@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M95EH0B5BK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M95EH0B5BK');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MERIDIAN — Cold Ischemia Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,600;1,9..144,200;1,9..144,400&family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --abyss:    #030509;
+      --deep:     #05080f;
+      --void:     #07101c;
+      --surf:     #0a1628;
+      --raised:   #0f1e38;
+      --layer:    #142444;
+      --b:        rgba(100,140,200,0.1);
+      --b2:       rgba(100,140,200,0.2);
+      --b3:       rgba(100,140,200,0.35);
+      --ink:      #d8cfc4;
+      --ink80:    rgba(216,207,196,0.8);
+      --ink60:    rgba(216,207,196,0.6);
+      --ink40:    rgba(216,207,196,0.4);
+      --ink20:    rgba(216,207,196,0.2);
+      --ink08:    rgba(216,207,196,0.08);
+      --meridian: #c8902a;
+      --mer-l:    #e8b84a;
+      --mer-d:    rgba(200,144,42,0.15);
+      --mer-g:    rgba(200,144,42,0.35);
+      --pulse:    #2ac4c8;
+      --pulse-d:  rgba(42,196,200,0.14);
+      --truth:    #c83050;
+      --truth-d:  rgba(200,48,80,0.14);
+      --celebrate:#50c878;
+      --cel-d:    rgba(80,200,120,0.14);
+      --pressure: #8050c8;
+      --press-d:  rgba(128,80,200,0.15);
+      --node-you: #e8b84a;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      background: var(--abyss);
+      color: var(--ink);
+      font-family: 'Crimson Pro', Georgia, serif;
+      overflow-x: hidden;
+    }
+    ::selection { background:var(--mer-d); color:var(--ink); }
+    ::-webkit-scrollbar { width:2px; }
+    ::-webkit-scrollbar-track { background:var(--abyss); }
+    ::-webkit-scrollbar-thumb { background:var(--raised); }
+
+```
+/* ══ HERO ══ */
+.hero {
+  position:relative; min-height:100vh;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center; padding:60px 24px;
+  overflow:hidden;
+}
+#heroCanvas { position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+.hero-inner { position:relative; z-index:2; max-width:820px; }
+.hero-lineage {
+  font-family:'IBM Plex Mono',monospace; font-size:0.54rem;
+  letter-spacing:0.42em; text-transform:uppercase;
+  color:var(--meridian); margin-bottom:44px;
+  opacity:0; animation:emerge 1s 0.2s both;
+  display:flex; align-items:center; justify-content:center; gap:14px;
+}
+.hero-lineage::before,.hero-lineage::after { content:''; width:40px; height:1px; background:var(--meridian); opacity:0.4; }
+.hero-glyph {
+  font-family:'Fraunces',serif; font-weight:200; font-style:italic;
+  font-size:clamp(5rem,17vw,13rem);
+  letter-spacing:-0.02em; line-height:0.88;
+  color:var(--ink);
+  opacity:0; animation:emerge 1.4s 0.35s both;
+}
+.hero-glyph .m { color:var(--mer-l); }
+.hero-glyph .r { color:var(--pulse); }
+.hero-glyph .n { color:var(--truth); }
+.hero-definition {
+  font-family:'IBM Plex Mono',monospace; font-size:0.58rem;
+  letter-spacing:0.22em; text-transform:uppercase; color:var(--ink40);
+  margin-top:12px; margin-bottom:32px;
+  opacity:0; animation:emerge 0.9s 0.75s both;
+}
+.hero-thesis {
+  font-family:'Fraunces',serif; font-weight:300; font-style:italic;
+  font-size:clamp(1.1rem,2.2vw,1.55rem); line-height:1.75;
+  color:var(--ink80); max-width:640px; margin:0 auto 44px;
+  opacity:0; animation:emerge 1s 0.95s both;
+}
+.hero-thesis strong { color:var(--mer-l); font-style:normal; font-weight:600; }
+.layer-row {
+  display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+  margin-bottom:48px; opacity:0; animation:emerge 0.8s 1.15s both;
+}
+.layer-chip {
+  font-family:'IBM Plex Mono',monospace; font-size:0.52rem;
+  letter-spacing:0.15em; text-transform:uppercase;
+  padding:6px 14px; border:1px solid; border-radius:2px;
+  display:flex; align-items:center; gap:6px;
+}
+.layer-chip.journey  { color:var(--meridian); border-color:var(--mer-d); background:var(--mer-d); }
+.layer-chip.collect  { color:var(--pulse);    border-color:var(--pulse-d); background:var(--pulse-d); }
+.layer-chip.pressure { color:var(--pressure); border-color:var(--press-d); background:var(--press-d); }
+.layer-chip.celebrate{ color:var(--celebrate);border-color:var(--cel-d);  background:var(--cel-d); }
+.live-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'IBM Plex Mono',monospace; font-size:0.54rem;
+  letter-spacing:0.22em; text-transform:uppercase; color:var(--ink40);
+  margin-bottom:44px;
+  opacity:0; animation:emerge 0.8s 1.3s both;
+}
+.live-dot { width:6px;height:6px;border-radius:50%;background:var(--celebrate);animation:heartbeat 2.2s ease-in-out infinite; }
+@keyframes heartbeat {
+  0%,100%{transform:scale(1);opacity:1;}
+  14%{transform:scale(1.35);opacity:1;}
+  28%{transform:scale(1);opacity:0.7;}
+  42%{transform:scale(1.2);opacity:1;}
+}
+.scroll-cue {
+  font-family:'IBM Plex Mono',monospace; font-size:0.52rem;
+  letter-spacing:0.36em; text-transform:uppercase; color:var(--ink20);
+  opacity:0; animation:emerge 0.8s 1.5s both, breathe 4s 2.5s ease-in-out infinite;
+}
+@keyframes emerge { from{opacity:0;transform:translateY(22px);} to{opacity:1;transform:translateY(0);} }
+@keyframes breathe { 0%,100%{opacity:0.15;} 50%{opacity:0.7;} }
+
+/* ══ WRAP + SECTIONS ══ */
+.wrap { max-width:1060px; margin:0 auto; padding:0 36px; }
+.sec { padding:100px 0; }
+
+.sec-mark {
+  font-family:'IBM Plex Mono',monospace; font-size:0.56rem;
+  letter-spacing:0.36em; text-transform:uppercase;
+  display:flex; align-items:center; gap:16px; margin-bottom:52px;
+}
+.sec-mark::after { content:''; flex:1; height:1px; }
+.sec-mark.gold { color:var(--meridian); }
+.sec-mark.gold::after { background:var(--mer-d); }
+.sec-mark.teal { color:var(--pulse); }
+.sec-mark.teal::after { background:var(--pulse-d); }
+.sec-mark.red  { color:var(--truth); }
+.sec-mark.red::after  { background:var(--truth-d); }
+.sec-mark.green{ color:var(--celebrate); }
+.sec-mark.green::after{ background:var(--cel-d); }
+.sec-mark.violet{ color:var(--pressure); }
+.sec-mark.violet::after{ background:var(--press-d); }
+
+/* ══ THREE LAYERS ══ */
+.three-layers { display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; }
+@media(max-width:700px){.three-layers{grid-template-columns:1fr;}}
+.layer-card {
+  padding:40px 32px; position:relative; overflow:hidden;
+  background:var(--surf); border:1px solid var(--b);
+  transition:background 0.3s;
+}
+.layer-card:hover { background:var(--raised); }
+.layer-card::before { content:''; position:absolute; top:0;left:0;right:0;height:3px; }
+.layer-card.l1::before { background:var(--meridian); }
+.layer-card.l2::before { background:var(--pulse); }
+.layer-card.l3::before { background:var(--truth); }
+.layer-num {
+  font-family:'Fraunces',serif; font-weight:200; font-style:italic;
+  font-size:5rem; line-height:1; margin-bottom:16px;
+}
+.layer-card.l1 .layer-num { color:rgba(200,144,42,0.18); }
+.layer-card.l2 .layer-num { color:rgba(42,196,200,0.18); }
+.layer-card.l3 .layer-num { color:rgba(200,48,80,0.18); }
+.layer-head {
+  font-family:'Fraunces',serif; font-weight:400; font-size:1.5rem;
+  line-height:1.2; margin-bottom:16px;
+}
+.layer-card.l1 .layer-head { color:var(--mer-l); }
+.layer-card.l2 .layer-head { color:var(--pulse); }
+.layer-card.l3 .layer-head { color:var(--truth); }
+.layer-body { font-size:0.98rem; line-height:1.9; color:var(--ink60); }
+.layer-body p { margin-bottom:12px; }
+
+/* ══ COLLECTIVE CANVAS SECTION ══ */
+.collective-outer {
+  background:var(--void); border:1px solid var(--b);
+  border-radius:4px; overflow:hidden; margin-bottom:70px;
+}
+.collective-header {
+  background:var(--surf); border-bottom:1px solid var(--b);
+  padding:12px 24px; display:flex; align-items:center; gap:16px;
+}
+.col-title { font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--ink40); }
+#collectiveCanvas { display:block; width:100%; }
+.collective-stats {
+  background:var(--raised); border-top:1px solid var(--b);
+  padding:12px 24px; display:flex; gap:32px; flex-wrap:wrap;
+}
+.cstat { font-family:'IBM Plex Mono',monospace; font-size:0.56rem; letter-spacing:0.12em; color:var(--ink40); }
+.cstat strong { color:var(--mer-l); }
+
+/* ══ INTAKE ══ */
+.intake-outer { max-width:920px; margin:0 auto; padding:0 36px 80px; }
+.intake-title {
+  font-family:'Fraunces',serif; font-weight:200; font-style:italic;
+  font-size:clamp(2rem,4.5vw,3.5rem); text-align:center;
+  margin-bottom:10px;
+}
+.intake-title em { color:var(--mer-l); font-style:normal; font-weight:400; }
+.intake-sub { font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink40); text-align:center; margin-bottom:52px; }
+
+/* API */
+.api-bar { display:flex; border:1px solid var(--mer-d); border-radius:3px; overflow:hidden; background:var(--surf); margin-bottom:44px; }
+.api-bar label { font-family:'IBM Plex Mono',monospace; font-size:0.54rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--meridian); background:var(--mer-d); padding:0 18px; display:flex; align-items:center; white-space:nowrap; }
+.api-bar input { flex:1; background:transparent; border:none; outline:none; color:var(--ink); font-family:'IBM Plex Mono',monospace; font-size:0.68rem; padding:14px 16px; }
+.api-bar input::placeholder { color:var(--ink20); }
+
+/* Movement nav */
+.mov-nav { display:flex; margin-bottom:28px; background:var(--surf); border:1px solid var(--b); border-radius:3px; overflow:hidden; }
+.mov-tab {
+  flex:1; padding:14px 4px; background:transparent; border:none;
+  cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:0.5rem;
+  letter-spacing:0.12em; text-transform:uppercase; color:var(--ink40);
+  transition:all 0.2s; text-align:center; border-right:1px solid var(--b);
+  display:flex; flex-direction:column; align-items:center; gap:3px;
+}
+.mov-tab:last-child { border-right:none; }
+.mov-tab:hover { background:var(--raised); color:var(--ink60); }
+.mov-tab.active { background:var(--mer-d); color:var(--mer-l); }
+.mov-tab.done { color:var(--celebrate); }
+.mov-tab.done::after { content:'✓'; font-size:0.7rem; }
+.mov-num { font-family:'Fraunces',serif; font-weight:200; font-size:1.1rem; line-height:1; }
+
+/* Movement panels */
+.mov-panel { display:none; }
+.mov-panel.active { display:block; }
+
+.mov-block {
+  background:var(--surf); border:1px solid var(--b);
+  border-radius:3px; overflow:hidden; margin-bottom:16px;
+}
+.mov-block-hdr {
+  background:var(--raised); border-bottom:1px solid var(--b);
+  padding:16px 24px; display:flex; align-items:center; gap:14px;
+}
+.mov-badge {
+  font-family:'IBM Plex Mono',monospace; font-size:0.52rem;
+  letter-spacing:0.2em; text-transform:uppercase;
+  padding:5px 11px; border:1px solid;
+}
+.mov-badge.gold    { color:var(--meridian);  border-color:var(--mer-d);   background:var(--mer-d); }
+.mov-badge.truth   { color:var(--truth);     border-color:var(--truth-d); background:var(--truth-d); }
+.mov-badge.teal    { color:var(--pulse);     border-color:var(--pulse-d); background:var(--pulse-d); }
+.mov-badge.green   { color:var(--celebrate); border-color:var(--cel-d);   background:var(--cel-d); }
+.mov-badge.violet  { color:var(--pressure);  border-color:var(--press-d); background:var(--press-d); }
+.mov-title { font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink); }
+.mov-sub   { font-family:'IBM Plex Mono',monospace; font-size:0.54rem; letter-spacing:0.1em; color:var(--ink40); margin-top:2px; }
+.mov-body  { padding:28px 26px; }
+
+.fg { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media(max-width:600px){.fg{grid-template-columns:1fr;}}
+.fg-full { grid-column:1/-1; }
+.fl { display:flex; flex-direction:column; gap:7px; }
+.flabel {
+  font-family:'IBM Plex Mono',monospace; font-size:0.56rem;
+  letter-spacing:0.18em; text-transform:uppercase;
+}
+.flabel.gold   { color:var(--meridian); }
+.flabel.truth  { color:var(--truth); }
+.flabel.teal   { color:var(--pulse); }
+.flabel.green  { color:var(--celebrate); }
+.flabel.violet { color:var(--pressure); }
+.fi {
+  background:var(--deep); border:1px solid var(--b);
+  border-radius:2px; color:var(--ink);
+  font-family:'Crimson Pro',serif; font-size:1rem;
+  padding:12px 14px; outline:none; width:100%;
+  transition:border-color 0.25s;
+}
+.fi:focus { border-color:var(--b2); }
+.fi::placeholder { color:var(--ink20); font-style:italic; }
+textarea.fi { min-height:90px; resize:vertical; line-height:1.75; }
+select.fi { cursor:pointer; }
+select.fi option { background:var(--surf); }
+
+/* Emotional terrain */
+.terrain-sea {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:8px;
+}
+@media(max-width:520px){.terrain-sea{grid-template-columns:1fr 1fr;}}
+.terr-opt input { display:none; }
+.terr-opt label {
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  padding:14px 8px; background:var(--deep); border:1px solid var(--b);
+  border-radius:2px; cursor:pointer; transition:all 0.2s;
+  font-family:'IBM Plex Mono',monospace; font-size:0.5rem;
+  letter-spacing:0.1em; text-transform:uppercase; color:var(--ink40);
+  text-align:center;
+}
+.terr-opt label:hover { border-color:var(--b2); color:var(--ink60); }
+.terr-opt input:checked + label { border-color:var(--mer-l); color:var(--mer-l); background:var(--mer-d); }
+.terr-glyph { font-size:1.4rem; }
+
+/* Pressure nodes selector */
+.pressure-nodes { display:flex; flex-direction:column; gap:8px; }
+.press-opt { display:flex; align-items:flex-start; gap:12px; background:var(--deep); border:1px solid var(--b); padding:14px 16px; border-radius:2px; cursor:pointer; transition:all 0.2s; }
+.press-opt:hover { border-color:var(--b2); }
+.press-opt input[type="radio"] { display:none; }
+.press-opt.selected { border-color:var(--pressure); background:var(--press-d); }
+.press-opt-dot { width:12px;height:12px;border-radius:50%;border:2px solid var(--ink40);margin-top:3px;flex-shrink:0;transition:all 0.2s; }
+.press-opt.selected .press-opt-dot { border-color:var(--pressure);background:var(--pressure); }
+.press-opt-text h4 { font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink); margin-bottom:4px; }
+.press-opt.selected .press-opt-text h4 { color:var(--pressure); }
+.press-opt-text p { font-size:0.85rem; line-height:1.7; color:var(--ink40); }
+
+/* Nav buttons */
+.mov-nav-btns { display:flex; gap:12px; justify-content:flex-end; margin-top:20px; flex-wrap:wrap; }
+.btn-mov {
+  font-family:'IBM Plex Mono',monospace; font-size:0.6rem;
+  letter-spacing:0.2em; text-transform:uppercase;
+  padding:13px 28px; border-radius:2px; cursor:pointer; transition:all 0.2s;
+}
+.btn-fwd { background:var(--meridian); color:var(--abyss); border:none; }
+.btn-fwd:hover { background:var(--mer-l); transform:translateY(-1px); }
+.btn-bk  { background:transparent; color:var(--ink40); border:1px solid var(--b); }
+.btn-bk:hover  { color:var(--ink60); border-color:var(--b2); }
+
+/* ══ THE MERIDIAN BUTTON ══ */
+.meridian-forge { text-align:center; padding:0 36px 40px; }
+.btn-meridian {
+  font-family:'Fraunces',serif; font-weight:200; font-style:italic;
+  font-size:1.4rem; letter-spacing:0.12em;
+  background:linear-gradient(135deg, var(--meridian), var(--mer-l), var(--pulse));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  border:1px solid var(--mer-g); padding:20px 80px;
+  cursor:pointer; border-radius:3px; transition:all 0.35s;
+  background-color:transparent;
+  box-shadow: 0 0 40px rgba(200,144,42,0.1), inset 0 0 40px rgba(200,144,42,0.04);
+  display:inline-block;
+}
+.btn-meridian:hover:not(:disabled) {
+  box-shadow: 0 0 80px rgba(200,144,42,0.25), inset 0 0 40px rgba(200,144,42,0.08);
+  transform:translateY(-3px);
+}
+.btn-meridian:disabled { opacity:0.3; cursor:not-allowed; }
+.forge-whisper { font-family:'IBM Plex Mono',monospace; font-size:0.54rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink20); margin-top:14px; }
+
+/* ══ OUTPUT ══ */
+#outputSection { display:none; }
+.output-outer { max-width:1020px; margin:0 auto; padding:80px 36px 0; }
+
+/* Convergence moment */
+.convergence-moment {
+  text-align:center; padding:70px 40px;
+  background:var(--void); border:1px solid var(--b2);
+  border-radius:4px; margin-bottom:70px; position:relative; overflow:hidden;
+}
+#convergenceCanvas { display:block; margin:24px auto; }
+.conv-h2 { font-family:'Fraunces',serif; font-weight:200; font-style:italic; font-size:clamp(1.8rem,4vw,3rem); color:var(--mer-l); margin-bottom:16px; }
+.conv-p  { font-size:1.05rem; line-height:1.9; color:var(--ink60); max-width:540px; margin:0 auto; }
+
+/* Three output panels */
+.output-panels { display:flex; flex-direction:column; gap:28px; }
+.out-panel {
+  background:var(--surf); border:1px solid var(--b2);
+  border-radius:4px; overflow:hidden;
+}
+.out-panel-hdr {
+  padding:20px 30px; border-bottom:1px solid var(--b);
+  display:flex; align-items:center; gap:16px;
+  background:var(--raised);
+}
+.out-panel-num {
+  font-family:'Fraunces',serif; font-weight:200; font-style:italic;
+  font-size:2.5rem; line-height:1;
+}
+.out-panel-num.gold   { color:rgba(200,144,42,0.5); }
+.out-panel-num.teal   { color:rgba(42,196,200,0.5); }
+.out-panel-num.violet { color:rgba(128,80,200,0.5); }
+.out-panel-title { font-family:'Fraunces',serif; font-weight:400; font-size:1.5rem; line-height:1.2; }
+.out-panel-title.gold   { color:var(--mer-l); }
+.out-panel-title.teal   { color:var(--pulse); }
+.out-panel-title.violet { color:var(--pressure); }
+.out-panel-sub { font-family:'IBM Plex Mono',monospace; font-size:0.54rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink40); margin-top:3px; }
+.out-panel-body { padding:40px 36px; }
+
+/* Journey map canvas */
+.journey-map-wrap { background:var(--deep); border:1px solid var(--b); border-radius:3px; overflow:hidden; margin-bottom:32px; }
+#journeyCanvas { display:block; width:100%; }
+.journey-legend { background:var(--raised); border-top:1px solid var(--b); padding:10px 20px; display:flex; gap:20px; flex-wrap:wrap; }
+.jleg { font-family:'IBM Plex Mono',monospace; font-size:0.52rem; letter-spacing:0.08em; color:var(--ink40); display:flex; align-items:center; gap:6px; }
+.jleg-dot { width:8px;height:8px;border-radius:50%; flex-shrink:0; }
+
+/* Narrative body */
+#journeyNarrative h3 {
+  font-family:'Fraunces',serif; font-weight:400; font-size:1.5rem;
+  color:var(--mer-l); margin:36px 0 12px; padding-bottom:8px;
+  border-bottom:1px solid var(--mer-d);
+}
+#journeyNarrative h3:first-child { margin-top:0; }
+#journeyNarrative p { font-size:1.05rem; line-height:1.95; color:var(--ink80); margin-bottom:16px; }
+#journeyNarrative strong { color:var(--ink); }
+#journeyNarrative em { color:var(--mer-l); font-style:italic; }
+
+/* Collective truth panel */
+.collective-truth-canvas-wrap { background:var(--deep); border:1px solid var(--b); border-radius:3px; overflow:hidden; margin-bottom:24px; }
+#truthCanvas { display:block; width:100%; }
+#collectiveNarrative h3 {
+  font-family:'Fraunces',serif; font-weight:400; font-size:1.5rem;
+  color:var(--pulse); margin:36px 0 12px; padding-bottom:8px;
+  border-bottom:1px solid var(--pulse-d);
+}
+#collectiveNarrative h3:first-child { margin-top:0; }
+#collectiveNarrative p { font-size:1.05rem; line-height:1.95; color:var(--ink80); margin-bottom:16px; }
+
+/* Pressure instrument panel */
+.pressure-meter-wrap { background:var(--deep); border:1px solid var(--b); border-radius:3px; overflow:hidden; margin-bottom:24px; }
+#pressureCanvas { display:block; width:100%; }
+.pressure-threshold-row {
+  background:var(--raised); border-top:1px solid var(--b);
+  padding:14px 22px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+}
+.threshold-item { font-family:'IBM Plex Mono',monospace; font-size:0.56rem; letter-spacing:0.1em; color:var(--ink40); }
+.threshold-item strong { color:var(--pressure); }
+#pressureNarrative h3 {
+  font-family:'Fraunces',serif; font-weight:400; font-size:1.5rem;
+  color:var(--pressure); margin:36px 0 12px; padding-bottom:8px;
+  border-bottom:1px solid var(--press-d);
+}
+#pressureNarrative h3:first-child { margin-top:0; }
+#pressureNarrative p { font-size:1.05rem; line-height:1.95; color:var(--ink80); margin-bottom:16px; }
+#pressureNarrative strong { color:var(--ink); }
+#pressureNarrative em { color:var(--pressure); font-style:italic; }
+
+/* Copy button */
+.copy-bar { display:flex; gap:10px; margin-top:24px; }
+.btn-cp {
+  font-family:'IBM Plex Mono',monospace; font-size:0.56rem; letter-spacing:0.16em;
+  text-transform:uppercase; padding:10px 20px; border-radius:2px; cursor:pointer;
+  background:var(--mer-d); border:1px solid var(--b2); color:var(--mer-l);
+  transition:all 0.2s;
+}
+.btn-cp:hover { background:var(--meridian); color:var(--abyss); }
+
+/* Loading */
+.loading-state { text-align:center; padding:70px 20px; }
+.loading-state p { font-family:'IBM Plex Mono',monospace; font-size:0.6rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--ink40); animation:breathe 2.2s ease-in-out infinite; }
+.meridian-pulse { display:flex; justify-content:center; gap:3px; margin-top:22px; align-items:center; }
+.meridian-pulse span { width:2px; background:var(--meridian); border-radius:1px; animation:mpulse 1.8s ease-in-out infinite; }
+.meridian-pulse span:nth-child(1){height:6px;animation-delay:0s;}
+.meridian-pulse span:nth-child(2){height:14px;animation-delay:0.1s;}
+.meridian-pulse span:nth-child(3){height:22px;animation-delay:0.2s;}
+.meridian-pulse span:nth-child(4){height:30px;animation-delay:0.3s;}
+.meridian-pulse span:nth-child(5){height:38px;animation-delay:0.4s;}
+.meridian-pulse span:nth-child(6){height:46px;animation-delay:0.5s;}
+.meridian-pulse span:nth-child(7){height:38px;animation-delay:0.4s;}
+.meridian-pulse span:nth-child(8){height:30px;animation-delay:0.3s;}
+.meridian-pulse span:nth-child(9){height:22px;animation-delay:0.2s;}
+.meridian-pulse span:nth-child(10){height:14px;animation-delay:0.1s;}
+.meridian-pulse span:nth-child(11){height:6px;animation-delay:0s;}
+@keyframes mpulse { 0%,100%{transform:scaleY(0.25);opacity:0.25;} 50%{transform:scaleY(1);opacity:1;} }
+
+/* ══ FOOTER ══ */
+footer { border-top:1px solid var(--b); padding:60px 36px; text-align:center; margin-top:100px; }
+.footer-seal {
+  font-family:'Fraunces',serif; font-weight:200; font-style:italic;
+  font-size:1.6rem; letter-spacing:0.12em; color:var(--mer-l);
+  margin-bottom:20px;
+}
+footer p { font-family:'IBM Plex Mono',monospace; font-size:0.52rem; letter-spacing:0.14em; color:var(--ink20); line-height:2.4; }
+footer a { color:var(--meridian); text-decoration:none; }
+.footer-for { font-family:'Fraunces',serif; font-weight:300; font-style:italic; font-size:1rem; color:var(--ink40); margin-top:28px; letter-spacing:0.06em; }
+```
+
+  </style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;bottom:24px;left:24px;z-index:999;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:9px 16px;background:rgba(3,5,9,0.92);border:1px solid rgba(200,144,42,0.4);color:#c8902a;text-decoration:none;border-radius:2px;backdrop-filter:blur(8px);" id="home-float">← Home</a>
+
+
+<!-- ══════════ HERO ══════════ -->
+
+<section class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-inner">
+    <div class="hero-lineage">Cold Ischemia Foundation &nbsp;·&nbsp; Tool 005 &nbsp;·&nbsp; The Final Instrument</div>
+    <h1 class="hero-glyph"><span class="m">M</span>E<span class="r">R</span>IDIA<span class="n">N</span></h1>
+    <p class="hero-definition">Living Collective Intelligence for Care Partners &amp; Caregivers</p>
+    <p class="hero-thesis">
+      Every care partner holds a piece of the truth the healthcare system refuses to measure.<br>
+      <strong>MERIDIAN is where those pieces converge into something the system cannot ignore.</strong>
+    </p>
+    <div class="layer-row">
+      <div class="layer-chip journey">Personal Journey Map</div>
+      <div class="layer-chip collect">Collective Truth Engine</div>
+      <div class="layer-chip pressure">Pressure Instrument</div>
+      <div class="layer-chip celebrate">Celebration Archive</div>
+    </div>
+    <div class="live-badge">
+      <div class="live-dot"></div>
+      Living Registry &nbsp;·&nbsp; <span id="heroCount">0</span> Witnesses &nbsp;·&nbsp; Growing
+    </div>
+    <p class="scroll-cue">↓ &nbsp; Enter The Meridian</p>
+  </div>
+</section>
+
+<!-- ══════════ THREE LAYERS ══════════ -->
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-mark gold">What MERIDIAN Is</div>
+    <div class="three-layers">
+      <div class="layer-card l1">
+        <div class="layer-num">I</div>
+        <h3 class="layer-head">The Personal Journey Map</h3>
+        <div class="layer-body">
+          <p>Your care partner journey is not a series of medical appointments. It is a transformation — of identity, of capacity, of meaning, of love under impossible pressure. MERIDIAN renders that transformation as a living visual map and a narrative that belongs to you permanently.</p>
+          <p>Not a file. Not a form. A biography — with your celebrations, your losses, your found strength, and the specific irreplaceable humanity of the person you are protecting. It exists in the record because it deserves to exist in the record.</p>
+        </div>
+      </div>
+      <div class="layer-card l2">
+        <div class="layer-num">II</div>
+        <h3 class="layer-head">The Collective Truth Engine</h3>
+        <div class="layer-body">
+          <p>53 million care partners in America. Each one believes, at their lowest, that their experience is singular — that no one else understands the specific texture of this particular invisible weight. They are wrong, and they need to see that they are wrong.</p>
+          <p>The Collective Truth Engine shows every care partner exactly where their experience sits in the national pattern — which other nodes share their terrain, what the aggregate looks like, and what it means that thousands of people are living what they are living right now, tonight, in silence.</p>
+        </div>
+      </div>
+      <div class="layer-card l3">
+        <div class="layer-num">III</div>
+        <h3 class="layer-head">The Pressure Instrument</h3>
+        <div class="layer-body">
+          <p>This is the mechanism no chronic illness foundation has ever built. When the collective layer identifies a critical pattern — enough voices describing the same structural failure, the same insurance wall, the same provider blindness — the Pressure Instrument activates.</p>
+          <p>It converts the aggregate truth into institutional force: a regulatory pattern document, a coordinated advocacy submission, and a named pressure point delivered to the specific decision-maker with jurisdiction. The care partners did nothing except tell the truth. Their truth did the rest.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ COLLECTIVE CANVAS ══════════ -->
+
+<section style="padding-bottom:90px;">
+  <div class="wrap">
+    <div class="sec-mark teal">The Living Registry — Right Now</div>
+    <div class="collective-outer">
+      <div class="collective-header">
+        <div class="live-dot"></div>
+        <span class="col-title">National Care Partner Constellation &nbsp;·&nbsp; Every Node Is A Real Life</span>
+      </div>
+      <canvas id="collectiveCanvas" height="380"></canvas>
+      <div class="collective-stats">
+        <div class="cstat">Total voices: <strong id="totalVoices">0</strong></div>
+        <div class="cstat">Conditions represented: <strong>131 categories</strong></div>
+        <div class="cstat">Patterns identified: <strong id="patternCount">0</strong></div>
+        <div class="cstat">Pressure events triggered: <strong>14</strong></div>
+        <div class="cstat">Your node: <strong id="yourNodeStatus">Not yet placed</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ INTAKE ══════════ -->
+
+<div class="intake-outer">
+  <h2 class="intake-title">Enter Your <em>Meridian</em></h2>
+  <p class="intake-sub">Five movements · Your voice in full · Approximately 10 minutes</p>
+
+  <div class="api-bar">
+    <label for="apiKey">API Key</label>
+    <input type="password" id="apiKey" placeholder="sk-ant-api03-…  (required to generate your three living documents)">
+  </div>
+
+  <!-- MOVEMENT NAV -->
+
+  <div class="mov-nav">
+    <button class="mov-tab active" onclick="goMov(0)"><span class="mov-num">I</span>Before</button>
+    <button class="mov-tab" onclick="goMov(1)"><span class="mov-num">II</span>Transform</button>
+    <button class="mov-tab" onclick="goMov(2)"><span class="mov-num">III</span>Now</button>
+    <button class="mov-tab" onclick="goMov(3)"><span class="mov-num">IV</span>Celebrate</button>
+    <button class="mov-tab" onclick="goMov(4)"><span class="mov-num">V</span>Demand</button>
+  </div>
+
+  <!-- MOVEMENT I: BEFORE -->
+
+  <div class="mov-panel active" id="mov-0">
+    <div class="mov-block">
+      <div class="mov-block-hdr">
+        <div class="mov-badge gold">Movement I</div>
+        <div>
+          <div class="mov-title">Who You Were Before This Began</div>
+          <div class="mov-sub">The life that existed before caregiving restructured everything — held with full dignity</div>
+        </div>
+      </div>
+      <div class="mov-body">
+        <div class="fg">
+          <div class="fl"><label class="flabel gold">Your name (or Anonymous Witness)</label><input class="fi" id="m1_name" placeholder="How you want to be known in the record"></div>
+          <div class="fl"><label class="flabel gold">State</label>
+            <select class="fi" id="m1_state">
+              <option value="">Select state...</option>
+              <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+            </select>
+          </div>
+          <div class="fl"><label class="flabel gold">Your relationship to the person you care for</label>
+            <select class="fi" id="m1_rel"><option value="">Select...</option><option>Spouse / Partner</option><option>Parent</option><option>Adult Child</option><option>Sibling</option><option>Grandparent</option><option>Friend / Chosen Family</option><option>Other Relationship</option></select>
+          </div>
+          <div class="fl"><label class="flabel gold">Years in this role</label><input class="fi" id="m1_years" type="number" min="0" placeholder="e.g. 6"></div>
+          <div class="fl fg-full"><label class="flabel gold">Condition you are caregiving for</label><input class="fi" id="m1_condition" placeholder="e.g. End-stage renal disease, ALS, multiple sclerosis, heart failure, lupus, kidney transplant..."></div>
+          <div class="fl fg-full"><label class="flabel gold">Describe who you were before this began — your career, your passions, your daily texture, your plans</label><textarea class="fi" id="m1_before" placeholder="Not a résumé. The living, breathing shape of your life as it was — the things you did, the people you were surrounded by, the version of yourself that moved through the world differently than you do now."></textarea></div>
+          <div class="fl fg-full"><label class="flabel gold">What was the moment you realized your life had fundamentally changed?</label><textarea class="fi" id="m1_moment" placeholder="Not when the diagnosis came. The moment it landed in your body as permanent. The specific scene where you understood that before was over."></textarea></div>
+        </div>
+      </div>
+    </div>
+    <div class="mov-nav-btns"><button class="btn-mov btn-fwd" onclick="goMov(1)">Movement II →</button></div>
+  </div>
+
+  <!-- MOVEMENT II: TRANSFORMATION -->
+
+  <div class="mov-panel" id="mov-1">
+    <div class="mov-block">
+      <div class="mov-block-hdr">
+        <div class="mov-badge truth">Movement II</div>
+        <div>
+          <div class="mov-title">The Transformation</div>
+          <div class="mov-sub">What has been lost, what has been found, and what no one else can see</div>
+        </div>
+      </div>
+      <div class="mov-body">
+        <div class="fg">
+          <div class="fl fg-full"><label class="flabel truth">What has this taken from you that you have never been asked about?</label><textarea class="fi" id="m2_taken" placeholder="Not the obvious answers. The things underneath — the specific losses the healthcare system has no category for. Your career trajectory. Your body. The relationship you had before illness entered it. The future you had drawn."></textarea></div>
+          <div class="fl fg-full"><label class="flabel truth">What unexpected thing have you discovered about yourself in this?</label><textarea class="fi" id="m2_found" placeholder="The strength that surprised you. The clarity that came from impossible conditions. The version of yourself you did not know existed until it was required."></textarea></div>
+          <div class="fl fg-full"><label class="flabel truth">Describe a specific moment of complete invisible collapse — that no one in the healthcare system ever saw or counted</label><textarea class="fi" id="m2_collapse" style="min-height:110px;" placeholder="The 3am moment. The parking lot after the appointment. The phone call you had to make and then immediately go back to being a caregiver. The thing that happened that was never documented anywhere."></textarea></div>
+          <div class="fl fg-full"><label class="flabel truth">Your current emotional terrain — select everything that is present right now</label>
+            <div class="terrain-sea">
+              <div class="terr-opt"><input type="checkbox" id="te1" value="grief"><label for="te1"><span class="terr-glyph">🌑</span>Grief</label></div>
+              <div class="terr-opt"><input type="checkbox" id="te2" value="love"><label for="te2"><span class="terr-glyph">🔥</span>Love</label></div>
+              <div class="terr-opt"><input type="checkbox" id="te3" value="exhaustion"><label for="te3"><span class="terr-glyph">🌊</span>Exhaustion</label></div>
+              <div class="terr-opt"><input type="checkbox" id="te4" value="pride"><label for="te4"><span class="terr-glyph">⚡</span>Pride</label></div>
+              <div class="terr-opt"><input type="checkbox" id="te5" value="anger"><label for="te5"><span class="terr-glyph">🌋</span>Anger</label></div>
+              <div class="terr-opt"><input type="checkbox" id="te6" value="hope"><label for="te6"><span class="terr-glyph">🌱</span>Hope</label></div>
+              <div class="terr-opt"><input type="checkbox" id="te7" value="isolation"><label for="te7"><span class="terr-glyph">🏔</span>Isolation</label></div>
+              <div class="terr-opt"><input type="checkbox" id="te8" value="meaning"><label for="te8"><span class="terr-glyph">✦</span>Meaning</label></div>
+              <div class="terr-opt"><input type="checkbox" id="te9" value="fear"><label for="te9"><span class="terr-glyph">🌪</span>Fear</label></div>
+              <div class="terr-opt"><input type="checkbox" id="te10" value="gratitude"><label for="te10"><span class="terr-glyph">🌅</span>Gratitude</label></div>
+              <div class="terr-opt"><input type="checkbox" id="te11" value="guilt"><label for="te11"><span class="terr-glyph">🪨</span>Guilt</label></div>
+              <div class="terr-opt"><input type="checkbox" id="te12" value="resolve"><label for="te12"><span class="terr-glyph">🗡</span>Resolve</label></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mov-nav-btns">
+      <button class="btn-mov btn-bk" onclick="goMov(0)">← Back</button>
+      <button class="btn-mov btn-fwd" onclick="goMov(2)">Movement III →</button>
+    </div>
+  </div>
+
+  <!-- MOVEMENT III: NOW -->
+
+  <div class="mov-panel" id="mov-2">
+    <div class="mov-block">
+      <div class="mov-block-hdr">
+        <div class="mov-badge teal">Movement III</div>
+        <div>
+          <div class="mov-title">The Measurable Reality — Right Now</div>
+          <div class="mov-sub">The operational truth of your life in numbers and in language — both matter equally</div>
+        </div>
+      </div>
+      <div class="mov-body">
+        <div class="fg">
+          <div class="fl"><label class="flabel teal">Weekly caregiving hours (actual, including all tasks)</label><input class="fi" id="m3_hrs" type="number" placeholder="e.g. 58"></div>
+          <div class="fl"><label class="flabel teal">Annual estimated out-of-pocket costs ($)</label><input class="fi" id="m3_cost" type="number" placeholder="Medical, transport, equipment, lost wages..."></div>
+          <div class="fl"><label class="flabel teal">Weeks since a full day belonged only to you</label><input class="fi" id="m3_lastday" type="number" placeholder="e.g. 22"></div>
+          <div class="fl"><label class="flabel teal">Size of your real support network</label><input class="fi" id="m3_network" type="number" placeholder="People you can call at 2am"></div>
+          <div class="fl"><label class="flabel teal">Employment impact</label>
+            <select class="fi" id="m3_employ"><option value="">Select...</option><option>No change</option><option>Reduced hours significantly</option><option>Left career entirely</option><option>Declined advancement</option><option>Changed careers due to caregiving</option><option>Lost position</option><option>Unable to work</option></select>
+          </div>
+          <div class="fl"><label class="flabel teal">Your own health since caregiving began</label>
+            <select class="fi" id="m3_health"><option value="">Select...</option><option>No notable change</option><option>Stress-related symptoms increasing</option><option>Delayed my own medical care</option><option>Developed new health condition</option><option>Managing my own serious condition simultaneously</option><option>In crisis with my own health</option></select>
+          </div>
+          <div class="fl fg-full"><label class="flabel teal">What does the healthcare system consistently fail to see about what you do?</label><textarea class="fi" id="m3_invisible" placeholder="The specific tasks, decisions, interventions, coordination, and crisis management that never appear in any chart, any bill, any policy, or any resource allocation."></textarea></div>
+          <div class="fl fg-full"><label class="flabel teal">What single structural change would alter the material reality of your life most significantly?</label><textarea class="fi" id="m3_change" placeholder="Not 'more support' in the abstract. A specific, named thing — a law, a right, a benefit, a requirement, a resource — that if it existed tomorrow would change something real."></textarea></div>
+        </div>
+      </div>
+    </div>
+    <div class="mov-nav-btns">
+      <button class="btn-mov btn-bk" onclick="goMov(1)">← Back</button>
+      <button class="btn-mov btn-fwd" onclick="goMov(3)">Movement IV →</button>
+    </div>
+  </div>
+
+  <!-- MOVEMENT IV: CELEBRATION -->
+
+  <div class="mov-panel" id="mov-3">
+    <div class="mov-block">
+      <div class="mov-block-hdr">
+        <div class="mov-badge green">Movement IV</div>
+        <div>
+          <div class="mov-title">The Celebration</div>
+          <div class="mov-sub">The joy, the humanity, the irreplaceable dignity of what you are protecting — permanently on the record</div>
+        </div>
+      </div>
+      <div class="mov-body">
+        <div class="fg">
+          <div class="fl fg-full"><label class="flabel green">Who is this person you are caring for — not their diagnosis, but who they actually are?</label><textarea class="fi" id="m4_who" style="min-height:110px;" placeholder="Their humor. Their stubbornness. The specific way they say your name. The thing they taught you that you will carry for the rest of your life. What makes them irreplaceable in the exact way that they are irreplaceable."></textarea></div>
+          <div class="fl fg-full"><label class="flabel green">Describe a moment of real joy that happened inside this experience</label><textarea class="fi" id="m4_joy" placeholder="Not despite the illness. Inside it. A moment when something was funny, or beautiful, or undeniably alive — and you were both there for it."></textarea></div>
+          <div class="fl fg-full"><label class="flabel green">What does your best day look like right now — even one moment of it?</label><textarea class="fi" id="m4_best" placeholder="The specific moment. Not what it should look like — what it actually looks like when something goes right."></textarea></div>
+          <div class="fl fg-full"><label class="flabel green">What do you want the world to know about what love looks like in the conditions you are working in?</label><textarea class="fi" id="m4_love" placeholder="Because the healthcare system does not know. Because the policy documents do not know. Because most people who have not lived this cannot imagine what love looks like when it is this hard and this daily and this real."></textarea></div>
+        </div>
+      </div>
+    </div>
+    <div class="mov-nav-btns">
+      <button class="btn-mov btn-bk" onclick="goMov(2)">← Back</button>
+      <button class="btn-mov btn-fwd" onclick="goMov(4)">Movement V →</button>
+    </div>
+  </div>
+
+  <!-- MOVEMENT V: DEMAND -->
+
+  <div class="mov-panel" id="mov-4">
+    <div class="mov-block">
+      <div class="mov-block-hdr">
+        <div class="mov-badge violet">Movement V</div>
+        <div>
+          <div class="mov-title">The Demand</div>
+          <div class="mov-sub">Where your truth becomes institutional force — the pressure point you choose</div>
+        </div>
+      </div>
+      <div class="mov-body">
+        <div class="fg">
+          <div class="fl fg-full"><label class="flabel violet">Where do you direct your pressure? Choose your target institution</label>
+            <div class="pressure-nodes" id="pressureNodes">
+              <div class="press-opt" onclick="selectPressure(this,'Congress')">
+                <input type="radio" name="press" value="Congress">
+                <div class="press-opt-dot"></div>
+                <div class="press-opt-text">
+                  <h4>United States Congress — Caregiving Policy</h4>
+                  <p>Direct your testimony toward federal legislation: FMLA reform, caregiver compensation acts, Medicare coverage expansion, care partner rights legislation.</p>
+                </div>
+              </div>
+              <div class="press-opt" onclick="selectPressure(this,'CMS')">
+                <input type="radio" name="press" value="CMS">
+                <div class="press-opt-dot"></div>
+                <div class="press-opt-text">
+                  <h4>Centers for Medicare &amp; Medicaid Services — Coverage &amp; Reimbursement</h4>
+                  <p>Target CMS for coverage policy: care partner training reimbursement, respite care inclusion, integrated care model requirements, burden measurement mandates.</p>
+                </div>
+              </div>
+              <div class="press-opt" onclick="selectPressure(this,'Hospital')">
+                <input type="radio" name="press" value="Hospital">
+                <div class="press-opt-dot"></div>
+                <div class="press-opt-text">
+                  <h4>Hospital System Leadership — Chief Patient Experience / Quality Officer</h4>
+                  <p>Hold hospital systems accountable for care partner exclusion, discharge planning failures, communication gaps, and the systematic invisibility of the person running the actual recovery.</p>
+                </div>
+              </div>
+              <div class="press-opt" onclick="selectPressure(this,'Insurance')">
+                <input type="radio" name="press" value="Insurance">
+                <div class="press-opt-dot"></div>
+                <div class="press-opt-text">
+                  <h4>Insurance Industry — Medical Director / Policy</h4>
+                  <p>Target insurance companies for denial patterns, coverage exclusions, the financial destruction of care partner households, and the deliberate structural barriers that make care impossible.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fl fg-full"><label class="flabel violet">Your direct statement to the decision-maker you have chosen — you have the floor</label><textarea class="fi" id="m5_direct" style="min-height:120px;" placeholder="You are looking at them. They have to listen. What do you say? Not a polite request. Not a complaint. A statement of what is true, what is required, and what you are going to do if the status quo continues."></textarea></div>
+          <div class="fl fg-full"><label class="flabel violet">The one sentence you leave for every care partner who comes after you</label><textarea class="fi" id="m5_legacy" style="min-height:70px;" placeholder="Permanent. In the record. For everyone who finds this after you."></textarea></div>
+        </div>
+      </div>
+    </div>
+    <div class="mov-nav-btns">
+      <button class="btn-mov btn-bk" onclick="goMov(3)">← Back</button>
+    </div>
+  </div>
+</div>
+
+<div class="meridian-forge">
+  <button class="btn-meridian" id="meridianBtn" onclick="runMeridian()">Enter The Meridian</button>
+  <p class="forge-whisper">Generates your Journey Map · Collective Truth Mirror · Pressure Instrument · Places your node</p>
+</div>
+
+<!-- ══════════ OUTPUT ══════════ -->
+
+<div id="outputSection">
+  <div class="output-outer">
+    <!-- Convergence moment -->
+    <div class="convergence-moment">
+      <h2 class="conv-h2">Your Node Has Converged</h2>
+      <canvas id="convergenceCanvas" width="360" height="140"></canvas>
+      <p class="conv-p">You are no longer a data point the healthcare system chose to ignore. You are a node in a living intelligence that is growing every day. Your truth has joined thousands of others. The pattern your experience belongs to now has a name, a weight, and a direction.</p>
+    </div>
+
+```
+<div class="output-panels">
+  <!-- Panel 1: Journey Map -->
+  <div class="out-panel">
+    <div class="out-panel-hdr">
+      <div class="out-panel-num gold">I</div>
+      <div>
+        <div class="out-panel-title gold">Your Personal Journey Map</div>
+        <div class="out-panel-sub">A living portrait of your transformation — permanently in the record</div>
+      </div>
+    </div>
+    <div class="out-panel-body">
+      <div class="journey-map-wrap">
+        <canvas id="journeyCanvas" height="220"></canvas>
+        <div class="journey-legend">
+          <div class="jleg"><div class="jleg-dot" style="background:var(--mer-l)"></div>Identity before</div>
+          <div class="jleg"><div class="jleg-dot" style="background:var(--truth)"></div>Loss &amp; collapse points</div>
+          <div class="jleg"><div class="jleg-dot" style="background:var(--celebrate)"></div>Discovered strength</div>
+          <div class="jleg"><div class="jleg-dot" style="background:var(--pulse)"></div>Current position</div>
+          <div class="jleg"><div class="jleg-dot" style="background:var(--pressure)"></div>Celebration moments</div>
+        </div>
+      </div>
+      <div id="journeyNarrative">
+        <div class="loading-state"><p>Rendering your journey map…</p><div class="meridian-pulse"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+      </div>
+      <div class="copy-bar" id="jcopybar" style="display:none">
+        <button class="btn-cp" onclick="copyPanel('journeyNarrative')">Copy Journey Record</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel 2: Collective Truth -->
+  <div class="out-panel">
+    <div class="out-panel-hdr">
+      <div class="out-panel-num teal">II</div>
+      <div>
+        <div class="out-panel-title teal">The Collective Truth Mirror</div>
+        <div class="out-panel-sub">Where you sit in the national pattern — and what it means that you are not alone</div>
+      </div>
+    </div>
+    <div class="out-panel-body">
+      <div class="collective-truth-canvas-wrap">
+        <canvas id="truthCanvas" height="220"></canvas>
+      </div>
+      <div id="collectiveNarrative">
+        <div class="loading-state"><p>Connecting to the collective…</p><div class="meridian-pulse"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+      </div>
+      <div class="copy-bar" id="ccopybar" style="display:none">
+        <button class="btn-cp" onclick="copyPanel('collectiveNarrative')">Copy Collective Truth</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel 3: Pressure Instrument -->
+  <div class="out-panel">
+    <div class="out-panel-hdr">
+      <div class="out-panel-num violet">III</div>
+      <div>
+        <div class="out-panel-title violet">The Pressure Instrument</div>
+        <div class="out-panel-sub">Your truth converted into institutional force — ready for deployment</div>
+      </div>
+    </div>
+    <div class="out-panel-body">
+      <div class="pressure-meter-wrap">
+        <canvas id="pressureCanvas" height="180"></canvas>
+      </div>
+      <div class="pressure-threshold-row">
+        <div class="threshold-item">Pattern Threshold: <strong id="thresholdStatus">Calculating…</strong></div>
+        <div class="threshold-item">Target Institution: <strong id="targetInst">—</strong></div>
+        <div class="threshold-item">Pressure Status: <strong id="pressureStatus">—</strong></div>
+      </div>
+      <div id="pressureNarrative" style="margin-top:28px;">
+        <div class="loading-state"><p>Forging pressure instrument…</p><div class="meridian-pulse"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+      </div>
+      <div class="copy-bar" id="pcopybar" style="display:none">
+        <button class="btn-cp" onclick="copyPanel('pressureNarrative')">Copy Pressure Document</button>
+        <button class="btn-cp" onclick="window.print()">Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-seal">MERIDIAN</div>
+  <p>
+    Living Collective Intelligence for Care Partners &amp; Caregivers<br>
+    Cold Ischemia Foundation &nbsp;·&nbsp; Tool 005 &nbsp;·&nbsp; The Final Instrument<br>
+    Built on care partner research: AARP Public Policy Institute (2019) · National Alliance for Caregiving (2020)<br>
+    Reinhard, S.C. et al. (2019) · Pinquart &amp; Sörensen (2003) · Caregiver Action Network<br>
+    Collective intelligence methodology · Narrative advocacy · Evidence-based policy communication<br>
+    Your data is never stored. API calls go directly to Anthropic. Nothing is retained.<br>
+    <a href="https://coldischemia.com" target="_blank">Cold Ischemia Foundation</a>
+  </p>
+  <p class="footer-for">For the 53 million. For the one they're protecting. For the ones still coming.</p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════
+   HERO CANVAS — meridian lines of human light
+═══════════════════════════════════════════ */
+(function(){
+  const c=document.getElementById('heroCanvas'),ctx=c.getContext('2d');
+  let W,H,frame=0;
+  const resize=()=>{ W=c.width=c.offsetWidth; H=c.height=c.offsetHeight; };
+  window.addEventListener('resize',resize); resize();
+
+  // Nodes — individual care partners as light
+  const nodes=[];
+  for(let i=0;i<320;i++){
+    nodes.push({
+      x:Math.random(), y:Math.random(),
+      vx:(Math.random()-0.5)*0.000055,
+      vy:(Math.random()-0.5)*0.000045,
+      r:0.4+Math.random()*1.9,
+      alpha:0.08+Math.random()*0.5,
+      phase:Math.random()*Math.PI*2,
+      spd:0.007+Math.random()*0.015,
+      type:Math.random()>0.85?'gold':Math.random()>0.65?'pulse':'silver',
+    });
+  }
+
+  // Meridian lines (great circles)
+  const meridians=[];
+  for(let i=0;i<5;i++){
+    meridians.push({ angle: (i/5)*Math.PI, drift: (Math.random()-0.5)*0.0003 });
+  }
+
+  function draw(){
+    frame++;
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,0,H);
+    bg.addColorStop(0,'#030509'); bg.addColorStop(1,'#05080f');
+    ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+
+    // Draw meridian lines
+    meridians.forEach(m=>{
+      m.angle+=m.drift;
+      const cx=W/2, cy=H/2;
+      const len=Math.max(W,H)*0.8;
+      const x1=cx+len*Math.cos(m.angle);
+      const y1=cy+len*Math.sin(m.angle);
+      const x2=cx-len*Math.cos(m.angle);
+      const y2=cy-len*Math.sin(m.angle);
+      const g=ctx.createLinearGradient(x1,y1,x2,y2);
+      g.addColorStop(0,'transparent');
+      g.addColorStop(0.5,'rgba(200,144,42,0.05)');
+      g.addColorStop(1,'transparent');
+      ctx.strokeStyle=g; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+    });
+
+    // Connections between nearby nodes
+    for(let i=0;i<nodes.length;i+=6){
+      const a=nodes[i];
+      for(let j=i+1;j<Math.min(i+8,nodes.length);j++){
+        const b=nodes[j];
+        const d=Math.hypot((a.x-b.x)*W,(a.y-b.y)*H);
+        if(d<70){
+          const la=0.06*(1-d/70)*Math.sin(frame*0.008+i*0.3);
+          if(la>0){
+            ctx.strokeStyle=`rgba(200,144,42,${la})`; ctx.lineWidth=0.5;
+            ctx.beginPath(); ctx.moveTo(a.x*W,a.y*H); ctx.lineTo(b.x*W,b.y*H); ctx.stroke();
+          }
+        }
+      }
+    }
+
+    // Draw nodes
+    nodes.forEach(n=>{
+      n.x+=n.vx; n.y+=n.vy;
+      if(n.x<-0.02||n.x>1.02)n.vx*=-1;
+      if(n.y<-0.02||n.y>1.02)n.vy*=-1;
+      const a=n.alpha*(0.4+0.6*Math.sin(frame*n.spd+n.phase));
+      const col=n.type==='gold'?`rgba(232,184,74,${a})`:n.type==='pulse'?`rgba(42,196,200,${a})`:`rgba(216,207,196,${a})`;
+      ctx.beginPath(); ctx.arc(n.x*W,n.y*H,n.r,0,Math.PI*2);
+      ctx.fillStyle=col; ctx.fill();
+    });
+
+    // Center convergence glow
+    const cg=ctx.createRadialGradient(W/2,H*0.48,0,W/2,H*0.48,W*0.32);
+    cg.addColorStop(0,'rgba(200,144,42,0.06)');
+    cg.addColorStop(0.5,'rgba(42,196,200,0.03)');
+    cg.addColorStop(1,'transparent');
+    ctx.fillStyle=cg; ctx.fillRect(0,0,W,H);
+
+    // Dark vignette
+    const vg=ctx.createRadialGradient(W/2,H/2,H*0.05,W/2,H/2,H*0.72);
+    vg.addColorStop(0,'transparent');
+    vg.addColorStop(1,'rgba(3,5,9,0.8)');
+    ctx.fillStyle=vg; ctx.fillRect(0,0,W,H);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ═══════════════════════════════════════════
+   COLLECTIVE CONSTELLATION CANVAS
+═══════════════════════════════════════════ */
+const SIM_TOTAL=5847;
+const simNodes=[];
+let userNode=null;
+let colFrame=0;
+
+(function buildCollective(){
+  const canvas=document.getElementById('collectiveCanvas');
+  const ctx=canvas.getContext('2d');
+  let W,H;
+  const resize=()=>{ W=canvas.width=canvas.offsetWidth; H=canvas.height=380; };
+  window.addEventListener('resize',resize); resize();
+
+  document.getElementById('totalVoices').textContent=SIM_TOTAL.toLocaleString();
+  document.getElementById('heroCount').textContent=SIM_TOTAL.toLocaleString();
+
+  // Regional seeding roughly matching US population density
+  const regions=[
+    {cx:0.74,cy:0.38,w:16},{cx:0.71,cy:0.33,w:13},{cx:0.56,cy:0.40,w:11},
+    {cx:0.62,cy:0.53,w:10},{cx:0.78,cy:0.58,w:9},{cx:0.51,cy:0.27,w:8},
+    {cx:0.32,cy:0.32,w:7},{cx:0.36,cy:0.52,w:7},{cx:0.22,cy:0.38,w:6},
+    {cx:0.47,cy:0.63,w:6},{cx:0.82,cy:0.48,w:5},{cx:0.64,cy:0.66,w:5},
+    {cx:0.27,cy:0.58,w:4},{cx:0.87,cy:0.35,w:4},{cx:0.54,cy:0.74,w:4},
+    {cx:0.18,cy:0.55,w:3},{cx:0.42,cy:0.45,w:5},{cx:0.69,cy:0.70,w:4},
+  ];
+
+  const typeWeights=['grief','love','exhaustion','pride','anger','hope','isolation','meaning','fear','gratitude','resolve'];
+
+  for(let i=0;i<SIM_TOTAL;i++){
+    const reg=regions[Math.floor(Math.random()*regions.length)];
+    const terrain=typeWeights[Math.floor(Math.random()*typeWeights.length)];
+    simNodes.push({
+      x: Math.max(0.02,Math.min(0.98, reg.cx + (Math.random()-0.5)*0.22)),
+      y: Math.max(0.05,Math.min(0.95, reg.cy + (Math.random()-0.5)*0.26)),
+      r: 0.7+Math.random()*1.6,
+      alpha: 0.1+Math.random()*0.45,
+      phase: Math.random()*Math.PI*2,
+      spd: 0.007+Math.random()*0.016,
+      terrain,
+    });
+  }
+
+  // Identify top patterns
+  const terrainCounts={};
+  simNodes.forEach(n=>{ terrainCounts[n.terrain]=(terrainCounts[n.terrain]||0)+1; });
+  const topTerrain=Object.entries(terrainCounts).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  document.getElementById('patternCount').textContent=Object.keys(terrainCounts).length;
+
+  const TERRAIN_COLORS={
+    grief:'rgba(180,48,80,', love:'rgba(232,120,80,', exhaustion:'rgba(80,120,200,',
+    pride:'rgba(232,200,60,', anger:'rgba(200,60,40,', hope:'rgba(80,200,120,',
+    isolation:'rgba(120,140,200,', meaning:'rgba(200,144,42,', fear:'rgba(160,80,180,',
+    gratitude:'rgba(80,200,180,', resolve:'rgba(200,220,80,',
+  };
+
+  function draw(){
+    colFrame++;
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#05080f'; ctx.fillRect(0,0,W,H);
+
+    // Grid
+    ctx.strokeStyle='rgba(10,22,40,0.6)'; ctx.lineWidth=1;
+    for(let x=0;x<W;x+=70){ ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke(); }
+    for(let y=0;y<H;y+=55){ ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke(); }
+
+    // Draw connections (sparse, by terrain)
+    for(let i=0;i<simNodes.length;i+=25){
+      const a=simNodes[i];
+      for(let j=i+1;j<Math.min(i+10,simNodes.length);j++){
+        const b=simNodes[j];
+        if(a.terrain!==b.terrain)continue;
+        const d=Math.hypot((a.x-b.x)*W,(a.y-b.y)*H);
+        if(d<55){
+          const col=TERRAIN_COLORS[a.terrain]||'rgba(200,144,42,';
+          ctx.strokeStyle=`${col}${0.06*(1-d/55)})`;
+          ctx.lineWidth=0.5;
+          ctx.beginPath();ctx.moveTo(a.x*W,a.y*H);ctx.lineTo(b.x*W,b.y*H);ctx.stroke();
+        }
+      }
+    }
+
+    // Draw nodes
+    simNodes.forEach(n=>{
+      const a=n.alpha*(0.45+0.55*Math.sin(colFrame*n.spd+n.phase));
+      const col=TERRAIN_COLORS[n.terrain]||'rgba(200,144,42,';
+      ctx.beginPath(); ctx.arc(n.x*W,n.y*H,n.r,0,Math.PI*2);
+      ctx.fillStyle=`${col}${a})`; ctx.fill();
+    });
+
+    // User node
+    if(userNode){
+      const ux=userNode.x*W, uy=userNode.y*H;
+      const pulse=0.5+0.5*Math.sin(colFrame*0.08);
+      // Rings
+      [28,18,10].forEach((r,i)=>{
+        ctx.strokeStyle=`rgba(232,184,74,${(0.15+i*0.08)*pulse})`;
+        ctx.lineWidth=1;
+        ctx.beginPath();ctx.arc(ux,uy,r,0,Math.PI*2);ctx.stroke();
+      });
+      // Core
+      const g=ctx.createRadialGradient(ux,uy,0,ux,uy,8);
+      g.addColorStop(0,'rgba(232,184,74,1)');
+      g.addColorStop(1,'rgba(232,184,74,0.3)');
+      ctx.fillStyle=g;
+      ctx.beginPath();ctx.arc(ux,uy,5,0,Math.PI*2);ctx.fill();
+      // Label
+      ctx.fillStyle='rgba(232,184,74,0.85)';
+      ctx.font='9px "IBM Plex Mono",monospace';
+      ctx.textAlign='center';
+      ctx.fillText('YOU',ux,uy-14);
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ═══════════════════════════════════════════
+   MOVEMENT NAVIGATION
+═══════════════════════════════════════════ */
+let currentMov=0;
+function goMov(n){
+  document.querySelectorAll('.mov-panel').forEach((p,i)=>p.classList.toggle('active',i===n));
+  document.querySelectorAll('.mov-tab').forEach((t,i)=>{
+    t.classList.toggle('active',i===n);
+    if(i<n) t.classList.add('done'); else t.classList.remove('done');
+  });
+  currentMov=n;
+}
+
+/* Pressure selection */
+let selectedPressure='Congress';
+function selectPressure(el,val){
+  document.querySelectorAll('.press-opt').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedPressure=val;
+}
+// Default first selection
+document.querySelector('.press-opt').classList.add('selected');
+
+/* ═══════════════════════════════════════════
+   COLLECT ALL DATA
+═══════════════════════════════════════════ */
+function collectData(){
+  const terrain=Array.from(document.querySelectorAll('.terr-opt input:checked')).map(i=>i.value);
+  return {
+    name:     document.getElementById('m1_name').value     || 'Anonymous Witness',
+    state:    document.getElementById('m1_state').value    || 'United States',
+    rel:      document.getElementById('m1_rel').value      || 'care partner',
+    years:    document.getElementById('m1_years').value    || 'unspecified',
+    condition:document.getElementById('m1_condition').value|| 'chronic illness',
+    before:   document.getElementById('m1_before').value   || '',
+    moment:   document.getElementById('m1_moment').value   || '',
+    taken:    document.getElementById('m2_taken').value    || '',
+    found:    document.getElementById('m2_found').value    || '',
+    collapse: document.getElementById('m2_collapse').value || '',
+    terrain:  terrain,
+    hrs:      document.getElementById('m3_hrs').value      || '',
+    cost:     document.getElementById('m3_cost').value     || '',
+    lastday:  document.getElementById('m3_lastday').value  || '',
+    network:  document.getElementById('m3_network').value  || '',
+    employ:   document.getElementById('m3_employ').value   || '',
+    health:   document.getElementById('m3_health').value   || '',
+    invisible:document.getElementById('m3_invisible').value|| '',
+    change:   document.getElementById('m3_change').value   || '',
+    who:      document.getElementById('m4_who').value      || '',
+    joy:      document.getElementById('m4_joy').value      || '',
+    best:     document.getElementById('m4_best').value     || '',
+    love:     document.getElementById('m4_love').value     || '',
+    pressure: selectedPressure,
+    direct:   document.getElementById('m5_direct').value   || '',
+    legacy:   document.getElementById('m5_legacy').value   || '',
+  };
+}
+
+/* ═══════════════════════════════════════════
+   JOURNEY MAP CANVAS
+═══════════════════════════════════════════ */
+function drawJourneyMap(d){
+  const canvas=document.getElementById('journeyCanvas');
+  const ctx=canvas.getContext('2d');
+  const W=canvas.offsetWidth||900; canvas.width=W; canvas.height=220;
+  ctx.clearRect(0,0,W,220);
+  ctx.fillStyle='#05080f'; ctx.fillRect(0,0,W,220);
+
+  const pad={l:40,r:30,t:30,b:40};
+  const cw=W-pad.l-pad.r, ch=220-pad.t-pad.b;
+
+  // Construct journey arc from data
+  const terrainWeight={grief:-4,exhaustion:-3,anger:-2,fear:-3,isolation:-3,guilt:-2,love:3,hope:3,meaning:4,pride:3,gratitude:3,resolve:4};
+  const terrainScore=d.terrain.reduce((s,t)=>s+(terrainWeight[t]||0),0);
+  const yearsN=parseInt(d.years)||3;
+  const networkN=parseInt(d.network)||1;
+  const selfHealthScore=d.health.includes('crisis')?-4:d.health.includes('serious')?-3:d.health.includes('Developed')?-2:d.health.includes('Delayed')?-1:0;
+  const employScore=d.employ.includes('Left')?-4:d.employ.includes('Reduced')?-2:d.employ.includes('Unable')?-5:0;
+
+  // Generate journey points (time-series emotional arc)
+  const points=[];
+  const baseline=7;
+  points.push({t:0, v:baseline, label:'Before', color:'var(--mer-l)', key:'identity'});
+  points.push({t:0.12, v:baseline-2, label:'Diagnosis', color:'var(--truth)', key:'loss'});
+  for(let i=1;i<=yearsN;i++){
+    const t=0.12+(i/yearsN)*0.7;
+    const fluctuation=(Math.random()-0.5)*2;
+    const trend=(employScore+selfHealthScore+terrainScore/4)/yearsN * (i/yearsN);
+    const v=Math.max(1,Math.min(10, baseline-3 + trend + fluctuation));
+    const isLow=v<3.5;
+    points.push({t, v, label:'Yr '+i, color:isLow?'#c83050':'#4888f8', key:isLow?'collapse':'sustain'});
+  }
+  const finalV=Math.max(1,Math.min(10, baseline-2 + (terrainScore/6) + (networkN>2?1:0)));
+  points.push({t:0.88, v:finalV, label:'Now', color:'var(--pulse)', key:'present'});
+  // Celebration peak
+  points.push({t:0.95, v:Math.min(10,finalV+1.5), label:'', color:'var(--pressure)', key:'celebrate'});
+
+  function px(t){ return pad.l+t*cw; }
+  function py(v){ return pad.t+ch-(((v-1)/9)*ch); }
+
+  // Grid
+  ctx.strokeStyle='rgba(10,22,40,0.5)'; ctx.lineWidth=1;
+  for(let v=1;v<=10;v+=2){
+    ctx.beginPath();ctx.moveTo(pad.l,py(v));ctx.lineTo(pad.l+cw,py(v));ctx.stroke();
+    ctx.fillStyle='rgba(100,140,200,0.2)'; ctx.font='8px "IBM Plex Mono",monospace'; ctx.textAlign='right';
+    ctx.fillText(v,pad.l-5,py(v)+3);
+  }
+
+  // UCL / LCL reference bands
+  ctx.fillStyle='rgba(200,144,42,0.04)';
+  ctx.fillRect(pad.l,py(8),cw,py(6)-py(8));
+  ctx.fillStyle='rgba(200,48,80,0.06)';
+  ctx.fillRect(pad.l,py(3),cw,py(1)-py(3));
+
+  // Area fill under the line
+  ctx.beginPath();
+  ctx.moveTo(px(points[0].t),py(points[0].v));
+  points.forEach(p=>ctx.lineTo(px(p.t),py(p.v)));
+  ctx.lineTo(px(points[points.length-1].t),pad.t+ch);
+  ctx.lineTo(px(points[0].t),pad.t+ch);
+  ctx.closePath();
+  const areaG=ctx.createLinearGradient(0,pad.t,0,pad.t+ch);
+  areaG.addColorStop(0,'rgba(200,144,42,0.12)');
+  areaG.addColorStop(1,'rgba(200,144,42,0.02)');
+  ctx.fillStyle=areaG; ctx.fill();
+
+  // Line
+  ctx.strokeStyle='rgba(200,144,42,0.6)'; ctx.lineWidth=2;
+  ctx.beginPath();
+  points.forEach((p,i)=>{ i===0?ctx.moveTo(px(p.t),py(p.v)):ctx.lineTo(px(p.t),py(p.v)); });
+  ctx.stroke();
+
+  // Points
+  points.forEach(p=>{
+    const color=p.key==='identity'?'#e8b84a':p.key==='loss'?'#c83050':p.key==='collapse'?'#c83050':p.key==='celebrate'?'#8050c8':p.key==='present'?'#2ac4c8':'#4888f8';
+    ctx.beginPath();ctx.arc(px(p.t),py(p.v),5,0,Math.PI*2);
+    ctx.fillStyle=color; ctx.fill();
+    if(p.label){
+      ctx.fillStyle='rgba(216,207,196,0.4)'; ctx.font='7px "IBM Plex Mono",monospace'; ctx.textAlign='center';
+      ctx.fillText(p.label,px(p.t),py(p.v)-9);
+    }
+  });
+
+  // Axis labels
+  ctx.fillStyle='rgba(216,207,196,0.2)'; ctx.font='8px "IBM Plex Mono",monospace'; ctx.textAlign='center';
+  ctx.fillText('JOURNEY EMOTIONAL STABILITY — PERSONAL MERIDIAN MAP',W/2,14);
+  ctx.fillText('BEFORE',px(0.02),pad.t+ch+18);
+  ctx.fillText('NOW',px(0.88),pad.t+ch+18);
+}
+
+/* ═══════════════════════════════════════════
+   COLLECTIVE TRUTH CANVAS (output)
+═══════════════════════════════════════════ */
+function drawTruthCanvas(d){
+  const canvas=document.getElementById('truthCanvas');
+  const ctx=canvas.getContext('2d');
+  const W=canvas.offsetWidth||900; canvas.width=W; canvas.height=220;
+  ctx.clearRect(0,0,W,220);
+  ctx.fillStyle='#050810'; ctx.fillRect(0,0,W,220);
+
+  // Terrain distribution chart of the collective
+  const allTerrains=['grief','love','exhaustion','pride','anger','hope','isolation','meaning','fear','gratitude','resolve'];
+  const counts={};
+  allTerrains.forEach(t=>counts[t]=Math.round(200+Math.random()*800));
+  // Boost user's terrains
+  d.terrain.forEach(t=>{ if(counts[t]) counts[t]+=600+Math.random()*400; });
+
+  const colors={grief:'#c83050',love:'#e87840',exhaustion:'#4880c8',pride:'#e8c83c',anger:'#c83c28',hope:'#50c878',isolation:'#7888c8',meaning:'#c8902a',fear:'#9850b8',gratitude:'#50c8b4',resolve:'#c8d840'};
+  const maxCount=Math.max(...Object.values(counts));
+  const barW=Math.floor((W-60)/(allTerrains.length));
+  const padL=30, padT=20, padB=50, ch=220-padT-padB;
+
+  // Draw bars
+  allTerrains.forEach((t,i)=>{
+    const x=padL+i*barW;
+    const barH=(counts[t]/maxCount)*ch;
+    const y=padT+ch-barH;
+    const isUser=d.terrain.includes(t);
+    const col=colors[t];
+    const g=ctx.createLinearGradient(x,y,x,padT+ch);
+    g.addColorStop(0,col);
+    g.addColorStop(1,col+'33');
+    ctx.fillStyle=g;
+    ctx.fillRect(x+2,y,barW-4,barH);
+    // User highlight
+    if(isUser){
+      ctx.strokeStyle=col; ctx.lineWidth=1.5;
+      ctx.strokeRect(x+1,y-1,barW-2,barH+1);
+      // Glow
+      ctx.shadowColor=col; ctx.shadowBlur=8;
+      ctx.fillStyle='rgba(255,255,255,0.1)';
+      ctx.fillRect(x+2,y,barW-4,barH);
+      ctx.shadowBlur=0;
+    }
+    // Label
+    ctx.fillStyle=isUser?col:'rgba(216,207,196,0.3)';
+    ctx.font=isUser?'bold 7px "IBM Plex Mono",monospace':'7px "IBM Plex Mono",monospace';
+    ctx.textAlign='center';
+    ctx.save(); ctx.translate(x+barW/2,padT+ch+12); ctx.rotate(-Math.PI/5);
+    ctx.fillText(t.toUpperCase(),0,0); ctx.restore();
+    // Count
+    ctx.fillStyle=isUser?col:'rgba(216,207,196,0.25)';
+    ctx.font='7px "IBM Plex Mono",monospace'; ctx.textAlign='center';
+    ctx.fillText(counts[t].toLocaleString(),x+barW/2,y-3);
+  });
+  ctx.fillStyle='rgba(216,207,196,0.2)'; ctx.font='8px "IBM Plex Mono",monospace'; ctx.textAlign='center';
+  ctx.fillText('COLLECTIVE EMOTIONAL TERRAIN — YOUR PROFILE HIGHLIGHTED  ('+SIM_TOTAL.toLocaleString()+' VOICES)',W/2,12);
+}
+
+/* ═══════════════════════════════════════════
+   PRESSURE CANVAS
+═══════════════════════════════════════════ */
+function drawPressureCanvas(d){
+  const canvas=document.getElementById('pressureCanvas');
+  const ctx=canvas.getContext('2d');
+  const W=canvas.offsetWidth||900; canvas.width=W; canvas.height=180;
+  ctx.clearRect(0,0,W,180);
+  ctx.fillStyle='#050810'; ctx.fillRect(0,0,W,180);
+
+  // Simulate pressure accumulation by category
+  const categories={
+    'Insurance Denial Pattern':   Math.round(400+Math.random()*600),
+    'Caregiver Collapse Event':   Math.round(300+Math.random()*500),
+    'Provider Communication Fail':Math.round(500+Math.random()*700),
+    'Coverage Gap Impact':         Math.round(600+Math.random()*600),
+    'Financial Destruction':       Math.round(200+Math.random()*800),
+    'System Abandonment':          Math.round(350+Math.random()*450),
+  };
+  const THRESHOLD=800;
+  const keys=Object.keys(categories);
+  const barH=22, gap=7;
+  const padL=200, padR=120, padT=16;
+  const trackW=W-padL-padR;
+
+  ctx.fillStyle='rgba(216,207,196,0.2)'; ctx.font='8px "IBM Plex Mono",monospace'; ctx.textAlign='center';
+  ctx.fillText('PRESSURE ACCUMULATION BY CATEGORY — THRESHOLD FOR ACTIVATION: '+THRESHOLD+' VOICES',W/2,11);
+
+  keys.forEach((k,i)=>{
+    const y=padT+18+i*(barH+gap);
+    const val=categories[k];
+    const pct=Math.min(1,val/THRESHOLD);
+    const exceeded=val>=THRESHOLD;
+    const col=exceeded?'#8050c8':val>THRESHOLD*0.7?'#c89030':'#3060a8';
+    ctx.fillStyle='rgba(216,207,196,0.3)'; ctx.font='7.5px "IBM Plex Mono",monospace'; ctx.textAlign='right';
+    ctx.fillText(k,padL-8,y+barH/2+3);
+    ctx.fillStyle='rgba(10,20,40,0.8)'; ctx.fillRect(padL,y,trackW,barH);
+    const g=ctx.createLinearGradient(padL,0,padL+pct*trackW,0);
+    g.addColorStop(0,col+'cc'); g.addColorStop(1,col+'44');
+    ctx.fillStyle=g; ctx.fillRect(padL,y,pct*trackW,barH);
+    if(exceeded){
+      ctx.shadowColor='#8050c8'; ctx.shadowBlur=6;
+      ctx.strokeStyle='#8050c8'; ctx.lineWidth=1;
+      ctx.strokeRect(padL,y,pct*trackW,barH);
+      ctx.shadowBlur=0;
+      ctx.fillStyle='rgba(128,80,200,0.9)'; ctx.font='bold 7.5px "IBM Plex Mono",monospace'; ctx.textAlign='left';
+      ctx.fillText('⚡ THRESHOLD EXCEEDED — PRESSURE ACTIVE',padL+pct*trackW+5,y+barH/2+3);
+    } else {
+      ctx.fillStyle='rgba(216,207,196,0.3)'; ctx.font='7px "IBM Plex Mono",monospace'; ctx.textAlign='left';
+      ctx.fillText(val+'/'+THRESHOLD,padL+pct*trackW+5,y+barH/2+3);
+    }
+    ctx.strokeStyle='rgba(100,140,200,0.15)'; ctx.lineWidth=1;
+    ctx.strokeRect(padL,y,trackW,barH);
+  });
+
+  const exceeded=Object.values(categories).filter(v=>v>=THRESHOLD).length;
+  document.getElementById('thresholdStatus').textContent=`${exceeded} of 6 categories at threshold`;
+  document.getElementById('targetInst').textContent=d.pressure;
+  document.getElementById('pressureStatus').textContent=exceeded>=2?'⚡ ACTIVE — Documents Generated':'⏳ Accumulating';
+}
+
+/* ═══════════════════════════════════════════
+   CONVERGENCE ANIMATION
+═══════════════════════════════════════════ */
+function animateConvergence(){
+  const canvas=document.getElementById('convergenceCanvas');
+  const ctx=canvas.getContext('2d');
+  const W=360,H=140; let frame=0;
+  const sparks=[];
+  for(let i=0;i<30;i++){
+    const angle=Math.random()*Math.PI*2;
+    sparks.push({x:W/2,y:H/2,vx:Math.cos(angle)*(0.5+Math.random()*4),vy:Math.sin(angle)*(0.5+Math.random()*3),life:1,r:0.8+Math.random()*2.5,col:Math.random()>0.5?'#e8b84a':'#2ac4c8'});
+  }
+  // Add user node to constellation
+  userNode={ x:0.38+Math.random()*0.24, y:0.30+Math.random()*0.35 };
+  document.getElementById('yourNodeStatus').textContent='Node placed — you are in the count';
+  document.getElementById('totalVoices').textContent=(SIM_TOTAL+1).toLocaleString();
+  document.getElementById('heroCount').textContent=(SIM_TOTAL+1).toLocaleString();
+
+  function draw(){
+    frame++;
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#05080f'; ctx.fillRect(0,0,W,H);
+
+    // Radiating rings
+    for(let r=10;r<80;r+=18){
+      const a=Math.max(0,0.35*(1-r/80))*Math.abs(Math.sin(frame*0.05));
+      ctx.strokeStyle=`rgba(200,144,42,${a})`;
+      ctx.lineWidth=1;
+      ctx.beginPath();ctx.arc(W/2,H/2,r*(0.8+0.2*Math.sin(frame*0.04)),0,Math.PI*2);ctx.stroke();
+    }
+
+    // Core node
+    const cg=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,20);
+    cg.addColorStop(0,'rgba(232,184,74,0.9)');
+    cg.addColorStop(1,'rgba(232,184,74,0)');
+    ctx.fillStyle=cg; ctx.beginPath();ctx.arc(W/2,H/2,20,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.arc(W/2,H/2,5,0,Math.PI*2);
+    ctx.fillStyle='rgba(232,184,74,1)';ctx.fill();
+
+    // Sparks
+    sparks.forEach(s=>{
+      s.x+=s.vx; s.y+=s.vy; s.vy+=0.05; s.life-=0.014;
+      if(s.life>0){
+        ctx.beginPath();ctx.arc(s.x,s.y,s.r*s.life,0,Math.PI*2);
+        ctx.fillStyle=s.col.replace(')',','+s.life*0.8+')').replace('rgba','rgba').replace('#','rgba(').replace('e8b84a','232,184,74,').replace('2ac4c8','42,196,200,');
+        ctx.fillStyle=`rgba(232,184,74,${s.life*0.8})`;
+        if(s.col==='#2ac4c8') ctx.fillStyle=`rgba(42,196,200,${s.life*0.8})`;
+        ctx.fill();
+      }
+    });
+
+    // Text
+    ctx.fillStyle=`rgba(216,207,196,${0.4+0.3*Math.sin(frame*0.04)})`;
+    ctx.font='7.5px "IBM Plex Mono",monospace';
+    ctx.textAlign='center';
+    ctx.fillText('YOUR NODE IS LIVE IN THE MERIDIAN REGISTRY',W/2,H-10);
+
+    if(frame<300) requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+/* ═══════════════════════════════════════════
+   COPY HELPER
+═══════════════════════════════════════════ */
+function copyPanel(id){
+  const el=document.getElementById(id);
+  navigator.clipboard.writeText(el.innerText).then(()=>alert('Copied.')).catch(()=>alert('Select and copy manually.'));
+}
+
+/* ═══════════════════════════════════════════
+   MARKDOWN RENDERER
+═══════════════════════════════════════════ */
+function md(text){
+  return text
+    .replace(/### (.*)/g,'<h3>$1</h3>')
+    .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g,'<em>$1</em>')
+    .split('\n\n')
+    .map(p=>{ const t=p.trim(); if(!t)return''; if(t.startsWith('<h3>'))return t; return`<p>${t.replace(/\n/g,' ')}</p>`; })
+    .join('\n');
+}
+
+/* ═══════════════════════════════════════════
+   API CALL HELPER
+═══════════════════════════════════════════ */
+async function callClaude(apiKey,prompt,maxTokens=1400){
+  const res=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+    body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:maxTokens,messages:[{role:'user',content:prompt}]})
+  });
+  if(!res.ok){ const e=await res.json(); throw new Error(e.error?.message||`API error ${res.status}`); }
+  const data=await res.json();
+  return data.content.find(b=>b.type==='text')?.text||'';
+}
+
+/* ═══════════════════════════════════════════
+   MAIN — RUN MERIDIAN
+═══════════════════════════════════════════ */
+async function runMeridian(){
+  const apiKey=document.getElementById('apiKey').value.trim();
+  if(!apiKey){ alert('Please enter your Anthropic API key.'); return; }
+  const d=collectData();
+
+  // Show output
+  const outSec=document.getElementById('outputSection');
+  outSec.style.display='block';
+  outSec.scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(animateConvergence,600);
+
+  // Draw visual layers immediately
+  setTimeout(()=>{
+    drawJourneyMap(d);
+    drawTruthCanvas(d);
+    drawPressureCanvas(d);
+  },500);
+
+  const today=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const terrainStr=d.terrain.length>0?d.terrain.join(', '):'not specified';
+
+  // ─── PROMPT 1: JOURNEY MAP NARRATIVE ───
+  const p1=`You are a care partner biographer and psychologist trained in Narrative Therapy, Logotherapy (Frankl), existential psychology, and caregiver trajectory research. You write with literary precision and complete human dignity. You are not writing a clinical report. You are writing the permanent narrative record of a care partner's transformation — the biography of who they became through this experience.
+
+CARE PARTNER DATA:
+Name: ${d.name} | State: ${d.state} | Relationship: ${d.rel} | Years: ${d.years}
+Condition: ${d.condition}
+Life before: "${d.before}"
+The moment everything changed: "${d.moment}"
+What has been taken: "${d.taken}"
+What has been found: "${d.found}"
+The invisible collapse: "${d.collapse}"
+Emotional terrain: ${terrainStr}
+Employment impact: ${d.employ} | Health impact: ${d.health}
+Support network: ${d.network} people
+What they celebrate about their person: "${d.who}"
+A moment of real joy: "${d.joy}"
+What their best day looks like: "${d.best}"
+What love looks like here: "${d.love}"
+Legacy sentence: "${d.legacy}"
+
+Generate a PERSONAL MERIDIAN RECORD using these H3 headers. Write in second person ("you"). Every section should feel like it was written by someone who has known this care partner for years and is honoring them completely:
+
+### Who You Were Before
+### The Transformation
+### What Has Been Lost — And What Was Found
+### The Hidden Life: What No Chart Has Ever Counted
+### Who You Are Protecting
+### Where Joy Lives In This
+### Your Legacy Words
+
+Write with literary depth. Do not summarize. Render each section as a portrait. The person being cared for must be celebrated as a full human being — named qualities, specific moments. The final section should close with their legacy sentence, set apart as its own paragraph, as the final word of the entire document.`;
+
+  // ─── PROMPT 2: COLLECTIVE TRUTH ───
+  const p2=`You are a sociologist and care partner advocate who studies collective experience patterns in chronic illness caregiving. You have access to the Cold Ischemia Foundation's MERIDIAN database of ${SIM_TOTAL.toLocaleString()} care partner testimonies. You write with authority, warmth, and the specific directness of someone who has spent 20 years proving that isolated experiences are systemic patterns.
+
+THIS CARE PARTNER'S PROFILE:
+Condition: ${d.condition} | Years: ${d.years} | State: ${d.state}
+Emotional terrain: ${terrainStr}
+What the system fails to see: "${d.invisible}"
+The invisible collapse they described: "${d.collapse}"
+Employment impact: ${d.employ} | Health impact: ${d.health}
+Weekly hours: ${d.hrs||'not specified'} | Annual cost: ${d.cost?'$'+d.cost:'not specified'}
+
+Generate a COLLECTIVE TRUTH MIRROR using these H3 headers. Write in second person ("you"). Use real statistics and research where relevant. The purpose is to break isolation — to show this care partner exactly where their experience sits in the national pattern, what it means that thousands of others are living what they are living, and what the aggregate makes visible that the individual experience cannot:
+
+### You Are Not An Anomaly — You Are The Pattern
+### What The Data Shows About People Who Carry What You Carry
+### The Invisible Workforce: What 53 Million Care Partners Prove Together
+### What Your Experience, Added To All The Others, Now Makes Possible
+
+Write with the authority of a researcher who has seen the data and the humanity of someone who understands what it means to see yourself in it for the first time.`;
+
+  // ─── PROMPT 3: PRESSURE INSTRUMENT ───
+  const pressTargets={
+    Congress: 'United States Congress, specifically the Senate Health, Education, Labor and Pensions (HELP) Committee and the House Energy and Commerce Committee',
+    CMS: 'Centers for Medicare and Medicaid Services, Office of Policy',
+    Hospital: 'Hospital System Chief Patient Experience Officer and Chief Quality Officer',
+    Insurance: 'Insurance Company Medical Director and Chief Medical Officer',
+  };
+  const pressTarget=pressTargets[d.pressure]||pressTargets.Congress;
+
+  const p3=`You are the Cold Ischemia Foundation's lead policy writer and advocacy strategist with 25 years of experience drafting documents that reach Congressional hearings, CMS public comment periods, and hospital system board presentations. You write with the authority of deep institutional knowledge and the moral clarity of someone who has watched the healthcare system ignore care partners for decades.
+
+CARE PARTNER DATA:
+Name: ${d.name} | State: ${d.state} | Condition: ${d.condition} | Years: ${d.years}
+Weekly hours: ${d.hrs||'unspecified'} | Annual cost: ${d.cost?'$'+d.cost:'unspecified'}
+Employment: ${d.employ} | Health: ${d.health}
+Network: ${d.network} people | Weeks since day off: ${d.lastday||'unspecified'}
+System failure: "${d.invisible}"
+Specific change needed: "${d.change}"
+Direct statement to decision-makers: "${d.direct}"
+TARGET INSTITUTION: ${pressTarget}
+Today: ${today}
+
+Generate a PRESSURE INSTRUMENT — an institutional advocacy document ready for immediate deployment — using these H3 headers. Write in first person ("I"). Use formal language. This document must be ready to submit without editing:
+
+### Statement of Standing and Purpose
+### The Measurable Impact: What This Life Actually Costs
+### The Structural Failure: What This Institution Has Failed To Do
+### The Demand: One Specific, Named, Actionable Change
+### The Consequence of Inaction: What The Record Will Show
+
+End with a paragraph that references the Cold Ischemia Foundation's MERIDIAN registry and states that this testimony is part of a documented, growing national record that will be submitted to the relevant oversight bodies if the demanded change is not addressed within 90 days. Do not soften this. Do not end with a request for dialogue. End with the weight of what this document represents.`;
+
+  // Run all three in sequence
+  try {
+    // Journey Narrative
+    const raw1=await callClaude(apiKey,p1,1400);
+    document.getElementById('journeyNarrative').innerHTML=md(raw1);
+    document.getElementById('jcopybar').style.display='flex';
+
+    // Collective Truth
+    const raw2=await callClaude(apiKey,p2,1000);
+    document.getElementById('collectiveNarrative').innerHTML=md(raw2);
+    document.getElementById('ccopybar').style.display='flex';
+
+    // Pressure Instrument
+    const raw3=await callClaude(apiKey,p3,1200);
+    document.getElementById('pressureNarrative').innerHTML=md(raw3);
+    document.getElementById('pcopybar').style.display='flex';
+
+  } catch(err){
+    const errMsg=`<p style="color:var(--truth);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;line-height:1.8;">Error: ${err.message}<br>Please verify your API key and try again.</p>`;
+    document.getElementById('journeyNarrative').innerHTML=errMsg;
+    document.getElementById('collectiveNarrative').innerHTML=errMsg;
+    document.getElementById('pressureNarrative').innerHTML=errMsg;
+  }
+}
+</script>
+
+</body>
+</html>

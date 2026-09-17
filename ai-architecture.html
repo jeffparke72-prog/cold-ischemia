@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Architecture — Project Donor-Flow | Cold Ischemia Foundation</title>
+<meta name="description" content="The eight-stage AI-enabled architecture proposed by Project Donor-Flow to close the living kidney donor pipeline — from population identification to post-donation monitoring.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);
+  --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);
+  --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.12);
+  --danger:#c83050;--danger-d:rgba(200,48,80,0.1);
+  --green:#50c878;--violet:#8050c8;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:var(--raised);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+@media(max-width:800px){.nav-links a{display:none;}.nav-links a.active{display:inline;}}
+
+.hero{padding:110px 32px 44px;background:var(--abyss);border-bottom:1px solid var(--b);}
+.hero-inner{max-width:900px;margin:0 auto;}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.34em;text-transform:uppercase;color:var(--pulse);margin-bottom:20px;}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5.5vw,58px);line-height:1.02;color:var(--ink);margin-bottom:20px;}
+.hero-h1 span{color:var(--pulse);}
+.hero-sub{font-size:1.05rem;line-height:1.85;color:var(--ink60);max-width:700px;}
+
+.disclaimer{background:var(--danger-d);border-left:3px solid var(--danger);padding:18px 22px;margin-top:24px;max-width:700px;}
+.disclaimer p{font-size:0.9rem;line-height:1.7;color:var(--ink80);margin:0;}
+.disclaimer strong{color:var(--danger);}
+.disclaimer p+p{margin-top:10px;}
+
+.wrap{max-width:900px;margin:0 auto;padding:0 32px;}
+section{padding:48px 0;}
+.ey{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,3vw,2rem);color:var(--ink);margin-bottom:18px;}
+h2 strong{font-style:normal;font-weight:600;color:var(--pulse);}
+p.lead{font-size:1rem;line-height:1.9;color:var(--ink60);max-width:720px;}
+
+.stages{margin-top:32px;display:flex;flex-direction:column;gap:2px;background:var(--b);}
+.stage{background:var(--void);}
+.stage-head{padding:20px 22px;display:flex;align-items:center;gap:16px;cursor:pointer;user-select:none;}
+.stage-num{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--gold-l);flex-shrink:0;width:36px;}
+.stage-title{flex:1;}
+.stage-title h3{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;color:var(--ink);}
+.stage-title span{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--pulse);}
+.stage-chevron{font-family:'IBM Plex Mono',monospace;color:var(--ink40);transition:transform .2s;}
+.stage.open .stage-chevron{transform:rotate(180deg);}
+.stage-body{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.stage.open .stage-body{max-height:400px;}
+.stage-body-inner{padding:0 22px 22px 74px;}
+.stage-body-inner p{font-size:0.94rem;line-height:1.85;color:var(--ink60);margin-bottom:10px;}
+.stage-cite{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.02em;color:var(--gold);}
+
+.formula-box{background:var(--surf);border:1px solid var(--b2);border-top:3px solid var(--gold);padding:28px 26px;margin-top:20px;}
+.formula-box .fk{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.formula{font-family:'IBM Plex Mono',monospace;font-size:1rem;color:var(--ink);background:var(--void);padding:16px 20px;border-radius:2px;margin-bottom:16px;overflow-x:auto;white-space:nowrap;}
+.formula-box p{font-size:0.92rem;color:var(--ink60);line-height:1.8;}
+.thresholds{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b);margin-top:16px;}
+@media(max-width:600px){.thresholds{grid-template-columns:1fr;}}
+.th{background:var(--void);padding:16px;text-align:center;}
+.th-n{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--gold-l);}
+.th-l{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink40);margin-top:4px;}
+
+.sigma-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b);margin-top:24px;}
+@media(max-width:600px){.sigma-grid{grid-template-columns:1fr 1fr;}}
+.sg{background:var(--void);padding:20px 14px;text-align:center;}
+.sgn{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--gold-l);display:block;}
+.sgl{font-family:'IBM Plex Mono',monospace;font-size:0.48rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink40);margin-top:6px;line-height:1.5;}
+
+.source-note{margin-top:24px;padding:18px 20px;background:var(--void);border-left:2px solid var(--pulse);}
+.source-note p{font-size:0.88rem;color:var(--ink40);line-height:1.7;margin:0;}
+
+footer{background:var(--abyss);border-top:1px solid var(--b);padding:40px 32px 24px;text-align:center;}
+footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.05em;color:var(--ink20);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="donor-readiness-explorer.html">Donor Readiness Guide</a>
+    <a href="ai-architecture.html" class="active">AI Architecture</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Project Donor-Flow &mdash; Research Framework</div>
+    <h1 class="hero-h1">The eight-stage <span>AI architecture</span> proposed to close the living donor pipeline.</h1>
+    <p class="hero-sub">From "The Intelligence Gap: How Artificial Intelligence Can End America's Living Donor Crisis" &mdash; Cold Ischemia Foundation's peer-reviewed white paper. Click each stage to see what it proposes and the published research behind it.</p>
+    <div class="disclaimer">
+      <p><strong>This is a proposed research framework, not deployed software.</strong> No live AI system runs on this page or anywhere on this site. Each stage below is grounded in real, cited, published research on AI applications in living donation — but Project Donor-Flow as an integrated system has not been built or clinically validated.</p>
+      <p><strong>This framework addresses donor identification, screening, and retention</strong> — not prediction of long-term graft function or outcome-optimized donor-recipient matching. Those are a different research question this document does not claim to answer.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="ey">The Pipeline</div>
+    <h2>Eight stages, <strong>one continuous system.</strong></h2>
+    <p class="lead">Each stage below deploys a specific, cited AI method. Click to expand.</p>
+
+    <div class="stages" id="stages">
+
+      <div class="stage">
+        <div class="stage-head" onclick="toggle(this)">
+          <div class="stage-num">1</div>
+          <div class="stage-title"><h3>Population Identification</h3><span>Random Forest ML Model</span></div>
+          <div class="stage-chevron">▼</div>
+        </div>
+        <div class="stage-body"><div class="stage-body-inner">
+          <p>Trained on ESRD prevalence by ZIP code (USRDS), CDC Social Vulnerability Index scores, and OPTN regional living donor rates, this model identifies where potential donors and unmet need are geographically concentrated &mdash; so outreach resources go where they'll matter most, instead of being spread evenly regardless of local burden.</p>
+          <p class="stage-cite">Cites: Boadu et al., 2023, Frontiers in Public Health</p>
+        </div></div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head" onclick="toggle(this)">
+          <div class="stage-num">2</div>
+          <div class="stage-title"><h3>Social Media Intelligence</h3><span>Natural Language Processing</span></div>
+          <div class="stage-chevron">▼</div>
+        </div>
+        <div class="stage-body"><div class="stage-body-inner">
+          <p>Continuously analyzes public social media discussion of living donation to identify people expressing curiosity or stated barriers, before they ever contact a transplant center &mdash; routing each person toward content addressing their specific concern rather than generic awareness messaging.</p>
+          <p class="stage-cite">Cites: Nawar et al., 2026, Frontiers in Transplantation; ODTA, 2025</p>
+        </div></div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head" onclick="toggle(this)">
+          <div class="stage-num">3</div>
+          <div class="stage-title"><h3>Intelligent Intake &amp; the Donor Readiness Score</h3><span>Natural Language Understanding</span></div>
+          <div class="stage-chevron">▼</div>
+        </div>
+        <div class="stage-body"><div class="stage-body-inner">
+          <p>Processes a donor's first communication in real time, assessing intent, emotional state, and logistical constraints, and assigns a Donor Readiness Score (DRS) &mdash; not to screen someone out, but to route the level of support they need to stay engaged. A low score triggers more support, not rejection.</p>
+          <p class="stage-cite">Cites: Al Awadhi et al., 2025, Clinical Transplantation (Houston Methodist)</p>
+        </div></div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head" onclick="toggle(this)">
+          <div class="stage-num">4</div>
+          <div class="stage-title"><h3>Automated Clinical Pre-Screen</h3><span>FHIR API Integration</span></div>
+          <div class="stage-chevron">▼</div>
+        </div>
+        <div class="stage-body"><div class="stage-body-inner">
+          <p>Pulls medical records automatically under the 21st Century Cures Act's FHIR interoperability mandate, eliminating the burden of a donor manually tracking down their own records &mdash; a burden the paper identifies as falling disproportionately on donors with lower health literacy.</p>
+          <p class="stage-cite">Cites: Bossini et al., 2023 (LSS/DMAIC applied to donor evaluation)</p>
+        </div></div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head" onclick="toggle(this)">
+          <div class="stage-num">5</div>
+          <div class="stage-title"><h3>Adaptive Psychosocial Assessment</h3><span>AI-Administered, Clinician-Enhanced</span></div>
+          <div class="stage-chevron">▼</div>
+        </div>
+        <div class="stage-body"><div class="stage-body-inner">
+          <p>Deploys the Altruism Assessment Scale and Coercion Risk Inventory as adaptive digital instruments before the first in-person visit &mdash; aiming to reduce the social-desirability bias that makes donors present as more freely motivated in a face-to-face evaluation than they may actually feel.</p>
+          <p class="stage-cite">Cites: Lentine et al., 2021 (LDCPR data on non-approval factors)</p>
+        </div></div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head" onclick="toggle(this)">
+          <div class="stage-num">6</div>
+          <div class="stage-title"><h3>The Concierge Support Engine</h3><span>Velocity Monitoring</span></div>
+          <div class="stage-chevron">▼</div>
+        </div>
+        <div class="stage-body"><div class="stage-body-inner">
+          <p>Tracks whether a donor's progress is falling outside the expected time window for their stage, and triggers proactive outreach before the donor disengages entirely &mdash; the paper's answer to the well-documented pattern of donors quietly dropping out of a slow process.</p>
+          <p class="stage-cite">Cites: ODTA, 2025 (Houston Methodist human-technology co-care model)</p>
+        </div></div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head" onclick="toggle(this)">
+          <div class="stage-num">7</div>
+          <div class="stage-title"><h3>AI-Standardized Multi-Disciplinary Review</h3><span>Decision-Support Dashboard</span></div>
+          <div class="stage-chevron">▼</div>
+        </div>
+        <div class="stage-body"><div class="stage-body-inner">
+          <p>The final approval decision stays a human clinical judgment &mdash; but the dashboard flags when evaluation criteria vary between programs for the same donor characteristic, surfacing inconsistency rather than deciding for the team.</p>
+          <p class="stage-cite">Framework component; see Section 3.7 of the source white paper</p>
+        </div></div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head" onclick="toggle(this)">
+          <div class="stage-num">8</div>
+          <div class="stage-title"><h3>Post-Donation AI Monitoring</h3><span>Closed-Loop Learning</span></div>
+          <div class="stage-chevron">▼</div>
+        </div>
+        <div class="stage-body"><div class="stage-body-inner">
+          <p>Extends OPTN's required 6/12/24-month follow-up with continuous monitoring, and feeds every outcome &mdash; positive and negative &mdash; back into the DRS model as a training data point, so the scoring improves over time instead of staying static.</p>
+          <p class="stage-cite">Framework component; see Section 3.8 of the source white paper</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="alt" style="background:var(--void);border-top:1px solid var(--b);border-bottom:1px solid var(--b);">
+  <div class="wrap">
+    <div class="ey">The Scoring Model</div>
+    <h2>The Donor Readiness Score, <strong>as defined in the paper.</strong></h2>
+    <div class="formula-box">
+      <div class="fk">DRS Formula</div>
+      <div class="formula">DRS = w₁(Clinical Pre-Screen) + w₂(Psychosocial Signal) + w₃(Financial Status) + w₄(Logistical Capacity)</div>
+      <p>Where the weights (w₁&ndash;w₄) sum to 1.0 and are calibrated quarterly against LDCPR outcome data. The design principle: the score doesn't ask "is this donor qualified?" &mdash; it asks what a specific donor needs right now to stay engaged in the process.</p>
+      <div class="thresholds">
+        <div class="th"><div class="th-n">≥70</div><div class="th-l">High DRS — Fast-Track</div></div>
+        <div class="th"><div class="th-n">40&ndash;69</div><div class="th-l">Moderate — Standard + Support</div></div>
+        <div class="th"><div class="th-n">&lt;40</div><div class="th-l">Low — Support Track Priority</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="ey">The Process Case</div>
+    <h2>Where the pipeline stands today, <strong>in Six Sigma terms.</strong></h2>
+    <p class="lead">The paper defines a "defect" as any medically and psychosocially appropriate donor who exits the process due to a preventable operational failure &mdash; not a medical disqualification.</p>
+    <div class="sigma-grid">
+      <div class="sg"><span class="sgn">2.15σ</span><span class="sgl">Current pipeline sigma level</span></div>
+      <div class="sg"><span class="sgn">255,000</span><span class="sgl">Current DPMO (defects per million)</span></div>
+      <div class="sg"><span class="sgn">3σ</span><span class="sgl">Target after AI deployment (24 mo.)</span></div>
+      <div class="sg"><span class="sgn">40%</span><span class="sgl">Projected relative conversion improvement</span></div>
+    </div>
+    <div class="source-note">
+      <p>The 40% improvement projection is described in the source document as a conservative, weighted synthesis of three published intervention effects (Bossini et al. 2023; ODTA/Houston Methodist AI profiling; Houston Methodist AI dropout prevention) &mdash; not a result Project Donor-Flow itself has measured, since it has not yet been deployed as an integrated system.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Cold Ischemia Foundation &middot; Ellenton, Florida &middot; Source: "The Intelligence Gap," Project Donor-Flow white paper. This page describes a proposed research framework and is not medical, clinical, or software documentation.</p>
+</footer>
+
+<script>
+function toggle(el){
+  el.parentElement.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

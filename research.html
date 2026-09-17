@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Intelligence — Cold Ischemia Foundation</title>
+  <meta name="description" content="Federal agency research, policy documents, GAO reports, CMS updates, HHS releases, and original Cold Ischemia Foundation investigative research.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,100;1,9..144,200;1,9..144,300;1,9..144,600&family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --abyss:#030509; --void:#07101c; --surf:#0a1628; --raised:#0f1e38;
+      --b:rgba(100,140,200,0.1); --b2:rgba(100,140,200,0.2);
+      --ink:#d8cfc4; --ink80:rgba(216,207,196,0.8); --ink60:rgba(216,207,196,0.6);
+      --ink40:rgba(216,207,196,0.4); --ink20:rgba(216,207,196,0.15);
+      --gold:#c8902a; --gold-l:#e8b84a; --gold-d:rgba(200,144,42,0.12);
+      --pulse:#2ac4c8; --pulse-d:rgba(42,196,200,0.1);
+      --danger:#c83050; --danger-d:rgba(200,48,80,0.1);
+      --green:#50c878;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events:none;z-index:0;opacity:0.5;}
+
+    nav{position:sticky;top:0;z-index:100;height:58px;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 40px;background:rgba(3,5,9,0.95);backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--b);}
+    .nav-logo img{height:40px;display:block;}
+    .nav-links{display:flex;align-items:center;gap:28px;}
+    .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;
+      letter-spacing:0.18em;text-transform:uppercase;color:var(--ink40);
+      text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold);}
+    .nav-join{background:var(--gold);color:var(--abyss)!important;
+      padding:7px 16px;border-radius:2px;}
+    .nav-join:hover{background:var(--gold-l)!important;}
+
+    .hero{position:relative;height:420px;overflow:hidden;}
+    .hero img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;}
+    .hero-overlay{position:absolute;inset:0;
+      background:linear-gradient(90deg,rgba(3,5,9,0.88) 0%,rgba(3,5,9,0.55) 55%,rgba(3,5,9,0.2) 100%);}
+    .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;
+      justify-content:center;padding:0 60px;z-index:2;}
+    .hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.48rem;
+      letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);
+      margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+    .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
+    .hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,8vw,7rem);
+      line-height:0.9;letter-spacing:0.04em;color:var(--ink);margin-bottom:12px;}
+    .hero-h1 span{color:var(--gold);}
+    .hero-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:1.1rem;
+      color:var(--ink60);max-width:480px;line-height:1.7;margin-bottom:24px;}
+    .hero-stats{display:flex;gap:28px;flex-wrap:wrap;}
+    .hero-stat{text-align:center;}
+    .hero-stat-val{font-family:'IBM Plex Mono',monospace;font-size:1.1rem;
+      color:var(--pulse);font-weight:500;display:block;}
+    .hero-stat-lbl{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;
+      letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);}
+
+    .ticker-wrap{background:var(--void);border-top:1px solid var(--gold-d);
+      border-bottom:1px solid var(--b);overflow:hidden;height:34px;
+      display:flex;align-items:center;}
+    .ticker-label{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;
+      letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);
+      padding:0 18px;white-space:nowrap;border-right:1px solid var(--b);
+      height:100%;display:flex;align-items:center;flex-shrink:0;}
+    .ticker-track{display:flex;gap:0;overflow:hidden;flex:1;}
+    .ticker-inner{display:flex;animation:ticker 40s linear infinite;white-space:nowrap;}
+    .ticker-item{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;
+      letter-spacing:0.1em;color:var(--ink40);padding:0 32px;
+      border-right:1px solid var(--b);}
+    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    .page{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 40px 80px;}
+
+    /* ── FEATURED WHITE PAPER BANNER ── */
+    .featured-wp{
+      margin:40px 0 0;
+      background:linear-gradient(135deg,rgba(80,200,120,0.08),rgba(80,200,120,0.03));
+      border:1px solid rgba(80,200,120,0.35);
+      border-left:4px solid var(--green);
+      border-radius:3px;
+      padding:28px 32px;
+      display:flex;align-items:flex-start;gap:28px;
+      flex-wrap:wrap;
+    }
+    .featured-wp-badge{
+      font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;
+      text-transform:uppercase;color:var(--green);
+      background:rgba(80,200,120,0.1);border:1px solid rgba(80,200,120,0.3);
+      padding:5px 12px;border-radius:1px;white-space:nowrap;flex-shrink:0;
+      align-self:flex-start;margin-top:4px;
+    }
+    .featured-wp-body{flex:1;min-width:260px;}
+    .featured-wp-title{
+      font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;
+      color:var(--ink);line-height:1.3;margin-bottom:8px;
+    }
+    .featured-wp-meta{
+      font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.1em;
+      color:var(--ink40);margin-bottom:10px;
+    }
+    .featured-wp-desc{
+      font-size:0.97rem;line-height:1.8;color:var(--ink60);margin-bottom:16px;
+    }
+    .featured-wp-stats{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px;}
+    .featured-wp-stat{
+      font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;
+      text-transform:uppercase;color:var(--ink40);padding-left:10px;
+      border-left:2px solid rgba(80,200,120,0.4);
+    }
+    .featured-wp-stat strong{display:block;font-size:0.52rem;color:var(--green);}
+    .featured-wp-actions{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn-dl{
+      font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.16em;
+      text-transform:uppercase;padding:11px 22px;border-radius:2px;
+      background:var(--green);color:#030509;text-decoration:none;
+      display:inline-block;transition:background 0.2s;font-weight:600;
+    }
+    .btn-dl:hover{background:#7ae89a;}
+    .btn-dl-outline{
+      font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.16em;
+      text-transform:uppercase;padding:10px 22px;border-radius:2px;
+      border:1px solid rgba(80,200,120,0.4);color:var(--green);text-decoration:none;
+      display:inline-block;transition:all 0.2s;
+    }
+    .btn-dl-outline:hover{background:rgba(80,200,120,0.08);border-color:var(--green);}
+
+    .filter-bar{padding:32px 0 0;display:flex;align-items:center;
+      justify-content:space-between;gap:20px;flex-wrap:wrap;}
+    .filter-tabs{display:flex;gap:4px;flex-wrap:wrap;}
+    .tab{font-family:'IBM Plex Mono',monospace;font-size:0.43rem;letter-spacing:0.18em;
+      text-transform:uppercase;padding:8px 16px;border-radius:2px;cursor:pointer;
+      border:1px solid var(--b);color:var(--ink40);background:transparent;
+      transition:all 0.2s;}
+    .tab:hover{border-color:var(--gold-d);color:var(--ink80);}
+    .tab.active{background:var(--gold);color:var(--abyss);border-color:var(--gold);}
+    .tab[data-filter="ci"]{border-color:rgba(42,196,200,0.3);color:var(--pulse);}
+    .tab[data-filter="ci"].active{background:var(--pulse);color:var(--abyss);border-color:var(--pulse);}
+
+    .search-wrap{position:relative;flex-shrink:0;}
+    .search-input{background:var(--surf);border:1px solid var(--b);border-radius:2px;
+      padding:9px 16px 9px 38px;color:var(--ink80);font-family:'IBM Plex Mono',monospace;
+      font-size:0.46rem;width:240px;outline:none;transition:border-color 0.2s;}
+    .search-input::placeholder{color:var(--ink20);}
+    .search-input:focus{border-color:rgba(200,144,42,0.4);}
+    .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);
+      color:var(--ink40);font-size:0.75rem;pointer-events:none;}
+
+    .section-label{display:flex;align-items:center;gap:16px;
+      margin:40px 0 24px;padding-bottom:12px;border-bottom:1px solid var(--b);}
+    .section-label-text{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;
+      letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);}
+    .section-label-count{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;
+      color:var(--ink20);margin-left:auto;}
+    .section-label-line{flex:1;height:1px;background:linear-gradient(90deg,var(--gold-d),transparent);}
+
+    .ci-section{margin-bottom:48px;}
+    .ci-header{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:32px;}
+    .ci-intro-text{font-size:1.05rem;line-height:1.9;color:var(--ink60);}
+    .ci-stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+    .ci-stat-box{background:var(--surf);border:1px solid var(--b);
+      border-radius:2px;padding:16px 18px;position:relative;overflow:hidden;}
+    .ci-stat-box::before{content:'';position:absolute;top:0;left:0;
+      width:3px;height:100%;background:var(--pulse);}
+    .ci-stat-val{font-family:'Fraunces',serif;font-weight:600;font-size:1.8rem;
+      color:var(--pulse);line-height:1;}
+    .ci-stat-lbl{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;
+      letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);margin-top:6px;}
+
+    .research-table-wrap{overflow-x:auto;border:1px solid var(--b);border-radius:2px;}
+    table.research-table{width:100%;border-collapse:collapse;}
+    .research-table thead{background:var(--raised);}
+    .research-table th{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;
+      letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);
+      padding:12px 16px;text-align:left;border-bottom:1px solid var(--b);
+      white-space:nowrap;}
+    .research-table td{padding:14px 16px;border-bottom:1px solid var(--b);
+      vertical-align:top;font-size:0.95rem;line-height:1.5;}
+    .research-table tr:last-child td{border-bottom:none;}
+    .research-table tr{transition:background 0.15s;}
+    .research-table tr:hover td{background:rgba(42,196,200,0.03);}
+    .research-table tr.featured-row td{background:rgba(80,200,120,0.04);}
+    .research-table tr.featured-row:hover td{background:rgba(80,200,120,0.07);}
+    .doc-title{color:var(--ink);font-weight:600;}
+    .doc-title a{color:inherit;text-decoration:none;}
+    .doc-title a:hover{color:var(--gold);}
+    .doc-type{display:inline-block;font-family:'IBM Plex Mono',monospace;
+      font-size:0.38rem;letter-spacing:0.14em;text-transform:uppercase;
+      padding:3px 8px;border-radius:1px;margin-top:5px;}
+    .type-report{background:rgba(200,144,42,0.12);color:var(--gold);border:1px solid rgba(200,144,42,0.25);}
+    .type-legislative{background:rgba(42,196,200,0.1);color:var(--pulse);border:1px solid rgba(42,196,200,0.25);}
+    .type-investigative{background:rgba(200,48,80,0.1);color:var(--danger);border:1px solid rgba(200,48,80,0.25);}
+    .type-whitepaper{background:rgba(80,200,120,0.1);color:var(--green);border:1px solid rgba(80,200,120,0.25);}
+    .type-guide{background:rgba(128,80,200,0.1);color:#8050c8;border:1px solid rgba(128,80,200,0.25);}
+    .type-submission{background:rgba(200,144,42,0.18);color:#e8b84a;border:1px solid rgba(232,184,74,0.4);}
+    .doc-source{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;
+      letter-spacing:0.1em;text-transform:uppercase;color:var(--pulse);}
+    .doc-date{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;
+      color:var(--ink20);white-space:nowrap;}
+    .doc-desc{color:var(--ink60);font-size:0.92rem;line-height:1.55;margin-top:4px;}
+    .doc-cfr{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;
+      color:var(--ink20);margin-top:3px;}
+    .btn-view{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;
+      letter-spacing:0.12em;text-transform:uppercase;padding:6px 12px;
+      border:1px solid var(--b);color:var(--gold);text-decoration:none;
+      border-radius:1px;transition:all 0.2s;white-space:nowrap;display:inline-block;}
+    .btn-view:hover{background:var(--gold-d);border-color:var(--gold);}
+    .btn-view-green{border-color:rgba(80,200,120,0.4);color:var(--green);}
+    .btn-view-green:hover{background:rgba(80,200,120,0.08);border-color:var(--green);}
+
+    .feed-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px;}
+    .feed-card{background:var(--surf);border:1px solid var(--b);border-radius:2px;
+      padding:20px 22px;transition:border-color 0.2s,transform 0.2s;
+      position:relative;overflow:hidden;}
+    .feed-card::before{content:'';position:absolute;top:0;left:0;
+      width:100%;height:2px;background:transparent;transition:background 0.2s;}
+    .feed-card:hover{border-color:var(--b2);transform:translateY(-1px);}
+    .feed-card[data-agency="CMS"]::before{background:var(--pulse);}
+    .feed-card[data-agency="GAO"]::before{background:var(--gold);}
+    .feed-card[data-agency="HHS"]::before{background:var(--danger);}
+    .feed-card[data-agency="OIG"]::before{background:var(--green);}
+    .feed-card[data-agency="FED"]::before{background:#8050c8;}
+    .card-agency{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;
+      letter-spacing:0.22em;text-transform:uppercase;margin-bottom:10px;
+      display:flex;align-items:center;gap:8px;}
+    .agency-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+    .dot-cms{background:var(--pulse);}
+    .dot-gao{background:var(--gold);}
+    .dot-hhs{background:var(--danger);}
+    .dot-oig{background:var(--green);}
+    .dot-fed{background:#8050c8;}
+    .card-title{font-family:'Fraunces',serif;font-weight:300;font-size:1.05rem;
+      line-height:1.35;color:var(--ink);margin-bottom:8px;}
+    .card-title a{color:inherit;text-decoration:none;transition:color 0.2s;}
+    .card-title a:hover{color:var(--gold);}
+    .card-desc{font-size:0.9rem;line-height:1.6;color:var(--ink40);
+      margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:3;
+      -webkit-box-orient:vertical;overflow:hidden;}
+    .card-meta{display:flex;align-items:center;justify-content:space-between;
+      padding-top:12px;border-top:1px solid var(--b);}
+    .card-date{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;color:var(--ink20);}
+    .card-link{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;
+      letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);
+      text-decoration:none;transition:color 0.2s;}
+    .card-link:hover{color:var(--gold-l);}
+    .card-link::after{content:' →';}
+
+    .feed-loading{grid-column:1/-1;padding:40px;text-align:center;}
+    .feed-loading-inner{display:inline-flex;flex-direction:column;align-items:center;gap:14px;}
+    .spinner{width:28px;height:28px;border:2px solid var(--b);
+      border-top-color:var(--gold);border-radius:50%;
+      animation:spin 0.8s linear infinite;}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .loading-text{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;
+      letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);}
+
+    .skeleton{background:var(--surf);border:1px solid var(--b);
+      border-radius:2px;padding:20px 22px;}
+    .skel-line{background:var(--raised);border-radius:1px;margin-bottom:8px;
+      animation:shimmer 1.5s ease infinite;}
+    @keyframes shimmer{0%,100%{opacity:0.4}50%{opacity:0.8}}
+    .skel-sm{height:8px;width:40%;}
+    .skel-md{height:12px;width:80%;}
+    .skel-lg{height:12px;width:95%;}
+
+    .agency-legend{display:flex;flex-wrap:wrap;gap:16px;
+      margin-bottom:28px;padding:16px 20px;
+      background:var(--surf);border:1px solid var(--b);border-radius:2px;}
+    .legend-item{display:flex;align-items:center;gap:8px;cursor:pointer;}
+    .legend-dot{width:8px;height:8px;border-radius:50%;}
+    .legend-label{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;
+      letter-spacing:0.14em;text-transform:uppercase;color:var(--ink60);}
+    .legend-count{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;color:var(--ink20);}
+
+    .agency-meters{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:36px;}
+    .meter-box{background:var(--surf);border:1px solid var(--b);border-radius:2px;padding:16px 14px;}
+    .meter-name{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;
+      letter-spacing:0.18em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+    .meter-bar-bg{height:4px;background:var(--raised);border-radius:2px;overflow:hidden;margin-bottom:8px;}
+    .meter-bar-fill{height:100%;border-radius:2px;transition:width 1s ease;width:0;}
+    .meter-count{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:600;line-height:1;}
+    .meter-sub{font-family:'IBM Plex Mono',monospace;font-size:0.37rem;color:var(--ink20);margin-top:3px;}
+
+    .fr-band{background:linear-gradient(135deg,rgba(128,80,200,0.08),rgba(128,80,200,0.03));
+      border:1px solid rgba(128,80,200,0.2);border-radius:2px;
+      padding:18px 22px;margin-bottom:20px;display:flex;align-items:center;gap:16px;}
+    .fr-badge{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;
+      letter-spacing:0.2em;text-transform:uppercase;color:#8050c8;
+      background:rgba(128,80,200,0.1);border:1px solid rgba(128,80,200,0.25);
+      padding:6px 12px;border-radius:1px;white-space:nowrap;}
+    .fr-text{font-size:0.92rem;color:var(--ink60);line-height:1.6;}
+    .fr-text strong{color:var(--ink80);}
+
+    .no-results{grid-column:1/-1;text-align:center;padding:60px 20px;}
+    .no-results-icon{font-size:2rem;margin-bottom:12px;opacity:0.3;}
+    .no-results-text{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;
+      letter-spacing:0.15em;text-transform:uppercase;color:var(--ink40);}
+
+    @keyframes fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{opacity:0;animation:fade-up 0.6s ease forwards;}
+    .d1{animation-delay:0.1s}.d2{animation-delay:0.2s}.d3{animation-delay:0.3s}
+
+    @media(max-width:900px){
+      .ci-header{grid-template-columns:1fr;}
+      .agency-meters{grid-template-columns:repeat(2,1fr);}
+      nav{padding:0 20px;} .page{padding:0 20px 60px;}
+      .hero-content{padding:0 24px;}
+      .filter-bar{flex-direction:column;align-items:flex-start;}
+      .search-input{width:100%;}
+      .featured-wp{flex-direction:column;gap:16px;}
+    }
+    @media(max-width:700px){
+      nav{padding:0 14px;}
+      .nav-logo img{height:32px !important;width:32px !important;}
+      .nav-logo-text,.nav-brand-text{display:none;}
+      .nav-links{gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;padding:0 8px;}
+      .nav-links::-webkit-scrollbar{display:none;}
+      .nav-links a{font-size:0.36rem !important;letter-spacing:0.1em !important;}
+      .nav-links a.hide-mob{display:none;}
+      body{font-size:16px;}
+      :root{
+        --ink:rgba(240,236,228,0.97);
+        --ink80:rgba(240,236,228,0.9);
+        --ink60:rgba(240,236,228,0.78);
+        --ink40:rgba(240,236,228,0.65);
+        --ink20:rgba(240,236,228,0.5);
+        --b:rgba(100,140,200,0.18);
+        --b2:rgba(100,140,200,0.32);
+      }
+      .hero-h1{font-size:clamp(1.6rem,6vw,2.2rem) !important;}
+    }
+    @media(max-width:480px){
+      .nav-links a:not(.nav-primary):not(.active):not(.always){display:none;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="https://payhip.com/coldischemia">Library</a>
+    <a href="research.html" class="active">Research</a>
+    <a href="situation-room.html">Situation Room</a>
+    <a href="accountability.html">Accountability</a>
+    <a href="congress-scorecard.html">Scorecard</a>
+    <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener">Store</a>
+    <a href="donate.html">Donate</a>
+  </div>
+  <div class="nav-actions">
+    <a href="donate.html" class="nav-btn nav-btn-gold">Donate Now</a>
+  </div>
+  <a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;padding:6px 12px;border:1px solid rgba(100,140,200,0.15);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.3)';" onmouseout="this.style.color='rgba(216,207,196,0.45)';this.style.borderColor='rgba(100,140,200,0.15)';">← Home</a>
+</nav>
+
+<!-- HERO BANNER -->
+<div class="hero">
+  <img src="research-banner.png" alt="Cold Ischemia Foundation Research Intelligence">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow fade-up d1">Federal Intelligence · Policy Documents · Original Research</div>
+    <h1 class="hero-h1 fade-up d2">Research<br><span>Intelligence</span></h1>
+    <p class="hero-sub fade-up d3">Live feeds from CMS, GAO, HHS, OIG, and the Federal Register — alongside original Cold Ischemia Foundation investigative documents.</p>
+    <div class="hero-stats fade-up d3">
+      <div class="hero-stat">
+        <span class="hero-stat-val" id="total-count">—</span>
+        <span class="hero-stat-lbl">Live Items</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-val">5</span>
+        <span class="hero-stat-lbl">Federal Feeds</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-val" id="ci-doc-count">—</span>
+        <span class="hero-stat-lbl">CI Documents</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-val" id="last-updated">Live</span>
+        <span class="hero-stat-lbl">Status</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">&#9679; Live Feed</div>
+  <div class="ticker-track">
+    <div class="ticker-inner" id="ticker-inner">
+      <span class="ticker-item">CMS · Loading federal updates...</span>
+      <span class="ticker-item">GAO · Loading health reports...</span>
+      <span class="ticker-item">HHS · Loading news releases...</span>
+      <span class="ticker-item">OIG · Loading enforcement alerts...</span>
+      <span class="ticker-item">Federal Register · Loading ESRD rules...</span>
+      <span class="ticker-item">CMS · Loading federal updates...</span>
+      <span class="ticker-item">GAO · Loading health reports...</span>
+      <span class="ticker-item">HHS · Loading news releases...</span>
+      <span class="ticker-item">OIG · Loading enforcement alerts...</span>
+      <span class="ticker-item">Federal Register · Loading ESRD rules...</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN PAGE -->
+<div class="page">
+
+  <!-- ── FEATURED WHITE PAPER BANNER ── -->
+  <div class="featured-wp fade-up">
+    <span class="featured-wp-badge">&#9733; New Submission · June 2026</span>
+    <div class="featured-wp-body">
+      <div class="featured-wp-title">A Lean Six Sigma Methodology for Transformation of the United States Solid Organ Transplant System</div>
+      <div class="featured-wp-meta">Version 2.0 · June 2026 · Jeff A. Parke, Founder, Cold Ischemia Foundation · Submitted to OPTN Board of Directors, HRSA &amp; CMS</div>
+      <div class="featured-wp-desc">The first application of full DMAIC methodology to the U.S. transplant system at the national policy level. 55 pages, 10 data visualizations, 54 peer-reviewed citations. Formally submitted to the OPTN Board of Directors, HRSA, and CMS on June 8, 2026. Documents a process cycle efficiency of 0.5%, a non-use rate out of statistical control since 2021, and a living donor pipeline losing 92.8% of potential donors to addressable barriers. Identifies a Nash equilibrium as the terminal root cause and proposes 11 named, enforceable countermeasures.</div>
+      <div class="featured-wp-stats">
+        <div class="featured-wp-stat"><strong>55</strong>Pages</div>
+        <div class="featured-wp-stat"><strong>10</strong>Data Visualizations</div>
+        <div class="featured-wp-stat"><strong>54</strong>Peer-Reviewed Citations</div>
+        <div class="featured-wp-stat"><strong>11</strong>Countermeasures</div>
+        <div class="featured-wp-stat"><strong>3</strong>Federal Recipients</div>
+      </div>
+      <div class="featured-wp-actions">
+        <a href="Solid_Organ_Transplant_Reform_Final_08Jun2026.docx" class="btn-dl" download>Download White Paper (.docx) ↓</a>
+        <a href="CIF_OPTN_Board_Formal_Submission.pdf" class="btn-dl-outline" download>Download Cover Letter ↓</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── COLD ISCHEMIA RESEARCH ── -->
+  <div class="section-label fade-up" style="margin-top:48px;">
+    <span class="section-label-text">Cold Ischemia Foundation · Original Research &amp; Documents</span>
+    <div class="section-label-line"></div>
+    <span class="section-label-count" id="ci-count-label">Loading...</span>
+  </div>
+
+  <div class="ci-section fade-up">
+    <div class="ci-header">
+      <div>
+        <p class="ci-intro-text">Original investigative documents, white papers, legislative drafts, and advocacy guides produced by the Cold Ischemia Foundation. All documents are published without pharmaceutical funding or institutional approval.</p>
+      </div>
+      <div class="ci-stat-grid">
+        <div class="ci-stat-box">
+          <div class="ci-stat-val" id="stat-reports">0</div>
+          <div class="ci-stat-lbl">Reports &amp; White Papers</div>
+        </div>
+        <div class="ci-stat-box" style="--pulse:#c8902a;">
+          <div class="ci-stat-val" style="color:var(--gold);" id="stat-legislative">0</div>
+          <div class="ci-stat-lbl">Legislative Documents</div>
+        </div>
+        <div class="ci-stat-box">
+          <div class="ci-stat-val" style="color:var(--danger);" id="stat-investigative">0</div>
+          <div class="ci-stat-lbl">Investigative Pieces</div>
+        </div>
+        <div class="ci-stat-box">
+          <div class="ci-stat-val" style="color:var(--green);" id="stat-guides">0</div>
+          <div class="ci-stat-lbl">Guides &amp; Tools</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="research-table-wrap">
+      <table class="research-table" id="ci-table">
+        <thead>
+          <tr>
+            <th style="width:35%">Document Title</th>
+            <th style="width:10%">Type</th>
+            <th style="width:10%">Date</th>
+            <th style="width:30%">Summary</th>
+            <th style="width:15%">Access</th>
+          </tr>
+        </thead>
+        <tbody id="ci-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── FILTER BAR ── -->
+  <div class="filter-bar fade-up">
+    <div class="filter-tabs" id="filter-tabs">
+      <button class="tab active" data-filter="all">All Feeds</button>
+      <button class="tab" data-filter="CMS">CMS</button>
+      <button class="tab" data-filter="GAO">GAO</button>
+      <button class="tab" data-filter="HHS">HHS</button>
+      <button class="tab" data-filter="OIG">OIG</button>
+      <button class="tab" data-filter="FED">Federal Register</button>
+    </div>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input class="search-input" type="text" id="search-input" placeholder="Search all feeds..." autocomplete="off">
+    </div>
+  </div>
+
+  <!-- Agency meters -->
+  <div class="agency-meters fade-up" id="agency-meters">
+    <div class="meter-box">
+      <div class="meter-name">CMS</div>
+      <div class="meter-bar-bg"><div class="meter-bar-fill" id="bar-cms" style="background:var(--pulse);"></div></div>
+      <div class="meter-count" id="count-cms" style="color:var(--pulse);">—</div>
+      <div class="meter-sub">Centers for Medicare &amp; Medicaid</div>
+    </div>
+    <div class="meter-box">
+      <div class="meter-name">GAO</div>
+      <div class="meter-bar-bg"><div class="meter-bar-fill" id="bar-gao" style="background:var(--gold);"></div></div>
+      <div class="meter-count" id="count-gao" style="color:var(--gold);">—</div>
+      <div class="meter-sub">Government Accountability Office</div>
+    </div>
+    <div class="meter-box">
+      <div class="meter-name">HHS</div>
+      <div class="meter-bar-bg"><div class="meter-bar-fill" id="bar-hhs" style="background:var(--danger);"></div></div>
+      <div class="meter-count" id="count-hhs" style="color:var(--danger);">—</div>
+      <div class="meter-sub">Health &amp; Human Services</div>
+    </div>
+    <div class="meter-box">
+      <div class="meter-name">OIG</div>
+      <div class="meter-bar-bg"><div class="meter-bar-fill" id="bar-oig" style="background:var(--green);"></div></div>
+      <div class="meter-count" id="count-oig" style="color:var(--green);">—</div>
+      <div class="meter-sub">Office of Inspector General</div>
+    </div>
+    <div class="meter-box">
+      <div class="meter-name">FED REG</div>
+      <div class="meter-bar-bg"><div class="meter-bar-fill" id="bar-fed" style="background:#8050c8;"></div></div>
+      <div class="meter-count" id="count-fed" style="color:#8050c8;">—</div>
+      <div class="meter-sub">Federal Register · ESRD/Dialysis</div>
+    </div>
+  </div>
+
+  <div class="fr-band fade-up">
+    <span class="fr-badge">Federal Register</span>
+    <p class="fr-text">The Federal Register feed is filtered for <strong>ESRD, dialysis, transplant, kidney, and care partner</strong> rules and proposed regulations. Items marked FED are active or proposed federal rules directly affecting your patient population.</p>
+  </div>
+
+  <!-- LSS INTELLIGENCE VISUALS -->
+  <div style="padding:40px 0 0;" id="lss-visuals">
+    <div class="section-label fade-up" style="margin-top:0;">
+      <span class="section-label-text">Lean Six Sigma · System Intelligence</span>
+      <div class="section-label-line"></div>
+      <span class="section-label-count">Data-driven advocacy — not opinion</span>
+    </div>
+    <p style="font-family:'Crimson Pro',serif;font-size:1.02rem;line-height:1.9;color:var(--ink60);max-width:780px;margin-bottom:32px;">These visualizations are not infographics. They are operational analyses — built using the same Lean Six Sigma methodology applied to quality and process failures in clinical research and manufacturing. Applied here to the most important quality failure in American healthcare: the systematic abandonment of 55 million care partners.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+      <div style="background:var(--surf);border:1px solid var(--b);border-radius:3px;padding:24px;grid-column:1/-1;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--pulse);margin-bottom:4px;">Pareto Analysis</div>
+        <div style="font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;color:var(--ink80);margin-bottom:4px;">Root Causes of Care Partner Advocacy Failure</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.1em;color:var(--ink40);margin-bottom:20px;">Source: 40 documented federal violations coded by primary failure mode · n=40 · Vital Few = top 3 causes = 78% of failures</div>
+        <canvas id="paretoCanvas" height="280" style="width:100%;display:block;"></canvas>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.08em;color:var(--ink20);margin-top:12px;line-height:1.9;">LSS conclusion: Eliminating the top 3 failure modes — rights unawareness, complaint non-filing, and wrong-agency routing — would resolve 78% of all documented care partner advocacy failures. This is precisely what Cold Ischemia Foundation's tools address. No other platform has built the countermeasures.</div>
+      </div>
+      <div style="background:var(--surf);border:1px solid var(--b);border-radius:3px;padding:24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Process Sigma · Quality Benchmark</div>
+        <div style="font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:var(--ink80);margin-bottom:16px;">CMS Grievance Response System</div>
+        <canvas id="sigmaCanvas" height="200" style="width:100%;display:block;"></canvas>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.08em;color:var(--ink20);margin-top:12px;line-height:1.9;">Current: 0.8σ — equivalent to 72% defect rate. Industry standard: 3σ minimum. World class: 6σ. The CMS grievance response system is operating at the quality level of a failing production line.</div>
+      </div>
+      <div style="background:var(--surf);border:1px solid var(--b);border-radius:3px;padding:24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--danger);margin-bottom:4px;">Control Chart · X̄ Chart</div>
+        <div style="font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:var(--ink80);margin-bottom:16px;">CMS Complaint Response Time (Days) vs. 14-Day Standard</div>
+        <canvas id="controlCanvas" height="200" style="width:100%;display:block;"></canvas>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.08em;color:var(--ink20);margin-top:12px;line-height:1.9;">19 of 24 data points above UCL (Upper Control Limit). Process is out of statistical control. Not a backlog problem — a structural design problem.</div>
+      </div>
+    </div>
+
+    <div style="background:var(--surf);border:1px solid var(--b);border-radius:3px;padding:24px;margin-bottom:16px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Swimlane Process Map · Current State vs. Future State</div>
+      <div style="font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:var(--ink80);margin-bottom:4px;">What Happens When a Care Partner Needs Help</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.1em;color:var(--ink40);margin-bottom:20px;">Red path = care partner without platform · Teal path = Cold Ischemia Foundation member · Each node = documented decision point with federal consequence</div>
+      <div style="overflow-x:auto;">
+        <svg id="swimlaneSVG" viewBox="0 0 900 260" style="width:100%;min-width:600px;display:block;" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.08em;color:var(--ink20);margin-top:12px;line-height:1.9;">The red path ends with no federal record — meaning the institution faces zero accountability. The teal path ends with a complaint on file, a compliance clock started, and a legally-obligated agency response. Same crisis. Entirely different outcome. The only variable: platform membership.</div>
+    </div>
+
+    <div style="background:var(--surf);border:1px solid var(--b);border-radius:3px;padding:24px;margin-bottom:32px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--green);margin-bottom:4px;">Heat Map · State Risk Index</div>
+      <div style="font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:var(--ink80);margin-bottom:4px;">ESRD Complaint Volume vs. Federal Enforcement Gap by State</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.1em;color:var(--ink40);margin-bottom:16px;">Dark red = high complaint volume, low enforcement action. Blue = low complaint volume (likely under-reporting). Hover for state detail.</div>
+      <div id="heatGrid" style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin-bottom:12px;"></div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.1em;color:var(--ink40);">Low Risk</span>
+        <div style="display:flex;gap:2px;width:120px;">
+          <div style="height:8px;flex:1;border-radius:1px;background:rgba(42,196,200,0.3);"></div>
+          <div style="height:8px;flex:1;border-radius:1px;background:rgba(200,144,42,0.4);"></div>
+          <div style="height:8px;flex:1;border-radius:1px;background:rgba(240,130,48,0.6);"></div>
+          <div style="height:8px;flex:1;border-radius:1px;background:rgba(200,48,80,0.75);"></div>
+          <div style="height:8px;flex:1;border-radius:1px;background:rgba(200,48,80,0.95);"></div>
+        </div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.1em;color:var(--ink40);">Critical Gap</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label fade-up">
+    <span class="section-label-text">Live Federal Agency Feeds</span>
+    <div class="section-label-line"></div>
+    <span class="section-label-count" id="feed-count-label">Loading...</span>
+  </div>
+
+  <div class="feed-grid" id="feed-grid">
+    <div class="skeleton"><div class="skel-line skel-sm"></div><div class="skel-line skel-lg"></div><div class="skel-line skel-md"></div></div>
+    <div class="skeleton"><div class="skel-line skel-sm"></div><div class="skel-line skel-md"></div><div class="skel-line skel-lg"></div></div>
+    <div class="skeleton"><div class="skel-line skel-sm"></div><div class="skel-line skel-lg"></div><div class="skel-line skel-md"></div></div>
+  </div>
+
+  <!-- PEER-REVIEWED RESEARCH -->
+  <div style="background:var(--void);border-top:2px solid var(--gold);padding:56px 40px;margin:60px -40px 0;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.48rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Peer-Reviewed Research Library</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(1.5rem,3vw,2.4rem);color:var(--ink);margin-bottom:10px;">Published clinical evidence.<br><span style="font-weight:600;font-style:normal;color:var(--gold-l);">The data the system already has — and ignores.</span></h2>
+      <p style="font-family:'Crimson Pro',serif;font-size:1.02rem;line-height:1.9;color:var(--ink60);max-width:720px;margin-bottom:36px;">Every study below is a published, peer-reviewed work from a verified academic or institutional source. This is the evidence the federal agencies have access to. This is the data that justifies every policy demand Cold Ischemia Foundation makes.</p>
+      <div id="peer-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;"></div>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// CI DOCUMENTS — LSS WHITE PAPER IS FIRST ENTRY
+// ═══════════════════════════════════════════════════════════════
+const CI_DOCUMENTS = [
+  {
+    title: "A Lean Six Sigma Methodology for Transformation of the United States Solid Organ Transplant System — Version 2.0",
+    type: "submission",
+    date: "2026-06-08",
+    summary: "55-page DMAIC analysis of the U.S. transplant system submitted to the OPTN Board of Directors, HRSA, and CMS. Documents a 0.5% process cycle efficiency, non-use rate out of statistical control since 2021, and 92.8% living donor pipeline attrition. Proposes 11 named, enforceable countermeasures. First application of full DMAIC methodology to U.S. transplant policy at national scale.",
+    cfr: "OPTN Board Submission · HRSA · CMS · June 8, 2026",
+    url: "Solid_Organ_Transplant_Reform_Final_08Jun2026.docx",
+    access: "download",
+    featured: true
+  },
+  {
+    title: "Structural Exclusion in Transplant Medicine: Informal Blacklisting and Dialysis Duration as Institutional Risk",
+    type: "whitepaper",
+    date: "2025-01-15",
+    summary: "30+ page white paper documenting informal blacklisting practices, how dialysis duration affects transplant listing decisions, and the structural incentives that perpetuate exclusion.",
+    cfr: "42 CFR §482.45 · 42 CFR §405.2100",
+    url: "#",
+    access: "members"
+  },
+  {
+    title: "The Accountability Atlas: Enforcement & Escalation System for Chronic Illness Patients",
+    type: "guide",
+    date: "2025-02-01",
+    summary: "70-page enforcement and escalation system. Covers every federal agency, complaint mechanism, and escalation pathway available to patients and care partners navigating systemic failure.",
+    cfr: "42 CFR §494.180 · 42 CFR §405.2140",
+    url: "#",
+    access: "members"
+  },
+  {
+    title: "The Unseen Half: A Comprehensive Guide for Home Dialysis Care Partners",
+    type: "guide",
+    date: "2025-02-15",
+    summary: "35+ page care partner guide including Lean Six Sigma process frameworks, gamified progression system, legal rights documentation, and mental health stabilization protocols.",
+    cfr: "",
+    url: "https://payhip.com/b/0B2MK",
+    access: "public"
+  },
+  {
+    title: "Marie's Lifeline Compensation Act: Federal Legislation Draft",
+    type: "legislative",
+    date: "2025-03-01",
+    summary: "Federal legislative draft mandating compensation for home dialysis care partners. Includes statutory language, findings section, and implementation framework modeled on existing CMS payment structures.",
+    cfr: "42 U.S.C. §1395rr",
+    url: "#",
+    access: "public"
+  },
+  {
+    title: "Renal Patient Protection and Medical Information Integrity Act: Draft Legislation",
+    type: "legislative",
+    date: "2025-03-05",
+    summary: "Proposed federal legislation targeting information suppression, patient blacklisting documentation, and transplant listing transparency requirements.",
+    cfr: "42 U.S.C. §1320a-7 · 42 CFR §482.13",
+    url: "#",
+    access: "public"
+  },
+  {
+    title: "40 Documented Federal Violations: GAO, OIG, and Senate Finance Audit Compilation",
+    type: "report",
+    date: "2025-03-08",
+    summary: "Compiled audit of 40 documented federal violations sourced from GAO reports, OIG investigations, and Senate Finance Committee findings — all pertaining to ESRD facility oversight failures.",
+    cfr: "Multiple — see document",
+    url: "#",
+    access: "public"
+  },
+  {
+    title: "Blood Money: Stockholm Syndrome Dynamics in Patient-Facility Relationships",
+    type: "investigative",
+    date: "2025-01-20",
+    summary: "Investigative editorial drawing clinical and structural parallels between coercive control dynamics and the chronic dependence relationships dialysis facilities cultivate with captive patient populations.",
+    cfr: "",
+    url: "#",
+    access: "public"
+  },
+  {
+    title: "Complicit by Design: Federal Agency Inaction on Documented Transplant System Failures",
+    type: "investigative",
+    date: "2025-02-10",
+    summary: "Exposé documenting CMS, HRSA, and UNOS inaction on documented systemic failures in transplant medicine — including the paper trail proving agency awareness prior to non-response.",
+    cfr: "42 CFR §121 · NOTA §372",
+    url: "#",
+    access: "public"
+  },
+  {
+    title: "Sponsored Patient Theater: Pharmaceutical Funding of Kidney Patient Advocacy Organizations",
+    type: "investigative",
+    date: "2025-02-20",
+    summary: "Investigative analysis of pharmaceutical and dialysis company funding flowing to ostensibly independent patient advocacy organizations — and how that funding shapes their policy positions.",
+    cfr: "",
+    url: "#",
+    access: "public"
+  },
+  {
+    title: "The First 24 Hours: Care Partner Discharge Crisis Guide",
+    type: "guide",
+    date: "2025-03-12",
+    summary: "Step-by-step guide for care partners navigating facility discharge notices. Hour-by-hour action framework including federal rights invocation, agency filing sequence, and mediation request protocol.",
+    cfr: "42 CFR §494.180(f)",
+    url: "https://mcusercontent.com/20960b505a060a5f7f476edab/files/2d8e4ade-62c0-3c46-6b67-69bea03a4074/the_first_24_hours.pdf",
+    access: "download"
+  },
+  {
+    title: "CARE Partner Compensation and Protection Act: Federal Legislative Draft",
+    type: "legislative",
+    date: "2025-04-01",
+    summary: "Proposed federal legislation establishing compensation standards, training mandates, and legal protections for unpaid chronic illness care partners across all conditions — not limited to dialysis.",
+    cfr: "42 U.S.C. §1395 · ADA Title II",
+    url: "#",
+    access: "public"
+  },
+  {
+    title: "The Burnout Architecture: How Chronic Illness Systems Manufacture Care Partner Attrition",
+    type: "whitepaper",
+    date: "2025-04-10",
+    summary: "White paper analyzing the structural conditions that produce care partner burnout — framing attrition not as personal failure but as a predictable, measurable output of policy-level neglect. Includes Lean Six Sigma failure mode analysis.",
+    cfr: "",
+    url: "#",
+    access: "members"
+  },
+  {
+    title: "The Informed Grievance: How to File a Federal Complaint and Force a Response",
+    type: "guide",
+    date: "2025-04-15",
+    summary: "Operational guide for care partners filing grievances with CMS, HHS, OIG, HRSA, and ESRD Networks. Includes exact CFR citations, agency contact information, filing templates, and response timeline standards.",
+    cfr: "42 CFR §494.180 · 42 CFR §405.2140",
+    url: "#",
+    access: "members"
+  },
+  {
+    title: "Mental Health Crisis and Kidney Disease: The Data the System Refuses to Act On",
+    type: "report",
+    date: "2025-05-01",
+    summary: "Evidence compilation on depression, anxiety, and burnout rates among dialysis patients and their care partners. Cross-references published clinical data with institutional non-response and zero federal funding allocation.",
+    cfr: "",
+    url: "#",
+    access: "public"
+  },
+  {
+    title: "ADA Rights in Dialysis and Transplant Settings: A Care Partner Enforcement Guide",
+    type: "guide",
+    date: "2025-05-10",
+    summary: "Legal rights guide covering ADA Title II and III enforcement, Section 504 protections, and DOJ complaint pathways for care partners and patients experiencing access violations in healthcare settings.",
+    cfr: "ADA Title II · Section 504 · 28 CFR §35",
+    url: "#",
+    access: "public"
+  },
+];
+
+const PEER_RESEARCH = [
+  { title:"Caregiver Burden and Depressive Symptoms in Spouses of Dialysis Patients", authors:"Belasco A, Sesso R", journal:"American Journal of Kidney Diseases", year:"2002", finding:"Dialysis caregivers showed significantly higher rates of depression and lower quality of life compared to non-caregiver controls. 53% met criteria for caregiver burden.", pmid:"11823955", url:"https://pubmed.ncbi.nlm.nih.gov/11823955/", tags:["Mental Health","Dialysis","Caregiver Burden"] },
+  { title:"Prevalence and Determinants of Caregiver Burden in Renal Replacement Therapy", authors:"Shdaifat EA, Manaf MR", journal:"Journal of Nephrology & Renal Transplantation", year:"2012", finding:"70% of caregivers of ESRD patients reported moderate-to-severe burden. Younger caregivers and female caregivers reported disproportionately high burden scores.", pmid:null, url:"https://pubmed.ncbi.nlm.nih.gov/?term=caregiver+burden+renal+replacement+therapy", tags:["ESRD","Caregiver Burden","Dialysis"] },
+  { title:"Mental Health Outcomes of Caregivers of Patients with End-Stage Renal Disease", authors:"Tong A, et al.", journal:"Journal of Pain and Symptom Management", year:"2013", finding:"Systematic review of 19 studies. Identified persistent themes of role loss, isolation, financial strain, and psychological distress — none systematically addressed by any care facility protocol.", pmid:"23107963", url:"https://pubmed.ncbi.nlm.nih.gov/23107963/", tags:["Mental Health","ESRD","Systematic Review"] },
+  { title:"Transplant Caregiver Burden: A Prospective Study Post-Kidney Transplant", authors:"Rodrigue JR, et al.", journal:"Transplantation", year:"2016", finding:"Caregivers of kidney transplant recipients reported clinically significant anxiety and depression at 6 and 12 months post-transplant — despite the system treating transplant as a caregiving endpoint rather than a beginning.", pmid:"26680371", url:"https://pubmed.ncbi.nlm.nih.gov/26680371/", tags:["Transplant","Caregiver Burden","Mental Health"] },
+  { title:"Informal Caregiving and Health: A Meta-Analytic Review", authors:"Pinquart M, Sörensen S", journal:"Psychological Bulletin", year:"2003", finding:"Meta-analysis of 84 studies (N=9,344). Caregivers showed significantly worse physical health, mental health, and self-efficacy than non-caregivers. Effect sizes consistent across chronic illness categories.", pmid:"12748644", url:"https://pubmed.ncbi.nlm.nih.gov/12748644/", tags:["Caregiver Health","Meta-Analysis","Chronic Illness"] },
+  { title:"Economic Value of Informal Caregiving in the United States", authors:"Reinhard SC, et al. (AARP Public Policy Institute)", journal:"AARP Public Policy Institute", year:"2023", finding:"$600 billion in unpaid care partner labor in 2021 — exceeding total Medicaid spending. 53 million caregivers providing an average of 18 hours per week without compensation or federal protection.", pmid:null, url:"https://www.aarp.org/content/dam/aarp/ppi/2023/08/valuing-the-invaluable-2023-update.doi.10.26419-2Fppi.00082.003.pdf", tags:["Economic","AARP","Caregiver Compensation"] },
+  { title:"Racial and Ethnic Disparities in Kidney Transplant Access", authors:"Patzer RE, et al.", journal:"Journal of the American Society of Nephrology", year:"2012", finding:"Black patients with ESRD were 24% less likely than white patients to be referred for transplant evaluation. Disparities persisted after adjustment for clinical factors.", pmid:"22997340", url:"https://pubmed.ncbi.nlm.nih.gov/22997340/", tags:["Health Equity","Transplant","Racial Disparities"] },
+  { title:"Prior Authorization and Patient Access: Systematic Delays in Kidney Care", authors:"Desai NR, et al.", journal:"JAMA Internal Medicine", year:"2021", finding:"Prior authorization requirements were associated with significant treatment delays and care discontinuation. 25% of denials were overturned on appeal — suggesting systemic over-denial.", pmid:"33900382", url:"https://pubmed.ncbi.nlm.nih.gov/33900382/", tags:["Insurance Denial","Prior Authorization","Access"] },
+  { title:"Depression Prevalence and Outcomes in End-Stage Renal Disease", authors:"Chilcot J, et al.", journal:"Nephrology Dialysis Transplantation", year:"2010", finding:"Depression affects 20–30% of dialysis patients — three times the general population rate. Depressed dialysis patients have significantly higher hospitalization rates and mortality risk.", pmid:"20037168", url:"https://pubmed.ncbi.nlm.nih.gov/20037168/", tags:["Mental Health","Dialysis","Depression"] },
+  { title:"OPO Performance Variation and Organ Procurement Outcomes", authors:"Salkowski N, et al.", journal:"American Journal of Transplantation", year:"2015", finding:"Significant performance variation among organ procurement organizations with best-performing OPOs obtaining 40% more organs per donor — translating directly to preventable deaths.", pmid:"25581228", url:"https://pubmed.ncbi.nlm.nih.gov/25581228/", tags:["OPO","OPTN","Organ Procurement"] },
+  { title:"Home Dialysis Caregiver Burden and the Need for Structured Support", authors:"Morfín JA, et al.", journal:"Seminars in Dialysis", year:"2021", finding:"Home dialysis caregivers reported significantly higher burden than in-center caregivers. Authors recommend formalized caregiver training, respite programs, and mental health screening — none of which are federally mandated.", pmid:"33470432", url:"https://pubmed.ncbi.nlm.nih.gov/33470432/", tags:["Home Dialysis","Caregiver Burden","Training"] },
+];
+
+const FEEDS = [
+  { agency:'CMS', label:'CMS Newsroom', url:'https://www.cms.gov/newsroom/rss-feeds/press-releases', dotClass:'dot-cms', color:'var(--pulse)' },
+  { agency:'GAO', label:'GAO Health Reports', url:'https://www.gao.gov/rss/reports.xml', dotClass:'dot-gao', color:'var(--gold)' },
+  { agency:'HHS', label:'HHS News', url:'https://www.hhs.gov/about/news/newsroom-rss.xml', dotClass:'dot-hhs', color:'var(--danger)' },
+  { agency:'OIG', label:'OIG HHS Reports', url:'https://oig.hhs.gov/rss/reports-and-publications.xml', dotClass:'dot-oig', color:'var(--green)' },
+  { agency:'FED', label:'Federal Register · ESRD', url:'https://www.federalregister.gov/api/v1/documents.rss?conditions[term]=dialysis+ESRD+kidney+transplant', dotClass:'dot-fed', color:'#8050c8' },
+  { agency:'CMS', label:'CMS ESRD Quality Reporting', url:'https://www.cms.gov/rss/esrd', dotClass:'dot-cms', color:'var(--pulse)' },
+  { agency:'HHS', label:'HRSA Organ Transplantation', url:'https://www.hrsa.gov/rss.xml', dotClass:'dot-hhs', color:'var(--danger)' },
+];
+
+// ── CI TABLE ──
+function renderCITable() {
+  const tbody = document.getElementById('ci-tbody');
+  let reports=0,legislative=0,investigative=0,guides=0;
+  tbody.innerHTML = CI_DOCUMENTS.map(doc => {
+    if(doc.type==='report'||doc.type==='whitepaper'||doc.type==='submission') reports++;
+    if(doc.type==='legislative') legislative++;
+    if(doc.type==='investigative') investigative++;
+    if(doc.type==='guide') guides++;
+    const typeMap = {report:'type-report',whitepaper:'type-whitepaper',legislative:'type-legislative',investigative:'type-investigative',guide:'type-guide',submission:'type-submission'};
+    const labelMap = {report:'Report',whitepaper:'White Paper',legislative:'Legislative',investigative:'Investigative',guide:'Guide',submission:'Formal Submission'};
+    const accessBtn = doc.access==='download'
+      ? `<a href="${doc.url}" class="btn-view btn-view-green" target="_blank" download>Download PDF ↓</a>`
+      : doc.url!=='#'
+      ? `<a href="${doc.url}" class="btn-view" target="_blank">View</a>`
+      : `<span class="btn-view" style="opacity:0.4;cursor:default;">Coming Soon</span>`;
+    const dateFormatted = doc.date ? new Date(doc.date).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}) : '';
+    const rowClass = doc.featured ? 'featured-row' : '';
+    return `<tr class="${rowClass}">
+      <td>
+        <div class="doc-title">${doc.url!=='#'&&doc.access!=='members'?`<a href="${doc.url}" target="_blank">${doc.title}</a>`:doc.title}</div>
+        ${doc.cfr?`<div class="doc-cfr">${doc.cfr}</div>`:''}
+        ${doc.featured?`<div style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-top:4px;">★ Featured — OPTN Board Submission</div>`:''}
+      </td>
+      <td><span class="doc-type ${typeMap[doc.type]||'type-report'}">${labelMap[doc.type]||doc.type}</span></td>
+      <td><span class="doc-date">${dateFormatted}</span></td>
+      <td><div class="doc-desc">${doc.summary}</div></td>
+      <td>${accessBtn}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('stat-reports').textContent=reports;
+  document.getElementById('stat-legislative').textContent=legislative;
+  document.getElementById('stat-investigative').textContent=investigative;
+  document.getElementById('stat-guides').textContent=guides;
+  document.getElementById('ci-doc-count').textContent=CI_DOCUMENTS.length;
+  document.getElementById('ci-count-label').textContent=CI_DOCUMENTS.length+' documents';
+}
+
+// ── PEER RESEARCH ──
+function renderPeerResearch() {
+  const grid=document.getElementById('peer-grid');
+  if(!grid) return;
+  grid.innerHTML=PEER_RESEARCH.map(r=>`
+    <div style="background:var(--surf);border:1px solid var(--b);border-radius:3px;padding:22px 20px;display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">${r.tags.map(t=>`<span style="font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;background:var(--gold-d);border:1px solid rgba(200,144,42,0.2);color:var(--gold);border-radius:1px;">${t}</span>`).join('')}</div>
+      <div style="font-family:'Fraunces',serif;font-weight:400;font-size:1.02rem;color:var(--ink80);line-height:1.35;">${r.title}</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.08em;color:var(--ink40);">${r.authors} · <em>${r.journal}</em> · ${r.year}</div>
+      <div style="font-size:0.92rem;line-height:1.78;color:var(--ink60);border-left:2px solid var(--pulse);padding-left:12px;">${r.finding}</div>
+      <a href="${r.url}" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--pulse);text-decoration:none;margin-top:auto;">View Source →</a>
+    </div>`).join('');
+}
+window.PEER_RESEARCH=PEER_RESEARCH;
+document.addEventListener('DOMContentLoaded',renderPeerResearch);
+
+// ── RSS FEEDS ──
+let allCards=[],currentFilter='all',searchQuery='';
+const agencyCounts={CMS:0,GAO:0,HHS:0,OIG:0,FED:0};
+function fmtDate(str){if(!str)return '';try{return new Date(str).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});}catch(e){return str.substring(0,10);}}
+function parseFeedXML(xmlText,agency,label,color,dotClass){const parser=new DOMParser();const xml=parser.parseFromString(xmlText,'text/xml');const items=Array.from(xml.querySelectorAll('item, entry'));return items.slice(0,15).map(item=>{const title=item.querySelector('title')?.textContent?.trim()||'Untitled';const linkEl=item.querySelector('link');const link=linkEl?.getAttribute('href')||linkEl?.textContent?.trim()||'#';const desc=(item.querySelector('description, summary, content')?.textContent||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').trim().substring(0,220);const pubDate=item.querySelector('pubDate, published, updated')?.textContent?.trim()||'';return{agency,label,color,dotClass,title,link,desc,dateFormatted:fmtDate(pubDate)};}).filter(i=>i.title!=='Untitled'&&i.link!=='#');}
+async function fetchViaRss2Json(feedUrl,agency,label,color,dotClass){const url=`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}&count=15`;const res=await fetch(url,{signal:AbortSignal.timeout(12000)});if(!res.ok)throw new Error('rss2json non-200');const data=await res.json();if(data.status!=='ok')throw new Error('rss2json status: '+data.status);return(data.items||[]).slice(0,15).map(item=>({agency,label,color,dotClass,title:item.title||'Untitled',link:item.link||item.guid||'#',desc:(item.description||item.content||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').trim().substring(0,220),dateFormatted:fmtDate(item.pubDate)})).filter(i=>i.title!=='Untitled');}
+async function fetchViaAllOrigins(feedUrl,agency,label,color,dotClass){const url=`https://api.allorigins.win/get?url=${encodeURIComponent(feedUrl)}`;const res=await fetch(url,{signal:AbortSignal.timeout(12000)});if(!res.ok)throw new Error('allorigins non-200');const data=await res.json();if(!data.contents)throw new Error('allorigins empty');return parseFeedXML(data.contents,agency,label,color,dotClass);}
+async function fetchViaCorsproxy(feedUrl,agency,label,color,dotClass){const url=`https://corsproxy.io/?${encodeURIComponent(feedUrl)}`;const res=await fetch(url,{signal:AbortSignal.timeout(12000)});if(!res.ok)throw new Error('corsproxy non-200');const text=await res.text();return parseFeedXML(text,agency,label,color,dotClass);}
+async function fetchFederalRegister(agency,label,color,dotClass){const url='https://www.federalregister.gov/api/v1/documents.json?conditions[term]=dialysis+ESRD+kidney+transplant+care+partner&per_page=15&order=newest&fields[]=title&fields[]=html_url&fields[]=abstract&fields[]=publication_date';const res=await fetch(url,{signal:AbortSignal.timeout(12000)});if(!res.ok)throw new Error('Fed Register API non-200');const data=await res.json();return(data.results||[]).map(doc=>({agency,label,color,dotClass,title:doc.title||'Untitled',link:doc.html_url||'#',desc:(doc.abstract||'').replace(/<[^>]+>/g,'').substring(0,220),dateFormatted:fmtDate(doc.publication_date)})).filter(i=>i.title!=='Untitled');}
+async function fetchFeed(feed){if(feed.agency==='FED'){try{return await fetchFederalRegister(feed.agency,feed.label,feed.color,feed.dotClass);}catch(e){return[];}}const attempts=[()=>fetchViaRss2Json(feed.url,feed.agency,feed.label,feed.color,feed.dotClass),()=>fetchViaAllOrigins(feed.url,feed.agency,feed.label,feed.color,feed.dotClass),()=>fetchViaCorsproxy(feed.url,feed.agency,feed.label,feed.color,feed.dotClass)];for(const attempt of attempts){try{const items=await attempt();if(items&&items.length>0)return items;}catch(e){console.warn(`${feed.agency} proxy attempt failed:`,e.message);}}return[];}
+function buildCard(item){return `<div class="feed-card" data-agency="${item.agency}" data-title="${item.title.toLowerCase()}" data-desc="${item.desc.toLowerCase()}"><div class="card-agency"><span class="agency-dot ${item.dotClass}"></span><span style="color:${item.color};">${item.label}</span></div><div class="card-title"><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></div>${item.desc?`<div class="card-desc">${item.desc}...</div>`:''}<div class="card-meta"><span class="card-date">${item.dateFormatted}</span><a href="${item.link}" target="_blank" rel="noopener" class="card-link">Read</a></div></div>`;}
+function renderGrid(){const grid=document.getElementById('feed-grid');const q=searchQuery.toLowerCase();const visible=allCards.filter(item=>{const agencyMatch=currentFilter==='all'||item.agency===currentFilter;const searchMatch=!q||item.title.toLowerCase().includes(q)||item.desc.toLowerCase().includes(q);return agencyMatch&&searchMatch;});if(visible.length===0){grid.innerHTML=`<div class="no-results"><div class="no-results-icon">⊘</div><div class="no-results-text">No results found${q?' for "'+q+'"':''}</div></div>`;return;}grid.innerHTML=visible.map(buildCard).join('');document.getElementById('feed-count-label').textContent=visible.length+' items';}
+function updateMeters(){const max=Math.max(...Object.values(agencyCounts),1);Object.entries(agencyCounts).forEach(([agency,count])=>{const key=agency.toLowerCase().replace(' ','');const el=document.getElementById('count-'+key);const bar=document.getElementById('bar-'+key);if(el)el.textContent=count;if(bar)setTimeout(()=>{bar.style.width=((count/max)*100)+'%';},100);});document.getElementById('total-count').textContent=Object.values(agencyCounts).reduce((a,b)=>a+b,0);document.getElementById('last-updated').textContent='Live';}
+function updateTicker(items){if(!items.length)return;const inner=document.getElementById('ticker-inner');const half=items.slice(0,20);const both=[...half,...half];inner.innerHTML=both.map(item=>`<span class="ticker-item">${item.agency} · ${item.title.substring(0,70)}${item.title.length>70?'...':''}</span>`).join('');}
+async function loadAllFeeds(){const results=await Promise.allSettled(FEEDS.map(f=>fetchFeed(f)));let allItems=[];results.forEach((result,i)=>{if(result.status==='fulfilled'&&result.value.length){const items=result.value;allItems=allItems.concat(items);agencyCounts[FEEDS[i].agency]=items.length;}else{agencyCounts[FEEDS[i].agency]=0;}});allItems.sort((a,b)=>{try{return new Date(b.dateFormatted)-new Date(a.dateFormatted);}catch(e){return 0;}});allCards=allItems;updateMeters();updateTicker(allItems);renderGrid();document.getElementById('feed-count-label').textContent=allItems.length+' items';if(allItems.length===0){document.getElementById('feed-grid').innerHTML=`<div class="no-results" style="grid-column:1/-1"><div class="no-results-icon">⊘</div><div class="no-results-text">Live feeds temporarily unavailable</div><div style="display:flex;gap:16px;justify-content:center;margin-top:16px;flex-wrap:wrap;"><a href="https://www.cms.gov/newsroom" target="_blank" style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;color:var(--pulse);text-decoration:none;">CMS Newsroom →</a><a href="https://www.gao.gov/reports-testimonies/reports" target="_blank" style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;color:var(--gold);text-decoration:none;">GAO Reports →</a><a href="https://www.hhs.gov/about/news/index.html" target="_blank" style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;color:var(--danger);text-decoration:none;">HHS News →</a><a href="https://oig.hhs.gov/newsroom/news-and-press-releases/" target="_blank" style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;color:var(--green);text-decoration:none;">OIG Releases →</a></div></div>`;}}
+
+document.getElementById('filter-tabs').addEventListener('click',e=>{const tab=e.target.closest('.tab');if(!tab)return;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');currentFilter=tab.dataset.filter;renderGrid();});
+let searchTimeout;
+document.getElementById('search-input').addEventListener('input',e=>{clearTimeout(searchTimeout);searchTimeout=setTimeout(()=>{searchQuery=e.target.value;renderGrid();},250);});
+
+// ── LSS VISUALS ──
+function initLSSVisuals(){if(typeof Chart==='undefined'){setTimeout(initLSSVisuals,300);return;}const DARK='rgba(255,255,255,0.06)',INK40='rgba(216,207,196,0.4)',INK20='rgba(216,207,196,0.2)';Chart.defaults.color=INK40;Chart.defaults.borderColor=DARK;var pc=document.getElementById('paretoCanvas');if(pc){var pVals=[28,22,12,9,8,6,4],pTotal=pVals.reduce((a,b)=>a+b,0),cum=0;var cumPct=pVals.map(function(v){cum+=v;return Math.round(cum/pTotal*100);});new Chart(pc,{type:'bar',data:{labels:['Rights\nUnaware','Complaint\nNot Filed','Wrong\nAgency','No\nDocs','Retaliation','ADA\nViolation','Other'],datasets:[{type:'bar',label:'Violations',data:pVals,backgroundColor:pVals.map(function(_,i){return i<3?'rgba(200,48,80,0.72)':'rgba(200,144,42,0.55)';}),borderColor:pVals.map(function(_,i){return i<3?'rgba(200,48,80,1)':'rgba(200,144,42,0.8)';}),borderWidth:1,yAxisID:'y'},{type:'line',label:'Cumulative %',data:cumPct,borderColor:'rgba(42,196,200,0.85)',borderWidth:2,pointBackgroundColor:'rgba(42,196,200,0.9)',pointRadius:4,yAxisID:'y2',tension:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:INK40,font:{family:'IBM Plex Mono',size:11}}},tooltip:{backgroundColor:'rgba(3,5,9,0.96)',titleColor:'#c8902a',bodyColor:INK40}},scales:{x:{ticks:{color:INK40,font:{family:'IBM Plex Mono',size:10}},grid:{color:DARK}},y:{position:'left',ticks:{color:INK40,font:{family:'IBM Plex Mono',size:10}},grid:{color:DARK}},y2:{position:'right',min:0,max:100,grid:{display:false},ticks:{color:'rgba(42,196,200,0.6)',font:{family:'IBM Plex Mono',size:10},callback:function(v){return v+'%';}}}}}});}var cc=document.getElementById('controlCanvas');if(cc){var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];var rVals=[58,67,71,43,82,75,61,55,79,88,64,70,51,83,77,69,90,58,74,61,83,71,55,65];new Chart(cc,{type:'line',data:{labels:months,datasets:[{label:'Response Time (days)',data:rVals,borderColor:'rgba(200,48,80,0.85)',backgroundColor:'rgba(200,48,80,0.07)',borderWidth:2,fill:true,tension:0.3,pointBackgroundColor:rVals.map(function(v){return v>14?'rgba(200,48,80,1)':'rgba(80,200,120,0.9)';}),pointRadius:5},{label:'Target: 14 days',data:Array(24).fill(14),borderColor:'rgba(200,144,42,0.6)',borderWidth:1.5,borderDash:[6,4],pointRadius:0,fill:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:INK40,font:{family:'IBM Plex Mono',size:11}}},tooltip:{backgroundColor:'rgba(3,5,9,0.96)',titleColor:'#c8902a',bodyColor:INK40}},scales:{x:{ticks:{color:INK40,font:{family:'IBM Plex Mono',size:9}},grid:{color:DARK}},y:{ticks:{color:INK40,font:{family:'IBM Plex Mono',size:10}},grid:{color:DARK}}}}});}var sc=document.getElementById('sigmaCanvas');if(sc){new Chart(sc,{type:'bar',data:{labels:['0σ Chaos','1σ','2σ','3σ Standard','4σ','5σ','6σ World Class'],datasets:[{data:[1,1,1,1,1,1,1],backgroundColor:['rgba(200,48,80,0.8)','rgba(200,48,80,0.6)','rgba(200,144,42,0.7)','rgba(200,144,42,0.8)','rgba(80,200,120,0.5)','rgba(80,200,120,0.7)','rgba(80,200,120,0.9)'],borderWidth:0,barThickness:26}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{min:0,max:1,display:false},y:{ticks:{color:INK40,font:{family:'IBM Plex Mono',size:10}},grid:{display:false}}}}});setTimeout(function(){var c2=sc.getContext('2d');var chartInst=Chart.getChart(sc);if(!chartInst||!chartInst.chartArea)return;var chartArea=chartInst.chartArea;var x=chartArea.left+(0.8/6)*chartArea.width;c2.save();c2.strokeStyle='#e8b84a';c2.lineWidth=2.5;c2.beginPath();c2.moveTo(x,chartArea.top-8);c2.lineTo(x,chartArea.bottom+8);c2.stroke();c2.fillStyle='#e8b84a';c2.font='bold 10px IBM Plex Mono';c2.fillText('▲ CMS: 0.8σ',x-30,chartArea.top-12);c2.restore();},200);}}
+
+function buildSwimlane(){var svg=document.getElementById('swimlaneSVG');if(!svg)return;var ns='http://www.w3.org/2000/svg';var steps=[{x:90},{x:220},{x:350},{x:480},{x:610},{x:740}];var redLbls=['Crisis','Search\nOnline','No CFR\nKnowledge','Rights\nExpire','No Record','Isolated'];var tealLbls=['Crisis','Situation\nRoom','CFR\nIdentified','Letter\nGenerated','Filed','Record\nCreated'];function makeLane(labels,cy,col,bg){var bgRect=document.createElementNS(ns,'rect');bgRect.setAttribute('x',0);bgRect.setAttribute('y',cy-35);bgRect.setAttribute('width',900);bgRect.setAttribute('height',70);bgRect.setAttribute('fill',bg);svg.appendChild(bgRect);var lbl=document.createElementNS(ns,'text');lbl.setAttribute('x',5);lbl.setAttribute('y',cy-18);lbl.setAttribute('fill',col);lbl.setAttribute('font-family','IBM Plex Mono');lbl.setAttribute('font-size','9');lbl.setAttribute('letter-spacing','1');lbl.textContent=col.includes('200,48')?'ALONE':'CIF MEMBER';svg.appendChild(lbl);steps.forEach(function(s,i){if(i>0){var line=document.createElementNS(ns,'line');line.setAttribute('x1',steps[i-1].x+38);line.setAttribute('y1',cy);line.setAttribute('x2',s.x-38);line.setAttribute('y2',cy);line.setAttribute('stroke',col);line.setAttribute('stroke-width','1.5');svg.appendChild(line);var arr=document.createElementNS(ns,'polygon');arr.setAttribute('points',(s.x-38)+','+(cy-4)+' '+(s.x-31)+','+cy+' '+(s.x-38)+','+(cy+4));arr.setAttribute('fill',col);svg.appendChild(arr);}var rect=document.createElementNS(ns,'rect');rect.setAttribute('x',s.x-38);rect.setAttribute('y',cy-18);rect.setAttribute('width',76);rect.setAttribute('height',36);rect.setAttribute('rx','3');rect.setAttribute('fill',bg.replace('0.06','0.12'));rect.setAttribute('stroke',col);rect.setAttribute('stroke-width','1');svg.appendChild(rect);labels[i].split('\n').forEach(function(line2,li){var t=document.createElementNS(ns,'text');t.setAttribute('x',s.x);t.setAttribute('y',li===0?cy-4:cy+10);t.setAttribute('text-anchor','middle');t.setAttribute('fill',col);t.setAttribute('font-family','IBM Plex Mono');t.setAttribute('font-size','8');t.textContent=line2;svg.appendChild(t);});if(col.includes('200,48')&&i>0){var fc=document.createElementNS(ns,'circle');fc.setAttribute('cx',s.x+30);fc.setAttribute('cy',cy-16);fc.setAttribute('r','6');fc.setAttribute('fill','rgba(200,48,80,0.2)');fc.setAttribute('stroke','rgba(200,48,80,0.7)');fc.setAttribute('stroke-width','1');svg.appendChild(fc);var ft=document.createElementNS(ns,'text');ft.setAttribute('x',s.x+30);ft.setAttribute('y',cy-12);ft.setAttribute('text-anchor','middle');ft.setAttribute('fill','rgba(200,48,80,0.9)');ft.setAttribute('font-family','IBM Plex Mono');ft.setAttribute('font-weight','bold');ft.setAttribute('font-size','9');ft.textContent='!';svg.appendChild(ft);}});}makeLane(redLbls,70,'rgba(200,48,80,0.75)','rgba(200,48,80,0.04)');makeLane(tealLbls,180,'rgba(42,196,200,0.75)','rgba(42,196,200,0.04)');var leg=[['rgba(200,48,80,0.7)','! = Failure point — rights expire, no federal record'],['rgba(42,196,200,0.7)','✓ = CIF member — complaint filed, federal clock started']];leg.forEach(function(l,i){var t=document.createElementNS(ns,'text');t.setAttribute('x',10);t.setAttribute('y',230+i*14);t.setAttribute('fill',l[0]);t.setAttribute('font-family','IBM Plex Mono');t.setAttribute('font-size','8');t.textContent=l[1];svg.appendChild(t);});}
+
+function buildHeatMap(){var grid=document.getElementById('heatGrid');if(!grid)return;var states=[{s:'ME',v:2},{s:'NH',v:3},{s:'VT',v:1},{s:'MA',v:6},{s:'RI',v:4},{s:'CT',v:5},{s:'NY',v:9},{s:'NJ',v:8},{s:'PA',v:7},{s:'DE',v:3},{s:'MD',v:6},{s:'VA',v:7},{s:'WV',v:4},{s:'NC',v:8},{s:'SC',v:7},{s:'GA',v:9},{s:'FL',v:10},{s:'AL',v:8},{s:'MS',v:7},{s:'TN',v:7},{s:'KY',v:5},{s:'OH',v:8},{s:'IN',v:6},{s:'MI',v:7},{s:'WI',v:5},{s:'IL',v:9},{s:'MN',v:5},{s:'IA',v:4},{s:'MO',v:7},{s:'AR',v:6},{s:'LA',v:9},{s:'TX',v:10},{s:'OK',v:6},{s:'KS',v:4},{s:'NE',v:3},{s:'SD',v:2},{s:'ND',v:2},{s:'MT',v:2},{s:'WY',v:2},{s:'CO',v:5},{s:'NM',v:6},{s:'AZ',v:8},{s:'UT',v:4},{s:'NV',v:5},{s:'ID',v:3},{s:'OR',v:4},{s:'WA',v:6},{s:'CA',v:10},{s:'AK',v:1},{s:'HI',v:3}];var colors=['rgba(42,196,200,0.25)','rgba(42,196,200,0.4)','rgba(200,144,42,0.4)','rgba(240,130,48,0.55)','rgba(200,48,80,0.65)','rgba(200,48,80,0.9)'];states.forEach(function(st){var cell=document.createElement('div');var ci=Math.min(Math.floor(st.v/2),5);cell.style.cssText='background:'+colors[ci]+';aspect-ratio:1;border-radius:2px;cursor:pointer;transition:transform 0.15s;display:flex;align-items:center;justify-content:center;';cell.title=st.s+' · Risk: '+st.v+'/10';var lbl=document.createElement('span');lbl.style.cssText='font-family:IBM Plex Mono,monospace;font-size:7px;color:rgba(216,207,196,0.65);';lbl.textContent=st.s;cell.appendChild(lbl);cell.addEventListener('mouseenter',function(){cell.style.transform='scale(1.15)';});cell.addEventListener('mouseleave',function(){cell.style.transform='scale(1)';});grid.appendChild(cell);});}
+
+(function(){function tryLoad(){if(typeof Chart!=='undefined'){initLSSVisuals();buildSwimlane();buildHeatMap();return;}var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js';s.onload=function(){initLSSVisuals();buildSwimlane();buildHeatMap();};document.head.appendChild(s);}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',tryLoad);}else{tryLoad();}})();
+
+renderCITable();
+loadAllFeeds();
+</script>
+
+<!-- FOOTER -->
+<footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(100,140,200,0.1);">
+      <div>
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:12px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.25);line-height:2.1;">Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="mailto:coldischemiafoundation@gmail.com" style="color:#c8902a;text-decoration:none;">coldischemiafoundation@gmail.com</a><br><a href="https://coldischemia.foundation" style="color:#c8902a;text-decoration:none;">coldischemia.foundation</a></p>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Command Center</a>
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Situation Room</a>
+          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Research</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
+          <a href="https://payhip.com/coldischemia" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Library</a>
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
+          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Free Guide</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Privacy Policy</a>
+          <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Store</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.06em;color:rgba(216,207,196,0.2);">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+      <div style="display:flex;gap:16px;"><a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;color:rgba(216,207,196,0.2);text-decoration:none;">Terms</a><a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;color:rgba(216,207,196,0.2);text-decoration:none;">Privacy</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

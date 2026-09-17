@@ -1,0 +1,81 @@
+<!-- ═══════════════════════════════════════════════════
+     COLD ISCHEMIA FOUNDATION — DONATE PAGE INTRO
+     Drop this into donate.html between nav and footer
+═══════════════════════════════════════════════════ -->
+
+<style>
+  .donate-hero{background:linear-gradient(160deg,#050810 0%,#030509 100%);border-bottom:1px solid rgba(100,140,200,0.1);padding:64px 36px 52px;}
+  .donate-hero-inner{max-width:820px;margin:0 auto;}
+  .donate-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.36em;text-transform:uppercase;color:#c83050;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .donate-eyebrow::before{content:'';display:inline-block;width:28px;height:2px;background:#c83050;}
+  .donate-h1{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(2.2rem,4.5vw,3.6rem);line-height:1.1;color:#d8cfc4;margin-bottom:18px;}
+  .donate-h1 strong{font-weight:600;font-style:normal;color:#e8b84a;}
+  .donate-lede{font-size:1.2rem;line-height:1.95;color:rgba(216,207,196,0.72);max-width:740px;margin-bottom:0;}
+  .donate-lede strong{color:#d8cfc4;}
+
+  .donate-body{max-width:820px;margin:0 auto;padding:52px 36px 64px;}
+
+  /* WHY PRIVATE DONATIONS block */
+  .why-block{background:rgba(200,48,80,0.06);border:1px solid rgba(200,48,80,0.18);border-left:3px solid #c83050;border-radius:0 3px 3px 0;padding:32px 36px;margin-bottom:36px;}
+  .why-block h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:1.7rem;color:#e87090;margin-bottom:14px;line-height:1.2;}
+  .why-block p{font-size:1.05rem;line-height:1.92;color:rgba(216,207,196,0.65);margin-bottom:12px;}
+  .why-block p:last-child{margin-bottom:0;}
+  .why-block strong{color:rgba(216,207,196,0.88);}
+
+  /* HOW FUNDS ARE USED grid */
+  .funds-label{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.34em;text-transform:uppercase;color:#c8902a;display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+  .funds-label::after{content:'';flex:1;height:1px;background:rgba(200,144,42,0.18);}
+  .funds-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:36px;}
+  @media(max-width:600px){.funds-grid{grid-template-columns:1fr;}}
+  .fund-item{background:rgba(10,22,40,0.8);border:1px solid rgba(100,140,200,0.1);padding:24px 22px;display:flex;gap:16px;align-items:flex-start;}
+  .fund-icon{font-size:1.5rem;flex-shrink:0;margin-top:2px;}
+  .fund-item h3{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:#c8902a;margin-bottom:8px;}
+  .fund-item p{font-size:0.9rem;line-height:1.8;color:rgba(216,207,196,0.5);margin:0;}
+
+  /* WHY DONATE block */
+  .why-donate{background:rgba(200,144,42,0.06);border:1px solid rgba(200,144,42,0.2);border-left:3px solid #c8902a;border-radius:0 3px 3px 0;padding:32px 36px;margin-bottom:36px;}
+  .why-donate h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:1.7rem;color:#e8b84a;margin-bottom:14px;line-height:1.2;}
+  .why-donate p{font-size:1.05rem;line-height:1.92;color:rgba(216,207,196,0.65);margin-bottom:12px;}
+  .why-donate p:last-child{margin-bottom:0;}
+  .why-donate strong{color:rgba(216,207,196,0.88);}
+
+  /* DONATE CTA */
+  .donate-cta{text-align:center;padding:40px 24px;background:rgba(10,22,40,0.5);border:1px solid rgba(100,140,200,0.1);border-radius:3px;}
+  .donate-cta p{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(216,207,196,0.3);margin-bottom:22px;}
+  .btn-kofi{display:inline-flex;align-items:center;gap:12px;background:#FF5E5B;color:white;font-family:'IBM Plex Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;padding:16px 36px;border-radius:3px;text-decoration:none;transition:background 0.2s,transform 0.2s;margin-bottom:14px;}
+  .btn-kofi:hover{background:#e04845;transform:translateY(-2px);}
+  .btn-kofi svg{width:22px;height:22px;flex-shrink:0;}
+  .kofi-note{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.12em;color:rgba(216,207,196,0.2);margin-top:8px;}
+
+  /* Pledge footer */
+  .donate-pledge{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.1em;line-height:2.2;color:rgba(216,207,196,0.22);text-align:center;margin-top:36px;padding:20px;border-top:1px solid rgba(100,140,200,0.08);}
+  .donate-pledge strong{color:rgba(200,48,80,0.55);}
+</style>
+
+<!-- HERO -->
+<div class="donate-hero">
+  <div class="donate-hero-inner">
+    <div class="donate-eyebrow">Independent · Uncompromised · Funded by People, Not Industry</div>
+    <h1 class="donate-h1">This platform exists because <strong>you funded it.</strong><br>Not Pharma. Not Hospitals. <strong>You.</strong></h1>
+    <p class="donate-lede">
+      The Cold Ischemia Foundation accepts <strong>zero dollars from pharmaceutical companies, dialysis corporations, medical device manufacturers, or hospital systems.</strong>
+      That decision is permanent and non-negotiable. It also means we depend entirely on the people this platform was built to serve.
+      If that is you — or if you believe care partners deserve real tools and real independence — this is where that belief becomes action.
+    </p>
+  </div>
+</div>
+
+<div class="donate-body">
+
+  <!-- WHY PRIVATE DONATIONS -->
+  <div class="why-block">
+    <h2>Why we rely on private donations — and why that matters.</h2>
+    <p>
+      Every major patient advocacy organization in kidney care and chronic illness has taken pharmaceutical money.
+      Some disclose it in fine print. Most do not lead with it.
+      The result is an entire advocacy ecosystem that <strong>cannot credibly challenge the industry funding it.</strong>
+      Policy positions get softened. Accountability reporting disappears. The organizations that claim to represent patients
+      end up representing the financial interests of their sponsors.
+    </p>
+    <p>
+      We made a different choice. The Cold Ischemia Foundation was structured from day one to refuse

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M95EH0B5BK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M95EH0B5BK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psychological Fieldcraft — Care Partner Tool</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#ffffff;color:#1a1a1a;padding:2rem 1.5rem;max-width:720px;margin:0 auto;}
+@media(prefers-color-scheme:dark){body{background:#111;color:#e8e4df;}}
+.fc-header{border-bottom:0.5px solid rgba(0,0,0,0.12);padding-bottom:1.25rem;margin-bottom:1.5rem;}
+@media(prefers-color-scheme:dark){.fc-header{border-color:rgba(255,255,255,0.1);}}
+.fc-label{font-size:11px;letter-spacing:2px;color:#888;margin-bottom:0.4rem;font-weight:500;text-transform:uppercase;}
+.fc-title{font-size:20px;font-weight:500;line-height:1.25;}
+.fc-sub{font-size:14px;color:#666;margin-top:0.4rem;font-style:italic;line-height:1.5;}
+@media(prefers-color-scheme:dark){.fc-sub{color:#aaa;}}
+.state-bar{background:#f5f4f2;border-radius:12px;padding:1.25rem;margin-bottom:1.5rem;}
+@media(prefers-color-scheme:dark){.state-bar{background:#1e1e1e;}}
+.state-q{font-size:13px;font-weight:500;color:#555;margin-bottom:0.75rem;}
+@media(prefers-color-scheme:dark){.state-q{color:#aaa;}}
+.state-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.state-btn{font-size:12px;padding:7px 14px;border-radius:8px;border:0.5px solid rgba(0,0,0,0.18);background:#fff;color:#555;cursor:pointer;transition:all 0.15s;line-height:1;}
+@media(prefers-color-scheme:dark){.state-btn{background:#2a2a2a;border-color:rgba(255,255,255,0.15);color:#aaa;}}
+.state-btn:hover{border-color:rgba(0,0,0,0.35);color:#1a1a1a;}
+.state-btn.on{border-color:#185fa5;background:#e6f1fb;color:#0c447c;}
+@media(prefers-color-scheme:dark){.state-btn.on{background:#0c447c;color:#b5d4f4;border-color:#378add;}}
+.divider{height:0.5px;background:rgba(0,0,0,0.1);margin:1.5rem 0;}
+@media(prefers-color-scheme:dark){.divider{background:rgba(255,255,255,0.08);}}
+.section-label{font-size:11px;letter-spacing:2px;color:#999;font-weight:500;margin-bottom:1rem;text-transform:uppercase;}
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.5rem;}
+.method-card{border:0.5px solid rgba(0,0,0,0.12);border-radius:12px;padding:1rem;cursor:pointer;transition:all 0.15s;background:#fff;}
+@media(prefers-color-scheme:dark){.method-card{background:#1e1e1e;border-color:rgba(255,255,255,0.1);}}
+.method-card:hover{border-color:rgba(0,0,0,0.25);}
+.method-card.selected{border:2px solid #185fa5;background:#e6f1fb;}
+@media(prefers-color-scheme:dark){.method-card.selected{background:#0c447c;border-color:#378add;}}
+.mc-num{font-size:11px;color:#999;font-weight:500;margin-bottom:5px;}
+.mc-name{font-size:13px;font-weight:500;line-height:1.3;margin-bottom:4px;}
+.method-card.selected .mc-num{color:#185fa5;}
+.method-card.selected .mc-name{color:#0c447c;}
+@media(prefers-color-scheme:dark){.method-card.selected .mc-num,.method-card.selected .mc-name{color:#b5d4f4;}}
+.mc-tag{font-size:10px;color:#aaa;line-height:1.4;}
+.method-card.selected .mc-tag{color:#378add;}
+.detail-panel{border:0.5px solid rgba(0,0,0,0.12);border-radius:12px;padding:1.25rem 1.5rem;background:#fff;}
+@media(prefers-color-scheme:dark){.detail-panel{background:#1e1e1e;border-color:rgba(255,255,255,0.1);}}
+.dp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:1rem;padding-bottom:1rem;border-bottom:0.5px solid rgba(0,0,0,0.1);}
+@media(prefers-color-scheme:dark){.dp-top{border-color:rgba(255,255,255,0.08);}}
+.dp-num{font-size:11px;letter-spacing:2px;color:#999;font-weight:500;margin-bottom:4px;}
+.dp-name{font-size:17px;font-weight:500;line-height:1.2;}
+.dp-badge{font-size:11px;padding:4px 10px;border-radius:8px;white-space:nowrap;flex-shrink:0;}
+.badge-reg{background:#f5f4f2;color:#666;border:0.5px solid rgba(0,0,0,0.1);}
+@media(prefers-color-scheme:dark){.badge-reg{background:#2a2a2a;color:#aaa;}}
+.badge-now{background:#fff8e6;color:#854f0b;border:0.5px solid rgba(186,117,23,0.3);}
+@media(prefers-color-scheme:dark){.badge-now{background:#412402;color:#ef9f27;}}
+.dp-what{font-size:14px;line-height:1.75;color:#555;margin-bottom:1rem;}
+@media(prefers-color-scheme:dark){.dp-what{color:#bbb;}}
+.dp-what b{color:#1a1a1a;font-weight:500;}
+@media(prefers-color-scheme:dark){.dp-what b{color:#e8e4df;}}
+.phrases-label{font-size:11px;letter-spacing:2px;color:#999;font-weight:500;margin-bottom:0.6rem;text-transform:uppercase;}
+.phrase-item{background:#f5f4f2;border-radius:0 8px 8px 0;padding:0.65rem 1rem;margin-bottom:6px;font-size:14px;font-style:italic;color:#1a1a1a;line-height:1.6;border-left:2px solid #185fa5;}
+@media(prefers-color-scheme:dark){.phrase-item{background:#252525;color:#e8e4df;}}
+.when-label{font-size:11px;letter-spacing:2px;color:#999;font-weight:500;margin:1rem 0 0.5rem;text-transform:uppercase;}
+.when-text{font-size:13px;color:#666;line-height:1.7;}
+@media(prefers-color-scheme:dark){.when-text{color:#aaa;}}
+.note-block{background:#fff8e6;border-radius:8px;padding:0.75rem 1rem;margin-top:1rem;font-size:13px;color:#854f0b;line-height:1.65;}
+@media(prefers-color-scheme:dark){.note-block{background:#412402;color:#ef9f27;}}
+.arousal-section{margin-bottom:1.5rem;}
+.arousal-slider-wrap{position:relative;padding-bottom:1.5rem;}
+.zone-bar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin-bottom:4px;}
+.zone-low{flex:2;background:#9FE1CB;}
+.zone-mid{flex:3;background:#C0DD97;}
+.zone-high{flex:2;background:#F09595;}
+.zone-labels{display:flex;justify-content:space-between;font-size:10px;color:#aaa;}
+.advice-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:0.75rem;}
+.advice-card{border-radius:8px;padding:0.75rem;font-size:12px;line-height:1.65;}
+.advice-green{background:#E1F5EE;color:#085041;}
+.advice-amber{background:#FAEEDA;color:#633806;}
+.advice-red{background:#FCEBEB;color:#791F1F;grid-column:1/-1;}
+.ac-title{font-weight:500;font-size:11px;letter-spacing:1px;margin-bottom:4px;text-transform:uppercase;}
+input[type=range]{width:100%;margin-top:8px;accent-color:#185fa5;}
+.pattern-section{margin-bottom:1.5rem;}
+.pattern-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.pattern-card{border:0.5px solid rgba(0,0,0,0.12);border-radius:8px;padding:0.75rem;background:#fff;cursor:pointer;transition:all 0.15s;}
+@media(prefers-color-scheme:dark){.pattern-card{background:#1e1e1e;border-color:rgba(255,255,255,0.1);}}
+.pattern-card:hover{border-color:rgba(0,0,0,0.25);}
+.pattern-card.hl{border-color:#a32d2d;background:#FCEBEB;}
+@media(prefers-color-scheme:dark){.pattern-card.hl{background:#501313;border-color:#e24b4a;}}
+.pc-name{font-size:12px;font-weight:500;margin-bottom:3px;}
+.pc-desc{font-size:11px;color:#aaa;line-height:1.5;}
+.pattern-card.hl .pc-name{color:#791F1F;}
+.pattern-card.hl .pc-desc{color:#a32d2d;}
+@media(prefers-color-scheme:dark){.pattern-card.hl .pc-name{color:#F09595;}.pattern-card.hl .pc-desc{color:#f7c1c1;}}
+.pattern-result{margin-top:0.75rem;padding:0.75rem 1rem;background:#FCEBEB;border-radius:8px;font-size:13px;color:#791F1F;line-height:1.7;display:none;}
+@media(prefers-color-scheme:dark){.pattern-result{background:#501313;color:#F09595;}}
+.pattern-result.show{display:block;}
+.reset-btn{font-size:12px;color:#999;background:none;border:0.5px solid rgba(0,0,0,0.12);padding:6px 14px;border-radius:8px;cursor:pointer;margin-top:1rem;}
+@media(prefers-color-scheme:dark){.reset-btn{color:#888;border-color:rgba(255,255,255,0.1);}}
+.reset-btn:hover{color:#1a1a1a;border-color:rgba(0,0,0,0.25);}
+@media(prefers-color-scheme:dark){.reset-btn:hover{color:#e8e4df;}}
+.detail-empty{text-align:center;padding:1rem 0;color:#aaa;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="fc-header">
+  <div class="fc-label">Psychological fieldcraft &middot; Care partner tool</div>
+  <div class="fc-title">When the air changes</div>
+  <div class="fc-sub">Practical methods for high-tension home dynamics &mdash; use in the moment or as a reference.</div>
+</div>
+
+<div class="state-bar">
+  <div class="state-q">What is happening in the room right now?</div>
+  <div class="state-btns">
+    <button class="state-btn" onclick="filterMethods('escalating',this)">It is escalating fast</button>
+    <button class="state-btn" onclick="filterMethods('shutdown',this)">They have shut down</button>
+    <button class="state-btn" onclick="filterMethods('flooding',this)">I am flooding</button>
+    <button class="state-btn" onclick="filterMethods('loops',this)">We keep going in circles</button>
+    <button class="state-btn" onclick="filterMethods('everything',this)">Everything arrived at once</button>
+    <button class="state-btn" onclick="filterMethods('after',this)">The moment has passed</button>
+    <button class="state-btn" onclick="filterMethods('all',this)">Show all methods</button>
+  </div>
+</div>
+
+<div class="section-label">Eight fieldcraft methods &mdash; select one to open</div>
+
+<div class="method-grid" id="methodGrid">
+  <div class="method-card" onclick="selectMethod(0)" id="mc0" data-tags="escalating loops flooding all">
+    <div class="mc-num">01</div>
+    <div class="mc-name">Mentalization</div>
+    <div class="mc-tag">Behavior driven by inner states</div>
+  </div>
+  <div class="method-card" onclick="selectMethod(1)" id="mc1" data-tags="flooding shutdown escalating all">
+    <div class="mc-num">02</div>
+    <div class="mc-name">Window of tolerance</div>
+    <div class="mc-tag">When reasoning stops working</div>
+  </div>
+  <div class="method-card" onclick="selectMethod(2)" id="mc2" data-tags="escalating flooding all">
+    <div class="mc-num">03</div>
+    <div class="mc-name">State before substance</div>
+    <div class="mc-tag">Lower temperature first</div>
+  </div>
+  <div class="method-card" onclick="selectMethod(3)" id="mc3" data-tags="loops escalating all">
+    <div class="mc-num">04</div>
+    <div class="mc-name">OODA loop</div>
+    <div class="mc-tag">Observe before reacting</div>
+  </div>
+  <div class="method-card" onclick="selectMethod(4)" id="mc4" data-tags="loops all after">
+    <div class="mc-num">05</div>
+    <div class="mc-name">Pattern naming</div>
+    <div class="mc-tag">Name it without inflating it</div>
+  </div>
+  <div class="method-card" onclick="selectMethod(5)" id="mc5" data-tags="loops escalating all">
+    <div class="mc-num">06</div>
+    <div class="mc-name">Selective non-participation</div>
+    <div class="mc-tag">Refuse your slot in the machine</div>
+  </div>
+  <div class="method-card" onclick="selectMethod(6)" id="mc6" data-tags="everything loops all">
+    <div class="mc-num">07</div>
+    <div class="mc-name">Channel control</div>
+    <div class="mc-tag">Choose one level to engage</div>
+  </div>
+  <div class="method-card" onclick="selectMethod(7)" id="mc7" data-tags="everything escalating flooding all">
+    <div class="mc-num">08</div>
+    <div class="mc-name">Micro-containment</div>
+    <div class="mc-tag">Make the room smaller</div>
+  </div>
+</div>
+
+<div class="detail-panel" id="detailPanel">
+  <div class="detail-empty">Select a method above to open its detail, phrases, and application notes.</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="arousal-section">
+  <div class="section-label">Arousal check &mdash; where is the room right now?</div>
+  <div style="font-size:13px;color:#666;margin-bottom:0.75rem;line-height:1.6;">Drag the slider to your current arousal level. The tool will tell you what kind of response is likely to be effective &mdash; and what will make it worse.</div>
+  <div class="arousal-slider-wrap">
+    <div class="zone-bar">
+      <div class="zone-low"></div>
+      <div class="zone-mid"></div>
+      <div class="zone-high"></div>
+    </div>
+    <div class="zone-labels"><span>Calm</span><span>Activated</span><span>Flooded</span></div>
+    <input type="range" min="1" max="10" value="5" step="1" id="arousalSlider" oninput="updateArousal(this.value)">
+  </div>
+  <div class="advice-row" id="arousalAdvice"></div>
+</div>
+
+<div class="divider"></div>
+
+<div class="pattern-section">
+  <div class="section-label">Pattern recognition &mdash; what is the dynamic doing?</div>
+  <div style="font-size:13px;color:#666;margin-bottom:0.75rem;line-height:1.6;">Select every pattern you recognize in the current exchange. The tool will surface the most relevant method.</div>
+  <div class="pattern-grid">
+    <div class="pattern-card" onclick="togglePattern(this)" data-method="6"><div class="pc-name">Everything at once</div><div class="pc-desc">Practical issue mixed with history, emotion, and accusation</div></div>
+    <div class="pattern-card" onclick="togglePattern(this)" data-method="5"><div class="pc-name">Expected reaction slot</div><div class="pc-desc">The dynamic has prepared a role for you &mdash; defend, fix, absorb</div></div>
+    <div class="pattern-card" onclick="togglePattern(this)" data-method="3"><div class="pc-name">Urgency inflation</div><div class="pc-desc">Every issue arriving as a five-alarm emergency</div></div>
+    <div class="pattern-card" onclick="togglePattern(this)" data-method="0"><div class="pc-name">Shame driving behavior</div><div class="pc-desc">Anger, control, or withdrawal as a shame response</div></div>
+    <div class="pattern-card" onclick="togglePattern(this)" data-method="2"><div class="pc-name">Too hot to solve</div><div class="pc-desc">Arousal has overtaken the ability to receive reason</div></div>
+    <div class="pattern-card" onclick="togglePattern(this)" data-method="7"><div class="pc-name">Abstraction overwhelm</div><div class="pc-desc">The whole relationship, illness, and future in one heap</div></div>
+    <div class="pattern-card" onclick="togglePattern(this)" data-method="4"><div class="pc-name">Punishment through withdrawal</div><div class="pc-desc">Silence or withholding used as influence</div></div>
+    <div class="pattern-card" onclick="togglePattern(this)" data-method="1"><div class="pc-name">Reasoning not landing</div><div class="pc-desc">Good points being made &mdash; none of them getting through</div></div>
+  </div>
+  <div class="pattern-result" id="patternResult"></div>
+  <button class="reset-btn" onclick="resetPatterns()">Clear selections</button>
+</div>
+
+<script>
+const METHODS=[
+  {num:'01',name:'Mentalization',badge:'Any moment',badgeClass:'badge-reg',
+   what:'Hold two truths at once: what may be happening <b>inside</b> the other person, and what their behavior is <b>doing</b> to you right now. Neither truth cancels the other.',
+   phrases:['This may be fear speaking &mdash; but fear is still hitting me as accusation.','They may feel ashamed and out of control, but I am not imagining that this room just became unsafe.','I can understand the drive behind this without agreeing to absorb it.'],
+   when:'When you are being pulled toward either total empathy (losing your own reality) or total judgment (losing sight of their inner state). Mentalization holds both.',
+   note:'This is not the same as making excuses for harmful behavior. Understanding a state does not require accepting its effects.'},
+  {num:'02',name:'Window of tolerance',badge:'Use this first',badgeClass:'badge-now',
+   what:'Once arousal spikes past a certain point, <b>reasoning stops being a useful tool</b>. The nervous system has taken the wheel. Stop trying to solve a burning room with a well-phrased paragraph.',
+   phrases:['This is not a conversation we can finish right now. That is physiology, not failure.','I am going to step out of this for fifteen minutes &mdash; not away from you, just away from this pitch.','We can come back to this when we both have access to ourselves.'],
+   when:'When you notice: your own voice has changed, you are repeating the same point with more intensity, they have gone glassy or rigid, or the conversation has been going in circles for more than ten minutes.',
+   note:'The goal is not to end the conversation. It is to pause it until insight is available on both sides.'},
+  {num:'03',name:'State before substance',badge:'Escalating moments',badgeClass:'badge-now',
+   what:'Before addressing the issue, address the <b>state of the interaction</b>. Speak to pace, intensity, and channel &mdash; not to who is right. Lower the temperature enough that reality can re-enter.',
+   phrases:['I want to answer this, but not while everything is coming at once.','I can stay with the practical problem if we slow it down.','This is too hot to solve in one move.','Let\'s find the smallest version of this problem first.'],
+   when:'When the issue is real and solvable, but the channel it has arrived in makes engagement impossible. The problem is not the problem &mdash; the temperature is.',
+   note:'A little warm humor can help here. Lightly exposing the absurdity of an inflated moment is not making light of suffering &mdash; it is refusing to let the moment appoint itself king.'},
+  {num:'04',name:'OODA loop',badge:'Before reacting',badgeClass:'badge-reg',
+   what:'Observe &mdash; Orient &mdash; Decide &mdash; Act. Insert <b>cognition between trigger and response</b>. What is actually happening? What is the pattern? What is my own state? Only then: choose.',
+   phrases:['What am I actually observing here &mdash; not the story, but the event?','What happened the last three times this tone entered the room?','What is my state right now, and how is it shaping what I\'m about to do?'],
+   when:'When everything feels urgent and reactive. The OODA loop is a way of reclaiming internal command &mdash; preventing you from becoming a human fire alarm ringing for every signal.',
+   note:'The orientation step is where the real work happens. Is this a shame problem, a transition problem, a fatigue problem? Each has a different handling profile.'},
+  {num:'05',name:'Pattern naming',badge:'Reflection tool',badgeClass:'badge-reg',
+   what:'Name the pattern precisely enough to think about it and interrupt it &mdash; without moral inflation. You do not need the heaviest label to take something seriously. <b>Precision beats drama.</b>',
+   phrases:['This is urgency inflation &mdash; the same problem at higher volume.','This is emotional spillover landing on a practical question.','This is a dependency protest arriving as criticism.','Help that has arrived as accusation.'],
+   when:'After the moment &mdash; or when you have enough internal space to observe the pattern rather than be inside it. Pattern naming is a reflective, not a reactive, tool.',
+   note:'Naming the pattern lets you interrupt it. Labeling the person closes the loop.'},
+  {num:'06',name:'Selective non-participation',badge:'Cycle breaker',badgeClass:'badge-now',
+   what:'Every high-tension exchange has an architecture: a trigger, an amplifier, a familiar route, an expected reaction. <b>Identify which part of the cycle depends on your automatic entry &mdash; and decline that role.</b>',
+   phrases:['I\'m not stepping into that part of the conversation today.','I hear the question inside the accusation. I\'m answering the question.','I\'m not going to defend myself here &mdash; but I am going to stay in the room.'],
+   when:'When you notice you are about to do exactly what the dynamic expects &mdash; rush to defend, rush to fix, rush to absorb. The most stabilizing move is sometimes a refusal to stand where the machinery expects you.',
+   note:'This is not coldness. It is design. The goal is to interrupt the cycle, not to punish the other person for starting it.'},
+  {num:'07',name:'Channel control',badge:'High complexity moments',badgeClass:'badge-now',
+   what:'Too many channels are open at once. <b>Choose the one level you are willing to engage.</b> Stay there. You cannot solve everything at once and trying to do so feeds the overwhelm.',
+   phrases:['I can stay with the plan for tonight.','I can respond to the appointment question.','I\'m not going into all of that right now &mdash; let\'s start with what we need to solve today.','One problem at a time. Which one matters most to you right now?'],
+   when:'When five separate issues have arrived in the same sentence. Choosing one channel and naming it explicitly reduces confusion and failure demand.',
+   note:'If a plane is landing in a storm, the pilot does not also reorganize the luggage. Pick the channel that is actionable and stay with it.'},
+  {num:'08',name:'Micro-containment',badge:'Overwhelm & abstraction',badgeClass:'badge-now',
+   what:'When the entire relationship, illness, and future arrive in one heap, people drown in abstraction. <b>Narrow time, scope, and objective &mdash; not forever, just for now.</b> Function returns when the frame shrinks.',
+   phrases:['Let\'s get through the next fifteen minutes.','Right now we only need to solve the ride.','Tonight is not the night to settle everything.','What is the one thing we need to handle before bed?'],
+   when:'When abstraction has overwhelmed the actionable. Human beings can survive much more than they can conceptualize all at once. Narrow the frame until function returns.',
+   note:'Micro-containment is not avoidance. The bigger conversation can happen later &mdash; when both people have access to themselves and there is time to hold it properly.'}
+];
+
+const PATTERN_NAMES=['Mentalization','Window of tolerance','State before substance','OODA loop','Pattern naming','Selective non-participation','Channel control','Micro-containment'];
+let selectedPatterns=[];
+
+function selectMethod(i){
+  document.querySelectorAll('.method-card').forEach((c,idx)=>c.classList.toggle('selected',idx===i));
+  const m=METHODS[i];
+  document.getElementById('detailPanel').innerHTML=`
+    <div class="dp-top">
+      <div><div class="dp-num">Method ${m.num}</div><div class="dp-name">${m.name}</div></div>
+      <span class="dp-badge ${m.badgeClass}">${m.badge}</span>
+    </div>
+    <div class="dp-what">${m.what}</div>
+    <div class="phrases-label">Phrases to use</div>
+    ${m.phrases.map(p=>`<div class="phrase-item">&ldquo;${p}&rdquo;</div>`).join('')}
+    <div class="when-label">When to use this</div>
+    <div class="when-text">${m.when}</div>
+    <div class="note-block">${m.note}</div>
+  `;
+}
+
+function filterMethods(tag,btn){
+  document.querySelectorAll('.state-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.method-card').forEach(c=>{
+    c.style.opacity=(tag==='all'||c.getAttribute('data-tags').includes(tag))?'1':'0.3';
+  });
+}
+
+function updateArousal(v){
+  v=parseInt(v);
+  const el=document.getElementById('arousalAdvice');
+  if(v<=3){
+    el.innerHTML='<div class="advice-card advice-green"><div class="ac-title">What works now</div>Any method. Insight and language are available. This is the time to have the real conversation &mdash; practical, emotional, or both.</div><div class="advice-card advice-green"><div class="ac-title">What to avoid</div>Nothing to avoid. Proceed with full access to your judgment.</div>';
+  } else if(v<=6){
+    el.innerHTML='<div class="advice-card advice-amber"><div class="ac-title">What works now</div>State before substance (03), OODA loop (04), Channel control (07). Address temperature and scope before trying to solve content.</div><div class="advice-card advice-amber"><div class="ac-title">What to avoid</div>Making your most important point right now. Defending yourself in detail. Answering all five layers at once.</div>';
+  } else {
+    el.innerHTML='<div class="advice-card advice-red"><div class="ac-title">Reasoning has left the building</div>Stop trying to win the argument. The nervous system has taken the wheel. Use Window of tolerance (02) or Micro-containment (08) &mdash; narrow to the smallest possible task or exit the exchange temporarily. Nothing you say right now will be received the way you intend it. That is physiology, not failure.</div>';
+  }
+}
+
+function togglePattern(el){
+  el.classList.toggle('hl');
+  const method=parseInt(el.getAttribute('data-method'));
+  if(el.classList.contains('hl')){
+    if(!selectedPatterns.includes(method)) selectedPatterns.push(method);
+  } else {
+    selectedPatterns=selectedPatterns.filter(m=>m!==method);
+  }
+  const res=document.getElementById('patternResult');
+  if(selectedPatterns.length===0){res.classList.remove('show');res.innerHTML='';return;}
+  const names=selectedPatterns.map(m=>PATTERN_NAMES[m]);
+  res.classList.add('show');
+  res.innerHTML=`<b>Suggested method${selectedPatterns.length>1?'s':''}:</b> ${names.join(', ')}. ${selectedPatterns.length>1?'Start with the first &mdash; do not try to apply all methods simultaneously.':'Select this card in the grid above to open it.'}`;
+}
+
+function resetPatterns(){
+  document.querySelectorAll('.pattern-card').forEach(c=>c.classList.remove('hl'));
+  selectedPatterns=[];
+  const res=document.getElementById('patternResult');
+  res.classList.remove('show');res.innerHTML='';
+}
+
+updateArousal(5);
+</script>
+</body>
+</html>

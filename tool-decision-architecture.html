@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hidden Architecture of Decision · Tool 08 · Survival Guide for Care Partners</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;overflow-x:hidden;}
+:root{
+  --bg:#030509;--bg2:#07101c;--bg3:#0a1628;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.22);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);
+  --ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);
+  --ink20:rgba(216,207,196,0.2);--ink10:rgba(216,207,196,0.07);
+  --gold:#c8902a;--gl:#e8b84a;--gd:rgba(200,144,42,0.1);--gb:rgba(200,144,42,0.22);
+  --cold:#2ac4c8;--cd:rgba(42,196,200,0.1);--cb:rgba(42,196,200,0.25);
+  --red:#c83050;--rd:rgba(200,48,80,0.1);--rb:rgba(200,48,80,0.25);
+  --green:#50c878;--grd:rgba(80,200,120,0.1);--grb:rgba(80,200,120,0.3);
+  --amber:#e8900a;--amd:rgba(232,144,10,0.1);--amb:rgba(232,144,10,0.3);
+  --violet:#9060c8;--vd:rgba(144,96,200,0.1);--vb:rgba(144,96,200,0.3);
+}
+body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-thumb{background:#0d1a2e;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(3,5,9,0.97);
+  backdrop-filter:blur(14px);border-bottom:0.5px solid rgba(100,140,200,0.1);
+  padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.nav-l{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink40);}
+.nav-r{display:flex;gap:7px;align-items:center;}
+.nbtn{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;padding:6px 13px;border-radius:2px;border:0.5px solid rgba(100,140,200,0.12);
+  color:var(--ink40);cursor:pointer;background:none;transition:all .15s;}
+.nbtn:hover{color:var(--ink80);border-color:var(--b2);}
+.nbtn.home{color:var(--gold);border-color:var(--gb);background:var(--gd);}
+
+/* BREADCRUMB */
+.breadcrumb{position:fixed;top:52px;left:0;right:0;z-index:200;
+  background:rgba(3,5,9,0.92);backdrop-filter:blur(8px);
+  border-bottom:0.5px solid var(--b);padding:8px 24px;
+  display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;text-transform:uppercase;}
+.bc-item{color:var(--ink40);cursor:pointer;transition:color .15s;}
+.bc-item:hover{color:var(--gold);}
+.bc-item.active{color:var(--gold);}
+.bc-sep{color:var(--ink20);}
+
+/* MAIN MAP AREA */
+.map-area{position:fixed;top:88px;left:0;right:0;bottom:0;overflow:hidden;}
+
+/* CANVAS LAYER */
+#mapCanvas{position:absolute;inset:0;width:100%;height:100%;}
+
+/* VIEW LAYERS */
+.view-layer{position:absolute;inset:0;display:none;overflow:hidden;}
+.view-layer.active{display:block;}
+
+/* OVERVIEW */
+#viewOverview{pointer-events:none;}
+#overviewSvg{width:100%;height:100%;}
+
+/* CLICKABLE NODES overlaid on SVG */
+.node-overlay{position:absolute;cursor:pointer;transform:translate(-50%,-50%);
+  display:flex;flex-direction:column;align-items:center;gap:0;z-index:10;}
+.node-btn{border:none;cursor:pointer;background:transparent;padding:0;position:relative;}
+.node-ring{border-radius:50%;display:flex;align-items:center;justify-content:center;
+  transition:all .25s;position:relative;}
+.node-ring::after{content:'';position:absolute;inset:-6px;border-radius:50%;
+  border:1px solid transparent;transition:all .3s;}
+.node-overlay:hover .node-ring::after{inset:-10px;opacity:1;}
+.node-inner{border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.node-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1.5px;
+  text-transform:uppercase;text-align:center;margin-top:6px;line-height:1.4;
+  white-space:nowrap;pointer-events:none;}
+.node-sublabel{font-family:'Crimson Pro',serif;font-size:10px;font-style:italic;
+  text-align:center;color:var(--ink40);margin-top:2px;pointer-events:none;max-width:100px;white-space:normal;line-height:1.3;}
+
+/* DETAIL PANEL */
+#detailPanel{position:absolute;right:0;top:0;bottom:0;width:420px;
+  background:rgba(3,5,9,0.97);border-left:0.5px solid var(--b);
+  transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+  overflow-y:auto;z-index:100;padding:28px 24px 40px;}
+#detailPanel.open{transform:translateX(0);}
+.dp-close{position:absolute;top:14px;right:16px;font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink40);
+  cursor:pointer;border:0.5px solid var(--b);padding:5px 12px;border-radius:2px;
+  background:none;transition:all .15s;}
+.dp-close:hover{color:var(--ink80);border-color:var(--b2);}
+.dp-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;
+  text-transform:uppercase;margin-bottom:8px;margin-top:32px;}
+.dp-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;
+  color:var(--ink);margin-bottom:8px;line-height:1.2;}
+.dp-subtitle{font-family:'Playfair Display',serif;font-style:italic;font-size:.92rem;
+  color:var(--ink60);margin-bottom:16px;line-height:1.65;}
+.dp-body{font-size:.92rem;line-height:1.88;color:var(--ink60);margin-bottom:14px;}
+.dp-body strong{color:var(--ink80);font-weight:500;}
+.dp-rule{height:0.5px;background:var(--b);margin:16px 0;}
+.dp-phrase{background:var(--bg3);border-left:2px solid var(--cold);
+  border-radius:0 4px 4px 0;padding:11px 15px;margin:14px 0;
+  font-family:'Playfair Display',serif;font-style:italic;font-size:.92rem;
+  color:var(--ink80);line-height:1.7;}
+.dp-section-label{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--ink40);margin:16px 0 8px;}
+.dp-insight{background:var(--bg2);border-radius:4px;padding:12px 14px;margin-bottom:8px;}
+.dp-insight-title{font-size:.88rem;font-weight:500;color:var(--ink80);margin-bottom:4px;
+  font-family:'Playfair Display',serif;}
+.dp-insight-body{font-size:.85rem;line-height:1.72;color:var(--ink60);}
+.dp-connections{display:flex;flex-direction:column;gap:6px;margin-top:12px;}
+.dp-conn{display:flex;gap:10px;align-items:center;padding:8px 12px;
+  border:0.5px solid var(--b);border-radius:3px;cursor:pointer;transition:all .15s;}
+.dp-conn:hover{border-color:var(--b2);background:var(--bg2);}
+.dp-conn-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dp-conn-text{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;
+  text-transform:uppercase;color:var(--ink60);}
+.dp-conn-arr{margin-left:auto;font-size:10px;color:var(--ink20);}
+.dp-strategy{background:var(--bg2);border-radius:3px;padding:11px 14px;margin-bottom:7px;
+  border-left:2px solid transparent;}
+.dp-strategy-num{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:4px;}
+.dp-strategy-text{font-size:.88rem;line-height:1.72;color:var(--ink60);}
+.dp-strategy-text strong{color:var(--ink80);font-weight:500;}
+
+/* MINI MAP in corner */
+.minimap{position:absolute;bottom:20px;left:20px;z-index:50;
+  background:rgba(3,5,9,0.92);border:0.5px solid var(--b);border-radius:4px;
+  padding:10px;width:130px;}
+.mm-label{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ink40);margin-bottom:8px;}
+.mm-dot{position:absolute;border-radius:50%;width:8px;height:8px;
+  transform:translate(-50%,-50%);cursor:pointer;transition:all .2s;}
+.mm-dot:hover{transform:translate(-50%,-50%) scale(1.4);}
+.mm-field{position:relative;height:70px;width:100%;}
+
+/* INSTRUCTIONS */
+.instructions{position:absolute;bottom:20px;right:20px;z-index:50;
+  background:rgba(3,5,9,0.9);border:0.5px solid var(--b);border-radius:4px;
+  padding:12px 14px;max-width:220px;}
+.inst-line{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.5px;
+  color:var(--ink40);line-height:1.9;display:flex;align-items:center;gap:6px;}
+.inst-key{background:var(--bg3);border:0.5px solid var(--b2);border-radius:2px;
+  padding:1px 5px;font-size:7px;color:var(--ink60);}
+
+/* PULSE ANIMATION */
+@keyframes pulse{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1);}
+  50%{opacity:1;transform:translate(-50%,-50%) scale(1.08);}}
+@keyframes ripple{0%{opacity:.6;transform:translate(-50%,-50%) scale(1);}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(1.8);}}
+@keyframes flowLine{0%{stroke-dashoffset:300;}100%{stroke-dashoffset:0;}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px);}to{opacity:1;transform:translateX(0);}}
+
+.dp-animate{animation:slideIn .25s ease both;}
+.node-animate{animation:fadeIn .4s ease both;}
+
+/* LEGEND */
+.map-legend{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:50;
+  display:flex;gap:14px;background:rgba(3,5,9,0.9);border:0.5px solid var(--b);
+  border-radius:4px;padding:8px 14px;}
+.leg-item{display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;
+  font-size:7.5px;letter-spacing:.5px;color:var(--ink40);}
+.leg-dot{width:7px;height:7px;border-radius:50%;}
+
+/* mobile */
+@media(max-width:600px){
+  #detailPanel{width:100%;border-left:none;border-top:0.5px solid var(--b);
+    top:auto;bottom:0;height:65%;transform:translateY(100%);}
+  #detailPanel.open{transform:translateY(0);}
+  .minimap,.instructions{display:none;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <span class="nav-l">Survival Guide · Tool 08</span>
+  <div class="nav-r">
+    <span id="navStatus" style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;text-transform:uppercase;color:var(--ink20);">Click any node to explore</span>
+    <a href="index.html" class="nbtn">← All Tools</a>
+    <a href="https://coldischemia.foundation" target="_blank" rel="noopener" class="nbtn home">CIF ↗</a>
+  </div>
+</nav>
+
+<div class="breadcrumb" id="breadcrumb">
+  <span class="bc-item active" onclick="goOverview()">Decision Architecture</span>
+  <span class="bc-sep" id="bc2sep" style="display:none;">›</span>
+  <span class="bc-item" id="bc2" style="display:none;"></span>
+  <span class="bc-sep" id="bc3sep" style="display:none;">›</span>
+  <span class="bc-item" id="bc3" style="display:none;"></span>
+</div>
+
+<div class="map-area">
+  <!-- Main SVG for connections -->
+  <svg id="mapSvg" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;">
+    <defs>
+      <marker id="arr-gold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M2 2L8 5L2 8" fill="none" stroke="#c8902a" stroke-width="1.5" stroke-linecap="round"/>
+      </marker>
+      <marker id="arr-cold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M2 2L8 5L2 8" fill="none" stroke="#2ac4c8" stroke-width="1.5" stroke-linecap="round"/>
+      </marker>
+      <filter id="glow-gold"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="glow-cold"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <g id="connectionLines"></g>
+    <g id="flowParticles"></g>
+  </svg>
+
+  <!-- Node overlays -->
+  <div id="nodeContainer" style="position:absolute;inset:0;z-index:5;"></div>
+
+  <!-- Detail panel -->
+  <div id="detailPanel">
+    <button class="dp-close" onclick="closeDetail()">Close ×</button>
+    <div id="detailContent"></div>
+  </div>
+
+  <!-- Minimap -->
+  <div class="minimap">
+    <div class="mm-label">Architecture map</div>
+    <div class="mm-field" id="miniField"></div>
+  </div>
+
+  <!-- Legend -->
+  <div class="map-legend">
+    <div class="leg-item"><div class="leg-dot" style="background:var(--gold)"></div>Core shift</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--red)"></div>Distortion</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--cold)"></div>Restoration</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--amber)"></div>Adaptive</div>
+  </div>
+
+  <!-- Instructions -->
+  <div class="instructions">
+    <div class="inst-line"><span class="inst-key">click</span> any node to drill down</div>
+    <div class="inst-line"><span class="inst-key">→</span> connections to navigate across</div>
+    <div class="inst-line"><span class="inst-key">breadcrumb</span> to drill up</div>
+  </div>
+</div>
+
+<script>
+// ══ NODE DATA ══
+const NODES = {
+  center: {
+    id:'center', label:'Decision\nArchitecture', sublabel:'The hidden structure',
+    color:'#c8902a', type:'core',
+    x:50, y:50, size:68,
+    eyebrow:'Tool 08 · Section VIII',
+    title:'The Hidden Architecture of Decision',
+    subtitle:'How care partners think under pressure — and what happens to that thinking over time.',
+    body:'Care partner decision-making does not break down under pressure. It reorganizes. Speed replaces deliberation. Pattern recognition replaces exploration. Emotional attunement replaces detached evaluation.<br><br>This architecture map shows how that reorganization occurs, where it costs, and where flexibility can be reintroduced — without disrupting the function the environment depends on.',
+    insights:[
+      {title:'Why this matters',body:'The care partner is not failing to think clearly. They are learning to think in a way that matches the demands of the environment. Understanding that architecture is the first step to navigating it deliberately.'},
+      {title:'How to use this tool',body:'Click each node to understand the mechanism. Follow connections across to see how each one feeds the next. Use the restoration nodes to find practical re-entry points.'}
+    ],
+    phrase:'The environment has trained the mind to operate within its constraints. The task is to see those constraints — so they are navigated rather than simply inhabited.',
+    connections:['shift','pattern','intensity','time','adaptive'],
+    strategies:[]
+  },
+  shift: {
+    id:'shift', label:'Stimulus → \nResponse', sublabel:'Choice becomes sequence',
+    color:'#c8902a', type:'core',
+    x:28, y:24, size:52,
+    eyebrow:'Layer 01 · The primary shift',
+    title:'From deliberate choice to continuous response',
+    subtitle:'The point where decision-making stops feeling like decision-making.',
+    body:'Under sustained pressure, cognition reorganizes around <strong>speed, predictability, and stabilization</strong>. The care partner learns that hesitation carries risk, that delay can escalate, and that consistency reduces volatility.<br><br>The result is a mind that becomes highly efficient at moving from stimulus to action with minimal delay. This is functional — and it comes at a cost.',
+    insights:[
+      {title:'What it looks like from inside',body:'Decisions feel faster. Options feel fewer. The response that arrives first feels not like a choice but like the only available action. This is not loss of intelligence — it is efficiency in a constrained environment.'},
+      {title:'What research shows',body:'Under chronic stress, individuals increasingly rely on automatic and previously reinforced patterns, reducing the use of flexible, exploratory thinking in favor of rapid response systems that conserve cognitive energy (Starcke & Brand, 2012).'}
+    ],
+    phrase:'The field of perceived possibility begins to contract. The care partner is no longer evaluating a broad set of responses — they are recognizing what has worked before and moving toward it quickly.',
+    connections:['pattern','intensity'],
+    strategies:[
+      {num:'01',color:'var(--gold)',title:'Notice the automaticity',text:'When a response arrives without any sense of deliberation, name it: "I just responded automatically." That naming — even silent — creates a small gap between stimulus and action.'},
+      {num:'02',color:'var(--cold)',title:'One-second pause test',text:'Before the next automatic response, take one breath. Not to change the response — to experience it as a choice rather than an inevitability. The response may be the same. The relationship to it shifts.'}
+    ]
+  },
+  pattern: {
+    id:'pattern', label:'Pattern\nRecognition', sublabel:'Expertise and its constraint',
+    color:'#e8900a', type:'adaptive',
+    x:72, y:24, size:52,
+    eyebrow:'Layer 02 · Situational expertise',
+    title:'The deepening reliance on pattern recognition',
+    subtitle:'The care partner becomes expert at navigating terrain that keeps shifting beneath the expertise.',
+    body:'As the environment becomes more familiar and demanding, the mind operates increasingly through pattern recognition. Situations are interpreted not as isolated events, but as <strong>variations of previous ones</strong>. Tone, posture, timing, and sequence are assessed rapidly — often outside conscious awareness — and matched against accumulated experience.<br><br>This produces a form of situational expertise that is genuinely difficult to replicate. The care partner can anticipate shifts before they are fully expressed.',
+    insights:[
+      {title:'The constraint inside the expertise',body:'When the mind becomes efficient at recognizing patterns, it also becomes more likely to impose those patterns even when the situation has changed. Subtle differences may be overlooked. The care partner may respond to what they expect to happen rather than what is actually unfolding.'},
+      {title:'What research shows',body:'Under stress, reliance on heuristics increases, allowing for faster processing but reducing sensitivity to nuance and change (Kahneman, 2011). In caregiving, this can create a situation of high competence and reduced adaptability simultaneously.'}
+    ],
+    phrase:'The care partner feels highly competent while simultaneously becoming less adaptive to shifts that fall outside established patterns. This is not a contradiction — it is a system optimizing for survival within a constrained environment.',
+    connections:['shift','intensity','adaptive'],
+    strategies:[
+      {num:'01',color:'var(--amber)',title:'The novelty check',text:'When a situation feels like one you have seen before, ask: "What is different this time?" Even a brief pause to notice one thing that is new can interrupt the pattern-matching and restore access to the actual situation.'},
+      {num:'02',color:'var(--cold)',title:'Pattern vs. reality',text:'Distinguish between responding to the pattern and responding to the person. The pattern is an abstraction built from past experience. The person is here, now, with today\'s specific configuration of need and pain.'}
+    ]
+  },
+  intensity: {
+    id:'intensity', label:'Intensity as\nSignal', sublabel:'Distortion of proportion',
+    color:'#c83050', type:'distortion',
+    x:20, y:58, size:52,
+    eyebrow:'Layer 03 · The distortion',
+    title:'Emotional intensity as a decision-making signal',
+    subtitle:'When what feels most urgent begins to feel most important.',
+    body:'As cognitive patterns become more entrenched, a shift occurs in how importance is evaluated. <strong>Emotionally charged signals — distress, anger, fear, urgency — begin to carry disproportionate weight.</strong> They are processed more quickly, responded to more immediately, and prioritized over less intense but potentially more consequential concerns.<br><br>This is not a conscious prioritization. It is a neurological adaptation.',
+    insights:[
+      {title:'The consequence',body:'The care partner may find themselves responding quickly and effectively to emotionally intense situations while delaying or overlooking tasks that carry less emotional charge but equal or greater long-term significance.'},
+      {title:'From inside the experience',body:'This does not feel like distortion. It feels like responsiveness. The care partner is doing what the moment appears to require. What becomes less visible is how the moment itself is shaping that perception (Arnsten, 2009).'}
+    ],
+    phrase:'When intensity becomes the primary signal, importance begins to feel defined by how strongly something is expressed — rather than by what it actually requires.',
+    connections:['shift','time','adaptive'],
+    strategies:[
+      {num:'01',color:'var(--red)',title:'Intensity vs. importance',text:'When responding to something emotionally intense, pause briefly to ask: "Is this important because it is important — or because it is loud?" The answer is not always what the signal suggests.'},
+      {num:'02',color:'var(--gold)',title:'The quiet task check',text:'Once per day, identify one thing that has been consistently not addressed — not because it is unimportant but because it generates no emotional signal. That quiet absence is often the most consequential item on the actual list.'}
+    ]
+  },
+  time: {
+    id:'time', label:'Cognitive\nTime Compression', sublabel:'The shortened horizon',
+    color:'#c83050', type:'distortion',
+    x:80, y:58, size:52,
+    eyebrow:'Layer 04 · Temporal narrowing',
+    title:'The compression of cognitive time',
+    subtitle:'When the future becomes harder to hold while responding to the now.',
+    body:'As emotional intensity guides attention, the temporal structure of decision-making changes. Thinking becomes <strong>increasingly oriented toward the immediate present</strong> — not as a conscious choice but as a reduction in the ability to hold multiple timeframes simultaneously.<br><br>Decisions that once incorporated past experience, present conditions, and future implications begin to rely more heavily on what is happening now. The care partner is making decisions within a <strong>shortened cognitive horizon</strong>.',
+    insights:[
+      {title:'What this produces',body:'Each choice becomes an adjustment within an ongoing flow rather than a step within a larger plan. The care partner is no longer primarily shaping outcomes. They are managing conditions.'},
+      {title:'From the outside vs. inside',body:'From the outside, this can appear as constant activity without clear direction. From the inside, it feels like maintaining stability in a system that does not allow for pause. Both descriptions are accurate.'}
+    ],
+    phrase:'The future is not absent. It is simply harder to hold in mind while responding to immediate demands. The difference between these two statements matters enormously.',
+    connections:['intensity','adaptive','restore'],
+    strategies:[
+      {num:'01',color:'var(--red)',title:'The 24-hour horizon check',text:'Once daily, before any response: "What does this decision look like in 24 hours?" Not to delay — to briefly extend the cognitive horizon. Even a five-second extension restores access to the near future.'},
+      {num:'02',color:'var(--cold)',title:'Past context retrieval',text:'When compressed in the present, deliberately reach back: "Have I been in this situation before? What happened?" Retrieving past context reactivates the three-timeframe system that the compression has narrowed.'}
+    ]
+  },
+  adaptive: {
+    id:'adaptive', label:'Adaptive\nStrength', sublabel:'The cost of capability',
+    color:'#e8900a', type:'adaptive',
+    x:50, y:76, size:52,
+    eyebrow:'Layer 05 · The paradox',
+    title:'The adaptive strength and its quiet constraint',
+    subtitle:'The care partner is not failing to think clearly. They have been trained to think in a way that matches the environment.',
+    body:'These changes represent a form of adaptation. Speed replaces deliberation. Pattern recognition replaces exploration. Emotional attunement replaces detached evaluation. These adaptations allow the care partner to function under conditions that would otherwise be overwhelming. <strong>They are signs of capacity, not weakness.</strong><br><br>And yet. As the mind becomes more efficient in responding to immediate demands, it becomes less flexible in stepping outside of them.',
+    insights:[
+      {title:'What the care partner may notice',body:'Decisions feel faster but less considered. More certain but less examined. High capability within the caregiving environment, but less ability to think beyond it. This narrowing is not a loss of intelligence — it is a precision cut in the wrong direction.'},
+      {title:'The environment\'s role',body:'The caregiving environment has not made the care partner less capable. It has made them precisely capable in a very specific way. The constraint is not internal — it is architectural. Understanding that distinction changes the task entirely.'}
+    ],
+    phrase:'The environment has trained the mind to operate within its constraints. The goal is not to undo that training. It is to ensure that not every response is happening automatically.',
+    connections:['restore','flex'],
+    strategies:[
+      {num:'01',color:'var(--amber)',title:'Name the adaptation',text:'When you notice yourself responding with exceptional speed and confidence, name what is driving it: "This is my caregiving efficiency." That naming creates a microsecond of awareness that the adapted mode is active — and that other modes exist.'},
+      {num:'02',color:'var(--green)',title:'Capacity without exclusivity',text:'The adaptation is not the problem. Exclusivity is. The goal is to maintain the adapted speed and pattern recognition while adding — not replacing — access to more deliberate thinking when conditions allow.'}
+    ]
+  },
+  restore: {
+    id:'restore', label:'Reintroduce\nFlexibility', sublabel:'Without disrupting function',
+    color:'#2ac4c8', type:'restoration',
+    x:28, y:76, size:52,
+    eyebrow:'Layer 06 · Restoration pathway',
+    title:'Reintroducing flexibility without disrupting function',
+    subtitle:'The task is not to undo the adaptations — they are necessary. It is to prevent them from becoming exclusive.',
+    body:'The care partner does not need to slow down every decision. They need to <strong>recognize when a decision is being made automatically</strong> and when it may benefit from a brief expansion of perspective.<br><br>This expansion does not require extended reflection. It can occur in seconds. The key is the recognition that what feels like the only response may in fact be the most familiar one.',
+    insights:[
+      {title:'What research shows',body:'Even minimal interruption of automatic processing can restore access to more flexible decision-making pathways (Kahneman, 2011). In caregiving, this interruption does not need to be visible externally. It is an internal adjustment.'},
+      {title:'What this looks like in practice',body:'The care partner begins to notice the conditions under which their thinking narrows — moments of heightened urgency, repeated patterns, or strong emotional signals. This noticing creates a small but meaningful shift. It reintroduces the possibility of variation.'}
+    ],
+    phrase:'The response may remain the same — but it is no longer experienced as inevitable. That gap between action and inevitability is where flexibility lives.',
+    connections:['flex','adaptive','time'],
+    strategies:[
+      {num:'01',color:'var(--cold)',title:'The three-second window',text:'When a strong automatic response is forming, count three seconds silently. Not to prevent the response — to create a window in which a different response could theoretically exist. The window is the restoration.'},
+      {num:'02',color:'var(--cold)',title:'Conditions of narrowing',text:'Identify the three situations in which your thinking most reliably narrows. Not to avoid them — to be ready. When narrowing conditions are anticipated, the intervention can be waiting for them.'},
+      {num:'03',color:'var(--green)',title:'The variation question',text:'"What would I do differently if I had 10 more minutes?" Not as a commitment — as a question. Even asking it briefly activates exploratory processing that the automatic mode has suppressed.'}
+    ]
+  },
+  flex: {
+    id:'flex', label:'Intuition ↔\nDeliberation', sublabel:'Rebalancing the two modes',
+    color:'#2ac4c8', type:'restoration',
+    x:72, y:76, size:52,
+    eyebrow:'Layer 07 · The rebalance',
+    title:'Rebalancing intuition and deliberation',
+    subtitle:'The care partner does not need to choose between these modes. They need to move between them.',
+    body:'Intuition remains valuable. It reflects accumulated experience and allows for rapid response in complex situations. Deliberation provides a counterbalance that prevents intuition from becoming rigid.<br><br>In moments of high intensity, intuitive response may be necessary. In moments where there is space — even briefly — <strong>deliberation can be reintroduced</strong>. This allows the care partner to reassess patterns, consider alternatives, and maintain a broader perspective.',
+    insights:[
+      {title:'What this restores',body:'Over time, this movement between modes restores a degree of cognitive range. The care partner remains effective within the environment but is no longer fully defined by it. The decision-making process regains depth.'},
+      {title:'The final outcome',body:'With that depth, the care partner regains something that had begun to narrow without being noticed. Not control, and not certainty — but the ability to think beyond the immediate shape of the moment while still remaining fully inside it.'}
+    ],
+    phrase:'The goal is not to slow everything down. It is to ensure that not every response is happening automatically.',
+    connections:['restore','adaptive'],
+    strategies:[
+      {num:'01',color:'var(--cold)',title:'Mode recognition',text:'Intuitive responses feel immediate and certain. Deliberate responses feel effortful and uncertain. When you notice certainty arriving very fast, that is often the signal that the intuitive mode is active. That mode is valuable. It is also worth checking.'},
+      {num:'02',color:'var(--cold)',title:'The space-available test',text:'Before any response, ask: "Is there space here — even five seconds — for a deliberate thought?" If yes, use it. If no, act on intuition and return to deliberation afterward. The return is the practice.'},
+      {num:'03',color:'var(--green)',title:'The post-action review',text:'Once daily, choose one decision made in the last 24 hours and ask: "Was that intuitive or deliberate? Would a deliberate response have differed?" Not to second-guess — to calibrate the two modes against each other.'}
+    ]
+  }
+};
+
+const CONNECTIONS = [
+  {from:'center',to:'shift',color:'rgba(200,144,42,0.4)',flow:true},
+  {from:'center',to:'pattern',color:'rgba(200,144,42,0.4)',flow:true},
+  {from:'center',to:'intensity',color:'rgba(200,144,42,0.3)',flow:true},
+  {from:'center',to:'time',color:'rgba(200,144,42,0.3)',flow:true},
+  {from:'center',to:'adaptive',color:'rgba(200,144,42,0.25)',flow:true},
+  {from:'shift',to:'pattern',color:'rgba(232,144,10,0.3)',flow:false},
+  {from:'shift',to:'intensity',color:'rgba(200,48,80,0.3)',flow:true},
+  {from:'pattern',to:'intensity',color:'rgba(200,48,80,0.25)',flow:true},
+  {from:'intensity',to:'time',color:'rgba(200,48,80,0.35)',flow:true},
+  {from:'intensity',to:'adaptive',color:'rgba(232,144,10,0.25)',flow:false},
+  {from:'time',to:'adaptive',color:'rgba(232,144,10,0.25)',flow:false},
+  {from:'adaptive',to:'restore',color:'rgba(42,196,200,0.35)',flow:true},
+  {from:'adaptive',to:'flex',color:'rgba(42,196,200,0.35)',flow:true},
+  {from:'restore',to:'flex',color:'rgba(42,196,200,0.4)',flow:true},
+  {from:'time',to:'restore',color:'rgba(42,196,200,0.3)',flow:true},
+];
+
+let activeNode = null;
+let W = 0, H = 0;
+let animFrame = null;
+let particles = [];
+
+function getPos(node){
+  return {x: node.x/100 * W, y: node.y/100 * H};
+}
+
+function drawConnections(){
+  const svg = document.getElementById('connectionLines');
+  svg.innerHTML = '';
+  CONNECTIONS.forEach(conn => {
+    const from = NODES[conn.from], to = NODES[conn.to];
+    const fp = getPos(from), tp = getPos(to);
+    const dx = tp.x - fp.x, dy = tp.y - fp.y;
+    const dist = Math.sqrt(dx*dx+dy*dy);
+    const fromR = from.size/2 + 8, toR = to.size/2 + 8;
+    const ratio = fromR/dist;
+    const sx = fp.x + dx*ratio, sy = fp.y + dy*ratio;
+    const ex = tp.x - dx*(toR/dist), ey = tp.y - dy*(toR/dist);
+
+    const cx1 = sx + (ex-sx)*0.4 + dy*0.15;
+    const cy1 = sy + (ey-sy)*0.4 - dx*0.15;
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+    const d = `M${sx},${sy} Q${cx1},${cy1} ${ex},${ey}`;
+    path.setAttribute('d', d);
+    path.setAttribute('fill','none');
+    path.setAttribute('stroke', conn.color);
+    path.setAttribute('stroke-width', conn.flow ? '1.2' : '0.7');
+    if(!conn.flow) path.setAttribute('stroke-dasharray','4,4');
+    svg.appendChild(path);
+
+    if(conn.flow){
+      const len = path.getTotalLength ? Math.round(path.getTotalLength()) : 200;
+      path.setAttribute('stroke-dasharray', len);
+      path.setAttribute('stroke-dashoffset', len);
+      path.style.animation = `flowLine ${2+Math.random()*2}s ease ${Math.random()*2}s infinite`;
+    }
+  });
+}
+
+function buildMiniMap(){
+  const field = document.getElementById('miniField');
+  field.innerHTML = '';
+  Object.values(NODES).forEach(n => {
+    const dot = document.createElement('div');
+    dot.className = 'mm-dot';
+    dot.style.background = n.color;
+    dot.style.left = n.x+'%';
+    dot.style.top = n.y+'%';
+    dot.title = n.label.replace('\n',' ');
+    dot.onclick = () => openDetail(n.id);
+    field.appendChild(dot);
+  });
+}
+
+function buildNodes(){
+  const container = document.getElementById('nodeContainer');
+  container.innerHTML = '';
+  Object.values(NODES).forEach((n,i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'node-overlay node-animate';
+    wrap.style.left = n.x+'%';
+    wrap.style.top = n.y+'%';
+    wrap.style.animationDelay = (i*0.08)+'s';
+
+    const isCenter = n.id === 'center';
+    const sz = n.size;
+    const innerSz = sz * 0.72;
+
+    wrap.innerHTML = `
+      <div class="node-btn" onclick="openDetail('${n.id}')">
+        <div class="node-ring" style="width:${sz}px;height:${sz}px;background:rgba(3,5,9,0.9);border:1.5px solid ${n.color}44;">
+          <div class="node-inner" style="width:${innerSz}px;height:${innerSz}px;background:${n.color}18;border:1px solid ${n.color}66;">
+          </div>
+        </div>
+        <div class="node-label" style="color:${n.color};max-width:${sz+30}px;white-space:pre;">${n.label}</div>
+        <div class="node-sublabel">${n.sublabel}</div>
+      </div>
+      ${n.id !== 'center' ? `<div style="position:absolute;inset:-12px;border-radius:50%;border:1px solid ${n.color}22;pointer-events:none;animation:ripple ${2.5+Math.random()}s ease ${Math.random()*2}s infinite;"></div>` : ''}
+    `;
+    container.appendChild(wrap);
+  });
+}
+
+function openDetail(nodeId){
+  const n = NODES[nodeId];
+  if(!n) return;
+  activeNode = nodeId;
+
+  // Breadcrumb
+  document.getElementById('bc2').textContent = n.title.split(':')[0].trim();
+  document.getElementById('bc2').classList.add('active');
+  document.getElementById('bc2sep').style.display='';
+  document.getElementById('bc2').style.display='';
+  document.getElementById('bc3sep').style.display='none';
+  document.getElementById('bc3').style.display='none';
+
+  // Update nav status
+  document.getElementById('navStatus').textContent = n.label.replace('\n',' ');
+  document.getElementById('navStatus').style.color = n.color;
+
+  // Build content
+  const conn_html = n.connections.length > 0 ? `
+    <div class="dp-section-label">Connected layers</div>
+    <div class="dp-connections">
+      ${n.connections.map(cid => {
+        const cn = NODES[cid];
+        if(!cn) return '';
+        return `<div class="dp-conn" onclick="openDetail('${cid}')">
+          <div class="dp-conn-dot" style="background:${cn.color}"></div>
+          <div class="dp-conn-text">${cn.label.replace('\n',' ')}</div>
+          <div class="dp-conn-arr">→</div>
+        </div>`;
+      }).join('')}
+    </div>
+  ` : '';
+
+  const insights_html = n.insights.length > 0 ? `
+    <div class="dp-section-label">Key mechanisms</div>
+    ${n.insights.map(ins => `
+      <div class="dp-insight">
+        <div class="dp-insight-title">${ins.title}</div>
+        <div class="dp-insight-body">${ins.body}</div>
+      </div>
+    `).join('')}
+  ` : '';
+
+  const strat_html = n.strategies.length > 0 ? `
+    <div class="dp-section-label">Strategic interventions</div>
+    ${n.strategies.map(s => `
+      <div class="dp-strategy" style="border-left-color:${s.color}">
+        <div class="dp-strategy-num" style="color:${s.color}">${s.num} · ${s.title}</div>
+        <div class="dp-strategy-text">${s.text}</div>
+      </div>
+    `).join('')}
+  ` : '';
+
+  document.getElementById('detailContent').innerHTML = `
+    <div class="dp-animate">
+      <div class="dp-eyebrow" style="color:${n.color}">${n.eyebrow}</div>
+      <div class="dp-title">${n.title}</div>
+      <div class="dp-subtitle">${n.subtitle}</div>
+      <div class="dp-body">${n.body}</div>
+      ${insights_html}
+      <div class="dp-phrase">"${n.phrase}"</div>
+      ${strat_html}
+      ${conn_html}
+    </div>
+  `;
+
+  // Highlight active node
+  highlightNode(nodeId, n.color);
+
+  const panel = document.getElementById('detailPanel');
+  panel.classList.add('open');
+}
+
+function closeDetail(){
+  document.getElementById('detailPanel').classList.remove('open');
+  activeNode = null;
+  resetHighlight();
+  document.getElementById('navStatus').textContent = 'Click any node to explore';
+  document.getElementById('navStatus').style.color = 'var(--ink20)';
+  document.getElementById('bc2sep').style.display='none';
+  document.getElementById('bc2').style.display='none';
+}
+
+function goOverview(){
+  closeDetail();
+}
+
+function highlightNode(nodeId, color){
+  const nodes = document.querySelectorAll('.node-overlay');
+  nodes.forEach(n => {
+    n.style.opacity = '0.35';
+    n.style.transform = 'translate(-50%,-50%) scale(0.95)';
+  });
+  const allNodes = document.querySelectorAll('.node-overlay');
+  // re-enable the clicked one and its connections
+  const activeN = NODES[nodeId];
+  const relatedIds = new Set([nodeId, ...activeN.connections]);
+  
+  document.querySelectorAll('.node-overlay').forEach((el, i) => {
+    const nid = Object.keys(NODES)[i];
+    if(relatedIds.has(nid)){
+      el.style.opacity = '1';
+      el.style.transform = 'translate(-50%,-50%) scale(1)';
+    }
+  });
+}
+
+function resetHighlight(){
+  document.querySelectorAll('.node-overlay').forEach(el => {
+    el.style.opacity = '1';
+    el.style.transform = 'translate(-50%,-50%) scale(1)';
+  });
+}
+
+function resize(){
+  const area = document.querySelector('.map-area');
+  W = area.offsetWidth;
+  H = area.offsetHeight;
+  drawConnections();
+}
+
+// ── ANIMATED FLOW PARTICLES ──
+function initParticles(){
+  particles = [];
+  CONNECTIONS.filter(c=>c.flow).forEach(conn => {
+    for(let i=0;i<2;i++){
+      particles.push({
+        conn, progress: Math.random(),
+        speed: 0.002 + Math.random()*0.003,
+        size: 2 + Math.random()*2,
+        opacity: 0.4 + Math.random()*0.4
+      });
+    }
+  });
+}
+
+function animateParticles(){
+  const svg = document.getElementById('flowParticles');
+  svg.innerHTML = '';
+  particles.forEach(p => {
+    p.progress += p.speed;
+    if(p.progress > 1) p.progress = 0;
+    const from = NODES[p.conn.from], to = NODES[p.conn.to];
+    const fp = getPos(from), tp = getPos(to);
+    const dx = tp.x - fp.x, dy = tp.y - fp.y;
+    const dist = Math.sqrt(dx*dx+dy*dy);
+    const fromR = from.size/2+8, toR = to.size/2+8;
+    const ratio = fromR/dist;
+    const sx = fp.x + dx*ratio, sy = fp.y + dy*ratio;
+    const ex = tp.x - dx*(toR/dist), ey = tp.y - dy*(toR/dist);
+    const cx1 = sx + (ex-sx)*0.4 + dy*0.15;
+    const cy1 = sy + (ey-sy)*0.4 - dx*0.15;
+    const t = p.progress;
+    const mt = 1-t;
+    const x = mt*mt*sx + 2*mt*t*cx1 + t*t*ex;
+    const y = mt*mt*sy + 2*mt*t*cy1 + t*t*ey;
+    const color = NODES[p.conn.from].color;
+    const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    circle.setAttribute('cx', x);
+    circle.setAttribute('cy', y);
+    circle.setAttribute('r', p.size);
+    circle.setAttribute('fill', color);
+    circle.setAttribute('opacity', p.opacity);
+    svg.appendChild(circle);
+  });
+  animFrame = requestAnimationFrame(animateParticles);
+}
+
+// ── INIT ──
+window.addEventListener('load', () => {
+  resize();
+  buildNodes();
+  buildMiniMap();
+  initParticles();
+  animateParticles();
+});
+window.addEventListener('resize', () => {
+  resize();
+});
+</script>
+</body>
+</html>

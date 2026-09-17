@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Distortion and the Caregiving Mind · Tool 07 · Survival Guide for Care Partners</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --bg:#030509;--bg2:#07101c;--bg3:#0a1628;--bg4:#04080e;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.22);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);
+  --ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);
+  --ink20:rgba(216,207,196,0.2);--ink10:rgba(216,207,196,0.08);
+  --gold:#c8902a;--gl:#e8b84a;--gd:rgba(200,144,42,0.1);--gb:rgba(200,144,42,0.22);
+  --cold:#2ac4c8;--cd:rgba(42,196,200,0.1);--cb:rgba(42,196,200,0.25);
+  --red:#c83050;--rd:rgba(200,48,80,0.1);--rb:rgba(200,48,80,0.25);
+  --green:#50c878;--grd:rgba(80,200,120,0.1);--grb:rgba(80,200,120,0.3);
+  --amber:#e8900a;--amd:rgba(232,144,10,0.1);--amb:rgba(232,144,10,0.3);
+  --violet:#9060c8;--vd:rgba(144,96,200,0.1);--vb:rgba(144,96,200,0.3);
+}
+body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;min-height:100vh;overflow-x:hidden;}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-thumb{background:#0d1a2e;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(100,140,200,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(100,140,200,0.018) 1px,transparent 1px);
+  background-size:56px 56px;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(14px);
+  border-bottom:0.5px solid rgba(100,140,200,0.1);padding:0 28px;height:52px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.nav-l{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink40);}
+.nav-r{display:flex;gap:7px;}
+.nbtn{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;padding:6px 13px;border-radius:2px;border:0.5px solid rgba(100,140,200,0.12);
+  color:var(--ink40);cursor:pointer;background:none;transition:all .15s;}
+.nbtn:hover{color:var(--ink80);border-color:var(--b2);}
+.nbtn.home{color:var(--gold);border-color:var(--gb);background:var(--gd);}
+.nbtn.home:hover{background:rgba(200,144,42,0.18);}
+
+.page{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:28px 24px 80px;}
+
+/* HEADER */
+.hdr{margin-bottom:24px;}
+.hdr-ey{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:9px;}
+.hdr-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;color:var(--ink);line-height:1.1;margin-bottom:7px;}
+.hdr-title em{font-style:italic;color:var(--gold);}
+.hdr-sub{font-size:.97rem;line-height:1.88;color:var(--ink60);border-left:2px solid var(--gold);
+  padding-left:14px;font-family:'Playfair Display',serif;font-style:italic;max-width:640px;margin-bottom:20px;}
+
+/* Concept strip — always visible */
+.concept-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:22px;}
+@media(max-width:560px){.concept-strip{grid-template-columns:1fr;}}
+.cs-card{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:14px;}
+.cs-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.cs-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
+.cs-desc{font-size:.82rem;line-height:1.6;color:var(--ink40);}
+
+/* TABS */
+.tool-tabs{display:flex;gap:0;border-bottom:0.5px solid var(--b);margin-bottom:26px;overflow-x:auto;}
+.ttab{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:11px 14px;cursor:pointer;color:var(--ink40);border-bottom:2px solid transparent;
+  white-space:nowrap;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none;}
+.ttab:hover{color:var(--ink80);}
+.ttab.on{color:var(--gold);border-bottom-color:var(--gold);}
+
+.tpanel{display:none;}
+.tpanel.on{display:block;}
+
+/* SHARED */
+.s-ey{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:9px;}
+.s-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.3;}
+.s-body{font-size:.95rem;line-height:1.9;color:var(--ink60);margin-bottom:18px;}
+.s-body strong{color:var(--ink80);font-weight:500;}
+.phrase{background:var(--bg3);border-left:2px solid var(--cold);border-radius:0 4px 4px 0;
+  padding:12px 16px;margin:14px 0;font-family:'Playfair Display',serif;font-style:italic;
+  font-size:.95rem;color:var(--ink80);line-height:1.7;}
+.card{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:18px 20px;margin-bottom:10px;}
+.rule{height:0.5px;background:var(--b);margin:18px 0;}
+.btn{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  padding:9px 20px;border-radius:2px;cursor:pointer;border:none;transition:all .15s;display:inline-block;}
+.btn-gold{background:var(--gold);color:var(--bg);}
+.btn-gold:hover{background:var(--gl);}
+.btn-ghost{background:none;color:var(--ink40);border:0.5px solid var(--b);}
+.btn-ghost:hover{color:var(--ink80);border-color:var(--b2);}
+.btn-cold{background:rgba(42,196,200,0.12);color:var(--cold);border:0.5px solid var(--cb);}
+.btn-cold:hover{background:rgba(42,196,200,0.22);}
+.btn-green{background:rgba(80,200,120,0.12);color:var(--green);border:0.5px solid var(--grb);}
+.btn-green:hover{background:rgba(80,200,120,0.22);}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px;}
+
+/* ══ TOOL 1: TIME PROFILE ══ */
+.tp-narrative{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:20px;margin-bottom:18px;}
+.tp-n-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.tp-n-body{font-size:.9rem;line-height:1.85;color:var(--ink60);}
+.tp-n-body strong{color:var(--ink80);font-weight:500;}
+
+.profile-q{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:16px 18px;margin-bottom:8px;transition:border-color .15s;}
+.profile-q.answered{border-color:var(--gb);}
+.pq-text{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.4;}
+.pq-scale{display:flex;flex-direction:column;gap:5px;}
+.pq-opt{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;border:0.5px solid var(--b);
+  border-radius:3px;cursor:pointer;transition:all .15s;}
+.pq-opt:hover{border-color:var(--b2);}
+.pq-opt.sel{background:var(--gd);border-color:var(--gb);}
+.pq-dot{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink20);flex-shrink:0;margin-top:4px;transition:all .15s;}
+.pq-opt.sel .pq-dot{background:var(--gold);border-color:var(--gold);}
+.pq-opt-text{font-size:.88rem;color:var(--ink60);line-height:1.5;}
+.pq-opt.sel .pq-opt-text{color:var(--ink80);}
+.pq-opt-weight{font-family:'IBM Plex Mono',monospace;font-size:7px;color:var(--ink20);flex-shrink:0;margin-top:5px;}
+
+.prog-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.prog-wrap{flex:1;background:var(--bg3);border-radius:2px;height:3px;overflow:hidden;}
+.prog-bar{height:100%;border-radius:2px;background:var(--gold);transition:width .4s ease;width:0%;}
+.prog-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--ink40);white-space:nowrap;letter-spacing:1px;}
+
+/* Profile result */
+.profile-result{background:var(--bg2);border-radius:4px;padding:22px;margin-top:16px;display:none;}
+.pr-type-row{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding-bottom:16px;border-bottom:0.5px solid var(--b);}
+.pr-type-badge{padding:6px 14px;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;}
+.pr-type-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--ink);}
+.pr-dimension-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:14px 0;}
+@media(max-width:500px){.pr-dimension-grid{grid-template-columns:1fr;}}
+.pr-dim{background:var(--bg3);border-radius:3px;padding:12px;}
+.pr-dim-label{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.pr-dim-bar-wrap{background:rgba(100,140,200,0.08);border-radius:2px;height:5px;overflow:hidden;margin-bottom:5px;}
+.pr-dim-bar{height:100%;border-radius:2px;transition:width .8s ease;width:0%;}
+.pr-dim-pct{font-family:'IBM Plex Mono',monospace;font-size:9px;}
+.pr-desc{font-size:.92rem;line-height:1.85;color:var(--ink60);margin:12px 0;}
+.pr-desc strong{color:var(--ink80);font-weight:500;}
+.pr-pathways{display:flex;flex-direction:column;gap:7px;}
+.pr-path{background:var(--bg3);border-radius:3px;padding:10px 14px;display:flex;gap:10px;align-items:flex-start;}
+.pr-path-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;margin-top:8px;}
+.pr-path-text{font-size:.88rem;line-height:1.72;color:var(--ink60);}
+.pr-path-text strong{color:var(--ink80);font-weight:500;}
+
+/* ══ TOOL 2: URGENCY SEPARATOR ══ */
+.urg-intro{border-left:2px solid var(--amber);background:var(--bg2);border-radius:0 4px 4px 0;
+  padding:14px 16px;margin-bottom:20px;font-size:.92rem;line-height:1.82;color:var(--ink60);}
+.urg-intro strong{color:var(--ink80);}
+
+.urg-input{width:100%;background:var(--bg3);border:0.5px solid var(--b2);border-radius:3px;
+  padding:12px 14px;font-family:'Crimson Pro',Georgia,serif;font-size:.95rem;color:var(--ink);
+  line-height:1.6;resize:vertical;min-height:66px;}
+.urg-input:focus{outline:none;border-color:var(--cold);}
+.urg-input::placeholder{color:var(--ink20);}
+
+.urg-questions{display:flex;flex-direction:column;gap:8px;margin:14px 0;}
+.urg-q{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:14px 16px;}
+.urg-q-text{font-family:'Playfair Display',serif;font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.35;}
+.urg-opts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;}
+@media(max-width:500px){.urg-opts{grid-template-columns:1fr;}}
+.urg-opt{padding:8px 12px;border:0.5px solid var(--b);border-radius:3px;cursor:pointer;text-align:center;transition:all .15s;}
+.urg-opt:hover{border-color:var(--b2);}
+.urg-opt.sel-y{background:var(--rd);border-color:var(--rb);color:var(--red);}
+.urg-opt.sel-m{background:var(--amd);border-color:var(--amb);color:var(--amber);}
+.urg-opt.sel-n{background:var(--grd);border-color:var(--grb);color:var(--green);}
+.urg-opt-text{font-size:.82rem;font-family:'IBM Plex Mono',monospace;letter-spacing:.5px;}
+
+.urg-result{background:var(--bg2);border-radius:4px;padding:20px;margin-top:14px;display:none;}
+.urg-verdict{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:8px;}
+.urg-meter-wrap{display:flex;gap:4px;margin:12px 0;}
+.urg-segment{flex:1;height:8px;border-radius:2px;transition:opacity .3s;}
+.urg-body{font-size:.92rem;line-height:1.82;color:var(--ink60);margin-bottom:12px;}
+.urg-body strong{color:var(--ink80);}
+.urg-action-list{display:flex;flex-direction:column;gap:6px;}
+.urg-action{background:var(--bg3);border-radius:3px;padding:9px 13px;font-size:.88rem;line-height:1.7;color:var(--ink60);}
+.urg-action strong{color:var(--ink80);}
+
+/* ══ TOOL 3: ACCUMULATION TRACKER ══ */
+.acc-intro{font-size:.92rem;line-height:1.85;color:var(--ink60);margin-bottom:16px;}
+.acc-intro strong{color:var(--ink80);}
+
+.acc-add-row{display:flex;gap:8px;margin-bottom:12px;align-items:flex-start;flex-wrap:wrap;}
+.acc-input{flex:1;min-width:200px;background:var(--bg3);border:0.5px solid var(--b2);border-radius:3px;
+  padding:10px 13px;font-family:'Crimson Pro',Georgia,serif;font-size:.92rem;color:var(--ink);
+  line-height:1.5;}
+.acc-input:focus{outline:none;border-color:var(--cold);}
+.acc-input::placeholder{color:var(--ink20);}
+.acc-type-select{background:var(--bg3);border:0.5px solid var(--b2);border-radius:3px;
+  padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;
+  color:var(--ink60);cursor:pointer;appearance:none;-webkit-appearance:none;}
+.acc-type-select:focus{outline:none;}
+
+.acc-list{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;min-height:40px;}
+.acc-item{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:12px 14px;
+  display:flex;align-items:center;gap:10px;transition:all .2s;}
+.acc-item.placed{opacity:0.4;border-color:var(--grb);}
+.acc-item-type{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;text-transform:uppercase;
+  padding:2px 8px;border-radius:2px;flex-shrink:0;}
+.type-interact{background:var(--cd);color:var(--cold);border:0.5px solid var(--cb);}
+.type-emotion{background:var(--rd);color:var(--red);border:0.5px solid var(--rb);}
+.type-task{background:var(--amd);color:var(--amber);border:0.5px solid var(--amb);}
+.type-unsaid{background:var(--vd);color:var(--violet);border:0.5px solid var(--vb);}
+.acc-item-text{flex:1;font-size:.9rem;color:var(--ink80);line-height:1.4;}
+.acc-item.placed .acc-item-text{text-decoration:line-through;color:var(--ink40);}
+.acc-item-actions{display:flex;gap:5px;flex-shrink:0;}
+.acc-place-btn{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:1px;text-transform:uppercase;
+  padding:4px 9px;border-radius:2px;cursor:pointer;border:0.5px solid var(--grb);
+  background:var(--grd);color:var(--green);transition:all .15s;}
+.acc-place-btn:hover{background:rgba(80,200,120,0.2);}
+.acc-place-btn.unplace{border-color:var(--b);background:none;color:var(--ink40);}
+.acc-del-btn{font-family:'IBM Plex Mono',monospace;font-size:7px;padding:4px 7px;border-radius:2px;
+  cursor:pointer;border:0.5px solid var(--b);background:none;color:var(--ink20);}
+.acc-del-btn:hover{color:var(--red);border-color:var(--rb);}
+
+.acc-summary{background:var(--bg2);border-radius:4px;padding:18px;margin-top:8px;}
+.acc-sum-row{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+.acc-sum-cell{background:var(--bg3);border-radius:3px;padding:10px 14px;flex:1;min-width:80px;text-align:center;}
+.acc-sum-n{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:500;margin-bottom:2px;}
+.acc-sum-l{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--ink40);}
+.acc-insight{background:var(--bg3);border-left:2px solid var(--gold);border-radius:0 4px 4px 0;
+  padding:11px 14px;font-size:.9rem;line-height:1.78;color:var(--ink60);}
+.acc-insight strong{color:var(--ink80);}
+.acc-empty{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;
+  color:var(--ink20);text-align:center;padding:24px;border:0.5px dashed var(--b);border-radius:3px;}
+
+/* ══ TOOL 4: SEQUENCE BUILDER ══ */
+.seq-intro{font-size:.92rem;line-height:1.85;color:var(--ink60);margin-bottom:16px;}
+.seq-intro strong{color:var(--ink80);}
+
+.seq-timeline{display:flex;flex-direction:column;gap:0;position:relative;margin-bottom:20px;}
+.seq-slot{display:flex;gap:14px;align-items:flex-start;padding-bottom:0;}
+.seq-spine{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.seq-node{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--b2);
+  display:flex;align-items:center;justify-content:center;transition:all .2s;background:var(--bg2);}
+.seq-node.complete{background:rgba(80,200,120,0.15);border-color:var(--green);}
+.seq-node.active{background:rgba(42,196,200,0.12);border-color:var(--cold);}
+.seq-node.future{border-color:var(--gb);background:var(--gd);}
+.seq-node-num{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink40);}
+.seq-node.complete .seq-node-num{color:var(--green);}
+.seq-node.active .seq-node-num{color:var(--cold);}
+.seq-node.future .seq-node-num{color:var(--gold);}
+.seq-connector{width:1px;flex:1;min-height:14px;background:var(--b);}
+.seq-connector.done{background:rgba(80,200,120,0.2);}
+.seq-content{flex:1;background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;
+  padding:14px 16px;margin-bottom:8px;transition:border-color .15s;}
+.seq-content.complete{border-color:rgba(80,200,120,0.2);background:rgba(80,200,120,0.03);}
+.seq-content.active{border-color:var(--cb);}
+.seq-content.future{border-color:var(--gb);}
+.seq-slot-label{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px;}
+.seq-content.complete .seq-slot-label{color:var(--green);}
+.seq-content.active .seq-slot-label{color:var(--cold);}
+.seq-content.future .seq-slot-label{color:var(--gold);}
+.seq-slot-q{font-family:'Playfair Display',serif;font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.35;}
+.seq-input{width:100%;background:var(--bg3);border:0.5px solid var(--b2);border-radius:3px;
+  padding:9px 12px;font-family:'Crimson Pro',Georgia,serif;font-size:.9rem;color:var(--ink);
+  line-height:1.5;resize:none;}
+.seq-input:focus{outline:none;border-color:var(--cold);}
+.seq-input::placeholder{color:var(--ink20);}
+.seq-complete-btn{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1.5px;
+  text-transform:uppercase;padding:6px 13px;border-radius:2px;cursor:pointer;
+  border:0.5px solid var(--grb);background:var(--grd);color:var(--green);margin-top:8px;transition:all .15s;}
+.seq-complete-btn:hover{background:rgba(80,200,120,0.2);}
+.seq-completed-text{font-size:.9rem;color:var(--green);font-style:italic;margin-top:4px;}
+
+.seq-result{background:var(--bg2);border:0.5px solid rgba(80,200,120,0.2);border-radius:4px;padding:20px;margin-top:8px;display:none;}
+
+/* ══ TOOL 5: FORWARD POINT ══ */
+.fwd-intro{font-size:.92rem;line-height:1.88;color:var(--ink60);margin-bottom:18px;}
+.fwd-intro strong{color:var(--ink80);}
+
+.fwd-scale-wrap{margin-bottom:20px;}
+.fwd-scale-q{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.35;}
+.fwd-scale{display:flex;flex-direction:column;gap:5px;}
+.fwd-opt{display:flex;align-items:flex-start;gap:10px;padding:9px 13px;border:0.5px solid var(--b);
+  border-radius:3px;cursor:pointer;transition:all .15s;}
+.fwd-opt:hover{border-color:var(--b2);}
+.fwd-opt.sel{border-color:var(--gb);background:var(--gd);}
+.fwd-dot{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink20);flex-shrink:0;margin-top:4px;transition:all .15s;}
+.fwd-opt.sel .fwd-dot{background:var(--gold);border-color:var(--gold);}
+.fwd-opt-text{font-size:.88rem;color:var(--ink60);line-height:1.5;}
+.fwd-opt.sel .fwd-opt-text{color:var(--ink80);}
+
+.fwd-builder{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:18px;margin-bottom:14px;}
+.fwd-builder-title{font-family:'Playfair Display',serif;font-size:.97rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.fwd-builder-desc{font-size:.85rem;color:var(--ink40);margin-bottom:14px;font-style:italic;line-height:1.6;}
+.fwd-anchor-grid{display:flex;flex-direction:column;gap:8px;}
+.fwd-anchor{background:var(--bg3);border-radius:3px;padding:12px 14px;display:flex;gap:12px;align-items:flex-start;}
+.fwd-anchor-when{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;flex-shrink:0;width:70px;margin-top:2px;}
+.fwd-anchor-input{flex:1;background:rgba(100,140,200,0.05);border:0.5px solid var(--b2);border-radius:2px;
+  padding:7px 10px;font-family:'Crimson Pro',Georgia,serif;font-size:.9rem;color:var(--ink);}
+.fwd-anchor-input:focus{outline:none;border-color:var(--gold);}
+.fwd-anchor-input::placeholder{color:var(--ink20);}
+
+.fwd-result{background:var(--bg2);border-radius:4px;padding:20px;margin-top:8px;display:none;}
+.fwd-plan{display:flex;flex-direction:column;gap:0;}
+.fwd-plan-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:0.5px solid var(--b);}
+.fwd-plan-item:last-child{border-bottom:none;}
+.fwd-plan-when{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);flex-shrink:0;width:80px;margin-top:3px;}
+.fwd-plan-what{font-size:.9rem;color:var(--ink80);line-height:1.5;}
+.fwd-plan-what.empty{color:var(--ink20);font-style:italic;}
+
+/* FOOTER */
+.pg-footer{margin-top:48px;padding-top:14px;border-top:0.5px solid var(--b);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.pf-l{font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:var(--ink20);letter-spacing:.5px;line-height:2.1;}
+.pf-r{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,144,42,0.35);}
+</style>
+</head>
+<body>
+<nav>
+  <span class="nav-l">Survival Guide · Tool 07</span>
+  <div class="nav-r">
+    <a href="index.html" class="nbtn">← All Tools</a>
+    <a href="https://coldischemia.foundation" target="_blank" rel="noopener" class="nbtn home">coldischemia.foundation ↗</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="hdr">
+    <div class="hdr-ey">Tool 07 · Section VII · Survival Guide for Care Partners</div>
+    <h1 class="hdr-title">Time Distortion and the <em>Caregiving Mind</em></h1>
+    <p class="hdr-sub">When every moment feels like it is still happening, when nothing feels finished, and when urgency has become the permanent background — these tools help you understand what is happening to your experience of time and how to begin restoring structure to it.</p>
+  </div>
+
+  <!-- CONCEPT STRIP -->
+  <div class="concept-strip">
+    <div class="cs-card">
+      <div class="cs-icon" style="background:var(--rd);">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#c83050" stroke-width="1.2"/><line x1="7" y1="3.5" x2="7" y2="7.5" stroke="#c83050" stroke-width="1.2"/><line x1="7" y1="7.5" x2="9.5" y2="9.5" stroke="#c83050" stroke-width="1.2"/></svg>
+      </div>
+      <div class="cs-label" style="color:var(--red);">The extended present</div>
+      <div class="cs-desc">Everything feels like it is happening at once. The past has not settled. The future cannot be accessed. Only an overloaded now remains.</div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-icon" style="background:var(--amd);">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12 L7 2 L12 12" stroke="#e8900a" stroke-width="1.2" fill="none"/><line x1="4.5" y1="8.5" x2="9.5" y2="8.5" stroke="#e8900a" stroke-width="1"/><line x1="7" y1="10.5" x2="7" y2="12" stroke="#e8900a" stroke-width="1.2"/></svg>
+      </div>
+      <div class="cs-label" style="color:var(--amber);">Urgency as default</div>
+      <div class="cs-desc">Urgency stops being a signal and becomes a background condition. Everything feels equally pressing. Differentiation becomes difficult.</div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-icon" style="background:var(--cd);">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="2" y1="7" x2="12" y2="7" stroke="#2ac4c8" stroke-width="1.2"/><line x1="2" y1="4" x2="7" y2="7" stroke="#2ac4c8" stroke-width="1"/><line x1="7" y1="7" x2="12" y2="4" stroke="#2ac4c8" stroke-width="1" stroke-dasharray="2,1.5"/></svg>
+      </div>
+      <div class="cs-label" style="color:var(--cold);">Restoring sequence</div>
+      <div class="cs-desc">Recovery begins when individual moments are allowed to reach a point of completion — even while the broader situation remains unresolved.</div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tool-tabs">
+    <button class="ttab on" onclick="setTab(0,this)">01 · Time profile</button>
+    <button class="ttab" onclick="setTab(1,this)">02 · Urgency separator</button>
+    <button class="ttab" onclick="setTab(2,this)">03 · Accumulation tracker</button>
+    <button class="ttab" onclick="setTab(3,this)">04 · Sequence builder</button>
+    <button class="ttab" onclick="setTab(4,this)">05 · Forward point</button>
+  </div>
+
+  <!-- ══ TAB 1: TIME PROFILE ══ -->
+  <div class="tpanel on" id="tp0">
+    <div class="s-ey">Tool 01 of 05 · Time distortion profile</div>
+    <div class="s-title">How is time behaving for you right now?</div>
+
+    <div class="tp-narrative">
+      <div class="tp-n-title">What this measures — and why it matters</div>
+      <div class="tp-n-body">Time distortion in caregiving is not a single experience. It fractures across three dimensions simultaneously. <strong>Fragmentation</strong> is the care partner's experience — moments that do not connect, no closure, everything stacking. <strong>Extended urgency</strong> is what the caregiving dynamic produces — when the feeling of immediacy becomes generalized and constant. <strong>Temporal collapse</strong> is the structural result — when past, present, and future stop operating as separate dimensions and compress into a single overloaded field.<br><br>This profile measures where you are across all three. It is not a diagnosis. It is a map.</div>
+    </div>
+
+    <div class="prog-row">
+      <div class="prog-wrap"><div class="prog-bar" id="profProg"></div></div>
+      <div class="prog-lbl" id="profLbl">0 of 9 answered</div>
+    </div>
+
+    <div id="profQuestions"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-gold" onclick="showProfile()">Generate my profile →</button>
+      <button class="btn btn-ghost" onclick="resetProfile()">Start over</button>
+    </div>
+    <div class="profile-result" id="profResult"></div>
+  </div>
+
+  <!-- ══ TAB 2: URGENCY SEPARATOR ══ -->
+  <div class="tpanel" id="tp1">
+    <div class="s-ey">Tool 02 of 05 · Urgency vs necessity separator</div>
+    <div class="s-title">Does this actually need to happen right now?</div>
+
+    <div class="urg-intro">
+      In a stable environment, urgency is <strong>specific and temporary</strong>. In high-tension caregiving it becomes generalized — a background condition that makes everything feel equally pressing. This tool separates genuine urgency from urgency that has become the default signal of an overloaded system. Name the demand you are feeling pulled toward right now.
+    </div>
+
+    <div class="card" style="margin-bottom:14px;">
+      <div class="s-ey" style="margin-bottom:7px;">The demand</div>
+      <div style="font-size:.85rem;color:var(--ink40);font-style:italic;margin-bottom:9px;">What is pulling at you right now — what feels like it must be done immediately?</div>
+      <textarea class="urg-input" id="urgInput" rows="2" placeholder="The thing that feels urgent right now is..."></textarea>
+    </div>
+
+    <div class="urg-questions" id="urgQuestions"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-gold" onclick="runUrgency()">Assess this →</button>
+      <button class="btn btn-ghost" onclick="clearUrgency()">Clear</button>
+    </div>
+    <div class="urg-result" id="urgResult"></div>
+  </div>
+
+  <!-- ══ TAB 3: ACCUMULATION TRACKER ══ -->
+  <div class="tpanel" id="tp2">
+    <div class="s-ey">Tool 03 of 05 · Accumulation tracker</div>
+    <div class="s-title">What is still in circulation — what has not been placed?</div>
+
+    <p class="acc-intro">
+      When time loses its structure, moments do not finish. They remain active — <strong>an unresolved conversation, an emotion that was triggered but not processed, a task that was started without an endpoint.</strong> This tool makes the invisible visible. Add what is still circulating in your mind. Then, one at a time, place each one — not by solving it, but by consciously acknowledging it as a distinct item that has been seen and set aside.
+    </p>
+
+    <div class="acc-add-row">
+      <input class="acc-input" type="text" id="accInput" placeholder="Something still circulating..." maxlength="120" onkeydown="if(event.key==='Enter')addAccItem()"/>
+      <select class="acc-type-select" id="accType">
+        <option value="interact">Interaction</option>
+        <option value="emotion">Emotion</option>
+        <option value="task">Task / practical</option>
+        <option value="unsaid">Something unsaid</option>
+      </select>
+      <button class="btn btn-cold" onclick="addAccItem()">Add →</button>
+    </div>
+
+    <div class="acc-list" id="accList"><div class="acc-empty" id="accEmpty">Nothing added yet. Add items above.</div></div>
+
+    <div class="acc-summary" id="accSummary">
+      <div class="acc-sum-row" id="accSumRow">
+        <div class="acc-sum-cell"><div class="acc-sum-n" id="asnTotal" style="color:var(--ink)">0</div><div class="acc-sum-l">total</div></div>
+        <div class="acc-sum-cell"><div class="acc-sum-n" id="asnActive" style="color:var(--amber)">0</div><div class="acc-sum-l">still circulating</div></div>
+        <div class="acc-sum-cell"><div class="acc-sum-n" id="asnPlaced" style="color:var(--green)">0</div><div class="acc-sum-l">placed</div></div>
+      </div>
+      <div class="acc-insight" id="accInsight">Add items above to see your accumulation picture.</div>
+    </div>
+  </div>
+
+  <!-- ══ TAB 4: SEQUENCE BUILDER ══ -->
+  <div class="tpanel" id="tp3">
+    <div class="s-ey">Tool 04 of 05 · Sequence builder</div>
+    <div class="s-title">Reintroducing completion points into a fragmented day</div>
+
+    <p class="seq-intro">
+      Restoration begins at the level of individual moments, not the whole system. You do not need to fix the entire structure of the day. You need to <strong>allow specific interactions to reach a psychological endpoint</strong> — even a small one. Work through the five steps below. Each one moves something from unresolved to placed.
+    </p>
+
+    <div class="seq-timeline" id="seqTimeline"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-gold" onclick="showSeqResult()">Review what I have placed →</button>
+      <button class="btn btn-ghost" onclick="resetSeq()">Start over</button>
+    </div>
+    <div class="seq-result" id="seqResult"></div>
+  </div>
+
+  <!-- ══ TAB 5: FORWARD POINT ══ -->
+  <div class="tpanel" id="tp4">
+    <div class="s-ey">Tool 05 of 05 · Forward point setter</div>
+    <div class="s-title">Restoring direction without forcing the future</div>
+
+    <p class="fwd-intro">
+      One of the most destabilizing effects of time distortion is the loss of forward direction. When everything is organized around immediate demand, the future cannot be accessed. The solution is not to impose long-term plans on an unstable environment. It is to <strong>reintroduce small, reliable points of anticipation that exist just beyond the present moment.</strong> These points do not need to be significant. Their function is not optimism. It is orientation.
+    </p>
+
+    <div class="card" style="margin-bottom:16px;">
+      <div class="fwd-scale-q">How much access do you currently have to anything beyond the immediate present?</div>
+      <div class="fwd-scale" id="fwdScale"></div>
+    </div>
+
+    <div class="fwd-builder">
+      <div class="fwd-builder-title">Build three forward points</div>
+      <div class="fwd-builder-desc">These do not need to be significant events. A cup of coffee at a specific time. A five-minute walk. A single message to one person. Something that exists just ahead of now and belongs to no one's needs but yours.</div>
+      <div class="fwd-anchor-grid" id="fwdAnchors"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-gold" onclick="buildForwardPlan()">Set these forward points →</button>
+      <button class="btn btn-ghost" onclick="clearForward()">Clear</button>
+    </div>
+    <div class="fwd-result" id="fwdResult"></div>
+  </div>
+
+  <div class="pg-footer">
+    <div class="pf-l">Tool 07 · Time Distortion and the Caregiving Mind · Survival Guide for Care Partners<br>Cold Ischemia Foundation · coldischemia.foundation · Free Resource · Not for Resale</div>
+    <div class="pf-r">CIF · 2025</div>
+  </div>
+</div>
+
+<script>
+// ══ PROFILE DATA ══
+const PROF_QS = [
+  {q:"When you think back to something that happened yesterday, does it feel like it belongs to a different day?",
+   dim:"frag",
+   opts:["Yes — it feels distant, like it belongs to another week.",
+         "Somewhat — yesterday feels blurry.",
+         "It feels close, maybe too close — like it is still active.",
+         "I am not sure. I am having trouble locating yesterday at all."],
+   w:[3,2,1,3]},
+  {q:"How often do you feel like you are still inside an interaction that has already ended?",
+   dim:"frag",
+   opts:["Rarely — interactions tend to resolve.",
+         "Sometimes — certain things stay with me longer than I'd expect.",
+         "Often — it is hard to feel like anything fully ends.",
+         "Almost always — nothing fully closes."],
+   w:[0,1,2,3]},
+  {q:"When a demand arrives — any demand — what is your first internal signal?",
+   dim:"urg",
+   opts:["A proportionate sense of whether it needs attention now.",
+         "A slight pull toward dealing with it quickly.",
+         "A strong pull — most things feel like they need immediate response.",
+         "Urgency — my default response is that it cannot wait."],
+   w:[0,1,2,3]},
+  {q:"Can you reliably tell the difference between what must happen in the next hour and what could wait until tomorrow?",
+   dim:"urg",
+   opts:["Yes — the distinction is usually clear.",
+         "Sometimes — it depends on the day.",
+         "Rarely — most things feel equally pressing.",
+         "No — everything carries the same weight of immediacy."],
+   w:[0,1,2,3]},
+  {q:"When you think about next week — or even tomorrow — what do you notice?",
+   dim:"collapse",
+   opts:["A reasonable sense of what is coming.",
+         "Some fuzziness — not much detail, but a sense of direction.",
+         "Difficulty accessing it — tomorrow feels very far or very uncertain.",
+         "Nothing. I cannot hold the future right now."],
+   w:[0,1,2,3]},
+  {q:"Does time feel like it is moving — or does it feel like it is accumulating?",
+   dim:"collapse",
+   opts:["Moving — days feel distinct and sequential.",
+         "Mostly moving, but with patches of stagnation.",
+         "More accumulating than moving — days blur.",
+         "Accumulating — it all feels like one continuous weight."],
+   w:[0,1,2,3]},
+  {q:"How often do you have a sense that something happened today but you cannot quite place where in the day it was?",
+   dim:"frag",
+   opts:["Rarely — I have a general sense of sequence.",
+         "Occasionally, for less significant things.",
+         "Often — the order of the day is unclear.",
+         "Most of the time — the day feels like a field, not a sequence."],
+   w:[0,1,2,3]},
+  {q:"When you are in the middle of one task, how often do you feel pulled by three or four other things that feel equally urgent?",
+   dim:"urg",
+   opts:["Rarely — I can usually stay with one thing.",
+         "Sometimes — competing pulls are present but manageable.",
+         "Often — it is difficult to stay with what is in front of me.",
+         "Almost always — multiple urgencies compete at once."],
+   w:[0,1,2,3]},
+  {q:"Do you have even a small sense of something that is yours — a moment, a routine, an anchor — that exists just ahead of now?",
+   dim:"collapse",
+   opts:["Yes — there is something small I can point to.",
+         "Vaguely — there might be, but it is not reliable.",
+         "Barely — I struggle to identify anything forward-facing.",
+         "No. The only orientation I have is what is immediately in front of me."],
+   w:[0,1,2,3]}
+];
+
+const PROF_DIMS = {frag:"Fragmentation",urg:"Urgency load",collapse:"Temporal collapse"};
+const PROF_DIM_COLORS = {frag:"var(--red)",urg:"var(--amber)",collapse:"var(--violet)"};
+
+let profAnswers = new Array(PROF_QS.length).fill(null);
+
+function buildProfile(){
+  document.getElementById('profQuestions').innerHTML = PROF_QS.map((q,qi)=>`
+    <div class="profile-q" id="pq${qi}">
+      <div class="pq-text">${qi+1}. ${q.q}</div>
+      <div class="pq-scale">
+        ${q.opts.map((o,oi)=>`
+          <div class="pq-opt" onclick="selProf(${qi},${oi},${q.w[oi]},this)">
+            <div class="pq-dot"></div>
+            <div class="pq-opt-text">${o}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function selProf(qi,oi,w,el){
+  document.querySelectorAll(`#pq${qi} .pq-opt`).forEach(e=>e.classList.remove('sel'));
+  el.classList.add('sel');
+  document.getElementById('pq'+qi).classList.add('answered');
+  profAnswers[qi]=w;
+  const done=profAnswers.filter(a=>a!==null).length;
+  document.getElementById('profProg').style.width=(done/PROF_QS.length*100)+'%';
+  document.getElementById('profLbl').textContent=`${done} of ${PROF_QS.length} answered`;
+}
+
+function showProfile(){
+  const done=profAnswers.filter(a=>a!==null).length;
+  if(done<6){alert('Please answer at least 6 questions for a meaningful profile.');return;}
+  
+  const dimScores={frag:0,urg:0,collapse:0};
+  const dimCounts={frag:0,urg:0,collapse:0};
+  PROF_QS.forEach((q,i)=>{
+    if(profAnswers[i]!==null){
+      dimScores[q.dim]+=profAnswers[i];
+      dimCounts[q.dim]++;
+    }
+  });
+  const dimPct={
+    frag: Math.round(dimScores.frag/(dimCounts.frag*3)*100),
+    urg: Math.round(dimScores.urg/(dimCounts.urg*3)*100),
+    collapse: Math.round(dimScores.collapse/(dimCounts.collapse*3)*100)
+  };
+  const overall = Math.round((dimPct.frag+dimPct.urg+dimPct.collapse)/3);
+
+  let profileType,profileColor,profileBadgeBg,profileDesc,pathways;
+  const dominant = Object.entries(dimPct).sort((a,b)=>b[1]-a[1])[0][0];
+
+  if(overall<=30){
+    profileType="Mostly continuous";profileColor="var(--cold)";profileBadgeBg="var(--cd)";
+    profileDesc="Your relationship with time is largely intact. Some fragmentation is present — this is normal in caregiving — but the overall structure of past, present, and future is functioning. What you are noticing is stress, not collapse.";
+    pathways=["<strong>Maintain the small structures you already have.</strong> Whatever is providing sequence in your day — honor it, even when it feels minor.",
+      "<strong>Watch the urgency signal.</strong> Even when time is mostly intact, urgency can begin to generalize slowly. Periodically check whether what feels pressing actually requires immediate response.",
+      "<strong>Use the Forward Point tool</strong> to keep at least one small anchor beyond the present moment."];
+  } else if(overall<=55){
+    profileType="Fragmented";profileColor="var(--amber)";profileBadgeBg="var(--amd)";
+    profileDesc="Time is beginning to lose its connective tissue. Days are less distinct. Some interactions feel unresolved for longer than they should. The future is accessible but harder to hold. This is the pattern mid-formation — when it is still possible to interrupt through deliberate reintroduction of structure.";
+    pathways=["<strong>Use the Accumulation Tracker</strong> to identify what is still circulating and begin placing items intentionally.",
+      "<strong>Practice partial closure</strong> after each significant interaction — not resolution of the whole problem, but acknowledgment that this particular segment has concluded.",
+      "<strong>Introduce one reliable daily forward point.</strong> Not a plan — a predictable small moment that exists just ahead of now."];
+  } else if(overall<=75){
+    profileType="Extended present";profileColor="var(--red)";profileBadgeBg="var(--rd)";
+    profileDesc="The temporal structure has substantially compressed. Past events remain partially active. Future access is significantly reduced. Urgency has generalized — most things carry the same weight of immediacy. You are operating in a continuous field of demand rather than a sequence of addressable moments. This requires deliberate structural intervention.";
+    pathways=["<strong>The Sequence Builder is the most important tool for you right now.</strong> Reintroducing even small completion points will begin to interrupt the compression.",
+      "<strong>The Urgency Separator is essential.</strong> Not everything that feels urgent actually requires immediate response. Building that distinction one demand at a time is how urgency loses its grip.",
+      "<strong>One forward point per day, minimum.</strong> Even something five minutes away from now. The present needs a boundary — something that marks where it ends."];
+  } else {
+    profileType="Full collapse";profileColor="var(--violet)";profileBadgeBg="var(--vd)";
+    profileDesc="Time has effectively compressed into a single, continuous, undifferentiated present. The past is not settling. The future is largely inaccessible. Urgency is constant and non-specific. You are not failing to manage time — the system you are operating within has removed the conditions that make time management possible. This is not a personal failing. It is a structural diagnosis. What is needed is not better time management. It is recovery of the basic architecture.";
+    pathways=["<strong>You need external support, not more tools.</strong> A counselor, a social worker, a peer caregiver. One real conversation per week with someone outside this situation is not a luxury — it is the minimum for restoring external reference.",
+      "<strong>Reduce, do not optimize.</strong> In full collapse, attempting to manage more is counterproductive. Identify the one or two things that absolutely must happen and let the rest queue.",
+      "<strong>One physical anchor per day</strong> — not a plan, not a task, not a caregiving obligation. Something your body can do for itself: a meal you chose, a walk, a moment of quiet that belongs to no one else."];
+  }
+
+  const r=document.getElementById('profResult');
+  r.style.display='block';
+  r.innerHTML=`
+    <div class="pr-type-row">
+      <div class="pr-type-badge" style="background:${profileBadgeBg};color:${profileColor};border:0.5px solid ${profileColor}33;">${profileType}</div>
+      <div class="pr-type-name">${profileType}</div>
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;">Three dimensions</div>
+    <div class="pr-dimension-grid">
+      ${Object.entries(dimPct).map(([k,v])=>`
+        <div class="pr-dim">
+          <div class="pr-dim-label" style="color:${PROF_DIM_COLORS[k]}">${PROF_DIMS[k]}</div>
+          <div class="pr-dim-bar-wrap"><div class="pr-dim-bar" style="background:${PROF_DIM_COLORS[k]}" data-w="${v}"></div></div>
+          <div class="pr-dim-pct" style="color:${PROF_DIM_COLORS[k]}">${v}%</div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="pr-desc">${profileDesc}</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:14px 0 8px;">Where to focus</div>
+    <div class="pr-pathways">${pathways.map(p=>`<div class="pr-path"><div class="pr-path-dot" style="background:${profileColor}"></div><div class="pr-path-text">${p}</div></div>`).join('')}</div>
+    <div class="phrase">"The goal is not to control time. The goal is to prevent it from collapsing into a single, unending present."</div>
+  `;
+  r.scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(()=>{
+    document.querySelectorAll('.pr-dim-bar[data-w]').forEach(b=>{b.style.width=b.getAttribute('data-w')+'%';});
+  },200);
+}
+
+function resetProfile(){
+  profAnswers=new Array(PROF_QS.length).fill(null);
+  document.getElementById('profProg').style.width='0%';
+  document.getElementById('profLbl').textContent='0 of 9 answered';
+  document.getElementById('profResult').style.display='none';
+  buildProfile();
+}
+
+// ══ URGENCY DATA ══
+const URG_QS = [
+  {q:"If this does not happen in the next 30 minutes, what is the realistic consequence?",
+   opts:["Serious — something medical, safety-related, or time-critical will be affected.",
+         "Inconvenient — something will be harder or require more effort later.",
+         "Minimal — the delay will be noticeable but nothing significant changes.",
+         "Unclear — I am not sure what the actual consequence is."],
+   w:[3,2,1,1]},
+  {q:"Where is the urgency coming from?",
+   opts:["From a specific, identifiable condition — something observable just changed.",
+         "From anticipation — I am expecting something might escalate.",
+         "From habit — responding quickly is how I have learned to prevent problems.",
+         "From the general pressure of the environment — it is always there."],
+   w:[3,2,1,0]},
+  {q:"Has this same type of demand felt equally urgent every time it has arisen in the last week?",
+   opts:["No — this is genuinely different from usual.",
+         "Sometimes — certain times are more intense than others.",
+         "Yes — this kind of demand always feels like it cannot wait.",
+         "Yes, and the urgency has been intensifying regardless of circumstances."],
+   w:[0,1,2,3]},
+  {q:"If a calm, trusted person were in the room right now, would they agree that this cannot wait?",
+   opts:["Definitely — they would see the same urgency I do.",
+         "Probably — they might hesitate briefly but would agree.",
+         "Possibly — they might suggest it could wait a short time.",
+         "Probably not — they would likely say this can be handled in the next hour or later."],
+   w:[3,2,1,0]}
+];
+
+let urgAnswers = new Array(URG_QS.length).fill(null);
+
+function buildUrgency(){
+  document.getElementById('urgQuestions').innerHTML = URG_QS.map((q,qi)=>`
+    <div class="urg-q" id="uq${qi}">
+      <div class="urg-q-text">${qi+1}. ${q.q}</div>
+      <div class="urg-opts">
+        ${q.opts.map((o,oi)=>`
+          <div class="urg-opt" onclick="selUrg(${qi},${oi},${q.w[oi]},this)">
+            <div class="urg-opt-text">${o}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+  urgAnswers=new Array(URG_QS.length).fill(null);
+}
+
+function selUrg(qi,oi,w,el){
+  const opts=document.querySelectorAll(`#uq${qi} .urg-opt`);
+  opts.forEach(e=>{e.classList.remove('sel-y','sel-m','sel-n');});
+  const cls=w>=2?'sel-y':w===1?'sel-m':'sel-n';
+  el.classList.add(cls);
+  urgAnswers[qi]=w;
+}
+
+function runUrgency(){
+  const demand=document.getElementById('urgInput').value.trim();
+  const done=urgAnswers.filter(a=>a!==null).length;
+  if(done<3){alert('Please answer at least 3 questions.');return;}
+  
+  const total=urgAnswers.filter(a=>a!==null).reduce((a,b)=>a+b,0);
+  const maxScore=done*3;
+  const pct=Math.round(total/maxScore*100);
+  
+  let verdict,verdictColor,body,actions,segs;
+  if(pct>=70){
+    verdict="Genuine urgency";verdictColor="var(--red)";
+    body="The signals here point to something that does warrant prompt attention. The urgency appears specific, identifiable, and proportionate to an actual condition. <strong>Address this now.</strong> The system is working correctly — urgency as a signal, not a background state.";
+    actions=["<strong>Act on this promptly.</strong> This is what urgency is for — directing attention toward something that has a genuine time component.",
+      "<strong>Once addressed, notice what happens to the urgency.</strong> If it resolves, that confirms it was specific and real. If it persists, something else may be driving it.",
+      "<strong>After acting, return here</strong> and ask the same questions about whatever feels urgent next."];
+    segs=['var(--red)','var(--red)','var(--amber)','var(--b)'];
+  } else if(pct>=45){
+    verdict="Moderate urgency — evaluate before acting";verdictColor="var(--amber)";
+    body="The urgency is real but the signals are mixed. Some of what is driving it appears situational; some appears habitual. <strong>This is worth a brief pause before full response.</strong> Not to delay something important — to avoid responding to the habit of urgency rather than the actual demand.";
+    actions=["<strong>Before acting, spend 60 seconds with this question:</strong> if I wait 20 minutes, what specifically changes?",
+      "<strong>If the answer is unclear, the urgency is likely generalized</strong> rather than demand-specific. That is worth noting.",
+      "<strong>If you do act, do so deliberately</strong> — not reflexively. The distinction is important for your own regulation."];
+    segs=['var(--amber)','var(--amber)','var(--amber)','var(--b)'];
+  } else {
+    verdict="Generalized urgency — likely system pressure";verdictColor="var(--green)";
+    body="The signals here suggest the urgency is not primarily about the specific demand. It is about the background pressure of the environment — urgency that has become the default signal rather than a specific response to a specific condition. <strong>This demand can likely wait.</strong> Acting on it now would be responding to the system, not to the demand.";
+    actions=["<strong>You do not need to respond to this right now.</strong> Place it on your list. Set a specific time to return to it — even 30 minutes from now — and notice whether the urgency has changed.",
+      "<strong>The feeling of urgency does not equal the necessity of immediate action.</strong> This is a practice — holding that distinction against the current of the caregiving environment.",
+      "<strong>Notice how often this pattern appears today.</strong> If generalized urgency is consistent, the Accumulation Tracker and the Forward Point tool are both relevant."];
+    segs=['var(--green)','var(--b)','var(--b)','var(--b)'];
+  }
+
+  const r=document.getElementById('urgResult');
+  r.style.display='block';
+  r.innerHTML=`
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:${verdictColor};margin-bottom:8px;">Assessment</div>
+    ${demand?`<div style="background:var(--bg3);border-left:2px solid var(--b2);border-radius:0 3px 3px 0;padding:8px 12px;margin-bottom:12px;font-size:.88rem;font-style:italic;color:var(--ink60);">"${demand}"</div>`:''}
+    <div class="urg-verdict" style="color:${verdictColor}">${verdict}</div>
+    <div class="urg-meter-wrap">
+      ${segs.map(s=>`<div class="urg-segment" style="background:${s};height:8px;flex:1;border-radius:2px;"></div>`).join('')}
+    </div>
+    <div class="urg-body">${body}</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:${verdictColor};margin-bottom:8px;">What to do</div>
+    <div class="urg-action-list">${actions.map(a=>`<div class="urg-action">${a}</div>`).join('')}</div>
+    <div class="phrase">"The feeling of urgency does not always correspond to the necessity of immediate action. That recognition is how the system regains the ability to differentiate."</div>
+  `;
+  r.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function clearUrgency(){
+  document.getElementById('urgInput').value='';
+  document.getElementById('urgResult').style.display='none';
+  buildUrgency();
+}
+
+// ══ ACCUMULATION ══
+let accItems=[];
+
+function addAccItem(){
+  const txt=document.getElementById('accInput').value.trim();
+  if(!txt) return;
+  const type=document.getElementById('accType').value;
+  accItems.push({id:Date.now(),text:txt,type,placed:false});
+  document.getElementById('accInput').value='';
+  renderAcc();
+}
+
+const ACC_TYPE_LABELS={interact:'Interaction',emotion:'Emotion',task:'Task',unsaid:'Unsaid'};
+const ACC_TYPE_CLASSES={interact:'type-interact',emotion:'type-emotion',task:'type-task',unsaid:'type-unsaid'};
+
+function placeItem(id){
+  const item=accItems.find(a=>a.id===id);
+  if(item) item.placed=!item.placed;
+  renderAcc();
+}
+
+function delItem(id){
+  accItems=accItems.filter(a=>a.id!==id);
+  renderAcc();
+}
+
+function renderAcc(){
+  const list=document.getElementById('accList');
+  const empty=document.getElementById('accEmpty');
+  if(accItems.length===0){
+    list.innerHTML='<div class="acc-empty">Nothing added yet. Add items above.</div>';
+  } else {
+    list.innerHTML=accItems.map(item=>`
+      <div class="acc-item${item.placed?' placed':''}">
+        <div class="acc-item-type ${ACC_TYPE_CLASSES[item.type]}">${ACC_TYPE_LABELS[item.type]}</div>
+        <div class="acc-item-text">${item.text}</div>
+        <div class="acc-item-actions">
+          <button class="acc-place-btn${item.placed?' unplace':''}" onclick="placeItem(${item.id})">${item.placed?'Unplace':'Place this'}</button>
+          <button class="acc-del-btn" onclick="delItem(${item.id})">×</button>
+        </div>
+      </div>
+    `).join('');
+  }
+  const total=accItems.length;
+  const placed=accItems.filter(a=>a.placed).length;
+  const active=total-placed;
+  document.getElementById('asnTotal').textContent=total;
+  document.getElementById('asnActive').textContent=active;
+  document.getElementById('asnPlaced').textContent=placed;
+  
+  let insight='Add items above to see your accumulation picture.';
+  if(total>0){
+    if(active===0&&total>0) insight=`You have placed all ${total} items. Each one has been seen and set aside. This is what partial closure looks like — not resolution, but acknowledgment.`;
+    else if(active<=2) insight=`${active} item${active!==1?'s':''} still circulating, ${placed} placed. The inventory is nearly clear. What remains active is defined and specific — which means it can be addressed rather than accumulated.`;
+    else if(total>=8) insight=`<strong>${total} items in circulation — ${active} still unplaced.</strong> A full accumulation is visible here. You are not disorganized. You are operating in a system that has not allowed any of these things to reach a natural endpoint. Place them one at a time, not by solving — by acknowledging that each one is a distinct item that has been seen.`;
+    else insight=`${active} item${active!==1?'s':''} still circulating. Placing each one — even without resolving it — interrupts the accumulation cycle. The act of naming it as a distinct item, separate from the continuous field, is itself a form of partial closure.`;
+  }
+  document.getElementById('accInsight').innerHTML=insight;
+}
+
+// ══ SEQUENCE BUILDER ══
+const SEQ_STEPS = [
+  {label:"Most recent", state:"active",
+   q:"Name one interaction from today that felt unresolved when it ended.",
+   hint:"Not to analyze it — just to name it. What happened?",
+   completion:"Mark it as complete when you have named it clearly — even if the situation itself is not resolved."},
+  {label:"The emotion left behind",state:"future",
+   q:"What emotion did that interaction leave behind?",
+   hint:"Name it with one word if possible. Frustration. Heaviness. Confusion. Relief.",
+   completion:"Mark complete when you have named the emotion without needing to explain it."},
+  {label:"What was actually happening",state:"future",
+   q:"In one sentence, what was that interaction actually about — underneath the surface?",
+   hint:"Not what was said. What was happening underneath it — fear, loss of control, pain, need for acknowledgment.",
+   completion:"Mark complete when you can state it plainly without having to solve it."},
+  {label:"What can be placed",state:"future",
+   q:"Is there any part of what happened that can be consciously set aside — not solved, but placed?",
+   hint:"'I am putting the conversation about the medication aside until tomorrow.' Partial placement counts.",
+   completion:"Mark complete when you have identified at least one thing that can be set aside for now."},
+  {label:"One thing still present",state:"future",
+   q:"What one thing from this interaction stays with you — and needs to remain active?",
+   hint:"Not everything should be placed. Name what still requires attention, and allow everything else to rest.",
+   completion:"Mark complete when you have named what stays — and allowed what doesn't stay to go."}
+];
+
+let seqStates=new Array(SEQ_STEPS.length).fill('');
+let seqValues=new Array(SEQ_STEPS.length).fill('');
+let seqDone=new Array(SEQ_STEPS.length).fill(false);
+
+function buildSeq(){
+  const wrap=document.getElementById('seqTimeline');
+  wrap.innerHTML=SEQ_STEPS.map((s,i)=>{
+    const state=i===0?'active':'future';
+    return `<div class="seq-slot" id="ss${i}">
+      <div class="seq-spine">
+        <div class="seq-node ${state}" id="sn${i}"><div class="seq-node-num">${i+1}</div></div>
+        ${i<SEQ_STEPS.length-1?`<div class="seq-connector" id="sc${i}"></div>`:''}
+      </div>
+      <div class="seq-content ${state}" id="sco${i}" style="margin-top:0;">
+        <div class="seq-slot-label">${s.label}</div>
+        <div class="seq-slot-q">${s.q}</div>
+        <div style="font-size:.82rem;color:var(--ink40);font-style:italic;margin-bottom:8px;">${s.hint}</div>
+        <textarea class="seq-input" id="si${i}" rows="2" placeholder="Write here..."></textarea>
+        <div><button class="seq-complete-btn" onclick="completeSeq(${i})">${s.completion}</button></div>
+        <div class="seq-completed-text" id="sct${i}" style="display:none;">✓ Placed</div>
+      </div>
+    </div>`;
+  }).join('');
+  seqDone=new Array(SEQ_STEPS.length).fill(false);
+  seqValues=new Array(SEQ_STEPS.length).fill('');
+}
+
+function completeSeq(i){
+  const val=document.getElementById('si'+i).value.trim();
+  if(!val){alert('Write something first — even a single word.');return;}
+  seqValues[i]=val;
+  seqDone[i]=true;
+  document.getElementById('sco'+i).classList.remove('active');
+  document.getElementById('sco'+i).classList.add('complete');
+  document.getElementById('sn'+i).classList.remove('active');
+  document.getElementById('sn'+i).classList.add('complete');
+  document.getElementById('sn'+i).querySelector('.seq-node-num').textContent='✓';
+  document.getElementById('sct'+i).style.display='block';
+  if(i<SEQ_STEPS.length-1){
+    document.getElementById('sc'+i).classList.add('done');
+    document.getElementById('sco'+(i+1)).classList.remove('future');
+    document.getElementById('sco'+(i+1)).classList.add('active');
+    document.getElementById('sn'+(i+1)).classList.remove('future');
+    document.getElementById('sn'+(i+1)).classList.add('active');
+  }
+}
+
+function showSeqResult(){
+  const completed=seqDone.filter(Boolean).length;
+  if(completed<2){alert('Complete at least 2 steps first.');return;}
+  const r=document.getElementById('seqResult');
+  r.style.display='block';
+  const filledSteps=SEQ_STEPS.filter((_,i)=>seqDone[i]);
+  r.innerHTML=`
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:14px;">Sequence summary — ${completed} of 5 steps placed</div>
+    ${SEQ_STEPS.map((s,i)=>seqDone[i]?`
+      <div style="background:var(--bg3);border-left:2px solid var(--green);border-radius:0 4px 4px 0;padding:10px 14px;margin-bottom:8px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:4px;">${s.label}</div>
+        <div style="font-size:.9rem;color:var(--ink80);font-style:italic;line-height:1.6;">"${seqValues[i]}"</div>
+      </div>
+    `:'').join('')}
+    <div class="phrase">"Completion, in this context, is not about solving the entire problem. It is about acknowledging that a segment of experience has been addressed and can be mentally placed outside immediate attention."</div>
+  `;
+  r.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function resetSeq(){
+  document.getElementById('seqResult').style.display='none';
+  buildSeq();
+}
+
+// ══ FORWARD POINT ══
+const FWD_SCALE=[
+  {t:"Clear forward access",d:"I can identify things coming in the next few days that feel real and distinct from now.",w:0},
+  {t:"Limited forward access",d:"I can sense tomorrow exists but it feels vague and uncertain.",w:1},
+  {t:"Minimal forward access",d:"The future feels cut off — I cannot hold anything beyond immediate demands.",w:2},
+  {t:"No forward access",d:"Everything is now. I cannot locate any reliable sense of what comes next.",w:3}
+];
+const FWD_WHENS=["In the next 2 hours","Today, later","Tomorrow"];
+const FWD_INSIGHTS={
+  0:"Your forward access is intact. Setting explicit forward points will reinforce and maintain the orientation you already have.",
+  1:"Your forward access is reduced but present. Even one reliable anchor per day can restore the sense that the present has a boundary.",
+  2:"Forward access is significantly reduced. The points you build here matter more than they might look. Start very small — something in the next hour.",
+  3:"When forward access is fully blocked, start with the smallest possible timeframe. Something in the next 30 minutes. Not tomorrow — the next half hour."
+};
+
+let fwdScaleAnswer=null;
+
+function buildForwardUI(){
+  document.getElementById('fwdScale').innerHTML=FWD_SCALE.map((s,i)=>`
+    <div class="fwd-opt" onclick="selFwd(${i},this)">
+      <div class="fwd-dot"></div>
+      <div>
+        <div style="font-size:.9rem;font-weight:500;color:var(--ink);margin-bottom:2px;">${s.t}</div>
+        <div class="fwd-opt-text">${s.d}</div>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('fwdAnchors').innerHTML=FWD_WHENS.map((when,i)=>`
+    <div class="fwd-anchor">
+      <div class="fwd-anchor-when" style="color:var(--gold);">${when}</div>
+      <input class="fwd-anchor-input" type="text" id="fa${i}" placeholder="Something small and yours..." maxlength="80"/>
+    </div>
+  `).join('');
+}
+
+function selFwd(i,el){
+  document.querySelectorAll('.fwd-opt').forEach(e=>e.classList.remove('sel'));
+  el.classList.add('sel');
+  fwdScaleAnswer=i;
+}
+
+function buildForwardPlan(){
+  const points=FWD_WHENS.map((_,i)=>({when:FWD_WHENS[i],what:document.getElementById('fa'+i).value.trim()}));
+  const hasSome=points.some(p=>p.what);
+  if(!hasSome){alert('Add at least one forward point.');return;}
+  
+  const levelInsight=fwdScaleAnswer!==null?FWD_INSIGHTS[fwdScaleAnswer]:FWD_INSIGHTS[1];
+  const r=document.getElementById('fwdResult');
+  r.style.display='block';
+  r.innerHTML=`
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Your forward points</div>
+    <div style="background:var(--bg3);border-left:2px solid var(--gold);border-radius:0 4px 4px 0;padding:11px 14px;margin-bottom:16px;font-size:.9rem;line-height:1.78;color:var(--ink60);">${levelInsight}</div>
+    <div class="fwd-plan">
+      ${points.map(p=>`
+        <div class="fwd-plan-item">
+          <div class="fwd-plan-when">${p.when}</div>
+          <div class="fwd-plan-what${p.what?'':' empty'}">${p.what||'(nothing set)'}</div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="phrase">"These points do not need to be significant. Their function is not to create optimism, but to restore orientation. When the care partner can perceive that something is coming next, the present no longer feels infinite."</div>
+  `;
+  r.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function clearForward(){
+  fwdScaleAnswer=null;
+  document.getElementById('fwdResult').style.display='none';
+  buildForwardUI();
+}
+
+// ══ TABS ══
+function setTab(idx,btn){
+  document.querySelectorAll('.ttab').forEach(t=>t.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.tpanel').forEach(p=>p.classList.remove('on'));
+  document.getElementById('tp'+idx).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ══ INIT ══
+buildProfile();
+buildUrgency();
+renderAcc();
+buildSeq();
+buildForwardUI();
+</script>
+</body>
+</html>

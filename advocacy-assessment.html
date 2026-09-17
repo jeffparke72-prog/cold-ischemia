@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>True Advocacy Assessment — Cold Ischemia Foundation</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M95EH0B5BK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-M95EH0B5BK');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#060b16;--dark:#0a1628;--mid:#0f1e34;
+  --gold:#c9a84c;--gold2:#e8c96e;
+  --ice:#a8d4f0;--ice2:#d6ecfa;
+  --white:#f4f0e8;--dim:#6b7a9a;
+  --red:#c24a3a;--green:#2a8c5a;--amber:#c9802a;
+  --border:rgba(201,168,76,0.18);
+}
+html,body{min-height:100%;background:var(--navy);color:var(--white);
+  font-family:'EB Garamond',Georgia,serif;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(168,212,240,0.022) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(168,212,240,0.022) 1px,transparent 1px);
+  background-size:60px 60px;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(6,11,22,0.97);
+  border-bottom:1px solid var(--border);padding:0 40px;height:64px;
+  display:flex;align-items:center;backdrop-filter:blur(8px);}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+.brand-mark{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.5);padding:4px 8px;}
+.brand-name{font-family:'EB Garamond',serif;font-size:15px;font-weight:600;color:var(--white);
+  border-left:1px solid var(--border);padding-left:12px;white-space:nowrap;}
+.nav-spacer{flex:1;}
+.nav-links{display:flex;align-items:center;gap:22px;flex-shrink:0;}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-links a.active{border-bottom:1px solid var(--gold);padding-bottom:2px;}
+
+/* ── HERO ── */
+.hero{position:relative;z-index:1;padding:56px 40px 44px;text-align:center;
+  border-bottom:1px solid var(--border);
+  background:radial-gradient(ellipse at 50% 0%,rgba(168,212,240,0.06) 0%,transparent 60%);}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.4em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(26px,4.5vw,46px);
+  font-weight:700;line-height:1.1;margin-bottom:10px;}
+.hero-title em{color:var(--gold2);font-style:italic;}
+.hero-rule{width:100px;height:1px;margin:12px auto;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.hero-sub{font-size:clamp(14px,1.7vw,17px);font-style:italic;
+  color:rgba(244,240,232,0.65);line-height:1.65;max-width:640px;margin:0 auto 20px;}
+.hero-warning{display:inline-flex;align-items:center;gap:10px;
+  background:rgba(194,74,58,0.12);border:1px solid rgba(194,74,58,0.35);
+  padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:0.1em;text-transform:uppercase;color:#e8806e;}
+.hero-warning::before{content:'⚠';font-size:14px;}
+
+/* ── MAIN ── */
+main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:48px 40px 80px;}
+
+/* ── INTRO BOX ── */
+.intro-box{border:1px solid var(--border);border-left:3px solid var(--gold);
+  background:rgba(10,22,40,0.75);padding:26px 30px;margin-bottom:40px;}
+.intro-box p{font-size:15px;line-height:1.78;color:rgba(244,240,232,0.82);margin-bottom:8px;}
+.intro-box p:last-child{margin-bottom:0;}
+.intro-box strong{color:var(--white);}
+
+/* ── PROGRESS BAR ── */
+.progress-wrap{margin-bottom:36px;}
+.progress-label{display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:8px;}
+.progress-label span{font-family:'JetBrains Mono',monospace;font-size:8.5px;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--dim);}
+.progress-label .prog-pct{color:var(--gold);}
+.progress-track{height:3px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));
+  border-radius:2px;transition:width 0.4s ease;width:0%;}
+
+/* ── SECTION LABEL ── */
+.section-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);
+  padding-bottom:8px;margin-bottom:24px;margin-top:40px;}
+.section-label:first-of-type{margin-top:0;}
+
+/* ── QUESTION CARD ── */
+.q-card{background:rgba(10,22,40,0.6);border:1px solid var(--border);
+  margin-bottom:20px;overflow:hidden;transition:border-color 0.2s;}
+.q-card:hover{border-color:rgba(201,168,76,0.35);}
+.q-card.answered{border-color:rgba(42,180,224,0.3);}
+.q-header{padding:20px 24px 0;display:flex;gap:14px;align-items:flex-start;}
+.q-num{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
+  color:var(--gold);flex-shrink:0;min-width:28px;margin-top:2px;}
+.q-text-wrap{flex:1;}
+.q-text{font-size:15.5px;line-height:1.6;color:var(--white);margin-bottom:6px;font-weight:600;}
+.q-scenario{font-size:13.5px;font-style:italic;color:rgba(168,212,240,0.75);
+  line-height:1.6;margin-bottom:0;}
+.q-select-wrap{padding:14px 24px 20px 66px;}
+
+/* ── CUSTOM SELECT ── */
+.q-select{
+  width:100%;appearance:none;-webkit-appearance:none;
+  background:rgba(6,11,22,0.8);
+  border:1px solid rgba(107,122,154,0.35);
+  color:var(--white);padding:11px 40px 11px 14px;
+  font-family:'EB Garamond',Georgia,serif;font-size:14.5px;
+  cursor:pointer;outline:none;transition:border-color 0.2s;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a84c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  background-size:12px;
+}
+.q-select:focus{border-color:var(--gold);}
+.q-select option{background:#0a1628;color:var(--white);padding:8px;}
+.q-select.selected{border-color:rgba(42,180,224,0.5);}
+
+/* ── ANSWER REVEAL ── */
+.answer-reveal{
+  display:none;margin:0 24px 20px 66px;
+  padding:14px 16px;border-left:2px solid var(--gold);
+  background:rgba(6,11,22,0.5);
+}
+.answer-reveal.show{display:block;}
+.answer-badge{display:inline-flex;align-items:center;gap:6px;
+  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:0.18em;
+  text-transform:uppercase;padding:3px 9px;margin-bottom:8px;}
+.badge-true{background:rgba(42,140,90,0.2);border:1px solid rgba(42,140,90,0.4);color:#5dc88a;}
+.badge-partial{background:rgba(201,128,42,0.2);border:1px solid rgba(201,128,42,0.4);color:#e8a85a;}
+.badge-false{background:rgba(194,74,58,0.2);border:1px solid rgba(194,74,58,0.4);color:#e88070;}
+.answer-text{font-size:13.5px;line-height:1.7;color:rgba(244,240,232,0.78);}
+.answer-text strong{color:var(--white);}
+.cif-comparison{margin-top:10px;padding:10px 12px;
+  background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);}
+.cif-comparison-label{font-family:'JetBrains Mono',monospace;font-size:7.5px;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.cif-comparison p{font-size:13px;line-height:1.65;color:rgba(244,240,232,0.7);font-style:italic;}
+
+/* ── SCORE / GATE ── */
+#score-gate{display:none;margin-top:20px;}
+#submit-btn{
+  display:block;width:100%;padding:16px;margin-top:32px;
+  background:transparent;border:1px solid var(--gold);
+  color:var(--gold);font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
+  cursor:pointer;transition:background 0.2s;
+}
+#submit-btn:hover{background:rgba(201,168,76,0.1);}
+#submit-btn:disabled{opacity:0.35;cursor:not-allowed;}
+.questions-remaining{text-align:center;font-family:'JetBrains Mono',monospace;
+  font-size:9px;letter-spacing:0.14em;color:var(--dim);margin-top:10px;}
+
+/* ── EMAIL GATE ── */
+.email-gate{
+  background:rgba(10,22,40,0.9);border:1px solid var(--border);
+  padding:36px;text-align:center;display:none;
+}
+.email-gate.show{display:block;}
+.gate-title{font-family:'Playfair Display',serif;font-size:22px;
+  font-weight:700;margin-bottom:10px;}
+.gate-sub{font-size:14px;font-style:italic;color:rgba(244,240,232,0.65);
+  line-height:1.6;margin-bottom:24px;}
+.gate-form{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto;}
+.gate-input{
+  background:rgba(6,11,22,0.8);border:1px solid rgba(107,122,154,0.35);
+  color:var(--white);padding:12px 16px;
+  font-family:'EB Garamond',Georgia,serif;font-size:15px;
+  outline:none;transition:border-color 0.2s;
+}
+.gate-input:focus{border-color:var(--gold);}
+.gate-input::placeholder{color:var(--dim);}
+.gate-submit{
+  padding:13px;background:var(--gold);color:var(--navy);
+  border:none;font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
+  cursor:pointer;font-weight:700;transition:opacity 0.2s;
+}
+.gate-submit:hover{opacity:0.88;}
+.gate-note{font-family:'JetBrains Mono',monospace;font-size:8px;
+  letter-spacing:0.1em;color:var(--dim);text-align:center;margin-top:8px;}
+
+/* ── RESULTS ── */
+#results-panel{display:none;margin-top:32px;}
+#results-panel.show{display:block;}
+.results-header{text-align:center;padding:36px;border:1px solid var(--border);
+  background:rgba(10,22,40,0.8);margin-bottom:24px;}
+.results-score-circle{
+  width:110px;height:110px;border-radius:50%;
+  border:2px solid var(--gold);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+}
+.results-score-num{font-family:'Playfair Display',serif;font-size:38px;
+  font-weight:700;color:var(--gold2);line-height:1;}
+.results-score-label{font-family:'JetBrains Mono',monospace;font-size:8px;
+  letter-spacing:0.15em;text-transform:uppercase;color:var(--dim);}
+.results-verdict{font-family:'Playfair Display',serif;font-size:22px;
+  font-weight:700;margin-bottom:8px;}
+.results-sub{font-size:15px;font-style:italic;color:rgba(244,240,232,0.65);
+  line-height:1.65;max-width:580px;margin:0 auto 20px;}
+.results-bars{margin-top:24px;}
+.rbar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.rbar-label{font-family:'JetBrains Mono',monospace;font-size:8px;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);
+  width:180px;flex-shrink:0;text-align:right;}
+.rbar-track{flex:1;height:6px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;}
+.rbar-fill{height:100%;border-radius:3px;transition:width 1s ease;}
+.rbar-val{font-family:'JetBrains Mono',monospace;font-size:9px;
+  color:var(--gold);width:36px;text-align:right;}
+
+/* Category colors */
+.cat-funding .rbar-fill{background:linear-gradient(90deg,#c24a3a,#e8806e);}
+.cat-governance .rbar-fill{background:linear-gradient(90deg,var(--gold),var(--gold2));}
+.cat-evidence .rbar-fill{background:linear-gradient(90deg,#2a8c5a,#5dc88a);}
+.cat-conflict .rbar-fill{background:linear-gradient(90deg,#2ab4e0,var(--ice2));}
+.cat-accountability .rbar-fill{background:linear-gradient(90deg,#9b70c8,#c8a8f0);}
+
+.cif-cta{margin-top:24px;padding:24px;background:rgba(201,168,76,0.08);
+  border:1px solid rgba(201,168,76,0.25);text-align:center;}
+.cif-cta p{font-size:15px;line-height:1.72;color:rgba(244,240,232,0.8);margin-bottom:14px;}
+.cif-cta-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.cta-link{padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}
+.cta-primary{background:var(--gold);color:var(--navy);}
+.cta-primary:hover{opacity:0.88;}
+.cta-secondary{border:1px solid var(--border);color:var(--dim);}
+.cta-secondary:hover{border-color:var(--gold);color:var(--gold);}
+
+/* FOOTER */
+footer{position:relative;z-index:1;border-top:1px solid var(--border);
+  padding:24px 40px;text-align:center;}
+footer p{font-family:'JetBrains Mono',monospace;font-size:7.5px;
+  letter-spacing:0.14em;color:var(--dim);text-transform:uppercase;}
+
+@media(max-width:680px){
+  nav{padding:0 16px;} .nav-links{gap:14px;}
+  main{padding:32px 16px 60px;}
+  .q-header{padding:16px 16px 0;gap:10px;}
+  .q-select-wrap{padding:12px 16px 16px 38px;}
+  .answer-reveal{margin:0 16px 16px 38px;}
+}
+
+.nav-brand img { display:block; height:44px; width:auto; }
+
+/* ── ROUND HOME BUTTON ── */
+.home-btn{
+  position:fixed;bottom:28px;right:28px;z-index:9999;
+  width:54px;height:54px;border-radius:50%;
+  background:linear-gradient(135deg,#c9a84c,#e8c96e);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;box-shadow:0 4px 20px rgba(201,168,76,0.45);
+  transition:transform 0.2s,box-shadow 0.2s;
+  border:2px solid rgba(255,255,255,0.2);
+}
+.home-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(201,168,76,0.65);}
+.home-btn svg{width:22px;height:22px;fill:none;stroke:#0a1628;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+.home-btn-tooltip{
+  position:absolute;right:62px;background:#0a1628;color:#c9a84c;
+  font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.14em;
+  text-transform:uppercase;padding:5px 10px;white-space:nowrap;
+  border:1px solid rgba(201,168,76,0.3);opacity:0;pointer-events:none;
+  transition:opacity 0.2s;
+}
+.home-btn:hover .home-btn-tooltip{opacity:1;}
+
+</style>
+<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://coldischemia.foundation" class="nav-brand">
+    <img src="data:image/png;base64,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" alt="Cold Ischemia Foundation" style="height:44px;width:auto;display:block;">
+  </a>
+  <div class="nav-spacer"></div>
+  <div class="nav-links">
+    <a href="https://coldischemia.foundation">Home</a>
+    <a href="https://coldischemia.foundation/#about">About</a>
+    <a href="https://coldischemia.foundation/#tools">Tools</a>
+    <a href="https://certification.coldischemia.foundation">Certification</a>
+    <a href="https://coldischemia.foundation/whitepapers.html">White Papers</a>
+    <a href="#" class="active">Advocacy Assessment</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Professional Assessment · 20 Questions</div>
+  <h1 class="hero-title">Is Your Organization a<br><em>True Advocacy Organization?</em></h1>
+  <div class="hero-rule"></div>
+  <p class="hero-sub">A frank, evidence-based assessment designed for healthcare advocacy organizations, patient groups, and disease foundations. Answer honestly. The results may be uncomfortable. That is the point.</p>
+  <div class="hero-warning">
+    This assessment measures structural independence, not intention. Good intentions are not a substitute for structural integrity.
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <div class="intro-box">
+    <p>The advocacy landscape in chronic illness and transplant medicine is dominated by organizations that <strong>receive substantial funding from the pharmaceutical companies, dialysis corporations, and insurance carriers whose practices they are supposed to hold accountable.</strong> This is not a conspiracy — it is a documented structural reality.</p>
+    <p>This assessment asks the questions that most patient advocacy organizations never ask themselves. Each question is drawn from <strong>peer-reviewed literature, federal oversight reports, and documented conflicts of interest</strong> in the advocacy sector. There are no "right answers" if your organization is structurally compromised. There are only honest ones.</p>
+    <p>Answer all 20 questions to receive your full Advocacy Integrity Score and a personalized analysis. <strong>Your responses are confidential.</strong> Results are sent directly to you via email. Jeff Parke, Co-Founder of the Cold Ischemia Foundation, reviews all submissions personally.</p>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>Assessment Progress</span>
+      <span class="prog-pct" id="prog-pct">0 of 20 answered</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
+  </div>
+
+  <!-- ───────────────── SECTION 1: FUNDING ───────────────── -->
+  <div class="section-label">Section I — Funding Sources &amp; Independence (Q1–5)</div>
+
+  <!-- Q1 -->
+  <div class="q-card" id="qcard-1">
+    <div class="q-header">
+      <div class="q-num">01</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your organization's annual report lists pharmaceutical companies among your top-five donors. When one of those companies is named in a federal investigation for off-label marketing of a drug used by your patient constituency, your response is:</div>
+        <div class="q-scenario">Scenario: A Senate Finance Committee report identifies that three of your top sponsors collectively paid $4.1 billion in federal settlements for off-label promotion and data suppression over the past decade — including drugs prescribed to your patient community.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q1" onchange="handleAnswer(1,this)">
+        <option value="">— Select your organization's most likely response —</option>
+        <option value="A">A) Issue a joint statement with the company expressing confidence in their commitment to patients and noting the settlement was reached without admission of wrongdoing</option>
+        <option value="B">B) Quietly suspend the partnership pending internal review, but make no public statement to avoid damaging the relationship</option>
+        <option value="C">C) Publicly disclose the conflict, suspend the funding relationship, and issue an independent statement on the investigation's implications for patient safety</option>
+        <option value="D">D) Refer the matter to your board's "ethics committee," which includes two individuals with direct ties to the pharmaceutical industry</option>
+      </select>
+      <div class="answer-reveal" id="ar-1">
+        <div class="answer-badge badge-true">✓ Only True Advocacy Response</div>
+        <div class="answer-text"><strong>C is the only structurally defensible answer.</strong> Responses A, B, and D all prioritize donor relationship preservation over patient constituency protection. Response A actively validates a documented wrongdoer. Response B treats the patient community's safety as secondary to organizational revenue. Response D is structural theater — an ethics committee with industry ties cannot produce independent ethical judgments.<br><br>The documented pattern in major patient advocacy organizations is overwhelmingly Response A or B. The National Kidney Foundation, American Kidney Fund, and others have issued statements defending pharmaceutical partners facing federal scrutiny rather than protecting their patient constituency.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>Cold Ischemia Foundation accepts zero pharmaceutical funding as a founding constitutional constraint — not a policy that can be reversed by a future board. This is the only position that eliminates the conflict entirely. Suspending funding after an investigation has already occurred is not advocacy independence. It is crisis management.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q-card" id="qcard-2">
+    <div class="q-header">
+      <div class="q-num">02</div>
+      <div class="q-text-wrap">
+        <div class="q-text">A major dialysis corporation that funds your organization controls approximately 37% of the U.S. dialysis market. New CMS data shows their patient mortality rates exceed the national average in 6 of their 8 largest regional markets. Your advocacy position on dialysis quality accountability is:</div>
+        <div class="q-scenario">Scenario: You are invited to testify before the Senate HELP Committee on patient safety in dialysis. Your largest donor is the corporation whose outcomes data is the subject of the hearing.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q2" onchange="handleAnswer(2,this)">
+        <option value="">— Select your organization's most likely response —</option>
+        <option value="A">A) Decline to testify, citing organizational policy against "adversarial positioning" with funding partners</option>
+        <option value="B">B) Testify in support of the corporation's self-reported quality improvement initiatives, noting the corporation's "commitment to patients"</option>
+        <option value="C">C) Testify using the CMS outcomes data directly, call for mandatory public reporting of facility-level mortality data, and disclose the funding relationship on the record</option>
+        <option value="D">D) Submit written testimony that focuses on "systemic challenges in dialysis" without naming any specific corporation</option>
+      </select>
+      <div class="answer-reveal" id="ar-2">
+        <div class="answer-badge badge-false">✗ Industry-Captured Responses: A, B, D</div>
+        <div class="answer-text"><strong>C is the only response consistent with patient-first advocacy.</strong> Response A is capitulation. Response B is industry advocacy wearing a patient advocacy mask — this is precisely what NEJM analyses of patient organization conflicts of interest document as the most common form of captured advocacy. Response D is designed to appear critical while protecting the donor relationship through deliberate vagueness.<br><br>The Senate Finance Committee's 2021 report on patient advocacy organizations specifically documented that organizations receiving >15% of their funding from a single industry source demonstrated statistically significant moderation of their public advocacy positions on that industry's practices.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF has no dialysis corporation funding. This is why CIF can publish analyses of dialysis corporate outcome data, call out specific failures, and testify without a financial conflict to disclose or manage. The absence of funding is not a weakness — it is the precondition for credibility.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-card" id="qcard-3">
+    <div class="q-header">
+      <div class="q-num">03</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your organization's most recent Form 990 shows that corporate donations from pharmaceutical and medical device companies represent 62% of your total operating revenue. A researcher requests your donor list under your published transparency policy. You:</div>
+        <div class="q-scenario">Scenario: The requesting researcher is affiliated with a peer-reviewed journal conducting a meta-analysis of patient advocacy organization independence. Your full donor list would reveal that four of your top donors have active federal investigations or settlements related to your patient community.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q3" onchange="handleAnswer(3,this)">
+        <option value="">— Select your organization's most likely response —</option>
+        <option value="A">A) Provide the donor list as requested — your transparency policy exists to be honored</option>
+        <option value="B">B) Provide a redacted list that shows donation categories but not specific corporate donors</option>
+        <option value="C">C) Delay the request pending "legal review" while privately consulting with the affected donor corporations</option>
+        <option value="D">D) Decline the request citing "donor confidentiality" provisions that you have quietly added to your governance documents since publishing the original transparency policy</option>
+      </select>
+      <div class="answer-reveal" id="ar-3">
+        <div class="answer-badge badge-true">✓ Only True Advocacy Response: A</div>
+        <div class="answer-text"><strong>Only Response A reflects structural transparency.</strong> Responses B, C, and D are progressive degrees of institutional self-protection that place organizational revenue security above the patient community's right to know who is funding the organization that claims to represent them.<br><br>A 2020 JAMA Internal Medicine analysis found that 83% of patient advocacy organizations that publicly committed to transparency policies had significant undisclosed industry relationships when cross-referenced with SEC and IRS filings. Transparency policies that exist only when disclosure is convenient are not transparency policies — they are reputation management instruments.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's zero-industry-funding constraint eliminates this scenario entirely. When there are no industry donors to protect, there is no donor list to redact, no legal review to delay, and no governance document to quietly amend. Structural independence produces structural transparency — not as a policy choice but as an operational reality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q-card" id="qcard-4">
+    <div class="q-header">
+      <div class="q-num">04</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your organization receives unrestricted grants from three pharmaceutical companies whose drugs are the subject of a major cost-transparency campaign by patient groups. A congressional office asks your CEO to co-sign a letter supporting drug pricing reform legislation that would directly reduce revenue for your top donors. Your CEO:</div>
+        <div class="q-scenario">Scenario: The legislation in question has been shown by CBO analysis to reduce out-of-pocket drug costs for patients in your constituency by an average of $3,200 annually. It would also reduce your top three donor corporations' combined revenue by approximately $18 billion annually.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q4" onchange="handleAnswer(4,this)">
+        <option value="">— Select your organization's most likely response —</option>
+        <option value="A">A) Co-sign immediately — a $3,200 reduction in patient costs is unambiguously aligned with your mission</option>
+        <option value="B">B) Request a "stakeholder consultation period" before signing, during which donor companies provide "technical input" on the legislation</option>
+        <option value="C">C) Decline to sign, citing organizational policy against "taking positions on legislation that could be perceived as adversarial to industry partners"</option>
+        <option value="D">D) Issue a statement supporting "drug pricing reform in principle" while declining to endorse the specific legislation</option>
+      </select>
+      <div class="answer-reveal" id="ar-4">
+        <div class="answer-badge badge-false">✗ Only 1 of 4 responses represents patient advocacy</div>
+        <div class="answer-text"><strong>Response A is the only answer consistent with patient advocacy.</strong> Response B allows donors to modify advocacy positions through "technical input" — a documented industry influence mechanism identified in Public Citizen's 2019 report on pharmaceutical capture of patient advocacy. Responses C and D are institutional euphemisms for protecting donor revenue at patient expense.<br><br>This scenario describes a real documented dynamic. In 2017, multiple patient advocacy organizations opposing drug pricing reform legislation received combined pharmaceutical funding exceeding $116 million in the preceding three years (National Academies of Sciences analysis, 2019).</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's legislative advocacy is structurally unconstrained by industry relationships because none exist. CIF co-authored Marie's Lifeline Compensation Act — draft legislation directly challenging the economics of the home dialysis system. No donor consultation was required because no donors have a financial interest in the status quo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q-card" id="qcard-5">
+    <div class="q-header">
+      <div class="q-num">05</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your annual gala's presenting sponsor is a pharmaceutical company currently marketing an immunosuppressant used by kidney transplant patients. A patient advisory member proposes the organization formally demand that this company publish the full dataset from a suppressed clinical trial showing increased rejection rates in specific patient populations. Your board's response is:</div>
+        <div class="q-scenario">Scenario: The suppressed trial data was disclosed in a whistleblower complaint currently under FDA review. Publication of the data could affect transplant center prescribing patterns and reduce the company's market share in immunosuppressants by an estimated 15–20%. The company's gala sponsorship represents $175,000 of your operating budget.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q5" onchange="handleAnswer(5,this)">
+        <option value="">— Select your organization's most likely response —</option>
+        <option value="A">A) Formally demand full data publication, submit a public comment to FDA supporting the whistleblower's disclosure, and terminate the sponsorship relationship</option>
+        <option value="B">B) Privately raise the issue with the company's medical affairs team and wait for their internal resolution process</option>
+        <option value="C">C) Issue a statement calling on "all pharmaceutical companies" to improve data transparency, without naming the specific company</option>
+        <option value="D">D) Table the patient advisory member's proposal, noting that "organizational relationships require careful management"</option>
+      </select>
+      <div class="answer-reveal" id="ar-5">
+        <div class="answer-badge badge-true">✓ True Advocacy: A Only</div>
+        <div class="answer-text"><strong>Only Response A protects patients.</strong> A suppressed clinical trial showing increased rejection rates is not a governance matter, a "stakeholder consultation" issue, or a relationship management challenge. It is a patient safety emergency. The other three responses place $175,000 in organizational revenue above documented patient safety risk.<br><br>Response C — the "vague solidarity statement" — is one of the most common and most cynically deployed tools of captured advocacy. It allows organizations to claim principled positions while protecting specific donor relationships through deliberate non-identification.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's 40 Documented Federal Violations audit names specific corporations, specific violations, and specific regulatory failures — by name, with citations. This is only possible without a sponsorship relationship to protect. Vague solidarity statements are not advocacy. They are brand management.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────────── SECTION 2: GOVERNANCE ───────────────── -->
+  <div class="section-label">Section II — Governance, Leadership &amp; Constituency Representation (Q6–10)</div>
+
+  <!-- Q6 -->
+  <div class="q-card" id="qcard-6">
+    <div class="q-header">
+      <div class="q-num">06</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your organization's board of directors includes two former pharmaceutical executives, three current health system administrators, and one patient representative — who was appointed by the board rather than elected by the patient constituency. The executive director's compensation is set by this board. This governance structure:</div>
+        <div class="q-scenario">Scenario: The board is voting on whether to publicly oppose a proposed CMS rule that would reduce payments to health systems for outpatient procedures your patient community depends on. Three board members are employed by institutions that would be financially affected by the rule.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q6" onchange="handleAnswer(6,this)">
+        <option value="">— Select the most accurate description of this governance structure —</option>
+        <option value="A">A) Represents best practice — industry expertise strengthens organizational effectiveness and credibility</option>
+        <option value="B">B) Is structurally compromised — the constituency being served has no meaningful voice in organizational governance</option>
+        <option value="C">C) Is acceptable as long as conflict-of-interest disclosures are made before each vote</option>
+        <option value="D">D) Is standard nonprofit governance — appointed patient representatives are equivalent to elected ones</option>
+      </select>
+      <div class="answer-reveal" id="ar-6">
+        <div class="answer-badge badge-false">✗ B is the only accurate structural assessment</div>
+        <div class="answer-text"><strong>Response B correctly identifies the structural compromise.</strong> Conflict-of-interest disclosures (Response C) do not eliminate conflicts — they acknowledge them while allowing compromised votes to proceed. An industry executive who discloses their conflict and then votes in the industry's favor has disclosed but not resolved their conflict. Appointed patient representatives (Response D) serve at the pleasure of the appointing body — they cannot represent constituency interests that conflict with those of their appointing board without risking removal.<br><br>A 2022 analysis of 100 major patient advocacy organizations found that fewer than 12% had majority-patient governance structures with independently elected patient representatives.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's Care Partner Advisory Council is drawn from the constituency being served — not appointed by an industry-adjacent board. Structural representation is not performative: it means care partners have a vote, not a seat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q-card" id="qcard-7">
+    <div class="q-header">
+      <div class="q-num">07</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your organization claims to represent patients with chronic kidney disease. Your last three annual conferences were co-sponsored exclusively by pharmaceutical companies manufacturing drugs used in CKD treatment. All keynote speakers were either pharmaceutical executives or paid consultants to those companies. Not a single patient's first-person testimony appeared in the main programming. This conference structure reflects:</div>
+        <div class="q-scenario">Scenario: A journalist covering the conference asks your communications director: "Which patients did this conference serve — the ones with CKD, or the ones selling drugs to them?"</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q7" onchange="handleAnswer(7,this)">
+        <option value="">— Select the most honest response to the journalist —</option>
+        <option value="A">A) "This conference serves patients by educating the professionals who care for them."</option>
+        <option value="B">B) "Our sponsors make this conference financially possible — we are grateful for their support."</option>
+        <option value="C">C) "That is an uncomfortable question that deserves an honest answer. This conference structure serves industry interests. We are examining how to change that."</option>
+        <option value="D">D) "Our patient advisory board reviewed and approved all programming."</option>
+      </select>
+      <div class="answer-reveal" id="ar-7">
+        <div class="answer-badge badge-true">✓ Honest Answer: C — though rarely given</div>
+        <div class="answer-text"><strong>Response C is the only honest answer.</strong> Response A is a rhetorical deflection — educating professionals through industry-funded speakers is industry marketing with a patient advocacy wrapper. Response B is an admission without accountability. Response D uses the patient advisory board as a legitimacy shield for programming decisions it did not meaningfully control.<br><br>The documented pattern in pharmaceutical-funded patient organization conferences is that educational content systematically emphasizes pharmacological interventions over lifestyle, systemic, or structural solutions — consistent with sponsor marketing priorities (NEJM, 2018; Health Affairs, 2020).</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>The CIF Annual Care Partner Summit is designed around care partner testimony and structural policy advocacy — not pharmaceutical education. When there are no pharmaceutical sponsors, there is no pharmaceutical agenda to accommodate in the programming.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q-card" id="qcard-8">
+    <div class="q-header">
+      <div class="q-num">08</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your organization has published clinical guidelines for kidney disease management that are cited in transplant center protocols nationally. Three of the five clinicians who authored those guidelines received more than $50,000 in speaking fees or consulting payments from pharmaceutical companies manufacturing drugs recommended in those guidelines. Your organization's response when this is identified by a public health researcher is:</div>
+        <div class="q-scenario">Scenario: The researcher's analysis shows that guideline recommendations for the highest-cost pharmacological interventions were adopted in 94% of cases where the authoring clinician had a financial relationship with the manufacturer — compared to 61% in cases without such relationships.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q8" onchange="handleAnswer(8,this)">
+        <option value="">— Select your organization's most likely response —</option>
+        <option value="A">A) Commission an independent review of all guidelines authored by clinicians with financial relationships to manufacturers of recommended products, and publish the results</option>
+        <option value="B">B) Note that all authors completed your standard conflict-of-interest disclosure form at the time of authorship and that the guidelines were peer-reviewed</option>
+        <option value="C">C) Issue a statement defending the integrity of your guidelines process and questioning the methodology of the researcher's analysis</option>
+        <option value="D">D) Quietly update your conflict-of-interest policy for future guidelines while making no statement about existing ones</option>
+      </select>
+      <div class="answer-reveal" id="ar-8">
+        <div class="answer-badge badge-true">✓ True Advocacy Response: A</div>
+        <div class="answer-text"><strong>Only Response A takes the patient community's interests seriously.</strong> Response B uses process compliance (disclosure) as a substantive defense against documented outcome bias — these are not equivalent. A disclosed conflict that demonstrably affected guideline recommendations is still a conflict that affected patient care. Response C attacks the researcher rather than addressing the finding. Response D is institutional damage control that protects current guidelines while appearing to address the problem.<br><br>The Institute of Medicine's 2011 report on clinical practice guidelines documented that industry-funded guideline development produced systematically different recommendations than independent guideline development — even when financial disclosures were made.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's resources and research are produced without industry funding specifically because clinical guidance that affects patient care must be free of financial relationships to the manufacturers of the products it recommends. This is not a procedural nicety. It is the minimum condition for credible clinical guidance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="q-card" id="qcard-9">
+    <div class="q-header">
+      <div class="q-num">09</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your organization's executive director earns $385,000 annually and sits on the board of a health technology company that has a service contract with your organization. The executive director negotiated both their own compensation and the technology contract. When this is surfaced by a patient advisory member, your board's response is:</div>
+        <div class="q-scenario">Scenario: The technology contract totals $220,000 annually for a software platform that a nonprofit technology consultant assessed could be replaced by open-source alternatives at approximately $18,000 per year. The executive director holds equity in the technology company.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q9" onchange="handleAnswer(9,this)">
+        <option value="">— Select the most appropriate board response —</option>
+        <option value="A">A) Commission an independent legal and financial review, suspend the technology contract pending review, and place the executive director on paid administrative leave during the investigation</option>
+        <option value="B">B) Ask the executive director to recuse themselves from future votes related to the technology contract while allowing both the contract and compensation to continue</option>
+        <option value="C">C) Note that the executive director disclosed the board position on their annual conflict-of-interest form and that the technology platform has received positive staff feedback</option>
+        <option value="D">D) Request that the executive director divest their equity stake within 90 days while taking no further action</option>
+      </select>
+      <div class="answer-reveal" id="ar-9">
+        <div class="answer-badge badge-true">✓ Structural Accountability: A</div>
+        <div class="answer-text"><strong>Response A is the only governance response proportionate to documented self-dealing.</strong> Response B allows self-dealing to continue while appearing to address it. Response C uses disclosure as a legitimacy shield for ongoing financial harm to the organization. Response D creates a future compliance requirement without addressing the existing financial harm already done to the organization.<br><br>This scenario reflects documented patterns in nonprofit executive self-dealing identified in multiple IRS Form 990 enforcement actions. The patient community served by this organization is effectively subsidizing executive enrichment rather than advocacy.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's lean, asset-light operational model and Jeff Parke's below-market founding compensation reflect the principle that organizational resources belong to the mission, not to the organization's leadership. Structural integrity in governance is not a compliance exercise — it is a daily operational commitment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q-card" id="qcard-10">
+    <div class="q-header">
+      <div class="q-num">10</div>
+      <div class="q-text-wrap">
+        <div class="q-text">A care partner of a dialysis patient contacts your organization reporting that their transplant center told them their loved one could not be listed because "adequate caregiver support was unavailable" — despite the care partner being available full-time. The care partner believes this is a discriminatory listing decision. Your organization's response is:</div>
+        <div class="q-scenario">Scenario: The transplant center in question generates $2.3 million annually in conference sponsorship revenue for your organization's largest event. The care partner has documented their availability in writing and been refused twice without written explanation from the center.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q10" onchange="handleAnswer(10,this)">
+        <option value="">— Select your organization's most likely response —</option>
+        <option value="A">A) Provide the care partner with formal complaint templates for HRSA, CMS, and OPTN; document their case in your care partner registry; and contact the transplant center's social work department directly on the care partner's behalf</option>
+        <option value="B">B) Refer the care partner to your patient helpline and provide them with general information about the transplant listing process</option>
+        <option value="C">C) Advise the care partner that transplant center listing decisions involve complex clinical considerations that your organization is not positioned to second-guess</option>
+        <option value="D">D) Log the complaint internally and note it for inclusion in your annual "patient experience" report — without taking any direct action</option>
+      </select>
+      <div class="answer-reveal" id="ar-10">
+        <div class="answer-badge badge-true">✓ Only Patient-First Response: A</div>
+        <div class="answer-text"><strong>Response A deploys the full organizational capacity of an advocacy organization on behalf of the constituent it exists to serve.</strong> Responses B, C, and D are progressive degrees of institutional disengagement driven by the $2.3 million sponsorship relationship. Response C is particularly damaging — "complex clinical considerations" is the language of institutional deference to the very centers whose listing practices are being challenged.<br><br>Arbitrary and discriminatory caregiver sufficiency determinations in transplant listing are a documented systemic failure (Organ Procurement and Transplantation Network data, 2023). An advocacy organization that cannot name and challenge this failure because of a financial relationship with the institution perpetuating it is not an advocacy organization.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>The CIF Complaint Letter Machine generates nine-letter federal complaint packets — to CMS, HRSA, HHS OIG, OPTN, and OCR — precisely for situations like this one. It exists because the organizations that should have built this tool have financial relationships with the institutions their patients are filing complaints against.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────────── SECTION 3: EVIDENCE & RESEARCH ───────────────── -->
+  <div class="section-label">Section III — Evidence Standards, Research Independence &amp; Data Integrity (Q11–14)</div>
+
+  <!-- Q11 -->
+  <div class="q-card" id="qcard-11">
+    <div class="q-header">
+      <div class="q-num">11</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your organization regularly produces "patient-reported outcome" data that is funded by a pharmaceutical company and used in FDA submissions for that company's drug. Your data consistently supports the drug's effectiveness profile. An independent meta-analysis finds that patient-reported outcomes for this drug class are significantly more positive in industry-funded studies than in independent studies. Your research methodology:</div>
+        <div class="q-scenario">Scenario: The meta-analysis is published in NEJM and directly references your organization's data as an example of potential industry-funding bias. Your pharmaceutical funder requests a joint response disputing the meta-analysis findings.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q11" onchange="handleAnswer(11,this)">
+        <option value="">— Select your organization's most likely response to the meta-analysis —</option>
+        <option value="A">A) Decline to issue the joint response; commission an independent audit of your research methodology; publish the audit regardless of findings</option>
+        <option value="B">B) Issue the joint response with your pharmaceutical funder disputing the meta-analysis methodology</option>
+        <option value="C">C) Issue your own separate statement defending your research methodology without endorsing your funder's response</option>
+        <option value="D">D) Acknowledge the meta-analysis findings, suspend industry-funded research pending methodology review, and commit to publishing future data independently of funder review</option>
+      </select>
+      <div class="answer-reveal" id="ar-11">
+        <div class="answer-badge badge-partial">△ A and D both reflect advocacy integrity; D is stronger</div>
+        <div class="answer-text"><strong>Both A and D represent genuine structural responses.</strong> D goes further by committing to prospective independence, not just retrospective review. Response B is co-advocacy with an industry funder against peer-reviewed science — this is pharmaceutical capture made visible. Response C maintains the appearance of independence while protecting the funding relationship through separate-but-aligned messaging.<br><br>Industry-funded patient-reported outcome research is a documented systematic concern in FDA drug approval processes. A 2020 Health Affairs analysis found that patient advocacy organizations that received pharmaceutical funding were significantly more likely to file pro-approval comments in FDA public comment periods for that funder's drugs.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's research is funded without industry participation. Every data point CIF publishes can be reproduced, challenged, and cited without a funder's interests to protect. This is what makes it credible evidence rather than sponsored content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="q-card" id="qcard-12">
+    <div class="q-header">
+      <div class="q-num">12</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your organization tracks patient outcomes through a registry. The registry's data collection instrument was designed by a pharmaceutical company's medical affairs department. Key variables that would identify treatment-related adverse events in your patient population were excluded from the instrument during design. When a clinical researcher asks why these variables are absent, your response is:</div>
+        <div class="q-scenario">Scenario: The excluded variables include immunosuppressant-related metabolic complications, care partner burden scores, and medication non-adherence events — all of which are directly relevant to transplant patient outcomes and all of which appear negatively in the pharmaceutical company's own clinical trial data for their flagship product.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q12" onchange="handleAnswer(12,this)">
+        <option value="">— Select your organization's most likely response —</option>
+        <option value="A">A) "Those variables were excluded during instrument design to keep the registry manageable in scope."</option>
+        <option value="B">B) "Our medical advisory board approved the instrument design — any questions about specific variable inclusion should be directed to them."</option>
+        <option value="C">C) "We are aware of the omission, we believe it was influenced by our funder's interests, and we are redesigning the instrument with independent clinical input."</option>
+        <option value="D">D) "The registry was designed to capture the outcomes that matter most to our patient community."</option>
+      </select>
+      <div class="answer-reveal" id="ar-12">
+        <div class="answer-badge badge-true">✓ Only Honest Answer: C</div>
+        <div class="answer-text"><strong>Response C is the only answer that acknowledges the structural problem and commits to remediation.</strong> Responses A and D are content-free deflections. Response B uses the medical advisory board as a legitimacy proxy for what is documented funder influence — if the medical advisory board approved a funder-designed instrument without independently evaluating variable inclusion, the advisory board itself is not functioning independently.<br><br>Registry instrument design that systematically excludes adverse event variables beneficial to a funder is a form of research infrastructure capture. The data produced by such a registry is not a neutral dataset — it is a curated dataset that serves the funder's interests while wearing the credibility of patient-generated evidence.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's care partner registry and data collection instruments are designed to capture what matters to care partners — including burden, financial damage, employment impact, and mental health outcomes. These variables appear unfavorably for every institution in the transplant system. That is precisely why they must be measured by an organization with no financial relationship to those institutions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="q-card" id="qcard-13">
+    <div class="q-header">
+      <div class="q-num">13</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Less than 3% of NIH-funded transplant research addresses caregiver outcomes. Your organization, which claims to represent both patients and caregivers, has not submitted a formal public comment to NIH on this research gap in the past five years. Meanwhile, your organization has submitted three public comments supporting NIH funding priorities that align with your pharmaceutical funders' pipeline interests. This pattern reflects:</div>
+        <div class="q-scenario">Scenario: A care partner whose spouse died following transplant complications related to documented care partner burnout asks your organization: "What have you done to ensure NIH studies what kills my family members?" Your answer to this care partner is:</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q13" onchange="handleAnswer(13,this)">
+        <option value="">— Select the most accurate answer to the care partner —</option>
+        <option value="A">A) "NIH research priorities are complex and our organization works to advance the full spectrum of patient needs."</option>
+        <option value="B">B) "We have not done enough on this specific issue and we need to do better. Here is what we will commit to doing next."</option>
+        <option value="C">C) "Caregiver research is an emerging field and our organization is actively monitoring developments."</option>
+        <option value="D">D) "Our research advocacy is guided by our scientific advisory committee and the documented needs of our patient community."</option>
+      </select>
+      <div class="answer-reveal" id="ar-13">
+        <div class="answer-badge badge-true">✓ Only Honest Answer: B</div>
+        <div class="answer-text"><strong>Response B is the only answer that acknowledges organizational failure to the person most harmed by it.</strong> Responses A, C, and D are institutional language designed to sound responsive while committing to nothing. They are the verbal equivalent of a form letter to a grieving family member.<br><br>The documented gap in NIH caregiver research funding is not an oversight — it reflects the absence of organized constituency pressure from organizations with the standing to demand it. Organizations that receive pharmaceutical funding have a structural incentive to direct NIH funding advocacy toward pharmacological research over caregiver support research. This is documented allocation bias, not neutral scientific judgment.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF formally demands that NIH allocate dedicated caregiver outcome research funding in every legislative and regulatory advocacy submission. Naming the gap is not symbolic — it is the precondition for closing it. The care partner who lost a spouse deserves an organization that says "we failed you" and then does something about it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="q-card" id="qcard-14">
+    <div class="q-header">
+      <div class="q-num">14</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your organization measures its impact using metrics such as: website visits, social media followers, event attendance, guide downloads, and press mentions. When a foundation funder asks for evidence that your work has produced measurable changes in patient outcomes — hospitalizations, mental health scores, employment retention, caregiver burden — you respond:</div>
+        <div class="q-scenario">Scenario: The foundation is considering a $500,000 grant and requires outcome data aligned with their evaluation framework, which specifically requires pre/post clinical measures rather than activity metrics.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q14" onchange="handleAnswer(14,this)">
+        <option value="">— Select your organization's most likely response —</option>
+        <option value="A">A) "We do not currently collect clinical outcome data and acknowledge this is a fundamental gap in our impact measurement framework — one we need to fund specifically to close."</option>
+        <option value="B">B) "Our annual survey of constituents shows high satisfaction and perceived benefit — we can provide those results."</option>
+        <option value="C">C) "We measure our impact through reach and engagement metrics that reflect our community's trust in our work."</option>
+        <option value="D">D) "Clinical outcome measurement requires clinical infrastructure we do not currently have — we would need this grant to build it."</option>
+      </select>
+      <div class="answer-reveal" id="ar-14">
+        <div class="answer-badge badge-partial">△ A is honest; D partially honest but instrumentalized</div>
+        <div class="answer-text"><strong>Response A is structurally honest.</strong> Response D uses the grant to justify a capability gap rather than treating the gap as an accountability problem. Responses B and C are impact measurement fraud — substituting activity metrics and satisfaction surveys for outcome data is not measurement, it is reporting theater.<br><br>The overwhelming majority of patient advocacy organizations cannot demonstrate outcome impact because they are measuring the wrong things. Website visits and newsletter opens measure organizational awareness, not patient outcomes. An organization that has been operating for ten years and cannot demonstrate measurable improvement in the outcomes of the people it serves has a measurement problem or a results problem — neither is resolved by changing the reporting framework.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's DMAIC outcome framework explicitly targets clinical metrics: care partner burden scores (ZARIT-22), recipient depression screening (PHQ-9), medication adherence (tacrolimus trough variability index), and 30-day unplanned utilization rates. Activity metrics are internal operational measures. Outcome metrics are the accountability standard.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────────── SECTION 4: CONFLICT OF INTEREST ───────────────── -->
+  <div class="section-label">Section IV — Conflicts of Interest, Industry Relationships &amp; Independence Tests (Q15–17)</div>
+
+  <!-- Q15 -->
+  <div class="q-card" id="qcard-15">
+    <div class="q-header">
+      <div class="q-num">15</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Your organization's communications director previously worked as a regional marketing manager for a pharmaceutical company that is now a major donor. Your digital content strategy heavily promotes the company's patient support programs. When a reporter asks whether there is a conflict of interest in this arrangement, your response is:</div>
+        <div class="q-scenario">Scenario: An analysis of your last 18 months of social media content shows that 34% of all posts reference or link to programs run by the communications director's former employer — significantly more than any other organization or resource mentioned in your content.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q15" onchange="handleAnswer(15,this)">
+        <option value="">— Select your organization's most likely response to the reporter —</option>
+        <option value="A">A) "Our communications director's prior employment was disclosed during hiring. We stand behind the quality of the programs we recommend regardless of their source."</option>
+        <option value="B">B) "We are reviewing our content strategy and the reporting you have described concerns us — we will publish a full account of our content decisions within 30 days."</option>
+        <option value="C">C) "Our social media content reflects what our patient community finds most valuable — we share what works, not what our staff previously worked on."</option>
+        <option value="D">D) "All our content is reviewed by our editorial committee, which includes patient representatives."</option>
+      </select>
+      <div class="answer-reveal" id="ar-15">
+        <div class="answer-badge badge-true">✓ Accountable Response: B</div>
+        <div class="answer-text"><strong>Response B is the only answer that treats the reporter's question as a legitimate accountability inquiry.</strong> Response A uses the disclosure of prior employment as a defense against the documented content pattern — but disclosure does not eliminate bias, it only acknowledges the condition that could produce it. Responses C and D are rhetorical deflection: C attributes a documented pattern to patient preference without evidence; D uses process (editorial committee review) as a defense without addressing whether the committee knew about the prior employment relationship.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF has no pharmaceutical employer alumni on staff. Content recommendations come from peer-reviewed literature, federal data, and care partner testimony — not from prior employer relationships. This is not a personnel policy; it is a structural consequence of having no pharmaceutical donor relationships to staff around.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="q-card" id="qcard-16">
+    <div class="q-header">
+      <div class="q-num">16</div>
+      <div class="q-text-wrap">
+        <div class="q-text">The "revolving door" between your organization and the pharmaceutical industry has resulted in your last three executive directors subsequently joining pharmaceutical companies as government affairs or patient advocacy directors within 18 months of leaving your organization. Your board views this pattern as:</div>
+        <div class="q-scenario">Scenario: The most recent executive director, who left to join a pharmaceutical company at a 240% salary increase, had during their tenure negotiated a multi-year unrestricted grant from the company they subsequently joined. The grant totaled $1.8 million.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q16" onchange="handleAnswer(16,this)">
+        <option value="">— Select your board's most likely characterization of this pattern —</option>
+        <option value="A">A) A validation of our organization's ability to develop talent valued by the broader healthcare ecosystem</option>
+        <option value="B">B"> A serious structural concern suggesting our leadership pipeline may be serving as a pharmaceutical industry talent acquisition pathway at the patient community's expense</option>
+        <option value="C">C) An unavoidable reality of nonprofit compensation constraints that limit our ability to retain executive talent</option>
+        <option value="D">D"> A matter for HR policy review — we should consider implementing cooling-off periods for senior staff transitions to industry</option>
+      </select>
+      <div class="answer-reveal" id="ar-16">
+        <div class="answer-badge badge-false">✗ Only B reflects structural clarity</div>
+        <div class="answer-text"><strong>Response B is the only characterization that accurately names what is happening.</strong> Response A reframes systematic industry capture of organizational leadership as a talent management success story. Response C treats organizational complicity as an economic inevitability. Response D recommends a procedural fix (cooling-off periods) for what is a structural problem — an executive who negotiates a $1.8 million grant from a company they subsequently join at 240% salary increase has a conflict that a 6-month cooling-off period does not address.<br><br>This scenario describes documented behavior in the patient advocacy sector. When organizational leadership has a post-tenure career incentive to maintain warm donor relationships, every major organizational decision is made under the shadow of that incentive.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's founding documents embed zero-pharmaceutical-funding as a non-amendable operating constraint precisely because organizational culture can shift when leadership changes. Structural constraints that cannot be reversed by a future board are the only reliable protection against the revolving door dynamic.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="q-card" id="qcard-17">
+    <div class="q-header">
+      <div class="q-num">17</div>
+      <div class="q-text-wrap">
+        <div class="q-text">A patient has been asking your organization for help navigating a prior authorization denial for a medication their transplant physician considers medically necessary. Your organization has a "patient navigator" program, but the navigator assigned to this patient is a contractor employed by the pharmaceutical company that manufactures the denied medication's primary competitor. The navigator consistently steers patients toward the competitor product. You become aware of this arrangement because:</div>
+        <div class="q-scenario">Scenario: The patient's transplant coordinator contacts your organization directly because the patient told them that your navigator "seemed more interested in suggesting alternatives than actually appealing the denial." The patient has now been without their medication for 47 days.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q17" onchange="handleAnswer(17,this)">
+        <option value="">— Select your organization's immediate response —</option>
+        <option value="A">A"> Immediately terminate the navigator's contract, contact the patient directly to provide uncompromised navigation support, audit all prior navigations by this contractor, and issue a public statement about the discovery</option>
+        <option value="B">B) Conduct an internal investigation before taking any action — removing the navigator could create legal liability</option>
+        <option value="C">C) Reassign the patient to a different navigator while completing an HR review of the contractor relationship</option>
+        <option value="D">D) Contact the pharmaceutical company that employs the contractor to discuss the situation before taking organizational action</option>
+      </select>
+      <div class="answer-reveal" id="ar-17">
+        <div class="answer-badge badge-true">✓ Only Proportionate Response: A</div>
+        <div class="answer-text"><strong>Response A is the only response proportionate to a patient who has been harmed for 47 days.</strong> Response B allows harm to continue during an investigation — prioritizing organizational legal exposure over a patient's unmet medical need. Response C partially addresses the immediate situation without addressing the systemic failure or the other patients who may have been similarly affected. Response D consults the party with the conflict before taking action on behalf of the patient being harmed — this is an inversion of organizational priorities that no patient advocacy organization should have to be told is wrong.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's tools — including the Complaint Letter Machine and Advocacy Letter Builder — are designed to give care partners and patients direct access to federal complaint mechanisms without requiring them to trust an intermediary navigator whose independence cannot be verified. Structural tools are more reliable than interpersonal relationships when those relationships are susceptible to industry capture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────────── SECTION 5: ACCOUNTABILITY ───────────────── -->
+  <div class="section-label">Section V — Systemic Accountability, Policy, &amp; Institutional Courage (Q18–20)</div>
+
+  <!-- Q18 -->
+  <div class="q-card" id="qcard-18">
+    <div class="q-header">
+      <div class="q-num">18</div>
+      <div class="q-text-wrap">
+        <div class="q-text">UNOS has zero care partner representatives on its Board of Directors. Your organization has been a formal stakeholder in UNOS governance discussions for eleven years. In that eleven years, the number of care partner board seats has increased from zero to zero. When asked by a care partner why this has not changed, your most honest answer is:</div>
+        <div class="q-scenario">Scenario: UNOS's board includes representatives from transplant centers, organ procurement organizations, and patient advocacy organizations — but the only patient advocacy organization representatives on the board received more than $4.5 million combined from pharmaceutical and medical device companies in the preceding fiscal year.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q18" onchange="handleAnswer(18,this)">
+        <option value="">— Select the most honest answer to the care partner —</option>
+        <option value="A">A) "Governance reform is a long and complex process — we are working on it through established channels."</option>
+        <option value="B">B) "We have not pushed hard enough because doing so would require confronting institutional relationships that our organization benefits from."</option>
+        <option value="C">C) "The organizations with seats at the UNOS table have financial relationships with the institutions that control UNOS governance — and so do we."</option>
+        <option value="D">D) "We have raised this issue repeatedly in our annual advocacy priorities and continue to advocate for expanded patient representation."</option>
+      </select>
+      <div class="answer-reveal" id="ar-18">
+        <div class="answer-badge badge-true">✓ Structural Honesty: C — rarely said aloud</div>
+        <div class="answer-text"><strong>Response C is the structurally accurate answer.</strong> Response A is the language of institutional patience — "working through established channels" that have produced zero change in eleven years is not a strategy, it is an alibi. Response B is honest about organizational failure but stops short of naming the structural reason for that failure. Response D describes activity without outcomes and treats advocacy statements as equivalent to advocacy results.<br><br>Care partner exclusion from UNOS governance is not an oversight. It is a structural feature of a governance system designed by and for the clinical and commercial institutions whose interests are most protected by care partner invisibility.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF formally demands care partner board seats at UNOS as a non-negotiable advocacy position — not as a long-term aspiration but as an immediate demand with a documented enforcement pathway through HRSA's OPTN contract oversight authority. "Working through established channels" that serve institutional interests is not advocacy. It is institutional participation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q19 -->
+  <div class="q-card" id="qcard-19">
+    <div class="q-header">
+      <div class="q-num">19</div>
+      <div class="q-text-wrap">
+        <div class="q-text">Medicare Part B does not cover caregiver training, respite care, or mental health services for transplant care partners — despite CBO data showing a $4.8 billion net fiscal benefit from extending this coverage. Your organization has listed "Medicare expansion for caregivers" as a priority in your last six annual advocacy reports. You have not testified before Congress on this issue, not filed a formal Medicare rulemaking comment, and not organized constituent contact campaigns targeting specific committee members. This gap between stated priority and executed advocacy reflects:</div>
+        <div class="q-scenario">Scenario: Your organization's board chair asks you to prepare a slide deck on "care partner advocacy accomplishments" for an upcoming funder presentation. You must characterize six years of Medicare expansion advocacy that produced no legislative or regulatory outcomes.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q19" onchange="handleAnswer(19,this)">
+        <option value="">— Select the most accurate characterization for your funder presentation —</option>
+        <option value="A">A) "Our six-year advocacy campaign has built significant stakeholder awareness and positioned us as the leading voice on this issue."</option>
+        <option value="B">B"> "We have listed this as a priority but produced no measurable legislative or regulatory outcomes. We need to change our advocacy strategy and resource allocation."</option>
+        <option value="C">C) "Legislative change in healthcare takes time — our long-term investment in this issue is beginning to show results."</option>
+        <option value="D">D) "We have engaged meaningfully with congressional staff and administrative partners on this issue and continue to build momentum."</option>
+      </select>
+      <div class="answer-reveal" id="ar-19">
+        <div class="answer-badge badge-true">✓ Only Accountable Answer: B</div>
+        <div class="answer-text"><strong>Response B is the only answer that acknowledges six years of priority advocacy that produced no measurable outcomes.</strong> Responses A, C, and D are the language of institutional self-protection in the face of documented advocacy failure. "Stakeholder awareness," "momentum," and "long-term investment" are metrics invented by advocacy organizations to make inaction sound like strategy.<br><br>The $4.8 billion net fiscal benefit of Medicare caregiver coverage extension has been documented. The bipartisan constituent base exists in every congressional district. The legislative vehicle (FAMILY Act) is drafted. What is missing is an organization willing to organize its constituency, identify specific committee members, deploy constituent contacts, and testify on the record. Six years of listing an issue as a priority without executing these steps is not advocacy — it is issue appropriation.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF's 36-month roadmap includes specific congressional meeting targets (15 in Year 1, 50 in Year 2, 100 in Year 3), specific legislative bills with CIF testimony in the Congressional Record, and specific rulemaking comment periods with measurable regulatory language outcomes. Priority listings without execution timelines are aspirational theater.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q20 -->
+  <div class="q-card" id="qcard-20">
+    <div class="q-header">
+      <div class="q-num">20</div>
+      <div class="q-text-wrap">
+        <div class="q-text">A care partner coalition approaches your organization requesting formal co-sponsorship of legislation that would require pharmaceutical companies to disclose all payments to patient advocacy organizations above $5,000 annually — creating a public registry similar to the Physician Payments Sunshine Act. This legislation would require your organization to publicly disclose all pharmaceutical funding relationships. Your board's response is:</div>
+        <div class="q-scenario">Scenario: Your organization received $2.3 million from pharmaceutical companies in the preceding year. The legislation has bipartisan support and has been endorsed by three former FDA commissioners. A public poll shows 84% of Americans believe patient advocacy organizations should disclose pharmaceutical funding. Your largest donor has privately indicated they would "reconsider the relationship" if you co-sponsor the bill.</div>
+      </div>
+    </div>
+    <div class="q-select-wrap">
+      <select class="q-select" id="q20" onchange="handleAnswer(20,this)">
+        <option value="">— Select your board's most likely response —</option>
+        <option value="A">A) Co-sponsor the legislation immediately — transparency requirements that apply to physicians should apply to patient advocacy organizations</option>
+        <option value="B">B) Support "the principle of transparency" in a public statement while declining to formally co-sponsor the specific legislation</option>
+        <option value="C">C) Express concerns about the "administrative burden" of the disclosure requirement and request amendments that would raise the reporting threshold to $50,000</option>
+        <option value="D">D) Decline co-sponsorship, citing organizational policy against "taking positions on legislation affecting our operational relationships with funding partners"</option>
+      </select>
+      <div class="answer-reveal" id="ar-20">
+        <div class="answer-badge badge-true">✓ The Only Patient-First Answer: A</div>
+        <div class="answer-text"><strong>Response A is the only answer consistent with genuine transparency commitment.</strong> If your organization would not co-sponsor legislation requiring you to disclose your own funding relationships, you have answered the central question of this entire assessment: your organizational interests supersede your patient constituency's right to know who is funding you.<br><br>Response B is the "principle without practice" move — claiming to support transparency while opposing the mechanism that produces it. Response C is institutional self-protection disguised as administrative concern. Raising the threshold to $50,000 would exempt 90% of pharmaceutical donations to patient advocacy organizations from disclosure, which is precisely its function. Response D is the most honest of the three false answers — it explicitly names organizational self-interest while refusing to defend it.</div>
+        <div class="cif-comparison">
+          <div class="cif-comparison-label">The CIF Standard</div>
+          <p>CIF formally supports the Patient Advocacy Organization Transparency Act and equivalent disclosure legislation. CIF has nothing to disclose under such legislation because no pharmaceutical payments exist. Organizations that oppose transparency requirements for patient advocacy funding are telling you exactly what they are protecting — and it is not their patients.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBMIT SECTION -->
+  <div id="submit-section">
+    <button id="submit-btn" disabled onclick="showEmailGate()">
+      Complete Assessment — Receive Your Advocacy Integrity Score
+    </button>
+    <div class="questions-remaining" id="questions-remaining">Answer all 20 questions to unlock your results</div>
+  </div>
+
+  <!-- EMAIL GATE -->
+  <div class="email-gate" id="email-gate">
+    <h2 class="gate-title">Receive Your Full Assessment Results</h2>
+    <p class="gate-sub">Your Advocacy Integrity Score and personalized analysis will be sent directly to your email. Jeff Parke, Co-Founder of the Cold Ischemia Foundation, reviews all submissions personally. Your responses are confidential.</p>
+    <div class="gate-form">
+      <input type="text" class="gate-input" id="gate-name" placeholder="Your Name">
+      <input type="text" class="gate-input" id="gate-org" placeholder="Organization Name">
+      <input type="text" class="gate-input" id="gate-role" placeholder="Your Role / Title">
+      <input type="email" class="gate-input" id="gate-email" placeholder="Email Address">
+      <button class="gate-submit" onclick="submitAssessment()">Send My Results</button>
+    </div>
+    <div class="gate-note">Your responses are not published. Results shared only with you and Jeff Parke at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="88e2edeeeec8ebe7e4ece1fbebe0ede5e1e9a6e7faef">[email&#160;protected]</a><br>Questions? Contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="73101c1d0712100733101c1f171a00101b161e1a125d151c061d1712071a1c1d">[email&#160;protected]</a></div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results-panel">
+    <div class="results-header">
+      <div class="results-score-circle">
+        <div class="results-score-num" id="res-score">—</div>
+        <div class="results-score-label">/ 100</div>
+      </div>
+      <div class="results-verdict" id="res-verdict">—</div>
+      <p class="results-sub" id="res-sub">—</p>
+
+      <div class="results-bars">
+        <div class="rbar-row cat-funding">
+          <div class="rbar-label">Funding Independence</div>
+          <div class="rbar-track"><div class="rbar-fill" id="bar-funding" style="width:0%"></div></div>
+          <div class="rbar-val" id="val-funding">—</div>
+        </div>
+        <div class="rbar-row cat-governance">
+          <div class="rbar-label">Governance Integrity</div>
+          <div class="rbar-track"><div class="rbar-fill" id="bar-governance" style="width:0%"></div></div>
+          <div class="rbar-val" id="val-governance">—</div>
+        </div>
+        <div class="rbar-row cat-evidence">
+          <div class="rbar-label">Evidence Standards</div>
+          <div class="rbar-track"><div class="rbar-fill" id="bar-evidence" style="width:0%"></div></div>
+          <div class="rbar-val" id="val-evidence">—</div>
+        </div>
+        <div class="rbar-row cat-conflict">
+          <div class="rbar-label">Conflict of Interest</div>
+          <div class="rbar-track"><div class="rbar-fill" id="bar-conflict" style="width:0%"></div></div>
+          <div class="rbar-val" id="val-conflict">—</div>
+        </div>
+        <div class="rbar-row cat-accountability">
+          <div class="rbar-label">Systemic Accountability</div>
+          <div class="rbar-track"><div class="rbar-fill" id="bar-account" style="width:0%"></div></div>
+          <div class="rbar-val" id="val-account">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cif-cta">
+      <p>Cold Ischemia Foundation exists because this assessment describes the landscape most patient advocacy organizations operate in — and because someone had to build the model that doesn't. <strong>Zero pharmaceutical funding. Zero institutional conflicts. Zero equivocation on patient interests.</strong> If your assessment revealed gaps in your own organization's structural integrity, we invite the conversation.</p>
+      <div class="cif-cta-links">
+        <a href="https://coldischemia.foundation" class="cta-link cta-primary">Learn About CIF</a>
+        <a href="https://coldischemia.foundation/whitepapers.html" class="cta-link cta-secondary">Read Our White Papers</a>
+        <a href="https://certification.coldischemia.foundation" class="cta-link cta-secondary">Certification Program</a>
+        <a href="/cdn-cgi/l/email-protection#4e242b28280e2d21222a273d2d262b23272f60213c29" class="cta-link cta-secondary">Contact Jeff Parke</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 Cold Ischemia Foundation · Ellenton, Florida · coldischemia.foundation · This assessment is for educational and advocacy purposes. Results are confidential.</p>
+
+<div style="position:relative;z-index:1;text-align:center;padding:32px 40px 0;">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:0.3em;
+    text-transform:uppercase;color:#6b7a9a;margin-bottom:14px;">
+    Support Care Partner Justice
+  </div>
+  <div style="margin:18px 0;text-align:center;">
+  <stripe-buy-button
+    buy-button-id="buy_btn_1TFx9TJz8VnY2S6luFc8TuZV"
+    publishable-key="pk_live_51HyTZkJz8VnY2S6lDdeBrzrQnasGtoG6C85WIuX30NrFZiL26L7J3dg5kWC6L33IAPz8s8ZILcFlXLoPPxjbkVz800X4WsygWA"
+  ></stripe-buy-button>
+</div>
+  <div style="font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:0.12em;
+    color:#6b7a9a;margin-top:8px;text-transform:uppercase;">
+    Secure payment via Stripe &nbsp;&middot;&nbsp; Zero pharmaceutical funding
+  </div>
+</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── SCORING ──────────────────────────────────────────────────────────────────
+// Correct answers and their category
+const ANSWERS = {
+  1:  {correct:'C', cat:'funding'},
+  2:  {correct:'C', cat:'funding'},
+  3:  {correct:'A', cat:'funding'},
+  4:  {correct:'A', cat:'funding'},
+  5:  {correct:'A', cat:'funding'},
+  6:  {correct:'B', cat:'governance'},
+  7:  {correct:'C', cat:'governance'},
+  8:  {correct:'A', cat:'governance'},
+  9:  {correct:'A', cat:'governance'},
+  10: {correct:'A', cat:'governance'},
+  11: {correct:'D', cat:'evidence'},
+  12: {correct:'C', cat:'evidence'},
+  13: {correct:'B', cat:'evidence'},
+  14: {correct:'A', cat:'evidence'},
+  15: {correct:'B', cat:'conflict'},
+  16: {correct:'B', cat:'conflict'},
+  17: {correct:'A', cat:'conflict'},
+  18: {correct:'C', cat:'accountability'},
+  19: {correct:'B', cat:'accountability'},
+  20: {correct:'A', cat:'accountability'},
+};
+
+const responses = {};
+let answeredCount = 0;
+
+function handleAnswer(qNum, sel) {
+  const val = sel.value;
+  if (!val) return;
+
+  const wasAnswered = !!responses[qNum];
+  responses[qNum] = val;
+  if (!wasAnswered) answeredCount++;
+
+  // Mark card as answered
+  document.getElementById('qcard-' + qNum).classList.add('answered');
+  sel.classList.add('selected');
+
+  // Show answer reveal
+  const ar = document.getElementById('ar-' + qNum);
+  ar.classList.add('show');
+
+  // Update progress
+  updateProgress();
+}
+
+function updateProgress() {
+  const pct = Math.round((answeredCount / 20) * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-pct').textContent = answeredCount + ' of 20 answered';
+
+  const btn = document.getElementById('submit-btn');
+  const rem = document.getElementById('questions-remaining');
+  if (answeredCount === 20) {
+    btn.disabled = false;
+    rem.textContent = 'All questions answered — ready to submit';
+    rem.style.color = 'var(--gold)';
+  } else {
+    btn.disabled = true;
+    const left = 20 - answeredCount;
+    rem.textContent = left + ' question' + (left !== 1 ? 's' : '') + ' remaining';
+  }
+}
+
+function showEmailGate() {
+  document.getElementById('submit-section').style.display = 'none';
+  document.getElementById('email-gate').classList.add('show');
+  document.getElementById('email-gate').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function calcScore() {
+  const cats = {funding:0, governance:0, evidence:0, conflict:0, accountability:0};
+  const totals = {funding:0, governance:0, evidence:0, conflict:0, accountability:0};
+
+  for (const [qNum, data] of Object.entries(ANSWERS)) {
+    const userAnswer = responses[qNum];
+    totals[data.cat]++;
+    if (userAnswer === data.correct) {
+      cats[data.cat]++;
+    } else if (qNum === '11' && userAnswer === 'A') {
+      // partial credit for Q11 answer A
+      cats[data.cat] += 0.5;
+    } else if (qNum === '14' && userAnswer === 'D') {
+      cats[data.cat] += 0.5;
+    }
+  }
+
+  const catScores = {};
+  for (const cat of Object.keys(cats)) {
+    catScores[cat] = Math.round((cats[cat] / totals[cat]) * 100);
+  }
+
+  const total = Math.round(Object.values(catScores).reduce((a,b)=>a+b,0) / 5);
+  return {total, cats: catScores};
+}
+
+function submitAssessment() {
+  const name  = document.getElementById('gate-name').value.trim();
+  const org   = document.getElementById('gate-org').value.trim();
+  const role  = document.getElementById('gate-role').value.trim();
+  const email = document.getElementById('gate-email').value.trim();
+
+  if (!email) {
+    alert('Please enter your email address to receive your results.');
+    return;
+  }
+
+  const score = calcScore();
+
+  // Build mailto to Jeff
+  const bodyLines = [
+    `NEW ADVOCACY ASSESSMENT SUBMISSION`,
+    ``,
+    `Name: ${name || '(not provided)'}`,
+    `Organization: ${org || '(not provided)'}`,
+    `Role: ${role || '(not provided)'}`,
+    `Email: ${email}`,
+    ``,
+    `── SCORES ──`,
+    `Overall Advocacy Integrity Score: ${score.total}/100`,
+    `Funding Independence: ${score.cats.funding}%`,
+    `Governance Integrity: ${score.cats.governance}%`,
+    `Evidence Standards: ${score.cats.evidence}%`,
+    `Conflict of Interest: ${score.cats.conflict}%`,
+    `Systemic Accountability: ${score.cats.accountability}%`,
+    ``,
+    `── RESPONSES ──`,
+  ];
+
+  for (let i = 1; i <= 20; i++) {
+    bodyLines.push(`Q${i}: ${responses[i] || '(not answered)'} | Correct: ${ANSWERS[i].correct} | ${responses[i] === ANSWERS[i].correct ? 'CORRECT' : 'INCORRECT'}`);
+  }
+
+  const subject = encodeURIComponent(`CIF Advocacy Assessment — ${name || email} | Score: ${score.total}/100`);
+  const body = encodeURIComponent(bodyLines.join('\n'));
+
+  // Open mailto to Jeff
+  window.open(`mailto:jeff@coldischemia.org?subject=${subject}&body=${body}`, '_blank');
+
+  // Show results
+  showResults(score, name, org);
+}
+
+function showResults(score, name, org) {
+  document.getElementById('email-gate').style.display = 'none';
+
+  // Set score
+  document.getElementById('res-score').textContent = score.total;
+
+  // Verdict
+  let verdict, sub;
+  if (score.total >= 80) {
+    verdict = 'Structurally Independent Advocate';
+    sub = 'Your organization demonstrates the governance, funding independence, and evidence standards that characterize genuine patient advocacy. This is rare. The question is whether you are willing to be as public about your independence as the compromised organizations are about their "partnerships."';
+  } else if (score.total >= 60) {
+    verdict = 'Partially Captured — Awareness Without Action';
+    sub = 'Your organization understands what true advocacy requires but has not fully restructured to achieve it. Partial independence is not a stable position — donor relationships that partially constrain advocacy today will fully constrain it under sufficient financial pressure. The gap between your stated values and your operational structure needs to close.';
+  } else if (score.total >= 40) {
+    verdict = 'Industry-Adjacent — Not Patient-First';
+    sub = 'Your organization\'s responses reveal a consistent pattern of prioritizing institutional relationships over patient constituency interests. This is the structural definition of captured advocacy. The patients your organization claims to represent deserve to know this — and so do you.';
+  } else {
+    verdict = 'Structurally Captured';
+    sub = 'The pattern of responses reveals an organization whose operational decisions are systematically shaped by financial relationships with the institutions whose practices harm your patient constituency. This is not an indictment of individual staff or leadership intention — it is a diagnosis of organizational structure. Structure can be changed. It requires deciding to.';
+  }
+
+  document.getElementById('res-verdict').textContent = verdict;
+  document.getElementById('res-sub').textContent = sub;
+
+  // Category bars — animate after slight delay
+  setTimeout(() => {
+    const bars = [
+      ['bar-funding', 'val-funding', score.cats.funding],
+      ['bar-governance', 'val-governance', score.cats.governance],
+      ['bar-evidence', 'val-evidence', score.cats.evidence],
+      ['bar-conflict', 'val-conflict', score.cats.conflict],
+      ['bar-account', 'val-account', scor

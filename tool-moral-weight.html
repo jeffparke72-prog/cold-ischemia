@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Moral Weight of Care · Tool 06 · Survival Guide for Care Partners</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --bg:#030509;--bg2:#07101c;--bg3:#0a1628;--bg4:#040d10;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.22);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);
+  --ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);
+  --ink20:rgba(216,207,196,0.2);--ink10:rgba(216,207,196,0.1);
+  --gold:#c8902a;--gl:#e8b84a;--gd:rgba(200,144,42,0.1);--gb:rgba(200,144,42,0.2);
+  --cold:#2ac4c8;--cd:rgba(42,196,200,0.1);--cb:rgba(42,196,200,0.25);
+  --red:#c83050;--rd:rgba(200,48,80,0.1);--rb:rgba(200,48,80,0.25);
+  --green:#50c878;--grd:rgba(80,200,120,0.1);--grb:rgba(80,200,120,0.3);
+  --amber:#e8900a;--amd:rgba(232,144,10,0.1);--amb:rgba(232,144,10,0.3);
+}
+body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;min-height:100vh;overflow-x:hidden;}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-thumb{background:#0d1a2e;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(100,140,200,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(100,140,200,0.018) 1px,transparent 1px);
+  background-size:56px 56px;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(14px);
+  border-bottom:0.5px solid rgba(100,140,200,0.1);padding:0 28px;height:52px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.nav-left{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ink40);}
+.nav-right{display:flex;gap:7px;}
+.nav-btn{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;text-decoration:none;padding:6px 13px;border-radius:2px;
+  border:0.5px solid rgba(100,140,200,0.12);color:var(--ink40);cursor:pointer;background:none;
+  transition:all .15s;}
+.nav-btn:hover{color:var(--ink80);border-color:var(--b2);}
+.nav-btn.home{color:var(--gold);border-color:var(--gb);background:var(--gd);}
+.nav-btn.home:hover{background:rgba(200,144,42,0.18);}
+
+/* PAGE */
+.page{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:28px 24px 80px;}
+
+/* HEADER */
+.hdr{padding-bottom:22px;margin-bottom:0;}
+.hdr-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:9px;}
+.hdr-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.6rem);
+  font-weight:900;color:var(--ink);line-height:1.1;margin-bottom:6px;}
+.hdr-title em{font-style:italic;color:var(--gold);}
+.hdr-sub{font-size:1rem;line-height:1.85;color:var(--ink60);
+  border-left:2px solid var(--gold);padding-left:14px;
+  font-family:'Playfair Display',serif;font-style:italic;max-width:620px;margin-bottom:22px;}
+
+/* TOOL NAV TABS */
+.tool-tabs{display:flex;gap:0;border-bottom:0.5px solid var(--b);margin-bottom:28px;overflow-x:auto;}
+.ttab{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;padding:11px 16px;cursor:pointer;color:var(--ink40);
+  border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none;}
+.ttab:hover{color:var(--ink80);}
+.ttab.on{color:var(--gold);border-bottom-color:var(--gold);}
+
+/* TOOL PANELS */
+.tpanel{display:none;}
+.tpanel.on{display:block;}
+
+/* ── SHARED ELEMENTS ── */
+.s-ey{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.s-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;
+  color:var(--ink);margin-bottom:6px;line-height:1.3;}
+.s-body{font-size:.97rem;line-height:1.88;color:var(--ink60);margin-bottom:18px;}
+.s-body strong{color:var(--ink80);font-weight:500;}
+.rule{height:0.5px;background:var(--b);margin:20px 0;}
+.rule-g{height:0.5px;background:var(--gb);margin:20px 0;}
+
+.card{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:18px 20px;margin-bottom:10px;}
+.card-accent-gold{border-left:2px solid var(--gold);border-radius:0 4px 4px 0;}
+.card-accent-cold{border-left:2px solid var(--cold);border-radius:0 4px 4px 0;}
+.card-accent-red{border-left:2px solid var(--red);border-radius:0 4px 4px 0;}
+.card-accent-green{border-left:2px solid var(--green);border-radius:0 4px 4px 0;}
+
+.phrase{background:var(--bg3);border-left:2px solid var(--cold);border-radius:0 4px 4px 0;
+  padding:12px 16px;margin:12px 0;
+  font-family:'Playfair Display',serif;font-style:italic;font-size:.97rem;
+  color:var(--ink80);line-height:1.7;}
+
+/* BUTTONS */
+.btn{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;
+  text-transform:uppercase;padding:9px 20px;border-radius:2px;cursor:pointer;
+  border:none;transition:all .15s;display:inline-block;}
+.btn-gold{background:var(--gold);color:var(--bg);}
+.btn-gold:hover{background:var(--gl);}
+.btn-cold{background:rgba(42,196,200,0.15);color:var(--cold);border:0.5px solid var(--cb);}
+.btn-cold:hover{background:rgba(42,196,200,0.25);}
+.btn-ghost{background:none;color:var(--ink40);border:0.5px solid var(--b);}
+.btn-ghost:hover{color:var(--ink80);border-color:var(--b2);}
+.btn-green{background:rgba(80,200,120,0.15);color:var(--green);border:0.5px solid var(--grb);}
+.btn-green:hover{background:rgba(80,200,120,0.25);}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px;}
+
+/* ══ TOOL 1: SATURATION ASSESSMENT ══ */
+.sat-intro{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;
+  padding:16px 18px;margin-bottom:20px;}
+.sat-q{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;
+  padding:16px 18px;margin-bottom:8px;transition:border-color .15s;}
+.sat-q.answered{border-color:rgba(200,144,42,0.2);}
+.sat-q-text{font-family:'Playfair Display',serif;font-size:.97rem;font-weight:700;
+  color:var(--ink);margin-bottom:12px;line-height:1.4;}
+.sat-opts{display:flex;flex-direction:column;gap:5px;}
+.sat-opt{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;
+  border:0.5px solid var(--b);border-radius:3px;cursor:pointer;transition:all .15s;}
+.sat-opt:hover{border-color:var(--b2);}
+.sat-opt.sel{border-color:var(--gold);background:var(--gd);}
+.sat-dot{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink20);
+  flex-shrink:0;margin-top:3px;transition:all .15s;}
+.sat-opt.sel .sat-dot{background:var(--gold);border-color:var(--gold);}
+.sat-opt-text{font-size:.88rem;color:var(--ink60);line-height:1.5;}
+.sat-opt.sel .sat-opt-text{color:var(--ink80);}
+
+/* Progress bar */
+.prog-wrap{background:var(--bg3);border-radius:2px;height:3px;margin-bottom:6px;overflow:hidden;}
+.prog-bar{height:100%;border-radius:2px;background:var(--gold);transition:width .4s ease;width:0%;}
+.prog-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;
+  color:var(--ink40);margin-bottom:14px;}
+
+/* Result meter */
+.result-box{background:var(--bg2);border-radius:4px;padding:22px;margin-top:16px;display:none;}
+.result-meter-wrap{margin:14px 0;}
+.result-meter-bg{background:var(--bg3);border-radius:2px;height:8px;overflow:hidden;margin-bottom:6px;}
+.result-meter-fill{height:100%;border-radius:2px;transition:width .8s ease;}
+.result-zone-labels{display:flex;justify-content:space-between;}
+.rzl{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.5px;color:var(--ink20);}
+.result-zone-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin:10px 0 4px;}
+.result-desc{font-size:.92rem;line-height:1.82;color:var(--ink60);}
+.result-actions{display:flex;flex-direction:column;gap:6px;margin-top:14px;}
+.ra-item{background:var(--bg3);border-radius:3px;padding:10px 14px;
+  display:flex;gap:10px;align-items:flex-start;}
+.ra-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:7px;}
+.ra-text{font-size:.88rem;line-height:1.7;color:var(--ink60);}
+.ra-text strong{color:var(--ink80);font-weight:500;}
+
+/* ══ TOOL 2: TWO-QUESTION SEPARATOR ══ */
+.tqs-container{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+@media(max-width:600px){.tqs-container{grid-template-columns:1fr;}}
+.tqs-side{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:18px;}
+.tqs-side.required{border-top:2px solid var(--cold);}
+.tqs-side.meaning{border-top:2px solid var(--red);}
+.tqs-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:8px;}
+.tqs-side.required .tqs-label{color:var(--cold);}
+.tqs-side.meaning .tqs-label{color:var(--red);}
+.tqs-q{font-family:'Playfair Display',serif;font-size:.97rem;font-weight:700;
+  color:var(--ink);margin-bottom:10px;line-height:1.35;}
+.tqs-hint{font-size:.82rem;color:var(--ink40);line-height:1.6;margin-bottom:12px;font-style:italic;}
+.tqs-input{width:100%;background:var(--bg3);border:0.5px solid var(--b2);border-radius:3px;
+  padding:10px 13px;font-family:'Crimson Pro',Georgia,serif;font-size:.92rem;
+  color:var(--ink);line-height:1.6;resize:vertical;min-height:80px;}
+.tqs-input:focus{outline:none;border-color:var(--cold);}
+.tqs-input::placeholder{color:var(--ink20);}
+
+.tqs-fusion-check{background:var(--bg2);border:0.5px solid rgba(200,144,42,0.25);
+  border-radius:4px;padding:16px 18px;margin-bottom:14px;}
+.tqs-separation-result{background:var(--bg2);border-radius:4px;padding:20px;
+  margin-top:14px;display:none;}
+.sep-insight{background:var(--bg3);border-left:2px solid var(--cold);
+  border-radius:0 4px 4px 0;padding:12px 16px;margin-bottom:10px;}
+.sep-insight-label{font-family:'IBM Plex Mono',monospace;font-size:7px;
+  letter-spacing:2px;text-transform:uppercase;color:var(--cold);margin-bottom:5px;}
+.sep-insight-text{font-size:.92rem;line-height:1.75;color:var(--ink60);}
+.sep-insight-text strong{color:var(--ink80);font-weight:500;}
+
+/* ══ TOOL 3: IDENTITY INVENTORY ══ */
+.inv-categories{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;}
+.inv-cat{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:16px 18px;}
+.inv-cat-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.inv-cat-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);}
+.inv-cat-score{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--ink40);}
+.inv-items{display:flex;flex-direction:column;gap:5px;}
+.inv-item{display:flex;align-items:center;gap:10px;padding:7px 0;
+  border-bottom:0.5px solid var(--ink10);cursor:pointer;}
+.inv-item:last-child{border-bottom:none;}
+.inv-check{width:16px;height:16px;border:1.5px solid var(--b2);border-radius:2px;
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.inv-item.lost .inv-check{background:var(--rd);border-color:var(--red);}
+.inv-item.reclaim .inv-check{background:var(--grd);border-color:var(--green);}
+.inv-item.ok .inv-check{background:var(--cd);border-color:var(--cold);}
+.inv-check-mark{font-size:9px;display:none;}
+.inv-item.lost .inv-check-mark{display:block;color:var(--red);}
+.inv-item.reclaim .inv-check-mark{display:block;color:var(--green);}
+.inv-item.ok .inv-check-mark{display:block;color:var(--cold);}
+.inv-item-text{font-size:.92rem;color:var(--ink60);flex:1;line-height:1.4;}
+.inv-item.lost .inv-item-text{color:var(--ink80);}
+.inv-item-state{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:1px;
+  text-transform:uppercase;color:var(--ink20);}
+.inv-item.lost .inv-item-state{color:var(--red);}
+.inv-item.reclaim .inv-item-state{color:var(--green);}
+.inv-item.ok .inv-item-state{color:var(--cold);}
+
+.inv-legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:16px;}
+.inv-leg-item{display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;
+  font-size:8px;letter-spacing:.5px;color:var(--ink40);cursor:pointer;}
+
+.inv-summary{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;
+  padding:18px;margin-top:8px;display:none;}
+.inv-sum-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0;}
+@media(max-width:500px){.inv-sum-grid{grid-template-columns:1fr;}}
+.inv-sum-cell{background:var(--bg3);border-radius:3px;padding:12px;text-align:center;}
+.inv-sum-num{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;margin-bottom:3px;}
+.inv-sum-label{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ink40);}
+
+/* ══ TOOL 4: COMPASSION REGULATION ══ */
+.cr-scenario-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+.cr-scenario{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;overflow:hidden;}
+.cr-sc-btn{width:100%;text-align:left;padding:14px 16px;background:none;border:none;
+  cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.cr-sc-btn:hover{background:rgba(100,140,200,0.04);}
+.cr-sc-text{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;
+  color:var(--ink);flex:1;line-height:1.4;}
+.cr-sc-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;
+  text-transform:uppercase;padding:3px 9px;border-radius:2px;white-space:nowrap;flex-shrink:0;}
+.tag-r{background:var(--rd);color:var(--red);border:0.5px solid var(--rb);}
+.tag-a{background:var(--amd);color:var(--amber);border:0.5px solid var(--amb);}
+.tag-g{background:var(--grd);color:var(--green);border:0.5px solid var(--grb);}
+.cr-sc-chev{font-size:11px;color:var(--ink40);flex-shrink:0;margin-top:4px;transition:transform .2s;}
+.cr-scenario.open .cr-sc-chev{transform:rotate(180deg);}
+.cr-sc-body{display:none;padding:0 16px 16px;border-top:0.5px solid var(--b);}
+.cr-scenario.open .cr-sc-body{display:block;}
+.cr-sc-reality{font-size:.92rem;line-height:1.82;color:var(--ink60);margin:12px 0;}
+.cr-sc-reality strong{color:var(--ink80);font-weight:500;}
+.cr-sc-reframe{background:var(--bg3);border-radius:3px;padding:11px 14px;margin-bottom:8px;}
+.cr-sc-rf-label{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:5px;}
+.cr-sc-rf-label.before{color:var(--red);}
+.cr-sc-rf-label.after{color:var(--green);}
+.cr-sc-rf-text{font-size:.88rem;line-height:1.7;color:var(--ink60);}
+.cr-sc-phrase{background:var(--bg3);border-left:2px solid var(--cold);
+  border-radius:0 4px 4px 0;padding:9px 14px;margin-top:8px;
+  font-family:'Playfair Display',serif;font-style:italic;font-size:.9rem;
+  color:var(--ink80);line-height:1.65;}
+
+/* ══ TOOL 5: REFRAMING STATION ══ */
+.rf-station{display:flex;flex-direction:column;gap:16px;}
+.rf-input-area{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:20px;}
+.rf-textarea{width:100%;background:var(--bg3);border:0.5px solid var(--b2);border-radius:3px;
+  padding:12px 14px;font-family:'Crimson Pro',Georgia,serif;font-size:.97rem;
+  color:var(--ink);line-height:1.7;resize:vertical;min-height:80px;margin-bottom:12px;}
+.rf-textarea:focus{outline:none;border-color:var(--cold);}
+.rf-textarea::placeholder{color:var(--ink20);}
+.rf-quick-examples{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.rf-ex{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.5px;
+  padding:5px 10px;border:0.5px solid var(--b);border-radius:2px;cursor:pointer;
+  color:var(--ink40);transition:all .15s;}
+.rf-ex:hover{color:var(--ink80);border-color:var(--b2);}
+.rf-result{background:var(--bg2);border-radius:4px;padding:20px;display:none;}
+.rf-original{background:var(--bg3);border-left:2px solid var(--red);
+  border-radius:0 4px 4px 0;padding:10px 14px;margin-bottom:12px;}
+.rf-orig-label{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--red);margin-bottom:4px;}
+.rf-orig-text{font-size:.92rem;color:var(--ink60);font-style:italic;line-height:1.6;}
+.rf-steps{display:flex;flex-direction:column;gap:8px;}
+.rf-step{background:var(--bg3);border-radius:3px;padding:12px 14px;}
+.rf-step-num{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.rf-step-text{font-size:.92rem;line-height:1.78;color:var(--ink60);}
+.rf-step-text strong{color:var(--ink80);font-weight:500;}
+.rf-reframed{background:var(--bg3);border-left:2px solid var(--green);
+  border-radius:0 4px 4px 0;padding:12px 16px;margin-top:10px;}
+.rf-reframed-label{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--green);margin-bottom:6px;}
+.rf-reframed-text{font-family:'Playfair Display',serif;font-size:.97rem;font-style:italic;
+  color:var(--ink80);line-height:1.75;}
+
+/* Footer */
+.pg-footer{margin-top:48px;padding-top:14px;border-top:0.5px solid var(--b);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.pf-l{font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:var(--ink20);
+  letter-spacing:.5px;line-height:2;}
+.pf-r{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(200,144,42,0.35);}
+</style>
+</head>
+<body>
+<nav>
+  <span class="nav-left">Survival Guide · Tool 06</span>
+  <div class="nav-right">
+    <a href="index.html" class="nav-btn">← All Tools</a>
+    <a href="https://coldischemia.foundation" target="_blank" rel="noopener" class="nav-btn home">coldischemia.foundation ↗</a>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-eyebrow">Tool 06 · Section VI · Survival Guide for Care Partners</div>
+    <h1 class="hdr-title">The Moral <em>Weight</em> of Care</h1>
+    <p class="hdr-sub">When caregiving stops being something you do and starts being something you are judged through — these tools help you find the line between what is required of you and what you have started to require of yourself.</p>
+  </div>
+
+  <div class="tool-tabs">
+    <button class="ttab on" onclick="setTab(0,this)">01 · Saturation check</button>
+    <button class="ttab" onclick="setTab(1,this)">02 · Two-question split</button>
+    <button class="ttab" onclick="setTab(2,this)">03 · Identity inventory</button>
+    <button class="ttab" onclick="setTab(3,this)">04 · Compassion regulation</button>
+    <button class="ttab" onclick="setTab(4,this)">05 · Reframing station</button>
+  </div>
+
+  <!-- ══ TAB 1: SATURATION ASSESSMENT ══ -->
+  <div class="tpanel on" id="tp0">
+    <div class="s-ey">Tool 01 of 05 · Moral saturation check</div>
+    <div class="s-title">Where are you right now?</div>
+    <p class="s-body">Moral saturation happens gradually. These eight questions are calibrated to the actual patterns that emerge in high-tension caregiving — not generic stress, but the specific weight of caregiving that has merged with identity. Answer honestly. There are no wrong answers here.</p>
+
+    <div class="prog-label" id="satProgLabel">0 of 8 answered</div>
+    <div class="prog-wrap"><div class="prog-bar" id="satProg"></div></div>
+
+    <div id="satQuestions"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-gold" onclick="showSatResult()">See my result →</button>
+      <button class="btn btn-ghost" onclick="resetSat()">Start over</button>
+    </div>
+
+    <div class="result-box" id="satResult"></div>
+  </div>
+
+  <!-- ══ TAB 2: TWO-QUESTION SEPARATOR ══ -->
+  <div class="tpanel" id="tp1">
+    <div class="s-ey">Tool 02 of 05 · The two-question separator</div>
+    <div class="s-title">Separating what is required from what it means about you</div>
+    <p class="s-body">When these two questions fuse, every action becomes a test of your worth. Keeping them separate is not a trick — it is a structural correction. Think of a specific recent situation that felt heavy and work through both questions about it.</p>
+
+    <div class="card card-accent-cold" style="margin-bottom:16px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--cold);margin-bottom:6px;">The situation</div>
+      <div style="font-size:.9rem;line-height:1.7;color:var(--ink60);margin-bottom:10px;">Describe briefly what happened — or is happening — that brought you here.</div>
+      <textarea class="tqs-input" id="tqsSituation" placeholder="The situation I am dealing with is..." rows="3"></textarea>
+    </div>
+
+    <div class="tqs-container">
+      <div class="tqs-side required">
+        <div class="tqs-label">Question one</div>
+        <div class="tqs-q">What is actually required of me in this situation?</div>
+        <div class="tqs-hint">Not what you wish were required. Not the ideal version. The real, minimum functional requirement right now.</div>
+        <textarea class="tqs-input" id="tqsRequired" placeholder="What is genuinely required is..." rows="4"></textarea>
+      </div>
+      <div class="tqs-side meaning">
+        <div class="tqs-label">Question two</div>
+        <div class="tqs-q">What am I telling myself this means about me?</div>
+        <div class="tqs-hint">The internal verdict — the thing you would never say aloud but that is running underneath every response.</div>
+        <textarea class="tqs-input" id="tqsMeaning" placeholder="What I am telling myself this means is..." rows="4"></textarea>
+      </div>
+    </div>
+
+    <div class="tqs-fusion-check">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Fusion check — mark all that apply right now</div>
+      <div id="fusionChecks"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-gold" onclick="runSeparation()">Separate these →</button>
+      <button class="btn btn-ghost" onclick="clearSeparator()">Clear</button>
+    </div>
+    <div class="tqs-separation-result" id="sepResult"></div>
+  </div>
+
+  <!-- ══ TAB 3: IDENTITY INVENTORY ══ -->
+  <div class="tpanel" id="tp2">
+    <div class="s-ey">Tool 03 of 05 · Identity inventory</div>
+    <div class="s-title">What has narrowed, what can return</div>
+    <p class="s-body">Identity compression happens incrementally. This inventory makes the invisible visible. For each item, mark whether it is still intact, has narrowed, or is something you want to reclaim. You do not need to act on all of it today — you need to <strong>see it clearly.</strong></p>
+
+    <div class="inv-legend">
+      <div class="inv-leg-item" onclick="markAll('ok')"><div style="width:10px;height:10px;border-radius:50%;background:var(--cold);"></div> Still intact</div>
+      <div class="inv-leg-item" onclick="markAll('lost')"><div style="width:10px;height:10px;border-radius:50%;background:var(--red);"></div> Has narrowed or gone</div>
+      <div class="inv-leg-item" onclick="markAll('reclaim')"><div style="width:10px;height:10px;border-radius:50%;background:var(--green);"></div> Want to reclaim this</div>
+      <div class="inv-leg-item" style="color:var(--ink20);">Tap each item to cycle through states</div>
+    </div>
+
+    <div class="inv-categories" id="invCategories"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-gold" onclick="showInvSummary()">See my inventory →</button>
+      <button class="btn btn-ghost" onclick="resetInv()">Reset all</button>
+    </div>
+    <div class="inv-summary" id="invSummary"></div>
+  </div>
+
+  <!-- ══ TAB 4: COMPASSION REGULATION ══ -->
+  <div class="tpanel" id="tp3">
+    <div class="s-ey">Tool 04 of 05 · Compassion regulation</div>
+    <div class="s-title">Compassion paused is not compassion lost</div>
+    <p class="s-body">The lie that drives moral saturation is that compassion must be continuous to be real. It does not. When it becomes a condition you must maintain to keep the environment stable, it stops functioning as compassion. Below are common situations where this confusion becomes most acute — and a clear reframe for each one.</p>
+
+    <div class="cr-scenario-grid" id="crScenarios"></div>
+  </div>
+
+  <!-- ══ TAB 5: REFRAMING STATION ══ -->
+  <div class="tpanel" id="tp4">
+    <div class="s-ey">Tool 05 of 05 · Reframing station</div>
+    <div class="s-title">From self-judgment to structural clarity</div>
+    <p class="s-body">The internal voice of moral saturation sounds like personal failure. It is usually a description of a situation that exceeds what any single person can manage. This tool takes a self-critical thought and walks it through the reframe that Section VI describes — not reassurance, but precision.</p>
+
+    <div class="rf-station">
+      <div class="rf-input-area">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Enter a thought you are carrying</div>
+        <div style="font-size:.88rem;color:var(--ink40);margin-bottom:10px;font-style:italic;">The internal verdict — something you have been telling yourself about how you are handling this.</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--ink40);margin-bottom:6px;">Or tap an example to start:</div>
+        <div class="rf-quick-examples" id="rfExamples"></div>
+        <textarea class="rf-textarea" id="rfInput" placeholder="I am not handling this well. I keep..." rows="3"></textarea>
+        <div class="btn-row">
+          <button class="btn btn-gold" onclick="runReframe()">Reframe this →</button>
+          <button class="btn btn-ghost" onclick="clearReframe()">Clear</button>
+        </div>
+      </div>
+      <div class="rf-result" id="rfResult"></div>
+    </div>
+  </div>
+
+  <div class="pg-footer">
+    <div class="pf-l">Tool 06 · The Moral Weight of Care · Survival Guide for Care Partners<br>Cold Ischemia Foundation · coldischemia.foundation · Free Resource · Not for Resale</div>
+    <div class="pf-r">CIF · 2025</div>
+  </div>
+</div>
+
+<script>
+// ══ DATA ══
+
+const SAT_QS = [
+  {q:"When you set a limit — any limit — how does it feel internally?",
+   opts:["Fine. Limits are practical.",
+         "Slightly uncomfortable, but I can do it.",
+         "It requires significant justification before I can allow it.",
+         "It feels morally wrong, like I am failing someone."],
+   weights:[0,1,2,3]},
+  {q:"When something goes wrong in the care environment, where does your mind go first?",
+   opts:["What happened and what needs to change.",
+         "Whether I could have prevented it.",
+         "What this says about how I am handling this.",
+         "A thorough review of everything I have done wrong recently."],
+   weights:[0,1,2,3]},
+  {q:"How often do you feel like your own needs require justification before they are allowed?",
+   opts:["Rarely — my needs are legitimate.",
+         "Sometimes — when they conflict with caregiving.",
+         "Often — I have to make a case for them.",
+         "Almost always — I have largely stopped having them."],
+   weights:[0,1,2,3]},
+  {q:"Finish this sentence honestly: 'If I were a better care partner, I would...'",
+   opts:["...be doing roughly what I am doing.",
+         "...manage my frustration more consistently.",
+         "...never feel resentful, exhausted, or overwhelmed.",
+         "...not have any needs of my own at all."],
+   weights:[0,1,2,3]},
+  {q:"When you are exhausted and cannot give more, what do you tell yourself?",
+   opts:["I have hit my limit and need to recover.",
+         "I should have paced myself better.",
+         "I am letting them down.",
+         "This is evidence of who I really am."],
+   weights:[0,1,2,3]},
+  {q:"How often do you review your actions from earlier in the day and assess whether they were adequate?",
+   opts:["Occasionally, if something felt off.",
+         "Regularly — I replay significant moments.",
+         "Most days — I run a kind of internal audit.",
+         "Constantly — it is the background noise of most of my hours."],
+   weights:[0,1,2,3]},
+  {q:"When you imagine stepping back — even briefly — from the caregiving role, what is the first feeling?",
+   opts:["Relief. I need that.",
+         "Guilt, but manageable.",
+         "Strong guilt — I would need permission from somewhere.",
+         "It does not feel possible. The cost is too high to think about."],
+   weights:[0,1,2,3]},
+  {q:"How much of your sense of who you are currently comes from how well you are performing as a care partner?",
+   opts:["It is one part of me, not the whole.",
+         "A significant part, more than I would like.",
+         "Most of it. I am not sure what else there is right now.",
+         "All of it. The role is the self."],
+   weights:[0,1,2,3]}
+];
+
+const FUSION_CHECKS = [
+  "I feel like not doing something perfectly means I do not care enough",
+  "I have stopped being able to tell the difference between a practical failure and a personal one",
+  "Rest feels like something I have to earn",
+  "I apologize for things that are not my fault",
+  "I rehearse explanations for limits before I enforce them",
+  "Feeling frustrated makes me feel like a bad person",
+  "I have started to believe I am the situation I am managing"
+];
+
+const INV_CATS = [
+  {label:"Work and purpose", items:[
+    "A role or career that felt mine",
+    "Projects I chose because I wanted them",
+    "Professional identity outside caregiving",
+    "Ambitions I used to plan toward"
+  ]},
+  {label:"Social and relational", items:[
+    "Friendships I maintained without explanation",
+    "Conversations that were not about caregiving",
+    "People who know a version of me that still exists",
+    "The ability to be spontaneous with others"
+  ]},
+  {label:"Internal and personal", items:[
+    "Opinions I held without checking if they were safe to say",
+    "Preferences — food, time, environment, quiet",
+    "The ability to feel an emotion without managing it",
+    "A sense of what I find funny, beautiful, or worth my time"
+  ]},
+  {label:"Physical and daily", items:[
+    "Sleep that is not interrupted by vigilance",
+    "Time that belongs to no one's needs",
+    "A body that is not running on reserve",
+    "Moments of genuine rest — not just waiting"
+  ]}
+];
+
+const CR_SCENARIOS = [
+  {tag:"tag-r", tagTxt:"Most common",
+   q:"I lost patience. That means I don't really care.",
+   reality:"Losing patience is not evidence of inadequate care. It is evidence of sustained overextension without adequate recovery. <strong>The two are not the same.</strong> Care partners with genuine compassion lose patience precisely because they have been trying so hard for so long.",
+   before:"\"I am impatient therefore I do not love them enough.\"",
+   after:"\"I am impatient because I have been extending patience past the point where it is physiologically sustainable. This is a capacity problem, not a character problem.\"",
+   phrase:"Patience is a resource. It depletes. Its depletion is information about the system, not about the person."},
+  {tag:"tag-r", tagTxt:"Very common",
+   q:"I need time alone. That makes me selfish.",
+   reality:"The need for solitude is a basic neurological requirement for regulated functioning — not a character defect. <strong>Continuous presence without recovery is not devotion. It is system overload.</strong> Calling the need for solitude selfish is the moral saturation speaking, not reality.",
+   before:"\"Needing space means I am putting myself first when I should be putting them first.\"",
+   after:"\"Needing space means I am a human nervous system that requires recovery to function. Without it, I will provide less — and worse — care.\"",
+   phrase:"Rest is not withdrawal from care. It is the condition that makes care possible."},
+  {tag:"tag-a", tagTxt:"Common",
+   q:"I set a limit and they were upset. I should have found another way.",
+   reality:"In high-tension caregiving, limits that are real will sometimes be met with distress. <strong>The distress is not proof that the limit was wrong.</strong> A system that requires you to have no limits in order to function is not a sustainable system — regardless of how the limit is received.",
+   before:"\"The fact that my limit caused pain means the limit was wrong or I enforced it badly.\"",
+   after:"\"The limit was necessary. The distress response is real and I can hold empathy for it without removing the limit that created it.\"",
+   phrase:"A limit that causes discomfort is not the same as a limit that causes harm. You are allowed to distinguish between them."},
+  {tag:"tag-a", tagTxt:"Common",
+   q:"I sometimes hope this period will end. That makes me a terrible person.",
+   reality:"The wish for relief is not the same as wishing harm. It is an <strong>exhausted mind scanning for an exit from unsustainable pressure.</strong> Healthcare professionals who work in palliative environments are trained to recognize this as a standard feature of compassion fatigue, not a moral verdict.",
+   before:"\"Wanting this to be over means I don't love them enough or that I want them to suffer.\"",
+   after:"\"Wanting relief from an extremely difficult situation is a normal neurological response to sustained overload. It says nothing about the quality of my care or the depth of my love.\"",
+   phrase:"Wanting this to be over is not the same as wanting them gone. The distinction matters."},
+  {tag:"tag-g", tagTxt:"Restorative",
+   q:"I feel better when I am not in the caregiving role. That must mean something is wrong with me.",
+   reality:"Feeling better outside the caregiving role is not betrayal. It is <strong>evidence that there is a self still intact outside the role.</strong> That self is the resource the care partner draws on. Protecting access to it is not self-indulgence. It is system maintenance.",
+   before:"\"Enjoying time away from this means I am not committed enough.\"",
+   after:"\"Enjoying time away means I am a whole person with a self that exists outside this role. That is not a problem. It is the thing I need to preserve.\"",
+   phrase:"The version of you that exists outside caregiving is not a distraction from care. It is the source of it."}
+];
+
+const RF_EXAMPLES = [
+  "I am not handling this well",
+  "I should be doing more",
+  "I keep losing patience",
+  "I am failing them",
+  "I don't know if I can keep doing this",
+  "I am not the person I used to be"
+];
+
+const REFRAMES = {
+  default:{
+    steps:[
+      {n:"What is the observable situation?", t:"Separate what is actually happening in the environment from the judgment your mind has attached to it. The situation has specific, describable features. The judgment is an interpretation added under pressure."},
+      {n:"Whose standard is being applied?", t:"The internal critic in moral saturation is rarely applying <strong>your own</strong> standard. It is applying the standard of a system that has expanded to require your continuous adequacy. Ask: would I apply this standard to anyone else in this situation?"},
+      {n:"Is this a character description or a capacity description?", t:"Most self-critical thoughts in caregiving are <strong>mislabeled capacity problems</strong>. \"I am not handling this\" usually means \"the situation exceeds what a single person can manage without support.\" Those are not the same statement."},
+      {n:"What would precision say instead?", t:"Replace the self-judgment with a contextual description of the situation. Not reassurance — accuracy. The reframe is not \"you are doing great.\" It is \"this situation has specific demands that exceed current capacity, and that is a structural fact, not a personal failing.\""}
+    ]
+  }
+};
+
+// ══ SATURATION LOGIC ══
+let satAnswers = new Array(SAT_QS.length).fill(null);
+
+function buildSat(){
+  const wrap = document.getElementById('satQuestions');
+  wrap.innerHTML = SAT_QS.map((q,qi)=>`
+    <div class="sat-q" id="sq${qi}">
+      <div class="sat-q-text">${qi+1}. ${q.q}</div>
+      <div class="sat-opts">
+        ${q.opts.map((o,oi)=>`
+          <div class="sat-opt" onclick="selectSat(${qi},${oi},${q.weights[oi]},this)">
+            <div class="sat-dot"></div>
+            <div class="sat-opt-text">${o}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function selectSat(qi,oi,weight,el){
+  document.querySelectorAll(`#sq${qi} .sat-opt`).forEach(e=>e.classList.remove('sel'));
+  el.classList.add('sel');
+  document.getElementById('sq'+qi).classList.add('answered');
+  satAnswers[qi] = weight;
+  const done = satAnswers.filter(a=>a!==null).length;
+  document.getElementById('satProg').style.width = (done/SAT_QS.length*100)+'%';
+  document.getElementById('satProgLabel').textContent = `${done} of ${SAT_QS.length} answered`;
+}
+
+function showSatResult(){
+  const answered = satAnswers.filter(a=>a!==null);
+  if(answered.length < 5){alert('Please answer at least 5 questions for a meaningful result.');return;}
+  const total = answered.reduce((a,b)=>a+b,0);
+  const max = answered.length * 3;
+  const pct = Math.round(total/max*100);
+
+  let zone,color,fill,desc,actions;
+  if(pct <= 25){
+    zone="Stable — vigilance appropriate";color="var(--cold)";fill=pct+'%';
+    desc="Your caregiving identity appears reasonably bounded right now. You are experiencing real strain, but it has not yet reorganized around your sense of worth. The risk is in complacency — this state is not permanent, and the patterns that lead to saturation build slowly.";
+    actions=[
+      "<strong>Maintain the separation</strong> between what you do and who you are — even when the situation is stable. The distinction is easier to keep when the pressure is lower.",
+      "<strong>Name one thing that is still yours</strong> outside the role, and protect access to it.",
+      "<strong>Watch for the first signs</strong> of role creep — moments when a limit feels like a verdict."
+    ];
+  } else if(pct <= 50){
+    zone="Moderate — some fusion present";color="var(--gold)";fill=pct+'%';
+    desc="Compassion is beginning to feel more like a requirement than a response. Some of your limits feel morally loaded. The self-assessment is becoming more frequent than the situation requires. This is not crisis — it is the pattern mid-formation, when it is still possible to interrupt.";
+    actions=[
+      "<strong>Use the two-question separator</strong> (Tool 02) for the next situation that feels heavy. The fusion is real and interrupting it early matters.",
+      "<strong>Identify one limit</strong> you have been avoiding because it feels morally wrong, and examine whether the moral weight is proportionate to the reality.",
+      "<strong>Name the internal critic</strong> — whose standard are you applying? It is almost certainly not your own."
+    ];
+  } else if(pct <= 75){
+    zone="High — significant saturation";color="var(--amber)";fill=pct+'%';
+    desc="Caregiving has become substantially fused with identity. Actions are being evaluated through a moral lens that has little to do with what is actually possible. Rest feels earned rather than necessary. The self is narrowing. This requires more than coping — it requires structural intervention.";
+    actions=[
+      "<strong>Do the identity inventory</strong> (Tool 03) today. You need to see clearly what has narrowed before you can begin to reclaim it.",
+      "<strong>Reality-test with one person</strong> outside the situation this week. Not to explain everything — just to hear yourself say one true thing to someone who can receive it.",
+      "<strong>Read Section VI</strong> of the Survival Guide directly. The pattern you are in has a name and it is not a character flaw."
+    ];
+  } else {
+    zone="Severe — the role has become the self";color="var(--red)";fill=pct+'%';
+    desc="The caregiving role has expanded to occupy most of the psychological space that used to belong to a whole person. This is not a moral failure — it is the outcome of a system that demanded continuous availability without acknowledging its cost. You are not broken. You are exhausted in a way that has gone unnamed for too long. This needs more than a tool.";
+    actions=[
+      "<strong>You need a real conversation</strong> with someone outside this situation — a counselor, a social worker, a peer caregiver who understands the specific pressure of chronic illness. Not because something is wrong with you, but because you have been carrying something that is too heavy to carry alone.",
+      "<strong>The most important thing right now</strong> is to reintroduce one moment per day that belongs to no one's needs but yours. Not an hour. A moment.",
+      "<strong>The goal is not better performance.</strong> It is to begin the process of existing again as something other than this role."
+    ];
+  }
+
+  const box = document.getElementById('satResult');
+  box.style.display='block';
+  box.innerHTML=`
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:${color};margin-bottom:14px;">Your result</div>
+    <div class="result-meter-wrap">
+      <div class="result-meter-bg"><div class="result-meter-fill" style="width:0%;background:${color}" id="meterFill"></div></div>
+      <div class="result-zone-labels">
+        <span class="rzl">Stable</span><span class="rzl">Moderate</span><span class="rzl">High</span><span class="rzl">Severe</span>
+      </div>
+    </div>
+    <div class="result-zone-name" style="color:${color}">${zone}</div>
+    <div class="result-desc">${desc}</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:${color};margin:14px 0 8px;">What this means for you right now</div>
+    <div class="result-actions">${actions.map(a=>`<div class="ra-item"><div class="ra-dot" style="background:${color}"></div><div class="ra-text">${a}</div></div>`).join('')}</div>
+  `;
+  box.scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(()=>document.getElementById('meterFill').style.width=fill, 200);
+}
+
+function resetSat(){
+  satAnswers = new Array(SAT_QS.length).fill(null);
+  document.getElementById('satProg').style.width='0%';
+  document.getElementById('satProgLabel').textContent='0 of 8 answered';
+  document.getElementById('satResult').style.display='none';
+  buildSat();
+}
+
+// ══ SEPARATOR LOGIC ══
+function buildFusionChecks(){
+  document.getElementById('fusionChecks').innerHTML = FUSION_CHECKS.map((f,i)=>`
+    <div class="inv-item" id="fc${i}" onclick="toggleFusion(${i})" style="padding:8px 0;cursor:pointer;">
+      <div class="inv-check" id="fcd${i}"><div class="inv-check-mark" id="fcm${i}">✓</div></div>
+      <div class="inv-item-text">${f}</div>
+    </div>
+  `).join('');
+}
+
+let fusionChecked = new Array(FUSION_CHECKS.length).fill(false);
+function toggleFusion(i){
+  fusionChecked[i] = !fusionChecked[i];
+  const el = document.getElementById('fc'+i);
+  const dot = document.getElementById('fcd'+i);
+  const mark = document.getElementById('fcm'+i);
+  if(fusionChecked[i]){
+    el.classList.add('lost');dot.style.background='var(--red)';dot.style.borderColor='var(--red)';mark.style.display='block';
+  } else {
+    el.classList.remove('lost');dot.style.background='';dot.style.borderColor='';mark.style.display='none';
+  }
+}
+
+function runSeparation(){
+  const sit = document.getElementById('tqsSituation').value.trim();
+  const req = document.getElementById('tqsRequired').value.trim();
+  const mean = document.getElementById('tqsMeaning').value.trim();
+  const checkedCount = fusionChecked.filter(Boolean).length;
+
+  if(!req && !mean){alert('Please fill in at least one of the two question fields.');return;}
+
+  const r = document.getElementById('sepResult');
+  r.style.display='block';
+
+  let fusion_insight = '';
+  if(checkedCount >= 5) fusion_insight = "You checked five or more fusion markers. This is a significant finding. The fusion between your identity and your role has become structural — it is not a bad day. It is a pattern that has been developing over time and that requires deliberate interruption.";
+  else if(checkedCount >= 3) fusion_insight = "You checked three or more fusion markers. The questions are beginning to collapse into each other. You are still able to recognize the difference — that recognition is important — but the pressure to fuse them is real and present.";
+  else if(checkedCount >= 1) fusion_insight = "One or two fusion markers are present. The separation is mostly intact, which means you still have access to the distinction. The tool is working the way it should.";
+  else fusion_insight = "No fusion markers checked, or the check was not completed. If you answered the two questions and they felt clearly different to you, that itself is a sign the separation is still functioning.";
+
+  const has_both = req && mean;
+  let comparison = '';
+  if(has_both){
+    comparison = `<div class="sep-insight" style="margin-bottom:10px;">
+      <div class="sep-insight-label">What you can do now</div>
+      <div class="sep-insight-text">You have written down both sides. That act itself is the tool. <strong>The first question belongs to the situation.</strong> The second belongs to you — but it is not a verdict. It is a thought that was generated by a system under sustained pressure, and it deserves examination, not automatic acceptance.<br><br>Ask yourself: if a friend described this exact situation and told me the same thing about themselves, would I agree with their verdict?</div>
+    </div>`;
+  }
+
+  r.innerHTML=`
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Separation result</div>
+    ${sit?`<div class="sep-insight" style="border-left-color:var(--ink20);margin-bottom:10px;">
+      <div class="sep-insight-label" style="color:var(--ink40);">The situation</div>
+      <div class="sep-insight-text" style="font-style:italic;">${sit}</div>
+    </div>`:''}
+    ${req?`<div class="sep-insight" style="border-left-color:var(--cold);margin-bottom:10px;">
+      <div class="sep-insight-label">What is actually required</div>
+      <div class="sep-insight-text">${req}</div>
+    </div>`:''}
+    ${mean?`<div class="sep-insight" style="border-left-color:var(--red);margin-bottom:10px;">
+      <div class="sep-insight-label" style="color:var(--red);">What you are telling yourself it means</div>
+      <div class="sep-insight-text">${mean}<br><br><strong>Hold this thought gently.</strong> It is not a fact. It is an interpretation generated under pressure. The first question is about the situation. This one is about you — and you are allowed to examine it before accepting it.</div>
+    </div>`:''}
+    ${comparison}
+    <div class="sep-insight" style="border-left-color:var(--gold);">
+      <div class="sep-insight-label" style="color:var(--gold);">Fusion check result (${checkedCount} of ${FUSION_CHECKS.length} present)</div>
+      <div class="sep-insight-text">${fusion_insight}</div>
+    </div>
+    <div class="phrase">"What is required in this moment is one question. What this means about me is another. When they are kept separate, actions can be evaluated in context rather than as continuous tests of worth."</div>
+  `;
+  r.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function clearSeparator(){
+  document.getElementById('tqsSituation').value='';
+  document.getElementById('tqsRequired').value='';
+  document.getElementById('tqsMeaning').value='';
+  fusionChecked = new Array(FUSION_CHECKS.length).fill(false);
+  document.getElementById('sepResult').style.display='none';
+  buildFusionChecks();
+}
+
+// ══ IDENTITY INVENTORY ══
+let invStates = {};
+
+function buildInv(){
+  const wrap = document.getElementById('invCategories');
+  wrap.innerHTML = INV_CATS.map((cat,ci)=>`
+    <div class="inv-cat">
+      <div class="inv-cat-header">
+        <div class="inv-cat-label">${cat.label}</div>
+        <div class="inv-cat-score" id="ics${ci}">—</div>
+      </div>
+      <div class="inv-items">
+        ${cat.items.map((item,ii)=>{
+          const key=`${ci}-${ii}`;
+          if(!invStates[key]) invStates[key]='none';
+          return `<div class="inv-item" id="ii${ci}-${ii}" onclick="cycleInv(${ci},${ii},'${item}')">
+            <div class="inv-check"><div class="inv-check-mark">✓</div></div>
+            <div class="inv-item-text">${item}</div>
+            <div class="inv-item-state" id="is${ci}-${ii}">tap to mark</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+const INV_CYCLE = ['none','ok','lost','reclaim'];
+const INV_LABELS = {none:'tap to mark',ok:'intact',lost:'narrowed',reclaim:'want back'};
+
+function cycleInv(ci,ii,item){
+  const key=`${ci}-${ii}`;
+  const cur = INV_CYCLE.indexOf(invStates[key]);
+  const next = INV_CYCLE[(cur+1)%INV_CYCLE.length];
+  invStates[key]=next;
+  const el = document.getElementById(`ii${ci}-${ii}`);
+  el.className='inv-item'+(next!=='none'?' '+next:'');
+  document.getElementById(`is${ci}-${ii}`).textContent=INV_LABELS[next];
+  updateCatScore(ci);
+}
+
+function updateCatScore(ci){
+  const cat = INV_CATS[ci];
+  const lost = cat.items.filter((_,ii)=>invStates[`${ci}-${ii}`]==='lost').length;
+  const reclaim = cat.items.filter((_,ii)=>invStates[`${ci}-${ii}`]==='reclaim').length;
+  const ok = cat.items.filter((_,ii)=>invStates[`${ci}-${ii}`]==='ok').length;
+  let score = '';
+  if(ok>0) score+=`${ok} intact `;
+  if(lost>0) score+=`${lost} narrowed `;
+  if(reclaim>0) score+=`${reclaim} to reclaim`;
+  document.getElementById(`ics${ci}`).textContent = score||'—';
+}
+
+function markAll(state){
+  INV_CATS.forEach((cat,ci)=>{
+    cat.items.forEach((_,ii)=>{
+      invStates[`${ci}-${ii}`]=state;
+      const el = document.getElementById(`ii${ci}-${ii}`);
+      el.className='inv-item '+state;
+      document.getElementById(`is${ci}-${ii}`).textContent=INV_LABELS[state];
+    });
+    updateCatScore(ci);
+  });
+}
+
+function resetInv(){
+  invStates={};
+  document.getElementById('invSummary').style.display='none';
+  buildInv();
+}
+
+function showInvSummary(){
+  const total = Object.keys(invStates).length;
+  const ok = Object.values(invStates).filter(v=>v==='ok').length;
+  const lost = Object.values(invStates).filter(v=>v==='lost').length;
+  const reclaim = Object.values(invStates).filter(v=>v==='reclaim').length;
+  const marked = ok+lost+reclaim;
+  if(marked===0){alert('Mark at least a few items before reviewing your inventory.');return;}
+
+  let insight='';
+  const reclaimItems = [];
+  INV_CATS.forEach((cat,ci)=>{
+    cat.items.forEach((item,ii)=>{
+      if(invStates[`${ci}-${ii}`]==='reclaim') reclaimItems.push(item);
+    });
+  });
+
+  if(lost>8) insight="The inventory shows significant narrowing across multiple areas of identity. This is not a character description — it is a structural outcome of sustained immersion in a role that required continuous availability. The goal is not to reclaim everything at once. It is to reintroduce access to the self in small, consistent ways.";
+  else if(lost>4) insight="Several areas of identity have narrowed. The person who existed before this role still exists — but access to them has been reduced by the demands of the role. Each item you have marked is a direction, not an accusation.";
+  else insight="Your identity appears reasonably intact across most areas. The things you have marked as narrowed are real and worth attention — but the overall picture suggests the self has not been fully absorbed into the role yet.";
+
+  const s = document.getElementById('invSummary');
+  s.style.display='block';
+  s.innerHTML=`
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Your inventory</div>
+    <div class="inv-sum-grid">
+      <div class="inv-sum-cell"><div class="inv-sum-num" style="color:var(--cold)">${ok}</div><div class="inv-sum-label">Still intact</div></div>
+      <div class="inv-sum-cell"><div class="inv-sum-num" style="color:var(--red)">${lost}</div><div class="inv-sum-label">Narrowed</div></div>
+      <div class="inv-sum-cell"><div class="inv-sum-num" style="color:var(--green)">${reclaim}</div><div class="inv-sum-label">Want to reclaim</div></div>
+    </div>
+    <div class="sep-insight" style="border-left-color:var(--gold);margin-bottom:12px;">
+      <div class="sep-insight-label" style="color:var(--gold);">What this shows</div>
+      <div class="sep-insight-text">${insight}</div>
+    </div>
+    ${reclaimItems.length>0?`
+    <div class="sep-insight" style="border-left-color:var(--green);">
+      <div class="sep-insight-label" style="color:var(--green);">Items you marked to reclaim (${reclaimItems.length})</div>
+      <div class="sep-insight-text">${reclaimItems.map(i=>`<div style="margin-bottom:5px;padding-bottom:5px;border-bottom:0.5px solid rgba(80,200,120,0.1);">→ ${i}</div>`).join('')}
+      <div style="margin-top:8px;">Pick one. Not all of them — one. Ask: what is the smallest version of this that I could access without requiring the situation to change first?</div>
+      </div>
+    </div>`:''}
+  `;
+  s.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ══ COMPASSION REGULATION ══
+function buildCR(){
+  const wrap = document.getElementById('crScenarios');
+  wrap.innerHTML = CR_SCENARIOS.map((s,i)=>`
+    <div class="cr-scenario" id="crs${i}">
+      <button class="cr-sc-btn" onclick="toggleCR(${i})">
+        <div class="cr-sc-text">${s.q}</div>
+        <div class="cr-sc-tag ${s.tag}">${s.tagTxt}</div>
+        <div class="cr-sc-chev">▼</div>
+      </button>
+      <div class="cr-sc-body">
+        <div class="cr-sc-reality">${s.reality}</div>
+        <div class="cr-sc-reframe">
+          <div class="cr-sc-rf-label before">The fused version</div>
+          <div class="cr-sc-rf-text">${s.before}</div>
+        </div>
+        <div class="cr-sc-reframe">
+          <div class="cr-sc-rf-label after">The accurate version</div>
+          <div class="cr-sc-rf-text">${s.after}</div>
+        </div>
+        <div class="cr-sc-phrase">"${s.phrase}"</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleCR(i){
+  document.getElementById('crs'+i).classList.toggle('open');
+}
+
+// ══ REFRAME STATION ══
+function buildRF(){
+  document.getElementById('rfExamples').innerHTML = RF_EXAMPLES.map(e=>`
+    <div class="rf-ex" onclick="setRFExample('${e}')">${e}</div>
+  `).join('');
+}
+
+function setRFExample(text){
+  document.getElementById('rfInput').value = text;
+}
+
+function runReframe(){
+  const input = document.getElementById('rfInput').value.trim();
+  if(!input){alert('Enter a thought first.');return;}
+
+  const r = document.getElementById('rfResult');
+  r.style.display='block';
+
+  const rf = REFRAMES.default;
+
+  let reframed = '';
+  const lower = input.toLowerCase();
+  if(lower.includes('not handling') || lower.includes('failing') || lower.includes('bad'))
+    reframed = "The situation I am in has specific demands that exceed what a single person can reliably sustain without support. This is a structural description of the environment, not a character description of me.";
+  else if(lower.includes('should be doing more') || lower.includes('not enough') || lower.includes('enough'))
+    reframed = "\"Enough\" in this situation is not a fixed standard — it is a moving target set by a system under continuous pressure. What I am doing is the maximum that is sustainable, not the minimum required.";
+  else if(lower.includes('patience') || lower.includes('losing it') || lower.includes('frustrated'))
+    reframed = "My patience has reached its physiological limit. This is a resource that depletes and requires recovery. Its depletion is a system signal, not a character verdict.";
+  else if(lower.includes('keep doing this') || lower.includes('can\'t') || lower.includes('cant'))
+    reframed = "Wondering how long I can continue is a rational response to sustained overload, not a sign of inadequate commitment. It is the system asking for help.";
+  else if(lower.includes('used to be') || lower.includes('who i am') || lower.includes('lost myself'))
+    reframed = "The version of me that existed before this role still exists. Access to it has been reduced by the demands of the situation — but reduction is not erasure. The path back is through small, consistent reintroduction, not a single transformation.";
+  else
+    reframed = "This situation has specific, describable demands that exceed what one person can carry alone. That is a structural fact. The judgment I have attached to it is an interpretation, not a verdict — and interpretations can be revised.";
+
+  r.innerHTML=`
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Reframe complete</div>
+    <div class="rf-original">
+      <div class="rf-orig-label">The thought you brought</div>
+      <div class="rf-orig-text">"${input}"</div>
+    </div>
+    <div class="rf-steps">
+      ${rf.steps.map(s=>`
+        <div class="rf-step">
+          <div class="rf-step-num">${s.n}</div>
+          <div class="rf-step-text">${s.t}</div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="rf-reframed">
+      <div class="rf-reframed-label">The accurate version</div>
+      <div class="rf-reframed-text">${reframed}</div>
+    </div>
+    <div class="phrase" style="margin-top:12px;">"The goal is not to feel better about the situation. It is to describe it accurately — because accurate descriptions lead to proportionate responses, and proportionate responses lead to sustainable care."</div>
+  `;
+  r.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function clearReframe(){
+  document.getElementById('rfInput').value='';
+  document.getElementById('rfResult').style.display='none';
+}
+
+// ══ TABS ══
+function setTab(idx,btn){
+  document.querySelectorAll('.ttab').forEach(t=>t.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.tpanel').forEach(p=>p.classList.remove('on'));
+  document.getElementById('tp'+idx).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ══ INIT ══
+buildSat();
+buildFusionChecks();
+buildInv();
+buildCR();
+buildRF();
+</script>
+</body>
+</html>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M95EH0B5BK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M95EH0B5BK');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authority Under Strain™ · Cold Ischemia Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,600;1,9..144,200;1,9..144,400&family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --abyss:   #030509;
+      --void:    #07101c;
+      --surf:    #0a1628;
+      --raised:  #0f1e38;
+      --b:       rgba(100,140,200,0.1);
+      --b2:      rgba(100,140,200,0.22);
+      --ink:     #d8cfc4;
+      --ink80:   rgba(216,207,196,0.8);
+      --ink60:   rgba(216,207,196,0.6);
+      --ink40:   rgba(216,207,196,0.4);
+      --ink20:   rgba(216,207,196,0.2);
+      --gold:    #c8902a;
+      --gold-l:  #e8b84a;
+      --gold-d:  rgba(200,144,42,0.14);
+      --gold-g:  rgba(200,144,42,0.28);
+      --pulse:   #2ac4c8;
+      --pulse-d: rgba(42,196,200,0.12);
+      --danger:  #c83050;
+      --danger-d:rgba(200,48,80,0.12);
+      --green:   #50c878;
+      --green-d: rgba(80,200,120,0.12);
+      --violet:  #8050c8;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;min-height:100vh;}
+    ::-webkit-scrollbar{width:2px;}
+    ::-webkit-scrollbar-track{background:var(--abyss);}
+    ::-webkit-scrollbar-thumb{background:var(--raised);}
+
+    /* NAV */
+    nav{
+      position:sticky;top:0;z-index:200;
+      background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--b);
+      padding:0 36px;height:56px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .nav-logo{font-family:'IBM Plex Mono',monospace;font-size:0.57rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);text-decoration:none;}
+    .nav-links{display:flex;align-items:center;gap:22px;}
+    .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--ink80);}
+    .nav-back{color:var(--gold)!important;}
+
+    /* TOOL HEADER */
+    .tool-header{
+      padding:64px 36px 48px;
+      border-bottom:1px solid var(--b);
+      background:linear-gradient(180deg,var(--void) 0%,var(--abyss) 100%);
+      position:relative;overflow:hidden;
+    }
+    .tool-header::before{
+      content:'';position:absolute;top:-80px;right:-60px;
+      width:440px;height:440px;border-radius:50%;
+      background:radial-gradient(circle,rgba(200,144,42,0.05) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .tool-header-inner{max-width:900px;margin:0 auto;}
+    .tool-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+    .tool-eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);opacity:0.5;}
+    .tool-h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2.4rem,5vw,4rem);line-height:1;color:var(--ink);margin-bottom:6px;}
+    .tool-h1 sup{font-size:1rem;color:var(--gold);vertical-align:super;}
+    .tool-tagline{font-family:'IBM Plex Mono',monospace;font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink40);margin-bottom:28px;}
+    .tool-desc{font-size:1.1rem;line-height:1.9;color:var(--ink60);max-width:760px;margin-bottom:32px;font-style:italic;}
+    .tool-desc em{color:var(--gold-l);font-style:normal;font-weight:600;}
+    .framework-chips{display:flex;gap:8px;flex-wrap:wrap;}
+    .chip{font-family:'IBM Plex Mono',monospace;font-size:0.47rem;letter-spacing:0.16em;text-transform:uppercase;padding:5px 12px;border:1px solid var(--gold-d);color:var(--gold);border-radius:2px;}
+
+    /* MAIN LAYOUT */
+    .tool-body{max-width:900px;margin:0 auto;padding:48px 36px 80px;}
+
+    /* WARNING PANEL */
+    .warning-panel{
+      background:var(--surf);border:1px solid var(--b);
+      border-left:3px solid var(--gold);
+      padding:24px 28px;margin-bottom:40px;
+      border-radius:0 3px 3px 0;
+    }
+    .wp-title{font-family:'Fraunces',serif;font-weight:400;font-size:1.15rem;color:var(--gold-l);margin-bottom:8px;}
+    .wp-body{font-size:0.95rem;line-height:1.85;color:var(--ink60);}
+
+    /* API KEY */
+    .api-section{background:var(--surf);border:1px solid var(--b);padding:22px 26px;margin-bottom:36px;border-radius:3px;}
+    .api-label{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;display:block;}
+    .api-input{
+      width:100%;background:var(--abyss);border:1px solid var(--b2);
+      color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;
+      padding:12px 16px;border-radius:2px;outline:none;
+      transition:border-color 0.2s;
+    }
+    .api-input:focus{border-color:var(--gold);}
+    .api-note{font-family:'IBM Plex Mono',monospace;font-size:0.47rem;letter-spacing:0.12em;color:var(--ink20);margin-top:8px;}
+
+    /* MODULE PROGRESS */
+    .module-progress{
+      display:flex;gap:0;margin-bottom:40px;overflow-x:auto;
+    }
+    .mp-step{
+      flex:1;min-width:120px;padding:12px 16px;
+      border:1px solid var(--b);border-right:none;
+      background:var(--surf);
+      font-family:'IBM Plex Mono',monospace;font-size:0.47rem;
+      letter-spacing:0.14em;text-transform:uppercase;
+      color:var(--ink20);text-align:center;
+      transition:all 0.3s;cursor:pointer;
+    }
+    .mp-step:last-child{border-right:1px solid var(--b);}
+    .mp-step.active{background:var(--raised);color:var(--gold);border-bottom:2px solid var(--gold);}
+    .mp-step.done{color:var(--green);background:var(--green-d);}
+    .mp-num{display:block;font-size:1.1rem;margin-bottom:4px;font-family:'Fraunces',serif;font-weight:200;}
+
+    /* MODULES */
+    .module{display:none;}
+    .module.active{display:block;}
+
+    /* SECTION HEADERS */
+    .mod-title{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:1.8rem;color:var(--ink);margin-bottom:6px;}
+    .mod-title em{color:var(--gold-l);font-style:normal;font-weight:600;}
+    .mod-sub{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink40);margin-bottom:28px;}
+
+    /* FORM ELEMENTS */
+    .field{margin-bottom:24px;}
+    .field-label{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block;}
+    .field-hint{font-family:'IBM Plex Mono',monospace;font-size:0.48rem;letter-spacing:0.12em;color:var(--ink40);margin-bottom:10px;display:block;line-height:1.8;}
+    .field-input{
+      width:100%;background:var(--surf);border:1px solid var(--b2);
+      color:var(--ink);font-family:'Crimson Pro',serif;font-size:1rem;
+      padding:14px 16px;border-radius:2px;outline:none;
+      transition:border-color 0.2s;resize:vertical;min-height:90px;
+    }
+    .field-input:focus{border-color:var(--gold);}
+    .field-select{
+      width:100%;background:var(--surf);border:1px solid var(--b2);
+      color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;
+      padding:12px 16px;border-radius:2px;outline:none;
+      transition:border-color 0.2s;cursor:pointer;
+      appearance:none;
+    }
+    .field-select:focus{border-color:var(--gold);}
+
+    /* SEVERITY METER */
+    .severity-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px;}
+    .sev-btn{
+      padding:12px 8px;border:1px solid var(--b);background:var(--surf);
+      font-family:'IBM Plex Mono',monospace;font-size:0.47rem;letter-spacing:0.1em;
+      text-transform:uppercase;color:var(--ink40);text-align:center;
+      cursor:pointer;border-radius:2px;transition:all 0.2s;
+    }
+    .sev-btn:hover{border-color:var(--gold-d);color:var(--ink80);}
+    .sev-btn.selected{border-color:var(--gold);background:var(--gold-d);color:var(--gold-l);}
+    .sev-num{font-family:'Fraunces',serif;font-weight:200;font-size:1.6rem;display:block;margin-bottom:4px;}
+
+    /* CHECKBOXES */
+    .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
+    @media(max-width:560px){.check-grid{grid-template-columns:1fr;}}
+    .check-item{
+      display:flex;align-items:flex-start;gap:10px;
+      padding:12px 14px;background:var(--surf);border:1px solid var(--b);
+      border-radius:2px;cursor:pointer;transition:all 0.2s;
+    }
+    .check-item:hover{border-color:var(--b2);}
+    .check-item input{display:none;}
+    .check-box{
+      width:14px;height:14px;flex-shrink:0;margin-top:3px;
+      border:1px solid var(--b2);border-radius:2px;background:var(--abyss);
+      display:flex;align-items:center;justify-content:center;transition:all 0.2s;
+    }
+    .check-item input:checked ~ .check-box{background:var(--gold-d);border-color:var(--gold);}
+    .check-item input:checked ~ .check-box::after{content:'✓';font-size:0.6rem;color:var(--gold-l);}
+    .check-item input:checked ~ .check-text{color:var(--ink80);}
+    .check-text{font-size:0.88rem;line-height:1.6;color:var(--ink40);}
+
+    /* RADIO GRID */
+    .radio-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
+    @media(max-width:560px){.radio-grid{grid-template-columns:1fr;}}
+    .radio-item{
+      display:flex;align-items:center;gap:10px;
+      padding:12px 14px;background:var(--surf);border:1px solid var(--b);
+      border-radius:2px;cursor:pointer;transition:all 0.2s;
+    }
+    .radio-item:hover{border-color:var(--b2);}
+    .radio-item input{display:none;}
+    .radio-dot{width:12px;height:12px;flex-shrink:0;border:1px solid var(--b2);border-radius:50%;background:var(--abyss);transition:all 0.2s;}
+    .radio-item input:checked ~ .radio-dot{background:var(--gold);border-color:var(--gold);}
+    .radio-item input:checked ~ .radio-label{color:var(--ink80);}
+    .radio-label{font-size:0.9rem;color:var(--ink40);}
+
+    /* NAV BUTTONS */
+    .module-nav{display:flex;justify-content:space-between;align-items:center;margin-top:40px;padding-top:28px;border-top:1px solid var(--b);}
+    .btn-prev{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;padding:12px 24px;background:transparent;color:var(--ink40);border:1px solid var(--b);border-radius:2px;cursor:pointer;transition:all 0.2s;}
+    .btn-prev:hover{color:var(--ink);border-color:var(--b2);}
+    .btn-next{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;padding:12px 28px;background:var(--gold-d);color:var(--gold-l);border:1px solid rgba(200,144,42,0.3);border-radius:2px;cursor:pointer;transition:all 0.2s;}
+    .btn-next:hover{background:var(--gold);color:var(--abyss);}
+    .btn-generate{font-family:'Fraunces',serif;font-weight:400;font-size:1rem;letter-spacing:0.06em;padding:16px 48px;background:linear-gradient(135deg,var(--gold),var(--gold-l));color:var(--abyss);border:none;border-radius:2px;cursor:pointer;box-shadow:0 4px 24px var(--gold-g);transition:all 0.3s;}
+    .btn-generate:hover{transform:translateY(-1px);box-shadow:0 8px 36px var(--gold-g);}
+    .btn-generate:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+
+    /* OUTPUT */
+    .output-section{margin-top:48px;display:none;}
+    .output-section.visible{display:block;}
+    .output-header{border-bottom:1px solid var(--b);padding-bottom:24px;margin-bottom:32px;}
+    .output-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+    .output-title{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:2rem;color:var(--ink);}
+
+    .output-block{
+      background:var(--surf);border:1px solid var(--b);
+      border-top:2px solid var(--gold);
+      padding:32px;margin-bottom:16px;border-radius:0 0 3px 3px;
+    }
+    .ob-label{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--gold-d);}
+    .ob-content{font-size:1rem;line-height:1.95;color:var(--ink60);white-space:pre-wrap;}
+
+    /* LETTER OUTPUT */
+    .letter-block{
+      background:var(--surf);border:1px solid var(--b2);
+      border-top:3px solid var(--gold);
+      padding:40px;margin-bottom:16px;
+    }
+    .letter-content{font-family:'Crimson Pro',serif;font-size:1rem;line-height:2;color:var(--ink80);white-space:pre-wrap;}
+
+    /* LOADING */
+    .loading{
+      display:none;text-align:center;padding:60px 20px;
+    }
+    .loading.visible{display:block;}
+    .loading-ring{
+      width:48px;height:48px;border:2px solid var(--b2);
+      border-top-color:var(--gold);border-radius:50%;
+      animation:spin 0.9s linear infinite;margin:0 auto 20px;
+    }
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .loading-text{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink40);}
+    .loading-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:0.9rem;color:var(--ink20);margin-top:8px;}
+
+    /* ACTION BUTTONS */
+    .action-row{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;}
+    .btn-copy{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 20px;background:var(--surf);color:var(--ink60);border:1px solid var(--b2);border-radius:2px;cursor:pointer;transition:all 0.2s;}
+    .btn-copy:hover{border-color:var(--gold);color:var(--gold-l);}
+    .btn-reset{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 20px;background:transparent;color:var(--ink40);border:1px solid var(--b);border-radius:2px;cursor:pointer;transition:all 0.2s;}
+    .btn-reset:hover{color:var(--danger);border-color:var(--danger-d);}
+
+    /* FOOTER */
+    footer{background:var(--void);border-top:1px solid var(--b);padding:28px 36px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+    .f-links{display:flex;gap:20px;}
+    .f-links a{font-family:'IBM Plex Mono',monospace;font-size:0.48rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink20);text-decoration:none;transition:color 0.2s;}
+    .f-links a:hover{color:var(--gold);}
+    .f-copy{font-family:'IBM Plex Mono',monospace;font-size:0.47rem;letter-spacing:0.11em;color:var(--ink20);}
+
+    .divider{border:none;border-top:1px solid var(--b);margin:28px 0;}
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Cold Ischemia Foundation</a>
+  <div class="nav-links">
+    <a href="projects.html" class="nav-back">← Back to Toolkit</a>
+  </div>
+</nav>
+
+<!-- TOOL HEADER -->
+<div class="tool-header">
+  <div class="tool-header-inner">
+    <div class="tool-eyebrow">Care Partner Cognitive Stabilization Engine</div>
+    <h1 class="tool-h1">Authority Under Strain<sup>™</sup></h1>
+    <p class="tool-tagline">AI-Powered · Cognitive Stabilization · Strategic Escalation · Institutional Communication</p>
+    <p class="tool-desc">
+      There are moments in chronic illness care when the cognitive load becomes so heavy — the grief, the exhaustion, the institutional pressure, the fear — that your ability to think and act from a position of authority begins to fracture.
+      This is the tool for those moments.
+      <em>Authority Under Strain stabilizes your decision-making capacity and generates the communications you need to be heard by the systems that are failing you.</em>
+    </p>
+    <div class="framework-chips">
+      <div class="chip">Cognitive Load Theory</div>
+      <div class="chip">Crisis Communication</div>
+      <div class="chip">Assertiveness Training</div>
+      <div class="chip">Motivational Interviewing</div>
+      <div class="chip">Institutional Advocacy</div>
+    </div>
+  </div>
+</div>
+
+<!-- TOOL BODY -->
+<div class="tool-body">
+
+  <!-- WARNING PANEL -->
+  <div class="warning-panel">
+    <div class="wp-title">How This Tool Works</div>
+    <div class="wp-body">
+      You will move through four modules. First you will describe your current situation and your cognitive state. Second you will identify the institution and the specific failure you are responding to. Third you will document your evidence and the stakes involved. Fourth the AI generates two outputs — a Stabilization Brief that restores your clarity and authority, and a formal Escalation Communication ready to send.
+      <br><br>
+      Your responses are processed in real time and are never stored. This tool requires your Anthropic API key to generate outputs.
+    </div>
+  </div>
+
+  <!-- API KEY -->
+  <div class="api-section">
+    <span class="api-label">Anthropic API Key — Required for AI Generation</span>
+    <input type="password" class="api-input" id="apiKey" placeholder="sk-ant-...">
+    <div class="api-note">Your key is used only to generate your output in this session. It is never stored, logged, or transmitted beyond the Anthropic API.</div>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="module-progress" id="progressBar">
+    <div class="mp-step active" onclick="goTo(0)"><span class="mp-num">01</span>Your State</div>
+    <div class="mp-step" onclick="goTo(1)"><span class="mp-num">02</span>The Institution</div>
+    <div class="mp-step" onclick="goTo(2)"><span class="mp-num">03</span>The Failure</div>
+    <div class="mp-step" onclick="goTo(3)"><span class="mp-num">04</span>Generate</div>
+  </div>
+
+  <!-- ═══ MODULE 1: YOUR STATE ═══ -->
+  <div class="module active" id="mod-0">
+    <div class="mod-title">Your <em>Current State</em></div>
+    <div class="mod-sub">Module 01 of 04 · Cognitive and Emotional Assessment</div>
+
+    <div class="field">
+      <label class="field-label">Describe what is happening right now in plain language.</label>
+      <span class="field-hint">What situation has pushed you to this tool today? What is the immediate pressure you are under?</span>
+      <textarea class="field-input" id="situation" rows="5" placeholder="Example: My husband's dialysis center just told us they are discharging him for a missed payment but we are in the middle of an insurance dispute. I have been on the phone for four hours and nobody will give me a direct answer. I don't know what to do next."></textarea>
+    </div>
+
+    <div class="field">
+      <label class="field-label">How would you describe your current cognitive state?</label>
+      <span class="field-hint">Select the one that most accurately reflects where you are right now.</span>
+      <div class="radio-grid">
+        <label class="radio-item"><input type="radio" name="cogState" value="overloaded"><div class="radio-dot"></div><span class="radio-label">Overloaded — too many things at once, can't prioritize</span></label>
+        <label class="radio-item"><input type="radio" name="cogState" value="shutdown"><div class="radio-dot"></div><span class="radio-label">Shutdown — paralyzed, unable to act</span></label>
+        <label class="radio-item"><input type="radio" name="cogState" value="reactive"><div class="radio-dot"></div><span class="radio-label">Reactive — responding emotionally, not strategically</span></label>
+        <label class="radio-item"><input type="radio" name="cogState" value="exhausted"><div class="radio-dot"></div><span class="radio-label">Exhausted — depleted, reduced capacity</span></label>
+        <label class="radio-item"><input type="radio" name="cogState" value="frightened"><div class="radio-dot"></div><span class="radio-label">Frightened — fear is driving decisions</span></label>
+        <label class="radio-item"><input type="radio" name="cogState" value="functional"><div class="radio-dot"></div><span class="radio-label">Functional — managing, but need strategic support</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">What pressure signals are you experiencing? Select all that apply.</label>
+      <div class="check-grid">
+        <label class="check-item"><input type="checkbox" name="pressure" value="sleep deprivation"><div class="check-box"></div><span class="check-text">Sleep deprivation affecting judgment</span></label>
+        <label class="check-item"><input type="checkbox" name="pressure" value="grief or anticipatory loss"><div class="check-box"></div><span class="check-text">Grief or anticipatory loss</span></label>
+        <label class="check-item"><input type="checkbox" name="pressure" value="financial stress"><div class="check-box"></div><span class="check-text">Financial stress directly tied to care decisions</span></label>
+        <label class="check-item"><input type="checkbox" name="pressure" value="information overload"><div class="check-box"></div><span class="check-text">Medical information overload</span></label>
+        <label class="check-item"><input type="checkbox" name="pressure" value="institutional stonewalling"><div class="check-box"></div><span class="check-text">Institutional stonewalling or dismissal</span></label>
+        <label class="check-item"><input type="checkbox" name="pressure" value="time pressure"><div class="check-box"></div><span class="check-text">Extreme time pressure on a decision</span></label>
+        <label class="check-item"><input type="checkbox" name="pressure" value="isolation"><div class="check-box"></div><span class="check-text">Isolation — navigating this without support</span></label>
+        <label class="check-item"><input type="checkbox" name="pressure" value="fear of retaliation"><div class="check-box"></div><span class="check-text">Fear of provider retaliation if I push back</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">On a scale of 1–5, how urgent is this situation?</label>
+      <div class="severity-grid">
+        <div class="sev-btn" onclick="setSev(this,1)"><span class="sev-num">1</span>Monitoring</div>
+        <div class="sev-btn" onclick="setSev(this,2)"><span class="sev-num">2</span>Developing</div>
+        <div class="sev-btn" onclick="setSev(this,3)"><span class="sev-num">3</span>Active</div>
+        <div class="sev-btn" onclick="setSev(this,4)"><span class="sev-num">4</span>Critical</div>
+        <div class="sev-btn" onclick="setSev(this,5)"><span class="sev-num">5</span>Emergency</div>
+      </div>
+      <input type="hidden" id="urgency" value="">
+    </div>
+
+    <div class="module-nav">
+      <div></div>
+      <button class="btn-next" onclick="nextModule()">Continue to Institution →</button>
+    </div>
+  </div>
+
+  <!-- ═══ MODULE 2: THE INSTITUTION ═══ -->
+  <div class="module" id="mod-1">
+    <div class="mod-title">The <em>Institution</em></div>
+    <div class="mod-sub">Module 02 of 04 · Who You Are Responding To</div>
+
+    <div class="field">
+      <label class="field-label">What type of institution is failing you?</label>
+      <select class="field-select" id="instType">
+        <option value="">Select institution type</option>
+        <option value="dialysis center">Dialysis Center / Clinic</option>
+        <option value="transplant hospital">Transplant Hospital or Program</option>
+        <option value="hospital or health system">Hospital or Health System</option>
+        <option value="insurance company">Insurance Company / Health Plan</option>
+        <option value="Medicare or Medicaid">Medicare or Medicaid / CMS</option>
+        <option value="pharmacy or PBM">Pharmacy or Pharmacy Benefit Manager</option>
+        <option value="specialist office">Specialist or Physician Office</option>
+        <option value="home health agency">Home Health Agency</option>
+        <option value="state health department">State Health Department</option>
+        <option value="federal agency">Federal Agency (HHS, HRSA, CMS)</option>
+        <option value="other healthcare institution">Other Healthcare Institution</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label class="field-label">Name of the specific institution (optional but recommended)</label>
+      <span class="field-hint">Include the organization name and, if known, the facility name. Example: DaVita Kidney Care — Bradenton South Clinic.</span>
+      <textarea class="field-input" id="instName" rows="2" style="min-height:60px;" placeholder="Institution name and location if known"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="field-label">Who specifically is the communication directed to?</label>
+      <select class="field-select" id="recipient">
+        <option value="">Select recipient role</option>
+        <option value="facility administrator">Facility Administrator or Director</option>
+        <option value="medical director">Medical Director</option>
+        <option value="patient services director">Patient Services Director</option>
+        <option value="insurance claims department">Insurance Claims Department</option>
+        <option value="insurance medical director">Insurance Medical Director</option>
+        <option value="appeals and grievances department">Appeals and Grievances Department</option>
+        <option value="hospital patient advocate">Hospital Patient Advocate / Ombudsman</option>
+        <option value="chief nursing officer">Chief Nursing Officer</option>
+        <option value="CEO or executive leadership">CEO or Executive Leadership</option>
+        <option value="state licensing board">State Licensing Board</option>
+        <option value="CMS regional office">CMS Regional Office</option>
+        <option value="HRSA">HRSA</option>
+        <option value="congressional office">Congressional Office</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label class="field-label">What is your relationship to the patient in this situation?</label>
+      <div class="radio-grid">
+        <label class="radio-item"><input type="radio" name="relationship" value="spouse or partner"><div class="radio-dot"></div><span class="radio-label">Spouse or partner</span></label>
+        <label class="radio-item"><input type="radio" name="relationship" value="adult child caregiver"><div class="radio-dot"></div><span class="radio-label">Adult child caregiver</span></label>
+        <label class="radio-item"><input type="radio" name="relationship" value="parent of patient"><div class="radio-dot"></div><span class="radio-label">Parent of patient</span></label>
+        <label class="radio-item"><input type="radio" name="relationship" value="sibling or family member"><div class="radio-dot"></div><span class="radio-label">Sibling or family member</span></label>
+        <label class="radio-item"><input type="radio" name="relationship" value="legal guardian or POA"><div class="radio-dot"></div><span class="radio-label">Legal guardian or Power of Attorney</span></label>
+        <label class="radio-item"><input type="radio" name="relationship" value="I am the patient"><div class="radio-dot"></div><span class="radio-label">I am the patient</span></label>
+      </div>
+    </div>
+
+    <div class="module-nav">
+      <button class="btn-prev" onclick="prevModule()">← Back</button>
+      <button class="btn-next" onclick="nextModule()">Continue to Failure →</button>
+    </div>
+  </div>
+
+  <!-- ═══ MODULE 3: THE FAILURE ═══ -->
+  <div class="module" id="mod-2">
+    <div class="mod-title">The <em>Failure</em></div>
+    <div class="mod-sub">Module 03 of 04 · What Has Gone Wrong and What You Need</div>
+
+    <div class="field">
+      <label class="field-label">What type of failure are you documenting?</label>
+      <div class="check-grid">
+        <label class="check-item"><input type="checkbox" name="failureType" value="denial of medically necessary care"><div class="check-box"></div><span class="check-text">Denial of medically necessary care</span></label>
+        <label class="check-item"><input type="checkbox" name="failureType" value="treatment disruption or discharge threat"><div class="check-box"></div><span class="check-text">Treatment disruption or discharge threat</span></label>
+        <label class="check-item"><input type="checkbox" name="failureType" value="administrative stonewalling"><div class="check-box"></div><span class="check-text">Administrative stonewalling or non-response</span></label>
+        <label class="check-item"><input type="checkbox" name="failureType" value="insurance denial"><div class="check-box"></div><span class="check-text">Insurance denial — coverage or authorization</span></label>
+        <label class="check-item"><input type="checkbox" name="failureType" value="provider misconduct or negligence"><div class="check-box"></div><span class="check-text">Provider misconduct or negligence</span></label>
+        <label class="check-item"><input type="checkbox" name="failureType" value="medication access failure"><div class="check-box"></div><span class="check-text">Medication access failure</span></label>
+        <label class="check-item"><input type="checkbox" name="failureType" value="records access refusal"><div class="check-box"></div><span class="check-text">Medical records access refusal</span></label>
+        <label class="check-item"><input type="checkbox" name="failureType" value="transplant evaluation delay or denial"><div class="check-box"></div><span class="check-text">Transplant evaluation delay or denial</span></label>
+        <label class="check-item"><input type="checkbox" name="failureType" value="billing or financial harm"><div class="check-box"></div><span class="check-text">Billing irregularity or financial harm</span></label>
+        <label class="check-item"><input type="checkbox" name="failureType" value="patient safety concern"><div class="check-box"></div><span class="check-text">Patient safety concern</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">Describe the specific failure in detail.</label>
+      <span class="field-hint">Include what happened, when, who was involved, and what the institution said or did. The more specific you are, the more precisely the AI can frame your communication.</span>
+      <textarea class="field-input" id="failureDetail" rows="6" placeholder="Example: On March 6th, the clinic administrator told me my husband would be discharged effective March 15th due to a balance of $340 owed from November. We have been disputing this charge with our insurance since December. I have documentation showing the claim was submitted correctly. The administrator refused to provide the discharge notice in writing and would not put me through to the medical director."></textarea>
+    </div>
+
+    <div class="field">
+      <label class="field-label">What specific outcome are you demanding?</label>
+      <span class="field-hint">Be direct. What do you need this institution to do?</span>
+      <textarea class="field-input" id="demand" rows="4" placeholder="Example: I am demanding that the discharge order be rescinded immediately pending resolution of the insurance dispute, that I receive a formal written response within 48 hours, and that I be connected with the medical director directly."></textarea>
+    </div>
+
+    <div class="field">
+      <label class="field-label">What evidence do you have? Select all that apply.</label>
+      <div class="check-grid">
+        <label class="check-item"><input type="checkbox" name="evidence" value="written documentation or letters"><div class="check-box"></div><span class="check-text">Written documentation or letters</span></label>
+        <label class="check-item"><input type="checkbox" name="evidence" value="dated call logs"><div class="check-box"></div><span class="check-text">Dated call logs or contact records</span></label>
+        <label class="check-item"><input type="checkbox" name="evidence" value="medical records"><div class="check-box"></div><span class="check-text">Medical records</span></label>
+        <label class="check-item"><input type="checkbox" name="evidence" value="insurance EOB or denial letter"><div class="check-box"></div><span class="check-text">Insurance EOB or denial letter</span></label>
+        <label class="check-item"><input type="checkbox" name="evidence" value="billing statements"><div class="check-box"></div><span class="check-text">Billing statements</span></label>
+        <label class="check-item"><input type="checkbox" name="evidence" value="witness or corroboration"><div class="check-box"></div><span class="check-text">Witness or corroborating party</span></label>
+        <label class="check-item"><input type="checkbox" name="evidence" value="prior written commitments from institution"><div class="check-box"></div><span class="check-text">Prior written commitments from institution</span></label>
+        <label class="check-item"><input type="checkbox" name="evidence" value="federal or state regulatory citation"><div class="check-box"></div><span class="check-text">Applicable federal or state regulation</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">What is the consequence if this is not resolved?</label>
+      <span class="field-hint">Describe the direct patient impact if no action is taken. This becomes the core of your communication's urgency framing.</span>
+      <textarea class="field-input" id="consequence" rows="3" placeholder="Example: My husband requires dialysis three times per week to survive. Discharge on March 15th would create an immediate life-threatening gap in treatment. There is no comparable facility within 30 miles that accepts our insurance."></textarea>
+    </div>
+
+    <div class="module-nav">
+      <button class="btn-prev" onclick="prevModule()">← Back</button>
+      <button class="btn-next" onclick="nextModule()">Review and Generate →</button>
+    </div>
+  </div>
+
+  <!-- ═══ MODULE 4: GENERATE ═══ -->
+  <div class="module" id="mod-3">
+    <div class="mod-title">Generate Your <em>Authority Dispatch</em></div>
+    <div class="mod-sub">Module 04 of 04 · AI Stabilization Brief + Escalation Communication</div>
+
+    <div class="warning-panel" style="border-left-color:var(--pulse);">
+      <div class="wp-title" style="color:var(--pulse);">Two Outputs Will Be Generated</div>
+      <div class="wp-body">
+        <strong style="color:var(--ink80);">Output 1 — Stabilization Brief.</strong> A private document for you alone. The AI will analyze your cognitive state, name what is happening to your decision-making authority, and deliver specific stabilization language and a strategic priority sequence for the next 24–72 hours. This is not advice. It is a mirror.
+        <br><br>
+        <strong style="color:var(--ink80);">Output 2 — Escalation Communication.</strong> A formal, professionally structured letter ready to be sent, faxed, or delivered to the institution and recipient you identified. It will cite your evidence, name the failure specifically, state your demand with a response deadline, and reference applicable accountability mechanisms.
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:20px 0;">
+      <button class="btn-generate" id="generateBtn" onclick="generate()">Generate My Authority Dispatch</button>
+    </div>
+
+    <div class="module-nav">
+      <button class="btn-prev" onclick="prevModule()">← Back to Review</button>
+      <div></div>
+    </div>
+  </div>
+
+  <!-- LOADING -->
+  <div class="loading" id="loadingBlock">
+    <div class="loading-ring"></div>
+    <div class="loading-text">Generating Your Authority Dispatch</div>
+    <div class="loading-sub">Analyzing situation · Preparing stabilization brief · Drafting escalation communication</div>
+  </div>
+
+  <!-- OUTPUT -->
+  <div class="output-section" id="outputSection">
+    <div class="output-header">
+      <div class="output-eyebrow">✓ Authority Dispatch Generated</div>
+      <div class="output-title">Your Stabilization Brief &amp; Escalation Communication</div>
+    </div>
+
+    <div class="output-block">
+      <div class="ob-label">Output 01 — Stabilization Brief · Private · For You Only</div>
+      <div class="ob-content" id="stabilizationOutput"></div>
+    </div>
+
+    <div class="letter-block">
+      <div class="ob-label" style="color:var(--gold);">Output 02 — Escalation Communication · Ready to Send</div>
+      <div class="letter-content" id="letterOutput"></div>
+    </div>
+
+    <div class="action-row">
+      <button class="btn-copy" onclick="copyLetter()">Copy Letter to Clipboard</button>
+      <button class="btn-copy" onclick="copyAll()">Copy Full Dispatch</button>
+      <button class="btn-reset" onclick="resetTool()">Start New Session</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Toolkit</a>
+    <a href="/terms">Terms</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/cdn-cgi/l/email-protection#046d6a626b44676b68606d77676c61696d652a676b69">Contact</a>
+  </div>
+  <p class="f-copy">© 2025 Cold Ischemia Foundation. Not legal or medical advice.</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+let currentModule = 0;
+let urgencyValue = '';
+
+function setSev(el, val) {
+  document.querySelectorAll('.sev-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('urgency').value = val;
+  urgencyValue = val;
+}
+
+function goTo(idx) {
+  document.querySelectorAll('.module').forEach((m,i) => {
+    m.classList.toggle('active', i === idx);
+  });
+  document.querySelectorAll('.mp-step').forEach((s,i) => {
+    s.classList.remove('active','done');
+    if(i < idx) s.classList.add('done');
+    if(i === idx) s.classList.add('active');
+  });
+  currentModule = idx;
+  window.scrollTo({top: 0, behavior:'smooth'});
+}
+
+function nextModule() {
+  if(currentModule < 3) goTo(currentModule + 1);
+}
+function prevModule() {
+  if(currentModule > 0) goTo(currentModule - 1);
+}
+
+async function generate() {
+  const apiKey = document.getElementById('apiKey').value.trim();
+  if(!apiKey) { alert('Please enter your Anthropic API key to generate your Authority Dispatch.'); return; }
+
+  const situation    = document.getElementById('situation').value.trim();
+  const cogState     = document.querySelector('input[name="cogState"]:checked')?.value || 'unspecified';
+  const pressures    = [...document.querySelectorAll('input[name="pressure"]:checked')].map(c=>c.value).join(', ') || 'none specified';
+  const urgency      = document.getElementById('urgency').value || '3';
+  const instType     = document.getElementById('instType').value;
+  const instName     = document.getElementById('instName').value.trim();
+  const recipient    = document.getElementById('recipient').value;
+  const relationship = document.querySelector('input[name="relationship"]:checked')?.value || 'care partner';
+  const failures     = [...document.querySelectorAll('input[name="failureType"]:checked')].map(c=>c.value).join(', ');
+  const failDetail   = document.getElementById('failureDetail').value.trim();
+  const demand       = document.getElementById('demand').value.trim();
+  const evidence     = [...document.querySelectorAll('input[name="evidence"]:checked')].map(c=>c.value).join(', ') || 'none specified';
+  const consequence  = document.getElementById('consequence').value.trim();
+
+  if(!situation || !failDetail || !demand) {
+    alert('Please complete at least the situation description, failure detail, and your demand before generating.');
+    return;
+  }
+
+  document.getElementById('generateBtn').disabled = true;
+  document.getElementById('loadingBlock').classList.add('visible');
+  document.getElementById('outputSection').classList.remove('visible');
+
+  const prompt = `You are a highly experienced patient advocacy specialist and strategic communications expert working for the Cold Ischemia Foundation. You specialize in supporting care partners — the family members and partners who manage chronic illness care — in moments of acute institutional crisis.
+
+A care partner has come to you under strain. You will generate two precise, powerful outputs.
+
+═══ SITUATION DATA ═══
+
+Care Partner Relationship: ${relationship}
+Cognitive State: ${cogState}
+Active Pressure Signals: ${pressures}
+Urgency Level: ${urgency}/5
+
+Current Situation:
+${situation}
+
+Institution Type: ${instType}
+Institution Name: ${instName || 'Not specified'}
+Communication Recipient: ${recipient}
+
+Failure Types: ${failures}
+Failure Detail:
+${failDetail}
+
+Specific Demand:
+${demand}
+
+Evidence Available: ${evidence}
+
+Patient Consequence if Unresolved:
+${consequence}
+
+═══ YOUR TWO OUTPUTS ═══
+
+Generate both outputs separated by the exact divider: ===LETTER===
+
+OUTPUT 1 — STABILIZATION BRIEF (before the divider)
+This is a private document for the care partner alone — not sent to anyone.
+Write directly to them in second person. Be honest, direct, and grounded — not therapeutic or soft. This person is under genuine pressure.
+
+Structure:
+WHAT IS HAPPENING TO YOUR AUTHORITY
+(2-3 paragraphs naming precisely what cognitive and emotional forces are degrading their decision-making capacity right now, based on what they reported. Be clinical and honest, not comforting.)
+
+WHAT REMAINS INTACT
+(1-2 paragraphs identifying the specific strengths, evidence, and leverage points this person actually has. What is working in their favor that stress may be obscuring.)
+
+YOUR PRIORITY SEQUENCE — NEXT 72 HOURS
+(A numbered list of 4-6 specific, concrete actions in precise order. Not general advice — actual actionable steps for this exact situation. Each step should include what to do, how to do it, and why it matters strategically.)
+
+YOUR COMMUNICATION POSITION
+(1 paragraph summarizing the strategic position they are going into the escalation communication from. What is their actual leverage? What tone is warranted? What outcome is realistic?)
+
+OUTPUT 2 — ESCALATION COMMUNICATION (after ===LETTER=== divider)
+This is a formal letter ready to be delivered to the institution.
+
+Format as a complete professional letter including:
+- Date: [Current Date]
+- From: [Care Partner Name — leave as placeholder]
+- To: The ${recipient} at ${instName || 'the institution'}
+- Re: line summarizing the issue
+
+The letter should:
+- Open with a clear statement of identity, relationship to patient, and purpose
+- State the specific failure or failures with dates and specifics where provided
+- Reference relevant evidence they have documented
+- Name the direct patient consequence of inaction with appropriate gravity
+- State the specific demand with a clear response deadline (48-72 hours for urgent, 5-7 business days for non-emergency)
+- Reference applicable accountability mechanisms — include relevant regulatory bodies (CMS, state health department, HRSA, state insurance commissioner, Joint Commission, ESRD Networks as appropriate to context) and note intent to escalate if no response is received
+- Close with formal signature block placeholder
+
+Tone: Authoritative. Professional. Not hostile — strategic. The letter should read as if written by someone who knows exactly what they are doing and exactly what their rights are.`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version':'2023-06-01',
+        'anthropic-dangerous-direct-browser-access':'true'
+      },
+      body: JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:4000,
+        messages:[{role:'user',content:prompt}]
+      })
+    });
+
+    const data = await res.json();
+    if(data.error){ throw new Error(data.error.message); }
+
+    const fullText = data.content[0].text;
+    const parts = fullText.split('===LETTER===');
+    const stabilization = parts[0].trim();
+    const letter = parts[1] ? parts[1].trim() : 'Letter generation failed — please try again.';
+
+    document.getElementById('stabilizationOutput').textContent = stabilization;
+    document.getElementById('letterOutput').textContent = letter;
+
+    document.getElementById('loadingBlock').classList.remove('visible');
+    document.getElementById('outputSection').classList.add('visible');
+    document.getElementById('outputSection').scrollIntoView({behavior:'smooth'});
+
+  } catch(err) {
+    document.getElementById('loadingBlock').classList.remove('visible');
+    document.getElementById('generateBtn').disabled = false;
+    alert('Error generating dispatch: ' + err.message + '\n\nPlease check your API key and try again.');
+  }
+}
+
+function copyLetter() {
+  const text = document.getElementById('letterOutput').textContent;
+  navigator.clipboard.writeText(text).then(()=>{ alert('Escalation letter copied to clipboard.'); });
+}
+
+function copyAll() {
+  const s = document.getElementById('stabilizationOutput').textContent;
+  const l = document.getElementById('letterOutput').textContent;
+  const full = 'STABILIZATION BRIEF\n' + '='.repeat(40) + '\n\n' + s + '\n\n' + 'ESCALATION COMMUNICATION\n' + '='.repeat(40) + '\n\n' + l;
+  navigator.clipboard.writeText(full).then(()=>{ alert('Full Authority Dispatch copied to clipboard.'); });
+}
+
+function resetTool() {
+  if(confirm('Start a new session? Your current inputs and outputs will be cleared.')) {
+    document.querySelectorAll('textarea').forEach(t=>t.value='');
+    document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);
+    document.querySelectorAll('input[type="checkbox"]').forEach(c=>c.checked=false);
+    document.querySelectorAll('select').forEach(s=>s.selectedIndex=0);
+    document.querySelectorAll('.sev-btn').forEach(b=>b.classList.remove('selected'));
+    document.getElementById('urgency').value='';
+    document.getElementById('gen

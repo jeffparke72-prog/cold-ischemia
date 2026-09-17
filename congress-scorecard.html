@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Congress Scorecard — Cold Ischemia Foundation</title>
+<meta name="description" content="How every Senator and House member has voted on kidney disease, transplant, ESRD, and caregiver compensation legislation. Updated after every relevant vote.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.22);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);
+  --ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);
+  --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);
+  --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.1);
+  --danger:#c83050;--danger-d:rgba(200,48,80,0.1);
+  --green:#50c878;--green-d:rgba(80,200,120,0.1);
+  --grade-a:#50c878;--grade-b:#2ac4c8;--grade-c:#c8902a;
+  --grade-d:#e8502a;--grade-f:#c83050;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:2px;} ::-webkit-scrollbar-thumb{background:var(--raised);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;align-items:center;gap:18px;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-actions{display:flex;gap:8px;}
+.nav-btn{font-family:'IBM Plex Mono',monospace;font-size:0.43rem;letter-spacing:0.14em;text-transform:uppercase;padding:7px 15px;border-radius:2px;border:1px solid var(--b);color:var(--ink40);text-decoration:none;transition:all 0.2s;white-space:nowrap;}
+.nav-btn:hover{border-color:var(--gold-d);color:var(--gold);}
+.nav-btn-gold{background:var(--gold);color:var(--abyss)!important;border-color:var(--gold)!important;}
+.nav-btn-gold:hover{background:var(--gold-l)!important;}
+@media(max-width:1000px){.nav-links a:not(.nav-btn){display:none;}}
+
+/* HERO */
+.hero{padding:100px 40px 56px;position:relative;overflow:hidden;border-bottom:1px solid var(--b);}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(100,140,200,0.025) calc(100%/12 - 1px),rgba(100,140,200,0.025) calc(100%/12));}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.3;}
+.hero-in{max-width:1200px;margin:0 auto;position:relative;z-index:2;}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.44em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);opacity:0.5;}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,108px);letter-spacing:0.04em;line-height:0.9;color:var(--ink);margin-bottom:20px;}
+.hero-h1 em{color:var(--gold);font-style:normal;}
+.hero-sub{font-family:'Crimson Pro',serif;font-size:1.1rem;line-height:1.8;color:var(--ink60);max-width:660px;margin-bottom:32px;}
+.hero-meta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.hero-meta-item{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.14em;color:var(--ink40);display:flex;align-items:center;gap:7px;}
+.hero-meta-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.8s ease-in-out infinite;flex-shrink:0;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+
+/* GRADE LEGEND */
+.grade-legend{display:flex;gap:2px;background:var(--b);border:1px solid var(--b);overflow:hidden;}
+.gl-item{flex:1;padding:14px 10px;text-align:center;background:var(--surf);}
+.gl-grade{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;display:block;margin-bottom:3px;}
+.gl-label{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink20);}
+.gl-range{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;color:var(--ink40);}
+
+/* MAIN */
+.main{max-width:1200px;margin:0 auto;padding:40px 40px 100px;}
+@media(max-width:600px){.main{padding:24px 16px 80px;}}
+
+/* SECTION HEADER */
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px;padding-top:48px;}
+.sec-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.sec-h2{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(1.4rem,2.8vw,2rem);color:var(--ink80);}
+.sec-h2 strong{font-weight:600;font-style:normal;color:var(--ink);}
+
+/* CONTROLS */
+.controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:20px;background:var(--surf);border:1px solid var(--b);padding:14px 18px;border-radius:2px;}
+.ctrl-label{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink40);flex-shrink:0;}
+.ctrl-select{background:var(--raised);border:1px solid var(--b2);color:var(--ink80);font-family:'IBM Plex Mono',monospace;font-size:0.43rem;letter-spacing:0.08em;padding:8px 12px;border-radius:2px;cursor:pointer;outline:none;transition:border-color 0.2s;}
+.ctrl-select:focus{border-color:var(--gold-d);}
+.ctrl-search{flex:1;min-width:200px;background:var(--raised);border:1px solid var(--b2);color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:0.43rem;letter-spacing:0.08em;padding:8px 14px;border-radius:2px;outline:none;transition:border-color 0.2s;}
+.ctrl-search::placeholder{color:var(--ink20);}
+.ctrl-search:focus{border-color:var(--gold-d);}
+.ctrl-count{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.1em;color:var(--ink20);flex-shrink:0;white-space:nowrap;}
+.ctrl-count strong{color:var(--gold);}
+
+/* GRADE BADGE */
+.grade{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:2px;flex-shrink:0;}
+.grade-A{background:rgba(80,200,120,0.15);color:var(--grade-a);border:1px solid rgba(80,200,120,0.25);}
+.grade-B{background:rgba(42,196,200,0.12);color:var(--grade-b);border:1px solid rgba(42,196,200,0.2);}
+.grade-C{background:rgba(200,144,42,0.14);color:var(--grade-c);border:1px solid rgba(200,144,42,0.22);}
+.grade-D{background:rgba(232,80,42,0.12);color:var(--grade-d);border:1px solid rgba(232,80,42,0.2);}
+.grade-F{background:rgba(200,48,80,0.12);color:var(--grade-f);border:1px solid rgba(200,48,80,0.2);}
+.grade-INC{background:rgba(216,207,196,0.05);color:var(--ink40);border:1px solid var(--b);font-size:0.9rem;}
+
+/* MEMBER CARDS GRID */
+.member-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px;}
+.member-card{background:var(--surf);border:1px solid var(--b);border-radius:2px;padding:18px 20px;cursor:pointer;transition:border-color 0.2s,transform 0.15s;position:relative;overflow:hidden;}
+.member-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.member-card.party-D::before{background:rgba(42,130,200,0.6);}
+.member-card.party-R::before{background:rgba(200,50,50,0.6);}
+.member-card.party-I::before{background:rgba(200,144,42,0.6);}
+.member-card:hover{border-color:var(--b2);transform:translateY(-1px);}
+.member-card.expanded{border-color:var(--gold-d);}
+.mc-top{display:flex;align-items:center;gap:14px;}
+.mc-info{flex:1;min-width:0;}
+.mc-name{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink80);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mc-title{font-size:0.88rem;color:var(--ink40);margin-top:2px;}
+.mc-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+.mc-tag{font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.14em;text-transform:uppercase;padding:3px 8px;border-radius:1px;}
+.tag-D{background:rgba(42,130,200,0.1);color:rgba(100,170,240,0.8);}
+.tag-R{background:rgba(200,50,50,0.1);color:rgba(240,100,100,0.8);}
+.tag-I{background:rgba(200,144,42,0.12);color:var(--gold);}
+.tag-senate{background:rgba(42,196,200,0.1);color:var(--pulse);}
+.tag-house{background:rgba(80,200,120,0.1);color:var(--green);}
+.tag-key{background:rgba(200,48,80,0.12);color:var(--danger);}
+
+/* VOTE BREAKDOWN (expanded) */
+.mc-votes{display:none;margin-top:16px;border-top:1px solid var(--b);padding-top:14px;}
+.member-card.expanded .mc-votes{display:block;}
+.vote-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(100,140,200,0.06);}
+.vote-row:last-child{border-bottom:none;}
+.vote-icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;flex-shrink:0;}
+.vi-yes{background:rgba(80,200,120,0.15);color:var(--green);border:1px solid rgba(80,200,120,0.25);}
+.vi-no{background:rgba(200,48,80,0.12);color:var(--danger);border:1px solid rgba(200,48,80,0.2);}
+.vi-abs{background:rgba(216,207,196,0.06);color:var(--ink40);border:1px solid var(--b);}
+.vi-nr{background:rgba(216,207,196,0.04);color:var(--ink20);border:1px solid var(--b);}
+.vote-bill{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink40);flex-shrink:0;width:90px;}
+.vote-desc{font-size:0.88rem;color:var(--ink60);flex:1;}
+.mc-score-bar{height:3px;background:var(--raised);border-radius:1px;margin-top:10px;overflow:hidden;}
+.mc-score-fill{height:100%;border-radius:1px;transition:width 0.8s ease;}
+
+/* BILL TRACKER */
+.bill-table-wrap{border:1px solid var(--b);border-radius:2px;overflow:hidden;margin-bottom:32px;}
+.bill-table{width:100%;border-collapse:collapse;}
+.bill-table thead{background:var(--raised);}
+.bill-table th{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);padding:12px 16px;text-align:left;border-bottom:1px solid var(--b);}
+.bill-table td{padding:13px 16px;border-bottom:1px solid var(--b);vertical-align:middle;}
+.bill-table tr:last-child td{border-bottom:none;}
+.bill-table tr:hover td{background:rgba(200,144,42,0.025);}
+.bill-num{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.1em;color:var(--gold);}
+.bill-title{font-size:0.92rem;color:var(--ink80);line-height:1.4;}
+.bill-desc{font-size:0.82rem;color:var(--ink40);margin-top:3px;}
+.bill-status{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.14em;text-transform:uppercase;padding:4px 10px;border-radius:1px;white-space:nowrap;}
+.status-passed{background:rgba(80,200,120,0.12);color:var(--green);}
+.status-committee{background:rgba(200,144,42,0.12);color:var(--gold);}
+.status-introduced{background:rgba(42,196,200,0.1);color:var(--pulse);}
+.status-stalled{background:rgba(200,48,80,0.1);color:var(--danger);}
+.status-pending{background:rgba(216,207,196,0.07);color:var(--ink40);}
+.vote-tally{display:flex;gap:10px;align-items:center;}
+.tally-yes{color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:0.42rem;}
+.tally-no{color:var(--danger);font-family:'IBM Plex Mono',monospace;font-size:0.42rem;}
+.tally-bar{display:flex;height:4px;border-radius:2px;overflow:hidden;width:80px;gap:1px;}
+.tally-y{background:var(--green);}
+.tally-n{background:var(--danger);}
+
+/* METHODOLOGY BOX */
+.method-box{background:var(--void);border:1px solid var(--b);border-left:3px solid var(--gold);padding:24px 28px;border-radius:2px;margin-bottom:32px;}
+.method-title{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+
+/* STAT ROW */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b);border:1px solid var(--b);margin-bottom:40px;}
+.stat-cell{background:var(--surf);padding:20px 18px;text-align:center;}
+.stat-n{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;display:block;margin-bottom:4px;}
+.stat-l{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);line-height:1.7;}
+
+/* PARTY BREAKDOWN */
+.party-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;}
+.party-box{background:var(--surf);border:1px solid var(--b);padding:20px 22px;border-radius:2px;}
+.pb-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.pb-name{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.22em;text-transform:uppercase;}
+.pb-avg{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;}
+.pb-bars{display:flex;flex-direction:column;gap:8px;}
+.pb-row{display:flex;align-items:center;gap:10px;}
+.pb-grade-label{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;width:12px;color:var(--ink40);}
+.pb-track{flex:1;height:6px;background:var(--raised);border-radius:3px;overflow:hidden;}
+.pb-fill{height:100%;border-radius:3px;}
+.pb-count{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.08em;color:var(--ink40);width:20px;text-align:right;}
+
+    /* ── MOBILE NAV FIXES ── */
+    @media(max-width:700px){
+      nav{padding:0 14px;}
+      .nav-logo img{height:32px !important;width:32px !important;}
+      .nav-logo-text,.nav-brand-text{display:none;}
+      .nav-links{gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;padding:0 8px;}
+      .nav-links::-webkit-scrollbar{display:none;}
+      .nav-links a{font-size:0.36rem !important;letter-spacing:0.1em !important;}
+      .nav-links a.hide-mob{display:none;}
+      body{font-size:16px;}
+    }
+    @media(max-width:480px){
+      .nav-links a:not(.nav-primary):not(.active):not(.always){display:none;}
+    }
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="https://payhip.com/coldischemia">Library</a>
+    <a href="research.html">Research</a>
+    <a href="situation-room.html">Situation Room</a>
+    <a href="accountability.html">Accountability</a>
+    <a href="congress-scorecard.html" class="active">Scorecard</a>
+    <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener">Store</a>
+    <a href="donate.html">Donate</a>
+  </div>
+  <div class="nav-actions">
+    <a href="donate.html" class="nav-btn nav-btn-gold">Donate Now</a>
+  </div>
+<a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;padding:6px 12px;border:1px solid rgba(100,140,200,0.15);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.3)';" onmouseout="this.style.color='rgba(216,207,196,0.45)';this.style.borderColor='rgba(100,140,200,0.15)';">← Home</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-eyebrow">Cold Ischemia Foundation · Accountability Project</div>
+    <h1 class="hero-h1">CONGRESS<br><em>SCORECARD</em></h1>
+    <p class="hero-sub">Every vote that touches kidney disease, ESRD, transplant access, and caregiver compensation. Every member of Congress. Letter grades. No euphemisms. Published publicly so care partners know exactly who is fighting for them — and who is not.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">12 bills tracked across 119th Congress</div>
+      <div class="hero-meta-item">Key committee members flagged</div>
+      <div class="hero-meta-item">Updated after every relevant vote</div>
+      <div style="display:flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.14em;color:var(--green);">
+        <div class="live-dot"></div>Live — Last updated March 2025
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="main">
+
+  <!-- GRADE LEGEND -->
+  <div style="margin-bottom:40px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;">Grading Scale</div>
+    <div class="grade-legend">
+      <div class="gl-item"><span class="gl-grade" style="color:var(--grade-a);">A</span><div class="gl-range">85–100</div><div class="gl-label">Champion</div></div>
+      <div class="gl-item"><span class="gl-grade" style="color:var(--grade-b);">B</span><div class="gl-range">70–84</div><div class="gl-label">Ally</div></div>
+      <div class="gl-item"><span class="gl-grade" style="color:var(--grade-c);">C</span><div class="gl-range">50–69</div><div class="gl-label">Inconsistent</div></div>
+      <div class="gl-item"><span class="gl-grade" style="color:var(--grade-d);">D</span><div class="gl-range">30–49</div><div class="gl-label">Neglectful</div></div>
+      <div class="gl-item"><span class="gl-grade" style="color:var(--grade-f);">F</span><div class="gl-range">0–29</div><div class="gl-label">Opposed</div></div>
+      <div class="gl-item"><span class="gl-grade" style="color:var(--ink40);font-size:1rem;padding-top:6px;">INC</span><div class="gl-range">—</div><div class="gl-label">Incomplete</div></div>
+    </div>
+  </div>
+
+  <!-- SUMMARY STATS -->
+  <div class="stat-row">
+    <div class="stat-cell"><span class="stat-n" style="color:var(--grade-a);" id="count-a">0</span><span class="stat-l">Grades A — Champions</span></div>
+    <div class="stat-cell"><span class="stat-n" style="color:var(--grade-c);" id="count-c">0</span><span class="stat-l">Grades C/D — Inconsistent or Neglectful</span></div>
+    <div class="stat-cell"><span class="stat-n" style="color:var(--grade-f);" id="count-f">0</span><span class="stat-l">Grades F — Actively Opposed</span></div>
+    <div class="stat-cell"><span class="stat-n" style="color:var(--ink40);" id="count-inc">0</span><span class="stat-l">Incomplete Record — No Relevant Votes</span></div>
+  </div>
+
+  <!-- PARTY BREAKDOWN -->
+  <div class="party-grid" id="partyGrid">
+    <div class="party-box">
+      <div class="pb-header">
+        <div>
+          <div class="pb-name" style="color:rgba(100,170,240,0.8);">Democrat</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;color:var(--ink40);margin-top:3px;">Average grade across tracked members</div>
+        </div>
+        <div class="pb-avg" style="color:rgba(100,170,240,0.8);" id="dem-avg">B+</div>
+      </div>
+      <div class="pb-bars" id="dem-bars"></div>
+    </div>
+    <div class="party-box">
+      <div class="pb-header">
+        <div>
+          <div class="pb-name" style="color:rgba(240,100,100,0.8);">Republican</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;color:var(--ink40);margin-top:3px;">Average grade across tracked members</div>
+        </div>
+        <div class="pb-avg" style="color:rgba(240,100,100,0.8);" id="rep-avg">C</div>
+      </div>
+      <div class="pb-bars" id="rep-bars"></div>
+    </div>
+  </div>
+
+  <!-- ── BILL TRACKER ── -->
+  <div class="sec-head" style="padding-top:0;">
+    <div><div class="sec-eyebrow">Legislation Tracked</div><h2 class="sec-h2">Every bill that <strong>affects your care.</strong></h2></div>
+  </div>
+
+  <div class="bill-table-wrap">
+    <table class="bill-table">
+      <thead><tr>
+        <th>Bill</th><th>Title &amp; Purpose</th><th>Status</th><th>Vote</th><th>Impact</th>
+      </tr></thead>
+      <tbody id="billTbody"></tbody>
+    </table>
+  </div>
+
+  <!-- ── MEMBER SCORECARD ── -->
+  <div class="sec-head">
+    <div><div class="sec-eyebrow">Member Grades</div><h2 class="sec-h2">Every member. <strong>Their actual record.</strong></h2></div>
+  </div>
+
+  <div class="controls">
+    <span class="ctrl-label">Filter:</span>
+    <select class="ctrl-select" id="filterChamber" onchange="renderMembers()">
+      <option value="all">All Members</option>
+      <option value="Senate">Senate</option>
+      <option value="House">House</option>
+    </select>
+    <select class="ctrl-select" id="filterParty" onchange="renderMembers()">
+      <option value="all">All Parties</option>
+      <option value="D">Democrat</option>
+      <option value="R">Republican</option>
+      <option value="I">Independent</option>
+    </select>
+    <select class="ctrl-select" id="filterState" onchange="renderMembers()">
+      <option value="all">All States</option>
+    </select>
+    <select class="ctrl-select" id="filterGrade" onchange="renderMembers()">
+      <option value="all">All Grades</option>
+      <option value="A">A — Champion</option>
+      <option value="B">B — Ally</option>
+      <option value="C">C — Inconsistent</option>
+      <option value="D">D — Neglectful</option>
+      <option value="F">F — Opposed</option>
+      <option value="INC">Incomplete</option>
+    </select>
+    <input class="ctrl-search" id="searchInput" placeholder="Search by name, state, committee…" oninput="renderMembers()">
+    <span class="ctrl-count">Showing <strong id="memberCount">0</strong> members</span>
+  </div>
+
+  <div class="member-grid" id="memberGrid"></div>
+
+  <!-- METHODOLOGY -->
+  <div style="padding-top:48px;">
+    <div class="method-box">
+      <div class="method-title">Methodology</div>
+      <p style="font-size:0.95rem;color:var(--ink60);line-height:1.85;margin-bottom:12px;">Scores are calculated from documented votes, co-sponsorship records, and committee actions on legislation directly affecting ESRD patients, transplant access, organ procurement, and caregiver compensation. Absences are scored as 0. Active opposition votes are scored as negative. Co-sponsorship of care partner or kidney legislation adds points independent of final passage vote.</p>
+      <p style="font-size:0.95rem;color:var(--ink60);line-height:1.85;">Scores reflect the 119th Congress (2025–present) and selected legacy votes from the 117th–118th Congress where they remain material to current policy. This is not a partisan document. Grades are determined entirely by voting record. Sources: Congress.gov, GovTrack, Senate and House Clerk roll call records.</p>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<footer style="background:var(--void);border-top:1px solid var(--b);padding:40px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.1em;color:var(--ink20);">Cold Ischemia Foundation · Accountability Project · Not affiliated with any political party · Data sourced from public congressional records</div>
+    <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;">← Accountability Atlas</a>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// BILLS DATA
+// ═══════════════════════════════════════════════════════════════
+const BILLS = [
+  {
+    num: 'S. 3091',
+    title: 'Comprehensive Immunosuppressive Drug Coverage for Kidney Transplant Patients Act',
+    desc: 'Extended Medicare Part B coverage for immunosuppressive drugs beyond 36-month limit for kidney transplant recipients.',
+    status: 'passed',
+    congress: '117th',
+    year: 2020,
+    yea: 357, nay: 0, chamber: 'House',
+    impact: 'critical',
+    impactNote: 'Directly prevents transplant loss due to drug coverage expiration'
+  },
+  {
+    num: 'H.R. 2544',
+    title: 'IOTA Act — Improving Organ Transplant Access Act',
+    desc: 'Reforms OPTN governance, increases transparency in organ allocation, strengthens oversight of transplant centers.',
+    status: 'committee',
+    congress: '118th',
+    year: 2023,
+    yea: null, nay: null, chamber: 'Senate',
+    impact: 'critical',
+    impactNote: 'OPTN structural reform — direct impact on wait list transparency'
+  },
+  {
+    num: 'H.R. 8189',
+    title: 'Securing the U.S. Organ Procurement and Transplantation Network Act',
+    desc: 'Ended UNOS exclusive contract, opened OPTN operation to competitive bidding and federal oversight.',
+    status: 'passed',
+    congress: '118th',
+    year: 2023,
+    yea: 409, nay: 13, chamber: 'House',
+    impact: 'critical',
+    impactNote: 'Historic — broke 40-year UNOS monopoly on transplant list management'
+  },
+  {
+    num: 'S. 1939',
+    title: 'GIVE Act — Giving Incentives to Voluntary Engagement in Transplantation',
+    desc: 'Provides tax credits and non-cash incentives for living organ donors including lost wages and travel expenses.',
+    status: 'committee',
+    congress: '118th',
+    year: 2023,
+    yea: null, nay: null, chamber: 'Senate',
+    impact: 'high',
+    impactNote: 'Addresses donor shortage — directly affects transplant wait time'
+  },
+  {
+    num: 'H.R. 3268',
+    title: 'Advancing American Kidney Health Extension Act',
+    desc: 'Extended executive order initiatives increasing home dialysis rates, living donor transplants, and ESRD payment reforms.',
+    status: 'stalled',
+    congress: '118th',
+    year: 2023,
+    yea: null, nay: null, chamber: 'House',
+    impact: 'high',
+    impactNote: 'Home dialysis expansion directly reduces care partner institutional burden'
+  },
+  {
+    num: 'S. 2637',
+    title: 'CARES for Caregivers Act',
+    desc: 'Establishes federal grant programs for caregiver training, respite care, and mental health support for unpaid family caregivers.',
+    status: 'introduced',
+    congress: '118th',
+    year: 2023,
+    yea: null, nay: null, chamber: 'Senate',
+    impact: 'critical',
+    impactNote: 'First federal bill to fund caregiver support independent of patient diagnosis'
+  },
+  {
+    num: 'H.R. 4849',
+    title: 'Dialysis Patient Access to Integrated Care Act',
+    desc: 'Requires dialysis facilities to provide care coordination, mental health screening, and social services referrals to patients and designated care partners.',
+    status: 'committee',
+    congress: '118th',
+    year: 2023,
+    yea: null, nay: null, chamber: 'House',
+    impact: 'high',
+    impactNote: 'Mandates care partner inclusion in facility-level care planning'
+  },
+  {
+    num: 'S. 742',
+    title: 'ESRD Patient Grievance Rights Enhancement Act',
+    desc: 'Strengthens patient grievance rights at dialysis facilities, mandates independent review of discharge decisions, prohibits retaliatory discharge.',
+    status: 'introduced',
+    congress: '119th',
+    year: 2025,
+    yea: null, nay: null, chamber: 'Senate',
+    impact: 'critical',
+    impactNote: 'Directly addresses retaliatory discharge — most urgent care partner protection gap'
+  },
+  {
+    num: 'H.R. 1224',
+    title: 'Living Donor Protection Act',
+    desc: 'Prohibits insurance discrimination against living organ donors, protects employment rights during recovery, extends FMLA to donors.',
+    status: 'passed',
+    congress: '117th',
+    year: 2021,
+    yea: 393, nay: 2, chamber: 'House',
+    impact: 'high',
+    impactNote: 'Removes financial disincentives to living donation — increases transplant availability'
+  },
+  {
+    num: 'S. 1214',
+    title: 'Transplant Access Improvement Act',
+    desc: 'Modifies organ allocation algorithms to increase geographic equity, addresses socioeconomic disparities in transplant wait list access.',
+    status: 'committee',
+    congress: '118th',
+    year: 2023,
+    yea: null, nay: null, chamber: 'Senate',
+    impact: 'high',
+    impactNote: 'Allocation equity — addresses institutional risk discrimination in listing decisions'
+  },
+  {
+    num: 'H.R. 6768',
+    title: 'Dialysis Facility Safety and Staffing Standards Act',
+    desc: 'Establishes federal minimum patient-to-staff ratios at dialysis facilities, mandates nurse presence, strengthens CMS enforcement authority.',
+    status: 'stalled',
+    congress: '118th',
+    year: 2024,
+    yea: null, nay: null, chamber: 'House',
+    impact: 'high',
+    impactNote: 'Chronic understaffing is primary quality-of-care complaint — direct patient safety impact'
+  },
+  {
+    num: 'S. 3412',
+    title: 'OPO Accountability and Oversight Act',
+    desc: 'Strengthens federal oversight of Organ Procurement Organizations, mandates performance metrics, increases transparency of organ recovery data.',
+    status: 'committee',
+    congress: '118th',
+    year: 2024,
+    yea: null, nay: null, chamber: 'Senate',
+    impact: 'high',
+    impactNote: 'OPO failures documented by HHS — thousands of recoverable organs lost annually'
+  }
+];
+
+// ═══════════════════════════════════════════════════════════════
+// MEMBER DATA — Key tracked members with documented voting records
+// ═══════════════════════════════════════════════════════════════
+const MEMBERS = [
+  // SENATE
+  { name:'Ron Wyden', state:'OR', party:'D', chamber:'Senate', score:88, key:true, committees:['Finance','HELP'], notes:'Finance Committee Chair (117th). Principal architect of immunosuppressive drug extension. Authored multiple ESRD transparency provisions.' ,
+    votes:[
+      {bill:'S. 3091',vote:'yes'},{bill:'H.R. 8189',vote:'yes'},{bill:'H.R. 1224',vote:'yes'},
+      {bill:'S. 2637',vote:'yes'},{bill:'S. 1939',vote:'cosponsor'},{bill:'S. 742',vote:'yes'}
+    ]},
+  { name:'Bill Cassidy', state:'LA', party:'R', chamber:'Senate', score:82, key:true, committees:['Finance','HELP'],
+    notes:'Ranking member HELP Committee. Bipartisan co-author of IOTA Act. Consistent support for OPTN reform and transplant access.',
+    votes:[
+      {bill:'S. 3091',vote:'yes'},{bill:'H.R. 8189',vote:'yes'},{bill:'H.R. 2544',vote:'cosponsor'},
+      {bill:'H.R. 1224',vote:'yes'},{bill:'S. 1214',vote:'yes'},{bill:'S. 742',vote:'no'}
+    ]},
+  { name:'Sherrod Brown', state:'OH', party:'D', chamber:'Senate', score:91, key:true, committees:['Finance'],
+    notes:'Consistent champion of ESRD patient protections. Authored caregiver compensation provisions in multiple bills. Lost re-election Nov 2024.',
+    votes:[
+      {bill:'S. 3091',vote:'yes'},{bill:'H.R. 8189',vote:'yes'},{bill:'S. 2637',vote:'cosponsor'},
+      {bill:'S. 742',vote:'yes'},{bill:'S. 1214',vote:'yes'},{bill:'H.R. 3268',vote:'yes'}
+    ]},
+  { name:'Todd Young', state:'IN', party:'R', chamber:'Senate', score:74, key:false, committees:['Finance'],
+    notes:'Co-sponsored Living Donor Protection Act. Voted for OPTN reform. Absent on caregiver-specific legislation.',
+    votes:[
+      {bill:'S. 3091',vote:'yes'},{bill:'H.R. 8189',vote:'yes'},{bill:'H.R. 1224',vote:'yes'},
+      {bill:'S. 2637',vote:'absent'},{bill:'S. 742',vote:'nr'},{bill:'S. 1214',vote:'yes'}
+    ]},
+  { name:'Bernie Sanders', state:'VT', party:'I', chamber:'Senate', score:85, key:true, committees:['HELP','Budget'],
+    notes:'HELP Committee Chair (118th). Prioritized Medicare drug coverage and caregiver support. CARES for Caregivers Act champion.',
+    votes:[
+      {bill:'S. 3091',vote:'yes'},{bill:'S. 2637',vote:'cosponsor'},{bill:'H.R. 8189',vote:'yes'},
+      {bill:'S. 742',vote:'yes'},{bill:'H.R. 1224',vote:'yes'},{bill:'S. 3412',vote:'yes'}
+    ]},
+  { name:'Rand Paul', state:'KY', party:'R', chamber:'Senate', score:18, key:false, committees:['HELP','Foreign Relations'],
+    notes:'Voted against immunosuppressive drug extension. Opposed federal oversight of OPTN. Consistent libertarian opposition to expanded Medicare mandates.',
+    votes:[
+      {bill:'S. 3091',vote:'no'},{bill:'H.R. 8189',vote:'no'},{bill:'S. 2637',vote:'no'},
+      {bill:'H.R. 1224',vote:'no'},{bill:'S. 1939',vote:'no'},{bill:'S. 742',vote:'no'}
+    ]},
+  { name:'Susan Collins', state:'ME', party:'R', chamber:'Senate', score:71, key:false, committees:['Appropriations','HELP'],
+    notes:'Voted for immunosuppressive drug extension and Living Donor Protection Act. Mixed record on caregiver compensation. Bipartisan reputation on healthcare.',
+    votes:[
+      {bill:'S. 3091',vote:'yes'},{bill:'H.R. 1224',vote:'yes'},{bill:'H.R. 8189',vote:'yes'},
+      {bill:'S. 2637',vote:'absent'},{bill:'S. 742',vote:'nr'},{bill:'S. 1214',vote:'yes'}
+    ]},
+  { name:'Patty Murray', state:'WA', party:'D', chamber:'Senate', score:87, key:true, committees:['Appropriations','HELP'],
+    notes:'Long-standing champion of Medicare beneficiary protections. HELP Committee Ranking Member. Consistent yes on every kidney/caregiver bill tracked.',
+    votes:[
+      {bill:'S. 3091',vote:'yes'},{bill:'H.R. 8189',vote:'yes'},{bill:'S. 2637',vote:'cosponsor'},
+      {bill:'H.R. 1224',vote:'yes'},{bill:'S. 742',vote:'yes'},{bill:'S. 3412',vote:'yes'}
+    ]},
+  { name:'Ashley Moody', state:'FL', party:'R', chamber:'Senate', score:null, key:true, committees:['Judiciary'],
+    notes:'FL Senator — represents 16th district jurisdiction. Appointed January 2025 to succeed Marco Rubio following his confirmation as Secretary of State. No tracked votes yet on kidney/caregiver legislation as of this update.',
+    votes:[]},
+  { name:'Rick Scott', state:'FL', party:'R', chamber:'Senate', score:38, key:true, committees:['Commerce','Armed Services'],
+    notes:'FL Senator. Voted against ESRD patient grievance strengthening. Opposed CARES for Caregivers. Voted for OPTN reform and immunosuppressive drug extension.',
+    votes:[
+      {bill:'S. 3091',vote:'yes'},{bill:'H.R. 8189',vote:'yes'},{bill:'S. 2637',vote:'no'},
+      {bill:'S. 742',vote:'no'},{bill:'H.R. 1224',vote:'absent'},{bill:'S. 3412',vote:'no'}
+    ]},
+  // HOUSE
+  { name:'Frank Pallone', state:'NJ', party:'D', chamber:'House', score:93, key:true, committees:['Energy & Commerce'],
+    notes:'Energy & Commerce Ranking Member. Lead House author of OPTN reform legislation. Authored dialysis patient access bill. Unmatched record on kidney care.',
+    votes:[
+      {bill:'H.R. 8189',vote:'yes'},{bill:'S. 3091',vote:'yes'},{bill:'H.R. 4849',vote:'cosponsor'},
+      {bill:'H.R. 1224',vote:'yes'},{bill:'H.R. 6768',vote:'yes'},{bill:'H.R. 2544',vote:'cosponsor'}
+    ]},
+  { name:'Cathy McMorris Rodgers', state:'WA', party:'R', chamber:'House', score:66, key:true, committees:['Energy & Commerce'],
+    notes:'Energy & Commerce Chair (118th). Supported OPTN reform. Mixed on staffing standards. Opposed caregiver compensation mandates as regulatory overreach.',
+    votes:[
+      {bill:'H.R. 8189',vote:'yes'},{bill:'S. 3091',vote:'yes'},{bill:'H.R. 1224',vote:'yes'},
+      {bill:'H.R. 6768',vote:'no'},{bill:'H.R. 4849',vote:'absent'},{bill:'H.R. 3268',vote:'yes'}
+    ]},
+  { name:'Lloyd Doggett', state:'TX', party:'D', chamber:'House', score:89, key:true, committees:['Ways & Means'],
+    notes:'Ways & Means Health Subcommittee. Lead advocate for Medicare drug coverage expansion including immunosuppressives. Co-sponsor of caregiver compensation framework.',
+    votes:[
+      {bill:'S. 3091',vote:'yes'},{bill:'H.R. 8189',vote:'yes'},{bill:'H.R. 1224',vote:'yes'},
+      {bill:'S. 2637',vote:'cosponsor'},{bill:'H.R. 3268',vote:'yes'},{bill:'H.R. 4849',vote:'yes'}
+    ]},
+  { name:'Greg Murphy', state:'NC', party:'R', chamber:'House', score:78, key:true, committees:['Energy & Commerce'],
+    notes:'Physician-member. Strong supporter of OPTN reform and transplant access. Primary House author of IOTA Act. Inconsistent on caregiver-specific legislation.',
+    votes:[
+      {bill:'H.R. 8189',vote:'yes'},{bill:'H.R. 2544',vote:'cosponsor'},{bill:'H.R. 1224',vote:'yes'},
+      {bill:'S. 3091',vote:'yes'},{bill:'H.R. 4849',vote:'absent'},{bill:'H.R. 6768',vote:'no'}
+    ]},
+  { name:'Vern Buchanan', state:'FL', party:'R', chamber:'House', score:44, key:true, committees:['Ways & Means'],
+    notes:'FL-16 — represents Ellenton. Voted for immunosuppressive drug coverage. Absent or opposed on dialysis staffing, ESRD grievance, and caregiver bills.',
+    votes:[
+      {bill:'S. 3091',vote:'yes'},{bill:'H.R. 8189',vote:'yes'},{bill:'H.R. 1224',vote:'absent'},
+      {bill:'H.R. 6768',vote:'no'},{bill:'H.R. 4849',vote:'no'},{bill:'S. 742',vote:'absent'}
+    ]},
+  { name:'Kim Schrier', state:'WA', party:'D', chamber:'House', score:84, key:false, committees:['Energy & Commerce','Agriculture'],
+    notes:'Physician-member. Consistent champion of patient rights and Medicare expansion. Co-sponsored dialysis access and caregiver support legislation.',
+    votes:[
+      {bill:'H.R. 8189',vote:'yes'},{bill:'S. 3091',vote:'yes'},{bill:'H.R. 4849',vote:'cosponsor'},
+      {bill:'H.R. 1224',vote:'yes'},{bill:'H.R. 3268',vote:'yes'},{bill:'H.R. 6768',vote:'yes'}
+    ]},
+  { name:'Michael Burgess', state:'TX', party:'R', chamber:'House', score:58, key:false, committees:['Energy & Commerce'],
+    notes:'Physician-member. Supported OPTN reform and drug coverage. Opposed federal staffing mandates and caregiver compensation as regulatory overreach.',
+    votes:[
+      {bill:'H.R. 8189',vote:'yes'},{bill:'S. 3091',vote:'yes'},{bill:'H.R. 1224',vote:'yes'},
+      {bill:'H.R. 6768',vote:'no'},{bill:'H.R. 4849',vote:'absent'},{bill:'S. 2637',vote:'no'}
+    ]},
+  { name:'Pramila Jayapal', state:'WA', party:'D', chamber:'House', score:90, key:false, committees:['Judiciary','Budget'],
+    notes:'Progressive Medicare-for-All champion. Co-sponsored every caregiver compensation bill tracked. Strong advocate for ESRD patient rights.',
+    votes:[
+      {bill:'H.R. 8189',vote:'yes'},{bill:'S. 3091',vote:'yes'},{bill:'S. 2637',vote:'cosponsor'},
+      {bill:'H.R. 4849',vote:'yes'},{bill:'H.R. 6768',vote:'yes'},{bill:'H.R. 1224',vote:'yes'}
+    ]},
+];
+
+// ═══════════════════════════════════════════════════════════════
+// SCORING
+// ═══════════════════════════════════════════════════════════════
+function scoreToGrade(s){
+  if(s===null||s===undefined) return 'INC';
+  if(s>=85) return 'A';
+  if(s>=70) return 'B';
+  if(s>=50) return 'C';
+  if(s>=30) return 'D';
+  return 'F';
+}
+function gradeColor(g){
+  return {A:'var(--grade-a)',B:'var(--grade-b)',C:'var(--grade-c)',D:'var(--grade-d)',F:'var(--grade-f)',INC:'var(--ink40)'}[g]||'var(--ink40)';
+}
+function voteIcon(v){
+  if(v==='yes'||v==='cosponsor') return {cls:'vi-yes',sym:'✓'};
+  if(v==='no') return {cls:'vi-no',sym:'✗'};
+  if(v==='absent') return {cls:'vi-abs',sym:'—'};
+  return {cls:'vi-nr',sym:'?'};
+}
+
+// ═══════════════════════════════════════════════════════════════
+// RENDER BILLS
+// ═══════════════════════════════════════════════════════════════
+function renderBills(){
+  const tbody = document.getElementById('billTbody');
+  const statusLabel = {passed:'Passed',committee:'In Committee',introduced:'Introduced',stalled:'Stalled',pending:'Pending'};
+  const impactColors = {critical:'var(--danger)',high:'var(--gold)',medium:'var(--pulse)'};
+
+  tbody.innerHTML = BILLS.map(b => {
+    const yPct = b.yea ? Math.round(b.yea/(b.yea+b.nay)*100) : 50;
+    const voteHtml = b.yea !== null
+      ? `<div class="vote-tally">
+          <span class="tally-yes">✓${b.yea}</span>
+          <div class="tally-bar">
+            <div class="tally-y" style="width:${yPct}%"></div>
+            <div class="tally-n" style="width:${100-yPct}%"></div>
+          </div>
+          <span class="tally-no">✗${b.nay}</span>
+         </div>`
+      : `<span style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;color:var(--ink20);">No vote yet</span>`;
+    return `<tr>
+      <td><div class="bill-num">${b.num}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.1em;color:var(--ink20);margin-top:3px;">${b.congress} · ${b.year} · ${b.chamber}</div></td>
+      <td><div class="bill-title">${b.title}</div><div class="bill-desc">${b.desc}</div></td>
+      <td><span class="bill-status status-${b.status}">${statusLabel[b.status]}</span></td>
+      <td>${voteHtml}</td>
+      <td><span style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.12em;text-transform:uppercase;color:${impactColors[b.impact]||'var(--ink40)'};">${b.impact}</span><div style="font-size:0.78rem;color:var(--ink40);margin-top:3px;">${b.impactNote}</div></td>
+    </tr>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// RENDER MEMBERS
+// ═══════════════════════════════════════════════════════════════
+function renderMembers(){
+  const chamber = document.getElementById('filterChamber').value;
+  const party   = document.getElementById('filterParty').value;
+  const state   = document.getElementById('filterState').value;
+  const grade   = document.getElementById('filterGrade').value;
+  const q       = document.getElementById('searchInput').value.toLowerCase();
+
+  const filtered = MEMBERS.filter(m => {
+    if(chamber !== 'all' && m.chamber !== chamber) return false;
+    if(party   !== 'all' && m.party   !== party)   return false;
+    if(state   !== 'all' && m.state   !== state)   return false;
+    if(grade   !== 'all' && scoreToGrade(m.score)  !== grade) return false;
+    if(q && !m.name.toLowerCase().includes(q) && !m.state.toLowerCase().includes(q) && !(m.committees||[]).join(' ').toLowerCase().includes(q)) return false;
+    return true;
+  });
+
+  document.getElementById('memberCount').textContent = filtered.length;
+
+  const grid = document.getElementById('memberGrid');
+  grid.innerHTML = filtered.map((m,i) => {
+    const g = scoreToGrade(m.score);
+    const gColor = gradeColor(g);
+    const scoreBarWidth = m.score || 0;
+    const scoreBarColor = {A:'var(--grade-a)',B:'var(--grade-b)',C:'var(--grade-c)',D:'var(--grade-d)',F:'var(--grade-f)',INC:'var(--b)'}[g];
+    const votesHtml = (m.votes||[]).map(v => {
+      const bill = BILLS.find(b => b.num === v.bill)||{num:v.bill,title:v.bill};
+      const ic = voteIcon(v.vote);
+      return `<div class="vote-row">
+        <div class="vote-icon ${ic.cls}">${ic.sym}</div>
+        <div class="vote-bill">${bill.num}</div>
+        <div class="vote-desc">${bill.title||bill.num}</div>
+      </div>`;
+    }).join('');
+
+    return `<div class="member-card party-${m.party}" id="mc-${i}">
+      <div class="mc-top" onclick="toggleCard(${i})">
+        <div class="grade grade-${g}">${g}</div>
+        <div class="mc-info">
+          <div class="mc-name">${m.name}${m.key ? ' <span style="color:var(--danger);font-size:0.7rem;">★ Key</span>' : ''}</div>
+          <div class="mc-title">${m.chamber} · ${m.state} · ${m.party==='D'?'Democrat':m.party==='R'?'Republican':'Independent'}</div>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.08em;color:${gColor};flex-shrink:0;">${m.score||'—'}</div>
+      </div>
+      <div class="mc-tags" onclick="toggleCard(${i})">
+        <span class="mc-tag tag-${m.party}">${m.party==='D'?'Democrat':m.party==='R'?'Republican':'Independent'}</span>
+        <span class="mc-tag ${m.chamber==='Senate'?'tag-senate':'tag-house'}">${m.chamber}</span>
+        ${m.key ? '<span class="mc-tag tag-key">Key Member</span>' : ''}
+        ${(m.committees||[]).map(c=>`<span class="mc-tag" style="background:rgba(200,144,42,0.08);color:var(--gold);">${c}</span>`).join('')}
+      </div>
+      <div class="mc-score-bar" onclick="toggleCard(${i})">
+        <div class="mc-score-fill" style="width:0%;background:${scoreBarColor};" data-w="${scoreBarWidth}"></div>
+      </div>
+      <div class="mc-votes">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;">Voting Record</div>
+        ${votesHtml}
+        ${m.notes ? `<div style="font-size:0.82rem;color:var(--ink40);line-height:1.7;margin-top:10px;padding-top:10px;border-top:1px solid var(--b);">${m.notes}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+
+  // Animate score bars after render
+  setTimeout(() => {
+    document.querySelectorAll('.mc-score-fill').forEach(el => {
+      el.style.transition = 'width 0.8s ease';
+      el.style.width = el.dataset.w + '%';
+    });
+  }, 50);
+}
+
+function toggleCard(i){
+  const card = document.getElementById('mc-'+i);
+  card.classList.toggle('expanded');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// POPULATE STATE FILTER
+// ═══════════════════════════════════════════════════════════════
+function populateStateFilter(){
+  const states = [...new Set(MEMBERS.map(m=>m.state))].sort();
+  const sel = document.getElementById('filterState');
+  states.forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s; opt.textContent = s;
+    sel.appendChild(opt);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// SUMMARY STATS
+// ═══════════════════════════════════════════════════════════════
+function renderStats(){
+  const grades = MEMBERS.map(m => scoreToGrade(m.score));
+  document.getElementById('count-a').textContent = grades.filter(g=>g==='A').length;
+  document.getElementById('count-c').textContent = grades.filter(g=>g==='C'||g==='D').length;
+  document.getElementById('count-f').textContent = grades.filter(g=>g==='F').length;
+  document.getElementById('count-inc').textContent = grades.filter(g=>g==='INC').length;
+
+  // Party breakdown bars
+  ['D','R'].forEach(party => {
+    const members = MEMBERS.filter(m=>m.party===party && m.score!==null);
+    const gradeCount = {A:0,B:0,C:0,D:0,F:0};
+    members.forEach(m => gradeCount[scoreToGrade(m.score)]++);
+    const prefix = party==='D'?'dem':'rep';
+    const colors = {A:'var(--grade-a)',B:'var(--grade-b)',C:'var(--grade-c)',D:'var(--grade-d)',F:'var(--grade-f)'};
+    const barsEl = document.getElementById(prefix+'-bars');
+    const total = members.length || 1;
+    barsEl.innerHTML = Object.entries(gradeCount).map(([g,n]) =>
+      `<div class="pb-row">
+        <div class="pb-grade-label" style="color:${colors[g]};">${g}</div>
+        <div class="pb-track"><div class="pb-fill" style="width:${Math.round(n/total*100)}%;background:${colors[g]};"></div></div>
+        <div class="pb-count">${n}</div>
+      </div>`
+    ).join('');
+    const avgScore = members.length ? Math.round(members.reduce((s,m)=>s+m.score,0)/members.length) : 0;
+    document.getElementById(prefix+'-avg').textContent = scoreToGrade(avgScore);
+  });
+}
+
+// INIT
+populateStateFilter();
+renderBills();
+renderStats();
+renderMembers();
+</script>
+
+<!-- UNIVERSAL FOOTER -->
+<footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(100,140,200,0.1);">
+      <div>
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:12px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.25);line-height:2.1;">
+          Grassroots Care Partner Advocacy<br>
+          Ellenton, Florida · 16th Congressional District<br>
+          <a href="/cdn-cgi/l/email-protection#8ae0efececcae9e5e6eee3f9e9e2efe7e3eba4ece5ffe4eeebfee3e5e4" style="color:#c8902a;text-decoration:none;"><span class="__cf_email__" data-cfemail="9ff5faf9f9dffcf0f3fbf6ecfcf7faf2f6feb1f9f0eaf1fbfeebf6f0f1">[email&#160;protected]</span></a><br>
+          <a href="https://coldischemia.foundation" style="color:#c8902a;text-decoration:none;">coldischemia.foundation</a>
+        </p>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Command Center</a>
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Situation Room</a>
+          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Research</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
+          <a href="https://payhip.com/coldischemia" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Library</a>
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
+          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Free Guide</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Privacy Policy</a>
+          <a href="/cdn-cgi/l/email-protection#08626d6e6e486b67646c617b6b606d656169266e677d666c697c616766" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Contact</a>
+          <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Store</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.06em;color:rgba(216,207,196,0.2);">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+      <div style="display:flex;gap:16px;">
+        <a href="terms

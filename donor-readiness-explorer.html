@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donor Readiness Discussion Guide — Cold Ischemia Foundation</title>
+<meta name="description" content="An interactive discussion guide for people considering living kidney donation — every topic links to a real resource: NLDAC, Donor Shield, OPTN, and more.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);
+  --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);
+  --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.12);
+  --danger:#c83050;--danger-d:rgba(200,48,80,0.1);
+  --green:#50c878;--green-d:rgba(80,200,120,0.12);
+  --violet:#8050c8;--violet-d:rgba(128,80,200,0.12);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:var(--raised);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+@media(max-width:800px){.nav-links a{display:none;}.nav-links a.active{display:inline;}}
+
+.hero{padding:110px 32px 48px;background:var(--abyss);border-bottom:1px solid var(--b);}
+.hero-inner{max-width:880px;margin:0 auto;}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.34em;text-transform:uppercase;color:var(--pulse);margin-bottom:20px;}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,6vw,64px);line-height:1;color:var(--ink);margin-bottom:20px;}
+.hero-h1 span{color:var(--pulse);}
+.hero-sub{font-size:1.08rem;line-height:1.85;color:var(--ink60);max-width:680px;}
+
+.disclaimer{background:var(--danger-d);border-left:3px solid var(--danger);padding:18px 22px;margin-top:26px;max-width:680px;}
+.disclaimer p{font-size:0.92rem;line-height:1.7;color:var(--ink80);margin:0;}
+.disclaimer strong{color:var(--danger);}
+
+.wrap{max-width:880px;margin:0 auto;padding:0 32px;}
+section{padding:44px 0;}
+
+.progress-bar{position:sticky;top:56px;z-index:100;background:var(--void);border-bottom:1px solid var(--b);padding:14px 32px;}
+.progress-inner{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:16px;}
+.progress-label{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink40);white-space:nowrap;}
+.progress-track{flex:1;height:4px;background:var(--raised);border-radius:2px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--pulse),var(--gold));width:0%;transition:width .3s;}
+.progress-count{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;color:var(--gold-l);white-space:nowrap;}
+
+.cat{margin-bottom:36px;border:1px solid var(--b2);}
+.cat-head{padding:20px 24px;display:flex;align-items:center;gap:14px;background:var(--void);}
+.cat-icon{font-size:1.4rem;}
+.cat-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;color:var(--ink);}
+.cat-sub{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink40);margin-top:2px;}
+.cat.clinical .cat-head{border-top:3px solid var(--pulse);}
+.cat.psychosocial .cat-head{border-top:3px solid var(--violet);}
+.cat.financial .cat-head{border-top:3px solid var(--gold);}
+.cat.logistical .cat-head{border-top:3px solid var(--green);}
+
+.item{padding:18px 24px;border-top:1px solid var(--b);display:flex;gap:14px;align-items:flex-start;background:var(--surf);}
+.item input[type=checkbox]{margin-top:4px;width:16px;height:16px;accent-color:var(--gold);cursor:pointer;flex-shrink:0;}
+.item-body{flex:1;}
+.item-q{font-size:1rem;color:var(--ink80);line-height:1.6;margin-bottom:6px;cursor:pointer;}
+.item-q strong{color:var(--ink);}
+.item-note{font-size:0.88rem;color:var(--ink40);line-height:1.7;margin-bottom:10px;}
+.item-link{display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--pulse);text-decoration:none;padding:6px 12px;border:1px solid var(--pulse-d);border-radius:2px;transition:all .15s;}
+.item-link:hover{background:var(--pulse-d);color:#5fe0e4;}
+
+.summary{background:var(--void);border:1px solid var(--b2);border-top:3px solid var(--gold);padding:30px 28px;margin-top:20px;}
+.summary h2{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;color:var(--gold-l);margin-bottom:14px;}
+.summary p{font-size:0.96rem;color:var(--ink60);line-height:1.8;margin-bottom:16px;}
+#summaryList{list-style:none;}
+#summaryList li{font-size:0.94rem;color:var(--ink80);padding:10px 0;border-top:1px solid var(--b);}
+#summaryList li:first-child{border-top:none;}
+.empty-note{font-size:0.9rem;color:var(--ink40);font-style:italic;}
+.btn-print{display:inline-block;margin-top:16px;background:var(--gold);color:var(--abyss);font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 24px;border:none;border-radius:2px;cursor:pointer;}
+.btn-print:hover{background:var(--gold-l);}
+
+footer{background:var(--abyss);border-top:1px solid var(--b);padding:40px 32px 24px;text-align:center;}
+footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.05em;color:var(--ink20);}
+
+@media print{
+  nav,.progress-bar,.btn-print,footer{display:none;}
+  body{background:#fff;color:#000;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="donor-readiness-explorer.html" class="active">Donor Readiness Guide</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Interactive Discussion Guide</div>
+    <h1 class="hero-h1">Questions worth asking <span>before you donate.</span></h1>
+    <p class="hero-sub">Based on Project Donor-Flow's research into why living donors are lost during evaluation, this guide walks through the real categories that matter — clinical, psychosocial, financial, logistical — with a real, working link to a genuine resource for each one.</p>
+    <div class="disclaimer">
+      <p><strong>This is an educational discussion guide, not a clinical or diagnostic tool.</strong> It does not assess your eligibility, predict graft outcomes, or replace evaluation by a transplant center. Check items to build a list of questions and resources to bring to your own transplant team.</p>
+    </div>
+  </div>
+</header>
+
+<div class="progress-bar">
+  <div class="progress-inner">
+    <span class="progress-label">Topics Selected</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <span class="progress-count" id="progressCount">0 / 16</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+
+    <div class="cat clinical">
+      <div class="cat-head">
+        <span class="cat-icon">🩺</span>
+        <div><div class="cat-title">Clinical Factors</div><div class="cat-sub">What the medical evaluation actually covers</div></div>
+      </div>
+      <label class="item"><input type="checkbox" data-label="Blood type and tissue compatibility with the recipient">
+        <div class="item-body"><div class="item-q">How is <strong>compatibility</strong> actually determined, and what happens if I'm not a match?</div>
+        <div class="item-note">Paired exchange programs exist specifically for incompatible donor-recipient pairs.</div>
+        <a href="https://www.kidneyregistry.org/for-donors/" target="_blank" rel="noopener" class="item-link">National Kidney Registry — Paired Exchange →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="Long-term kidney function data for living donors">
+        <div class="item-body"><div class="item-q">What does the <strong>long-term outcome data</strong> actually show for living kidney donors?</div>
+        <div class="item-note">Average remaining kidney function and lifespan outcomes are tracked and published.</div>
+        <a href="https://www.hrsa.gov/optn/patients/organ-donation/living-donation" target="_blank" rel="noopener" class="item-link">OPTN — Living Donation Information →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="Recovery timeline and physical restrictions after surgery">
+        <div class="item-body"><div class="item-q">What's the <strong>real recovery timeline</strong> — not the optimistic version?</div>
+        <div class="item-note">Typical hospital stay, flight restrictions, and return-to-work windows vary by job type.</div>
+        <a href="https://www.kidneyregistry.org/for-donors/faq-for-donors/" target="_blank" rel="noopener" class="item-link">NKR — Donor Recovery FAQ →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="Independent donor advocate requirement">
+        <div class="item-body"><div class="item-q">Do I get my <strong>own advocate</strong>, separate from the recipient's care team?</div>
+        <div class="item-note">Transplant centers are required to provide an Independent Living Donor Advocate (ILDA).</div>
+        <a href="https://www.hrsa.gov/optn/patients/organ-donation/living-donation/living-donation-faqs" target="_blank" rel="noopener" class="item-link">OPTN — Living Donation FAQs →</a></div>
+      </label>
+    </div>
+
+    <div class="cat psychosocial">
+      <div class="cat-head">
+        <span class="cat-icon">🧠</span>
+        <div><div class="cat-title">Psychosocial Factors</div><div class="cat-sub">The screening that happens later than it should</div></div>
+      </div>
+      <label class="item"><input type="checkbox" data-label="Screening for coercion or pressure to donate">
+        <div class="item-body"><div class="item-q">How does the center screen for <strong>pressure or coercion</strong> to donate?</div>
+        <div class="item-note">A real psychosocial evaluation should give you private, confidential space to say no.</div>
+        <a href="https://www.myast.org/caregiver-toolkit/general-information-about-living-donation" target="_blank" rel="noopener" class="item-link">American Society of Transplantation — Living Donation →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="Emotional support and mental health resources for donors">
+        <div class="item-body"><div class="item-q">What <strong>mental health support</strong> exists specifically for donors, not just recipients?</div>
+        <div class="item-note">Donor-specific peer support and counseling resources exist but aren't always offered proactively.</div>
+        <a href="https://www.kidney.org/kidney-topics/living-donation" target="_blank" rel="noopener" class="item-link">National Kidney Foundation — Living Donation →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="What happens to the donor-recipient relationship if complications occur">
+        <div class="item-body"><div class="item-q">What happens to my relationship with the recipient if the <strong>transplant fails</strong>?</div>
+        <div class="item-note">This is rarely discussed before donation but affects a meaningful share of donor-recipient pairs.</div>
+        <a href="https://www.myast.org/caregiver-toolkit" target="_blank" rel="noopener" class="item-link">AST Caregiver Toolkit →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="Donor mentor programs connecting with past living donors">
+        <div class="item-body"><div class="item-q">Can I talk to <strong>someone who's already donated</strong> before I decide?</div>
+        <div class="item-note">Peer donor mentor programs connect prospective donors with people who've been through it.</div>
+        <a href="https://www.kidneyregistry.org/for-donors/donor-resources/" target="_blank" rel="noopener" class="item-link">NKR — Donor Mentor Program →</a></div>
+      </label>
+    </div>
+
+    <div class="cat financial">
+      <div class="cat-head">
+        <span class="cat-icon">💰</span>
+        <div><div class="cat-title">Financial Factors</div><div class="cat-sub">The largest documented barrier to completing donation</div></div>
+      </div>
+      <label class="item"><input type="checkbox" data-label="Reimbursement for travel, lodging, and lost wages during donation">
+        <div class="item-body"><div class="item-q">Can I get <strong>travel, lodging, and lost wages</strong> reimbursed?</div>
+        <div class="item-note">Two major federal/nonprofit programs cover different pieces of this — eligibility differs between them.</div>
+        <a href="https://www.livingdonorassistance.org/" target="_blank" rel="noopener" class="item-link">National Living Donor Assistance Center (NLDAC) →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="Donor Shield income-independent lost wage and complication coverage">
+        <div class="item-body"><div class="item-q">Is there coverage that <strong>doesn't depend on income</strong> the way NLDAC does?</div>
+        <div class="item-note">Donor Shield covers lost wages and complications without an income cap, for donors at participating centers.</div>
+        <a href="https://www.donorshield.com/" target="_blank" rel="noopener" class="item-link">National Kidney Registry — Donor Shield →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="Life and disability insurance protections for living donors">
+        <div class="item-body"><div class="item-q">Can donating a kidney affect my <strong>future life or disability insurance</strong>?</div>
+        <div class="item-note">Some donor protection programs include supplemental life and disability coverage tied to the donation itself.</div>
+        <a href="https://www.kidneyregistry.org/for-donors/i-want-to-learn-more-about-living-kidney-donation/donor-shield/" target="_blank" rel="noopener" class="item-link">NKR — Donor Shield Protections →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="Legislative status of the Living Donor Protection Act">
+        <div class="item-body"><div class="item-q">What's the actual status of the <strong>Living Donor Protection Act</strong> in Congress?</div>
+        <div class="item-note">First introduced in 2016, it addresses job and insurance protection gaps for living donors nationally.</div>
+        <a href="https://www.congress.gov/search?q=%7B%22source%22%3A%22legislation%22%2C%22search%22%3A%22Living%20Donor%20Protection%20Act%22%7D" target="_blank" rel="noopener" class="item-link">Congress.gov — Bill Tracker →</a></div>
+      </label>
+    </div>
+
+    <div class="cat logistical">
+      <div class="cat-head">
+        <span class="cat-icon">🗺️</span>
+        <div><div class="cat-title">Logistical Factors</div><div class="cat-sub">The friction that causes evaluation fatigue</div></div>
+      </div>
+      <label class="item"><input type="checkbox" data-label="Finding a transplant center that performs living donor surgery">
+        <div class="item-body"><div class="item-q">How do I find a <strong>transplant center</strong> that actually performs living donor surgery near me?</div>
+        <div class="item-note">Not every transplant center runs an active living donor program — this varies by region.</div>
+        <a href="https://optn.transplant.hrsa.gov/patients/by-organ/" target="_blank" rel="noopener" class="item-link">OPTN — Organ Donation Overview by Organ Type →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="Timeline from first inquiry to surgical evaluation">
+        <div class="item-body"><div class="item-q">Realistically, how long does it take from <strong>first inquiry to surgery</strong>?</div>
+        <div class="item-note">Evaluation timelines vary widely by center and are one of the top reasons donors withdraw.</div>
+        <a href="https://www.kidney.org/kidney-topics/living-kidney-donor-evaluation" target="_blank" rel="noopener" class="item-link">National Kidney Foundation — The Donation Process →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="Employer job protection while undergoing evaluation and surgery">
+        <div class="item-body"><div class="item-q">Is my <strong>job protected</strong> while I go through evaluation and recovery?</div>
+        <div class="item-note">Federal and state job-protection rules for organ donors vary — this is a real gap in some states.</div>
+        <a href="https://www.dol.gov/agencies/whd/fmla" target="_blank" rel="noopener" class="item-link">U.S. Dept. of Labor — FMLA Overview →</a></div>
+      </label>
+      <label class="item"><input type="checkbox" data-label="Long-term follow-up care requirements after donation">
+        <div class="item-body"><div class="item-q">What <strong>follow-up care</strong> is required after I've donated, and for how long?</div>
+        <div class="item-note">OPTN policy requires structured follow-up at set intervals for at least two years post-donation.</div>
+        <a href="https://www.hrsa.gov/optn/patients/organ-donation/living-donation/living-donation-faqs" target="_blank" rel="noopener" class="item-link">OPTN — Post-Donation Follow-Up →</a></div>
+      </label>
+    </div>
+
+    <div class="summary">
+      <h2>Your Discussion List</h2>
+      <p>Everything you've checked above, in one place — bring this to your transplant coordinator or independent donor advocate.</p>
+      <ul id="summaryList"><li class="empty-note">Nothing selected yet. Check any question above to add it here.</li></ul>
+      <button class="btn-print" onclick="window.print()">Print This List →</button>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>Cold Ischemia Foundation &middot; Ellenton, Florida &middot; This is an educational discussion guide, not medical, legal, or clinical advice. It does not assess donor eligibility or predict transplant outcomes. Always consult your transplant center and independent donor advocate directly.</p>
+</footer>
+
+<script>
+const checkboxes = document.querySelectorAll('.item input[type=checkbox]');
+const summaryList = document.getElementById('summaryList');
+const progressFill = document.getElementById('progressFill');
+const progressCount = document.getElementById('progressCount');
+const total = checkboxes.length;
+
+function render(){
+  const checked = Array.from(checkboxes).filter(c => c.checked);
+  progressFill.style.width = (checked.length/total*100) + '%';
+  progressCount.textContent = checked.length + ' / ' + total;
+  if(checked.length === 0){
+    summaryList.innerHTML = '<li class="empty-note">Nothing selected yet. Check any question above to add it here.</li>';
+  } else {
+    summaryList.innerHTML = checked.map(c => '<li>' + c.dataset.label + '</li>').join('');
+  }
+}
+checkboxes.forEach(c => c.addEventListener('change', render));
+render();
+</script>
+
+</body>
+</html>

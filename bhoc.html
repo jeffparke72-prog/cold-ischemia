@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BHOC — The Technology Nobody's Explaining to Patients | Cold Ischemia Foundation</title>
+<meta name="description" content="Biologic Hemoglobin Oxygen Carrier technology could change how long an organ survives between donor and recipient. Almost no patient has heard of it.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);
+  --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);
+  --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.12);
+  --danger:#c83050;--danger-d:rgba(200,48,80,0.1);
+  --green:#50c878;--green-d:rgba(80,200,120,0.1);
+  --violet:#8050c8;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:var(--raised);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-actions{display:flex;align-items:center;gap:8px;}
+.nav-btn{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;padding:7px 16px;border-radius:2px;border:1px solid var(--b);color:var(--ink40);text-decoration:none;transition:all 0.2s;}
+.nav-btn:hover{border-color:var(--gold-d);color:var(--gold);}
+.nav-btn-gold{background:var(--gold);color:var(--abyss)!important;border-color:var(--gold)!important;}
+.nav-btn-gold:hover{background:var(--gold-l)!important;}
+@media(max-width:900px){.nav-links a:not(.nav-btn){display:none;}}
+
+.hero{padding:120px 40px 60px;background:var(--abyss);border-bottom:1px solid var(--b);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12));}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2;}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--pulse);margin-bottom:24px;display:flex;align-items:center;gap:14px;}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--pulse);}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(42px,7vw,84px);letter-spacing:0.02em;line-height:0.98;color:var(--ink);margin-bottom:24px;}
+.hero-h1 span{color:var(--pulse);}
+.hero-sub{font-family:'Crimson Pro',serif;font-size:1.18rem;line-height:1.85;color:var(--ink60);max-width:680px;}
+.hero-sub strong{color:var(--ink80);font-weight:600;}
+
+.wrap{max-width:900px;margin:0 auto;padding:0 40px;}
+section{padding:60px 0;}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--ink);margin-bottom:20px;line-height:1.25;max-width:760px;}
+h2 strong{font-weight:600;font-style:normal;color:var(--pulse);}
+p{font-size:1.03rem;line-height:1.9;color:var(--ink80);margin-bottom:1.1em;max-width:720px;}
+p strong{color:var(--ink);}
+.divider{height:1px;background:var(--b);margin:0;}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--b);margin-top:32px;}
+@media(max-width:800px){.grid3{grid-template-columns:1fr;}}
+.gc{background:var(--void);padding:26px 24px;}
+.gc .gn{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--pulse);margin-bottom:10px;}
+.gc h3{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.gc p{font-size:0.92rem;color:var(--ink60);margin:0;max-width:none;}
+
+.callout{border-left:3px solid var(--pulse);background:var(--pulse-d);padding:22px 26px;margin:28px 0;}
+.callout p{font-family:'Fraunces',serif;font-style:italic;font-size:1.12rem;color:var(--ink);margin:0;line-height:1.6;max-width:none;}
+
+.note{border-left:2px solid var(--gold);padding-left:20px;margin:24px 0;}
+.note p{color:var(--ink60);font-size:0.95rem;margin:0;max-width:none;}
+
+footer{background:var(--abyss);border-top:1px solid var(--b);padding:48px 40px 28px;text-align:center;}
+footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.05em;color:var(--ink20);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="transplant-realities.html">What Nobody Tells You</a>
+    <a href="bhoc.html" class="active">BHOC</a>
+    <a href="accountability.html">Accountability</a>
+    <a href="donate.html">Donate</a>
+  </div>
+  <div class="nav-actions">
+    <a href="donate.html" class="nav-btn nav-btn-gold">Donate Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Emerging Technology &mdash; Patient Conversation</div>
+    <h1 class="hero-h1">The Organ Is Only as Good <span>as the Clock It Beat.</span></h1>
+    <p class="hero-sub">Every organ that travels from donor to recipient is racing a clock the moment blood flow stops. <strong>Biologic Hemoglobin Oxygen Carrier (BHOC) technology is one of the more promising attempts to slow that clock</strong> &mdash; and almost no patient or care partner has ever heard of it.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="lbl">What It Actually Is</div>
+    <h2>Not a blood transfusion. <strong>Not a drug.</strong> A way to keep tissue oxygenated when there's no circulation to do it.</h2>
+    <p>Cold ischemia &mdash; the time an organ spends without blood flow between recovery and transplant &mdash; is the single most damaging window in the entire transplant process, and it's also the namesake of this foundation for a reason. The longer that window stretches, the more cellular damage accumulates before the organ is ever reconnected to a body.</p>
+    <p>BHOC technology is built around synthetic or modified hemoglobin-based carriers designed to deliver oxygen to tissue independent of a beating heart or intact vasculature. In plain terms: it's a way to keep an organ's cells supplied with oxygen during the exact window where they'd otherwise be starving for it. That's a fundamentally different tool than anything currently standard in organ preservation, which mostly relies on cold storage alone to slow metabolic damage rather than actively interrupting it.</p>
+    <div class="callout">
+      <p>Cold storage slows the damage. Oxygen-carrying technology is one of the few approaches trying to stop it from happening at all.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="lbl">Why Patients Never Hear About This</div>
+    <h2>It lives in surgical journals and industry panels &mdash; <strong>never in the room with the patient.</strong></h2>
+    <p>This is not a secret. It's published, presented, and discussed &mdash; but almost exclusively among transplant surgeons, organ preservation researchers, and the companies developing the technology. It essentially never makes it into a conversation with the person actually waiting for an organ, or the care partner who's about to spend the next year managing their recovery.</p>
+    <p>That gap matters for a simple reason: technology that could shorten viable preservation windows, expand the geographic range organs can travel, and reduce delayed graft function isn't just a surgical curiosity. It's directly relevant to whether a specific patient in a specific region gets offered a specific organ at all. Patients deserve to understand what's being worked on to solve the problem that keeps them waiting &mdash; not just be told the waitlist is long.</p>
+    <div class="grid3">
+      <div class="gc">
+        <div class="gn">For Patients</div>
+        <h3>What it could mean</h3>
+        <p>Organs preserved longer and better could mean a wider pool of viable offers reaching people who are currently ruled out by distance or timing alone.</p>
+      </div>
+      <div class="gc">
+        <div class="gn">For Care Partners</div>
+        <h3>Why it's worth tracking</h3>
+        <p>Delayed graft function &mdash; a major driver of a harder first weeks post-transplant &mdash; is closely tied to how much damage an organ sustained before transplant. Better preservation is a care partner's problem too.</p>
+      </div>
+      <div class="gc">
+        <div class="gn">For the System</div>
+        <h3>Why it's stuck in the lab</h3>
+        <p>Novel preservation technology faces a slow, expensive, heavily regulated path to clinical adoption &mdash; and no organized patient constituency is currently pushing for it to move faster.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="lbl">Where CIF Fits</div>
+    <h2>We're not the company building it. <strong>We're the ones making sure patients know it exists.</strong></h2>
+    <p>Cold Ischemia Foundation is engaging directly with BHOC researchers and developers &mdash; not to promote a product, but to translate what this technology is, what it isn't, and why it deserves a place in the conversation patients and care partners are having about the future of transplant medicine. That means plain-language explanation instead of a surgical journal abstract, and outreach to the regulatory and clinical bodies who decide whether emerging preservation technology reaches the people waiting for it.</p>
+    <div class="note">
+      <p>This is early-stage, evolving technology. It is not yet standard of care, and no patient should expect it to change their current transplant timeline. The goal here is awareness and informed conversation &mdash; not premature promises.</p>
+    </div>
+    <p>If preservation technology is going to move faster from lab to standard practice, it will be because the people who actually have something at stake &mdash; patients, care partners, living donors &mdash; understood it well enough to ask their transplant centers about it. That's the conversation this page exists to start.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Cold Ischemia Foundation &middot; Ellenton, Florida &middot; Zero pharmaceutical, dialysis, or insurance industry funding. This page is educational, not a promise of clinical availability or outcomes.</p>
+</footer>
+
+</body>
+</html>

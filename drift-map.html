@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Drift Map · Tool 02 · Survival Guide for Care Partners</title>
+<meta name="description" content="An interactive environment scanner for detecting emerging volatility in caregiving homes. Based on crisis analysis and process improvement frameworks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+:root{
+  --bg:#030509;--bg2:#07101c;--bg3:#0a1628;--bg4:#0f1e38;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);
+  --ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);
+  --ink20:rgba(216,207,196,0.2);
+  --gold:#c8902a;--gl:#e8b84a;--gd:rgba(200,144,42,0.1);
+  --cold:#2ac4c8;--cold-d:rgba(42,196,200,0.08);
+  --red:#c83050;--green:#50c878;--amber:#e8900a;
+  --signal-blue:#2ac4c8;
+  --signal-red:#c83050;
+}
+body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-thumb{background:var(--bg4);}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(100,140,200,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(100,140,200,0.022) 1px,transparent 1px);background-size:56px 56px;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(14px);border-bottom:0.5px solid var(--b);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink40);text-decoration:none;}
+.nav-links{display:flex;gap:8px;align-items:center;}
+.nav-back{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--ink40);padding:6px 14px;border:0.5px solid var(--b);border-radius:2px;transition:all .15s;}
+.nav-back:hover{color:var(--ink80);border-color:var(--b2);}
+.nav-cif{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:6px 14px;border-radius:2px;background:var(--gd);color:var(--gold);border:0.5px solid rgba(200,144,42,0.3);transition:all .15s;}
+.nav-cif:hover{background:rgba(200,144,42,0.18);}
+@media(max-width:640px){nav{padding:0 16px;}.nb{display:none;}}
+
+/* HERO — drift map image full width */
+.hero{
+  position:relative;z-index:1;
+  height:70vh;min-height:480px;
+  overflow:hidden;border-bottom:0.5px solid var(--b);
+}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom, rgba(3,5,9,0.3) 0%, rgba(3,5,9,0.1) 40%, rgba(3,5,9,0.85) 85%, rgba(3,5,9,1) 100%);
+}
+.hero-text{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:0 60px 44px;
+}
+@media(max-width:700px){.hero-text{padding:0 24px 32px;}}
+.ph-ey{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.ph-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.88;color:var(--ink);margin-bottom:10px;}
+.ph-h1 span{color:var(--gold);}
+.ph-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.9rem,1.3vw,1.05rem);line-height:1.75;color:var(--ink60);border-left:2px solid var(--gold);padding-left:14px;max-width:580px;}
+
+/* INTRO */
+.intro{position:relative;z-index:1;background:var(--bg2);border-bottom:0.5px solid var(--b);padding:48px 60px;}
+@media(max-width:700px){.intro{padding:36px 22px;}}
+.intro-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+@media(max-width:800px){.intro-grid{grid-template-columns:1fr;gap:24px;}}
+.ey{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.intro-body{font-size:.97rem;line-height:1.92;color:var(--ink60);}
+.intro-body strong{color:var(--ink80);}
+.intro-body p{margin-bottom:14px;}
+.intro-body p:last-child{margin-bottom:0;}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.stat{background:var(--bg3);border:0.5px solid var(--b);border-radius:4px;padding:16px;}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;margin-bottom:5px;}
+.stat-n.blue{color:var(--cold);}
+.stat-n.red{color:var(--red);}
+.stat-n.gold{color:var(--gold);}
+.stat-n.green{color:var(--green);}
+.stat-l{font-size:.8rem;line-height:1.65;color:var(--ink60);}
+
+/* SCANNER SECTION */
+.scanner{position:relative;z-index:1;padding:60px 60px;border-bottom:0.5px solid var(--b);}
+@media(max-width:700px){.scanner{padding:44px 22px;}}
+.sw{max-width:1100px;margin:0 auto;}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;color:var(--ink);margin-bottom:14px;line-height:1.1;}
+h2 em{font-style:italic;color:var(--gold);}
+.bt{font-size:.97rem;line-height:1.92;color:var(--ink60);max-width:680px;margin-bottom:36px;}
+.bt strong{color:var(--ink80);}
+
+/* SCANNER BODY — three column */
+.scan-body{display:grid;grid-template-columns:220px 1fr 280px;gap:2px;background:var(--b);min-height:600px;}
+@media(max-width:1060px){.scan-body{grid-template-columns:1fr;}}
+
+/* LEFT: signal list */
+.sig-col{background:var(--bg2);padding:24px 20px;}
+.sig-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:0.5px solid var(--b);}
+.sig-item{
+  padding:12px 14px;border-radius:4px;margin-bottom:6px;
+  cursor:pointer;border:0.5px solid var(--b);
+  background:var(--bg3);transition:all .15s;
+}
+.sig-item:hover{border-color:var(--b2);}
+.sig-item.on{border:2px solid var(--cold);background:rgba(42,196,200,0.07);}
+.sig-item.warn{border-color:rgba(200,48,80,0.4);background:rgba(200,48,80,0.06);}
+.si-name{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--ink60);margin-bottom:3px;}
+.sig-item.on .si-name{color:var(--cold);}
+.sig-item.warn .si-name{color:var(--red);}
+.si-desc{font-size:.78rem;line-height:1.45;color:var(--ink40);}
+.sig-item.on .si-desc{color:rgba(42,196,200,0.6);}
+.sig-item.warn .si-desc{color:rgba(200,48,80,0.5);}
+
+/* CENTRE: detail + drift visual */
+.centre-col{background:var(--bg);padding:28px 28px;}
+@media(max-width:700px){.centre-col{padding:22px 18px;}}
+
+.detail-empty{display:flex;align-items:center;justify-content:center;height:280px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--ink20);}
+
+/* DRIFT VISUAL */
+.drift-visual{margin-bottom:28px;}
+.dv-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--ink40);margin-bottom:12px;}
+.dv-track{position:relative;height:24px;background:var(--bg3);border-radius:3px;overflow:hidden;border:0.5px solid var(--b);}
+.dv-fill{height:100%;border-radius:3px;transition:width .5s ease,background .5s ease;background:var(--cold);}
+.dv-zones{display:flex;margin-top:5px;}
+.dv-zone{flex:1;font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:1px;text-transform:uppercase;text-align:center;padding-top:3px;}
+.dv-z1{color:#50c878;}
+.dv-z2{color:var(--gold);}
+.dv-z3{color:var(--red);}
+
+/* SIGNAL DETAIL */
+.sd-hdr{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:0.5px solid var(--b);}
+.sd-left .sd-cat{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.sd-left .sd-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--ink);line-height:1.1;}
+.sd-badge{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:2px;white-space:nowrap;flex-shrink:0;margin-top:3px;}
+.b-subtle{background:rgba(42,196,200,0.1);color:var(--cold);border:0.5px solid rgba(42,196,200,0.25);}
+.b-warn{background:rgba(200,48,80,0.1);color:var(--red);border:0.5px solid rgba(200,48,80,0.25);}
+.b-crit{background:rgba(200,48,80,0.18);color:#ff6080;border:0.5px solid rgba(200,48,80,0.4);}
+
+.sd-what{font-size:.93rem;line-height:1.88;color:var(--ink60);margin-bottom:18px;}
+.sd-what b{color:var(--ink80);font-weight:500;}
+.sd-what em{color:var(--gold);font-style:normal;}
+
+.sd-sec-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--ink40);margin-bottom:8px;}
+.indicator{background:var(--bg3);border-left:2px solid var(--cold);border-radius:0 4px 4px 0;padding:10px 14px;margin-bottom:7px;font-size:.88rem;line-height:1.6;color:var(--ink60);}
+.indicator.warn{border-color:var(--red);}
+.indicator strong{color:var(--ink80);font-weight:500;}
+
+.question-box{background:var(--bg3);border:0.5px solid var(--b2);border-radius:4px;padding:14px 16px;margin-top:16px;}
+.qb-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.q-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;}
+.q-item:last-child{margin-bottom:0;}
+.q-check{flex-shrink:0;margin-top:2px;}
+.q-check input[type=checkbox]{accent-color:var(--gold);width:14px;height:14px;cursor:pointer;}
+.q-text{font-size:.85rem;line-height:1.65;color:var(--ink60);}
+.q-answered{color:var(--ink80);}
+
+/* RIGHT: drift score */
+.score-col{background:var(--bg2);padding:24px 20px;}
+.sc-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:0.5px solid var(--b);}
+
+.score-display{text-align:center;padding:20px 0;border-bottom:0.5px solid var(--b);margin-bottom:18px;}
+.score-n{font-family:'Bebas Neue',sans-serif;font-size:4rem;line-height:1;margin-bottom:4px;transition:color .4s;}
+.score-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;}
+.score-sub{font-size:.8rem;color:var(--ink40);margin-top:6px;line-height:1.5;}
+
+.var-section{margin-bottom:18px;}
+.var-title{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.var-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.var-name{font-size:.8rem;color:var(--ink60);flex:1;}
+.var-bar-wrap{flex:1;height:4px;background:var(--b2);border-radius:2px;margin:0 10px;}
+.var-bar{height:100%;border-radius:2px;background:var(--cold);transition:width .4s ease;}
+.var-val{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink40);min-width:24px;text-align:right;}
+
+.interpretation{border-top:0.5px solid var(--b);padding-top:18px;}
+.interp-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.interp-text{font-size:.82rem;line-height:1.75;color:var(--ink60);border-left:2px solid var(--b);padding-left:12px;}
+.reset-btn{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink40);background:none;border:0.5px solid var(--b);padding:6px 12px;border-radius:2px;cursor:pointer;width:100%;margin-top:14px;transition:all .15s;}
+.reset-btn:hover{color:var(--ink80);border-color:var(--b2);}
+
+/* FRAMEWORKS SECTION */
+.frameworks{position:relative;z-index:1;background:var(--bg2);border-top:0.5px solid var(--b);border-bottom:0.5px solid var(--b);padding:60px 60px;}
+@media(max-width:700px){.frameworks{padding:44px 22px;}}
+.fw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px;background:var(--b);margin-top:32px;}
+.fw-card{background:var(--bg2);padding:26px 22px;}
+.fw-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:rgba(200,144,42,0.12);line-height:1;margin-bottom:8px;}
+.fw-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.fw-body{font-size:.85rem;line-height:1.78;color:var(--ink60);}
+
+/* FOOTER */
+footer{position:relative;z-index:1;background:var(--bg);border-top:0.5px solid var(--b);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+@media(max-width:700px){footer{padding:22px 20px;}}
+.ftl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--ink40);line-height:1.9;}
+.ftr{display:flex;gap:8px;flex-wrap:wrap;}
+.ftr a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;}
+.ft-b{color:var(--ink40);border:0.5px solid var(--b);transition:all .15s;}
+.ft-b:hover{color:var(--ink80);}
+.ft-h{background:var(--gd);color:var(--gold);border:0.5px solid rgba(200,144,42,0.3);transition:all .15s;}
+.ft-h:hover{background:rgba(200,144,42,0.18);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nb">Survival Guide Tools</a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-back">← All Tools</a>
+    <a href="https://coldischemia.foundation" target="_blank" rel="noopener" class="nav-cif">coldischemia.foundation &#8599;</a>
+  </div>
+</nav>
+
+<!-- HERO: drift map image -->
+<section class="hero">
+  <img src="drift-map.png" alt="Environmental Drift Map — Signs of Emerging Volatility in Caregiving Homes">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <div class="ph-ey">Tool 02 · The Drift Map · Survival Guide for Care Partners</div>
+    <h1 class="ph-h1">THE DRIFT <span>MAP</span></h1>
+    <p class="ph-sub">Reading the room before it breaks. An interactive environment scanner for detecting emerging volatility — using signal, not spectacle.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="intro-grid">
+    <div>
+      <div class="ey">What this tool does</div>
+      <div class="intro-body">
+        <p>Every crisis has a pre-incident phase. Collapse rarely arrives without antecedents. <strong>We notice rupture. We miss drift.</strong> We remember the slammed door, the accusation, the threat after midnight. What we fail to register — especially when exhausted — are the smaller deviations that built the path toward that moment.</p>
+        <p>This tool applies crisis analysis and process improvement frameworks to the caregiving home. It helps you move from intuitive unease to <strong>disciplined observation</strong> — detecting pattern before it becomes event.</p>
+        <p>Work through the signal checklist on the left. The scanner tracks three core variables — tempo, permeability, and recoverability — and builds a drift score. It does not diagnose the relationship. It makes the environment visible as a system.</p>
+      </div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><div class="stat-n blue">Tempo</div><div class="stat-l">How much lead time exists between disappointment and blowup? Has the warning interval narrowed?</div></div>
+      <div class="stat"><div class="stat-n red">Permeability</div><div class="stat-l">Are emotional storms staying connected to what triggered them — or spreading into unrelated domains?</div></div>
+      <div class="stat"><div class="stat-n gold">Recoverability</div><div class="stat-l">After strain, can the environment return to workable function? Does tension settle — or linger as dread?</div></div>
+      <div class="stat"><div class="stat-n green">Signal</div><div class="stat-l">The loudest moment is not always the most diagnostic. Consistent quiet patterns predict trajectory better than dramatic incidents.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCANNER -->
+<section class="scanner">
+  <div class="sw">
+    <div class="ey">Environment scanner</div>
+    <h2>Read the signals.<br><em>Map the drift.</em></h2>
+    <p class="bt">Select each signal you recognise in your current environment. The scanner tracks how your environment scores across the three key variables and builds an overall drift assessment. <strong>Select signals honestly — not optimistically.</strong></p>
+
+    <div class="scan-body">
+
+      <!-- LEFT: signal list -->
+      <div class="sig-col">
+        <div class="sig-label">Subtle cues — select all you recognise</div>
+
+        <div class="sig-item" onclick="select_signal(0)" id="s0" data-tempo="3" data-perm="1" data-rec="1">
+          <div class="si-name">Narrowing reaction time</div>
+          <div class="si-desc">Less time between trigger and blowup than three months ago</div>
+        </div>
+        <div class="sig-item" onclick="select_signal(1)" id="s1" data-tempo="1" data-perm="3" data-rec="1">
+          <div class="si-name">Narrative drift</div>
+          <div class="si-desc">Explanations, accusations, or blame shift depending on mood or audience</div>
+        </div>
+        <div class="sig-item" onclick="select_signal(2)" id="s2" data-tempo="1" data-perm="3" data-rec="2">
+          <div class="si-name">Contaminated conversation</div>
+          <div class="si-desc">Practical topics become emotionally loaded tests of loyalty</div>
+        </div>
+        <div class="sig-item" onclick="select_signal(3)" id="s3" data-tempo="2" data-perm="1" data-rec="1">
+          <div class="si-name">Bodily threat awareness</div>
+          <div class="si-desc">Stomach knot at a certain hour, constriction before entering the room</div>
+        </div>
+        <div class="sig-item" onclick="select_signal(4)" id="s4" data-tempo="1" data-perm="2" data-rec="3">
+          <div class="si-name">Isolation from common reality</div>
+          <div class="si-desc">You are the only one defending a shared account of what happened</div>
+        </div>
+        <div class="sig-item" onclick="select_signal(5)" id="s5" data-tempo="2" data-perm="2" data-rec="1">
+          <div class="si-name">Reduced judgment clarity</div>
+          <div class="si-desc">More reactive, less clear — decisions feel harder than they used to</div>
+        </div>
+        <div class="sig-item" onclick="select_signal(6)" id="s6" data-tempo="1" data-perm="1" data-rec="3">
+          <div class="si-name">Anticipatory compliance</div>
+          <div class="si-desc">Language is rationed, timed, or withheld to reduce risk</div>
+        </div>
+        <div class="sig-item" onclick="select_signal(7)" id="s7" data-tempo="2" data-perm="1" data-rec="2">
+          <div class="si-name">Fear-based timing</div>
+          <div class="si-desc">Information delivery is managed tactically around emotional safety</div>
+        </div>
+        <div class="sig-item" onclick="select_signal(8)" id="s8" data-tempo="1" data-perm="2" data-rec="3">
+          <div class="si-name">Escalating relational load</div>
+          <div class="si-desc">Repetition of difficult patterns is eroding psychological agility</div>
+        </div>
+        <div class="sig-item" onclick="select_signal(9)" id="s9" data-tempo="3" data-perm="2" data-rec="1">
+          <div class="si-name">Shrinking repair window</div>
+          <div class="si-desc">After conflict, the return to ordinary conversation takes longer</div>
+        </div>
+        <div class="sig-item" onclick="select_signal(10)" id="s10" data-tempo="1" data-perm="3" data-rec="2">
+          <div class="si-name">High permeability events</div>
+          <div class="si-desc">One topic becomes a vessel for every other grievance simultaneously</div>
+        </div>
+        <div class="sig-item" onclick="select_signal(11)" id="s11" data-tempo="2" data-perm="1" data-rec="3">
+          <div class="si-name">Dread residue</div>
+          <div class="si-desc">Aftermath of difficult moments lingers as anticipatory exhaustion</div>
+        </div>
+      </div>
+
+      <!-- CENTRE: detail -->
+      <div class="centre-col" id="centreCol">
+
+        <div class="drift-visual">
+          <div class="dv-label">Environment drift level</div>
+          <div class="dv-track"><div class="dv-fill" id="dvFill" style="width:0%;"></div></div>
+          <div class="dv-zones">
+            <div class="dv-zone dv-z1">Common cause variation</div>
+            <div class="dv-zone dv-z2">Special cause emerging</div>
+            <div class="dv-zone dv-z3">Crisis-prone zone</div>
+          </div>
+        </div>
+
+        <div id="detailArea">
+          <div class="detail-empty">Select a signal on the left to read its detail</div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: score -->
+      <div class="score-col">
+        <div class="sc-label">Drift assessment</div>
+
+        <div class="score-display">
+          <div class="score-n" id="scoreN" style="color:var(--cold);">0</div>
+          <div class="score-lbl" id="scoreLbl" style="color:var(--ink40);">No signals selected</div>
+          <div class="score-sub" id="scoreSub">Select signals from the left to begin the assessment.</div>
+        </div>
+
+        <div class="var-section">
+          <div class="var-title">Three variables</div>
+          <div class="var-row">
+            <span class="var-name">Tempo</span>
+            <div class="var-bar-wrap"><div class="var-bar" id="vbTempo" style="width:0%;background:var(--cold);"></div></div>
+            <span class="var-val" id="vvTempo">0</span>
+          </div>
+          <div class="var-row">
+            <span class="var-name">Permeability</span>
+            <div class="var-bar-wrap"><div class="var-bar" id="vbPerm" style="width:0%;background:var(--amber);"></div></div>
+            <span class="var-val" id="vvPerm">0</span>
+          </div>
+          <div class="var-row">
+            <span class="var-name">Recoverability</span>
+            <div class="var-bar-wrap"><div class="var-bar" id="vbRec" style="width:0%;background:var(--red);"></div></div>
+            <span class="var-val" id="vvRec">0</span>
+          </div>
+        </div>
+
+        <div class="interpretation">
+          <div class="interp-label">Interpretation</div>
+          <div class="interp-text" id="interpText">Select signals above. This panel will update as your assessment builds.</div>
+        </div>
+
+        <button class="reset-btn" onclick="reset_all()">Reset assessment</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORKS -->
+<section class="frameworks">
+  <div class="sw">
+    <div class="ey">The analytical frameworks behind this tool</div>
+    <h2>Four lenses for<br><em>reading a live system.</em></h2>
+    <p class="bt">This tool draws on four disciplines that are rarely applied to caregiving environments — but should be.</p>
+    <div class="fw-grid">
+      <div class="fw-card">
+        <div class="fw-num">01</div>
+        <div class="fw-title">Crisis analysis — pre-incident detection</div>
+        <div class="fw-body">Every crisis has a pre-incident phase. Public safety, aviation, and emergency management all know that collapse rarely arrives without antecedents. Weak signals — small departures from baseline — reveal rising instability before the dramatic event. The home is a live system. It has signals. It degrades in patterns.</div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-num">02</div>
+        <div class="fw-title">Lean Six Sigma — variation and drift detection</div>
+        <div class="fw-body">At their core, process improvement disciplines ask: what is the baseline, and where is the process no longer behaving like itself? Common cause variation is normal fluctuation. Special cause variation signals meaningful instability. When an environment enters special cause territory, continued normalization becomes dangerous.</div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-num">03</div>
+        <div class="fw-title">High-reliability operations — signal vs. noise</div>
+        <div class="fw-body">Not every upsetting behavior is equally predictive. The loudest moment in the week may tell you less than a consistent quiet pattern. Noise attracts attention. Signal predicts trajectory. The work is learning not to chase the most dramatic data point — but to identify the most consequential pattern.</div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-num">04</div>
+        <div class="fw-title">Root cause analysis — operational implication first</div>
+        <div class="fw-body">Root cause analysis is often misused when the environment is already emotionally hazardous. The more urgent question is not ultimate causation but operational implication: what does this pattern do to safety, judgment, and daily function? Public safety does not wait for etiological certainty before reducing exposure.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ftl">Tool 02 &mdash; The Drift Map &middot; Survival Guide for Care Partners &middot; Cold Ischemia Foundation</div>
+  <div class="ftr">
+    <a href="index.html" class="ft-b">← All Tools</a>
+    <a href="https://coldischemia.foundation" target="_blank" rel="noopener" class="ft-h">coldischemia.foundation &#8599;</a>
+  </div>
+</footer>
+
+<script>
+const SIGNALS = [
+  {
+    name:'Narrowing reaction time',
+    cat:'Tempo signal',
+    badge:'Subtle cue',bc:'b-subtle',
+    what:'You have <b>less time now</b> than three months ago between a disappointment and a blowup. In emergency management, shrinking warning time is serious because it reduces room for mitigation. Care partners often feel this before they can name it: <em>"I have less time to explain. Less time to redirect. Less time to step out."</em> That compression is itself an important cue.',
+    indicators:[
+      'The window between trigger and escalation has narrowed visibly',
+      'Ordinary requests now require more careful timing than before',
+      'You find yourself rehearsing questions before asking them'
+    ],
+    questions:[
+      'Has the lead time between frustration and blowup shortened in the past three months?',
+      'Do you find yourself with less time to redirect or contain a rising situation?',
+      'Are ordinary conversations now requiring tactical preparation?'
+    ],
+    warn:false
+  },
+  {
+    name:'Narrative drift',
+    cat:'Permeability signal',
+    badge:'Emerging concern',bc:'b-warn',
+    what:'In stable environments, even difficult people remain broadly coherent. In degrading environments, <b>narratives about what is wrong begin to change</b> depending on mood, audience, or desired leverage. Yesterday the issue was pain. Today it is betrayal. In the clinic it is fear. At home it is accusation. The care partner spends enormous energy trying to reconcile versions or preserve a common reality. In crisis management, unstable narratives impair decision quality and increase reactivity.',
+    indicators:[
+      'The account of what is wrong changes depending on who is in the room',
+      'Grievances that were resolved reappear without acknowledgment that they were addressed',
+      'You spend energy reconciling different versions of recent events'
+    ],
+    questions:[
+      'Does the account of what is wrong change depending on mood or audience?',
+      'Do resolved grievances reappear as if they were never addressed?',
+      'Are you spending time defending a shared account of events?'
+    ],
+    warn:true
+  },
+  {
+    name:'Contaminated conversation',
+    cat:'Permeability signal',
+    badge:'Emerging concern',bc:'b-warn',
+    what:'In a contaminated conversation environment, <b>every practical interaction has become a test</b>. A medication question becomes proof of mistrust. A scheduling issue becomes abandonment. A request for written clarification becomes disrespect. This transforms routine care operations into emotionally loaded trials. The care partner can no longer interact with the system at face value. Every logistical move must be routed through emotional risk assessment. This is a contamination event: one domain of functioning has invaded another.',
+    indicators:[
+      'Practical topics consistently become tests of loyalty or competence',
+      'Requests for information are interpreted as acts of distrust',
+      'Ordinary care operations now require emotional risk assessment before proceeding'
+    ],
+    questions:[
+      'Do practical conversations regularly transform into tests of loyalty?',
+      'Is asking a factual question treated as an act of suspicion or disrespect?',
+      'Do you assess emotional risk before raising routine care topics?'
+    ],
+    warn:true
+  },
+  {
+    name:'Bodily threat awareness',
+    cat:'Somatic signal',
+    badge:'Subtle cue',bc:'b-subtle',
+    what:'The nervous system recognizes pattern under uncertainty before the conscious mind names it. <b>A recurring knot in the stomach at the same hour. A constriction before entering a room. Hypervigilance when preparing to discuss logistics.</b> This does not by itself prove abuse. It does indicate that the environment is being processed as threat-laden. Public safety professionals would never ignore repeated pre-incident somatic arousal in a volatile setting. Care partners are too often taught to normalize it as stress. It is more useful to treat it as signal.',
+    indicators:[
+      'Recurring physical tension or constriction at predictable times or locations',
+      'The body registers something as unsafe before the mind has named it',
+      'Physiological arousal before entering certain rooms or conversations'
+    ],
+    questions:[
+      'Do you notice recurring physical tension at the same hour or location each day?',
+      'Does your body register a room or conversation as unsafe before you have consciously assessed it?',
+      'Have you normalized a level of physiological vigilance that you would flag as significant in another setting?'
+    ],
+    warn:false
+  },
+  {
+    name:'Isolation from common reality',
+    cat:'Recoverability signal',
+    badge:'High concern',bc:'b-crit',
+    what:'When the care partner is <b>the only person defending a shared account of what happened</b>, they are effectively isolated from common reality. This matters because isolation prevents reality-testing, reduces access to outside perspective, and concentrates interpretive authority entirely within the volatile relationship. In caregiving scholarship, isolation from social support is one of the strongest predictors of deteriorating caregiver wellbeing. The isolation is often gradual. It begins as the relationship demands more and ordinary connections receive less.',
+    indicators:[
+      'You are the only one who holds the accurate account of recent events',
+      'Social connections outside the caregiving relationship have quietly reduced',
+      'You have stopped telling others what is happening because the explanation is too complicated or too alarming'
+    ],
+    questions:[
+      'Are you defending reality alone — without anyone outside the relationship who holds the same account?',
+      'Have you found yourself reducing contact with others because explaining the situation is too difficult?',
+      'Has the caregiving relationship become the primary or exclusive interpreter of daily events?'
+    ],
+    warn:true
+  },
+  {
+    name:'Reduced judgment clarity',
+    cat:'Tempo signal',
+    badge:'Emerging concern',bc:'b-warn',
+    what:'High-intensity caregiving with deteriorating relationship quality is associated with elevated anxiety and reduced cognitive clarity. <b>Decisions that were once routine now feel difficult.</b> Reactivity has increased. The care partner is processing more threat signals simultaneously and has less bandwidth for deliberate judgment. This is not a character flaw. It is a system under load. In aviation, degraded situational awareness is treated as an emergency condition — not as evidence that the pilot is inadequate.',
+    indicators:[
+      'Routine decisions now feel disproportionately difficult or uncertain',
+      'Reactivity has increased — responses feel faster and less considered than before',
+      'Concentration and deliberate thinking require more effort in the home environment'
+    ],
+    questions:[
+      'Have decisions that were once straightforward become difficult or uncertain?',
+      'Are you responding to situations faster and with less deliberation than before?',
+      'Is sustained careful thinking harder to access in this environment than it used to be?'
+    ],
+    warn:true
+  },
+  {
+    name:'Anticipatory compliance',
+    cat:'Recoverability signal',
+    badge:'High concern',bc:'b-crit',
+    what:'Anticipatory compliance is <b>the learned management of communication in advance of a feared response</b>. The care partner is not responding to what has happened — they are already adjusting behavior to prevent what they predict will happen. Language is rationed. Questions are withheld. Information is delayed. This is a significant signal because it indicates that the care partner has internalized the volatility of the environment as a permanent operating condition — and has adapted their behavior to manage it rather than address it.',
+    indicators:[
+      'You routinely withhold or delay information to manage anticipated reactions',
+      'Questions are chosen for emotional safety rather than informational need',
+      'You have learned which topics, times, or phrasings are safer — and operate accordingly'
+    ],
+    questions:[
+      'Do you regularly withhold or delay information to prevent a difficult reaction?',
+      'Do you choose what to say based on what is emotionally safe rather than what is accurate?',
+      'Have you developed a detailed internal map of what can be said when and to whom?'
+    ],
+    warn:true
+  },
+  {
+    name:'Fear-based timing',
+    cat:'Tempo signal',
+    badge:'Emerging concern',bc:'b-warn',
+    what:'In a stable environment, information is shared when it is relevant. In an environment with fear-based timing, <b>all communication must be managed around the emotional state of the care recipient</b>. Truth is not withheld because it is untrue — it is withheld because the moment is wrong. Every logistical matter acquires a timing problem. The care partner becomes the unofficial regulator of when reality can enter the room. This is an enormous and invisible cognitive load.',
+    indicators:[
+      'Information delivery is consistently timed around emotional state rather than operational need',
+      'There is no neutral time for difficult but necessary conversations',
+      'You manage the timing of truth as a continuous tactical problem'
+    ],
+    questions:[
+      'Do you routinely delay accurate information because the timing is emotionally dangerous?',
+      'Is there a reliably neutral window for difficult but necessary conversations, or has that window closed?',
+      'Do you find yourself managing when reality enters the room as an ongoing tactical responsibility?'
+    ],
+    warn:false
+  },
+  {
+    name:'Escalating relational load',
+    cat:'Recoverability signal',
+    badge:'High concern',bc:'b-crit',
+    what:'The relational load of caregiving has been accumulating. <b>Repetition is eroding psychological agility.</b> The care partner is no longer only managing the acute demands of each day — they are also managing the residue of previous difficult episodes. Research on intensive caregiving shows that relationship quality is one of the strongest predictors of caregiver distress. When difficult patterns repeat without resolution, the care partner\'s capacity for flexible response progressively narrows.',
+    indicators:[
+      'Psychological flexibility — the ability to adapt and respond freshly — is visibly reduced',
+      'Difficult patterns repeat without meaningful resolution or change',
+      'The cumulative weight of previous episodes shapes the present moment more than the present facts do'
+    ],
+    questions:[
+      'Is your psychological flexibility — your ability to respond freshly — visibly reduced from what it was?',
+      'Do difficult patterns repeat without meaningful resolution?',
+      'Does the weight of previous episodes shape your present reactions more than current facts do?'
+    ],
+    warn:true
+  },
+  {
+    name:'Shrinking repair window',
+    cat:'Tempo signal',
+    badge:'High concern',bc:'b-crit',
+    what:'In a stable though difficult environment, <b>sequence still holds</b>. Frustration rises, words are exchanged, someone cools, a practical matter is addressed, the evening resumes. In a degrading environment, the repair window shrinks or disappears. There is less recovery. Less re-entry. The environment loses elasticity. Crisis-prone systems are defined not only by intensity but by <b>narrowing recovery bandwidth</b>. When recovery becomes rare or brief, each new disturbance builds on the unresolved residue of the last.',
+    indicators:[
+      'The return to ordinary conversation after conflict takes significantly longer than before',
+      'There is little or no repair — apology, acknowledgment, or re-entry into ordinary function',
+      'The aftermath of difficult moments now extends into the next day or longer'
+    ],
+    questions:[
+      'Has the time it takes to return to workable conversation after conflict lengthened significantly?',
+      'Is there meaningful repair — acknowledgment, apology, or re-entry — after difficult episodes?',
+      'Does the aftermath of conflict now extend into subsequent days rather than resolving within hours?'
+    ],
+    warn:true
+  },
+  {
+    name:'High permeability events',
+    cat:'Permeability signal',
+    badge:'Emerging concern',bc:'b-warn',
+    what:'High permeability means <b>one topic has become a vessel for every other topic</b>. Healthcare, money, memory, fear, old grievances, loneliness, shame, and bodily decline all arrive at once inside what begins as a single conversation. High-permeability environments are difficult to stabilize because they do not contain disturbance — they amplify and diffuse it. The care partner cannot keep issues bounded. Every conversation risks becoming the site of everything that has never been fully resolved.',
+    indicators:[
+      'A single topic routinely becomes the site of every unresolved grievance',
+      'Conversations that begin as practical consistently spread into historical, relational, or moral territory',
+      'The care partner is unable to contain a conversation to its presenting issue'
+    ],
+    questions:[
+      'Do conversations that begin as practical regularly expand to include unrelated grievances?',
+      'Is any single topic able to remain bounded — or does it consistently absorb other issues?',
+      'Have you lost the ability to contain a conversation to its presenting subject?'
+    ],
+    warn:false
+  },
+  {
+    name:'Dread residue',
+    cat:'Recoverability signal',
+    badge:'High concern',bc:'b-crit',
+    what:'Systems with poor recoverability consume enormous human energy because each disturbance leaves residue. <b>The care partner becomes exhausted not only by events but by what events fail to resolve.</b> Dread residue is the anticipatory exhaustion that settles between difficult episodes — the heaviness of knowing that nothing has been resolved and that the next event is already building. Research on caregiving and burnout consistently identifies this affective residue as a significant predictor of caregiver collapse.',
+    indicators:[
+      'The period between difficult episodes is characterized by dread rather than recovery',
+      'Anticipatory exhaustion before routine interactions is a regular experience',
+      'The feeling of impending difficulty rarely fully clears — it only changes in intensity'
+    ],
+    questions:[
+      'Is the time between difficult episodes spent in recovery — or in anticipatory dread?',
+      'Do you regularly experience exhaustion before routine interactions rather than only after difficult ones?',
+      'Does the sense of impending difficulty rarely fully clear — only varying in intensity?'
+    ],
+    warn:true
+  }
+];
+
+let sel = new Set();
+let checks = {};
+
+function select_signal(i){
+  if(sel.has(i)){
+    sel.delete(i);
+    document.getElementById('s'+i).classList.remove('on','warn');
+  } else {
+    sel.add(i);
+    const s = SIGNALS[i];
+    const el = document.getElementById('s'+i);
+    el.classList.add(s.warn ? 'warn' : 'on');
+  }
+  render_detail(i);
+  update_score();
+}
+
+function render_detail(i){
+  const s = SIGNALS[i];
+  const qsHtml = s.questions.map((q,qi)=>`
+    <div class="q-item">
+      <div class="q-check"><input type="checkbox" id="q${i}_${qi}" onchange="check_q(${i},${qi},this)"></div>
+      <div class="q-text" id="qt${i}_${qi}">${q}</div>
+    </div>
+  `).join('');
+
+  document.getElementById('detailArea').innerHTML = `
+    <div class="sd-hdr">
+      <div class="sd-left"><div class="sd-cat">${s.cat}</div><div class="sd-name">${s.name}</div></div>
+      <span class="sd-badge ${s.bc}">${s.badge}</span>
+    </div>
+    <div class="sd-what">${s.what}</div>
+    <div class="sd-sec-label">Field indicators</div>
+    ${s.indicators.map(ind=>`<div class="indicator ${s.warn?'warn':''}"><strong>—</strong> ${ind}</div>`).join('')}
+    <div class="question-box">
+      <div class="qb-label">Diagnostic questions</div>
+      ${qsHtml}
+    </div>
+  `;
+
+  // Restore checked state
+  if(checks[i]){
+    checks[i].forEach((v,qi)=>{
+      const cb = document.getElementById(`q${i}_${qi}`);
+      if(cb && v){
+        cb.checked=true;
+        document.getElementById(`qt${i}_${qi}`).classList.add('q-answered');
+      }
+    });
+  }
+}
+
+function check_q(si,qi,el){
+  if(!checks[si]) checks[si]=[];
+  checks[si][qi]=el.checked;
+  const txt = document.getElementById(`qt${si}_${qi}`);
+  if(txt) txt.classList.toggle('q-answered',el.checked);
+}
+
+function update_score(){
+  let tempo=0,perm=0,rec=0;
+  sel.forEach(i=>{
+    const el = document.getElementById('s'+i);
+    tempo += parseInt(el.getAttribute('data-tempo'));
+    perm  += parseInt(el.getAttribute('data-perm'));
+    rec   += parseInt(el.getAttribute('data-rec'));
+  });
+
+  const max_each = 36;
+  const tp = Math.min(tempo/max_each*100,100);
+  const pp = Math.min(perm/max_each*100,100);
+  const rp = Math.min(rec/max_each*100,100);
+  const total = Math.round((tp+pp+rp)/3);
+
+  document.getElementById('vbTempo').style.width=tp+'%';
+  document.getElementById('vbPerm').style.width=pp+'%';
+  document.getElementById('vbRec').style.width=rp+'%';
+  document.getElementById('vvTempo').textContent=tempo;
+  document.getElementById('vvPerm').textContent=perm;
+  document.getElementById('vvRec').textContent=rec;
+
+  // Drift fill
+  const fill = document.getElementById('dvFill');
+  fill.style.width = total+'%';
+  fill.style.background = total<35?'var(--cold)':total<65?'var(--amber)':'var(--red)';
+
+  // Score display
+  const sn = document.getElementById('scoreN');
+  const sl = document.getElementById('scoreLbl');
+  const ss = document.getElementById('scoreSub');
+  const it = document.getElementById('interpText');
+
+  sn.textContent = total+'%';
+
+  if(sel.size===0){
+    sn.style.color='var(--cold)';
+    sl.textContent='No signals selected';
+    sl.style.color='var(--ink40)';
+    ss.textContent='Select signals from the left to begin the assessment.';
+    it.textContent='Select signals above. This panel will update as your assessment builds.';
+    return;
+  }
+
+  if(total<25){
+    sn.style.color='var(--green)';
+    sl.textContent='Common cause variation';sl.style.color='var(--green)';
+    ss.textContent='The environment shows normal fluctuation. Monitor for change in pattern or frequency.';
+    it.textContent='The signals present are consistent with ordinary strain under caregiving load. They warrant monitoring but do not currently indicate that the environment has moved beyond expected variation. Continue observing baseline.';
+  } else if(total<50){
+    sn.style.color='var(--gold)';
+    sl.textContent='Special cause emerging';sl.style.color='var(--gold)';
+    ss.textContent='The environment is showing signals outside ordinary variation. Observation and response are warranted.';
+    it.textContent='The pattern of signals suggests the environment is beginning to move outside its ordinary operating range. This is the most useful time to act — before the pattern consolidates. Consider which variable is driving the score (tempo, permeability, or recoverability) and what can address it.';
+  } else if(total<75){
+    sn.style.color='var(--amber)';
+    sl.textContent='Significant drift detected';sl.style.color='var(--amber)';
+    ss.textContent='Multiple signals are active across more than one variable. The environment is under meaningful instability.';
+    it.textContent='The environment has drifted meaningfully from stable operating conditions. The presence of signals across multiple variables indicates that this is not a single-source problem. This level of drift rarely resolves without deliberate intervention — whether that means outside support, changed care arrangements, or a direct conversation about what the environment is doing.';
+  } else {
+    sn.style.color='var(--red)';
+    sl.textContent='Crisis-prone zone';sl.style.color='var(--red)';
+    ss.textContent='The environment is showing a high concentration of volatility signals. This warrants serious attention and outside support.';
+    it.textContent='This level of signal density indicates an environment that has moved well beyond ordinary caregiving strain. The combination of high tempo, permeability, and recoverability signals is associated with significantly elevated risk — to the care partner\'s health, judgment, and safety. This is not a situation that self-corrects. Outside support, professional consultation, or changed care arrangements are appropriate responses at this level.';
+  }
+}
+
+function reset_all(){
+  sel.clear();
+  checks={};
+  document.querySelectorAll('.sig-item').forEach(el=>{el.classList.remove('on','warn');});
+  document.getElementById('detailArea').innerHTML='<div class="detail-empty">Select a signal on the left to read its detail</div>';
+  document.getElementById('dvFill').style.width='0%';
+  document.getElementById('scoreN').textContent='0';
+  document.getElementById('scoreN').style.color='var(--cold)';
+  document.getElementById('scoreLbl').textContent='No signals selected';
+  document.getElementById('scoreLbl').style.color='var(--ink40)';
+  document.getElementById('scoreSub').textContent='Select signals from the left to begin the assessment.';
+  document.getElementById('interpText').textContent='Select signals above. This panel will update as your assessment builds.';
+  document.getElementById('vbTempo').style.width='0%';
+  document.getElementById('vbPerm').style.width='0%';
+  document.getElementById('vbRec').style.width='0%';
+  document.getElementById('vvTempo').textContent='0';
+  document.getElementById('vvPerm').textContent='0';
+  document.getElementById('vvRec').textContent='0';
+}
+</script>
+<a href="index.html" style="position:fixed;bottom:24px;right:24px;z-index:500;font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(216,207,196,0.5);text-decoration:none;padding:9px 16px;border:1px solid rgba(100,140,200,0.18);border-radius:2px;background:rgba(3,5,9,0.85);backdrop-filter:blur(6px);transition:color .15s,border-color .15s;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.35)';" onmouseout="this.style.color='rgba(216,207,196,0.5)';this.style.borderColor='rgba(100,140,200,0.18)';">⌂ Home</a>
+</body>
+</html>

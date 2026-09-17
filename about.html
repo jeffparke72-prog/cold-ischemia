@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story — Cold Ischemia Foundation</title>
+  <meta name="description" content="The story of the Cold Ischemia Foundation — built in a living room, funded by no one but its founders, driven by decades of navigating a healthcare system designed to use care partners without compensating them.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,600;1,9..144,200;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+    :root{
+      --abyss:#030509;--deep:#050810;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+      --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.22);
+      --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);
+      --ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);
+      --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.14);--gold-g:rgba(200,144,42,0.3);
+      --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.12);
+      --danger:#c83050;--green:#50c878;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+    ::selection{background:var(--gold-d);color:var(--ink);}
+    ::-webkit-scrollbar{width:2px;}
+    ::-webkit-scrollbar-track{background:var(--abyss);}
+    ::-webkit-scrollbar-thumb{background:var(--raised);}
+
+    /* NAV */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:200;
+      background:rgba(3,5,9,0.94);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--b);
+      padding:0 36px;height:58px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .nav-logo{font-family:'IBM Plex Mono',monospace;font-size:0.57rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);text-decoration:none;}
+    .nav-links{display:flex;align-items:center;gap:22px;}
+    .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--ink80);}
+    .nav-links a.active{color:var(--gold);}
+    .nav-btn{color:var(--gold)!important;border:1px solid var(--gold-d);padding:7px 18px;border-radius:2px;background:transparent;transition:all 0.2s!important;}
+    .nav-btn:hover{background:var(--gold-d)!important;color:var(--gold-l)!important;}
+    @media(max-width:700px){.nav-links a:not(.nav-btn){display:none;}}
+
+    /* HERO */
+    .story-hero{
+      min-height:80vh;
+      display:flex;flex-direction:column;justify-content:flex-end;
+      padding:0 36px 80px;
+      position:relative;overflow:hidden;
+    }
+    .hero-bg{
+      position:absolute;inset:0;z-index:0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(200,144,42,0.06) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 20%, rgba(42,196,200,0.04) 0%, transparent 55%),
+        var(--abyss);
+    }
+    /* Vertical rule lines — editorial feel */
+    .hero-bg::before{
+      content:'';position:absolute;inset:0;
+      background:
+        repeating-linear-gradient(90deg,
+          transparent 0px,
+          transparent calc(100% / 12 - 1px),
+          rgba(100,140,200,0.04) calc(100% / 12 - 1px),
+          rgba(100,140,200,0.04) calc(100% / 12)
+        );
+    }
+    .hero-inner{position:relative;z-index:2;max-width:1080px;margin:0 auto;width:100%;}
+    .hero-eyebrow{
+      font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.42em;
+      text-transform:uppercase;color:var(--gold);margin-bottom:36px;
+      display:flex;align-items:center;gap:14px;opacity:0;
+      animation:rise 1s 0.2s both;
+    }
+    .hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold);opacity:0.5;}
+    .story-h1{
+      font-family:'Fraunces',serif;font-weight:200;font-style:italic;
+      font-size:clamp(4rem,12vw,10rem);letter-spacing:-0.02em;line-height:0.88;
+      color:var(--ink);margin-bottom:32px;
+      opacity:0;animation:rise 1.4s 0.3s both;
+    }
+    .story-h1 em{
+      font-style:normal;color:var(--gold-l);
+      font-weight:200;
+    }
+    .hero-sub{
+      max-width:620px;font-size:1.2rem;line-height:1.85;
+      color:var(--ink60);
+      font-style:italic;
+      border-left:2px solid var(--gold);padding-left:22px;
+      opacity:0;animation:rise 1s 0.6s both;
+    }
+    @keyframes rise{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+
+    /* PHOTO BAND */
+    .photo-band{
+      border-top:1px solid var(--b);border-bottom:1px solid var(--b);
+      background:var(--surf);
+      overflow:hidden;
+    }
+    .photo-band-inner{
+      max-width:1080px;margin:0 auto;
+      display:grid;grid-template-columns:1fr 1.6fr;
+      min-height:420px;
+    }
+    @media(max-width:720px){.photo-band-inner{grid-template-columns:1fr;}}
+    .photo-cell{
+      overflow:hidden;position:relative;
+    }
+    .photo-cell img{
+      width:100%;height:100%;object-fit:cover;object-position:center top;
+      display:block;
+      filter:contrast(1.05) saturate(0.85);
+      transition:transform 0.6s ease;
+    }
+    .photo-cell:hover img{transform:scale(1.02);}
+    .photo-caption-cell{
+      padding:60px 60px 60px 56px;
+      display:flex;flex-direction:column;justify-content:center;
+      border-left:1px solid var(--b);
+    }
+    @media(max-width:720px){.photo-caption-cell{padding:40px 36px;border-left:none;border-top:1px solid var(--b);}}
+    .caption-tag{
+      font-family:'IBM Plex Mono',monospace;font-size:0.48rem;letter-spacing:0.26em;
+      text-transform:uppercase;color:var(--pulse);margin-bottom:20px;
+    }
+    .caption-quote{
+      font-family:'Fraunces',serif;font-weight:200;font-style:italic;
+      font-size:clamp(1.4rem,3vw,2rem);line-height:1.4;
+      color:var(--ink80);margin-bottom:24px;
+    }
+    .caption-names{
+      font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.18em;
+      text-transform:uppercase;color:var(--gold);
+    }
+    .caption-location{
+      font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.14em;
+      color:var(--ink40);margin-top:6px;
+    }
+
+    /* ESSAY BODY */
+    .essay{
+      max-width:780px;margin:0 auto;padding:100px 36px 0;
+    }
+    .essay-section{margin-bottom:80px;}
+    .section-marker{
+      display:flex;align-items:center;gap:16px;margin-bottom:40px;
+    }
+    .marker-num{
+      font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.2em;
+      color:var(--gold);opacity:0.6;flex-shrink:0;
+    }
+    .marker-rule{height:1px;flex:1;background:var(--b);}
+    .marker-title{
+      font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.28em;
+      text-transform:uppercase;color:var(--ink40);flex-shrink:0;
+    }
+
+    .essay h2{
+      font-family:'Fraunces',serif;font-weight:200;font-style:italic;
+      font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;
+      color:var(--ink);margin-bottom:28px;letter-spacing:-0.01em;
+    }
+    .essay h2 strong{
+      font-style:normal;font-weight:600;color:var(--gold-l);
+    }
+    .essay p{
+      font-size:1.15rem;line-height:1.95;color:var(--ink60);
+      margin-bottom:22px;
+    }
+    .essay p:last-child{margin-bottom:0;}
+    .essay strong{color:var(--ink80);font-weight:600;}
+    .essay em{color:var(--ink80);font-style:italic;}
+
+    /* PULL QUOTE */
+    .pull-quote{
+      margin:52px 0;padding:36px 40px;
+      border-left:3px solid var(--gold);
+      background:linear-gradient(90deg,var(--gold-d),transparent);
+    }
+    .pull-quote p{
+      font-family:'Fraunces',serif;font-weight:200;font-style:italic;
+      font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.45;
+      color:var(--ink80);margin:0;
+    }
+    .pull-quote cite{
+      display:block;margin-top:14px;
+      font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.2em;
+      text-transform:uppercase;color:var(--gold);font-style:normal;
+    }
+
+    /* STAT CALLOUTS */
+    .stat-row{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+      background:var(--b);
+      border:1px solid var(--b);border-radius:2px;
+      margin:52px 0;overflow:hidden;
+    }
+    @media(max-width:560px){.stat-row{grid-template-columns:1fr;}}
+    .stat-cell{
+      background:var(--surf);padding:28px 24px;text-align:center;
+    }
+    .stat-num{
+      font-family:'Fraunces',serif;font-weight:600;font-size:2.4rem;
+      color:var(--gold-l);display:block;margin-bottom:6px;
+    }
+    .stat-label{
+      font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.16em;
+      text-transform:uppercase;color:var(--ink40);line-height:1.7;
+    }
+    .stat-source{
+      font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.1em;
+      color:var(--ink20);margin-top:6px;display:block;
+    }
+
+    /* TEAL RULE */
+    .teal-rule{
+      height:1px;background:linear-gradient(90deg,transparent,var(--pulse),transparent);
+      margin:60px 0;opacity:0.3;
+    }
+
+    /* COMMITMENT BOX */
+    .commitment{
+      background:var(--void);border:1px solid var(--b);border-top:3px solid var(--danger);
+      border-radius:2px;padding:40px 44px;margin:52px 0;
+    }
+    .commitment-title{
+      font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.3em;
+      text-transform:uppercase;color:var(--danger);margin-bottom:20px;
+    }
+    .commitment p{
+      font-size:1.05rem;line-height:1.9;color:var(--ink60);margin-bottom:14px;
+    }
+    .commitment p:last-child{margin-bottom:0;}
+    .commitment strong{color:var(--ink80);}
+
+    /* SOURCES */
+    .sources{
+      max-width:780px;margin:0 auto;padding:0 36px 100px;
+    }
+    .sources-header{
+      border-top:1px solid var(--b);padding-top:48px;margin-bottom:32px;
+    }
+    .sources-title{
+      font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.3em;
+      text-transform:uppercase;color:var(--ink40);
+    }
+    .source-list{
+      list-style:none;display:flex;flex-direction:column;gap:16px;
+    }
+    .source-item{
+      display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:baseline;
+    }
+    .source-num{
+      font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.1em;
+      color:var(--gold);text-align:right;flex-shrink:0;
+    }
+    .source-text{
+      font-family:'IBM Plex Mono',monospace;font-size:0.48rem;letter-spacing:0.08em;
+      color:var(--ink40);line-height:1.8;
+    }
+    .source-text a{color:var(--pulse);text-decoration:none;}
+    .source-text a:hover{color:var(--ink80);}
+
+    /* FOOTER */
+    footer{background:var(--void);border-top:1px solid var(--b);padding:60px 36px 0;}
+    .footer-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;}
+    @media(max-width:840px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+    @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+    .f-logo{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:1.5rem;color:var(--gold-l);display:block;margin-bottom:14px;}
+    .footer-brand p{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.1em;color:var(--ink20);line-height:2.2;}
+    .footer-brand a{color:var(--gold);text-decoration:none;}
+    .footer-pledge{
+      margin-top:18px;padding:14px 16px;
+      border:1px solid rgba(200,48,80,0.2);border-left:2px solid var(--danger);
+      background:rgba(200,48,80,0.04);border-radius:1px;
+    }
+    .footer-pledge p{
+      font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.1em;
+      color:rgba(216,207,196,0.35);line-height:2;
+    }
+    .footer-pledge strong{color:rgba(200,48,80,0.7);}
+    .f-col-title{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:block;}
+    .f-links{display:flex;flex-direction:column;gap:10px;}
+    .f-links a{font-family:'IBM Plex Mono',monospace;font-size:0.51rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+    .f-links a:hover{color:var(--gold-l);}
+    .footer-bottom{max-width:1080px;margin:0 auto;border-top:1px solid var(--b);padding:22px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+    .f-bottom-links{display:flex;gap:20px;}
+    .f-bottom-links a{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.12em;color:var(--ink20);text-decoration:none;}
+    .copyright{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.08em;color:var(--ink20);text-align:right;max-width:480px;}
+  
+    /* ── MOBILE NAV FIXES ── */
+    @media(max-width:700px){
+      nav{padding:0 14px;}
+      .nav-logo img{height:32px !important;width:32px !important;}
+      .nav-logo-text,.nav-brand-text{display:none;}
+      .nav-links{gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;padding:0 8px;}
+      .nav-links::-webkit-scrollbar{display:none;}
+      .nav-links a{font-size:0.36rem !important;letter-spacing:0.1em !important;}
+      .nav-links a.hide-mob{display:none;}
+      body{font-size:16px;}
+    }
+    @media(max-width:480px){
+      .nav-links a:not(.nav-primary):not(.active):not(.always){display:none;}
+    }
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+  </a>
+  <div class="nav-links">
+    <a href="about.html" class="active">About</a>
+    <a href="https://payhip.com/coldischemia">Library</a>
+    <a href="research.html">Research</a>
+    <a href="situation-room.html">Situation Room</a>
+    <a href="accountability.html">Accountability</a>
+    <a href="congress-scorecard.html">Scorecard</a>
+    <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener">Store</a>
+    <a href="donate.html">Donate</a>
+  </div>
+  <div class="nav-actions">
+    <a href="donate.html" class="nav-btn nav-btn-gold">Donate Now</a>
+  </div>
+<a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;padding:6px 12px;border:1px solid rgba(100,140,200,0.15);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.3)';" onmouseout="this.style.color='rgba(216,207,196,0.45)';this.style.borderColor='rgba(100,140,200,0.15)';">← Home</a>
+</nav>
+
+<!-- HERO -->
+<section class="story-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Cold Ischemia Foundation · Ellenton, Florida</div>
+    <h1 class="story-h1">Our <em>Humble</em><br>Beginnings</h1>
+    <p class="hero-sub">
+      This organization was not launched from a boardroom. It was not seeded by a pharmaceutical grant.
+      It was built in a living room in Ellenton, Florida — by two people who had run out of patience
+      with a system that kept asking care partners to give everything
+      while offering nothing in return.
+    </p>
+  </div>
+</section>
+
+<!-- UVP — FIRST OF ITS KIND -->
+<section style="background:var(--void);border-top:3px solid var(--gold);border-bottom:1px solid var(--b);padding:80px 36px;">
+  <div style="max-width:1080px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:0.48rem;letter-spacing:0.42em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:14px;">
+      <span style="display:inline-block;width:40px;height:1px;background:var(--gold);opacity:0.5;"></span>
+      America's First · Care Partner Advocacy Platform
+    </div>
+    <h2 style="font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.15;color:var(--ink);margin-bottom:36px;">
+      There has never been a platform<br>built <em style="color:var(--gold);">exclusively</em> for care partners.<br>
+      <strong style="font-weight:600;font-style:normal;">Until now.</strong>
+    </h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b);border:1px solid var(--b);margin-bottom:56px;">
+      <div style="background:var(--surf);padding:36px 32px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--danger);margin-bottom:12px;">Every Other Platform</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--ink40);display:flex;gap:10px;"><span style="color:var(--danger);flex-shrink:0;">✕</span> Funded by pharmaceutical companies with direct conflicts of interest</li>
+          <li style="font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--ink40);display:flex;gap:10px;"><span style="color:var(--danger);flex-shrink:0;">✕</span> Built for patients — care partners are an afterthought or absent entirely</li>
+          <li style="font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--ink40);display:flex;gap:10px;"><span style="color:var(--danger);flex-shrink:0;">✕</span> No AI tools, no federal complaint generators, no crisis escalation systems</li>
+          <li style="font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--ink40);display:flex;gap:10px;"><span style="color:var(--danger);flex-shrink:0;">✕</span> Governed by boards with hospital system and insurer representation</li>
+          <li style="font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--ink40);display:flex;gap:10px;"><span style="color:var(--danger);flex-shrink:0;">✕</span> Cannot name the institutions that harm the people they claim to serve</li>
+        </ul>
+      </div>
+      <div style="background:var(--raised);padding:36px 32px;border-left:2px solid var(--gold);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Cold Ischemia Foundation</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--ink80);display:flex;gap:10px;"><span style="color:var(--gold);flex-shrink:0;">✓</span> Zero pharmaceutical funding — zero conflicts, zero editorial compromise</li>
+          <li style="font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--ink80);display:flex;gap:10px;"><span style="color:var(--gold);flex-shrink:0;">✓</span> Built by a care partner, for care partners — kidney disease and transplant-specific</li>
+          <li style="font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--ink80);display:flex;gap:10px;"><span style="color:var(--gold);flex-shrink:0;">✓</span> AI-powered crisis tools, federal complaint generators with exact CFR citations</li>
+          <li style="font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--ink80);display:flex;gap:10px;"><span style="color:var(--gold);flex-shrink:0;">✓</span> Answers to no hospital system, insurer, or government agency</li>
+          <li style="font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--ink80);display:flex;gap:10px;"><span style="color:var(--gold);flex-shrink:0;">✓</span> Names the failure. Cites the law. Puts the tools in your hands.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b);">
+      <div style="background:var(--surf);padding:28px 24px;text-align:center;">
+        <div style="font-family:'Fraunces',serif;font-weight:600;font-size:2.2rem;color:var(--gold-l);margin-bottom:6px;">First</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);line-height:1.8;">Platform built exclusively for kidney care partners in America</div>
+      </div>
+      <div style="background:var(--surf);padding:28px 24px;text-align:center;">
+        <div style="font-family:'Fraunces',serif;font-weight:600;font-size:2.2rem;color:var(--gold-l);margin-bottom:6px;">$0</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);line-height:1.8;">Pharmaceutical funding — ever</div>
+      </div>
+      <div style="background:var(--surf);padding:28px 24px;text-align:center;">
+        <div style="font-family:'Fraunces',serif;font-weight:600;font-size:2.2rem;color:var(--gold-l);margin-bottom:6px;">6</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);line-height:1.8;">AI-powered advocacy tools with live federal CFR citations</div>
+      </div>
+      <div style="background:var(--surf);padding:28px 24px;text-align:center;">
+        <div style="font-family:'Fraunces',serif;font-weight:600;font-size:2.2rem;color:var(--gold-l);margin-bottom:6px;">55M</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);line-height:1.8;">Americans whose unpaid labor this platform was built to defend</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS PHOTO -->
+<div class="photo-band">
+  <div class="photo-band-inner">
+    <div class="photo-cell">
+      <img src="jeff-marie-founders.png" alt="Jeff and Marie Parke, founders of the Cold Ischemia Foundation">
+    </div>
+    <div class="photo-caption-cell">
+      <div class="caption-tag">The Founders</div>
+      <div class="caption-quote">
+        "We did not choose this fight because it was convenient.
+        We chose it because we could not find anyone else who would."
+      </div>
+      <div class="caption-names">Jeff &amp; Marie Parke</div>
+      <div class="caption-location">Founders · Cold Ischemia Foundation · Ellenton, Florida · 16th Congressional District</div>
+    </div>
+  </div>
+</div>
+
+<!-- ESSAY -->
+<div class="essay">
+
+  <!-- SECTION 01 -->
+  <div class="essay-section">
+    <div class="section-marker">
+      <span class="marker-num">01</span>
+      <div class="marker-rule"></div>
+      <span class="marker-title">The Beginning</span>
+    </div>
+
+    <h2>Before there was a foundation,<br>there was <strong>a kitchen table.</strong></h2>
+
+    <p>
+      The Cold Ischemia Foundation did not begin with a strategic plan or a seed round or a ribbon cutting.
+      It began the way most important things begin — with exhaustion, with anger,
+      and with the quiet refusal to accept that this was simply how things were.
+    </p>
+    <p>
+      Jeff Parke had spent decades inside the American healthcare machine —
+      first as a clinical research professional navigating the mechanics of how medicine gets tested and deployed,
+      then as something far more personal: a care partner.
+      The person who shows up. The person who stays. The person who reorganizes their entire life around
+      someone else's survival and discovers, usually too late, that the system built around that survival
+      was never designed to acknowledge their existence.
+    </p>
+    <p>
+      Marie Parke understood this from the other side of the same table.
+      Living with kidney disease means learning to navigate a healthcare system
+      that is extraordinarily good at treating the organ and extraordinarily indifferent
+      to the human being attached to it — and to the other human being whose life is restructured entirely
+      to support that treatment.
+      Together, they saw the same failure from two angles. Neither angle was comfortable.
+      Both were clarifying.
+    </p>
+
+    <div class="pull-quote">
+      <p>"Cold ischemia" is the medical term for the window of time between when a donor organ
+      is removed from its source and when it is restored to circulation in a recipient's body.
+      It is the period of maximum vulnerability. It is the window where everything can be lost.</p>
+      <cite>The Name Behind the Mission</cite>
+    </div>
+
+    <p>
+      That is the name they chose for this organization — deliberately, precisely —
+      because care partners live inside that window every single day.
+      The cold ischemia of caregiving is the sustained state of doing critical work
+      for which the system provides no training, no compensation, no recognition,
+      and no path back to the person you were before you started.
+      It is the invisible labor period. It is where most care partners are lost.
+    </p>
+  </div>
+
+  <!-- SECTION 02 -->
+  <div class="essay-section">
+    <div class="section-marker">
+      <span class="marker-num">02</span>
+      <div class="marker-rule"></div>
+      <span class="marker-title">The Scale of the Problem</span>
+    </div>
+
+    <h2>This is not a personal story.<br><strong>It is a structural failure.</strong></h2>
+
+    <p>
+      What Jeff and Marie experienced was not bad luck or an unusual circumstance.
+      It was the predictable, documented, and entirely preventable outcome of a system
+      that was designed — in policy, in regulation, in funding, and in institutional practice —
+      to extract care partner labor without acknowledging it.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <span class="stat-num">53M</span>
+        <span class="stat-label">Americans providing unpaid informal care to chronically ill family members</span>
+        <span class="stat-source">AARP / National Alliance for Caregiving, 2020<sup>[1]</sup></span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">$600B</span>
+        <span class="stat-label">Annual value of unpaid caregiving labor — exceeding total Medicaid spending</span>
+        <span class="stat-source">AARP Public Policy Institute, 2023<sup>[2]</sup></span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">$0</span>
+        <span class="stat-label">Federal Medicare allocation for transplant care partner training, compensation, or mental health support</span>
+        <span class="stat-source">CMS Medicare Benefit Policy Manual<sup>[3]</sup></span>
+      </div>
+    </div>
+
+    <p>
+      The transplant system specifically — the OPTN-governed network of transplant centers,
+      organ procurement organizations, and oversight bodies — legally requires
+      a designated care partner for a patient to be listed for transplant.
+      No care partner means no listing. No listing means no organ.
+      The system has made the care partner a medical prerequisite.
+      It has then provided that care partner with no standardized training,
+      no federal compensation, no employment protection, no mental health support,
+      and no seat at any governance table that sets the rules they live under.
+    </p>
+    <p>
+      The GAO documented failures across transplant system oversight.<sup>[4]</sup>
+      Senate Finance Committee investigations revealed gaps in HRSA accountability.<sup>[5]</sup>
+      OIG reports identified systemic deficiencies in ESRD facility compliance monitoring.<sup>[6]</sup>
+      The data was there. The documentation was there.
+      What was missing was an organization willing to use it — without corporate constraint,
+      without pharmaceutical partnership, without the conflict of interest
+      that renders most patient advocacy organizations structurally incapable of confronting
+      the institutions that fund them.
+    </p>
+
+    <div class="teal-rule"></div>
+  </div>
+
+  <!-- SECTION 03 -->
+  <div class="essay-section">
+    <div class="section-marker">
+      <span class="marker-num">03</span>
+      <div class="marker-rule"></div>
+      <span class="marker-title">Building Without Permission</span>
+    </div>
+
+    <h2>No grant. No board of directors.<br><strong>No permission asked.</strong></h2>
+
+    <p>
+      The Cold Ischemia Foundation was built with no external funding.
+      No pharmaceutical sponsor, no hospital system partnership, no foundation grant attached to
+      an institution with its own interests in how the story gets told.
+      This was an intentional choice — and it was the hardest one.
+    </p>
+    <p>
+      What Jeff brought to the foundation was not just personal experience but professional depth:
+      years inside clinical research operations, regulatory frameworks, patient recruitment infrastructure,
+      and the architecture of how medical knowledge is produced, validated, and deployed.
+      He had seen, from the inside, how institutions shape narratives.
+      How funding determines which questions get asked and which do not.
+      How the language of patient-centricity gets deployed by organizations
+      that have never once asked a care partner to sit at their table.
+    </p>
+    <p>
+      That knowledge did not make the work easier.
+      It made the obligation to do it impossible to avoid.
+    </p>
+
+    <div class="pull-quote">
+      <p>
+        The tools were built because care partners needed them — not because a committee approved them,
+        not because a sponsor funded them, not because a hospital system endorsed them.
+        They were built because two people in Ellenton, Florida looked at the landscape
+        and decided that waiting for the system to fix itself was a strategy for watching people fail.
+      </p>
+      <cite>Jeff Parke · Cold Ischemia Foundation</cite>
+    </div>
+
+    <p>
+      The platform that emerged — the AI-powered tools, the federal complaint generators,
+      the backup care systems, the publications, the policy monitors — was not designed by committee.
+      It was designed by a care partner who had needed every one of these tools
+      and found that none of them existed.
+      Every feature on this platform is the answer to a question
+      that the healthcare system never bothered to ask.
+    </p>
+  </div>
+
+  <!-- SECTION 04 -->
+  <div class="essay-section">
+    <div class="section-marker">
+      <span class="marker-num">04</span>
+      <div class="marker-rule"></div>
+      <span class="marker-title">Marie</span>
+    </div>
+
+    <h2>Behind every care partner<br>is <strong>someone worth fighting for.</strong></h2>
+
+    <p>
+      Marie Parke is not a background figure in this story.
+      She is its center of gravity.
+      Every publication, every tool, every policy brief, every congressional contact,
+      every act of advocacy that this foundation has produced
+      exists because of what it means to love someone through serious illness —
+      and because of what it means to watch a system
+      treat that love as a resource to be extracted rather than a sacrifice to be honored.
+    </p>
+    <p>
+      Marie's experience with kidney disease is not recounted here in clinical detail
+      because this is not a story about symptoms or procedures.
+      It is a story about what it costs to be the person who stays — day after day,
+      appointment after appointment, crisis after crisis — inside a system
+      that was designed for patients and not for the people holding them together.
+    </p>
+    <p>
+      The Cold Ischemia Foundation was named for a medical window of vulnerability.
+      But it was built for a human one — the sustained, invisible, uncompensated state
+      of being indispensable to someone's survival while being invisible to every institution
+      responsible for supporting that survival.
+    </p>
+    <p>
+      This foundation is, in every meaningful way, a tribute to Marie —
+      and to the 53 million Americans whose names no database records,
+      whose labor no paycheck reflects, and whose sacrifice
+      no monument has ever acknowledged.
+    </p>
+
+    <div class="teal-rule"></div>
+  </div>
+
+  <!-- SECTION 05 -->
+  <div class="essay-section">
+    <div class="section-marker">
+      <span class="marker-num">05</span>
+      <div class="marker-rule"></div>
+      <span class="marker-title">Our Commitment</span>
+    </div>
+
+    <h2>Who we answer to.<br><strong>And who we do not.</strong></h2>
+
+    <div class="commitment">
+      <div class="commitment-title">⬡ Independence Pledge — Permanent &amp; Non-Negotiable</div>
+      <p>
+        <strong>The Cold Ischemia Foundation accepts no funding, gifts, grants, sponsorships, donations,
+        or compensation of any kind from pharmaceutical companies, medical device manufacturers,
+        dialysis corporations, transplant centers, hospital systems, organ procurement organizations,
+        or any entity with a financial interest in the policies this foundation exists to challenge.</strong>
+      </p>
+      <p>
+        This is not a preference. It is not a current policy subject to future revision.
+        It is a permanent, structural commitment to the only constituency this foundation serves:
+        care partners and patients who have already paid enough.
+      </p>
+      <p>
+        The patient advocacy landscape in the United States is overwhelmingly funded by the same industries
+        whose practices it is supposed to hold accountable. The National Kidney Foundation,
+        the American Kidney Fund, and the majority of disease-specific advocacy organizations
+        receive significant pharmaceutical and dialysis industry funding.<sup>[7]</sup>
+        Cold Ischemia does not.
+        It never will. And it will say so plainly — in every footer, on every page, in every document —
+        for as long as it operates.
+      </p>
+      <p>
+        If this platform is useful to you, it is because no one paid us to make it anything other than useful to you.
+        That is the only business model that has ever made sense for an organization
+        that exists to expose the failures of institutions that have money and power.
+        We have neither. We have something better.
+        <strong>We have no reason to protect anyone but you.</strong>
+      </p>
+    </div>
+  </div>
+
+</div><!-- /essay -->
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-header">
+    <div class="sources-title">Sources &amp; References</div>
+  </div>
+  <ol class="source-list">
+    <li class="source-item">
+      <span class="source-num">[1]</span>
+      <span class="source-text">AARP and National Alliance for Caregiving. <em>Caregiving in the U.S. 2020.</em> Washington, DC: AARP, 2020. <a href="https://www.caregiving.org/caregiving-in-the-us-2020/" target="_blank" rel="noopener">caregiving.org</a></span>
+    </li>
+    <li class="source-item">
+      <span class="source-num">[2]</span>
+      <span class="source-text">Reinhard, S.C., Feinberg, L.F., Houser, A., Choula, R., &amp; Evans, M. <em>Valuing the Invaluable: 2023 Update.</em> AARP Public Policy Institute, 2023. <a href="https://www.aarp.org/ppi/info-2023/valuing-the-invaluable.html" target="_blank" rel="noopener">aarp.org/ppi</a></span>
+    </li>
+    <li class="source-item">
+      <span class="source-num">[3]</span>
+      <span class="source-text">Centers for Medicare &amp; Medicaid Services. <em>Medicare Benefit Policy Manual, Chapter 11 — End Stage Renal Disease.</em> CMS Publication 100-02. <a href="https://www.cms.gov/regulations-and-guidance/guidance/manuals/internet-only-manuals-ioms-items/cms012673" target="_blank" rel="noopener">cms.gov</a></span>
+    </li>
+    <li class="source-item">
+      <span class="source-num">[4]</span>
+      <span class="source-text">U.S. Government Accountability Office. <em>Organ Transplants: Increased HHS Oversight of Organ Procurement Organizations Needed.</em> GAO-21-70. Washington, DC: GAO, 2020. <a href="https://www.gao.gov/products/gao-21-70" target="_blank" rel="noopener">gao.gov</a></span>
+    </li>
+    <li class="source-item">
+      <span class="source-num">[5]</span>
+      <span class="source-text">U.S. Senate Finance Committee. <em>Preventable Tragedies: How to Save the Next 58,000 Lives Waiting for Organ Transplants.</em> Staff Report. Washington, DC: Senate Finance Committee, 2022. <a href="https://www.finance.senate.gov/imo/media/doc/transplant_report.pdf" target="_blank" rel="noopener">finance.senate.gov</a></span>
+    </li>
+    <li class="source-item">
+      <span class="source-num">[6]</span>
+      <span class="source-text">U.S. Department of Health and Human Services, Office of Inspector General. <em>Medicare's End-Stage Renal Disease Program: Deficiencies in Survey and Certification Oversight.</em> OEI-01-19-00410. Washington, DC: HHS OIG, 2020. <a href="https://oig.hhs.gov/oei/reports/OEI-01-19-00410.asp" target="_blank" rel="noopener">oig.hhs.gov</a></span>
+    </li>
+    <li class="source-item">
+      <span class="source-num">[7]</span>
+      <span class="source-text">Güngör, A. et al. "Industry Funding of Patient Advocacy Organizations for Chronic Kidney Disease." <em>JAMA Internal Medicine</em>, 2023; and McCoy, M.S. et al. "Conflicts of Interest for Patient-Advocacy Organizations." <em>New England Journal of Medicine</em>, 2017;376(9):880–885. <a href="https://www.nejm.org/doi/full/10.1056/NEJMsr1612502" target="_blank" rel="noopener">nejm.org</a></span>
+    </li>
+  </ol>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="f-logo">Cold Ischemia Foundation</span>
+      <p>
+        Grassroots Care Partner Advocacy<br>
+        Ellenton, Florida · 16th Congressional District<br>
+        <a href="/cdn-cgi/l/email-protection#80eae5e6e6c0e3efece4e9f3e3e8e5ede9e1aee6eff5eee4e1f4e9efee"><span class="__cf_email__" data-cfemail="85efe0e3e3c5e6eae9e1ecf6e6ede0e8ece4abe3eaf0ebe1e4f1eceaeb">[email&#160;protected]</span></a><br>
+        <a href="https://coldischemia.foundation">coldischemia.foundation</a>
+      </p>
+      <div class="footer-pledge">
+        <p>
+          <strong>Independence Pledge.</strong> The Cold Ischemia Foundation accepts no funding, gifts, grants, or sponsorships from pharmaceutical companies, medical device manufacturers, dialysis corporations, transplant centers, hospital systems, or any entity with a financial interest in the policies we challenge. We answer to care partners. No one else.
+        </p>
+      </div>
+    </div>
+    <div>
+      <span class="f-col-title">Platform</span>
+      <div class="f-links">
+        <a href="projects.html">Tool Library</a>
+        <a href="https://payhip.com/coldischemia">Publications</a>
+        <a href="command-center.html">Command Center</a>
+        <a href="research.html">Policy Monitor</a>
+        <a href="research.html">Transplant Monitor</a>
+      </div>
+    </div>
+    <div>
+      <span class="f-col-title">Foundation</span>
+      <div class="f-links">
+        <a href="index.html#mission">Our Mission</a>
+        <a href="about.html">Our Story</a>
+        <a href="index.html#pricing">Membership</a>
+        <a href="index.html#videos">Video Briefings</a>
+        <a href="/cdn-cgi/l/email-protection#fd97989b9bbd9e929199948e9e959890949cd39b928893999c89949293">Contact Us</a>
+      </div>
+    </div>
+    <div>
+      <span class="f-col-title">Legal</span>
+      <div class="f-links">
+        <a href="/terms">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="f-bottom-links">
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/cdn-cgi/l/email-protection#4b212e2d2d0b2824272f223828232e26222a652d243e252f2a3f2224254141772d24243f2e396b383f32272e76" background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:36px 40px 20px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:28px;padding-bottom:24px;border-bottom:1px solid rgba(100,140,200,0.1);">
+      <div>
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:24px;display:block;margin-bottom:10px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.22);line-height:2.2;">Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="/cdn-cgi/l/email-protection#c7ada2a1a187a4a8aba3aeb4a4afa2aaaea6e9a1a8b2a9a3a6b3aea8a9" style="color:#c8902a;text-decoration:none;"><span class="__cf_email__" data-cfemail="b0dad5d6d6f0d3dfdcd4d9c3d3d8d5ddd9d19ed6dfc5ded4d1c4d9dfde">[email&#160;protected]</span></a></p>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Command Center</a>
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Situation Room</a>
+          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Research</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Scorecard</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">About</a>
+          <a href="https://payhip.com/coldischemia" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Library</a>
+          
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Donate</a>
+          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Free Guide</a>
+          <a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Home</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Privacy Policy</a>
+          <a href="/cdn-cgi/l/email-protection#442e21222204272b28202d37272c21292d256a222b312a2025302d2b2a" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Contact</a>
+          <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Store</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.18);">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice</p>
+      <div style="display:flex;gap:12px;">
+        <a href="terms.html" style="

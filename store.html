@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Store — Cold Ischemia Foundation</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+<script async src="https://client.memberstack.com/static/memberstack.js" data-memberstack-app="app_cmmihjq3n008g0trohx5z6e68"></script>
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--danger:#c83050;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--abyss);color:var(--ink);font-family:'IBM Plex Mono',monospace;min-height:100vh;overflow-x:hidden;}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-thumb{background:var(--raised);}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:26px;display:block;}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-actions{display:flex;gap:8px;}
+.nav-btn{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;padding:7px 16px;border-radius:2px;border:1px solid var(--b);color:var(--ink40);text-decoration:none;transition:all 0.2s;}
+.nav-btn:hover{border-color:var(--gold-d);color:var(--gold);}
+.nav-btn-gold{background:var(--gold);color:var(--abyss)!important;border-color:var(--gold)!important;}
+.nav-btn-gold:hover{background:var(--gold-l)!important;}
+@media(max-width:900px){.nav-links a{display:none;}.nav-links a.nav-btn{display:flex;}}
+
+/* CONSTRUCTION STAGE */
+.stage{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:80px 24px;}
+.stage::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12));}
+canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.center{position:relative;z-index:2;text-align:center;max-width:680px;margin:0 auto;}
+
+/* Animated stripes */
+.stripes{display:flex;gap:3px;justify-content:center;margin-bottom:40px;}
+.stripe{width:6px;height:48px;border-radius:1px;animation:stripePulse 1.4s ease-in-out infinite;}
+.stripe:nth-child(1){background:var(--gold);animation-delay:0s;}
+.stripe:nth-child(2){background:var(--pulse);animation-delay:0.1s;}
+.stripe:nth-child(3){background:var(--gold);animation-delay:0.2s;}
+.stripe:nth-child(4){background:var(--danger);animation-delay:0.3s;}
+.stripe:nth-child(5){background:var(--gold);animation-delay:0.4s;}
+.stripe:nth-child(6){background:var(--pulse);animation-delay:0.5s;}
+.stripe:nth-child(7){background:var(--gold);animation-delay:0.6s;}
+.stripe:nth-child(8){background:var(--gold-l);animation-delay:0.7s;}
+@keyframes stripePulse{0%,100%{transform:scaleY(1);opacity:0.5;}50%{transform:scaleY(1.6);opacity:1;}}
+
+.eyebrow{font-size:0.42rem;letter-spacing:0.44em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:14px;}
+.eyebrow::before,.eyebrow::after{content:'';width:24px;height:1px;background:var(--gold);opacity:0.4;}
+.big-text{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,12vw,120px);letter-spacing:0.04em;line-height:0.9;color:var(--ink);margin-bottom:12px;}
+.big-text span{color:var(--gold);}
+.sub{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(1.1rem,2.5vw,1.5rem);color:rgba(216,207,196,0.5);margin-bottom:40px;line-height:1.6;}
+
+/* Preview items */
+.preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--b);border:1px solid var(--b);margin:0 auto 44px;max-width:560px;}
+.preview-item{background:var(--surf);padding:20px 16px;text-align:center;position:relative;overflow:hidden;}
+.preview-item::after{content:'COMING SOON';position:absolute;inset:0;background:rgba(3,5,9,0.7);display:flex;align-items:center;justify-content:center;font-size:0.36rem;letter-spacing:0.2em;color:var(--gold);opacity:0;transition:opacity 0.2s;display:grid;place-items:center;}
+.preview-item:hover::after{opacity:1;}
+.pi-icon{font-size:1.8rem;margin-bottom:8px;filter:grayscale(1);opacity:0.3;}
+.pi-label{font-size:0.4rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);}
+
+/* Notify form */
+.notify-wrap{background:var(--void);border:1px solid var(--b);border-top:2px solid var(--gold);padding:28px 32px;border-radius:2px;max-width:480px;margin:0 auto 36px;}
+.notify-label{font-size:0.42rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.notify-form{display:flex;gap:8px;}
+.notify-input{flex:1;background:var(--raised);border:1px solid var(--b);color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.08em;padding:10px 14px;border-radius:2px;outline:none;}
+.notify-input:focus{border-color:var(--gold-d);}
+.notify-btn{background:var(--gold);color:var(--abyss);border:none;font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.18em;text-transform:uppercase;padding:10px 20px;border-radius:2px;cursor:pointer;white-space:nowrap;transition:background 0.2s;}
+.notify-btn:hover{background:var(--gold-l);}
+.notify-note{font-size:0.38rem;letter-spacing:0.1em;color:var(--ink20);margin-top:8px;}
+
+.back-link{font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;display:inline-flex;align-items:center;gap:8px;}
+.back-link:hover{color:var(--gold);}
+
+/* Progress bar */
+.progress-section{margin-bottom:32px;}
+.prog-label{font-size:0.4rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink40);margin-bottom:8px;display:flex;justify-content:space-between;}
+.prog-track{height:3px;background:var(--raised);border-radius:1px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-l));border-radius:1px;width:0;transition:width 1.4s cubic-bezier(0.22,1,0.36,1);}
+
+    /* ── MOBILE NAV FIXES ── */
+    @media(max-width:700px){
+      nav{padding:0 14px;}
+      .nav-logo img{height:22px !important;width:22px !important;}
+      .nav-logo-text,.nav-brand-text{display:none;}
+      .nav-links{gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;padding:0 8px;}
+      .nav-links::-webkit-scrollbar{display:none;}
+      .nav-links a{font-size:0.36rem !important;letter-spacing:0.1em !important;}
+      .nav-links a.hide-mob{display:none;}
+      body{font-size:16px;}
+    }
+    @media(max-width:480px){
+      .nav-links a:not(.nav-primary):not(.active):not(.always){display:none;}
+    }
+
+  </style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="library.html">Library</a>
+    <a href="research.html">Research</a>
+    <a href="situation-room.html">Situation Room</a>
+    <a href="accountability.html">Accountability</a>
+    <a href="https://store.coldischemia.foundation" target="_blank" rel="noopener" class="active">Store</a>
+    <a href="donate.html">Donate</a>
+  </div>
+  <div class="nav-actions">
+  </div>
+<a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;padding:6px 12px;border:1px solid rgba(100,140,200,0.15);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.3)';" onmouseout="this.style.color='rgba(216,207,196,0.45)';this.style.borderColor='rgba(100,140,200,0.15)';">← Home</a>
+</nav>
+
+<div class="stage">
+  <div class="center">
+    <div class="stripes">
+      <div class="stripe"></div><div class="stripe"></div><div class="stripe"></div>
+      <div class="stripe"></div><div class="stripe"></div><div class="stripe"></div>
+      <div class="stripe"></div><div class="stripe"></div>
+    </div>
+
+    <div class="eyebrow">Foundation Store</div>
+    <div class="big-text">UNDER<br><span>CONSTRUCTION</span></div>
+    <p class="sub">Merch that carries the message. Every purchase funds the platform and the people it was built for.</p>
+
+    <div class="progress-section">
+      <div class="prog-label"><span>Store Setup Progress</span><span id="pct">0%</span></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill"></div></div>
+    </div>
+
+    <div class="preview-grid">
+      <div class="preview-item"><div class="pi-icon">👕</div><div class="pi-label">Apparel</div></div>
+      <div class="preview-item"><div class="pi-icon">☕</div><div class="pi-label">Drinkware</div></div>
+      <div class="preview-item"><div class="pi-icon">🎒</div><div class="pi-label">Accessories</div></div>
+      <div class="preview-item"><div class="pi-icon">📌</div><div class="pi-label">Pins &amp; Patches</div></div>
+      <div class="preview-item"><div class="pi-icon">📓</div><div class="pi-label">Journals</div></div>
+      <div class="preview-item"><div class="pi-icon">🏷️</div><div class="pi-label">Stickers</div></div>
+    </div>
+
+    <div class="notify-wrap">
+      <div class="notify-label">Notify me when the store opens</div>
+      <div class="notify-form">
+        <input class="notify-input" type="email" placeholder="your@email.com" id="notifyEmail">
+        <button class="notify-btn" onclick="notifySubmit()">Notify Me →</button>
+      </div>
+      <div class="notify-note" id="notifyMsg">No spam. One email when we launch. That's it.</div>
+    </div>
+
+    <a href="index.html" class="back-link">← Return to Foundation</a>
+  </div>
+</div>
+
+<script>
+// Progress animation
+setTimeout(function(){
+  var fill = document.getElementById('progFill');
+  var pct = document.getElementById('pct');
+  fill.style.width = '35%';
+  var n = 0;
+  var t = setInterval(function(){ n++; pct.textContent = n+'%'; if(n>=35) clearInterval(t); }, 40);
+}, 400);
+
+// Notify submit — points to Mailchimp list
+function notifySubmit(){
+  var email = document.getElementById('notifyEmail').value.trim();
+  var msg = document.getElementById('notifyMsg');
+  if(!email || !email.includes('@')){
+    msg.style.color='var(--danger)';
+    msg.textContent = 'Please enter a valid email.';
+    return;
+  }
+  // Submit to Mailchimp audience
+  var form = document.createElement('form');
+  form.action = 'https://yahoo.us6.list-manage.com/subscribe/post?u=20960b505a060a5f7f476edab&id=c79e8e22e1&f_id=004553e3f0';
+  form.method = 'POST';
+  form.style.display = 'none';
+  var emailInput = document.createElement('input');
+  emailInput.name = 'EMAIL'; emailInput.value = email;
+  var tagInput = document.createElement('input');
+  tagInput.name = 'TAGS'; tagInput.value = 'store-notify';
+  var trap = document.createElement('input');
+  trap.type='text'; trap.name='b_20960b505a060a5f7f476edab_c79e8e22e1'; trap.value='';
+  form.appendChild(emailInput); form.appendChild(tagInput); form.appendChild(trap);
+  document.body.appendChild(form);
+  form.submit();
+  msg.style.color='var(--green)';
+  msg.textContent = "✓ You're on the list. We'll let you know the moment we launch.";
+  document.getElementById('notifyEmail').disabled = true;
+  document.querySelector('.notify-btn').disabled = true;
+}
+
+// Background particles
+(function(){
+  var c=document.getElementById('bg'),ctx=c.getContext('2d'),W,H,pts=[];
+  function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight;}
+  function Pt(){this.x=Math.random()*W;this.y=Math.random()*H;this.vx=(Math.random()-0.5)*0.2;this.vy=(Math.random()-0.5)*0.2;this.r=1+Math.random();this.a=0.05+Math.random()*0.15;this.col=Math.random()>0.5?'200,144,42':'42,196,200';}
+  Pt.prototype.update=function(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W)this.vx*=-1;if(this.y<0||this.y>H)this.vy*=-1;};
+  Pt.prototype.draw=function(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle='rgba('+this.col+','+this.a+')';ctx.fill();};
+  function init(){resize();pts=[];for(var i=0;i<50;i++)pts.push(new Pt());}
+  function loop(){ctx.clearRect(0,0,W,H);pts.forEach(function(p){p.update();p.draw();});requestAnimationFrame(loop);}
+  window.addEventListener('resize',resize);init();loop();
+})();
+</script>
+
+<!-- UNIVERSAL FOOTER -->
+<footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(100,140,200,0.1);">
+      <div>
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:12px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.25);line-height:2.1;">
+          Grassroots Care Partner Advocacy<br>
+          Ellenton, Florida · 16th Congressional District<br>
+          <a href="/cdn-cgi/l/email-protection#91fbf4f7f7d1f2fefdf5f8e2f2f9f4fcf8f0bff7fee4fff5f0e5f8feff" style="color:#c8902a;text-decoration:none;"><span class="__cf_email__" data-cfemail="4a202f2c2c0a2925262e233929222f27232b642c253f242e2b3e232524">[email&#160;protected]</span></a><br>
+          <a href="https://coldischemia.foundation" style="color:#c8902a;text-decoration:none;">coldischemia.foundation</a>
+        </p>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Command Center</a>
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Situation Room</a>
+          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Research</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
+          <a href="library.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Library</a>
+          <a href="media.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Media</a>
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
+          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Free Guide</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Privacy Policy</a>
+          <a href="/cdn-cgi/l/email-protection#f09a959696b0939f9c9499839398959d9991de969f859e949184999f9e" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Contact</a>
+          <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Store</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.06em;color:rgba(216,207,196,0.2);">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+      <div style="display:flex;gap:16px;">
+        <a href="terms

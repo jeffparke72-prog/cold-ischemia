@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accountability Atlas — Cold Ischemia Foundation</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);
+  --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);
+  --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.12);
+  --danger:#c83050;--danger-d:rgba(200,48,80,0.1);
+  --green:#50c878;--green-d:rgba(80,200,120,0.1);
+  --violet:#8050c8;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:var(--raised);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-actions{display:flex;align-items:center;gap:8px;}
+.nav-btn{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;padding:7px 16px;border-radius:2px;border:1px solid var(--b);color:var(--ink40);text-decoration:none;transition:all 0.2s;}
+.nav-btn:hover{border-color:var(--gold-d);color:var(--gold);}
+.nav-btn-gold{background:var(--gold);color:var(--abyss)!important;border-color:var(--gold)!important;}
+.nav-btn-gold:hover{background:var(--gold-l)!important;}
+@media(max-width:900px){.nav-links a:not(.nav-btn){display:none;}}
+
+/* HERO */
+.hero{padding:120px 40px 60px;background:var(--abyss);border-bottom:1px solid var(--b);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12));}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2;}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:14px;}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,8vw,110px);letter-spacing:0.04em;line-height:0.92;color:var(--ink);margin-bottom:24px;}
+.hero-h1 span{color:var(--gold);}
+.hero-sub{font-family:'Crimson Pro',serif;font-size:1.15rem;line-height:1.8;color:var(--ink60);max-width:680px;margin-bottom:36px;}
+.hero-stats{display:flex;gap:40px;flex-wrap:wrap;}
+.hstat{border-left:2px solid var(--gold-d);padding-left:16px;}
+.hstat-n{font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;color:var(--gold-l);display:block;}
+.hstat-l{font-family:'IBM Plex Mono',monospace;font-size:0.43rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);}
+
+/* LSS DASHBOARD */
+.lss-bar{background:var(--void);border-bottom:1px solid var(--b);padding:0 40px;}
+.lss-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--b);}
+.lss-metric{background:var(--void);padding:20px 24px;border-right:none;}
+.lss-m-label{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink20);margin-bottom:6px;}
+.lss-m-val{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;margin-bottom:4px;}
+.lss-m-sub{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;color:var(--ink20);line-height:1.6;}
+.lss-bar-fill{height:3px;border-radius:1px;margin-top:8px;background:var(--raised);}
+.lss-bar-inner{height:100%;border-radius:1px;transition:width 1.2s ease;}
+@media(max-width:700px){.lss-inner{grid-template-columns:1fr 1fr;}}
+
+/* MAIN LAYOUT */
+.main{max-width:1200px;margin:0 auto;padding:0 40px 100px;}
+@media(max-width:600px){.main{padding:0 16px 80px;}}
+
+/* SECTION HEADERS */
+.sec-head{padding:60px 0 32px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.sec-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.sec-h2{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--ink80);}
+.sec-h2 strong{font-weight:600;font-style:normal;color:var(--ink);}
+
+/* FILTER BAR */
+.filter-bar{background:var(--surf);border:1px solid var(--b);border-radius:2px;padding:14px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+.filter-label{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink40);flex-shrink:0;}
+.filter-select{background:var(--raised);border:1px solid var(--b2);color:var(--ink80);font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.1em;padding:8px 12px;border-radius:2px;cursor:pointer;outline:none;transition:border-color 0.2s;}
+.filter-select:hover,.filter-select:focus{border-color:var(--gold-d);}
+.search-input{flex:1;min-width:180px;background:var(--raised);border:1px solid var(--b2);color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.08em;padding:8px 14px;border-radius:2px;outline:none;transition:border-color 0.2s;}
+.search-input::placeholder{color:var(--ink20);}
+.search-input:focus{border-color:var(--gold-d);}
+.filter-count{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.12em;color:var(--ink20);flex-shrink:0;}
+.filter-count span{color:var(--gold);}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:2px;}
+.acc-item{border:1px solid var(--b);border-radius:2px;overflow:hidden;transition:border-color 0.2s;}
+.acc-item.open{border-color:var(--b2);}
+.acc-trigger{width:100%;background:var(--surf);border:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;transition:background 0.2s;}
+.acc-trigger:hover{background:var(--raised);}
+.acc-item.open .acc-trigger{background:var(--raised);border-bottom:1px solid var(--b);}
+.acc-left{display:flex;align-items:center;gap:14px;}
+.acc-badge{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.18em;text-transform:uppercase;padding:4px 10px;border-radius:1px;flex-shrink:0;}
+.badge-federal{background:rgba(200,144,42,0.12);color:var(--gold);}
+.badge-congress{background:rgba(42,196,200,0.12);color:var(--pulse);}
+.badge-state{background:rgba(80,200,120,0.12);color:var(--green);}
+.badge-agency{background:rgba(128,80,200,0.12);color:var(--violet);}
+.badge-legal{background:rgba(200,48,80,0.12);color:var(--danger);}
+.acc-name{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink80);}
+.acc-title{font-size:0.88rem;color:var(--ink40);margin-top:2px;font-family:'Crimson Pro',serif;}
+.acc-chevron{color:var(--ink40);transition:transform 0.3s;flex-shrink:0;font-size:0.7rem;}
+.acc-item.open .acc-chevron{transform:rotate(180deg);}
+.acc-body{display:none;padding:24px 20px;background:var(--abyss);}
+.acc-item.open .acc-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+@media(max-width:700px){.acc-item.open .acc-body{grid-template-columns:1fr;}}
+
+/* CONTACT CARDS */
+.contact-card{background:var(--void);border:1px solid var(--b);border-radius:2px;padding:18px;}
+.cc-label{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--ink20);margin-bottom:8px;}
+.cc-val{font-size:0.92rem;color:var(--ink80);line-height:1.7;font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.06em;}
+.cc-val a{color:var(--pulse);text-decoration:none;}
+.cc-val a:hover{color:var(--ink);}
+.cc-flag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.16em;text-transform:uppercase;padding:3px 8px;border-radius:1px;margin-top:6px;}
+.flag-priority{background:rgba(200,48,80,0.15);color:var(--danger);}
+.flag-media{background:rgba(42,196,200,0.12);color:var(--pulse);}
+.flag-ada{background:rgba(80,200,120,0.12);color:var(--green);}
+
+/* US MAP */
+.map-wrap{position:relative;background:var(--void);border:1px solid var(--b);border-radius:2px;padding:20px;margin-bottom:32px;overflow:hidden;}
+.map-wrap svg{width:100%;height:auto;display:block;}
+.state-path{fill:var(--surf);stroke:var(--b2);stroke-width:0.5;cursor:pointer;transition:fill 0.2s;}
+.state-path:hover{fill:var(--raised);}
+.state-path.selected{fill:rgba(200,144,42,0.2);stroke:var(--gold);stroke-width:1;}
+.map-tooltip{position:absolute;background:var(--raised);border:1px solid var(--b2);padding:10px 14px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.1em;pointer-events:none;opacity:0;transition:opacity 0.15s;z-index:10;white-space:nowrap;}
+.map-tooltip.show{opacity:1;}
+.map-legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;}
+.map-leg-item{display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink40);}
+.map-leg-dot{width:10px;height:10px;border-radius:1px;}
+
+/* TAB SYSTEM */
+.tab-bar{display:flex;gap:2px;margin-bottom:24px;border-bottom:1px solid var(--b);padding-bottom:0;}
+.tab-btn{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.18em;text-transform:uppercase;padding:12px 20px;background:transparent;border:none;color:var(--ink40);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;white-space:nowrap;}
+.tab-btn:hover{color:var(--ink80);}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* PRIORITY MATRIX — LSS TOOL */
+.matrix-wrap{background:var(--void);border:1px solid var(--b);border-radius:2px;overflow:hidden;margin-bottom:32px;}
+.matrix-header{padding:16px 20px;border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between;}
+.matrix-title{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);}
+.matrix-table{width:100%;border-collapse:collapse;}
+.matrix-table th{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink20);padding:10px 16px;text-align:left;border-bottom:1px solid var(--b);background:var(--surf);}
+.matrix-table td{padding:12px 16px;border-bottom:1px solid var(--b);font-size:0.88rem;color:var(--ink80);vertical-align:top;}
+.matrix-table tr:last-child td{border-bottom:none;}
+.matrix-table tr:hover td{background:rgba(200,144,42,0.03);}
+.priority-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:middle;}
+.p-critical{background:var(--danger);}
+.p-high{background:var(--gold);}
+.p-medium{background:var(--pulse);}
+.p-low{background:var(--green);}
+.score-bar-wrap{display:flex;align-items:center;gap:8px;}
+.score-bar{height:4px;background:var(--raised);border-radius:2px;flex:1;overflow:hidden;}
+.score-fill{height:100%;border-radius:2px;}
+
+/* COPY BUTTON */
+.copy-btn{background:transparent;border:1px solid var(--b);color:var(--ink40);font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.14em;text-transform:uppercase;padding:4px 10px;border-radius:1px;cursor:pointer;transition:all 0.2s;}
+.copy-btn:hover{border-color:var(--gold-d);color:var(--gold);}
+.copy-btn.copied{border-color:var(--green);color:var(--green);}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hero{padding:90px 20px 40px;}
+  .lss-inner{grid-template-columns:1fr 1fr;}
+  .tab-bar{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+}
+
+    /* ── MOBILE NAV FIXES ── */
+    @media(max-width:700px){
+      nav{padding:0 14px;}
+      .nav-logo img{height:32px !important;width:32px !important;}
+      .nav-logo-text,.nav-brand-text{display:none;}
+      .nav-links{gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;padding:0 8px;}
+      .nav-links::-webkit-scrollbar{display:none;}
+      .nav-links a{font-size:0.36rem !important;letter-spacing:0.1em !important;}
+      .nav-links a.hide-mob{display:none;}
+      body{font-size:16px;}
+    }
+    @media(max-width:480px){
+      .nav-links a:not(.nav-primary):not(.active):not(.always){display:none;}
+    }
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="https://payhip.com/coldischemia">Library</a>
+    <a href="research.html">Research</a>
+    <a href="situation-room.html">Situation Room</a>
+    <a href="accountability.html" class="active">Accountability</a>
+    <a href="congress-scorecard.html">Scorecard</a>
+    <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener">Store</a>
+    <a href="donate.html">Donate</a>
+  </div>
+  <div class="nav-actions">
+    <a href="donate.html" class="nav-btn nav-btn-gold">Donate Now</a>
+  </div>
+<a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;padding:6px 12px;border:1px solid rgba(100,140,200,0.15);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.3)';" onmouseout="this.style.color='rgba(216,207,196,0.45)';this.style.borderColor='rgba(100,140,200,0.15)';">← Home</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Accountability Atlas · Cold Ischemia Foundation</div>
+    <h1 class="hero-h1">EVERY<br>DECISION<br><span>MAKER.</span></h1>
+    <p class="hero-sub">Every federal agency, congressional leader, transplant authority, and legal mechanism that affects your care — with direct contact information. Because accountability requires access. And access starts here.</p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">7</span><span class="hstat-l">Federal agencies tracked</span></div>
+      <div class="hstat"><span class="hstat-n">535</span><span class="hstat-l">Congress members</span></div>
+      <div class="hstat"><span class="hstat-n">50</span><span class="hstat-l">State delegations</span></div>
+      <div class="hstat"><span class="hstat-n">18</span><span class="hstat-l">ESRD Networks</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LSS DASHBOARD BAR -->
+<div class="lss-bar">
+  <div class="lss-inner">
+    <div class="lss-metric">
+      <div class="lss-m-label">Accountability Index</div>
+      <div class="lss-m-val" style="color:var(--gold);">34%</div>
+      <div class="lss-m-sub">Agencies w/ transparent complaint response SLAs</div>
+      <div class="lss-bar-fill"><div class="lss-bar-inner" style="width:34%;background:var(--gold);"></div></div>
+    </div>
+    <div class="lss-metric">
+      <div class="lss-m-label">Response Rate</div>
+      <div class="lss-m-val" style="color:var(--danger);">61 days</div>
+      <div class="lss-m-sub">Avg. CMS complaint response time (target: 14 days)</div>
+      <div class="lss-bar-fill"><div class="lss-bar-inner" style="width:77%;background:var(--danger);"></div></div>
+    </div>
+    <div class="lss-metric">
+      <div class="lss-m-label">OPTN Transparency</div>
+      <div class="lss-m-val" style="color:var(--pulse);">Low</div>
+      <div class="lss-m-sub">Care partner representation on governance boards</div>
+      <div class="lss-bar-fill"><div class="lss-bar-inner" style="width:18%;background:var(--pulse);"></div></div>
+    </div>
+    <div class="lss-metric">
+      <div class="lss-m-label">ADA Enforcement</div>
+      <div class="lss-m-val" style="color:var(--green);">Active</div>
+      <div class="lss-m-sub">DOJ civil rights complaints accepted · Section 504</div>
+      <div class="lss-bar-fill"><div class="lss-bar-inner" style="width:72%;background:var(--green);"></div></div>
+    </div>
+    <div class="lss-metric">
+      <div class="lss-m-label">Escalation Paths</div>
+      <div class="lss-m-val" style="color:var(--gold-l);">14</div>
+      <div class="lss-m-sub">Documented federal escalation contacts mapped below</div>
+      <div class="lss-bar-fill"><div class="lss-bar-inner" style="width:90%;background:var(--gold-l);"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ── TAB SYSTEM ── -->
+  <div class="tab-bar" id="tabBar">
+    <button class="tab-btn active" data-tab="federal">Federal Agencies</button>
+    <button class="tab-btn" data-tab="congress">Congressional Leadership</button>
+    <button class="tab-btn" data-tab="transplant">Transplant Authorities</button>
+    <button class="tab-btn" data-tab="states">State Directory</button>
+    <button class="tab-btn" data-tab="legal">ADA & Legal Rights</button>
+    <button class="tab-btn" data-tab="matrix">LSS Priority Matrix</button>
+  </div>
+
+  <!-- ══ FEDERAL AGENCIES ══ -->
+  <div class="tab-panel active" id="tab-federal">
+    <div class="sec-head">
+      <div><div class="sec-eyebrow">Federal Oversight</div><h2 class="sec-h2">The agencies <strong>responsible for your care.</strong></h2></div>
+    </div>
+    <div class="filter-bar">
+      <span class="filter-label">Filter:</span>
+      <select class="filter-select" onchange="filterAccordion('federal',this.value)">
+        <option value="all">All Agencies</option>
+        <option value="cms">CMS</option>
+        <option value="hhs">HHS</option>
+        <option value="nih">NIH</option>
+        <option value="oig">OIG</option>
+        <option value="doj">DOJ</option>
+      </select>
+      <input class="search-input" placeholder="Search agencies, contacts…" oninput="searchAccordion('federal',this.value)">
+      <span class="filter-count">Showing <span id="federal-count">7</span> agencies</span>
+    </div>
+    <div class="accordion" id="federal-acc">
+
+      <div class="acc-item" data-tags="cms federal">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-federal">CMS</span>
+            <div><div class="acc-name">Centers for Medicare &amp; Medicaid Services</div><div class="acc-title">Primary regulatory authority · ESRD Conditions for Coverage · 42 CFR §494</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card" style="border-left:3px solid var(--gold);">
+            <div class="cc-label">Current Administrator</div>
+            <div class="cc-val" style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);">Dr. Mehmet Oz</div>
+            <div class="cc-label" style="margin-top:8px;">Address Correspondence To</div>
+            <div class="cc-val">7500 Security Boulevard<br>Baltimore, MD 21244</div>
+            <span class="cc-flag flag-priority">Verified Current — Sept 2026</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Main Switchboard</div>
+            <div class="cc-val"><a href="tel:18773678800">1-877-267-2323</a></div>
+            <div class="cc-label" style="margin-top:12px;">TTY</div>
+            <div class="cc-val"><a href="tel:18665172027">1-866-517-2027</a></div>
+            <span class="cc-flag flag-priority">High Priority Contact</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">File a Complaint (1-800-MEDICARE)</div>
+            <div class="cc-val"><a href="tel:18006331227">1-800-633-1227</a><br>24 hours / 7 days</div>
+            <div class="cc-label" style="margin-top:12px;">Online Complaint Portal</div>
+            <div class="cc-val"><a href="https://www.cms.gov/Medicare/Provider-Enrollment-and-Certification/GettingStartedwithCredentials/Complaints" target="_blank">cms.gov complaint portal →</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Mailing Address</div>
+            <div class="cc-val">7500 Security Boulevard<br>Baltimore, MD 21244</div>
+            <div class="cc-label" style="margin-top:12px;">Media Inquiries</div>
+            <div class="cc-val"><a href="/cdn-cgi/l/email-protection#066c6360604665696a626f75656e636b6f6728606973686267726f6968"><span class="__cf_email__" data-cfemail="7f151a19193f1c10131b160c1c171a12161e5119100a111b1e0b161011">[email&#160;protected]</span></a></div>
+            <span class="cc-flag flag-media">Media Line</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" data-tags="hhs federal">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-federal">HHS</span>
+            <div><div class="acc-name">Department of Health &amp; Human Services</div><div class="acc-title">Secretary-level oversight · HRSA · OPTN contract authority</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card" style="border-left:3px solid var(--gold);">
+            <div class="cc-label">Current Secretary</div>
+            <div class="cc-val" style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);">Robert F. Kennedy Jr.</div>
+            <div class="cc-label" style="margin-top:8px;">Address Correspondence To</div>
+            <div class="cc-val">200 Independence Avenue SW<br>Washington, DC 20201</div>
+            <span class="cc-flag flag-priority">Verified Current — Sept 2026</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Main Number</div>
+            <div class="cc-val"><a href="tel:12026190257">1-202-619-0257</a></div>
+            <div class="cc-label" style="margin-top:12px;">Toll Free</div>
+            <div class="cc-val"><a href="tel:18776966775">1-877-696-6775</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Civil Rights Office (OCR)</div>
+            <div class="cc-val"><a href="tel:18008686827">1-800-368-1019</a><br>Discrimination complaints, ADA violations, HIPAA</div>
+            <div class="cc-label" style="margin-top:12px;">OCR Complaint Portal</div>
+            <div class="cc-val"><a href="https://www.hhs.gov/civil-rights/filing-a-complaint" target="_blank">hhs.gov/civil-rights →</a></div>
+            <span class="cc-flag flag-ada">ADA / Civil Rights</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Mailing Address</div>
+            <div class="cc-val">200 Independence Avenue SW<br>Washington, DC 20201</div>
+            <div class="cc-label" style="margin-top:12px;">Media / Press</div>
+            <div class="cc-val"><a href="/cdn-cgi/l/email-protection#5e343b38381e3d31323a372d3d363b33373f7038312b303a3f2a373130"><span class="__cf_email__" data-cfemail="eb818e8d8dab8884878f829888838e86828ac58d849e858f8a9f828485">[email&#160;protected]</span></a></div>
+            <span class="cc-flag flag-media">Press Office</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" data-tags="nih federal">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-federal">NIH</span>
+            <div><div class="acc-name">National Institutes of Health</div><div class="acc-title">Research funding authority · Chronic disease &amp; caregiver outcome research priorities</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card" style="border-left:3px solid var(--gold);">
+            <div class="cc-label">Current Director</div>
+            <div class="cc-val" style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);">Dr. Jay Bhattacharya</div>
+            <div class="cc-label" style="margin-top:8px;">Address Correspondence To</div>
+            <div class="cc-val">9000 Rockville Pike<br>Bethesda, MD 20892</div>
+            <span class="cc-flag flag-priority">Verified Current — Sept 2026</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Main Number</div>
+            <div class="cc-val"><a href="tel:13014964000">1-301-496-4000</a></div>
+            <div class="cc-label" style="margin-top:12px;">NIDDK (Kidney Disease Institute)</div>
+            <div class="cc-val">National Institute of Diabetes and Digestive and Kidney Diseases — the specific institute overseeing kidney/transplant research funding</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" data-tags="oig federal">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-federal">OIG</span>
+            <div><div class="acc-name">HHS Office of Inspector General</div><div class="acc-title">Fraud, waste, abuse, compliance violations in Medicare/Medicaid programs</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">Fraud Hotline</div>
+            <div class="cc-val"><a href="tel:18004477660">1-800-HHS-TIPS (1-800-447-7660)</a><br>Anonymous complaints accepted</div>
+            <span class="cc-flag flag-priority">Anonymous Accepted</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Online Complaint Form</div>
+            <div class="cc-val"><a href="https://oig.hhs.gov/fraud/report-fraud/" target="_blank">oig.hhs.gov/fraud/report-fraud →</a></div>
+            <div class="cc-label" style="margin-top:12px;">Fax</div>
+            <div class="cc-val">1-800-223-8164</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Mailing Address</div>
+            <div class="cc-val">P.O. Box 23489<br>Washington, DC 20026</div>
+            <div class="cc-label" style="margin-top:12px;">Key Use Case</div>
+            <div class="cc-val" style="color:var(--ink60);">ESRD facility non-compliance, improper discharge, billing fraud, retaliation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" data-tags="hrsa federal hhs">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-federal">HRSA</span>
+            <div><div class="acc-name">Health Resources &amp; Services Administration</div><div class="acc-title">OPTN contract authority · Organ Procurement Oversight · Transplant system regulation</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">Main Number</div>
+            <div class="cc-val"><a href="tel:13014435034">1-301-443-5034</a></div>
+            <div class="cc-label" style="margin-top:12px;">Healthcare Systems Bureau</div>
+            <div class="cc-val"><a href="tel:13014430000">1-301-443-0000</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Transplant Issues / OPTN Oversight</div>
+            <div class="cc-val"><a href="/cdn-cgi/l/email-protection#375d5251517754585b535e44545f525a5e5619515842595356435e5859"><span class="__cf_email__" data-cfemail="204a45464660434f4c4449534348454d49410e464f554e444154494f4e">[email&#160;protected]</span></a></div>
+            <div class="cc-label" style="margin-top:12px;">Division of Transplantation</div>
+            <div class="cc-val">5600 Fishers Lane<br>Rockville, MD 20857</div>
+            <span class="cc-flag flag-priority">Transplant Authority</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Media Inquiries</div>
+            <div class="cc-val"><a href="/cdn-cgi/l/email-protection#2e444b48486e4d41424a475d4d464b43474f0048415b404a4f5a474140"><span class="__cf_email__" data-cfemail="4a202f2c2c0a2925262e233929222f27232b642c253f242e2b3e232524">[email&#160;protected]</span></a></div>
+            <div class="cc-label" style="margin-top:12px;">Public Information</div>
+            <div class="cc-val"><a href="https://www.hrsa.gov/about/contact" target="_blank">hrsa.gov/about/contact →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" data-tags="doj ada legal federal">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-legal">DOJ</span>
+            <div><div class="acc-name">Department of Justice — Civil Rights Division</div><div class="acc-title">ADA enforcement · Section 504 Rehabilitation Act · Disability rights complaints</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">ADA Information Line</div>
+            <div class="cc-val"><a href="tel:18003142183">1-800-514-0301</a><br>M–F 9:30am–5:30pm ET</div>
+            <div class="cc-label" style="margin-top:12px;">TTY</div>
+            <div class="cc-val"><a href="tel:18003142183">1-800-514-0383</a></div>
+            <span class="cc-flag flag-ada">ADA Enforcement</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">File ADA Complaint Online</div>
+            <div class="cc-val"><a href="https://www.ada.gov/filing-a-complaint/" target="_blank">ada.gov/filing-a-complaint →</a></div>
+            <div class="cc-label" style="margin-top:12px;">Civil Rights Complaints</div>
+            <div class="cc-val"><a href="https://civilrights.justice.gov/" target="_blank">civilrights.justice.gov →</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Disability Rights Section</div>
+            <div class="cc-val">950 Pennsylvania Ave NW<br>Washington, DC 20530</div>
+            <div class="cc-label" style="margin-top:12px;">Key Statutes</div>
+            <div class="cc-val" style="color:var(--ink60);">Americans with Disabilities Act (ADA) · Section 504 · Section 508 · Fair Housing Act</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" data-tags="gao federal oversight">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-federal">GAO</span>
+            <div><div class="acc-name">Government Accountability Office</div><div class="acc-title">Congressional watchdog · Transplant system audits · Medicare program investigations</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">Main Number</div>
+            <div class="cc-val"><a href="tel:12025121000">1-202-512-1000</a></div>
+            <div class="cc-label" style="margin-top:12px;">FraudNet Hotline</div>
+            <div class="cc-val"><a href="tel:18009975589">1-800-424-5454</a></div>
+            <span class="cc-flag flag-priority">Accepts Public Tips</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">FraudNet Online</div>
+            <div class="cc-val"><a href="https://www.gao.gov/fraudnet" target="_blank">gao.gov/fraudnet →</a></div>
+            <div class="cc-label" style="margin-top:12px;">Congressional Requests</div>
+            <div class="cc-val">Complaints referred to relevant committee staff for GAO investigation</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Mailing Address</div>
+            <div class="cc-val">441 G Street NW<br>Washington, DC 20548</div>
+            <div class="cc-label" style="margin-top:12px;">Reports Portal</div>
+            <div class="cc-val"><a href="https://www.gao.gov/reports-testimonies" target="_blank">gao.gov/reports-testimonies →</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /federal-acc -->
+  </div><!-- /tab-federal -->
+
+  <!-- ══ CONGRESSIONAL LEADERSHIP ══ -->
+  <div class="tab-panel" id="tab-congress">
+    <div class="sec-head">
+      <div><div class="sec-eyebrow">Congress</div><h2 class="sec-h2">The legislators <strong>who set the rules.</strong></h2></div>
+    </div>
+    <div class="filter-bar">
+      <span class="filter-label">Chamber:</span>
+      <select class="filter-select" onchange="filterAccordion('congress',this.value)">
+        <option value="all">All</option>
+        <option value="senate">Senate</option>
+        <option value="house">House</option>
+      </select>
+      <select class="filter-select" onchange="filterCongress(this.value)" id="committeeFilter">
+        <option value="all">All Committees</option>
+        <option value="finance">Senate Finance</option>
+        <option value="health">HELP Committee</option>
+        <option value="energy">Energy &amp; Commerce</option>
+        <option value="ways">Ways &amp; Means</option>
+      </select>
+      <input class="search-input" placeholder="Search by name, state, committee…" oninput="searchAccordion('congress',this.value)">
+    </div>
+    <div class="accordion" id="congress-acc">
+
+      <div class="acc-item" data-tags="senate finance leadership">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-congress">Senate</span>
+            <div><div class="acc-name">Senate Finance Committee</div><div class="acc-title">Medicare, Medicaid, CHIP oversight · Transplant funding legislation</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">Committee Main</div>
+            <div class="cc-val"><a href="tel:12022243344">1-202-224-3344</a></div>
+            <div class="cc-label" style="margin-top:12px;">Majority Staff Director</div>
+            <div class="cc-val">Senate Finance Committee<br>219 Dirksen Senate Office Building<br>Washington, DC 20510</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Committee Website</div>
+            <div class="cc-val"><a href="https://www.finance.senate.gov" target="_blank">finance.senate.gov →</a></div>
+            <div class="cc-label" style="margin-top:12px;">Hearing Schedule</div>
+            <div class="cc-val"><a href="https://www.finance.senate.gov/hearings" target="_blank">finance.senate.gov/hearings →</a></div>
+            <span class="cc-flag flag-priority">Key Committee — Kidney Policy</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Submit Public Comment</div>
+            <div class="cc-val">Contact committee staff directly. Reference ESRD/transplant policy by bill number or docket for fastest routing.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" data-tags="senate health help committee">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-congress">Senate</span>
+            <div><div class="acc-name">HELP Committee — Health, Education, Labor &amp; Pensions</div><div class="acc-title">Public health, FDA, transplant safety, HRSA oversight</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">Committee Main</div>
+            <div class="cc-val"><a href="tel:12022243643">1-202-224-5375</a></div>
+            <div class="cc-label" style="margin-top:12px;">Address</div>
+            <div class="cc-val">428 Dirksen Senate Office Building<br>Washington, DC 20510</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Committee Website</div>
+            <div class="cc-val"><a href="https://www.help.senate.gov" target="_blank">help.senate.gov →</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Relevance</div>
+            <div class="cc-val" style="color:var(--ink60);">HRSA oversight, transplant safety regulation, organ procurement reform</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" data-tags="house energy commerce committee">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-congress">House</span>
+            <div><div class="acc-name">House Energy &amp; Commerce Committee</div><div class="acc-title">Health Subcommittee · Medicare, public health, OPTN reform</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">Committee Main</div>
+            <div class="cc-val"><a href="tel:12022252927">1-202-225-2927</a></div>
+            <div class="cc-label" style="margin-top:12px;">Address</div>
+            <div class="cc-val">2125 Rayburn House Office Building<br>Washington, DC 20515</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Committee Website</div>
+            <div class="cc-val"><a href="https://energycommerce.house.gov" target="_blank">energycommerce.house.gov →</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Health Subcommittee</div>
+            <div class="cc-val">Primary House oversight of Medicare, Medicaid, OPTN, ESRD policy. File constituent concerns through your House member.</div>
+            <span class="cc-flag flag-priority">OPTN Reform Jurisdiction</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" data-tags="house ways means committee">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-congress">House</span>
+            <div><div class="acc-name">House Ways &amp; Means Committee — Health Subcommittee</div><div class="acc-title">Medicare financing, ESRD payment policy, dialysis reimbursement</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">Committee Main</div>
+            <div class="cc-val"><a href="tel:12022253625">1-202-225-3625</a></div>
+            <div class="cc-label" style="margin-top:12px;">Address</div>
+            <div class="cc-val">1102 Longworth House Office Building<br>Washington, DC 20515</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Committee Website</div>
+            <div class="cc-val"><a href="https://waysandmeans.house.gov" target="_blank">waysandmeans.house.gov →</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Relevance</div>
+            <div class="cc-val" style="color:var(--ink60);">ESRD bundled payment reform, dialysis center reimbursement, Medicare funding for transplant</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" data-tags="congress find member">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-congress">Tool</span>
+            <div><div class="acc-name">Find Your Representatives — All 535 Members</div><div class="acc-title">Enter your ZIP code to get direct contact for your Senator and House member</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card" style="grid-column:1/-1;">
+            <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:20px;">
+              <div>
+                <div class="cc-label">Your ZIP Code</div>
+                <input id="zipInput" class="search-input" style="width:140px;" placeholder="33803" maxlength="5">
+              </div>
+              <button onclick="lookupRep()" style="padding:9px 20px;background:var(--gold);color:var(--abyss);border:none;font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;border-radius:2px;">Look Up →</button>
+            </div>
+            <div id="rep-results" style="font-size:0.9rem;color:var(--ink60);line-height:1.8;"></div>
+            <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px;">
+              <a href="https://www.congress.gov/members/find-your-member" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:1px solid var(--b2);color:var(--pulse);font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;">Congress.gov Member Finder →</a>
+              <a href="https://www.senate.gov/senators/senators-contact.htm" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:1px solid var(--b2);color:var(--pulse);font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;">Senate Contact Directory →</a>
+              <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:1px solid var(--b2);color:var(--pulse);font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;">House Representative Finder →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ TRANSPLANT AUTHORITIES ══ -->
+  <div class="tab-panel" id="tab-transplant">
+    <div class="sec-head">
+      <div><div class="sec-eyebrow">Transplant System</div><h2 class="sec-h2">The organizations <strong>that control the list.</strong></h2></div>
+    </div>
+    <div class="accordion" id="transplant-acc">
+
+      <div class="acc-item">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-agency">UNOS/OPTN</span>
+            <div><div class="acc-name">United Network for Organ Sharing / OPTN</div><div class="acc-title">National transplant waiting list · Organ allocation policy · HRSA contract holder</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card" style="border-left:3px solid var(--gold);">
+            <div class="cc-label">Current OPTN Board President</div>
+            <div class="cc-val" style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);">John C. Magee, MD</div>
+            <div class="cc-label" style="margin-top:8px;">Affiliation</div>
+            <div class="cc-val">Jeremiah &amp; Claire Turcotte Professor of Transplant Surgery, University of Michigan Medical Center</div>
+            <span class="cc-flag flag-priority">Verified Current — Sept 2026</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Main Number</div>
+            <div class="cc-val"><a href="tel:18047824800">1-804-782-4800</a></div>
+            <div class="cc-label" style="margin-top:12px;">Patient Services</div>
+            <div class="cc-val"><a href="tel:18888946361">1-888-894-6361</a></div>
+            <span class="cc-flag flag-priority">Patient Services Line</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Transplant Center Complaints</div>
+            <div class="cc-val"><a href="/cdn-cgi/l/email-protection#a7cdc2c1c1e7c4c8cbc3ced4c4cfc2cacec689c1c8d2c9c3c6d3cec8c9"><span class="__cf_email__" data-cfemail="442e21222204272b28202d37272c21292d256a222b312a2025302d2b2a">[email&#160;protected]</span></a></div>
+            <div class="cc-label" style="margin-top:12px;">Address</div>
+            <div class="cc-val">700 North 4th Street<br>Richmond, VA 23219</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Policy & Media</div>
+            <div class="cc-val"><a href="/cdn-cgi/l/email-protection#94fef1f2f2d4f7fbf8f0fde7f7fcf1f9fdf5baf2fbe1faf0f5e0fdfbfa"><span class="__cf_email__" data-cfemail="533936353513303c3f373a20303b363e3a327d353c263d3732273a3c3d">[email&#160;protected]</span></a></div>
+            <div class="cc-label" style="margin-top:12px;">Website</div>
+            <div class="cc-val"><a href="https://unos.org" target="_blank">unos.org →</a></div>
+            <span class="cc-flag flag-media">Media Line</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-agency">ESRD</span>
+            <div><div class="acc-name">ESRD Networks (18 Regional Networks)</div><div class="acc-title">Regional patient grievance · Quality improvement · CMS contractor oversight</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">Find Your ESRD Network</div>
+            <div class="cc-val"><a href="https://esrdnetwork.org" target="_blank">esrdnetwork.org →</a></div>
+            <div class="cc-label" style="margin-top:12px;">Network 7 (SE United States / Florida)</div>
+            <div class="cc-val"><a href="tel:18666374722">1-866-637-4722</a></div>
+            <span class="cc-flag flag-priority">File Grievance Here First</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">What They Handle</div>
+            <div class="cc-val" style="color:var(--ink60);">Discharge disputes · Facility complaints · Patient rights violations · 42 CFR §494 complaints</div>
+            <div class="cc-label" style="margin-top:12px;">Timeline</div>
+            <div class="cc-val">Network must acknowledge complaint within 3 business days. Resolution target: 30 days.</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">CMS ESRD Network Oversight</div>
+            <div class="cc-val"><a href="https://www.cms.gov/Medicare/End-Stage-Renal-Disease/ESRDNetworkOrganizations" target="_blank">cms.gov/ESRD-networks →</a></div>
+            <div class="cc-label" style="margin-top:12px;">All 18 Networks Directory</div>
+            <div class="cc-val"><a href="https://esrdnetwork.org/networks" target="_blank">esrdnetwork.org/networks →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-agency">AOPO</span>
+            <div><div class="acc-name">Association of Organ Procurement Organizations</div><div class="acc-title">OPO oversight · Organ recovery accountability · Donor family representation</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">Main Number</div>
+            <div class="cc-val"><a href="tel:17038304500">1-703-830-4500</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Address</div>
+            <div class="cc-val">1364 Beverly Road, Suite 100<br>McLean, VA 22101</div>
+            <div class="cc-label" style="margin-top:12px;">Website</div>
+            <div class="cc-val"><a href="https://www.aopo.org" target="_blank">aopo.org →</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Complaints About OPO Conduct</div>
+            <div class="cc-val">File with HRSA Division of Transplantation AND your regional OPTN member organization simultaneously.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ STATE DIRECTORY ══ -->
+  <div class="tab-panel" id="tab-states">
+    <div class="sec-head">
+      <div><div class="sec-eyebrow">State Level</div><h2 class="sec-h2">State survey agencies <strong>&amp; Medicaid offices.</strong></h2></div>
+    </div>
+
+    <!-- Interactive Map -->
+    <div class="map-wrap">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Click any state to view contact information</div>
+      <svg id="us-map" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+        <!-- Simplified state outlines - key states with full paths, others approximated -->
+        <!-- FL -->
+        <path class="state-path" id="FL" d="M680,480 L720,470 L730,510 L720,540 L700,550 L680,530 Z" data-state="Florida" onclick="selectState('FL')"/>
+        <!-- TX -->
+        <path class="state-path" id="TX" d="M400,420 L520,420 L530,500 L490,530 L450,510 L390,470 Z" data-state="Texas" onclick="selectState('TX')"/>
+        <!-- CA -->
+        <path class="state-path" id="CA" d="M80,200 L130,160 L140,280 L110,350 L80,320 Z" data-state="California" onclick="selectState('CA')"/>
+        <!-- NY -->
+        <path class="state-path" id="NY" d="M730,160 L800,150 L810,200 L760,210 L740,190 Z" data-state="New York" onclick="selectState('NY')"/>
+        <!-- PA -->
+        <path class="state-path" id="PA" d="M720,210 L800,205 L800,250 L720,255 Z" data-state="Pennsylvania" onclick="selectState('PA')"/>
+        <!-- OH -->
+        <path class="state-path" id="OH" d="M660,210 L720,210 L718,260 L658,258 Z" data-state="Ohio" onclick="selectState('OH')"/>
+        <!-- IL -->
+        <path class="state-path" id="IL" d="M580,210 L630,210 L628,300 L578,298 Z" data-state="Illinois" onclick="selectState('IL')"/>
+        <!-- GA -->
+        <path class="state-path" id="GA" d="M680,360 L740,355 L738,420 L700,430 L678,410 Z" data-state="Georgia" onclick="selectState('GA')"/>
+        <!-- NC -->
+        <path class="state-path" id="NC" d="M730,310 L820,305 L822,345 L730,350 Z" data-state="North Carolina" onclick="selectState('NC')"/>
+        <!-- MI -->
+        <path class="state-path" id="MI" d="M630,140 L690,135 L695,185 L660,200 L630,190 Z" data-state="Michigan" onclick="selectState('MI')"/>
+        <!-- WA -->
+        <path class="state-path" id="WA" d="M100,80 L180,75 L182,130 L102,132 Z" data-state="Washington" onclick="selectState('WA')"/>
+        <!-- AZ -->
+        <path class="state-path" id="AZ" d="M180,340 L260,338 L262,420 L182,422 Z" data-state="Arizona" onclick="selectState('AZ')"/>
+        <!-- CO -->
+        <path class="state-path" id="CO" d="M310,270 L400,268 L402,340 L312,342 Z" data-state="Colorado" onclick="selectState('CO')"/>
+        <!-- TN -->
+        <path class="state-path" id="TN" d="M620,340 L730,337 L732,370 L622,373 Z" data-state="Tennessee" onclick="selectState('TN')"/>
+        <!-- VA -->
+        <path class="state-path" id="VA" d="M720,270 L820,265 L822,310 L722,315 Z" data-state="Virginia" onclick="selectState('VA')"/>
+        <!-- MA -->
+        <path class="state-path" id="MA" d="M830,160 L880,158 L882,185 L832,187 Z" data-state="Massachusetts" onclick="selectState('MA')"/>
+        <!-- MN -->
+        <path class="state-path" id="MN" d="M490,100 L570,98 L572,180 L492,182 Z" data-state="Minnesota" onclick="selectState('MN')"/>
+        <!-- IN -->
+        <path class="state-path" id="IN" d="M628,212 L660,210 L658,280 L626,282 Z" data-state="Indiana" onclick="selectState('IN')"/>
+        <!-- MO -->
+        <path class="state-path" id="MO" d="M530,270 L610,268 L612,340 L532,342 Z" data-state="Missouri" onclick="selectState('MO')"/>
+        <!-- WI -->
+        <path class="state-path" id="WI" d="M558,130 L630,128 L632,210 L560,212 Z" data-state="Wisconsin" onclick="selectState('WI')"/>
+        <!-- AK -->
+        <path class="state-path" id="AK" d="M100,500 L200,490 L210,560 L110,565 Z" data-state="Alaska" onclick="selectState('AK')"/>
+        <!-- HI -->
+        <path class="state-path" id="HI" d="M250,540 L290,538 L295,565 L255,568 Z" data-state="Hawaii" onclick="selectState('HI')"/>
+        <!-- State labels -->
+        <text x="695" y="510" fill="rgba(216,207,196,0.5)" font-size="9" font-family="IBM Plex Mono" text-anchor="middle">FL</text>
+        <text x="460" y="475" fill="rgba(216,207,196,0.5)" font-size="9" font-family="IBM Plex Mono" text-anchor="middle">TX</text>
+        <text x="107" y="270" fill="rgba(216,207,196,0.5)" font-size="9" font-family="IBM Plex Mono" text-anchor="middle">CA</text>
+        <text x="770" y="182" fill="rgba(216,207,196,0.5)" font-size="9" font-family="IBM Plex Mono" text-anchor="middle">NY</text>
+        <text x="660" y="235" fill="rgba(216,207,196,0.5)" font-size="9" font-family="IBM Plex Mono" text-anchor="middle">OH</text>
+        <text x="600" y="258" fill="rgba(216,207,196,0.5)" font-size="9" font-family="IBM Plex Mono" text-anchor="middle">IL</text>
+        <text x="708" y="395" fill="rgba(216,207,196,0.5)" font-size="9" font-family="IBM Plex Mono" text-anchor="middle">GA</text>
+        <text x="142" y="382" fill="rgba(216,207,196,0.5)" font-size="9" font-family="IBM Plex Mono" text-anchor="middle">AZ</text>
+        <text x="356" y="308" fill="rgba(216,207,196,0.5)" font-size="9" font-family="IBM Plex Mono" text-anchor="middle">CO</text>
+        <text x="676" y="357" fill="rgba(216,207,196,0.5)" font-size="9" font-family="IBM Plex Mono" text-anchor="middle">TN</text>
+      </svg>
+      <div class="map-tooltip" id="mapTooltip"></div>
+      <div class="map-legend">
+        <div class="map-leg-item"><div class="map-leg-dot" style="background:var(--surf);border:1px solid var(--b2);"></div>Not selected</div>
+        <div class="map-leg-item"><div class="map-leg-dot" style="background:rgba(200,144,42,0.2);border:1px solid var(--gold);"></div>Selected</div>
+      </div>
+    </div>
+
+    <!-- State info panel -->
+    <div id="state-panel" style="display:none;background:var(--void);border:1px solid var(--b2);border-left:3px solid var(--gold);border-radius:2px;padding:28px;margin-bottom:24px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;" id="state-name"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;" id="state-contacts"></div>
+    </div>
+
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.18em;color:var(--ink40);padding:16px;background:var(--surf);border:1px solid var(--b);border-radius:2px;">
+      <strong style="color:var(--gold);">Universal:</strong> For any state, your State Survey Agency handles complaints against Medicare/Medicaid-certified facilities including dialysis centers. Find yours at:
+      <a href="https://www.cms.gov/Medicare/Provider-Enrollment-and-Certification/GettingStartedwithCredentials/Downloads/statemap.pdf" target="_blank" style="color:var(--pulse);">cms.gov State Survey Agency Map →</a>
+      &nbsp;|&nbsp;
+      <a href="https://www.medicare.gov/care-compare/" target="_blank" style="color:var(--pulse);">Medicare Care Compare (facility ratings) →</a>
+    </div>
+  </div>
+
+  <!-- ══ ADA & LEGAL RIGHTS ══ -->
+  <div class="tab-panel" id="tab-legal">
+    <div class="sec-head">
+      <div><div class="sec-eyebrow">Legal Framework</div><h2 class="sec-h2">The laws that <strong>protect you.</strong></h2></div>
+    </div>
+    <div class="accordion" id="legal-acc">
+
+      <div class="acc-item">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-legal">ADA</span>
+            <div><div class="acc-name">Americans with Disabilities Act — Title II &amp; III</div><div class="acc-title">Disability discrimination · Healthcare access · Reasonable accommodation</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">DOJ ADA Hotline</div>
+            <div class="cc-val"><a href="tel:18005140301">1-800-514-0301</a></div>
+            <div class="cc-label" style="margin-top:12px;">File Complaint Online</div>
+            <div class="cc-val"><a href="https://www.ada.gov/filing-a-complaint/" target="_blank">ada.gov/filing-a-complaint →</a></div>
+            <span class="cc-flag flag-ada">Primary ADA Enforcement</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">What It Covers</div>
+            <div class="cc-val" style="color:var(--ink60);">Title II: State and local government services<br>Title III: Places of public accommodation including medical offices, dialysis centers, transplant centers</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Key Provisions for Care Partners</div>
+            <div class="cc-val" style="color:var(--ink60);">Reasonable accommodation requests · Accompaniment rights · Communication access · Physical access requirements</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-legal">504</span>
+            <div><div class="acc-name">Section 504 — Rehabilitation Act of 1973</div><div class="acc-title">Federal funding recipients cannot discriminate on basis of disability</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">File With HHS OCR</div>
+            <div class="cc-val"><a href="tel:18003681019">1-800-368-1019</a></div>
+            <div class="cc-label" style="margin-top:12px;">OCR Portal</div>
+            <div class="cc-val"><a href="https://ocrportal.hhs.gov" target="_blank">ocrportal.hhs.gov →</a></div>
+            <span class="cc-flag flag-ada">Applies to All Medicare Providers</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Who It Applies To</div>
+            <div class="cc-val" style="color:var(--ink60);">Any entity receiving federal financial assistance — this includes every dialysis center, transplant center, and hospital that accepts Medicare or Medicaid.</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Statute Reference</div>
+            <div class="cc-val">29 U.S.C. § 794<br>45 CFR Part 84 (HHS implementation)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-legal">HIPAA</span>
+            <div><div class="acc-name">HIPAA — Health Insurance Portability &amp; Accountability Act</div><div class="acc-title">Patient records access · Care partner authorization · Privacy violations</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">File HIPAA Complaint</div>
+            <div class="cc-val"><a href="tel:18003681019">HHS OCR: 1-800-368-1019</a></div>
+            <div class="cc-label" style="margin-top:12px;">Online Portal</div>
+            <div class="cc-val"><a href="https://www.hhs.gov/hipaa/filing-a-complaint/" target="_blank">hhs.gov/hipaa/filing-a-complaint →</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Care Partner Rights</div>
+            <div class="cc-val" style="color:var(--ink60);">With patient authorization, care partners have right to access records, receive information, and be present during care discussions. Facilities cannot deny access without documented clinical justification.</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Key CFR Citation</div>
+            <div class="cc-val">45 CFR §164.524 (access to records)<br>45 CFR §164.510 (care partner disclosures)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <span class="acc-badge badge-legal">ESRD</span>
+            <div><div class="acc-name">ESRD Patient Rights — 42 CFR §494.70</div><div class="acc-title">Federal patient rights in dialysis facilities · Discharge protections · Grievance rights</div></div>
+          </div>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="acc-body">
+          <div class="contact-card">
+            <div class="cc-label">Key Rights Under 42 CFR §494.70</div>
+            <div class="cc-val" style="color:var(--ink60);">Right to be informed · Right to participate in care planning · Right to file grievance without retaliation · Right to adequate notice before discharge · Right to access records</div>
+            <span class="cc-flag flag-priority">Legally Enforceable</span>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Discharge Protections — 42 CFR §494.180</div>
+            <div class="cc-val" style="color:var(--ink60);">Facility cannot discharge without adequate written notice. Must ensure continuity of care during transition. Discharge cannot be used as retaliation for exercising rights.</div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-label">Enforce Via</div>
+            <div class="cc-val">1. Your ESRD Network (grievance)<br>2. Your State Survey Agency<br>3. CMS Regional Office<br>4. OIG (if retaliation involved)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ LSS PRIORITY MATRIX ══ -->
+  <div class="tab-panel" id="tab-matrix">
+    <div class="sec-head">
+      <div><div class="sec-eyebrow">Lean Six Sigma · Accountability Dashboard</div><h2 class="sec-h2">Escalation priority <strong>by severity and impact.</strong></h2></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b);border:1px solid var(--b);margin-bottom:32px;">
+      <div style="background:var(--surf);padding:20px 18px;text-align:center;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--danger);margin-bottom:8px;">Critical</div>
+        <div style="font-family:'Fraunces',serif;font-size:2rem;font-weight:600;color:var(--danger);">4</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;color:var(--ink20);margin-top:4px;">Immediate escalation required</div>
+      </div>
+      <div style="background:var(--surf);padding:20px 18px;text-align:center;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">High</div>
+        <div style="font-family:'Fraunces',serif;font-size:2rem;font-weight:600;color:var(--gold);">6</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;color:var(--ink20);margin-top:4px;">File within 72 hours</div>
+      </div>
+      <div style="background:var(--surf);padding:20px 18px;text-align:center;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:8px;">Medium</div>
+        <div style="font-family:'Fraunces',serif;font-size:2rem;font-weight:600;color:var(--pulse);">5</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;color:var(--ink20);margin-top:4px;">File within 30 days</div>
+      </div>
+      <div style="background:var(--surf);padding:20px 18px;text-align:center;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">Low</div>
+        <div style="font-family:'Fraunces',serif;font-size:2rem;font-weight:600;color:var(--green);">3</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;color:var(--ink20);margin-top:4px;">Document and monitor</div>
+      </div>
+    </div>
+
+    <div class="matrix-wrap">
+      <div class="matrix-header">
+        <div class="matrix-title">Complaint Escalation Matrix — Where to File &amp; When</div>
+        <input class="search-input" style="width:220px;" placeholder="Filter by issue type…" oninput="filterMatrix(this.value)">
+      </div>
+      <div style="overflow-x:auto;">
+      <table class="matrix-table" id="matrixTable">
+        <thead>
+          <tr>
+            <th>Priority</th>
+            <th>Issue</th>
+            <th>File With</th>
+            <th>CFR / Statute</th>
+            <th>Timeline</th>
+            <th>Impact Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-tags="discharge retaliation critical">
+            <td><span class="priority-dot p-critical"></span>Critical</td>
+            <td>Facility threatens/executes discharge in retaliation for complaint</td>
+            <td>ESRD Network (same day) + OIG + State Survey Agency</td>
+            <td>42 CFR §494.180, §494.70(f)</td>
+            <td>File within 24 hours</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:95%;background:var(--danger);"></div></div><span style="font-size:0.8rem;color:var(--danger);">9.5</span></div></td>
+          </tr>
+          <tr data-tags="care denial treatment critical">
+            <td><span class="priority-dot p-critical"></span>Critical</td>
+            <td>Denial of scheduled dialysis treatment without medical justification</td>
+            <td>1-800-MEDICARE + State Survey Agency immediately</td>
+            <td>42 CFR §494.180(b)</td>
+            <td>File same day</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:98%;background:var(--danger);"></div></div><span style="font-size:0.8rem;color:var(--danger);">9.8</span></div></td>
+          </tr>
+          <tr data-tags="transplant listing removal critical">
+            <td><span class="priority-dot p-critical"></span>Critical</td>
+            <td>Transplant center removes patient from waiting list without due process</td>
+            <td>UNOS Patient Services + HRSA Division of Transplantation + your transplant attorney</td>
+            <td>OPTN Policy 18 · 42 CFR §121</td>
+            <td>File within 48 hours</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:97%;background:var(--danger);"></div></div><span style="font-size:0.8rem;color:var(--danger);">9.7</span></div></td>
+          </tr>
+          <tr data-tags="discrimination ada critical">
+            <td><span class="priority-dot p-critical"></span>Critical</td>
+            <td>Disability discrimination in healthcare setting</td>
+            <td>HHS OCR + DOJ ADA Hotline</td>
+            <td>ADA Title III · Section 504 · 45 CFR §84</td>
+            <td>File within 180 days</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:93%;background:var(--danger);"></div></div><span style="font-size:0.8rem;color:var(--danger);">9.3</span></div></td>
+          </tr>
+          <tr data-tags="records access hipaa high">
+            <td><span class="priority-dot p-high"></span>High</td>
+            <td>Facility refuses to provide records or denies care partner access</td>
+            <td>HHS OCR (HIPAA complaint)</td>
+            <td>45 CFR §164.524</td>
+            <td>File within 180 days</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:82%;background:var(--gold);"></div></div><span style="font-size:0.8rem;color:var(--gold);">8.2</span></div></td>
+          </tr>
+          <tr data-tags="staffing quality high">
+            <td><span class="priority-dot p-high"></span>High</td>
+            <td>Chronic understaffing or unsafe patient-to-staff ratios</td>
+            <td>State Survey Agency + ESRD Network</td>
+            <td>42 CFR §494.140</td>
+            <td>File within 72 hours</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:79%;background:var(--gold);"></div></div><span style="font-size:0.8rem;color:var(--gold);">7.9</span></div></td>
+          </tr>
+          <tr data-tags="billing fraud high oig">
+            <td><span class="priority-dot p-high"></span>High</td>
+            <td>Billing fraud, upcoding, improper Medicare charges</td>
+            <td>OIG Hotline: 1-800-447-7660</td>
+            <td>42 U.S.C. §1320a-7b (Anti-kickback)</td>
+            <td>File as discovered</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:85%;background:var(--gold);"></div></div><span style="font-size:0.8rem;color:var(--gold);">8.5</span></div></td>
+          </tr>
+          <tr data-tags="care plan high">
+            <td><span class="priority-dot p-high"></span>High</td>
+            <td>Excluded from patient care planning without justification</td>
+            <td>ESRD Network grievance</td>
+            <td>42 CFR §494.70(a)(2)</td>
+            <td>File within 30 days</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:75%;background:var(--gold);"></div></div><span style="font-size:0.8rem;color:var(--gold);">7.5</span></div></td>
+          </tr>
+          <tr data-tags="grievance response medium">
+            <td><span class="priority-dot p-medium"></span>Medium</td>
+            <td>Facility fails to respond to internal grievance within required timeframe</td>
+            <td>ESRD Network escalation</td>
+            <td>42 CFR §494.70(f)(4)</td>
+            <td>File after 30 days non-response</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:65%;background:var(--pulse);"></div></div><span style="font-size:0.8rem;color:var(--pulse);">6.5</span></div></td>
+          </tr>
+          <tr data-tags="information consent medium">
+            <td><span class="priority-dot p-medium"></span>Medium</td>
+            <td>Failure to obtain informed consent or provide adequate information</td>
+            <td>State licensing board + ESRD Network</td>
+            <td>42 CFR §494.70(a)(5)</td>
+            <td>File within 60 days</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:62%;background:var(--pulse);"></div></div><span style="font-size:0.8rem;color:var(--pulse);">6.2</span></div></td>
+          </tr>
+          <tr data-tags="optn transplant allocation medium">
+            <td><span class="priority-dot p-medium"></span>Medium</td>
+            <td>Concern about organ allocation decision process</td>
+            <td>UNOS Patient Services + HRSA</td>
+            <td>OPTN Policy · 42 CFR §121.4</td>
+            <td>File within 90 days</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:70%;background:var(--pulse);"></div></div><span style="font-size:0.8rem;color:var(--pulse);">7.0</span></div></td>
+          </tr>
+          <tr data-tags="documentation records low">
+            <td><span class="priority-dot p-low"></span>Low</td>
+            <td>Inaccurate documentation in medical records</td>
+            <td>HHS OCR + facility compliance officer</td>
+            <td>45 CFR §164.526</td>
+            <td>File within 180 days</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill" style="width:45%;background:var(--green);"></div></div><span style="font-size:0.8rem;color:var(--green);">4.5</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div style="background:var(--void);border:1px solid var(--b);border-left:3px solid var(--gold);padding:24px;border-radius:2px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">LSS Methodology Note</div>
+      <p style="font-size:0.95rem;color:var(--ink60);line-height:1.8;">Impact scores calculated using a modified FMEA (Failure Mode &amp; Effects Analysis) framework: Severity × Occurrence × Detectability. Critical items (≥9.0) represent failures with immediate patient safety implications. File simultaneously with all listed agencies for maximum accountability pressure. Use the <a href="situation-room.html" style="color:var(--pulse);">Situation Room</a> to generate exact complaint language with CFR citations.</p>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<footer style="background:var(--void);border-top:1px solid var(--b);padding:48px 40px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Cold Ischemia Foundation</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.1em;color:var(--ink20);">Contact data verified 2025 · Updated annually · Not legal advice · Verify all numbers before filing</div>
+    </div>
+    <a href="situation-room.html" style="padding:12px 28px;background:var(--gold);color:var(--abyss);font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;border-radius:2px;">Generate Complaint Letter →</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── TAB SYSTEM ──────────────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var id = this.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+    document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+    this.classList.add('active');
+    document.getElementById('tab-'+id).classList.add('active');
+  });
+});
+
+// ── ACCORDION ──────────────────────────────────────────────────
+function toggleAcc(trigger){
+  var item = trigger.closest('.acc-item');
+  var wasOpen = item.classList.contains('open');
+  // Close siblings
+  trigger.closest('.accordion').querySelectorAll('.acc-item').forEach(function(i){i.classList.remove('open');});
+  if(!wasOpen) item.classList.add('open');
+}
+
+// ── SEARCH / FILTER ────────────────────────────────────────────
+function searchAccordion(section, val){
+  var q = val.toLowerCase();
+  var items = document.querySelectorAll('#'+section+'-acc .acc-item');
+  var vis = 0;
+  items.forEach(function(item){
+    var text = item.textContent.toLowerCase();
+    var show = !q || text.includes(q);
+    item.style.display = show ? '' : 'none';
+    if(show) vis++;
+  });
+  var cnt = document.getElementById(section+'-count');
+  if(cnt) cnt.textContent = vis;
+}
+
+function filterAccordion(section, val){
+  var items = document.querySelectorAll('#'+section+'-acc .acc-item');
+  items.forEach(function(item){
+    var tags = item.dataset.tags||'';
+    item.style.display = val==='all'||tags.includes(val) ? '' : 'none';
+  });
+}
+
+// ── MATRIX FILTER ──────────────────────────────────────────────
+function filterMatrix(val){
+  var q = val.toLowerCase();
+  document.querySelectorAll('#matrixTable tbody tr').forEach(function(row){
+    row.style.display = !q || row.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+
+// ── ZIP CODE REP LOOKUP ────────────────────────────────────────
+function lookupRep(){
+  var zip = document.getElementById('zipInput').value.trim();
+  var el = document.getElementById('rep-results');
+  if(zip.length !== 5 || isNaN(zip)){
+    el.innerHTML = '<span style="color:var(--danger);">Please enter a valid 5-digit ZIP code.</span>';
+    return;
+  }
+  el.innerHTML = '<span style="color:var(--ink40);">Opening congressional lookup for ZIP ' + zip + '…</span>';
+  setTimeout(function(){
+    window.open('https://www.congress.gov/members/find-your-member?zip5=' + zip, '_blank');
+    window.open('https://www.senate.gov/senators/senators-contact.htm', '_blank');
+    el.innerHTML =
+      '<strong style="color:var(--gold);">Two tabs opened:</strong><br>' +
+      '1. House representative finder for ZIP ' + zip + '<br>' +
+      '2. Senate full directory<br><br>' +
+      '<span style="color:var(--ink40);">If pop-ups were blocked, use the direct links below.</span>';
+  }, 400);
+}
+
+// ── US MAP STATE SELECT ────────────────────────────────────────
+var stateData = {
+  FL:{ name:'Florida', sa:'Florida Agency for Health Care Administration', saPhone:'1-888-419-3456', medicaid:'Florida Medicaid: 1-866-762-2237', esrd:'ESRD Network 7 (SE US): 1-866-637-4722', rep:'Find FL reps: congress.gov' },
+  TX:{ name:'Texas', sa:'Texas Health and Human Services', saPhone:'1-800-458-9858', medicaid:'Texas Medicaid: 1-800-335-8957', esrd:'ESRD Network 14 (TX): 1-800-973-3773', rep:'Find TX reps: congress.gov' },
+  CA:{ name:'California', sa:'CA Department of Public Health', saPhone:'1-916-552-8632', medicaid:'Medi-Cal: 1-800-541-5555', esrd:'ESRD Network 17 (CA): 1-415-472-8590', rep:'Find CA reps: congress.gov' },
+  NY:{ name:'New York', sa:'NY State Dept. of Health', saPhone:'1-800-663-6114', medicaid:'NY Medicaid: 1-800-541-2831', esrd:'ESRD Network 2 (NY/NJ): 1-866-561-2434', rep:'Find NY reps: congress.gov' },
+  GA:{ name:'Georgia', sa:'Georgia Dept. of Community Health', saPhone:'1-404-657-5726', medicaid:'Georgia Medicaid: 1-866-211-0950', esrd:'ESRD Network 6 (SE): 1-800-524-7139', rep:'Find GA reps: congress.gov' },
+  OH:{ name:'Ohio', sa:'Ohio Dept. of Health', saPhone:'1-800-342-0553', medicaid:'Ohio Medicaid: 1-800-324-8680', esrd:'ESRD Network 9 (OH/KY): 1-866-561-6614', rep:'Find OH reps: congress.gov' },
+  IL:{ name:'Illinois', sa:'Illinois Dept. of Public Health', saPhone:'1-800-252-4343', medicaid:'Illinois Medicaid: 1-877-805-5312', esrd:'ESRD Network 10 (IL): 1-800-456-6919', rep:'Find IL reps: congress.gov' },
+  NC:{ name:'North Carolina', sa:'NC Dept. of Health and Human Services', saPhone:'1-800-662-7030', medicaid:'NC Medicaid: 1-888-245-0179', esrd:'ESRD Network 6 (SE): 1-800-524-7139', rep:'Find NC reps: congress.gov' },
+  TN:{ name:'Tennessee', sa:'TN Dept. of Health', saPhone:'1-800-778-4504', medicaid:'TennCare: 1-800-342-3145', esrd:'ESRD Network 8 (TN/AL): 1-800-524-7139', rep:'Find TN reps: congress.gov' },
+  VA:{ name:'Virginia', sa:'Virginia Dept. of Health', saPhone:'1-804-864-7001', medicaid:'Virginia Medicaid: 1-800-552-8627', esrd:'ESRD Network 5 (VA/DC/MD): 1-888-570-3728', rep:'Find VA reps: congress.gov' },
+};
+
+function selectState(code){
+  document.querySelectorAll('.state-path').forEach(function(p){p.classList.remove('selected');});
+  var el = document.getElementById(code);
+  if(el) el.classList.add('selected');
+  var d = stateData[code];
+  if(!d){
+    document.getElementById('state-name').textContent = code + ' — Contact CMS directly for state-specific directory';
+    document.getElementById('state-contacts').innerHTML = '<div class="contact-card"><div class
+</html>
+
+</script>
+
+<!-- UNIVERSAL FOOTER -->
+<footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(100,140,200,0.1);">
+      <div>
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:12px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.25);line-height:2.1;">Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="/cdn-cgi/l/email-protection#117b74777751727e7d7578627279747c78703f777e647f757065787e7f" style="color:#c8902a;text-decoration:none;"><span class="__cf_email__" data-cfemail="6d07080b0b2d0e020109041e0e050800040c430b021803090c19040203">[email&#160;protected]</span></a><br><a href="https://coldischemia.foundation" style="color:#c8902a;text-decoration:none;">coldischemia.foundation</a></p>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Command Center</a>
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Situation Room</a>
+          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Research</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
+          <a href="https://payhip.com/coldischemia" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Library</a>
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
+          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Free Guide</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Priv

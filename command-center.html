@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Command Center — Cold Ischemia Foundation</title>
+<meta name="description" content="Your operational hub. Every AI tool, every federal contact, every complaint pathway — in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+:root{
+  --bg:#030509;--bg2:#07101c;--bg3:#0a1628;--bg4:#0f1e38;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.22);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);
+  --ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);
+  --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.14);
+  --cold:#2ac4c8;--red:#c83050;--green:#50c878;--violet:#8050c8;--amber:#f09030;
+}
+body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-thumb{background:var(--bg4);}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:300;background:rgba(3,5,9,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--b);padding:0 20px;height:54px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0;}
+.nav-logo img{height:40px;width:40px;object-fit:contain;}
+.nav-brand{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
+@media(max-width:480px){.nav-brand{display:none;}}
+.nav-links{display:flex;align-items:center;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;justify-content:center;}
+.nav-links::-webkit-scrollbar{display:none;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.18s;white-space:nowrap;}
+.nav-links a:hover{color:var(--ink80);}
+.nav-links a.active{color:var(--gold);}
+.nav-cta{flex-shrink:0;font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.12em;text-transform:uppercase;padding:7px 14px;background:var(--gold);color:var(--bg);border-radius:2px;text-decoration:none;white-space:nowrap;}
+.nav-cta:hover{background:var(--gold-l);}
+
+/* HERO */
+.cc-hero{background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);border-bottom:1px solid var(--b);padding:64px 40px 48px;position:relative;overflow:hidden;}
+.cc-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12));}
+.cc-hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
+.cc-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.cc-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+.cc-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,7rem);line-height:0.88;letter-spacing:0.03em;color:var(--ink);margin-bottom:16px;}
+.cc-h1 .g{color:var(--gold);}
+.cc-sub{font-size:1.1rem;line-height:1.85;color:var(--ink60);max-width:680px;font-weight:300;}
+.cc-sub strong{color:var(--ink80);}
+.cc-member-gate{margin-top:24px;background:rgba(200,144,42,0.08);border:1px solid rgba(200,144,42,0.25);padding:14px 20px;border-radius:2px;display:inline-flex;align-items:center;gap:12px;}
+.cc-gate-text{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);}
+
+/* STATUS BAR */
+.status-bar{background:var(--bg3);border-bottom:1px solid var(--b);padding:0;}
+.status-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);}
+@media(max-width:700px){.status-inner{grid-template-columns:1fr 1fr;}}
+.status-item{padding:18px 20px;border-right:1px solid var(--b);text-align:center;}
+.status-item:last-child{border-right:none;}
+.si-val{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;line-height:1;display:block;margin-bottom:3px;}
+.si-lbl{font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink40);}
+
+/* MAIN GRID */
+.cc-main{max-width:1100px;margin:0 auto;padding:48px 40px 80px;}
+@media(max-width:700px){.cc-main{padding:32px 20px 60px;}}
+
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;padding-bottom:10px;border-bottom:1px solid var(--b);display:flex;align-items:center;gap:12px;}
+.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--gold-d),transparent);}
+
+/* TOOL GRID */
+.tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:48px;}
+@media(max-width:900px){.tool-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.tool-grid{grid-template-columns:1fr;}}
+
+.tool-card{background:var(--bg2);border:1px solid var(--b);border-radius:3px;overflow:hidden;text-decoration:none;display:block;transition:border-color 0.2s,transform 0.15s;position:relative;}
+.tool-card:hover{border-color:var(--b2);transform:translateY(-2px);}
+.tool-card.locked{opacity:0.65;cursor:not-allowed;}
+.tool-card.locked:hover{transform:none;}
+.tc-accent{height:3px;}
+.tc-body{padding:22px 20px;}
+.tc-icon{font-size:1.6rem;margin-bottom:10px;display:block;}
+.tc-badge{font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.16em;text-transform:uppercase;padding:3px 8px;border-radius:1px;display:inline-block;margin-bottom:10px;}
+.tc-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink80);margin-bottom:8px;line-height:1.3;}
+.tc-desc{font-size:0.88rem;line-height:1.78;color:var(--ink50);}
+.tc-link{font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.14em;text-transform:uppercase;margin-top:12px;display:flex;align-items:center;gap:5px;}
+.tc-link::after{content:'→';}
+.tc-lock{position:absolute;top:12px;right:12px;font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.1em;text-transform:uppercase;padding:3px 8px;background:rgba(200,144,42,0.1);border:1px solid rgba(200,144,42,0.2);color:var(--gold);border-radius:1px;}
+
+/* Color schemes per tool */
+.t-gold .tc-accent{background:var(--gold);}
+.t-gold .tc-badge{background:rgba(200,144,42,0.1);color:var(--gold);}
+.t-gold .tc-link{color:var(--gold);}
+.t-cold .tc-accent{background:var(--cold);}
+.t-cold .tc-badge{background:rgba(42,196,200,0.1);color:var(--cold);}
+.t-cold .tc-link{color:var(--cold);}
+.t-red .tc-accent{background:var(--red);}
+.t-red .tc-badge{background:rgba(200,48,80,0.1);color:var(--red);}
+.t-red .tc-link{color:var(--red);}
+.t-green .tc-accent{background:var(--green);}
+.t-green .tc-badge{background:rgba(80,200,120,0.1);color:var(--green);}
+.t-green .tc-link{color:var(--green);}
+.t-violet .tc-accent{background:var(--violet);}
+.t-violet .tc-badge{background:rgba(128,80,200,0.1);color:var(--violet);}
+.t-violet .tc-link{color:var(--violet);}
+.t-amber .tc-accent{background:var(--amber);}
+.t-amber .tc-badge{background:rgba(240,144,48,0.1);color:var(--amber);}
+.t-amber .tc-link{color:var(--amber);}
+
+/* QUICK LINKS */
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:48px;}
+@media(max-width:700px){.quick-grid{grid-template-columns:1fr 1fr;}}
+.quick-card{background:var(--bg2);border:1px solid var(--b);padding:18px;border-radius:2px;text-decoration:none;display:flex;align-items:center;gap:12px;transition:border-color 0.18s,background 0.18s;}
+.quick-card:hover{border-color:var(--b2);background:var(--bg3);}
+.qc-icon{font-size:1.2rem;flex-shrink:0;}
+.qc-text{}
+.qc-title{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink80);}
+.qc-sub{font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.08em;color:var(--ink40);margin-top:3px;}
+
+/* STRATEGY SECTION */
+.strategy-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--b);margin-bottom:48px;}
+@media(max-width:700px){.strategy-grid{grid-template-columns:1fr;}}
+.strat-card{background:var(--bg2);padding:28px 24px;}
+.strat-num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:rgba(200,144,42,0.15);line-height:1;margin-bottom:8px;}
+.strat-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink80);margin-bottom:8px;}
+.strat-desc{font-size:0.88rem;line-height:1.78;color:var(--ink50);}
+
+/* INFOGRAPHIC */
+.infographic-section{margin-bottom:48px;}
+.infographic-section img{width:100%;border-radius:3px;display:block;border:1px solid var(--b);}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+    <span class="nav-brand">Cold Ischemia</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="situation-room.html">Situation Room</a>
+    <a href="research.html">Research</a>
+    <a href="accountability.html">Atlas</a>
+    <a href="congress-scorecard.html">Scorecard</a>
+    
+  </div>
+  <a href="donate.html" class="nav-cta">Donate Now</a>
+<a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;padding:6px 12px;border:1px solid rgba(100,140,200,0.15);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.3)';" onmouseout="this.style.color='rgba(216,207,196,0.45)';this.style.borderColor='rgba(100,140,200,0.15)';">← Home</a>
+</nav>
+
+<!-- HERO -->
+<div class="cc-hero">
+  <div class="cc-hero-inner">
+    <div class="cc-eyebrow">Operational Hub</div>
+    <div class="cc-h1">COMMAND<br><span class="g">CENTER</span></div>
+    <p class="cc-sub">Every tool. Every federal contact. Every complaint pathway. Every lever of institutional accountability — in one place. <strong>Built for care partners who are done waiting for the system to help them.</strong></p>
+    <div class="cc-member-gate">
+      <span class="cc-gate-text">✓ Full tool suite &mdash; free for every care partner. Always.</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATUS BAR -->
+<div class="status-bar">
+  <div class="status-inner">
+    <div class="status-item"><span class="si-val" style="color:var(--gold);">9</span><span class="si-lbl">AI Tools Available</span></div>
+    <div class="status-item"><span class="si-val" style="color:var(--cold);">Live</span><span class="si-lbl">Federal Feeds</span></div>
+    <div class="status-item"><span class="si-val" style="color:var(--green);">40</span><span class="si-lbl">Violations Documented</span></div>
+    <div class="status-item"><span class="si-val" style="color:var(--amber);">535</span><span class="si-lbl">Congress Members Graded</span></div>
+    <div class="status-item"><span class="si-val" style="color:var(--red);">$0</span><span class="si-lbl">Pharma Funding — Ever</span></div>
+  </div>
+</div>
+
+<div class="cc-main">
+
+  <!-- AI TOOLS -->
+  <div class="section-label">AI-Powered Advocacy Tools</div>
+  <div class="tool-grid">
+
+    <a href="situation-room.html" class="tool-card t-red">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🚨</span>
+        <span class="tc-badge">AI · Crisis Response</span>
+        <div class="tc-title">The Situation Room</div>
+        <p class="tc-desc">Describe your crisis. Get the exact CFR violation, the agency to call, and a complete federal complaint letter — ready to file in under 60 seconds.</p>
+        <span class="tc-link">Enter now</span>
+      </div>
+    </a>
+
+    <a href="tool-signal.html" class="tool-card t-cold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">📄</span>
+        <span class="tc-badge">AI · Document Analysis</span>
+        <div class="tc-title">The Translator</div>
+        <p class="tc-desc">Paste any denial letter, discharge notice, or facility policy. Returns plain-English meaning, your exact legal rights, and what the institution is legally required to do next.</p>
+        <span class="tc-link">Translate now</span>
+      </div>
+    </a>
+
+    <a href="tool-meridian.html" class="tool-card t-gold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🧭</span>
+        <span class="tc-badge">AI · Situation Assessment</span>
+        <div class="tc-title">Meridian</div>
+        <p class="tc-desc">Comprehensive care partner situation assessment. Maps your circumstances to applicable federal protections, identifies violations, and builds your escalation strategy.</p>
+        <span class="tc-link">Assess now</span>
+      </div>
+    </a>
+
+    <a href="tool-narrative-mirror.html" class="tool-card t-violet">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🪞</span>
+        <span class="tc-badge">AI · Narrative</span>
+        <div class="tc-title">Narrative Mirror</div>
+        <p class="tc-desc">Transforms your care partner experience into structured, documented testimony suitable for federal agencies, congressional staff, and media outlets.</p>
+        <span class="tc-link">Begin</span>
+      </div>
+    </a>
+
+    <a href="tool-cartography.html" class="tool-card t-amber">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🗺️</span>
+        <span class="tc-badge">AI · Strategic Mapping</span>
+        <div class="tc-title">Cartography</div>
+        <p class="tc-desc">Maps the power structures, funding relationships, and institutional conflicts of interest that shape the policies affecting your care — and shows you where the leverage points are.</p>
+        <span class="tc-link">Map now</span>
+      </div>
+    </a>
+
+    <a href="tool-two-futures.html" class="tool-card t-green">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">⚡</span>
+        <span class="tc-badge">AI · Scenario Planning</span>
+        <div class="tc-title">Two Futures</div>
+        <p class="tc-desc">Presents two documented outcome scenarios — action vs. inaction — based on your specific situation. Forces institutional decision-makers to confront the consequences of non-response.</p>
+        <span class="tc-link">Run scenario</span>
+      </div>
+    </a>
+
+    <a href="tool-authority-strain.html" class="tool-card t-red">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">⚖️</span>
+        <span class="tc-badge">AI · Accountability</span>
+        <div class="tc-title">Authority Strain</div>
+        <p class="tc-desc">Identifies the pressure points within institutions that cause them to respond. Generates targeted escalation strategies that apply documented institutional vulnerabilities.</p>
+        <span class="tc-link">Analyze</span>
+      </div>
+    </a>
+
+    <a href="tool-relationship-cartography.html" class="tool-card t-violet">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🗺️</span>
+        <span class="tc-badge">AI · Relationship Mapping</span>
+        <div class="tc-title">Relationship Cartography</div>
+        <p class="tc-desc">Maps the full network of providers, institutions, and relationships shaping your case &mdash; so you can see where pressure actually needs to be applied.</p>
+        <span class="tc-link">Map it</span>
+      </div>
+    </a>
+
+    <a href="tool-moral-weight.html" class="tool-card t-amber">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">⚡</span>
+        <span class="tc-badge">AI · Decision Support</span>
+        <div class="tc-title">Moral Weight</div>
+        <p class="tc-desc">Weighs a hard decision against the values, risks, and consequences that actually matter to your situation &mdash; instead of a generic pros-and-cons list.</p>
+        <span class="tc-link">Weigh it</span>
+      </div>
+    </a>
+
+    <a href="tool-psychological-fieldcraft.html" class="tool-card t-cold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🧭</span>
+        <span class="tc-badge">AI · Coping Strategy</span>
+        <div class="tc-title">Psychological Fieldcraft</div>
+        <p class="tc-desc">Practical psychological tactics for navigating institutional stonewalling, gaslighting, and burnout &mdash; built for the day-to-day grind, not a therapy session.</p>
+        <span class="tc-link">Get tactics</span>
+      </div>
+    </a>
+
+    <a href="tool-insurance-appeal.html" class="tool-card t-green">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">📑</span>
+        <span class="tc-badge">AI · Document Generator</span>
+        <div class="tc-title">Insurance Appeal Builder</div>
+        <p class="tc-desc">Turns a denial letter into a formal appeal citing the exact plan language, regulation, and precedent the insurer is required to respond to.</p>
+        <span class="tc-link">Build appeal</span>
+      </div>
+    </a>
+
+    <a href="tool-records-request.html" class="tool-card t-gold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🗂️</span>
+        <span class="tc-badge">AI · Document Generator</span>
+        <div class="tc-title">Records Request Builder</div>
+        <p class="tc-desc">Generates a properly formatted medical records request citing HIPAA and state-specific timelines, so a facility has no procedural excuse to stall.</p>
+        <span class="tc-link">Build request</span>
+      </div>
+    </a>
+
+    <a href="tool-incident-workflow.html" class="tool-card t-red">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🧩</span>
+        <span class="tc-badge">AI · Case Management</span>
+        <div class="tc-title">Incident Workflow</div>
+        <p class="tc-desc">Walks a care partner through documenting an incident step by step &mdash; timeline, parties involved, evidence &mdash; in a format that holds up if it's escalated.</p>
+        <span class="tc-link">Start workflow</span>
+      </div>
+    </a>
+
+    <a href="tool-system-exposure.html" class="tool-card t-red">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🔦</span>
+        <span class="tc-badge">AI · Investigative</span>
+        <div class="tc-title">System Exposure</div>
+        <p class="tc-desc">Surfaces the documented pattern behind a single incident &mdash; connecting it to the broader institutional practice it's part of.</p>
+        <span class="tc-link">Expose pattern</span>
+      </div>
+    </a>
+
+    <a href="tool-time-distortion.html" class="tool-card t-cold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">⏳</span>
+        <span class="tc-badge">AI · Delay Analysis</span>
+        <div class="tc-title">Time Distortion</div>
+        <p class="tc-desc">Analyzes how long a delay actually is against the regulatory timeline it should have followed &mdash; and builds the paper trail proving it.</p>
+        <span class="tc-link">Analyze delay</span>
+      </div>
+    </a>
+
+    <a href="tool-treatment-framework.html" class="tool-card t-green">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🧬</span>
+        <span class="tc-badge">AI · Clinical Framework</span>
+        <div class="tc-title">Treatment Framework</div>
+        <p class="tc-desc">Organizes a complex treatment plan into a clear framework a patient and care partner can actually follow and question.</p>
+        <span class="tc-link">Build framework</span>
+      </div>
+    </a>
+
+    <a href="tool-survival-guide-hub.html" class="tool-card t-cold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🧭</span>
+        <span class="tc-badge">Resource Hub</span>
+        <div class="tc-title">Survival Guide Hub</div>
+        <p class="tc-desc">The central index for every CIF guide, toolkit, and field resource in one place &mdash; organized by what stage of the journey you're in.</p>
+        <span class="tc-link">Browse hub</span>
+      </div>
+    </a>
+
+    <a href="tool-field-station-embedded.html" class="tool-card t-violet">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">📡</span>
+        <span class="tc-badge">Live Monitor</span>
+        <div class="tc-title">Field Station</div>
+        <p class="tc-desc">A live, embeddable monitor built for care partners tracking a case in real time &mdash; status, next steps, and open items in one view.</p>
+        <span class="tc-link">Open station</span>
+      </div>
+    </a>
+
+    <a href="drift-map.html" class="tool-card t-amber">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🌊</span>
+        <span class="tc-badge">AI · Systems Mapping</span>
+        <div class="tc-title">Drift Map</div>
+        <p class="tc-desc">Visualizes how a case quietly drifts off track across multiple providers and agencies &mdash; so the drift gets caught before it becomes a crisis.</p>
+        <span class="tc-link">View drift</span>
+      </div>
+    </a>
+
+    <a href="whitepapers.html" class="tool-card t-gold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">📄</span>
+        <span class="tc-badge">Research Library</span>
+        <div class="tc-title">White Papers</div>
+        <p class="tc-desc">Every CIF white paper in one place &mdash; the Donor-Flow framework, the Lean Six Sigma transplant methodology, and the care partner integration research.</p>
+        <span class="tc-link">Read papers</span>
+      </div>
+    </a>
+
+    <a href="CIF-SHIELD-Strategy.html" class="tool-card t-gold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🛡️</span>
+        <span class="tc-badge">Strategic Framework</span>
+        <div class="tc-title">The S.H.I.E.L.D. Method</div>
+        <p class="tc-desc">CIF's core strategic framework for structural advocacy &mdash; the method behind every tool, letter, and campaign on this platform.</p>
+        <span class="tc-link">Read the method</span>
+      </div>
+    </a>
+
+    <a href="transplant-realities.html" class="tool-card t-red">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🩸</span>
+        <span class="tc-badge">Patient Education</span>
+        <div class="tc-title">What Nobody Tells You</div>
+        <p class="tc-desc">BK virus, CMV, and the biopsy nobody prepares you for &mdash; the parts of post-transplant life that don't make the conference agenda.</p>
+        <span class="tc-link">Read now</span>
+      </div>
+    </a>
+
+    <a href="bhoc.html" class="tool-card t-cold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🧬</span>
+        <span class="tc-badge">Emerging Technology</span>
+        <div class="tc-title">BHOC Explained</div>
+        <p class="tc-desc">Biologic Hemoglobin Oxygen Carrier technology could extend how long an organ survives before transplant. Almost no patient has heard of it.</p>
+        <span class="tc-link">Learn more</span>
+      </div>
+    </a>
+
+    <a href="donor-readiness-explorer.html" class="tool-card t-green">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">✅</span>
+        <span class="tc-badge">Interactive · Living Donors</span>
+        <div class="tc-title">Donor Readiness Discussion Guide</div>
+        <p class="tc-desc">Check the clinical, psychosocial, financial, and logistical questions that matter for living kidney donation — every one links to a real resource: NLDAC, Donor Shield, OPTN, and more.</p>
+        <span class="tc-link">Build your list</span>
+      </div>
+    </a>
+
+    <a href="donor-flow-blueprint.html" class="tool-card t-cold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">📊</span>
+        <span class="tc-badge">Interactive Dashboard</span>
+        <div class="tc-title">Donor-Flow Interactive Dashboard</div>
+        <p class="tc-desc">The full data-driven blueprint — leaky-bucket diagnosis, state-by-state donor trends, denial-reason breakdown, and the 6-phase roadmap. Every filter and chart is live.</p>
+        <span class="tc-link">Explore the dashboard</span>
+      </div>
+    </a>
+
+    <a href="the-intelligence-gap.html" class="tool-card t-violet">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🧠</span>
+        <span class="tc-badge">Research Framework</span>
+        <div class="tc-title">The Intelligence Gap — White Paper</div>
+        <p class="tc-desc">The full narrative case for AI in the living donor pipeline, with the 8-stage architecture, evidence base, and a downloadable white paper.</p>
+        <span class="tc-link">Read the paper</span>
+      </div>
+    </a>
+
+    <a href="demand-letters.html" class="tool-card t-amber">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">📜</span>
+        <span class="tc-badge">On the Record</span>
+        <div class="tc-title">Formal Demand Letters</div>
+        <p class="tc-desc">Six formal letters to Congress, CMS, HHS, NIH, the Florida Legislature, and the OPTN Board — read exactly what was demanded, and of whom.</p>
+        <span class="tc-link">Read letters</span>
+      </div>
+    </a>
+
+    <a href="demand-letters.html" class="tool-card t-gold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">📋</span>
+        <span class="tc-badge">Complaint Generator</span>
+        <div class="tc-title">Federal Complaint Builder</div>
+        <p class="tc-desc">Nine-letter federal complaint packet generator. Pre-cited, pre-formatted, directed to the correct agencies. Covers CMS, HHS, OIG, HRSA, DOJ, ESRD Networks, and more.</p>
+        <span class="tc-link">Build complaint</span>
+      </div>
+    </a>
+
+    <a href="signals-dashboard.html" class="tool-card t-cold">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <span class="tc-icon">🔔</span>
+        <span class="tc-badge">Policy Monitor</span>
+        <div class="tc-title">Policy Alert System</div>
+        <p class="tc-desc">Real-time policy alerts filtered for ESRD, transplant, chronic illness, and care partner regulations. Every rule change that affects you, the moment it drops.</p>
+        <span class="tc-link">Activate alerts</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- QUICK LINKS -->
+  <div class="section-label">Intelligence & Accountability</div>
+  <div class="quick-grid">
+    <a href="research.html" class="quick-card">
+      <span class="qc-icon">📡</span>
+      <div class="qc-text"><div class="qc-title">Research Monitor</div><div class="qc-sub">Live federal feeds — CMS, GAO, HHS, OIG</div></div>
+    </a>
+    <a href="accountability.html" class="quick-card">
+      <span class="qc-icon">📍</span>
+      <div class="qc-text"><div class="qc-title">Accountability Atlas</div><div class="qc-sub">Direct contacts · 18 ESRD Networks · All agencies</div></div>
+    </a>
+    <a href="congress-scorecard.html" class="quick-card">
+      <span class="qc-icon">🏛️</span>
+      <div class="qc-text"><div class="qc-title">Congress Scorecard</div><div class="qc-sub">535 members graded A–F on your issues</div></div>
+    </a>
+    
+    <a href="first-24-hours.html" class="quick-card">
+      <span class="qc-icon">⏱️</span>
+      <div class="qc-text"><div class="qc-title">First 24 Hours Guide</div><div class="qc-sub">Crisis response framework — free download</div></div>
+    </a>
+    <a href="free-guide.html" class="quick-card">
+      <span class="qc-icon">📥</span>
+      <div class="qc-text"><div class="qc-title">Free Guide Download</div><div class="qc-sub">The First 24 Hours — immediate access</div></div>
+    </a>
+    
+    <a href="donate.html" class="quick-card">
+      <span class="qc-icon">💛</span>
+      <div class="qc-text"><div class="qc-title">Support the Foundation</div><div class="qc-sub">Keep us independent — zero pharma funding</div></div>
+    </a>
+  </div>
+
+  <!-- ADVOCACY INFOGRAPHIC -->
+  <div class="section-label">The Reality of Healthcare Advocacy</div>
+  <div class="infographic-section">
+    <img src="advocacy-infographic.png" alt="The Reality of Healthcare Advocacy — Cold Ischemia Foundation" onerror="this.style.display='none'">
+  </div>
+
+  <!-- STRATEGY & METHODS -->
+  <div class="section-label">Our Strategy & Methods</div>
+  <div class="strategy-grid">
+    <div class="strat-card">
+      <div class="strat-num">01</div>
+      <div class="strat-title">Regulatory Precision</div>
+      <p class="strat-desc">Every tool we build cites the exact CFR section, statute, or federal policy that has been violated. We do not speak in generalities. We speak in the language that federal agencies and legal counsel are required to respond to. Vague complaints get archived. Specific complaints with documented regulatory references get responses.</p>
+    </div>
+    <div class="strat-card">
+      <div class="strat-num">02</div>
+      <div class="strat-title">Process Engineering</div>
+      <p class="strat-desc">Care partner failure is not personal. It is process failure — measurable, repeatable, and correctable using Lean Six Sigma methodology. We map current-state failure modes, identify root causes, calculate risk priority numbers, and build the precise countermeasures. The same rigor that improves manufacturing quality applied to the most important quality failure in American healthcare.</p>
+    </div>
+    <div class="strat-card">
+      <div class="strat-num">03</div>
+      <div class="strat-title">Public Record Creation</div>
+      <p class="strat-desc">Institutions change behavior when there is a documented public record they cannot erase. Every complaint our tools generate creates a federal record. Every record starts a compliance clock. Every clock the institution ignores adds to the documented evidence of systemic non-compliance. We are building the paper trail that future legislative action, media investigations, and legal proceedings will rely on.</p>
+    </div>
+    <div class="strat-card">
+      <div class="strat-num">04</div>
+      <div class="strat-title">Intelligence-Led Advocacy</div>
+      <p class="strat-desc">We operate from evidence, not emotion. GAO reports. OIG investigations. Senate Finance Committee findings. CMS enforcement data. Federal Register rule changes. Every position we take is sourced. Every demand we make is documented. This is the standard that moves institutions — and the standard we hold ourselves to without exception.</p>
+    </div>
+    <div class="strat-card">
+      <div class="strat-num">05</div>
+      <div class="strat-title">Independence as Infrastructure</div>
+      <p class="strat-desc">We take no pharmaceutical money. We accept no hospital grants. We have no insurance company on our board. This is not a policy — it is the structural foundation of everything we do. An advocacy organization that cannot name the institutions causing harm is not an advocacy organization. It is a pressure valve. We are not a pressure valve.</p>
+    </div>
+    <div class="strat-card">
+      <div class="strat-num">06</div>
+      <div class="strat-title">Grassroots to Federal</div>
+      <p class="strat-desc">Individual care partner experiences — documented, properly filed, publicly tracked — become the aggregated evidence base that congressional staff, federal investigators, and journalists need. We are not asking care partners to advocate in addition to everything else they carry. We are building the infrastructure that amplifies their experience into systemic pressure at the federal level.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- UNIVERSAL FOOTER -->
+<footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(100,140,200,0.1);">
+      <div>
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:12px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.25);line-height:2.1;">Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="/cdn-cgi/l/email-protection#751f10131335161a19111c06161d10181c145b131a001b1114011c1a1b" style="color:#c8902a;text-decoration:none;"><span class="__cf_email__" data-cfemail="48222d2e2e082b27242c213b2b202d252129662e273d262c293c212726">[email&#160;protected]</span></a></p>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Tools</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Situation Room</a>
+          <a href="tool-signal.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">The Translator</a>
+          <a href="tool-meridian.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Meridian</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Home</a>
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
+          
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Privacy Policy</a>
+          <a href="/cdn-cgi/l/email-protection#543e31323214373b38303d27373c31393d357a323b213a3035203d3b3a" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.06em;color:rgba(216,207,196,0.2);">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+      <div style="dis

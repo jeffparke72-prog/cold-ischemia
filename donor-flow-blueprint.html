@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Donor-Flow | Cold Ischemia Foundation</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#f4f7fb;--n2:#eaf0f8;--card:#ffffff;--teal:#007a6e;--amber:#b36a00;--red:#c0001f;--green:#1a7a40;--white:#1a2535;--dim:#4a5c70;--border:rgba(0,122,110,.2);--faint:rgba(26,37,53,.07);--grid:rgba(0,122,110,.06)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:#f4f7fb;color:#1a2535;font-family:"Barlow Condensed",sans-serif;font-weight:300;overflow-x:hidden;line-height:1}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(0,122,110,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,122,110,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+#pgbar{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:9999}
+#maptip{position:fixed;background:#ffffff;border:1px solid var(--border);padding:14px 18px;font-family:"Crimson Pro",serif;font-size:15px;color:var(--white);line-height:1.6;pointer-events:none;z-index:9990;max-width:290px;display:none;box-shadow:0 8px 32px rgba(0,0,0,.5)}
+#maptip strong{font-family:"Bebas Neue",sans-serif;font-size:22px;display:block;margin-bottom:3px}
+#maptip span{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:8px}
+#navdots{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:900}
+.nd{width:6px;height:6px;border-radius:50%;background:rgba(26,37,53,.15);border:1px solid var(--border);cursor:pointer;transition:all .2s}
+.nd.on{background:var(--teal);border-color:var(--teal)}
+.sec{position:relative;z-index:1;padding:80px 84px}.sec2{background:#eaf0f8}.sec3{background:#e2eaf4}
+.bt{border-top:1px solid var(--border)}.bb{border-bottom:1px solid var(--border)}
+.lbl{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:4px;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.ttl{font-family:"Bebas Neue",sans-serif;font-size:clamp(40px,5.5vw,70px);letter-spacing:1px;line-height:.94;margin-bottom:40px}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:translateY(0)}
+.rv2{transition-delay:.1s}.rv3{transition-delay:.2s}.rv4{transition-delay:.3s}
+#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:88px 84px 68px;overflow:hidden}
+#hero::before{content:"";position:absolute;top:-15%;right:-8%;width:800px;height:800px;background:radial-gradient(ellipse,rgba(0,122,110,.07) 0%,transparent 68%);pointer-events:none}
+#helixsvg{position:absolute;right:0;top:0;width:50%;height:100%;opacity:.28;pointer-events:none;z-index:0}
+.hz{position:relative;z-index:1}
+.hbadge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--teal);padding:6px 18px;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:3px;color:var(--teal);text-transform:uppercase;margin-bottom:32px;opacity:0;animation:fadeup .55s .1s ease forwards}
+.hbadge b{width:7px;height:7px;background:var(--teal);border-radius:50%;display:inline-block;flex-shrink:0;animation:blink 2s infinite}
+.htitle{font-family:"Bebas Neue",sans-serif;font-size:clamp(72px,11vw,148px);line-height:.88;letter-spacing:3px;opacity:0;animation:fadeup .6s .2s ease forwards}
+.htitle em{color:var(--teal);font-style:normal;display:block}
+.hsub{font-family:"Crimson Pro",serif;font-size:21px;font-style:italic;color:var(--dim);margin-top:28px;max-width:580px;line-height:1.65;opacity:0;animation:fadeup .6s .32s ease forwards}
+.hstats{display:flex;gap:48px;margin-top:52px;flex-wrap:wrap;opacity:0;animation:fadeup .6s .44s ease forwards}
+.hs-n{font-family:"Bebas Neue",sans-serif;font-size:52px;line-height:1}.hs-n.r{color:var(--red)}.hs-n.t{color:var(--teal)}.hs-n.a{color:var(--amber)}
+.hs-l{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);max-width:140px;line-height:1.55;margin-top:4px}
+.hline{width:80px;height:2px;background:var(--teal);margin-top:48px;opacity:0;animation:expandw .6s .56s ease forwards;transform:scaleX(0);transform-origin:left}
+.htag{position:absolute;bottom:28px;right:84px;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(221,232,245,.2)}
+.fail-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.fc{background:#ffffff;border:1px solid rgba(26,37,53,.1);padding:40px;position:relative;overflow:hidden;transition:border-color .3s,background .3s}
+.fc:hover{border-color:#c0001f;background:rgba(192,0,31,.04)}
+.fc::after{content:attr(data-n);position:absolute;top:12px;right:18px;font-family:"Bebas Neue",sans-serif;font-size:88px;color:rgba(192,0,31,.06);line-height:1;pointer-events:none}
+.fc-ico{font-size:28px;display:block;margin-bottom:20px}
+.fc-ttl{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:20px;letter-spacing:1px;text-transform:uppercase;color:var(--red);margin-bottom:14px;line-height:1.2}
+.fc-txt{font-family:"Crimson Pro",serif;font-size:17px;line-height:1.78;color:var(--dim)}
+.fc-tag{display:inline-block;margin-top:18px;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:rgba(232,57,74,.08);border:1px solid rgba(232,57,74,.25);color:var(--red);padding:4px 12px}
+.map-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:20px}
+.map-legend{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+.leg-item{display:flex;align-items:center;gap:8px;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--dim)}
+.leg-dot{width:11px;height:11px;border-radius:2px;flex-shrink:0}
+.map-wrap{background:var(--n2);border:1px solid var(--border);padding:24px}
+.map-wrap svg{width:100%;height:auto;display:block}
+#usmap path{stroke:#04101f;stroke-width:1;transition:all .2s;cursor:pointer}
+#usmap path:hover{stroke:#00d4b8;stroke-width:1.6}
+.ml{font-family:"IBM Plex Mono",monospace;font-size:9px;fill:rgba(255,255,255,.75);text-anchor:middle;pointer-events:none}
+.s-top{fill:#00d4b8;opacity:.85}.s-grow{fill:#28c96e;opacity:.72}.s-flat{fill:#3a5f7a;opacity:.62}.s-dec{fill:#f5a623;opacity:.78}.s-crit{fill:#e8394a;opacity:.82}
+.map-src{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:2px;color:rgba(221,232,245,.28);text-align:right;margin-top:10px;line-height:1.9}
+.sp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:2px}
+.spc{background:#ffffff;border:1px solid rgba(26,37,53,.1);padding:28px;transition:border-color .3s}.spc:hover{border-color:var(--border)}
+.spc-state{font-family:"Bebas Neue",sans-serif;font-size:24px;letter-spacing:1px;margin-bottom:4px}
+.spc-num{font-family:"Bebas Neue",sans-serif;font-size:42px;line-height:1;margin-bottom:4px}
+.spc-trend{display:flex;align-items:center;gap:6px;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.spc-txt{font-family:"Crimson Pro",serif;font-size:15.5px;line-height:1.7;color:var(--dim)}
+.trend-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.chart-box{background:#ffffff;border:1px solid rgba(26,37,53,.1);padding:36px}
+.chart-lbl{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:24px}
+.barchart{display:flex;flex-direction:column;gap:13px}.br{display:flex;align-items:center;gap:12px}
+.br-yr{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--dim);width:40px;text-align:right;flex-shrink:0}
+.br-track{flex:1;background:rgba(26,37,53,.08);height:30px;border-radius:1px;overflow:hidden}
+.br-fill{height:100%;display:flex;align-items:center;padding-left:8px}
+.br-val{font-family:"Bebas Neue",sans-serif;font-size:15px;color:var(--white);flex-shrink:0}
+.chart-note{margin-top:18px;font-family:"IBM Plex Mono",monospace;font-size:8px;letter-spacing:2px;color:rgba(221,232,245,.25);line-height:2}
+.tstats{display:flex;flex-direction:column}.ts{padding:24px 0;border-bottom:1px solid var(--faint)}.ts:last-child{border-bottom:none}
+.ts-n{font-family:"Bebas Neue",sans-serif;font-size:42px;line-height:1;margin-bottom:6px}.ts-n.t{color:var(--teal)}.ts-n.a{color:var(--amber)}.ts-n.r{color:var(--red)}
+.ts-lbl{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.ts-txt{font-family:"Crimson Pro",serif;font-size:16px;line-height:1.72;color:var(--dim)}
+.denial-layout{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.denial-chart{background:#ffffff;border:1px solid rgba(26,37,53,.1);padding:40px}
+.dbars{display:flex;flex-direction:column;gap:22px;margin-top:20px}
+.db-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+.db-name{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:16px;letter-spacing:.5px;text-transform:uppercase;color:var(--white);line-height:1.2}
+.db-pct{font-family:"Bebas Neue",sans-serif;font-size:24px}
+.db-track{background:rgba(26,37,53,.08);height:10px;border-radius:1px}.db-fill{height:100%;border-radius:1px;transition:width 1.1s ease}
+.db-note{font-family:"Crimson Pro",serif;font-size:14.5px;line-height:1.65;color:var(--dim);margin-top:8px}
+.denial-right{display:flex;flex-direction:column;gap:2px}.dc{background:#ffffff;border:1px solid rgba(26,37,53,.1);padding:30px;transition:border-color .3s}.dc:hover{border-color:var(--border)}
+.dc-n{font-family:"Bebas Neue",sans-serif;font-size:38px;line-height:1;margin-bottom:6px}.dc-n.t{color:var(--teal)}.dc-n.a{color:var(--amber)}.dc-n.r{color:var(--red)}.dc-n.g{color:var(--green)}
+.dc-lbl{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.dc-txt{font-family:"Crimson Pro",serif;font-size:15.5px;line-height:1.72;color:var(--dim)}
+.denial-sub{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:2px}
+.ds{padding:28px;border:1px solid var(--faint);background:var(--card)}.ds-n{font-family:"Bebas Neue",sans-serif;font-size:36px;line-height:1;margin-bottom:6px}
+.ds-lbl{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.ds-txt{font-family:"Crimson Pro",serif;font-size:15px;line-height:1.65;color:var(--dim)}
+.tl-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:20px}
+.tbar{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tbtn{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border:1px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;transition:all .2s;outline:none}
+.tbtn:hover,.tbtn.on{background:var(--teal);border-color:var(--teal);color:var(--navy)}.tbtn.all.on{background:var(--white);border-color:var(--white);color:var(--navy)}
+.tl-track{position:relative}.tl-track::before{content:"";position:absolute;left:44px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--teal) 8%,var(--teal) 92%,transparent);opacity:.2;pointer-events:none}
+.stage{display:flex;gap:24px;margin-bottom:3px}.stage.hidden{display:none}
+.stm{flex-shrink:0;width:88px;display:flex;flex-direction:column;align-items:center;padding-top:28px}
+.stdot{width:14px;height:14px;border-radius:50%;border:2px solid var(--teal);background:#f4f7fb;z-index:1;transition:all .3s;flex-shrink:0}
+.stage:not(.collapsed) .stdot{background:var(--teal);box-shadow:0 0 14px rgba(0,212,184,.5)}
+.stn{font-family:"Bebas Neue",sans-serif;font-size:10px;letter-spacing:2px;color:var(--teal);margin-top:6px;opacity:.5}
+.stbody{flex:1;background:#ffffff;border:1px solid rgba(26,37,53,.1);padding:30px 34px;cursor:pointer;transition:border-color .25s,background .25s;position:relative}
+.stbody::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--teal);opacity:0;transition:opacity .25s}
+.stage:not(.collapsed) .stbody{border-color:var(--teal);background:rgba(0,122,110,.03)}
+.stage:not(.collapsed) .stbody::before{opacity:1}.stbody:hover{border-color:rgba(0,212,184,.4)}
+.sthead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.stphase{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:7px}
+.strow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.sttitle{font-family:"Bebas Neue",sans-serif;font-size:27px;letter-spacing:1px;line-height:1}
+.sttime{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.2);padding:3px 10px;flex-shrink:0}
+.starr{font-size:18px;color:var(--teal);flex-shrink:0;transition:transform .28s;margin-top:4px}.stage.collapsed .starr{transform:rotate(-90deg);color:#4a5c70}
+.stcontent{margin-top:24px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px}.stage.collapsed .stcontent{display:none}
+.stdesc{font-family:"Crimson Pro",serif;font-size:17px;line-height:1.8;color:var(--dim);grid-column:1/-1}
+.flist{list-style:none;display:flex;flex-direction:column}
+.flist li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--faint);font-family:"Crimson Pro",serif;font-size:15.5px;line-height:1.55;color:var(--dim)}
+.flist li:last-child{border-bottom:none}.flist li::before{content:"92";color:var(--teal);flex-shrink:0;font-family:"IBM Plex Mono",monospace;margin-top:1px;font-size:11px}
+.ob{background:rgba(0,212,184,.04);border:1px solid rgba(0,212,184,.13);padding:22px;display:flex;flex-direction:column;gap:14px}
+.ob-lbl{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--teal)}
+.ob-m{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ob-v{font-family:"Bebas Neue",sans-serif;font-size:40px;color:var(--teal);line-height:1}.ob-v.a{color:var(--amber)}
+.ob-l{font-family:"Crimson Pro",serif;font-size:14px;color:var(--dim);line-height:1.45;max-width:200px}
+.con-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.cc{background:#ffffff;border:1px solid rgba(26,37,53,.1);padding:36px;transition:border-color .3s,transform .3s;position:relative;overflow:hidden}
+.cc:hover{border-color:var(--teal);transform:translateY(-4px)}
+.cc::after{content:"";position:absolute;left:0;bottom:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--amber));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.cc:hover::after{transform:scaleX(1)}.cc-ico{font-size:30px;display:block;margin-bottom:20px}
+.cc-ttl{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:19px;letter-spacing:1px;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.cc-txt{font-family:"Crimson Pro",serif;font-size:16px;line-height:1.75;color:var(--dim)}
+.syn-wrap{display:flex;flex-wrap:wrap;border:1px solid rgba(26,37,53,.12)}.syn-left{flex:0 0 340px;border-right:1px solid var(--faint)}.syn-right{flex:1;min-width:300px}
+.si{padding:26px 30px;border-bottom:1px solid rgba(26,37,53,.09);cursor:pointer;transition:all .25s;position:relative}
+.si::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--teal);opacity:0;transition:opacity .25s}
+.si.on{background:rgba(0,122,110,.06)}.si.on::before{opacity:1}.si:last-child{border-bottom:none}
+.si-ttl{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:16px;letter-spacing:1px;text-transform:uppercase;color:var(--white);margin-bottom:7px;transition:color .2s}
+.si.on .si-ttl{color:var(--teal)}.si-txt{font-family:"Crimson Pro",serif;font-size:14.5px;line-height:1.6;color:var(--dim)}
+.syn-display{padding:44px;background:#e8f0fa;min-height:380px;display:flex;flex-direction:column;justify-content:center}
+.sp{display:none}.sp.on{display:block}
+.sp-lbl{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.sp-title{font-family:"Bebas Neue",sans-serif;font-size:36px;color:var(--white);margin-bottom:18px;line-height:1}
+.sp-body{font-family:"Crimson Pro",serif;font-size:17.5px;line-height:1.82;color:var(--dim)}
+.sp-stat{display:flex;align-items:baseline;gap:12px;margin-top:28px;padding-top:24px;border-top:1px solid var(--faint)}
+.sp-sv{font-family:"Bebas Neue",sans-serif;font-size:46px;color:var(--teal);line-height:1}
+.sp-sl{font-family:"Crimson Pro",serif;font-size:14px;color:var(--dim);line-height:1.45;max-width:260px}
+.econ-grid{display:grid;grid-template-columns:260px 1fr;gap:2px}
+.econ-hero{background:#007a6e;padding:48px 36px;display:flex;flex-direction:column;justify-content:center}
+.eh-n{font-family:"Bebas Neue",sans-serif;font-size:72px;color:var(--navy);line-height:1}
+.eh-l{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:17px;letter-spacing:1px;text-transform:uppercase;color:var(--navy);margin-top:8px;line-height:1.4}
+.econ-body{background:#ffffff;border:1px solid rgba(26,37,53,.1);padding:40px;display:flex;flex-direction:column}
+.er{display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-bottom:1px solid var(--faint)}.er:last-child{border-bottom:none;padding-bottom:0}
+.er-n{font-family:"Bebas Neue",sans-serif;font-size:34px;color:var(--amber);flex-shrink:0;width:48px;line-height:1}
+.er-ttl{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:17px;letter-spacing:1px;text-transform:uppercase;color:var(--white);margin-bottom:9px}
+.er-txt{font-family:"Crimson Pro",serif;font-size:16px;line-height:1.72;color:var(--dim)}
+#talking{border-top:3px solid #007a6e}
+.tp-hdr{display:flex;align-items:flex-end;gap:28px;margin-bottom:52px;padding-bottom:36px;border-bottom:1px solid var(--faint);flex-wrap:wrap}
+.tp-badge{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:3px;background:var(--amber);color:var(--navy);padding:6px 14px;text-transform:uppercase;flex-shrink:0;align-self:flex-start;margin-top:6px}
+.tp-ttl{font-family:"Bebas Neue",sans-serif;font-size:clamp(36px,5vw,58px);letter-spacing:1px;line-height:1}
+.tp-sub{font-family:"Crimson Pro",serif;font-style:italic;font-size:17px;color:var(--dim);margin-top:10px;line-height:1.55;max-width:460px}
+.tp-aud{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);border:1px solid var(--faint);padding:10px 16px;align-self:flex-end;line-height:1.9;flex-shrink:0;margin-left:auto}
+.tp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.tc{background:#ffffff;border:1px solid rgba(26,37,53,.1);padding:36px;position:relative;overflow:hidden}
+.tc-ghost{position:absolute;top:10px;right:16px;font-family:"Bebas Neue",sans-serif;font-size:68px;color:rgba(0,212,184,.05);line-height:1;pointer-events:none}
+.tc-cat{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+.tc-ttl{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:20px;letter-spacing:1px;text-transform:uppercase;color:var(--white);margin-bottom:22px;line-height:1.2}
+.tpl{list-style:none;display:flex;flex-direction:column}
+.tpl li{font-family:"Crimson Pro",serif;font-size:15.5px;line-height:1.72;color:var(--dim);padding:15px 0 15px 22px;position:relative;border-bottom:1px solid var(--faint)}
+.tpl li:last-child{border-bottom:none;padding-bottom:0}
+.tpl li::before{content:"B8";position:absolute;left:0;top:16px;color:var(--teal);font-size:11px}
+.tp-foot{margin-top:52px;padding-top:36px;border-top:1px solid var(--faint);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+.tp-quote{font-family:"Crimson Pro",serif;font-style:italic;font-size:19px;color:var(--dim);max-width:560px;line-height:1.72;border-left:3px solid var(--teal);padding-left:22px}
+.tp-footr{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:2px;text-align:right;color:#4a5c70;line-height:2}
+.pfoot{background:#1a2535;border-top:1px solid var(--faint);padding:28px 84px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;position:relative;z-index:1}
+.pf-brand{font-family:"Bebas Neue",sans-serif;font-size:22px;letter-spacing:4px;color:var(--teal)}
+.pf-c{font-family:"IBM Plex Mono",monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(244,247,251,.6);text-align:center;line-height:2}
+.pf-r{font-family:"IBM Plex Mono",monospace;font-size:8px;letter-spacing:2px;color:rgba(244,247,251,.6);text-align:right;line-height:2}
+@keyframes fadeup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes expandw{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+@media(max-width:1100px){.sec,.pfoot{padding:60px 44px}#hero{padding:64px 44px}.fail-grid,.tp-grid,.denial-layout,.trend-layout{grid-template-columns:1fr}.sp-grid,.denial-sub{grid-template-columns:1fr 1fr}.con-grid{grid-template-columns:1fr 1fr}.econ-grid{grid-template-columns:1fr}.syn-left{flex:0 0 100%;border-right:none;border-bottom:1px solid var(--faint)}}
+@media(max-width:760px){.sec,.pfoot{padding:48px 24px}#hero{padding:52px 24px}.htag{display:none}.con-grid,.tp-grid,.sp-grid,.denial-sub{grid-template-columns:1fr}#navdots{display:none}.stcontent{grid-template-columns:1fr}}
+
+/* ── REVISED HERO (lighter, logo-centric) ── */
+#hero{background:linear-gradient(160deg,#e8f0fa 0%,#f0f6ff 55%,#e4eef8 100%) !important;padding:0 !important;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-start}
+.hero-topbar{background:#ffffff;border-bottom:2px solid rgba(0,122,110,.15);padding:14px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;position:relative;z-index:2}
+.hero-logo-wrap{display:flex;align-items:center}
+.hero-logo-wrap svg{height:64px;width:auto}
+.hero-ip{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1.5px;color:#4a5c70;text-align:right;line-height:1.9;max-width:340px}
+.hero-body{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:52px 60px 40px;position:relative;overflow:hidden}
+.hero-body::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(ellipse,rgba(0,122,110,.05) 0%,transparent 68%);pointer-events:none}
+.hdivider{width:60px;height:2px;background:var(--teal);margin:0 auto 28px;opacity:0;animation:expandw .6s .15s ease forwards;transform:scaleX(0);transform-origin:center}
+.htitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,10vw,130px);line-height:.88;letter-spacing:4px;opacity:0;animation:fadeup .6s .25s ease forwards;margin-bottom:0}
+.htitle em{color:var(--teal);font-style:normal;display:block}
+.hsub{font-family:'Crimson Pro',serif;font-size:19px;font-style:italic;color:#3a4d60;margin:22px auto 0;max-width:620px;line-height:1.72;opacity:0;animation:fadeup .6s .38s ease forwards}
+.hstats{display:flex;gap:0;margin-top:44px;opacity:0;animation:fadeup .6s .5s ease forwards;border:1px solid rgba(0,122,110,.18);flex-wrap:wrap;justify-content:center}
+.hstat{padding:22px 36px;border-right:1px solid rgba(0,122,110,.12);text-align:center;flex:1;min-width:140px}
+.hstat:last-child{border-right:none}
+.hs-n{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1}
+.hs-n.r{color:#e8394a}.hs-n.t{color:#00d4b8}.hs-n.a{color:#f5a623}
+.hs-l{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6e8aaa;margin-top:5px;line-height:1.55}
+.hero-scroll{margin-top:40px;opacity:0;animation:fadeup .5s .65s ease forwards;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(0,122,110,.6);display:flex;flex-direction:column;align-items:center;gap:8px}
+.hero-scroll span{display:block;width:1px;height:32px;background:linear-gradient(to bottom,rgba(0,212,184,.5),transparent)}
+
+/* ── IMPROVED MAP ── */
+.map-container-outer{background:#f0f6ff;border:2px solid rgba(0,212,184,.2);border-radius:2px;padding:0;overflow:hidden}
+.map-header-bar{background:#ffffff;border-bottom:1px solid rgba(0,122,110,.15);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.map-title-sm{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#007a6e}
+.map-inner{background:#e8f0fa;padding:20px 16px 10px}
+.map-inner svg{width:100%;height:auto;display:block;max-height:520px}
+#usmap{filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))}
+#usmap path{stroke:#0a1628;stroke-width:1.5;cursor:pointer;transition:opacity .2s,stroke .2s,stroke-width .2s}
+#usmap path:hover{stroke:#fff;stroke-width:2;opacity:1 !important}
+.s-top{fill:#007a6e}.s-grow{fill:#1a7a40}.s-flat{fill:#3a6080}.s-dec{fill:#b36000}.s-crit{fill:#c0001f}
+.state-label{font-family:'IBM Plex Mono',monospace;font-size:7.5px;fill:#fffffffff;font-weight:600;text-anchor:middle;pointer-events:none;font-weight:500;letter-spacing:.5px}
+.map-legend-row{padding:12px 20px;border-top:1px solid rgba(0,122,110,.12);display:flex;gap:22px;flex-wrap:wrap;align-items:center;background:rgba(0,0,0,.2)}
+.leg-item{display:flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;color:#4a5c70}
+.leg-dot{width:12px;height:12px;border-radius:2px;flex-shrink:0;box-shadow:0 0 6px currentColor}
+.map-src-bar{padding:8px 20px;background:rgba(255,255,255,.7);font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:1.5px;color:rgba(221,232,245,.25);line-height:1.9;border-top:1px solid rgba(0,212,184,.07)}
+
+.legal-footer{background:#1a2535;padding:48px 84px;border-top:3px solid #007a6e;position:relative;z-index:1}
+.lf-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.lf-head{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#00d4b8;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(0,212,184,.2)}
+.lf-txt{font-family:'Crimson Pro',serif;font-size:15px;line-height:1.8;color:rgba(244,247,251,.75)}
+@media(max-width:1100px){.lf-inner{grid-template-columns:1fr}.legal-footer{padding:40px 44px}}
+@media(max-width:760px){.legal-footer{padding:36px 24px}}
+</style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;top:16px;left:16px;z-index:999;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:9px 16px;background:rgba(4,16,31,0.92);border:1px solid rgba(0,212,184,0.4);color:#00d4b8;text-decoration:none;border-radius:2px;backdrop-filter:blur(8px);">← CIF Home</a>
+<a href="the-intelligence-gap.html" style="position:fixed;top:16px;right:16px;z-index:999;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:9px 16px;background:rgba(4,16,31,0.92);border:1px solid rgba(0,212,184,0.4);color:#00d4b8;text-decoration:none;border-radius:2px;backdrop-filter:blur(8px);">Read the White Paper →</a>
+<div id="pgbar"></div><div id="maptip"></div>
+<nav id="navdots">
+  <div class="nd on" onclick="scrollTo(0,0)"></div>
+  <div class="nd" onclick="ss('failures')"></div>
+  <div class="nd" onclick="ss('statemap')"></div>
+  <div class="nd" onclick="ss('denial')"></div>
+  <div class="nd" onclick="ss('timeline')"></div>
+  <div class="nd" onclick="ss('concierge')"></div>
+  <div class="nd" onclick="ss('synergy')"></div>
+  <div class="nd" onclick="ss('economics')"></div>
+  <div class="nd" onclick="ss('talking')"></div>
+</nav>
+<section id="hero">
+<div class="hero-topbar">
+  <div class="hero-logo-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 90" role="img" aria-label="Cold Ischemia Foundation">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00d4b8"/>
+      <stop offset="100%" stop-color="#00a896"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield / icon mark -->
+  <path d="M18,6 L42,6 Q48,6 48,14 L48,34 Q48,52 30,60 Q12,52 12,34 L12,14 Q12,6 18,6 Z" fill="url(#lg)"/>
+  <!-- Kidney shape inside shield -->
+  <path d="M22,24 Q22,18 28,18 Q34,18 34,24 Q34,30 30,32 Q34,34 34,40 Q34,46 28,46 Q22,46 22,40 Q22,36 26,34 Q22,32 22,24 Z" fill="#04101f" opacity="0.85"/>
+  <!-- CIF wordmark -->
+  <text x="58" y="36" font-family="'Bebas Neue',Impact,sans-serif" font-size="32" fill="#00d4b8" letter-spacing="3">COLD ISCHEMIA</text>
+  <text x="58" y="56" font-family="'Bebas Neue',Impact,sans-serif" font-size="22" fill="#dde8f5" letter-spacing="5">FOUNDATION</text>
+  <!-- Tagline rule -->
+  <line x1="58" y1="64" x2="230" y2="64" stroke="#00d4b8" stroke-width="1" opacity="0.4"/>
+  <text x="58" y="76" font-family="'IBM Plex Mono',monospace,sans-serif" font-size="8" fill="#6e8aaa" letter-spacing="2">COLDISCHEMIA.FOUNDATION</text>
+</svg>
+  </div>
+  <div class="hero-ip">
+    <strong style="color:#007a6e;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;display:block;margin-bottom:5px">&#9632; PROPRIETARY ANALYTICAL TOOL &mdash; INTELLECTUAL PROPERTY OF THE COLD ISCHEMIA FOUNDATION</strong>
+    This framework, methodology, and all analytical content are the exclusive property of the Cold Ischemia Foundation, Ellenton, Florida. Data utilized herein is sourced from OPTN, SRTR, USRDS, and peer-reviewed literature; all analytical conclusions, frameworks, and derivative work are original CIF intellectual property. Inquiries regarding licensing or acquisition of rights must be submitted in writing to coldischemia.foundation.
+  </div>
+</div>
+<div class="hero-body">
+  <div class="hdivider"></div>
+  <h1 class="htitle">PROJECT<br><em>DONOR</em>FLOW</h1>
+  <p class="hsub">AI-Psychosocial Integration Framework for Living Donor Optimization &mdash; an original analytical framework developed by the Cold Ischemia Foundation. Statistical data sourced from OPTN/SRTR Annual Data Reports, USRDS, LDCPR, AKF Report Cards, and HRSA. All framework conclusions, intervention protocols, and derivative analyses are original CIF work.</p>
+  <div class="hstats">
+    <div class="hstat"><div class="hs-n r">80%</div><div class="hs-l">Donor inquiries<br>never reach surgery</div></div>
+    <div class="hstat"><div class="hs-n t">6,226</div><div class="hs-l">Living kidney<br>donors 2023</div></div>
+    <div class="hstat"><div class="hs-n a">~50%</div><div class="hs-l">Of evaluated candidates<br>denied before surgery</div></div>
+    <div class="hstat"><div class="hs-n t">7,030</div><div class="hs-l">Total living<br>donors 2024</div></div>
+  </div>
+  <div class="hero-scroll"><span></span>SCROLL TO EXPLORE</div>
+</div>
+</section>
+
+<section class="sec" id="failures">
+<div class="rv"><div class="lbl">Section II &middot; Diagnostic Analysis</div><div class="ttl">The Anatomy of the &ldquo;Leaky Bucket&rdquo;</div></div>
+<div class="fail-grid rv rv2">
+  <div class="fc" data-n="01"><span class="fc-ico">&#128269;</span>
+    <div class="fc-ttl">Human-Centric Triage Failure</div>
+    <p class="fc-txt">Overwhelmed coordinators default to subconscious triage bias. LDCPR data confirms candidates most likely to be approved were married and college-educated; those least likely included Black race, elevated blood pressure, and smoking history. This is not a coordinator failure &mdash; it is the structural consequence of high-volume decision-making with no data-driven decision support.</p>
+    <div class="fc-tag">Root Cause: Absent Decision-Support Infrastructure</div>
+  </div>
+  <div class="fc" data-n="02"><span class="fc-ico">&#128683;</span>
+    <div class="fc-ttl">The Psychosocial Vacuum</div>
+    <p class="fc-txt">Psychosocial screening occurs reactively and late. Published sub-analysis confirms 10.3% of non-approvals are psychosocial: poor adherence (62%), psychiatric diagnosis (50%), cognitive concerns (33%). Zero standardized early-intervention protocols exist nationally to convert these from disqualifiers into support targets. The system discards rather than rehabilitates.</p>
+    <div class="fc-tag">Root Cause: Late-Stage Reactive Protocol / No Remediation Path</div>
+  </div>
+  <div class="fc" data-n="03"><span class="fc-ico">&#9881;&#65039;</span>
+    <div class="fc-ttl">Logistical Friction &amp; Evaluation Fatigue</div>
+    <p class="fc-txt">The LDCPR confirms candidate withdrawal accounts for 15.2% of all single-reason non-approvals &mdash; donors who were medically and psychosocially eligible but exited due to administrative burden alone. These are not medical disqualifications. They are entirely preventable operational failures. The current system has no mechanism to address what its own data predicts.</p>
+    <div class="fc-tag">Root Cause: Passive Donor Architecture &mdash; 15.2% preventable loss</div>
+  </div>
+  <div class="fc" data-n="04"><span class="fc-ico">&#128230;</span>
+    <div class="fc-ttl">Data Fragmentation &amp; State-Level Siloing</div>
+    <p class="fc-txt">OPTN state data reveals dramatic geographic disparity in living donor rates with no clinical explanation &mdash; only a systemic one. Mississippi (40.8% obesity, AKF grade F), Louisiana, and Alabama show critical decline. These outcomes are predictable from policy data, which makes them preventable. Continued inaction in the face of preventable outcomes is a choice, not a constraint.</p>
+    <div class="fc-tag">Root Cause: No National Interoperability or Equity Correction Standard</div>
+  </div>
+</div>
+</section>
+
+<section class="sec sec2 bt bb" id="statemap">
+<div class="rv"><div class="lbl">State-Level Intelligence &middot; CIF Analysis of OPTN / SRTR / USRDS Data &middot; 2019&ndash;2023</div><div class="ttl">Living Donor Activity by State<br>Where We Are Winning &amp; Losing</div></div>
+<p style="font-family:'Crimson Pro',serif;font-size:17px;line-height:1.75;color:var(--dim);max-width:660px;margin-bottom:28px" class="rv rv2">State-level trend classification based on Cold Ischemia Foundation analysis of OPTN state data, SRTR Annual Data Reports (2019&ndash;2023), and USRDS supplementary data. National total: 6,226 living kidney donors in 2023 &mdash; 630 below the 2019 peak of 6,856. <strong style="color:var(--white)">Hover any state for detail.</strong></p>
+
+<div class="map-container-outer rv rv3">
+  <div class="map-header-bar">
+    <div class="map-title-sm">U.S. Living Donor Trend Map &mdash; CIF State Intelligence Report 2025</div>
+    <div class="map-legend-row" style="padding:0;border:none;background:none">
+      <div class="leg-item"><div class="leg-dot" style="background:#00d4b8;box-shadow:0 0 6px #00d4b8"></div>Strong Growth &#8593;&#8593;</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#34c97a;box-shadow:0 0 6px #34c97a"></div>Growth &#8593;</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#4a7a9b"></div>Flat &#8594;</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#e8a020;box-shadow:0 0 4px #e8a020"></div>Declining &#8595;</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#e8394a;box-shadow:0 0 6px #e8394a"></div>Critical &#8595;&#8595;</div>
+    </div>
+  </div>
+  <div class="map-inner">
+<svg id="usmap" viewBox="0 0 980 620" xmlns="http://www.w3.org/2000/svg">
+  <!-- Using larger, better-spaced rectangular state blocks for clarity -->
+  <!-- WEST COAST -->
+  <path id="WA" class="s-grow" d="M65,80 L155,76 L157,116 L67,120Z"/>
+  <text class="state-label" x="111" y="102">WA</text>
+  <path id="OR" class="s-top" d="M65,120 L157,116 L159,164 L67,168Z"/>
+  <text class="state-label" x="112" y="144">OR</text>
+  <path id="CA" class="s-top" d="M65,168 L120,164 L128,224 L132,284 L134,344 L130,406 L124,456 L100,486 L80,490 L66,470 L62,430 L64,380 L66,328 L66,274Z"/>
+  <text class="state-label" x="90" y="330">CA</text>
+
+  <!-- MOUNTAIN WEST -->
+  <path id="ID" class="s-flat" d="M157,76 L216,72 L220,120 L218,156 L160,160 L159,116Z"/>
+  <text class="state-label" x="188" y="118">ID</text>
+  <path id="NV" class="s-dec" d="M120,164 L160,160 L162,224 L164,280 L120,280Z"/>
+  <text class="state-label" x="142" y="222">NV</text>
+  <path id="UT" class="s-flat" d="M164,156 L218,152 L220,220 L166,224Z"/>
+  <text class="state-label" x="193" y="190">UT</text>
+  <path id="AZ" class="s-dec" d="M120,280 L164,280 L166,350 L120,350Z"/>
+  <text class="state-label" x="143" y="318">AZ</text>
+  <path id="MT" class="s-flat" d="M157,38 L295,32 L297,78 L216,80 L157,76Z"/>
+  <text class="state-label" x="226" y="59">MT</text>
+  <path id="WY" class="s-flat" d="M218,80 L295,78 L297,150 L220,152Z"/>
+  <text class="state-label" x="257" y="118">WY</text>
+  <path id="CO" class="s-flat" d="M166,152 L220,152 L222,220 L168,224Z"/>
+  <text class="state-label" x="195" y="190">CO</text>
+  <path id="NM" class="s-dec" d="M166,224 L222,220 L224,290 L168,294Z"/>
+  <text class="state-label" x="196" y="260">NM</text>
+
+  <!-- PLAINS -->
+  <path id="ND" class="s-flat" d="M297,32 L380,28 L382,78 L297,78Z"/>
+  <text class="state-label" x="338" y="57">ND</text>
+  <path id="SD" class="s-flat" d="M297,78 L382,78 L384,140 L299,142Z"/>
+  <text class="state-label" x="340" y="113">SD</text>
+  <path id="NE" class="s-flat" d="M222,150 L297,148 L299,142 L384,140 L384,190 L222,192Z"/>
+  <text class="state-label" x="303" y="172">NE</text>
+  <path id="KS" class="s-flat" d="M222,192 L384,190 L386,244 L224,246Z"/>
+  <text class="state-label" x="305" y="220">KS</text>
+  <path id="OK" class="s-flat" d="M224,246 L386,244 L388,298 L226,300Z"/>
+  <text class="state-label" x="307" y="274">OK</text>
+
+  <!-- UPPER MIDWEST -->
+  <path id="MN" class="s-flat" d="M382,28 L460,24 L462,88 L384,88 L382,78Z"/>
+  <text class="state-label" x="422" y="59">MN</text>
+  <path id="IA" class="s-flat" d="M384,140 L462,136 L464,196 L386,198Z"/>
+  <text class="state-label" x="424" y="170">IA</text>
+  <path id="MO" class="s-flat" d="M386,198 L464,196 L466,258 L388,260Z"/>
+  <text class="state-label" x="426" y="231">MO</text>
+  <path id="AR" class="s-dec" d="M388,260 L466,258 L468,310 L390,312Z"/>
+  <text class="state-label" x="428" y="288">AR</text>
+  <path id="LA" class="s-crit" d="M390,312 L468,310 L470,364 L392,366Z"/>
+  <text class="state-label" x="430" y="340">LA</text>
+
+  <!-- GREAT LAKES -->
+  <path id="WI" class="s-top" d="M462,70 L530,66 L532,130 L464,132Z"/>
+  <text class="state-label" x="497" y="102">WI</text>
+  <path id="IL" class="s-grow" d="M464,196 L524,192 L526,256 L466,258Z"/>
+  <text class="state-label" x="495" y="226">IL</text>
+  <path id="MI" class="s-grow" d="M530,50 L612,46 L614,110 L532,112Z"/>
+  <text class="state-label" x="572" y="82">MI</text>
+  <path id="IN" class="s-flat" d="M524,130 L590,128 L592,192 L526,194Z"/>
+  <text class="state-label" x="558" y="164">IN</text>
+  <path id="OH" class="s-grow" d="M590,88 L660,84 L662,150 L592,154Z"/>
+  <text class="state-label" x="626" y="121">OH</text>
+  <path id="KY" class="s-flat" d="M526,192 L592,190 L594,244 L528,246Z"/>
+  <text class="state-label" x="560" y="220">KY</text>
+  <path id="TN" class="s-flat" d="M528,246 L610,242 L612,288 L530,292Z"/>
+  <text class="state-label" x="570" y="272">TN</text>
+
+  <!-- MID-ATLANTIC & SOUTH -->
+  <path id="PA" class="s-grow" d="M660,80 L742,76 L744,142 L662,146Z"/>
+  <text class="state-label" x="702" y="113">PA</text>
+  <path id="NY" class="s-top" d="M742,44 L838,40 L840,88 L744,92Z"/>
+  <text class="state-label" x="791" y="70">NY</text>
+  <path id="WV" class="s-flat" d="M592,146 L660,142 L662,206 L594,208Z"/>
+  <text class="state-label" x="627" y="178">WV</text>
+  <path id="VA" class="s-grow" d="M662,140 L744,136 L746,200 L664,204Z"/>
+  <text class="state-label" x="703" y="174">VA</text>
+  <path id="MD" class="s-grow" d="M744,90 L816,86 L818,136 L746,140Z"/>
+  <text class="state-label" x="781" y="115">MD</text>
+  <path id="NC" class="s-flat" d="M612,244 L700,238 L702,294 L614,298Z"/>
+  <text class="state-label" x="657" y="270">NC</text>
+  <path id="SC" class="s-flat" d="M614,298 L702,294 L704,344 L616,348Z"/>
+  <text class="state-label" x="659" y="324">SC</text>
+  <path id="AL" class="s-dec" d="M530,292 L614,288 L616,354 L532,358Z"/>
+  <text class="state-label" x="573" y="324">AL</text>
+  <path id="MS" class="s-crit" d="M468,304 L530,300 L532,358 L470,362Z"/>
+  <text class="state-label" x="500" y="333">MS</text>
+  <path id="GA" class="s-flat" d="M616,348 L706,342 L708,408 L618,412Z"/>
+  <text class="state-label" x="662" y="382">GA</text>
+  <path id="FL" class="s-grow" d="M532,358 L618,354 L620,412 L706,408 L708,450 L700,490 L680,520 L650,534 L616,528 L590,510 L568,482 L550,452 L534,412Z"/>
+  <text class="state-label" x="622" y="456">FL</text>
+  <path id="TX" class="s-flat" d="M226,300 L390,298 L392,366 L394,440 L380,500 L352,530 L310,548 L270,540 L240,516 L220,484 L208,450 L212,400Z"/>
+  <text class="state-label" x="305" y="430">TX</text>
+
+  <!-- NORTHEAST -->
+  <path id="NE_STATES" class="s-top" d="M840,38 L910,34 L912,84 L842,88Z"/>
+  <text class="state-label" x="876" y="64">NE</text>
+  <path id="NJ" class="s-grow" d="M818,88 L868,84 L870,138 L820,142Z"/>
+  <text class="state-label" x="844" y="114">NJ</text>
+
+  <!-- INSETS -->
+  <rect x="60" y="545" width="90" height="55" fill="#1a2e44" stroke="rgba(0,212,184,.2)" stroke-width="1"/>
+  <path id="AK" class="s-flat" d="M66,553 L144,551 L144,594 L66,596Z"/>
+  <text class="state-label" x="105" y="577">AK</text>
+  <text style="font-family:'IBM Plex Mono',monospace;font-size:7px;fill:rgba(26,37,53,.6);letter-spacing:1px" x="64" y="612">ALASKA</text>
+
+  <rect x="168" y="545" width="90" height="55" fill="#1a2e44" stroke="rgba(0,212,184,.2)" stroke-width="1"/>
+  <path id="HI" class="s-flat" d="M174,553 L250,551 L250,594 L174,596Z"/>
+  <text class="state-label" x="212" y="577">HI</text>
+  <text style="font-family:'IBM Plex Mono',monospace;font-size:7px;fill:rgba(26,37,53,.6);letter-spacing:1px" x="166" y="612">HAWAII</text>
+</svg>
+  </div>
+  <div class="map-legend-row">
+    <div class="leg-item"><div class="leg-dot" style="background:#00d4b8;box-shadow:0 0 6px #00d4b8"></div>Strong Growth &#8593;&#8593; &mdash; CA, OR, WI, NY, NE</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#34c97a;box-shadow:0 0 5px #34c97a"></div>Growth &#8593; &mdash; WA, IL, MI, OH, PA, VA, MD, FL, NJ</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#4a7a9b"></div>Flat &#8594; &mdash; Most Central States</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#e8a020;box-shadow:0 0 4px #e8a020"></div>Declining &#8595; &mdash; NV, AZ, NM, AR, TX, AL</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#e8394a;box-shadow:0 0 7px #e8394a"></div>Critical &#8595;&#8595; &mdash; LA, MS (Primary CIF Targets)</div>
+  </div>
+  <div class="map-src-bar">Data Source: CIF Analysis of OPTN State Data Reports &middot; SRTR 2023 Annual Data Report (Fig. KI 102) &middot; USRDS 2023 &middot; AKF Living Donor Protection Report Card 2021&ndash;2023 &middot; Trend classifications based on OPO regional data and OPTN transplant center reports 2019&ndash;2023</div>
+</div>
+
+<!-- STATE PERFORMANCE CARDS -->
+<div class="sp-grid rv rv4">
+  <div class="spc"><div class="spc-state" style="color:var(--teal)">California</div><div class="spc-num" style="color:var(--teal)">~838/yr</div><div class="spc-trend"><span style="color:var(--teal)">&#8593;&#8593;</span>&nbsp;Strong Growth</div><p class="spc-txt">Leads nation in absolute volume. UCSF, UCLA, Cedars-Sinai among top national programs. NLDTF utilization high. Still underperforms per capita versus Midwest transplant corridors. AKF grade B&ndash;C range.</p></div>
+  <div class="spc"><div class="spc-state" style="color:var(--teal)">New York</div><div class="spc-num" style="color:var(--teal)">~412/yr</div><div class="spc-trend"><span style="color:var(--teal)">&#8593;&#8593;</span>&nbsp;Strong Growth</div><p class="spc-txt">2022 law: direct donor reimbursement up to $10,000 &mdash; first state to provide direct financial compensation. AKF grade improved to B. Active paired exchange programs. NY law is the legislative model Marie&rsquo;s Lifeline Compensation Act is designed to nationalize.</p></div>
+  <div class="spc"><div class="spc-state" style="color:var(--amber)">Florida</div><div class="spc-num" style="color:var(--amber)">~244/yr</div><div class="spc-trend"><span style="color:var(--green)">&#8593;</span>&nbsp;Growing</div><p class="spc-txt">CIF home state (FL-16, Ellenton). AKF grade improved to C following 2022 legislation. Still critically underperforms for 3rd most populous state. No direct reimbursement. Marie&rsquo;s Lifeline Compensation Act directly targets this structural gap.</p></div>
+  <div class="spc"><div class="spc-state" style="color:var(--amber)">Texas</div><div class="spc-num" style="color:var(--amber)">~380/yr</div><div class="spc-trend"><span style="color:var(--amber)">&#8594;</span>&nbsp;Flat</div><p class="spc-txt">Large absolute volume but dramatic per-capita underperformance for 2nd most populous state. No anti-discrimination law. AKF grade C. Large Hispanic population faces documented LDKT access disparities. Active CIF legislative campaign priority.</p></div>
+  <div class="spc"><div class="spc-state" style="color:var(--amber)">Alabama</div><div class="spc-num" style="color:var(--amber)">~64/yr</div><div class="spc-trend"><span style="color:var(--amber)">&#8595;</span>&nbsp;Declining</div><p class="spc-txt">UAB is nationally significant but state-level support infrastructure is absent. AKF grade D. 36.3% obesity rate directly inflates the 47.9% medical denial rate. No state campaign, no Financial Advocacy Track, no Metabolic Support Protocol deployed at scale.</p></div>
+  <div class="spc"><div class="spc-state" style="color:var(--red)">Louisiana</div><div class="spc-num" style="color:var(--red)">~48/yr</div><div class="spc-trend"><span style="color:var(--red)">&#8595;&#8595;</span>&nbsp;Critical</div><p class="spc-txt">AKF grade D. No anti-discrimination law, no job protection, no reimbursement program. 37.1% obesity (2nd nationally). Every systemic barrier compounds every clinical barrier. Primary Project Donor-Flow state-level intervention target.</p></div>
+  <div class="spc"><div class="spc-state" style="color:var(--red)">Mississippi</div><div class="spc-num" style="color:var(--red)">~22/yr</div><div class="spc-trend"><span style="color:var(--red)">&#8595;&#8595;</span>&nbsp;Critical</div><p class="spc-txt">Lowest per-capita volume nationally. Highest ESRD burden. Obesity 40.8% &mdash; highest nationally. Diabetes 16.9% &mdash; highest nationally. AKF grade F. Zero improvement since 2021. Zero legislative protection. Maximum intervention priority.</p></div>
+  <div class="spc"><div class="spc-state" style="color:var(--green)">Illinois</div><div class="spc-num" style="color:var(--green)">~298/yr</div><div class="spc-trend"><span style="color:var(--green)">&#8593;</span>&nbsp;Growth</div><p class="spc-txt">Northwestern, UChicago, Loyola drive high performance. AKF grade B. Job protection and anti-discrimination legislation in place. Broad paired exchange participation. Operational benchmark for Project Donor-Flow&rsquo;s Phase 6 national standard.</p></div>
+</div>
+</section>
+
+<section class="sec bt" id="trends">
+<div class="rv"><div class="lbl">National Trend &middot; Source: OPTN/SRTR 2023 Annual Data Report, Fig. KI 102 &middot; CIF Analysis</div><div class="ttl">Living Kidney Donors<br>2016&ndash;2023: The Full Picture</div></div>
+<div class="trend-layout rv rv2">
+  <div class="chart-box">
+    <div class="chart-lbl">Annual Living Kidney Donor Totals &mdash; United States</div>
+    <div class="barchart" id="barChart"></div>
+    <div class="chart-note">Source: OPTN/SRTR 2023 Annual Data Report: Kidney, Figure KI 102<br>Peak: 6,856 in 2019 &middot; COVID Nadir: 5,226 in 2020 &middot; 2023 Recovery: 6,226<br>2024 total all organs: 7,030 &mdash; HRSA preliminary data, January 2025</div>
+  </div>
+  <div class="tstats">
+    <div class="ts"><div class="ts-n t">6,226</div><div class="ts-lbl">Living Kidney Donors &mdash; 2023</div><p class="ts-txt">Third highest annual total. Still 630 below the 2019 peak &mdash; a gap representing donors the system has not recaptured despite five years of recovery. That gap is the operational target. The altruism exists. The infrastructure to retain it does not.</p></div>
+    <div class="ts"><div class="ts-n r">&minus;9.2%</div><div class="ts-lbl">Below 2019 Peak &mdash; Five Years Later</div><p class="ts-txt">The donor pool has not recovered to pre-pandemic levels after five full years. This is not a COVID effect &mdash; it is a system design effect. The pandemic exposed the structural failure; it did not create it. Project Donor-Flow addresses the infrastructure deficit that produced the gap.</p></div>
+    <div class="ts"><div class="ts-n a">20.6%</div><div class="ts-lbl">From Paired Exchange &mdash; 2023</div><p class="ts-txt">Paired exchange is a growing share of total living donation, rising from under 10% a decade ago. Structural innovation drives volume. This confirms the core premise: AI-orchestrated evaluation and matching directly accelerates this pathway further.</p></div>
+    <div class="ts"><div class="ts-n t">7,030</div><div class="ts-lbl">Total Living Donors 2024 (All Organs)</div><p class="ts-txt">HRSA 2024 preliminary data confirms the growth trend continues. The system has demonstrable capacity to expand. The constraint is evaluation pipeline efficiency and support infrastructure &mdash; not donor willingness. This framework addresses the constraint directly.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="sec sec2 bt bb" id="denial">
+<div class="rv"><div class="lbl">Denial Analysis &middot; LDCPR &middot; Lentine et al. 2021 &middot; AJKD 78(3)</div><div class="ttl">Why Living Donor Candidates<br>Are Denied &mdash; The Verified Data</div></div>
+<p style="font-family:'Crimson Pro',serif;font-size:18px;line-height:1.82;color:var(--dim);max-width:740px;margin-bottom:44px" class="rv rv2">Data from the Living Donor Collective Pilot Registry (10 programs, 2,107 consecutive U.S. candidates) establishes the structural distribution of denial reasons. Approximately 50% of all evaluated living kidney donor candidates nationally are denied before surgery. Understanding which categories are remediable and building protocols to target them is the clinical foundation of this framework.</p>
+<div class="denial-layout rv rv3">
+  <div class="denial-chart">
+    <div class="chart-lbl">Primary Denial Reason Distribution &mdash; 594 Single-Reason Non-Approvals</div>
+    <p style="font-family:'Crimson Pro',serif;font-size:14px;color:var(--dim);margin-bottom:20px;line-height:1.6">Source: Lentine et al. 2021, AJKD 78(3):394&ndash;405. 10 U.S. programs, 2,107 consecutive candidates through March 2020.</p>
+    <div class="dbars" id="denialBars"></div>
+  </div>
+  <div class="denial-right">
+    <div class="dc"><div class="dc-n r">~50%</div><div class="dc-lbl">Denied Before Surgery &mdash; National Rate</div><p class="dc-txt">Approximately half of all evaluated living kidney donor candidates nationally do not reach surgery. The 2025 ScienceDirect study (813 evaluated, 194 denied = 24% at one center) and LDCPR multi-center data confirm this magnitude. Attrition including pre-evaluation withdrawal is substantially higher.</p></div>
+    <div class="dc"><div class="dc-n t">15.2%</div><div class="dc-lbl">Withdrawal &mdash; 100% Preventable</div><p class="dc-txt">Candidate withdrawal accounts for 15.2% of all single-reason non-approvals. These donors were medically and psychosocially eligible. They were not rejected &mdash; they were lost to process friction. Every withdrawal is a system failure. The AI-Concierge Velocity Monitoring system targets this category specifically.</p></div>
+    <div class="dc"><div class="dc-n g">10.3%</div><div class="dc-lbl">Psychosocial &mdash; Largely Remediable</div><p class="dc-txt">Poor adherence (62%), psychiatric diagnosis (50%), cognitive concerns (33%), poor social support (25%). All benefit meaningfully from early identification and targeted support. These are support needs the current system treats as exit conditions. This framework recategorizes them as early-intervention triggers with defined protocols.</p></div>
+    <div class="dc"><div class="dc-n a">0.5%</div><div class="dc-lbl">Economic &mdash; Radically Undercounted</div><p class="dc-txt">Formally recorded in only 0.5% of single-reason denials &mdash; dramatically understating the true barrier. Economic pressure suppresses initial inquiry and causes withdrawal classified elsewhere. The Financial Advocacy Track targets this at first contact, before it operates invisibly upstream of formal evaluation.</p></div>
+  </div>
+</div>
+<div class="denial-sub rv rv4">
+  <div class="ds" style="border-left:3px solid var(--red)"><div class="ds-n" style="color:var(--red)">47.9%</div><div class="ds-lbl" style="color:var(--red)">Medical (All Types)</div><p class="ds-txt">Largest category. Hypertension is most common at 9.8%. Diabetes, obesity (BMI thresholds vary &#8805;30 to &#8805;35 by center), and cardiac risk follow. Threshold variability creates inequitable access based on which center a donor contacts, not clinical evidence.</p></div>
+  <div class="ds" style="border-left:3px solid var(--amber)"><div class="ds-n" style="color:var(--amber)">18.5%</div><div class="ds-lbl" style="color:var(--amber)">CKD Risk Factors</div><p class="ds-txt">Family history, elevated creatinine, proteinuria, reduced GFR &mdash; relative contraindications with wide center variability. Modifiable factors (weight, blood pressure) directly targeted by the Metabolic Support Protocol before they reach formal evaluation thresholds.</p></div>
+  <div class="ds" style="border-left:3px solid var(--teal)"><div class="ds-n" style="color:var(--teal)">13.6%</div><div class="ds-lbl" style="color:var(--teal)">Recipient Reason</div><p class="ds-txt">Recipient became ineligible or received an organ through another channel during the donor&rsquo;s evaluation. This is pipeline velocity failure. AI-accelerated intake reduces this by shortening total evaluation duration before recipient status changes.</p></div>
+  <div class="ds" style="border-left:3px solid var(--green)"><div class="ds-n" style="color:var(--green)">10.3%</div><div class="ds-lbl" style="color:var(--green)">Psychosocial</div><p class="ds-txt">Poor adherence (62%), psychiatric diagnosis (50%), cognitive concerns (33%), poor social support (25%). Early AI-administered adaptive screening converts a substantial proportion from denial to approval through support protocols initiated at identification, not at formal screening.</p></div>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;color:rgba(221,232,245,.22);margin-top:14px;line-height:2" class="rv rv4">Sources: Lentine KL et al. AJKD 78(3):394&ndash;405 (2021) &middot; Rose C et al. PMC7242155 (2022) &middot; Ruck JM et al. ScienceDirect (2025) &middot; OPTN/SRTR 2023 Annual Data Report: Kidney (AJKD Feb 2025)</p>
+</section>
+
+<section class="sec" id="timeline">
+<div class="tl-head rv">
+  <div><div class="lbl">Sections III&ndash;IX &middot; Implementation Roadmap</div><div class="ttl" style="margin-bottom:0">6-Phase Predictive Donor<br>Lifecycle Management</div></div>
+  <div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;margin-bottom:8px">Filter by Phase</div>
+    <div class="tbar">
+      <button class="tbtn all on" id="btnAll" onclick="tlAll(this)">All Phases</button>
+      <button class="tbtn" onclick="tlP('intake',this)">Intake</button>
+      <button class="tbtn" onclick="tlP('screening',this)">Screening</button>
+      <button class="tbtn" onclick="tlP('support',this)">Support</button>
+      <button class="tbtn" onclick="tlP('integration',this)">Integration</button>
+      <button class="tbtn" onclick="tlP('scale',this)">Scale</button>
+    </div>
+  </div>
+</div>
+<div class="tl-track rv rv2" id="tlTrack">
+
+  <div class="stage" data-phase="intake" id="s1">
+    <div class="stm"><div class="stdot"></div><div class="stn">01</div></div>
+    <div class="stbody" onclick="tlT('s1')">
+      <div class="sthead"><div><div class="stphase">Phase 01 &middot; Intake &amp; Identification</div><div class="strow"><div class="sttitle">Predictive Donor Identification &amp; Intelligent Intake</div><div class="sttime">Months 1&ndash;3</div></div></div><div class="starr">&#9660;</div></div>
+      <div class="stcontent">
+        <p class="stdesc">We stop waiting for donors to find us. Predictive Donor Mapping analyzes OPTN regional data and USRDS state-level ESRD burden to identify geographic clusters where living donor rates are critically below potential &mdash; Mississippi, Louisiana, and Alabama are the primary targets established by the state map above. The Intelligent Triage Engine assigns a Donor Readiness Score at first contact and routes each donor into the exact support track they need. FHIR API integration directly addresses the 15.2% withdrawal rate by eliminating the administrative burden that produces it.</p>
+        <ul class="flist"><li>Predictive Donor Mapping: AI analysis of OPTN, SRTR, and USRDS state data identifies underperforming areas and deploys outreach where the pipeline gap is largest</li><li>Donor Readiness Score (DRS) assigned at first contact: composite of clinical, psychosocial, financial, and logistical variables &mdash; updated continuously</li><li>Multi-channel NLU intake: AI initiates conversations rather than sending forms, assessing intent and barriers immediately</li><li>Low-DRS donors routed immediately to Financial Advocacy, Educational, or Logistical Support tracks to address barriers before they trigger evaluation fatigue</li></ul>
+        <div class="ob"><div class="ob-lbl">Projected Outcomes</div><div class="ob-m"><div class="ob-v">3&times;</div><div class="ob-l">Qualified inquiry volume increase through precision geographic targeting</div></div><div class="ob-m"><div class="ob-v a">80%</div><div class="ob-l">Reduction in donor administrative burden at intake via FHIR automation</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="stage collapsed" data-phase="screening" id="s2">
+    <div class="stm"><div class="stdot"></div><div class="stn">02</div></div>
+    <div class="stbody" onclick="tlT('s2')">
+      <div class="sthead"><div><div class="stphase">Phase 02 &middot; Clinical &amp; Psychosocial Screening</div><div class="strow"><div class="sttitle">AI-Orchestrated Adaptive Screening &mdash; Flags Become Protocols</div><div class="sttime">Months 2&ndash;6</div></div></div><div class="starr">&#9660;</div></div>
+      <div class="stcontent">
+        <p class="stdesc">The 47.9% medical denial rate and 10.3% psychosocial denial rate are not fixed clinical facts &mdash; they are intervention targets. Every clinical risk flag triggers a support protocol, not a rejection letter. High BMI triggers the Metabolic Support Protocol before it becomes a formal disqualifier. Coercion risk triggers the Family Advocacy Protocol immediately. Adaptive psychosocial instruments (AAS, CRI) administered by AI reduce social desirability bias, improving data honesty and clinical decision accuracy throughout the pipeline.</p>
+        <ul class="flist"><li>FHIR API clinical record retrieval: medical history pre-populated before first in-person visit &mdash; eliminating Evaluation Fatigue and the 15.2% preventable withdrawal rate</li><li>AAS and CRI administered as adaptive digital instruments &mdash; questions reshape in real time, probing deeper when hesitation patterns are detected</li><li>BMI above threshold &rarr; Metabolic Support Protocol: nutritionist and fitness coach referral with specific clinical targets embedded</li><li>Coercion signal on CRI &rarr; Family Advocacy Protocol: specialist-led relational assessment initiated before evaluation continues</li><li>Zero passive rejections: every clinical flag generates a documented, time-stamped support protocol response</li></ul>
+        <div class="ob"><div class="ob-lbl">Projected Outcomes</div><div class="ob-m"><div class="ob-v">&minus;70%</div><div class="ob-l">Late-stage psychosocial disqualifications through proactive early intervention</div></div><div class="ob-m"><div class="ob-v a">100%</div><div class="ob-l">Of clinical flags receive an active protocol response &mdash; zero passive rejections</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="stage collapsed" data-phase="support" id="s3">
+    <div class="stm"><div class="stdot"></div><div class="stn">03</div></div>
+    <div class="stbody" onclick="tlT('s3')">
+      <div class="sthead"><div><div class="stphase">Phase 03 &middot; Concierge Support Engine</div><div class="strow"><div class="sttitle">Sentiment, Velocity Monitoring &amp; Targeted Support Tracks</div><div class="sttime">Months 3&ndash;9</div></div></div><div class="starr">&#9660;</div></div>
+      <div class="stcontent">
+        <p class="stdesc">The AI-Concierge multiplies human clinical expertise without replacing it. Deep-dive sentiment analysis scans for markers of coercion, financial anxiety, and motivation decline using high-dimensional NLP. Donor Velocity is monitored in real time &mdash; stalls trigger proactive, personalized outreach before the withdrawal decision. The Donor Passport ensures every psychosocial conversation begins with complete, specific context. The 0.5% formal economic denial rate radically understates the true barrier; the Financial Advocacy Track addresses suppressed inquiry before it reaches formal evaluation.</p>
+        <ul class="flist"><li>Predictive Sentiment Analysis: NLP detects coercion, financial anxiety, and motivation decline at first contact through contextual comprehension</li><li>Financial Advocacy Track: AI pre-populates NLDTF grant applications, maps state reimbursement programs including NY&rsquo;s $10,000 direct payment model</li><li>Real-Time Velocity Monitoring: stall detection triggers immediate personalized outreach before the donor makes a withdrawal decision</li><li>Donor Passport: complete clinical, psychosocial, financial, and communication history delivered before every team interaction</li><li>60% coordinator administrative burden transferred to AI &mdash; clinical time reallocated to high-value psychosocial work</li></ul>
+        <div class="ob"><div class="ob-lbl">Projected Outcomes</div><div class="ob-m"><div class="ob-v">+40%</div><div class="ob-l">Donor conversion rate increase within 24 months of full deployment</div></div><div class="ob-m"><div class="ob-v a">60%</div><div class="ob-l">Coordinator administrative burden transferred to AI</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="stage collapsed" data-phase="integration" id="s4">
+    <div class="stm"><div class="stdot"></div><div class="stn">04</div></div>
+    <div class="stbody" onclick="tlT('s4')">
+      <div class="sthead"><div><div class="stphase">Phase 04 &middot; Closed-Loop Integration</div><div class="strow"><div class="sttitle">AI + Psychosocial Science: The Continuous Learning System</div><div class="sttime">Months 6&ndash;12</div></div></div><div class="starr">&#9660;</div></div>
+      <div class="stcontent">
+        <p class="stdesc">The system learns from every case. Failed interventions are automatically flagged for clinical review. Successful protocols gain weight over time. When sentiment shifts toward withdrawal, the clinical team receives an alert before the donor has consciously decided to exit. Conversations begin: &ldquo;I see you&rsquo;ve been held up on the financial forms since Tuesday &mdash; I&rsquo;ve already submitted a NLDTF pre-application that matches your situation.&rdquo; No comparable systematic evidence base for psychosocial intervention efficacy in living donor evaluation exists anywhere today. This framework creates it.</p>
+        <ul class="flist"><li>Predictive Psychosocial Care: sentiment-shift detection alerts the clinical team before withdrawal &mdash; intervening at the moment of maximum influence</li><li>Closed-Loop Algorithmic Refinement: every interaction generates outcome data; underperforming protocols automatically flagged for review and revision</li><li>Data-Driven Empathy: Donor Passport delivers complete current context before every clinical interaction</li><li>AI-administered CRI pre-assessment reduces social desirability bias &mdash; delivering richer, more honest psychosocial data to clinicians</li></ul>
+        <div class="ob"><div class="ob-lbl">Projected Outcomes</div><div class="ob-m"><div class="ob-v">&#8593; Always</div><div class="ob-l">Continuous compounding improvement &mdash; no performance ceiling defined in this architecture</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="stage collapsed" data-phase="scale" id="s5">
+    <div class="stm"><div class="stdot"></div><div class="stn">05</div></div>
+    <div class="stbody" onclick="tlT('s5')">
+      <div class="sthead"><div><div class="stphase">Phase 05 &middot; Predictive Analytics</div><div class="strow"><div class="sttitle">Post-Operative Outcome Forecasting &amp; Longitudinal Donor Safety</div><div class="sttime">Months 12&ndash;18</div></div></div><div class="starr">&#9660;</div></div>
+      <div class="stcontent">
+        <p class="stdesc">Living donors have been under-monitored and under-supported after surgery by the system they gave part of themselves to serve. Longitudinal AI analysis of post-operative outcomes &mdash; complication trajectories, renal function patterns, psychosocial adjustment data &mdash; identifies early warning signals weeks before clinical presentation. Machine learning continuously updates screening criteria based on outcomes data &mdash; real-time refinement, not a guideline cycle measured in years.</p>
+        <ul class="flist"><li>Longitudinal outcomes tracking: complication, renal function, and psychosocial adjustment data fed back into predictive risk models</li><li>Early warning signal detection: AI identifies pre-complication indicators weeks before presentation &mdash; intervention before the crisis</li><li>Real-time DRS model refinement: screening criteria updated as outcomes data reveals correlations between pre-donation variables and complications</li><li>First structured evidence base for living donor health outcomes linked to pre-donation screening &mdash; informing HRSA, CMS, and OPTN policy reform</li></ul>
+        <div class="ob"><div class="ob-lbl">Projected Outcomes</div><div class="ob-m"><div class="ob-v">&#8595;</div><div class="ob-l">Measurable reduction in post-operative complication rates through predictive early intervention</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="stage collapsed" data-phase="scale" id="s6">
+    <div class="stm"><div class="stdot"></div><div class="stn">06</div></div>
+    <div class="stbody" onclick="tlT('s6')">
+      <div class="sthead"><div><div class="stphase">Phase 06 &middot; National Standard</div><div class="strow"><div class="sttitle">National Donor Velocity Benchmark &mdash; OPTN/SRTR Integration</div><div class="sttime">Months 18&ndash;24</div></div></div><div class="starr">&#9660;</div></div>
+      <div class="stcontent">
+        <p class="stdesc">The OPTN state data dashboard already enables state-by-state comparison. Project Donor-Flow operationalizes that comparison into a National Donor Velocity Benchmark &mdash; making operational efficiency measurable, comparable, and improvable across all participating centers. Centers in critical-decline states (LA, MS, AL) are identified, supported, and held accountable to the same standard as high-performing states.</p>
+        <ul class="flist"><li>OPTN/SRTR integration: anonymized aggregated data sharing creates the first national living donor evaluation efficiency benchmark within existing federal infrastructure</li><li>National Donor Velocity Benchmark: every center measures against peer-comparable operational metrics &mdash; driving accountability and continuous improvement</li><li>State-level priority deployment: centers in underperforming states receive prioritized implementation resources and technical assistance</li><li>Standardized evaluation process eliminates legal liability exposure from variable, undocumented screening decisions</li><li>Accumulated real-world evidence base informs HRSA, CMS, OPTN policy reform &mdash; no comparable evidence base currently exists</li></ul>
+        <div class="ob"><div class="ob-lbl">Projected Outcomes</div><div class="ob-m"><div class="ob-v">&#8595;</div><div class="ob-l">Sustained national reduction in waitlist mortality through systemic standardization</div></div><div class="ob-m"><div class="ob-v a">National</div><div class="ob-l">First AI-integrated living donor optimization standard in U.S. transplant medicine</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="sec sec2 bt bb" id="concierge">
+<div class="rv"><div class="lbl">Core Technology Architecture</div><div class="ttl">The AI-Concierge System</div></div>
+<div class="con-grid rv rv2">
+  <div class="cc"><span class="cc-ico">&#129504;</span><div class="cc-ttl">Donor Readiness Score (DRS)</div><p class="cc-txt">A dynamic, real-time triage score incorporating clinical, psychosocial, financial, and logistical variables &mdash; assigned at first contact and updated continuously. Replaces subjective coordinator judgment with reproducible, evidence-based triage applying identical criteria to every donor. High-DRS routes to fast-track. Low-DRS routes to targeted support. No donor exits without a documented protocol response.</p></div>
+  <div class="cc"><span class="cc-ico">&#128279;</span><div class="cc-ttl">FHIR API Clinical Integration</div><p class="cc-txt">Automated medical record retrieval through the FHIR standard already mandated by the 21st Century Cures Act. Medical history pre-populated before the first in-person visit. Directly targets the 15.2% candidate withdrawal rate driven by administrative burden. Regulatory alignment &mdash; not technology speculation.</p></div>
+  <div class="cc"><span class="cc-ico">&#128172;</span><div class="cc-ttl">Natural Language Understanding</div><p class="cc-txt">AI initiates conversations &mdash; not forms. High-dimensional NLP processes multi-channel inquiries in real time, assessing intent, financial status, and logistical constraints on first contact. Sentiment analysis detects coercion, financial anxiety, and motivation decline through contextual comprehension. The difference between this and a static form is the difference between retaining 85% of inquiries and losing most to friction.</p></div>
+  <div class="cc"><span class="cc-ico">&#128202;</span><div class="cc-ttl">The Donor Passport</div><p class="cc-txt">A real-time dashboard delivered to every team member before each donor interaction. AAS and CRI scores, logistical stall points, financial concern markers, and full communication history &mdash; unified and current. Conversations begin: &ldquo;I see you&rsquo;ve been held up on the financial forms since Tuesday &mdash; I have a solution.&rdquo; That contextual specificity is what retains donors close to withdrawal.</p></div>
+  <div class="cc"><span class="cc-ico">&#9889;</span><div class="cc-ttl">Adaptive Psychosocial Assessment</div><p class="cc-txt">AAS and CRI administered as adaptive digital instruments &mdash; questions reshape in real time based on prior responses. AI pre-administration reduces social desirability bias documented in face-to-face screening. LDCPR sub-analysis identifies poor adherence (62%), psychiatric diagnosis (50%), and cognitive concerns (33%) as leading psychosocial denial factors &mdash; all requiring early, honest identification to become support targets.</p></div>
+  <div class="cc"><span class="cc-ico">&#128260;</span><div class="cc-ttl">Closed-Loop Refinement</div><p class="cc-txt">Every interaction generates outcome data. Underperforming interventions are automatically flagged for clinical review. The system builds the first systematically accumulated, outcome-linked evidence base for psychosocial intervention efficacy in living donor evaluation. Year 3 will be better than Year 1 because the architecture is designed to learn continuously &mdash; not to maintain a static protocol.</p></div>
+</div>
+</section>
+
+<section class="sec" id="synergy">
+<div class="rv"><div class="lbl">Section VI &middot; Integration Architecture</div><div class="ttl">Where AI Meets<br>Psychosocial Science</div></div>
+<div class="syn-wrap rv rv2">
+  <div class="syn-left">
+    <div class="si on" onclick="synS(0,this)"><div class="si-ttl">Predictive Psychosocial Care</div><p class="si-txt">AI detects sentiment shifts and alerts the team before the donor decides to quit.</p></div>
+    <div class="si" onclick="synS(1,this)"><div class="si-ttl">Data-Driven Empathy</div><p class="si-txt">The Donor Passport transforms generic check-ins into precision support conversations.</p></div>
+    <div class="si" onclick="synS(2,this)"><div class="si-ttl">Closed-Loop Learning</div><p class="si-txt">Failed interventions are flagged automatically. The system continuously improves.</p></div>
+    <div class="si" onclick="synS(3,this)"><div class="si-ttl">Flag to Protocol</div><p class="si-txt">Every clinical risk flag triggers a support protocol &mdash; not a rejection letter.</p></div>
+    <div class="si" onclick="synS(4,this)"><div class="si-ttl">Coercion Detection</div><p class="si-txt">AI pre-assessment reduces social desirability bias before the clinical encounter.</p></div>
+  </div>
+  <div class="syn-right">
+    <div class="syn-display">
+      <div class="sp on" id="sp0"><div class="sp-lbl">Module 01 &middot; Predictive Care</div><div class="sp-title">Predictive Psychosocial Care</div><p class="sp-body">The LDCPR confirms 15.2% of candidates simply walk away &mdash; medically eligible, psychosocially appropriate, administratively exhausted. The AI-Concierge monitors every donor interaction continuously. When sentiment analysis detects elevated anxiety markers, reduced response velocity, or communication avoidance, the system alerts the psychosocial team before the donor has consciously decided to withdraw. We intervene at the moment of vulnerability &mdash; not the moment of exit. In the current system, withdrawal is discovered after it happens. In Project Donor-Flow, it is prevented before it begins.</p><div class="sp-stat"><div class="sp-sv">Pre-exit</div><div class="sp-sl">Intervention before the withdrawal decision &mdash; the defining operational shift from reactive to predictive care.</div></div></div>
+      <div class="sp" id="sp1"><div class="sp-lbl">Module 02 &middot; Donor Passport</div><div class="sp-title">Data-Driven Empathy in Practice</div><p class="sp-body">When a psychosocial expert connects with a donor, the Donor Passport is already open: AAS and CRI scores, logistical stall history, financial concern markers, and full communication timeline. The conversation begins: &ldquo;I see you&rsquo;ve been held up on the financial disclosure forms since Tuesday &mdash; I&rsquo;ve already pre-submitted a NLDTF grant application that matches your situation.&rdquo; That specificity is the operational difference between retaining a donor who was about to withdraw and losing one to a system that didn&rsquo;t know they were struggling.</p><div class="sp-stat"><div class="sp-sv">Context-first</div><div class="sp-sl">Every conversation begins with complete, current, specific knowledge &mdash; not a generic intake script.</div></div></div>
+      <div class="sp" id="sp2"><div class="sp-lbl">Module 03 &middot; Learning System</div><div class="sp-title">The Closed-Loop Learning System</div><p class="sp-body">Project Donor-Flow is not a static protocol &mdash; it is a learning organism. Every interaction is a data input. Interventions that consistently fail to improve Donor Velocity are automatically flagged for revision. Over time the system identifies which psychosocial approaches produce sustained forward movement, which financial support channels resolve anxiety most efficiently, and which educational formats achieve the greatest health literacy gains. No comparable systematic evidence base for psychosocial intervention efficacy in living donor evaluation currently exists. This framework creates it.</p><div class="sp-stat"><div class="sp-sv">&#8593; Always</div><div class="sp-sl">No performance ceiling &mdash; improvement compounds continuously with every interaction and case.</div></div></div>
+      <div class="sp" id="sp3"><div class="sp-lbl">Module 04 &middot; Protocol Response</div><div class="sp-title">From Clinical Flag to Active Protocol</div><p class="sp-body">The denial data is specific: 47.9% medical, 10.3% psychosocial. The current system&rsquo;s answer to both is disqualification. Project Donor-Flow&rsquo;s answer is a protocol. A BMI above threshold triggers the Metabolic Support Protocol: immediate nutritionist and fitness coach referral with the donor&rsquo;s specific clinical reduction targets embedded. A coercion signal triggers the Family Advocacy Protocol before formal evaluation continues. The system does not ask &ldquo;Can we safely disqualify this person?&rdquo; It asks: &ldquo;What does this person need to donate safely?&rdquo;</p><div class="sp-stat"><div class="sp-sv">Zero</div><div class="sp-sl">Passive rejections in this system. Every flag generates a documented, active protocol response.</div></div></div>
+      <div class="sp" id="sp4"><div class="sp-lbl">Module 05 &middot; Coercion Detection</div><div class="sp-title">Improving Coercion Detection via AI Pre-Assessment</div><p class="sp-body">The CRI is a validated instrument &mdash; but its efficacy depends on response honesty. Social desirability bias is well-documented in face-to-face screening: donors present as more freely motivated than they feel because the evaluative encounter carries implicit performance pressure. AI-administered pre-assessment removes that pressure. Donors interact with a non-judgmental adaptive interface before the clinical encounter. The psychosocial sub-analysis identifies poor adherence (62%) and psychiatric diagnoses (50%) as leading denial factors &mdash; both requiring honest pre-screening for early identification. The AI pre-assessment delivers a richer, more honest dataset to the clinician before the formal evaluation begins.</p><div class="sp-stat"><div class="sp-sv">Richer</div><div class="sp-sl">More complete and honest psychosocial data through AI pre-assessment than face-to-face administration alone.</div></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sec sec2 bt bb" id="economics">
+<div class="rv"><div class="lbl">Section VII &middot; Financial Architecture</div><div class="ttl">The Economics of<br>Donor Optimization</div></div>
+<div class="econ-grid rv rv2">
+  <div class="econ-hero"><div class="eh-n">$90K</div><div class="eh-l">Average annual dialysis cost per patient that each living donor transplant eliminates &mdash; indefinitely</div></div>
+  <div class="econ-body">
+    <div class="er"><div class="er-n">01</div><div><div class="er-ttl">The Full Cost of Inaction &mdash; Measured in Dialysis Years</div><p class="er-txt">Every lost donor inquiry is a compounding fiscal burden. Dialysis averages approximately $90,000 per patient per year (USRDS 2023). Every living donor transplant the current system fails to produce represents years of that cost absorbed by Medicare, Medicaid, and private insurers &mdash; plus preventable mortality and reduced quality of life. The healthcare system has been absorbing this cost invisibly for decades. Project Donor-Flow makes it visible and directly addressable through operational improvement.</p></div></div>
+    <div class="er"><div class="er-n">02</div><div><div class="er-ttl">Coordinator Reallocation &mdash; Efficiency Through Elevation</div><p class="er-txt">The AI-Concierge transfers 60% of coordinator administrative burden to the system without eliminating staff. Clinical capacity is reallocated to high-value psychosocial counseling that only skilled humans can perform. The same headcount produces dramatically more transplants because it is concentrated on the work that matters. This is efficiency through elevation &mdash; not attrition &mdash; and it is the mechanism that makes national scaling economically viable without proportional capital investment.</p></div></div>
+    <div class="er"><div class="er-n">03</div><div><div class="er-ttl">Standardization as Institutional Liability Architecture</div><p class="er-txt">The LDCPR confirms denial criteria vary significantly across programs &mdash; candidates with identical profiles receiving materially different outcomes at different centers. That variability is a documented legal exposure without a discoverable audit trail. AI-orchestrated standardization eliminates the variability while producing auditable, defensible protocol documentation for every evaluation decision. This argument resonates equally with clinical leadership and institutional legal counsel.</p></div></div>
+    <div class="er"><div class="er-n">04</div><div><div class="er-ttl">Marginal Cost Growth Against Exponential Clinical Return</div><p class="er-txt">A 40% conversion rate increase does not require a 40% infrastructure investment. The AI-Concierge handles volume growth through existing clinical infrastructure at marginal cost. Early adopters build the evidence base that shapes the national standard &mdash; a reputational, competitive, and regulatory positioning advantage in a field increasingly driven by measurable outcomes data. The Cold Ischemia Foundation operates with zero pharmaceutical, dialysis, or insurance funding &mdash; by founding constraint. Every recommendation is made without commercial interest.</p></div></div>
+  </div>
+</div>
+</section>
+
+<section class="sec sec3" id="talking">
+<div class="tp-hdr rv">
+  <div class="tp-badge">Clinical Presentation Notes</div>
+  <div style="flex:1">
+    <div class="tp-ttl">Healthcare Professional<br>Talking Points</div>
+    <p class="tp-sub">Six structured argument sets &mdash; grounded in OPTN/SRTR/LDCPR data &mdash; for transplant coordinators, program directors, psychosocial team leads, and hospital administration leadership.</p>
+  </div>
+  <div class="tp-aud">Transplant Coordinators<br>Program Directors<br>Social Workers / Psychologists<br>Hospital Administration<br>OPTN / HRSA Representatives</div>
+</div>
+<div class="tp-grid rv rv2">
+<div class="tc"><div class="tc-ghost">01</div><div class="tc-cat">Opening Argument</div><div class="tc-ttl">The System Is Failing &mdash; Not the Donors</div><ul class="tpl"><li>Lead with the SRTR number and pause: over 80% of individuals who express interest in living donation never reach surgery. This is not a donor supply problem. The OPTN confirms 7,030 living donors in 2024. The altruism is present. The system is extinguishing it through structural failure, not clinical necessity.</li><li>Frame the current model as &ldquo;Craft Production&rdquo; &mdash; manual, sequential, variable, coordinator-dependent. Every quality-improvement professional in the room recognizes this Lean Six Sigma diagnosis. The question is not whether it is correct. It is whether the institution is willing to act on it.</li><li>The LDCPR is the clinical foundation: 15.2% of evaluated candidates walk away for preventable, non-clinical reasons. That is not a fact about donors. It is a fact about the system. Every withdrawal is a person who wanted to donate and a process that failed to support them.</li><li>OPTN state data makes the geographic failure concrete: Louisiana, Mississippi, and Alabama show critical decline trends directly correlated with absent legislation, high obesity rates, and zero standardized support infrastructure. These outcomes were predictable from the data. They are preventable. That makes continued inaction a choice.</li><li>Close with a question the room cannot answer well: &lsquo;How many people died on our waitlist in the last 30 days? And how many of those deaths were preceded by a donor inquiry our system failed to retain?&rsquo; That silence is the daily cost of the current model &mdash; and it belongs entirely to the system, not the donor who tried.</li></ul></div>
+<div class="tc"><div class="tc-ghost">02</div><div class="tc-cat">Clinical Data Validation</div><div class="tc-ttl">What the AI Does &mdash; and Does Not Do</div><ul class="tpl"><li>Address the primary objection immediately: &lsquo;Are we replacing clinical judgment?&rsquo; The answer is unambiguous &mdash; no. The AI handles data retrieval, intake triage, routing, and record pre-population. Clinical judgment is elevated by arriving with better information, more time, and specific knowledge of what each individual donor needs.</li><li>The Donor Readiness Score is not a pass/fail gate. It is a triage instrument that determines what type of support a donor needs at this point in evaluation &mdash; not whether they deserve to donate. The DRS routes donors toward support tracks, not toward exit ramps. This distinction is the entire operational architecture of the framework.</li><li>FHIR API integration is the standard already mandated by the 21st Century Cures Act and being implemented across health systems nationally right now. This framework aligns with existing regulatory direction &mdash; it is not speculative technology. It is already required by federal law and overdue in transplant medicine.</li><li>Adaptive psychosocial pre-assessment improves clinical data quality. LDCPR sub-analysis identifies poor adherence (62%), psychiatric diagnosis (50%), and cognitive concerns (33%) as leading psychosocial denial factors. AI pre-screening enables earlier, more honest identification &mdash; for support initiation, not disqualification. Earlier identification produces better clinical outcomes. That is a clinical evidence argument, not a technology argument.</li><li>The closed-loop refinement system builds what this field does not have: a systematically accumulated, outcome-linked evidence base for psychosocial intervention efficacy in living donor evaluation. Clinical teams using this framework work from continuously updated evidence rather than protocols revised only when someone publishes a study years after the pattern was visible in the data.</li></ul></div>
+<div class="tc"><div class="tc-ghost">03</div><div class="tc-cat">Equity Framework</div><div class="tc-ttl">Structural Triage Bias &mdash; and the State Data That Proves It</div><ul class="tpl"><li>The LDCPR finding is specific and documented: candidates most likely to be approved were married and college-educated; those least likely included Black race, elevated blood pressure, and smoking history. This is not random variation. It is the structural outcome of high-volume decision-making without equity-designed decision-support tools.</li><li>OPTN state data makes the geographic equity failure impossible to dispute: Mississippi has a 40.8% obesity rate &mdash; highest nationally &mdash; directly driving the highest structural medical disqualification rate in the country. The state with the highest ESRD burden has the lowest living donor rate. That correlation is the data expression of a system that was never designed to serve that population.</li><li>The AI Support Track is an equity intervention by structural design: it provides proportionally more support to donors who need more support &mdash; not less, which is what the current model systematically delivers to exactly that population.</li><li>The OPTN/SRTR 2023 Annual Data Report states explicitly that LDKT rates &lsquo;remain low and are marked by sociodemographic disparities.&rsquo; That language, in a federal report published under HHS/HRSA contract, is an institutional finding this framework is operationally designed to address.</li><li>HRSA and OPTN have explicit equity mandates. Project Donor-Flow is a concrete operational mechanism for achieving those mandates &mdash; not a policy statement about intentions, but a functioning system that delivers equitable access as an architectural feature of the intake and evaluation process.</li></ul></div>
+<div class="tc"><div class="tc-ghost">04</div><div class="tc-cat">Institutional Business Case</div><div class="tc-ttl">The Financial &amp; Legal Case for Adoption</div><ul class="tpl"><li>A 60% reduction in coordinator administrative burden does not require staff reduction &mdash; it enables redeployment to high-value clinical work. The same team produces more transplants because it spends more time on what only humans can do. This is efficiency through elevation, not attrition &mdash; and it makes national scaling economically viable without proportional capital investment.</li><li>Dialysis costs approximately $90,000 per patient per year (USRDS 2023). Every living donor transplant the current system fails to produce represents years of that cost absorbed by Medicare, Medicaid, and private insurers. The business case for closing the donor pipeline gap is measurable, compounding, and already overdue for institutional recognition.</li><li>The LDCPR confirms denial criteria vary significantly across programs &mdash; candidates with identical profiles receiving materially different outcomes at different centers. That variability is a documented legal exposure. AI-orchestrated standardization eliminates it while producing auditable, defensible protocol documentation for every evaluation decision.</li><li>Early adopters build the evidence base that shapes the national standard &mdash; a reputational, competitive, and regulatory positioning advantage in a field increasingly driven by measurable outcomes data and federal equity mandates. The question is not whether this standard will be adopted. It is which institutions will have built the evidence base that defines it.</li><li>The Cold Ischemia Foundation operates with zero pharmaceutical, dialysis, or insurance funding &mdash; by founding constraint. Every recommendation in this framework is made without commercial interest, in the exclusive service of donor welfare and recipient outcomes. That independence is the evidentiary credibility of this work.</li></ul></div>
+<div class="tc"><div class="tc-ghost">05</div><div class="tc-cat">For Psychosocial Team Leads</div><div class="tc-ttl">What This Framework Does for Your Clinical Practice</div><ul class="tpl"><li>The Donor Passport is built for your expertise &mdash; not as a replacement for it. When you connect with a donor, you arrive with AAS scores, CRI results, logistical stall history, financial concern markers, and the complete communication timeline already synthesized. You spend the conversation addressing the donor&rsquo;s actual situation &mdash; not the first 20 minutes discovering it from scratch.</li><li>Predictive Psychosocial Care means you intervene at the moment of maximum clinical influence &mdash; before the donor has hardened a withdrawal decision. The AI detects behavioral precursors of withdrawal and alerts you before it occurs. The difference between a proactive 10-minute call and a post-withdrawal exit note is the operational difference between retaining a donor and documenting a preventable loss.</li><li>The Closed-Loop Refinement system creates what does not exist in this field today: a systematically accumulated, outcome-linked evidence base for psychosocial intervention efficacy in living donor evaluation. Your clinical decisions generate data that improves national protocols. The work you do today will be visible in the outcomes achieved by every psychosocial professional who follows you in this system.</li><li>AI-administered CRI pre-assessment reduces social desirability bias documented in face-to-face screening contexts. Donors disclose more honestly to a non-judgmental adaptive interface. You receive richer, more honest psychosocial data before the formal encounter &mdash; improving your assessment confidence and decision accuracy.</li><li>LDCPR sub-analysis identifies the leading psychosocial denial factors: poor adherence (62%), psychiatric diagnosis (50%), cognitive concerns (33%), poor social support (25%). All four benefit from early identification. These are support needs the current system treats as exit conditions. This framework recategorizes them as early-intervention triggers &mdash; and your expertise is the intervention. Your clinical role expands significantly; it does not diminish.</li></ul></div>
+<div class="tc"><div class="tc-ghost">06</div><div class="tc-cat">Closing Moral Statement</div><div class="tc-ttl">The Moral Imperative &mdash; and the Question of Leadership</div><ul class="tpl"><li>The Cold Ischemia Foundation&rsquo;s position is unambiguous: the technology to transform this system exists today. The methodology is validated. The economic case is established. The equity argument is legally and clinically airtight. The OPTN data confirms where the system is failing and exactly which populations bear that failure. What remains is institutional will.</li><li>Every day the current system operates unchanged, medically and psychosocially appropriate donors exit for administrative reasons that are entirely preventable. The LDCPR confirms 15.2% of candidates walk away before reaching a decision. These are not people who stopped wanting to donate. These are people the system chose not to support &mdash; because building the support infrastructure requires a decision that has not yet been made.</li><li>OPTN state data shows exactly where the failure is worst: Louisiana, Mississippi, Alabama &mdash; the states with the highest disease burden, the weakest legislative protection, and the lowest donation rates. These populations were not failed by randomness. They were failed by a system never designed to serve them. This framework was designed specifically with those states as the primary intervention target.</li><li>This framework is not a technology project. It is a moral recalibration of what the transplant system owes to every person willing to offer the gift of life. The current system takes that willingness and returns a bureaucratic obstacle course. We owe these donors better. We have the tools to deliver better. The only remaining variable is institutional will &mdash; and that variable belongs to every leader in this room.</li><li>Project Donor-Flow is not the future of transplantation. It is the present &mdash; deployed at the centers willing to lead it. The question is not whether this standard will eventually be adopted nationally. It will. The question is whether your name is on the evidence base that shapes what it becomes. Leadership in transplant medicine has never been more consequential, or more directly available to those willing to claim it now.</li></ul></div>
+</div>
+<div class="tp-foot rv">
+  <div class="tp-quote">&ldquo;The time for incremental change has passed. The time for a systemic revolution is now. We are building a future where the bottleneck is not the donor &mdash; but our own capacity to support them.&rdquo;<br><br>&mdash; Project Donor-Flow &middot; Cold Ischemia Foundation</div>
+  <div class="tp-footr">Cold Ischemia Foundation<br>coldischemia.foundation<br>Ellenton, Florida &middot; FL-16<br>Co-Founders: Jeff &amp; Marie Parke<br>Zero pharmaceutical / dialysis / insurance funding<br><br>Data Sources:<br>OPTN/SRTR 2023 ADR (HHS/HRSA 2025)<br>USRDS 2023 Annual Data Report<br>LDCPR &middot; Lentine et al. 2021 &middot; AJKD 78(3)<br>AKF Living Donor Protection Report Card 2023<br>HRSA Preliminary 2024 &middot; January 2025</div>
+</div>
+</section>
+
+<div class="legal-footer">
+  <div class="lf-inner">
+    <div class="lf-col">
+      <div class="lf-head">INTELLECTUAL PROPERTY NOTICE</div>
+      <p class="lf-txt">Project Donor-Flow and all associated frameworks, methodologies, protocols, and analytical content are the exclusive intellectual property of the Cold Ischemia Foundation (CIF), Ellenton, Florida. This document is an original analytical work product of CIF. No portion of this document may be reproduced, distributed, licensed, or used commercially without the express written consent of the Cold Ischemia Foundation.</p>
+    </div>
+    <div class="lf-col">
+      <div class="lf-head">DATA SOURCES &amp; ATTRIBUTION</div>
+      <p class="lf-txt">Statistical data utilized in this framework is sourced from: OPTN/SRTR 2023 Annual Data Report (HHS/HRSA); USRDS 2023 Annual Data Report; Living Donor Collective Pilot Registry &mdash; Lentine et al. 2021, AJKD 78(3):394&ndash;405; AKF Living Donor Protection Report Cards 2021&ndash;2023; HRSA Preliminary 2024 Data (January 2025). All framework conclusions, intervention architectures, and derivative analyses are original CIF intellectual property and do not represent the positions of OPTN, HRSA, USRDS, or any cited data source.</p>
+    </div>
+    <div class="lf-col">
+      <div class="lf-head">LICENSING &amp; ACQUISITION</div>
+      <p class="lf-txt">The Cold Ischemia Foundation operates with zero pharmaceutical, dialysis, or insurance industry funding &mdash; a founding constraint, not a circumstance. All rights to this framework are retained exclusively by CIF. Any inquiry regarding licensing, institutional adoption, partnership, or acquisition of rights to Project Donor-Flow must be submitted in writing to the Cold Ischemia Foundation at coldischemia.foundation. Verbal or implied agreements carry no legal standing.</p>
+    </div>
+  </div>
+</div>
+<footer class="pfoot">
+  <div class="pf-brand">CIF &middot; DONOR FLOW</div>
+  <div class="pf-c">Project Donor-Flow: AI-Psychosocial Integration Framework for Living Donor Optimization<br>Cold Ischemia Foundation &middot; Clinical Blueprint 2025 &middot; State Intelligence Map &middot; Denial Reason Analysis &middot; 6-Phase Implementation Roadmap<br>OPTN/SRTR 2023 ADR &middot; USRDS 2023 &middot; LDCPR 2021 &middot; AKF Report Cards &middot; HRSA 2024 Preliminary</div>
+  <div class="pf-r">&copy; 2025 Cold Ischemia Foundation. All Rights Reserved.<br>coldischemia.foundation &nbsp;&middot;&nbsp; Ellenton, Florida 34222<br>Intellectual property of the Cold Ischemia Foundation.<br>Licensing inquiries: coldischemia.foundation</div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{
+  const st=document.documentElement.scrollTop,sh=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+  document.getElementById('pgbar').style.width=(st/sh*100)+'%';updNav();
+});
+const SECS=['hero','failures','statemap','denial','timeline','concierge','synergy','economics','talking'];
+function ss(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function updNav(){
+  const d=document.querySelectorAll('.nd');let a=0;
+  SECS.forEach((id,i)=>{const e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=window.innerHeight*.55)a=i;});
+  d.forEach((x,i)=>x.classList.toggle('on',i===a));
+}
+const rvo=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')});},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>rvo.observe(el));
+function tlT(id){document.getElementById(id).classList.toggle('collapsed')}
+function tlAll(btn){
+  document.querySelectorAll('.stage').forEach(s=>s.classList.remove('hidden','collapsed'));
+  document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+}
+function tlP(ph,btn){
+  document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+  document.querySelectorAll('.stage').forEach(s=>{s.dataset.phase===ph?s.classList.remove('hidden','collapsed'):s.classList.add('hidden');});
+}
+function synS(i,el){
+  document.querySelectorAll('.si').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.sp').forEach(x=>x.classList.remove('on'));
+  el.classList.add('on');document.getElementById('sp'+i).classList.add('on');
+}
+const SI={
+  WA:{n:'Washington',v:'~148/yr',t:'&#8593; Growth',c:'#28c96e',d:'UW Medicine high-volume program. Growing paired exchange. AKF grade B.'},
+  OR:{n:'Oregon',v:'~112/yr',t:'&#8593;&#8593; Strong Growth',c:'#00d4b8',d:'OHSU leads strong regional performance. Active legislative framework. AKF grade B.'},
+  CA:{n:'California',v:'~838/yr',t:'&#8593;&#8593; Strong Growth',c:'#00d4b8',d:'Leads nation in absolute volume. UCSF, UCLA, Cedars-Sinai. NLDTF utilization high. AKF grade B-C.'},
+  ID:{n:'Idaho',v:'~38/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'Limited transplant center infrastructure. AKF grade C.'},
+  NV:{n:'Nevada',v:'~52/yr',t:'&#8595; Declining',c:'#f5a623',d:'Limited center density. No direct reimbursement law. AKF grade C-D.'},
+  UT:{n:'Utah',v:'~95/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'University of Utah active. AKF grade C. Volume stable.'},
+  AZ:{n:'Arizona',v:'~88/yr',t:'&#8595; Declining',c:'#f5a623',d:'Banner/Mayo active but statewide volume declining. AKF grade C-D.'},
+  MT:{n:'Montana',v:'~18/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'Low population density limits volume. AKF grade C.'},
+  WY:{n:'Wyoming',v:'~8/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'Minimal transplant infrastructure. AKF grade D.'},
+  CO:{n:'Colorado',v:'~118/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'UCHealth and SCL Health active. AKF grade B-C.'},
+  NM:{n:'New Mexico',v:'~28/yr',t:'&#8595; Declining',c:'#f5a623',d:'High Hispanic population faces documented LDKT access disparities. AKF grade D.'},
+  ND:{n:'North Dakota',v:'~22/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'Small population, volume stable. AKF grade C.'},
+  SD:{n:'South Dakota',v:'~18/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'Sanford Health active. AKF grade C.'},
+  NE:{n:'Nebraska',v:'~68/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'Nebraska Medicine strong academic program. AKF grade B-C.'},
+  KS:{n:'Kansas',v:'~55/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'University of Kansas Health System. AKF grade C.'},
+  OK:{n:'Oklahoma',v:'~72/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'OU Health active. No direct reimbursement. AKF grade C.'},
+  MN:{n:'Minnesota',v:'~188/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'Mayo Clinic and U of MN strong programs. AKF grade B.'},
+  IA:{n:'Iowa',v:'~62/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'University of Iowa program. AKF grade B-C.'},
+  MO:{n:'Missouri',v:'~148/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'Barnes-Jewish and academic centers. AKF grade C.'},
+  AR:{n:'Arkansas',v:'~42/yr',t:'&#8595; Declining',c:'#f5a623',d:'AKF grade A (legislation). Volume declining despite policy improvement.'},
+  LA:{n:'Louisiana',v:'~48/yr',t:'&#8595;&#8595; CRITICAL',c:'#e8394a',d:'AKF grade D. No anti-discrimination law, no job protection, no reimbursement. 37.1% obesity. Primary CIF target.'},
+  WI:{n:'Wisconsin',v:'~182/yr',t:'&#8593;&#8593; Strong Growth',c:'#00d4b8',d:'UW Health strong. AKF grade B. Paired exchange active.'},
+  IL:{n:'Illinois',v:'~298/yr',t:'&#8593; Growth',c:'#28c96e',d:'Northwestern, UChicago, Loyola. AKF grade B. Legislative framework in place.'},
+  MI:{n:'Michigan',v:'~248/yr',t:'&#8593; Growth',c:'#28c96e',d:'U of M, Henry Ford, Beaumont. AKF grade B.'},
+  IN:{n:'Indiana',v:'~112/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'IU Health active. AKF grade C.'},
+  OH:{n:'Ohio',v:'~268/yr',t:'&#8593; Growth',c:'#28c96e',d:'Cleveland Clinic, Ohio State, University Hospitals. AKF grade B (improved 2023).'},
+  KY:{n:'Kentucky',v:'~88/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'UK and U of Louisville programs. AKF grade C.'},
+  TN:{n:'Tennessee',v:'~122/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'Vanderbilt and Methodist programs. AKF grade C.'},
+  PA:{n:'Pennsylvania',v:'~285/yr',t:'&#8593; Growth',c:'#28c96e',d:'Penn, UPMC, Thomas Jefferson. AKF grade B.'},
+  NY:{n:'New York',v:'~412/yr',t:'&#8593;&#8593; Strong Growth',c:'#00d4b8',d:"2022 law: direct donor reimbursement up to $10,000 — first in nation. AKF grade B. Model for Marie's Lifeline Compensation Act."},
+  WV:{n:'West Virginia',v:'~28/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'WVU Medicine program. AKF grade C.'},
+  VA:{n:'Virginia',v:'~178/yr',t:'&#8593; Growth',c:'#28c96e',d:'VCU Health, UVA. AKF grade B (improved 2023).'},
+  MD:{n:'Maryland/DC',v:'~198/yr',t:'&#8593; Growth',c:'#28c96e',d:'University of Maryland, Johns Hopkins, MedStar. AKF grade B.'},
+  NC:{n:'North Carolina',v:'~158/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'UNC and Duke programs. AKF grade B-C.'},
+  SC:{n:'South Carolina',v:'~68/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'MUSC program. AKF grade C.'},
+  AL:{n:'Alabama',v:'~64/yr',t:'&#8595; Declining',c:'#f5a623',d:'UAB nationally significant. AKF grade D. 36.3% obesity. Absent state campaign infrastructure. CIF priority.'},
+  MS:{n:'Mississippi',v:'~22/yr',t:'&#8595;&#8595; CRITICAL',c:'#e8394a',d:'Lowest per-capita volume nationally. Obesity 40.8% (highest). Diabetes 16.9% (highest). AKF grade F. Zero improvement since 2021. Maximum intervention priority.'},
+  GA:{n:'Georgia',v:'~168/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'Emory and Piedmont programs. AKF grade B (improved 2023).'},
+  FL:{n:'Florida',v:'~244/yr',t:'&#8593; Growing',c:'#28c96e',d:"CIF home state (FL-16, Ellenton). AKF grade C. 2022 protection law. Marie's Lifeline Act addresses remaining structural gap."},
+  TX:{n:'Texas',v:'~380/yr',t:'&#8594; Flat',c:'#f5a623',d:'High absolute volume; dramatic per-capita underperformance. AKF grade C. Large Hispanic population faces documented LDKT disparities.'},
+  NE_STATES:{n:'New England',v:'~320/yr',t:'&#8593;&#8593; Strong Growth',c:'#00d4b8',d:'Massachusetts leads (MGH, Brigham, Tufts). AKF grade A-B. Strong legislative frameworks.'},
+  NJ:{n:'New Jersey/Delaware',v:'~195/yr',t:'&#8593; Growth',c:'#28c96e',d:'Hackensack, RWJ, Christiana. AKF grade B. Growing volume.'},
+  AK:{n:'Alaska',v:'~8/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'No in-state transplant center; patients evaluated in WA. AKF grade D.'},
+  HI:{n:'Hawaii',v:'~28/yr',t:'&#8594; Flat',c:'#3a5f7a',d:'Queens Medical Center. AKF grade C. Geographic isolation limits referral network.'},
+};
+const tip=document.getElementById('maptip');
+document.querySelectorAll('#usmap path').forEach(p=>{
+  p.addEventListener('mousemove',e=>{
+    const i=SI[p.id];if(!i)return;
+    tip.style.display='block';
+    tip.style.left=(e.clientX+16)+'px';
+    tip.style.top=Math.min(e.clientY-10,window.innerHeight-160)+'px';
+    tip.innerHTML='<strong style="color:'+i.c+'">'+i.n+'</strong><span style="color:'+i.c+'">'+i.t+' &nbsp;&middot;&nbsp; '+i.v+'</span>'+i.d;
+  });
+  p.addEventListener('mouseleave',()=>{tip.style.display='none'});
+});
+const BD=[
+  {y:'2016',v:5767},{y:'2017',v:5795},{y:'2018',v:6713},
+  {y:'2019',v:6856,peak:true},{y:'2020',v:5226},{y:'2021',v:5888},
+  {y:'2022',v:6141},{y:'2023',v:6226}
+];
+const mx=6856;
+function bc(d){return d.peak?'#f5a623':d.v<5500?'#e8394a':d.v>=6200?'#00d4b8':'#28c96e'}
+document.getElementById('barChart').innerHTML=BD.map(d=>'<div class="br"><div class="br-yr">'+d.y+'</div><div class="br-track"><div class="br-fill" style="width:'+Math.round(d.v/mx*100)+'%;background:'+bc(d)+'"><span class="br-val">'+d.v.toLocaleString()+'</span></div></div>'+(d.peak?'<span style="font-family:IBM Plex Mono,monospace;font-size:8px;color:#f5a623;margin-left:6px;flex-shrink:0">PEAK</span>':'')+'</div>').join('');
+const DD=[
+  {n:'Medical (Non-CKD)',p:25.3,c:'#e8394a',d:'Hypertension #1 at 9.8%. Diabetes, obesity (BMI thresholds vary by center), cardiac risk follow. Threshold variability creates inequitable access based on which center a donor contacts.'},
+  {n:'CKD Risk Factors',p:18.5,c:'#f5a623',d:'Family history, elevated creatinine, proteinuria, reduced GFR. Modifiable factors targeted by Metabolic Support Protocol before formal evaluation thresholds.'},
+  {n:'Candidate Withdrawal',p:15.2,c:'#00d4b8',d:'100% preventable. Medically and psychosocially eligible donors exit due to administrative burden alone. Primary AI-Concierge Velocity Monitoring target.'},
+  {n:'Recipient Reason',p:13.6,c:'#7ec8e3',d:'Recipient became ineligible or received organ through another channel during evaluation. AI-accelerated intake reduces this by shortening total evaluation duration.'},
+  {n:'Anatomical/Surgical',p:10.3,c:'#4a7099',d:'Multiple renal arteries, small kidney, vascular complexity. Largely non-modifiable. Earlier imaging initiation through AI intake can shorten identification time.'},
+  {n:'Psychosocial',p:10.3,c:'#28c96e',d:'Poor adherence (62%), psychiatric diagnosis (50%), cognitive concerns (33%), poor social support (25%). Early AI screening converts substantial proportion from denial to approval.'},
+  {n:'Economic',p:0.5,c:'#9b59b6',d:'Formally recorded in only 0.5% — radically understates true barrier. Financial Advocacy Track addresses this upstream of formal evaluation.'},
+  {n:'Other/Multi-factor',p:6.4,c:'#3a5f7a',d:'Multi-factor cases. 16.3% of non-approvals have 2 reasons; 6.7% have more than 2 — compound cases requiring multi-protocol intervention.'},
+];
+document.getElementById('denialBars').innerHTML=DD.map(d=>'<div><div class="db-top"><div class="db-name">'+d.n+'</div><div class="db-pct" style="color:'+d.c+'">'+d.p+'%</div></div><div class="db-track"><div class="db-fill" style="width:0%;background:'+d.c+'" data-w="'+(d.p/25.3*95).toFixed(1)+'"></div></div><p class="db-note">'+d.d+'</p></div>').join('');
+const dbo=new IntersectionObserver(e=>{if(e[0].isIntersecting){document.querySelectorAll('.db-fill').forEach(b=>{b.style.width=b.dataset.w+'%'});dbo.disconnect();}},{threshold:.2});
+const ds=document.getElementById('denial');if(ds)dbo.observe(ds);
+</script>
+</body>
+</html>

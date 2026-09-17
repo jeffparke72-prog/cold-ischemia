@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Intelligence Gap — Project Donor-Flow | Cold Ischemia Foundation</title>
+<meta name="description" content="Project Donor-Flow: The AI-Psychosocial Integration Framework that can end America's living donor crisis. Built by the Cold Ischemia Foundation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* =====================================================
+   DESIGN TOKENS
+   ===================================================== */
+:root {
+  --ink:       #07111E;
+  --ink-90:    rgba(7,17,30,.9);
+  --navy:      #0D2137;
+  --navy-mid:  #152D47;
+  --navy-lt:   #1E3D5C;
+  --teal:      #00A98F;
+  --teal-dk:   #007A69;
+  --teal-lt:   #C8F0EB;
+  --teal-glow: rgba(0,169,143,.15);
+  --amber:     #E8890C;
+  --amber-lt:  #FEF3DC;
+  --crimson:   #C0281E;
+  --crimson-lt:#FDECEA;
+  --slate:     #4A6278;
+  --slate-lt:  #8BA3B6;
+  --cloud:     #F0F5F9;
+  --white:     #FAFCFE;
+  --card:      #FFFFFF;
+  --border:    rgba(74,98,120,.14);
+  --border-teal: rgba(0,169,143,.25);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Outfit', system-ui, sans-serif;
+  --font-mono:    'Fira Code', monospace;
+
+  --shadow-xs: 0 1px 4px rgba(7,17,30,.07);
+  --shadow-sm: 0 2px 12px rgba(7,17,30,.09), 0 1px 3px rgba(7,17,30,.05);
+  --shadow-md: 0 6px 28px rgba(7,17,30,.12), 0 2px 8px rgba(7,17,30,.06);
+  --shadow-lg: 0 16px 56px rgba(7,17,30,.16), 0 4px 16px rgba(7,17,30,.08);
+  --shadow-teal: 0 8px 32px rgba(0,169,143,.22);
+
+  --r-sm: 6px;
+  --r:    12px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =====================================================
+   RESET & BASE
+   ===================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* =====================================================
+   SCROLL REVEAL
+   ===================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s var(--ease-out), transform .7s var(--ease-out);
+}
+.reveal.r-left  { transform: translateX(-24px); }
+.reveal.r-right { transform: translateX(24px); }
+.reveal.r-scale { transform: scale(.96); }
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.delay-1 { transition-delay: .1s; }
+.delay-2 { transition-delay: .2s; }
+.delay-3 { transition-delay: .3s; }
+.delay-4 { transition-delay: .4s; }
+.delay-5 { transition-delay: .5s; }
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+#nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  transition: background .4s, box-shadow .4s, padding .3s;
+  padding: 0;
+}
+#nav.solid {
+  background: rgba(7,17,30,.96);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(0,169,143,.18), 0 4px 24px rgba(7,17,30,.4);
+}
+.nav-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 36px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-emblem {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dk));
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-teal);
+}
+.nav-emblem svg { width: 20px; height: 20px; }
+.nav-wordmark { line-height: 1.1; }
+.nav-wordmark-primary {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -.01em;
+}
+.nav-wordmark-sub {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255,255,255,.45);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-links a {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,.65);
+  padding: 7px 14px;
+  border-radius: var(--r-sm);
+  transition: color .2s, background .2s;
+}
+.nav-links a:hover { color: #fff; background: rgba(255,255,255,.07); }
+.nav-pill {
+  background: var(--teal);
+  color: #fff !important;
+  padding: 8px 20px !important;
+  border-radius: 100px !important;
+  font-weight: 600 !important;
+  transition: background .2s, transform .2s, box-shadow .2s !important;
+  box-shadow: var(--shadow-teal);
+}
+.nav-pill:hover {
+  background: var(--teal-dk) !important;
+  transform: translateY(-1px) !important;
+}
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+.nav-burger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: rgba(255,255,255,.7);
+  border-radius: 2px;
+  transition: all .25s;
+}
+
+/* =====================================================
+   HERO — FULL-BLEED DARK
+   ===================================================== */
+#hero {
+  background: linear-gradient(160deg, var(--ink) 0%, var(--navy) 55%, #0A2035 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 36px 80px;
+  position: relative;
+  overflow: hidden;
+}
+/* Subtle grid lines */
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,169,143,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,169,143,.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+/* Radial glow */
+#hero::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 70%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(0,169,143,.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 64px;
+  align-items: center;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: rgba(0,169,143,.1);
+  border: 1px solid rgba(0,169,143,.3);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--teal);
+  border-radius: 50%;
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink {
+  0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,169,143,.5); }
+  50%      { opacity: .5; box-shadow: 0 0 0 4px rgba(0,169,143,0); }
+}
+.hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 5.5vw, 76px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -.03em;
+  color: #fff;
+  margin-bottom: 28px;
+}
+.hero-h1 em {
+  font-style: italic;
+  color: var(--teal);
+  display: block;
+}
+.hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,.62);
+  max-width: 560px;
+  margin-bottom: 44px;
+}
+.hero-sub strong { color: rgba(255,255,255,.85); font-weight: 500; }
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.cta-primary {
+  background: var(--teal);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 32px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all .25s;
+  box-shadow: var(--shadow-teal);
+  border: none;
+}
+.cta-primary:hover {
+  background: var(--teal-dk);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,169,143,.35);
+}
+.cta-ghost {
+  color: rgba(255,255,255,.75);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 15px 32px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid rgba(255,255,255,.2);
+  transition: all .25s;
+}
+.cta-ghost:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,.45);
+  background: rgba(255,255,255,.05);
+}
+
+/* Hero stat panel */
+.hero-stats {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-xl);
+  padding: 6px;
+  backdrop-filter: blur(8px);
+}
+.hero-stat {
+  padding: 22px 24px;
+  border-radius: var(--r-lg);
+  transition: background .25s;
+  cursor: default;
+}
+.hero-stat:hover { background: rgba(255,255,255,.06); }
+.hero-stat + .hero-stat {
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.hs-number {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hs-number.c-teal    { color: var(--teal); }
+.hs-number.c-crimson { color: #FF5A50; }
+.hs-number.c-amber   { color: var(--amber); }
+.hs-label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,.5);
+  line-height: 1.4;
+}
+.hs-source {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: rgba(255,255,255,.25);
+  margin-top: 4px;
+  letter-spacing: .03em;
+}
+
+/* =====================================================
+   SECTION SCAFFOLDING
+   ===================================================== */
+.section { padding: 96px 36px; }
+.section-alt  { background: var(--cloud); }
+.section-dark {
+  background: linear-gradient(160deg, var(--navy) 0%, var(--ink) 100%);
+  color: #fff;
+}
+.section-teal-tint { background: #EEF8F6; }
+
+.s-wrap { max-width: 1240px; margin: 0 auto; }
+
+.s-tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: var(--teal-lt);
+  border: 1px solid var(--border-teal);
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+.section-dark .s-tag {
+  background: rgba(0,169,143,.12);
+  border-color: rgba(0,169,143,.3);
+  color: #5CE6D2;
+}
+.s-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.8vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.025em;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.section-dark .s-title { color: #fff; }
+.s-lead {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--slate);
+  max-width: 700px;
+  margin-bottom: 56px;
+}
+.section-dark .s-lead { color: rgba(255,255,255,.6); }
+
+/* =====================================================
+   CRISIS — STAT CARDS
+   ===================================================== */
+.crisis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.crisis-card {
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  border-top: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s var(--ease-out), box-shadow .3s;
+}
+.crisis-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(255,255,255,0) 60%, rgba(0,0,0,.02));
+  pointer-events: none;
+}
+.crisis-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+.crisis-card.ct  { border-top-color: var(--teal); }
+.crisis-card.cc  { border-top-color: var(--crimson); }
+.crisis-card.ca  { border-top-color: var(--amber); }
+.crisis-card.cn  { border-top-color: var(--navy-lt); }
+
+.cc-icon {
+  width: 46px; height: 46px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+.cc-icon.t { background: var(--teal-lt); }
+.cc-icon.c { background: var(--crimson-lt); }
+.cc-icon.a { background: var(--amber-lt); }
+.cc-icon.n { background: var(--cloud); }
+
+.cc-big {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.cc-big.t { color: var(--teal-dk); }
+.cc-big.c { color: var(--crimson); }
+.cc-big.a { color: var(--amber); }
+.cc-big.n { color: var(--navy); }
+
+.cc-h {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+.cc-p {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--slate);
+}
+.cc-cite {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--slate-lt);
+  margin-top: 14px;
+  letter-spacing: .03em;
+}
+
+/* =====================================================
+   AI PIPELINE — INTERACTIVE CAROUSEL
+   ===================================================== */
+.pipeline-shell {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.pipeline-nav-list {
+  position: sticky;
+  top: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pnl-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: var(--r);
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  background: transparent;
+  text-align: left;
+  transition: all .2s;
+  width: 100%;
+}
+.pnl-item:hover { background: var(--cloud); border-color: var(--border); }
+.pnl-item.active {
+  background: var(--teal-lt);
+  border-color: var(--border-teal);
+}
+.pnl-num {
+  width: 30px; height: 30px;
+  background: var(--cloud);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--slate);
+  flex-shrink: 0;
+  transition: all .2s;
+}
+.pnl-item.active .pnl-num {
+  background: var(--teal);
+  color: #fff;
+}
+.pnl-text {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--slate);
+  line-height: 1.3;
+  transition: color .2s;
+}
+.pnl-item.active .pnl-text { color: var(--teal-dk); font-weight: 600; }
+
+.pipeline-content-area {}
+.stage-card {
+  display: none;
+  animation: stageFade .4s var(--ease-out);
+}
+.stage-card.active { display: block; }
+@keyframes stageFade {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.stage-header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  padding: 32px 36px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.stage-badge {
+  width: 52px; height: 52px;
+  background: rgba(0,169,143,.15);
+  border: 2px solid rgba(0,169,143,.35);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--teal);
+  flex-shrink: 0;
+}
+.stage-header-text {}
+.stage-cat {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 4px;
+}
+.stage-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.stage-ai-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: #5CE6D2;
+  background: rgba(0,169,143,.1);
+  border: 1px solid rgba(0,169,143,.25);
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: .04em;
+}
+.stage-ai-tag::before { content: '⬢'; font-size: 8px; }
+.stage-body {
+  background: var(--card);
+  border-radius: 0 0 var(--r-lg) var(--r-lg);
+  padding: 32px 36px;
+  border: 1px solid var(--border);
+  border-top: none;
+  box-shadow: var(--shadow-md);
+}
+.stage-body-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--slate);
+  margin-bottom: 24px;
+}
+.stage-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.sdg-box {
+  background: var(--cloud);
+  border-radius: var(--r);
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+}
+.sdg-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--slate-lt);
+  margin-bottom: 6px;
+}
+.sdg-val {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+.stage-evidence {
+  background: linear-gradient(135deg, var(--teal-lt), #E0F5F2);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  padding: 16px 20px;
+}
+.se-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--teal-dk);
+  margin-bottom: 6px;
+}
+.se-text {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--navy);
+}
+.stage-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.snr-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--slate);
+  background: var(--cloud);
+  border: 1.5px solid var(--border);
+  padding: 9px 20px;
+  border-radius: 100px;
+  transition: all .2s;
+}
+.snr-btn:hover { color: var(--teal); border-color: var(--border-teal); background: var(--teal-lt); }
+.snr-btn:disabled { opacity: .3; cursor: not-allowed; }
+.snr-progress {
+  display: flex;
+  gap: 5px;
+}
+.snr-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: all .25s;
+  border: none;
+}
+.snr-dot.on { background: var(--teal); width: 20px; border-radius: 4px; }
+
+/* =====================================================
+   EVIDENCE CAROUSEL
+   ===================================================== */
+.ev-outer {
+  position: relative;
+  overflow: hidden;
+}
+.ev-track {
+  display: flex;
+  gap: 22px;
+  transition: transform .55s var(--ease-out);
+  will-change: transform;
+}
+.ev-card {
+  flex: 0 0 calc(33.333% - 15px);
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 30px 28px;
+  box-shadow: var(--shadow-sm);
+  border-top: 4px solid var(--teal);
+  display: flex;
+  flex-direction: column;
+}
+.ev-src {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 14px;
+}
+.ev-big {
+  font-family: var(--font-display);
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--teal-dk);
+  margin-bottom: 4px;
+}
+.ev-big-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.ev-body {
+  font-size: 13.5px;
+  line-height: 1.72;
+  color: var(--slate);
+  flex: 1;
+}
+.ev-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+.ev-arrow {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+  color: var(--slate);
+  cursor: pointer;
+  transition: all .2s;
+  box-shadow: var(--shadow-xs);
+}
+.ev-arrow:hover { border-color: var(--teal); color: var(--teal); box-shadow: var(--shadow-teal); }
+.ev-dots {
+  display: flex;
+  gap: 6px;
+}
+.ev-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  transition: all .25s;
+}
+.ev-dot.on { background: var(--teal); width: 18px; border-radius: 3px; }
+.ev-auto-text {
+  font-size: 11px;
+  color: var(--slate-lt);
+  margin-left: auto;
+  font-style: italic;
+}
+
+/* =====================================================
+   SIGMA / EQUATIONS
+   ===================================================== */
+.equation-block {
+  background: var(--ink);
+  border-radius: var(--r-lg);
+  padding: 36px 40px;
+  margin: 32px 0;
+  border: 1px solid rgba(0,169,143,.18);
+  position: relative;
+  overflow: hidden;
+}
+.equation-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+}
+.eq-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.eq-label::before {
+  content: '∑';
+  font-size: 16px;
+  color: var(--teal);
+}
+.eq-line {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: #5CE6D2;
+  line-height: 2;
+  display: block;
+}
+.eq-line.comment { color: rgba(255,255,255,.28); font-size: 12px; }
+
+.sigma-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 32px 0;
+}
+.sigma-card {
+  text-align: center;
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 28px 20px;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 3px solid var(--teal);
+  transition: transform .25s, box-shadow .25s;
+}
+.sigma-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.sc-mono {
+  font-family: var(--font-mono);
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--teal-dk);
+  margin-bottom: 6px;
+}
+.sc-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 4px;
+}
+.sc-sub {
+  font-size: 12.5px;
+  color: var(--slate-lt);
+  line-height: 1.5;
+}
+
+/* =====================================================
+   DMAIC ACCORDION
+   ===================================================== */
+.dmaic-stack { display: flex; flex-direction: column; gap: 6px; }
+.dm-item {
+  border-radius: var(--r);
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  transition: border-color .25s;
+}
+.dm-item.open { border-color: var(--border-teal); }
+.dm-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  cursor: pointer;
+  background: var(--card);
+  transition: background .2s;
+  user-select: none;
+}
+.dm-item.open .dm-head { background: #F0FAFA; }
+.dm-phase-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: #fff;
+  background: var(--navy);
+  padding: 4px 12px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  min-width: 80px;
+  text-align: center;
+  transition: background .2s;
+}
+.dm-item.open .dm-phase-tag { background: var(--teal); }
+.dm-head-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  flex: 1;
+  line-height: 1.35;
+}
+.dm-chevron {
+  font-size: 11px;
+  color: var(--slate-lt);
+  transition: transform .3s var(--ease-out), color .2s;
+  flex-shrink: 0;
+}
+.dm-item.open .dm-chevron { transform: rotate(180deg); color: var(--teal); }
+.dm-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .45s var(--ease-out);
+}
+.dm-item.open .dm-body { max-height: 500px; }
+.dm-inner {
+  padding: 4px 24px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.dm-col-head {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--slate-lt);
+  margin-bottom: 6px;
+}
+.dm-col-val {
+  font-size: 13px;
+  line-height: 1.68;
+  color: var(--ink);
+}
+
+/* =====================================================
+   AWARENESS — 3-COL
+   ===================================================== */
+.awareness-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.aw-stat-stack { display: flex; flex-direction: column; gap: 16px; }
+.aw-stat-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid transparent;
+  transition: all .25s;
+}
+.aw-stat-card:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+.aw-stat-card.t { border-left-color: var(--teal); }
+.aw-stat-card.a { border-left-color: var(--amber); }
+.aw-stat-card.c { border-left-color: var(--crimson); }
+.aw-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 90px;
+}
+.aw-num.t { color: var(--teal-dk); }
+.aw-num.a { color: var(--amber); }
+.aw-num.c { color: var(--crimson); }
+.aw-text {}
+.aw-text h4 {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.aw-text p { font-size: 13px; line-height: 1.65; color: var(--slate); }
+.aw-prose {}
+.aw-prose h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -.02em;
+}
+.aw-prose p {
+  font-size: 15px;
+  line-height: 1.82;
+  color: var(--slate);
+  margin-bottom: 16px;
+}
+.aw-prose p:last-child { margin-bottom: 0; }
+.aw-prose strong { color: var(--ink); font-weight: 600; }
+
+/* =====================================================
+   STATE CARDS
+   ===================================================== */
+.state-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.st-card {
+  border-radius: var(--r-lg);
+  padding: 24px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform .25s var(--ease-out), box-shadow .25s;
+}
+.st-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.st-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+}
+.st-card.grade-f  { background: var(--crimson-lt); }
+.st-card.grade-f::before { background: var(--crimson); }
+.st-card.grade-d  { background: var(--amber-lt); }
+.st-card.grade-d::before { background: var(--amber); }
+.st-card.grade-c  { background: var(--teal-lt); }
+.st-card.grade-c::before { background: var(--teal); }
+
+.st-abbr {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.st-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.grade-f .st-badge { background: var(--crimson); }
+.grade-d .st-badge { background: var(--amber); }
+.grade-c .st-badge { background: var(--teal-dk); }
+.st-facts { font-size: 12px; color: var(--slate); line-height: 1.65; }
+.st-facts strong { color: var(--ink); display: block; margin-top: 4px; }
+
+/* =====================================================
+   AI TOOLS GRID
+   ===================================================== */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.tg-card {
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--border);
+  transition: all .3s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+.tg-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s var(--ease-out);
+}
+.tg-card:hover { border-color: var(--border-teal); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.tg-card:hover::after { transform: scaleX(1); }
+.tg-icon {
+  width: 48px; height: 48px;
+  background: var(--teal-lt);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+.tg-name {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.tg-tech {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--teal);
+  letter-spacing: .04em;
+  margin-bottom: 12px;
+}
+.tg-body { font-size: 13.5px; line-height: 1.72; color: var(--slate); }
+
+/* =====================================================
+   IMPACT — DARK SECTION
+   ===================================================== */
+.impact-numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.in-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-xl);
+  padding: 36px 28px;
+  text-align: center;
+  transition: background .25s, border-color .25s;
+}
+.in-card:hover {
+  background: rgba(0,169,143,.08);
+  border-color: rgba(0,169,143,.25);
+}
+.in-num {
+  font-family: var(--font-display);
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1;
+  color: #5CE6D2;
+  margin-bottom: 8px;
+}
+.in-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 10px;
+}
+.in-detail {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255,255,255,.4);
+}
+.equation-block.dark-eq {
+  background: rgba(255,255,255,.04);
+  border-color: rgba(0,169,143,.2);
+}
+.equation-block.dark-eq::before {
+  background: linear-gradient(90deg, #5CE6D2, transparent);
+}
+
+/* =====================================================
+   IMPLEMENTATION PHASES
+   ===================================================== */
+.phases-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  counter-reset: phase;
+}
+.phase-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--border);
+  transition: all .25s;
+  counter-increment: phase;
+}
+.phase-row:hover { border-color: var(--border-teal); box-shadow: var(--shadow-md); }
+.phase-circle {
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dk));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-teal);
+}
+.phase-text {}
+.phase-meta {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+.phase-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.phase-body { font-size: 14px; line-height: 1.78; color: var(--slate); }
+
+/* =====================================================
+   ETHICS GRID
+   ===================================================== */
+.eth-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.eth-card {
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--border);
+  border-left: 4px solid var(--teal);
+  transition: all .25s;
+}
+.eth-card:hover { border-color: var(--border-teal); box-shadow: var(--shadow-md); }
+.eth-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.eth-dot {
+  width: 9px; height: 9px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.eth-body { font-size: 13.5px; line-height: 1.78; color: var(--slate); }
+
+/* =====================================================
+   CIF / ABOUT
+   ===================================================== */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.about-blockquote {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink);
+  border-left: 4px solid var(--teal);
+  padding: 4px 0 4px 24px;
+  margin: 28px 0;
+  letter-spacing: -.01em;
+}
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+.a-badge {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .05em;
+  color: var(--teal-dk);
+  background: var(--teal-lt);
+  border: 1px solid var(--border-teal);
+  padding: 5px 13px;
+  border-radius: 4px;
+}
+.founders-panel {
+  background: var(--cloud);
+  border-radius: var(--r-xl);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.founder-row {
+  display: flex;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+.founder-row:first-child { padding-top: 0; }
+.founder-row:last-child  { padding-bottom: 0; border-bottom: none; }
+.founder-ico {
+  width: 46px; height: 46px;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dk));
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,169,143,.25);
+}
+.founder-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.founder-role {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+.founder-bio { font-size: 13px; line-height: 1.68; color: var(--slate); }
+
+/* =====================================================
+   IP / WHITE PAPER CTA
+   ===================================================== */
+.ip-panel {
+  background: rgba(0,169,143,.06);
+  border: 1.5px solid rgba(0,169,143,.2);
+  border-radius: var(--r-xl);
+  padding: 36px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.ip-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #5CE6D2, transparent 60%);
+}
+.ip-head {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #5CE6D2;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ip-head::before { content: '⚑'; font-size: 14px; }
+.ip-body { font-size: 14px; line-height: 1.78; color: rgba(255,255,255,.65); }
+.ip-body strong { color: #5CE6D2; font-weight: 600; }
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer {
+  background: var(--ink);
+  padding: 56px 36px 28px;
+}
+.footer-grid {
+  max-width: 1240px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 44px;
+}
+.fg-brand {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.fg-sub {
+  font-size: 12.5px;
+  color: rgba(255,255,255,.38);
+  line-height: 1.68;
+  margin-bottom: 16px;
+}
+.fg-mono {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,.22);
+  line-height: 1.7;
+  letter-spacing: .03em;
+}
+.fg-col-head {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.38);
+  margin-bottom: 16px;
+}
+.fg-col a {
+  display: block;
+  font-size: 13.5px;
+  color: rgba(255,255,255,.5);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color .2s;
+}
+.fg-col a:hover { color: #5CE6D2; }
+.footer-bottom {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(255,255,255,.25);
+}
+.footer-bottom a { color: rgba(0,169,143,.6); }
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 1100px) {
+  .hero-inner         { grid-template-columns: 1fr; }
+  .hero-stats         { display: grid; grid-template-columns: repeat(2,1fr); max-width: 500px; gap: 2px; background: rgba(255,255,255,.05); border-radius: var(--r-lg); overflow: hidden; }
+  .hero-stat          { padding: 18px 20px; background: transparent; }
+  .hero-stat + .hero-stat { border-top: none; border-left: 1px solid rgba(255,255,255,.07); }
+  .pipeline-shell     { grid-template-columns: 1fr; }
+  .pipeline-nav-list  { position: static; flex-direction: row; flex-wrap: wrap; }
+  .pnl-item           { flex: 0 0 auto; }
+  .crisis-grid        { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .section            { padding: 72px 24px; }
+  #hero               { padding: 110px 24px 72px; }
+  .nav-wrap           { padding: 0 24px; }
+  .stage-detail-grid  { grid-template-columns: 1fr; }
+  .impact-numbers     { grid-template-columns: 1fr; }
+  .about-split        { grid-template-columns: 1fr; }
+  .awareness-cols     { grid-template-columns: 1fr; }
+  .dm-inner           { grid-template-columns: 1fr; }
+  .footer-grid        { grid-template-columns: 1fr 1fr; }
+  .ev-card            { flex: 0 0 calc(50% - 11px); }
+  .state-row          { grid-template-columns: repeat(3,1fr); }
+  .tools-grid         { grid-template-columns: 1fr 1fr; }
+  .sigma-cards        { grid-template-columns: 1fr; }
+  .eth-grid           { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .nav-links          { display: none; }
+  .nav-burger         { display: flex; }
+  .hero-h1            { font-size: 40px; }
+  .hero-stats         { grid-template-columns: 1fr 1fr; max-width: 100%; }
+  .hero-stat + .hero-stat { border-left: none; border-top: 1px solid rgba(255,255,255,.07); }
+  .crisis-grid        { grid-template-columns: 1fr; }
+  .ev-card            { flex: 0 0 88%; }
+  .state-row          { grid-template-columns: 1fr 1fr; }
+  .tools-grid         { grid-template-columns: 1fr; }
+  .impact-numbers     { grid-template-columns: 1fr; }
+  .footer-grid        { grid-template-columns: 1fr; }
+  .footer-bottom      { flex-direction: column; gap: 8px; text-align: center; }
+  .phases-wrap .phase-row { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;top:16px;left:16px;z-index:999;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:9px 16px;background:rgba(255,255,255,0.95);border:1px solid rgba(0,169,143,0.35);color:#007A69;text-decoration:none;border-radius:6px;backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(7,17,30,.09);">← CIF Home</a>
+<a href="donor-flow-blueprint.html" style="position:fixed;top:16px;right:16px;z-index:999;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:9px 16px;background:rgba(255,255,255,0.95);border:1px solid rgba(0,169,143,0.35);color:#007A69;text-decoration:none;border-radius:6px;backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(7,17,30,.09);">Interactive Dashboard →</a>
+
+<!-- ═══════════════════════════════════════════════════
+  NAV
+═══════════════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="nav-wrap">
+    <a href="#top" class="nav-logo-link">
+      <div class="nav-emblem">
+        <svg viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="10" cy="10" r="7"/>
+          <circle cx="10" cy="10" r="3"/>
+          <line x1="10" y1="3" x2="10" y2="1"/>
+          <line x1="10" y1="19" x2="10" y2="17"/>
+          <line x1="17" y1="10" x2="19" y2="10"/>
+          <line x1="1" y1="10" x2="3" y2="10"/>
+        </svg>
+      </div>
+      <div class="nav-wordmark">
+        <div class="nav-wordmark-primary">Project Donor-Flow</div>
+        <div class="nav-wordmark-sub">Cold Ischemia Foundation</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#crisis">The Crisis</a>
+      <a href="#pipeline">AI Pipeline</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#impact">Impact</a>
+      <a href="#about">About CIF</a>
+      <a href="#paper" class="nav-pill">White Paper ↓</a>
+    </div>
+    <button class="nav-burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+  HERO
+═══════════════════════════════════════════════════ -->
+<section id="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow reveal">Cold Ischemia Foundation &nbsp;·&nbsp; 2025 Academic White Paper</div>
+      <h1 class="hero-h1 reveal delay-1">The Intelligence Gap:<em>How AI Can End America's<br>Living Donor Crisis</em></h1>
+      <p class="hero-sub reveal delay-2">
+        <strong>17 Americans die every day</strong> waiting for a kidney transplant. More than 80% of willing donors never reach surgery — not because of medical disqualification, but because the evaluation system was designed to screen them, not support them. Project Donor-Flow deploys <strong>8 AI technologies across 8 pipeline stages</strong> to close the gap that is costing lives.
+      </p>
+      <div class="hero-ctas reveal delay-3">
+        <a href="#pipeline" class="cta-primary">Explore the AI Pipeline →</a>
+        <a href="#paper" class="cta-ghost">Download White Paper</a>
+      </div>
+    </div>
+    <div class="hero-stats reveal delay-4">
+      <div class="hero-stat">
+        <div class="hs-number c-crimson">17</div>
+        <div class="hs-label">Americans die daily on the kidney waitlist</div>
+        <div class="hs-source">OPTN, 2024</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-number c-amber">&gt;80%</div>
+        <div class="hs-label">Of interested donors never reach surgery</div>
+        <div class="hs-source">SRTR, 2023</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-number c-teal">2.15σ</div>
+        <div class="hs-label">Current pipeline process sigma level</div>
+        <div class="hs-source">CIF Analysis; Lentine et al., 2021</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-number c-teal">+40%</div>
+        <div class="hs-label">Projected donor conversion rate improvement</div>
+        <div class="hs-source">CIF Framework Projection</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  CRISIS
+═══════════════════════════════════════════════════ -->
+<section class="section" id="crisis">
+  <div class="s-wrap">
+    <div class="s-tag reveal">Section I — The Problem</div>
+    <h2 class="s-title reveal delay-1">A System That Fails the People It Was Built to Serve</h2>
+    <p class="s-lead reveal delay-2">The living donor crisis is not a shortage of willing donors. It is a failure of intelligence — the failure to deploy AI where it is now demonstrably capable of preventing preventable attrition at every stage of the pipeline.</p>
+
+    <div class="crisis-grid">
+      <div class="crisis-card cc reveal delay-1">
+        <div class="cc-icon c">💀</div>
+        <div class="cc-big c">103,000+</div>
+        <div class="cc-h">Patients on the National Kidney Waitlist</div>
+        <div class="cc-p">As of March 2024, 103,000+ Americans await a kidney transplant. Pretransplant mortality is 5.0 deaths per 100 patient-years (2023). Among adults newly listed in 2018–2020, a combined 26% had died or been removed due to deterioration within three years of listing.</div>
+        <div class="cc-cite">OPTN, 2024 · Lentine et al., 2025 (SRTR Fig. KI 22)</div>
+      </div>
+      <div class="crisis-card ct reveal delay-2">
+        <div class="cc-icon t">🔬</div>
+        <div class="cc-big t">90% vs 82%</div>
+        <div class="cc-h">5-Year Graft Survival: Living vs. Deceased Donor</div>
+        <div class="cc-p">Five-year graft survival is 90.0% for LDKT vs. 82.2% for deceased donor transplant (ages 18–34). A 2024 UK propensity-matched cohort of 10,915 transplants found LDKT associated with 6.03% lower five-year graft failure risk (95% CI 4.71–7.35%), representing 0.36 additional years of graft survival per recipient.</div>
+        <div class="cc-cite">Lentine et al., 2025 · Buse et al., 2024 (British Journal of Surgery)</div>
+      </div>
+      <div class="crisis-card ca reveal delay-3">
+        <div class="cc-icon a">⚠️</div>
+        <div class="cc-big a">15.2%</div>
+        <div class="cc-h">Candidates Withdraw — Fully Eligible — Before Any Decision</div>
+        <div class="cc-p">The LDCPR (2,107 consecutive candidates, 10 programs) confirmed 15.2% of non-approvals were due to candidate withdrawal before any formal decision. An additional 10.3% were denied for psychosocial reasons the literature characterizes as addressable support needs — not inherent medical barriers.</div>
+        <div class="cc-cite">Lentine et al., 2021 (AJKD 78:3) — LDCPR</div>
+      </div>
+      <div class="crisis-card cn reveal delay-1">
+        <div class="cc-icon n">📊</div>
+        <div class="cc-big n">255,000</div>
+        <div class="cc-h">DPMO — Current Pipeline Process Quality</div>
+        <div class="cc-p">Preventable attrition (withdrawal 15.2% + psychosocial 10.3%) = 25.5% of non-approvals = 255,000 Defects Per Million Opportunities. The current pipeline operates at ≈2.15σ — more than 3 standard deviations below the minimum acceptable healthcare standard of 3σ (66,807 DPMO).</div>
+        <div class="cc-cite">CIF Analysis · Lentine et al., 2021</div>
+      </div>
+      <div class="crisis-card ca reveal delay-2">
+        <div class="cc-icon a">🌍</div>
+        <div class="cc-big a">37%</div>
+        <div class="cc-h">Lower LDKT Likelihood for Black Recipients</div>
+        <div class="cc-p">A multicenter study of 19,287 recipients found Black recipients had 37% lower LDKT likelihood (aRR 0.63; 95% CI 0.59–0.67; p&lt;0.001) independent of community vulnerability. Of all waitlisted Hispanic patients, only 5.2% received LDKT vs. 11.4% of non-Hispanic White patients. These disparities are structural, not clinical.</div>
+        <div class="cc-cite">Axelrod et al., 2021 (JAMA Surgery) · Waterman et al., 2022</div>
+      </div>
+      <div class="crisis-card ct reveal delay-3">
+        <div class="cc-icon t">🧠</div>
+        <div class="cc-big t">The Gap</div>
+        <div class="cc-h">Data Without Intelligence = Continued Inaction</div>
+        <div class="cc-p">OPTN collects program-level data. SRTR publishes it. USRDS tracks ESRD prevalence. The LDCPR documents failure modes. The problem is not absent data — it is the absence of computational intelligence to act on that data at the speed, scale, and specificity required to prevent the attrition it predicts. Project Donor-Flow closes that intelligence gap.</div>
+        <div class="cc-cite">CIF Framework Analysis, 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  AI EVIDENCE
+═══════════════════════════════════════════════════ -->
+<section class="section section-alt" id="evidence">
+  <div class="s-wrap">
+    <div class="s-tag reveal">Section II — The Evidence Base</div>
+    <h2 class="s-title reveal delay-1">What Peer-Reviewed Research Confirms</h2>
+    <p class="s-lead reveal delay-2">Every AI component in Project Donor-Flow is grounded in published evidence. These are documented outcomes from real programs, not projections from hypothetical systems.</p>
+
+    <div class="ev-outer reveal delay-2">
+      <div class="ev-track" id="evTrack"></div>
+    </div>
+    <div class="ev-controls reveal delay-3">
+      <button class="ev-arrow" id="evPrev">←</button>
+      <button class="ev-arrow" id="evNext">→</button>
+      <div class="ev-dots" id="evDots"></div>
+      <span class="ev-auto-text">Auto-advancing</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  PIPELINE
+═══════════════════════════════════════════════════ -->
+<section class="section" id="pipeline">
+  <div class="s-wrap">
+    <div class="s-tag reveal">Section III — The Architecture</div>
+    <h2 class="s-title reveal delay-1">The 8-Stage AI-Enabled Donor Pipeline</h2>
+    <p class="s-lead reveal delay-2">From pre-inquiry population identification to post-donation longitudinal monitoring — every stage deploys the specific AI technology most appropriate to its data type, regulatory environment, and interpretability requirements.</p>
+
+    <div class="pipeline-shell reveal delay-2">
+      <div class="pipeline-nav-list" id="pipelineNav"></div>
+      <div id="pipelineContent"></div>
+    </div>
+    <div class="stage-nav-row reveal" style="margin-top:20px">
+      <button class="snr-btn" id="stagePrev" onclick="stageNav(-1)">← Previous Stage</button>
+      <div class="snr-progress" id="stageDots"></div>
+      <button class="snr-btn" id="stageNext" onclick="stageNav(1)">Next Stage →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  PROCESS — DMAIC
+═══════════════════════════════════════════════════ -->
+<section class="section section-teal-tint" id="process">
+  <div class="s-wrap">
+    <div class="s-tag reveal">Section IV — Process Engineering</div>
+    <h2 class="s-title reveal delay-1">Lean Six Sigma DMAIC Framework</h2>
+    <p class="s-lead reveal delay-2">Lean Six Sigma provides the engineering backbone — ensuring every AI deployment is organized around measurable outcomes, data-driven root cause analysis, and continuous improvement.</p>
+
+    <div class="sigma-cards reveal delay-2">
+      <div class="sigma-card">
+        <div class="sc-mono">255,000</div>
+        <div class="sc-label">Current DPMO</div>
+        <div class="sc-sub">≈2.15σ process quality<br>3+ std dev below acceptable</div>
+      </div>
+      <div class="sigma-card">
+        <div class="sc-mono">153,000</div>
+        <div class="sc-label">Projected DPMO at 24 Months</div>
+        <div class="sc-sub">40% relative improvement<br>from full AI-PDLM deployment</div>
+      </div>
+      <div class="sigma-card">
+        <div class="sc-mono">&lt;66,807</div>
+        <div class="sc-label">Target DPMO (3σ)</div>
+        <div class="sc-sub">Healthcare minimum standard<br>74% reduction from baseline</div>
+      </div>
+    </div>
+
+    <div class="equation-block reveal delay-3">
+      <div class="eq-label">Conversion Rate Model — CIF Framework 2025</div>
+      <span class="eq-line">C₀ = 0.18          <span style="color:rgba(255,255,255,.3)">// Baseline: 18% of inquiries reach surgery (SRTR, 2023)</span></span>
+      <span class="eq-line">C₁ = C₀ × (1 + Δ) <span style="color:rgba(255,255,255,.3)">// Target after AI-PDLM deployment</span></span>
+      <span class="eq-line">Δ  = 0.40          <span style="color:rgba(255,255,255,.3)">// Conservative weighted intervention effect</span></span>
+      <span class="eq-line">C₁ = 0.18 × 1.40 = 0.252  <span style="color:#5CE6D2">→  25.2% conversion rate at 24 months</span></span>
+    </div>
+
+    <div class="dmaic-stack reveal delay-3" id="dmaicStack"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  AWARENESS
+═══════════════════════════════════════════════════ -->
+<section class="section" id="awareness">
+  <div class="s-wrap">
+    <div class="s-tag reveal">Section V — Awareness & Outreach</div>
+    <h2 class="s-title reveal delay-1">Awareness Is the Starting Line — Not the Finish Line</h2>
+
+    <div class="awareness-cols">
+      <div class="aw-stat-stack reveal r-left">
+        <div class="aw-stat-card t">
+          <div class="aw-num t">121K</div>
+          <div class="aw-text">
+            <h4>AI-Profiled Campaign Reach</h4>
+            <p>ODTA (2025) AI-driven donor profiling campaign reached 121,000 people and prompted 1,400 evaluation starts — a 1.16% activation rate far exceeding standard benchmarks. Three motivation archetypes (Caretakers, Purpose Seekers, Community-Motivated) drove the targeting.</p>
+          </div>
+        </div>
+        <div class="aw-stat-card a">
+          <div class="aw-num a">80%</div>
+          <div class="aw-text">
+            <h4>Of Awareness Investment Lost Without Pipeline</h4>
+            <p>For every 100 people a campaign moves to inquiry, 80 will not complete the journey — not primarily from medical disqualification but from administrative burden, financial barriers, late psychosocial screening, and system neglect.</p>
+          </div>
+        </div>
+        <div class="aw-stat-card c">
+          <div class="aw-num c">1,400</div>
+          <div class="aw-text">
+            <h4>Evaluation Starts Require a Retention System</h4>
+            <p>Without a high-retention evaluation system, the majority of those 1,400 ODTA-generated starters will be lost to the same structural failures the LDCPR documents. Project Donor-Flow is the infrastructure that converts starts into completions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="aw-prose reveal r-right delay-1">
+        <h3>AI Doesn't Replace Outreach — It Aims It</h3>
+        <p>Television advertising, billboards, faith community partnerships, employer outreach, HBCU engagement, and digital campaigns are the non-negotiable first act of any living donor strategy. Without them, the pipeline has no inputs. The ODTA campaign proves AI-targeted awareness produces measurably higher activation rates than broadcast approaches.</p>
+        <p>But the return on awareness investment is mathematically bounded by the retention capacity of the system that receives the donors it generates. A $500,000 awareness campaign without evaluation infrastructure improvement wastes $400,000 on donors the system will not retain. <strong>The marginal return on the first dollar of AI-enabled evaluation infrastructure investment increases the ROI of every awareness dollar already spent.</strong></p>
+        <p>Stage 1 Predictive Donor Mapping identifies which ZIP codes, faith institutions, FQHCs, and community touchpoints have the highest concentration of individuals whose ML-derived profiles predict elevated donation intent among underrepresented populations. Stage 2 NLP monitoring converts the ambient social media conversation about kidney donation into a precision outreach instrument — identifying curious pre-inquiry donors before they self-identify to any transplant center.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  PRIORITY STATES
+═══════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="s-wrap">
+    <div class="s-tag reveal">State Intelligence — CIF Priority Targets</div>
+    <h2 class="s-title reveal delay-1">The Five Critical States</h2>
+    <p class="s-lead reveal delay-2">CIF analysis of OPTN state data, USRDS ESRD prevalence, and AKF Report Card legislative grades identifies five states requiring priority Project Donor-Flow deployment.</p>
+    <div class="state-row reveal delay-2">
+      <div class="st-card grade-f">
+        <div class="st-abbr">MS</div>
+        <div class="st-badge">AKF Grade F</div>
+        <div class="st-facts">
+          Obesity: 40.8% <strong>(highest nationally)</strong>
+          Diabetes: 16.9% <strong>(highest nationally)</strong>
+          Zero improvement 2021–2023<strong>No anti-discrimination law · No reimbursement</strong>
+        </div>
+      </div>
+      <div class="st-card grade-f">
+        <div class="st-abbr">LA</div>
+        <div class="st-badge">AKF Grade D</div>
+        <div class="st-facts">
+          Obesity: 37.1% <strong>(2nd nationally)</strong>
+          No anti-discrimination law<strong>No job protection · No reimbursement</strong>
+          Critical decline trend
+        </div>
+      </div>
+      <div class="st-card grade-d">
+        <div class="st-abbr">AL</div>
+        <div class="st-badge">AKF Grade D</div>
+        <div class="st-facts">
+          Obesity: 36.3%<strong>UAB nationally significant</strong>
+          Zero state-level support infrastructure
+          <strong>Modifiable with the right system</strong>
+        </div>
+      </div>
+      <div class="st-card grade-d">
+        <div class="st-abbr">TX</div>
+        <div class="st-badge">AKF Grade C</div>
+        <div class="st-facts">
+          2nd most populous state<strong>Hispanic LDKT: 5.2%</strong>
+          vs. White LDKT: 11.4%
+          <strong>Documented equity crisis</strong>
+        </div>
+      </div>
+      <div class="st-card grade-c">
+        <div class="st-abbr">FL</div>
+        <div class="st-badge">CIF Home · FL-16</div>
+        <div class="st-facts">
+          AKF Grade C — improved<strong>2022 legislation passed</strong>
+          3rd most populous state
+          <strong>Marie's Lifeline Act target</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  AI TOOLS
+═══════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="s-wrap">
+    <div class="s-tag reveal">The Technology Stack</div>
+    <h2 class="s-title reveal delay-1">AI Technologies Across the Pipeline</h2>
+    <p class="s-lead reveal delay-2">Each tool is selected for the specific requirements of its stage — balancing predictive accuracy with interpretability requirements as recommended by Nawar et al. (2026, Frontiers in Transplantation).</p>
+    <div class="tools-grid" id="toolsGrid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  IMPACT
+═══════════════════════════════════════════════════ -->
+<section class="section section-dark" id="impact">
+  <div class="s-wrap">
+    <div class="s-tag reveal">Section VII — National Impact</div>
+    <h2 class="s-title reveal delay-1">What a 40% Conversion Improvement Means</h2>
+    <p class="s-lead reveal delay-2">Applying the projected conversion rate improvement to the current U.S. living donor base produces measurable, calculable national impact — conservative by design.</p>
+
+    <div class="impact-numbers">
+      <div class="in-card reveal delay-1">
+        <div class="in-num">2,490</div>
+        <div class="in-label">Additional Donors per Year</div>
+        <div class="in-detail">6,226 (2023 baseline) × 0.40 = 2,490 additional annual donors from improved conversion alone — before accounting for increased inquiry volume from AI-guided outreach at Stages 1–2.</div>
+      </div>
+      <div class="in-card reveal delay-2">
+        <div class="in-num">8,716</div>
+        <div class="in-label">Projected LDKT Volume at 24 Months</div>
+        <div class="in-detail">Up from 6,226 in 2023 — surpassing the 2019 all-time peak of 6,856 and exceeding HRSA's 2024 total of 7,030 within the first two deployment years.</div>
+      </div>
+      <div class="in-card reveal delay-3">
+        <div class="in-num">1,158</div>
+        <div class="in-label">Fewer Waitlist Deaths Annually</div>
+        <div class="in-detail">2,490 × (17 deaths/day ÷ 91,000 waitlisted) = 0.465 deaths prevented per additional donor × 2,490. Conservative. Does not include compounding Year 2–3 gains from Closed-Loop DRS refinement.</div>
+      </div>
+    </div>
+
+    <div class="equation-block dark-eq reveal delay-3">
+      <div class="eq-label">National Impact Equation — CIF Framework 2025</div>
+      <span class="eq-line">Additional donors  =  6,226  ×  0.40  =  2,490 / year</span>
+      <span class="eq-line">Waitlist deaths prevented  =  2,490  ×  (17 / 91,000)  =  1,158 / year</span>
+      <span class="eq-line comment">// Conservative: constant inquiry volume, no Stage 1-2 outreach uplift, no Year 2-3 compounding</span>
+    </div>
+
+    <div class="ip-panel reveal delay-4">
+      <div class="ip-head">Equity Multiplier</div>
+      <div class="ip-body">The 2,490 additional donors projected at 24 months, distributed with equity-correcting proportionality, concentrate waitlist mortality reduction in the populations currently experiencing the longest wait times. <strong>AI's capacity to deliver precision-targeted outreach and support to underserved communities is not just operational efficiency — it is an equity multiplier</strong> that directs the additional donor supply generated by Project Donor-Flow toward the patients who need it most: Black, Hispanic, lower-income, and rural donors most underrepresented in current LDKT rates.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  IMPLEMENTATION
+═══════════════════════════════════════════════════ -->
+<section class="section section-alt" id="implementation">
+  <div class="s-wrap">
+    <div class="s-tag reveal">Section VIII — Roadmap</div>
+    <h2 class="s-title reveal delay-1">From Pilot to National Standard in 36 Months</h2>
+    <p class="s-lead reveal delay-2">The programs that deploy Project Donor-Flow earliest are not simply adopting a better tool — they are building the evidence base that shapes what the national standard becomes.</p>
+    <div class="phases-wrap reveal delay-2">
+      <div class="phase-row">
+        <div class="phase-circle">1</div>
+        <div class="phase-text">
+          <div class="phase-meta">Months 1–12 &nbsp;·&nbsp; Phase 1</div>
+          <div class="phase-title">Program-Level Pilot Deployment</div>
+          <div class="phase-body">2–3 transplant centers selected for geographic diversity, minimum 50 annual inquiries, and institutional commitment to Closed-Loop data sharing. All 8 AI stages deployed with monthly DMAIC Control metric review. Primary measure: donor conversion rate vs. historical baseline. Every interaction — completion and withdrawal — calibrates the DRS model. Data governance framework established for Phase 2.</div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-circle">2</div>
+        <div class="phase-text">
+          <div class="phase-meta">Months 12–24 &nbsp;·&nbsp; Phase 2</div>
+          <div class="phase-title">Regional Scaling &amp; Benchmark Establishment</div>
+          <div class="phase-body">Expansion to 10–15 programs, prioritizing the five critical states. National Donor Velocity Benchmark activates — inter-program comparison becomes meaningful accountability. Programs joining Phase 2 deploy a DRS model already refined by Phase 1 outcomes. Legislative coordination: CIF advocacy on anti-discrimination and reimbursement legislation synchronized with operational deployment in each priority state.</div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-circle">3</div>
+        <div class="phase-text">
+          <div class="phase-meta">Months 24–36 &nbsp;·&nbsp; Phase 3</div>
+          <div class="phase-title">National Standard — OPTN/SRTR Integration</div>
+          <div class="phase-body">National Donor Velocity Benchmark published quarterly alongside SRTR program-level reports. Closed-Loop Refinement has generated the first systematically accumulated, outcome-linked evidence base for psychosocial intervention efficacy in living donor evaluation — directly informing HRSA, CMS, and OPTN policy reform. The OPTN/SRTR policy pathway operates through the Policy Oversight Committee; CIF's advocacy work creates the regulatory environment for mandatory participation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  ETHICS
+═══════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="s-wrap">
+    <div class="s-tag reveal">Section IX — Ethical Framework</div>
+    <h2 class="s-title reveal delay-1">AI That Serves the Donor, Not the System</h2>
+    <p class="s-lead reveal delay-2">Every Project Donor-Flow AI design choice reflects a foundational principle: the system serves the donor. Ethical requirements are not footnotes — they are architectural constraints.</p>
+    <div class="eth-grid reveal delay-2">
+      <div class="eth-card">
+        <div class="eth-title"><div class="eth-dot"></div>Transparency &amp; Explainability</div>
+        <div class="eth-body">Every AI output is explainable. The Donor Readiness Score shows donors exactly why their score is what it is and which support track they are being routed to. The Donor Passport is an AI-organized synthesis of documented data — not a black-box recommendation. No AI output produces a clinical decision without a human review layer. Model selection prioritizes interpretability at stages where clinical decisions depend on AI output (Nawar et al., 2026).</div>
+      </div>
+      <div class="eth-card">
+        <div class="eth-title"><div class="eth-dot"></div>Data Privacy — Public Data Only</div>
+        <div class="eth-body">The Stage 2 NLP monitor classifies only publicly available social media posts — content users have voluntarily made public. No private communications, no non-public account data, no profiling of protected characteristics. This is functionally identical to public health departments analyzing public survey data to direct educational resources toward at-risk communities. AI makes the practice more precise; it does not change its legal or ethical character.</div>
+      </div>
+      <div class="eth-card">
+        <div class="eth-title"><div class="eth-dot"></div>Equity Assurance by Architecture</div>
+        <div class="eth-body">The DRS model is trained with equity constraints that prevent race, educational attainment, and income from serving as direct inputs to routing decisions. The LDCPR's finding that Black race and lower education are independently associated with non-approval (Mader et al., 2024) means any model without equity correction would encode historical bias. Equity-adjusted outcome metrics are monitored quarterly; disparate results trigger immediate model audit and reweighting.</div>
+      </div>
+      <div class="eth-card">
+        <div class="eth-title"><div class="eth-dot"></div>Donor Autonomy &amp; Informed Consent</div>
+        <div class="eth-body">The AI-Concierge serves the donor, not the transplant program's conversion metrics. Velocity monitoring alerts the clinical team so they can address barriers — not apply pressure. Informed withdrawal is not a system failure; it is the system working correctly. Uninformed withdrawal — driven by avoidable administrative burden, financial anxiety, or an addressable support gap — is the failure the architecture is designed to prevent. The distinction is operationally significant and ethically essential.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  ABOUT CIF
+═══════════════════════════════════════════════════ -->
+<section class="section section-alt" id="about">
+  <div class="s-wrap">
+    <div class="about-split">
+      <div class="reveal r-left">
+        <div class="s-tag">About the Cold Ischemia Foundation</div>
+        <h2 class="s-title">Independence Is the Source of Authority</h2>
+        <p style="font-size:16px;line-height:1.82;color:var(--slate);margin-bottom:8px">The organizations that dominate the national conversation about kidney disease receive substantial funding from the dialysis and pharmaceutical industries. CIF does not — by founding constraint, not circumstance. That independence eliminates the structural conflicts of interest that prevent other organizations from naming these failures and proposing solutions of this scope.</p>
+        <blockquote class="about-blockquote">The intelligence gap is real. The evidence base is complete. The framework is specified. What remains is institutional will — and the urgency of 17 deaths every day.</blockquote>
+        <p style="font-size:15px;line-height:1.8;color:var(--slate)">CIF advances Project Donor-Flow and Marie's Lifeline Compensation Act simultaneously — the only organization doing so from a fully independent position. AI optimizes the pipeline; legislation expands the population that enters it. The two interventions compound each other.</p>
+        <div class="about-badges">
+          <span class="a-badge">Zero pharma funding</span>
+          <span class="a-badge">Zero dialysis funding</span>
+          <span class="a-badge">Zero insurance funding</span>
+          <span class="a-badge">Founding constraint</span>
+          <span class="a-badge">Ellenton, FL · FL-16</span>
+          <span class="a-badge">coldischemia.foundation</span>
+        </div>
+      </div>
+      <div class="founders-panel reveal r-right delay-2">
+        <div class="founder-row">
+          <div class="founder-ico">♾</div>
+          <div>
+            <div class="founder-name">Jeff Parke</div>
+            <div class="founder-role">Co-Founder &amp; Executive Director</div>
+            <div class="founder-bio">Three-time kidney transplant recipient. Author of <em>Unbroken: Rising Above Chronic Kidney Disease</em>. Jeff's lived experience as a patient provides primary-source insight into the systemic failures that published data documents but cannot fully explain. The LDCPR's finding that 50.7% of withdrawals cited "undisclosed" reasons is not a data gap to CIF — it is a description of shame, financial embarrassment, and overwhelm that the system's architecture produced and that Project Donor-Flow's design eliminates.</div>
+          </div>
+        </div>
+        <div class="founder-row">
+          <div class="founder-ico">🩺</div>
+          <div>
+            <div class="founder-name">Marie Parke, RN</div>
+            <div class="founder-role">Co-Founder, Primary Author &amp; Namesake</div>
+            <div class="founder-bio">Registered nurse in radiation oncology. Namesake of Marie's Lifeline Compensation Act — the national legislative framework for direct living donor compensation modeled on New York State's 2022 law. Marie's clinical expertise in care delivery anchors the psychosocial, care partner, and post-donation dimensions of this framework. Her perspective on what it means for a healthcare system to fail patients who are trying to give illuminates every design choice in Project Donor-Flow.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  WHITE PAPER CTA
+═══════════════════════════════════════════════════ -->
+<section class="section section-dark" id="paper">
+  <div class="s-wrap" style="text-align:center">
+    <div class="s-tag reveal" style="display:inline-block">The Complete Academic White Paper</div>
+    <h2 class="s-title reveal delay-1" style="max-width:780px;margin:0 auto 16px">The Intelligence Gap: How AI Can End America's Living Donor Crisis</h2>
+    <p style="font-size:17px;font-weight:300;line-height:1.82;color:rgba(255,255,255,.58);max-width:640px;margin:0 auto 40px" class="reveal delay-2">14,000 words. 22 peer-reviewed sources. 8-stage AI pipeline. Two professional data visualizations. Quantitative sigma analysis, conversion rate modeling, and a complete implementation roadmap. Built for presentation at business meetings with transplant organizations, OPOs, and OPTN policy committees.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:48px" class="reveal delay-3">
+      <a href="CIF-Intelligence-Gap-White-Paper-2025.docx" class="cta-primary" download>⬇&nbsp; Download White Paper (.docx)</a>
+      <a href="mailto:contact@coldischemia.foundation?subject=Project Donor-Flow Deployment Inquiry" class="cta-ghost">Contact CIF About Deployment</a>
+    </div>
+    <div class="ip-panel reveal delay-4" style="max-width:800px;margin:0 auto;text-align:left">
+      <div class="ip-head">Intellectual Property Notice</div>
+      <div class="ip-body">This framework, all AI architectures, the Donor Readiness Score model, all protocol designs, process maps, and analytical conclusions are the <strong>exclusive intellectual property of the Cold Ischemia Foundation</strong>. Statistical data is sourced from publicly available peer-reviewed federal datasets; all framework designs and derivative conclusions are original CIF intellectual property. Any inquiry regarding licensing, institutional adoption, or acquisition of rights must be submitted in writing to <strong>coldischemia.foundation</strong>. Verbal representations, implied licenses, or informal agreements carry no legal standing.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+  FOOTER
+═══════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="fg-brand">Cold Ischemia Foundation</div>
+      <div class="fg-sub">Project Donor-Flow · The AI-Psychosocial Integration Framework for Predictive Donor Lifecycle Management. Independent. Evidence-based. Donor-centered.</div>
+      <div class="fg-mono">Ellenton, Florida 34222 · FL-16<br>Zero pharma / dialysis / insurance funding — founding constraint<br>© 2025 Cold Ischemia Foundation · All Rights Reserved</div>
+    </div>
+    <div class="fg-col">
+      <div class="fg-col-head">Framework</div>
+      <a href="#crisis">The Crisis</a>
+      <a href="#pipeline">AI Pipeline</a>
+      <a href="#process">DMAIC Process</a>
+      <a href="#evidence">Evidence Base</a>
+      <a href="#impact">National Impact</a>
+    </div>
+    <div class="fg-col">
+      <div class="fg-col-head">Resources</div>
+      <a href="#paper">White Paper</a>
+      <a href="#implementation">Roadmap</a>
+      <a href="#about">About CIF</a>
+      <a href="mailto:contact@coldischemia.foundation">Contact CIF</a>
+    </div>
+    <div class="fg-col">
+      <div class="fg-col-head">Data Sources</div>
+      <a href="https://srtr.transplant.hrsa.gov" target="_blank" rel="noopener">OPTN/SRTR 2023 ADR</a>
+      <a href="https://usrds-adr.niddk.nih.gov" target="_blank" rel="noopener">USRDS 2023</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8078331/" target="_blank" rel="noopener">LDCPR (Lentine, 2021)</a>
+      <a href="https://www.kidneyfund.org" target="_blank" rel="noopener">AKF Report Cards</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12819335/" target="_blank" rel="noopener">Nawar et al., 2026</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Cold Ischemia Foundation · <a href="https://coldischemia.foundation">coldischemia.foundation</a></span>
+    <span>Proprietary AI Framework · Licensing: coldischemia.foundation</span>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════
+  JAVASCRIPT
+═══════════════════════════════════════════════════ -->
+<script>
+/* ── SCROLL REVEAL ── */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ── NAV SOLID ON SCROLL ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('solid', scrollY > 60);
+}, { passive: true });
+
+/* ════════════════════════════════════════
+   DATA
+════════════════════════════════════════ */
+const pipelineStages = [
+  { num:'01', cat:'Outreach · Stage 1', title:'Public Population Identification',
+    ai:'Random Forest / Geospatial ML Model',
+    body:'The current model is uniform: national campaigns, generalized messaging, and hope that motivated individuals self-identify. AI replaces this with geospatial predictive modeling trained on USRDS ESRD prevalence, CDC Social Vulnerability Index, OPTN state donation rates, and census demographics to generate ranked geographic targeting maps. A billboard guided by Stage 1 targeting appears at the specific community health center, faith institution, or HBCU location the ML model identifies as highest-yield for underrepresented populations.',
+    inputs:'USRDS ESRD prevalence by ZIP; CDC Social Vulnerability Index; OPTN state donation rates; demographic census data; AKF legislative grades by state',
+    output:'Ranked geographic target map — identifies communities with highest ESRD burden, lowest LDKT rates, and highest suitability for outreach investment',
+    human:'Public health strategists review AI heat map; approve channel allocation; brief community health partners',
+    evidence:'Boadu et al. (2023, Frontiers in Public Health) applied random forest ML to 14,278 survey respondents to identify complex predictors of living donor intent — providing the direct scientific basis for population-level AI targeting.' },
+  { num:'02', cat:'Outreach · Stage 2', title:'Social Media Intelligence & NLP Listening',
+    ai:'NLP Classifier / Social Media ML Monitor',
+    body:'The potential donor population is not silent. It is actively discussing kidney donation, dialysis experiences, and family members on the waitlist — on platforms that are publicly accessible and increasingly classifiable by AI systems. Stage 2 NLP continuously analyzes Twitter/X, Reddit, and Facebook for signals of living donor interest, classifying posts into four profiles: Curious Potential Donor, Barrier-Expressing Individual, Emotionally Motivated Individual, and Already Aware but Inactive. Each profile generates a different, targeted outreach response.',
+    inputs:'Twitter/X, Reddit, Facebook posts about kidney donation, dialysis, transplant; engagement metrics; sentiment signals; community influencer activity',
+    output:'Classifies social media communications into donor motivation profiles; flags high-intent individuals for targeted educational outreach in real time',
+    human:'Creative/outreach team designs channel-specific messaging; campaign deployed to AI-identified high-intent audiences with profile-matched content',
+    evidence:'Nawar et al. (2026, Frontiers in Transplantation) document NLP classification of living donor social media posts as the scientific foundation for automated pre-inquiry donor identification. ODTA (2025) AI profiling reached 121,000 and produced 1,400 evaluation starts.' },
+  { num:'03', cat:'Intake · Stage 3', title:'Intelligent First Contact & Donor Readiness Score',
+    ai:'NLU Conversational AI / DRS Engine',
+    body:'When a potential donor crosses from awareness to inquiry, they enter the moment of highest motivational volatility. In the current system, that moment is met with a form and a wait. In Project Donor-Flow, it is met with an immediate, personalized AI-Concierge conversation available 24/7. The NLU system assesses expressed intent, financial anxiety, health literacy, and logistical constraints within the first interaction. A Low DRS does not trigger rejection — it triggers the most intensive support routing.',
+    inputs:'Donor text/audio; prior engagement data; EHR pre-screen if available; financial and logistical signals detected in conversation',
+    output:'DRS = w₁(Clinical) + w₂(Psychosocial) + w₃(Financial) + w₄(Logistical). High DRS (≥70) → Fast-Track; Mid (40–69) → Standard+Support; Low (<40) → Support Priority',
+    human:'AI handles 24/7 triage; human coordinator engages only when DRS threshold or clinical flag warrants personal contact — freeing coordinators for high-value interactions',
+    evidence:'Houston Methodist (Al Awadhi et al., 2025, Clinical Transplantation) validated ML risk indices predicting evaluation dropout. Only 40% of patients completed evaluation within 12 months without AI-enabled early identification. NIH AIM-AHEAD funded.' },
+  { num:'04', cat:'Evaluation · Stage 4', title:'Automated Clinical Pre-Screen via FHIR',
+    ai:'FHIR API Integration + ML Clinical Risk Classifier',
+    body:'Administrative burden of medical record compilation is the single most consistently documented operational driver of evaluation fatigue and donor withdrawal. The 21st Century Cures Act (2016) mandates FHIR interoperability for certified EHR systems. Project Donor-Flow operationalizes this regulatory requirement: with donor consent at Stage 3, the AI-Concierge pulls medical records before the first in-person visit. The ML classifier flags modifiable risk factors and generates protocol triggers — converting potential disqualifiers into early support interventions.',
+    inputs:'EHR data via FHIR API (mandated by 21st Century Cures Act 2020); BMI, GFR, BP, comorbidities; lab values; medication lists',
+    output:'Pre-populated donor clinical profile; ML-flagged modifiable risk factors; auto-generated protocol triggers (Metabolic, Anatomical) with specific clinical targets embedded',
+    human:'Clinician receives pre-populated record and AI risk summary before first encounter; reviews flags; confirms or overrides protocol activations',
+    evidence:'Bossini et al. (2023, BMC Nephrology) LSS DMAIC: streamlined evaluation with record automation reduced lead time 293→166 days (−43%), pre-emptive donor loss 44%→27%. Northern Ireland one-day model: +80% LDRT volume.' },
+  { num:'05', cat:'Evaluation · Stage 5', title:'Adaptive Psychosocial Assessment',
+    ai:'Transformer-Based Adaptive Assessment / Sentiment Analysis',
+    body:'Only half of surveyed transplant programs report active depression as a contraindication — the other half do not (Clifton et al., 2024). This inconsistency produces inequitable outcomes. Project Donor-Flow deploys the Altruism Assessment Scale (AAS) and Coercion Risk Inventory (CRI) as adaptive digital instruments administered before the first in-person visit. Questions reshape in real time based on prior responses. Social desirability bias is reduced because the assessment occurs in a non-judgmental AI-mediated context rather than an evaluative human encounter.',
+    inputs:'Real-time donor responses to AAS and CRI; hesitation patterns; response latency; language complexity signals; prior communication sentiment trend',
+    output:'Psychosocial risk profile and recommended support protocol activation; AI-generated Donor Passport delivered to psychosocial professional before interaction',
+    human:'Psychosocial professional receives Donor Passport before interaction; targets pre-identified concerns rather than discovery — clinical encounter becomes precision support, not assessment',
+    evidence:'Nawar et al. (2026) document transformer/LLM applications to donor communication. Social desirability bias documented: donors present as more freely motivated in human evaluative encounters than AI-mediated ones (Muzaale et al., 2014, JAMA).' },
+  { num:'06', cat:'Support · Stage 6', title:'Concierge Support & Velocity Monitoring',
+    ai:'Predictive Retention ML / Velocity Monitoring Engine',
+    body:'Donor Velocity — the rate of pipeline progression — is the most reliable behavioral predictor of withdrawal. In the current model, stalls are identified when a coordinator notices they haven\'t heard from a donor — often after the withdrawal decision is already made. Project Donor-Flow\'s Velocity Monitoring detects stall patterns algorithmically the moment they appear, before the donor has consciously formulated exit intent. The tiered response system (Day 1 message → Day 3 alert → Day 7 escalation) converts potential withdrawal into targeted support engagement.',
+    inputs:'Communication frequency; DRS trend (30-day rolling); support protocol outcomes; NLDAC application status; peer support engagement; appointment adherence',
+    output:'Velocity stall detection with tiered auto-response; Financial Advocacy Track auto-populates NLDAC applications; maps state reimbursement program availability',
+    human:'Coordinator receives velocity alert with specific context; engages with AI-provided brief rather than cold contact; escalates to psychosocial team with full Donor Passport',
+    evidence:'ODTA (2025) Houston Methodist human-technology co-care: AI identifies high-risk dropout early for tailored interventions. LDCPR: 15.2% withdrew before any decision (Lentine et al., 2021) — Velocity Monitoring directly targets this preventable attrition.' },
+  { num:'07', cat:'Decision · Stage 7', title:'AI-Standardized MDT Board Review',
+    ai:'AI Decision-Support Dashboard / Audit Trail Generator',
+    body:'The multi-disciplinary team review is a human clinical judgment — and must remain so. But judgment quality depends entirely on information completeness. The AI Decision-Support Dashboard synthesizes the complete clinical, psychosocial, logistical, financial, and behavioral record into a single navigable evidence package. It also flags inter-center evaluation criterion variation in real time: when a donor\'s BMI triggers a flag, the system notes whether the same BMI would trigger the same flag at peer programs — making inequitable variation visible rather than invisible.',
+    inputs:'Complete DRS history; clinical record; psychosocial profile; support protocol log; velocity trend; financial status; all protocol activation records',
+    output:'Unified MDT Decision Dashboard; structured evidence package for board review; standardized audit trail for every decision; inter-center BMI threshold variation flags',
+    human:'MDT board reviews AI-synthesized evidence package; makes final approval decision; all decisions logged with rationale — AI structures the evidence, humans decide',
+    evidence:'LDCPR documents BMI thresholds varying ≥30 to ≥35 across programs (Lentine et al., 2021) — AI-standardized decision support eliminates inequitable variation. Ruck et al. (2025) document impact of denial; standardized communication protocols improve experience.' },
+  { num:'08', cat:'Monitoring · Stage 8', title:'Post-Donation Longitudinal Monitoring',
+    ai:'Time-Series ML / Longitudinal Outcome Predictive Model',
+    body:'Living donors have been under-monitored by the system they gave part of themselves to serve. OPTN\'s current follow-up requirements include only functional status and return to work — insufficient for psychosocial monitoring (Clifton et al., 2024). Stage 8 deploys continuous time-series ML monitoring for renal function, blood pressure, and psychosocial adjustment — generating early warning signals weeks before clinical events. Every outcome updates the DRS model for future donors. The system becomes more accurate with every completed donation.',
+    inputs:'Post-donation renal function trajectory; blood pressure; quality-of-life survey data; psychosocial adjustment indicators; medication adherence; 6/12/24-month OPTN follow-up data',
+    output:'Early warning signals for pre-complication patterns; updated DRS model weights for future screening; feeds National Donor Velocity Benchmark; OPTN compliance monitoring automated',
+    human:'Clinical team receives early warning alerts; intervenes proactively; contributes to evidence base via Closed-Loop Refinement; OPTN compliance automated',
+    evidence:'Clifton et al. (2024): OPTN requirements insufficient for psychosocial monitoring; KDIGO calls for systematic wellbeing data. Stage 8 AI monitoring addresses both gaps and generates the first outcome-linked living donor evidence base at national scale.' },
+];
+
+const evidenceItems = [
+  { src:'Bossini et al., 2023 · BMC Nephrology', big:'−43%', bigLabel:'Reduction in evaluation lead time',
+    body:'Lean Six Sigma DMAIC applied directly to living donor renal transplant evaluation. Lead time reduced from median 293 to 166 days. Pre-emptive donor loss fell from 44% to 27%. Dialysis cost exposure reduced by 45%. Achieved without additional staffing — pure process and automation improvement.' },
+  { src:'Al Awadhi et al., 2025 · Clinical Transplantation (Houston Methodist)', big:'60%', bigLabel:'Of patients did NOT complete evaluation within 12 months without AI',
+    body:'NIH AIM-AHEAD funded study validated ML risk indices predicting dropout at referral, evaluation, and waitlisting stages. AI identification enabled tailored early interventions. This is real-world validation from a high-volume U.S. program — not a simulation.' },
+  { src:'ODTA, 2025 · National Innovation Forum', big:'1,400', bigLabel:'Evaluation starts from AI-profiled digital campaign',
+    body:'AI-driven donor profiling campaign reached 121,000 people through targeted digital channels. Three motivation archetypes guided targeting. 1,400 individuals began the evaluation process — a 1.16% activation rate far exceeding standard public health campaign benchmarks.' },
+  { src:'Nawar, Motter, Levan et al., 2026 · Frontiers in Transplantation (NYU Grossman)', big:'First', bigLabel:'Comprehensive peer-reviewed review of AI in living kidney donation',
+    body:'"AI holds promise for addressing obstacles in living kidney donor programs" across risk prediction, donor evaluation, patient education, and social media-based outreach. Covers ML, NLP, CNNs, RNNs, transformer models, and LLMs. Published Jan 2026 — the definitive synthesis.' },
+  { src:'Boadu et al., 2023 · Frontiers in Public Health (LSHTM)', big:'14,278', bigLabel:'Survey respondents analyzed with random forest ML',
+    body:'Machine learning identified complex interactions between demographic characteristics, health beliefs, prior donation experience, and community trust factors that predict living donor intent. Provides the scientific basis for Stage 1 Predictive Donor Mapping in Project Donor-Flow.' },
+  { src:'Axelrod et al., 2021 · JAMA Surgery', big:'37%', bigLabel:'Lower LDKT likelihood for Black recipients',
+    body:'Multicenter study of 19,287 recipients. Black recipients: aRR 0.63 (95% CI 0.59–0.67; p<0.001). Independent of community-level vulnerability. Hispanic patients: 5.2% LDKT vs. 11.4% for non-Hispanic White. These are structural inequities — addressable only through AI architecture designed for equity from the ground up.' },
+];
+
+const dmaicData = [
+  { phase:'DEFINE', title:'Establish project charter, CTQs, and process boundaries',
+    current:'Donor inquiry-to-surgery conversion <20% (SRTR, 2023); 17 waitlist deaths/day; 15.2% preventable withdrawal; no national operational standard',
+    intervention:'AI-Concierge deployed as primary measurement instrument; DRS defined as primary CTQ; process boundary set: inquiry to surgical clearance',
+    target:'Charter signed; baseline DRS calibration study complete; national comparison benchmarks identified' },
+  { phase:'MEASURE', title:'Quantify baseline defect rates; calculate process sigma level',
+    current:'Preventable attrition = 25.5% of non-approvals; DPMO = 255,000; process sigma ≈2.15σ; lead time range 127–293 days',
+    intervention:'AI-Concierge begins baseline velocity monitoring; DRS distribution mapped; equity-adjusted conversion rate calculated by race, income, geography',
+    target:'DPMO baseline 255,000; target DPMO <66,807 (3σ); lead time target <90 days' },
+  { phase:'ANALYZE', title:'Root cause analysis — identify specific failure mechanisms',
+    current:'5 root causes confirmed: (1) triage bias; (2) late psychosocial screening; (3) admin burden driving evaluation fatigue; (4) financial barrier invisible upstream; (5) data fragmentation/geographic inequity',
+    intervention:'AI fishbone analysis; DRS regression vs. withdrawal; NLP analysis of undisclosed withdrawal language; geographic equity mapping via OPTN + CDC SVI',
+    target:'Triage bias + late psychosocial screening = 52.4% of preventable attrition quantified and actionable' },
+  { phase:'IMPROVE', title:'Deploy full AI-Concierge, DRS routing, adaptive screening, and protocols',
+    current:'40% coordinator time on admin tasks; 0 standardized early psychosocial protocols nationally; BMI threshold varies ≥30–≥35 by program',
+    intervention:'Full AI-Concierge deployment; DRS routing (High/Mid/Low); FHIR automation; adaptive AAS/CRI; Financial + Metabolic + Family Advocacy protocols; Donor Passport; Velocity Monitoring',
+    target:'+40% conversion rate at 24 months; lead time <90 days; admin burden −60%; protocol activation <48h post-flag' },
+  { phase:'CONTROL', title:'Sustain gains, benchmark nationally, and enable continuous improvement',
+    current:'No national benchmark; OPTN post-donation compliance imperfect; no outcome-linked psychosocial evidence base exists anywhere',
+    intervention:'National Donor Velocity Benchmark via OPTN/SRTR; Closed-Loop Algorithmic Refinement updates DRS weights quarterly; Marie\'s Lifeline Act legislative coordination',
+    target:'DRS model update quarterly; national standard target Year 3; first outcome-linked LKD evidence base generated' },
+];
+
+const toolsData = [
+  { icon:'🗺', name:'Random Forest ML', tech:'Geospatial Population Modeling', body:'Trained on USRDS ESRD prevalence, CDC Social Vulnerability Index, OPTN state data, and census demographics. Generates ranked geographic targeting maps for precision awareness deployment.' },
+  { icon:'💬', name:'NLP Classifier', tech:'Social Media Intelligence', body:'Continuously monitors publicly available social media for living donor intent signals. Classifies Curious Donors, Barrier-Expressing, Emotionally Motivated, and Inactive-Aware individuals for targeted outreach.' },
+  { icon:'🤖', name:'NLU Conversational AI', tech:'Intelligent Intake & DRS Engine', body:'Processes donor first contact in real time across all channels 24/7. Calculates DRS = w₁Clinical + w₂Psychosocial + w₃Financial + w₄Logistical and routes to the appropriate support track.' },
+  { icon:'🏥', name:'FHIR API Integration', tech:'Automated Clinical Pre-Screen', body:'Leverages 21st Century Cures Act-mandated EHR interoperability to pull medical records before the first in-person visit. ML classifier flags modifiable risk factors and generates embedded protocol triggers.' },
+  { icon:'🔄', name:'Transformer-Based Assessment', tech:'Adaptive Psychosocial Screening', body:'Deploys AAS and Coercion Risk Inventory as adaptive digital instruments — questions reshape in real time. Reduces social desirability bias documented in face-to-face screening contexts (Muzaale et al., 2014).' },
+  { icon:'📡', name:'Velocity Monitoring Engine', tech:'Predictive Retention ML', body:'Monitors Donor Velocity continuously. Detects stall patterns before withdrawal decisions are made. Initiates tiered response: Day 1 personalized message → Day 3 coordinator alert → Day 7 psychosocial escalation.' },
+  { icon:'📋', name:'Decision-Support Dashboard', tech:'MDT Evidence Synthesis & Audit Trail', body:'Synthesizes complete clinical, psychosocial, financial, and behavioral record into a single MDT evidence package. Flags inter-center evaluation criterion variation. Generates auditable protocol documentation.' },
+  { icon:'📈', name:'Time-Series ML', tech:'Post-Donation Longitudinal Monitoring', body:'Continuously monitors post-donation renal function, blood pressure, and psychosocial adjustment. Generates early warning signals weeks before clinical events. Every outcome updates the DRS model.' },
+  { icon:'♾', name:'Closed-Loop Refinement', tech:'Continuous Improvement Architecture', body:'Every interaction generates outcome data. Underperforming interventions are automatically flagged. DRS weights updated quarterly. Generates the first systematically accumulated outcome-linked LKD evidence base.' },
+];
+
+/* ════════════════════════════════════════
+   RENDER FUNCTIONS
+════════════════════════════════════════ */
+
+/* ── Evidence Carousel ── */
+let evCurrent = 0;
+let evAuto;
+
+function renderEvidence() {
+  const track = document.getElementById('evTrack');
+  const dots  = document.getElementById('evDots');
+  track.innerHTML = evidenceItems.map(e => `
+    <div class="ev-card">
+      <div class="ev-src">${e.src}</div>
+      <div class="ev-big">${e.big}</div>
+      <div class="ev-big-label">${e.bigLabel}</div>
+      <div class="ev-body">${e.body}</div>
+    </div>`).join('');
+  dots.innerHTML = evidenceItems.map((_, i) =>
+    `<button class="ev-dot${i===0?' on':''}" onclick="evGoto(${i})"></button>`
+  ).join('');
+  document.getElementById('evPrev').addEventListener('click', () => evGoto(evCurrent - 1));
+  document.getElementById('evNext').addEventListener('click', () => evGoto(evCurrent + 1));
+}
+
+function evGoto(idx) {
+  evCurrent = (idx + evidenceItems.length) % evidenceItems.length;
+  const track = document.getElementById('evTrack');
+  const cardW = track.querySelector('.ev-card').getBoundingClientRect().width + 22;
+  track.style.transform = `translateX(-${evCurrent * cardW}px)`;
+  document.querySelectorAll('.ev-dot').forEach((d, i) => d.classList.toggle('on', i === evCurrent));
+}
+
+function startEvAuto() {
+  evAuto = setInterval(() => evGoto(evCurrent + 1), 5000);
+}
+function stopEvAuto() { clearInterval(evAuto); }
+
+/* ── Pipeline ── */
+let stageCurrent = 0;
+
+function renderPipeline() {
+  const nav     = document.getElementById('pipelineNav');
+  const content = document.getElementById('pipelineContent');
+  const dots    = document.getElementById('stageDots');
+
+  nav.innerHTML = pipelineStages.map((s, i) => `
+    <button class="pnl-item${i===0?' active':''}" onclick="setStage(${i})">
+      <div class="pnl-num">${s.num}</div>
+      <div class="pnl-text">${s.title}</div>
+    </button>`).join('');
+
+  content.innerHTML = pipelineStages.map((s, i) => `
+    <div class="stage-card${i===0?' active':''}">
+      <div class="stage-header">
+        <div class="stage-badge">${s.num}</div>
+        <div class="stage-header-text">
+          <div class="stage-cat">${s.cat}</div>
+          <div class="stage-title">${s.title}</div>
+          <div class="stage-ai-tag">${s.ai}</div>
+        </div>
+      </div>
+      <div class="stage-body">
+        <p class="stage-body-text">${s.body}</p>
+        <div class="stage-detail-grid">
+          <div class="sdg-box">
+            <div class="sdg-label">Data Inputs</div>
+            <div class="sdg-val">${s.inputs}</div>
+          </div>
+          <div class="sdg-box">
+            <div class="sdg-label">AI Output & Action</div>
+            <div class="sdg-val">${s.output}</div>
+          </div>
+          <div class="sdg-box">
+            <div class="sdg-label">Human Clinical Role</div>
+            <div class="sdg-val">${s.human}</div>
+          </div>
+        </div>
+        <div class="stage-evidence">
+          <div class="se-label">Published Evidence</div>
+          <div class="se-text">${s.evidence}</div>
+        </div>
+      </div>
+    </div>`).join('');
+
+  dots.innerHTML = pipelineStages.map((_, i) =>
+    `<button class="snr-dot${i===0?' on':''}" onclick="setStage(${i})"></button>`
+  ).join('');
+
+  updateStageNav();
+}
+
+function setStage(idx) {
+  stageCurrent = idx;
+  document.querySelectorAll('.stage-card').forEach((c, i) => c.classList.toggle('active', i === idx));
+  document.querySelectorAll('.pnl-item').forEach((b, i) => b.classList.toggle('active', i === idx));
+  document.querySelectorAll('.snr-dot').forEach((d, i) => d.classList.toggle('on', i === idx));
+  updateStageNav();
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObs.observe(el));
+}
+
+function stageNav(dir) {
+  setStage(Math.max(0, Math.min(pipelineStages.length - 1, stageCurrent + dir)));
+}
+
+function updateStageNav() {
+  document.getElementById('stagePrev').disabled = stageCurrent === 0;
+  document.getElementById('stageNext').disabled = stageCurrent === pipelineStages.length - 1;
+}
+
+/* ── DMAIC Accordion ── */
+function renderDmaic() {
+  document.getElementById('dmaicStack').innerHTML = dmaicData.map((d, i) => `
+    <div class="dm-item${i===0?' open':''}" onclick="toggleDm(this)">
+      <div class="dm-head">
+        <span class="dm-phase-tag">${d.phase}</span>
+        <span class="dm-head-title">${d.title}</span>
+        <span class="dm-chevron">▼</span>
+      </div>
+      <div class="dm-body">
+        <div class="dm-inner">
+          <div><div class="dm-col-head">Current State</div><div class="dm-col-val">${d.current}</div></div>
+          <div><div class="dm-col-head">AI-PDLM Intervention</div><div class="dm-col-val">${d.intervention}</div></div>
+          <div><div class="dm-col-head">Target Metric</div><div class="dm-col-val">${d.target}</div></div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function toggleDm(el) { el.classList.toggle('open'); }
+
+/* ── Tools Grid ── */
+function renderTools() {
+  document.getElementById('toolsGrid').innerHTML = toolsData.map((t, i) => `
+    <div class="tg-card reveal delay-${(i%3)+1}">
+      <div class="tg-icon">${t.icon}</div>
+      <div class="tg-name">${t.name}</div>
+      <div class="tg-tech">${t.tech}</div>
+      <div class="tg-body">${t.body}</div>
+    </div>`).join('');
+}
+
+/* ════════════════════════════════════════
+   INIT
+════════════════════════════════════════ */
+renderEvidence();
+renderPipeline();
+renderDmaic();
+renderTools();
+startEvAuto();
+
+// Re-observe dynamically added elements
+setTimeout(() => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObs.observe(el));
+}, 100);
+
+// Stop/restart ev auto on hover
+document.querySelector('.ev-outer').addEventListener('mouseenter', stopEvAuto);
+document.querySelector('.ev-outer').addEventListener('mouseleave', startEvAuto);
+
+// Resize — reposition ev carousel
+window.addEventListener('resize', () => evGoto(evCurrent), { passive: true });
+</script>
+</body>
+</html>

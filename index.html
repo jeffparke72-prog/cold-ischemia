@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cold Ischemia Foundation — Mission, Advocacy &amp; Tools</title>
+<meta name="description" content="America's only independent care partner and transplant policy advocacy platform. Zero pharmaceutical funding. Our mission, our story, our fight, and our tools — in one place.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,200;1,9..144,300;1,9..144,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030509;--deep:#050810;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.22);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);
+  --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.14);
+  --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.12);
+  --danger:#c83050;--danger-d:rgba(200,48,80,0.1);
+  --green:#50c878;--violet:#8050c8;--amber:#e0932e;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::selection{background:var(--gold-d);color:var(--ink);}
+::-webkit-scrollbar{width:2px;}
+::-webkit-scrollbar-thumb{background:var(--raised);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--b);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);white-space:nowrap;text-decoration:none;}
+.nm{display:flex;align-items:center;gap:3px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nm::-webkit-scrollbar{display:none;}
+.nm a{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink40);text-decoration:none;white-space:nowrap;padding:4px 9px;border-radius:2px;transition:color .15s;}
+.nm a:hover{color:var(--ink);}
+.nr a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:8px 16px;border-radius:2px;background:var(--gold);color:var(--abyss);white-space:nowrap;}
+.nr a:hover{background:var(--gold-l);}
+@media(max-width:900px){.nm{display:none;}}
+
+/* MISSION HERO */
+.hero{padding:84px 40px 60px;background:linear-gradient(160deg,var(--void) 0%,var(--abyss) 60%,#0a1628 100%);position:relative;overflow:hidden;border-bottom:1px solid var(--b);}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,144,42,0.06) 0%,transparent 65%);pointer-events:none;}
+.hw{max-width:1080px;margin:0 auto;position:relative;}
+.htag{display:inline-flex;align-items:center;gap:8px;background:var(--gold-d);border:1px solid rgba(200,144,42,0.25);padding:7px 16px;margin-bottom:26px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.hdot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.15;}}
+h1.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,6.5vw,4.6rem);line-height:1.02;letter-spacing:.01em;margin-bottom:22px;color:var(--ink);max-width:920px;}
+h1.hero-h1 .g{color:var(--gold);}
+.hdeck{font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.85;color:var(--ink60);max-width:660px;margin-bottom:30px;font-weight:300;}
+.hdeck strong{color:var(--ink80);font-weight:600;}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 26px;border-radius:2px;text-decoration:none;transition:all .2s;border:none;cursor:pointer;}
+.bg{background:var(--gold);color:var(--abyss);}
+.bg:hover{background:var(--gold-l);}
+.bo{background:transparent;border:1px solid rgba(216,207,196,.25);color:rgba(216,207,196,.7);}
+.bo:hover{border-color:var(--gold);color:var(--gold);}
+
+/* STATS */
+.sb{background:var(--void);border-top:1px solid var(--b);border-bottom:1px solid var(--b);}
+.si{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
+@media(max-width:600px){.si{grid-template-columns:1fr 1fr;}}
+.sc{padding:22px 16px;border-right:1px solid var(--b);text-align:center;}
+.sc:last-child{border-right:none;}
+.sn{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold-l);display:block;line-height:1;margin-bottom:5px;}
+.sl{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink40);line-height:1.5;}
+
+/* SECTION SHARED */
+section{padding:68px 40px;}
+@media(max-width:700px){section{padding:48px 22px;}}
+.sw{max-width:1080px;margin:0 auto;}
+.sw-n{max-width:780px;margin:0 auto;}
+.ey{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:14px;}
+.ey::before{content:'';width:26px;height:1px;background:var(--gold);opacity:.6;}
+h2{font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.16;font-weight:300;font-style:italic;color:var(--ink);margin-bottom:18px;max-width:820px;}
+h2 strong{font-style:normal;font-weight:600;color:var(--gold-l);}
+.plead{font-size:1.02rem;line-height:1.9;color:var(--ink60);max-width:720px;}
+.plead strong{color:var(--ink80);font-weight:600;}
+.alt{background:var(--void);border-top:1px solid var(--b);border-bottom:1px solid var(--b);}
+
+/* ABOUT / STORY */
+.origin-quote{border-left:3px solid var(--gold);padding:22px 26px;margin:28px 0;background:var(--gold-d);max-width:680px;}
+.origin-quote p{font-family:'Fraunces',serif;font-style:italic;font-size:1.2rem;color:var(--ink);margin:0;line-height:1.6;}
+.origin-quote cite{display:block;margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--b);margin-top:32px;}
+@media(max-width:700px){.compare{grid-template-columns:1fr;}}
+.cc{background:var(--void);padding:26px 24px;}
+.cc h3{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;}
+.cc.bad h3{color:var(--danger);}
+.cc.good h3{color:var(--green);}
+.cc ul{list-style:none;}
+.cc li{font-size:0.92rem;color:var(--ink60);padding:7px 0;padding-left:22px;position:relative;line-height:1.6;}
+.cc li::before{position:absolute;left:0;}
+.cc.bad li::before{content:'✕';color:var(--danger);}
+.cc.good li::before{content:'✓';color:var(--green);}
+
+/* THREE FRONTS */
+.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--b);margin-top:36px;}
+@media(max-width:860px){.fg{grid-template-columns:1fr;}}
+.fc{background:var(--void);padding:30px 26px;}
+.fa{height:2px;margin:-30px -26px 18px;}
+.f1 .fa{background:var(--gold);} .f2 .fa{background:var(--amber);} .f3 .fa{background:var(--pulse);}
+.fb{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:2px 8px;display:inline-block;margin-bottom:12px;}
+.f1 .fb{background:rgba(200,144,42,.1);color:var(--gold);} .f2 .fb{background:rgba(224,147,46,.1);color:var(--amber);} .f3 .fb{background:rgba(42,196,200,.1);color:var(--pulse);}
+.ft{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.3;}
+.fd{font-size:.92rem;line-height:1.8;color:var(--ink60);}
+.fitems{margin-top:14px;padding-top:14px;border-top:1px solid var(--b);}
+.fitem{font-size:.85rem;color:var(--ink40);padding:5px 0;padding-left:16px;position:relative;}
+.fitem::before{content:'—';position:absolute;left:0;color:var(--ink20);}
+
+/* DONOR-FLOW / BHOC / REALITIES cards */
+.deep-card{background:var(--void);border:1px solid var(--b2);padding:36px 32px;margin-top:32px;}
+@media(max-width:700px){.deep-card{padding:24px 20px;}}
+.deep-card.gold{border-top:3px solid var(--gold);}
+.deep-card.teal{border-top:3px solid var(--pulse);}
+.deep-card.red{border-top:3px solid var(--danger);}
+.dc-k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;}
+.gold .dc-k{color:var(--gold);} .teal .dc-k{color:var(--pulse);} .red .dc-k{color:var(--danger);}
+.dc-h{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.3;}
+.dc-p{font-size:.98rem;line-height:1.85;color:var(--ink60);margin-bottom:14px;}
+.dc-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b);margin:22px 0;border:1px solid var(--b);}
+@media(max-width:600px){.dc-stats{grid-template-columns:1fr 1fr;}}
+.dcs{background:var(--surf);padding:16px 12px;text-align:center;}
+.dcn{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold-l);display:block;line-height:1;margin-bottom:4px;}
+.dcl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;text-transform:uppercase;color:var(--ink40);line-height:1.4;}
+
+/* CARE PARTNER RIGHTS LIST */
+.rights-list{margin-top:24px;max-width:700px;}
+.right-item{padding:20px 0;border-top:1px solid var(--b);}
+.right-item:last-child{border-bottom:1px solid var(--b);}
+.right-item h3{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;color:var(--gold-l);margin-bottom:6px;}
+.right-item p{font-size:0.94rem;color:var(--ink60);margin:0;line-height:1.75;}
+
+/* LETTERS */
+.letters{display:flex;flex-direction:column;gap:2px;background:var(--b);margin-top:28px;}
+.letter{background:var(--void);padding:26px 26px;}
+.letter-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+.letter-to{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.letter-date{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink40);}
+.letter blockquote{border-left:2px solid var(--danger-d);padding-left:16px;margin:0;font-family:'Fraunces',serif;font-style:italic;font-size:0.98rem;line-height:1.7;color:var(--ink80);}
+
+/* TOOLS OVERVIEW GRID */
+.tg{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--b);margin-top:32px;}
+@media(max-width:900px){.tg{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.tg{grid-template-columns:1fr;}}
+.tgc{background:var(--void);padding:20px 18px;}
+.tgc .ti{font-size:1.3rem;margin-bottom:8px;}
+.tgc h4{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.06em;color:var(--ink80);margin-bottom:6px;line-height:1.4;}
+.tgc p{font-size:0.8rem;color:var(--ink40);line-height:1.6;margin:0;}
+
+/* VIDEO LIST */
+.vlist{display:flex;flex-direction:column;gap:2px;margin-top:28px;}
+.vitem{display:flex;align-items:center;gap:16px;background:var(--void);border:1px solid var(--b);border-radius:2px;padding:15px 18px;text-decoration:none;transition:background .2s;}
+.vitem:hover{background:var(--raised);}
+.vplay{flex-shrink:0;width:26px;height:26px;background:rgba(200,48,80,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.vtitle{font-family:'Fraunces',serif;font-size:.92rem;color:var(--ink80);margin-bottom:2px;}
+.vcta{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:var(--danger);}
+
+/* DONATE BANNER — highly visible, standalone */
+.donate-banner{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-l) 100%);padding:34px 40px;text-align:center;border-top:1px solid rgba(0,0,0,0.1);border-bottom:1px solid rgba(0,0,0,0.1);}
+.db-inner{max-width:820px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:14px;}
+.db-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(3,5,9,0.6);}
+.db-btn{display:inline-flex;align-items:center;gap:10px;background:var(--abyss);color:var(--gold-l);font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:600;padding:18px 40px;border-radius:3px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,0.25);transition:transform .15s,background .15s;}
+.db-btn:hover{background:var(--void);transform:translateY(-2px);}
+.db-btn svg{width:18px;height:18px;flex-shrink:0;}
+.db-note{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:0.6px;color:rgba(3,5,9,0.55);max-width:520px;line-height:1.7;}
+
+/* PLEDGE */
+.pledge{background:rgba(200,48,80,0.04);border-top:1px solid rgba(200,48,80,0.15);padding:26px 40px;}
+.pledge-inner{max-width:1080px;margin:0 auto;display:flex;gap:16px;align-items:flex-start;}
+.pledge-bar{width:3px;background:var(--danger);flex-shrink:0;align-self:stretch;border-radius:2px;}
+.pledge p{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1px;line-height:2.1;color:var(--ink40);}
+.pledge strong{color:rgba(200,48,80,.65);}
+
+/* CTA */
+.cta{background:var(--gold);padding:60px 40px;text-align:center;}
+.ctah{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4.2vw,2.8rem);color:var(--abyss);letter-spacing:.02em;margin-bottom:14px;}
+.ctas{font-size:.98rem;line-height:1.75;color:rgba(3,5,9,.72);max-width:620px;margin:0 auto 28px;}
+.ctab{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.bd{display:inline-block;background:var(--abyss);color:var(--gold-l);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 26px;border-radius:2px;text-decoration:none;}
+.bd:hover{background:var(--void);}
+.bl{display:inline-block;background:transparent;border:2px solid rgba(3,5,9,.3);color:var(--abyss);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 26px;border-radius:2px;text-decoration:none;}
+.bl:hover{border-color:var(--abyss);}
+
+/* FOOTER */
+footer{background:var(--abyss);border-top:1px solid var(--b);padding:44px 40px 26px;}
+.fgt{max-width:1080px;margin:0 auto 24px;font-size:.85rem;line-height:1.9;color:var(--ink40);}
+.fbot{max-width:1080px;margin:0 auto;border-top:1px solid var(--b);padding-top:18px;}
+.fcp{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--ink20);line-height:1.8;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#top" class="nb">Cold Ischemia Foundation</a>
+  <div class="nm">
+    <a href="#mission">Mission</a>
+    <a href="#story">Our Story</a>
+    <a href="#fronts">The Fight</a>
+    <a href="#care-partners">Care Partners</a>
+    <a href="#donorflow">Donor-Flow</a>
+    <a href="#bhoc">BHOC</a>
+    <a href="#realities">What Nobody Tells You</a>
+    <a href="#letters">Demand Letters</a>
+    <a href="#tools">Tools</a>
+    <a href="donor-readiness-explorer.html">Donor Readiness Guide</a>
+    <a href="donor-flow-blueprint.html">Donor-Flow Dashboard</a>
+    <a href="the-intelligence-gap.html">The Intelligence Gap</a>
+    <a href="#research">Research</a>
+  </div>
+  <div class="nr"><a href="#support">Support</a></div>
+</nav>
+
+<!-- ============ MISSION HERO — FIRST, ALWAYS FIRST ============ -->
+<section class="hero" id="top" style="padding-bottom:0;">
+  <div class="hw" id="mission">
+    <div class="htag"><span class="hdot"></span>Grassroots &middot; Zero Pharmaceutical Funding</div>
+    <h1 class="hero-h1">Built by a care partner. For the 55 million people <span class="g">holding everything together.</span></h1>
+    <p class="hdeck">Cold Ischemia Foundation is America's only independent care partner and transplant policy advocacy platform. <strong>We take no pharmaceutical, dialysis, or insurance industry money.</strong> That's not a feature. It's the product.</p>
+    <div class="hbtns">
+      <a href="https://fnd.us/c2muK1?ref=sh_aFAak8" target="_blank" rel="noopener" class="btn bg">Support This Work &rarr;</a>
+      <a href="#story" class="btn bo">Read Our Story</a>
+    </div>
+  </div>
+</section>
+<div class="sb">
+  <div class="si">
+    <div class="sc"><span class="sn">55M</span><span class="sl">Care partners in America</span></div>
+    <div class="sc"><span class="sn">$600B</span><span class="sl">Unpaid annual labor value</span></div>
+    <div class="sc"><span class="sn">$0</span><span class="sl">Pharma funding received</span></div>
+    <div class="sc"><span class="sn">100%</span><span class="sl">Independent &amp; unfiltered</span></div>
+  </div>
+</div>
+
+<!-- ============ DONATE BANNER — obvious, upfront ============ -->
+<div class="donate-banner">
+  <div class="db-inner">
+    <div class="db-label">Fund the Fight &mdash; Every Dollar Goes Directly to the Foundation</div>
+    <a href="https://fnd.us/c2muK1?ref=sh_aFAak8" target="_blank" rel="noopener" class="db-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Donate to the Foundation &rarr;
+    </a>
+    <div class="db-note">Every contribution goes directly to Cold Ischemia Foundation &mdash; already connected to our PayPal account, so there's no separate payment setup, no third-party processor, and no delay between your donation and the work it funds.</div>
+  </div>
+</div>
+
+<!-- ============ OUR STORY / ABOUT US ============ -->
+<section id="story">
+  <div class="sw">
+    <div class="ey">Our Story</div>
+    <h2>Before there was a foundation, <strong>there was a kitchen table.</strong></h2>
+    <p class="plead">The Cold Ischemia Foundation did not begin with a strategic plan, a seed round, or a ribbon cutting. It began the way most important things begin &mdash; with exhaustion, with anger, and with the quiet refusal to accept that this was simply how things were.</p>
+    <p class="plead" style="margin-top:16px;">Jeff Parke spent decades inside the American healthcare machine &mdash; first as a clinical research professional navigating how medicine gets tested and deployed, then as something far more personal: a care partner. Marie Parke understood it from the other side of the same table, living with kidney disease inside a system extraordinarily good at treating the organ and extraordinarily indifferent to the human being attached to it. Together, they saw the same failure from two angles. Neither angle was comfortable. Both were clarifying.</p>
+    <div class="origin-quote">
+      <p>"We did not choose this fight because it was convenient. We chose it because we could not find anyone else who would."</p>
+      <cite>Jeff &amp; Marie Parke &middot; Founders, Cold Ischemia Foundation &middot; Ellenton, Florida</cite>
+    </div>
+    <p class="plead">"Cold ischemia" is the medical term for the window of time between when a donor organ is removed from its source and restored to circulation in a recipient's body &mdash; the period of maximum vulnerability, where everything can be lost. That's the name they chose, deliberately, because care partners live inside that window every single day: doing critical work the system provides no training for, no compensation for, no recognition for, and no path back from.</p>
+
+    <div class="compare">
+      <div class="cc bad">
+        <h3>Every Other Platform</h3>
+        <ul>
+          <li>Funded by pharmaceutical companies with direct conflicts of interest</li>
+          <li>Built for patients &mdash; care partners are an afterthought or absent entirely</li>
+          <li>No AI tools, no federal complaint generators, no crisis escalation systems</li>
+          <li>Governed by boards with hospital system and insurer representation</li>
+          <li>Cannot name the institutions that harm the people they claim to serve</li>
+        </ul>
+      </div>
+      <div class="cc good">
+        <h3>Cold Ischemia Foundation</h3>
+        <ul>
+          <li>Zero pharmaceutical funding &mdash; zero conflicts, zero editorial compromise</li>
+          <li>Built by a care partner, for care partners &mdash; kidney disease and transplant-specific</li>
+          <li>AI-powered crisis tools, federal complaint generators with exact CFR citations</li>
+          <li>Answers to no hospital system, insurer, or government agency</li>
+          <li>Names the failure. Cites the law. Puts the tools in your hands.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THREE FRONTS ============ -->
+<section id="fronts" class="alt">
+  <div class="sw">
+    <div class="ey">Three Fronts, One Fight</div>
+    <h2>This isn't one issue. <strong>It's a system that fails in three places at once.</strong></h2>
+    <p class="plead">Policy reform, care partner rights, and evaluation reform aren't separate campaigns &mdash; they're one structural failure viewed from three angles.</p>
+    <div class="fg">
+      <div class="fc f1">
+        <div class="fa"></div>
+        <span class="fb">Front One</span>
+        <div class="ft">Policy Reform</div>
+        <p class="fd">Structural change to how OPTN, UNOS, and transplant centers set and enforce the rules &mdash; allocation, oversight, and accountability, not just paperwork.</p>
+        <div class="fitems">
+          <div class="fitem">Allocation &amp; access equity</div>
+          <div class="fitem">OPTN/UNOS oversight &amp; accountability</div>
+          <div class="fitem">Congressional &amp; regulatory engagement</div>
+        </div>
+      </div>
+      <div class="fc f2">
+        <div class="fa"></div>
+        <span class="fb">Front Two</span>
+        <div class="ft">Care Partner Rights &amp; Pay</div>
+        <p class="fd">Legal standing, job protection, and actual compensation for the person a transplant program requires &mdash; and then gives nothing to.</p>
+        <div class="fitems">
+          <div class="fitem">Compensation for care partner labor</div>
+          <div class="fitem">Job &amp; income protection</div>
+          <div class="fitem">A formal voice in medical decisions</div>
+        </div>
+      </div>
+      <div class="fc f3">
+        <div class="fa"></div>
+        <span class="fb">Front Three</span>
+        <div class="ft">Evaluation Reform</div>
+        <p class="fd">One piece of the larger fight: a transplant evaluation process patients can actually navigate, with consistent, transparent standards.</p>
+        <div class="fitems">
+          <div class="fitem">Legible intake &amp; requirements</div>
+          <div class="fitem">Standardized financial &amp; psychosocial screening</div>
+          <div class="fitem">Documented, appealable decisions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARE PARTNER RIGHTS ============ -->
+<section id="care-partners">
+  <div class="sw">
+    <div class="ey">Care Partner Advocacy</div>
+    <h2>The person keeping a patient alive at home deserves more than a signature line.</h2>
+    <p class="plead">Transplant programs will not list a candidate without a designated care partner, then offer that same care partner no training, no legal standing, and no pay for years of medically essential labor. Roughly 500,000 people are performing mandatory, clinical-grade care labor as a condition of transplant listing right now &mdash; labor that's invisible in cost accounting and absent from every outcome measurement system.</p>
+    <div class="rights-list">
+      <div class="right-item">
+        <h3>Compensation for care partner labor</h3>
+        <p>Recovery-phase caregiving is skilled, sustained, and unpaid. Marie's Lifeline Compensation Act would create a real path to pay &mdash; not just a tax credit nobody can access in time.</p>
+      </div>
+      <div class="right-item">
+        <h3>Job &amp; income protection</h3>
+        <p>Care partners are routinely forced to choose between the patient's recovery and their own paycheck. 61% work while providing care; 69% of those make significant workplace sacrifices as a result.</p>
+      </div>
+      <div class="right-item">
+        <h3>A formal voice in the medical decision</h3>
+        <p>Zero care partners sit on the UNOS Board of Directors. Every allocation policy affecting 500,000+ care partners is designed without a care partner voice at the table.</p>
+      </div>
+      <div class="right-item">
+        <h3>Mental health as clinical infrastructure</h3>
+        <p>53% of transplant care partners meet clinical criteria for depression or anxiety &mdash; and the overwhelming majority are never referred for treatment. Untreated depression in recipients raises mortality risk by 65%. This isn't a support issue. It's a clinical one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DONOR-FLOW ============ -->
+<section id="donorflow" class="alt">
+  <div class="sw">
+    <div class="ey">Research &amp; Innovation</div>
+    <h2>Project Donor-Flow: <strong>closing the living donor pipeline's biggest leak.</strong></h2>
+    <p class="plead">An AI-psychosocial framework for why more than 92.8% of potential living donors are lost before completing donation &mdash; and what a Lean Six Sigma-driven fix looks like.</p>
+    <div class="deep-card teal">
+      <div class="dc-k">The Intelligence Gap &mdash; A White Paper</div>
+      <div class="dc-h">The AI-Psychosocial Integration Framework for Predictive Donor Lifecycle Management</div>
+      <p class="dc-p">The transplant system invests heavily in the surgery and almost nothing in the operational work of finding and keeping donors through evaluation. Project Donor-Flow applies Lean Six Sigma process engineering and AI-driven triage &mdash; including a Donor Readiness Score for every inquiry &mdash; to close that gap.</p>
+      <div class="dc-stats">
+        <div class="dcs"><span class="dcn">92.8%</span><span class="dcl">Potential donors lost before completing donation</span></div>
+        <div class="dcs"><span class="dcn">6,226</span><span class="dcl">Living kidney donors, 2023</span></div>
+        <div class="dcs"><span class="dcn">100K+</span><span class="dcl">Americans on the waitlist</span></div>
+        <div class="dcs"><span class="dcn">~13</span><span class="dcl">Deaths per day, waiting</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BHOC ============ -->
+<section id="bhoc">
+  <div class="sw">
+    <div class="ey">Emerging Technology</div>
+    <h2>BHOC: <strong>the organ is only as good as the clock it beat.</strong></h2>
+    <p class="plead">Biologic Hemoglobin Oxygen Carrier (BHOC) technology is one of the more promising attempts to slow the cold ischemia clock &mdash; and almost no patient or care partner has ever heard of it.</p>
+    <div class="deep-card gold">
+      <div class="dc-k">Not a Transfusion. Not a Drug.</div>
+      <div class="dc-h">A way to keep tissue oxygenated when there's no circulation to do it.</div>
+      <p class="dc-p">Cold storage slows the damage an organ accumulates in the window without blood flow. BHOC technology is one of the few approaches trying to interrupt that damage entirely, by delivering oxygen to tissue independent of a beating heart. This lives almost exclusively in surgical journals and industry panels right now &mdash; never in the room with the patient who's waiting for an organ. CIF is working to change that: plain-language explanation instead of a surgical abstract, and outreach to the researchers and regulators deciding whether this technology reaches the people who need it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT NOBODY TELLS YOU ============ -->
+<section id="realities" class="alt">
+  <div class="sw">
+    <div class="ey">Patient Education &mdash; Not in the Welcome Packet</div>
+    <h2>What nobody hands you at intake.</h2>
+    <p class="plead">Transplant conferences talk about access and allocation. They don't spend much time on what living with a transplant actually feels like week to week.</p>
+    <div class="deep-card red">
+      <div class="dc-k">BK Virus, CMV &amp; the Biopsy</div>
+      <div class="dc-h">It's already inside you &mdash; that's the part nobody explains.</div>
+      <p class="dc-p">Most adults carry BK virus and cytomegalovirus (CMV) quietly, kept in check by a normal immune system. Immunosuppression &mdash; the entire point of a transplant working &mdash; is also what lets them reactivate. Nobody hands you a pamphlet on this at your pre-transplant workup; you find out the way most transplant patients find out about most things, after it's already happening. And the biopsy that monitors for it is rarely the hard part physically &mdash; it's the waiting on results that nobody prepares you for emotionally, especially the second, third, and tenth time around.</p>
+      <p class="dc-p" style="margin-bottom:0;">This is manageable, monitored, and anticipated by good transplant centers. What's missing isn't the medicine &mdash; it's someone saying this out loud before you're staring at a lab result you don't understand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEMAND LETTERS ============ -->
+<section id="letters">
+  <div class="sw">
+    <div class="ey">Formal Correspondence &mdash; On the Record</div>
+    <h2>This letter does not ask. <strong>It demands.</strong></h2>
+    <p class="plead">Six formal letters sent to Congress, the Florida Legislature, HHS, CMS, NIH, and the OPTN Board of Directors. Every office was given thirty days to respond in writing.</p>
+    <div class="letters">
+      <div class="letter">
+        <div class="letter-top"><div class="letter-to">United States Congress &amp; Leadership</div><div class="letter-date">March 30, 2026</div></div>
+        <blockquote>"I am a transplant recipient who is alive because someone cared for me without compensation... That person's labor &mdash; and the labor of 53 million Americans like her &mdash; will no longer be treated as a free resource available for governmental exploitation."</blockquote>
+      </div>
+      <div class="letter">
+        <div class="letter-top"><div class="letter-to">OPTN Board of Directors</div><div class="letter-date">June 8, 2026</div></div>
+        <blockquote>"92.8 percent of potential living donors are lost before completing donation... These are not unsolvable problems. They are unfunded solutions."</blockquote>
+      </div>
+      <div class="letter">
+        <div class="letter-top"><div class="letter-to">Dr. Jay Bhattacharya, Director, NIH</div><div class="letter-date">March 30, 2026</div></div>
+        <blockquote>"Less than 3% of NIH chronic disease research funding is directed toward caregiver outcomes... Gold-standard science does not ignore the most consequential unmeasured variable in its primary area of study."</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOLS OVERVIEW (comes after mission/story, not before) ============ -->
+<section id="tools" class="alt">
+  <div class="sw">
+    <div class="ey">The Platform</div>
+    <h2>Tools built because <strong>no one else would build them.</strong></h2>
+    <p class="plead">Every tool exists because a care partner needed it and it didn't exist. AI-powered crisis response, document generators, and case-management instruments &mdash; all free, all citing exact federal law. Every card below links straight to that tool.</p>
+    <div class="tg">
+      <a href="situation-room.html" class="tgc"><div class="ti">🚨</div><h4>The Situation Room</h4><p>Describe your crisis, get the CFR violation and a ready-to-file federal complaint letter.</p></a>
+      <a href="tool-meridian.html" class="tgc"><div class="ti">🧭</div><h4>Meridian</h4><p>Navigational decision support for the transplant &amp; dialysis journey.</p></a>
+      <a href="tool-signal.html" class="tgc"><div class="ti">📶</div><h4>The Translator (Signal)</h4><p>Paste a denial letter or discharge notice, get your exact legal rights back.</p></a>
+      <a href="tool-narrative-mirror.html" class="tgc"><div class="ti">🪞</div><h4>Narrative Mirror</h4><p>Reflects your situation back in a documented, institution-ready narrative.</p></a>
+      <a href="tool-cartography.html" class="tgc"><div class="ti">🗺️</div><h4>Cartography</h4><p>Maps the full landscape of your case across every institution involved.</p></a>
+      <a href="tool-relationship-cartography.html" class="tgc"><div class="ti">🕸️</div><h4>Relationship Cartography</h4><p>Maps the network of providers and relationships shaping your specific case.</p></a>
+      <a href="tool-authority-strain.html" class="tgc"><div class="ti">⚖️</div><h4>Authority Strain</h4><p>Finds the institutional pressure points that actually cause a response.</p></a>
+      <a href="tool-authority-under-strain.html" class="tgc"><div class="ti">⚖️</div><h4>Authority Under Strain</h4><p>The extended analysis of institutional vulnerability under sustained pressure.</p></a>
+      <a href="tool-two-futures.html" class="tgc"><div class="ti">🔀</div><h4>Two Futures</h4><p>Presents two documented outcomes &mdash; action vs. inaction &mdash; for your case.</p></a>
+      <a href="tool-moral-weight.html" class="tgc"><div class="ti">⚡</div><h4>Moral Weight</h4><p>Weighs a hard decision against the values and risks that matter to your situation.</p></a>
+      <a href="tool-decision-architecture.html" class="tgc"><div class="ti">🏗️</div><h4>Decision Architecture</h4><p>Structures a complex, multi-step decision into a clear framework.</p></a>
+      <a href="tool-psychological-fieldcraft.html" class="tgc"><div class="ti">🧠</div><h4>Psychological Fieldcraft</h4><p>Practical tactics for institutional stonewalling, gaslighting, and burnout.</p></a>
+      <a href="tool-insurance-appeal.html" class="tgc"><div class="ti">📑</div><h4>Insurance Appeal Builder</h4><p>Turns a denial letter into a formal appeal citing plan language and regulation.</p></a>
+      <a href="tool-records-request.html" class="tgc"><div class="ti">🗂️</div><h4>Records Request Builder</h4><p>Generates a HIPAA-cited medical records request with proper timelines.</p></a>
+      <a href="tool-incident-workflow.html" class="tgc"><div class="ti">🧩</div><h4>Incident Workflow</h4><p>Documents an incident step by step in a format that holds up if escalated.</p></a>
+      <a href="tool-system-exposure.html" class="tgc"><div class="ti">🔦</div><h4>System Exposure</h4><p>Connects a single incident to the broader institutional pattern behind it.</p></a>
+      <a href="tool-time-distortion.html" class="tgc"><div class="ti">⏳</div><h4>Time Distortion</h4><p>Analyzes how long a delay actually is against the regulatory timeline.</p></a>
+      <a href="tool-continuity-planner.html" class="tgc"><div class="ti">🔗</div><h4>Continuity Planner</h4><p>Plans for care continuity across providers, moves, and transitions.</p></a>
+      <a href="tool-treatment-framework.html" class="tgc"><div class="ti">🧬</div><h4>Treatment Framework</h4><p>Organizes a complex treatment plan into something a family can actually follow.</p></a>
+      <a href="tool-field-station.html" class="tgc"><div class="ti">📡</div><h4>Field Station</h4><p>A live monitor for tracking a case in real time &mdash; status and next steps.</p></a>
+      <a href="tool-field-station-embedded.html" class="tgc"><div class="ti">📡</div><h4>Field Station (Embedded)</h4><p>The embeddable version of Field Station for use on other pages.</p></a>
+      <a href="signals-dashboard.html" class="tgc"><div class="ti">📊</div><h4>Signals Dashboard</h4><p>Live federal policy signals from CMS, HRSA, OPTN, and Congress.</p></a>
+      <a href="signals-embedded.html" class="tgc"><div class="ti">📊</div><h4>Signals (Embedded)</h4><p>The embeddable version of the Signals Dashboard.</p></a>
+      <a href="drift-map.html" class="tgc"><div class="ti">🌊</div><h4>Drift Map</h4><p>Visualizes how a case quietly drifts off track across providers and agencies.</p></a>
+      <a href="drift-map-embedded.html" class="tgc"><div class="ti">🌊</div><h4>Drift Map (Embedded)</h4><p>The embeddable version of Drift Map for use on other pages.</p></a>
+      <a href="tool-survival-guide-hub.html" class="tgc"><div class="ti">🧭</div><h4>Survival Guide Hub</h4><p>The central index for every CIF guide, toolkit, and field resource.</p></a>
+      <a href="CIF-SHIELD-Strategy.html" class="tgc"><div class="ti">🛡️</div><h4>The S.H.I.E.L.D. Method</h4><p>CIF's core strategic framework behind every tool, letter, and campaign.</p></a>
+      <a href="manifesto.html" class="tgc"><div class="ti">📯</div><h4>The Manifesto</h4><p>The foundation's philosophical case for why this platform exists.</p></a>
+      <a href="the-captured-voice.html" class="tgc"><div class="ti">🎙️</div><h4>The Captured Voice</h4><p>The investigative case against captured patient advocacy organizations.</p></a>
+      <a href="whitepapers.html" class="tgc"><div class="ti">📄</div><h4>White Papers</h4><p>Every CIF white paper in one place &mdash; Donor-Flow, Lean Six Sigma, and more.</p></a>
+      <a href="demand-letters.html" class="tgc"><div class="ti">📋</div><h4>Federal Complaint Builder</h4><p>Nine-letter federal complaint packet generator &mdash; CMS, HHS, OIG, HRSA, DOJ.</p></a>
+      <a href="command-center.html" class="tgc"><div class="ti">🗂️</div><h4>Command Center</h4><p>The full tool suite &mdash; every tool above, plus contacts and alerts, in one hub.</p></a>
+      <a href="donor-readiness-explorer.html" class="tgc"><div class="ti">✅</div><h4>Donor Readiness Discussion Guide</h4><p>Interactive checklist for living kidney donors &mdash; every question links to a real resource: NLDAC, Donor Shield, OPTN, and more.</p></a>
+      <a href="donor-flow-blueprint.html" class="tgc"><div class="ti">📊</div><h4>Donor-Flow Interactive Dashboard</h4><p>The full data-driven blueprint: the leaky-bucket diagnosis, state-by-state donor trends, denial-reason analysis, and the 6-phase implementation roadmap.</p></a>
+      <a href="the-intelligence-gap.html" class="tgc"><div class="ti">🧠</div><h4>The Intelligence Gap — White Paper</h4><p>The full narrative case for AI in the living donor pipeline, with the 8-stage architecture, evidence base, and downloadable white paper.</p></a>
+      <a href="congress-scorecard.html" class="tgc"><div class="ti">🏛️</div><h4>Congress Scorecard</h4><p>Letter grades for every Senator and House member on chronic illness votes.</p></a>
+      <a href="accountability.html" class="tgc"><div class="ti">📇</div><h4>Accountability Atlas</h4><p>Direct contacts for CMS, HHS, OIG, HRSA, DOJ, UNOS/OPTN, and every ESRD Network.</p></a>
+      <a href="advocacy-assessment.html" class="tgc"><div class="ti">📝</div><h4>Advocacy Assessment</h4><p>A structured self-assessment of where your case stands and what to do next.</p></a>
+      <a href="advocacy-news.html" class="tgc"><div class="ti">📰</div><h4>Advocacy News</h4><p>Ongoing coverage of transplant and care partner policy developments.</p></a>
+      <a href="care-partner-advocacy.html" class="tgc"><div class="ti">🤝</div><h4>Care Partner Advocacy</h4><p>The dedicated hub for care partner rights, pay, and protection resources.</p></a>
+      <a href="cif-amazon-library.html" class="tgc"><div class="ti">📚</div><h4>Book &amp; Toolkit Library</h4><p>Every CIF guide and book, including the free resource bundle.</p></a>
+      <a href="research.html" class="tgc"><div class="ti">🔬</div><h4>Federal Research Monitor</h4><p>Live feeds from CMS, GAO, HHS, OIG, and the Federal Register.</p></a>
+    </div>
+    <p class="plead" style="margin-top:20px;"><a href="command-center.html" style="color:var(--gold-l);">See the full Command Center &rarr;</a></p>
+  </div>
+</section>
+
+<style>.tg .tgc{text-decoration:none;display:block;transition:background .2s;} .tg .tgc:hover{background:var(--raised);}</style>
+
+<!-- ============ RESEARCH / VIDEO ============ -->
+<section id="research">
+  <div class="sw">
+    <div class="ey">CIF Video &amp; Research</div>
+    <h2>Watch. <strong>No sponsor reads. Ever.</strong></h2>
+    <div class="vlist">
+      <a href="https://www.youtube.com/watch?v=GMQm3n132R8" target="_blank" rel="noopener" class="vitem">
+        <div class="vplay"><svg width="9" height="11" viewBox="0 0 10 12" fill="none"><polygon points="0,0 10,6 0,12" fill="#c83050"/></svg></div>
+        <div><div class="vtitle">The Invisible Workforce Holding Transplant Medicine Together</div><div class="vcta">Watch on YouTube &rarr;</div></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=J_RwwnustkU" target="_blank" rel="noopener" class="vitem">
+        <div class="vplay"><svg width="9" height="11" viewBox="0 0 10 12" fill="none"><polygon points="0,0 10,6 0,12" fill="#c83050"/></svg></div>
+        <div><div class="vtitle">Unpaid Infrastructure &mdash; Survival</div><div class="vcta">Watch on YouTube &rarr;</div></div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=VJR_h6y68DI" target="_blank" rel="noopener" class="vitem">
+        <div class="vplay"><svg width="9" height="11" viewBox="0 0 10 12" fill="none"><polygon points="0,0 10,6 0,12" fill="#c83050"/></svg></div>
+        <div><div class="vtitle">Care Partner Burden</div><div class="vcta">Watch on YouTube &rarr;</div></div>
+      </a>
+    </div>
+    <p class="plead" style="margin-top:28px;">White papers on file: <strong style="color:var(--ink80);">The Intelligence Gap</strong> (Project Donor-Flow), <strong style="color:var(--ink80);">A Lean Six Sigma Methodology for Transformation of the U.S. Solid Organ Transplant System</strong> (submitted to the OPTN Board), and <strong style="color:var(--ink80);">The Unseen Half</strong> (care partner integration &amp; outcome-aligned systems).</p>
+  </div>
+</section>
+
+<div class="pledge">
+  <div class="pledge-inner">
+    <div class="pledge-bar"></div>
+    <p><strong>Independence Pledge &mdash; Permanent &amp; Non-Negotiable.</strong> Cold Ischemia Foundation will never accept funding from pharmaceutical companies, dialysis corporations, medical device manufacturers, hospital systems, or insurance companies. Our independence is not a feature. It is the product.</p>
+  </div>
+</div>
+
+<section class="cta" id="support">
+  <div class="ctah">STOP DOING THIS ALONE.</div>
+  <p class="ctas">America's only independent care partner and transplant policy advocacy platform. Every chronic illness. No wellness quiz. No self-assessment score. Just the tools, the law, and the people who built this because they lived it.</p>
+  <div class="ctab">
+    <a href="https://fnd.us/c2muK1?ref=sh_aFAak8" target="_blank" rel="noopener" class="bd">Support the Foundation &rarr;</a>
+    <a href="#story" class="bl">Read Our Story</a>
+  </div>
+  <p style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.4px;color:rgba(3,5,9,0.5);margin-top:18px;">Connected directly to our PayPal account &mdash; no additional payment setup required.</p>
+</section>
+
+<footer>
+  <div class="fgt">
+    <strong style="color:var(--ink60);">Cold Ischemia Foundation</strong> &mdash; Grassroots Care Partner &amp; Transplant Policy Advocacy<br>
+    Ellenton, Florida &middot; 16th Congressional District
+  </div>
+  <div class="fbot">
+    <p class="fcp">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weak Signals, Hard Truths · Tool 03 · Survival Guide for Care Partners</title>
+<meta name="description" content="The Signal Escalation Dashboard. Seven weak signals in caregiving homes under pressure — interactive detection tool by the Cold Ischemia Foundation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+:root{
+  --bg:#030509;--bg2:#07101c;--bg3:#0a1628;--bg4:#0f1e38;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);
+  --ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);
+  --ink20:rgba(216,207,196,0.2);
+  --gold:#c8902a;--gl:#e8b84a;--gd:rgba(200,144,42,0.1);
+  --cold:#2ac4c8;--green:#50c878;
+  --amber:#e8900a;--red:#c83050;
+  --z1:#1a3a1a;--z1b:#50c878;
+  --z2:#3a2a08;--z2b:#e8b84a;
+  --z3:#3a1a08;--z3b:#e8900a;
+  --z4:#3a0810;--z4b:#c83050;
+}
+body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-thumb{background:var(--bg4);}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(100,140,200,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(100,140,200,0.022) 1px,transparent 1px);background-size:56px 56px;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(14px);border-bottom:0.5px solid var(--b);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink40);}
+.nav-links{display:flex;gap:8px;align-items:center;}
+.nav-back{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--ink40);padding:6px 14px;border:0.5px solid var(--b);border-radius:2px;transition:all .15s;}
+.nav-back:hover{color:var(--ink80);border-color:var(--b2);}
+.nav-cif{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:6px 14px;border-radius:2px;background:var(--gd);color:var(--gold);border:0.5px solid rgba(200,144,42,0.3);transition:all .15s;}
+.nav-cif:hover{background:rgba(200,144,42,0.18);}
+@media(max-width:640px){nav{padding:0 16px;}.nb{display:none;}}
+
+/* HERO */
+.hero{position:relative;z-index:1;height:65vh;min-height:420px;overflow:hidden;border-bottom:0.5px solid var(--b);}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(3,5,9,0.25) 0%,rgba(3,5,9,0) 35%,rgba(3,5,9,0.8) 80%,rgba(3,5,9,1) 100%);}
+.hero-text{position:absolute;bottom:0;left:0;right:0;padding:0 60px 44px;}
+@media(max-width:700px){.hero-text{padding:0 22px 30px;}}
+.ph-ey{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.ph-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,6.5vw,6rem);line-height:.88;color:var(--ink);margin-bottom:10px;}
+.ph-h1 span{color:var(--gold);}
+.ph-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.9rem,1.3vw,1.05rem);line-height:1.75;color:var(--ink60);border-left:2px solid var(--gold);padding-left:14px;max-width:620px;}
+
+/* INTRO STRIP */
+.intro-strip{position:relative;z-index:1;background:var(--bg2);border-bottom:0.5px solid var(--b);padding:48px 60px;}
+@media(max-width:700px){.intro-strip{padding:36px 22px;}}
+.is-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+@media(max-width:800px){.is-inner{grid-template-columns:1fr;gap:24px;}}
+.ey{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.body-p{font-size:.97rem;line-height:1.92;color:var(--ink60);}
+.body-p strong{color:var(--ink80);}
+.body-p p{margin-bottom:14px;}
+.body-p p:last-child{margin-bottom:0;}
+.zone-legend{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.zl{padding:14px 16px;border-radius:4px;border:0.5px solid;}
+.zl1{background:rgba(80,200,120,0.07);border-color:rgba(80,200,120,0.2);}
+.zl2{background:rgba(232,184,74,0.07);border-color:rgba(232,184,74,0.2);}
+.zl3{background:rgba(232,144,10,0.07);border-color:rgba(232,144,10,0.2);}
+.zl4{background:rgba(200,48,80,0.07);border-color:rgba(200,48,80,0.2);}
+.zl-n{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
+.zl1 .zl-n{color:var(--z1b);}
+.zl2 .zl-n{color:var(--z2b);}
+.zl3 .zl-n{color:var(--z3b);}
+.zl4 .zl-n{color:var(--z4b);}
+.zl-desc{font-size:.8rem;line-height:1.6;color:var(--ink60);}
+
+/* DASHBOARD SECTION */
+.dash-section{position:relative;z-index:1;padding:60px 60px;border-bottom:0.5px solid var(--b);}
+@media(max-width:700px){.dash-section{padding:44px 22px;}}
+.sw{max-width:1100px;margin:0 auto;}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;color:var(--ink);margin-bottom:14px;line-height:1.1;}
+h2 em{font-style:italic;color:var(--gold);}
+.bt{font-size:.97rem;line-height:1.92;color:var(--ink60);max-width:680px;margin-bottom:36px;}
+.bt strong{color:var(--ink80);}
+
+/* WATCH/ACT/SOLVE FILTER */
+.was-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+.was-btn{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;border-radius:2px;cursor:pointer;transition:all .15s;border:0.5px solid;}
+.was-all{background:rgba(100,140,200,0.06);color:var(--ink60);border-color:var(--b2);}
+.was-all.on{background:var(--bg4);color:var(--ink80);border-color:var(--b2);}
+.was-watch{background:rgba(232,184,74,0.08);color:#e8b84a;border-color:rgba(232,184,74,0.2);}
+.was-watch.on{background:rgba(232,184,74,0.18);border-color:#e8b84a;}
+.was-act{background:rgba(232,144,10,0.08);color:#e8900a;border-color:rgba(232,144,10,0.2);}
+.was-act.on{background:rgba(232,144,10,0.18);border-color:#e8900a;}
+.was-solve{background:rgba(80,200,120,0.08);color:#50c878;border-color:rgba(80,200,120,0.2);}
+.was-solve.on{background:rgba(80,200,120,0.18);border-color:#50c878;}
+
+/* SIGNAL DASHBOARD — two-col: left cards, right detail */
+.dash-body{display:grid;grid-template-columns:1fr 380px;gap:2px;background:var(--b);align-items:start;}
+@media(max-width:1060px){.dash-body{grid-template-columns:1fr;}}
+
+/* SIGNAL CARDS */
+.signals-col{background:var(--bg);display:flex;flex-direction:column;gap:2px;}
+.sig-card{background:var(--bg2);padding:20px 22px;cursor:pointer;border-left:3px solid transparent;transition:all .15s;position:relative;}
+.sig-card:hover{background:var(--bg3);}
+.sig-card.active{border-left-color:var(--gold);background:var(--bg3);}
+.sig-card.dim{opacity:.25;pointer-events:none;}
+
+.sc-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px;}
+.sc-zone{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:3px 9px;border-radius:2px;}
+.sc-z-watch{background:rgba(232,184,74,0.1);color:#e8b84a;border:0.5px solid rgba(232,184,74,0.25);}
+.sc-z-act{background:rgba(232,144,10,0.1);color:#e8900a;border:0.5px solid rgba(232,144,10,0.25);}
+.sc-z-solve{background:rgba(80,200,120,0.1);color:#50c878;border:0.5px solid rgba(80,200,120,0.25);}
+.sc-check{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--b2);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.sc-check.checked{background:var(--gold);border-color:var(--gold);}
+.sc-check-mark{font-size:8px;color:var(--bg);display:none;}
+.sc-check.checked .sc-check-mark{display:block;}
+.sc-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:3px;}
+.sc-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--ink40);font-style:italic;}
+
+/* DETAIL COL */
+.detail-col{background:var(--bg2);padding:26px 24px;position:sticky;top:56px;}
+@media(max-width:1060px){.detail-col{position:relative;top:0;border-top:0.5px solid var(--b);}}
+
+.d-empty{display:flex;align-items:center;justify-content:center;height:320px;text-align:center;padding:24px;}
+.d-empty-text{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink20);line-height:1.8;}
+
+.dp-ey{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.dp-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--ink);margin-bottom:4px;line-height:1.1;}
+.dp-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--ink40);font-style:italic;margin-bottom:16px;padding-bottom:16px;border-bottom:0.5px solid var(--b);}
+.dp-what{font-size:.9rem;line-height:1.88;color:var(--ink60);margin-bottom:16px;}
+.dp-what b{color:var(--ink80);font-weight:500;}
+.dp-what em{color:var(--gold);font-style:normal;}
+
+.dp-sec{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--ink40);margin-bottom:8px;}
+.dp-phrase{background:var(--bg3);border-left:2px solid var(--gold);border-radius:0 4px 4px 0;padding:10px 14px;margin-bottom:7px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.5px;line-height:1.65;color:var(--gold);}
+
+.dp-action{background:var(--bg3);border:0.5px solid var(--b2);border-radius:4px;padding:14px 16px;margin-top:14px;}
+.dp-action-title{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.watch-title{color:#e8b84a;}
+.act-title{color:#e8900a;}
+.solve-title{color:#50c878;}
+.dp-action-body{font-size:.82rem;line-height:1.75;color:var(--ink60);}
+
+/* SCORE BAR */
+.score-strip{background:var(--bg2);border:0.5px solid var(--b);border-radius:4px;padding:16px 20px;margin-bottom:20px;}
+.ss-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.ss-bar-wrap{height:6px;background:var(--b2);border-radius:3px;overflow:hidden;margin-bottom:8px;}
+.ss-bar{height:100%;border-radius:3px;transition:width .4s ease,background .4s ease;background:var(--green);width:0%;}
+.ss-row{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--ink40);}
+.ss-count{font-size:1.4rem;font-family:'Bebas Neue',sans-serif;line-height:1;margin-bottom:2px;transition:color .3s;}
+.ss-status{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;text-transform:uppercase;}
+
+/* OODA + FAILURE MODES */
+.frameworks-section{position:relative;z-index:1;background:var(--bg2);border-top:0.5px solid var(--b);border-bottom:0.5px solid var(--b);padding:60px 60px;}
+@media(max-width:700px){.frameworks-section{padding:44px 22px;}}
+.fw-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--b);margin-top:32px;}
+@media(max-width:700px){.fw-grid{grid-template-columns:1fr;}}
+.fw-card{background:var(--bg2);padding:28px 24px;}
+.fw-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:rgba(200,144,42,0.1);line-height:1;margin-bottom:8px;}
+.fw-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.2;}
+.fw-body{font-size:.85rem;line-height:1.8;color:var(--ink60);}
+.fw-body strong{color:var(--ink80);}
+.fw-steps{margin-top:12px;}
+.fw-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;}
+.fw-step-n{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);flex-shrink:0;width:20px;padding-top:3px;}
+.fw-step-t{font-size:.83rem;line-height:1.7;color:var(--ink60);}
+
+/* FAILURE MODES */
+.failure-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:14px;}
+.fm-card{background:var(--bg3);border:0.5px solid var(--b);border-radius:4px;padding:14px;}
+.fm-trigger{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.fm-body{font-size:.8rem;line-height:1.65;color:var(--ink60);}
+
+/* FOOTER */
+footer{position:relative;z-index:1;background:var(--bg);border-top:0.5px solid var(--b);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+@media(max-width:700px){footer{padding:22px 20px;}}
+.ftl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--ink40);line-height:1.9;}
+.ftr{display:flex;gap:8px;flex-wrap:wrap;}
+.ftr a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;}
+.ft-b{color:var(--ink40);border:0.5px solid var(--b);transition:all .15s;}
+.ft-b:hover{color:var(--ink80);}
+.ft-h{background:var(--gd);color:var(--gold);border:0.5px solid rgba(200,144,42,0.3);transition:all .15s;}
+.ft-h:hover{background:rgba(200,144,42,0.18);}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nb">Survival Guide Tools</span>
+  <div class="nav-links">
+    <a href="index.html" class="nav-back">← All Tools</a>
+    <a href="https://coldischemia.foundation" target="_blank" rel="noopener" class="nav-cif">coldischemia.foundation &#8599;</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="signals.png" alt="Early Warning Signals and Actions — Watch, Act, Solve">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <div class="ph-ey">Tool 03 · Signal Escalation Dashboard · Survival Guide for Care Partners</div>
+    <h1 class="ph-h1">WEAK SIGNALS, <span>HARD TRUTHS</span></h1>
+    <p class="ph-sub">The psychology of subtle warning signs in homes under caregiving pressure. Seven signals. Three response zones. One method for seeing clearly before the crisis becomes undeniable.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-strip">
+  <div class="is-inner">
+    <div>
+      <div class="ey">What this tool does</div>
+      <div class="body-p">
+        <p>The most dangerous environments are often not the loudest ones. They are the ones that <strong>teach people to doubt the meaning of what they already know.</strong></p>
+        <p>This tool applies the Watch — Act — Solve framework to seven weak signals documented in the chapter text. Each signal is assigned a zone based on urgency. Select any signal to read its clinical explanation, field indicators, and the specific action it calls for.</p>
+        <p>The signals are not checklists. They are <strong>earlier truths</strong> — and in crisis work, earlier truths are the ones that preserve the most.</p>
+      </div>
+    </div>
+    <div>
+      <div class="ey">Three response zones</div>
+      <div class="zone-legend">
+        <div class="zl zl1"><div class="zl-n">Watch</div><div class="zl-desc">Pattern forming. Observation and documentation are the primary tasks.</div></div>
+        <div class="zl zl2"><div class="zl-n">Watch &rarr; Act</div><div class="zl-desc">Escalating signal. Active response is warranted before the pattern consolidates.</div></div>
+        <div class="zl zl3"><div class="zl-n">Act</div><div class="zl-desc">Operational hazard. Deliberate intervention — internal or external — is required.</div></div>
+        <div class="zl zl4"><div class="zl-n">Act &rarr; Solve</div><div class="zl-desc">Acute warning. The environment has moved beyond ordinary strain. Outside support is appropriate.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="dash-section">
+  <div class="sw">
+    <div class="ey">Signal escalation dashboard</div>
+    <h2>Seven signals.<br><em>Select each one you recognise.</em></h2>
+    <p class="bt">Work through the signals. Check those you recognise in your current environment. Select any card to read its full detail, field indicators, and prescribed action. <strong>The dashboard tracks your signal count and zone distribution as you go.</strong></p>
+
+    <div class="was-bar">
+      <button class="was-btn was-all on" onclick="filter_zone('all',this)">All signals</button>
+      <button class="was-btn was-watch" onclick="filter_zone('watch',this)">Watch zone</button>
+      <button class="was-btn was-act" onclick="filter_zone('act',this)">Act zone</button>
+      <button class="was-btn was-solve" onclick="filter_zone('solve',this)">Solve zone</button>
+    </div>
+
+    <div class="dash-body">
+
+      <!-- SIGNAL CARDS -->
+      <div class="signals-col" id="signalsCol">
+
+        <div class="sig-card" onclick="open_sig(0)" id="sc0" data-zone="act">
+          <div class="sc-row">
+            <span class="sc-zone sc-z-act">Act zone</span>
+            <div class="sc-check" id="ck0"><span class="sc-check-mark">&#10003;</span></div>
+          </div>
+          <div class="sc-name">Asymmetry of reality</div>
+          <div class="sc-tag">"Which reality am I in right now?"</div>
+        </div>
+
+        <div class="sig-card" onclick="open_sig(1)" id="sc1" data-zone="act">
+          <div class="sc-row">
+            <span class="sc-zone sc-z-act">Act zone</span>
+            <div class="sc-check" id="ck1"><span class="sc-check-mark">&#10003;</span></div>
+          </div>
+          <div class="sc-name">Collapse of proportionality</div>
+          <div class="sc-tag">"Routine tasks carrying excessive emotional cost"</div>
+        </div>
+
+        <div class="sig-card" onclick="open_sig(2)" id="sc2" data-zone="watch">
+          <div class="sc-row">
+            <span class="sc-zone sc-z-watch">Watch zone</span>
+            <div class="sc-check" id="ck2"><span class="sc-check-mark">&#10003;</span></div>
+          </div>
+          <div class="sc-name">Anticipatory editing</div>
+          <div class="sc-tag">"Truth becoming risky"</div>
+        </div>
+
+        <div class="sig-card" onclick="open_sig(3)" id="sc3" data-zone="act">
+          <div class="sc-row">
+            <span class="sc-zone sc-z-act">Act zone</span>
+            <div class="sc-check" id="ck3"><span class="sc-check-mark">&#10003;</span></div>
+          </div>
+          <div class="sc-name">Inversion of urgency</div>
+          <div class="sc-tag">"Tone overriding content"</div>
+        </div>
+
+        <div class="sig-card" onclick="open_sig(4)" id="sc4" data-zone="watch">
+          <div class="sc-row">
+            <span class="sc-zone sc-z-watch">Watch zone</span>
+            <div class="sc-check" id="ck4"><span class="sc-check-mark">&#10003;</span></div>
+          </div>
+          <div class="sc-name">Emotional opacity</div>
+          <div class="sc-tag">"Destabilizing emotions dominating space"</div>
+        </div>
+
+        <div class="sig-card" onclick="open_sig(5)" id="sc5" data-zone="solve">
+          <div class="sc-row">
+            <span class="sc-zone sc-z-solve">Act &rarr; Solve</span>
+            <div class="sc-check" id="ck5"><span class="sc-check-mark">&#10003;</span></div>
+          </div>
+          <div class="sc-name">Friction debt accumulation</div>
+          <div class="sc-tag">"Hidden labor exceeding explicit task list"</div>
+        </div>
+
+        <div class="sig-card" onclick="open_sig(6)" id="sc6" data-zone="solve">
+          <div class="sc-row">
+            <span class="sc-zone sc-z-solve">Act &rarr; Solve</span>
+            <div class="sc-check" id="ck6"><span class="sc-check-mark">&#10003;</span></div>
+          </div>
+          <div class="sc-name">Selfhood erosion</div>
+          <div class="sc-tag">"Disappearing through repeated micro-adaptations"</div>
+        </div>
+
+      </div>
+
+      <!-- DETAIL -->
+      <div class="detail-col" id="detailCol">
+
+        <div class="score-strip">
+          <div class="ss-label">Signal count</div>
+          <div class="ss-count" id="scoreN" style="color:var(--cold);">0 / 7</div>
+          <div class="ss-status" id="scoreStatus" style="color:var(--ink40);">No signals selected</div>
+          <div class="ss-bar-wrap" style="margin-top:10px;"><div class="ss-bar" id="ssBar"></div></div>
+          <div class="ss-row"><span>Ambient</span><span>Pattern forming</span><span>Acute warning</span></div>
+        </div>
+
+        <div id="detailArea">
+          <div class="d-empty">
+            <div class="d-empty-text">Select a signal on the left<br>to read its detail,<br>field indicators,<br>and prescribed action.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORKS: OODA + Failure Modes -->
+<section class="frameworks-section">
+  <div class="sw">
+    <div class="ey">Two analytical methods from the chapter</div>
+    <h2>Tools for preserving<br><em>cognition under pressure.</em></h2>
+    <p class="bt">The chapter names two specific methods for care partners working in volatile environments. Both are borrowed from crisis and industrial contexts and applied here directly.</p>
+
+    <div class="fw-grid">
+      <div class="fw-card">
+        <div class="fw-num">01</div>
+        <div class="fw-title">The OODA loop — observe, orient, decide, act</div>
+        <div class="fw-body">Developed in strategic and crisis contexts, the OODA loop is useful in volatile interpersonal settings because it <strong>slows the slide from stimulus to compliance.</strong> It is not a script to be performed mechanically. It is a mental architecture for preserving cognition under interpersonal pressure.</div>
+        <div class="fw-steps">
+          <div class="fw-step"><span class="fw-step-n">O</span><div class="fw-step-t"><strong style="color:var(--ink80);">Observe</strong> what is actually happening — without immediately accepting the emotional frame imposed by the moment.</div></div>
+          <div class="fw-step"><span class="fw-step-n">O</span><div class="fw-step-t"><strong style="color:var(--ink80);">Orient</strong>: what else could this mean? What is the pattern? What has happened before? What is my own baseline state?</div></div>
+          <div class="fw-step"><span class="fw-step-n">D</span><div class="fw-step-t"><strong style="color:var(--ink80);">Decide</strong> on a proportional response — not the one the moment is recruiting.</div></div>
+          <div class="fw-step"><span class="fw-step-n">A</span><div class="fw-step-t"><strong style="color:var(--ink80);">Act</strong> from that decision, not from the emotional pressure of the immediate environment.</div></div>
+        </div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fw-num">02</div>
+        <div class="fw-title">Failure modes and effects analysis — where does this environment most predictably fail?</div>
+        <div class="fw-body">Instead of asking only what feels wrong, ask: <strong>where does this environment fail, and what is the effect of that failure on safety, function, and perception?</strong> Each failure mode has a signature. Once identified, these signatures allow earlier recognition of pre-crisis drift.</div>
+        <div class="failure-grid">
+          <div class="fm-card"><div class="fm-trigger">At transitions</div><div class="fm-body">Waking, medication time, leaving the house, returning from appointments, bedtime.</div></div>
+          <div class="fm-card"><div class="fm-trigger">When uncertainty rises</div><div class="fm-body">New diagnoses, changes in care plan, financial decisions, or institutional contact.</div></div>
+          <div class="fm-card"><div class="fm-trigger">In front of others</div><div class="fm-body">Clinicians, family members, or any third party who changes the dynamic.</div></div>
+          <div class="fm-card"><div class="fm-trigger">Outside information</div><div class="fm-body">When the care partner introduces information from outside the relationship.</div></div>
+          <div class="fm-card"><div class="fm-trigger">After appointments</div><div class="fm-body">Discharge discussions, clinical assessments, or medical news that activates fear.</div></div>
+          <div class="fm-card"><div class="fm-trigger">Under correction</div><div class="fm-body">Any moment when a care decision, statement, or act is questioned or revised.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ftl">Tool 03 &mdash; Weak Signals, Hard Truths &middot; Survival Guide for Care Partners &middot; Cold Ischemia Foundation</div>
+  <div class="ftr">
+    <a href="index.html" class="ft-b">← All Tools</a>
+    <a href="https://coldischemia.foundation" target="_blank" rel="noopener" class="ft-h">coldischemia.foundation &#8599;</a>
+  </div>
+</footer>
+
+<script>
+const SIGS = [
+  {
+    zone:'act', zoneLabel:'Act zone', zoneCls:'sc-z-act',
+    name:'Asymmetry of reality',
+    tag:'Common reality is foundational to safety',
+    what:'In a workable relationship under strain, two people may disagree fiercely and still occupy the same basic event. In psychologically degrading environments, <b>common reality begins to fail.</b> The care partner learns that what happened matters less than which version will dominate the moment. A request that was acceptable yesterday is condemned today. A tone tolerated at noon becomes evidence of betrayal by evening.',
+    phrase:'Which reality am I in right now?',
+    why:'Common reality is foundational to safety. When it degrades, <em>cognition becomes more expensive.</em> The care partner is no longer working with shared facts — they are navigating an epistemically unstable field.',
+    action_title:'watch-title', action_label:'Watch — then Act',
+    action:'Document specific instances where the account of events shifted. Note the trigger, the version shift, and the audience. Three or more documented shifts in a fortnight warrant deliberate action — either a direct conversation or outside support.'
+  },
+  {
+    zone:'act', zoneLabel:'Act zone', zoneCls:'sc-z-act',
+    name:'Collapse of proportionality',
+    tag:'Routine tasks carrying excessive emotional cost',
+    what:'Under pressure, proportionality may bend but not disappear. In crisis-prone homes, <b>minor operational matters begin to produce major relational consequences.</b> A request to confirm a medication time becomes an accusation of control. A clinician\'s scheduling change becomes proof that no one cares. The care partner can no longer complete routine care tasks without incurring unstable reactions.',
+    phrase:'Friction debt — the cumulative burden of doing basic things in a system that charges too much for them.',
+    why:'Disproportionality changes the hazard profile of the environment. Every small care task spawns secondary emotional labor: <em>placating, timing, softening, translating, rehearsing, buffering, apologizing.</em>',
+    action_title:'act-title', action_label:'Act',
+    action:'Name the friction debt explicitly — to yourself, in writing. Identify which tasks consistently produce disproportionate reactions. Consider which tasks can be modified, delegated, or restructured to reduce the volatility surface.'
+  },
+  {
+    zone:'watch', zoneLabel:'Watch zone', zoneCls:'sc-z-watch',
+    name:'Anticipatory editing',
+    tag:'Truth becoming risky',
+    what:'The care partner begins leaving things unsaid — but not out of kindness alone. They omit information because <b>truth has become operationally hazardous.</b> They delay discussing a symptom. They soften recommendations. They wait until the person has eaten, rested, calmed. Timing is sometimes wise. But when timing becomes the central architecture of communication, it signals the environment has become conditionally unsafe for ordinary reality.',
+    phrase:'Risk-managed disclosure.',
+    why:'Systems where critical information must be smuggled in gently are systems at risk of decision degradation. <em>The home becomes less able to metabolize reality in real time.</em>',
+    action_title:'watch-title', action_label:'Watch',
+    action:'Track the frequency and subject matter of information that you delay or omit. Ask: if I were advising a colleague in this situation, would I consider this level of communication management a warning sign? If yes — it is one here too.'
+  },
+  {
+    zone:'act', zoneLabel:'Act zone', zoneCls:'sc-z-act',
+    name:'Inversion of urgency',
+    tag:'Tone overriding content',
+    what:'In unstable environments, emotional urgency can counterfeit medical urgency. Everything arrives at the care partner with the same command intensity — whether it is chest pain, loneliness, irritation, or a misplaced object. <b>The nervous system of the home gets trained to respond to tone rather than content.</b> This is dangerous because it degrades triage.',
+    phrase:'Chronic overactivation and increasing confusion about what truly requires immediate action.',
+    why:'Triage depends on differentiation. A care partner conditioned to answer every emotionally charged demand as if it were medically equivalent loses the ability to discriminate. <em>Intensity alone must not determine reality.</em>',
+    action_title:'act-title', action_label:'Act',
+    action:'Apply structured anomaly review: What is the content of the demand? What is the channel through which it arrives? What is the pattern history? What happens if response is delayed ten minutes? Restoring these questions is the restoration of reflective function under stress.'
+  },
+  {
+    zone:'watch', zoneLabel:'Watch zone', zoneCls:'sc-z-watch',
+    name:'Emotional opacity',
+    tag:'Destabilizing emotions dominating space',
+    what:'In high-tension homes, emotional information is often <b>opaque in the wrong ways and transparent in the wrong moments.</b> Everyone knows when the room is dangerous, but no one can say what is happening. The care partner remains hidden to maintain function — and becomes emotionally transparent only after overload, after collapse. Before that, they manage.',
+    phrase:'The most destabilizing emotions dominate space. The most useful emotions go underground.',
+    why:'A safer environment is not emotionless. It is <em>legible.</em> People can identify fear, shame, exhaustion, and frustration before they convert into coercion or panic. The care partner may need an internal method for emotional legibility even when the environment cannot support open dialogue.',
+    action_title:'watch-title', action_label:'Watch',
+    action:'Build an internal emotional legibility practice — brief, private, regular. Before each difficult interaction, name the emotion that is present without evaluating it. After each interaction, identify what emotional information was useful and what was noise. This restores internal signal clarity.'
+  },
+  {
+    zone:'solve', zoneLabel:'Act → Solve', zoneCls:'sc-z-solve',
+    name:'Friction debt accumulation',
+    tag:'Hidden labor exceeding the explicit task list',
+    what:'The explicit labor may be ten tasks. The <b>hidden labor is absorbing the turbulence attached to each one.</b> This is analogous to failure demand in service design — where a system generates extra work because it is poorly designed or unstable. In a caregiving home, failure demand takes psychological form: every practical task spawns secondary emotional labor.',
+    phrase:'The care partner stops thinking in terms of what is needed and starts thinking in terms of what can be survived.',
+    why:'This produces not only fatigue but <em>distortion.</em> Care partners become depleted even when the task list looks manageable on paper — because the hidden labor is invisible in every accounting except their own nervous system.',
+    action_title:'solve-title', action_label:'Act → Solve',
+    action:'Audit hidden labor explicitly. For each routine care task, estimate the secondary emotional labor it currently generates. Where secondary labor consistently exceeds primary labor, the system requires structural change — not better coping. This level of friction debt does not resolve through endurance.'
+  },
+  {
+    zone:'solve', zoneLabel:'Act → Solve', zoneCls:'sc-z-solve',
+    name:'Selfhood erosion',
+    tag:'Disappearing through repeated micro-adaptations',
+    what:'High-tension caregiving environments do not merely exhaust people — they <b>alter the meaning of selfhood.</b> The care partner disappears not through one dramatic sacrifice, but through repeated micro-adaptations to instability. They stop speaking in full voice. They stop trusting first impressions. They stop expecting reciprocity. They stop distinguishing fatigue from fear. The home becomes an interpretive maze.',
+    phrase:'Cultivated discernment — a way of knowing that is humane, evidence-informed, and resilient to distortion.',
+    why:'Instinct under chronic pressure can become fogged by pity, habit, love, dependency, role history, and trauma. <em>"Just trust your instincts" is inadequate advice.</em> What is needed is a disciplined method for seeing clearly.',
+    action_title:'solve-title', action_label:'Act → Solve',
+    action:'Name the micro-adaptations that have accumulated: what have you stopped saying, expecting, doing, or trusting? Once named, these become the basis for restoration rather than further adaptation. Outside support — therapeutic, relational, or practical — is appropriate at this level of erosion.'
+  }
+];
+
+let checked = new Set();
+let current = -1;
+
+function open_sig(i){
+  current = i;
+  document.querySelectorAll('.sig-card').forEach((c,j)=>c.classList.toggle('active',j===i));
+  const s = SIGS[i];
+  document.getElementById('detailArea').innerHTML = `
+    <div class="dp-ey">${s.zoneLabel}</div>
+    <div class="dp-name">${s.name}</div>
+    <div class="dp-tag">${s.tag}</div>
+    <div class="dp-what">${s.what}</div>
+    <div class="dp-sec" style="margin-top:14px;margin-bottom:8px;">Field phrase</div>
+    <div class="dp-phrase">${s.phrase}</div>
+    <div class="dp-sec" style="margin-top:14px;margin-bottom:8px;">Why it matters</div>
+    <div class="dp-what">${s.why}</div>
+    <div class="dp-action">
+      <div class="dp-action-title ${s.action_title}">${s.action_label}</div>
+      <div class="dp-action-body">${s.action}</div>
+    </div>
+    <div style="margin-top:16px;display:flex;align-items:center;gap:10px;">
+      <input type="checkbox" id="chk_${i}" ${checked.has(i)?'checked':''} onchange="toggle_check(${i},this)" style="accent-color:var(--gold);width:16px;height:16px;cursor:pointer;">
+      <label for="chk_${i}" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--ink40);cursor:pointer;">Mark this signal as present in my environment</label>
+    </div>
+  `;
+}
+
+function toggle_check(i, el){
+  if(el.checked){ checked.add(i); }
+  else { checked.delete(i); }
+  const ck = document.getElementById('ck'+i);
+  if(ck) ck.classList.toggle('checked', el.checked);
+  update_score();
+}
+
+function update_score(){
+  const n = checked.size;
+  const pct = n/7*100;
+  const bar = document.getElementById('ssBar');
+  bar.style.width = pct+'%';
+  bar.style.background = n<=2?'var(--green)':n<=4?'var(--amber)':'var(--red)';
+  document.getElementById('scoreN').textContent = n+' / 7';
+  const sn = document.getElementById('scoreN');
+  sn.style.color = n===0?'var(--cold)':n<=2?'var(--green)':n<=4?'var(--amber)':'var(--red)';
+  const ss = document.getElementById('scoreStatus');
+  if(n===0){ss.textContent='No signals checked';ss.style.color='var(--ink40)';}
+  else if(n<=2){ss.textContent='Ambient — monitor pattern';ss.style.color='var(--green)';}
+  else if(n<=4){ss.textContent='Pattern forming — act before it consolidates';ss.style.color='var(--amber)';}
+  else{ss.textContent='Acute warning — outside support appropriate';ss.style.color='var(--red)';}
+}
+
+function filter_zone(zone, btn){
+  document.querySelectorAll('.was-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.sig-card').forEach(c=>{
+    const cz = c.getAttribute('data-zone');
+    c.classList.toggle('dim', zone!=='all' && cz!==zone);
+  });
+  document.getElementById('detailArea').innerHTML='<div class="d-empty"><div class="d-empty-text">Select a signal on the left<br>to read its detail,<br>field indicators,<br>and prescribed action.</div></div>';
+  document.querySelectorAll('.sig-card').forEach(c=>c.classList.remove('active'));
+}
+</script>
+<a href="index.html" style="position:fixed;bottom:24px;right:24px;z-index:500;font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(216,207,196,0.5);text-decoration:none;padding:9px 16px;border:1px solid rgba(100,140,200,0.18);border-radius:2px;background:rgba(3,5,9,0.85);backdrop-filter:blur(6px);transition:color .15s,border-color .15s;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.35)';" onmouseout="this.style.color='rgba(216,207,196,0.5)';this.style.borderColor='rgba(100,140,200,0.18)';">⌂ Home</a>
+</body>
+</html>

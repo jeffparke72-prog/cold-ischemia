@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Care Partner Toolkit · Cold Ischemia Foundation</title>
+  <meta name="description" content="The Cold Ischemia Foundation care partner toolkit — 14 AI-powered tools, live monitors, and operational instruments built for the 53 million Americans navigating chronic illness systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,600;1,9..144,200;1,9..144,400&family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <script async src="https://client.memberstack.com/static/memberstack.js" data-memberstack-app="app_cmmihjq3n008g0trohx5z6e68"></script>
+  <style>
+    :root {
+      --abyss:   #030509;
+      --void:    #07101c;
+      --surf:    #0a1628;
+      --raised:  #0f1e38;
+      --b:       rgba(100,140,200,0.1);
+      --b2:      rgba(100,140,200,0.22);
+      --ink:     #d8cfc4;
+      --ink80:   rgba(216,207,196,0.8);
+      --ink60:   rgba(216,207,196,0.6);
+      --ink40:   rgba(216,207,196,0.4);
+      --ink20:   rgba(216,207,196,0.2);
+      --gold:    #c8902a;
+      --gold-l:  #e8b84a;
+      --gold-d:  rgba(200,144,42,0.14);
+      --gold-g:  rgba(200,144,42,0.28);
+      --pulse:   #2ac4c8;
+      --pulse-d: rgba(42,196,200,0.12);
+      --danger:  #c83050;
+      --danger-d:rgba(200,48,80,0.12);
+      --green:   #50c878;
+      --green-d: rgba(80,200,120,0.12);
+      --violet:  #8050c8;
+      --violet-d:rgba(128,80,200,0.12);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+    ::selection{background:var(--gold-d);color:var(--ink);}
+    ::-webkit-scrollbar{width:2px;}
+    ::-webkit-scrollbar-track{background:var(--abyss);}
+    ::-webkit-scrollbar-thumb{background:var(--raised);}
+
+    /* NAV */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:200;
+      background:rgba(3,5,9,0.94);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--b);
+      padding:0 36px;height:58px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .nav-logo{font-family:'IBM Plex Mono',monospace;font-size:0.57rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);text-decoration:none;}
+    .nav-links{display:flex;align-items:center;gap:22px;}
+    .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--ink80);}
+    .nav-links a.active{color:var(--gold);}
+    .nav-btn{color:var(--gold)!important;border:1px solid var(--gold-d);padding:7px 18px;border-radius:2px;background:transparent;transition:all 0.2s!important;}
+    .nav-btn:hover{background:var(--gold-d)!important;color:var(--gold-l)!important;}
+    @media(max-width:700px){.nav-links a:not(.nav-btn){display:none;}}
+
+    /* PAGE HEADER */
+    .page-header{
+      padding:120px 36px 64px;
+      border-bottom:1px solid var(--b);
+      background:linear-gradient(180deg,var(--void) 0%,var(--abyss) 100%);
+      position:relative;overflow:hidden;
+    }
+    .page-header::before{
+      content:'';position:absolute;top:-60px;right:-80px;
+      width:500px;height:500px;border-radius:50%;
+      background:radial-gradient(circle,rgba(200,144,42,0.04) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .page-header-inner{max-width:1080px;margin:0 auto;}
+    .page-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+    .page-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);opacity:0.5;}
+    .page-h1{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(2.8rem,6vw,5.5rem);line-height:0.95;color:var(--ink);margin-bottom:8px;}
+    .page-h1 strong{font-weight:600;font-style:normal;color:var(--gold-l);display:block;}
+    .page-sub{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin:18px 0 0;}
+    .page-intro{
+      max-width:760px;margin-top:32px;
+      font-size:1.12rem;line-height:1.9;color:var(--ink60);font-style:italic;
+      border-left:2px solid var(--gold-d);padding-left:24px;
+    }
+    .page-intro em{color:var(--gold-l);font-style:normal;font-weight:600;}
+
+    /* CATEGORY TABS */
+    .cat-tabs{
+      position:sticky;top:58px;z-index:100;
+      background:rgba(3,5,9,0.96);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--b);
+      padding:0 36px;
+      display:flex;align-items:center;gap:0;overflow-x:auto;
+    }
+    .cat-tab{
+      font-family:'IBM Plex Mono',monospace;font-size:0.51rem;letter-spacing:0.18em;text-transform:uppercase;
+      padding:16px 22px;color:var(--ink40);text-decoration:none;
+      border-bottom:2px solid transparent;white-space:nowrap;
+      transition:all 0.2s;display:flex;align-items:center;gap:8px;
+    }
+    .cat-tab:hover{color:var(--ink80);}
+    .cat-tab.ai{border-bottom-color:transparent;}
+    .cat-tab.ai:hover,.cat-tab.ai.active{color:var(--gold);border-bottom-color:var(--gold);}
+    .cat-tab.mon:hover,.cat-tab.mon.active{color:var(--pulse);border-bottom-color:var(--pulse);}
+    .cat-tab.ops:hover,.cat-tab.ops.active{color:var(--danger);border-bottom-color:var(--danger);}
+    .cat-tab.leg:hover,.cat-tab.leg.active{color:var(--green);border-bottom-color:var(--green);}
+    .tab-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+    .ai .tab-dot{background:var(--gold);}
+    .mon .tab-dot{background:var(--pulse);}
+    .ops .tab-dot{background:var(--danger);}
+    .leg .tab-dot{background:var(--green);}
+
+    /* MAIN */
+    .wrap{max-width:1080px;margin:0 auto;padding:0 36px;}
+    .sec{padding:72px 0 48px;}
+
+    /* SECTION LABEL */
+    .sec-label{
+      font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.34em;text-transform:uppercase;
+      display:flex;align-items:center;gap:16px;margin-bottom:36px;
+    }
+    .sec-label::after{content:'';flex:1;height:1px;}
+    .sec-label.gold{color:var(--gold);}
+    .sec-label.gold::after{background:var(--gold-d);}
+    .sec-label.teal{color:var(--pulse);}
+    .sec-label.teal::after{background:var(--pulse-d);}
+    .sec-label.red{color:var(--danger);}
+    .sec-label.red::after{background:var(--danger-d);}
+    .sec-label.green{color:var(--green);}
+    .sec-label.green::after{background:var(--green-d);}
+
+    /* FEATURED AI TOOL (large card) */
+    .featured-tool{
+      background:var(--surf);border:1px solid var(--b2);border-top:3px solid var(--gold);
+      padding:40px;margin-bottom:2px;position:relative;overflow:hidden;
+      display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;
+      transition:background 0.2s;
+    }
+    .featured-tool:hover{background:var(--raised);}
+    @media(max-width:720px){.featured-tool{grid-template-columns:1fr;gap:28px;}}
+    .ft-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.49rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+    .ft-name{font-family:'Fraunces',serif;font-weight:400;font-size:2rem;line-height:1.1;color:var(--ink);margin-bottom:14px;}
+    .ft-framework{font-family:'IBM Plex Mono',monospace;font-size:0.49rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:20px;line-height:2;}
+    .ft-framework span{color:var(--gold);border:1px solid var(--gold-d);padding:3px 8px;border-radius:2px;margin-right:6px;display:inline-block;margin-bottom:4px;}
+    .ft-desc{font-size:1rem;line-height:1.9;color:var(--ink60);margin-bottom:24px;}
+    .ft-right{}
+    .ft-detail-label{font-family:'IBM Plex Mono',monospace;font-size:0.49rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-bottom:12px;margin-top:20px;}
+    .ft-detail-label:first-child{margin-top:0;}
+    .ft-detail{font-size:0.9rem;line-height:1.85;color:var(--ink60);}
+    .ft-modules{display:flex;flex-direction:column;gap:6px;}
+    .ft-module{
+      font-family:'IBM Plex Mono',monospace;font-size:0.49rem;letter-spacing:0.1em;
+      padding:8px 14px;background:var(--abyss);border:1px solid var(--b);border-radius:2px;
+      color:var(--ink40);display:flex;align-items:center;gap:8px;
+    }
+    .ft-module::before{content:'▸';color:var(--gold);font-size:0.6rem;}
+    .ft-btn{
+      font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;
+      padding:12px 24px;background:var(--gold-d);color:var(--gold-l);
+      border:1px solid rgba(200,144,42,0.3);border-radius:2px;
+      text-decoration:none;display:inline-block;transition:all 0.2s;margin-top:8px;
+    }
+    .ft-btn:hover{background:var(--gold);color:var(--abyss);}
+    .ft-lock{
+      font-family:'IBM Plex Mono',monospace;font-size:0.49rem;letter-spacing:0.14em;text-transform:uppercase;
+      color:var(--ink20);display:flex;align-items:center;gap:6px;margin-top:12px;
+    }
+
+    /* STANDARD TOOL GRID */
+    .tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:2px;}
+    @media(max-width:900px){.tool-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:520px){.tool-grid{grid-template-columns:1fr;}}
+    .tc{
+      background:var(--surf);border:1px solid var(--b);
+      padding:26px 22px;position:relative;
+      display:flex;flex-direction:column;
+      transition:background 0.2s,transform 0.2s;
+    }
+    .tc:hover{background:var(--raised);transform:translateY(-2px);}
+    .tc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+    .tc.ai::before  {background:var(--gold);}
+    .tc.mon::before {background:var(--pulse);}
+    .tc.ops::before {background:var(--danger);}
+    .tc.leg::before {background:var(--green);}
+    .tc-cat{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px;}
+    .tc.ai .tc-cat{color:var(--gold);}
+    .tc.mon .tc-cat{color:var(--pulse);}
+    .tc.ops .tc-cat{color:var(--danger);}
+    .tc.leg .tc-cat{color:var(--green);}
+    .tc-name{font-family:'Fraunces',serif;font-weight:400;font-size:1.05rem;line-height:1.2;color:var(--ink);margin-bottom:10px;}
+    .tc-desc{font-size:0.86rem;line-height:1.75;color:var(--ink40);flex:1;margin-bottom:18px;}
+    .tc-btn{
+      font-family:'IBM Plex Mono',monospace;font-size:0.49rem;letter-spacing:0.16em;text-transform:uppercase;
+      padding:9px 16px;border-radius:2px;text-decoration:none;
+      display:inline-block;align-self:flex-start;transition:all 0.2s;
+    }
+    .tc.ai  .tc-btn{background:var(--gold-d);color:var(--gold-l);border:1px solid rgba(200,144,42,0.22);}
+    .tc.ai  .tc-btn:hover{background:var(--gold);color:var(--abyss);}
+    .tc.mon .tc-btn{background:var(--pulse-d);color:var(--pulse);border:1px solid rgba(42,196,200,0.22);}
+    .tc.mon .tc-btn:hover{background:var(--pulse);color:var(--abyss);}
+    .tc.ops .tc-btn{background:var(--danger-d);color:var(--danger);border:1px solid rgba(200,48,80,0.22);}
+    .tc.ops .tc-btn:hover{background:var(--danger);color:white;}
+    .tc.leg .tc-btn{background:var(--green-d);color:var(--green);border:1px solid rgba(80,200,120,0.22);}
+    .tc.leg .tc-btn:hover{background:var(--green);color:var(--abyss);}
+
+    /* TWO COL GRID */
+    .tool-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+    @media(max-width:600px){.tool-grid-2{grid-template-columns:1fr;}}
+
+    /* CTA BAND */
+    .cta-band{
+      background:var(--surf);border:1px solid var(--b2);border-top:3px solid var(--gold);
+      padding:52px 40px;margin:64px 0 0;text-align:center;
+    }
+    .cta-band h2{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--ink);margin-bottom:14px;}
+    .cta-band h2 strong{font-weight:600;font-style:normal;color:var(--gold-l);}
+    .cta-band p{font-size:1rem;line-height:1.85;color:var(--ink60);max-width:520px;margin:0 auto 32px;}
+    .btn-gold{
+      font-family:'Fraunces',serif;font-weight:400;font-size:1rem;letter-spacing:0.06em;
+      padding:16px 48px;background:linear-gradient(135deg,var(--gold),var(--gold-l));
+      color:var(--abyss);border:none;border-radius:2px;cursor:pointer;
+      text-decoration:none;display:inline-block;
+      box-shadow:0 4px 28px var(--gold-g);transition:all 0.3s;
+    }
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 40px var(--gold-g);}
+
+    /* FOOTER */
+    footer{background:var(--void);border-top:1px solid var(--b);padding:60px 36px 0;}
+    .footer-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;}
+    @media(max-width:840px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+    @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+    .f-logo{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:1.5rem;color:var(--gold-l);display:block;margin-bottom:14px;}
+    .footer-brand p{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.12em;color:var(--ink20);line-height:2.2;}
+    .footer-brand a{color:var(--gold);text-decoration:none;}
+    .f-col-title{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:block;}
+    .f-links{display:flex;flex-direction:column;gap:10px;}
+    .f-links a{font-family:'IBM Plex Mono',monospace;font-size:0.51rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+    .f-links a:hover{color:var(--gold-l);}
+    .footer-bottom{max-width:1080px;margin:0 auto;border-top:1px solid var(--b);padding:22px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+    .f-bottom-links{display:flex;gap:22px;flex-wrap:wrap;}
+    .f-bottom-links a{font-family:'IBM Plex Mono',monospace;font-size:0.48rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink20);text-decoration:none;transition:color 0.2s;}
+    .f-bottom-links a:hover{color:var(--gold);}
+    .copyright{font-family:'IBM Plex Mono',monospace;font-size:0.47rem;letter-spacing:0.11em;color:var(--ink20);}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="library.html">Library</a>
+    <a href="media.html">Media</a>
+    <a href="research.html">Research</a>
+    <a href="situation-room.html">Situation Room</a>
+    <a href="accountability.html">Accountability</a>
+    <a href="congress-scorecard.html">Scorecard</a>
+    <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener">Store</a>
+    <a href="donate.html">Donate</a>
+  </div>
+  <div class="nav-actions">
+  </div>
+<a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;padding:6px 12px;border:1px solid rgba(100,140,200,0.15);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.3)';" onmouseout="this.style.color='rgba(216,207,196,0.45)';this.style.borderColor='rgba(100,140,200,0.15)';">← Home</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Care Partner Toolkit</div>
+    <h1 class="page-h1">
+      The Tools They<br>
+      <strong>Never Built For You</strong>
+    </h1>
+    <p class="page-sub">14 Instruments · AI-Powered · Operationally Grounded · Built From Lived Experience</p>
+    <p class="page-intro">
+      Families managing chronic illness coordinate treatment logistics, challenge insurance denials, document institutional failures, and navigate bureaucracies that were never designed with them in mind.
+      <em>Cold Ischemia built the infrastructure the healthcare system forgot to build.</em>
+      Every tool here was developed from real experience inside dialysis, transplant medicine, and the machinery of American chronic illness care.
+    </p>
+  </div>
+</div>
+
+<!-- CATEGORY TABS -->
+<div class="cat-tabs">
+  <a href="#ai-tools" class="cat-tab ai active"><div class="tab-dot"></div>AI-Powered Tools</a>
+  <a href="#monitors" class="cat-tab mon"><div class="tab-dot"></div>Live Monitors</a>
+  <a href="#operational" class="cat-tab ops"><div class="tab-dot"></div>Operational Tools</a>
+  <a href="#legal" class="cat-tab leg"><div class="tab-dot"></div>Legal &amp; Administrative</a>
+</div>
+
+<!-- ══ AI TOOLS ══ -->
+<div id="ai-tools">
+  <div class="wrap">
+    <div class="sec">
+      <div class="sec-label gold">AI-Powered Tools · Psychology · Advocacy · System Intelligence</div>
+
+      <!-- MERIDIAN FEATURED -->
+      <div class="featured-tool">
+        <div>
+          <div class="ft-eyebrow">Flagship Tool · Collective Intelligence · Institutional Advocacy</div>
+          <div class="ft-name">MERIDIAN</div>
+          <div class="ft-framework">
+            <span>Collective Intelligence</span>
+            <span>Narrative Advocacy</span>
+            <span>Institutional Pressure</span>
+          </div>
+          <p class="ft-desc">The most powerful tool in the platform. MERIDIAN is a living collective intelligence engine that converts individual care partner testimony into institutional pressure. Your story joins a national registry of 5,847+ nodes. Your personal journey map becomes a visualization. Your experience becomes a weapon.</p>
+          <p class="ft-desc">Three Claude API calls generate your Personal Meridian Record, your Collective Truth Mirror showing where your experience intersects with the national pattern, and a Pressure Instrument — a formal advocacy document targeting Congress, CMS, hospital administrations, or insurance executives by name.</p>
+          <a href="tool-meridian.html" class="ft-btn">Open MERIDIAN →</a>
+          <div class="ft-lock">🔒 Membership required · <a href="index.html#pricing" style="color:var(--gold);text-decoration:none;">Join to access</a></div>
+        </div>
+        <div class="ft-right">
+          <div class="ft-detail-label">Five-Movement Intake</div>
+          <div class="ft-modules">
+            <div class="ft-module">Movement I — Who You Are</div>
+            <div class="ft-module">Movement II — The Medical Reality</div>
+            <div class="ft-module">Movement III — The Systemic Failures</div>
+            <div class="ft-module">Movement IV — The Invisible Cost</div>
+            <div class="ft-module">Movement V — What You Demand</div>
+          </div>
+          <div class="ft-detail-label">Three Generated Outputs</div>
+          <div class="ft-modules">
+            <div class="ft-module">Personal Meridian Record</div>
+            <div class="ft-module">Collective Truth Mirror</div>
+            <div class="ft-module">Pressure Instrument</div>
+          </div>
+          <div class="ft-detail-label">Targets</div>
+          <div class="ft-detail">U.S. Congress · CMS Administrator · Hospital Executives · Insurance Commissioners · State Legislators</div>
+        </div>
+      </div>
+
+      <!-- SIGNAL FEATURED -->
+      <div class="featured-tool" style="border-top-color:var(--pulse);margin-top:2px;">
+        <div>
+          <div class="ft-eyebrow" style="color:var(--pulse);">AI · Lean Six Sigma · Statistical Process Control · Ishikawa</div>
+          <div class="ft-name">SIGNAL</div>
+          <div class="ft-framework">
+            <span style="color:var(--pulse);border-color:rgba(42,196,200,0.3);">Lean Six Sigma</span>
+            <span style="color:var(--pulse);border-color:rgba(42,196,200,0.3);">SPC · Control Charts</span>
+            <span style="color:var(--pulse);border-color:rgba(42,196,200,0.3);">Ishikawa Root Cause</span>
+            <span style="color:var(--pulse);border-color:rgba(42,196,200,0.3);">Logotherapy</span>
+          </div>
+          <p class="ft-desc">The same operational intelligence methodology applied in hospital ICUs, NASA mission control, and manufacturing facilities — applied to the care partner's operational life. SIGNAL identifies system waste, instability patterns, root cause failures, and recoverable capacity you did not know you had.</p>
+          <p class="ft-desc">An 8-week stability engine maps your operational variance. A Fishbone Diagram maps your root cause failures across six domains. The AI generates an Intelligence Report with a 30-day process improvement plan with specific, actionable interventions.</p>
+          <a href="tool-signal.html" class="ft-btn" style="background:var(--pulse-d);color:var(--pulse);border-color:rgba(42,196,200,0.3);">Open SIGNAL →</a>
+          <div class="ft-lock">🔒 Membership required · <a href="index.html#pricing" style="color:var(--gold);text-decoration:none;">Join to access</a></div>
+        </div>
+        <div class="ft-right">
+          <div class="ft-detail-label">Four Modules</div>
+          <div class="ft-modules">
+            <div class="ft-module">Waste Classifier — 8 Lean waste categories</div>
+            <div class="ft-module">8-Week Stability Engine — SPC control charts</div>
+            <div class="ft-module">Fishbone Diagram — Root cause mapping</div>
+            <div class="ft-module">Process Reality Inputs — Live dashboard</div>
+          </div>
+          <div class="ft-detail-label">Output</div>
+          <div class="ft-detail">AI Intelligence Report · 30-Day Process Improvement Map · Specific interventions ranked by recoverable capacity</div>
+        </div>
+      </div>
+
+      <!-- REMAINING AI TOOLS -->
+      <div class="tool-grid" style="margin-top:2px;">
+        <div class="tc ai">
+          <div class="tc-cat">AI · Narrative Therapy · Logotherapy</div>
+          <div class="tc-name">Narrative Mirror</div>
+          <div class="tc-desc">Scans the language you use to describe your experience and reflects clinical signals back — detecting identity fracture, suppressed resentment, helplessness patterns, and agency language. Identifies your dominant narrative archetype and generates a Mirror Reflection with three targeted sections: The Pattern, The Signal, The Reframe.</div>
+          <a href="tool-narrative-mirror.html" class="tc-btn">Open Narrative Mirror →</a>
+        </div>
+        <div class="tc ai">
+          <div class="tc-cat">AI · Ambiguous Loss Theory · Attachment</div>
+          <div class="tc-name">Relationship Cartography Engine</div>
+          <div class="tc-desc">An interactive drag-and-drop emotional topology map grounded in Pauline Boss's Ambiguous Loss Theory. Eight emotional identity nodes — drag, place, and connect them to render your full relational landscape. Generates a narrative Field Dispatch: The Terrain, The Red Flags, The Leverage Point.</div>
+          <a href="tool-relationship-cartography.html" class="tc-btn">Open Cartography →</a>
+        </div>
+        <div class="tc ai">
+          <div class="tc-cat">AI · Motivational Interviewing · Trajectory Research</div>
+          <div class="tc-name">Two Futures Engine</div>
+          <div class="tc-desc">Renders the fork between your current trajectory and a possible intervention as two specific narrative vignettes — and names the single highest-leverage action point with a 72-hour micro-plan you can execute immediately. Built on Motivational Interviewing principles and caregiver trajectory research.</div>
+          <a href="tool-two-futures.html" class="tc-btn">Open Two Futures →</a>
+        </div>
+        <div class="tc ai">
+          <div class="tc-cat">AI · Cognitive Stabilization · Decision Authority</div>
+          <div class="tc-name">Authority Under Strain</div>
+          <div class="tc-desc">For the moments when cognitive load, grief, and institutional pressure are actively degrading your judgment quality. Stabilizes your decision-making authority and generates calibrated, strategic escalation communications — so you respond to the healthcare system from a position of clarity rather than crisis.</div>
+          <a href="tool-authority-strain.html" class="tc-btn">Open Authority Under Strain →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ MONITORS ══ -->
+<div id="monitors" style="border-top:1px solid var(--b);">
+  <div class="wrap">
+    <div class="sec">
+      <div class="sec-label teal">Live Monitors · Federal Policy · Transplant System · Institutional Intelligence</div>
+      <div class="tool-grid">
+        <div class="tc mon">
+          <div class="tc-cat">Live Monitor · CMS · HHS · HRSA · Congress</div>
+          <div class="tc-name">Critical Policy Monitor</div>
+          <div class="tc-desc">Tracks federal regulatory developments affecting dialysis reimbursement, transplant policy, insurance coverage, and chronic illness care systems. Surfaces signals from CMS, HHS, HRSA, GAO, and Congress before they reach mainstream awareness. Updates every 10 minutes. Keyword-filtered for chronic illness relevance.</div>
+          <a href="research.html" class="tc-btn">Open Policy Monitor →</a>
+        </div>
+        <div class="tc mon">
+          <div class="tc-cat">Live Monitor · OPTN · OPO · Federal Oversight</div>
+          <div class="tc-name">Transplant Alert Monitor</div>
+          <div class="tc-desc">Monitors the national organ transplant system for allocation failures, OPO oversight events, logistics breakdowns, procurement failures, and federal investigations. Three categories: Allocation &amp; Governance, Logistics &amp; Transport, Federal Oversight. Updates every 10 minutes. Built for families waiting on lists.</div>
+          <a href="research.html" class="tc-btn">Open Transplant Monitor →</a>
+        </div>
+        <div class="tc mon">
+          <div class="tc-cat">Intelligence · System Mapping · Lean Six Sigma</div>
+          <div class="tc-name">System Exposure Map</div>
+          <div class="tc-desc">Visualizes the full institutional ecosystem surrounding your patient — hospital systems, insurance carriers, specialists, pharmacy benefit managers, government programs. Identifies where decision authority actually lives, where delays originate, and which institutions control critical access points in your care environment.</div>
+          <a href="tool-system-exposure.html" class="tc-btn">Open System Map →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ OPERATIONAL ══ -->
+<div id="operational" style="border-top:1px solid var(--b);">
+  <div class="wrap">
+    <div class="sec">
+      <div class="sec-label red">Operational Tools · Care Planning · Decision Support · Incident Management</div>
+      <div class="tool-grid">
+        <div class="tc ops">
+          <div class="tc-cat">Operational · Continuity · Crisis Preparation</div>
+          <div class="tc-name">Treatment Continuity Planner</div>
+          <div class="tc-desc">Structures your preparation before provider relationships collapse or treatment environments become unstable. Documents alternative care pathways, insurance compatibility, transportation capacity, and medical record readiness. Built for the moment before the crisis — so decisions come from a plan, not panic.</div>
+          <a href="tool-continuity-planner.html" class="tc-btn">Open Continuity Planner →</a>
+        </div>
+        <div class="tc ops">
+          <div class="tc-cat">Operational · Decision Support · Risk Analysis</div>
+          <div class="tc-name">Treatment Decision Framework</div>
+          <div class="tc-desc">Slows major treatment decisions down and organizes clinical risk, expected benefit, time sensitivity, quality-of-life impact, and evidence certainty into a structured decision summary. For surgery, medication changes, transplant eligibility, or new therapies — when you are being asked to decide under pressure.</div>
+          <a href="tool-treatment-framework.html" class="tc-btn">Open Decision Framework →</a>
+        </div>
+        <div class="tc ops">
+          <div class="tc-cat">Operational · Incident Documentation · Escalation</div>
+          <div class="tc-name">Structured Incident Workflow</div>
+          <div class="tc-desc">Documents healthcare concerns, organizes evidence, classifies severity at four levels, and generates professional escalation letters. Includes incident intake, evidence organization, severity classification, escalation guidance, a letter generator, and a running timeline archive. Built for institutional accountability.</div>
+          <a href="tool-incident-workflow.html" class="tc-btn">Open Incident Workflow →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ LEGAL ══ -->
+<div id="legal" style="border-top:1px solid var(--b);">
+  <div class="wrap">
+    <div class="sec">
+      <div class="sec-label green">Legal &amp; Administrative Tools · Insurance · Medical Records · Patient Rights</div>
+      <div class="tool-grid-2">
+        <div class="tc leg">
+          <div class="tc-cat">Legal · Insurance Denial · Appeal · Patient Rights</div>
+          <div class="tc-name">Insurance Appeal Builder</div>
+          <div class="tc-desc">Generates formal insurance denial appeal letters organized by denial type — medication coverage, diagnostic tests, hospital treatment, specialist referrals, transplant evaluation, dialysis authorization, medical devices, and imaging. Structured for prompt administrative review and maximum probability of reversal on initial appeal. Cites applicable plan terms, medical necessity standards, and federal appeals rights.</div>
+          <a href="tool-insurance-appeal.html" class="tc-btn">Open Appeal Builder →</a>
+        </div>
+        <div class="tc leg">
+          <div class="tc-cat">Legal · HIPAA · Medical Records · Federal Law</div>
+          <div class="tc-name">Medical Records Request Generator</div>
+          <div class="tc-desc">Produces clear, structured records request letters citing patient rights under federal law. Covers full medical records, lab results, imaging reports, dialysis treatment records, transplant evaluation documents, discharge summaries, medication administration records, and physician notes. Organized to minimize delays, partial fulfillment, and institutional non-compliance with applicable HIPAA deadlines.</div>
+          <a href="tool-records-request.html" class="tc-btn">Open Records Request →</a>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-band">
+        <h2>Every Tool. One Membership.<br><strong>$15 a Month.</strong></h2>
+        <p>Full access to all 14 Cold Ischemia Foundation instruments — AI-powered tools, live federal monitors, legal document generators, and operational care planning systems. No upsells. Nothing held back.</p>
+        <a href="index.html#pricing" class="btn-gold">Join the Cold Ischemia Foundation →</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="f-logo">Cold Ischemia Foundation</span>
+      <p>
+        Grassroots Care Partner Advocacy<br>
+        Ellenton, Florida · 16th Congressional District<br>
+        <a href="/cdn-cgi/l/email-protection#68020d0e0e280b07040c011b0b000d050109460e071d060c091c010706"><span class="__cf_email__" data-cfemail="5c36393a3a1c3f333038352f3f343931353d723a332932383d28353332">[email&#160;protected]</span></a><br>
+        <a href="https://coldischemia.com">coldischemia.com</a>
+      </p>
+    </div>
+    <div>
+      <span class="f-col-title">Platform</span>
+      <div class="f-links">
+        <a href="#ai-tools">AI Tools</a>
+        <a href="#monitors">Live Monitors</a>
+        <a href="#operational">Operational Tools</a>
+        <a href="#legal">Legal Tools</a>
+        <a href="situation-room.html">Situation Room</a>
+    <a href="research.html">Research</a>
+      </div>
+    </div>
+    <div>
+      <span class="f-col-title">Foundation</span>
+      <div class="f-links">
+        <a href="index.html#mission">Our Mission</a>
+        <a href="index.html#videos">Video Briefings</a>
+        <a href="about.html">Our Story</a>
+    <a href="index.html#pricing">Membership</a>
+        <a href="library.html">Library</a>
+    <a href="dashboard.html">Command Center</a>
+        <a href="/cdn-cgi/l/email-protection#39535c5f5f795a56555d504a5a515c545058175f564c575d584d505657">Contact Us</a>
+      </div>
+    </div>
+    <div>
+      <span class="f-col-title">Legal</span>
+      <div class="f-links">
+        <a href="/terms">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="f-bottom-links">
+      <a href="/terms">Terms of Service</a>
+      <a href
+
+<!-- UNIVERSAL FOOTER -->
+<footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(100,140,200,0.1);">
+      <div>
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:12px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.25);line-height:2.1;">Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="/cdn-cgi/l/email-protection#2d47484b4b6d4e424149445e4e454840444c034b425843494c59444243" style="color:#c8902a;text-decoration:none;"><span class="__cf_email__" data-cfemail="b7ddd2d1d1f7d4d8dbd3dec4d4dfd2daded699d1d8c2d9d3d6c3ded8d9">[email&#160;protected]</span></a><br><a href="https://coldischemia.foundation" style="color:#c8902a;text-decoration:none;">coldischemia.foundation</a></p>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Command Center</a>
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Situation Room</a>
+          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Research</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
+          <a href="library.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Library</a>
+          <a href="media.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Media</a>
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
+          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Free Guide</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Privacy Policy</a>
+          <a href="/cdn-cgi/l/email-protection#422827242402212d2e262b31212a272f2b236c242d372c2623362b2d2c" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Contact</a>
+          <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Store</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.06em;color:rgba(216,207,196,0.2);">&copy; 2025&ndash;2026 Cold I

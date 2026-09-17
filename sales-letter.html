@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>This Was Built For You — Cold Ischemia Foundation</title>
+<meta name="description" content="If you are the person holding everything together while the system pretends you don't exist — this platform was built specifically for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+:root{
+  --bg:#06080f;--bg2:#090c16;--bg3:#0d121e;--bg4:#121828;
+  --b:rgba(255,255,255,0.07);--b2:rgba(255,255,255,0.13);
+  --ink:#ede9e0;--ink80:rgba(237,233,224,0.8);--ink60:rgba(237,233,224,0.6);
+  --ink40:rgba(237,233,224,0.4);--ink20:rgba(237,233,224,0.2);
+  --gold:#d4922a;--gold-l:#f0b040;--gold-d:rgba(212,146,42,0.14);
+  --cold:#2ab4e0;--red:#e03050;--green:#38d880;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:2px;}::-webkit-scrollbar-thumb{background:var(--bg4);}
+
+/* ══ 20-SECOND LOGO REVEAL ══ */
+#lr{position:fixed;inset:0;z-index:9999;background:var(--bg);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  pointer-events:none;}
+.lr-wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:24px;}
+#lrSvg{width:130px;height:130px;}
+.lrRingOuter{fill:none;stroke:var(--cold);stroke-width:2;stroke-dasharray:408;stroke-dashoffset:408;animation:lrDraw 1.6s cubic-bezier(0.22,1,0.36,1) 0.4s forwards;}
+.lrRingInner{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-dasharray:204;stroke-dashoffset:204;animation:lrDraw 1s ease 1.6s forwards;}
+.lrEcg{fill:none;stroke:var(--cold);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:240;stroke-dashoffset:240;animation:lrDraw 1.4s ease 2.4s forwards;}
+.lrArm{fill:none;stroke:rgba(255,255,255,0.85);stroke-width:1.5;stroke-linecap:round;opacity:0;animation:lrFade 0.5s ease forwards;}
+.lrArm:nth-child(1){animation-delay:3.4s;}
+.lrArm:nth-child(2){animation-delay:3.6s;}
+.lrArm:nth-child(3){animation-delay:3.8s;}
+.lrArm:nth-child(4){animation-delay:4.0s;}
+.lrTip{opacity:0;animation:lrFade 0.4s ease forwards;}
+.lrTip:nth-child(5){animation-delay:4.4s;}
+.lrTip:nth-child(6){animation-delay:4.5s;}
+.lrDot{fill:var(--gold);transform-origin:65px 65px;transform:scale(0);opacity:0;animation:lrBurst 0.5s cubic-bezier(0.34,1.56,0.64,1) 4.8s forwards;}
+.lrPulse{position:absolute;width:24px;height:24px;border-radius:50%;background:rgba(212,146,42,0.25);left:50%;top:50%;transform:translate(-50%,-50%) scale(0);animation:lrPulse 1.2s ease 4.9s;}
+@keyframes lrDraw{to{stroke-dashoffset:0;}}
+@keyframes lrFade{to{opacity:0.88;}}
+@keyframes lrBurst{to{opacity:1;transform:scale(1);}}
+@keyframes lrPulse{0%{transform:translate(-50%,-50%) scale(0);opacity:1;}100%{transform:translate(-50%,-50%) scale(5);opacity:0;}}
+.lrName{font-family:'Bebas Neue',sans-serif;font-size:56px;letter-spacing:0.09em;overflow:hidden;}
+.lrNameInner{display:block;transform:translateY(105%);animation:lrRise 0.8s cubic-bezier(0.22,1,0.36,1) 5.2s forwards;}
+.lrGold{color:var(--gold);}
+.lrDiv{width:0;height:1px;background:linear-gradient(90deg,var(--gold),rgba(212,146,42,0));animation:lrDiv 0.5s ease 5.8s forwards;}
+.lrSub{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(237,233,224,0);animation:lrSubFade 0.5s ease 6.3s forwards;}
+.lrTag{font-family:'Crimson Pro',serif;font-style:italic;font-size:14px;color:rgba(237,233,224,0);animation:lrSubFade 0.6s ease 7.2s forwards;margin-top:6px;}
+.lrScan{position:fixed;top:0;bottom:0;width:2px;left:-4px;background:linear-gradient(to bottom,transparent,rgba(42,180,224,0.55),transparent);animation:lrScan 1.8s ease 8s;opacity:0;pointer-events:none;}
+.lrParts{position:absolute;inset:0;pointer-events:none;}
+.lrP{position:absolute;width:3px;height:3px;border-radius:50%;opacity:0;}
+@keyframes lrRise{to{transform:translateY(0);}}
+@keyframes lrDiv{to{width:270px;}}
+@keyframes lrSubFade{to{color:rgba(237,233,224,0.44);}}
+@keyframes lrScan{0%{left:-4px;opacity:0.9;}100%{left:100%;opacity:0;}}
+
+/* ══ NAV ══ */
+#rb{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--cold));z-index:900;width:0%;pointer-events:none;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:400;height:54px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;transition:background 0.4s,border 0.4s;border-bottom:1px solid transparent;}
+.nav.stuck{background:rgba(6,8,15,0.96);backdrop-filter:blur(18px);border-bottom-color:var(--b);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{height:26px;width:26px;object-fit:contain;}
+.nav-brand{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
+.nav-r{display:flex;align-items:center;gap:14px;}
+.nav-r a{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.18s;}
+.nav-r a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold)!important;color:var(--bg)!important;padding:8px 20px;border-radius:2px;}
+.nav-cta:hover{background:var(--gold-l)!important;}
+@media(max-width:700px){.nav-r a:not(.nav-cta){display:none;}}
+
+/* ══ REVEAL ══ */
+.rv{opacity:0;transform:translateY(24px);transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1),transform 0.9s cubic-bezier(0.22,1,0.36,1);}
+.rv.on{opacity:1;transform:translateY(0);}
+.rv-l{opacity:0;transform:translateX(-30px);transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1),transform 0.9s cubic-bezier(0.22,1,0.36,1);}
+.rv-l.on{opacity:1;transform:translateX(0);}
+.rv-r{opacity:0;transform:translateX(30px);transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1),transform 0.9s cubic-bezier(0.22,1,0.36,1);}
+.rv-r.on{opacity:1;transform:translateX(0);}
+.d1{transition-delay:.08s;}.d2{transition-delay:.18s;}.d3{transition-delay:.3s;}.d4{transition-delay:.44s;}.d5{transition-delay:.6s;}
+
+/* ══ LAYOUT ══ */
+.letter{max-width:760px;margin:0 auto;padding:0 40px;}
+@media(max-width:700px){.letter{padding:0 24px;}}
+
+/* ══ HERO — MARCH PHOTO ══ */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:brightness(0.32) saturate(0.65);}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,8,15,1) 0%,rgba(6,8,15,0.6) 40%,rgba(6,8,15,0.1) 100%);}
+.hero-body{position:relative;z-index:2;padding:0 64px 96px;max-width:860px;}
+@media(max-width:700px){.hero-body{padding:0 24px 72px;}}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;background:rgba(212,146,42,0.1);border:1px solid rgba(212,146,42,0.28);padding:7px 16px;margin-bottom:32px;animation:fu 0.8s 0.3s both;font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10.5vw,148px);line-height:0.86;letter-spacing:0.02em;margin-bottom:28px;animation:fu 1.1s 0.5s both;}
+.hero-h1 .w{color:var(--ink);}
+.hero-h1 .g{color:var(--gold);}
+.hero-h1 .gh{-webkit-text-stroke:1.5px rgba(237,233,224,0.2);color:transparent;}
+.hero-open{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.2rem,2.2vw,1.6rem);line-height:1.7;color:var(--ink70);max-width:680px;margin-bottom:40px;animation:fu 1s 0.8s both;}
+.hero-open strong{color:var(--ink);font-style:normal;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fu 0.8s 1.1s both;}
+.btn{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.18em;text-transform:uppercase;padding:15px 38px;border-radius:2px;text-decoration:none;transition:all 0.2s;cursor:pointer;border:none;}
+.btn-g{background:var(--gold);color:var(--bg);}
+.btn-g:hover{background:var(--gold-l);transform:translateY(-2px);}
+.btn-o{background:transparent;border:1px solid var(--b2);color:var(--ink60);}
+.btn-o:hover{border-color:var(--gold);color:var(--gold);}
+@keyframes fu{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+/* ══ TICKER ══ */
+.ticker{background:var(--gold);overflow:hidden;white-space:nowrap;padding:11px 0;}
+.tick-t{display:inline-flex;animation:tick 24s linear infinite;}
+.tick-i{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--bg);padding:0 36px;}
+.tick-i::after{content:'·';margin-left:36px;opacity:0.4;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ══ LETTER BODY ══ */
+.letter-section{padding:96px 0;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.41rem;letter-spacing:0.44em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.lh2{font-family:'Playfair Display',serif;font-size:clamp(32px,4.2vw,60px);line-height:1.1;font-weight:900;color:var(--ink);margin-bottom:22px;}
+.lh2 em{font-style:italic;color:var(--gold);}
+.lh3{font-family:'Playfair Display',serif;font-size:clamp(20px,2.8vw,34px);font-weight:700;line-height:1.25;color:var(--ink);margin-bottom:14px;}
+.lh3 em{color:var(--gold);font-style:italic;}
+.lp{font-size:clamp(1.08rem,1.6vw,1.24rem);line-height:2.05;color:var(--ink60);margin-bottom:22px;font-weight:300;}
+.lp strong{color:var(--ink80);font-weight:600;}
+.lp em{color:var(--gold);font-style:italic;}
+.lp.opening{font-size:clamp(1.15rem,2vw,1.42rem);line-height:1.9;color:var(--ink70);}
+.lp.callout{font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.85;color:var(--ink80);font-style:italic;}
+
+/* ══ PHOTO INTERRUPTS ══ */
+.photo-full{position:relative;height:500px;overflow:hidden;margin:80px 0;}
+.photo-full img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.4) saturate(0.6);}
+.photo-full-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,8,15,0.92) 0%,rgba(6,8,15,0.3) 55%,rgba(6,8,15,0.1) 100%);}
+.photo-full-text{position:absolute;bottom:0;left:0;right:0;padding:48px 64px;}
+@media(max-width:700px){.photo-full-text{padding:32px 24px;}}
+.pft-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,7vw,88px);letter-spacing:0.04em;color:var(--gold);line-height:0.92;margin-bottom:10px;}
+.pft-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:clamp(1rem,2vw,1.4rem);color:var(--ink70);max-width:600px;line-height:1.65;}
+
+/* ══ PORTRAIT SPLIT ══ */
+.psplit{display:grid;grid-template-columns:360px 1fr;min-height:560px;background:var(--bg2);}
+@media(max-width:900px){.psplit{grid-template-columns:1fr;}}
+.psplit-img{position:relative;overflow:hidden;min-height:420px;}
+.psplit-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 5s ease;}
+.psplit-img:hover img{transform:scale(1.04);}
+.psplit-veil{position:absolute;inset:0;}
+.psplit-cap{position:absolute;bottom:16px;left:16px;font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(237,233,224,0.38);}
+.psplit-body{padding:64px 56px;display:flex;flex-direction:column;justify-content:center;}
+@media(max-width:700px){.psplit-body{padding:40px 24px;}}
+
+/* ══ PULL QUOTE ══ */
+.pq{border-left:3px solid var(--gold);padding:28px 36px;margin:44px 0;background:rgba(212,146,42,0.04);}
+.pq-text{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.15rem,2.2vw,1.6rem);line-height:1.6;color:var(--ink85);}
+.pq-attr{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:14px;}
+
+/* ══ GOLD INTERRUPT STRIP ══ */
+.gold-strip{background:var(--gold);padding:64px 0;text-align:center;}
+.gs-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5.5vw,80px);color:var(--bg);letter-spacing:0.04em;line-height:1;margin-bottom:10px;}
+.gs-p{font-family:'Crimson Pro',serif;font-size:clamp(1rem,1.8vw,1.3rem);color:rgba(6,8,15,0.62);max-width:660px;margin:0 auto;}
+
+/* ══ DONATE LIFE STRIP ══ */
+.dl-strip{background:var(--bg3);border-top:1px solid var(--b);border-bottom:1px solid var(--b);padding:64px 0;}
+.dl-inner{max-width:1000px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:180px 1fr;gap:56px;align-items:center;}
+@media(max-width:700px){.dl-inner{grid-template-columns:1fr;gap:28px;padding:0 24px;}}
+.dl-img img{width:140px;height:auto;}
+
+/* ══ PROMISE CARDS ══ (NO checkboxes, NO scores) */
+.promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--b);margin:44px 0;}
+@media(max-width:700px){.promise-grid{grid-template-columns:1fr;}}
+.pc{background:var(--bg3);padding:36px 32px;}
+.pc-icon{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--gold);margin-bottom:12px;line-height:1;}
+.pc-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.pc-text{font-size:0.95rem;line-height:1.88;color:var(--ink50);}
+.pc-not{display:flex;align-items:flex-start;gap:8px;margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);opacity:0.7;}
+.pc-not::before{content:'✕';flex-shrink:0;margin-top:1px;}
+
+/* ══ FINAL CTA ══ */
+.fcta{padding:130px 0;text-align:center;position:relative;overflow:hidden;background:var(--bg2);}
+.fcta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(212,146,42,0.07) 0%,transparent 65%);pointer-events:none;}
+.fcta-logo{width:90px;height:90px;margin:0 auto 32px;display:block;position:relative;z-index:2;animation:spinSlow 24s linear infinite;}
+@keyframes spinSlow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.fcta-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,9vw,120px);letter-spacing:0.03em;line-height:0.88;color:var(--ink);margin-bottom:20px;position:relative;z-index:2;}
+.fcta-h em{color:var(--gold);font-style:normal;}
+.fcta-deck{font-size:clamp(1.05rem,1.8vw,1.35rem);color:var(--ink60);max-width:540px;margin:0 auto 44px;font-weight:300;line-height:1.9;position:relative;z-index:2;}
+.fcta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2;}
+.fcta-note{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink30);margin-top:18px;position:relative;z-index:2;}
+.fcta-note a{color:var(--gold);text-decoration:none;}
+
+/* ══ FOOTER ══ */
+.foot{background:var(--bg);border-top:1px solid var(--b);padding:44px 56px;}
+.foot-in{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.foot-l{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
+.foot-copy{font-family:'IBM Plex Mono',monospace;font-size:0.34rem;letter-spacing:0.07em;color:var(--ink20);margin-top:4px;}
+.foot-links{display:flex;gap:16px;}
+.foot-links a{font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink30);text-decoration:none;}
+.foot-links a:hover{color:var(--gold);}
+
+/* bold drop cap */
+.dropcap::first-letter{font-family:'Playfair Display',serif;font-size:4.2rem;line-height:0.78;float:left;margin:4px 10px 0 0;color:var(--gold);font-weight:900;}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     20-SECOND LOGO REVEAL
+     ══════════════════════════════════ -->
+<div id="lr">
+  <div class="lr-wrap">
+    <div class="lrPulse"></div>
+    <svg id="lrSvg" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="65" cy="65" r="60" class="lrRingOuter"/>
+      <circle cx="65" cy="65" r="36" class="lrRingInner"/>
+      <polyline points="10,65 30,65 37,42 46,88 55,48 61,72 65,65 84,65 91,48 98,65 120,65" class="lrEcg"/>
+      <line x1="65" y1="20" x2="65" y2="110" class="lrArm"/>
+      <line x1="20" y1="65" x2="110" y2="65" class="lrArm"/>
+      <line x1="35" y1="35" x2="95" y2="95" class="lrArm"/>
+      <line x1="95" y1="35" x2="35" y2="95" class="lrArm"/>
+      <circle cx="65" cy="20" r="4" class="lrTip" fill="rgba(255,255,255,0.8)" stroke="none"/>
+      <circle cx="65" cy="110" r="4" class="lrTip" fill="rgba(255,255,255,0.8)" stroke="none"/>
+      <circle cx="65" cy="65" r="8" class="lrDot"/>
+    </svg>
+    <div class="lrName"><span class="lrNameInner">COLD <span class="lrGold">ISCHEMIA</span></span></div>
+    <div class="lrDiv"></div>
+    <div class="lrSub">Foundation</div>
+    <div class="lrTag">For the 55 Million Who Hold Everything Together</div>
+  </div>
+  <div class="lrScan"></div>
+  <div class="lrParts" id="lrParts"></div>
+</div>
+
+<div id="rb"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.src='cold-ischemia-logo.png'">
+    <span class="nav-brand">Cold Ischemia Foundation</span>
+  </a>
+  <div class="nav-r">
+    <a href="https://coldischemia.foundation">Main Site</a>
+    <a href="https://coldischemia.foundation/research.html">Research</a>
+    <a href="https://coldischemia.foundation/situation-room.html">Tools</a>
+  </div>
+<a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;padding:6px 12px;border:1px solid rgba(100,140,200,0.15);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.3)';" onmouseout="this.style.color='rgba(216,207,196,0.45)';this.style.borderColor='rgba(100,140,200,0.15)';">← Home</a>
+</nav>
+
+
+<!-- ══════════════════════════════════
+     HERO
+     ══════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="march-for-care.jpg" alt="The Long March for Care"
+         onerror="this.style.display='none'">
+  </div>
+  <div class="hero-veil"></div>
+  <div class="hero-body">
+    <div class="hero-tag"><div class="hero-dot"></div>This Was Built For You</div>
+    <div class="hero-h1">
+      <div class="w">THEY SAID</div>
+      <div class="g">THANK YOU.</div>
+      <div class="gh">THAT WAS IT.</div>
+    </div>
+    <p class="hero-open">
+      You were thanked. You were told you were <em>essential.</em> You were told you were doing
+      <em>God's work.</em> And then the system handed you a schedule, walked away,
+      and <strong>never called you again.</strong>
+      This platform exists because that is not good enough.
+      And we have the tools to prove it.
+    </p>
+    <div class="hero-btns">
+      <a href="#letter" class="btn btn-o">Read the letter ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="tick-t" id="tickerTrack">
+    <span class="tick-i">Care Partners Demand Recognition</span>
+    <span class="tick-i">Healthcare Is a Human Right</span>
+    <span class="tick-i">Honor Our Advocates</span>
+    <span class="tick-i">Not a Checklist. Not a Score. A Real Response.</span>
+    <span class="tick-i">The Long March for Care</span>
+    <span class="tick-i">Zero Pharmaceutical Funding</span>
+    <span class="tick-i">Built by a Recipient. Inspired by the Care Partner Who Saved His Life.</span>
+    <span class="tick-i">Care Partners Demand Recognition</span>
+    <span class="tick-i">Healthcare Is a Human Right</span>
+    <span class="tick-i">Honor Our Advocates</span>
+    <span class="tick-i">Not a Checklist. Not a Score. A Real Response.</span>
+    <span class="tick-i">The Long March for Care</span>
+    <span class="tick-i">Zero Pharmaceutical Funding</span>
+    <span class="tick-i">Built by a Recipient. Inspired by the Care Partner Who Saved His Life.</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     THE LETTER
+     ══════════════════════════════════ -->
+<section id="letter" style="background:var(--bg2);padding:96px 0;">
+  <div class="letter">
+
+    <div class="eyebrow rv">A Letter to Every Care Partner Reading This</div>
+    <h2 class="lh2 rv d1">You already know<br><em>something is wrong.</em></h2>
+
+    <p class="lp opening rv d2 dropcap">You did not come to this page because everything is fine. You came because something happened — a discharge threat, a denial letter, an institution that looked you in the eye and treated you like you were not there — and every resource you found handed you a quiz. A PDF. A ten-question checklist that ended with a score and a suggestion to "seek professional support."</p>
+
+    <p class="lp rv d3">That is not support. <strong>That is the system protecting itself from you by making you feel like the problem is inside you, not inside the institution that is failing you.</strong></p>
+
+    <p class="lp rv">We are done with that approach. Cold Ischemia Foundation does not hand you a wellness score. We hand you the federal law, the complaint letter, the direct line to the agency that is legally required to respond — and we built every one of those tools because a care partner in this situation does not have time for a score. <em>They have a deadline.</em></p>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     JEFF PORTRAIT — WHO BUILT THIS
+     ══════════════════════════════════ -->
+<div class="psplit">
+  <div class="psplit-img rv-l">
+    <img src="jeff-headshot.png" alt="Jeff Parke — Founder, Cold Ischemia Foundation"
+         onerror="this.style.background='#121828';this.style.display='block';this.style.height='100%'">
+    <div class="psplit-veil" style="background:linear-gradient(to right,transparent 30%,var(--bg2) 100%);"></div>
+    <div class="psplit-cap">Jeff Parke · Founder · Three-Time Kidney Transplant Recipient · Author, Unbroken</div>
+  </div>
+  <div class="psplit-body">
+    <div class="eyebrow rv">Who Built This</div>
+    <h2 class="lh2 rv d1" style="font-size:clamp(28px,3.5vw,50px);">I was the patient<br><em>in the chair.</em></h2>
+    <p class="lp rv d2">Three kidney transplants. I have been on the receiving end of every failure mode this platform documents. I have sat in the dialysis chair. I have waited for the transplant call. I have navigated the institutional indifference, the discharge threats, the systems designed to ensure that people in our position never figure out what rights they actually have.</p>
+    <p class="lp rv d3">I also spent decades as a clinical research professional — inside the machine, understanding how it produces knowledge, protects itself, and decides what care partners are and are not allowed to know. <strong>That combination — patient experience plus systems expertise — is why this platform exists and why nothing else like it does.</strong></p>
+    <div class="pq rv d4">
+      <div class="pq-text">"I did not build this because I read a policy report. I built it because I lived every page of that report — and watched Marie carry the weight the system never once offered to share."</div>
+      <div class="pq-attr">Jeff Parke · Executive Director · Three-Time Kidney Transplant Recipient</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     MARCH PHOTO — THE MOVEMENT IS REAL
+     ══════════════════════════════════ -->
+<div class="photo-full rv">
+  <img src="march-for-care.jpg" alt="The Long March for Care"
+       onerror="this.style.background='#090c16';this.style.display='block';this.style.height='500px'">
+  <div class="photo-full-veil"></div>
+  <div class="photo-full-text">
+    <div class="pft-big">CARE PARTNERS<br>ARE MARCHING.</div>
+    <div class="pft-sub">They held signs in the rain for you. This platform gives you the tools to hold something sharper — the federal law they hoped you would never find.</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     NOT A CHECKLIST — THE CONTRAST
+     ══════════════════════════════════ -->
+<section style="background:var(--bg);padding:96px 0;">
+  <div class="letter">
+    <div class="eyebrow rv">What We Are Not</div>
+    <h2 class="lh2 rv d1">Every other platform<br><em>gave you a score.</em></h2>
+    <p class="lp rv d2">You have seen them. You have taken the burnout quiz. You have rated your stress from one to ten. You have received the PDF titled "10 Ways to Practice Self-Care as a Caregiver." And you have thought — maybe you even said it out loud — <strong><em>this is not what I need right now.</em></strong></p>
+    <p class="lp rv d3">You were right. That content was not built for you. It was built to protect the organization publishing it. A wellness quiz creates the appearance of support while generating zero accountability for the institution causing the harm. It keeps you busy and calm while the discharge clock runs out.</p>
+    <p class="lp rv">Cold Ischemia Foundation does not weaponize checklists. We do not give you a self-assessment score that pathologizes your response to an institution that is genuinely harming you. <em>We treat your response as rational — because it is — and we give you the tools that match its urgency.</em></p>
+  </div>
+
+  <div class="letter" style="margin-top:40px;">
+    <div class="promise-grid">
+      <div class="pc rv d1">
+        <div class="pc-icon">✕</div>
+        <div class="pc-title">What they gave you</div>
+        <div class="pc-text">A stress scale. A breathing exercise. A tip sheet. Content designed by a committee whose first question was not "what does this care partner need" but "what protects us from liability if they do not get better."</div>
+        <div class="pc-not">No complaint filed. No rights invoked. No record created.</div>
+      </div>
+      <div class="pc rv d2" style="border-top:3px solid var(--gold);">
+        <div class="pc-icon" style="color:var(--green);">✓</div>
+        <div class="pc-title" style="color:var(--gold);">What we give you</div>
+        <div class="pc-text">The exact CFR citation the facility violated. The direct phone number for your ESRD Network. The AI-generated complaint letter — pre-formatted, pre-cited, ready to file before the deadline the institution is counting on you to miss.</div>
+        <div class="pc-not" style="color:var(--green);">✓ Federal record created. Clock starts. Institution on notice.</div>
+      </div>
+      <div class="pc rv d3">
+        <div class="pc-icon">✕</div>
+        <div class="pc-title">What they called it</div>
+        <div class="pc-text">Patient-centered. Holistic. Empowering. Supportive. Language engineered to make you feel seen while delivering nothing that changes the power dynamic between you and the institution that controls your loved one's care.</div>
+        <div class="pc-not">No leverage created. Same power imbalance. Nothing changed.</div>
+      </div>
+      <div class="pc rv d4" style="border-top:3px solid var(--gold);">
+        <div class="pc-icon" style="color:var(--green);">✓</div>
+        <div class="pc-title" style="color:var(--gold);">What we call it</div>
+        <div class="pc-text">Grassroots advocacy infrastructure. Real tools that create real federal records that real agencies are legally required to act on. Support that ends with something filed — not something felt.</div>
+        <div class="pc-not" style="color:var(--green);">✓ Leverage created. Power shifts. Institution has a problem now.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     GOLD STRIP — THE PLEDGE
+     ══════════════════════════════════ -->
+<div class="gold-strip rv">
+  <div class="gs-h">WE TAKE NO PHARMA MONEY.<br>WE NAME THE INSTITUTIONS.<br>WE CLOSE THE LOOP.</div>
+  <p class="gs-p">Every platform that takes pharmaceutical money can publish the wellness content. Only Cold Ischemia Foundation can name the institutions causing the harm — because no one is paying us to stay quiet.</p>
+</div>
+
+
+<!-- ══════════════════════════════════
+     MARIE — THE CARE PARTNER
+     ══════════════════════════════════ -->
+<div class="psplit" style="direction:rtl;">
+  <div class="psplit-img rv-r" style="direction:ltr;">
+    <img src="marie-st-pete.jpg" alt="Marie Parke — Co-Founder, Cold Ischemia Foundation"
+         onerror="this.style.background='#0d121e';this.style.display='block';this.style.height='100%'">
+    <div class="psplit-veil" style="background:linear-gradient(to left,transparent 30%,var(--bg2) 100%);"></div>
+    <div class="psplit-cap">Marie Parke · Co-Founder · The Care Partner Who Inspired This Platform</div>
+  </div>
+  <div class="psplit-body rv-l" style="direction:ltr;">
+    <div class="eyebrow">The Care Partner</div>
+    <h2 class="lh2" style="font-size:clamp(28px,3.5vw,50px);">She held everything together.<br><em>The system held nothing for her.</em></h2>
+    <p class="lp">Through three of Jeff's kidney transplants, Marie was the prerequisite. The transplant system required her presence to put Jeff on the list. No care partner, no listing. No listing, no organ. The system made her medically essential — and then provided her with no training, no compensation, no protection, and no acknowledgment that she was anything more than a logistical requirement.</p>
+    <p class="lp"><strong>No one handed Marie a guide. No one told her she had rights. No one called to check if she was still standing.</strong> They handed her the discharge schedule and assumed she would figure out the rest.</p>
+    <div class="pq" style="border-left-color:var(--cold);">
+      <div class="pq-text" style="color:var(--ink70);">"No one called me a care partner. No one told me I had rights. No one handed me a guide. They just handed me the schedule — and expected me to figure out the rest alone."</div>
+      <div class="pq-attr" style="color:var(--cold);">Marie Parke · Co-Founder · Care Partner</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     DONATE LIFE BRIDGE
+     ══════════════════════════════════ -->
+<div class="dl-strip rv">
+  <div class="dl-inner">
+    <div class="dl-img rv-l">
+      <img src="donate-life.png" alt="Donate Life">
+    </div>
+    <div class="rv-r">
+      <div class="eyebrow">Organ Donation Depends on This</div>
+      <h3 class="lh3"><em>Every organ that saves a life<br>was delivered by a care partner.</em></h3>
+      <p class="lp">Jeff received three donated kidneys. Marie made each transplant possible by meeting the legal care partner requirement — without a single dollar of federal support. The Donate Life movement asks people to give the most generous gift imaginable. Cold Ischemia Foundation exists to ensure that the people who receive that gift — and the care partners who carry them through recovery — are never abandoned by the system that asked everything of them.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     THE DIRECT ASK
+     ══════════════════════════════════ -->
+<section style="background:var(--bg2);padding:96px 0;">
+  <div class="letter">
+    <div class="eyebrow rv">The Ask</div>
+    <h2 class="lh2 rv d1">You have been doing this<br><em>alone long enough.</em></h2>
+
+    <p class="lp rv d2 callout">The dialysis center counting on your ignorance of 42 CFR §494.70. The transplant committee that removed your loved one from the list without invoking the due process they were legally required to offer. The insurance company that denied the claim and counted on the 180-day appeal window expiring before you figured out how to respond.</p>
+
+    <p class="lp rv d3"><strong>They are counting on your isolation. They have always counted on your isolation.</strong> The entire structure of the problem — the $600 billion in unpaid labor, the zero federal compensation, the 4% complaint filing rate — depends on care partners not knowing what they are owed, not knowing how to ask for it, and not having a platform designed specifically to give them both.</p>
+
+    <p class="lp rv">Cold Ischemia Foundation was built to end that. Not with a checklist. Not with a breathing exercise. With AI-powered complaint generators, federal escalation pathways, a Congress Scorecard that names every legislator who voted against you, and an Accountability Atlas that puts the direct phone number for every agency that can help you in your hands — right now.</p>
+
+    <p class="lp rv"><em>For $15 a month.</em> Less than the cost of one hour of the professional advice the system has been counting on you never being able to afford.</p>
+
+    <div class="pq rv" style="border-left-color:var(--red);margin-top:48px;">
+      <div class="pq-text">The system is not going to fix itself. The institutions profiting from care partner invisibility are not going to dismantle the structure that profits them. The pharmaceutical companies funding the platforms that gave you the wellness quiz are not going to fund the platform that names them. <strong>That platform has to be funded by you.</strong></div>
+      <div class="pq-attr" style="color:var(--red);">This is what makes us different. This is what makes us necessary.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     FINAL CTA
+     ══════════════════════════════════ -->
+<section class="fcta rv">
+  <img src="cold-ischemia-logo.png" class="fcta-logo" alt="Cold Ischemia Foundation"
+       onerror="this.src='cold-ischemia-logo.png';this.style.animation='none'">
+  <div class="fcta-h">STOP<br>DOING THIS <em>ALONE.</em></div>
+  <p class="fcta-deck">Join America's only independent care partner advocacy platform. No wellness quiz. No self-assessment score. Just the tools, the law, and the people who built this because they lived it.</p>
+  <div class="fcta-btns">
+    <a href="https://coldischemia.foundation/donate.html" class="btn btn-o" style="font-size:0.5rem;padding:18px 52px;">Support with a donation</a>
+  </div>
+  <div class="fcta-note">
+    Cancel anytime &nbsp;·&nbsp; Instant access &nbsp;·&nbsp; Zero pharmaceutical conflicts &nbsp;·&nbsp; Ever<br>
+    <a href="https://coldischemia.foundation">← Return to coldischemia.foundation</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div>
+      <div class="foot-l">Cold Ischemia Foundation</div>
+      <div class="foot-copy">Ellenton, Florida &nbsp;·&nbsp; For the 55 Million Who Hold Everything Together</div>
+    </div>
+    <div class="foot-links">
+      <a href="https://coldischemia.foundation">Home</a>
+      <a href="https://coldischemia.foundation/about.html">Story</a>
+      <a href="https://coldischemia.foundation/situation-room.html">Tools</a>
+      <a href="https://coldischemia.foundation/terms.html">Terms</a>
+      <a href="https://coldischemia.foundation/privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Logo reveal particles
+(function(){
+  var pc=document.getElementById('lrParts');
+  for(var i=0;i<40;i++){
+    (function(idx){
+      var el=document.createElement('div');el.className='lrP';
+      var angle=(idx/40)*360,dist=100+Math.random()*170;
+      var dx=Math.cos(angle*Math.PI/180)*dist,dy=Math.sin(angle*Math.PI/180)*dist;
+      var size=2+Math.random()*5,col=Math.random()>0.4?'#d4922a':'#2ab4e0';
+      var delay=(4.9+Math.random()*0.5).toFixed(2),dur=(0.7+Math.random()*0.8).toFixed(2);
+      el.style.cssText='left:50%;top:50%;width:'+size+'px;height:'+size+'px;background:'+col+';';
+      var s=document.createElement('style');
+      s.textContent='@keyframes lrp'+idx+'{0%{opacity:0;transform:translate(-50%,-50%) scale(0);}20%{opacity:1;}100%{opacity:0;transform:translate(calc(-50% + '+dx.toFixed(0)+'px),calc(-50% + '+dy.toFixed(0)+'px)) scale(0.3);}}';
+      document.head.appendChild(s);
+      el.style.animation='lrp'+idx+' '+dur+'s ease '+delay+'s forwards';
+      pc.appendChild(el);
+    })(i);
+  }
+})();
+
+// Exit reveal at 19.4s
+setTimeout(function(){
+  var el=document.getElementById('lr');
+  el.style.transition='opacity 0.7s ease, transform 0.7s cubic-bezier(0.55,0,1,0.45)';
+  el.style.opacity='0';el.style.transform='translateY(-100%)';
+  setTimeout(function(){el.style.display='none';},700);
+},19400);
+
+// Reading bar + nav
+window.addEventListener('scroll',function(){
+  var pct=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+  document.getElementById('rb').style.width=Math.min(pct,100)+'%';
+  document.getElementById('nav').classList.toggle('stuck',window.scrollY>50);
+});
+
+// Scroll reveal
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on');});
+},{threshold:0.08});
+document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(function(el){obs.observe(el);});
+</script>
+
+<div style="background:#030509;border-top:1px solid rgba(100,140,200,0.08);padding:20px 40px;text-align:center;margin-top:0;">
+  <p style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.18);">
+    &copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot;
+    <a href="terms.html" style="color:rgba(216,207,196,0.18);text-decoration:none;">Terms</a> &middot;
+    <a href="privacy.html" style="color:rgba(216,207,196,0.18);text-decoration:none;">Privacy</a> &middot;
+    <a href="index.html" style="color:#c8902a;text-decoration:none;">← Main Site</a> &middot;
+    No pharmaceutical funding &middot; Not medical advice
+  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advocacy News — Cold Ischemia Foundation</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M95EH0B5BK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-M95EH0B5BK');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#060b16;--dark:#0a1628;
+  --gold:#c9a84c;--gold2:#e8c96e;
+  --ice:#a8d4f0;--ice2:#d6ecfa;
+  --white:#f4f0e8;--dim:#6b7a9a;
+  --red:#c24a3a;--green:#2a8c5a;
+  --border:rgba(201,168,76,0.18);
+}
+html,body{min-height:100%;background:var(--navy);color:var(--white);
+  font-family:'EB Garamond',Georgia,serif;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(168,212,240,0.022) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(168,212,240,0.022) 1px,transparent 1px);
+  background-size:60px 60px;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(6,11,22,0.97);
+  border-bottom:1px solid var(--border);padding:0 40px;height:64px;
+  display:flex;align-items:center;backdrop-filter:blur(8px);}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+.brand-mark{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.5);padding:4px 8px;}
+.brand-name{font-family:'EB Garamond',serif;font-size:15px;font-weight:600;color:var(--white);
+  border-left:1px solid var(--border);padding-left:12px;white-space:nowrap;}
+.nav-spacer{flex:1;}
+.nav-right{display:flex;align-items:center;gap:18px;}
+.nav-back{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color 0.2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-sep{color:rgba(107,122,154,0.3);font-size:12px;}
+.nav-current{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:2px;}
+.live-pill{display:inline-flex;align-items:center;gap:5px;
+  background:rgba(194,74,58,0.15);border:1px solid rgba(194,74,58,0.35);
+  padding:3px 9px;font-family:'JetBrains Mono',monospace;font-size:7.5px;
+  letter-spacing:0.2em;text-transform:uppercase;color:#e8806e;}
+.live-dot{width:5px;height:5px;border-radius:50%;background:#e8806e;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+
+/* HERO */
+.hero{position:relative;z-index:1;padding:50px 40px 36px;text-align:center;
+  border-bottom:1px solid var(--border);
+  background:radial-gradient(ellipse at 50% 0%,rgba(168,212,240,0.055) 0%,transparent 60%);}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.4em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,42px);
+  font-weight:700;line-height:1.1;margin-bottom:8px;}
+.hero-title em{color:var(--gold2);font-style:italic;}
+.hero-rule{width:80px;height:1px;margin:10px auto;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.hero-sub{font-size:15px;font-style:italic;color:rgba(244,240,232,0.62);
+  line-height:1.65;max-width:600px;margin:0 auto;}
+
+/* STATS BAR */
+.stats-bar{position:relative;z-index:1;display:flex;
+  border-bottom:1px solid var(--border);overflow-x:auto;}
+.stat-cell{flex:1;min-width:150px;padding:18px 20px;
+  border-right:1px solid var(--border);text-align:center;}
+.stat-cell:last-child{border-right:none;}
+.stat-num{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;
+  color:var(--gold2);line-height:1;margin-bottom:4px;}
+.stat-num.red{color:#e8806e;}
+.stat-num.green{color:#5dc88a;}
+.stat-num.ice{color:var(--ice);}
+.stat-lbl{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--dim);line-height:1.5;}
+.stat-src{font-size:11px;font-style:italic;color:rgba(107,122,154,0.6);margin-top:2px;}
+
+/* MAIN */
+main{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:40px 40px 80px;}
+.layout{display:grid;grid-template-columns:1fr 310px;gap:30px;}
+
+/* SECTION LABELS */
+.sec-lbl{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);
+  padding-bottom:8px;margin-bottom:18px;display:flex;align-items:center;
+  justify-content:space-between;}
+.sec-lbl-r{color:var(--dim);font-size:7.5px;letter-spacing:0.1em;font-weight:400;}
+
+/* TABS */
+.tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:22px;overflow-x:auto;}
+.tab-btn{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--dim);padding:9px 14px;cursor:pointer;
+  background:transparent;border:none;border-bottom:2px solid transparent;
+  transition:all 0.2s;margin-bottom:-1px;white-space:nowrap;}
+.tab-btn:hover{color:var(--white);}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+/* NEWS CARDS */
+.feed{display:flex;flex-direction:column;gap:14px;}
+.news-card{background:rgba(10,22,40,0.6);border:1px solid var(--border);
+  padding:16px 18px;transition:border-color 0.2s;}
+.news-card:hover{border-color:rgba(201,168,76,0.35);}
+.card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
+.card-cat{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:0.18em;
+  text-transform:uppercase;padding:2px 7px;border:1px solid;}
+.cat-advocacy{color:var(--gold);border-color:rgba(201,168,76,0.35);background:rgba(201,168,76,0.07);}
+.cat-transplant{color:var(--ice);border-color:rgba(168,212,240,0.3);background:rgba(168,212,240,0.06);}
+.cat-fraud{color:#e8806e;border-color:rgba(194,74,58,0.35);background:rgba(194,74,58,0.08);}
+.cat-kidney{color:#5dc88a;border-color:rgba(42,140,90,0.35);background:rgba(42,140,90,0.08);}
+.cat-pharma{color:#c8a0f0;border-color:rgba(160,120,220,0.35);background:rgba(160,120,220,0.07);}
+.card-date{font-family:'JetBrains Mono',monospace;font-size:7.5px;color:var(--dim);}
+.card-source{font-family:'JetBrains Mono',monospace;font-size:7.5px;color:rgba(107,122,154,0.65);}
+.card-title{font-size:17px;font-weight:600;line-height:1.3;color:var(--white);margin-bottom:6px;}
+.card-title a{color:inherit;text-decoration:none;transition:color 0.2s;}
+.card-title a:hover{color:var(--gold2);}
+.card-summary{font-size:13.5px;line-height:1.68;color:rgba(244,240,232,0.68);margin-bottom:8px;}
+.card-link{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--gold);text-decoration:none;}
+.card-link:hover{color:var(--gold2);}
+.card-cif{margin-top:10px;padding:9px 12px;
+  background:rgba(201,168,76,0.07);border-left:2px solid var(--gold);}
+.cif-lbl{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.cif-note{font-size:12.5px;font-style:italic;line-height:1.6;color:rgba(244,240,232,0.65);}
+.loading-state{text-align:center;padding:36px;font-family:'JetBrains Mono',monospace;
+  font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim);}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:24px;}
+.funding-table{background:rgba(10,22,40,0.7);border:1px solid var(--border);overflow:hidden;}
+.ft-header{background:rgba(194,74,58,0.12);border-bottom:1px solid rgba(194,74,58,0.22);padding:12px 14px;}
+.ft-h-title{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:0.2em;
+  text-transform:uppercase;color:#e8806e;margin-bottom:2px;}
+.ft-h-sub{font-size:11.5px;font-style:italic;color:rgba(244,240,232,0.5);}
+.ft-row{display:grid;grid-template-columns:1fr auto;gap:6px;
+  padding:9px 14px;border-bottom:1px solid rgba(255,255,255,0.04);align-items:start;}
+.ft-row:nth-child(even){background:rgba(6,11,22,0.25);}
+.ft-org{font-size:12.5px;font-weight:600;color:var(--white);margin-bottom:1px;}
+.ft-donor{font-size:11px;color:rgba(244,240,232,0.45);font-style:italic;}
+.ft-amount{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;
+  color:#e8806e;white-space:nowrap;text-align:right;}
+.ft-year{font-family:'JetBrains Mono',monospace;font-size:7px;color:var(--dim);text-align:right;}
+.ft-zero{padding:10px 14px;display:flex;justify-content:space-between;align-items:center;
+  background:rgba(42,140,90,0.08);border-top:1px solid rgba(42,140,90,0.2);}
+.ft-zero-lbl{font-family:'JetBrains Mono',monospace;font-size:7.5px;
+  letter-spacing:0.14em;text-transform:uppercase;color:#5dc88a;}
+.ft-zero-num{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#5dc88a;}
+.ft-note{padding:9px 14px;font-size:11px;font-style:italic;
+  color:rgba(107,122,154,0.65);border-top:1px solid var(--border);}
+.sources-box{background:rgba(10,22,40,0.6);border:1px solid var(--border);padding:14px;}
+.src-item{display:flex;align-items:center;gap:9px;padding:6px 0;
+  border-bottom:1px solid rgba(255,255,255,0.04);}
+.src-item:last-child{border-bottom:none;}
+.src-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.src-name{font-size:13px;color:var(--white);}
+.src-type{font-family:'JetBrains Mono',monospace;font-size:7px;
+  letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);margin-left:auto;}
+.signal-box{background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.2);padding:16px;}
+.signal-title{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.signal-item{display:flex;gap:9px;margin-bottom:10px;padding-bottom:10px;
+  border-bottom:1px solid var(--border);}
+.signal-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.signal-icon{font-size:14px;flex-shrink:0;margin-top:2px;}
+.signal-text{font-size:12.5px;line-height:1.6;color:rgba(244,240,232,0.72);}
+.signal-text strong{color:var(--white);}
+.zapier-box{background:rgba(10,22,40,0.7);border:1px solid var(--border);padding:16px;}
+.zapier-title{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--ice);margin-bottom:12px;}
+.zap-step{display:flex;gap:10px;margin-bottom:9px;}
+.zap-num{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;
+  color:var(--gold);flex-shrink:0;min-width:18px;}
+.zap-text{font-size:12px;line-height:1.6;color:rgba(244,240,232,0.7);}
+.zap-text strong{color:var(--white);}
+.zap-text code{font-family:'JetBrains Mono',monospace;font-size:10px;
+  color:var(--ice);background:rgba(168,212,240,0.08);padding:1px 5px;}
+.back-wrap{text-align:center;margin-top:48px;}
+.back-link{display:inline-block;padding:10px 22px;border:1px solid var(--border);
+  color:var(--dim);font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}
+.back-link:hover{color:var(--gold);border-color:rgba(201,168,76,0.4);}
+footer{position:relative;z-index:1;border-top:1px solid var(--border);
+  padding:22px 40px;text-align:center;}
+footer p{font-family:'JetBrains Mono',monospace;font-size:7.5px;
+  letter-spacing:0.14em;color:var(--dim);text-transform:uppercase;}
+@media(max-width:900px){.layout{grid-template-columns:1fr;}}
+@media(max-width:640px){
+  nav{padding:0 16px;} .hero{padding:36px 20px 28px;}
+  main{padding:28px 16px 60px;} .stats-bar{flex-wrap:wrap;}
+  .stat-cell{min-width:50%;border-right:none;border-bottom:1px solid var(--border);}
+}
+
+.nav-brand img { display:block; height:44px; width:auto; }
+</style>
+<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</head>
+<body>
+
+<nav>
+  <a href="https://coldischemia.foundation" class="nav-brand">
+    <img src="data:image/png;base64,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" alt="Cold Ischemia Foundation" style="height:44px;width:auto;display:block;">
+  </a>
+  <div class="nav-spacer"></div>
+  <div class="nav-right">
+    <a href="https://coldischemia.foundation" class="nav-back">&#8592;&nbsp;Main Site</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-current">Advocacy News</span>
+    <span class="nav-sep">|</span>
+    <div class="live-pill"><span class="live-dot"></span>Live</div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">CIF Advocacy News &nbsp;·&nbsp; Updated Continuously</div>
+  <h1 class="hero-title">Advocacy News<br><em>Unfiltered</em></h1>
+  <div class="hero-rule"></div>
+  <p class="hero-sub">Real-time monitoring of chronic illness advocacy, kidney disease, transplant medicine, organ donation policy, pharmaceutical funding conflicts, and federal enforcement — curated through the lens of care partner justice.</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-cell"><div class="stat-num red">$6B+</div><div class="stat-lbl">Pharma Grants to Advocacy<br>Groups, 2010–2022</div><div class="stat-src">Public Citizen, 2023</div></div>
+  <div class="stat-cell"><div class="stat-num">$1.8M</div><div class="stat-lbl">Fresenius to NKF<br>Kidney Walk (2 yrs)</div><div class="stat-src">Fresenius press release</div></div>
+  <div class="stat-cell"><div class="stat-num green">48,000+</div><div class="stat-lbl">U.S. Organ Transplants<br>Performed in 2024</div><div class="stat-src">UNOS / OPTN, 2025</div></div>
+  <div class="stat-cell"><div class="stat-num ice">104,000</div><div class="stat-lbl">Americans on the<br>Transplant Waiting List</div><div class="stat-src">OPTN, 2025</div></div>
+  <div class="stat-cell"><div class="stat-num red">17</div><div class="stat-lbl">People Die Daily<br>Waiting for an Organ</div><div class="stat-src">HRSA / OPTN</div></div>
+  <div class="stat-cell"><div class="stat-num">&euro;110M</div><div class="stat-lbl">Pharma to EU Patient<br>Groups in 2022</div><div class="stat-src">Investigate Europe, 2024</div></div>
+</div>
+
+<main>
+<div class="layout">
+
+  <div>
+    <div class="sec-lbl">Advocacy News Feed <span class="sec-lbl-r" id="feed-ts">Loading&#8230;</span></div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('all',this)">All Stories</button>
+      <button class="tab-btn" onclick="switchTab('pharma',this)">Pharma Funding</button>
+      <button class="tab-btn" onclick="switchTab('transplant',this)">Transplant</button>
+      <button class="tab-btn" onclick="switchTab('kidney',this)">Kidney Disease</button>
+      <button class="tab-btn" onclick="switchTab('fraud',this)">Fraud &amp; Enforcement</button>
+      <button class="tab-btn" onclick="switchTab('advocacy',this)">Advocacy</button>
+    </div>
+
+    <div class="feed" id="pinned">
+
+      <div class="news-card" data-cat="pharma">
+        <div class="card-top"><span class="card-cat cat-pharma">Pharma Funding</span><span class="card-date">Dec 2023</span><span class="card-source">KFF Health News &amp; Public Citizen</span></div>
+        <div class="card-title"><a href="https://kffhealthnews.org/news/article/health-202-pharma-money-patient-advocacy-groups-public-citizen/" target="_blank" rel="noopener">$6 Billion in Pharma Grants Flowed to Patient Advocacy Groups Between 2010 and 2022</a></div>
+        <div class="card-summary">Public Citizen's landmark analysis documented that PhRMA and 31 member companies provided at least $6 billion in grants to more than 20,000 organizations over 12 years — dwarfing their federal lobbying and campaign contributions combined. Organizations receiving these funds were significantly less likely to support drug pricing reform legislation that would benefit their own patient constituencies.</div>
+        <a href="https://kffhealthnews.org/news/article/health-202-pharma-money-patient-advocacy-groups-public-citizen/" target="_blank" rel="noopener" class="card-link">Read the full analysis &#8594;</a>
+        <div class="card-cif"><div class="cif-lbl">CIF Position</div><div class="cif-note">Cold Ischemia Foundation accepts zero pharmaceutical funding by founding constitutional constraint — not policy preference. This is why we can say what organizations receiving this money cannot.</div></div>
+      </div>
+
+      <div class="news-card" data-cat="fraud">
+        <div class="card-top"><span class="card-cat cat-fraud">Fraud &amp; Enforcement</span><span class="card-date">Sept 2025</span><span class="card-source">HHS Investigation / KSTP</span></div>
+        <div class="card-title"><a href="https://kstp.com/kstp-news/top-news/major-reforms-coming-to-organ-transplant-network/" target="_blank" rel="noopener">HHS Investigation: At Least 28 Patients May Not Have Been Deceased at Time of Organ Procurement</a></div>
+        <div class="card-summary">An HHS investigation into an OPO serving Kentucky, Ohio, and West Virginia found at least 28 patients may not have been deceased at the time of organ preparation, with 73 patients showing neurological signs incompatible with donation between December 2024 and February 2025. CMS announced "major reforms" including an independent oversight board and a direct patient reporting channel.</div>
+        <a href="https://kstp.com/kstp-news/top-news/major-reforms-coming-to-organ-transplant-network/" target="_blank" rel="noopener" class="card-link">Read the investigation &#8594;</a>
+        <div class="card-cif"><div class="cif-lbl">CIF Position</div><div class="cif-note">CIF's 40 Documented Federal Violations audit addresses exactly these structural OPO oversight failures. A direct reporting channel is not reform — it is the minimum accountability floor that should have existed from day one.</div></div>
+      </div>
+
+      <div class="news-card" data-cat="transplant">
+        <div class="card-top"><span class="card-cat cat-transplant">Organ Transplant</span><span class="card-date">Jan 2025</span><span class="card-source">UNOS / OPTN</span></div>
+        <div class="card-title"><a href="https://unos.org/media-resources/releases/u-s-surpassed-48000-organ-transplants-in-2024/" target="_blank" rel="noopener">U.S. Surpassed 48,000 Organ Transplants in 2024 — Fifth Consecutive Record Year</a></div>
+        <div class="card-summary">Despite a fifth consecutive record year, 104,000 Americans remain on the waiting list and 17 people die daily. UNOS is calling on Congress to mandate automated donor referrals, in-cabin airline organ transport, and a national organ tracking system.</div>
+        <a href="https://unos.org/media-resources/releases/u-s-surpassed-48000-organ-transplants-in-2024/" target="_blank" rel="noopener" class="card-link">Read the UNOS release &#8594;</a>
+        <div class="card-cif"><div class="cif-lbl">CIF Context</div><div class="cif-note">48,000 new transplants means 48,000 new care partners added to an already burdened population with zero federal protection, training, or compensation requirements.</div></div>
+      </div>
+
+      <div class="news-card" data-cat="pharma">
+        <div class="card-top"><span class="card-cat cat-pharma">Pharma Conflicts</span><span class="card-date">2024</span><span class="card-source">Investigate Europe</span></div>
+        <div class="card-title"><a href="https://www.investigate-europe.eu/posts/deadly-prices-drug-firms-pharmaceuticals-finance-europe-patient-groups-charities-110-million-euros" target="_blank" rel="noopener">&euro;110 Million: Drug Companies Fund European Patient Advocacy Groups in a Single Year</a></div>
+        <div class="card-summary">Pfizer, Novo Nordisk, and AstraZeneca poured &euro;110 million into patient advocacy organizations across Europe in 2022 alone. One researcher summarized the mechanism: "Patient groups are better marketing managers than pharma companies because they are seen as neutral or objective."</div>
+        <a href="https://www.investigate-europe.eu/posts/deadly-prices-drug-firms-pharmaceuticals-finance-europe-patient-groups-charities-110-million-euros" target="_blank" rel="noopener" class="card-link">Read the investigation &#8594;</a>
+        <div class="card-cif"><div class="cif-lbl">CIF Position</div><div class="cif-note">This quote describes exactly the mechanism CIF was built to expose and refuse to participate in. Patient groups perceived as neutral while funded by industry are not neutral — they are unacknowledged marketing infrastructure.</div></div>
+      </div>
+
+      <div class="news-card" data-cat="kidney">
+        <div class="card-top"><span class="card-cat cat-kidney">Kidney Disease</span><span class="card-date">2024</span><span class="card-source">American Kidney Fund</span></div>
+        <div class="card-title"><a href="https://www.kidneyfund.org/about-us/financials-and-accountability/list-corporate-sponsors" target="_blank" rel="noopener">American Kidney Fund Corporate Sponsor List: DaVita, Fresenius, AstraZeneca, Amgen, GSK and 20+ More</a></div>
+        <div class="card-summary">The AKF's publicly disclosed sponsor list includes DaVita, Fresenius Medical Care, AstraZeneca, Amgen, GlaxoSmithKline, Akebia, Alnylam, Otsuka, Cara Therapeutics, Horizon Therapeutics, and more than 20 additional pharmaceutical and dialysis corporations whose practices directly control the lives of the kidney patients AKF claims to represent.</div>
+        <a href="https://www.kidneyfund.org/about-us/financials-and-accountability/list-corporate-sponsors" target="_blank" rel="noopener" class="card-link">View the full sponsor list &#8594;</a>
+        <div class="card-cif"><div class="cif-lbl">CIF Position</div><div class="cif-note">The AKF sponsor list is a map of conflicts of interest. Every corporation on that list has a financial stake in the advocacy positions AKF takes — or does not take — on their behalf.</div></div>
+      </div>
+
+      <div class="news-card" data-cat="advocacy">
+        <div class="card-top"><span class="card-cat cat-advocacy">Industry Capture</span><span class="card-date">Multiple Years</span><span class="card-source">Fresenius Medical Care</span></div>
+        <div class="card-title"><a href="https://freseniusmedicalcare.com/en-us/company/our-company/news-releases/fresenius-medical-care-north-america-contributes-record-funding-to-national-kidney-foundation/" target="_blank" rel="noopener">Fresenius Medical Care &#8212; National Kidney Foundation: $1.8 Million Over Two Years as &#8220;National Presenting Sponsor&#8221;</a></div>
+        <div class="card-summary">Fresenius Medical Care North America, the world's largest dialysis provider, contributed over $1.8 million to the NKF across two years as National Presenting Sponsor of the NKF Kidney Walk. The NKF simultaneously receives funding from Amgen, AstraZeneca, DaVita, and dozens of other pharmaceutical and dialysis corporations.</div>
+        <a href="https://freseniusmedicalcare.com/en-us/company/our-company/news-releases/fresenius-medical-care-north-america-contributes-record-funding-to-national-kidney-foundation/" target="_blank" rel="noopener" class="card-link">Read the announcement &#8594;</a>
+        <div class="card-cif"><div class="cif-lbl">CIF Position</div><div class="cif-note">An organization accepting $1.8 million from the world's largest dialysis provider cannot independently evaluate that provider's patient outcomes, mortality rates, or regulatory compliance. That is not a conflict of interest. It is a conflict of purpose.</div></div>
+      </div>
+
+      <div class="news-card" data-cat="transplant">
+        <div class="card-top"><span class="card-cat cat-transplant">Transplant Science</span><span class="card-date">Mar 2026</span><span class="card-source">Global Observatory on Donation &amp; Transplantation</span></div>
+        <div class="card-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41670431/" target="_blank" rel="noopener">Record 173,727 Solid Organ Transplants Performed Worldwide in 2024</a></div>
+        <div class="card-summary">The Global Observatory on Donation and Transplantation's 2024 report documents a record 173,727 solid organ transplants worldwide — a 2% global increase driven largely by donations after circulatory death, which accounted for 28% of all deceased donation activity. Major challenges persist including continued organ shortage and pronounced geographic disparities in transplant access.</div>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/41670431/" target="_blank" rel="noopener" class="card-link">Read the GODT report &#8594;</a>
+      </div>
+
+      <div class="news-card" data-cat="fraud">
+        <div class="card-top"><span class="card-cat cat-fraud">Governance Failure</span><span class="card-date">Dec 2025</span><span class="card-source">UNOS / HRSA</span></div>
+        <div class="card-title"><a href="https://unos.org/advocacy/" target="_blank" rel="noopener">HRSA Takes Over OPTN Website from UNOS; New Contract Begins December 30, 2025</a></div>
+        <div class="card-summary">Following years of congressional scrutiny, HRSA assumed full management of the OPTN website from UNOS in December 2025. A Senate HELP Committee hearing on the future of the OPTN was held December 11, 2025. Care partner representation remained absent from the witness list — zero care partners testified before the committee governing the system that requires their labor.</div>
+        <a href="https://unos.org/advocacy/" target="_blank" rel="noopener" class="card-link">Read UNOS advocacy positions &#8594;</a>
+        <div class="card-cif"><div class="cif-lbl">CIF Position</div><div class="cif-note">UNOS governance reform proceeds without a single care partner voice at the table. The system is reforming itself around the people it extracts labor from.</div></div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:30px;">
+      <div class="sec-lbl">Live News Feed <span class="sec-lbl-r">Via RSS &middot; Filtered for Relevance</span></div>
+      <div id="live-feed" class="feed"><div class="loading-state">Fetching live advocacy news&#8230;</div></div>
+    </div>
+
+    <div class="back-wrap">
+      <a href="https://coldischemia.foundation" class="back-link">&#8592;&nbsp; Return to Cold Ischemia Foundation</a>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <div>
+      <div class="sec-lbl">Pharma Funding Tracker <span class="sec-lbl-r">Documented</span></div>
+      <div class="funding-table">
+        <div class="ft-header">
+          <div class="ft-h-title">Industry Grants to Patient Advocacy</div>
+          <div class="ft-h-sub">Selected documented amounts. Public filings, press releases, investigations.</div>
+        </div>
+        <div class="ft-row"><div><div class="ft-org">NKF &#8212; Fresenius Kidney Walk</div><div class="ft-donor">Fresenius Medical Care NA, National Presenting Sponsor</div></div><div><div class="ft-amount">$1.8M</div><div class="ft-year">2-yr total</div></div></div>
+        <div class="ft-row"><div><div class="ft-org">NKF &#8212; Single Year</div><div class="ft-donor">Fresenius: $400K corporate + $400K employee donations</div></div><div><div class="ft-amount">$800K+</div><div class="ft-year">1 year</div></div></div>
+        <div class="ft-row"><div><div class="ft-org">American Kidney Fund</div><div class="ft-donor">DaVita, Fresenius, AstraZeneca, Amgen, GSK + 20 more</div></div><div><div class="ft-amount">Multi-M</div><div class="ft-year">Annual</div></div></div>
+        <div class="ft-row"><div><div class="ft-org">EU Patient Groups (Combined)</div><div class="ft-donor">Pfizer, Novo Nordisk, AstraZeneca + EU pharma</div></div><div><div class="ft-amount">&euro;110M</div><div class="ft-year">2022 alone</div></div></div>
+        <div class="ft-row"><div><div class="ft-org">U.S. Patient Groups (Combined)</div><div class="ft-donor">PhRMA + 31 member companies, 20,000+ orgs</div></div><div><div class="ft-amount">$6B+</div><div class="ft-year">2010&#8211;2022</div></div></div>
+        <div class="ft-zero"><div class="ft-zero-lbl">Cold Ischemia Foundation</div><div class="ft-zero-num">$0.00</div></div>
+        <div class="ft-note">CIF accepts zero pharmaceutical, dialysis, or insurance funding — by founding constraint. This is why our advocacy is not filtered through donor interests.</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec-lbl">Feed Sources <span class="sec-lbl-r">Live RSS</span></div>
+      <div class="sources-box">
+        <div class="src-item"><div class="src-dot" style="background:#e8806e;"></div><div class="src-name">KFF Health News</div><div class="src-type">Advocacy</div></div>
+        <div class="src-item"><div class="src-dot" style="background:var(--ice);"></div><div class="src-name">STAT News</div><div class="src-type">Pharma</div></div>
+        <div class="src-item"><div class="src-dot" style="background:#5dc88a;"></div><div class="src-name">Health Affairs</div><div class="src-type">Policy</div></div>
+        <div class="src-item"><div class="src-dot" style="background:var(--gold);"></div><div class="src-name">UNOS News</div><div class="src-type">Transplant</div></div>
+        <div class="src-item"><div class="src-dot" style="background:#c8a0f0;"></div><div class="src-name">ProPublica</div><div class="src-type">Fraud</div></div>
+        <div class="src-item"><div class="src-dot" style="background:var(--gold2);"></div><div class="src-name">Medscape / NEJM</div><div class="src-type">Clinical</div></div>
+        <div class="src-item"><div class="src-dot" style="background:var(--ice);"></div><div class="src-name">HRSA / organdonor.gov</div><div class="src-type">Donation</div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec-lbl">What We Cover <span class="sec-lbl-r">CIF Editorial</span></div>
+      <div class="signal-box">
+        <div class="signal-title">CIF News Signal</div>
+        <div class="signal-item"><div class="signal-icon">&#128308;</div><div class="signal-text"><strong>Industry funding disclosures</strong> — when patient advocacy organizations receive pharmaceutical or dialysis money, we document it and track which advocacy positions change.</div></div>
+        <div class="signal-item"><div class="signal-icon">&#9878;&#65039;</div><div class="signal-text"><strong>Federal enforcement actions</strong> — OPO investigations, CMS enforcement, HHS findings, Senate Finance oversight the funded organizations rarely amplify.</div></div>
+        <div class="signal-item"><div class="signal-icon">&#129516;</div><div class="signal-text"><strong>Care partner and transplant science</strong> — peer-reviewed research on caregiver burden, recipient outcomes, mental health, and medication adherence.</div></div>
+        <div class="signal-item"><div class="signal-icon">&#128203;</div><div class="signal-text"><strong>Legislative movement</strong> — bills affecting transplant care partners, Medicare coverage, caregiver compensation, and family leave — tracked without donor filter.</div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec-lbl">Automate This Feed <span class="sec-lbl-r">Zapier Setup</span></div>
+      <div class="zapier-box">
+        <div class="zapier-title">Connect Live News via Zapier</div>
+        <div class="zap-step"><div class="zap-num">01</div><div class="zap-text">Go to <strong>google.com/alerts</strong>. Create alerts for: <code>care partner advocacy</code>, <code>kidney disease fraud</code>, <code>organ procurement</code>, <code>pharma patient advocacy funding</code>. Set delivery to <strong>RSS feed</strong>.</div></div>
+        <div class="zap-step"><div class="zap-num">02</div><div class="zap-text">In Zapier: <strong>RSS by Zapier &#8594; New Item in Feed</strong>. Paste your Google Alert RSS URL. Check every 15 minutes.</div></div>
+        <div class="zap-step"><div class="zap-num">03</div><div class="zap-text">Add <strong>AI by Zapier</strong>. Prompt: rate 1&#8211;10 for relevance to care partner advocacy, kidney disease, or pharma conflicts. Return JSON with score and category.</div></div>
+        <div class="zap-step"><div class="zap-num">04</div><div class="zap-text">Add <strong>Filter</strong>: only continue if score &ge; 6.</div></div>
+        <div class="zap-step"><div class="zap-num">05</div><div class="zap-text">Add <strong>Gmail</strong>: send daily digest of filtered stories to <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="157f70737355767a79717c66767d70787c743b7a6772">[email&#160;protected]</a></code> for review before publishing.</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer>
+  <p>&#169; 2025 Cold Ischemia Foundation &nbsp;&middot;&nbsp; Advocacy News &nbsp;&middot;&nbsp; coldischemia.foundation &nbsp;&middot;&nbsp; $0 Pharmaceutical Funding &nbsp;&middot;&nbsp; Updated Continuously</p>
+
+<div style="position:relative;z-index:1;text-align:center;padding:32px 40px 0;">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:0.3em;
+    text-transform:uppercase;color:#6b7a9a;margin-bottom:14px;">
+    Support Care Partner Justice
+  </div>
+  <div style="margin:18px 0;text-align:center;">
+  <stripe-buy-button
+    buy-button-id="buy_btn_1TFx9TJz8VnY2S6luFc8TuZV"
+    publishable-key="pk_live_51HyTZkJz8VnY2S6lDdeBrzrQnasGtoG6C85WIuX30NrFZiL26L7J3dg5kWC6L33IAPz8s8ZILcFlXLoPPxjbkVz800X4WsygWA"
+  ></stripe-buy-button>
+</div>
+  <div style="font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:0.12em;
+    color:#6b7a9a;margin-top:8px;text-transform:uppercase;">
+    Secure payment via Stripe &nbsp;&middot;&nbsp; Zero pharmaceutical funding
+  </div>
+</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function switchTab(cat, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#pinned .news-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+  });
+}
+
+const FEEDS = [
+  {url:'https://kffhealthnews.org/feed/', name:'KFF Health News', cat:'advocacy', label:'Advocacy'},
+  {url:'https://www.statnews.com/feed/', name:'STAT News', cat:'pharma', label:'Pharma'},
+];
+const KW = ['kidney','transplant','caregiver','care partner','dialysis','organ donation',
+  'patient advocacy','pharmaceutical','chronic illness','renal','UNOS','OPTN','Medicare','CKD'];
+
+function relevant(t,d){const txt=(t+' '+d).toLowerCase();return KW.some(k=>txt.includes(k.toLowerCase()));}
+function ago(ds){
+  const d=new Date(ds);if(isNaN(d))return 'Recent';
+  const diff=Math.floor((Date.now()-d)/1000);
+  if(diff<3600)return Math.floor(diff/60)+'m ago';
+  if(diff<86400)return Math.floor(diff/3600)+'h ago';
+  if(diff<604800)return Math.floor(diff/86400)+'d ago';
+  return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+}
+function catCls(c){return{advocacy:'cat-advocacy',pharma:'cat-pharma',transplant:'cat-transplant',kidney:'cat-kidney',fraud:'cat-fraud'}[c]||'cat-advocacy';}
+
+function buildCard(item,fi){
+  const title=(item.title||'').replace(/&amp;/g,'&').replace(/&#039;/g,"'");
+  const desc=(item.description||'').replace(/<[^>]+>/g,'').slice(0,200)+'&#8230;';
+  return `<div class="news-card" data-cat="${fi.cat}">
+    <div class="card-top">
+      <span class="card-cat ${catCls(fi.cat)}">${fi.label}</span>
+      <span class="card-date">${ago(item.pubDate||'')}</span>
+      <span class="card-source">${fi.name}</span>
+    </div>
+    <div class="card-title"><a href="${item.link||'#'}" target="_blank" rel="noopener">${title}</a></div>
+    <div class="card-summary">${desc}</div>
+    <a href="${item.link||'#'}" target="_blank" rel="noopener" class="card-link">Read full story &#8594;</a>
+  </div>`;
+}
+
+async function loadFeed(fi){
+  try{
+    const r=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(fi.url)}&count=15`);
+    const d=await r.json();
+    if(d.status!=='ok')return [];
+    return(d.items||[]).filter(i=>relevant(i.title||'',i.description||'')).slice(0,3).map(i=>buildCard(i,fi));
+  }catch{return[];}
+}
+
+async function init(){
+  const container=document.getElementById('live-feed');
+  const ts=document.getElementById('feed-ts');
+  const all=await Promise.all(FEEDS.map(loadFeed));
+  const cards=all.flat();
+  container.innerHTML=cards.length
+    ? cards.join('')
+    : `<div style="background:rgba(10,22,40,0.6);border:1px solid var(--border);padding:20px;
+        text-align:center;font-style:italic;color:rgba(244,240,232,0.45);font-size:14px;">
+        Live feeds may be temporarily unavailable.&nbsp;
+        <a href="https://kffhealthnews.org" target="_blank" style="color:var(--gold);">
+ 

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Nobody Hands You at Intake — Cold Ischemia Foundation</title>
+<meta name="description" content="BK virus, CMV, and the biopsy nobody prepares you for. The parts of post-transplant life that don't make it into the conference agenda.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);
+  --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);
+  --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.12);
+  --danger:#c83050;--danger-d:rgba(200,48,80,0.1);
+  --green:#50c878;--green-d:rgba(80,200,120,0.1);
+  --violet:#8050c8;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:var(--raised);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-actions{display:flex;align-items:center;gap:8px;}
+.nav-btn{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;padding:7px 16px;border-radius:2px;border:1px solid var(--b);color:var(--ink40);text-decoration:none;transition:all 0.2s;}
+.nav-btn:hover{border-color:var(--gold-d);color:var(--gold);}
+.nav-btn-gold{background:var(--gold);color:var(--abyss)!important;border-color:var(--gold)!important;}
+.nav-btn-gold:hover{background:var(--gold-l)!important;}
+@media(max-width:900px){.nav-links a:not(.nav-btn){display:none;}}
+
+.hero{padding:120px 40px 60px;background:var(--abyss);border-bottom:1px solid var(--b);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12));}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2;}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:14px;}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(42px,7vw,84px);letter-spacing:0.02em;line-height:0.98;color:var(--ink);margin-bottom:24px;}
+.hero-h1 span{color:var(--gold);}
+.hero-sub{font-family:'Crimson Pro',serif;font-size:1.18rem;line-height:1.85;color:var(--ink60);max-width:680px;}
+.hero-sub strong{color:var(--ink80);font-weight:600;}
+
+.wrap{max-width:820px;margin:0 auto;padding:0 40px;}
+section{padding:64px 0;}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.6rem,3vw,2.3rem);color:var(--ink);margin-bottom:20px;line-height:1.25;}
+h2 strong{font-weight:600;font-style:normal;color:var(--gold-l);}
+p{font-size:1.05rem;line-height:1.9;color:var(--ink80);margin-bottom:1.1em;}
+p strong{color:var(--ink);}
+
+.divider{height:1px;background:var(--b);margin:0;}
+
+.callout{border-left:3px solid var(--danger);background:var(--danger-d);padding:22px 26px;margin:28px 0;}
+.callout p{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;color:var(--ink);margin:0;line-height:1.6;}
+
+.note{border-left:2px solid var(--pulse);padding-left:20px;margin:24px 0;}
+.note p{color:var(--ink60);font-size:0.98rem;margin:0;}
+
+footer{background:var(--abyss);border-top:1px solid var(--b);padding:48px 40px 28px;text-align:center;}
+footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.05em;color:var(--ink20);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="transplant-realities.html" class="active">What Nobody Tells You</a>
+    <a href="bhoc.html">BHOC</a>
+    <a href="accountability.html">Accountability</a>
+    <a href="donate.html">Donate</a>
+  </div>
+  <div class="nav-actions">
+    <a href="donate.html" class="nav-btn nav-btn-gold">Donate Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Patient Education &mdash; Not in the Welcome Packet</div>
+    <h1 class="hero-h1">What Nobody Hands You <span>at Intake.</span></h1>
+    <p class="hero-sub">Transplant conferences talk about access, allocation, and outcomes. They don't spend much time on what actually living with a transplant feels like week to week. <strong>Three of those things deserve a real conversation: BK virus, CMV, and the biopsy nobody prepares you for.</strong></p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="lbl">01 &mdash; BK Virus</div>
+    <h2>It's already inside you. <strong>That's the part nobody explains.</strong></h2>
+    <p>Most adults are carrying BK virus right now and don't know it. It sat quietly in your kidneys for years, kept in line by an immune system that was doing its job. Nobody gets a warning about it before transplant because, before transplant, it was never a problem.</p>
+    <p>Then you go on immunosuppression &mdash; which is the entire point of a transplant working &mdash; and the same virus that was never an issue wakes up. It doesn't announce itself. It shows up in a lab value, a rising number on a urine test, sometimes a biopsy that comes back with a name you've never heard before. And now you're being told the same drugs keeping your kidney from being rejected are also the reason a virus you didn't know you had is now attacking it.</p>
+    <div class="callout">
+      <p>Nobody hands you a pamphlet on BK virus at your pre-transplant workup. You find out about it the way most transplant patients find out about most things &mdash; after it's already happening to you.</p>
+    </div>
+    <p>The honest version of this conversation isn't scary, it's just <strong>missing</strong>. BK reactivation is common, it's monitored for a reason, and centers that are paying attention catch it early through routine screening. What's missing is someone telling you, before you're staring at a lab result you don't understand, that this is a normal part of the immunosuppressed experience &mdash; not a sign that something went wrong with your transplant, and not something you did.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="lbl">02 &mdash; CMV</div>
+    <h2>The virus that decides your risk <strong>before you ever meet your donor.</strong></h2>
+    <p>Cytomegalovirus works the same quiet way BK does &mdash; most adults carry it, most never know it, and it causes no problems in a normal immune system. What changes everything is the mismatch: a donor who carries CMV and a recipient who's never been exposed. That combination is the highest-risk category in transplant medicine for this particular virus, and it's determined before you ever wake up from surgery.</p>
+    <p>What that means in practice is a stretch of months &mdash; sometimes the hardest stretch of the whole first year &mdash; built around prevention: medication schedules that don't bend, lab draws that don't stop, and a level of vigilance around symptoms that can feel, to a care partner especially, like living on alert. Fatigue that won't lift, a fever that shows up for no obvious reason, a GI system that suddenly isn't cooperating &mdash; any of it can be CMV, and any of it needs a call, not a wait-and-see.</p>
+    <div class="note">
+      <p>This is a care partner issue as much as a patient issue. The person watching for these symptoms day to day is very often not the patient.</p>
+    </div>
+    <p>What doesn't get said enough: this is manageable, it's anticipated, and centers plan for it. What also doesn't get said enough: "manageable" doesn't mean easy, and a patient or care partner who feels blindsided by how heavy that first CMV-prevention stretch is isn't failing at anything. They just weren't told what it actually looks like.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="lbl">03 &mdash; The Biopsy</div>
+    <h2>The gold standard nobody prepares you <strong>for emotionally.</strong></h2>
+    <p>A kidney biopsy is a needle, imaging guidance, local anesthesia, and a procedure that's genuinely quick and, physically, usually manageable. Clinically, it's the most reliable way to know what's actually happening inside a transplanted organ when labs are ambiguous. None of that is what makes it hard.</p>
+    <p>What makes it hard is that it's not a one-time thing. It's a recurring event that shows up at moments when something is already uncertain &mdash; a creatinine that's crept up, a protocol check, a "just to be sure." You go in not knowing what the result will say about the organ someone else's family agreed to donate, or that a living donor gave up a kidney to provide. That's not a physical risk. That's a psychological weight that gets heavier, not lighter, with repetition &mdash; and it's almost never named out loud before the first one.</p>
+    <div class="callout">
+      <p>The medical literature calls it a low-risk outpatient procedure. Nobody's medical chart has a field for how it feels to wait on the results.</p>
+    </div>
+    <p>Three transplants and roughly two decades of this in one lifetime teaches you something the pre-transplant packet doesn't: the biopsy itself is rarely the hard part. The waiting is. And the waiting deserves to be talked about with the same seriousness as the procedure itself &mdash; not treated as an afterthought to a fifteen-minute appointment.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="lbl">Why This Page Exists</div>
+    <h2>Conferences cover access. <strong>Almost nobody covers this.</strong></h2>
+    <p>Transplant conferences and advocacy platforms spend most of their time on the things that are easiest to put on a panel: allocation policy, waitlist numbers, awareness campaigns. Those matter. But they aren't what a patient or care partner is actually navigating at 6pm on a random Tuesday when a lab result doesn't look right and nobody's explained why that might be completely normal.</p>
+    <p>Cold Ischemia Foundation exists to say the parts other organizations leave out &mdash; plainly, without dumbing it down, and without pretending three transplants and a care partner's seventeen years in the middle of it don't count as expertise.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Cold Ischemia Foundation &middot; Ellenton, Florida &middot; This page is educational and does not replace guidance from your transplant team. Not medical advice.</p>
+</footer>
+
+</body>
+</html>

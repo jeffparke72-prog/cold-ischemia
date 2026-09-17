@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Two Futures Engine — Cold Ischemia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --void:       #060810;
+      --deep:       #0a0e1a;
+      --surface:    #0f1526;
+      --raised:     #151d30;
+      --border:     rgba(255,255,255,0.07);
+      --border2:    rgba(255,255,255,0.12);
+      --ink:        #e6e0f4;
+      --ink70:      rgba(230,224,244,0.7);
+      --ink40:      rgba(230,224,244,0.4);
+      --ink20:      rgba(230,224,244,0.2);
+      --ink08:      rgba(230,224,244,0.08);
+      --gold:       #e0b84a;
+      --gold-d:     rgba(224,184,74,0.15);
+      --gold-g:     rgba(224,184,74,0.35);
+      --path-a:     #c05c3e;   /* current trajectory — ember red */
+      --path-a-d:   rgba(192,92,62,0.15);
+      --path-b:     #4a9e7a;   /* intervention path — teal */
+      --path-b-d:   rgba(74,158,122,0.15);
+      --lever:      #7b6fd4;   /* leverage point — violet */
+      --lever-d:    rgba(123,111,212,0.2);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--void);
+      color: var(--ink);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--gold-d); color: var(--ink); }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--void); }
+    ::-webkit-scrollbar-thumb { background: var(--raised); border-radius: 2px; }
+
+    /* ══════════════════════════════════
+       HERO
+    ══════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      overflow: hidden;
+    }
+    #heroCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+    .tool-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(224,184,74,0.1);
+      border: 1px solid rgba(224,184,74,0.25);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: appear 0.8s 0.2s both;
+    }
+    .tool-badge-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: dotblink 2s ease-in-out infinite;
+    }
+    @keyframes dotblink {
+      0%,100%{ opacity:1; } 50%{ opacity:0.2; }
+    }
+    .hero-h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: appear 1s 0.4s both;
+    }
+    .hero-h1 .two { font-style: italic; color: var(--gold); }
+    .hero-h1 .futures { display: block; }
+    .path-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: appear 0.8s 0.7s both;
+    }
+    .path-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 3px;
+      border: 1px solid;
+    }
+    .path-badge.a { color: var(--path-a); border-color: rgba(192,92,62,0.35); background: var(--path-a-d); }
+    .path-badge.b { color: var(--path-b); border-color: rgba(74,158,122,0.35); background: var(--path-b-d); }
+    .path-badge-sep {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--ink20);
+    }
+    .path-badge-line {
+      width: 10px; height: 2px;
+      border-radius: 1px;
+    }
+    .hero-lead {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink70);
+      font-style: italic;
+      max-width: 520px;
+      margin: 0 auto 48px;
+      font-family: 'DM Serif Display', serif;
+      opacity: 0;
+      animation: appear 1s 0.9s both;
+    }
+    .scroll-cue {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink20);
+      opacity: 0;
+      animation: appear 0.8s 1.2s both, breathe 3s 2.2s ease-in-out infinite;
+    }
+    @keyframes appear {
+      from { opacity:0; transform: translateY(16px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+    @keyframes breathe {
+      0%,100%{ opacity:0.2; } 50%{ opacity:0.7; }
+    }
+
+    /* ══════════════════════════════════
+       SECTION STRUCTURE
+    ══════════════════════════════════ */
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 90px 36px;
+    }
+    .sec-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .sec-eyebrow::after { content:''; flex:1; height:1px; background:var(--gold-d); }
+
+    /* ══════════════════════════════════
+       ORIGIN GRID
+    ══════════════════════════════════ */
+    .origin-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: start;
+    }
+    @media(max-width: 700px){ .origin-grid{ grid-template-columns:1fr; gap:40px; } }
+    .origin-h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .origin-h2 em { font-style: italic; color: var(--gold); }
+    .origin-body p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--ink70);
+      margin-bottom: 16px;
+    }
+    .origin-body .cite {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      opacity: 0.6;
+      margin-top: 20px;
+    }
+    .origin-side {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .origin-stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 22px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .origin-stat::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+    }
+    .origin-stat.red::before  { background: var(--path-a); }
+    .origin-stat.teal::before { background: var(--path-b); }
+    .origin-stat.violet::before { background: var(--lever); }
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .origin-stat.red .stat-num    { color: var(--path-a); }
+    .origin-stat.teal .stat-num   { color: var(--path-b); }
+    .origin-stat.violet .stat-num { color: var(--lever); }
+    .stat-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      color: var(--ink40);
+      text-transform: uppercase;
+    }
+    .stat-body {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--ink40);
+      margin-top: 10px;
+    }
+
+    /* ══════════════════════════════════
+       HOW IT WORKS — visual steps
+    ══════════════════════════════════ */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 0;
+    }
+    @media(max-width:680px){ .how-grid{ grid-template-columns:1fr; } }
+    .how-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 32px 28px;
+      position: relative;
+      transition: background 0.3s;
+    }
+    .how-step:hover { background: var(--raised); }
+    .step-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: rgba(224,184,74,0.12);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .step-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+    .step-body {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: var(--ink40);
+    }
+
+    /* ══════════════════════════════════
+       DIVIDER
+    ══════════════════════════════════ */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 36px 70px;
+    }
+    .divider-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .divider::before, .divider::after {
+      content:''; flex:1; height:1px; background: var(--border);
+    }
+
+    /* ══════════════════════════════════
+       TOOL — THE FIVE DIMENSIONS
+    ══════════════════════════════════ */
+    .tool-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 36px 80px;
+    }
+    .tool-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .tool-header h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 10px;
+    }
+    .tool-header p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--ink40);
+      text-transform: uppercase;
+    }
+
+    /* API row */
+    .api-field {
+      display: flex;
+      border: 1px solid rgba(224,184,74,0.2);
+      border-radius: 3px;
+      overflow: hidden;
+      background: var(--surface);
+      margin-bottom: 44px;
+    }
+    .api-field label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.54rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-d);
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+    .api-field input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--ink);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      padding: 14px 16px;
+    }
+    .api-field input::placeholder { color: var(--ink20); }
+
+    /* Dimension panels */
+    .dim-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      transition: border-color 0.3s;
+    }
+    .dim-panel:focus-within { border-color: rgba(224,184,74,0.3); }
+    .dim-header {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--raised);
+    }
+    .dim-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      background: var(--gold-d);
+      padding: 12px 16px;
+      border-right: 1px solid var(--border);
+      white-space: nowrap;
+      min-width: 50px;
+      text-align: center;
+    }
+    .dim-title-block {
+      padding: 10px 18px;
+      flex: 1;
+    }
+    .dim-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.64rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .dim-subtitle {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.1em;
+      color: var(--ink40);
+      margin-top: 2px;
+    }
+
+    /* Intensity selector */
+    .intensity-row {
+      padding: 18px 20px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .intensity-track {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 5px;
+    }
+    .int-option {
+      position: relative;
+    }
+    .int-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0; height: 0;
+    }
+    .int-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      padding: 10px 4px 8px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: var(--deep);
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .int-label:hover { border-color: var(--border2); background: var(--raised); }
+    .int-option input:checked + .int-label {
+      border-color: var(--gold);
+      background: var(--gold-d);
+    }
+    .int-bar {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .int-bars {
+      display: flex;
+      gap: 2px;
+      align-items: flex-end;
+      height: 20px;
+    }
+    .int-bars span {
+      width: 4px;
+      border-radius: 1px;
+      background: var(--border2);
+      transition: background 0.2s;
+    }
+    .int-option input:checked + .int-label .int-bars span { background: var(--gold); }
+    .int-text {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink40);
+      text-align: center;
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+    .int-option input:checked + .int-label .int-text { color: var(--gold); }
+
+    /* context textarea */
+    .dim-context {
+      padding: 0 20px 16px;
+    }
+    .dim-context textarea {
+      width: 100%;
+      background: var(--deep);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      padding: 12px 14px;
+      resize: vertical;
+      min-height: 72px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .dim-context textarea::placeholder { color: var(--ink20); font-style: italic; }
+    .dim-context textarea:focus { border-color: rgba(224,184,74,0.3); }
+
+    /* CTA */
+    .cta-cluster {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 44px;
+      flex-wrap: wrap;
+    }
+    .btn-engine {
+      background: var(--gold);
+      color: var(--void);
+      border: none;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      padding: 16px 52px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.25s;
+    }
+    .btn-engine:hover:not(:disabled) { background: var(--ink); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+    .btn-engine:disabled { opacity: 0.35; cursor: not-allowed; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink40);
+      border: 1px solid var(--border);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 16px 26px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover { color: var(--ink70); border-color: var(--border2); }
+
+    /* ══════════════════════════════════
+       OUTPUT — DIVERGENCE PANEL
+    ══════════════════════════════════ */
+    #outputPanel {
+      display: none;
+      max-width: 1000px;
+      margin: 20px auto 0;
+      padding: 0 36px 120px;
+    }
+
+    /* Path score summary */
+    .path-summary {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      margin-bottom: 56px;
+      align-items: stretch;
+    }
+    @media(max-width:620px){ .path-summary{ grid-template-columns:1fr; } }
+    .path-card {
+      padding: 32px;
+      border: 1px solid;
+      position: relative;
+      overflow: hidden;
+    }
+    .path-card::before {
+      content:'';
+      position: absolute;
+      top:0; left:0; right:0;
+      height: 3px;
+    }
+    .path-card.current { border-color: rgba(192,92,62,0.3); background: var(--path-a-d); }
+    .path-card.current::before { background: var(--path-a); }
+    .path-card.future  { border-color: rgba(74,158,122,0.3); background: var(--path-b-d); }
+    .path-card.future::before  { background: var(--path-b); }
+    .path-card-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.54rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .path-card.current .path-card-tag { color: var(--path-a); }
+    .path-card.future  .path-card-tag { color: var(--path-b); }
+    .path-card-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .path-card-body {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--ink70);
+    }
+    .path-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .vs-circle {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border2);
+      background: var(--raised);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      color: var(--ink40);
+    }
+
+    /* Dimension bars */
+    .dim-compare {
+      margin-bottom: 52px;
+    }
+    .dim-compare-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .dim-compare-label::after { content:''; flex:1; height:1px; background:var(--gold-d); }
+    .dim-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .dim-bar-name {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink40);
+      width: 110px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .dim-bar-track {
+      flex: 1;
+      height: 6px;
+      background: var(--surface);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+    }
+    .dim-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dim-bar-fill.bad  { background: var(--path-a); }
+    .dim-bar-fill.good { background: var(--path-b); }
+    .dim-bar-score {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.54rem;
+      color: var(--ink40);
+      width: 24px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* Main narrative output */
+    .output-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .output-label::after { content:''; flex:1; height:1px; background:var(--gold-d); }
+    #futureBody h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.55rem;
+      font-weight: 400;
+      margin: 40px 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    #futureBody h3:first-child { margin-top: 0; }
+    #futureBody h3.path-a-head { color: var(--path-a); border-color: var(--path-a-d); }
+    #futureBody h3.path-b-head { color: var(--path-b); border-color: var(--path-b-d); }
+    #futureBody h3.lever-head  { color: var(--lever);  border-color: var(--lever-d); }
+    #futureBody p {
+      font-size: 1.02rem;
+      line-height: 1.95;
+      color: var(--ink70);
+      margin-bottom: 16px;
+    }
+    #futureBody strong { color: var(--ink); }
+    #futureBody em { color: var(--gold); font-style: italic; }
+
+    /* 72hr plan */
+    .plan-timeline {
+      margin: 32px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .plan-step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0;
+      position: relative;
+    }
+    .plan-step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 39px;
+      top: 40px;
+      bottom: 0;
+      width: 2px;
+      background: var(--lever-d);
+    }
+    .plan-time-col {
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding-top: 18px;
+    }
+    .plan-dot {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--lever);
+      border: 3px solid var(--void);
+      box-shadow: 0 0 0 1px var(--lever);
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .plan-time-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--lever);
+      white-space: nowrap;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+    .plan-content {
+      padding: 18px 24px 18px 20px;
+      border-left: 2px solid var(--lever-d);
+      margin-left: 6px;
+      margin-bottom: 6px;
+    }
+    .plan-content h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--lever);
+      margin-bottom: 8px;
+    }
+    .plan-content p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--ink70);
+      margin: 0;
+    }
+
+    /* Loading */
+    .loading-panel {
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .loading-panel p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ink40);
+      animation: breathe 2s ease-in-out infinite;
+    }
+    .fork-anim {
+      width: 120px;
+      height: 60px;
+      margin: 24px auto;
+    }
+
+    /* ══════════════════════════════════
+       FOOTER
+    ══════════════════════════════════ */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 36px;
+      text-align: center;
+    }
+    footer p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.54rem;
+      letter-spacing: 0.14em;
+      color: var(--ink20);
+      line-height: 2.2;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+<!-- FLOATING HOME BUTTON -->
+<a href="index.html" id="home-float" style="position:fixed;bottom:24px;left:24px;z-index:999;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:10px 18px;background:rgba(3,5,9,0.92);border:1px solid rgba(200,144,42,0.4);color:#c8902a;text-decoration:none;border-radius:2px;backdrop-filter:blur(8px);transition:all .2s;white-space:nowrap;" onmouseover="this.style.background='#c8902a';this.style.color='#030509';" onmouseout="this.style.background='rgba(3,5,9,0.92)';this.style.color='#c8902a';">← Home</a>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-inner">
+    <div class="tool-badge">
+      <div class="tool-badge-dot"></div>
+      Cold Ischemia &nbsp;·&nbsp; Care Partner Tools &nbsp;·&nbsp; Tool 003
+    </div>
+    <h1 class="hero-h1">
+      <span class="two">The</span>
+      <span class="futures">Two Futures</span>
+      <span style="font-style:italic; color:var(--gold); font-size:0.65em;">Engine</span>
+    </h1>
+    <div class="path-badge-row">
+      <div class="path-badge a">
+        <div class="path-badge-line" style="background:var(--path-a)"></div>
+        Current Trajectory
+      </div>
+      <span class="path-badge-sep">vs</span>
+      <div class="path-badge b">
+        <div class="path-badge-line" style="background:var(--path-b)"></div>
+        Intervention Path
+      </div>
+    </div>
+    <p class="hero-lead">
+      You cannot unsee what you have already seen. Two roads, rendered in full.
+      The one you're on right now — and the one still available to you.
+    </p>
+    <p class="scroll-cue">↓ &nbsp; Map Your Five Dimensions</p>
+  </div>
+</section>
+
+<!-- ════════════════════ ORIGIN ════════════════════ -->
+<section class="section" style="padding-bottom:40px;">
+  <p class="sec-eyebrow">Origins &amp; Framework</p>
+  <div class="origin-grid">
+    <div class="origin-body">
+      <h2 class="origin-h2">Built on the Science of<br><em>What Actually Changes People</em></h2>
+      <p>Motivational Interviewing, developed by William Miller and Stephen Rollnick in the 1980s and refined through decades of clinical research, identified something counterintuitive: people do not change when they are confronted with information about a problem. They change when they experience the emotional weight of the gap between where they are and where they could be.</p>
+      <p>In caregiver research, this gap is almost always invisible. The deterioration is so gradual — so normalized, so praised by a culture that celebrates sacrifice — that the trajectory is never clearly seen until crisis arrives. By then, the care partner has often collapsed. The patient loses not just a caregiver but the person who was there.</p>
+      <p>This tool makes both futures concrete. Not statistics. Not risk scores. Two specific, narratively rendered vignettes of a week in your life — one on your current path extended forward six months, one on an intervention path. Then it identifies the single highest-leverage point where intervention is most available, and gives you a 72-hour micro-plan with three named, timed actions.</p>
+      <p>The goal is compassionate confrontation. You cannot work with what you cannot see.</p>
+      <p class="cite">Miller, W. R. & Rollnick, S. (2012). <em>Motivational Interviewing, 3rd Ed.</em> Guilford Press.<br>
+      Pinquart, M. & Sörensen, S. (2003). Differences between caregivers and noncaregivers in psychological health and physical health. <em>Psychology and Aging, 18</em>(2), 250–267.</p>
+    </div>
+    <div class="origin-side">
+      <div class="origin-stat red">
+        <div class="stat-num">23%</div>
+        <div class="stat-label">Elevated Mortality Risk</div>
+        <p class="stat-body">Care partners experiencing high stress show a 23% increase in mortality risk compared to non-caregivers. The body keeps the score the mind refuses to acknowledge.</p>
+      </div>
+      <div class="origin-stat teal">
+        <div class="stat-num">6 mo.</div>
+        <div class="stat-label">Intervention Window</div>
+        <p class="stat-body">Research shows that single targeted interventions, sustained for six months, produce measurable improvement in care partner psychological health and patient outcomes simultaneously.</p>
+      </div>
+      <div class="origin-stat violet">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Leverage Point</div>
+        <p class="stat-body">MI research consistently shows that identifying the single highest-leverage change point outperforms comprehensive multi-change plans. One real change beats ten theoretical ones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="section" style="padding-top:60px;">
+  <p class="sec-eyebrow">How It Works</p>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="step-num">01</div>
+      <h3 class="step-title">Rate Your Five Dimensions</h3>
+      <p class="step-body">You assess five real dimensions of your current life — not with a checkbox, but with a five-point intensity selector that surfaces the raw weight of each dimension. You can add context in your own words.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-num">02</div>
+      <h3 class="step-title">The Engine Renders Two Futures</h3>
+      <p class="step-body">Two narrative vignettes are generated: your current trajectory extended six months forward, and an intervention path. Not statistics. A specific week in your life — rendered in full — so you can feel the gap between them.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-num">03</div>
+      <h3 class="step-title">The 72-Hour Micro-Plan</h3>
+      <p class="step-body">One leverage point is identified — the single highest-impact intervention visible in your dimensions. Then three timed, concrete actions across 72 hours. Not a list of wellness tips. A plan.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span>The Five Dimensions</span></div>
+
+<!-- ════════════════════ TOOL ════════════════════ -->
+<div class="tool-section">
+  <div class="tool-header">
+    <h2>Describe Your Current Reality</h2>
+    <p>Select intensity · Add context · Do not perform wellness</p>
+  </div>
+
+  <div class="api-field">
+    <label for="apiKey">API Key</label>
+    <input type="password" id="apiKey" placeholder="sk-ant-api03-…  (required to generate your Two Futures)">
+  </div>
+
+  <!-- Dimension 1: Sleep -->
+  <div class="dim-panel">
+    <div class="dim-header">
+      <div class="dim-num">01</div>
+      <div class="dim-title-block">
+        <div class="dim-title">Sleep &amp; Physical Recovery</div>
+        <div class="dim-subtitle">Quality and duration of rest — not just hours, but whether you wake recovered</div>
+      </div>
+    </div>
+    <div class="intensity-row">
+      <div class="intensity-track" id="dim1-track">
+        <div class="int-option"><input type="radio" name="dim1" value="1" id="d1-1"><label class="int-label" for="d1-1"><div class="int-bars"><span style="height:4px"></span><span style="height:4px"></span><span style="height:4px"></span><span style="height:4px"></span></div><span class="int-text">Mostly<br>Rested</span></label></div>
+        <div class="int-option"><input type="radio" name="dim1" value="2" id="d1-2"><label class="int-label" for="d1-2"><div class="int-bars"><span style="height:8px"></span><span style="height:8px"></span><span style="height:4px"></span><span style="height:4px"></span></div><span class="int-text">Often<br>Tired</span></label></div>
+        <div class="int-option"><input type="radio" name="dim1" value="3" id="d1-3" checked><label class="int-label" for="d1-3"><div class="int-bars"><span style="height:12px"></span><span style="height:12px"></span><span style="height:8px"></span><span style="height:4px"></span></div><span class="int-text">Chronically<br>Depleted</span></label></div>
+        <div class="int-option"><input type="radio" name="dim1" value="4" id="d1-4"><label class="int-label" for="d1-4"><div class="int-bars"><span style="height:16px"></span><span style="height:14px"></span><span style="height:10px"></span><span style="height:6px"></span></div><span class="int-text">Severely<br>Disrupted</span></label></div>
+        <div class="int-option"><input type="radio" name="dim1" value="5" id="d1-5"><label class="int-label" for="d1-5"><div class="int-bars"><span style="height:20px"></span><span style="height:18px"></span><span style="height:16px"></span><span style="height:12px"></span></div><span class="int-text">Crisis<br>Level</span></label></div>
+      </div>
+    </div>
+    <div class="dim-context">
+      <textarea placeholder="Optional: Describe your actual sleep situation — what interrupts it, how it feels, what it costs you..." rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Dimension 2: Social Contact -->
+  <div class="dim-panel">
+    <div class="dim-header">
+      <div class="dim-num">02</div>
+      <div class="dim-title-block">
+        <div class="dim-title">Social Contact &amp; Isolation</div>
+        <div class="dim-subtitle">Meaningful connection outside the caregiving relationship — not presence, but felt belonging</div>
+      </div>
+    </div>
+    <div class="intensity-row">
+      <div class="intensity-track">
+        <div class="int-option"><input type="radio" name="dim2" value="1" id="d2-1"><label class="int-label" for="d2-1"><div class="int-bars"><span style="height:4px"></span><span style="height:4px"></span><span style="height:4px"></span><span style="height:4px"></span></div><span class="int-text">Connected<br>Often</span></label></div>
+        <div class="int-option"><input type="radio" name="dim2" value="2" id="d2-2"><label class="int-label" for="d2-2"><div class="int-bars"><span style="height:8px"></span><span style="height:8px"></span><span style="height:4px"></span><span style="height:4px"></span></div><span class="int-text">Mostly<br>Isolated</span></label></div>
+        <div class="int-option"><input type="radio" name="dim2" value="3" id="d2-3" checked><label class="int-label" for="d2-3"><div class="int-bars"><span style="height:12px"></span><span style="height:12px"></span><span style="height:8px"></span><span style="height:4px"></span></div><span class="int-text">Severely<br>Isolated</span></label></div>
+        <div class="int-option"><input type="radio" name="dim2" value="4" id="d2-4"><label class="int-label" for="d2-4"><div class="int-bars"><span style="height:16px"></span><span style="height:14px"></span><span style="height:10px"></span><span style="height:6px"></span></div><span class="int-text">No Meaningful<br>Contact</span></label></div>
+        <div class="int-option"><input type="radio" name="dim2" value="5" id="d2-5"><label class="int-label" for="d2-5"><div class="int-bars"><span style="height:20px"></span><span style="height:18px"></span><span style="height:16px"></span><span style="height:12px"></span></div><span class="int-text">Total<br>Withdrawal</span></label></div>
+      </div>
+    </div>
+    <div class="dim-context">
+      <textarea placeholder="Optional: Who is in your life right now? What has changed about your social world since caregiving began?" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Dimension 3: Medical Crisis Load -->
+  <div class="dim-panel">
+    <div class="dim-header">
+      <div class="dim-num">03</div>
+      <div class="dim-title-block">
+        <div class="dim-title">Medical Crisis Frequency</div>
+        <div class="dim-subtitle">How often your life is disrupted by acute events, emergencies, or sudden changes in the patient's condition</div>
+      </div>
+    </div>
+    <div class="intensity-row">
+      <div class="intensity-track">
+        <div class="int-option"><input type="radio" name="dim3" value="1" id="d3-1"><label class="int-label" for="d3-1"><div class="int-bars"><span style="height:4px"></span><span style="height:4px"></span><span style="height:4px"></span><span style="height:4px"></span></div><span class="int-text">Stable /<br>Predictable</span></label></div>
+        <div class="int-option"><input type="radio" name="dim3" value="2" id="d3-2"><label class="int-label" for="d3-2"><div class="int-bars"><span style="height:8px"></span><span style="height:8px"></span><span style="height:4px"></span><span style="height:4px"></span></div><span class="int-text">Occasional<br>Events</span></label></div>
+        <div class="int-option"><input type="radio" name="dim3" value="3" id="d3-3" checked><label class="int-label" for="d3-3"><div class="int-bars"><span style="height:12px"></span><span style="height:12px"></span><span style="height:8px"></span><span style="height:4px"></span></div><span class="int-text">Regular<br>Disruption</span></label></div>
+        <div class="int-option"><input type="radio" name="dim3" value="4" id="d3-4"><label class="int-label" for="d3-4"><div class="int-bars"><span style="height:16px"></span><span style="height:14px"></span><span style="height:10px"></span><span style="height:6px"></span></div><span class="int-text">Frequent<br>Crisis</span></label></div>
+        <div class="int-option"><input type="radio" name="dim3" value="5" id="d3-5"><label class="int-label" for="d3-5"><div class="int-bars"><span style="height:20px"></span><span style="height:18px"></span><span style="height:16px"></span><span style="height:12px"></span></div><span class="int-text">Constant<br>Emergency</span></label></div>
+      </div>
+    </div>
+    <div class="dim-context">
+      <textarea placeholder="Optional: What does a typical week look like in terms of medical disruptions, calls, appointments, or emergencies?" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Dimension 4: Time for Self -->
+  <div class="dim-panel">
+    <div class="dim-header">
+      <div class="dim-num">04</div>
+      <div class="dim-title-block">
+        <div class="dim-title">Time &amp; Space for Self</div>
+        <div class="dim-subtitle">Hours per week that belong to you alone — not caregiving, not recovery from caregiving, but chosen time for identity</div>
+      </div>
+    </div>
+    <div class="intensity-row">
+      <div class="intensity-track">
+        <div class="int-option"><input type="radio" name="dim4" value="1" id="d4-1"><label class="int-label" for="d4-1"><div class="int-bars"><span style="height:4px"></span><span style="height:4px"></span><span style="height:4px"></span><span style="height:4px"></span></div><span class="int-text">Regular<br>Personal Time</span></label></div>
+        <div class="int-option"><input type="radio" name="dim4" value="2" id="d4-2"><label class="int-label" for="d4-2"><div class="int-bars"><span style="height:8px"></span><span style="height:8px"></span><span style="height:4px"></span><span style="height:4px"></span></div><span class="int-text">Occasional<br>Moments</span></label></div>
+        <div class="int-option"><input type="radio" name="dim4" value="3" id="d4-3" checked><label class="int-label" for="d4-3"><div class="int-bars"><span style="height:12px"></span><span style="height:12px"></span><span style="height:8px"></span><span style="height:4px"></span></div><span class="int-text">Rarely<br>Available</span></label></div>
+        <div class="int-option"><input type="radio" name="dim4" value="4" id="d4-4"><label class="int-label" for="d4-4"><div class="int-bars"><span style="height:16px"></span><span style="height:14px"></span><span style="height:10px"></span><span style="height:6px"></span></div><span class="int-text">Almost<br>Never</span></label></div>
+        <div class="int-option"><input type="radio" name="dim4" value="5" id="d4-5"><label class="int-label" for="d4-5"><div class="int-bars"><span style="height:20px"></span><span style="height:18px"></span><span style="height:16px"></span><span style="height:12px"></span></div><span class="int-text">Fully<br>Absorbed</span></label></div>
+      </div>
+    </div>
+    <div class="dim-context">
+      <textarea placeholder="Optional: What did you used to do that you no longer do? What would feel like time that belongs to you?" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Dimension 5: Financial Pressure -->
+  <div class="dim-panel">
+    <div class="dim-header">
+      <div class="dim-num">05</div>
+      <div class="dim-title-block">
+        <div class="dim-title">Financial Pressure</div>
+        <div class="dim-subtitle">The weight of economic strain — lost income, medical costs, reduced hours, or the invisible tax of caregiving on financial stability</div>
+      </div>
+    </div>
+    <div class="intensity-row">
+      <div class="intensity-track">
+        <div class="int-option"><input type="radio" name="dim5" value="1" id="d5-1"><label class="int-label" for="d5-1"><div class="int-bars"><span style="height:4px"></span><span style="height:4px"></span><span style="height:4px"></span><span style="height:4px"></span></div><span class="int-text">Financially<br>Stable</span></label></div>
+        <div class="int-option"><input type="radio" name="dim5" value="2" id="d5-2"><label class="int-label" for="d5-2"><div class="int-bars"><span style="height:8px"></span><span style="height:8px"></span><span style="height:4px"></span><span style="height:4px"></span></div><span class="int-text">Moderate<br>Strain</span></label></div>
+        <div class="int-option"><input type="radio" name="dim5" value="3" id="d5-3" checked><label class="int-label" for="d5-3"><div class="int-bars"><span style="height:12px"></span><span style="height:12px"></span><span style="height:8px"></span><span style="height:4px"></span></div><span class="int-text">Significant<br>Pressure</span></label></div>
+        <div class="int-option"><input type="radio" name="dim5" value="4" id="d5-4"><label class="int-label" for="d5-4"><div class="int-bars"><span style="height:16px"></span><span style="height:14px"></span><span style="height:10px"></span><span style="height:6px"></span></div><span class="int-text">Severe<br>Strain</span></label></div>
+        <div class="int-option"><input type="radio" name="dim5" value="5" id="d5-5"><label class="int-label" for="d5-5"><div class="int-bars"><span style="height:20px"></span><span style="height:18px"></span><span style="height:16px"></span><span style="height:12px"></span></div><span class="int-text">Financial<br>Crisis</span></label></div>
+      </div>
+    </div>
+    <div class="dim-context">
+      <textarea placeholder="Optional: How has your financial situation changed? What choices are you making because of financial pressure?" rows="2"></textarea>
+    </div>
+  </div>
+
+  <div class="cta-cluster">
+    <button class="btn-engine" id="runBtn" onclick="runEngine()">Generate My Two Futures</button>
+    <button class="btn-ghost" onclick="resetAll()">Reset</button>
+  </div>
+</div>
+
+<!-- ════════════════════ OUTPUT ════════════════════ -->
+<div id="outputPanel">
+  <!-- Path summary cards built by JS -->
+  <div id="pathSummary" class="path-summary" style="display:none;"></div>
+
+  <!-- Dimension comparison bars -->
+  <div id="dimCompare" class="dim-compare" style="max-width:860px;margin:0 auto 52px;padding:0 36px; display:none;">
+    <p class="dim-compare-label">Dimension Profile</p>
+    <div id="dimBars"></div>
+  </div>
+
+  <!-- Narrative output -->
+  <div style="max-width:860px; margin:0 auto; padding:0 36px;">
+    <p class="output-label">Your Two Futures</p>
+    <div id="futureBody">
+      <div class="loading-panel">
+        <p>Rendering your two futures…</p>
+        <svg class="fork-anim" viewBox="0 0 120 60">
+          <line x1="60" y1="0" x2="60" y2="25" stroke="rgba(224,184,74,0.5)" stroke-width="2"/>
+          <line x1="60" y1="25" x2="10" y2="55" stroke="rgba(192,92,62,0.7)" stroke-width="2" stroke-dasharray="4 3">
+            <animate attributeName="stroke-dashoffset" from="28" to="0" dur="1.4s" repeatCount="indefinite"/>
+          </line>
+          <line x1="60" y1="25" x2="110" y2="55" stroke="rgba(74,158,122,0.7)" stroke-width="2" stroke-dasharray="4 3">
+            <animate attributeName="stroke-dashoffset" from="0" to="28" dur="1.4s" repeatCount="indefinite"/>
+          </line>
+          <circle cx="60" cy="25" r="4" fill="#e0b84a" opacity="0.8"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+
+
+<script>
+/* ════════════════════════════════════════
+   HERO CANVAS — diverging path animation
+════════════════════════════════════════ */
+(function() {
+  const c = document.getElementById('heroCanvas');
+  const ctx = c.getContext('2d');
+  let W, H, frame = 0;
+
+  function resize() { W = c.width = c.offsetWidth; H = c.height = c.offsetHeight; }
+  window.addEventListener('resize', resize); resize();
+
+  // Particles travelling along two diverging paths
+  const N = 60;
+  const particles = [];
+  for (let i = 0; i < N; i++) {
+    const path = i < N/2 ? 'a' : 'b';
+    particles.push({
+      t: Math.random(),
+      speed: 0.0008 + Math.random() * 0.0006,
+      path,
+      alpha: 0.3 + Math.random() * 0.5,
+      size: 1.5 + Math.random() * 2.5,
+      phase: Math.random() * Math.PI * 2,
+    });
+  }
+
+  function getPos(t, path) {
+    // t: 0 to 1, path: 'a' | 'b'
+    const mx = W * 0.5, my = H * 0.45;
+    const split = 0.42;
+    if (t < split) {
+      // converging from top
+      const progress = t / split;
+      return {
+        x: mx,
+        y: H * 0.08 + progress * (my - H * 0.08)
+      };
+    } else {
+      const progress = (t - split) / (1 - split);
+      const ease = 1 - Math.pow(1 - progress, 2);
+      if (path === 'a') {
+        return {
+          x: mx - ease * W * 0.36,
+          y: my + progress * H * 0.48
+        };
+      } else {
+        return {
+          x: mx + ease * W * 0.36,
+          y: my + progress * H * 0.48
+        };
+      }
+    }
+  }
+
+  function draw() {
+    frame++;
+    ctx.clearRect(0, 0, W, H);
+
+    // Draw path lines
+    const steps = 120;
+    ['a','b'].forEach(path => {
+      ctx.beginPath();
+      for (let i = 0; i <= steps; i++) {
+        const t = i / steps;
+        const p = getPos(t, path);
+        i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+      }
+      ctx.strokeStyle = path === 'a'
+        ? 'rgba(192,92,62,0.12)'
+        : 'rgba(74,158,122,0.12)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    });
+
+    // Update and draw particles
+    particles.forEach(p => {
+      p.t += p.speed;
+      if (p.t > 1) { p.t = 0; p.alpha = 0.3 + Math.random() * 0.5; }
+      const pos = getPos(p.t, p.path);
+      const glow = p.alpha * (0.6 + 0.4 * Math.sin(frame * 0.04 + p.phase));
+      const color = p.path === 'a' ? `rgba(192,92,62,${glow})` : `rgba(74,158,122,${glow})`;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(pos.x, pos.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    // Fork point glow
+    const fx = W * 0.5, fy = H * 0.45;
+    const fg = ctx.createRadialGradient(fx, fy, 0, fx, fy, 60);
+    fg.addColorStop(0, 'rgba(224,184,74,0.2)');
+    fg.addColorStop(1, 'transparent');
+    ctx.fillStyle = fg;
+    ctx.beginPath(); ctx.arc(fx, fy, 60, 0, Math.PI*2); ctx.fill();
+
+    // Fork dot
+    const fp = 0.7 + 0.3 * Math.sin(frame * 0.04);
+    ctx.fillStyle = `rgba(224,184,74,${fp})`;
+    ctx.beginPath(); ctx.arc(fx, fy, 4, 0, Math.PI*2); ctx.fill();
+
+    // Vignette
+    const vg = ctx.createRadialGradient(W/2, H/2, H*0.1, W/2, H/2, H*0.75);
+    vg.addColorStop(0, 'transparent');
+    vg.addColorStop(1, 'rgba(6,8,16,0.8)');
+    ctx.fillStyle = vg;
+    ctx.fillRect(0, 0, W, H);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ════════════════════════════════════════
+   HELPER — get dimension values
+════════════════════════════════════════ */
+function getDimensions() {
+  const dims = [];
+  const names = ['Sleep & Physical Recovery','Social Contact & Isolation','Medical Crisis Frequency','Time & Space for Self','Financial Pressure'];
+  for (let i = 1; i <= 5; i++) {
+    const sel = document.querySelector(`input[name="dim${i}"]:checked`);
+    const val = sel ? parseInt(sel.value) : 3;
+    const panels = document.querySelectorAll('.dim-panel');
+    const ctx    = panels[i-1] ? panels[i-1].querySelector('textarea').value.trim() : '';
+    dims.push({ name: names[i-1], score: val, context: ctx });
+  }
+  return dims;
+}
+
+function totalRisk(dims) { return dims.reduce((s, d) => s + d.score, 0); }
+
+/* ════════════════════════════════════════
+   BUILD DIMENSION BARS
+════════════════════════════════════════ */
+function buildDimBars(dims) {
+  return dims.map(d => {
+    const pct = (d.score / 5) * 100;
+    const cls = d.score >= 4 ? 'bad' : 'good';
+    return `<div class="dim-bar-row">
+      <span class="dim-bar-name">${d.name.split(' ')[0]}</span>
+      <div class="dim-bar-track"><div class="dim-bar-fill ${cls}" style="width:0%" data-target="${pct}"></div></div>
+      <span class="dim-bar-score">${d.score}/5</span>
+    </div>`;
+  }).join('');
+}
+
+function animateBars() {
+  setTimeout(() => {
+    document.querySelectorAll('.dim-bar-fill').forEach(el => {
+      el.style.width = el.dataset.target + '%';
+    });
+  }, 100);
+}
+
+/* ════════════════════════════════════════
+   BUILD PATH SUMMARY CARDS (static)
+════════════════════════════════════════ */
+function buildPathCards(dims) {
+  const risk = totalRisk(dims);
+  const riskLabel = risk >= 18 ? 'Critical' : risk >= 13 ? 'High Stress' : risk >= 9 ? 'Moderate' : 'Manageable';
+  const highestDim = dims.reduce((a, b) => a.score > b.score ? a : b);
+
+  return `
+    <div class="path-card current">
+      <p class="path-card-tag">Current Trajectory · 6 Months</p>
+      <h3 class="path-card-title">If nothing changes</h3>
+      <p class="path-card-body">Combined stress load: <strong>${risk}/25 (${riskLabel})</strong>. Highest pressure dimension: <strong>${highestDim.name}</strong> at ${highestDim.score}/5. The narrative below shows where this trajectory leads.</p>
+    </div>
+    <div class="path-divider"><div class="vs-circle">vs</div></div>
+    <div class="path-card future">
+      <p class="path-card-tag">Intervention Path · 6 Months</p>
+      <h3 class="path-card-title">With one real change</h3>
+      <p class="path-card-body">Motivational Interviewing research shows one targeted intervention, sustained for six months, is sufficient to alter trajectory. The leverage point is identified below.</p>
+    </div>`;
+}
+
+/* ════════════════════════════════════════
+   MAIN ENGINE
+════════════════════════════════════════ */
+async function runEngine() {
+  const apiKey = document.getElementById('apiKey').value.trim();
+  if (!apiKey) { alert('Please enter your Anthropic API key.'); return; }
+
+  const dims = getDimensions();
+  const risk = totalRisk(dims);
+  const panel  = document.getElementById('outputPanel');
+  const body   = document.getElementById('futureBody');
+  const sumDiv = document.getElementById('pathSummary');
+  const cmpDiv = document.getElementById('dimCompare');
+  const barsEl = document.getElementById('dimBars');
+
+  // Show loading
+  body.innerHTML = `<div class="loading-panel"><p>Rendering your two futures…</p>
+    <svg class="fork-anim" viewBox="0 0 120 60" style="margin:24px auto;display:block;">
+      <line x1="60" y1="0" x2="60" y2="25" stroke="rgba(224,184,74,0.5)" stroke-width="2"/>
+      <line x1="60" y1="25" x2="10" y2="55" stroke="rgba(192,92,62,0.7)" stroke-width="2" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="28" to="0" dur="1.4s" repeatCount="indefinite"/></line>
+      <line x1="60" y1="25" x2="110" y2="55" stroke="rgba(74,158,122,0.7)" stroke-width="2" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="28" dur="1.4s" repeatCount="indefinite"/></line>
+      <circle cx="60" cy="25" r="4" fill="#e0b84a" opacity="0.8"/>
+    </svg></div>`;
+
+  sumDiv.innerHTML = buildPathCards(dims);
+  sumDiv.style.display = 'grid';
+  barsEl.innerHTML = buildDimBars(dims);
+  cmpDiv.style.display = 'block';
+  panel.style.display  = 'block';
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  animateBars();
+
+  const dimSummary = dims.map((d, i) =>
+    `Dimension ${i+1} — ${d.name}: ${d.score}/5${d.context ? '\n  Context: "' + d.context + '"' : ''}`
+  ).join('\n');
+
+  const highestDim  = dims.reduce((a, b) => a.score > b.score ? a : b);
+  const riskProfile = risk >= 18 ? 'critical — this person is in a pre-collapse state'
+                    : risk >= 13 ? 'high stress — significant burnout risk within months'
+                    : risk >= 9  ? 'moderate — trajectory is concerning but recoverable'
+                    : 'manageable — early intervention is effective';
+
+  const prompt = `You are a specialist in caregiver trajectory psychology, trained in Motivational Interviewing (Miller & Rollnick, 2012), caregiver burnout research (Pinquart & Sörensen, 2003), and Acceptance and Commitment Therapy. You are generating a Two Futures narrative for a care partner.
+
+They have rated their current reality across five dimensions:
+
+${dimSummary}
+
+Total stress load: ${risk}/25 — Risk profile: ${riskProfile}
+Highest-pressure dimension: ${highestDim.name} (${highestDim.score}/5)
+
+Your task: Generate the Three Sections below using H3 headers. Be specific, concrete, and narrative. Do not write in lists or bullet points anywhere. Write in full paragraphs and full scenes.
+
+### The Trajectory: A Week in Your Life — Six Months From Now
+Write a specific, detailed, narrative portrait of what a week in this care partner's life looks like if nothing changes — their current trajectory extended six months forward. Do not list what will happen. Write it as a scene: Tuesday morning, a phone call, the body, the kitchen at 11pm. Make it feel real. Ground it specifically in their five dimension scores and context. Use second person ("you"). Be honest about what caregiver trajectory research says happens on this path. Do not soften it. The goal is that they recognize themselves and feel the weight of where this leads.
+
+### The Alternate Week: Six Months on the Intervention Path
+Now write the same week — but six months after one real intervention was made. Do not write a fantasy. Write a realistic portrayal of what changes when the single highest-leverage dimension shifts. It is not perfect. It is not healed. But something specific and real is different. What does Tuesday morning feel like then? What is possible that was not possible before? Ground it in what the research shows actually changes when care partners make one sustained intervention. Same structure, same day — different weight.
+
+### The Leverage Point and 72-Hour Plan
+Name the single highest-leverage intervention point visible in their five dimensions — not the worst-scoring, but the one where a real change would produce the most systemic shift. Explain why this is the fulcrum, using the specific MI and caregiver research framework. Then give a 72-hour micro-plan with three timed, specific actions — labeled Hour 0-24, Hour 24-48, and Hour 48-72. Each action must be named, described in one concrete paragraph, and actionable without money, permission from anyone, or perfect circumstances. This is not a wellness plan. This is the minimum viable intervention.
+
+Write in second person ("you"). Be direct, literary, and honest. Do not end with encouragement. End with the last action in the 72-hour plan.`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1600,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.error?.message || `API error ${res.status}`);
+    }
+
+    const data = await res.json();
+    const raw  = data.content.find(b => b.type === 'text')?.text || '';
+
+    // Render — apply color classes to H3s based on order
+    let h3Count = 0;
+    const html = raw
+      .replace(/### (.*)/g, () => {
+        const cls = h3Count === 0 ? 'path-a-head' : h3Count === 1 ? 'path-b-head' : 'lever-head';
+        h3Count++;
+        return `<h3 class="${cls}">${arguments[1] || raw.match(/### (.*)/g)?.[h3Count-1]?.replace('### ','')}</h3>`;
+      })
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .split('\n\n')
+      .map(p => {
+        const t = p.trim();
+        if (!t) return '';
+        if (t.startsWith('<h3>')) return t;
+        return `<p>${t.replace(/\n/g,' ')}</p>`;
+      })
+      .join('\n');
+
+    body.innerHTML = html;
+
+  } catch(err) {
+    body.innerHTML = `<p style="color:var(--path-a);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;line-height:1.8;">
+      Error: ${err.message}<br>Please verify your API key and try again.</p>`;
+  }
+}
+
+/* reset */
+function resetAll() {
+  for (let i = 1; i <= 5; i++) {
+    const mid = document.getElementById(`d${i}-3`);
+    if (mid) mid.checked = true;
+    const panels = document.querySelectorAll('.dim-panel');
+    if (panels[i-1]) panels[i-1].querySelector('textarea').value = '';
+  }
+  document.getElementById('outputPanel').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+<!-- UNIVERSAL FOOTER -->
+<footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(100,140,200,0.1);">
+      <div>
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:12px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.25);line-height:2.1;">
+          Grassroots Care Partner Advocacy<br>
+          Ellenton, Florida · 16th Congressional District<br>
+          <a href="/cdn-cgi/l/email-protection#157f70737355767a79717c66767d70787c743b737a607b7174617c7a7b" style="color:#c8902a;text-decoration:none;"><span class="__cf_email__" data-cfemail="f69c939090b695999a929f85959e939b9f97d8909983989297829f9998">[email&#160;protected]</span></a><br>
+          <a href="https://coldischemia.foundation" style="color:#c8902a;text-decoration:none;">coldischemia.foundation</a>
+        </p>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Command Center</a>
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Situation Room</a>
+          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Research</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
+          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Free Guide</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Privacy Policy</a>
+          <a href="/cdn-cgi/l/email-protection#78121d1e1e381b17141c110b1b101d151119561e170d161c190c111716" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Contact</a>
+          <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Store</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.06em;color:rgba(216,207,196,0.2);">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+      <div style="display:flex;gap:16px;">
+        <a href="terms

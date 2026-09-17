@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formal Demand Letters — Cold Ischemia Foundation</title>
+<meta name="description" content="Formal correspondence from Cold Ischemia Foundation to Congress, CMS, HHS, NIH, the Florida Legislature, and the OPTN Board of Directors — demanding recognition, protection, and compensation for care partners.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+  --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);
+  --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);
+  --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.12);
+  --danger:#c83050;--danger-d:rgba(200,48,80,0.1);
+  --green:#50c878;--green-d:rgba(80,200,120,0.1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:var(--raised);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-actions{display:flex;align-items:center;gap:8px;}
+.nav-btn{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;padding:7px 16px;border-radius:2px;border:1px solid var(--b);color:var(--ink40);text-decoration:none;transition:all 0.2s;}
+.nav-btn:hover{border-color:var(--gold-d);color:var(--gold);}
+.nav-btn-gold{background:var(--gold);color:var(--abyss)!important;border-color:var(--gold)!important;}
+.nav-btn-gold:hover{background:var(--gold-l)!important;}
+@media(max-width:900px){.nav-links a:not(.nav-btn){display:none;}}
+
+.hero{padding:120px 40px 56px;background:var(--abyss);border-bottom:1px solid var(--b);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12));}
+.hero-inner{max-width:1000px;margin:0 auto;position:relative;z-index:2;}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--danger);margin-bottom:24px;display:flex;align-items:center;gap:14px;}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--danger);}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6.5vw,76px);letter-spacing:0.02em;line-height:1;color:var(--ink);margin-bottom:22px;}
+.hero-h1 span{color:var(--danger);}
+.hero-sub{font-family:'Crimson Pro',serif;font-size:1.12rem;line-height:1.85;color:var(--ink60);max-width:720px;}
+.hero-sub strong{color:var(--ink80);font-weight:600;}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:32px;}
+.hs{padding-left:14px;border-left:2px solid var(--danger-d);}
+.hsn{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--gold-l);line-height:1;}
+.hsl{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink40);}
+
+.wrap{max-width:1000px;margin:0 auto;padding:0 40px;}
+section{padding:56px 0;}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--danger);margin-bottom:18px;}
+
+.letters{display:flex;flex-direction:column;gap:2px;background:var(--b);margin-top:24px;}
+.letter{background:var(--void);padding:32px 30px;}
+.letter-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+.letter-to{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;color:var(--ink);}
+.letter-date{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink40);}
+.letter-re{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;line-height:1.6;}
+.letter blockquote{border-left:2px solid var(--danger-d);padding-left:18px;margin:0 0 16px 0;font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;line-height:1.75;color:var(--ink80);}
+.letter-dl{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--pulse);text-decoration:none;}
+.letter-dl:hover{color:#5fe0e4;}
+
+.pledge{background:rgba(200,48,80,.04);border-top:1px solid rgba(200,48,80,.15);border-bottom:1px solid rgba(200,48,80,.15);padding:26px 40px;margin-top:40px;}
+.pledge-inner{max-width:1000px;margin:0 auto;display:flex;gap:16px;align-items:flex-start;}
+.pledge-bar{width:3px;background:var(--danger);flex-shrink:0;align-self:stretch;border-radius:2px;}
+.pledge p{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;line-height:2.1;color:var(--ink40);margin:0;}
+.pledge strong{color:rgba(200,48,80,.7);}
+
+footer{background:var(--abyss);border-top:1px solid var(--b);padding:48px 40px 28px;text-align:center;}
+footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.05em;color:var(--ink20);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="accountability.html">Accountability</a>
+    <a href="demand-letters.html" class="active">Demand Letters</a>
+    <a href="donate.html">Donate</a>
+  </div>
+  <div class="nav-actions">
+    <a href="donate.html" class="nav-btn nav-btn-gold">Donate Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Formal Correspondence &mdash; On the Record</div>
+    <h1 class="hero-h1">This Letter Does Not Ask. <span>It Demands.</span></h1>
+    <p class="hero-sub">On March 30, 2026, Cold Ischemia Foundation sent formal demand letters to Congress, the Florida Legislature, HHS, CMS, and NIH. In June 2026, CIF submitted a formal Lean Six Sigma methodology directly to the OPTN Board of Directors. <strong>Every office was given thirty days to respond in writing. Non-response is being treated as a matter of public record.</strong></p>
+    <div class="hero-stats">
+      <div class="hs"><div class="hsn">6</div><div class="hsl">Formal letters on file</div></div>
+      <div class="hs"><div class="hsn">53M</div><div class="hsl">Care partners represented</div></div>
+      <div class="hs"><div class="hsn">30</div><div class="hsl">Days given to respond</div></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="lbl">The Letters</div>
+    <div class="letters">
+
+      <div class="letter">
+        <div class="letter-top">
+          <div class="letter-to">United States Congress &amp; Leadership</div>
+          <div class="letter-date">March 30, 2026</div>
+        </div>
+        <div class="letter-re">RE: Federal Compensation Mandate for Unpaid Family Care Partners, All Chronic Disease Categories</div>
+        <blockquote>"I am a transplant recipient who is alive because someone cared for me without compensation, without recognition, and without the support of a single federal or state program designed for their benefit. That person's labor &mdash; and the labor of 53 million Americans like her &mdash; will no longer be treated as a free resource available for governmental exploitation."</blockquote>
+        <a href="demand-letter-congress.pdf" class="letter-dl">Download the full letter (PDF) &rarr;</a>
+      </div>
+
+      <div class="letter">
+        <div class="letter-top">
+          <div class="letter-to">Dr. Mehmet Oz, Administrator, CMS</div>
+          <div class="letter-date">March 30, 2026</div>
+        </div>
+        <div class="letter-re">RE: Care Partner Recognition, Transplant Center Conditions of Participation, and Outcome Metric Reform</div>
+        <blockquote>"As Administrator of the Centers for Medicare &amp; Medicaid Services, you hold direct regulatory authority over transplant center certification... The corrective actions demanded herein require no new legislation. They require the exercise of existing regulatory authority that your office has declined to exercise. That declination ends with this correspondence."</blockquote>
+        <a href="demand-letter-cms.pdf" class="letter-dl">Download the full letter (PDF) &rarr;</a>
+      </div>
+
+      <div class="letter">
+        <div class="letter-top">
+          <div class="letter-to">Secretary Robert F. Kennedy, Jr., HHS</div>
+          <div class="letter-date">March 30, 2026</div>
+        </div>
+        <div class="letter-re">RE: Regulatory and Administrative Action Across All Chronic Disease Categories</div>
+        <blockquote>"Administrative action within existing authority can begin immediately. No new legislation is required for the initial corrective steps demanded below."</blockquote>
+        <a href="demand-letter-hhs.pdf" class="letter-dl">Download the full letter (PDF) &rarr;</a>
+      </div>
+
+      <div class="letter">
+        <div class="letter-top">
+          <div class="letter-to">Dr. Jay Bhattacharya, Director, NIH</div>
+          <div class="letter-date">March 30, 2026</div>
+        </div>
+        <div class="letter-re">RE: Research Priority Designation for Care Partner Outcomes</div>
+        <blockquote>"Less than 3% of NIH chronic disease research funding is directed toward caregiver outcomes &mdash; despite peer-reviewed evidence that caregiver burden directly determines recipient mortality, medication adherence, and hospitalization rates. Gold-standard science does not ignore the most consequential unmeasured variable in its primary area of study."</blockquote>
+        <a href="demand-letter-nih.pdf" class="letter-dl">Download the full letter (PDF) &rarr;</a>
+      </div>
+
+      <div class="letter">
+        <div class="letter-top">
+          <div class="letter-to">Florida Legislature &mdash; Senate President &amp; House Speaker</div>
+          <div class="letter-date">March 30, 2026</div>
+        </div>
+        <div class="letter-re">RE: Care Partner Compensation, Respite Services, and Workforce Protection Under Florida Medicaid</div>
+        <blockquote>"Florida has enacted no meaningful statutory framework requiring compensation, workforce protections, or standardized respite services for care partners across chronic illness categories. That gap is a policy choice this Legislature has made. It is a policy choice this Legislature must reverse."</blockquote>
+        <a href="demand-letter-florida-legislature.pdf" class="letter-dl">Download the full letter (PDF) &rarr;</a>
+      </div>
+
+      <div class="letter">
+        <div class="letter-top">
+          <div class="letter-to">OPTN Board of Directors</div>
+          <div class="letter-date">June 8, 2026</div>
+        </div>
+        <div class="letter-re">RE: A Lean Six Sigma Methodology for Transformation of the U.S. Solid Organ Transplant System, v2.0</div>
+        <blockquote>"92.8 percent of potential living donors are lost before completing donation... These are not unsolvable problems. They are unfunded solutions." &mdash; and on independence: "Fresenius Medical Care and DaVita together control approximately 70 percent of the U.S. dialysis market... Each successful kidney transplant eliminates approximately $145,000 in annual dialysis revenue. That financial stake in transplant underperformance is not incidental to the reform environment. It is constitutive of it."</blockquote>
+        <a href="cif-optn-board-submission.pdf" class="letter-dl">Download the full submission (PDF) &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="pledge">
+  <div class="pledge-inner">
+    <div class="pledge-bar"></div>
+    <p><strong>Independence Pledge &mdash; Permanent &amp; Non-Negotiable.</strong> Cold Ischemia Foundation will never accept funding from pharmaceutical companies, dialysis corporations, medical device manufacturers, hospital systems, or insurance companies. Every letter above was written and sent without a single dollar from the industries it holds accountable.</p>
+  </div>
+</div>
+
+<footer>
+  <p>Cold Ischemia Foundation &middot; Ellenton, Florida &middot; Congressional District FL-16 &middot; coldischemia.foundation</p>
+</footer>
+
+</body>
+</html>

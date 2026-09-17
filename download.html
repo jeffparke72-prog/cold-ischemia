@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — Your Free Guide Bundle · Cold Ischemia Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{width:100%;height:100%;overflow:hidden;background:#030509;}
+    canvas#particles{position:fixed;inset:0;z-index:0;pointer-events:none;}
+    .stage{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;}
+    .ring-wrap{position:relative;width:140px;height:140px;margin:0 auto 40px;flex-shrink:0;}
+    .ring{position:absolute;inset:0;border-radius:50%;border:2px solid transparent;animation:ringExpand 0.9s cubic-bezier(0.22,1,0.36,1) forwards;opacity:0;}
+    .ring-1{border-color:rgba(200,144,42,0.9);animation-delay:0s;}
+    .ring-2{border-color:rgba(42,196,200,0.6);animation-delay:0.15s;}
+    .ring-3{border-color:rgba(200,144,42,0.25);animation-delay:0.3s;}
+    @keyframes ringExpand{0%{opacity:0;transform:scale(0.1);}60%{opacity:1;transform:scale(1.15);}80%{transform:scale(0.95);}100%{opacity:1;transform:scale(1);}}
+    .check-circle{position:absolute;inset:20px;border-radius:50%;background:rgba(200,144,42,0.08);border:1.5px solid rgba(200,144,42,0.4);display:flex;align-items:center;justify-content:center;opacity:0;animation:fadeIn 0.4s ease 0.5s forwards;}
+    .check-path{stroke:#c8902a;stroke-width:3;fill:none;stroke-dasharray:40;stroke-dashoffset:40;stroke-linecap:round;stroke-linejoin:round;animation:drawCheck 0.4s ease 0.65s forwards;}
+    @keyframes drawCheck{to{stroke-dashoffset:0;}}
+    @keyframes fadeIn{to{opacity:1;}}
+    .ty-word{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,14vw,130px);letter-spacing:0.04em;line-height:0.9;color:#d8cfc4;opacity:0;transform:translateY(60px) scale(0.92);animation:wordRise 0.8s cubic-bezier(0.22,1,0.36,1) 0.4s forwards;}
+    .ty-word span{color:#c8902a;}
+    @keyframes wordRise{to{opacity:1;transform:translateY(0) scale(1);}}
+    .ty-sub{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(16px,3vw,22px);color:rgba(216,207,196,0.55);margin-top:12px;opacity:0;animation:fadeSlide 0.6s ease 0.9s forwards;}
+    @keyframes fadeSlide{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+    .divider{width:0;height:1px;background:linear-gradient(90deg,transparent,#c8902a,transparent);margin:28px auto;animation:divGrow 0.6s ease 1.1s forwards;}
+    @keyframes divGrow{to{width:280px;}}
+    .ty-body{font-family:'IBM Plex Mono',monospace;font-size:clamp(10px,1.8vw,13px);letter-spacing:0.12em;line-height:2;color:rgba(216,207,196,0.4);text-transform:uppercase;max-width:440px;opacity:0;animation:fadeSlide 0.6s ease 1.3s forwards;}
+    .redirect-wrap{margin-top:36px;opacity:0;animation:fadeSlide 0.5s ease 1.6s forwards;}
+    .redirect-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(216,207,196,0.2);margin-bottom:10px;}
+    .redirect-label span{color:#c8902a;}
+    .progress-track{width:280px;height:2px;background:rgba(100,140,200,0.08);border-radius:1px;margin:0 auto 20px;overflow:hidden;}
+    .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#c8902a,#e8b84a);animation:progressFill 5s linear 1.8s forwards;}
+    @keyframes progressFill{to{width:100%;}}
+    .btn-return{display:inline-block;padding:14px 36px;background:#c8902a;color:#030509;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:2px;transition:background 0.2s,transform 0.15s;}
+    .btn-return:hover{background:#e8b84a;transform:translateY(-1px);}
+    .manual-dl{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:rgba(216,207,196,0.2);}
+    .manual-dl a{color:rgba(200,144,42,0.5);text-decoration:none;}
+    .manual-dl a:hover{color:#c8902a;}
+    .flare{position:fixed;border-radius:50%;pointer-events:none;z-index:1;animation:flareAnim var(--dur) ease var(--delay) forwards;opacity:0;}
+    @keyframes flareAnim{0%{opacity:0;transform:translate(0,0) scale(0);}30%{opacity:var(--op);}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(var(--sc));}}
+  </style>
+</head>
+<body>
+<!-- FLOATING HOME BUTTON -->
+<a href="index.html" id="home-float" style="position:fixed;bottom:24px;left:24px;z-index:999;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:10px 18px;background:rgba(3,5,9,0.92);border:1px solid rgba(200,144,42,0.4);color:#c8902a;text-decoration:none;border-radius:2px;backdrop-filter:blur(8px);transition:all .2s;white-space:nowrap;" onmouseover="this.style.background='#c8902a';this.style.color='#030509';" onmouseout="this.style.background='rgba(3,5,9,0.92)';this.style.color='#c8902a';">← Home</a>
+
+<canvas id="particles"></canvas>
+<div class="stage">
+  <div class="ring-wrap">
+    <div class="ring ring-3"></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-1"></div>
+    <div class="check-circle">
+      <svg width="36" height="36" viewBox="0 0 36 36">
+        <polyline class="check-path" points="8,18 15,25 28,11"/>
+      </svg>
+    </div>
+  </div>
+  <div class="ty-word">THANK <span>YOU</span></div>
+  <div class="ty-sub">Your guide bundle is downloading now.</div>
+  <div class="divider"></div>
+  <p class="ty-body">Check your inbox for the welcome email with all 3 guides.<br>If a download didn't start, use the links below.</p>
+  <div class="redirect-wrap">
+    <div class="redirect-label">Returning to the Foundation in <span id="cd">8</span>s</div>
+    <div class="progress-track"><div class="progress-fill"></div></div>
+    <a href="https://coldischemia.foundation" class="btn-return">Return to Cold Ischemia Foundation &rarr;</a>
+    <div class="manual-dl">
+      Downloads didn't start?
+      <a href="the-first-24-hours.pdf" download>The First 24 Hours</a>
+      <!-- TODO: Add Advocacy Toolkit and Regulatory Action Toolkit PDFs here once provided, then restore their links above and in the script below. -->
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var files=[
+    {url:'the-first-24-hours.pdf',name:'Cold-Ischemia-Foundation-The-First-24-Hours.pdf'}
+  ];
+  files.forEach(function(f,i){
+    setTimeout(function(){
+      var a=document.createElement('a');
+      a.href=f.url;a.download=f.name;
+      document.body.appendChild(a);a.click();document.body.removeChild(a);
+    }, i*700);
+  });
+})();
+var count=8,cdEl=document.getElementById('cd');
+var t=setInterval(function(){count--;cdEl.textContent=count;if(count<=0){clearInterval(t);window.location.href='https://coldischemia.foundation';}},1000);
+(function(){
+  var n=44,cx=window.innerWidth/2,cy=window.innerHeight/2;
+  for(var i=0;i<n;i++){
+    var el=document.createElement('div');
+    el.className='flare';
+    var angle=(i/n)*360+Math.random()*15;
+    var dist=100+Math.random()*220;
+    var dx=Math.cos(angle*Math.PI/180)*dist;
+    var dy=Math.sin(angle*Math.PI/180)*dist;
+    var size=3+Math.random()*9;
+    var gold=Math.random()>0.4?'#c8902a':'#2ac4c8';
+    el.style.cssText='left:'+cx+'px;top:'+cy+'px;width:'+size+'px;height:'+size+'px;background:'+gold+';'
+      +'--dur:'+(0.7+Math.random()*0.9).toFixed(2)+'s;'
+      +'--delay:'+(0.35+Math.random()*0.45).toFixed(2)+'s;'
+      +'--tx:'+dx.toFixed(0)+'px;--ty:'+dy.toFixed(0)+'px;'
+      +'--op:'+(0.4+Math.random()*0.5).toFixed(2)+';'
+      +'--sc:'+(0.5+Math.random()*0.8).toFixed(2)+';';
+    document.body.appendChild(el);
+  }
+})();
+(function(){
+  var canvas=document.getElementById('particles'),ctx=canvas.getContext('2d'),W,H,pts=[];
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+  function Pt(){this.x=Math.random()*W;this.y=Math.random()*H;this.vx=(Math.random()-0.5)*0.3;this.vy=(Math.random()-0.5)*0.3;this.r=1+Math.random()*1.5;this.a=0.08+Math.random()*0.2;this.c=Math.random()>0.5?'rgba(200,144,42,':'rgba(42,196,200,';}
+  Pt.prototype.update=function(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W)this.vx*=-1;if(this.y<0||this.y>H)this.vy*=-1;};
+  Pt.prototype.draw=function(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.c+this.a+')';ctx.fill();};
+  function init(){resize();pts=[];for(var i=0;i<60;i++)pts.push(new Pt());}
+  function loop(){ctx.clearRect(0,0,W,H);pts.forEach(function(p){p.update();p.draw();});for(var i=0;i<pts.length;i++)for(var j=i+1;j<pts.length;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<90){ctx.beginPath();ctx.strokeStyle='rgba(200,144,42,'+(1-d/90)*0.06+')';ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.lineWidth=0.5;ctx.stroke();}}requestAnimationFrame(loop);}
+  window.addEventListener('resize',resize);init();loop();
+})();
+</script>
+
+<!-- UNIVERSAL FOOTER -->
+<footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,0.1);">
+      <div>
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:10px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.22);line-height:2.2;">
+          Grassroots Care Partner Advocacy<br>
+          Ellenton, Florida · 16th Congressional District<br>
+          <a href="/cdn-cgi/l/email-protection#076d6261614764686b636e74646f626a6e6629616872696366736e6869" style="color:#c8902a;text-decoration:none;"><span class="__cf_email__" data-cfemail="3e545b58587e5d51525a574d5d565b53575f1058514b505a5f4a575150">[email&#160;protected]</span></a><br>
+          <a href="https://coldischemia.foundation" style="color:#c8902a;text-decoration:none;">coldischemia.foundation</a>
+        </p>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Command Center</a>
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Situation Room</a>
+          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Research</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Scorecard</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Our Story</a>
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Donate</a>
+          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Free Guides</a>
+          <a href="sales-letter.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Our Case for You</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Privacy Policy</a>
+          <a href="/cdn-cgi/l/email-protection#e8828d8e8ea88b87848c819b8b808d858189c68e879d868c899c818786" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.18);">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+      <div style="display:flex;gap:14px;">
+        <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.18);text-decoration:none;">Terms</a>
+        <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.18);text-decoration:none;">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

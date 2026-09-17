@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cold Ischemia Foundation · SHIELD Method Strategy 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#f5f0e8;font-family:'Crimson Pro',Georgia,serif;color:#1a1208;overflow-x:hidden}
+.nav{position:sticky;top:0;z-index:100;background:#0d1f14;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:54px;border-bottom:1px solid rgba(201,168,76,.25)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#c9a84c;letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
+.nav-links{display:flex}
+.nav-links button{background:none;border:none;border-bottom:2px solid transparent;color:#8aaa8a;font-family:'Crimson Pro',serif;font-size:13px;padding:0 14px;cursor:pointer;height:54px;transition:color .2s;letter-spacing:.5px}
+.nav-links button:hover{color:#c9a84c}
+.nav-links button.active{color:#c9a84c;border-bottom-color:#c9a84c}
+.section{display:none;min-height:100vh;animation:fadeIn .4s ease}
+.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.hero{background:#0d1f14;min-height:100vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.05) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.hero-glow{position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 70%);pointer-events:none}
+.hero-content{position:relative;z-index:2;padding:5rem 3.5rem 3rem;flex:1;display:flex;flex-direction:column;justify-content:center;max-width:900px}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:#c9a84c;letter-spacing:4px;text-transform:uppercase;margin-bottom:1.75rem;display:flex;align-items:center;gap:14px}
+.hero-eyebrow::before{content:'';display:block;width:36px;height:1px;background:#c9a84c}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6.5vw,5.5rem);font-weight:900;color:#f5f0e8;line-height:1.04;margin-bottom:1.75rem;letter-spacing:-.5px}
+.hero-h1 em{color:#c9a84c;font-style:italic}
+.hero-body{font-size:1.2rem;color:#7a9a7a;line-height:1.8;max-width:580px;margin-bottom:3rem;font-weight:300}
+.hero-cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:4rem}
+.btn-gold{background:#c9a84c;color:#0d1f14;font-family:'Crimson Pro',serif;font-size:15px;font-weight:600;padding:13px 30px;border:none;border-radius:3px;cursor:pointer;letter-spacing:.5px;transition:all .2s}
+.btn-gold:hover{background:#e0c06a;transform:translateY(-2px)}
+.btn-outline{background:none;color:#c9a84c;font-family:'Crimson Pro',serif;font-size:15px;padding:13px 30px;border:1.5px solid rgba(201,168,76,.45);border-radius:3px;cursor:pointer;letter-spacing:.5px;transition:all .2s}
+.btn-outline:hover{border-color:#c9a84c;background:rgba(201,168,76,.07)}
+.hero-stat-row{display:flex;gap:0;border-top:1px solid rgba(201,168,76,.15);padding-top:2.5rem}
+.hero-stat{flex:1;padding-right:2.5rem;border-right:1px solid rgba(201,168,76,.1)}
+.hero-stat:last-child{border-right:none;padding-right:0;padding-left:2.5rem}
+.hero-stat:nth-child(2){padding-left:2.5rem}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;color:#c9a84c;line-height:1}
+.hero-stat-label{font-size:12px;color:#4a6a4a;margin-top:6px;letter-spacing:.5px;line-height:1.5}
+.hero-corner{position:absolute;bottom:2.5rem;right:3.5rem;z-index:2;text-align:right}
+.hero-corner-line{font-family:'JetBrains Mono',monospace;font-size:9px;color:#2a4a2a;letter-spacing:2px;line-height:2.2}
+.page-bg{background:#f5f0e8;padding:3.5rem 0}
+.container{max-width:900px;margin:0 auto;padding:0 3rem}
+.page-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:#8a6a1c;letter-spacing:4px;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+.page-eyebrow::before{content:'';display:block;width:24px;height:1px;background:#8a6a1c}
+.page-h2{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;color:#0d1f14;line-height:1.08;margin-bottom:1rem}
+.page-lead{font-size:1.15rem;color:#3a3020;line-height:1.85;font-weight:300;border-left:3px solid #c9a84c;padding-left:1.5rem;margin-bottom:2.5rem}
+.contrast-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:2.5rem}
+.c-dark{background:#0d1f14;border-radius:5px;padding:2rem}
+.c-dark-label{font-family:'JetBrains Mono',monospace;font-size:9px;color:#5ad4a0;letter-spacing:3px;text-transform:uppercase;margin-bottom:1rem}
+.c-dark ul{list-style:none;font-size:14px;color:#7a9a7a;line-height:2.1}
+.c-dark ul li::before{content:'→ ';color:#c9a84c}
+.c-red{background:#1a0808;border-radius:5px;padding:2rem}
+.c-red-label{font-family:'JetBrains Mono',monospace;font-size:9px;color:#f07a5a;letter-spacing:3px;text-transform:uppercase;margin-bottom:1rem}
+.c-red ul{list-style:none;font-size:14px;color:#7a4a4a;line-height:2.1}
+.c-red ul li::before{content:'✗ ';color:#f07a5a}
+.violation-band{background:#1a0808;padding:2.25rem 2.5rem;margin:2.5rem 0;border-radius:5px;display:flex;align-items:center;gap:2.5rem}
+.v-num{font-family:'Playfair Display',serif;font-size:4.5rem;font-weight:900;color:#f07a5a;line-height:1;min-width:100px}
+.v-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:#f5f0e8;margin-bottom:.5rem}
+.v-sub{font-size:13.5px;color:#7a4a4a;line-height:1.65}
+.v-cta{background:#f07a5a;color:#1a0808;font-family:'Crimson Pro',serif;font-size:14px;font-weight:600;padding:10px 22px;border:none;border-radius:3px;cursor:pointer;white-space:nowrap;transition:all .2s}
+.v-cta:hover{background:#f09a7a}
+.print-banner{background:#fff8ee;border:1px solid #d4c4a0;border-radius:5px;padding:1.25rem 1.75rem;margin:2.5rem 0;display:flex;align-items:center;gap:1.25rem;cursor:pointer}
+.print-icon{font-size:1.6rem;flex-shrink:0}
+.print-text-block{flex:1;font-size:13.5px;color:#5a4a2a;line-height:1.5}
+.print-text-block strong{display:block;margin-bottom:2px;font-size:14px;color:#1a1208}
+.print-btn{background:#0d1f14;color:#c9a84c;font-family:'JetBrains Mono',monospace;font-size:9px;padding:10px 18px;border:none;border-radius:3px;cursor:pointer;letter-spacing:2px;text-transform:uppercase;transition:all .2s;white-space:nowrap}
+.print-btn:hover{background:#1a3a24}
+.dmaic-strip{background:#fff8ee;border:1px solid #d4c4a0;border-radius:5px;margin-bottom:2.5rem;overflow:hidden}
+.dmaic-strip-inner{display:grid;grid-template-columns:repeat(5,1fr)}
+.ds-cell{padding:1.25rem 1rem;text-align:center;border-right:1px solid #e4d4b0}
+.ds-cell:last-child{border-right:none}
+.ds-phase{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px}
+.ds-d .ds-phase{color:#5ab4f0}.ds-m .ds-phase{color:#5ad4a0}.ds-a .ds-phase{color:#f07a5a}.ds-i .ds-phase{color:#c07af5}.ds-c .ds-phase{color:#d4a820}
+.ds-word{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#0d1f14}
+.ds-sub{font-size:11px;color:#8a6a2a;margin-top:3px}
+.pillar-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 2rem}
+.pillar{background:#0d1f14;border-radius:5px;padding:2rem;position:relative;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.pillar:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
+.pillar::after{content:attr(data-letter);position:absolute;bottom:-20px;right:-8px;font-family:'Playfair Display',serif;font-size:8rem;font-weight:900;color:rgba(201,168,76,.04);line-height:1;pointer-events:none}
+.pillar-phase{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:.75rem}
+.pillar-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#f5f0e8;margin-bottom:.65rem;line-height:1.3}
+.pillar-body{font-size:13.5px;color:#5a7a5a;line-height:1.7}
+.pillar-tools{display:flex;flex-wrap:wrap;gap:5px;margin-top:1.25rem}
+.tool-tag{font-family:'JetBrains Mono',monospace;font-size:9px;padding:3px 9px;border-radius:2px;border:1px solid rgba(201,168,76,.2);color:#7a6a3a;letter-spacing:.5px}
+.p-d .pillar-phase{color:#5ab4f0}.p-m .pillar-phase{color:#5ad4a0}.p-a .pillar-phase{color:#f07a5a}.p-i .pillar-phase{color:#c07af5}.p-c .pillar-phase{color:#d4a820}
+.pillar-full{grid-column:1/-1}
+.expand-wrap{margin:2.5rem 0}
+.expand-btn{width:100%;background:#fff8ee;border:1px solid #d4c4a0;border-radius:5px;padding:14px 18px;text-align:left;cursor:pointer;font-family:'Crimson Pro',serif;font-size:16px;color:#0d1f14;display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;transition:all .2s}
+.expand-btn:hover{border-color:#c9a84c;background:#fffaf2}
+.expand-btn .arr{transition:transform .3s;color:#c9a84c;font-family:'JetBrains Mono',monospace;font-size:11px}
+.expand-btn.open{border-radius:5px 5px 0 0;border-color:#c9a84c;background:#fffaf2}
+.expand-btn.open .arr{transform:rotate(180deg)}
+.expand-content{display:none;padding:1.5rem 1.75rem;background:#fffaf2;border:1px solid #c9a84c;border-top:none;border-radius:0 0 5px 5px;font-size:14px;color:#4a3a1a;line-height:1.8;margin-bottom:4px}
+.expand-content.open{display:block}
+.expand-content strong{color:#0d1f14;display:block;margin:.75rem 0 4px;font-size:14.5px}
+.expand-content strong:first-child{margin-top:0}
+.expand-content p{margin-bottom:.75rem}
+.expand-content ul{margin-left:1.2rem;margin-bottom:.75rem}
+.expand-content ul li{margin-bottom:4px}
+.voices-bg{background:#0d1f14;padding:5rem 0}
+.voice-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:#c9a84c;letter-spacing:4px;text-transform:uppercase;text-align:center;margin-bottom:3rem}
+.voice-carousel{position:relative;overflow:hidden}
+.voice-slides{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.voice-slide{min-width:100%;padding:0 3rem}
+.quote-block{max-width:720px;margin:0 auto;text-align:center}
+.quote-mark{font-family:'Playfair Display',serif;font-size:6rem;color:rgba(201,168,76,.18);line-height:.4;margin-bottom:1.5rem;display:block}
+.quote-text{font-family:'Playfair Display',serif;font-size:1.55rem;font-style:italic;color:#d4c9a8;line-height:1.65;margin-bottom:2rem}
+.quote-attr{font-family:'Crimson Pro',serif;font-size:13.5px;color:#4a6a4a;letter-spacing:.5px}
+.quote-attr strong{color:#8aaa8a;display:block;margin-bottom:3px;font-size:16px;font-style:normal;letter-spacing:0}
+.quote-struct{font-family:'JetBrains Mono',monospace;font-size:9px;color:#2a4a2a;letter-spacing:2px;text-transform:uppercase;margin-top:.75rem;display:block}
+.voice-controls{display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:2.5rem}
+.voice-dots{display:flex;gap:8px}
+.v-dot{width:7px;height:7px;border-radius:50%;background:rgba(201,168,76,.2);cursor:pointer;transition:all .25s;border:none}
+.v-dot.active{background:#c9a84c;width:22px;border-radius:4px}
+.voice-nav-row{display:flex;gap:12px}
+.voice-btn{background:none;border:1px solid rgba(201,168,76,.3);color:#c9a84c;padding:8px 22px;border-radius:3px;cursor:pointer;font-family:'Crimson Pro',serif;font-size:14px;transition:all .2s}
+.voice-btn:hover{background:rgba(201,168,76,.1);border-color:#c9a84c}
+.fw-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:13.5px}
+.fw-table thead th{background:#0d1f14;color:#c9a84c;padding:11px 16px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:400}
+.fw-table tbody td{padding:11px 16px;border-bottom:1px solid #e8dfc8;color:#3a3020;vertical-align:top;line-height:1.6}
+.fw-table tbody tr:hover td{background:#fff8ee}
+.fw-table td:first-child{font-family:'Playfair Display',serif;font-weight:700;color:#0d1f14;font-size:14px}
+.phase-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;padding:3px 8px;border-radius:2px;letter-spacing:1px}
+.pb-live{background:#0a2018;color:#5ad4a0}.pb-filed{background:#0a2030;color:#5ab4f0}.pb-adv{background:#1a0a28;color:#c07af5}.pb-dep{background:#2a1e04;color:#d4a820}.pb-prod{background:#1a1010;color:#f07a5a}
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:2rem 0}
+.aud-card{border:1px solid #d4c4a0;border-radius:5px;padding:1.75rem;background:#fff8ee;transition:all .25s;cursor:pointer;display:flex;flex-direction:column}
+.aud-card:hover{border-color:#c9a84c;transform:translateY(-3px);box-shadow:0 8px 28px rgba(10,30,20,.08)}
+.aud-icon-wrap{width:48px;height:48px;background:#0d1f14;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;flex-shrink:0}
+.aud-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#0d1f14;margin-bottom:.5rem}
+.aud-desc{font-size:13.5px;color:#5a4a2a;line-height:1.65;flex:1}
+.aud-cta{font-family:'JetBrains Mono',monospace;font-size:9px;color:#8a6a1c;letter-spacing:1.5px;margin-top:1rem;text-transform:uppercase}
+.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:2rem 0}
+.metric-box{background:#fff8ee;border:1px solid #d4c4a0;border-radius:5px;padding:1.5rem;text-align:center}
+.metric-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#c9a84c;line-height:1}
+.metric-lbl{font-size:12px;color:#7a6a3a;margin-top:6px;line-height:1.45}
+.about-split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin:2rem 0}
+.about-left{border-right:1px solid #d4c4a0;padding-right:3.5rem}
+.about-pull{font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;color:#0d1f14;line-height:1.45;margin-bottom:1.5rem}
+.about-body p{font-size:14px;color:#5a4a2a;line-height:1.85;margin-bottom:1rem}
+.bio-card{border:1px solid #d4c4a0;border-radius:5px;padding:1.5rem;margin-bottom:1rem;background:#fff8ee}
+.bio-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#0d1f14;margin-bottom:2px}
+.bio-role{font-family:'JetBrains Mono',monospace;font-size:9px;color:#8a6a1c;letter-spacing:2px;text-transform:uppercase;margin-bottom:.6rem}
+.bio-text{font-size:13.5px;color:#5a4a2a;line-height:1.7}
+.cred-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:.85rem}
+.cred{background:#0d1f14;color:#7a9a7a;font-family:'JetBrains Mono',monospace;font-size:9px;padding:3px 9px;border-radius:2px;letter-spacing:.5px}
+.constraint-box{background:#0d1f14;border-radius:5px;padding:1.5rem;margin-top:4px}
+.constraint-label{font-family:'JetBrains Mono',monospace;font-size:9px;color:#c9a84c;letter-spacing:2px;text-transform:uppercase;margin-bottom:.6rem}
+.constraint-text{font-size:13.5px;color:#7a9a7a;line-height:1.65}
+.leg-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.5rem 0}
+.leg-card{border:1px solid #d4c4a0;border-radius:5px;padding:1.5rem;background:#fff8ee}
+.leg-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#0d1f14;margin-bottom:.5rem;line-height:1.35}
+.leg-body{font-size:13px;color:#5a4a2a;line-height:1.7}
+.site-footer{background:#070f0a;padding:2.5rem 3rem;border-top:1px solid rgba(201,168,76,.12)}
+.footer-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#c9a84c;letter-spacing:2px;text-transform:uppercase}
+.footer-line{font-family:'JetBrains Mono',monospace;font-size:9px;color:#2a4a2a;letter-spacing:2px;line-height:2}
+@media print{
+  .nav,.voice-btn,.voice-nav-row,.print-banner,.hero-cta-row{display:none!important}
+  .section{display:block!important;animation:none!important;min-height:auto}
+  .hero{min-height:auto;page-break-after:always}
+  .voices-bg{page-break-before:always}
+  body,html{background:#fff!important}
+  .page-bg{background:#fff!important}
+  .pillar,.c-dark,.c-red,.violation-band,.constraint-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">CIF · Cold Ischemia Foundation</div>
+  <div class="nav-links">
+    <button class="active" onclick="show('home')">Overview</button>
+    <button onclick="show('strategy')">The Strategy</button>
+    <button onclick="show('voices')">Patient Voices</button>
+    <button onclick="show('serve')">Who We Serve</button>
+    <button onclick="show('about')">About CIF</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div class="section active" id="sec-home">
+  <div class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Cold Ischemia Foundation · Ellenton, Florida · FL-16</div>
+      <h1 class="hero-h1">The people who<br>keep others <em>alive</em><br>are left to drown.</h1>
+      <p class="hero-body">America built a multibillion-dollar chronic illness and transplant system on labor it never counted, people it never paid, and voices it has never acknowledged in a single federal statute. The Cold Ischemia Foundation exists to change that — with evidence, not sentiment.</p>
+      <div class="hero-cta-row">
+        <button class="btn-gold" onclick="show('strategy')">Read the Strategy</button>
+        <button class="btn-outline" onclick="show('voices')">Hear Their Voices</button>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <div class="hero-stat-num">40+</div>
+          <div class="hero-stat-label">Documented federal violations — on record with primary source citations</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">$0</div>
+          <div class="hero-stat-label">Pharmaceutical, dialysis, or insurance funding — founding constraint, not a talking point</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">3×</div>
+          <div class="hero-stat-label">Kidney transplant recipient leading this work from lived experience and Lean Six Sigma discipline</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-corner">
+      <div class="hero-corner-line">FOUNDED BY JEFF &amp; MARIE PARKE</div>
+      <div class="hero-corner-line">LEAN SIX SIGMA GREEN BELT · DMAIC</div>
+      <div class="hero-corner-line">ZERO INDUSTRY CAPTURE</div>
+    </div>
+  </div>
+
+  <div class="page-bg">
+    <div class="container">
+      <div class="page-eyebrow">Why CIF Is Different</div>
+      <h2 class="page-h2">Not another patient advocacy<br>organization. A structural reckoning.</h2>
+      <p class="page-lead">Most organizations in this space receive pharmaceutical funding, defer to industry partners, and produce position papers that change nothing. CIF operates with zero industry funding — by design, by founding constraint, and by moral necessity. The organizations that accept that funding are precisely what CIF was built to expose.</p>
+      <div class="contrast-grid">
+        <div class="c-dark">
+          <div class="c-dark-label">What CIF Does</div>
+          <ul>
+            <li>Files formal federal complaints with primary source citations</li>
+            <li>Quantifies the economic value of unpaid care labor using BLS wage proxies</li>
+            <li>Drafts legislation — Marie's Lifeline Compensation Act</li>
+            <li>Audits industry-captured patient advocacy organizations publicly</li>
+            <li>Centers patient and family testimony as primary evidence, not anecdote</li>
+            <li>Applies Lean Six Sigma DMAIC methodology to systemic healthcare failure</li>
+          </ul>
+        </div>
+        <div class="c-red">
+          <div class="c-red-label">What CIF Refuses to Do</div>
+          <ul>
+            <li>Accept pharmaceutical, dialysis, or insurance industry funding</li>
+            <li>Produce advocacy that protects industry revenue over patient welfare</li>
+            <li>Treat patient suffering as a fundraising asset or marketing narrative</li>
+            <li>Platform organizations with undisclosed industry funding relationships</li>
+            <li>Reduce structural injustice to individual inspiration stories</li>
+            <li>Stop when ignored by the agencies responsible for these failures</li>
+          </ul>
+        </div>
+      </div>
+      <div class="violation-band">
+        <div class="v-num">40+</div>
+        <div>
+          <div class="v-title">Documented Federal Violations — On the Record</div>
+          <div class="v-sub">CIF has formally documented more than forty federal regulatory and statutory violations across CMS, HHS, NIH, DOL, and the Florida Legislature. Each violation is cited, sourced, and submitted. This is not an allegation. It is a public record.</div>
+        </div>
+        <button class="v-cta" onclick="show('strategy')">See the Framework</button>
+      </div>
+      <div class="metric-row">
+        <div class="metric-box"><div class="metric-num">9</div><div class="metric-lbl">Federal complaint letters filed simultaneously at launch</div></div>
+        <div class="metric-box"><div class="metric-num">53M</div><div class="metric-lbl">Unpaid family caregivers in the U.S. with no federal legal standing</div></div>
+        <div class="metric-box"><div class="metric-num">24mo</div><div class="metric-lbl">Target window for first federal legislative milestone</div></div>
+      </div>
+      <div class="print-banner" onclick="window.print()">
+        <div class="print-icon">🖨</div>
+        <div class="print-text-block">
+          <strong>Print or save this full strategy document</strong>
+          Formatted for A4 and US Letter. All five sections print in sequence. Share with colleagues, legislators, hospital departments, or academic programs. No login required.
+        </div>
+        <button class="print-btn">Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STRATEGY -->
+<div class="section" id="sec-strategy">
+  <div class="page-bg">
+    <div class="container">
+      <div style="padding-top:1rem"></div>
+      <div class="page-eyebrow">Six Sigma Green Belt · DMAIC Framework · 2025</div>
+      <h2 class="page-h2">The S.H.I.E.L.D. Method</h2>
+      <p class="page-lead"><strong style="font-weight:600">Structural Harm Identification, Evidence-Led Dismantling.</strong> A rigorous, reproducible methodology for exposing and eliminating the institutional exploitation of unpaid family caregivers — designed for congressional testimony, peer-reviewed publication, and real-world enforcement. Built on Lean Six Sigma DMAIC. Funded by no one who benefits from the status quo.</p>
+      <div class="dmaic-strip">
+        <div class="dmaic-strip-inner">
+          <div class="ds-cell ds-d"><div class="ds-phase">Define</div><div class="ds-word">Structural</div><div class="ds-sub">Map the system</div></div>
+          <div class="ds-cell ds-m"><div class="ds-phase">Measure</div><div class="ds-word">Harm</div><div class="ds-sub">Quantify the toll</div></div>
+          <div class="ds-cell ds-a"><div class="ds-phase">Analyze</div><div class="ds-word">Identification</div><div class="ds-sub">Isolate root causes</div></div>
+          <div class="ds-cell ds-i"><div class="ds-phase">Improve</div><div class="ds-word">Evidence-Led</div><div class="ds-sub">Legislation &amp; law</div></div>
+          <div class="ds-cell ds-c"><div class="ds-phase">Control</div><div class="ds-word">Dismantling</div><div class="ds-sub">Enforce &amp; replicate</div></div>
+        </div>
+      </div>
+      <div class="pillar-grid">
+        <div class="pillar p-d" data-letter="S">
+          <div class="pillar-phase">Define · S — Structural Mapping</div>
+          <div class="pillar-title">Map Every Institution That Profits From Unpaid Labor</div>
+          <div class="pillar-body">SIPOC analysis maps every stakeholder — from CMS reimbursement structures to pharmaceutical-funded patient advocacy organizations — that benefits from the invisibility of family care labor. No assumptions. No anecdote. Documented process flow with primary source citations at every node.</div>
+          <div class="pillar-tools"><span class="tool-tag">SIPOC</span><span class="tool-tag">Voice of Customer</span><span class="tool-tag">Process Mapping</span><span class="tool-tag">Stakeholder Register</span></div>
+        </div>
+        <div class="pillar p-m" data-letter="H">
+          <div class="pillar-phase">Measure · H — Harm Quantification</div>
+          <div class="pillar-title">Assign Economic Value to What the System Calls "Love"</div>
+          <div class="pillar-body">Using Bureau of Labor Statistics wage proxies, CIF quantifies the annual dollar value of unpaid care hours per household. Measurement extends to health deterioration trajectories, employment disruption rates, and financial ruin data — building the Sigma baseline for the defect this method resolves.</div>
+          <div class="pillar-tools"><span class="tool-tag">BLS Wage Proxy Model</span><span class="tool-tag">Control Charts</span><span class="tool-tag">Measurement System Analysis</span><span class="tool-tag">Baseline Sigma</span></div>
+        </div>
+        <div class="pillar p-a" data-letter="I">
+          <div class="pillar-phase">Analyze · I — Root Cause Isolation</div>
+          <div class="pillar-title">Trace Every Surface Harm Back to Its Structural Source</div>
+          <div class="pillar-body">Pareto analysis returns three root causes accounting for 80% of documented harm: CMS exclusion criteria erasing care labor from all reimbursement models; industry-captured advocacy organizations redirecting reform energy; and the complete absence of legal standing for family caregivers in federal statute.</div>
+          <div class="pillar-tools"><span class="tool-tag">5-Why Analysis</span><span class="tool-tag">Fishbone Diagram</span><span class="tool-tag">Pareto 80/20</span><span class="tool-tag">Failure Mode Analysis</span></div>
+        </div>
+        <div class="pillar p-i" data-letter="E">
+          <div class="pillar-phase">Improve · E — Evidence-Led Reform</div>
+          <div class="pillar-title">Convert Evidence Into Law, Policy, and Institutional Accountability</div>
+          <div class="pillar-body">Marie's Lifeline Compensation Act as the primary legislative vehicle. Nine simultaneous federal complaint letters as the pressure mechanism. CIF's federal complaint packet as the enforcement infrastructure. The UNPAID manuscript as the public evidence document. Every deliverable is sourced and formatted for congressional intake.</div>
+          <div class="pillar-tools"><span class="tool-tag">Solution Selection Matrix</span><span class="tool-tag">Legislative Brief</span><span class="tool-tag">Federal Complaint Packet</span><span class="tool-tag">FMEA</span></div>
+        </div>
+        <div class="pillar p-c pillar-full" data-letter="LD">
+          <div class="pillar-phase">Control · L + D — Long-Term Dismantling</div>
+          <div class="pillar-title">Monitor, Enforce, and Replicate Until the System Cannot Ignore What It Has Done</div>
+          <div class="pillar-body">Control phase deploys agency-specific accountability dashboards tracking federal response rates, legislative advancement timelines, and media traction. The True Advocacy Assessment publicly scores patient advocacy organizations on funding transparency. The SHIELD Method is published as open-access standard operating procedure — any independent caregiver advocacy organization anywhere can replicate it, scale it, and cite it. This is not a campaign. It is a permanent structural shift.</div>
+          <div class="pillar-tools"><span class="tool-tag">Control Charts</span><span class="tool-tag">SOP Library</span><span class="tool-tag">Congressional Scorecard</span><span class="tool-tag">True Advocacy Assessment Database</span><span class="tool-tag">Replication Protocol</span><span class="tool-tag">Annual Audit Cycle</span></div>
+        </div>
+      </div>
+      <div class="expand-wrap">
+        <div class="page-eyebrow" style="margin-bottom:1.5rem">Implementation Detail — Click to Expand</div>
+        <button class="expand-btn" onclick="toggleEx(this)">Phase 1 · Structural Mapping — Tools, Owners &amp; Outputs <span class="arr">▼</span></button>
+        <div class="expand-content">
+          <strong>Define Phase Deliverables</strong>
+          <p>Complete SIPOC covering all seven major institutional actors in the transplant and chronic illness ecosystem. Voice of Customer (VOC) intake deployed to CIF's network using a structured interview protocol — not anecdotal collection. Project Charter formalizing the problem statement with economic framing accepted for congressional submission.</p>
+          <p>Stakeholder register identifying every organization with a financial interest in the status quo — including patient advocacy organizations with undisclosed pharmaceutical funding relationships.</p>
+          <strong>Target Completion:</strong> Months 1–3. Responsible: Jeff Parke (Green Belt lead), Marie Parke (VOC Panel lead).
+        </div>
+        <button class="expand-btn" onclick="toggleEx(this)">Phase 2 · Harm Quantification — The Economic Case for Congress <span class="arr">▼</span></button>
+        <div class="expand-content">
+          <strong>Measure Phase Deliverables</strong>
+          <p>Economic valuation model for unpaid care hours using BLS wage proxies — broken down by condition type: renal failure, post-transplant recovery, oncology. Complaint response rate baseline across CMS, HHS, NIH, DOL, and the Florida Legislature.</p>
+          <p>Sigma baseline calculation: current defect rate equals near-complete absence of legal protection for 53 million unpaid caregivers in U.S. federal statute.</p>
+          <strong>Output:</strong> Systems Transformation White Paper — Lean Six Sigma framing with peer-reviewed citations.
+        </div>
+        <button class="expand-btn" onclick="toggleEx(this)">Phase 3 · Root Cause Isolation — The Three Structural Failures <span class="arr">▼</span></button>
+        <div class="expand-content">
+          <strong>The Three Root Causes</strong>
+          <ul>
+            <li><strong>Root Cause 1:</strong> CMS excludes care labor from all reimbursement models. No federal classification of "family caregiver" exists in statute.</li>
+            <li><strong>Root Cause 2:</strong> Industry-captured patient advocacy organizations redirect reform energy toward pharmaceutical revenue protection rather than patient welfare.</li>
+            <li><strong>Root Cause 3:</strong> No federal statute grants legal standing, compensation access, or healthcare rights to family caregivers in chronic illness or transplant settings.</li>
+          </ul>
+          <p>Pareto chart confirms 80% of documented harm traces to these three causes. Fishbone diagram published in CIF white paper and submitted with congressional testimony package.</p>
+        </div>
+        <button class="expand-btn" onclick="toggleEx(this)">Phase 4–5 · Reform and Dismantling — From Evidence to Law <span class="arr">▼</span></button>
+        <div class="expand-content">
+          <strong>Improve + Control Deliverables</strong>
+          <ul>
+            <li><strong>Marie's Lifeline Compensation Act</strong> — drafted, formatted for congressional intake, submitted to FL-16 and Senate targets.</li>
+            <li><strong>Nine simultaneous federal complaint letters</strong> — Senate/House, HHS, CMS, NIH, Florida Legislature, and four agency-specific targets filed simultaneously.</li>
+            <li><strong>UNPAID: The Manuscript</strong> — co-authored by Jeff Parke and Marie Parke. Full literary nonfiction public evidence document. KDP 6×9 paperback.</li>
+            <li><strong>True Advocacy Assessment database</strong> — live public scoring of patient advocacy organizations by funding transparency. Available at surveys.coldischemia.foundation.</li>
+            <li><strong>SHIELD Method SOP</strong> — published as open-access replication protocol for national adoption.</li>
+          </ul>
+          <strong>Control Horizon:</strong> 24-month legislative milestone target. Ongoing: Congressional Accountability Scorecard, agency response rate dashboards, annual audit cycle.
+        </div>
+      </div>
+      <div class="print-banner" onclick="window.print()">
+        <div class="print-icon">🖨</div>
+        <div class="print-text-block">
+          <strong>Download or print the full SHIELD Method strategy document</strong>
+          For use in congressional briefings, academic settings, hospital department presentations, or institutional onboarding.
+        </div>
+        <button class="print-btn">Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VOICES -->
+<div class="section" id="sec-voices">
+  <div class="page-bg">
+    <div class="container" style="padding-bottom:0">
+      <div class="page-eyebrow">Real Voices · Primary Evidence</div>
+      <h2 class="page-h2">These are not case studies.<br>These are people the system erased.</h2>
+      <p class="page-lead">The SHIELD Method centers lived testimony as primary evidence — not to inspire, not to solicit donations, but to indict. Every voice below represents a documented structural failure with a regulation number, a responsible agency, and a CIF action already taken.</p>
+    </div>
+  </div>
+  <div class="voices-bg">
+    <div class="container">
+      <div class="voice-label">Patient &amp; Family Testimony — Primary Evidence</div>
+      <div class="voice-carousel">
+        <div class="voice-slides" id="vslides">
+          <div class="voice-slide">
+            <div class="quote-block">
+              <span class="quote-mark">"</span>
+              <div class="quote-text">I left a twenty-two year nursing career to manage his medications, his dialysis schedule, his infections, his despair. Nobody at CMS has a code for what I do. I don't exist in their reimbursement system. My retirement doesn't exist either.</div>
+              <div class="quote-attr">
+                <strong>Carolyn — Clearwater, Florida</strong>
+                Spouse and family caregiver · Dialysis patient household · Seven years of undocumented labor
+                <span class="quote-struct">Structural Failure: CMS Exclusion Criteria · Responsible Agency: CMS/HHS</span>
+              </div>
+            </div>
+          </div>
+          <div class="voice-slide">
+            <div class="quote-block">
+              <span class="quote-mark">"</span>
+              <div class="quote-text">After the transplant, the hospital assumed I had people. I had one person. She drove two hours each way for every appointment. She learned to manage rejection episodes at midnight. She never received a cent, a credential, or a thank-you from a single institution involved in my survival.</div>
+              <div class="quote-attr">
+                <strong>Marcus — Clearwater, Florida</strong>
+                Dialysis patient and kidney transplant recipient · Reflecting on his wife's invisible infrastructure
+                <span class="quote-struct">Structural Failure: Absence of Legal Recognition · Responsible Agency: HHS/HRSA</span>
+              </div>
+            </div>
+          </div>
+          <div class="voice-slide">
+            <div class="quote-block">
+              <span class="quote-mark">"</span>
+              <div class="quote-text">The patient advocacy organization told me they were fighting for people like me. Then I found out they took eleven million dollars from the company that makes my husband's immunosuppressants. That is not advocacy. That is a press release with a patient's face on it.</div>
+              <div class="quote-attr">
+                <strong>Patricia — Gainesville, Florida</strong>
+                School administrator · Family caregiver to post-transplant spouse · CIF True Advocacy Assessment respondent
+                <span class="quote-struct">Structural Failure: Industry Capture of Patient Advocacy · Responsible Agency: HHS/FTC</span>
+              </div>
+            </div>
+          </div>
+          <div class="voice-slide">
+            <div class="quote-block">
+              <span class="quote-mark">"</span>
+              <div class="quote-text">Raymond had thirty-one hospitalizations in four years. I tracked every one. I managed the transitions the coordinators forgot. I became a nephrologist I never wanted to be. When he died, no one acknowledged what I had done. The death certificate listed his cause. Mine would have listed exhaustion and erasure.</div>
+              <div class="quote-attr">
+                <strong>Sandra Kowalczyk — Retired chemistry teacher</strong>
+                Widow · Husband Raymond deceased · Four years as sole care coordinator for thirty-one hospitalizations
+                <span class="quote-struct">Structural Failure: No Mandated Family Assessment in Transplant Protocol · Responsible Agency: HRSA/UNOS</span>
+              </div>
+            </div>
+          </div>
+          <div class="voice-slide">
+            <div class="quote-block">
+              <span class="quote-mark">"</span>
+              <div class="quote-text">I have had three transplants. The medical team saved my kidneys three times. My wife saved my life every day in between. The system knows her as an emergency contact. She is not an emergency contact. She is the entire infrastructure that kept me alive long enough to receive each organ.</div>
+              <div class="quote-attr">
+                <strong>Jeff Parke — Ellenton, Florida</strong>
+                Three-time kidney transplant recipient · Co-Founder, Cold Ischemia Foundation · Author, UNPAID and Unbroken
+                <span class="quote-struct">Structural Failure: Systemic Erasure of Family Care Labor · CIF Action: Marie's Lifeline Compensation Act</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="voice-controls">
+        <div class="voice-dots" id="vdots">
+          <button class="v-dot active" onclick="goV(0)"></button>
+          <button class="v-dot" onclick="goV(1)"></button>
+          <button class="v-dot" onclick="goV(2)"></button>
+          <button class="v-dot" onclick="goV(3)"></button>
+          <button class="v-dot" onclick="goV(4)"></button>
+        </div>
+        <div class="voice-nav-row">
+          <button class="voice-btn" onclick="prevV()">← Previous</button>
+          <button class="voice-btn" onclick="nextV()">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-bg">
+    <div class="container">
+      <div class="page-eyebrow">Evidence Mapping</div>
+      <h2 class="page-h2" style="font-size:1.9rem">Behind every voice — a structural failure with a regulation number</h2>
+      <table class="fw-table">
+        <thead><tr><th>The Human Experience</th><th>The Structural Failure</th><th>Responsible Agency</th><th>CIF Action Taken</th></tr></thead>
+        <tbody>
+          <tr><td>Family member leaves career, depletes savings, loses health managing care</td><td>CMS excludes care labor from all reimbursement models. No federal classification of "family caregiver" exists in statute.</td><td>CMS / HHS</td><td>Formal demand letter filed. Marie's Lifeline Compensation Act drafted and submitted.</td></tr>
+          <tr><td>Patient told a patient advocacy organization represents them — organization is funded by their drug manufacturer</td><td>No mandatory funding disclosure requirements for patient advocacy organizations receiving pharmaceutical grants</td><td>HHS / FTC</td><td>True Advocacy Assessment deployed. Public audit database active at surveys.coldischemia.foundation.</td></tr>
+          <tr><td>Family member excluded from clinical decision-making, treated as visitor rather than essential care team member</td><td>HIPAA and transplant care team protocols treat family caregivers as peripheral rather than integral to care delivery</td><td>HHS / OCR</td><td>Documented in 40 Federal Violations audit. Complaint filed with agency. On public record.</td></tr>
+          <tr><td>Financial ruin following transplant or dialysis initiation — no income, no reimbursement, no safety net</td><td>No federal wage replacement or compensation program exists for family caregivers in chronic illness or transplant settings</td><td>DOL / CMS</td><td>Economic model built using BLS wage proxies. Congressional brief submitted to FL-16 and Senate targets.</td></tr>
+          <tr><td>Family member's health deteriorates — burnout, depression, physical illness — with zero institutional support</td><td>No mandated family caregiver health assessment exists in transplant protocols, UNOS standards, or ESRD network requirements</td><td>HRSA / UNOS</td><td>Included in legislative brief. Agency response pending. Flagged for annual audit cycle.</td></tr>
+        </tbody>
+      </table>
+      <div class="print-banner" onclick="window.print()">
+        <div class="print-icon">🖨</div>
+        <div class="print-text-block">
+          <strong>Print the Patient Voices section</strong>
+          Share testimony and structural evidence tables with hospital ethics committees, social work departments, or congressional staff.
+        </div>
+        <button class="print-btn">Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO WE SERVE -->
+<div class="section" id="sec-serve">
+  <div class="page-bg">
+    <div class="container">
+      <div style="padding-top:1rem"></div>
+      <div class="page-eyebrow">Our Community</div>
+      <h2 class="page-h2">Three audiences. One structural<br>problem. One organization<br>willing to name it.</h2>
+      <p class="page-lead">Whether you are living the reality of unpaid family care labor, treating patients whose survival depends on invisible support systems, or researching the policy gap between what caregivers do and what the law acknowledges — CIF has evidence, tools, and a methodology built for your context.</p>
+      <div class="audience-grid">
+        <div class="aud-card" onclick="show('voices')">
+          <div class="aud-icon-wrap">🫀</div>
+          <div class="aud-title">People Living This</div>
+          <div class="aud-desc">Patients managing chronic illness or transplant recovery. Family members who gave up careers, savings, and their own health to provide care that no institution will acknowledge or compensate. You are the reason this exists.</div>
+          <div class="aud-cta">Read Their Testimony →</div>
+        </div>
+        <div class="aud-card" onclick="show('strategy')">
+          <div class="aud-icon-wrap">🏥</div>
+          <div class="aud-title">Healthcare Professionals</div>
+          <div class="aud-desc">Nephrologists, transplant coordinators, oncology nurses, social workers, and medical educators who see the systemic gap every day and need rigorous, peer-review-grade evidence they can use in advocacy and practice reform.</div>
+          <div class="aud-cta">Read the SHIELD Method →</div>
+        </div>
+        <div class="aud-card" onclick="show('strategy')">
+          <div class="aud-icon-wrap">⚖️</div>
+          <div class="aud-title">Policy Colleagues</div>
+          <div class="aud-desc">Congressional staff, health policy researchers, legislative advocates, and academic colleagues who need a fully sourced, DMAIC-structured evidence base — built for congressional intake, peer-reviewed publication, and legal challenge.</div>
+          <div class="aud-cta">See the Evidence Base →</div>
+        </div>
+      </div>
+      <div class="page-eyebrow" style="margin:3rem 0 1.5rem">CIF Resources — By Audience</div>
+      <table class="fw-table">
+        <thead><tr><th>Resource</th><th>For Whom</th><th>Format</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>UNPAID: The Manuscript</td><td>General public, media, legislators, educators</td><td>Literary nonfiction · KDP 6×9 paperback · Jeff &amp; Marie Parke</td><td><span class="phase-badge pb-prod">In Production</span></td></tr>
+          <tr><td>SHIELD Method White Paper</td><td>Healthcare professionals, researchers, policy staff</td><td>Lean Six Sigma framing · Peer-reviewed format · PDF</td><td><span class="phase-badge pb-live">Published</span></td></tr>
+          <tr><td>Federal Complaint Packet</td><td>Congressional offices, federal agency leadership</td><td>9 simultaneous formal letters with primary source citations</td><td><span class="phase-badge pb-filed">Filed</span></td></tr>
+          <tr><td>Marie's Lifeline Compensation Act</td><td>Congressional staff, co-sponsors, legislative advocates</td><td>Full legislative draft with statutory language</td><td><span class="phase-badge pb-adv">Advancing</span></td></tr>
+          <tr><td>True Advocacy Assessment</td><td>Patients, researchers, media, policymakers</td><td>Live survey · Public database · surveys.coldischemia.foundation</td><td><span class="phase-badge pb-live">Live</span></td></tr>
+          <tr><td>The Unseen Half Guide</td><td>Families, hospital social work teams, discharge planners</td><td>35-page practical guide · PDF and print distribution</td><td><span class="phase-badge pb-live">Published</span></td></tr>
+          <tr><td>40 Federal Violations Audit</td><td>Legal teams, congressional offices, academic researchers</td><td>Primary source citations · Full reference list · On public record</td><td><span class="phase-badge pb-filed">On Record</span></td></tr>
+          <tr><td>The Substitute — Backup System</td><td>Active care households facing coverage gaps</td><td>Digital tool · Backup care activation protocol · Claude API integrated</td><td><span class="phase-badge pb-dep">Deployed</span></td></tr>
+          <tr><td>Renal Patient Protection Act</td><td>Legal teams, ESRD networks, renal patient advocates</td><td>Legislative draft · Addresses algorithmic bias and payer AI denials</td><td><span class="phase-badge pb-adv">Advancing</span></td></tr>
+        </tbody>
+      </table>
+      <div class="print-banner" onclick="window.print()">
+        <div class="print-icon">🖨</div>
+        <div class="print-text-block">
+          <strong>Print the full CIF resource guide</strong>
+          For distribution in hospital departments, congressional offices, academic programs, or community health settings.
+        </div>
+        <button class="print-btn">Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="sec-about">
+  <div class="page-bg">
+    <div class="container">
+      <div style="padding-top:1rem"></div>
+      <div class="page-eyebrow">About the Cold Ischemia Foundation</div>
+      <h2 class="page-h2">Built by people who lived it.<br>Run with the rigor of people<br>who refuse to lose.</h2>
+      <div class="about-split">
+        <div class="about-left">
+          <div class="about-pull">"We are not a patient advocacy organization. We are a structural accountability organization. The difference is everything."</div>
+          <div class="about-body">
+            <p>The Cold Ischemia Foundation was co-founded by Jeff and Marie Parke in Ellenton, Florida — Congressional District FL-16. It emerged from three kidney transplants, a radiation oncology nursing career, and the recognition that the system depending on family caregivers has never once acknowledged they exist in federal law.</p>
+            <p>CIF operates with zero pharmaceutical, dialysis, or insurance industry funding. This is not a marketing position. It is a founding constraint that cannot be waived — because the organizations that accept industry funding are precisely what CIF was created to expose.</p>
+            <p>The SHIELD Method is the product of a Lean Six Sigma Green Belt background applied to healthcare systemic failure. It is rigorous, reproducible, and designed to withstand congressional testimony, peer review, and public challenge.</p>
+            <p>CIF does not wait to be invited to the table. It builds the table. Its work has been submitted to the U.S. Senate, U.S. House of Representatives, HHS, CMS, NIH, DOL, and the Florida Legislature.</p>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="bio-card">
+            <div class="bio-name">Jeff Parke</div>
+            <div class="bio-role">Co-Founder · Executive Director</div>
+            <div class="bio-text">Three-time kidney transplant recipient. Author of Unbroken: Rising Above Chronic Kidney Disease and co-author of UNPAID. Lean Six Sigma Green Belt. Developed the SHIELD Method and CIF's entire federal complaint architecture. Originally from Ithaca, NY. Met Marie in Chapel Hill, NC.</div>
+            <div class="cred-row"><span class="cred">Lean Six Sigma GB</span><span class="cred">3× Transplant Recipient</span><span class="cred">Published Author</span><span class="cred">Federal Complainant</span></div>
+          </div>
+          <div class="bio-card">
+            <div class="bio-name">Marie Parke</div>
+            <div class="bio-role">Co-Founder · The Voice Behind This Work</div>
+            <div class="bio-text">Radiation oncology nurse from Pittsburgh, PA. The inspiration behind Marie's Lifeline Compensation Act. Co-author of UNPAID. Her lived experience managing three kidney transplants as an unpaid family caregiver is the moral and evidentiary foundation of everything CIF produces.</div>
+            <div class="cred-row"><span class="cred">Radiation Oncology RN</span><span class="cred">Family Caregiver</span><span class="cred">Legislative Inspiration</span><span class="cred">Co-Author</span></div>
+          </div>
+          <div class="constraint-box">
+            <div class="constraint-label">Founding Constraint — Non-Negotiable</div>
+            <div class="constraint-text">Zero pharmaceutical · Zero dialysis · Zero insurance industry funding. This constraint is permanent. It is the reason CIF can say what others cannot, publish what others will not, and file what others are paid to prevent.</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#fff8ee;border:1px solid #d4c4a0;border-radius:5px;padding:2.5rem;margin:2.5rem 0">
+        <div class="page-eyebrow" style="margin-bottom:1.75rem">CIF's Core Legislative &amp; Accountability Tools</div>
+        <div class="leg-grid">
+          <div class="leg-card"><div class="leg-title">Marie's Lifeline Compensation Act</div><div class="leg-body">Federal legislation establishing compensation, legal standing, and healthcare access for family caregivers in chronic illness and transplant settings. Named for Marie Parke. Advancing through congressional channels.</div></div>
+          <div class="leg-card"><div class="leg-title">Renal Patient Protection &amp; Medical Information Integrity Act</div><div class="leg-body">Addresses information asymmetry, algorithmic bias in payer AI denial systems, and patient rights protections in renal and transplant care settings. Drafted for congressional intake.</div></div>
+          <div class="leg-card"><div class="leg-title">True Advocacy Assessment</div><div class="leg-body">Live public scoring system for patient advocacy organizations — evaluating pharmaceutical funding transparency, industry independence, and genuine advocacy output. Active at surveys.coldischemia.foundation.</div></div>
+          <div class="leg-card"><div class="leg-title">40 Federal Violations Audit</div><div class="leg-body">A fully cited audit of more than forty documented federal regulatory and statutory violations across CMS, HHS, NIH, DOL, and the Florida Legislature. Filed formally. On public record. Cannot be unseen.</div></div>
+        </div>
+      </div>
+      <div class="print-banner" onclick="window.print()">
+        <div class="print-icon">🖨</div>
+        <div class="print-text-block">
+          <strong>Print the full CIF organizational profile</strong>
+          All five sections — overview, SHIELD strategy, patient voices, resources, and organizational background — print in sequence. Formatted for A4 and US Letter.
+        </div>
+        <button class="print-btn">Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Cold Ischemia Foundation</div>
+      <div class="footer-line" style="margin-top:6px">coldischemia.foundation</div>
+    </div>
+    <div style="text-align:right">
+      <div class="footer-line">Ellenton, Florida · Congressional District FL-16</div>
+      <div class="footer-line">Zero Pharmaceutical · Zero Dialysis · Zero Insurance Funding</div>
+      <div class="footer-line">The SHIELD Method © 2025 Cold Ischemia Foundation</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function show(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-links button').forEach(b=>b.classList.remove('active'));
+  var map={home:0,strategy:1,voices:2,serve:3,about:4};
+  document.getElementById('sec-'+id).classList.add('active');
+  var btns=document.querySelectorAll('.nav-links button');
+  if(map[id]!==undefined) btns[map[id]].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+var vCur=0,vTotal=5;
+function goV(n){
+  vCur=n;
+  document.getElementById('vslides').style.transform='translateX(-'+(vCur*100)+'%)';
+  document.querySelectorAll('.v-dot').forEach(function(d,i){d.classList.toggle('active',i===vCur)});
+}
+function nextV(){goV((vCur+1)%vTotal)}
+function prevV(){goV((vCur-1+vTotal)%vTotal)}
+setInterval(nextV,8000);
+function toggleEx(btn){
+  btn.classList.toggle('open');
+  btn.nextElementSibling.classList.toggle('open');
+}
+</script>
+<a href="index.html" style="position:fixed;bottom:24px;right:24px;z-index:500;font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(216,207,196,0.5);text-decoration:none;padding:9px 16px;border:1px solid rgba(100,140,200,0.18);border-radius:2px;background:rgba(3,5,9,0.85);backdrop-filter:blur(6px);transition:color .15s,border-color .15s;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.35)';" onmouseout="this.style.color='rgba(216,207,196,0.5)';this.style.borderColor='rgba(100,140,200,0.18)';">⌂ Home</a>
+</body>
+</html>

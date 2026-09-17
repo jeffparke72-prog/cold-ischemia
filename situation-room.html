@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Situation Room — Cold Ischemia Foundation</title>
+  <meta name="description" content="Real-time patient crisis analysis. Describe your situation. Get the federal law, the violations, and the action plan — immediately.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,100;1,9..144,200;1,9..144,300;1,9..144,600&family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+      --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.18);
+      --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);
+      --ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.12);
+      --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.12);
+      --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.08);
+      --danger:#c83050;--danger-d:rgba(200,48,80,0.1);
+      --green:#50c878;--violet:#8050c8;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;min-height:100vh;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.5;}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(3,5,9,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--b);}
+    .nav-logo img{height:40px;display:block;}
+    .nav-links{display:flex;align-items:center;gap:24px;}
+    .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold);}
+    .nav-join{background:var(--gold);color:var(--abyss)!important;padding:7px 16px;border-radius:2px;}
+    .nav-join:hover{background:var(--gold-l)!important;}
+
+    /* HERO */
+    .hero{position:relative;height:400px;overflow:hidden;}
+    .hero img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,5,9,0.92) 0%,rgba(3,5,9,0.6) 55%,rgba(3,5,9,0.2) 100%);}
+    .hero-overlay-b{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,var(--abyss) 100%);}
+    .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 64px;z-index:2;}
+    .hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--danger);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+    .hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--danger);}
+    .hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6.5rem);line-height:0.88;letter-spacing:0.04em;color:var(--ink);margin-bottom:14px;}
+    .hero-h1 em{color:var(--gold);font-style:normal;}
+    .hero-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:1.1rem;color:var(--ink60);max-width:500px;line-height:1.7;margin-bottom:20px;}
+    .hero-quote{font-family:'Crimson Pro',serif;font-size:1rem;color:var(--ink40);font-style:italic;border-left:2px solid var(--gold);padding-left:16px;max-width:440px;line-height:1.6;}
+    .hero-quote strong{color:var(--gold);font-style:normal;}
+
+    /* LAYOUT */
+    .page{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:48px 40px 100px;}
+    .phase{display:none;}
+    .phase.active{display:block;}
+
+    /* INTAKE */
+    .intake-card{background:var(--void);border:1px solid var(--b);border-radius:4px;padding:40px;margin-bottom:24px;}
+    .intake-label{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+    .intake-title{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:300;color:var(--ink);margin-bottom:6px;line-height:1.3;}
+    .intake-sub{font-size:1rem;color:var(--ink40);line-height:1.7;margin-bottom:28px;}
+
+    .situation-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:28px;}
+    .sit-btn{background:var(--surf);border:1px solid var(--b);border-radius:3px;padding:14px 18px;text-align:left;cursor:pointer;transition:all 0.2s;color:var(--ink60);}
+    .sit-btn:hover{border-color:rgba(200,144,42,0.4);background:var(--gold-d);}
+    .sit-btn.selected{border-color:var(--gold);background:var(--gold-d);color:var(--ink);}
+    .sit-btn-title{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:4px;}
+    .sit-btn-desc{font-size:0.88rem;color:inherit;line-height:1.4;}
+
+    textarea.sit-input{width:100%;background:var(--surf);border:1px solid var(--b);border-radius:3px;padding:18px 20px;color:var(--ink80);font-family:'Crimson Pro',serif;font-size:1.05rem;line-height:1.7;resize:vertical;min-height:160px;outline:none;transition:border-color 0.2s;}
+    textarea.sit-input::placeholder{color:var(--ink20);}
+    textarea.sit-input:focus{border-color:rgba(200,144,42,0.4);}
+    .char-count{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;color:var(--ink20);text-align:right;margin-top:6px;}
+
+    .context-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:20px;}
+    .ctx-field label{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink40);display:block;margin-bottom:6px;}
+    .ctx-field select{width:100%;background:var(--surf);border:1px solid var(--b);border-radius:2px;padding:10px 14px;color:var(--ink80);font-family:'IBM Plex Mono',monospace;font-size:0.44rem;outline:none;appearance:none;transition:border-color 0.2s;}
+    .ctx-field select:focus{border-color:rgba(200,144,42,0.4);}
+    .ctx-field select option{background:var(--void);}
+
+    .analyze-btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:18px;margin-top:24px;background:var(--danger);color:#fff;border:none;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
+    .analyze-btn:hover{background:#e03560;}
+    .analyze-btn:disabled{opacity:0.4;cursor:not-allowed;}
+
+    .free-notice{display:flex;align-items:flex-start;gap:14px;background:var(--pulse-d);border:1px solid rgba(42,196,200,0.2);border-radius:3px;padding:16px 20px;margin-top:16px;}
+    .free-badge{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--pulse);background:rgba(42,196,200,0.12);border:1px solid rgba(42,196,200,0.25);padding:4px 10px;border-radius:1px;white-space:nowrap;flex-shrink:0;}
+    .free-text{font-size:0.92rem;color:var(--ink60);line-height:1.6;}
+    .free-text strong{color:var(--pulse);}
+
+    /* LOADING */
+    .loading-phase{text-align:center;padding:80px 20px;}
+    .loading-ring{width:56px;height:56px;border-radius:50%;border:2px solid var(--b);border-top-color:var(--danger);animation:spin 0.9s linear infinite;margin:0 auto 24px;}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .loading-label{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink40);margin-bottom:8px;}
+    .loading-step{font-family:'Crimson Pro',serif;font-style:italic;font-size:1rem;color:var(--ink20);}
+
+    /* RESULTS */
+    .results-header{margin-bottom:28px;}
+    .results-stamp{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--danger);margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+    .results-stamp::before{content:'';width:20px;height:1px;background:var(--danger);}
+    .results-title{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:0.04em;color:var(--ink);line-height:1;}
+    .results-meta{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;color:var(--ink20);margin-top:8px;}
+
+    .severity-banner{border-radius:3px;padding:16px 22px;margin-bottom:28px;display:flex;align-items:center;gap:16px;}
+    .severity-banner.critical{background:rgba(200,48,80,0.1);border:1px solid rgba(200,48,80,0.3);}
+    .severity-banner.high{background:rgba(200,144,42,0.1);border:1px solid rgba(200,144,42,0.3);}
+    .severity-banner.moderate{background:rgba(42,196,200,0.08);border:1px solid rgba(42,196,200,0.25);}
+    .severity-label{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;flex-shrink:0;}
+    .severity-banner.critical .severity-label{color:var(--danger);}
+    .severity-banner.high .severity-label{color:var(--gold);}
+    .severity-banner.moderate .severity-label{color:var(--pulse);}
+    .severity-text{font-size:1rem;color:var(--ink60);line-height:1.5;}
+
+    .analysis-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:32px;}
+    .analysis-block{background:var(--void);border:1px solid var(--b);border-radius:3px;overflow:hidden;}
+    .block-header{padding:14px 22px;border-bottom:1px solid var(--b);display:flex;align-items:center;gap:12px;}
+    .block-num{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;color:var(--ink20);min-width:24px;}
+    .block-title{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink60);}
+    .block-body{padding:22px;}
+
+    .violation-list{display:flex;flex-direction:column;gap:14px;}
+    .violation-item{background:var(--surf);border-radius:2px;padding:16px 18px;border-left:3px solid var(--danger);}
+    .violation-cfr{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.12em;color:var(--danger);margin-bottom:6px;}
+    .violation-title{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;color:var(--ink);margin-bottom:6px;}
+    .violation-desc{font-size:0.92rem;color:var(--ink60);line-height:1.6;}
+
+    .agency-sequence{display:flex;flex-direction:column;gap:0;}
+    .agency-step{display:grid;grid-template-columns:48px 1fr;gap:0;}
+    .step-num-col{display:flex;flex-direction:column;align-items:center;}
+    .step-circle{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:0.44rem;font-weight:500;flex-shrink:0;z-index:1;}
+    .step-line{width:1px;flex:1;background:var(--b);min-height:20px;}
+    .step-content{padding:0 0 24px 16px;}
+    .step-timing{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:4px;}
+    .step-agency{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);margin-bottom:4px;}
+    .step-action{font-size:0.9rem;color:var(--ink60);line-height:1.6;}
+    .step-cfr{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;color:var(--ink20);margin-top:4px;}
+
+    .plain-text{font-size:1.05rem;line-height:1.85;color:var(--ink80);}
+    .plain-text p{margin-bottom:16px;}
+    .plain-text p:last-child{margin-bottom:0;}
+    .plain-text strong{color:var(--gold);}
+
+    .action-list{display:flex;flex-direction:column;gap:10px;}
+    .action-item{display:flex;align-items:flex-start;gap:14px;background:var(--surf);border-radius:2px;padding:14px 16px;}
+    .action-num{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;color:var(--gold);flex-shrink:0;margin-top:3px;}
+    .action-text{font-size:0.95rem;color:var(--ink80);line-height:1.6;}
+
+    /* GATE */
+    .gate-section{margin-top:36px;}
+    .gate-divider{display:flex;align-items:center;gap:16px;margin-bottom:28px;}
+    .gate-divider-line{flex:1;height:1px;background:var(--b);}
+    .gate-divider-text{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink20);}
+
+    .doc-generator{background:var(--void);border:1px solid rgba(200,144,42,0.25);border-radius:4px;padding:32px;display:none;}
+    .doc-generator.visible{display:block;}
+    .doc-gen-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:24px;}
+    .doc-gen-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.04em;color:var(--gold);}
+    .doc-gen-sub{font-size:1rem;color:var(--ink60);line-height:1.6;margin-top:4px;}
+    .member-badge{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);background:var(--gold-d);border:1px solid rgba(200,144,42,0.3);padding:6px 14px;border-radius:1px;white-space:nowrap;flex-shrink:0;}
+
+    .doc-type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;}
+    .doc-type-btn{background:var(--surf);border:1px solid var(--b);border-radius:2px;padding:14px 16px;cursor:pointer;transition:all 0.2s;text-align:left;}
+    .doc-type-btn:hover{border-color:rgba(200,144,42,0.4);}
+    .doc-type-btn.selected{border-color:var(--gold);background:var(--gold-d);}
+    .doc-type-icon{font-size:1.3rem;display:block;margin-bottom:6px;}
+    .doc-type-name{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink60);display:block;}
+    .doc-type-btn.selected .doc-type-name{color:var(--gold);}
+
+    .generate-btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:16px;background:var(--gold);color:var(--abyss);border:none;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-weight:500;}
+    .generate-btn:hover{background:var(--gold-l);}
+    .generate-btn:disabled{opacity:0.4;cursor:not-allowed;}
+
+    .doc-output{margin-top:24px;display:none;}
+    .doc-output.visible{display:block;}
+    .doc-output-inner{background:var(--surf);border:1px solid var(--b);border-radius:3px;padding:28px 32px;}
+    .doc-output-label{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+    .doc-content{font-family:'Crimson Pro',serif;font-size:1rem;line-height:1.85;color:var(--ink80);white-space:pre-wrap;}
+    .doc-actions{display:flex;gap:12px;margin-top:20px;padding-top:20px;border-top:1px solid var(--b);}
+    .doc-action-btn{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.14em;text-transform:uppercase;padding:10px 20px;border-radius:2px;cursor:pointer;transition:all 0.2s;border:none;}
+    .btn-copy{background:var(--gold-d);color:var(--gold);border:1px solid rgba(200,144,42,0.3);}
+    .btn-copy:hover{background:rgba(200,144,42,0.2);}
+    .btn-print{background:transparent;color:var(--ink40);border:1px solid var(--b);}
+    .btn-print:hover{color:var(--ink80);}
+
+    .gate-wall{background:linear-gradient(135deg,rgba(200,144,42,0.06),rgba(200,144,42,0.02));border:1px solid rgba(200,144,42,0.2);border-radius:4px;padding:40px;text-align:center;}
+    .gate-wall-icon{font-size:2.5rem;margin-bottom:16px;opacity:0.6;}
+    .gate-wall-title{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:300;color:var(--ink);margin-bottom:10px;}
+    .gate-wall-text{font-size:1rem;color:var(--ink60);line-height:1.7;max-width:480px;margin:0 auto 24px;}
+    .gate-wall-price{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.15em;color:var(--gold);margin-bottom:24px;text-transform:uppercase;}
+    .gate-join-btn{display:inline-block;background:var(--gold);color:var(--abyss);font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;padding:16px 36px;border-radius:3px;text-decoration:none;transition:background 0.2s;cursor:pointer;border:none;}
+    .gate-join-btn:hover{background:var(--gold-l);}
+    .gate-perks{display:flex;justify-content:center;gap:28px;margin-top:20px;flex-wrap:wrap;}
+    .gate-perk{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink20);display:flex;align-items:center;gap:6px;}
+    .gate-perk::before{content:'✓';color:var(--gold);}
+
+    .reset-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+    .reset-btn{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);background:transparent;border:1px solid var(--b);border-radius:2px;padding:8px 16px;cursor:pointer;transition:all 0.2s;}
+    .reset-btn:hover{color:var(--ink80);border-color:var(--b2);}
+
+    @keyframes fade-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fade-up 0.5s ease forwards;}
+
+    @media(max-width:768px){
+      nav{padding:0 20px;}.page{padding:32px 20px 80px;}
+      .hero-content{padding:0 24px;}.situation-grid{grid-template-columns:1fr;}
+      .context-row{grid-template-columns:1fr;}.doc-type-grid{grid-template-columns:1fr 1fr;}
+      .nav-links a:not(.nav-join){display:none;}
+    }
+  
+    /* ── MOBILE NAV FIXES ── */
+    @media(max-width:700px){
+      nav{padding:0 14px;}
+      .nav-logo img{height:32px !important;width:32px !important;}
+      .nav-logo-text,.nav-brand-text{display:none;}
+      .nav-links{gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;padding:0 8px;}
+      .nav-links::-webkit-scrollbar{display:none;}
+      .nav-links a{font-size:0.36rem !important;letter-spacing:0.1em !important;}
+      .nav-links a.hide-mob{display:none;}
+      body{font-size:16px;}
+    }
+    @media(max-width:480px){
+      .nav-links a:not(.nav-primary):not(.active):not(.always){display:none;}
+    }
+
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="situation-room.html" class="active">Situation Room</a>
+    <a href="accountability.html">Accountability</a>
+    <a href="congress-scorecard.html">Scorecard</a>
+    <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener">Store</a>
+    <a href="donate.html">Donate</a>
+  </div>
+  <div class="nav-actions">
+    <a href="donate.html" class="nav-btn nav-btn-gold">Donate Now</a>
+  </div>
+<a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;padding:6px 12px;border:1px solid rgba(100,140,200,0.15);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.3)';" onmouseout="this.style.color='rgba(216,207,196,0.45)';this.style.borderColor='rgba(100,140,200,0.15)';">← Home</a>
+</nav>
+
+<div class="hero">
+  <img src="the-situation-room.png" alt="The Situation Room">
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-b"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Real-Time Crisis Analysis</div>
+    <h1 class="hero-h1">The<br><em>Situation</em><br>Room</h1>
+    <p class="hero-sub">Describe what's happening. Get the federal law, the violations, and the action plan — immediately.</p>
+    <p class="hero-quote">In healthcare, secrecy protects institutions.<br>In The Situation Room, <strong>the facts protect patients.</strong></p>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- PHASE 1: INTAKE -->
+  <div class="phase active" id="phase-intake">
+    <div class="intake-card">
+      <div class="intake-label">Step 1 — Situation Type</div>
+      <h2 class="intake-title">What is happening right now?</h2>
+      <p class="intake-sub">Select the closest match — this focuses the analysis on the right federal regulations and agencies.</p>
+
+      <div class="situation-grid">
+        <button class="sit-btn" data-sit="discharge">
+          <span class="sit-btn-title">Discharge / Removal Notice</span>
+          <span class="sit-btn-desc">Facility threatening to discharge patient from care or dialysis</span>
+        </button>
+        <button class="sit-btn" data-sit="transplant">
+          <span class="sit-btn-title">Transplant Listing Denied or Delayed</span>
+          <span class="sit-btn-desc">Being told patient can't be listed or is being removed from waitlist</span>
+        </button>
+        <button class="sit-btn" data-sit="blacklist">
+          <span class="sit-btn-title">Care Refusal / Blacklisting</span>
+          <span class="sit-btn-desc">Multiple facilities refusing to accept patient without explanation</span>
+        </button>
+        <button class="sit-btn" data-sit="information">
+          <span class="sit-btn-title">Information Being Withheld</span>
+          <span class="sit-btn-desc">Records denied, diagnosis concealed, or informed consent violated</span>
+        </button>
+        <button class="sit-btn" data-sit="retaliation">
+          <span class="sit-btn-title">Retaliation for Complaints</span>
+          <span class="sit-btn-desc">Care quality changed or threatened after raising concerns</span>
+        </button>
+        <button class="sit-btn" data-sit="other">
+          <span class="sit-btn-title">Other — I'll Describe It</span>
+          <span class="sit-btn-desc">My situation doesn't fit neatly into the above categories</span>
+        </button>
+      </div>
+
+      <div class="intake-label" style="margin-top:8px;">Step 2 — Describe Your Situation</div>
+      <textarea class="sit-input" id="situation-text"
+        placeholder="Describe what is happening in your own words. Include what the facility said, any notices you received, how long this has been occurring, names of departments or staff if known, and anything else that feels relevant. The more detail, the more precise the analysis."></textarea>
+      <div class="char-count"><span id="char-count">0</span> characters</div>
+
+      <div class="context-row">
+        <div class="ctx-field">
+          <label>State</label>
+          <select id="ctx-state">
+            <option value="">Select state...</option>
+            <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+          </select>
+        </div>
+        <div class="ctx-field">
+          <label>Treatment Type</label>
+          <select id="ctx-treatment">
+            <option value="">Select...</option>
+            <option>In-Center Hemodialysis</option>
+            <option>Home Hemodialysis</option>
+            <option>Peritoneal Dialysis</option>
+            <option>Post-Transplant</option>
+            <option>Pre-Dialysis / CKD</option>
+            <option>Transplant Candidate</option>
+          </select>
+        </div>
+        <div class="ctx-field">
+          <label>How Long Occurring</label>
+          <select id="ctx-duration">
+            <option value="">Select...</option>
+            <option>Today / Just happened</option>
+            <option>Past 48 hours</option>
+            <option>Past week</option>
+            <option>Past month</option>
+            <option>3–6 months</option>
+            <option>6+ months</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="analyze-btn" id="analyze-btn" onclick="startAnalysis()">
+        ⚡&nbsp;&nbsp;Analyze My Situation — Free
+      </button>
+
+      <div class="free-notice">
+        <span class="free-badge">Free</span>
+        <p class="free-text">Your <strong>complete situation analysis</strong> — federal violations, agency sequence, and immediate actions — is completely free. Members unlock document generation: complaint letters, appeals, and agency filings drafted from your specific situation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2: LOADING -->
+  <div class="phase" id="phase-loading">
+    <div class="loading-phase">
+      <div class="loading-ring"></div>
+      <div class="loading-label">Analyzing Your Situation</div>
+      <div class="loading-step" id="loading-step">Cross-referencing federal regulations...</div>
+    </div>
+  </div>
+
+  <!-- PHASE 3: RESULTS -->
+  <div class="phase" id="phase-results">
+
+    <div class="reset-bar">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink20);">Situation Room · Analysis Complete</div>
+      <button class="reset-btn" onclick="resetTool()">← New Analysis</button>
+    </div>
+
+    <div class="results-header fade-up">
+      <div class="results-stamp">Federal Rights Analysis</div>
+      <div class="results-title">YOUR SITUATION REPORT</div>
+      <div class="results-meta">Generated · <span id="results-ts"></span></div>
+    </div>
+
+    <div id="severity-banner" class="severity-banner critical fade-up">
+      <div class="severity-label" id="severity-label">Critical</div>
+      <div class="severity-text" id="severity-text"></div>
+    </div>
+
+    <div class="analysis-grid">
+      <div class="analysis-block fade-up">
+        <div class="block-header">
+          <div class="block-num">01</div>
+          <div class="block-title">What Is Happening — In Plain Language</div>
+        </div>
+        <div class="block-body">
+          <div class="plain-text" id="plain-language"></div>
+        </div>
+      </div>
+
+      <div class="analysis-block fade-up">
+        <div class="block-header">
+          <div class="block-num">02</div>
+          <div class="block-title">Federal Violations Identified</div>
+        </div>
+        <div class="block-body">
+          <div class="violation-list" id="violation-list"></div>
+        </div>
+      </div>
+
+      <div class="analysis-block fade-up">
+        <div class="block-header">
+          <div class="block-num">03</div>
+          <div class="block-title">Agency Contact Sequence</div>
+        </div>
+        <div class="block-body">
+          <div class="agency-sequence" id="agency-sequence"></div>
+        </div>
+      </div>
+
+      <div class="analysis-block fade-up">
+        <div class="block-header">
+          <div class="block-num">04</div>
+          <div class="block-title">Immediate Actions — Do These First</div>
+        </div>
+        <div class="block-body">
+          <div class="action-list" id="action-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GATE -->
+    <div class="gate-section">
+      <div class="gate-divider">
+        <div class="gate-divider-line"></div>
+        <div class="gate-divider-text">Document Generation</div>
+        <div class="gate-divider-line"></div>
+      </div>
+
+      <!-- MEMBERS: Document generator (hidden until member check) -->
+      <div class="doc-generator" id="doc-generator">
+        <div class="doc-gen-header">
+          <div>
+            <div class="doc-gen-title">Generate Your Document</div>
+            <div class="doc-gen-sub">Complaint letters, appeals, and agency filings — drafted from your specific situation and ready to send.</div>
+          </div>
+          <div class="member-badge">Members Only</div>
+        </div>
+        <div class="doc-type-grid">
+          <button class="doc-type-btn selected" data-doctype="complaint">
+            <span class="doc-type-icon">📋</span>
+            <span class="doc-type-name">Complaint Letter</span>
+          </button>
+          <button class="doc-type-btn" data-doctype="appeal">
+            <span class="doc-type-icon">⚖️</span>
+            <span class="doc-type-name">Formal Appeal</span>
+          </button>
+          <button class="doc-type-btn" data-doctype="cms">
+            <span class="doc-type-icon">🏛️</span>
+            <span class="doc-type-name">CMS Filing</span>
+          </button>
+          <button class="doc-type-btn" data-doctype="oig">
+            <span class="doc-type-icon">🔍</span>
+            <span class="doc-type-name">OIG Complaint</span>
+          </button>
+          <button class="doc-type-btn" data-doctype="state">
+            <span class="doc-type-icon">📍</span>
+            <span class="doc-type-name">State Agency Letter</span>
+          </button>
+          <button class="doc-type-btn" data-doctype="congressional">
+            <span class="doc-type-icon">🏠</span>
+            <span class="doc-type-name">Congressional Letter</span>
+          </button>
+        </div>
+        <button class="generate-btn" id="generate-btn" onclick="generateDocument()">
+          Generate Document
+        </button>
+        <div class="doc-output" id="doc-output">
+          <div class="doc-output-inner">
+            <div class="doc-output-label">Generated Document — Ready to Send</div>
+            <div class="doc-content" id="doc-content"></div>
+            <div class="doc-actions">
+              <button class="doc-action-btn btn-copy" onclick="copyDoc()">Copy to Clipboard</button>
+              <button class="doc-action-btn btn-print" onclick="window.print()">Print</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NON-MEMBERS: Gate wall -->
+      
+
+    </div>
+  </div><!-- /phase-results -->
+
+</div><!-- /page -->
+
+<script>
+let selectedSit = '';
+let analysisData = null;
+let selectedDocType = 'complaint';
+let isMember = true; // paywall removed 2026-07 — all tools are free
+
+// Situation buttons
+document.querySelectorAll('.sit-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.sit-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedSit = btn.dataset.sit;
+  });
+});
+
+document.getElementById('situation-text').addEventListener('input', e => {
+  document.getElementById('char-count').textContent = e.target.value.length;
+});
+
+// Doc type buttons
+document.querySelectorAll('.doc-type-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.doc-type-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedDocType = btn.dataset.doctype;
+    document.getElementById('doc-output').classList.remove('visible');
+  });
+});
+
+function showPhase(id) {
+  document.querySelectorAll('.phase').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function resetTool() {
+  analysisData = null;
+  document.getElementById('situation-text').value = '';
+  document.getElementById('char-count').textContent = '0';
+  document.querySelectorAll('.sit-btn').forEach(b => b.classList.remove('selected'));
+  selectedSit = '';
+  document.getElementById('doc-output').classList.remove('visible');
+  showPhase('phase-intake');
+}
+
+async function startAnalysis() {
+  const text = document.getElementById('situation-text').value.trim();
+  if (text.length < 30) {
+    alert('Please describe your situation in more detail before analyzing.');
+    return;
+  }
+
+  const state = document.getElementById('ctx-state').value;
+  const treatment = document.getElementById('ctx-treatment').value;
+  const duration = document.getElementById('ctx-duration').value;
+
+  document.getElementById('analyze-btn').disabled = true;
+  showPhase('phase-loading');
+
+  const steps = [
+    'Cross-referencing federal regulations...',
+    'Identifying applicable CFR citations...',
+    'Mapping agency jurisdiction...',
+    'Assessing violation severity...',
+    'Determining action sequence...',
+    'Compiling your analysis...'
+  ];
+  let si = 0;
+  const stepEl = document.getElementById('loading-step');
+  const iv = setInterval(() => { si = (si+1)%steps.length; stepEl.textContent = steps[si]; }, 1800);
+
+  const system = `You are the Cold Ischemia Foundation's federal patient rights analysis engine. You specialize in ESRD (End-Stage Renal Disease) patient rights, dialysis facility regulations, and transplant system accountability under federal law.
+
+Deep expertise in:
+- 42 CFR Part 494 (ESRD Conditions for Coverage — especially §494.70 patient rights, §494.180 grievances, §494.90 patient care plans)
+- 42 CFR Part 482 (Hospital Conditions of Participation — §482.13 patient rights)
+- 42 CFR Part 489 (Provider agreements — §489.102 advance directives)
+- 42 U.S.C. §1395rr (Medicare ESRD Program statutory rights)
+- NOTA (National Organ Transplant Act) and 42 CFR Part 121 (OPTN — §121.4 listing criteria)
+- EMTALA — 42 U.S.C. §1395dd
+- HIPAA — 45 CFR Part 164 (patient access to records)
+- ADA protections for ESRD patients — 42 U.S.C. §12101
+- CMS enforcement: State Survey Agencies, ESRD Networks (QIA contractors), CMS Regional Offices
+- OIG hotline jurisdiction — 42 U.S.C. §1320a-7a
+
+Analysis requirements:
+1. Cite exact CFR sections — never vague references
+2. Every violation maps to a concrete action
+3. Honest severity — never minimize, never catastrophize
+4. Written for a stressed care partner, not a lawyer
+
+Return ONLY valid JSON matching this exact structure — no preamble, no markdown fences:
+{
+  "severity": "critical|high|moderate",
+  "severityText": "One sentence on overall urgency",
+  "plainLanguage": "2-3 paragraphs in plain English explaining what is happening legally and what rights are being violated. Use <p> tags. Bold key phrases with <strong>.",
+  "violations": [
+    {"cfr": "42 CFR §494.180(f)", "title": "Short title", "description": "What this requires and how it is being violated"}
+  ],
+  "agencySequence": [
+    {"step": 1, "timing": "Within 24 hours", "agency": "Agency name", "action": "Specific action to take", "cfr": "Relevant authority"}
+  ],
+  "immediateActions": ["Direct instruction written as an imperative sentence"]
+}`;
+
+  const userMsg = `Analyze this patient/care partner situation:
+
+Situation type: ${selectedSit || 'not specified'}
+State: ${state || 'not specified'}
+Treatment type: ${treatment || 'not specified'}
+Duration: ${duration || 'not specified'}
+
+Description: ${text}
+
+Provide a complete federal rights analysis with specific CFR citations, all applicable violations, the full agency contact sequence in priority order, and at least 4 immediate action steps.`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 2000,
+        system,
+        messages: [{ role: 'user', content: userMsg }]
+      })
+    });
+
+    clearInterval(iv);
+
+    if (!res.ok) throw new Error('API ' + res.status);
+    const d = await res.json();
+    const raw = d.content[0].text.trim().replace(/^```json\s*/,'').replace(/\s*```$/,'').trim();
+    analysisData = JSON.parse(raw);
+    analysisData._text = text;
+    analysisData._state = state;
+    analysisData._treatment = treatment;
+    analysisData._duration = duration;
+    analysisData._sit = selectedSit;
+    renderResults();
+  } catch(e) {
+    clearInterval(iv);
+    console.error(e);
+    document.getElementById('analyze-btn').disabled = false;
+    showPhase('phase-intake');
+    alert('Analysis could not complete — please try again.');
+  }
+}
+
+const stepColors = ['var(--danger)','var(--gold)','var(--pulse)','var(--green)','var(--violet)','var(--ink40)'];
+
+function renderResults() {
+  const r = analysisData;
+
+  document.getElementById('results-ts').textContent =
+    new Date().toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit'});
+
+  const banner = document.getElementById('severity-banner');
+  banner.className = 'severity-banner fade-up ' + (r.severity || 'high');
+  document.getElementById('severity-label').textContent =
+    ({critical:'Critical',high:'High Priority',moderate:'Moderate Review'})[r.severity] || 'Analysis Complete';
+  document.getElementById('severity-text').textContent = r.severityText || '';
+
+  document.getElementById('plain-language').innerHTML = r.plainLanguage || '';
+
+  document.getElementById('violation-list').innerHTML = (r.violations || []).map(v => `
+    <div class="violation-item">
+      <div class="violation-cfr">${v.cfr}</div>
+      <div class="violation-title">${v.title}</div>
+      <div class="violation-desc">${v.description}</div>
+    </div>`).join('');
+
+  document.getElementById('agency-sequence').innerHTML = (r.agencySequence || []).map((s,i) => `
+    <div class="agency-step">
+      <div class="step-num-col">
+        <div class="step-circle" style="background:${stepColors[i]||'var(--gold)'};color:var(--abyss);">${s.step}</div>
+        ${i < (r.agencySequence.length-1) ? '<div class="step-line"></div>' : ''}
+      </div>
+      <div class="step-content">
+        <div class="step-timing" style="color:${stepColors[i]||'var(--gold)'};">${s.timing}</div>
+        <div class="step-agency">${s.agency}</div>
+        <div class="step-action">${s.action}</div>
+        ${s.cfr ? `<div class="step-cfr">${s.cfr}</div>` : ''}
+      </div>
+    </div>`).join('');
+
+  document.getElementById('action-list').innerHTML = (r.immediateActions || []).map((a,i) => `
+    <div class="action-item">
+      <div class="action-num">${String(i+1).padStart(2,'0')}</div>
+      <div class="action-text">${a}</div>
+    </div>`).join('');
+
+  // Gate
+  document.getElementById('doc-generator').classList.add('visible');
+
+  showPhase('phase-results');
+}
+
+async function generateDocument() {
+  if (!analysisData) return;
+  const btn = document.getElementById('generate-btn');
+  btn.disabled = true;
+  btn.textContent = 'Generating...';
+
+  const labels = {
+    complaint: 'formal complaint letter to the dialysis facility administrator and legal counsel',
+    appeal: 'formal administrative appeal to the facility and ESRD Network',
+    cms: 'complaint filing letter to CMS ESRD Network and CMS Regional Office',
+    oig: 'OIG complaint narrative and hotline filing',
+    state: 'complaint letter to the state health department / survey agency',
+    congressional: 'letter to the patient\'s congressional representative requesting oversight intervention'
+  };
+
+  const r = analysisData;
+  const viols = (r.violations||[]).map(v => `${v.cfr}: ${v.title}`).join('; ');
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 2000,
+        system: `You are a federal patient rights attorney specializing in ESRD, dialysis, and transplant law. You draft precise, legally grounded advocacy documents for patients and care partners. Documents must be formally structured, cite exact CFR sections, be assertive but professional, and ready to send without editing. Use [PATIENT NAME], [CARE PARTNER NAME], [FACILITY NAME], [FACILITY ADDRESS] as placeholders. Include today's date: ${new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}.`,
+        messages: [{
+          role: 'user',
+          content: `Generate a ${labels[selectedDocType]} based on this situation:\n\nState: ${r._state||'Not specified'}\nTreatment: ${r._treatment||'Not specified'}\nType: ${r._sit||'Not specified'}\nDescription: ${r._text}\nViolations: ${viols}\nSeverity: ${r.severity}\n\nWrite the complete ready-to-send document with proper date, addresses, subject line, body paragraphs citing specific CFR sections, a clear demand with deadline, and CC line to relevant agencies.`
+        }]
+      })
+    });
+
+    if (!res.ok) throw new Error('API error');
+    const d = await res.json();
+    document.getElementById('doc-content').textContent = d.content[0].text.trim();
+    document.getElementById('doc-output').classList.add('visible');
+    document.getElementById('doc-output').scrollIntoView({ behavior:'smooth', block:'start' });
+  } catch(e) {
+    alert('Document generation failed. Please try again.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Generate Document';
+  }
+}
+
+function copyDoc() {
+  navigator.clipboard.writeText(document.getElementById('doc-content').textContent).then(() => {
+    const btn = document.querySelector('.btn-copy');
+    const orig = btn.textContent;
+    btn.textContent = 'Copied ✓';
+    setTimeout(() => { btn.textContent = orig; }, 2000);
+  });
+}
+</script>
+
+<!-- UNIVERSAL FOOTER -->
+<footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(100,140,200,0.1);">
+      <div>
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:12px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.25);line-height:2.1;">
+          Grassroots Care Partner Advocacy<br>
+          Ellenton, Florida · 16th Congressional District<br>
+          <a href="/cdn-cgi/l/email-protection#0c66696a6a4c6f636068657f6f646961656d226a637962686d78656362" style="color:#c8902a;text-decoration:none;"><span class="__cf_email__" data-cfemail="721817141432111d1e161b01111a171f1b135c141d071c1613061b1d1c">[email&#160;protected]</span></a><br>
+          <a href="https://coldischemia.foundation" style="color:#c8902a;text-decoration:none;">coldischemia.foundation</a>
+        </p>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Command Center</a>
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Situation Room</a>
+          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Research</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
+          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Free Guide</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Privacy Policy</a>
+          <a href="/cdn-cgi/l/email-protection#412b24272701222e2d2528322229242c28206f272e342f252035282e2f" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Contact</a>
+          <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Store</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.06em;color:rgba(216,207,196,0.2);">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+      <div style="display:flex;gap:16px;">
+        <a href="terms

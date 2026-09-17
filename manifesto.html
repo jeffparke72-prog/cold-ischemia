@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cold Ischemia Manifesto — For the 55 Million Who Hold Everything Together</title>
+<meta name="description" content="We are the only independent care partner advocacy platform in America. Zero pharmaceutical funding. Zero conflicts of interest. Built by a care partner, for care partners. This is our case.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700;1,900&family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030509;
+  --void:#07101c;
+  --surf:#0a1628;
+  --raised:#0f1e38;
+  --b:rgba(100,140,200,0.1);
+  --b2:rgba(100,140,200,0.2);
+  --ink:#d8cfc4;
+  --ink90:rgba(216,207,196,0.9);
+  --ink70:rgba(216,207,196,0.7);
+  --ink50:rgba(216,207,196,0.5);
+  --ink30:rgba(216,207,196,0.3);
+  --ink15:rgba(216,207,196,0.15);
+  --gold:#c8902a;
+  --gold-l:#e8b84a;
+  --gold-d:rgba(200,144,42,0.12);
+  --pulse:#2ac4c8;
+  --danger:#c83050;
+  --green:#50c878;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--abyss);
+  color:var(--ink);
+  font-family:'Crimson Pro',Georgia,serif;
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* CUSTOM CURSOR */
+.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.1s ease,width 0.2s,height 0.2s,background 0.2s;mix-blend-mode:difference;}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(200,144,42,0.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform 0.18s ease,width 0.25s,height 0.25s,opacity 0.2s;}
+body:hover .cursor-ring{opacity:1;}
+.cursor.active{width:6px;height:6px;}
+.cursor-ring.active{width:52px;height:52px;border-color:rgba(200,144,42,0.8);}
+
+/* PROGRESS BAR */
+.reading-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--pulse));z-index:1000;width:0%;transition:width 0.1s linear;}
+
+/* NAV */
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between;background:rgba(3,5,9,0);transition:background 0.4s,border-bottom 0.4s;border-bottom:1px solid transparent;}
+.top-nav.scrolled{background:rgba(3,5,9,0.96);border-bottom-color:var(--b);backdrop-filter:blur(16px);}
+.nav-logo{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);text-decoration:none;}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink50);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--abyss);padding:8px 20px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:var(--gold-l);}
+@media(max-width:700px){.nav-links a:not(.nav-cta){display:none;}}
+
+/* ─── SECTION REVEAL ANIMATIONS ─── */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1),transform 0.9s cubic-bezier(0.22,1,0.36,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1),transform 0.9s cubic-bezier(0.22,1,0.36,1);}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1),transform 0.9s cubic-bezier(0.22,1,0.36,1);}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.d1{transition-delay:0.05s;} .d2{transition-delay:0.15s;} .d3{transition-delay:0.25s;} .d4{transition-delay:0.35s;} .d5{transition-delay:0.45s;}
+
+/* ─── HERO ─── */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 64px 80px;position:relative;overflow:hidden;}
+.hero-canvas{position:absolute;inset:0;z-index:0;}
+.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12));z-index:1;}
+.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,transparent 0%,rgba(3,5,9,0.4) 70%,rgba(3,5,9,0.85) 100%);z-index:2;}
+.hero-content{position:relative;z-index:3;max-width:1100px;}
+.hero-overline{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.52em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:16px;opacity:0;animation:fadeUp 1s 0.3s forwards;}
+.hero-overline::before{content:'';width:48px;height:1px;background:var(--gold);}
+.hero-h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(52px,7.5vw,108px);line-height:0.95;font-weight:900;color:var(--ink);margin-bottom:32px;opacity:0;animation:fadeUp 1.1s 0.5s forwards;}
+.hero-h1 em{font-style:italic;color:var(--gold);}
+.hero-h1 .outline{-webkit-text-stroke:1px rgba(216,207,196,0.25);color:transparent;}
+.hero-sub{font-size:clamp(1.1rem,2vw,1.45rem);line-height:1.8;color:var(--ink70);max-width:700px;margin-bottom:48px;font-weight:300;opacity:0;animation:fadeUp 1s 0.8s forwards;}
+.hero-sub strong{color:var(--ink);font-weight:600;}
+.hero-scroll{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink30);display:flex;align-items:center;gap:12px;opacity:0;animation:fadeUp 0.8s 1.2s forwards;}
+.scroll-line{width:40px;height:1px;background:var(--ink30);position:relative;overflow:hidden;}
+.scroll-line::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--gold);animation:scrollAnim 2s 1.5s ease-in-out infinite;}
+@keyframes scrollAnim{0%{left:-100%;}100%{left:100%;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+/* ─── GENERAL LAYOUT ─── */
+.section{padding:120px 64px;}
+.section-in{max-width:1100px;margin:0 auto;}
+@media(max-width:768px){.section{padding:80px 28px;}}
+
+/* CHAPTER MARKER */
+.chapter{display:flex;align-items:center;gap:20px;margin-bottom:20px;}
+.chapter-num{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.6;}
+.chapter-line{flex:1;height:1px;background:linear-gradient(90deg,var(--gold-d),transparent);max-width:120px;}
+.chapter-title{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);}
+
+/* DISPLAY TEXT */
+.display-h2{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,72px);line-height:1.1;font-weight:700;color:var(--ink);margin-bottom:28px;}
+.display-h2 em{font-style:italic;color:var(--gold);}
+.display-h2 .light{font-weight:400;color:var(--ink70);}
+.body-text{font-size:clamp(1.05rem,1.6vw,1.22rem);line-height:1.95;color:var(--ink70);margin-bottom:24px;font-weight:300;}
+.body-text strong{color:var(--ink90);font-weight:600;}
+.body-text em{font-style:italic;color:var(--gold);}
+
+/* PULL QUOTE */
+.pull-quote{border-left:3px solid var(--gold);padding:28px 40px;margin:56px 0;background:linear-gradient(135deg,rgba(200,144,42,0.05),transparent);position:relative;}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:80px;line-height:0.8;color:var(--gold);opacity:0.25;position:absolute;top:16px;left:24px;}
+.pq-text{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.5vw,2rem);font-style:italic;line-height:1.5;color:var(--ink90);padding-left:20px;}
+.pq-attr{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:16px;padding-left:20px;}
+
+/* STAT BLOCKS */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b);border:1px solid var(--b);margin:56px 0;}
+@media(max-width:700px){.stat-grid{grid-template-columns:1fr;}}
+.stat-block{background:var(--void);padding:40px 32px;text-align:center;}
+.stat-n{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:900;color:var(--gold-l);display:block;margin-bottom:8px;line-height:1;}
+.stat-label{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink50);line-height:1.8;}
+.stat-source{font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.08em;color:var(--ink30);margin-top:8px;display:block;}
+
+/* TWO-COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+@media(max-width:900px){.two-col{grid-template-columns:1fr;gap:48px;}}
+.two-col-text{}
+.two-col-visual{position:relative;}
+
+/* ISCHEMIA EXPLAINER BOX */
+.ischemia-box{background:var(--void);border:1px solid var(--b2);border-top:3px solid var(--pulse);padding:40px 44px;position:relative;overflow:hidden;}
+.ischemia-box::before{content:'';position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(42,196,200,0.06) 0%,transparent 70%);}
+.ib-word{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;font-style:italic;color:var(--pulse);margin-bottom:6px;}
+.ib-pron{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.18em;color:var(--pulse);opacity:0.5;margin-bottom:20px;}
+.ib-def{font-size:1.05rem;line-height:1.9;color:var(--ink70);}
+.ib-def strong{color:var(--pulse);}
+.ib-medical{margin-top:20px;padding-top:20px;border-top:1px solid var(--b);}
+.ib-medical-label{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink30);margin-bottom:8px;}
+.ib-medical-text{font-size:0.95rem;line-height:1.8;color:var(--ink50);font-style:italic;}
+
+/* MANIFESTO ITEMS */
+.manifesto-list{display:flex;flex-direction:column;gap:2px;margin:40px 0;}
+.manifesto-item{display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start;padding:24px 28px;background:var(--void);border:1px solid var(--b);transition:border-color 0.2s,background 0.2s;}
+.manifesto-item:hover{border-color:var(--b2);background:var(--surf);}
+.mi-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--gold);opacity:0.4;line-height:1;}
+.mi-content{}
+.mi-title{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink80);margin-bottom:6px;}
+.mi-text{font-size:0.95rem;line-height:1.85;color:var(--ink50);}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--gold),rgba(200,144,42,0.1));}
+.tl-item{position:relative;padding:0 0 52px 40px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-dot{position:absolute;left:-40px;top:4px;width:10px;height:10px;background:var(--gold);border-radius:50%;border:2px solid var(--abyss);box-shadow:0 0 0 3px rgba(200,144,42,0.2);}
+.tl-year{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.tl-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.tl-text{font-size:0.95rem;line-height:1.85;color:var(--ink50);}
+
+/* COMPARISON TABLE */
+.compare-wrap{border:1px solid var(--b);border-radius:2px;overflow:hidden;margin:40px 0;}
+.compare-header{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--raised);}
+.compare-header div{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;padding:16px 24px;}
+.compare-header .ours{color:var(--gold);border-left:2px solid var(--gold);}
+.compare-header .theirs{color:var(--danger);}
+.compare-row{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--b);}
+.compare-row:hover{background:rgba(200,144,42,0.02);}
+.cr-cat{padding:16px 24px;font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink40);}
+.cr-ours{padding:16px 24px;font-size:0.95rem;color:var(--green);border-left:2px solid rgba(200,144,42,0.15);}
+.cr-theirs{padding:16px 24px;font-size:0.95rem;color:var(--danger);}
+@media(max-width:700px){.compare-header,.compare-row{grid-template-columns:1fr;} .ours,.cr-ours{border-left:none;border-top:2px solid var(--gold);}}
+
+/* GLOBAL RESPONSIBILITY GRID */
+.globe-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:40px 0;}
+@media(max-width:700px){.globe-grid{grid-template-columns:1fr;}}
+.globe-card{background:var(--void);border:1px solid var(--b);padding:32px 28px;position:relative;overflow:hidden;transition:border-color 0.2s;}
+.globe-card:hover{border-color:var(--b2);}
+.globe-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.gc-1::before{background:var(--gold);}
+.gc-2::before{background:var(--pulse);}
+.gc-3::before{background:var(--green);}
+.gc-4::before{background:var(--danger);}
+.gc-icon{font-size:1.8rem;margin-bottom:16px;opacity:0.7;}
+.gc-title{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink80);margin-bottom:10px;}
+.gc-text{font-size:0.95rem;line-height:1.85;color:var(--ink50);}
+
+/* TOOLS SHOWCASE */
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--b);margin:40px 0;}
+@media(max-width:700px){.tools-grid{grid-template-columns:1fr;}}
+.tool-cell{background:var(--void);padding:28px 24px;transition:background 0.2s;}
+.tool-cell:hover{background:var(--surf);}
+.tc-badge{font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.18em;text-transform:uppercase;padding:3px 9px;border-radius:1px;display:inline-block;margin-bottom:12px;background:rgba(200,144,42,0.1);color:var(--gold);}
+.tc-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--ink80);margin-bottom:8px;}
+.tc-text{font-size:0.88rem;line-height:1.8;color:var(--ink40);}
+
+/* BIG CTA */
+.cta-section{padding:140px 64px;background:var(--void);border-top:1px solid var(--b);position:relative;overflow:hidden;text-align:center;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(200,144,42,0.06) 0%,transparent 70%);}
+.cta-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.44em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:14px;}
+.cta-eyebrow::before,.cta-eyebrow::after{content:'';width:32px;height:1px;background:var(--gold);opacity:0.4;}
+.cta-h2{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,88px);font-weight:900;line-height:1;color:var(--ink);margin-bottom:24px;position:relative;z-index:2;}
+.cta-h2 em{font-style:italic;color:var(--gold);}
+.cta-sub{font-size:clamp(1rem,1.8vw,1.3rem);line-height:1.8;color:var(--ink60);max-width:660px;margin:0 auto 48px;font-weight:300;position:relative;z-index:2;}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2;}
+.btn-primary{display:inline-block;padding:18px 44px;background:var(--gold);color:var(--abyss);font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:2px;transition:background 0.2s,transform 0.15s;}
+.btn-primary:hover{background:var(--gold-l);transform:translateY(-2px);}
+.btn-secondary{display:inline-block;padding:18px 44px;background:transparent;border:1px solid rgba(216,207,196,0.25);color:var(--ink70);font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.2s;}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+.pledge-box{max-width:700px;margin:60px auto 0;padding:36px 40px;border:1px solid rgba(200,144,42,0.2);border-left:3px solid var(--gold);background:rgba(200,144,42,0.04);position:relative;z-index:2;}
+.pledge-title{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.pledge-text{font-size:0.95rem;line-height:1.9;color:var(--ink60);}
+
+/* DARK SECTION */
+.dark-section{background:var(--void);}
+
+/* SIGNATURE */
+.signature{font-family:'Playfair Display',serif;font-style:italic;font-size:1.8rem;color:var(--gold-l);margin-top:32px;}
+.sig-name{font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink50);margin-top:6px;}
+
+/* FOOTER */
+footer{background:var(--abyss);border-top:1px solid var(--b);padding:60px 64px;}
+.footer-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
+.footer-brand{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);}
+.footer-copy{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;color:var(--ink30);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+
+/* DECORATIVE RULE */
+.gold-rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:80px 0;opacity:0.3;}
+
+/* INLINE EMPHASIS */
+.em-gold{color:var(--gold);}
+.em-danger{color:var(--danger);}
+.em-pulse{color:var(--pulse);}
+
+/* NO WRAP MONO */
+.mono{font-family:'IBM Plex Mono',monospace;font-size:0.9em;letter-spacing:0.06em;}
+
+/* LARGE INITIAL */
+.dropcap::first-letter{font-family:'Playfair Display',serif;font-size:4.5rem;line-height:0.8;font-weight:900;float:left;margin-right:10px;margin-top:6px;color:var(--gold);}
+
+/* WORD STAGGER HERO */
+.word{display:inline-block;overflow:hidden;vertical-align:bottom;}
+.word span{display:inline-block;transform:translateY(100%);animation:wordReveal 0.8s cubic-bezier(0.22,1,0.36,1) forwards;}
+@keyframes wordReveal{to{transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<div class="reading-bar" id="readingBar"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav class="top-nav" id="topNav">
+  <a href="index.html" class="nav-logo">Cold Ischemia Foundation</a>
+  <div class="nav-links">
+    <a href="about.html">Our Story</a>
+    <a href="research.html">Research</a>
+    <a href="situation-room.html">Tools</a>
+    <a href="donate.html" class="nav-cta">Donate Now</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- HERO                                        -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="hero">
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <div class="hero-overline">Cold Ischemia Foundation · A Manifesto for the Unseen</div>
+    <h1 class="hero-h1">
+      They made us<br>
+      <em>invisible.</em><br>
+      <span class="outline">We made this.</span>
+    </h1>
+    <p class="hero-sub">
+      Fifty-five million Americans are keeping the healthcare system alive right now —
+      <strong>without a paycheck, without protection, without a seat at any table
+      that decides their fate.</strong> This is our declaration.
+      This is our platform. This is where it ends.
+    </p>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Read the case
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- I. THE WOUND THAT HAS A NAME               -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-in">
+    <div class="chapter reveal">
+      <span class="chapter-num">Chapter I</span>
+      <div class="chapter-line"></div>
+      <span class="chapter-title">The Wound That Has a Name</span>
+    </div>
+
+    <h2 class="display-h2 reveal d1">Why we chose the name<br><em>Cold Ischemia.</em></h2>
+
+    <div class="two-col">
+      <div class="two-col-text">
+        <p class="body-text reveal d2 dropcap">
+          In transplant medicine, <em>cold ischemia</em> is the name for the window of time
+          between when a donor organ is removed from its source and when it is restored
+          to circulation in a recipient. It is the period of maximum vulnerability.
+          The organ is alive — technically viable — but it is disconnected, unsupported,
+          and losing ground with every passing minute.
+          <strong>It is the window where everything can be lost.</strong>
+        </p>
+        <p class="body-text reveal d3">
+          We chose this name deliberately. Precisely. Because <strong>care partners live inside
+          that window every single day.</strong> They are indispensable to the system.
+          Legally required, in the case of transplant. Practically required, in the case
+          of home dialysis. Emotionally required in every case — and yet the system
+          that depends on them provides no training, no compensation, no protection,
+          and no acknowledgment that they exist at all.
+        </p>
+        <p class="body-text reveal d4">
+          The cold ischemia of caregiving is the sustained, invisible, uncompensated
+          labor period — the time between when a person assumes the role of care partner
+          and when, if ever, the system finally admits they were there.
+          <em>Most are lost in that window.</em> This foundation was built to close it.
+        </p>
+      </div>
+      <div class="two-col-visual reveal-right d2">
+        <div class="ischemia-box">
+          <div class="ib-word">Cold Ischemia</div>
+          <div class="ib-pron">/ kōld is-ˈkē-mē-ə /</div>
+          <div class="ib-def">
+            The period of <strong>maximum vulnerability</strong> — when a donor organ is
+            removed from circulation and awaits restoration. Every minute in cold
+            ischemia is a minute of cellular damage accumulating in silence.
+            The clock is always running. The system rarely acknowledges it.
+          </div>
+          <div class="ib-medical">
+            <div class="ib-medical-label">Why we named the Foundation this</div>
+            <div class="ib-medical-text">
+              Because care partners exist in exactly this state — vital to the system,
+              disconnected from its protections, losing ground with every passing year
+              they give without receiving anything in return.
+              We are named for the wound. We exist to heal it.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- II. THE SCALE OF THE SILENCE               -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section dark-section">
+  <div class="section-in">
+    <div class="chapter reveal">
+      <span class="chapter-num">Chapter II</span>
+      <div class="chapter-line"></div>
+      <span class="chapter-title">The Scale of the Silence</span>
+    </div>
+
+    <h2 class="display-h2 reveal d1">This is not a personal story.<br><em>It is a structural failure.</em></h2>
+
+    <p class="body-text reveal d2">
+      Before we tell you what Cold Ischemia Foundation does, we need to tell you
+      the size of the problem it was built to address. Because if you do not understand
+      the scale, you will not understand the urgency — and the urgency is everything.
+    </p>
+
+    <div class="stat-grid reveal d3">
+      <div class="stat-block">
+        <span class="stat-n" data-count="55">0</span>
+        <span class="stat-label">Million Americans providing unpaid informal care to chronically ill family members right now</span>
+        <span class="stat-source">AARP / National Alliance for Caregiving, 2020</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-n">$600B</span>
+        <span class="stat-label">Annual value of unpaid care partner labor — exceeding the total annual Medicaid spend</span>
+        <span class="stat-source">AARP Public Policy Institute, 2023</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-n">$0</span>
+        <span class="stat-label">Federal Medicare allocation for transplant care partner training, compensation, or mental health support</span>
+        <span class="stat-source">CMS Medicare Benefit Policy Manual</span>
+      </div>
+    </div>
+
+    <div class="pull-quote reveal d4">
+      <p class="pq-text">
+        The transplant system legally requires a designated care partner for a patient
+        to be listed for an organ. No care partner means no listing. No listing means
+        no organ. The system has made the care partner a medical prerequisite —
+        and then provided that care partner with nothing.
+      </p>
+      <div class="pq-attr">The structural contradiction at the core of American transplant medicine</div>
+    </div>
+
+    <p class="body-text reveal d2">
+      This is not an oversight. It is not a gap that slipped through. It is a
+      <strong>documented, deliberate, policy-level decision</strong> to extract care partner
+      labor without compensating it, to require care partner presence without protecting it,
+      and to depend on care partner commitment without acknowledging it.
+      The GAO documented it. The OIG documented it. The Senate Finance Committee
+      documented it. <em>The paper trail exists.</em>
+      What was missing was an organization willing to use it.
+    </p>
+
+    <p class="body-text reveal d3">
+      That is what Cold Ischemia Foundation is.
+      <strong>The organization that was missing.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- III. WHO WE ARE                            -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-in">
+    <div class="chapter reveal">
+      <span class="chapter-num">Chapter III</span>
+      <div class="chapter-line"></div>
+      <span class="chapter-title">Who We Are</span>
+    </div>
+
+    <h2 class="display-h2 reveal d1">Built in a living room.<br><em>Funded by no one but us.</em></h2>
+
+    <div class="two-col">
+      <div class="two-col-text">
+        <p class="body-text reveal d2 dropcap">
+          The Cold Ischemia Foundation was not launched from a boardroom. It was not
+          seeded by a pharmaceutical grant. It was not formed by a committee of
+          credentialed experts who had read about the problem in a journal.
+          <strong>It was built by two people in Ellenton, Florida, who had lived it.</strong>
+        </p>
+        <p class="body-text reveal d3">
+          Jeff Parke spent decades inside the American healthcare machine — first as
+          a clinical research professional who understood how the system produces,
+          validates, and deploys medical knowledge; then as something far more personal:
+          a care partner. The person who shows up. The person who stays.
+          The person who reorganizes their entire life around someone else's survival
+          and discovers, usually too late, that the system built around that survival
+          was never designed to acknowledge their existence.
+        </p>
+        <p class="body-text reveal d4">
+          Marie Parke lives with kidney disease. She knows what it means to navigate
+          a system that is extraordinarily good at treating the organ and extraordinarily
+          indifferent to the human being attached to it. Together, they saw the same
+          failure from two angles. <em>Neither angle was comfortable.
+          Both were clarifying.</em>
+        </p>
+      </div>
+      <div class="two-col-visual reveal-right d2">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">The Beginning</div>
+            <div class="tl-title">The kitchen table became the headquarters</div>
+            <div class="tl-text">No grant. No board. No permission asked. Two people who had run out of patience with a system that kept asking care partners to give everything while offering nothing in return.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">The Research</div>
+            <div class="tl-title">40 documented federal violations compiled</div>
+            <div class="tl-text">GAO reports. OIG investigations. Senate Finance Committee findings. Every piece of paper that proved the system knew — and chose to do nothing.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">The Platform</div>
+            <div class="tl-title">America's first care partner advocacy platform</div>
+            <div class="tl-text">AI-powered crisis tools. Federal complaint generators. Congressional scorecards. Live policy monitors. Built because the tools didn't exist and someone needed them.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">Right Now</div>
+            <div class="tl-title">55 million people. One platform. Zero conflicts.</div>
+            <div class="tl-text">No pharmaceutical sponsor. No hospital system partner. No institutional funder with a conflict of interest. The first platform that answers to no one but the people it was built to serve.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- IV. WHAT MAKES US DIFFERENT                -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section dark-section">
+  <div class="section-in">
+    <div class="chapter reveal">
+      <span class="chapter-num">Chapter IV</span>
+      <div class="chapter-line"></div>
+      <span class="chapter-title">The Difference</span>
+    </div>
+
+    <h2 class="display-h2 reveal d1">Every other platform in this space<br><em>has a conflict of interest.</em></h2>
+
+    <p class="body-text reveal d2">
+      There are kidney patient advocacy organizations. There are caregiver support groups.
+      There are hospital-funded patient portals and pharmaceutical-sponsored wellness programs.
+      <strong>None of them are what we are.</strong>
+      And the reason they cannot be what we are has nothing to do with capability.
+      It has to do with <em>who is paying them.</em>
+    </p>
+
+    <div class="compare-wrap reveal d3">
+      <div class="compare-header">
+        <div>Category</div>
+        <div class="theirs">Every Other Platform</div>
+        <div class="ours">Cold Ischemia Foundation</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cat">Funding Source</div>
+        <div class="cr-theirs">Pharmaceutical companies, dialysis corporations, hospital systems</div>
+        <div class="cr-ours">Zero pharmaceutical funding — ever. Funded entirely by donations from the people we serve.</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cat">Built For</div>
+        <div class="cr-theirs">Patients — care partners are invisible or absent</div>
+        <div class="cr-ours">Built by a care partner, for care partners. Kidney & transplant-specific.</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cat">Will Name Institutions</div>
+        <div class="cr-theirs">Cannot — funders are the institutions causing harm</div>
+        <div class="cr-ours">Yes. With CFR citations, federal records, and documented evidence.</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cat">AI Crisis Tools</div>
+        <div class="cr-theirs">None</div>
+        <div class="cr-ours">6 tools: complaint generators, federal escalation, situation analysis</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cat">Governance</div>
+        <div class="cr-theirs">Hospital systems, insurers, pharma reps on the board</div>
+        <div class="cr-ours">Answers to no hospital, insurer, or government agency</div>
+      </div>
+      <div class="compare-row">
+        <div class="cr-cat">Independence</div>
+        <div class="cr-theirs">Structural conflict of interest — cannot bite the hand that feeds</div>
+        <div class="cr-ours">The only hand feeding us is yours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- V. THE PLATFORM                            -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-in">
+    <div class="chapter reveal">
+      <span class="chapter-num">Chapter V</span>
+      <div class="chapter-line"></div>
+      <span class="chapter-title">The Platform</span>
+    </div>
+
+    <h2 class="display-h2 reveal d1">Every tool was built because<br><em>someone needed it and it didn't exist.</em></h2>
+
+    <p class="body-text reveal d2">
+      The Cold Ischemia platform is not a collection of resources. It is not a link list
+      or a forum or a blog. It is an <strong>operational advocacy infrastructure</strong> —
+      built to put the tools of institutional accountability directly into the hands
+      of the people who have the most at stake and the least access to power.
+    </p>
+
+    <div class="tools-grid reveal d3">
+      <div class="tool-cell">
+        <div class="tc-badge">AI Tool</div>
+        <div class="tc-title">The Situation Room</div>
+        <div class="tc-text">Describe your crisis. Get severity rating, exact CFR violations, agency contact sequence, and immediate action steps — then generate a complete federal complaint letter, free for every care partner.</div>
+      </div>
+      <div class="tool-cell">
+        <div class="tc-badge">Live Intelligence</div>
+        <div class="tc-title">Research Library</div>
+        <div class="tc-text">Live feeds from CMS, GAO, HHS, OIG, and the Federal Register — filtered for kidney, ESRD, transplant, and care partner policy. Every update that affects you, in real time.</div>
+      </div>
+      <div class="tool-cell">
+        <div class="tc-badge">Accountability</div>
+        <div class="tc-title">Congress Scorecard</div>
+        <div class="tc-text">Letter grades for every House and Senate member based on actual votes on kidney disease, ESRD, transplant access, and caregiver compensation legislation. No euphemisms.</div>
+      </div>
+      <div class="tool-cell">
+        <div class="tc-badge">AI Tool</div>
+        <div class="tc-title">The Translator</div>
+        <div class="tc-text">Paste any denial letter, discharge notice, or facility policy. Returns plain-English explanation, your rights, and what the institution is legally required to do.</div>
+      </div>
+      <div class="tool-cell">
+        <div class="tc-badge">Directory</div>
+        <div class="tc-title">Accountability Atlas</div>
+        <div class="tc-text">Direct contact information for CMS, HHS, OIG, HRSA, DOJ, UNOS/OPTN, all 18 ESRD Networks, and every state survey agency. With ADA and legal rights referenced by statute.</div>
+      </div>
+      <div class="tool-cell">
+        <div class="tc-badge">AI Tool</div>
+        <div class="tc-title">Meridian</div>
+        <div class="tc-text">Comprehensive care partner situation assessment. Maps your specific circumstances to every applicable federal protection, identifies institutional violations, and builds your escalation strategy.</div>
+      </div>
+    </div>
+
+    <div class="pull-quote reveal d4">
+      <p class="pq-text">
+        Every feature on this platform is the answer to a question
+        that the healthcare system never bothered to ask.
+      </p>
+      <div class="pq-attr">Jeff Parke · Founder · Cold Ischemia Foundation · Ellenton, Florida</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- V.5 BEYOND CHECKBOXES                       -->
+<section class="section">
+  <div class="section-in">
+    <div class="chapter reveal">
+      <span class="chapter-num">Chapter V · II</span>
+      <div class="chapter-line"></div>
+      <span class="chapter-title">Beyond Checkboxes</span>
+    </div>
+
+    <h2 class="display-h2 reveal d1">This is not a self-assessment.<br><em>This is a real reckoning.</em></h2>
+
+    <p class="body-text reveal d2">
+      Every other care partner resource in existence hands you a checklist.
+      A PDF. A quiz that scores you from one to ten and tells you to
+      <em>"consider speaking to a professional."</em>
+      That is not support. That is the appearance of support —
+      engineered to protect the organization offering it from liability
+      while doing nothing measurable for the person holding the clipboard.
+      <strong>Cold Ischemia Foundation does not do that.</strong>
+    </p>
+
+    <div class="pull-quote reveal d3">
+      <p class="pq-text">
+        A care partner in crisis does not need a wellness score.
+        They need a complaint letter with the right CFR citation,
+        filed to the right agency, before Tuesday's discharge hearing.
+        We built that. Not the score.
+      </p>
+      <div class="pq-attr">The distinction that separates us from every other platform in this space</div>
+    </div>
+
+    <p class="body-text reveal d2">
+      Our approach to care partner support is built on three pillars that no
+      checkbox-driven wellness portal has ever attempted to combine:
+      <strong>cognitive reality assessment, emotional state mapping, and immediate
+      operational response.</strong> Not in sequence. Simultaneously.
+      Because that is how a crisis actually works — and care partners in the
+      kidney and transplant system live inside one continuously.
+    </p>
+
+    <!-- THREE PILLARS -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--b);border:1px solid var(--b);margin:48px 0;" class="reveal d3">
+      <div style="background:var(--void);padding:36px 30px;border-top:3px solid var(--gold);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Pillar One</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.3;">Cognitive State<br>Assessment</div>
+        <p style="font-size:0.92rem;line-height:1.85;color:var(--ink50);">We do not ask how you <em>feel</em> about your situation. We assess how your situation is <em>actually affecting your capacity to function</em> — your decision-making under pressure, your access to institutional knowledge, your ability to identify what is being done to you and what options you have. Care partner cognitive load is measurable. We measure it and respond to it operationally.</p>
+      </div>
+      <div style="background:var(--void);padding:36px 30px;border-top:3px solid var(--pulse);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--pulse);margin-bottom:14px;">Pillar Two</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.3;">Emotional Reality<br>Mapping</div>
+        <p style="font-size:0.92rem;line-height:1.85;color:var(--ink50);">Burnout, hypervigilance, grief, and institutional trauma are not personality defects. They are the documented, predictable results of sustained unpaid caregiving inside a system that provides no support infrastructure. Our tools identify where a care partner actually is emotionally — not where they are expected to be — and route them to the specific resources and actions that match their real state, not their theoretical one.</p>
+      </div>
+      <div style="background:var(--void);padding:36px 30px;border-top:3px solid var(--green);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--green);margin-bottom:14px;">Pillar Three</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.3;">Immediate Operational<br>Response</div>
+        <p style="font-size:0.92rem;line-height:1.85;color:var(--ink50);">Assessment without action is theater. Every evaluation our platform delivers ends not with a score but with a next step — a specific agency to call, a regulation to cite, a letter to file, a right to invoke. We close the loop between knowing something is wrong and doing something about it that the institution responsible for that wrong will be legally required to respond to.</p>
+      </div>
+    </div>
+
+    <h2 class="display-h2 reveal d2" style="font-size:clamp(28px,3.5vw,52px);margin-top:64px;">Grassroots advocacy<br><em>is not a feature. It is the foundation.</em></h2>
+
+    <p class="body-text reveal d3">
+      Cold Ischemia Foundation was not built top-down. There was no institutional
+      mandate, no committee approval, no strategic planning retreat.
+      It was built from the ground up by people who were living the crisis —
+      which means <strong>every tool, every document, every escalation pathway
+      reflects the actual lived experience of care partners navigating the system
+      in real time,</strong> not the theoretical experience of a policy analyst
+      describing it from outside.
+    </p>
+
+    <div class="manifesto-list reveal d4">
+      <div class="manifesto-item">
+        <div class="mi-num">↗</div>
+        <div class="mi-content">
+          <div class="mi-title">We go where other advocacy organizations cannot</div>
+          <div class="mi-text">Because we take no pharmaceutical money, we can name the pharmaceutical companies. Because we take no hospital grant, we can name the hospitals. Because our board answers to no insurer, we can document every insurance denial pattern without softening the language. Grassroots means the roots go all the way down — to the people being harmed, not to the people writing checks.</div>
+        </div>
+      </div>
+      <div class="manifesto-item">
+        <div class="mi-num">↗</div>
+        <div class="mi-content">
+          <div class="mi-title">We treat care partners as experts, not recipients</div>
+          <div class="mi-text">The person who has been doing home dialysis for three years knows more about the practical reality of that experience than any clinical guideline committee. Our platform is built on that expertise — surfacing it, systematizing it, and turning it into the kind of documented, actionable intelligence that federal agencies and congressional staff are legally required to take seriously.</div>
+        </div>
+      </div>
+      <div class="manifesto-item">
+        <div class="mi-num">↗</div>
+        <div class="mi-content">
+          <div class="mi-title">We build the infrastructure that makes individual action systemic</div>
+          <div class="mi-text">One complaint to one ESRD Network is a complaint. Ten thousand complaints, routed correctly, documented consistently, and publicly tracked against agency response times — that is a federal investigation. Our platform is designed to turn individual care partner experiences into the kind of cumulative, documented public record that cannot be ignored, dismissed, or quietly archived.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-quote reveal d3" style="border-left-color:var(--pulse);">
+      <p class="pq-text" style="color:var(--pulse);">
+        We are not asking care partners to advocate for themselves
+        in addition to everything else they are already doing.
+        We are building the platform that does the heavy institutional lifting
+        so they do not have to do it alone.
+      </p>
+      <div class="pq-attr" style="color:var(--pulse);">The Cold Ischemia Foundation operating principle</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VII. GLOBAL & SOCIAL RESPONSIBILITY        -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section dark-section">
+  <div class="section-in">
+    <div class="chapter reveal">
+      <span class="chapter-num">Chapter VII</span>
+      <div class="chapter-line"></div>
+      <span class="chapter-title">Global & Social Responsibility</span>
+    </div>
+
+    <h2 class="display-h2 reveal d1">This fight does not<br><em>stop at the US border.</em></h2>
+
+    <p class="body-text reveal d2">
+      The structural exploitation of care partners is not uniquely American.
+      It is a global pattern — in every country where chronic illness intersects
+      with underfunded public health systems, family caregivers bear the cost
+      that institutions refuse to carry. <strong>We are building in America first
+      because that is where we are.</strong> But the framework we are creating —
+      the legal tools, the advocacy infrastructure, the policy documentation —
+      is designed to be exportable, adaptable, and universal.
+    </p>
+
+    <div class="globe-grid reveal d3">
+      <div class="globe-card gc-1">
+        <div class="gc-icon">⚖</div>
+        <div class="gc-title">Legislative Advocacy</div>
+        <div class="gc-text">We have drafted federal legislation — Marie's Lifeline Compensation Act — mandating compensation for home dialysis care partners. We are actively pursuing congressional sponsorship and building the coalition to push it through committee. This is not aspirational. We have the text. We have the allies. We are moving.</div>
+      </div>
+      <div class="globe-card gc-2">
+        <div class="gc-icon">📡</div>
+        <div class="gc-title">Radical Transparency</div>
+        <div class="gc-text">Every federal violation we document is published. Every congressional vote that affects care partners is scored and public. Every agency contact has a direct number. We believe transparency is the only accountability mechanism that works when institutions control the enforcement process. We are building the public record they cannot erase.</div>
+      </div>
+      <div class="globe-card gc-3">
+        <div class="gc-icon">🌍</div>
+        <div class="gc-title">Model for Global Replication</div>
+        <div class="gc-text">The WHO estimates over 1 billion people worldwide provide unpaid informal care. Most have no legal protections, no advocacy infrastructure, and no platform speaking specifically to their circumstances. The Cold Ischemia model — zero pharmaceutical funding, AI-powered tools, federal accountability tracking — is designed to be replicated by advocacy organizations worldwide.</div>
+      </div>
+      <div class="globe-card gc-4">
+        <div class="gc-icon">🔥</div>
+        <div class="gc-title">Independence as Infrastructure</div>
+        <div class="gc-text">Our independence is not a talking point. It is structural. Every dollar we receive comes from the people we serve — no pharmaceutical partner, no hospital grant, no insurance company underwriter. This is not how most advocacy organizations operate. It is the only way to operate if you intend to name the institutions causing harm. We name them. Every time.</div>
+      </div>
+    </div>
+
+    <div class="manifesto-list reveal d4">
+      <div class="manifesto-item">
+        <div class="mi-num">01</div>
+        <div class="mi-content">
+          <div class="mi-title">We will not soften our language for funders we do not have</div>
+          <div class="mi-text">The absence of pharmaceutical funding is not a liability. It is the source of every word of truth we are able to print. We will never have a conflict of interest with the institutions we hold accountable because we will never take their money.</div>
+        </div>
+      </div>
+      <div class="manifesto-item">
+        <div class="mi-num">02</div>
+        <div class="mi-content">
+          <div class="mi-title">We will put federal law directly in care partner hands</div>
+          <div class="mi-text">42 CFR §494.70. 42 CFR §494.180. The ADA. Section 504. HIPAA. These are not academic references. They are weapons. We will make sure every care partner in America knows how to use them — against every institution that has counted on their ignorance.</div>
+        </div>
+      </div>
+      <div class="manifesto-item">
+        <div class="mi-num">03</div>
+        <div class="mi-content">
+          <div class="mi-title">We will not stop until care partners are legally recognized as essential labor</div>
+          <div class="mi-text">$600 billion in annual unpaid labor. No federal compensation. No employment protection. No mental health mandate. No seat at the governance table of any institution that requires their presence. This is the central injustice of American healthcare. We are here until it is corrected.</div>
+        </div>
+      </div>
+      <div class="manifesto-item">
+        <div class="mi-num">04</div>
+        <div class="mi-content">
+          <div class="mi-title">We will build the international coalition this requires</div>
+          <div class="mi-text">The WHO. The International Society of Nephrology. Kidney advocacy organizations in the UK, Australia, Canada, and the EU. The fight for care partner recognition is global. We are establishing the American beachhead. The work does not stop here.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- VII. THE CALL                              -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-in">
+    <div class="chapter reveal">
+      <span class="chapter-num">Chapter VIII</span>
+      <div class="chapter-line"></div>
+      <span class="chapter-title">The Call</span>
+    </div>
+
+    <h2 class="display-h2 reveal d1">You have read the case.<br><em>Now make the decision.</em></h2>
+
+    <p class="body-text reveal d2 dropcap">
+      The American healthcare system did not become this way by accident.
+      It became this way because the people who benefit from its current structure
+      had organized, funded, vocal representation at every table that set the rules —
+      and the people who bear the cost of those rules had <em>nothing.</em>
+      No platform. No tools. No institutional voice. No one willing to take a pharmaceutical
+      dollar and then write something that pharmaceutical company would not want published.
+    </p>
+
+    <p class="body-text reveal d3">
+      That is the gap Cold Ischemia Foundation was built to close.
+      <strong>But we cannot close it alone.</strong>
+      The foundation is funded entirely by the people it serves —
+      one donation at a time, from care partners and patients who understand that the independence
+      of this platform is directly proportional to the number of people willing to fund it.
+      Every person who gives is not just supporting free tools.
+      <strong>They are buying the institutional independence that makes those tools honest.</strong>
+    </p>
+
+    <div class="gold-rule reveal"></div>
+
+    <p class="body-text reveal d2" style="font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.75;color:var(--ink80);">
+      The dialysis center that threatened your family member with discharge
+      for filing a complaint is counting on your isolation. <em>Join us.</em><br><br>
+      The transplant committee that denied a listing without documented justification
+      is counting on your ignorance of OPTN Policy 18. <em>Join us.</em><br><br>
+      The pharmaceutical company funding the patient advocacy organization
+      that is supposed to represent you is counting on your trust.
+      <em>Join us instead.</em>
+    </p>
+
+    <div class="gold-rule reveal"></div>
+
+    <div class="reveal d3">
+      <div class="signature">Jeff &amp; Marie Parke</div>
+      <div class="sig-name">Founders · Cold Ischemia Foundation · Ellenton, Florida · 16th Congressional District</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CTA                                        -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-eyebrow reveal">Take Back Control</div>
+  <h2 class="cta-h2 reveal d1">
+    The system<br>will not fix itself.<br>
+    <em>We will.</em>
+  </h2>
+  <p class="cta-sub reveal d2">
+    Join America's only independent care partner advocacy platform.
+    Zero pharmaceutical funding. Zero conflicts. Every tool, every federal contact,
+    every complaint generator — completely free, funded by people like you.
+  </p>
+  <div class="cta-buttons reveal d3">
+    <a href="donate.html" class="btn-primary">Support the Foundation &rarr;</a>
+    <a href="about.html" class="btn-secondary">Read Our Full Story</a>
+  </div>
+  <div class="pledge-box reveal d4">
+    <div class="pledge-title">Independence Pledge — Permanent &amp; Non-Negotiable</div>
+    <p class="pledge-text">
+      Cold Ischemia Foundation will never accept funding from pharmaceutical companies,
+      dialysis corporations, medical device manufacturers, hospital systems, insurance companies,
+      or any entity with a financial interest in the healthcare outcomes of the people
+      this platform serves. This pledge is not a policy. It is a structural commitment
+      that cannot be undone by a board vote, a financial crisis, or a generous offer.
+      <strong>Our independence is the product. If we sell it, we have nothing left to offer.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-in">
+    <div>
+      <div class="footer-brand">Cold Ischemia Foundation</div>
+      <div class="footer-copy" style="margin-top:6px;">Ellenton, Florida · 16th Congressional District · For the 55 Million Who Hold Everything Together</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">Our Story</a>
+      <a href="research.html">Research</a>
+      <a href="accountability.html">Accountability</a>
+      <a href="situation-room.html">Tools</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:28px auto 0;padding-top:28px;border-top:1px solid var(--b);font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.08em;color:var(--ink30);">
+    © 2025 Cold Ischemia Foundation · No pharmaceutical funding · Not medical advice · Not legal advice · All federal citations sourced from public records
+  </div>
+</footer>
+
+<script>
+// ── CURSOR ─────────────────────────────────────────────────
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX; my=e.clientY;
+  cursor.style.left=mx+'px'; cursor.style.top=my+'px';
+});
+function animRing(){
+  rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ cursor.classList.add('active'); ring.classList.add('active'); });
+  el.addEventListener('mouseleave',()=>{ cursor.classList.remove('active'); ring.classList.remove('active'); });
+});
+
+// ── READING BAR ────────────────────────────────────────────
+window.addEventListener('scroll',()=>{
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  document.getElementById('readingBar').style.width = Math.min(pct,100)+'%';
+  // Nav scroll
+  document.getElementById('topNav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── SCROLL REVEAL ──────────────────────────────────────────
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.12});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>observer.observe(el));
+
+// ── COUNTER ANIMATION ──────────────────────────────────────
+const counterObserver = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseInt(el.dataset.count);
+    if(!target) return;
+    let current = 0;
+    const step = Math.ceil(target/60);
+    const timer = setInterval(()=>{
+      current = Math.min(current+step, target);
+      el.textContent = current+'M';
+      if(current>=target){ el.textContent=target+'M'; clearInterval(timer); }
+    },25);
+    counterObserver.unobserve(el);
+  });
+},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(el=>counterObserver.observe(el));
+
+// ── HERO CANVAS PARTICLES ─────────────────────────────────
+(function(){
+  const c=document.getElementById('heroCanvas');
+  const ctx=c.getContext('2d');
+  let W,H,pts=[];
+  function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight;}
+  function Pt(){
+    this.x=Math.random()*W; this.y=Math.random()*H;
+    this.vx=(Math.random()-0.5)*0.25; this.vy=(Math.random()-0.5)*0.25;
+    this.r=0.8+Math.random()*1.5;
+    this.a=0.06+Math.random()*0.18;
+    this.c=Math.random()>0.6?'200,144,42':'42,196,200';
+  }
+  Pt.prototype.update=function(){
+    this.x+=this.vx; this.y+=this.vy;
+    if(this.x<0||this.x>W) this.vx*=-1;
+    if(this.y<0||this.y>H) this.vy*=-1;
+  };
+  Pt.prototype.draw=function(){
+    ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
+    ctx.fillStyle='rgba('+this.c+','+this.a+')';ctx.fill();
+  };
+  function init(){resize();pts=[];for(let i=0;i<80;i++)pts.push(new Pt());}
+  function loop(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p=>{p.update();p.draw();});
+    for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<100){
+        ctx.beginPath();
+        ctx.strokeStyle='rgba(200,144,42,'+(1-d/100)*0.07+')';
+        ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);
+        ctx.lineWidth=0.5;ctx.stroke();
+      }
+    }
+    requestAnimationFrame(loop);
+  }
+  window.addEventListener('resize',resize);
+  init();loop();
+})();
+</script>
+<a href="index.html" style="position:fixed;bottom:24px;right:24px;z-index:500;font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(216,207,196,0.5);text-decoration:none;padding:9px 16px;border:1px solid rgba(100,140,200,0.18);border-radius:2px;background:rgba(3,5,9,0.85);backdrop-filter:blur(6px);transition:color .15s,border-color .15s;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.35)';" onmouseout="this.style.color='rgba(216,207,196,0.5)';this.style.borderColor='rgba(100,140,200,0.18)';">⌂ Home</a>
+</body>
+</html>

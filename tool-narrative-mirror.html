@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M95EH0B5BK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M95EH0B5BK');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Narrative Mirror — Cold Ischemia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #0d0d0d;
+      --bg2:       #111111;
+      --bg3:       #171717;
+      --bg4:       #1e1e1e;
+      --ink:       #e8e2d9;
+      --ink60:     rgba(232,226,217,0.6);
+      --ink30:     rgba(232,226,217,0.3);
+      --ink12:     rgba(232,226,217,0.12);
+      --ink06:     rgba(232,226,217,0.06);
+      --amber:     #d4a853;
+      --amber-dim: rgba(212,168,83,0.15);
+      --amber-glow:rgba(212,168,83,0.3);
+      --rust:      #c0533a;
+      --slate:     #6b8fa8;
+      --sage:      #7aab8a;
+      --lavender:  #9b7fc0;
+      --danger:    #c0533a;
+      --caution:   #c9893a;
+      --safe:      #5a9e74;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Lora', Georgia, serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+    ::selection { background: var(--amber-dim); color: var(--ink); }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 2px; }
+
+```
+/* ═══ ANIMATED CANVAS HERO ═══ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  padding: 60px 32px;
+}
+#heroCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+.ci-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: riseIn 1s 0.2s ease both;
+}
+.ci-label::before, .ci-label::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--amber);
+  opacity: 0.5;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: riseIn 1.1s 0.4s ease both;
+}
+.hero-title .the { font-style: italic; color: var(--amber); font-weight: 400; }
+.hero-rule {
+  width: 60px;
+  height: 1px;
+  background: var(--amber);
+  opacity: 0.4;
+  margin: 28px auto;
+  opacity: 0;
+  animation: riseIn 0.8s 0.7s ease both;
+}
+.hero-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  color: var(--ink30);
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: riseIn 1s 0.85s ease both;
+}
+.hero-lead {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--ink60);
+  font-style: italic;
+  max-width: 560px;
+  margin: 0 auto 52px;
+  opacity: 0;
+  animation: riseIn 1s 1.05s ease both;
+}
+.hero-cue {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  color: var(--ink30);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: riseIn 1s 1.3s ease both, pulse 3s 2.5s ease-in-out infinite;
+}
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%,100% { opacity: 0.3; }
+  50%      { opacity: 0.9; }
+}
+
+/* ═══ ORIGIN SECTION ═══ */
+.origin {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 100px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+@media(max-width:720px) { .origin { grid-template-columns:1fr; gap:50px; padding:70px 28px; } }
+.origin-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 28px;
+}
+.origin-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.origin-title em { font-style: italic; color: var(--amber); }
+.origin-col p {
+  font-size: 1.02rem;
+  line-height: 1.95;
+  color: var(--ink60);
+  margin-bottom: 16px;
+}
+.origin-col .cite {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--amber);
+  opacity: 0.65;
+  margin-top: 20px;
+}
+.origin-right {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.origin-card {
+  background: var(--bg3);
+  border: 1px solid var(--ink12);
+  padding: 28px 32px;
+  position: relative;
+}
+.origin-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--amber);
+  opacity: 0.6;
+}
+.origin-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+.origin-card p {
+  font-size: 0.98rem;
+  line-height: 1.85;
+  color: var(--ink60);
+}
+.archetype-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.archetype-pill {
+  background: var(--bg4);
+  border: 1px solid var(--ink12);
+  padding: 10px 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink60);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.archetype-pill .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ═══ DIVIDER ═══ */
+.section-divider {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.section-divider span {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--amber);
+  white-space: nowrap;
+}
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--ink12);
+}
+
+/* ═══ TOOL ═══ */
+.tool-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 32px 60px;
+}
+.tool-intro {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.tool-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+.tool-intro p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--ink30);
+  text-transform: uppercase;
+}
+
+/* API row */
+.api-row {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(212,168,83,0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  background: var(--bg2);
+}
+.api-row label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: var(--amber-dim);
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.api-row input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  padding: 14px 16px;
+}
+.api-row input::placeholder { color: var(--ink30); }
+
+/* Writing surface */
+.writing-surface {
+  position: relative;
+  background: var(--bg2);
+  border: 1px solid var(--ink12);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  transition: border-color 0.3s;
+}
+.writing-surface:focus-within { border-color: rgba(212,168,83,0.35); }
+.writing-header {
+  background: var(--bg3);
+  border-bottom: 1px solid var(--ink12);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.writing-header-left {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink30);
+}
+.writing-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+#wordCount {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.12em;
+  color: var(--ink30);
+}
+#wordCount span { color: var(--amber); }
+.clear-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.54rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink30);
+  background: none;
+  border: 1px solid var(--ink12);
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.clear-btn:hover { color: var(--ink60); border-color: var(--ink30); }
+
+#userEntry {
+  width: 100%;
+  min-height: 280px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--ink);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.95;
+  padding: 28px 32px;
+  resize: vertical;
+}
+#userEntry::placeholder {
+  color: var(--ink30);
+  font-style: italic;
+}
+.writing-footer {
+  background: var(--bg3);
+  border-top: 1px solid var(--ink06);
+  padding: 8px 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.54rem;
+  letter-spacing: 0.1em;
+  color: var(--ink30);
+}
+
+/* Prompt nudge buttons */
+.nudge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.nudge-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink30);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 4px;
+}
+.nudge-label::after { content:''; flex:1; height:1px; background:var(--ink06); }
+.nudge-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--ink60);
+  background: var(--bg3);
+  border: 1px solid var(--ink12);
+  padding: 7px 14px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.nudge-btn:hover {
+  color: var(--amber);
+  border-color: var(--amber-dim);
+  background: var(--amber-dim);
+}
+
+/* CTA */
+.cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-reflect {
+  background: var(--amber);
+  color: var(--bg);
+  border: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  padding: 16px 48px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.25s, transform 0.15s, opacity 0.2s;
+}
+.btn-reflect:hover:not(:disabled) { background: var(--ink); transform: translateY(-2px); }
+.btn-reflect:disabled { opacity: 0.38; cursor: not-allowed; }
+.btn-clear-full {
+  background: transparent;
+  color: var(--ink30);
+  border: 1px solid var(--ink12);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 16px 28px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.btn-clear-full:hover { color: var(--ink60); border-color: var(--ink30); }
+
+/* ═══ REFLECTION PANEL ═══ */
+#reflectionPanel {
+  display: none;
+  max-width: 860px;
+  margin: 50px auto 0;
+  padding: 0 32px 120px;
+}
+
+/* Language signal cards */
+.signal-section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.signal-section-label::after { content:''; flex:1; height:1px; background:var(--amber-dim); }
+#signalCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+  margin-bottom: 52px;
+}
+.signal-card {
+  background: var(--bg2);
+  border: 1px solid var(--ink12);
+  padding: 18px 20px;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.signal-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+}
+.signal-card.danger::after  { background: var(--danger); }
+.signal-card.caution::after { background: var(--caution); }
+.signal-card.neutral::after { background: var(--slate); }
+.signal-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.53rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.signal-card.danger  .signal-label { color: var(--danger); }
+.signal-card.caution .signal-label { color: var(--caution); }
+.signal-card.neutral .signal-label { color: var(--slate); }
+.signal-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.signal-detail {
+  font-size: 0.82rem;
+  color: var(--ink30);
+  margin-top: 5px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.54rem;
+  letter-spacing: 0.06em;
+}
+
+/* Mirror body */
+.mirror-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.mirror-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid rgba(212,168,83,0.35);
+  background: var(--amber-dim);
+  padding: 5px 14px;
+  white-space: nowrap;
+}
+.mirror-rule { flex:1; height:1px; background: var(--amber-dim); }
+#mirrorBody h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--amber);
+  margin: 36px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--amber-dim);
+}
+#mirrorBody h3:first-child { margin-top: 0; }
+#mirrorBody p {
+  font-size: 1.05rem;
+  line-height: 1.95;
+  color: rgba(232,226,217,0.8);
+  margin-bottom: 16px;
+}
+#mirrorBody strong { color: var(--ink); }
+#mirrorBody em { color: var(--amber); font-style: italic; }
+.reframe-box {
+  background: var(--bg3);
+  border-left: 3px solid var(--amber);
+  padding: 24px 28px;
+  margin: 24px 0;
+}
+.reframe-box p {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.loading-anim {
+  text-align: center;
+  padding: 80px 20px;
+}
+.loading-anim p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
+  color: var(--ink30);
+  text-transform: uppercase;
+  animation: pulse 2s ease-in-out infinite;
+}
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.loading-dots span {
+  width: 6px; height: 6px;
+  background: var(--amber);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: dotPulse 1.4s ease-in-out infinite;
+}
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes dotPulse {
+  0%,80%,100% { opacity:0.2; transform:scale(0.85); }
+  40%          { opacity:1;   transform:scale(1.1); }
+}
+
+/* ═══ FOOTER ═══ */
+footer {
+  border-top: 1px solid var(--ink12);
+  padding: 44px 40px;
+  text-align: center;
+}
+footer p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  color: var(--ink30);
+  line-height: 2;
+}
+footer a { color: var(--amber); text-decoration: none; }
+
+/* word threshold hint */
+.threshold {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.threshold-bar-wrap {
+  flex: 1;
+  height: 3px;
+  background: var(--bg4);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.threshold-bar {
+  height: 100%;
+  background: var(--amber);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  max-width: 100%;
+}
+.threshold-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.54rem;
+  letter-spacing: 0.12em;
+  color: var(--ink30);
+  white-space: nowrap;
+}
+```
+
+  </style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;bottom:24px;left:24px;z-index:999;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:9px 16px;background:rgba(3,5,9,0.92);border:1px solid rgba(200,144,42,0.4);color:#c8902a;text-decoration:none;border-radius:2px;backdrop-filter:blur(8px);" id="home-float">← Home</a>
+
+
+<!-- ═══════════ HERO ═══════════ -->
+
+<section class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-inner">
+    <div class="ci-label">Cold Ischemia &nbsp;·&nbsp; Care Partner Tools &nbsp;·&nbsp; Tool 002</div>
+    <h1 class="hero-title">
+      <span class="the">The</span><br>Narrative<br>Mirror
+    </h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">A language analysis instrument for care partners</p>
+    <p class="hero-lead">
+      The words you choose are not accidents. They are a map of what you actually believe —
+      about yourself, about your situation, about what is possible. This tool holds that map up to the light.
+    </p>
+    <p class="hero-cue">↓ &nbsp; Write What Is True</p>
+  </div>
+</section>
+
+<!-- ═══════════ ORIGIN ═══════════ -->
+
+<section class="origin">
+  <div class="origin-col">
+    <p class="origin-label">Origins &amp; Framework</p>
+    <h2 class="origin-title">Where This<br><em>Comes From</em></h2>
+    <p>Narrative Therapy, developed by Michael White and David Epston in the 1980s, begins with a radical premise: the stories we tell about our lives are not neutral descriptions of reality. They are constructions — and they have power. The stories we repeat become the stories we live inside.</p>
+    <p>For care partners, this matters enormously. The language that accumulates around a caregiving life — the phrases used to describe the situation, the self, the future — gradually builds an invisible architecture that shapes every decision, every feeling of permission, every sense of what is and is not possible.</p>
+    <p>Viktor Frankl's Logotherapy adds a second dimension. Writing from his survival of Auschwitz, Frankl observed that suffering does not destroy a person — meaninglessness does. When care partners lose the narrative thread that makes their experience meaningful, when the story collapses into pure endurance, that is where psychological crisis lives.</p>
+    <p>This tool surfaces both: the stories keeping you trapped, and the fractures in meaning that are producing the most invisible suffering.</p>
+    <p class="cite">White, M. & Epston, D. (1990). <em>Narrative Means to Therapeutic Ends.</em> Norton.<br>
+    Frankl, V. (1946). <em>Man's Search for Meaning.</em> Beacon Press.</p>
+  </div>
+  <div class="origin-right">
+    <div class="origin-card">
+      <h3>What the Tool Reads</h3>
+      <p>You write freely — no prompts, no questions, no forms. The tool analyzes your language for dominant narrative patterns: the psychological story your word choices are constructing. It identifies whether you're writing from inside a closed narrative or an open one, where agency has been located or surrendered, and what the specific linguistic signals suggest about your current psychological terrain.</p>
+    </div>
+    <div class="origin-card">
+      <h3>The Four Dominant Narratives</h3>
+      <p>Research in care partner psychology consistently identifies four dominant narrative patterns that emerge under chronic caregiving stress:</p>
+      <div class="archetype-grid">
+        <div class="archetype-pill"><div class="dot" style="background:#c0533a"></div>The Martyr</div>
+        <div class="archetype-pill"><div class="dot" style="background:#9b7fc0"></div>The Invisible</div>
+        <div class="archetype-pill"><div class="dot" style="background:#d4a853"></div>The Tethered</div>
+        <div class="archetype-pill"><div class="dot" style="background:#6b8fa8"></div>Grieving the Living</div>
+      </div>
+      <p style="margin-top:14px;">These are not diagnoses. They are the dominant stories that can keep a care partner locked inside a version of their life that is making them sick — and can be rewritten once they are visible.</p>
+    </div>
+    <div class="origin-card">
+      <h3>How to Use This Tool</h3>
+      <p>Write freely for at least five minutes. Do not edit. Do not perform wellness. Write what is actually true about your life right now — the daily reality, what you feel, what you resent, what you fear, what you're carrying. When you finish, click <em>Hold Up The Mirror</em>. The tool will reflect back what your language actually reveals — the dominant narrative pattern, the specific red flags it detected, an existential reframe, and a concrete first step.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><span>The Writing Surface</span></div>
+
+<!-- ═══════════ TOOL ═══════════ -->
+
+<div class="tool-wrap">
+  <div class="tool-intro">
+    <h2>Write What Is Actually True</h2>
+    <p>No editing · No performance · No correct answer · Just what is real right now</p>
+  </div>
+
+  <div class="api-row">
+    <label for="apiKey">API Key</label>
+    <input type="password" id="apiKey" placeholder="sk-ant-api03-…  (required for your Mirror reflection)" autocomplete="off">
+  </div>
+
+  <p class="nudge-label">If you don't know where to start</p>
+  <div class="nudge-row">
+    <button class="nudge-btn" onclick="nudge(0)">What today actually felt like</button>
+    <button class="nudge-btn" onclick="nudge(1)">What I never say out loud</button>
+    <button class="nudge-btn" onclick="nudge(2)">The part of my old life I miss most</button>
+    <button class="nudge-btn" onclick="nudge(3)">What I'm most afraid of</button>
+    <button class="nudge-btn" onclick="nudge(4)">What I tell people vs. what is true</button>
+    <button class="nudge-btn" onclick="nudge(5)">How I describe myself now</button>
+  </div>
+
+  <div class="writing-surface">
+    <div class="writing-header">
+      <span class="writing-header-left">Your Words · Private · Not Stored</span>
+      <div class="writing-header-right">
+        <span id="wordCount">Words: <span>0</span></span>
+        <button class="clear-btn" onclick="clearEntry()">Clear</button>
+      </div>
+    </div>
+    <textarea id="userEntry" placeholder="Write here. There is no right way. There is no wrong answer. Just what is true.&#10;&#10;The tool needs at least 80 words to read your language accurately. More is better."></textarea>
+    <div class="writing-footer">Everything you write stays in your browser and is never stored or transmitted except to the AI for analysis.</div>
+  </div>
+
+  <div class="threshold">
+    <div class="threshold-bar-wrap"><div class="threshold-bar" id="thresholdBar" style="width:0%"></div></div>
+    <span class="threshold-text" id="thresholdText">Write at least 80 words</span>
+  </div>
+
+  <div class="cta-row">
+    <button class="btn-reflect" id="mirrorBtn" disabled onclick="runMirror()">Hold Up The Mirror</button>
+    <button class="btn-clear-full" onclick="fullReset()">Start Over</button>
+  </div>
+</div>
+
+<!-- ═══════════ REFLECTION ═══════════ -->
+
+<div id="reflectionPanel">
+  <p class="signal-section-label">Language Signal Scan</p>
+  <div id="signalCards"></div>
+
+  <div class="mirror-banner">
+    <span class="mirror-tag">Mirror Reflection</span>
+    <div class="mirror-rule"></div>
+  </div>
+  <div id="mirrorBody"></div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+
+<footer>
+  <p>
+    The Narrative Mirror &nbsp;·&nbsp; Cold Ischemia Care Partner Tools &nbsp;·&nbsp; Tool 002<br>
+    Grounded in Narrative Therapy (White &amp; Epston, 1990) · Logotherapy (Frankl, 1946)<br>
+    This tool does not provide clinical diagnosis or medical advice. Your text is never stored.<br>
+    <a href="https://coldischemia.com" target="_blank">Cold Ischemia</a>
+  </p>
+</footer>
+
+<script>
+/* ───────────────────────────────────────
+   HERO CANVAS — Ink/text particle effect
+─────────────────────────────────────────*/
+(function() {
+  const c = document.getElementById('heroCanvas');
+  const ctx = c.getContext('2d');
+  let W, H;
+
+  const words = ['I','feel','but','because','always','never','tired','alone',
+    'afraid','love','lost','hope','still','maybe','can\'t','won\'t','should','trapped',
+    'before','after','used to','if only','someday','enough','invisible','here'];
+
+  const particles = [];
+
+  function resize() {
+    W = c.width  = c.offsetWidth;
+    H = c.height = c.offsetHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  for (let i = 0; i < 38; i++) {
+    particles.push({
+      x: Math.random() * 1,
+      y: Math.random() * 1,
+      vx: (Math.random() - 0.5) * 0.00014,
+      vy: (Math.random() - 0.5) * 0.00012,
+      word: words[Math.floor(Math.random() * words.length)],
+      alpha: 0.03 + Math.random() * 0.1,
+      size: 9 + Math.random() * 9,
+      phase: Math.random() * Math.PI * 2,
+    });
+  }
+
+  let frame = 0;
+  function draw() {
+    frame++;
+    ctx.clearRect(0, 0, W, H);
+
+    // Dark vignette
+    const vg = ctx.createRadialGradient(W/2, H/2, H*0.1, W/2, H/2, H*0.75);
+    vg.addColorStop(0, 'transparent');
+    vg.addColorStop(1, 'rgba(13,13,13,0.7)');
+    ctx.fillStyle = vg;
+    ctx.fillRect(0, 0, W, H);
+
+    // Floating words
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < -0.05) p.x = 1.05;
+      if (p.x > 1.05)  p.x = -0.05;
+      if (p.y < -0.05) p.y = 1.05;
+      if (p.y > 1.05)  p.y = -0.05;
+
+      const breath = p.alpha * (0.6 + 0.4 * Math.sin(frame * 0.012 + p.phase));
+      ctx.fillStyle = `rgba(212,168,83,${breath})`;
+      ctx.font = `300 ${p.size}px "Lora", serif`;
+      ctx.textAlign = 'left';
+      ctx.fillText(p.word, p.x * W, p.y * H);
+    });
+
+    // Center glow
+    const cg = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, W*0.4);
+    cg.addColorStop(0, 'rgba(212,168,83,0.04)');
+    cg.addColorStop(1, 'transparent');
+    ctx.fillStyle = cg;
+    ctx.fillRect(0, 0, W, H);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ───────────────────────────────────────
+   WORD COUNT + THRESHOLD
+─────────────────────────────────────────*/
+const textarea    = document.getElementById('userEntry');
+const wordCountEl = document.querySelector('#wordCount span');
+const bar         = document.getElementById('thresholdBar');
+const threshText  = document.getElementById('thresholdText');
+const mirrorBtn   = document.getElementById('mirrorBtn');
+const MIN_WORDS   = 80;
+
+textarea.addEventListener('input', () => {
+  const words = textarea.value.trim().split(/\s+/).filter(Boolean).length;
+  wordCountEl.textContent = words;
+  const pct = Math.min(100, (words / MIN_WORDS) * 100);
+  bar.style.width = pct + '%';
+  if (words >= MIN_WORDS) {
+    threshText.textContent = `${words} words — ready`;
+    threshText.style.color = 'rgba(212,168,83,0.8)';
+    mirrorBtn.disabled = false;
+  } else {
+    threshText.textContent = `${MIN_WORDS - words} more words needed`;
+    threshText.style.color = '';
+    mirrorBtn.disabled = true;
+  }
+});
+
+/* ───────────────────────────────────────
+   NUDGE STARTERS
+─────────────────────────────────────────*/
+const nudges = [
+  'Today felt like ',
+  'The thing I never say out loud is ',
+  'What I miss most from my life before this is ',
+  'What I\'m most afraid of is ',
+  'When people ask how I\'m doing I say "I\'m fine" but what\'s actually true is ',
+  'When I think about who I am now, compared to who I used to be, ',
+];
+function nudge(i) {
+  if (textarea.value.length > 0) {
+    textarea.value += '\n\n' + nudges[i];
+  } else {
+    textarea.value = nudges[i];
+  }
+  textarea.focus();
+  textarea.dispatchEvent(new Event('input'));
+}
+
+function clearEntry() {
+  textarea.value = '';
+  textarea.dispatchEvent(new Event('input'));
+  textarea.focus();
+}
+
+function fullReset() {
+  clearEntry();
+  document.getElementById('reflectionPanel').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ───────────────────────────────────────
+   LOCAL LANGUAGE SIGNAL ANALYSIS
+─────────────────────────────────────────*/
+function analyzeLanguage(text) {
+  const lower = text.toLowerCase();
+  const words  = lower.split(/\s+/).filter(Boolean);
+  const total  = words.length;
+
+  // Helplessness language
+  const helpless = ['can\'t','cannot','impossible','no choice','no way','have to','must','forced','stuck',
+    'trapped','no option','no escape','couldn\'t','won\'t','never','can never'];
+  const helplessCount = helpless.reduce((n, w) => n + (lower.split(w).length - 1), 0);
+
+  // Identity language (self-referential before/after framing)
+  const identity = ['i used to','who i was','before this','i was once','i used to be','the old me','i don\'t recognize'];
+  const identityCount = identity.reduce((n, w) => n + (lower.split(w).length - 1), 0);
+
+  // Resentment / suppressed anger
+  const resentMarkers = ['unfair','shouldn\'t have to','why me','nobody understands','no one','alone in this',
+    'don\'t care','don\'t get it','expected','tired of','resent','angry','rage','furious'];
+  const resentCount = resentMarkers.reduce((n, w) => n + (lower.split(w).length - 1), 0);
+
+  // Agency language
+  const agency = ['i decided','i choose','i can','i will','i want','i need','i plan','i could','it\'s possible',
+    'i\'m working','i\'ve learned','i\'m learning'];
+  const agencyCount = agency.reduce((n, w) => n + (lower.split(w).length - 1), 0);
+
+  // Future language
+  const future = ['someday','one day','eventually','in the future','when this is over','after','hope','maybe someday','wish'];
+  const futureCount = future.reduce((n, w) => n + (lower.split(w).length - 1), 0);
+
+  // Grief markers
+  const griefMarkers = ['miss','lost','gone','grief','grieve','mourning','mourn','used to','before he','before she',
+    'before they','not the same','different now','changed','what we had'];
+  const griefCount = griefMarkers.reduce((n, w) => n + (lower.split(w).length - 1), 0);
+
+  // Dominant narrative guess
+  const scores = {
+    martyr:     (helplessCount * 2) + (lower.includes('sacrifice') ? 3 : 0) + (lower.includes('give up') ? 2 : 0),
+    invisible:  (lower.split('alone').length - 1) * 2 + (lower.split('no one').length -1)*2 + (lower.split('invisible').length-1)*3,
+    tethered:   (helplessCount) + (identityCount * 2),
+    grieving:   (griefCount * 2) + (identityCount),
+  };
+  const dominant = Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0];
+  const narrativeNames = {
+    martyr: 'The Martyr Narrative',
+    invisible: 'The Invisible Narrative',
+    tethered: 'The Tethered Narrative',
+    grieving: 'Grieving the Living',
+  };
+
+  const selfRefs = (text.match(/\bI\b/g) || []).length;
+  const agencyRatio = agencyCount / Math.max(1, total / 10);
+
+  return {
+    total,
+    helplessCount,
+    identityCount,
+    resentCount,
+    agencyCount,
+    futureCount,
+    griefCount,
+    dominant,
+    dominantName: narrativeNames[dominant],
+    agencyRatio: agencyRatio.toFixed(2),
+    selfRefs,
+  };
+}
+
+function buildSignalCards(sig) {
+  const cards = [
+    {
+      label: 'Dominant Narrative',
+      value: sig.dominantName,
+      detail: 'Primary story pattern detected',
+      tier: 'caution'
+    },
+    {
+      label: 'Helplessness Language',
+      value: sig.helplessCount === 0 ? 'Minimal' : sig.helplessCount < 3 ? 'Low ('+sig.helplessCount+' signals)' : 'High ('+sig.helplessCount+' signals)',
+      detail: 'Trapped / no-choice phrasing',
+      tier: sig.helplessCount >= 3 ? 'danger' : sig.helplessCount > 0 ? 'caution' : 'neutral'
+    },
+    {
+      label: 'Identity Fracture Signals',
+      value: sig.identityCount === 0 ? 'Not detected' : sig.identityCount < 2 ? 'Present' : 'Prominent',
+      detail: '"I used to be" / "before this" framing',
+      tier: sig.identityCount >= 2 ? 'danger' : sig.identityCount > 0 ? 'caution' : 'neutral'
+    },
+    {
+      label: 'Suppressed Resentment',
+      value: sig.resentCount === 0 ? 'Not detected' : sig.resentCount < 3 ? 'Low ('+sig.resentCount+')' : 'High ('+sig.resentCount+')',
+      detail: 'Anger language / isolation framing',
+      tier: sig.resentCount >= 3 ? 'danger' : sig.resentCount > 0 ? 'caution' : 'neutral'
+    },
+    {
+      label: 'Agency Language',
+      value: sig.agencyCount === 0 ? 'Absent' : sig.agencyCount < 3 ? 'Low' : 'Present',
+      detail: 'I choose / I will / I can language',
+      tier: sig.agencyCount === 0 ? 'danger' : sig.agencyCount < 3 ? 'caution' : 'neutral'
+    },
+    {
+      label: 'Future Orientation',
+      value: sig.futureCount === 0 ? 'Closed' : 'Some evidence',
+      detail: 'Forward-looking language',
+      tier: sig.futureCount === 0 ? 'danger' : 'neutral'
+    },
+  ];
+  return cards.map(c => `
+    <div class="signal-card ${c.tier}">
+      <p class="signal-label">${c.label}</p>
+      <p class="signal-value">${c.value}</p>
+      <p class="signal-detail">${c.detail}</p>
+    </div>
+  `).join('');
+}
+
+/* ───────────────────────────────────────
+   MAIN MIRROR FUNCTION
+─────────────────────────────────────────*/
+async function runMirror() {
+  const apiKey = document.getElementById('apiKey').value.trim();
+  if (!apiKey) { alert('Please enter your Anthropic API key.'); return; }
+  const text = textarea.value.trim();
+  if (!text) return;
+
+  const sig = analyzeLanguage(text);
+  const panel = document.getElementById('reflectionPanel');
+  const cards = document.getElementById('signalCards');
+  const body  = document.getElementById('mirrorBody');
+
+  cards.innerHTML = buildSignalCards(sig);
+  body.innerHTML  = `<div class="loading-anim"><p>Reading your language…</p><div class="loading-dots"><span></span><span></span><span></span></div></div>`;
+  panel.style.display = 'block';
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  const prompt = `You are a psychological language analyst trained in Narrative Therapy (White & Epston, 1990), Viktor Frankl's Logotherapy, Acceptance and Commitment Therapy, and caregiver psychology research. You do not provide therapy. You provide honest, literary, psychologically grounded reflection.
+
+A care partner — someone providing ongoing care for a person with a serious or chronic illness — has written the following freely. They were asked to write what is actually true about their life right now, with no performance and no editing:
+
+---
+${text}
+---
+
+My local language analysis has already detected these signals:
+- Dominant narrative pattern: ${sig.dominantName}
+- Helplessness language count: ${sig.helplessCount} signals
+- Identity fracture signals: ${sig.identityCount} ("I used to be" / "before this" framing)
+- Suppressed resentment signals: ${sig.resentCount}
+- Agency language count: ${sig.agencyCount} (I choose / I will / I can)
+- Future orientation language: ${sig.futureCount} signals
+- Total word count: ${sig.total}
+
+Your task is to generate a Mirror Reflection using these exact three H3 sections:
+
+### What Your Language Is Actually Saying
+Read their text as a language analyst, not a therapist. What story is their word choice constructing? Which words, phrases, or patterns are most significant? What is the dominant psychological narrative this language is building — and what does that narrative cost them? Be specific to their actual words. Quote nothing, but reference what you see. Be direct, literary, and honest.
+
+### The Fracture Points
+What does the language reveal about where meaning has been damaged or lost? Use Frankl's framework: where has the narrative thread that makes suffering meaningful been broken? Name the specific existential losses you can see — not generally, but in what they actually wrote. What are the two or three most significant psychological red flags in this text? Name them directly. Do not soften them.
+
+### The Reframe and First Step
+In Narrative Therapy, the goal is not to change the facts — it is to author a different story about the same facts. Identify the one most powerful linguistic reframe available in their text: a moment, phrase, or pattern that could anchor a different narrative if they chose to see it differently. Then offer one specific, concrete, non-generic practice — named and described — from Narrative Therapy, Logotherapy, or ACT. Tell them exactly how to do it. Make it actionable in the next 48 hours. Do not give a list of five tips.
+
+Write in second person ("you"). Be direct and honest without being harsh. Do not manage their feelings or end with a motivational closing. End with the concrete practice. This person has already heard every platitude caregiving has to offer. They need to be seen, not soothed.`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1400,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.error?.message || `API error ${res.status}`);
+    }
+
+    const data = await res.json();
+    const raw  = data.content.find(b => b.type === 'text')?.text || '';
+
+    const html = raw
+      .replace(/### (.*)/g, '<h3>$1</h3>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .split('\n\n')
+      .map(p => {
+        p = p.trim();
+        if (!p) return '';
+        if (p.startsWith('<h3>')) return p;
+        return `<p>${p.replace(/\n/g,' ')}</p>`;
+      })
+      .join('\n');
+
+    body.innerHTML = html;
+
+  } catch (err) {
+    body.innerHTML = `<p style="color:var(--danger);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;line-height:1.8;">
+      Error: ${err.message}<br>Please verify your API key and try again.
+    </p>`;
+  }
+}
+</script>
+
+</body>
+</html>
