@@ -7,6 +7,7 @@
 <meta name="description" content="Your operational hub. Every AI tool, every federal contact, every complaint pathway — in one place.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<script src="https://client.memberstack.com/static/memberstack.js" data-memberstack-app="app_cmmihjq3n008g0trohx5z6e68"></script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -24,7 +25,7 @@ body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,ser
 /* NAV */
 .nav{position:sticky;top:0;z-index:300;background:rgba(3,5,9,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--b);padding:0 20px;height:54px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
 .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0;}
-.nav-logo img{height:40px;width:40px;object-fit:contain;}
+.nav-logo img{height:26px;width:26px;object-fit:contain;}
 .nav-brand{font-family:'IBM Plex Mono',monospace;font-size:0.38rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
 @media(max-width:480px){.nav-brand{display:none;}}
 .nav-links{display:flex;align-items:center;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;justify-content:center;}
@@ -127,6 +128,7 @@ body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,ser
 </style>
 </head>
 <body>
+
 <nav class="nav">
   <a href="index.html" class="nav-logo">
     <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
@@ -138,9 +140,9 @@ body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,ser
     <a href="research.html">Research</a>
     <a href="accountability.html">Atlas</a>
     <a href="congress-scorecard.html">Scorecard</a>
-    
+    <a href="podcast.html">Podcast</a>
   </div>
-  <a href="donate.html" class="nav-cta">Donate Now</a>
+  <a href="join.html" class="nav-cta">Join $15/mo</a>
 <a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;padding:6px 12px;border:1px solid rgba(100,140,200,0.15);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.3)';" onmouseout="this.style.color='rgba(216,207,196,0.45)';this.style.borderColor='rgba(100,140,200,0.15)';">← Home</a>
 </nav>
 
@@ -151,7 +153,8 @@ body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,ser
     <div class="cc-h1">COMMAND<br><span class="g">CENTER</span></div>
     <p class="cc-sub">Every tool. Every federal contact. Every complaint pathway. Every lever of institutional accountability — in one place. <strong>Built for care partners who are done waiting for the system to help them.</strong></p>
     <div class="cc-member-gate">
-      <span class="cc-gate-text">✓ Full tool suite &mdash; free for every care partner. Always.</span>
+      <span class="cc-gate-text">🔒 Full tool suite unlocked at $15/month membership</span>
+      <a href="join.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:7px 16px;border-radius:2px;text-decoration:none;">Join Now →</a>
     </div>
   </div>
 </div>
@@ -250,242 +253,24 @@ body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,ser
       </div>
     </a>
 
-    <a href="tool-relationship-cartography.html" class="tool-card t-violet">
+    <a href="members-dashboard.html" class="tool-card t-gold" data-ms-content="plans:prc_cold-ischemia-pro-membership-nqa6057z">
       <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🗺️</span>
-        <span class="tc-badge">AI · Relationship Mapping</span>
-        <div class="tc-title">Relationship Cartography</div>
-        <p class="tc-desc">Maps the full network of providers, institutions, and relationships shaping your case &mdash; so you can see where pressure actually needs to be applied.</p>
-        <span class="tc-link">Map it</span>
-      </div>
-    </a>
-
-    <a href="tool-moral-weight.html" class="tool-card t-amber">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">⚡</span>
-        <span class="tc-badge">AI · Decision Support</span>
-        <div class="tc-title">Moral Weight</div>
-        <p class="tc-desc">Weighs a hard decision against the values, risks, and consequences that actually matter to your situation &mdash; instead of a generic pros-and-cons list.</p>
-        <span class="tc-link">Weigh it</span>
-      </div>
-    </a>
-
-    <a href="tool-psychological-fieldcraft.html" class="tool-card t-cold">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🧭</span>
-        <span class="tc-badge">AI · Coping Strategy</span>
-        <div class="tc-title">Psychological Fieldcraft</div>
-        <p class="tc-desc">Practical psychological tactics for navigating institutional stonewalling, gaslighting, and burnout &mdash; built for the day-to-day grind, not a therapy session.</p>
-        <span class="tc-link">Get tactics</span>
-      </div>
-    </a>
-
-    <a href="tool-insurance-appeal.html" class="tool-card t-green">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">📑</span>
-        <span class="tc-badge">AI · Document Generator</span>
-        <div class="tc-title">Insurance Appeal Builder</div>
-        <p class="tc-desc">Turns a denial letter into a formal appeal citing the exact plan language, regulation, and precedent the insurer is required to respond to.</p>
-        <span class="tc-link">Build appeal</span>
-      </div>
-    </a>
-
-    <a href="tool-records-request.html" class="tool-card t-gold">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🗂️</span>
-        <span class="tc-badge">AI · Document Generator</span>
-        <div class="tc-title">Records Request Builder</div>
-        <p class="tc-desc">Generates a properly formatted medical records request citing HIPAA and state-specific timelines, so a facility has no procedural excuse to stall.</p>
-        <span class="tc-link">Build request</span>
-      </div>
-    </a>
-
-    <a href="tool-incident-workflow.html" class="tool-card t-red">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🧩</span>
-        <span class="tc-badge">AI · Case Management</span>
-        <div class="tc-title">Incident Workflow</div>
-        <p class="tc-desc">Walks a care partner through documenting an incident step by step &mdash; timeline, parties involved, evidence &mdash; in a format that holds up if it's escalated.</p>
-        <span class="tc-link">Start workflow</span>
-      </div>
-    </a>
-
-    <a href="tool-system-exposure.html" class="tool-card t-red">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🔦</span>
-        <span class="tc-badge">AI · Investigative</span>
-        <div class="tc-title">System Exposure</div>
-        <p class="tc-desc">Surfaces the documented pattern behind a single incident &mdash; connecting it to the broader institutional practice it's part of.</p>
-        <span class="tc-link">Expose pattern</span>
-      </div>
-    </a>
-
-    <a href="tool-time-distortion.html" class="tool-card t-cold">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">⏳</span>
-        <span class="tc-badge">AI · Delay Analysis</span>
-        <div class="tc-title">Time Distortion</div>
-        <p class="tc-desc">Analyzes how long a delay actually is against the regulatory timeline it should have followed &mdash; and builds the paper trail proving it.</p>
-        <span class="tc-link">Analyze delay</span>
-      </div>
-    </a>
-
-    <a href="tool-treatment-framework.html" class="tool-card t-green">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🧬</span>
-        <span class="tc-badge">AI · Clinical Framework</span>
-        <div class="tc-title">Treatment Framework</div>
-        <p class="tc-desc">Organizes a complex treatment plan into a clear framework a patient and care partner can actually follow and question.</p>
-        <span class="tc-link">Build framework</span>
-      </div>
-    </a>
-
-    <a href="tool-survival-guide-hub.html" class="tool-card t-cold">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🧭</span>
-        <span class="tc-badge">Resource Hub</span>
-        <div class="tc-title">Survival Guide Hub</div>
-        <p class="tc-desc">The central index for every CIF guide, toolkit, and field resource in one place &mdash; organized by what stage of the journey you're in.</p>
-        <span class="tc-link">Browse hub</span>
-      </div>
-    </a>
-
-    <a href="tool-field-station-embedded.html" class="tool-card t-violet">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">📡</span>
-        <span class="tc-badge">Live Monitor</span>
-        <div class="tc-title">Field Station</div>
-        <p class="tc-desc">A live, embeddable monitor built for care partners tracking a case in real time &mdash; status, next steps, and open items in one view.</p>
-        <span class="tc-link">Open station</span>
-      </div>
-    </a>
-
-    <a href="drift-map.html" class="tool-card t-amber">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🌊</span>
-        <span class="tc-badge">AI · Systems Mapping</span>
-        <div class="tc-title">Drift Map</div>
-        <p class="tc-desc">Visualizes how a case quietly drifts off track across multiple providers and agencies &mdash; so the drift gets caught before it becomes a crisis.</p>
-        <span class="tc-link">View drift</span>
-      </div>
-    </a>
-
-    <a href="whitepapers.html" class="tool-card t-gold">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">📄</span>
-        <span class="tc-badge">Research Library</span>
-        <div class="tc-title">White Papers</div>
-        <p class="tc-desc">Every CIF white paper in one place &mdash; the Donor-Flow framework, the Lean Six Sigma transplant methodology, and the care partner integration research.</p>
-        <span class="tc-link">Read papers</span>
-      </div>
-    </a>
-
-    <a href="CIF-SHIELD-Strategy.html" class="tool-card t-gold">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🛡️</span>
-        <span class="tc-badge">Strategic Framework</span>
-        <div class="tc-title">The S.H.I.E.L.D. Method</div>
-        <p class="tc-desc">CIF's core strategic framework for structural advocacy &mdash; the method behind every tool, letter, and campaign on this platform.</p>
-        <span class="tc-link">Read the method</span>
-      </div>
-    </a>
-
-    <a href="transplant-realities.html" class="tool-card t-red">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🩸</span>
-        <span class="tc-badge">Patient Education</span>
-        <div class="tc-title">What Nobody Tells You</div>
-        <p class="tc-desc">BK virus, CMV, and the biopsy nobody prepares you for &mdash; the parts of post-transplant life that don't make the conference agenda.</p>
-        <span class="tc-link">Read now</span>
-      </div>
-    </a>
-
-    <a href="bhoc.html" class="tool-card t-cold">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🧬</span>
-        <span class="tc-badge">Emerging Technology</span>
-        <div class="tc-title">BHOC Explained</div>
-        <p class="tc-desc">Biologic Hemoglobin Oxygen Carrier technology could extend how long an organ survives before transplant. Almost no patient has heard of it.</p>
-        <span class="tc-link">Learn more</span>
-      </div>
-    </a>
-
-    <a href="donor-readiness-explorer.html" class="tool-card t-green">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">✅</span>
-        <span class="tc-badge">Interactive · Living Donors</span>
-        <div class="tc-title">Donor Readiness Discussion Guide</div>
-        <p class="tc-desc">Check the clinical, psychosocial, financial, and logistical questions that matter for living kidney donation — every one links to a real resource: NLDAC, Donor Shield, OPTN, and more.</p>
-        <span class="tc-link">Build your list</span>
-      </div>
-    </a>
-
-    <a href="donor-flow-blueprint.html" class="tool-card t-cold">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">📊</span>
-        <span class="tc-badge">Interactive Dashboard</span>
-        <div class="tc-title">Donor-Flow Interactive Dashboard</div>
-        <p class="tc-desc">The full data-driven blueprint — leaky-bucket diagnosis, state-by-state donor trends, denial-reason breakdown, and the 6-phase roadmap. Every filter and chart is live.</p>
-        <span class="tc-link">Explore the dashboard</span>
-      </div>
-    </a>
-
-    <a href="the-intelligence-gap.html" class="tool-card t-violet">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">🧠</span>
-        <span class="tc-badge">Research Framework</span>
-        <div class="tc-title">The Intelligence Gap — White Paper</div>
-        <p class="tc-desc">The full narrative case for AI in the living donor pipeline, with the 8-stage architecture, evidence base, and a downloadable white paper.</p>
-        <span class="tc-link">Read the paper</span>
-      </div>
-    </a>
-
-    <a href="demand-letters.html" class="tool-card t-amber">
-      <div class="tc-accent"></div>
-      <div class="tc-body">
-        <span class="tc-icon">📜</span>
-        <span class="tc-badge">On the Record</span>
-        <div class="tc-title">Formal Demand Letters</div>
-        <p class="tc-desc">Six formal letters to Congress, CMS, HHS, NIH, the Florida Legislature, and the OPTN Board — read exactly what was demanded, and of whom.</p>
-        <span class="tc-link">Read letters</span>
-      </div>
-    </a>
-
-    <a href="demand-letters.html" class="tool-card t-gold">
-      <div class="tc-accent"></div>
+      <div class="tc-lock">Members</div>
       <div class="tc-body">
         <span class="tc-icon">📋</span>
-        <span class="tc-badge">Complaint Generator</span>
+        <span class="tc-badge">Members · Complaint Generator</span>
         <div class="tc-title">Federal Complaint Builder</div>
         <p class="tc-desc">Nine-letter federal complaint packet generator. Pre-cited, pre-formatted, directed to the correct agencies. Covers CMS, HHS, OIG, HRSA, DOJ, ESRD Networks, and more.</p>
         <span class="tc-link">Build complaint</span>
       </div>
     </a>
 
-    <a href="signals-dashboard.html" class="tool-card t-cold">
+    <a href="members-dashboard.html" class="tool-card t-cold" data-ms-content="plans:prc_cold-ischemia-pro-membership-nqa6057z">
       <div class="tc-accent"></div>
+      <div class="tc-lock">Members</div>
       <div class="tc-body">
         <span class="tc-icon">🔔</span>
-        <span class="tc-badge">Policy Monitor</span>
+        <span class="tc-badge">Members · Policy Monitor</span>
         <div class="tc-title">Policy Alert System</div>
         <p class="tc-desc">Real-time policy alerts filtered for ESRD, transplant, chronic illness, and care partner regulations. Every rule change that affects you, the moment it drops.</p>
         <span class="tc-link">Activate alerts</span>
@@ -509,7 +294,10 @@ body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,ser
       <span class="qc-icon">🏛️</span>
       <div class="qc-text"><div class="qc-title">Congress Scorecard</div><div class="qc-sub">535 members graded A–F on your issues</div></div>
     </a>
-    
+    <a href="library.html" class="quick-card">
+      <span class="qc-icon">📚</span>
+      <div class="qc-text"><div class="qc-title">Resource Library</div><div class="qc-sub">Guides, white papers, legislative drafts</div></div>
+    </a>
     <a href="first-24-hours.html" class="quick-card">
       <span class="qc-icon">⏱️</span>
       <div class="qc-text"><div class="qc-title">First 24 Hours Guide</div><div class="qc-sub">Crisis response framework — free download</div></div>
@@ -518,7 +306,10 @@ body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,ser
       <span class="qc-icon">📥</span>
       <div class="qc-text"><div class="qc-title">Free Guide Download</div><div class="qc-sub">The First 24 Hours — immediate access</div></div>
     </a>
-    
+    <a href="podcast.html" class="quick-card">
+      <span class="qc-icon">🎙️</span>
+      <div class="qc-text"><div class="qc-title">Cold Truth Podcast</div><div class="qc-sub">New episodes on Podbean</div></div>
+    </a>
     <a href="donate.html" class="quick-card">
       <span class="qc-icon">💛</span>
       <div class="qc-text"><div class="qc-title">Support the Foundation</div><div class="qc-sub">Keep us independent — zero pharma funding</div></div>
@@ -591,8 +382,9 @@ body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,ser
         <div style="display:flex;flex-direction:column;gap:9px;">
           <a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Home</a>
           <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
-          
+          <a href="podcast.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Cold Truth Podcast</a>
           <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
+          <a href="join.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:#c8902a;text-decoration:none;">Join — $15/mo</a>
         </div>
       </div>
       <div>
