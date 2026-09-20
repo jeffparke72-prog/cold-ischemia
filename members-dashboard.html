@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Dashboard &middot; Cold Ischemia Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,600;1,9..144,200;1,9..144,400&family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <script src="https://client.memberstack.com/static/memberstack.js" data-memberstack-app="app_cmmihjq3n008g0trohx5z6e68"></script>
+  <style>
+    :root{
+      --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+      --b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.22);
+      --ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);
+      --ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);
+      --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.14);--gold-g:rgba(200,144,42,0.28);
+      --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.12);
+      --danger:#c83050;--danger-d:rgba(200,48,80,0.12);
+      --green:#50c878;--green-d:rgba(80,200,120,0.12);
+      --violet:#8050c8;--violet-d:rgba(128,80,200,0.12);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;min-height:100vh;}
+    ::-webkit-scrollbar{width:2px;}
+    ::-webkit-scrollbar-track{background:var(--abyss);}
+    ::-webkit-scrollbar-thumb{background:var(--raised);}
+
+    /* ── GATE: hidden until auth confirms ── */
+    #protected{display:none;}
+
+    /* ── LOADING ── */
+    #loading{position:fixed;inset:0;background:var(--abyss);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:999;}
+    .spin{width:30px;height:30px;border:2px solid var(--raised);border-top-color:var(--gold);border-radius:50%;animation:spin 0.85s linear infinite;}
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .loading-logo{font-family:'IBM Plex Mono',monospace;font-size:0.54rem;letter-spacing:0.34em;text-transform:uppercase;color:var(--gold);}
+    .loading-text{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink20);}
+
+    /* ── TOPBAR ── */
+    .topbar{position:sticky;top:0;z-index:100;background:rgba(3,5,9,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 36px;height:58px;display:flex;align-items:center;justify-content:space-between;}
+    .topbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .topbar-logo img{height:30px;width:auto;}
+    .topbar-logo span{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);}
+    .topbar-right{display:flex;align-items:center;gap:14px;flex-wrap:nowrap;}
+    .member-name{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);}
+    .member-name span{color:var(--gold-l);}
+    .btn-sm{font-family:'IBM Plex Mono',monospace;font-size:0.48rem;letter-spacing:0.14em;text-transform:uppercase;background:transparent;border:1px solid var(--b);padding:6px 13px;border-radius:2px;cursor:pointer;text-decoration:none;transition:all 0.2s;white-space:nowrap;}
+    .btn-sm{color:var(--ink40);}
+    .btn-sm:hover{color:var(--gold);border-color:var(--gold-d);}
+    .btn-sm.danger:hover{color:var(--danger);border-color:var(--danger-d);}
+    @media(max-width:600px){.member-name{display:none;}}
+
+    /* ── HERO HEADER ── */
+    .dash-hero{background:linear-gradient(160deg,var(--void) 0%,var(--abyss) 100%);border-bottom:1px solid var(--b);padding:56px 36px 44px;}
+    .dash-hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;}
+    @media(max-width:700px){.dash-hero-inner{grid-template-columns:1fr;}}
+    .dash-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--pulse);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+    .ldot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 2.2s ease-in-out infinite;flex-shrink:0;}
+    @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.15;}}
+    .dash-h1{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(2rem,4vw,3.4rem);line-height:1.1;color:var(--ink);margin-bottom:10px;}
+    .dash-h1 strong{font-weight:600;font-style:normal;color:var(--gold-l);}
+    .dash-sub{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:28px;}
+    .status-row{display:flex;gap:8px;flex-wrap:wrap;}
+    .chip{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.14em;text-transform:uppercase;padding:7px 14px;border:1px solid;border-radius:2px;display:inline-flex;align-items:center;gap:6px;}
+    .chip-gold{color:var(--gold);border-color:var(--gold-d);background:var(--gold-d);}
+    .chip-teal{color:var(--pulse);border-color:var(--pulse-d);background:var(--pulse-d);}
+    .chip-green{color:var(--green);border-color:var(--green-d);background:var(--green-d);}
+    @media(max-width:700px){}
+
+    /* ── LAYOUT ── */
+    .dash-body{max-width:1140px;margin:0 auto;padding:44px 36px 80px;}
+
+    /* ── SECTION LABELS ── */
+    .sec-label{font-family:'IBM Plex Mono',monospace;font-size:0.52rem;letter-spacing:0.34em;text-transform:uppercase;display:flex;align-items:center;gap:16px;margin-bottom:22px;margin-top:56px;}
+    .sec-label:first-child{margin-top:0;}
+    .sec-label::after{content:'';flex:1;height:1px;}
+    .sec-label.gold{color:var(--gold);}    .sec-label.gold::after{background:var(--gold-d);}
+    .sec-label.teal{color:var(--pulse);}   .sec-label.teal::after{background:var(--pulse-d);}
+    .sec-label.red{color:var(--danger);}   .sec-label.red::after{background:var(--danger-d);}
+    .sec-label.green{color:var(--green);}  .sec-label.green::after{background:var(--green-d);}
+    .sec-label.violet{color:var(--violet);}.sec-label.violet::after{background:var(--violet-d);}
+
+    /* ── MEMBERSHIP VALUE BOX ── */
+    .value-box{background:var(--surf);border:1px solid var(--b);border-left:3px solid var(--gold);border-radius:0 3px 3px 0;padding:32px 36px;margin-bottom:0;}
+    .value-box h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:1.7rem;color:var(--gold-l);margin-bottom:14px;line-height:1.2;}
+    .value-box p{font-size:1.05rem;line-height:1.9;color:var(--ink60);margin-bottom:12px;}
+    .value-box p:last-child{margin-bottom:0;}
+    .value-box strong{color:var(--ink80);}
+    .value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:24px;}
+    @media(max-width:720px){.value-grid{grid-template-columns:1fr 1fr;}}
+    .vg-item{background:var(--raised);border:1px solid var(--b);padding:18px 16px;text-align:center;}
+    .vg-num{font-family:'Fraunces',serif;font-weight:200;font-size:2rem;line-height:1;color:var(--gold-l);display:block;margin-bottom:6px;}
+    .vg-label{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);}
+
+    /* ── TOOL GRID ── */
+    .tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+    @media(max-width:900px){.tool-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:520px){.tool-grid{grid-template-columns:1fr;}}
+    .tc{background:var(--surf);border:1px solid var(--b);padding:26px 22px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:background 0.2s,transform 0.2s,box-shadow 0.2s;}
+    .tc:hover{background:var(--raised);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.4);}
+    .tc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+    .tc.ai::before{background:var(--gold);}
+    .tc.mon::before{background:var(--pulse);}
+    .tc.ops::before{background:var(--danger);}
+    .tc.leg::before{background:var(--green);}
+    .tc-cat{font-family:'IBM Plex Mono',monospace;font-size:0.45rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px;}
+    .tc.ai .tc-cat{color:var(--gold);} .tc.mon .tc-cat{color:var(--pulse);} .tc.ops .tc-cat{color:var(--danger);} .tc.leg .tc-cat{color:var(--green);}
+    .tc-name{font-family:'Fraunces',serif;font-weight:400;font-size:1.1rem;line-height:1.2;color:var(--ink);margin-bottom:10px;}
+    .tc-desc{font-size:0.87rem;line-height:1.78;color:var(--ink40);margin-bottom:20px;flex:1;}
+    .tc-btn{font-family:'IBM Plex Mono',monospace;font-size:0.48rem;letter-spacing:0.16em;text-transform:uppercase;padding:10px 16px;border-radius:2px;text-decoration:none;display:inline-block;transition:all 0.2s;align-self:flex-start;border:1px solid;}
+    .tc.ai .tc-btn{background:var(--gold-d);color:var(--gold-l);border-color:rgba(200,144,42,0.3);} .tc.ai .tc-btn:hover{background:var(--gold);color:var(--abyss);border-color:var(--gold);}
+    .tc.mon .tc-btn{background:var(--pulse-d);color:var(--pulse);border-color:rgba(42,196,200,0.3);} .tc.mon .tc-btn:hover{background:var(--pulse);color:var(--abyss);}
+    .tc.ops .tc-btn{background:var(--danger-d);color:var(--danger);border-color:rgba(200,48,80,0.3);} .tc.ops .tc-btn:hover{background:var(--danger);color:#fff;}
+    .tc.leg .tc-btn{background:var(--green-d);color:var(--green);border-color:rgba(80,200,120,0.3);} .tc.leg .tc-btn:hover{background:var(--green);color:var(--abyss);}
+
+    /* ── VIDEO ── */
+    .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    @media(max-width:680px){.video-grid{grid-template-columns:1fr;}}
+    .vc{background:var(--surf);border:1px solid var(--b);border-radius:3px;overflow:hidden;}
+    .vc video{display:block;width:100%;background:#000;min-height:180px;}
+    .vc-meta{padding:16px 18px;border-top:1px solid var(--b);}
+    .vc-title{font-family:'Fraunces',serif;font-weight:400;font-size:1rem;color:var(--ink80);margin-bottom:6px;}
+    .vc-desc{font-size:0.86rem;line-height:1.7;color:var(--ink40);}
+    .video-note{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.12em;color:var(--ink20);margin-top:14px;text-align:center;}
+
+    /* ── LIBRARY (books) ── */
+    .book-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:840px){.book-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:520px){.book-grid{grid-template-columns:1fr;}}
+    .bk{background:var(--surf);border:1px solid var(--b);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;transition:border-color 0.2s,transform 0.2s;}
+    .bk:hover{border-color:var(--b2);transform:translateY(-2px);}
+    .bk-cover{padding:28px 20px 22px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;border-bottom:1px solid var(--b);}
+    .bk-icon{font-size:1.6rem;}
+    .bk-price{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:200;color:var(--gold-l);}
+    .bk-body{padding:18px 20px;flex:1;display:flex;flex-direction:column;gap:8px;}
+    .bk-tag{font-family:'IBM Plex Mono',monospace;font-size:0.43rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink20);}
+    .bk-title{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1rem;color:var(--ink80);line-height:1.3;}
+    .bk-desc{font-size:0.86rem;line-height:1.75;color:var(--ink40);flex:1;}
+    .bk-btn{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;padding:11px;text-decoration:none;border-top:1px solid var(--b);color:var(--gold);transition:background 0.2s,color 0.2s;}
+    .bk-btn:hover{background:var(--gold-d);color:var(--gold-l);}
+    .bk.featured{border-color:rgba(200,144,42,0.4);}
+    .bk.featured .bk-cover{background:var(--gold-d);}
+    .library-cta{text-align:center;margin-top:24px;}
+    .btn-outline{font-family:'IBM Plex Mono',monospace;font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;padding:12px 28px;border:1px solid var(--gold-d);color:var(--gold);background:transparent;border-radius:2px;text-decoration:none;display:inline-block;transition:all 0.2s;}
+    .btn-outline:hover{background:var(--gold-d);color:var(--gold-l);}
+
+    /* ── INDEPENDENCE PLEDGE ── */
+    .pledge{background:rgba(200,48,80,0.04);border:1px solid rgba(200,48,80,0.18);border-left:3px solid var(--danger);padding:22px 28px;border-radius:0 3px 3px 0;margin-top:56px;}
+    .pledge p{font-family:'IBM Plex Mono',monospace;font-size:0.48rem;letter-spacing:0.1em;color:rgba(216,207,196,0.38);line-height:2;}
+    .pledge strong{color:rgba(200,48,80,0.7);}
+
+    /* ── FOOTER ── */
+    .dash-footer{border-top:1px solid var(--b);padding:28px 36px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-top:56px;}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap;}
+    .footer-links a{font-family:'IBM Plex Mono',monospace;font-size:0.46rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink20);text-decoration:none;transition:color 0.2s;}
+    .footer-links a:hover{color:var(--gold);}
+    .footer-copy{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.08em;color:var(--ink20);}
+  </style>
+</head>
+<body data-ms-content="plans:prc_cold-ischemia-pro-membership-nqa6057z" data-ms-redirect="join.html">
+<!-- FLOATING HOME BUTTON -->
+<a href="index.html" id="home-float" style="position:fixed;bottom:24px;left:24px;z-index:999;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:10px 18px;background:rgba(3,5,9,0.92);border:1px solid rgba(200,144,42,0.4);color:#c8902a;text-decoration:none;border-radius:2px;backdrop-filter:blur(8px);transition:all .2s;white-space:nowrap;" onmouseover="this.style.background='#c8902a';this.style.color='#030509';" onmouseout="this.style.background='rgba(3,5,9,0.92)';this.style.color='#c8902a';">← Home</a>
+
+<!-- GATE: Members only. Non-members redirected to join.html -->
+<div id="ms-gate-overlay" style="display:none;position:fixed;inset:0;z-index:9998;background:#030509;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
+  <p style="font-family:IBM Plex Mono,monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;">Members Only</p>
+  <a href="join.html" style="font-family:IBM Plex Mono,monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:12px 28px;background:#c8902a;color:#030509;text-decoration:none;border-radius:2px;">Join to Access →</a>
+  <a href="index.html" style="font-family:IBM Plex Mono,monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.4);text-decoration:none;">← Return Home</a>
+</div>
+
+
+<!-- LOADING SCREEN -->
+<div id="loading">
+  <div class="loading-logo">Cold Ischemia Foundation</div>
+  <div class="spin"></div>
+  <div class="loading-text">Verifying membership&hellip;</div>
+</div>
+
+<!-- ALL PROTECTED CONTENT -->
+<div id="protected">
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a href="index.html" class="topbar-logo">
+    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
+    <span>Cold Ischemia Foundation</span>
+  </a>
+  <div class="topbar-right">
+    <div class="member-name">Welcome back, <span id="memberName">Member</span></div>
+    <a href="podcast.html" class="btn-sm">Podcast</a>
+    <a href="situation-room.html">Situation Room</a>
+    <a href="https://store.coldischemia.foundation" target="_blank" rel="noopener" class="btn-sm">Store</a>
+    <a href="research.html" class="btn-sm">Research</a>
+    <a href="#" data-ms-action="customer-portal" class="btn-sm">Manage Billing</a>
+    <button class="btn-sm danger" data-ms-action="logout">Log Out</button>
+  </div>
+</div>
+
+<!-- HERO HEADER -->
+<div class="dash-hero">
+  <div class="dash-hero-inner">
+    <div>
+      <div class="dash-eyebrow"><div class="ldot"></div>Member Access &middot; Full Platform Unlocked</div>
+      <h1 class="dash-h1">Care Partner <strong>Intelligence Platform</strong></h1>
+      <p class="dash-sub">Cold Ischemia Foundation &middot; 14 Active Tools &middot; 5 Publications &middot; Live Federal Monitors</p>
+      <div class="status-row">
+        <span class="chip chip-gold">&#10003; Active Membership</span>
+        <span class="chip chip-teal">14 Tools Unlocked</span>
+        <span class="chip chip-green">Live Monitors Active</span>
+      </div>
+    </div>
+
+<script>
+// ── MEMBERSHIP GATE ──────────────────────────────────────────────
+// Page body hidden via CSS. Auth check fires immediately.
+// Non-members redirected to join.html. No content exposed.
+// ─────────────────────────────────────────────────────────────────
+function gate() {
+  if (window.$memberstackDom) {
+    window.$memberstackDom.getCurrentMember()
+      .then(function(res) {
+        var m = res && res.data;
+        if (!m) {
+          window.location.replace('join.html');
+        } else {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('protected').style.display = 'block';
+          var name = (m.customFields && m.customFields['first-name'])
+                  || (m.auth && m.auth.email)
+                  || m.email || 'Member';
+          var el = document.getElementById('memberName');
+          if (el) el.textContent = name;
+        }
+      })
+
+</script>
+
+<!-- UNIVERSAL FOOTER -->
+<footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(100,140,200,0.1);">
+      <div>
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:12px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.25);line-height:2.1;">
+          Grassroots Care Partner Advocacy<br>
+          Ellenton, Florida · 16th Congressional District<br>
+          <a href="/cdn-cgi/l/email-protection#a5cfc0c3c3e5c6cac9c1ccd6c6cdc0c8ccc48bc3cad0cbc1c4d1cccacb" style="color:#c8902a;text-decoration:none;"><span class="__cf_email__" data-cfemail="107a75767650737f7c7479637378757d79713e767f657e747164797f7e">[email&#160;protected]</span></a><br>
+          <a href="https://coldischemia.foundation" style="color:#c8902a;text-decoration:none;">coldischemia.foundation</a>
+        </p>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Command Center</a>
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Situation Room</a>
+          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Research</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
+          <a href="join.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:#c8902a;text-decoration:none;">Join — $15/mo</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
+          <a href="library.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Library</a>
+          <a href="podcast.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Cold Truth Podcast</a>
+          <a href="media.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Media</a>
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
+          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Free Guide</a>
+        </div>
+      </div>
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Privacy Policy</a>
+          <a href="/cdn-cgi/l/email-protection#c2a8a7a4a482a1adaea6abb1a1aaa7afaba3eca4adb7aca6a3b6abadac" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Contact</a>
+          <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Store</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.06em;color:rgba(216,207,196,0.2);">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+      <div style="display:flex;gap:16px;">
+        <a href="terms
