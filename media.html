@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Media Library — Cold Ischemia Foundation</title>
-<meta name="description" content="Foundation briefings and care partner PSAs. Every piece of media Cold Ischemia Foundation has produced — playable on site.">
+<meta name="description" content="Foundation briefings, care partner PSAs, and podcast episodes. Every piece of media Cold Ischemia Foundation has produced — playable on site.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
 <script async src="https://client.memberstack.com/static/memberstack.js" data-memberstack-app="app_cmmihjq3n008g0trohx5z6e68"></script>
 <style>
@@ -52,6 +52,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.96);
 .filt-btn:hover{border-color:var(--b2);color:var(--ink80);}
 .filt-btn.active{background:var(--gold);color:var(--abyss);border-color:var(--gold);}
 .filt-btn.active.cat-psa{background:var(--danger);border-color:var(--danger);}
+.filt-btn.active.cat-podcast{background:var(--pulse);border-color:var(--pulse);}
 .filt-btn.active.cat-briefing{background:var(--gold);border-color:var(--gold);}
 .filt-count{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.1em;color:var(--ink20);flex-shrink:0;}
 .filt-count strong{color:var(--gold);}
@@ -110,6 +111,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.96);
 .mc-stripe{position:absolute;top:0;left:0;right:0;height:2px;z-index:3;}
 .stripe-briefing{background:var(--gold);}
 .stripe-psa{background:var(--danger);}
+.stripe-podcast{background:var(--pulse);}
 .stripe-short{background:var(--green);}
 
 /* DURATION BADGE */
@@ -139,6 +141,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.96);
 .mc-tag{font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.18em;text-transform:uppercase;padding:3px 9px;border-radius:1px;display:inline-block;align-self:flex-start;}
 .tag-briefing{background:rgba(200,144,42,0.12);color:var(--gold);}
 .tag-psa{background:rgba(200,48,80,0.12);color:var(--danger);}
+.tag-podcast{background:rgba(42,196,200,0.1);color:var(--pulse);}
 .tag-short{background:rgba(80,200,120,0.1);color:var(--green);}
 .mc-title{font-family:'Fraunces',serif;font-weight:400;font-size:1rem;color:var(--ink80);line-height:1.4;}
 .mc-desc{font-size:0.85rem;line-height:1.7;color:var(--ink40);flex:1;}
@@ -176,6 +179,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.96);
   <div class="nav-links">
     <a href="about.html">About</a>
     <a href="library.html">Library</a>
+    <a href="podcast.html">Podcast</a>
     <a href="media.html" class="active">Media</a>
     <a href="research.html">Research</a>
     <a href="situation-room.html">Situation Room</a>
@@ -185,6 +189,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.96);
     <a href="donate.html">Donate</a>
   </div>
   <div class="nav-actions">
+    <a href="members-dashboard.html" class="nav-btn" data-ms-content="plans:prc_cold-ischemia-pro-membership-nqa6057z">My Tools</a>
+    <a href="join.html" class="nav-btn nav-btn-gold" data-ms-action="open-modal" data-ms-modal="checkout" data-ms-plan="prc_cold-ischemia-pro-membership-nqa6057z">Join $15/mo</a>
   </div>
 <a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;padding:6px 12px;border:1px solid rgba(100,140,200,0.15);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s;flex-shrink:0;" onmouseover="this.style.color='#c8902a';this.style.borderColor='rgba(200,144,42,0.3)';" onmouseout="this.style.color='rgba(216,207,196,0.45)';this.style.borderColor='rgba(100,140,200,0.15)';">← Home</a>
 </nav>
@@ -194,7 +200,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.96);
   <div class="hero-in">
     <div class="eyebrow">Foundation Media Library</div>
     <h1 class="hero-h1">WATCH.<br>LISTEN.<br><span>SHARE.</span></h1>
-    <p class="hero-sub">Every briefing and PSA produced by Cold Ischemia Foundation. Play anything directly on this page. No YouTube account required.</p>
+    <p class="hero-sub">Every briefing, PSA, and podcast episode produced by Cold Ischemia Foundation. Play anything directly on this page. No YouTube account required.</p>
   </div>
 </section>
 
@@ -205,7 +211,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.96);
     <button class="filt-btn active" data-cat="all" onclick="setFilter('all',this)">All Media</button>
     <button class="filt-btn cat-briefing" data-cat="briefing" onclick="setFilter('briefing',this)">Briefings</button>
     <button class="filt-btn cat-psa" data-cat="psa" onclick="setFilter('psa',this)">PSAs</button>
-        <button class="filt-btn" data-cat="short" onclick="setFilter('short',this)">Shorts</button>
+    <button class="filt-btn cat-podcast" data-cat="podcast" onclick="setFilter('podcast',this)">Podcast</button>
+    <button class="filt-btn" data-cat="short" onclick="setFilter('short',this)">Shorts</button>
     <span class="filt-count">Showing <strong id="visCount">6</strong> of 6</span>
   </div>
 </div>
@@ -242,6 +249,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.96);
 <footer style="background:var(--void);border-top:1px solid var(--b);padding:40px;">
   <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
     <div style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.1em;color:var(--ink20);">Cold Ischemia Foundation · All media produced independently · Zero pharmaceutical sponsorship</div>
+    <a href="podcast.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Full Podcast Page →</a>
   </div>
 </footer>
 
@@ -296,12 +304,22 @@ const MEDIA = [
     desc: 'When institutions fall below the standards they publicly commit to, that failure has a name — and a federal record.',
     date: '2025',
     duration: null
+  },
+  {
+    id: 'ep01',
+    type: 'audio',
+    cat: 'podcast',
+    title: 'Episode 01 — The Cold Ischemia Foundation Podcast',
+    desc: 'The inaugural episode. Why this podcast exists, what it will say, and what every other care partner advocacy platform has been too conflicted to admit.',
+    date: '2025',
+    duration: null,
+    src: 'the_cold_ischemia_foundation_podcast_version_1_copy.mp3'
   }
 ];
 
-const TAG_LABELS = {briefing:'Briefing',psa:'PSA',short:'Short'};
-const STRIPE_CLASS = {briefing:'stripe-briefing',psa:'stripe-psa',short:'stripe-short'};
-const TAG_CLASS = {briefing:'tag-briefing',psa:'tag-psa',short:'tag-short'};
+const TAG_LABELS = {briefing:'Briefing',psa:'PSA',podcast:'Podcast',short:'Short'};
+const STRIPE_CLASS = {briefing:'stripe-briefing',psa:'stripe-psa',podcast:'stripe-podcast',short:'stripe-short'};
+const TAG_CLASS = {briefing:'tag-briefing',psa:'tag-psa',podcast:'tag-podcast',short:'tag-short'};
 
 // YouTube thumbnail helper
 function ytThumb(id){ return 'https://img.youtube.com/vi/'+id+'/mqdefault.jpg'; }
@@ -344,7 +362,7 @@ function renderGrid(){
               <div class="audio-bar"></div><div class="audio-bar"></div><div class="audio-bar"></div>
               <div class="audio-bar"></div>
             </div>
-            <div class="audio-label">${m.title}</div>
+            <div class="audio-label">Podcast · Episode 01</div>
           </div>
           <div class="mc-thumb" id="thumb-${m.id}" onclick="playCard('${m.id}','audio')">
             <div class="mc-thumb-img" style="background:linear-gradient(135deg,#07101c 0%,#0f1e38 100%);"></div>
@@ -365,6 +383,7 @@ function renderGrid(){
           <div class="mc-desc">${m.desc}</div>
           <div class="mc-footer">
             <span class="mc-date">${m.date}</span>
+            <a href="podcast.html" class="mc-yt-link">Full Episode →</a>
           </div>
         </div>
       </div>`;
@@ -461,6 +480,7 @@ renderGrid();
           <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Research</a>
           <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
           <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
+          <a href="join.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:#c8902a;text-decoration:none;">Join — $15/mo</a>
         </div>
       </div>
       <div>
@@ -468,6 +488,7 @@ renderGrid();
         <div style="display:flex;flex-direction:column;gap:9px;">
           <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
           <a href="library.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Library</a>
+          <a href="podcast.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Cold Truth Podcast</a>
           <a href="media.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Media</a>
           <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
           <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Free Guide</a>
