@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You — Your Free Guide Bundle · Cold Ischemia Foundation</title>
+  <title>Thank You — Cold Ischemia Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
@@ -60,34 +60,24 @@
     </div>
   </div>
   <div class="ty-word">THANK <span>YOU</span></div>
-  <div class="ty-sub">Your guide bundle is downloading now.</div>
+  <div class="ty-sub">Your guide is downloading now.</div>
   <div class="divider"></div>
-  <p class="ty-body">Check your inbox for the welcome email with all 3 guides.<br>If a download didn't start, use the links below.</p>
+  <p class="ty-body">Check your inbox for the welcome email.<br>If the download didn't start, use the link below.</p>
   <div class="redirect-wrap">
-    <div class="redirect-label">Returning to the Foundation in <span id="cd">8</span>s</div>
+    <div class="redirect-label">Returning to the Foundation in <span id="cd">5</span>s</div>
     <div class="progress-track"><div class="progress-fill"></div></div>
     <a href="https://coldischemia.foundation" class="btn-return">Return to Cold Ischemia Foundation &rarr;</a>
-    <div class="manual-dl">
-      Downloads didn't start?
-      <a href="the-first-24-hours.pdf" download>The First 24 Hours</a>
-      <!-- TODO: Add Advocacy Toolkit and Regulatory Action Toolkit PDFs here once provided, then restore their links above and in the script below. -->
-    </div>
+    <div class="manual-dl">Download didn't start? <a href="https://mcusercontent.com/20960b505a060a5f7f476edab/files/2d8e4ade-62c0-3c46-6b67-69bea03a4074/the_first_24_hours.pdf" download>Click here</a></div>
   </div>
 </div>
 <script>
 (function(){
-  var files=[
-    {url:'the-first-24-hours.pdf',name:'Cold-Ischemia-Foundation-The-First-24-Hours.pdf'}
-  ];
-  files.forEach(function(f,i){
-    setTimeout(function(){
-      var a=document.createElement('a');
-      a.href=f.url;a.download=f.name;
-      document.body.appendChild(a);a.click();document.body.removeChild(a);
-    }, i*700);
-  });
+  var a=document.createElement('a');
+  a.href='https://mcusercontent.com/20960b505a060a5f7f476edab/files/2d8e4ade-62c0-3c46-6b67-69bea03a4074/the_first_24_hours.pdf';
+  a.download='The-First-24-Hours-Cold-Ischemia-Foundation.pdf';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
 })();
-var count=8,cdEl=document.getElementById('cd');
+var count=5,cdEl=document.getElementById('cd');
 var t=setInterval(function(){count--;cdEl.textContent=count;if(count<=0){clearInterval(t);window.location.href='https://coldischemia.foundation';}},1000);
 (function(){
   var n=44,cx=window.innerWidth/2,cy=window.innerHeight/2;
@@ -124,10 +114,10 @@ var t=setInterval(function(){count--;cdEl.textContent=count;if(count<=0){clearIn
 <!-- UNIVERSAL FOOTER -->
 <footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
   <div style="max-width:1100px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,0.1);">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(100,140,200,0.1);">
       <div>
-        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:10px;" onerror="this.style.display='none'">
-        <p style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.22);line-height:2.2;">
+        <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" style="height:26px;display:block;margin-bottom:12px;" onerror="this.style.display='none'">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.25);line-height:2.1;">
           Grassroots Care Partner Advocacy<br>
           Ellenton, Florida · 16th Congressional District<br>
           <a href="/cdn-cgi/l/email-protection#076d6261614764686b636e74646f626a6e6629616872696366736e6869" style="color:#c8902a;text-decoration:none;"><span class="__cf_email__" data-cfemail="3e545b58587e5d51525a574d5d565b53575f1058514b505a5f4a575150">[email&#160;protected]</span></a><br>
@@ -135,41 +125,38 @@ var t=setInterval(function(){count--;cdEl.textContent=count;if(count<=0){clearIn
         </p>
       </div>
       <div>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;">Platform</span>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Command Center</a>
-          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Situation Room</a>
-          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Research</a>
-          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Atlas</a>
-          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Scorecard</a>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Platform</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Command Center</a>
+          <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Situation Room</a>
+          <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Research</a>
+          <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
+          <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
+          <a href="join.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:#c8902a;text-decoration:none;">Join — $15/mo</a>
         </div>
       </div>
       <div>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;">Foundation</span>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Our Story</a>
-          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Donate</a>
-          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Free Guides</a>
-          <a href="sales-letter.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Our Case for You</a>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Foundation</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="about.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Our Story</a>
+          <a href="library.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Library</a>
+          <a href="podcast.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Cold Truth Podcast</a>
+          <a href="media.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Media</a>
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Donate</a>
+          <a href="free-guide.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Free Guide</a>
         </div>
       </div>
       <div>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;">Legal</span>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Terms of Service</a>
-          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Privacy Policy</a>
-          <a href="/cdn-cgi/l/email-protection#e8828d8e8ea88b87848c819b8b808d858189c68e879d868c899c818786" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.38);text-decoration:none;">Contact</a>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Legal</span>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Terms of Service</a>
+          <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Privacy Policy</a>
+          <a href="/cdn-cgi/l/email-protection#e8828d8e8ea88b87848c819b8b808d858189c68e879d868c899c818786" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Contact</a>
+          <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Store</a>
         </div>
       </div>
     </div>
     <div style="padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-      <p style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.18);">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
-      <div style="display:flex;gap:14px;">
-        <a href="terms.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.18);text-decoration:none;">Terms</a>
-        <a href="privacy.html" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,0.18);text-decoration:none;">Privacy</a>
-      </div>
-    </div>
-  </div>
-</footer>
-</body>
-</html>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.36rem;letter-spacing:0.06em;color:rgba(216,207,196,0.2);">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+      <div style="display:flex;gap:16px;">
+        <a href="terms
