@@ -30,9 +30,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filte
 .njn:hover{background:#e8b84a;}
 @media(max-width:680px){.nm a:not(.nk){display:none;}.nb{display:none;}.nmy{display:none;}}
 
-/* HERO */
-.hero{min-height:100vh;background:linear-gradient(160deg,#07101c 0%,#030509 60%,#0a1628 100%);display:flex;flex-direction:column;justify-content:center;padding:80px 48px 64px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,144,42,0.06) 0%,transparent 65%);pointer-events:none;}
+/* HERO */.hero{min-height:100vh;background:linear-gradient(160deg,rgba(7,16,28,0.90) 0%,rgba(3,5,9,0.93) 60%,rgba(10,22,40,0.88) 100%),url('hero-banner.jpg') center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;padding:80px 48px 64px;position:relative;overflow:hidden;}.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,144,42,0.06) 0%,transparent 65%);pointer-events:none;}
 .hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(42,196,200,0.04) 0%,transparent 65%);pointer-events:none;}
 @media(max-width:700px){.hero{padding:80px 24px 56px;}}
 .htag{display:inline-flex;align-items:center;gap:8px;background:rgba(200,144,42,0.08);border:1px solid rgba(200,144,42,0.25);padding:7px 16px;margin-bottom:28px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;}
