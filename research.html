@@ -1215,8 +1215,6 @@ function renderCITable() {
 
     const accessBtn = doc.access === 'download'
       ? `<a href="${doc.url}" class="btn-view" target="_blank">Download PDF</a>`
-      : doc.access === 'members'
-      ? `<a href="join.html" class="btn-view" style="color:var(--pulse);">Members Only</a>`
       : doc.url !== '#'
       ? `<a href="${doc.url}" class="btn-view" target="_blank">View</a>`
       : `<span class="btn-view" style="opacity:0.4;cursor:default;">Coming Soon</span>`;
