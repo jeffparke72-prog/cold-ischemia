@@ -6,7 +6,6 @@
   <title>Member Dashboard &middot; Cold Ischemia Foundation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,600;1,9..144,200;1,9..144,400&family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <script src="https://client.memberstack.com/static/memberstack.js" data-memberstack-app="app_cmmihjq3n008g0trohx5z6e68"></script>
   <style>
     :root{
       --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
@@ -26,11 +25,10 @@
     ::-webkit-scrollbar-track{background:var(--abyss);}
     ::-webkit-scrollbar-thumb{background:var(--raised);}
 
-    /* ── GATE: hidden until auth confirms ── */
-    #protected{display:none;}
-
-    /* ── LOADING ── */
-    #loading{position:fixed;inset:0;background:var(--abyss);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:999;}
+    /* ── Dashboard is free for everyone — no auth gate ── */
+    #protected{display:block;}
+    #loading{display:none;}
+    #ms-gate-overlay{display:none;}
     .spin{width:30px;height:30px;border:2px solid var(--raised);border-top-color:var(--gold);border-radius:50%;animation:spin 0.85s linear infinite;}
     @keyframes spin{to{transform:rotate(360deg);}}
     .loading-logo{font-family:'IBM Plex Mono',monospace;font-size:0.54rem;letter-spacing:0.34em;text-transform:uppercase;color:var(--gold);}
@@ -157,26 +155,11 @@
     .footer-copy{font-family:'IBM Plex Mono',monospace;font-size:0.44rem;letter-spacing:0.08em;color:var(--ink20);}
   </style>
 </head>
-<body data-ms-content="plans:prc_cold-ischemia-pro-membership-nqa6057z" data-ms-redirect="join.html">
+<body>
 <!-- FLOATING HOME BUTTON -->
 <a href="index.html" id="home-float" style="position:fixed;bottom:24px;left:24px;z-index:999;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:10px 18px;background:rgba(3,5,9,0.92);border:1px solid rgba(200,144,42,0.4);color:#c8902a;text-decoration:none;border-radius:2px;backdrop-filter:blur(8px);transition:all .2s;white-space:nowrap;" onmouseover="this.style.background='#c8902a';this.style.color='#030509';" onmouseout="this.style.background='rgba(3,5,9,0.92)';this.style.color='#c8902a';">← Home</a>
 
-<!-- GATE: Members only. Non-members redirected to join.html -->
-<div id="ms-gate-overlay" style="display:none;position:fixed;inset:0;z-index:9998;background:#030509;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
-  <p style="font-family:IBM Plex Mono,monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;">Members Only</p>
-  <a href="join.html" style="font-family:IBM Plex Mono,monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:12px 28px;background:#c8902a;color:#030509;text-decoration:none;border-radius:2px;">Join to Access →</a>
-  <a href="index.html" style="font-family:IBM Plex Mono,monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.4);text-decoration:none;">← Return Home</a>
-</div>
-
-
-<!-- LOADING SCREEN -->
-<div id="loading">
-  <div class="loading-logo">Cold Ischemia Foundation</div>
-  <div class="spin"></div>
-  <div class="loading-text">Verifying membership&hellip;</div>
-</div>
-
-<!-- ALL PROTECTED CONTENT -->
+<!-- ALL CONTENT — free and open to everyone, no login required -->
 <div id="protected">
 
 <!-- TOPBAR -->
@@ -186,13 +169,10 @@
     <span>Cold Ischemia Foundation</span>
   </a>
   <div class="topbar-right">
-    <div class="member-name">Welcome back, <span id="memberName">Member</span></div>
     <a href="podcast.html" class="btn-sm">Podcast</a>
     <a href="situation-room.html">Situation Room</a>
     <a href="https://store.coldischemia.foundation" target="_blank" rel="noopener" class="btn-sm">Store</a>
     <a href="research.html" class="btn-sm">Research</a>
-    <a href="#" data-ms-action="customer-portal" class="btn-sm">Manage Billing</a>
-    <button class="btn-sm danger" data-ms-action="logout">Log Out</button>
   </div>
 </div>
 
@@ -200,40 +180,15 @@
 <div class="dash-hero">
   <div class="dash-hero-inner">
     <div>
-      <div class="dash-eyebrow"><div class="ldot"></div>Member Access &middot; Full Platform Unlocked</div>
+      <div class="dash-eyebrow"><div class="ldot"></div>Free Access &middot; Full Platform Unlocked</div>
       <h1 class="dash-h1">Care Partner <strong>Intelligence Platform</strong></h1>
       <p class="dash-sub">Cold Ischemia Foundation &middot; 14 Active Tools &middot; 5 Publications &middot; Live Federal Monitors</p>
       <div class="status-row">
-        <span class="chip chip-gold">&#10003; Active Membership</span>
+        <span class="chip chip-gold">&#10003; 100% Free Access</span>
         <span class="chip chip-teal">14 Tools Unlocked</span>
         <span class="chip chip-green">Live Monitors Active</span>
       </div>
     </div>
-
-<script>
-// ── MEMBERSHIP GATE ──────────────────────────────────────────────
-// Page body hidden via CSS. Auth check fires immediately.
-// Non-members redirected to join.html. No content exposed.
-// ─────────────────────────────────────────────────────────────────
-function gate() {
-  if (window.$memberstackDom) {
-    window.$memberstackDom.getCurrentMember()
-      .then(function(res) {
-        var m = res && res.data;
-        if (!m) {
-          window.location.replace('join.html');
-        } else {
-          document.getElementById('loading').style.display = 'none';
-          document.getElementById('protected').style.display = 'block';
-          var name = (m.customFields && m.customFields['first-name'])
-                  || (m.auth && m.auth.email)
-                  || m.email || 'Member';
-          var el = document.getElementById('memberName');
-          if (el) el.textContent = name;
-        }
-      })
-
-</script>
 
 <!-- UNIVERSAL FOOTER -->
 <footer style="background:#030509;border-top:1px solid rgba(100,140,200,0.1);padding:44px 40px 24px;">
@@ -251,12 +206,12 @@ function gate() {
       <div>
         <span style="font-family:'IBM Plex Mono',monospace;font-size:0.42rem;letter-spacing:0.22em;text-transform:uppercase;color:#c8902a;margin-bottom:14px;display:block;">Platform</span>
         <div style="display:flex;flex-direction:column;gap:9px;">
-          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Command Center</a>
+          <a href="command-center.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Command Center</a><a href="projects.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Toolkit</a>
           <a href="situation-room.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Situation Room</a>
           <a href="research.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Research</a>
           <a href="accountability.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Atlas</a>
           <a href="congress-scorecard.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:rgba(216,207,196,0.4);text-decoration:none;">Scorecard</a>
-          <a href="join.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:#c8902a;text-decoration:none;">Join — $15/mo</a>
+          <a href="donate.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.4rem;letter-spacing:0.08em;color:#c8902a;text-decoration:none;">Donate</a>
         </div>
       </div>
       <div>
