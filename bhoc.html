@@ -67,12 +67,17 @@ p strong{color:var(--ink);}
 .note{border-left:2px solid var(--gold);padding-left:20px;margin:24px 0;}
 .note p{color:var(--ink60);font-size:0.95rem;margin:0;max-width:none;}
 
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;}
+.cta{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 22px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;transition:all .2s;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);color:var(--abyss);border-color:var(--gold);}
+.cta.gold:hover{background:var(--gold-l);}
+
 footer{background:var(--abyss);border-top:1px solid var(--b);padding:48px 40px 28px;text-align:center;}
 footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.05em;color:var(--ink20);}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="nav-logo">
     <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
@@ -111,7 +116,6 @@ footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:
 </section>
 
 <div class="divider"></div>
-
 <section>
   <div class="wrap">
     <div class="lbl">Why Patients Never Hear About This</div>
@@ -139,7 +143,6 @@ footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:
 </section>
 
 <div class="divider"></div>
-
 <section>
   <div class="wrap">
     <div class="lbl">Where CIF Fits</div>
@@ -149,6 +152,10 @@ footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:
       <p>This is early-stage, evolving technology. It is not yet standard of care, and no patient should expect it to change their current transplant timeline. The goal here is awareness and informed conversation &mdash; not premature promises.</p>
     </div>
     <p>If preservation technology is going to move faster from lab to standard practice, it will be because the people who actually have something at stake &mdash; patients, care partners, living donors &mdash; understood it well enough to ask their transplant centers about it. That's the conversation this page exists to start.</p>
+    <div class="cta-row">
+      <a href="bhoc-evidence.html" class="cta gold">Read the Full Evidence Hub &rarr;</a>
+      <a href="research.html" class="cta">More CIF Research</a>
+    </div>
   </div>
 </section>
 
