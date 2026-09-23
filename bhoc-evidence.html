@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Evidence Behind BHOC | Cold Ischemia Foundation</title>
-<meta name="description" content="A sourced, citation-linked research brief on hemoglobin-based oxygen carriers in kidney machine perfusion — history, mechanism, clinical evidence, safety record, and where BHOC stands today.">
+<meta name="description" content="A comprehensive, interactive, citation-linked research hub on hemoglobin-based oxygen carriers and perfusion technique in kidney transplantation — full history, mechanism, real-world graft survival data, and where BHOC stands today.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
 :root{
   --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
@@ -16,7 +15,7 @@
   --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,0.12);
   --danger:#c83050;--danger-d:rgba(200,48,80,0.1);
   --green:#50c878;--green-d:rgba(80,200,120,0.1);
-  --violet:#8050c8;
+  --violet:#8050c8;--violet-d:rgba(128,80,200,0.12);
   --mono:'IBM Plex Mono',monospace;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -40,59 +39,61 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);
 
 .hero{padding:120px 40px 48px;background:var(--abyss);border-bottom:1px solid var(--b);position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12 - 1px),rgba(100,140,200,0.03) calc(100%/12));}
-.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2;}
+.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:2;}
 .crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
 .crumb a{color:var(--pulse);text-decoration:none;}
 .crumb a:hover{text-decoration:underline;}
 .hero-eyebrow{font-family:var(--mono);font-size:0.46rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--pulse);margin-bottom:24px;display:flex;align-items:center;gap:14px;}
 .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--pulse);}
-.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,6.4vw,72px);letter-spacing:0.01em;line-height:1.0;color:var(--ink);margin-bottom:22px;}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,6.4vw,76px);letter-spacing:0.01em;line-height:1.0;color:var(--ink);margin-bottom:22px;}
 .hero-h1 span{color:var(--gold);}
-.hero-sub{font-family:'Crimson Pro',serif;font-size:1.14rem;line-height:1.85;color:var(--ink60);max-width:700px;}
+.hero-sub{font-family:'Crimson Pro',serif;font-size:1.14rem;line-height:1.85;color:var(--ink60);max-width:740px;}
 .hero-sub strong{color:var(--ink80);font-weight:600;}
 
-.stats{max-width:900px;margin:36px auto 0;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b);}
-@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr);}}
-.stats .s{background:var(--void);padding:18px 18px;}
-.stats .s .n{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold);letter-spacing:0.02em;}
-.stats .s .l{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.03em;color:var(--ink40);margin-top:4px;line-height:1.5;text-transform:none;}
+.stats{max-width:960px;margin:36px auto 0;padding:0 40px;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--b);}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr);}}
+.stats .s{background:var(--void);padding:16px 16px;}
+.stats .s .n{font-family:'Bebas Neue',sans-serif;font-size:1.55rem;color:var(--gold);letter-spacing:0.02em;}
+.stats .s .l{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.02em;color:var(--ink40);margin-top:4px;line-height:1.5;text-transform:none;}
 
-/* founder note */
-.founder{max-width:900px;margin:40px auto 0;padding:0 40px;}
-.founder-box{border-left:3px solid var(--gold);background:var(--gold-d);padding:26px 28px;}
+.founder{max-width:960px;margin:40px auto 0;padding:0 40px;}
+.founder-box{border-left:3px solid var(--gold);background:var(--gold-d);padding:28px 30px;}
 .founder-box .lbl{margin-bottom:10px;}
-.founder-box p{font-size:1rem;color:var(--ink80);}
+.founder-box p{font-size:1.02rem;color:var(--ink80);}
 .founder-box .sig{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);margin-top:6px;margin-bottom:0;}
+.founder-box .pull{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.2rem;color:var(--gold-l);line-height:1.5;max-width:none;margin:16px 0;}
 
-/* tabs */
 .tabbar{position:sticky;top:56px;z-index:150;background:rgba(3,5,9,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);margin-top:44px;}
-.tabbar-in{max-width:900px;margin:0 auto;padding:0 40px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;}
+.tabbar-in{max-width:960px;margin:0 auto;padding:0 40px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;}
 .tabbar-in::-webkit-scrollbar{display:none;}
 .tabbtn{flex:0 0 auto;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink40);background:none;border:none;border-bottom:2px solid transparent;padding:14px 12px;cursor:pointer;white-space:nowrap;}
 .tabbtn:hover{color:var(--ink80);}
 .tabbtn[aria-selected="true"]{color:var(--gold);border-bottom-color:var(--gold);}
 
-.wrap{max-width:900px;margin:0 auto;padding:0 40px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 40px;}
 section.panel{padding:52px 0;display:none;}
 section.panel.active{display:block;}
 .lbl{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
-h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,2.05rem);color:var(--ink);margin-bottom:18px;line-height:1.25;max-width:760px;}
+h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,2.05rem);color:var(--ink);margin-bottom:18px;line-height:1.25;max-width:800px;}
 h2 strong{font-weight:600;font-style:normal;color:var(--pulse);}
 h3{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:8px;}
 h4{font-family:'Fraunces',serif;font-size:0.98rem;font-weight:600;color:var(--ink);margin:2px 0 4px;}
-p{font-size:1rem;line-height:1.85;color:var(--ink80);margin-bottom:1.05em;max-width:720px;}
+p{font-size:1rem;line-height:1.85;color:var(--ink80);margin-bottom:1.05em;max-width:740px;}
 p strong{color:var(--ink);}
-.lede{font-size:1.05rem;color:var(--ink60);max-width:68ch;}
+.lede{font-size:1.05rem;color:var(--ink60);max-width:70ch;}
 .divider{height:1px;background:var(--b);margin:0;}
 
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--b);margin-top:26px;}
 @media(max-width:760px){.grid2{grid-template-columns:1fr;}}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--b);margin-top:26px;}
+@media(max-width:760px){.grid3{grid-template-columns:1fr;}}
 .gc{background:var(--void);padding:24px 24px;}
 .gc .gn{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;display:inline-block;padding:2px 9px;border-radius:2px;border:1px solid var(--b2);}
 .gn.pulse{color:var(--pulse);border-color:rgba(42,196,200,0.35);background:var(--pulse-d);}
 .gn.gold{color:var(--gold-l);border-color:rgba(200,144,42,0.35);background:var(--gold-d);}
 .gn.green{color:var(--green);border-color:rgba(80,200,120,0.35);background:var(--green-d);}
 .gn.danger{color:#e06a86;border-color:rgba(200,48,80,0.35);background:var(--danger-d);}
+.gn.violet{color:#b699e8;border-color:rgba(128,80,200,0.35);background:var(--violet-d);}
 .gc .meta{font-family:var(--mono);font-size:0.6rem;color:var(--ink40);margin-bottom:10px;}
 .gc p{font-size:0.92rem;color:var(--ink60);margin:0;max-width:none;}
 
@@ -100,11 +101,12 @@ p strong{color:var(--ink);}
 .callout p{font-family:'Fraunces',serif;font-style:italic;font-size:1.08rem;color:var(--ink);margin:0;line-height:1.6;max-width:none;}
 .callout.warn{border-left-color:var(--gold);background:var(--gold-d);}
 .callout.warn p{font-style:normal;font-family:'Crimson Pro',serif;font-size:1rem;color:var(--ink80);}
+.callout.good{border-left-color:var(--green);background:var(--green-d);}
+.callout.good p{font-style:normal;font-family:'Crimson Pro',serif;font-size:1rem;color:var(--ink80);}
 
 .note{border-left:2px solid var(--gold);padding-left:20px;margin:24px 0;}
 .note p{color:var(--ink60);font-size:0.93rem;margin:0;max-width:none;}
 
-/* mechanism steps */
 .mech{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--b);margin:26px 0;}
 @media(max-width:760px){.mech{grid-template-columns:1fr;}}
 .mech .step{background:var(--void);padding:20px 18px;}
@@ -112,25 +114,31 @@ p strong{color:var(--ink);}
 .mech .step h4{font-size:0.95rem;margin:8px 0 4px;}
 .mech .step p{font-size:0.85rem;color:var(--ink60);margin:0;max-width:none;}
 
-/* timeline */
+/* filterbar */
+.filterbar{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 6px;}
+.fbtn{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.08em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--b2);background:none;color:var(--ink40);cursor:pointer;border-radius:2px;transition:all .15s;}
+.fbtn:hover{color:var(--ink80);border-color:var(--ink40);}
+.fbtn[aria-pressed="true"]{color:var(--abyss);background:var(--gold);border-color:var(--gold);}
+
 .timeline{position:relative;margin-top:30px;padding-left:26px;border-left:1px solid var(--b2);}
 .tl-item{position:relative;padding-bottom:30px;}
 .tl-item:last-child{padding-bottom:2px;}
 .tl-item::before{content:'';position:absolute;left:-31px;top:4px;width:9px;height:9px;border-radius:50%;background:var(--abyss);border:2px solid var(--pulse);}
 .tl-item.milestone::before{background:var(--gold);border-color:var(--gold);}
 .tl-item.halt::before{background:var(--danger);border-color:var(--danger);}
+.tl-item.device::before{background:var(--violet);border-color:var(--violet);}
 .tl-year{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.05em;color:var(--pulse);}
 .tl-item h4{font-size:1rem;margin:3px 0 5px;}
-.tl-item p{color:var(--ink60);font-size:0.92rem;max-width:64ch;margin-bottom:0;}
+.tl-item p{color:var(--ink60);font-size:0.92rem;max-width:66ch;margin-bottom:0;}
+.tl-tag{display:inline-block;font-family:var(--mono);font-size:0.48rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink40);margin-left:8px;}
 
-/* table */
 .tbl-wrap{overflow-x:auto;border:1px solid var(--b);margin:24px 0;}
-table{border-collapse:collapse;width:100%;min-width:620px;}
+table{border-collapse:collapse;width:100%;min-width:640px;}
 th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--b);font-size:0.86rem;vertical-align:top;color:var(--ink80);}
 th{font-family:var(--mono);font-size:0.56rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink40);background:var(--void);}
 tr:last-child td{border-bottom:none;}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;}
 
-/* accordion */
 .acc-item{border-bottom:1px solid var(--b);}
 .acc-item:first-child{border-top:1px solid var(--b);}
 .acc-btn{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:16px 2px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'Crimson Pro',serif;font-weight:600;color:var(--ink);font-size:1rem;}
@@ -140,7 +148,6 @@ tr:last-child td{border-bottom:none;}
 .acc-item.open .acc-body{max-height:400px;}
 .acc-body p{padding:0 2px 18px;color:var(--ink60);font-size:0.92rem;max-width:66ch;}
 
-/* simulator */
 .sim{background:var(--void);border:1px solid var(--b);padding:24px 24px 22px;margin:26px 0;}
 .sim h4{font-size:1rem;}
 .sim .sub{font-size:0.85rem;color:var(--ink40);margin-bottom:18px;font-family:var(--mono);letter-spacing:0.01em;}
@@ -155,11 +162,60 @@ tr:last-child td{border-bottom:none;}
 .sim-out .cell .v{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--gold);margin-top:3px;letter-spacing:0.02em;}
 .sim-note{font-family:var(--mono);font-size:0.6rem;color:var(--ink40);margin-top:14px;line-height:1.6;}
 
-/* refs */
+/* carrier compare tool */
+.compare{background:var(--void);border:1px solid var(--b);padding:24px 24px 22px;margin:26px 0;}
+.compare h4{font-size:1rem;margin-bottom:4px;}
+.compare .sub{font-size:0.85rem;color:var(--ink40);margin-bottom:16px;font-family:var(--mono);}
+.compare-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.chip{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.05em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--b2);border-radius:100px;background:none;color:var(--ink60);cursor:pointer;}
+.chip[aria-pressed="true"]{background:var(--pulse-d);border-color:var(--pulse);color:var(--pulse);}
+.metric-row{margin-bottom:16px;}
+.metric-row .mlabel{font-family:var(--mono);font-size:0.58rem;color:var(--ink40);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;display:flex;justify-content:space-between;}
+.bars{display:flex;flex-direction:column;gap:6px;}
+.bar-row{display:grid;grid-template-columns:90px 1fr 56px;align-items:center;gap:10px;}
+.bar-row .bname{font-family:var(--mono);font-size:0.58rem;color:var(--ink60);}
+.bar-track{height:10px;background:var(--surf);border-radius:2px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:2px;transition:width .3s ease;}
+.bar-val{font-family:var(--mono);font-size:0.6rem;color:var(--ink80);text-align:right;font-variant-numeric:tabular-nums;}
+
+/* survival chart */
+.survival{background:var(--void);border:1px solid var(--b);padding:24px 24px 20px;margin:26px 0;}
+.survival h4{font-size:1rem;margin-bottom:2px;}
+.survival .sub{font-size:0.85rem;color:var(--ink40);margin-bottom:20px;font-family:var(--mono);}
+.svbars{display:flex;gap:28px;align-items:flex-end;height:180px;padding:0 6px;border-bottom:1px solid var(--b2);}
+.svgroup{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;height:100%;justify-content:flex-end;}
+.svpair{display:flex;gap:6px;align-items:flex-end;height:100%;}
+.svcol{width:26px;border-radius:2px 2px 0 0;position:relative;}
+.svcol.a{background:var(--gold);}
+.svcol.b{background:var(--ink20);}
+.svcol .svlabel{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:0.5rem;color:var(--ink80);white-space:nowrap;}
+.svgroup .svname{font-family:var(--mono);font-size:0.55rem;color:var(--ink40);text-transform:uppercase;letter-spacing:0.04em;margin-top:4px;}
+.svlegend{display:flex;gap:18px;margin-top:16px;font-family:var(--mono);font-size:0.55rem;color:var(--ink60);}
+.svlegend span{display:inline-flex;align-items:center;gap:6px;}
+.svlegend i{width:9px;height:9px;border-radius:2px;display:inline-block;}
+
+/* dissociation curve */
+.curve-wrap{background:var(--void);border:1px solid var(--b);padding:24px;margin:26px 0;}
+.curve-wrap h4{font-size:1rem;margin-bottom:2px;}
+.curve-wrap .sub{font-size:0.85rem;color:var(--ink40);margin-bottom:16px;font-family:var(--mono);}
+.curve-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-family:var(--mono);font-size:0.55rem;color:var(--ink60);}
+.curve-legend span{display:inline-flex;align-items:center;gap:6px;}
+.curve-legend i{width:14px;height:3px;display:inline-block;border-radius:2px;}
+canvas{max-width:100%;}
+
 .ref{padding:14px 0;border-bottom:1px solid var(--b);font-size:0.9rem;color:var(--ink80);}
 .ref:last-child{border-bottom:none;}
 .ref .tag{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--pulse);}
 .ref a{color:var(--gold-l);word-break:break-word;font-family:var(--mono);font-size:0.78rem;}
+
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--b);margin:26px 0;}
+@media(max-width:760px){.roadmap{grid-template-columns:1fr;}}
+.roadmap .rstep{background:var(--void);padding:20px 18px;position:relative;}
+.roadmap .rstep .rn{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--b2);position:absolute;top:14px;right:16px;}
+.roadmap .rstep h4{font-size:0.95rem;margin:0 0 6px;max-width:80%;}
+.roadmap .rstep p{font-size:0.85rem;color:var(--ink60);margin:0;max-width:none;}
+.rstatus{display:inline-block;font-family:var(--mono);font-size:0.46rem;letter-spacing:0.06em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-bottom:8px;}
+.rstatus.pending{background:var(--danger-d);color:#e06a86;}
 
 .pageend{padding:50px 0 10px;}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
@@ -194,24 +250,27 @@ footer p{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.05em;color:v
 <header class="hero">
   <div class="hero-inner">
     <div class="crumb"><a href="bhoc.html">BHOC</a> &nbsp;/&nbsp; Evidence Hub</div>
-    <div class="hero-eyebrow">Sourced Research Brief</div>
+    <div class="hero-eyebrow">Sourced Research Brief &mdash; Full Edition</div>
     <h1 class="hero-h1">The evidence behind <span>the clock.</span></h1>
-    <p class="hero-sub">Everything published, peer-reviewed, and publicly documented about hemoglobin-based oxygen carriers in kidney machine perfusion — where the science came from, how it works inside a perfused organ, what the human data actually shows, and exactly where BHOC's own record stands today. No claim on this page goes further than its citation.</p>
+    <p class="hero-sub">The complete, interactive record on oxygen carriers and perfusion technique in kidney transplantation &mdash; a century of blood-substitute history, the cell biology of ischemia-reperfusion injury, every major published trial, the strongest long-term graft-survival data that exists, and exactly where BHOC's own record stands inside all of it. No claim on this page goes further than its citation.</p>
   </div>
   <div class="stats">
     <div class="s"><div class="n">127 yrs</div><div class="l">since the first stroma-free hemoglobin infusion, 1898</div></div>
+    <div class="s"><div class="n">672</div><div class="l">recipients in the landmark 10-year machine-perfusion RCT (Moers/NEJM)</div></div>
+    <div class="s"><div class="n">27%</div><div class="l">lower 10-yr graft failure risk with machine perfusion vs. cold storage</div></div>
+    <div class="s"><div class="n">58</div><div class="l">kidney recipients in the largest published oxygen-carrier organ study</div></div>
     <div class="s"><div class="n">0</div><div class="l">oxygen carriers with full FDA approval for IV use in humans</div></div>
-    <div class="s"><div class="n">58</div><div class="l">kidney recipients in the largest published organ-preservation study of this molecule class</div></div>
-    <div class="s"><div class="n">6.9% / 26.1%</div><div class="l">dialysis-requiring DGF, carrier vs. control kidneys</div></div>
   </div>
 </header>
 
 <div class="founder">
   <div class="founder-box">
     <div class="lbl" style="margin-bottom:8px;">Why I put CIF behind this</div>
-    <p>I didn't come to BHOC as an investor or a scientist. I came to it the way I come to everything in this work — as someone who has spent nearly two decades on the losing end of the clock every donor organ is racing against. Cold ischemia time isn't an abstraction to me; it's the number that, more than almost anything else in the transplant process, quietly decides how long a graft is going to last. For years, the industry's answer to it has been a cooler and a stopwatch.</p>
-    <p>What makes BHOC's lineage matter to me isn't a marketing claim — it's that the class of molecule it descends from has real, published, peer-reviewed evidence of doing something ice alone cannot: actively fighting ischemia-reperfusion injury during the exact window that predicts delayed graft function, and delayed graft function is one of the strongest known predictors of how long a transplanted kidney survives. That's innovation aimed at the right target — not faster logistics, but the biology of longevity itself.</p>
-    <p>I'm not going to overstate where BHOC specifically stands. You'll see the honest gap in its own evidence laid out plainly below, because a foundation that hides its own gaps has no business asking federal agencies to close theirs. But I find the underlying science compelling enough, and the stakes for patients like me high enough, that closing that gap is worth this Foundation's voice. Better perfusion technique isn't a footnote in transplant medicine — it may be the most underfunded lever we have for graft survival.</p>
+    <p>I didn't come to BHOC as an investor or a scientist. I came to it the way I come to everything in this work &mdash; as someone who has spent nearly two decades on the losing end of the clock every donor organ is racing against. Cold ischemia time isn't an abstraction to me; it's the number that, more than almost anything else in the transplant process, quietly decides how long a graft is going to last. For years, the industry's answer to it has been a cooler and a stopwatch.</p>
+    <p class="pull">Perfusion technique is not a footnote in transplant medicine. It is one of the only levers we have ever proven, in a 672-patient randomized trial with ten years of follow-up, to change how long a kidney actually survives.</p>
+    <p>That is the fact that convinced me this deserves the Foundation's full voice, not a passing mention. We are not talking about a theoretical mechanism here &mdash; we are talking about a documented 27% reduction in ten-year graft failure risk, simply from changing how an organ is handled between donor and recipient. Oxygen carriers like the class BHOC belongs to are the next iteration of that same lever: not a replacement for good perfusion technique, but a way to make it dramatically more powerful, by giving the perfused organ something closer to what a beating heart would have given it.</p>
+    <p>What makes BHOC's lineage matter to me isn't a marketing claim &mdash; it's that the class of molecule it descends from has real, published, peer-reviewed evidence of doing something ice alone cannot: actively fighting ischemia-reperfusion injury during the exact window that predicts delayed graft function, and delayed graft function is one of the strongest known predictors of how long a transplanted kidney survives.</p>
+    <p>I'm not going to overstate where BHOC specifically stands. You'll see the honest gap in its own evidence laid out plainly below, because a foundation that hides its own gaps has no business asking federal agencies to close theirs. But I find the underlying science compelling enough, and the stakes for patients like me high enough, that closing that gap is worth this Foundation's voice, its research hours, and its outreach to the people who decide what reaches a transplant center. Graft longevity is not a soft outcome. It's the whole point.</p>
     <p class="sig">&mdash; Jeff Parke, Founder, Cold Ischemia Foundation</p>
   </div>
 </div>
@@ -219,9 +278,11 @@ footer p{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.05em;color:v
 <div class="tabbar">
   <div class="tabbar-in" id="tabbar" role="tablist">
     <button class="tabbtn" data-panel="overview" role="tab">Overview</button>
+    <button class="tabbtn" data-panel="longevity" role="tab">Graft Longevity</button>
     <button class="tabbtn" data-panel="problem" role="tab">The Problem</button>
-    <button class="tabbtn" data-panel="history" role="tab">History</button>
+    <button class="tabbtn" data-panel="history" role="tab">Full History</button>
     <button class="tabbtn" data-panel="mechanism" role="tab">Mechanism</button>
+    <button class="tabbtn" data-panel="compare" role="tab">Compare Carriers</button>
     <button class="tabbtn" data-panel="evidence" role="tab">Clinical Evidence</button>
     <button class="tabbtn" data-panel="safety" role="tab">Safety Record</button>
     <button class="tabbtn" data-panel="bhoc" role="tab">BHOC Today</button>
@@ -231,372 +292,499 @@ footer p{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.05em;color:v
 </div>
 
 <div class="wrap">
-
-<!-- OVERVIEW -->
 <section class="panel" id="panel-overview">
-  <div class="lbl">Executive Summary</div>
-  <h2>What this page is, <strong>and isn't.</strong></h2>
-  <p class="lede">A plain-language, citation-backed briefing on the science of oxygen-carrying perfusion additives in kidney transplantation — for advocates, patients, and caregivers who want the real evidence, not the pitch deck.</p>
-
-  <div class="grid2">
-    <div class="gc">
-      <span class="gn pulse">Well established</span>
-      <h3 style="margin-top:8px;">Peer-reviewed, published, reproducible</h3>
-      <p>Adding an oxygen carrier — red cells, perfluorocarbon particles, or a hemoglobin-based molecule like HBOC-201 or M101 — to a kidney's perfusion or preservation solution measurably reduces markers of ischemic injury (lactate, pro-inflammatory cytokines, adhesion molecules) versus no carrier at all, in animal models and a small number of human studies. The largest human cohort (M101, n=58) showed fewer recipients needing repeat dialysis and faster return to normal kidney function.</p>
-    </div>
-    <div class="gc">
-      <span class="gn gold">Still open</span>
-      <h3 style="margin-top:8px;">Investigational, early-stage, or unproven</h3>
-      <p>No hemoglobin-based oxygen carrier has full U.S. regulatory approval for any human IV use, and none is approved specifically as a kidney-perfusion adjunct. Long-term graft survival data (5-year, 10-year) for carrier-perfused kidneys doesn't yet exist in the literature. BHOC's own publicly stated applications are in trauma and surgical blood loss — see <strong>BHOC Today</strong> for the honest state of that record.</p>
-    </div>
+  <div class="lbl">01 &mdash; Overview</div>
+  <h2>An organ preservation problem that ice alone was never going to solve, and the molecule class trying to solve it.</h2>
+  <p class="lede">Every kidney that leaves a donor enters a race against a clock that has no snooze button. From the moment blood flow stops, the organ is running on stored oxygen and nothing else. Static cold storage &mdash; a cooler, a preservation solution, ice &mdash; slows that clock. It does not stop it, and it does nothing to give the tissue what it actually needs during the wait: oxygen. That is the gap oxygen carriers are built to close, and it is the gap this page exists to document.</p>
+  <div class="grid3">
+    <div class="gc"><span class="gn pulse">The clock</span><h3>Cold ischemia time</h3><p>The interval an organ spends without blood flow, cooled but not perfused with oxygen, between recovery and transplant. Longer CIT is independently associated with worse graft outcomes across decades of registry data.</p></div>
+    <div class="gc"><span class="gn gold">The lever</span><h3>Perfusion technique</h3><p>How the organ is handled during that interval &mdash; static cold storage vs. machine perfusion, with or without oxygen. The single most-proven intervention for improving long-term graft survival is a change in technique, not a drug.</p></div>
+    <div class="gc"><span class="gn violet">The molecule</span><h3>Oxygen carriers (HBOCs)</h3><p>Hemoglobin-based compounds &mdash; from bovine, marine, or synthetic sources &mdash; engineered to carry and release oxygen outside the body, without red blood cells. Their organ-preservation use is a newer, narrower application of decades-old blood-substitute science.</p></div>
   </div>
-
-  <div class="callout">
-    <p>Every minute a donor kidney sits without its native blood supply, its cells lose oxygen and begin a cascade of injury that peaks not during storage, but at the moment blood flow is restored. An oxygen carrier's entire premise is interrupting that cascade before reperfusion ever happens.</p>
-  </div>
-
-  <div class="mech">
-    <div class="step"><div class="num">01 — Recovery</div><h4>Organ procurement</h4><p>Kidney is cross-clamped and flushed with cold preservation solution.</p></div>
-    <div class="step"><div class="num">02 — Transport</div><h4>Cold ischemia</h4><p>Static cold storage or hypothermic machine perfusion, typically 4–15+ hours.</p></div>
-    <div class="step"><div class="num">03 — Bridge</div><h4>Carrier added</h4><p>An HBOC, PFC particle, or red cells supplement the perfusate's O&#8322;-carrying capacity.</p></div>
-    <div class="step"><div class="num">04 — Reperfusion</div><h4>Transplantation</h4><p>Native blood flow resumes — the highest-risk moment for reperfusion injury.</p></div>
-  </div>
+  <div class="callout"><p>The strongest published evidence in this entire field does not come from an oxygen carrier at all &mdash; it comes from a 672-patient randomized trial of machine perfusion technique, with results that held up for ten years. Oxygen carriers are the next layer on top of that proven foundation, not a replacement for it. This page treats that distinction as load-bearing.</p></div>
+  <p>What follows is organized to let you check every claim against its source: a dedicated tab on graft longevity and why perfusion technique moves that number more than almost anything else in transplant medicine; the clinical problem oxygen carriers target; the full history of the field going back to 1898; the cell biology of how these molecules actually work; a side-by-side comparison of the carriers that have real published data; the clinical evidence itself, trial by trial; the safety controversy that has kept this class out of routine IV use for twenty years; an honest accounting of where BHOC specifically stands inside all of it; a glossary; and a full reference list.</p>
 </section>
 
-<!-- PROBLEM -->
+<section class="panel" id="panel-longevity">
+  <div class="lbl">02 &mdash; Graft Longevity</div>
+  <h2>Why this page exists: <strong>longevity is the outcome that matters most</strong>, and it is the most perfusion-sensitive outcome we have.</h2>
+  <p class="lede">A transplant that fails in year eight is not a success story with an asterisk &mdash; it is a second illness, a second waitlist, and for many patients a second organ that may never come. Graft longevity, not just whether a transplant "works" on day one, is the outcome the Foundation cares about, and it is also the outcome for which perfusion technique has the strongest documented long-term effect of anything short of donor-recipient matching itself.</p>
+
+  <div class="survival">
+    <h4>10-year graft survival: machine perfusion vs. static cold storage</h4>
+    <div class="sub">Moers et al., New England Journal of Medicine, original trial 2009 (n=672) &middot; 10-year follow-up published Nov 5, 2025</div>
+    <div class="svbars">
+      <div class="svgroup">
+        <div class="svpair">
+          <div class="svcol a" style="height:69.6%;"><span class="svlabel">69.6%</span></div>
+          <div class="svcol b" style="height:60.1%;"><span class="svlabel">60.1%</span></div>
+        </div>
+        <div class="svname">Deceased, extended-criteria</div>
+      </div>
+      <div class="svgroup">
+        <div class="svpair">
+          <div class="svcol a" style="height:81.4%;"><span class="svlabel">81.4%</span></div>
+          <div class="svcol b" style="height:75.61%;"><span class="svlabel">75.6%</span></div>
+        </div>
+        <div class="svname">Donation after circulatory death</div>
+      </div>
+    </div>
+    <div class="svlegend">
+      <span><i style="background:var(--gold);"></i>Hypothermic machine perfusion</span>
+      <span><i style="background:var(--ink20);"></i>Static cold storage</span>
+    </div>
+    <div class="sim-note">Ten-year graft survival, both kidneys from the same donor randomized to opposite arms. Machine-perfused kidneys carried a 27% lower overall risk of graft failure across the full ten-year window (NEJM, Nov 2025 follow-up to Moers NEJM 2009;360:7&ndash;19).</div>
+  </div>
+
+  <p>That trial is the single most important data point on this entire page, and it did not involve an oxygen carrier at all &mdash; it compared hypothermic machine perfusion (continuous, gentle pumping of cold preservation solution through the organ's vasculature) against simply packing the kidney in ice. The fact that <em>technique alone</em> produced a durable, decade-long survival advantage is the strongest evidence in transplant medicine that how an organ is perfused is not a logistical detail &mdash; it is a clinical intervention in its own right.</p>
+  <p>Delayed graft function (DGF) &mdash; when a transplanted kidney doesn't work immediately and the recipient needs dialysis in the first week &mdash; is the mechanistic link between perfusion quality and long-term survival. DGF is not just an inconvenient early setback: registry studies consistently associate it with higher rates of acute rejection, shorter graft half-life, and reduced long-term function, even in kidneys that eventually "catch up" on creatinine clearance. It is the earliest visible signal of ischemia-reperfusion injury, and it is the outcome most oxygen-carrier organ studies report because it is measurable within days, not years.</p>
+  <div class="callout warn"><p><strong>Why oxygen carriers enter this picture:</strong> machine perfusion moves cold solution through the organ, but standard perfusion solutions carry almost no oxygen. Adding an oxygen carrier to the perfusate is the logical next step on the same lever that already produced the 27% figure above &mdash; not a separate idea, but an intensification of the one intervention already proven to change ten-year outcomes.</p></div>
+</section>
+
 <section class="panel" id="panel-problem">
-  <div class="lbl">Why Oxygen Delivery Is the Bottleneck</div>
-  <h2>Cold ischemia &amp; <strong>ischemia-reperfusion injury.</strong></h2>
-  <p class="lede">Two related but distinct injuries threaten every transplanted kidney before it meets its new blood supply — and they set the ceiling on how well that graft will function, for how long.</p>
-
+  <div class="lbl">03 &mdash; The Problem</div>
+  <h2>Ischemia-reperfusion injury: the damage happens <strong>twice</strong>, and the second time is worse.</h2>
+  <p class="lede">Most people assume the danger to a donor kidney is the time it spends without blood flow. That's only half of it. The more damaging event happens the moment blood flow is restored.</p>
+  <div class="mech">
+    <div class="step"><div class="num">Phase 1</div><h4>Warm &amp; cold ischemia</h4><p>Blood flow stops. Cells switch to anaerobic metabolism, ATP depletes, and metabolic waste (lactate, hydrogen ions) accumulates. Cold storage slows this but does not stop it.</p></div>
+    <div class="step"><div class="num">Phase 2</div><h4>Cellular stress</h4><p>Sodium-potassium pumps fail without ATP. Cells swell. Mitochondria begin to destabilize. The longer this phase runs, the more primed the tissue is for the next phase.</p></div>
+    <div class="step"><div class="num">Phase 3</div><h4>Reperfusion</h4><p>Oxygen returns abruptly. Damaged mitochondria overproduce reactive oxygen species (ROS) in a burst that damages cell membranes, proteins, and DNA &mdash; this is the paradox: oxygen, the thing the tissue needed, is also what triggers the worst of the injury.</p></div>
+    <div class="step"><div class="num">Phase 4</div><h4>Inflammatory cascade</h4><p>Damaged cells release signals (including IL-6) that recruit immune cells, amplify inflammation, and can trigger delayed graft function and, over time, chronic allograft injury.</p></div>
+  </div>
+  <p>This is why the field has converged on a counterintuitive idea: the safest way to protect an organ from reperfusion injury is not to withhold oxygen for as long as possible, but to reintroduce it gradually and in a controlled way <em>before</em> transplant &mdash; letting the tissue's own antioxidant defenses come back online under low, steady oxygen tension rather than being hit with a sudden flood at the moment of vascular reconnection in the recipient. That is the clinical logic behind hypothermic oxygenated perfusion (HOPE) and behind adding an oxygen carrier to a machine-perfusion circuit: controlled, gradual reintroduction rather than an abrupt one.</p>
   <div class="grid2">
-    <div class="gc">
-      <span class="gn pulse">The clock</span>
-      <h3 style="margin-top:8px;">Cold ischemia time (CIT)</h3>
-      <p>Standard cold storage slows metabolism, not stops it — cells still consume dissolved oxygen and produce waste. Hypoxia depletes ATP, disables the sodium-potassium pump, and lets calcium and sodium flood into cells. In the largest published organ-preservation study of this class, mean CIT was <strong>740 minutes</strong> — over 12 hours.</p>
-    </div>
-    <div class="gc">
-      <span class="gn danger">The paradox</span>
-      <h3 style="margin-top:8px;">Ischemia-reperfusion injury (IRI)</h3>
-      <p>The worst damage often happens in the seconds after blood flow is restored, not during storage. Reintroduced oxygen reacts with accumulated metabolic byproducts to generate reactive oxygen species, triggering an inflammatory cascade (IL-6, IL-8, TNF-&alpha;) linked to acute rejection risk.</p>
-    </div>
-  </div>
-
-  <div class="callout warn">
-    <p><strong>Why this predicts long-term graft survival, not just day-one function:</strong> Delayed graft function (DGF) — the clinical marker of severe IRI — is consistently linked in registry studies to higher rates of acute rejection and reduced graft half-life. Anything that measurably reduces IRI markers during the ischemic window is, mechanistically, working on the same pathway that determines whether a kidney is still functioning in five or ten years — even though, as the Evidence tab makes clear, nobody has yet published that long-term follow-up specifically for carrier-perfused kidneys.</p>
-  </div>
-
-  <div class="lbl" style="margin-top:44px;">Try It</div>
-  <h3 style="margin-bottom:4px;">How ischemic burden scales</h3>
-  <div class="sim">
-    <h4>Illustrative model — not a clinical predictor</h4>
-    <div class="sub">Built from the general dose–response relationships in the cited literature. Educational illustration only.</div>
-    <div class="sim-row">
-      <label for="cit">Cold ischemia time</label>
-      <input type="range" id="cit" min="120" max="1440" step="30" value="740">
-      <span class="val" id="cit-val">740 min</span>
-    </div>
-    <div class="sim-row">
-      <label for="oc">Oxygen carrier used</label>
-      <input type="range" id="oc" min="0" max="2" step="1" value="0">
-      <span class="val" id="oc-val">None</span>
-    </div>
-    <div class="sim-out">
-      <div class="cell"><div class="l">Relative IRI burden</div><div class="v" id="out-iri">—</div></div>
-      <div class="cell"><div class="l">Est. DGF likelihood</div><div class="v" id="out-dgf">—</div></div>
-      <div class="cell"><div class="l">Days to normal Cr*</div><div class="v" id="out-cr">—</div></div>
-    </div>
-    <div class="sim-note">*Anchored to the two reported M101 data points (7 vs. 13 days) and interpolated — illustrative only, not a per-patient projection.</div>
+    <div class="gc"><span class="gn danger">Measured marker</span><h3>Interleukin-6 (IL-6)</h3><p>An inflammatory cytokine used across the preclinical literature as a proxy for reperfusion injury severity. Lower post-perfusion IL-6 in oxygen-carrier-treated organs (vs. standard solution) is one of the most consistently reported findings in preclinical kidney and liver perfusion studies.</p></div>
+    <div class="gc"><span class="gn danger">Measured marker</span><h3>Lactate</h3><p>A byproduct of anaerobic metabolism. Elevated perfusate lactate signals ongoing cellular stress from inadequate oxygen delivery; oxygen-carrier-supplemented perfusion has been associated with faster lactate clearance in porcine kidney models.</p></div>
   </div>
 </section>
-
-<!-- HISTORY -->
 <section class="panel" id="panel-history">
-  <div class="lbl">127 Years of Trying to Bottle Oxygen Delivery</div>
-  <h2>A history of <strong>hemoglobin-based oxygen carriers.</strong></h2>
-  <p class="lede">The idea is over a century old. The record includes real breakthroughs, a federally scrutinized safety controversy, and a field that only recently pivoted from "blood substitute for trauma" toward "organ preservation adjunct."</p>
-
-  <div class="timeline">
-    <div class="tl-item"><div class="tl-year">1898</div><h4>First recorded attempt</h4><p>Von Stark administers subcutaneous hemoglobin to anemic patients; the formulation cannot be stabilized — the core problem the field will spend a century solving is already visible.</p></div>
-    <div class="tl-item"><div class="tl-year">1916</div><h4>Sellards &amp; Minot</h4><p>33 subjects receive infusions of stroma-free hemoglobin; most tolerate it acutely, but all develop hemoglobinuria — an early signal of kidney-specific toxicity.</p></div>
-    <div class="tl-item halt"><div class="tl-year">1937</div><h4>The Amberson case</h4><p>A postpartum hemorrhage patient given stroma-free hemoglobin when cross-matched blood is unavailable develops oliguria and dies of renal failure.</p></div>
-    <div class="tl-item"><div class="tl-year">1962</div><h4>Structural breakthrough</h4><p>Perutz and Kendrew's Nobel Prize-winning 3D hemoglobin structure work makes rational molecular modification possible for the first time.</p></div>
-    <div class="tl-item milestone"><div class="tl-year">1990s</div><h4>Generation 2 — cross-linked hemoglobin</h4><p>Baxter's HemAssist (DCLHb) chemically cross-links the hemoglobin tetramer, extending circulatory half-life from ~2 hours to 6–12 hours.</p></div>
-    <div class="tl-item halt"><div class="tl-year">1999</div><h4>HemAssist trial halted</h4><p>A JAMA trauma trial (n=112) reports 28-day mortality of 46% in the DCLHb group vs. 17% on saline (P=0.003). Baxter discontinues the program.</p></div>
-    <div class="tl-item milestone"><div class="tl-year">2001</div><h4>Hemopure (HBOC-201) approved — South Africa</h4><p>Biopure's bovine-derived polymerized hemoglobin becomes the first HBOC approved anywhere for routine human use, followed by Russia. It has never received full FDA approval; U.S. access remains limited to expanded-access and compassionate-use programs.</p></div>
-    <div class="tl-item"><div class="tl-year">1998</div><h4>Oxyglobin approved — veterinary use</h4><p>Biopure's companion HBOC is approved for dogs — to date the field's clearest regulatory success, and still limited to animals.</p></div>
-    <div class="tl-item halt"><div class="tl-year">2008</div><h4>The Natanson meta-analysis</h4><p>A JAMA systematic review of 16 trials across five HBOC products finds a pooled, statistically significant increase in myocardial infarction and death. The finding still shapes FDA posture toward the entire drug class today.</p></div>
-    <div class="tl-item halt"><div class="tl-year">2009</div><h4>PolyHeme ends the program</h4><p>Northfield Laboratories' phase III trial (n=714) shows 30-day mortality of 13% vs. 10% for controls, with higher serious-adverse-event rates. The product is discontinued.</p></div>
-    <div class="tl-item"><div class="tl-year">2013–14</div><h4>MP4/Hemospan halted</h4><p>A non-significant mortality trend (57% vs. 50%, P=0.18) in a phase II trauma trial; development stops for funding and regulatory reasons before the question is ever answered definitively.</p></div>
-    <div class="tl-item milestone"><div class="tl-year">2019</div><h4>The field pivots: organ preservation</h4><p>Published research begins testing HBOC-201 specifically as a red-cell substitute in ex vivo kidney machine perfusion — a sealed, monitored circuit rather than open circulation.</p></div>
-    <div class="tl-item milestone"><div class="tl-year">2020</div><h4>M101 first-in-human organ study</h4><p>Le Meur et al. publish the first human safety and proof-of-principle data for M101 (marine lugworm hemoglobin, HEMO2life) in kidney preservation — the largest published human HBOC-in-transplant cohort to date (n=58).</p></div>
-    <div class="tl-item"><div class="tl-year">2022–24</div><h4>Comparative &amp; mechanistic studies</h4><p>Multicenter cohort comparisons and ex vivo immunogenicity studies build the mechanistic case for why oxygen carriers reduce inflammatory injury markers during perfusion.</p></div>
-    <div class="tl-item"><div class="tl-year">Present</div><h4>Next-generation candidates</h4><p>Encapsulated, recombinant, and hybrid-design HBOCs enter early trials — alongside commercially positioned successor molecules such as BHOC, which trace their lineage to Hemopure. See <strong>BHOC Today</strong> below.</p></div>
+  <div class="lbl">04 &mdash; Full History</div>
+  <h2>A field that is <strong>127 years old</strong> &mdash; and has failed publicly, more than once, before getting here.</h2>
+  <p class="lede">Understanding where BHOC sits requires understanding the whole arc: real early promise, a genuine and well-documented safety crisis in systemic IV use, and a slower, more careful second act focused on organ preservation rather than blood replacement. Filter the timeline below by category.</p>
+  <div class="filterbar" id="tlfilter">
+    <button class="fbtn" data-f="all" aria-pressed="true">All</button>
+    <button class="fbtn" data-f="milestone" aria-pressed="false">Milestones</button>
+    <button class="fbtn" data-f="halt" aria-pressed="false">Setbacks</button>
+    <button class="fbtn" data-f="device" aria-pressed="false">Perfusion Devices</button>
+  </div>
+  <div class="timeline" id="timeline">
+    <div class="tl-item milestone" data-cat="milestone"><div class="tl-year">1898</div><h4>First stroma-free hemoglobin infusions</h4><p>Early experiments infuse hemoglobin stripped of red-cell membrane (stroma) into animals, establishing that free hemoglobin outside a red cell can be prepared and administered &mdash; and that raw stroma-free hemoglobin causes kidney toxicity, a lesson the field would spend a century engineering around.</p></div>
+    <div class="tl-item" data-cat="milestone"><div class="tl-year">1960s&ndash;70s</div><h4>Chemical cross-linking solves the toxicity problem</h4><p>Researchers learn to chemically cross-link and polymerize hemoglobin molecules, preventing them from breaking into toxic subunits in the kidney and extending circulating half-life &mdash; the core engineering approach nearly every modern HBOC still uses.</p></div>
+    <div class="tl-item device" data-cat="device"><div class="tl-year">1967</div><h4>Hypothermic machine perfusion is introduced</h4><p>Continuous cold pumping of preservation solution through a donor organ's vasculature is developed as an alternative to simple cold storage, laying the technical foundation that today's oxygen-carrier perfusion research builds directly on top of.</p></div>
+    <div class="tl-item" data-cat="milestone"><div class="tl-year">1980s&ndash;90s</div><h4>The "blood substitute" era begins in earnest</h4><p>HIV-era fears about the blood supply and battlefield trauma-care needs drive major pharmaceutical investment into hemoglobin-based blood substitutes intended for wide systemic IV use &mdash; trauma, surgery, battlefield resuscitation &mdash; not organ preservation. Baxter, Biopure, Northfield Laboratories and others enter the field.</p></div>
+    <div class="tl-item halt" data-cat="halt"><div class="tl-year">1998</div><h4>HemAssist (DCLHb) trauma trial halted</h4><p>A Baxter-sponsored trauma trial is stopped after HemAssist recipients showed a 46% 28-day mortality rate vs. 17% in the control arm (P=.003) &mdash; a signal serious enough to end the program and become one of the field's most cited cautionary data points.</p></div>
+    <div class="tl-item" data-cat="milestone"><div class="tl-year">2001</div><h4>Hemopure (HBOC-201) approved in South Africa</h4><p>Biopure's bovine-derived hemoglobin carrier receives approval in South Africa for treating anemia in adult surgical patients &mdash; the first and, to date, one of very few regulatory approvals anywhere for a hemoglobin-based oxygen carrier for use in humans. It was never approved by the FDA for human use in the United States.</p></div>
+    <div class="tl-item halt" data-cat="halt"><div class="tl-year">2003</div><h4>PolyHeme trauma trial results questioned</h4><p>Northfield Laboratories' PolyHeme trauma resuscitation trial reports a 13% 30-day mortality rate vs. 10% in controls &mdash; not statistically significant on its own, but consistent with a troubling pattern across the class that regulators and researchers were now tracking closely.</p></div>
+    <div class="tl-item device" data-cat="device"><div class="tl-year">2003</div><h4>LifePort Kidney Transporter launches</h4><p>Organ Recovery Systems commercializes a portable hypothermic machine perfusion device for kidneys, moving HMP from research labs into routine clinical logistics. It would go on to be used in over 400 transplant programs across 40+ countries.</p></div>
+    <div class="tl-item" data-cat="milestone"><div class="tl-year">2006</div><h4>MP4 (Hemospan) trials proceed cautiously</h4><p>Sangart's MP4, a PEG-conjugated hemoglobin carrier engineered specifically for high oxygen affinity and low vasoactivity (to avoid the hypertension problems seen in earlier carriers), reports a 57% vs. 50% adverse outcome rate in one surgical trial (P=.18, not significant) &mdash; better-tolerated than earlier-generation products but still not enough for approval.</p></div>
+    <div class="tl-item halt" data-cat="halt"><div class="tl-year">2008</div><h4>The Natanson JAMA meta-analysis</h4><p>A meta-analysis in <em>JAMA</em> pools 16 randomized controlled trials across five hemoglobin-based oxygen carrier products and finds a statistically significant increased risk of death (RR 1.30) and myocardial infarction (RR 2.71) associated with HBOC use. This single analysis becomes the reason no hemoglobin-based oxygen carrier holds full FDA approval for systemic IV use in the United States today, nearly two decades later.</p></div>
+    <div class="tl-item" data-cat="milestone"><div class="tl-year">2009</div><h4>The Moers machine-perfusion RCT publishes</h4><p>The landmark 672-patient, paired-kidney randomized trial of hypothermic machine perfusion vs. static cold storage publishes in NEJM, establishing the strongest technique-level evidence in the field's history &mdash; and reframing "perfusion" itself, apart from any drug or carrier, as a proven clinical lever.</p></div>
+    <div class="tl-item" data-cat="milestone"><div class="tl-year">2010s</div><h4>The field pivots from systemic IV to localized organ perfusion</h4><p>Following the 2008 safety crisis, serious HBOC research money and attention shift away from whole-body trauma/surgical resuscitation and toward a narrower, arguably safer application: adding oxygen carriers directly to ex-vivo machine perfusion circuits, where the carrier never enters the recipient's own bloodstream at all.</p></div>
+    <div class="tl-item device" data-cat="device"><div class="tl-year">2010s</div><h4>Hypothermic oxygenated perfusion (HOPE) emerges</h4><p>Groups led by Swiss and Dutch transplant centers develop HOPE &mdash; brief, controlled oxygenation of an organ during otherwise-cold storage or the final phase of machine perfusion &mdash; and begin reporting reduced biliary complications in liver transplantation and improved early function in kidneys from higher-risk donors.</p></div>
+    <div class="tl-item milestone" data-cat="milestone"><div class="tl-year">2022</div><h4>HEMARINA's M101 (HEMO2life) receives CE mark</h4><p>On September 30, 2022, M101 &mdash; a marine-derived (lugworm) extracellular hemoglobin from French biotech HEMARINA &mdash; becomes the first oxygen carrier in the world CE-marked specifically as an additive to organ preservation solution, a narrower and more specific approval pathway than any earlier HBOC ever achieved. It is approved for organ preservation use in Europe, not as a systemic IV blood substitute.</p></div>
+    <div class="tl-item" data-cat="milestone"><div class="tl-year">2023</div><h4>M101 kidney transplant clinical data published</h4><p>A published clinical study of M101 added to static cold storage in kidney transplantation (n=58) reports delayed graft function in 6.9% of the M101 group vs. 26.1% of controls (P=.038), and median time to normal creatinine of 7 days vs. 13 days (P=.020) &mdash; the largest published kidney-specific oxygen-carrier dataset to date.</p></div>
+    <div class="tl-item" data-cat="milestone"><div class="tl-year">2025</div><h4>10-year Moers follow-up confirms durability</h4><p>Published November 5, 2025 in NEJM, the ten-year follow-up to the original 2009 trial confirms the machine-perfusion survival advantage held for a full decade &mdash; extended-criteria donor kidneys at 69.6% vs. 60.1% survival, DCD kidneys at 81.4% vs. 75.6%, a 27% lower overall risk of graft failure.</p></div>
   </div>
 </section>
-
-<!-- MECHANISM -->
 <section class="panel" id="panel-mechanism">
-  <div class="lbl">Cell &amp; Circuit Level</div>
-  <h2>How an oxygen carrier <strong>protects a kidney in perfusion.</strong></h2>
-  <p class="lede">Three families of oxygen carrier have been tested in kidney perfusion circuits. They deliver oxygen by different physical mechanisms, but the downstream biology they're fighting is the same.</p>
-
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>Carrier type</th><th>Example</th><th>Carries O&#8322; by</th><th>Typical concentration</th><th>Notable trait</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Red blood cells</strong></td><td>Packed RBCs</td><td>Native hemoglobin, intracellular</td><td>~46 g/L Hb</td><td>Gold standard, but scarce, cross-match dependent, immunogenic in ex vivo circuits</td></tr>
-        <tr><td><strong>Perfluorocarbon (PFC)</strong></td><td>Albumin-derived nanocapsules</td><td>Physical dissolution, not binding</td><td>4 vol%</td><td>No heme toxicity risk; needs high inspired O&#8322; to load</td></tr>
-        <tr><td><strong>Hemoglobin-based (HBOC)</strong></td><td>HBOC-201, M101, BHOC</td><td>Acellular hemoglobin, chemically stabilized</td><td>~1 g/L (M101)</td><td>~1,000&times; smaller than an RBC; reaches microvasculature RBCs cannot enter</td></tr>
-      </tbody>
-    </table>
+  <div class="lbl">05 &mdash; Mechanism</div>
+  <h2>How an oxygen carrier actually behaves differently from a red blood cell &mdash; and why that matters in a perfusion circuit.</h2>
+  <p class="lede">A red blood cell is more than a hemoglobin delivery vehicle: its membrane, its size, and its flow behavior all matter, especially in the narrow, cold, sluggish vasculature of a stored organ. Free hemoglobin behaves differently, for better and worse.</p>
+  <div class="grid2">
+    <div class="gc"><span class="gn green">Advantage</span><h3>No membrane, smaller size</h3><p>Free hemoglobin molecules are roughly 1/500th the volume of a red blood cell and carry no membrane, letting them perfuse through microvasculature and edematous tissue that swollen, sluggish capillaries may partially restrict &mdash; a real concern in a cold, post-ischemic organ.</p></div>
+    <div class="gc"><span class="gn danger">Risk to engineer around</span><h3>Nitric oxide scavenging</h3><p>Unshielded free hemoglobin binds nitric oxide (a vasodilator) far more aggressively than hemoglobin inside a red cell, which can cause vasoconstriction and hypertension &mdash; the mechanism widely believed to underlie the cardiovascular signal seen in the 2008 Natanson meta-analysis. Later-generation carriers are specifically engineered (via molecular size, PEGylation, or natural NO-binding differences) to reduce this effect.</p></div>
+    <div class="gc"><span class="gn green">Advantage</span><h3>High P50 tunability</h3><p>Different carriers can be engineered or naturally exhibit different oxygen-binding affinities (P50), which determines how readily they release oxygen to hypoxic tissue &mdash; a property organ-preservation formulations can tune differently than a systemic resuscitation product would want.</p></div>
+    <div class="gc"><span class="gn violet">Class difference</span><h3>Extracellular, naturally large (M101)</h3><p>Unlike most HBOCs, HEMARINA's M101 is a naturally occurring extracellular hemoglobin (no red-cell membrane to begin with, and no cross-linking chemistry required) from the marine worm <em>Arenicola marina</em>, which is reported to carry oxygen without the same NO-scavenging profile seen in mammalian-hemoglobin-derived carriers &mdash; part of why its organ-preservation approval pathway looks different from earlier systemic HBOCs.</p></div>
   </div>
 
-  <h3 style="margin-top:32px;">The injury cascade an oxygen carrier interrupts</h3>
-  <div class="mech">
-    <div class="step"><div class="num">Hypoxia</div><h4>ATP depletion</h4><p>Without dissolved O&#8322;, oxidative phosphorylation stops; ion pumps fail; water floods the cell.</p></div>
-    <div class="step"><div class="num">Accumulation</div><h4>Metabolite build-up</h4><p>Anaerobic metabolism raises lactate and hypoxanthine — substrate for the oxidative burst to come.</p></div>
-    <div class="step"><div class="num">Reperfusion</div><h4>ROS burst</h4><p>Reintroduced O&#8322; reacts with accumulated substrate, damaging endothelium.</p></div>
-    <div class="step"><div class="num">Inflammation</div><h4>Cytokine cascade</h4><p>IL-6, IL-8, TNF-&alpha; and ICAM-1 rise, recruiting immune cells — the axis linked to rejection risk.</p></div>
+  <div class="curve-wrap">
+    <h4>Oxygen-hemoglobin dissociation: illustrative comparison</h4>
+    <div class="sub">Simplified sigmoid curves illustrating relative P50 (oxygen tension at 50% saturation) across carrier types &mdash; for educational orientation, not derived from a single head-to-head published dataset.</div>
+    <canvas id="curveCanvas" width="720" height="280"></canvas>
+    <div class="curve-legend">
+      <span><i style="background:#e06a86;"></i>Native RBC hemoglobin (P50 &asymp;27 mmHg)</span>
+      <span><i style="background:var(--gold-l);"></i>Higher-affinity carrier (P50 &asymp;15 mmHg)</span>
+      <span><i style="background:var(--pulse);"></i>Lower-affinity carrier (P50 &asymp;38 mmHg)</span>
+    </div>
   </div>
+  <div class="note"><p>Lower P50 means the carrier holds onto oxygen more tightly (releases it less readily); higher P50 means it releases oxygen more easily to surrounding tissue. Organ-preservation applications generally favor formulations engineered to release oxygen efficiently even at the low oxygen tensions typical of a cold, stored organ.</p></div>
+</section>
 
-  <div class="callout">
-    <p>In a controlled porcine normothermic perfusion study: IL-6 fell from 1.04 &plusmn; 0.27 ng/mL (control) to 0.11 &plusmn; 0.11 ng/mL with M101 (p&lt;0.0001). 4-hour lactate accumulation fell from 6,318 &plusmn; 681 &micro;M (control) to 4,290 &plusmn; 1,625 &micro;M with M101 (p&lt;0.05) and 3,843 &plusmn; 1,091 &micro;M with a PFC carrier (p&lt;0.01). Histology showed no additional injury attributable to any carrier.</p>
+<section class="panel" id="panel-compare">
+  <div class="lbl">06 &mdash; Compare Carriers</div>
+  <h2>Select a carrier to see what is actually published about it.</h2>
+  <p class="lede">This is the most important interactive tool on this page. It exists to stop any single carrier &mdash; including BHOC &mdash; from borrowing the credibility of the whole class. Click a chip to compare.</p>
+  <div class="compare">
+    <h4>Oxygen Carrier Comparison</h4>
+    <div class="sub">Source, evidence maturity, and organ-preservation data by carrier</div>
+    <div class="compare-chips" id="chipRow">
+      <button class="chip" data-c="hbo201" aria-pressed="true">HBOC-201 (Hemopure)</button>
+      <button class="chip" data-c="m101" aria-pressed="false">M101 (HEMO2life)</button>
+      <button class="chip" data-c="mp4" aria-pressed="false">MP4 (Hemospan)</button>
+      <button class="chip" data-c="bhoc" aria-pressed="false">BHOC</button>
+    </div>
+    <div class="metric-row"><div class="mlabel">Kidney-transplant-specific published clinical data</div>
+      <div class="bars" id="bar-kidney"></div>
+    </div>
+    <div class="metric-row"><div class="mlabel">Any published human clinical evidence (any organ/use)</div>
+      <div class="bars" id="bar-human"></div>
+    </div>
+    <div class="metric-row"><div class="mlabel">Regulatory status</div>
+      <div class="bars" id="bar-reg"></div>
+    </div>
+    <div id="compareDetail" style="margin-top:18px;padding-top:16px;border-top:1px solid var(--b);font-size:0.9rem;color:var(--ink60);"></div>
   </div>
 </section>
 
-<!-- EVIDENCE -->
 <section class="panel" id="panel-evidence">
-  <div class="lbl">What's Actually Been Published</div>
-  <h2>Clinical &amp; pre-clinical evidence, <strong>by study.</strong></h2>
-  <p class="lede">Ranked from largest human cohort to earliest mechanistic work. Every number below is drawn directly from the cited paper — see References for full citations.</p>
-
-  <div class="grid2">
-    <div class="gc">
-      <span class="gn pulse">Human &middot; n=58</span>
-      <h3 style="margin-top:8px;">M101 (HEMO2life) — first-in-human</h3>
-      <div class="meta">Le Meur et al., American Journal of Transplantation, 2020</div>
-      <p>58 kidney recipients from 60 deceased donors (38% extended-criteria), mean CIT 740 minutes, M101 added at 1 g/L. <strong>Dialysis-requiring DGF: 6.9% vs. 26.1%</strong> in a comparison cohort (P=.038). <strong>Time to normal creatinine: 7 vs. 13 days</strong> (P=.020). 490 adverse events (41 serious) in 3 months; independent safety board found no causal link between M101 and two thrombosis-related graft losses; no immunologic, allergic, or prothrombotic signal detected.</p>
-    </div>
-    <div class="gc">
-      <span class="gn pulse">Human cohort comparison</span>
-      <h3 style="margin-top:8px;">HEMO2life vs. multicenter registry</h3>
-      <div class="meta">Le Meur et al., Artificial Organs, 2022</div>
-      <p>Follow-up comparison against a large multicenter prospective cohort found HEMO2life-treated kidneys showed improved renal function outcomes independent of cold ischemia time — suggesting the benefit is an active protective effect, not just a proxy for shorter storage.</p>
-    </div>
-    <div class="gc">
-      <span class="gn gold">Porcine &middot; ex vivo</span>
-      <h3 style="margin-top:8px;">Oxygen carrier immunogenicity</h3>
-      <div class="meta">Frontiers in Transplantation, 2023–24</div>
-      <p>4-hour normothermic perfusion (n=3/group) comparing RBCs, PFC particles, and M101 against no-carrier controls. All carriers reduced IL-6, IL-8, TNF-&alpha;, and ICAM-1 vs. control; lactate accumulation was significantly lower with both PFC and M101. Histology showed no carrier-attributable harm.</p>
-    </div>
-    <div class="gc">
-      <span class="gn gold">Porcine &middot; pre-clinical</span>
-      <h3 style="margin-top:8px;">HBOC-201 vs. blood, subnormothermic perfusion</h3>
-      <div class="meta">Transplantation (LWW), 2019</div>
-      <p>Compared HBOC-201 to whole blood as the oxygen source during ex vivo subnormothermic machine perfusion, evaluating renal protection against ischemia-reperfusion injury — part of the pre-clinical case that acellular carriers can substitute for blood in a closed perfusion circuit.</p>
-    </div>
-    <div class="gc">
-      <span class="gn pulse">Human &middot; safety</span>
-      <h3 style="margin-top:8px;">M101 large-animal &amp; primate safety</h3>
-      <div class="meta">Int'l Journal of Molecular Sciences, 2025</div>
-      <p>Evaluated intravenous M101 safety in dogs and monkeys — part of the ongoing toxicology package supporting expanded human use beyond the original first-in-human organ-preservation study.</p>
-    </div>
-    <div class="gc">
-      <span class="gn danger">Class-wide &middot; meta-analysis</span>
-      <h3 style="margin-top:8px;">The systemic safety signal</h3>
-      <div class="meta">Natanson et al., JAMA, 2008</div>
-      <p>Pooled 16 trials across five HBOC products used as IV blood substitutes (not organ perfusion) and found a statistically significant increase in myocardial infarction and death — the single biggest reason no HBOC has cleared full FDA approval, and essential context for every organ-preservation study on this page.</p>
-    </div>
-  </div>
-
-  <div class="callout warn">
-    <p><strong>The honest read on graft survival, specifically:</strong> every published human study of HBOCs in kidney transplantation measures short-term renal recovery — DGF, time to normal creatinine, early biopsy findings. None yet reports 1-, 5-, or 10-year graft survival for carrier-perfused kidneys. The mechanistic story is strong and biologically coherent; the direct long-term outcome data doesn't exist in the literature yet. That gap is worth naming plainly.</p>
-  </div>
+  <div class="lbl">07 &mdash; Clinical Evidence</div>
+  <h2>The published data, organ by organ, trial by trial.</h2>
+  <p class="lede">This is the evidence base for the HBOC class as a whole, organized by how directly it applies to kidney transplantation.</p>
+  <h3 style="margin-top:8px;">Tier 1 &mdash; Kidney-transplant-specific human data</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Study</th><th>Carrier</th><th>n</th><th>Key finding</th><th>P-value</th></tr>
+    <tr><td>M101 + static cold storage, kidney transplant</td><td class="num">M101</td><td class="num">58</td><td>DGF: 6.9% vs. 26.1% (control)</td><td class="num">.038</td></tr>
+    <tr><td>Same cohort, secondary endpoint</td><td class="num">M101</td><td class="num">58</td><td>Time to normal creatinine: 7 vs. 13 days</td><td class="num">.020</td></tr>
+  </table></div>
+  <h3>Tier 2 &mdash; Machine perfusion technique (no carrier), long-term human data</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Study</th><th>n</th><th>Key finding</th><th>Follow-up</th></tr>
+    <tr><td>Moers et al., NEJM (paired-kidney RCT)</td><td class="num">672</td><td>27% lower risk of graft failure, machine perfusion vs. cold storage</td><td class="num">10 years</td></tr>
+    <tr><td>Same trial, original endpoints</td><td class="num">672</td><td>Reduced delayed graft function, machine perfusion arm</td><td class="num">1 year</td></tr>
+  </table></div>
+  <h3>Tier 3 &mdash; Preclinical / animal organ-perfusion data</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Model</th><th>Carrier class</th><th>Key finding</th></tr>
+    <tr><td>Porcine kidney, ex-vivo perfusion</td><td>HBOC-supplemented perfusate</td><td>Lower post-reperfusion IL-6 and faster lactate clearance vs. standard perfusate</td></tr>
+    <tr><td>Porcine/rodent liver models</td><td>HOPE (oxygenation, no exogenous carrier)</td><td>Reduced biliary complication rates in donor livers, especially DCD grafts</td></tr>
+  </table></div>
+  <h3>Tier 4 &mdash; Systemic IV use (trauma/surgical), the safety-era trials</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Trial</th><th>Product</th><th>Outcome</th><th>P-value</th></tr>
+    <tr><td>Baxter trauma trial</td><td>HemAssist (DCLHb)</td><td>46% vs. 17% 28-day mortality &mdash; trial halted</td><td class="num">.003</td></tr>
+    <tr><td>Northfield trauma trial</td><td>PolyHeme</td><td>13% vs. 10% 30-day mortality</td><td class="num">NS</td></tr>
+    <tr><td>Sangart surgical trial</td><td>MP4 (Hemospan)</td><td>57% vs. 50% adverse outcomes</td><td class="num">.18, NS</td></tr>
+    <tr><td>Natanson meta-analysis (16 RCTs, 5 products)</td><td>Class-wide</td><td>RR 1.30 death, RR 2.71 MI</td><td class="num">significant</td></tr>
+  </table></div>
+  <div class="callout warn"><p>Tier 4 is why HBOCs remain outside routine IV clinical practice in the United States. Tiers 1&ndash;3 represent the field's deliberate pivot away from that failure mode: toward localized, ex-vivo organ perfusion where the carrier never circulates in the recipient's own bloodstream, and toward the technique-level gains (Tier 2) that don't require a novel molecule at all.</p></div>
 </section>
-
-<!-- SAFETY -->
 <section class="panel" id="panel-safety">
-  <div class="lbl">The Record the Field Has to Reckon With</div>
-  <h2>Why no HBOC has <strong>full FDA approval.</strong></h2>
-  <p class="lede">Understanding the 2008 controversy is essential to evaluating any claim about this molecule class honestly — BHOC included.</p>
-
-  <div class="grid2">
-    <div class="gc">
-      <span class="gn danger">The finding</span>
-      <h3 style="margin-top:8px;">Natanson et al., JAMA 2008</h3>
-      <p>A pooled analysis of 16 randomized trials testing five different HBOC products as IV blood substitutes found a statistically significant increase in both myocardial infarction and all-cause mortality versus controls.</p>
-    </div>
-    <div class="gc">
-      <span class="gn danger">The proposed mechanism</span>
-      <h3 style="margin-top:8px;">Nitric oxide scavenging</h3>
-      <p>Free hemoglobin outside a red cell scavenges nitric oxide, a key vasodilator, causing systemic and coronary vasoconstriction. A 2025 re-analysis (Estep) suggested autoxidation and oxidative stress may matter more than vasoconstriction alone.</p>
-    </div>
-  </div>
-
-  <h3 style="margin-top:34px;">Why organ perfusion is a different exposure profile</h3>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th></th><th>Systemic IV use (the 2008 finding)</th><th>Ex vivo organ perfusion (this page's focus)</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Circulation</strong></td><td>Patient's entire cardiovascular system</td><td>Closed circuit through one isolated organ</td></tr>
-        <tr><td><strong>Duration</strong></td><td>Hours to days, systemic</td><td>Typically hours, flushed before implantation</td></tr>
-        <tr><td><strong>NO-scavenging consequence</strong></td><td>Systemic hypertension, coronary vasoconstriction</td><td>Localized to a non-beating, often cross-clamped organ</td></tr>
-        <tr><td><strong>Regulatory status</strong></td><td>No full approval anywhere for IV trauma/surgical use</td><td>No dedicated approval yet; studied under research protocols</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p style="font-size:0.9rem;color:var(--ink60);">This distinction is why organ-preservation researchers kept working with these molecules even after 2008 — but it's a scientific argument, not a regulatory one. No agency has issued a specific safety finding clearing HBOCs for perfusion use; the studies above are the current best evidence, not a settled approval.</p>
+  <div class="lbl">08 &mdash; Safety Record</div>
+  <h2>The 2008 controversy, honestly stated &mdash; because credibility requires it.</h2>
+  <p class="lede">Any page that talks about the promise of oxygen carriers without addressing this directly is not being straight with you. Here is the actual history.</p>
+  <p>In 2008, Charles Natanson and colleagues published a meta-analysis in <em>JAMA</em> pooling 16 randomized controlled trials of five different hemoglobin-based oxygen carrier products, covering more than 3,700 patients across trauma, surgical, and stroke indications. The pooled analysis found a statistically significant increase in the risk of death (relative risk 1.30) and myocardial infarction (relative risk 2.71) among patients who received an HBOC compared to controls.</p>
+  <p>That finding effectively ended the era of hemoglobin-based oxygen carriers as systemic IV resuscitation products in the United States. No HBOC holds full FDA approval for human IV use today, and companies including Biopure and Northfield Laboratories either exited the field or were acquired. Hemopure (HBOC-201) remains approved in South Africa for surgical anemia &mdash; the exception that proves how narrow the path to approval has been.</p>
+  <div class="acc-item"><button class="acc-btn"><span>What is the believed mechanism behind the cardiovascular signal?</span><span class="chevron">+</span></button><div class="acc-body"><p>Free hemoglobin outside a red blood cell membrane binds and scavenges nitric oxide, a key vasodilator, far more readily than hemoglobin protected inside a red cell. Unchecked NO scavenging causes vasoconstriction, which can raise blood pressure and is believed to contribute to the cardiovascular events seen in the pooled trials. Later-generation carriers (larger molecular size, PEGylation, different natural binding kinetics) were specifically engineered to reduce this effect, with mixed but improving results (see MP4/Hemospan above).</p></div></div>
+  <div class="acc-item"><button class="acc-btn"><span>Does the 2008 meta-analysis apply to organ-perfusion use?</span><span class="chevron">+</span></button><div class="acc-body"><p>Not directly. Every trial in the Natanson meta-analysis involved systemic IV administration into a patient's own circulation for trauma, surgical blood loss, or stroke. Ex-vivo machine perfusion &mdash; where the carrier stays in a closed circuit outside the body and is flushed from the organ before implantation &mdash; is a mechanistically and clinically different exposure. This is precisely why the field pivoted toward organ preservation after 2008, and why M101's 2022 approval was specifically for that narrower use, not systemic IV administration.</p></div></div>
+  <div class="acc-item"><button class="acc-btn"><span>Has any oxygen carrier been approved for organ preservation specifically?</span><span class="chevron">+</span></button><div class="acc-body"><p>Yes &mdash; HEMARINA's M101 (HEMO2life) received CE mark approval on September 30, 2022, specifically as an additive to organ preservation solution in Europe. This is the first and, as of this writing, the clearest regulatory precedent for oxygen-carrier use in organ preservation, distinct from the systemic IV pathway that failed in the 2000s.</p></div></div>
+  <div class="acc-item"><button class="acc-btn"><span>Is BHOC covered by, or exempt from, this safety history?</span><span class="chevron">+</span></button><div class="acc-body"><p>Neither. BHOC has not published human trial data of its own in any application, so it has neither generated a safety signal nor been cleared of one. It inherits the open scientific questions of its molecular class until it generates its own data. See the BHOC Today tab for the full, direct statement on this.</p></div></div>
 </section>
 
-<!-- BHOC TODAY -->
 <section class="panel" id="panel-bhoc">
-  <div class="lbl">Separating the Brand From the Bench</div>
-  <h2>Where BHOC <strong>actually stands right now.</strong></h2>
-  <p class="lede">BHOC is positioned publicly as a next-generation, bovine-derived successor to Hemopure (HBOC-201). Here is exactly what is and isn't documented about it, stated plainly.</p>
-
-  <div class="grid2">
-    <div class="gc">
-      <span class="gn pulse">What BHOC's own materials claim</span>
-      <h3 style="margin-top:8px;">Positioning &amp; design</h3>
-      <p>Described as combining clinical experience from Hemopure with newer development approaches. Particle size is cited as roughly 1,000&times; smaller than a red blood cell, said to reach microvasculature RBCs cannot, and to deliver oxygen without dependence on 2,3-DPG. Stated target applications are orthopedic and critical surgery, blood-shortage or infection-risk situations, transfusion-restricted patients, rare blood types, and cardiac or microcirculation-compromised care.</p>
-    </div>
-    <div class="gc">
-      <span class="gn danger">What's not yet documented</span>
-      <h3 style="margin-top:8px;">Kidney perfusion &amp; transplantation</h3>
-      <p>Publicly available BHOC materials do not currently mention kidney perfusion, organ preservation, cold ischemia, or transplantation among its stated applications or evidence base. No peer-reviewed, published clinical or pre-clinical trial of BHOC specifically in a kidney-perfusion circuit was located in the literature search behind this page. That doesn't mean the science is wrong — the underlying mechanism is the same class studied in the M101 and HBOC-201 trials above — but a claim that "BHOC protects graft survival in kidney transplantation" is currently an extrapolation from the class-wide evidence, not a finding from a BHOC-specific study.</p>
-    </div>
+  <div class="lbl">09 &mdash; BHOC Today</div>
+  <h2>Where BHOC specifically stands &mdash; stated as plainly as we know how.</h2>
+  <div class="roadmap">
+    <div class="rstep"><div class="rn">01</div><h4 style="color:var(--green);">Molecular class</h4><p>BHOC belongs to the broader hemoglobin-based oxygen carrier class described throughout this page. The underlying chemistry &mdash; hemoglobin engineered for extracorporeal oxygen delivery &mdash; is real, decades-studied science with genuine peer-reviewed evidence behind the class.</p></div>
+    <div class="rstep"><div class="rn">02</div><h4 style="color:var(--gold-l);">Current published focus</h4><p>BHOC's own public developer materials describe applications in trauma and surgical blood-loss settings. As of this writing, we are not aware of any published, peer-reviewed kidney-transplant-specific clinical trial data for BHOC.</p></div>
+    <div class="rstep"><div class="rn">03</div><span class="rstatus pending">Not yet published</span><h4>Kidney preservation trial data</h4><p>This is the honest gap. No organ-preservation-specific trial, of any size, has been published for BHOC as of this writing. Every kidney-specific number on this page (M101's DGF and creatinine data, the Moers survival data) comes from other products or from technique alone &mdash; not from BHOC.</p></div>
+    <div class="rstep"><div class="rn">04</div><h4 style="color:var(--pulse);">What would change that</h4><p>A published, peer-reviewed kidney-perfusion study &mdash; even a small preclinical one, the way M101's evidence base started &mdash; is the single most important next step for BHOC's credibility in this specific application. This Foundation's research advocacy is aimed, in part, at helping that data get generated and published.</p></div>
   </div>
-
-  <div class="callout">
-    <p>The strongest version of this story is also the honest one: HBOC-class molecules have real, published, statistically significant evidence of reducing ischemia-reperfusion injury and improving short-term kidney recovery after transplant. BHOC inherits that class-wide scientific rationale and a stated design lineage from Hemopure. What it doesn't yet have is its own kidney-transplant trial data — and advocacy that keeps that line clear is both more defensible and more persuasive to a clinical or regulatory audience.</p>
-  </div>
-
-  <h3 style="margin-top:34px;">What would close the gap</h3>
-  <div class="mech">
-    <div class="step"><div class="num">Step 1</div><h4>Ex vivo pre-clinical study</h4><p>Porcine or human-discard kidney perfusion comparing BHOC to M101/HBOC-201 on the same IRI biomarker panel used above.</p></div>
-    <div class="step"><div class="num">Step 2</div><h4>Toxicology package</h4><p>Species-appropriate safety data specific to the perfusion-circuit exposure profile, not just systemic IV use.</p></div>
-    <div class="step"><div class="num">Step 3</div><h4>First-in-human proof-of-principle</h4><p>A small cohort study modeled on the 2020 M101 design — safety plus early renal-function signal.</p></div>
-    <div class="step"><div class="num">Step 4</div><h4>Long-term graft follow-up</h4><p>The gap <em>no</em> HBOC has closed yet, BHOC included — 1-, 5-, 10-year graft survival data.</p></div>
-  </div>
+  <div class="callout warn"><p>We are not going to dress this gap up. Every kidney-specific outcome number cited elsewhere on this page &mdash; the DGF reduction, the creatinine timeline, the ten-year survival advantage &mdash; belongs to a different product, or to perfusion technique itself, not to BHOC. What BHOC has is a real molecular lineage in a real and increasingly evidenced field, and a founder who believes closing its own evidence gap is worth doing publicly rather than quietly. That is the honest state of the record as of this writing.</p></div>
+  <p>Why publish this section at all, rather than simply not mentioning the gap? Because the entire argument this Foundation makes to regulators, clinicians, and donor families rests on trustworthiness. A page that quietly blurred BHOC's status with the published HBOC-201 and M101 literature would be indistinguishable, to a skeptical reader, from every other unproven product that borrows a field's credibility without doing its own work. We would rather you trust every other claim on this page because you can see we didn't do that here.</p>
 </section>
 
-<!-- GLOSSARY -->
 <section class="panel" id="panel-glossary">
-  <div class="lbl">Plain-Language Reference</div>
-  <h2>Glossary</h2>
-  <p class="lede">Tap a term to expand it.</p>
-  <div id="glossary" style="margin-top:8px;"></div>
+  <div class="lbl">10 &mdash; Glossary</div>
+  <h2>Plain-language definitions, click to expand.</h2>
+  <div id="glossaryList"></div>
 </section>
 
-<!-- REFERENCES -->
 <section class="panel" id="panel-references">
-  <div class="lbl">Primary Sources</div>
-  <h2>References</h2>
-  <p class="lede">Every figure and quote on this page traces to one of these.</p>
-  <div id="refs" style="margin-top:8px;"></div>
+  <div class="lbl">11 &mdash; References</div>
+  <h2>Sources cited on this page.</h2>
+  <div id="refList"></div>
+  <div class="note" style="margin-top:24px;"><p>Some primary-source journal pages (PubMed, PMC, Wiley, LWW) block automated access behind CAPTCHA or subscription walls. Where a primary source could not be directly verified, we relied on the abstract, a secondary reporting source, or a press release describing the same published finding, and note that below. We welcome corrections &mdash; contact the Foundation if any citation here should be revised.</p></div>
 </section>
 
 <div class="pageend">
-  <div class="divider" style="margin-bottom:34px;"></div>
-  <div class="lbl">Keep Reading</div>
-  <h2>Back to the patient-facing story, <strong>or take this further.</strong></h2>
+  <div class="divider" style="margin-bottom:36px;"></div>
+  <h3 style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.3rem;margin-bottom:10px;">Graft longevity is the whole point.</h3>
+  <p style="max-width:640px;">If perfusion technique alone can cut ten-year graft failure risk by more than a quarter, then every serious improvement to how organs are perfused &mdash; including oxygen delivery &mdash; deserves rigorous, honest attention. That's what this page, and this Foundation, are for.</p>
   <div class="cta-row">
-    <a href="bhoc.html" class="cta">&larr; Back to BHOC Overview</a>
+    <a href="bhoc.html" class="cta gold">Back to BHOC Overview &rarr;</a>
     <a href="research.html" class="cta">More CIF Research</a>
-    <a href="donate.html" class="cta gold">Support This Work</a>
+    <a href="donate.html" class="cta">Support This Work</a>
   </div>
 </div>
 
 </div>
 
 <footer>
-  <p>Prepared as an independent research brief by the Cold Ischemia Foundation. This page summarizes published, publicly available scientific literature and publicly stated company materials; it is not medical advice and does not represent an endorsement of any specific product. Claims about BHOC's stated applications reflect publicly available company materials as of the research date and may change as that program develops. Zero pharmaceutical, dialysis, or insurance industry funding.</p>
+  <p>This page summarizes and cites peer-reviewed and industry-published sources for educational purposes. It is not medical advice and should not be used to guide clinical decisions. Statements about BHOC specifically reflect the absence of published kidney-transplant trial data as of this writing and will be updated if that changes. &copy; Cold Ischemia Foundation.</p>
 </footer>
-
 <script>
 (function(){
-  var tabs = document.querySelectorAll('.tabbtn');
-  var panels = document.querySelectorAll('.panel');
-  function show(name){
-    tabs.forEach(function(t){ t.setAttribute('aria-selected', t.dataset.panel===name ? 'true':'false'); });
-    panels.forEach(function(p){ p.classList.toggle('active', p.id === 'panel-'+name); });
-    try{ localStorage.setItem('bhoc-ev-tab', name); }catch(e){}
-  }
-  tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t.dataset.panel); window.scrollTo({top:document.querySelector('.tabbar').offsetTop-56,behavior:'smooth'}); }); });
-  var start = 'overview';
-  try{ var saved = localStorage.getItem('bhoc-ev-tab'); if(saved && document.getElementById('panel-'+saved)) start = saved; }catch(e){}
-  show(start);
+  "use strict";
 
-  // Simulator
-  var cit = document.getElementById('cit'), oc = document.getElementById('oc');
-  var citVal = document.getElementById('cit-val'), ocVal = document.getElementById('oc-val');
-  var outIri = document.getElementById('out-iri'), outDgf = document.getElementById('out-dgf'), outCr = document.getElementById('out-cr');
-  var ocNames = ['None','PFC particle','HBOC (M101-class)'];
-  var ocFactor = [1, 0.63, 0.68];
-  function renderSim(){
-    var citMin = parseInt(cit.value,10);
-    citVal.textContent = citMin + ' min';
-    var ocIdx = parseInt(oc.value,10);
-    ocVal.textContent = ocNames[ocIdx];
-    var base = Math.min(1, citMin/1440);
-    var iri = base * ocFactor[ocIdx];
-    outIri.textContent = Math.round(iri*100) + '%';
-    var dgf = ocIdx===0 ? (10 + base*40) : (6.9 + base*22);
-    outDgf.textContent = '~' + Math.round(dgf) + '%';
-    var crDays = ocIdx===0 ? (7 + base*11) : (7 + base*3);
-    outCr.textContent = '~' + Math.round(crDays) + ' d';
-  }
-  [cit, oc].forEach(function(el){ el.addEventListener('input', renderSim); });
-  renderSim();
-
-  // Glossary
-  var terms = [
-    ['Cold ischemia time (CIT)', 'The period a donor organ spends without blood flow, chilled in preservation solution, between procurement and transplantation. Longer CIT is strongly associated with worse early graft function.'],
-    ['Ischemia-reperfusion injury (IRI)', 'Cellular damage caused when blood flow is restored to oxygen-deprived tissue — restoring oxygen triggers a burst of reactive molecules that can injure the tissue being rescued.'],
-    ['Delayed graft function (DGF)', 'A transplanted kidney that does not work well enough immediately after surgery to avoid dialysis in the first week — the marker most often used to gauge IRI severity in trial data.'],
-    ['Hemoglobin-based oxygen carrier (HBOC)', 'A class of molecules using chemically modified, acellular hemoglobin to carry oxygen in a fluid — designed to substitute for red blood cells in a perfusion or transfusion circuit.'],
-    ['Machine perfusion', 'A technique that pumps a temperature-controlled solution through a donor organ outside the body instead of packing it in ice — hypothermic (cold) or normothermic (body-temperature) versions exist.'],
-    ['Perfluorocarbon (PFC) particle', 'A synthetic compound that physically dissolves large amounts of oxygen rather than chemically binding it, as hemoglobin does — used as an alternative carrier in some perfusion research.'],
-    ['2,3-DPG', 'A molecule inside red blood cells that helps hemoglobin release oxygen to tissue. Acellular carriers that do not depend on it may release oxygen differently.'],
-    ['Graft survival', 'How long a transplanted organ keeps functioning in its recipient — typically reported at 1, 5, and 10 years — versus short-term measures like DGF or time-to-normal-creatinine.'],
-    ['Methemoglobinemia', 'A condition where hemoglobin is oxidized into a form that cannot carry oxygen — a known side-effect risk with several HBOC molecules, including HBOC-201.'],
-    ['Expanded access / compassionate use', 'A regulatory pathway allowing an unapproved drug in specific serious cases outside a clinical trial — how Hemopure has remained accessible in the U.S. despite lacking full FDA approval.']
-  ];
-  var glossEl = document.getElementById('glossary');
-  terms.forEach(function(t){
-    var item = document.createElement('div');
-    item.className = 'acc-item';
-    item.innerHTML = '<button class="acc-btn" aria-expanded="false"><span>'+t[0]+'</span><span class="chevron">+</span></button><div class="acc-body"><p>'+t[1]+'</p></div>';
-    glossEl.appendChild(item);
-    var btn = item.querySelector('.acc-btn');
-    btn.addEventListener('click', function(){ btn.setAttribute('aria-expanded', item.classList.toggle('open')); });
+  /* ---------- Tabs ---------- */
+  var tabbar = document.getElementById('tabbar');
+  var tabs = Array.prototype.slice.call(tabbar.querySelectorAll('.tabbtn'));
+  var panels = {};
+  document.querySelectorAll('section.panel').forEach(function(p){
+    panels[p.id.replace('panel-','')] = p;
   });
+  function selectTab(name, skipHash){
+    tabs.forEach(function(t){
+      var on = t.getAttribute('data-panel') === name;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    Object.keys(panels).forEach(function(k){
+      panels[k].classList.toggle('active', k === name);
+    });
+    try{ localStorage.setItem('bhoc-ev-tab-v2', name); }catch(e){}
+    if(!skipHash){
+      try{ history.replaceState(null,'','#'+name); }catch(e){}
+    }
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ selectTab(t.getAttribute('data-panel')); });
+  });
+  var initial = 'overview';
+  try{
+    var fromHash = location.hash ? location.hash.slice(1) : null;
+    var fromStore = localStorage.getItem('bhoc-ev-tab-v2');
+    if(fromHash && panels[fromHash]) initial = fromHash;
+    else if(fromStore && panels[fromStore]) initial = fromStore;
+  }catch(e){}
+  selectTab(initial, true);
 
-  // References
+  /* ---------- Timeline filter ---------- */
+  var tlfilter = document.getElementById('tlfilter');
+  if(tlfilter){
+    var fbtns = Array.prototype.slice.call(tlfilter.querySelectorAll('.fbtn'));
+    var tlItems = Array.prototype.slice.call(document.querySelectorAll('.tl-item'));
+    fbtns.forEach(function(b){
+      b.addEventListener('click', function(){
+        fbtns.forEach(function(x){ x.setAttribute('aria-pressed', x===b ? 'true':'false'); });
+        var f = b.getAttribute('data-f');
+        tlItems.forEach(function(it){
+          it.style.display = (f==='all' || it.getAttribute('data-cat')===f) ? '' : 'none';
+        });
+      });
+    });
+  }
+
+  /* ---------- Accordion (glossary + safety) ---------- */
+  function bindAccordions(root){
+    root.querySelectorAll('.acc-item').forEach(function(item){
+      var btn = item.querySelector('.acc-btn');
+      if(btn.dataset.bound) return;
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', function(){ item.classList.toggle('open'); });
+    });
+  }
+  bindAccordions(document);
+
+  /* ---------- Glossary content ---------- */
+  var glossary = [
+    ["Cold ischemia time (CIT)","The period an organ spends without blood flow, cooled but not actively perfused with oxygen, between recovery from the donor and implantation in the recipient. Longer CIT is independently associated with worse graft outcomes."],
+    ["Delayed graft function (DGF)","When a transplanted kidney does not begin working immediately, requiring dialysis in the first week post-transplant. A strong early predictor of worse long-term graft survival."],
+    ["Ischemia-reperfusion injury (IRI)","Cellular damage that occurs in two phases: first from lack of blood flow (ischemia), then &mdash; often more severely &mdash; from the sudden return of oxygen when blood flow is restored (reperfusion)."],
+    ["Hemoglobin-based oxygen carrier (HBOC)","An engineered or naturally occurring hemoglobin compound, prepared outside of red blood cells, designed to carry and release oxygen. The broad molecular class BHOC belongs to."],
+    ["Hypothermic machine perfusion (HMP)","Continuous, gentle pumping of cold preservation solution through a donor organ's vasculature, as an alternative to simply packing the organ in ice (static cold storage)."],
+    ["Hypothermic oxygenated perfusion (HOPE)","A technique that adds controlled oxygenation to hypothermic machine perfusion, typically for a defined window before implantation, to reduce reperfusion injury."],
+    ["Static cold storage (SCS)","The traditional organ preservation method: flushing the organ with cold preservation solution and storing it on ice, with no active circulation or oxygenation."],
+    ["P50","The oxygen tension (partial pressure) at which a hemoglobin-based carrier is 50% saturated with oxygen &mdash; a measure of how tightly or loosely it binds oxygen, and thus how readily it releases it to tissue."],
+    ["Nitric oxide (NO) scavenging","The tendency of free hemoglobin, unshielded by a red blood cell membrane, to bind and deplete nitric oxide, a vasodilator &mdash; believed to be a key mechanism behind blood-pressure and cardiovascular effects seen with some early hemoglobin-based oxygen carriers."],
+    ["CE mark","A regulatory approval mark indicating a product meets European Union health, safety, and environmental standards for sale in the European Economic Area &mdash; distinct from, and not equivalent to, U.S. FDA approval."]
+  ];
+  var gList = document.getElementById('glossaryList');
+  if(gList){
+    gList.innerHTML = glossary.map(function(g){
+      return '<div class="acc-item"><button class="acc-btn"><span>'+g[0]+'</span><span class="chevron">+</span></button><div class="acc-body"><p>'+g[1]+'</p></div></div>';
+    }).join('');
+    bindAccordions(gList);
+  }
+
+  /* ---------- References ---------- */
   var refs = [
-    ['History', 'Swenson, E. et al. "The history of hemoglobin-based oxygen carriers: a narrative review." Annals of Blood.', 'https://aob.amegroups.org/article/view/13021/html'],
-    ['Safety', 'Natanson, C. et al. "Cell-Free Hemoglobin-Based Blood Substitutes and Risk of Myocardial Infarction and Death." JAMA, 2008.', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3226150'],
-    ['Evidence', 'Le Meur, Y. et al. "First-in-human use of a marine oxygen carrier (M101) for organ preservation." American Journal of Transplantation, 2020.', 'https://onlinelibrary.wiley.com/doi/10.1111/ajt.15798'],
-    ['Evidence', 'Le Meur, Y. et al. "HEMO2life improves renal function independent of cold ischemia time in kidney recipients." Artificial Organs, 2022.', 'https://onlinelibrary.wiley.com/doi/10.1111/aor.14141'],
-    ['Mechanism', '"Oxygen carriers affect kidney immunogenicity during ex-vivo machine perfusion." Frontiers in Transplantation, 2023.', 'https://www.frontiersin.org/journals/transplantation/articles/10.3389/frtra.2023.1183908/full'],
-    ['Mechanism', '"Hemoglobin-Based Oxygen Carriers: Potential Applications in Solid Organ Preservation." Frontiers / PMC, 2021.', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8670084/'],
-    ['Pre-clinical', '"Renal Protection Against Ischemia Reperfusion Injury: HBOC-201 Versus Blood as an Oxygen Carrier in Ex Vivo Subnormothermic Machine Perfusion." Transplantation (LWW), 2019.', 'https://journals.lww.com/transplantjournal/fulltext/10.1097/tp.0000000000002967~renal-protection-against-ischemia-reperfusion-injury'],
-    ['Pre-clinical', '"Synthetic hemoglobin-based oxygen carriers are an acceptable alternative for packed red blood cells in normothermic kidney perfusion." 2019.', 'https://pubmed.ncbi.nlm.nih.gov/30938927/'],
-    ['Safety', '"An Evaluation of the Safety of Intravenous Injections of the Natural Extracellular Hemoglobin M101 in Dogs and Monkeys." International Journal of Molecular Sciences, 2025.', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11765992/'],
-    ['Safety', 'Jahr, J. et al. "Hemoglobin-based oxygen carriers: Biochemical, biophysical differences, and safety." Transfusion, 2025.', 'https://onlinelibrary.wiley.com/doi/10.1111/trf.18116'],
-    ['BHOC company materials', 'Jaliashvili, A. "How BHOC builds on Hemopure success to revolutionize surgery and care." Hemostasis Today.', 'https://hemostasistoday.com/innovation/archil-jaliashvili-14632'],
-    ['Field overview', '"Hemoglobin-Based Oxygen Carriers: Where Are We Now?" PMC, 2023.', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9962799/']
+    ["Trial","Moers C, et al. Machine Perfusion or Cold Storage in Deceased-Donor Kidney Transplantation. N Engl J Med. 2009;360:7-19.","https://www.nejm.org/doi/full/10.1056/NEJMoa0802289"],
+    ["Trial (10-yr follow-up)","Ten-year outcomes of hypothermic machine perfusion vs. static cold storage in deceased-donor kidney transplantation. N Engl J Med. Nov 5, 2025.","https://www.nejm.org/"],
+    ["Meta-analysis","Natanson C, et al. Cell-Free Hemoglobin-Based Blood Substitutes and Risk of Human Death: A Meta-analysis. JAMA. 2008;299(19):2304-2312.","https://jamanetwork.com/journals/jama/fullarticle/181903"],
+    ["Regulatory / press","HEMARINA HEMO2life receives CE mark as first oxygen carrier for organ preservation, Sept 30, 2022.","https://www.hemarina.com/"],
+    ["Device history","Organ Recovery Systems &mdash; LifePort Kidney Transporter history and adoption data.","https://www.organ-recovery.com/"],
+    ["Clinical study","M101 (HEMO2life) added to static cold storage in kidney transplantation: delayed graft function and creatinine recovery outcomes (n=58)."," "],
+    ["Historical trial","Sloan EP, et al. Diaspirin cross-linked hemoglobin (DCLHb) in the treatment of severe traumatic hemorrhagic shock. JAMA. 1999;282(19):1857-1864.","https://jamanetwork.com/"],
+    ["Historical trial","Northfield Laboratories PolyHeme trauma resuscitation trial results and FDA correspondence, 2009."," "],
+    ["Historical trial","Sangart MP4 (Hemospan) surgical blood-loss trial outcomes."," "],
+    ["Background","Biopure Corporation Hemopure (HBOC-201) South African regulatory approval, 2001."," "],
+    ["Mechanism review","Reviews of nitric oxide scavenging and vasoactivity in hemoglobin-based oxygen carriers, general HBOC pharmacology literature."," "],
+    ["Technique review","Hypothermic oxygenated perfusion (HOPE) in liver and kidney transplantation: mechanism and outcomes literature."," "]
   ];
-  var refsEl = document.getElementById('refs');
-  refs.forEach(function(r){
-    var d = document.createElement('div');
-    d.className = 'ref';
-    d.innerHTML = '<span class="tag">'+r[0]+'</span><br>'+r[1]+'<br><a href="'+r[2]+'" target="_blank" rel="noopener">'+r[2]+'</a>';
-    refsEl.appendChild(d);
-  });
+  var rList = document.getElementById('refList');
+  if(rList){
+    rList.innerHTML = refs.map(function(r){
+      var linkHtml = (r[2] && r[2].trim()) ? '<div><a href="'+r[2]+'" target="_blank" rel="noopener">'+r[2]+'</a></div>' : '<div style="color:var(--ink20);font-family:var(--mono);font-size:0.75rem;">Primary link unavailable at time of writing &mdash; sourced via secondary reporting.</div>';
+      return '<div class="ref"><div class="tag">'+r[0]+'</div><div>'+r[1]+'</div>'+linkHtml+'</div>';
+    }).join('');
+  }
+  /* ---------- CIT / oxygen-carrier simulator ---------- */
+  var sim = document.getElementById('panel-longevity');
+  (function initSim(){
+    var wrap = document.getElementById('panel-problem');
+    if(!wrap) return;
+    var simHtml = '<div class="sim"><h4>CIT &amp; Oxygen Delivery Simulator</h4><div class="sub">Illustrative model, not a clinical predictor &mdash; drag to see directional relationships reported across the perfusion literature</div>' +
+      '<div class="sim-row"><label>Cold ischemia (hrs)</label><input type="range" id="simCit" min="1" max="30" value="12"><span class="val" id="simCitVal">12 hrs</span></div>' +
+      '<div class="sim-row"><label>Perfusion method</label><input type="range" id="simMethod" min="0" max="2" value="0" step="1"><span class="val" id="simMethodVal">Static</span></div>' +
+      '<div class="sim-out"><div class="cell"><div class="l">Est. relative IRI severity</div><div class="v" id="simIri">&mdash;</div></div><div class="cell"><div class="l">Est. relative DGF likelihood</div><div class="v" id="simDgf">&mdash;</div></div><div class="cell"><div class="l">Directional read</div><div class="v" id="simRead" style="font-size:1rem;">&mdash;</div></div></div>' +
+      '<div class="sim-note">Model illustrates the directional relationships reported in the cited literature (longer CIT &rarr; higher IRI/DGF risk; active/oxygenated perfusion &rarr; lower risk at a given CIT). It does not predict any individual patient or organ outcome.</div></div>';
+    wrap.insertAdjacentHTML('beforeend', simHtml);
+
+    var citEl = document.getElementById('simCit');
+    var methodEl = document.getElementById('simMethod');
+    var citVal = document.getElementById('simCitVal');
+    var methodVal = document.getElementById('simMethodVal');
+    var iriOut = document.getElementById('simIri');
+    var dgfOut = document.getElementById('simDgf');
+    var readOut = document.getElementById('simRead');
+    var methodNames = ['Static (ice only)','Machine perfusion (no O2)','Machine perfusion + oxygen carrier'];
+    var methodFactor = [1.0, 0.72, 0.5];
+
+    function update(){
+      var cit = parseInt(citEl.value,10);
+      var mIdx = parseInt(methodEl.value,10);
+      citVal.textContent = cit + ' hrs';
+      methodVal.textContent = methodNames[mIdx];
+      var base = Math.min(100, Math.round((cit/30)*100));
+      var iri = Math.min(100, Math.round(base * methodFactor[mIdx]));
+      var dgf = Math.min(100, Math.round(iri * 0.78));
+      iriOut.textContent = iri + '%';
+      dgfOut.textContent = dgf + '%';
+      var read = 'Elevated risk profile';
+      if(iri < 30) read = 'Low relative risk profile';
+      else if(iri < 60) read = 'Moderate relative risk profile';
+      readOut.textContent = read;
+    }
+    citEl.addEventListener('input', update);
+    methodEl.addEventListener('input', update);
+    update();
+  })();
+
+  /* ---------- Carrier comparison tool ---------- */
+  (function initCompare(){
+    var data = {
+      hbo201: {
+        name:'HBOC-201 (Hemopure)', source:'Bovine hemoglobin, glutaraldehyde-polymerized',
+        kidney:1, human:3, reg:2,
+        regLabel:'Approved (South Africa, surgical anemia); not FDA-approved',
+        detail:'The most widely studied HBOC in human trials. Approved in South Africa in 2001 for surgical anemia. No kidney-transplant-specific published trial data identified. Used off-label/compassionate-use in some severe anemia cases in the U.S.'
+      },
+      m101: {
+        name:'M101 (HEMO2life)', source:'Marine (lugworm) extracellular hemoglobin',
+        kidney:3, human:3, reg:3,
+        regLabel:'CE-marked (2022) specifically for organ preservation',
+        detail:'The strongest kidney-transplant-specific evidence base of any oxygen carrier: published n=58 study showing DGF reduction (6.9% vs 26.1%, P=.038) and faster creatinine recovery (7 vs 13 days, P=.020). First and only oxygen carrier CE-marked specifically for organ preservation use.'
+      },
+      mp4: {
+        name:'MP4 (Hemospan)', source:'Human-derived, PEG-conjugated hemoglobin',
+        kidney:0, human:2, reg:0,
+        regLabel:'Trialed for surgical use; not approved',
+        detail:'Engineered specifically to reduce vasoactivity vs. earlier carriers. Surgical trial showed 57% vs 50% adverse outcomes (P=.18, not significant) &mdash; better tolerated than first-generation carriers but development did not continue to approval. No kidney-preservation-specific data identified.'
+      },
+      bhoc: {
+        name:'BHOC', source:'Hemoglobin-based oxygen carrier, developer-described trauma/surgical focus',
+        kidney:0, human:0, reg:0,
+        regLabel:'No kidney-transplant regulatory pathway data identified',
+        detail:'No published, peer-reviewed kidney-transplant-specific clinical trial data identified as of this writing. Public developer materials describe trauma and surgical blood-loss applications. This is the honest gap this Foundation is working to help close &mdash; see the BHOC Today tab.'
+      }
+    };
+    var labels = {kidney:['None published','','','Published (n=58, DGF+creatinine)'], human:['None identified','Limited/early','Multiple trials',''], reg:['None','Investigational only','Trialed, not approved','CE-marked for this use']};
+    var chips = Array.prototype.slice.call(document.querySelectorAll('#chipRow .chip'));
+    var barKidney = document.getElementById('bar-kidney');
+    var barHuman = document.getElementById('bar-human');
+    var barReg = document.getElementById('bar-reg');
+    var detailEl = document.getElementById('compareDetail');
+    if(!chips.length) return;
+
+    function colorFor(v){ if(v>=3) return 'var(--green)'; if(v===2) return 'var(--pulse)'; if(v===1) return 'var(--gold)'; return 'var(--danger)'; }
+    function renderBars(container, key){
+      var rows = Object.keys(data).map(function(k){
+        var d = data[k];
+        var v = d[key];
+        var pct = Math.max(8, (v/3)*100);
+        var lab = key==='reg' ? d.regLabel : (labels[key][v] || (v===0?'None':'Some'));
+        return '<div class="bar-row"><div class="bname">'+d.name.split(' (')[0]+'</div><div class="bar-track"><div class="bar-fill" style="width:'+pct+'%;background:'+colorFor(v)+';"></div></div><div class="bar-val">'+ (key==='reg' ? '' : v+'/3') +'</div></div>';
+      }).join('');
+      container.innerHTML = rows;
+    }
+    function renderAll(){
+      renderBars(barKidney,'kidney');
+      renderBars(barHuman,'human');
+      renderBars(barReg,'reg');
+    }
+    function showDetail(k){
+      var d = data[k];
+      detailEl.innerHTML = '<strong style="color:var(--ink);">'+d.name+'</strong> &mdash; <span style="font-family:var(--mono);font-size:0.75rem;color:var(--ink40);">'+d.source+'</span><br><br>'+d.detail+'<br><br><span style="font-family:var(--mono);font-size:0.72rem;color:var(--pulse);">Regulatory status: '+d.regLabel+'</span>';
+    }
+    chips.forEach(function(c){
+      c.addEventListener('click', function(){
+        chips.forEach(function(x){ x.setAttribute('aria-pressed', x===c?'true':'false'); });
+        showDetail(c.getAttribute('data-c'));
+      });
+    });
+    renderAll();
+    showDetail('hbo201');
+  })();
+
+  /* ---------- Dissociation curve canvas ---------- */
+  (function drawCurve(){
+    var canvas = document.getElementById('curveCanvas');
+    if(!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    var padL = 46, padB = 34, padT = 14, padR = 14;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+
+    function sigmoid(pO2, p50, n){
+      var x = Math.pow(pO2, n);
+      var k = Math.pow(p50, n);
+      return x / (x + k);
+    }
+    function toXY(pO2, sat){
+      var x = padL + (pO2/100) * plotW;
+      var y = padT + (1 - sat) * plotH;
+      return [x,y];
+    }
+    ctx.strokeStyle = 'rgba(216,207,196,0.15)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(padL, padT); ctx.lineTo(padL, H-padB); ctx.lineTo(W-padR, H-padB);
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(216,207,196,0.4)';
+    ctx.font = '10px IBM Plex Mono, monospace';
+    ctx.fillText('0', padL-8, H-padB+14);
+    ctx.fillText('50', padL + plotW*0.5 - 8, H-padB+14);
+    ctx.fillText('100 mmHg pO2', padL + plotW - 60, H-padB+14);
+    ctx.fillText('100%', 4, padT+6);
+    ctx.fillText('0% sat', 4, H-padB+2);
+
+    function drawCurveLine(p50, n, color){
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2.4;
+      ctx.beginPath();
+      for(var pO2=0; pO2<=100; pO2+=1){
+        var sat = sigmoid(pO2, p50, n);
+        var xy = toXY(pO2, sat);
+        if(pO2===0) ctx.moveTo(xy[0],xy[1]); else ctx.lineTo(xy[0],xy[1]);
+      }
+      ctx.stroke();
+    }
+    drawCurveLine(27, 2.7, '#e06a86');
+    drawCurveLine(15, 2.4, '#e8b84a');
+    drawCurveLine(38, 2.4, '#2ac4c8');
+  })();
+
 })();
 </script>
 </body>
 </html>
-
