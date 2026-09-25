@@ -1,0 +1,787 @@
+<title>Project Donor-Flow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root{
+  color-scheme: light;
+  --bg:#FAF6EC; --surface:#FFFFFF; --surface-2:#F1EAD8; --surface-3:#E9DFC7;
+  --ink:#1B2A4A; --ink-soft:#5B5644; --ink-faint:#8B8570;
+  --border: rgba(27,42,74,0.15); --border-strong: rgba(27,42,74,0.32);
+  --gold:#B4923C; --gold-soft: rgba(201,168,76,0.16);
+  --teal:#2E7D74; --teal-soft: rgba(46,125,116,0.14);
+  --blood:#B23A3A; --blood-soft: rgba(178,58,58,0.13);
+  --amber:#B96F16; --amber-soft: rgba(217,138,43,0.16);
+  --navy:#1B2A4A; --navy-soft: rgba(27,42,74,0.10);
+  --shadow: 0 1px 2px rgba(27,20,10,0.06), 0 8px 24px -12px rgba(27,20,10,0.18);
+  --font-display:'Fraunces', ui-serif, Georgia, serif;
+  --font-body:'Public Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#10182A; --surface:#161F35; --surface-2:#1D2A45; --surface-3:#243252;
+    --ink:#F1ECDD; --ink-soft:#C7C0AA; --ink-faint:#8D8A7C;
+    --border: rgba(241,236,221,0.14); --border-strong: rgba(241,236,221,0.30);
+    --gold:#E0BE6C; --gold-soft: rgba(224,190,108,0.16);
+    --teal:#57B0A4; --teal-soft: rgba(87,176,164,0.16);
+    --blood:#E2726B; --blood-soft: rgba(226,114,107,0.16);
+    --amber:#F0A44A; --amber-soft: rgba(240,164,74,0.16);
+    --navy:#8FA3D0; --navy-soft: rgba(143,163,208,0.14);
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 30px -14px rgba(0,0,0,0.55);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#10182A; --surface:#161F35; --surface-2:#1D2A45; --surface-3:#243252;
+  --ink:#F1ECDD; --ink-soft:#C7C0AA; --ink-faint:#8D8A7C;
+  --border: rgba(241,236,221,0.14); --border-strong: rgba(241,236,221,0.30);
+  --gold:#E0BE6C; --gold-soft: rgba(224,190,108,0.16);
+  --teal:#57B0A4; --teal-soft: rgba(87,176,164,0.16);
+  --blood:#E2726B; --blood-soft: rgba(226,114,107,0.16);
+  --amber:#F0A44A; --amber-soft: rgba(240,164,74,0.16);
+  --navy:#8FA3D0; --navy-soft: rgba(143,163,208,0.14);
+  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 30px -14px rgba(0,0,0,0.55);
+}
+
+*{box-sizing:border-box;}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased;}
+img,svg{max-width:100%; display:block;}
+[hidden]{display:none!important;}
+h1,h2,h3,h4{font-family:var(--font-display); font-weight:700; margin:0; text-wrap:balance; color:var(--ink);}
+p{margin:0;}
+::selection{background:var(--gold-soft); color:var(--ink);}
+a{color:inherit;}
+button{font-family:inherit; cursor:pointer;}
+@media (prefers-reduced-motion: reduce){ *{animation-duration:.001ms!important; animation-iteration-count:1!important; transition-duration:.001ms!important;} }
+
+.wrap{max-width:1180px; margin-inline:auto; padding-inline:max(20px, env(safe-area-inset-left,0px));}
+.eyebrow{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); display:flex; align-items:center; gap:8px;}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:currentColor;display:inline-block;}
+
+/* topbar */
+.topbar{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--border);}
+.topbar-inner{max-width:1180px; margin-inline:auto; padding:10px max(20px, env(safe-area-inset-left,0px)); display:flex; align-items:center; gap:12px; justify-content:space-between;}
+.brand-group{display:flex; align-items:center; gap:10px; flex:none; min-width:0;}
+.home-link{display:flex; align-items:center; gap:6px; flex:none; font-family:var(--font-mono); font-size:11.5px; color:var(--ink-soft); text-decoration:none; padding:6px 10px 6px 6px; border-right:1px solid var(--border);}
+.home-link:hover{color:var(--ink);}
+.home-link svg{width:15px; height:15px; flex:none;}
+.brandmark{display:flex; align-items:center; gap:9px; font-family:var(--font-display); font-weight:700; font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.brandmark .sq{width:10px;height:10px; background:var(--teal); flex:none;}
+.section-rail{display:flex; gap:2px; flex:1; min-width:0; overflow-x:auto; scrollbar-width:none;}
+.section-rail::-webkit-scrollbar{display:none;}
+.rail-chip{font-family:var(--font-mono); font-size:10px; letter-spacing:.05em; text-transform:uppercase; padding:5px 8px; border-radius:999px; white-space:nowrap; color:var(--ink-faint); border:1px solid transparent; flex:none; text-decoration:none;}
+.rail-chip.active{color:var(--teal); border-color:var(--teal); background:var(--teal-soft);}
+.donate-btn{flex:none; display:flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:11px; letter-spacing:.05em; text-transform:uppercase; font-weight:600; color:var(--bg); background:var(--blood); padding:8px 12px; border-radius:999px; text-decoration:none; white-space:nowrap;}
+.donate-btn svg{width:12px; height:12px;}
+
+/* hero */
+.hero{padding-block:52px 36px;}
+.hero-grid{display:grid; grid-template-columns:1.35fr 1fr; gap:36px; align-items:end;}
+@media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
+.hero h1{font-size:clamp(32px,5.4vw,58px); line-height:1.02; letter-spacing:-.01em;}
+.hero h1 em{font-style:italic; color:var(--teal);}
+.hero-sub{font-size:16.5px; line-height:1.65; color:var(--ink-soft); max-width:58ch; margin-top:16px;}
+.hero-stats{display:flex; gap:22px; margin-top:24px; flex-wrap:wrap;}
+.hero-stat{}
+.hero-stat .n{font-family:var(--font-display); font-weight:700; font-size:clamp(28px,4vw,42px); color:var(--blood); font-variant-numeric:tabular-nums;}
+.hero-stat .l{font-size:12px; color:var(--ink-faint); max-width:16ch; line-height:1.3; margin-top:2px;}
+.hero-side{border:1px solid var(--border); background:var(--surface); border-radius:8px; padding:18px; box-shadow:var(--shadow);}
+.hero-side .k{font-family:var(--font-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:8px;}
+.hero-side ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:9px;}
+.hero-side li{font-size:13px; color:var(--ink-soft); display:flex; gap:8px; align-items:flex-start;}
+.hero-side li b{color:var(--ink); font-weight:600;}
+.hero-side svg{flex:none; width:14px; height:14px; margin-top:2px; color:var(--teal);}
+
+/* sections */
+.section{padding-block:48px;}
+.section-head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:22px; flex-wrap:wrap;}
+.section-head h2{font-size:clamp(22px,3.2vw,32px);}
+.section-head .tag{font-family:var(--font-mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); border:1px solid var(--border); border-radius:999px; padding:5px 11px; white-space:nowrap;}
+.lede{font-size:15.5px; line-height:1.7; color:var(--ink-soft); max-width:76ch; margin-bottom:6px;}
+.divider{height:1px; background:var(--border); margin-block:8px;}
+
+/* stat grid */
+.stat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:8px; overflow:hidden;}
+@media (max-width:760px){ .stat-grid{grid-template-columns:1fr 1fr;} }
+.stat-cell{background:var(--surface); padding:18px 16px;}
+.stat-cell .n{font-family:var(--font-display); font-weight:700; font-size:clamp(22px,2.8vw,30px); color:var(--navy); font-variant-numeric:tabular-nums;}
+.stat-cell .l{font-size:12px; color:var(--ink-soft); margin-top:5px; line-height:1.4;}
+.stat-cell .s{font-family:var(--font-mono); font-size:9.5px; color:var(--ink-faint); margin-top:7px;}
+
+/* state cards */
+.state-tabs{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;}
+.state-tab{font-family:var(--font-mono); font-size:11.5px; font-weight:600; padding:8px 14px; border-radius:999px; border:1px solid var(--border-strong); background:var(--surface); color:var(--ink-soft);}
+.state-tab.active{background:var(--blood); border-color:var(--blood); color:#fff;}
+.state-panel{display:none; border:1px solid var(--border); border-radius:8px; background:var(--surface); padding:20px; box-shadow:var(--shadow);}
+.state-panel.active{display:block;}
+.state-panel-head{display:flex; align-items:center; gap:14px; margin-bottom:12px;}
+.state-grade{width:44px; height:44px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:900; font-size:22px; color:#fff; flex:none;}
+.state-panel h3{font-size:19px;}
+.state-facts{display:flex; flex-direction:column; gap:8px; margin-top:6px;}
+.state-facts li{font-size:13.5px; color:var(--ink-soft); line-height:1.5; list-style:none; padding-left:14px; position:relative;}
+.state-facts li::before{content:"—"; position:absolute; left:0; color:var(--ink-faint);}
+
+/* funnel */
+.funnel{display:flex; flex-direction:column; gap:2px; max-width:640px; margin:0 auto;}
+.funnel-row{display:flex; align-items:center; gap:14px; cursor:pointer;}
+.funnel-bar-track{flex:1; height:34px; background:var(--surface-2); border-radius:4px; overflow:hidden; position:relative;}
+.funnel-bar{height:100%; background:linear-gradient(90deg, var(--teal), var(--gold)); display:flex; align-items:center; padding-left:12px; font-family:var(--font-mono); font-size:12px; color:#fff; font-weight:600; white-space:nowrap; transition:width .6s ease;}
+.funnel-label{width:150px; flex:none; font-size:13px; color:var(--ink-soft); text-align:right;}
+.funnel-detail{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+.funnel-detail.open{max-height:200px;}
+.funnel-detail-inner{padding:12px 16px; margin:6px 0 10px 164px; background:var(--surface-2); border-radius:6px; font-size:13px; color:var(--ink-soft); line-height:1.55;}
+@media (max-width:600px){ .funnel-label{width:90px; font-size:11.5px;} .funnel-detail-inner{margin-left:104px;} }
+
+/* evidence grid */
+.evidence-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+@media (max-width:860px){ .evidence-grid{grid-template-columns:1fr 1fr;} }
+@media (max-width:600px){ .evidence-grid{grid-template-columns:1fr;} }
+.ev-card{border:1px solid var(--border); background:var(--surface); border-radius:8px; padding:16px; box-shadow:var(--shadow);}
+.ev-card .n{font-family:var(--font-display); font-weight:800; font-size:26px; color:var(--teal);}
+.ev-card .t{font-size:12.5px; color:var(--ink-soft); margin-top:4px; line-height:1.4;}
+.ev-card .src{font-family:var(--font-mono); font-size:10px; color:var(--ink-faint); margin-top:8px; text-transform:uppercase; letter-spacing:.03em;}
+.ev-card .d{font-size:12px; color:var(--ink-soft); margin-top:8px; line-height:1.5; border-top:1px solid var(--border); padding-top:8px;}
+
+/* pipeline accordion (reuse transplant-line pattern) */
+.pipeline{display:flex; flex-direction:column; gap:12px;}
+.stage{border:1px solid var(--border); border-radius:8px; background:var(--surface); box-shadow:var(--shadow); overflow:hidden;}
+.stage-head{padding:14px 16px; display:flex; align-items:center; gap:14px; cursor:pointer; user-select:none;}
+.stage-head:hover{background:var(--surface-2);}
+.stage-num{flex:none; width:38px; height:38px; border-radius:6px; background:var(--phase-soft); color:var(--phase-color); display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-weight:700; font-size:14px;}
+.stage-titles{flex:1; min-width:0;}
+.stage-cat{font-family:var(--font-mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--phase-color); display:block; margin-bottom:2px;}
+.stage-titles h3{font-size:16.5px;}
+.stage-ai{font-size:12px; color:var(--ink-faint); margin-top:2px;}
+.chev{flex:none; width:18px; height:18px; color:var(--ink-faint); transition:transform .25s;}
+.stage.open .chev{transform:rotate(180deg);}
+.stage-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.stage.open .stage-body{max-height:900px;}
+.stage-body-inner{padding:2px 16px 18px; display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+@media (max-width:700px){ .stage-body-inner{grid-template-columns:1fr;} }
+.sb-block h5{font-family:var(--font-mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:6px;}
+.sb-block p{font-size:13px; line-height:1.6; color:var(--ink-soft);}
+
+/* DRS calculator */
+.drs-calc{border:1px solid var(--border); border-radius:10px; background:var(--surface); box-shadow:var(--shadow); padding:24px; display:grid; grid-template-columns:1fr 260px; gap:28px;}
+@media (max-width:800px){ .drs-calc{grid-template-columns:1fr;} }
+.drs-slider-row{margin-bottom:18px;}
+.drs-slider-row:last-child{margin-bottom:0;}
+.drs-slider-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;}
+.drs-slider-top .name{font-size:13.5px; font-weight:600; color:var(--ink);}
+.drs-slider-top .weight{font-family:var(--font-mono); font-size:11px; color:var(--ink-faint);}
+.drs-slider-top .val{font-family:var(--font-mono); font-size:13px; color:var(--teal); font-weight:600;}
+.drs-slider-desc{font-size:11.5px; color:var(--ink-faint); margin-bottom:6px;}
+input[type="range"]{-webkit-appearance:none; width:100%; height:6px; border-radius:3px; background:var(--surface-3); outline:none;}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none; width:18px; height:18px; border-radius:50%; background:var(--teal); border:3px solid var(--surface); box-shadow:0 0 0 1px var(--border-strong); cursor:pointer;}
+input[type="range"]::-moz-range-thumb{width:18px; height:18px; border-radius:50%; background:var(--teal); border:3px solid var(--surface); box-shadow:0 0 0 1px var(--border-strong); cursor:pointer;}
+.drs-result{border-radius:8px; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background:var(--surface-2); border:1px solid var(--border);}
+.drs-score{font-family:var(--font-display); font-weight:900; font-size:56px; line-height:1; color:var(--route-color, var(--teal)); font-variant-numeric:tabular-nums;}
+.drs-score-label{font-family:var(--font-mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); margin-top:4px;}
+.drs-route{margin-top:16px; font-family:var(--font-mono); font-size:12px; letter-spacing:.05em; text-transform:uppercase; font-weight:700; padding:8px 14px; border-radius:999px; background:var(--route-bg, var(--teal-soft)); color:var(--route-color, var(--teal));}
+.drs-route-desc{font-size:12px; color:var(--ink-soft); margin-top:12px; line-height:1.5;}
+
+/* DMAIC tabs */
+.dmaic-tabs{display:flex; gap:6px; margin-bottom:16px; flex-wrap:wrap;}
+.dmaic-tab{font-family:var(--font-mono); font-size:11.5px; font-weight:700; padding:9px 16px; border-radius:6px; border:1px solid var(--border-strong); background:var(--surface); color:var(--ink-soft); border-top:3px solid transparent;}
+.dmaic-tab.active{border-top-color:var(--phase-c); color:var(--ink); background:var(--surface-2);}
+.dmaic-panel{display:none; border:1px solid var(--border); border-radius:8px; background:var(--surface); padding:20px; box-shadow:var(--shadow);}
+.dmaic-panel.active{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+@media (max-width:700px){ .dmaic-panel.active{grid-template-columns:1fr;} }
+.dmaic-col h5{font-family:var(--font-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:10px;}
+.dmaic-col.current h5{color:var(--blood);}
+.dmaic-col.ai h5{color:var(--teal);}
+.dmaic-col ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:8px;}
+.dmaic-col li{font-size:13px; color:var(--ink-soft); padding-left:14px; position:relative; line-height:1.5;}
+.dmaic-col li::before{content:"—"; position:absolute; left:0; color:var(--ink-faint);}
+
+/* before/after */
+.ba-wrap{display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center;}
+@media (max-width:760px){ .ba-wrap{grid-template-columns:1fr;} }
+.ba-bars{display:flex; align-items:flex-end; gap:40px; justify-content:center; height:200px; padding:0 20px;}
+.ba-bar-col{display:flex; flex-direction:column; align-items:center; gap:8px; height:100%; justify-content:flex-end;}
+.ba-bar{width:64px; border-radius:6px 6px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:8px; font-family:var(--font-mono); font-weight:700; color:#fff; font-size:14px;}
+.ba-bar-label{font-size:12px; color:var(--ink-faint); text-align:center;}
+
+/* roadmap */
+.roadmap{display:flex; flex-direction:column; gap:0; position:relative;}
+.rm-phase{display:grid; grid-template-columns:120px 1fr; gap:20px; padding-block:18px; border-top:1px solid var(--border);}
+.rm-phase:first-child{border-top:none;}
+.rm-months{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); padding-top:2px;}
+.rm-title{font-size:16px; font-weight:700; font-family:var(--font-display); margin-bottom:8px;}
+.rm-phase ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:6px;}
+.rm-phase li{font-size:13px; color:var(--ink-soft); padding-left:14px; position:relative; line-height:1.5;}
+.rm-phase li::before{content:"—"; position:absolute; left:0; color:var(--ink-faint);}
+
+/* ethics grid */
+.ethics-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+@media (max-width:700px){ .ethics-grid{grid-template-columns:1fr;} }
+.ethic-card{border:1px solid var(--border); border-radius:8px; background:var(--surface); padding:18px; box-shadow:var(--shadow);}
+.ethic-card .num{font-family:var(--font-mono); color:var(--gold); font-size:12px; margin-bottom:6px;}
+.ethic-card h4{font-size:15px; margin-bottom:6px;}
+.ethic-card p{font-size:13px; color:var(--ink-soft); line-height:1.55;}
+
+/* competitive table */
+.comp-table-wrap{overflow-x:auto; border:1px solid var(--border); border-radius:8px; box-shadow:var(--shadow);}
+table.comp{width:100%; border-collapse:collapse; background:var(--surface); font-size:12.5px; min-width:640px;}
+table.comp th, table.comp td{padding:10px 12px; text-align:center; border-bottom:1px solid var(--border);}
+table.comp th{font-family:var(--font-mono); font-size:10px; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-faint); text-align:left;}
+table.comp td:first-child, table.comp th:first-child{text-align:left; font-weight:600;}
+table.comp tr.cif{background:var(--teal-soft);}
+table.comp tr.cif td:first-child{color:var(--teal); font-weight:700;}
+.chk{color:var(--teal); font-weight:800;}
+.dash{color:var(--ink-faint);}
+
+/* CTA cards */
+.cta-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+@media (max-width:800px){ .cta-grid{grid-template-columns:1fr;} }
+.cta-card{border:1px solid var(--border); border-radius:8px; background:var(--surface); padding:20px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:10px;}
+.cta-card h4{font-size:15px;}
+.cta-card p{font-size:13px; color:var(--ink-soft); line-height:1.55; flex:1;}
+.cta-card .tag2{font-family:var(--font-mono); font-size:10.5px; color:var(--gold); text-transform:uppercase; letter-spacing:.05em;}
+
+/* refs */
+.refs{columns:2; column-gap:32px; font-size:11.5px; color:var(--ink-faint); line-height:1.7;}
+@media (max-width:760px){ .refs{columns:1;} }
+.refs p{break-inside:avoid; margin-bottom:10px;}
+
+.closing{padding-block:56px 80px; text-align:center;}
+.closing h2{font-size:clamp(24px,3.8vw,38px); max-width:22ch; margin-inline:auto;}
+.closing p{max-width:60ch; margin:14px auto 0; color:var(--ink-soft); font-size:15px; line-height:1.65;}
+.cta-row{display:flex; gap:12px; justify-content:center; margin-top:24px; flex-wrap:wrap;}
+.btn{font-family:var(--font-mono); font-size:12px; letter-spacing:.05em; text-transform:uppercase; padding:12px 20px; border-radius:4px; border:1px solid var(--border-strong); background:transparent; color:var(--ink); text-decoration:none; display:inline-flex; align-items:center; gap:8px; font-weight:600;}
+.btn.solid{background:var(--teal); border-color:var(--teal); color:#fff;}
+footer{border-top:1px solid var(--border); padding-block:24px; text-align:center;}
+footer p{font-family:var(--font-mono); font-size:10.5px; color:var(--ink-faint); letter-spacing:.03em;}
+</style>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-group">
+      <a class="home-link" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Home</a>
+      <div class="brandmark"><span class="sq"></span>PROJECT DONOR-FLOW</div>
+    </div>
+    <div class="section-rail" id="sectionRail"></div>
+    <a class="donate-btn" href="https://fnd.us/c2muK1?ref=sh_aFAak8" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.6 8.1 2.3 4.8 5.6 4.1c2-.4 4 .5 5.1 2.2C11.8 4.6 13.8 3.7 15.8 4.1c3.3.7 5 4 3.6 7.7C16.9 16.4 12 21 12 21Z"/></svg>Support</a>
+  </div>
+</div>
+
+<header class="hero wrap" id="top">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow"><span class="dot"></span>THE AI-PSYCHOSOCIAL INTEGRATION FRAMEWORK FOR PREDICTIVE DONOR LIFECYCLE MANAGEMENT</p>
+      <h1>Living donors aren't <em>missing</em>.<br>They're being lost.</h1>
+      <p class="hero-sub">Every 24 hours, 17 Americans die waiting for a kidney. More than 80% of people who say yes to living donation never reach the operating table — not because they're disqualified, but because the system that's supposed to carry them through evaluation was never built to hold on to them. Project Donor-Flow is Cold Ischemia Foundation's eight-stage AI architecture for closing that gap, grounded in peer-reviewed evidence at every stage.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="n">17/day</div><div class="l">deaths on the kidney waitlist (OPTN, 2024)</div></div>
+        <div class="hero-stat"><div class="n">&gt;80%</div><div class="l">of willing donors never reach surgery (SRTR, 2023)</div></div>
+        <div class="hero-stat"><div class="n">2.15σ</div><div class="l">current process quality — 255,000 DPMO</div></div>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="k">The Eight-Stage Solution</div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>AI-guided population targeting</b> before outreach begins</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Donor Readiness Score</b> at first contact, 24/7</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>FHIR record pull</b> eliminates evaluation fatigue</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Velocity monitoring</b> predicts withdrawal before it happens</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Closed-loop learning</b> — every outcome improves the next screen</span></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section class="section wrap" id="crisis">
+  <div class="section-head"><h2>The scale of the unmet need</h2><span class="tag">Section I · The Crisis</span></div>
+  <p class="lede">The numbers are not ambiguous. As of March 2024, more than 103,000 patients sat on the national kidney transplant waiting list. Living donor transplantation is the clinical gold standard — and the country is producing fewer of them than it did five years ago.</p>
+  <div class="stat-grid" style="margin-top:18px;">
+    <div class="stat-cell"><div class="n">103,000+</div><div class="l">patients on the kidney waitlist</div><div class="s">OPTN, 2024</div></div>
+    <div class="stat-cell"><div class="n">90% vs 82%</div><div class="l">5-yr graft survival, LDKT vs. deceased-donor (ages 18–34)</div><div class="s">Lentine et al., 2025</div></div>
+    <div class="stat-cell"><div class="n">6,226</div><div class="l">living kidney donors in 2023 — 630 below the 2019 peak</div><div class="s">SRTR, 2023</div></div>
+    <div class="stat-cell"><div class="n">6.03%</div><div class="l">lower 5-yr graft failure risk, LDKT vs. deceased-donor</div><div class="s">Buse et al., 2024, BJS</div></div>
+  </div>
+</section>
+
+<section class="section wrap" id="equity">
+  <div class="section-head"><h2>The disparities are structural, not clinical</h2><span class="tag">Equity Failure</span></div>
+  <p class="lede">The intelligence deficit does not fall equally. Race and geography predict access to living donation independent of medical eligibility — and CIF's priority-state analysis names exactly where the crisis concentrates.</p>
+  <div class="stat-grid" style="margin-top:18px; margin-bottom:24px;">
+    <div class="stat-cell"><div class="n">37%</div><div class="l">lower LDKT likelihood for Black recipients, independent of community vulnerability</div><div class="s">Axelrod et al., 2021, JAMA Surgery</div></div>
+    <div class="stat-cell"><div class="n">5.2% vs 11.4%</div><div class="l">LDKT rate, Hispanic vs. non-Hispanic White waitlisted patients</div><div class="s">Waterman et al., 2022</div></div>
+    <div class="stat-cell"><div class="n">3 of 5</div><div class="l">CIF priority states carry an AKF grade of D or F</div><div class="s">AKF Report Card</div></div>
+    <div class="stat-cell"><div class="n">15.2%</div><div class="l">of candidates withdraw before any formal decision — fully eligible, never disqualified</div><div class="s">Lentine et al., 2021, LDCPR</div></div>
+  </div>
+
+  <div class="state-tabs" id="stateTabs"></div>
+  <div id="statePanels"></div>
+</section>
+
+<section class="section wrap" id="pipeline-problem">
+  <div class="section-head"><h2>Awareness brings donors to the door. The system turns them away.</h2><span class="tag">Section II · The Pipeline Problem</span></div>
+  <p class="lede">Click any stage of the funnel below. Of 100 people who inquire about living donation, only 18 ever complete surgery — and the LDCPR data shows most of that loss has nothing to do with medical disqualification.</p>
+  <div class="funnel" id="funnel" style="margin-top:28px;"></div>
+</section>
+
+<section class="section wrap" id="evidence">
+  <div class="section-head"><h2>Every capability is grounded in published evidence</h2><span class="tag">Section II · Evidence Base</span></div>
+  <p class="lede">Nothing in this framework is speculative. Each number below is a peer-reviewed finding that Project Donor-Flow's architecture directly operationalizes.</p>
+  <div class="evidence-grid" style="margin-top:18px;" id="evidenceGrid"></div>
+</section>
+
+<section class="section wrap" id="architecture">
+  <div class="section-head"><h2>The eight-stage AI architecture</h2><span class="tag">Section III · Click to expand</span></div>
+  <p class="lede">From pre-inquiry population identification to post-donation longitudinal monitoring — a specific AI tool, a defined human role, and a published evidence citation at every stage.</p>
+  <div class="pipeline" id="pipeline" style="margin-top:20px;"></div>
+</section>
+
+<section class="section wrap" id="drs">
+  <div class="section-head"><h2>Try the Donor Readiness Score</h2><span class="tag">Live Calculator</span></div>
+  <p class="lede">The DRS is a weighted composite calculated the moment a donor makes first contact. Move the sliders to see how clinical, psychosocial, financial, and logistical signals combine — and which support track the AI-Concierge would activate. No donor is ever rejected at triage; every score triggers a response.</p>
+  <div class="drs-calc" style="margin-top:20px;">
+    <div>
+      <div class="drs-slider-row">
+        <div class="drs-slider-top"><span class="name">Clinical Pre-Screen</span><span class="weight">w₁ = 0.35</span><span class="val" id="valC">70</span></div>
+        <div class="drs-slider-desc">BMI, GFR, blood pressure, comorbidities — modifiable risk flags</div>
+        <input type="range" id="sliderC" min="0" max="100" value="70">
+      </div>
+      <div class="drs-slider-row">
+        <div class="drs-slider-top"><span class="name">Psychosocial Signal</span><span class="weight">w₂ = 0.30</span><span class="val" id="valP">70</span></div>
+        <div class="drs-slider-desc">AAS motivation proxy, social support, prior adherence indicators</div>
+        <input type="range" id="sliderP" min="0" max="100" value="70">
+      </div>
+      <div class="drs-slider-row">
+        <div class="drs-slider-top"><span class="name">Financial Status</span><span class="weight">w₃ = 0.20</span><span class="val" id="valF">70</span></div>
+        <div class="drs-slider-desc">Economic stability, employer protection, NLDAC eligibility signals</div>
+        <input type="range" id="sliderF" min="0" max="100" value="70">
+      </div>
+      <div class="drs-slider-row">
+        <div class="drs-slider-top"><span class="name">Logistical Capacity</span><span class="weight">w₄ = 0.15</span><span class="val" id="valL">70</span></div>
+        <div class="drs-slider-desc">Distance to transplant center, health literacy, prior engagement</div>
+        <input type="range" id="sliderL" min="0" max="100" value="70">
+      </div>
+    </div>
+    <div class="drs-result" id="drsResult">
+      <div class="drs-score" id="drsScore">70</div>
+      <div class="drs-score-label">Donor Readiness Score</div>
+      <div class="drs-route" id="drsRoute">STANDARD TRACK</div>
+      <div class="drs-route-desc" id="drsRouteDesc">Assigned support protocols for flagged variables. Coordinator contact within 48 hours.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="dmaic">
+  <div class="section-head"><h2>The Lean Six Sigma DMAIC framework</h2><span class="tag">Section IV · Click a phase</span></div>
+  <p class="lede">DMAIC — Define, Measure, Analyze, Improve, Control — is the process-engineering backbone that keeps every AI deployment organized around measurable outcomes rather than technology for its own sake.</p>
+  <div class="dmaic-tabs" id="dmaicTabs" style="margin-top:18px;"></div>
+  <div id="dmaicPanels"></div>
+</section>
+
+<section class="section wrap" id="impact">
+  <div class="section-head"><h2>What 40% conversion improvement means</h2><span class="tag">Quantitative Framework</span></div>
+  <p class="lede">Modeled on 250 annual donor inquiries, using LDCPR attrition rates for the current system and Bossini et al. (2023) improvement rates for the AI-enabled pipeline.</p>
+  <div class="ba-wrap" style="margin-top:20px;">
+    <div class="ba-bars">
+      <div class="ba-bar-col">
+        <div class="ba-bar" style="height:90px; background:var(--ink-faint);">45</div>
+        <div class="ba-bar-label">Current system<br>completions / 250</div>
+      </div>
+      <div class="ba-bar-col">
+        <div class="ba-bar" style="height:174px; background:var(--teal);">87</div>
+        <div class="ba-bar-label">With Project Donor-Flow<br>completions / 250</div>
+      </div>
+    </div>
+    <div>
+      <div class="stat-grid" style="grid-template-columns:1fr 1fr;">
+        <div class="stat-cell"><div class="n">+93%</div><div class="l">more completions from the same inquiry pool</div><div class="s">CIF modeling</div></div>
+        <div class="stat-cell"><div class="n">+42</div><div class="l">additional donors — no new marketing spend</div><div class="s">CIF modeling</div></div>
+        <div class="stat-cell"><div class="n">2,490</div><div class="l">projected additional living donors per year, nationally</div><div class="s">6,226 × 0.40</div></div>
+        <div class="stat-cell"><div class="n">1,158</div><div class="l">fewer waitlist deaths annually (conservative)</div><div class="s">2,490 × (17/91,000)</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="roadmap">
+  <div class="section-head"><h2>From pilot to national standard</h2><span class="tag">Section VIII · 36 Months</span></div>
+  <div class="roadmap" id="roadmapList"></div>
+</section>
+
+<section class="section wrap" id="ethics">
+  <div class="section-head"><h2>AI that serves the donor — not the system</h2><span class="tag">Section IX · Ethical Framework</span></div>
+  <div class="ethics-grid" id="ethicsGrid"></div>
+</section>
+
+<section class="section wrap" id="landscape">
+  <div class="section-head"><h2>Where CIF stands in the national landscape</h2><span class="tag">Competitive Landscape</span></div>
+  <p class="lede">Ten leading living-donor awareness programs operate in the U.S. None is building what CIF is building.</p>
+  <div class="comp-table-wrap" style="margin-top:16px;">
+    <table class="comp" id="compTable"></table>
+  </div>
+</section>
+
+<section class="section wrap" id="action">
+  <div class="section-head"><h2>The case for action</h2><span class="tag">Partnership &amp; Deployment</span></div>
+  <p class="lede">The programs that deploy Project Donor-Flow earliest aren't just adopting a better tool — they're building the evidence base that shapes what the national standard becomes.</p>
+  <div class="cta-grid" style="margin-top:18px;">
+    <div class="cta-card"><div class="tag2">Transplant Programs &amp; OPOs</div><h4>Deploy the pilot</h4><p>Deploy the AI-Concierge infrastructure at your program and commit to the National Donor Velocity Benchmark data-sharing framework.</p></div>
+    <div class="cta-card"><div class="tag2">OPTN Policy Committees</div><h4>Establish the benchmark</h4><p>Make donor evaluation operational efficiency — DRS distribution, velocity profile, equity-adjusted conversion — a component of program accountability.</p></div>
+    <div class="cta-card"><div class="tag2">Federal Policymakers &amp; HHS</div><h4>Support Marie's Lifeline</h4><p>Expand NLDAC eligibility on donor financial status alone, and mandate the follow-up standards KDIGO already calls for.</p></div>
+  </div>
+</section>
+
+<section class="section wrap" id="references">
+  <div class="section-head"><h2>Works cited</h2><span class="tag">APA 7th Edition</span></div>
+  <div class="refs" id="refsList"></div>
+</section>
+
+<section class="section wrap">
+  <div class="closing">
+    <h2>The intelligence gap is real. Project Donor-Flow closes it.</h2>
+    <p>Seventeen people will die today on the kidney transplant waitlist. AI cannot save all of them. But it can — and based on the published evidence, demonstrably will — save more of them than the current system does.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="https://fnd.us/c2muK1?ref=sh_aFAak8" target="_blank" rel="noopener">Support This Work</a>
+      <a class="btn" href="/">Back to Home</a>
+      <a class="btn" href="/transplant-line.html">The Transplant Line</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>COLD ISCHEMIA FOUNDATION · PROJECT DONOR-FLOW IS ORIGINAL CIF INTELLECTUAL PROPERTY · FOR ADVOCACY &amp; POLICY EDUCATION · NOT MEDICAL ADVICE</p>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- section rail ---------- */
+var sections = [
+  {id:"crisis", label:"Crisis"},
+  {id:"equity", label:"Equity"},
+  {id:"pipeline-problem", label:"Pipeline"},
+  {id:"evidence", label:"Evidence"},
+  {id:"architecture", label:"Architecture"},
+  {id:"drs", label:"DRS Calc"},
+  {id:"dmaic", label:"DMAIC"},
+  {id:"impact", label:"Impact"},
+  {id:"roadmap", label:"Roadmap"},
+  {id:"ethics", label:"Ethics"},
+  {id:"landscape", label:"Landscape"},
+  {id:"action", label:"Act"}
+];
+var rail = document.getElementById("sectionRail");
+sections.forEach(function(s){
+  var a = document.createElement("a");
+  a.className = "rail-chip";
+  a.href = "#" + s.id;
+  a.textContent = s.label;
+  rail.appendChild(a);
+});
+var chips = Array.from(rail.querySelectorAll(".rail-chip"));
+var secEls = sections.map(function(s){ return document.getElementById(s.id); });
+if("IntersectionObserver" in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var idx = secEls.indexOf(e.target);
+        chips.forEach(function(c,i){ c.classList.toggle("active", i===idx); });
+      }
+    });
+  }, {rootMargin:"-35% 0px -55% 0px"});
+  secEls.forEach(function(el){ if(el) io.observe(el); });
+}
+
+/* ---------- state cards ---------- */
+var STATES = [
+  {code:"MS", grade:"F", color:"var(--blood)", name:"Mississippi", facts:["Obesity 40.8% — highest nationally","Diabetes 16.9% — highest nationally","Zero improvement in living donor rates, 2021–2023","No anti-discrimination law, no job protection, no reimbursement"]},
+  {code:"LA", grade:"D", color:"var(--amber)", name:"Louisiana", facts:["Obesity 37.1% — 2nd highest nationally","No anti-discrimination law","No job protection","No direct reimbursement program"]},
+  {code:"AL", grade:"D", color:"var(--amber)", name:"Alabama", facts:["Obesity 36.3%","UAB is nationally significant as a transplant center","Zero state-level support infrastructure"]},
+  {code:"TX", grade:"C", color:"var(--gold)", name:"Texas", facts:["2nd most populous state","Hispanic LDKT rate: 5.2% vs. 11.4% for non-Hispanic White patients","Documented, quantified equity crisis (Waterman et al., 2022)"]},
+  {code:"FL", grade:"C", color:"var(--gold)", name:"Florida", facts:["CIF home state — Congressional District FL-16","Improved legislation post-2022","Still underperforms for the 3rd most populous state in the country"]}
+];
+var stateTabs = document.getElementById("stateTabs");
+var statePanels = document.getElementById("statePanels");
+STATES.forEach(function(st, i){
+  var tab = document.createElement("button");
+  tab.className = "state-tab" + (i===0 ? " active" : "");
+  tab.textContent = st.code;
+  tab.dataset.idx = i;
+  stateTabs.appendChild(tab);
+
+  var panel = document.createElement("div");
+  panel.className = "state-panel" + (i===0 ? " active" : "");
+  panel.dataset.idx = i;
+  panel.innerHTML =
+    '<div class="state-panel-head"><div class="state-grade" style="background:'+st.color+';">'+st.grade+'</div><div><h3>'+st.name+'</h3><div style="font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);">AKF Living Donor Protection Grade: '+st.grade+'</div></div></div>' +
+    '<ul class="state-facts">' + st.facts.map(function(f){return '<li>'+f+'</li>';}).join('') + '</ul>';
+  statePanels.appendChild(panel);
+});
+stateTabs.addEventListener("click", function(e){
+  var btn = e.target.closest(".state-tab");
+  if(!btn) return;
+  var idx = btn.dataset.idx;
+  Array.from(stateTabs.children).forEach(function(c){ c.classList.toggle("active", c===btn); });
+  Array.from(statePanels.children).forEach(function(p){ p.classList.toggle("active", p.dataset.idx===idx); });
+});
+
+/* ---------- funnel ---------- */
+var FUNNEL = [
+  {label:"Inquiries", pct:100, n:"100", detail:"Every donor journey starts here — an individual expresses interest in living donation, in person, online, or through a screening call."},
+  {label:"Prelim. screening", pct:60, n:"~60", detail:"Roughly 40% are lost before any formal evaluation step even begins — largely to administrative friction and unanswered questions, not medical findings."},
+  {label:"Clinical evaluation", pct:42, n:"~42", detail:"Of those who reach evaluation, many stall on record compilation — the single most consistently documented driver of donor fatigue and withdrawal."},
+  {label:"Psychosocial review", pct:30, n:"~30", detail:"Unstandardized psychosocial criteria mean a donor can be approved at one program and disqualified at another for an identical clinical profile."},
+  {label:"Final approval", pct:22, n:"~22", detail:"15.2% of all non-approvals are candidates who withdrew before any formal decision was ever made — fully eligible, never disqualified."},
+  {label:"Surgery", pct:18, n:"~18", detail:"Only 18 of the original 100 inquiries become a completed living donation. Project Donor-Flow targets this exact gap at every stage above."}
+];
+var funnel = document.getElementById("funnel");
+FUNNEL.forEach(function(f, i){
+  var row = document.createElement("div");
+  row.className = "funnel-row";
+  row.innerHTML =
+    '<div class="funnel-label">'+f.label+'</div>' +
+    '<div class="funnel-bar-track"><div class="funnel-bar" style="width:0%;" data-target="'+f.pct+'">'+f.n+'</div></div>';
+  funnel.appendChild(row);
+
+  var detail = document.createElement("div");
+  detail.className = "funnel-detail";
+  detail.innerHTML = '<div class="funnel-detail-inner">'+f.detail+'</div>';
+  funnel.appendChild(detail);
+
+  row.addEventListener("click", function(){
+    var wasOpen = detail.classList.contains("open");
+    Array.from(funnel.querySelectorAll(".funnel-detail")).forEach(function(d){ d.classList.remove("open"); });
+    if(!wasOpen) detail.classList.add("open");
+  });
+});
+function animateFunnel(){
+  Array.from(funnel.querySelectorAll(".funnel-bar")).forEach(function(bar){
+    bar.style.width = bar.dataset.target + "%";
+  });
+}
+if("IntersectionObserver" in window){
+  var fio = new IntersectionObserver(function(entries, obs){
+    entries.forEach(function(e){ if(e.isIntersecting){ animateFunnel(); obs.disconnect(); } });
+  }, {threshold:0.3});
+  fio.observe(funnel);
+} else { animateFunnel(); }
+
+/* ---------- evidence grid ---------- */
+var EVIDENCE = [
+  {n:"−43%", t:"Evaluation lead time with LSS + FHIR streamlining", src:"Bossini et al., 2023 · BMC Nephrology", d:"293 → 166 days. Pre-emptive donor loss 44% → 27%. Dialysis cost exposure reduced 45%. No additional staffing required."},
+  {n:"60%", t:"Did not complete evaluation without AI, within 12 months", src:"Al Awadhi et al., 2025 · Clinical Transplantation", d:"Houston Methodist ML risk indices predict dropout at referral, evaluation, and waitlisting. NIH AIM-AHEAD funded. Validates the DRS routing system."},
+  {n:"1,400", t:"Evaluation starts from one AI-profiled outreach campaign", src:"ODTA, 2025 · National Innovation Forum", d:"AI donor profiling reached 121,000 people using three motivation archetypes — a 1.16% activation rate, far above standard campaign benchmarks."},
+  {n:"First", t:"Comprehensive AI review ever published in living kidney donation", src:"Nawar et al., 2026 · Frontiers in Transplantation", d:"NYU Grossman systematic review confirms ML, NLP, and transformer models across risk prediction, evaluation, and outreach — the evidence backbone of this framework."},
+  {n:"14,278", t:"Survey respondents analyzed by random forest ML", src:"Boadu et al., 2023 · Frontiers in Public Health", d:"LSHTM random forest analysis identifies the complex predictors of living donor intent — the scientific basis for Stage 1 predictive donor mapping."},
+  {n:"37%", t:"Lower LDKT likelihood for Black recipients", src:"Axelrod et al., 2021 · JAMA Surgery", d:"19,287 recipients analyzed; adjusted relative risk 0.63 (p<0.001), independent of community vulnerability — a structural inequity addressable only through equity-correcting AI architecture."}
+];
+var evGrid = document.getElementById("evidenceGrid");
+EVIDENCE.forEach(function(e){
+  var card = document.createElement("div");
+  card.className = "ev-card";
+  card.innerHTML = '<div class="n">'+e.n+'</div><div class="t">'+e.t+'</div><div class="src">'+e.src+'</div><div class="d">'+e.d+'</div>';
+  evGrid.appendChild(card);
+});
+
+/* ---------- pipeline accordion ---------- */
+var PHASES2 = {
+  outreach:{color:"var(--teal)", soft:"var(--teal-soft)", label:"Outreach"},
+  intake:{color:"var(--amber)", soft:"var(--amber-soft)", label:"Intake"},
+  evaluation:{color:"var(--gold)", soft:"var(--gold-soft)", label:"Evaluation"},
+  support:{color:"var(--blood)", soft:"var(--blood-soft)", label:"Support"},
+  decision:{color:"var(--navy)", soft:"var(--navy-soft)", label:"Decision"},
+  monitoring:{color:"var(--navy)", soft:"var(--navy-soft)", label:"Monitoring"}
+};
+var STAGES2 = [
+  {n:"01", cat:"outreach", title:"AI-Driven Population Identification", ai:"Random Forest / Geospatial ML Model", inputs:"USRDS ESRD prevalence by ZIP, CDC Social Vulnerability Index, OPTN state donation rates, AKF legislative grades, demographic census data.", output:"A ranked geographic targeting map identifying the ZIP codes, faith institutions, FQHCs, and HBCUs with the highest potential donor supply and lowest current LDKT rates.", human:"Public health strategists review the AI heat map, approve channel allocation, and brief community health partners.", evidence:"Boadu et al. (2023) applied random forest ML to 14,278 respondents to identify living donor intent predictors — the scientific basis for this stage."},
+  {n:"02", cat:"outreach", title:"Social Media Intelligence", ai:"NLP Classifier / Social Media ML Monitor", inputs:"Public posts on Twitter/X, Reddit, and Facebook about kidney donation and dialysis; engagement metrics; sentiment signals; community influencer activity.", output:"Classifies each flagged post as Curious Potential Donor, Barrier-Expressing, Emotionally Motivated, or Already Aware but Inactive — then flags high-intent individuals for targeted outreach.", human:"The creative team designs profile-specific messaging and deploys campaigns to AI-identified audiences with matched content strategy.", evidence:"ODTA (2025) AI profiling reached 121,000 people and produced 1,400 evaluation starts. Nawar et al. (2026) document NLP as the foundation for pre-inquiry donor identification."},
+  {n:"03", cat:"intake", title:"Intelligent Intake &amp; the Donor Readiness Score", ai:"NLU + DRS Engine", inputs:"The donor's first real-time communication — expressed intent, emotional state, financial anxiety indicators, health literacy signals, logistical constraints.", output:"An immediate, personalized AI-Concierge conversation and a live-calculated Donor Readiness Score routing the donor to Fast-Track, Standard + Support, or Support Track Priority.", human:"A coordinator receives the DRS and routing recommendation and makes first human contact within the assigned window.", evidence:"Al Awadhi et al. (2025) found ML risk indices at referral could predict dropout before it occurred — exactly the function the DRS performs."},
+  {n:"04", cat:"evaluation", title:"FHIR Automated Clinical Pre-Screen", ai:"FHIR API Integration + ML Clinical Risk Classifier", inputs:"With donor consent, the donor's EHR network records — pulled automatically rather than self-compiled by the donor.", output:"A pre-populated clinical history before the first in-person visit, with modifiable risk factors (elevated BMI, borderline blood pressure, reduced GFR) already flagged.", human:"Clinical staff review the pre-populated record instead of waiting weeks for the donor to gather it themselves.", evidence:"Bossini et al. (2023): evaluation lead time cut from 293 to 166 days (−43%) using this exact class of intervention."},
+  {n:"05", cat:"evaluation", title:"Adaptive Psychosocial Assessment", ai:"Transformer-Based Adaptive AAS / CRI Assessment", inputs:"Donor responses to the Altruism Assessment Scale (AAS) and Coercion Risk Inventory (CRI), delivered as adaptive digital instruments before the first in-person visit.", output:"Question sequences that reshape in real time based on prior answers — probing deeper on motivation-integrity or coercion risk exactly where a donor's responses indicate a need.", human:"The psychosocial team receives richer, more honest data than any static screening instrument produces, before their first live encounter with the donor.", evidence:"LDCPR: poor adherence (62% of psychosocial non-approvals), psychiatric diagnosis (50%), cognitive concerns (33%), poor social support (25%) — all identifiable early through this stage."},
+  {n:"06", cat:"support", title:"The Concierge Support Engine — Velocity Monitoring", ai:"Predictive Retention ML", inputs:"Stage-by-stage progression timing compared against expected velocity benchmarks for each evaluation step.", output:"A tiered response the moment a donor's pace falls outside the expected window: personalized outreach at 24 hours, a coordinator alert with a Donor Passport brief at 48 hours, psychosocial escalation at 72 hours.", human:"Coordinators act on an AI-generated Donor Passport that names the probable cause of a stall before they ever pick up the phone.", evidence:"ODTA (2025) documents Houston Methodist's human-technology co-care model doing exactly this at a single high-resource institution — Project Donor-Flow makes it an operational standard."},
+  {n:"07", cat:"decision", title:"AI-Standardized Multi-Disciplinary Review", ai:"Decision-Support Dashboard AI", inputs:"The complete clinical, psychosocial, logistical, financial, and behavioral record, synthesized into one navigable view.", output:"A structured evidence package for the MDT review — plus a real-time flag showing whether a donor's BMI or other threshold would trigger the same disqualification at peer programs.", human:"The multi-disciplinary team retains full decision authority; the AI supplies the complete, standardized evidence context the decision deserves.", evidence:"LDCPR documents BMI disqualification thresholds varying from ≥30 to ≥35 across programs — inequitable access based on program affiliation, not clinical evidence."},
+  {n:"08", cat:"monitoring", title:"Post-Donation AI Monitoring", ai:"Time-Series ML", inputs:"Post-donation renal function trajectory, blood pressure, psychosocial adjustment indicators, medication adherence, and quality-of-life survey data.", output:"Early warning signals for pre-complication patterns, weeks before they produce clinical events — and a continuously refined DRS model as every outcome becomes a training data point.", human:"Clinical teams intervene early on flagged trajectories; the evidence generated informs OPTN, HRSA, and CMS policy on post-donation monitoring standards.", evidence:"KDIGO Living Donor Guidelines call for exactly this kind of systematic psychosocial data collection — infrastructure that does not yet exist elsewhere."}
+];
+var pipeline = document.getElementById("pipeline");
+STAGES2.forEach(function(s, i){
+  var ph = PHASES2[s.cat];
+  var stage = document.createElement("div");
+  stage.className = "stage" + (i===0 ? " open" : "");
+  stage.style.setProperty("--phase-color", ph.color);
+  stage.style.setProperty("--phase-soft", ph.soft);
+  stage.innerHTML =
+    '<div class="stage-head">' +
+      '<div class="stage-num">'+s.n+'</div>' +
+      '<div class="stage-titles"><span class="stage-cat">'+ph.label+'</span><h3>'+s.title+'</h3><div class="stage-ai">'+s.ai+'</div></div>' +
+      '<div class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>' +
+    '</div>' +
+    '<div class="stage-body"><div class="stage-body-inner">' +
+      '<div class="sb-block"><h5>Data Inputs</h5><p>'+s.inputs+'</p></div>' +
+      '<div class="sb-block"><h5>AI Output</h5><p>'+s.output+'</p></div>' +
+      '<div class="sb-block"><h5>Human Role</h5><p>'+s.human+'</p></div>' +
+      '<div class="sb-block"><h5>Evidence</h5><p>'+s.evidence+'</p></div>' +
+    '</div></div>';
+  pipeline.appendChild(stage);
+  stage.querySelector(".stage-head").addEventListener("click", function(){
+    stage.classList.toggle("open");
+  });
+});
+
+/* ---------- DRS calculator ---------- */
+var sliders = {C: document.getElementById("sliderC"), P: document.getElementById("sliderP"), F: document.getElementById("sliderF"), L: document.getElementById("sliderL")};
+var vals = {C: document.getElementById("valC"), P: document.getElementById("valP"), F: document.getElementById("valF"), L: document.getElementById("valL")};
+var weights = {C:0.35, P:0.30, F:0.20, L:0.15};
+var drsScore = document.getElementById("drsScore");
+var drsRoute = document.getElementById("drsRoute");
+var drsRouteDesc = document.getElementById("drsRouteDesc");
+var drsResult = document.getElementById("drsResult");
+
+function updateDRS(){
+  var score = 0;
+  Object.keys(sliders).forEach(function(k){
+    var v = parseFloat(sliders[k].value);
+    vals[k].textContent = v.toFixed(0);
+    score += v * weights[k];
+  });
+  score = Math.round(score);
+  drsScore.textContent = score;
+  var routeColor, routeBg, routeLabel, routeDesc;
+  if(score >= 70){
+    routeColor = "var(--teal)"; routeBg = "var(--teal-soft)";
+    routeLabel = "FAST-TRACK";
+    routeDesc = "Direct coordinator assignment within 2 hours. FHIR record pull initiated. Evaluation scheduled within 14 days.";
+  } else if(score >= 40){
+    routeColor = "var(--amber)"; routeBg = "var(--amber-soft)";
+    routeLabel = "STANDARD + ACTIVE SUPPORT";
+    routeDesc = "Assigned support protocols for flagged variables. Coordinator contact within 48 hours. Specific barriers addressed before evaluation begins.";
+  } else {
+    routeColor = "var(--blood)"; routeBg = "var(--blood-soft)";
+    routeLabel = "INTENSIVE SUPPORT PRIORITY";
+    routeDesc = "Immediate Financial Advocacy + Care Network activation. Psychosocial pre-engagement before medical evaluation. No donor is ever rejected at triage.";
+  }
+  drsScore.style.color = routeColor;
+  drsRoute.style.color = routeColor;
+  drsRoute.style.background = routeBg;
+  drsRoute.textContent = routeLabel;
+  drsRouteDesc.textContent = routeDesc;
+}
+Object.values(sliders).forEach(function(s){ s.addEventListener("input", updateDRS); });
+updateDRS();
+
+/* ---------- DMAIC tabs ---------- */
+var DMAIC = [
+  {phase:"DEFINE", color:"var(--teal)", sub:"Establish CTQs & scope", current:["Conversion rate under 20%","17 deaths per day on the waitlist","No national operational standard exists"], ai:["DRS defined as the primary Critical to Quality metric","Full SIPOC map generated for the donor pipeline"]},
+  {phase:"MEASURE", color:"var(--amber)", sub:"Quantify defects & sigma level", current:["DPMO = 255,000","Sigma level ≈ 2.15σ","Evaluation lead time: 127–293 days"], ai:["Velocity monitoring activated across all stages","Equity metrics mapped by race, income, and geography"]},
+  {phase:"ANALYZE", color:"var(--gold)", sub:"Root cause identification", current:["Five confirmed root causes: triage bias, late psychosocial screening, administrative burden, financial suppression, data fragmentation"], ai:["AI fishbone analysis","DRS regression modeling against withdrawal risk","NLP analysis of undisclosed exit reasons"]},
+  {phase:"IMPROVE", color:"var(--blood)", sub:"Deploy the full AI architecture", current:["Zero standardized early psychosocial protocols","BMI disqualification threshold varies ≥30–≥35 by program"], ai:["All eight AI stages deployed","DRS routing live at first contact","FHIR automation eliminates record-compilation burden","Support protocols auto-activated by risk signal"]},
+  {phase:"CONTROL", color:"var(--navy)", sub:"Sustain, benchmark & scale nationally", current:["No national benchmark exists","Imperfect OPTN compliance","No outcome-linked evidence base"], ai:["National Donor Velocity Benchmark published quarterly","Closed-Loop DRS refinement on every outcome","Marie's Lifeline Compensation Act advances in parallel"]}
+];
+var dTabs = document.getElementById("dmaicTabs");
+var dPanels = document.getElementById("dmaicPanels");
+DMAIC.forEach(function(d, i){
+  var tab = document.createElement("button");
+  tab.className = "dmaic-tab" + (i===0?" active":"");
+  tab.style.setProperty("--phase-c", d.color);
+  tab.textContent = d.phase;
+  tab.dataset.idx = i;
+  dTabs.appendChild(tab);
+
+  var panel = document.createElement("div");
+  panel.className = "dmaic-panel" + (i===0?" active":"");
+  panel.dataset.idx = i;
+  panel.innerHTML =
+    '<div class="dmaic-col current"><h5>Current State — '+d.sub+'</h5><ul>'+d.current.map(function(c){return '<li>'+c+'</li>';}).join('')+'</ul></div>' +
+    '<div class="dmaic-col ai"><h5>AI Intervention</h5><ul>'+d.ai.map(function(c){return '<li>'+c+'</li>';}).join('')+'</ul></div>';
+  dPanels.appendChild(panel);
+});
+dTabs.addEventListener("click", function(e){
+  var btn = e.target.closest(".dmaic-tab");
+  if(!btn) return;
+  var idx = btn.dataset.idx;
+  Array.from(dTabs.children).forEach(function(c){ c.classList.toggle("active", c===btn); });
+  Array.from(dPanels.children).forEach(function(p){ p.classList.toggle("active", p.dataset.idx===idx); });
+});
+
+/* ---------- roadmap ---------- */
+var ROADMAP = [
+  {months:"Months 1–12", title:"Phase 1 — Program-Level Pilot Deployment", items:["2–3 transplant centers: geographic diversity, minimum 50 annual inquiries","All 8 AI stages deployed with monthly DMAIC control-metric review","Primary measure: conversion rate vs. historical baseline","Every interaction calibrates the DRS model — completions and withdrawals alike","Priority sites: Florida (CIF home), Mississippi or Louisiana (highest equity urgency)"]},
+  {months:"Months 12–24", title:"Phase 2 — Regional Scaling &amp; Benchmark Establishment", items:["Expansion to 10–15 programs, prioritizing the five critical states","National Donor Velocity Benchmark activates — inter-program accountability begins","Phase 2 programs deploy a DRS model already refined by Phase 1 outcome data","Legislative coordination: anti-discrimination and reimbursement bills advance in parallel","Spanish-language NLP monitoring deployed for Texas and Florida markets"]},
+  {months:"Months 24–36", title:"Phase 3 — National Standard, OPTN/SRTR Integration", items:["National Donor Velocity Benchmark published quarterly alongside SRTR reports","Closed-Loop Refinement generates the first outcome-linked LKD evidence base","Evidence base directly informs HRSA, CMS, and OPTN policy reform","OPTN Policy Oversight Committee engagement for mandatory reporting","Marie's Lifeline Compensation Act advances with national legislative support"]}
+];
+var rmList = document.getElementById("roadmapList");
+ROADMAP.forEach(function(r){
+  var el = document.createElement("div");
+  el.className = "rm-phase";
+  el.innerHTML = '<div class="rm-months">'+r.months+'</div><div><div class="rm-title">'+r.title+'</div><ul>'+r.items.map(function(i){return '<li>'+i+'</li>';}).join('')+'</ul></div>';
+  rmList.appendChild(el);
+});
+
+/* ---------- ethics grid ---------- */
+var ETHICS = [
+  {n:"01", t:"Transparency &amp; Explainability", d:"Every AI output is explainable to the donor and the clinical team. The DRS shows donors why their score is what it is and which support track they're being routed to — and why. No AI output produces a clinical decision without a human review layer."},
+  {n:"02", t:"Data Privacy — Public Data Only", d:"Stage 2 NLP monitors only publicly available social media posts. No private communications, no non-public account data. Functionally identical to a public health department analyzing public survey data to direct educational resources."},
+  {n:"03", t:"Equity Assurance by Architecture", d:"The DRS model is trained with equity constraints that prevent race, educational attainment, and income from serving as direct routing inputs. Equity-adjusted outcomes are monitored quarterly as a primary quality-control metric, not an afterthought."},
+  {n:"04", t:"Donor Autonomy Is Paramount", d:"The AI-Concierge serves the donor, not the program's conversion metrics. Velocity monitoring alerts the clinical team so they can address a barrier — never to pressure a donor toward a decision. Informed withdrawal is not a system failure."}
+];
+var eGrid = document.getElementById("ethicsGrid");
+ETHICS.forEach(function(e){
+  var card = document.createElement("div");
+  card.className = "ethic-card";
+  card.innerHTML = '<div class="num">'+e.n+'</div><h4>'+e.t+'</h4><p>'+e.d+'</p>';
+  eGrid.appendChild(card);
+});
+
+/* ---------- competitive table ---------- */
+var COMP_COLS = ["Organization","Awareness","Financial Support","Eval Pipeline Optimization","AI Deployment","Independent Funding"];
+var COMP_ROWS = [
+  ["Donate Life America","✓","–","–","–","–"],
+  ["NKDO","✓","–","–","–","✓"],
+  ["NKF (Big Ask / Give)","✓","–","–","–","–"],
+  ["Living Kidney Donors Network","✓","–","–","–","✓"],
+  ["National Kidney Registry","✓","✓","Partial","–","–"],
+  ["American Kidney Fund","✓","✓","–","–","–"],
+  ["NLDAC / HRSA","–","✓","–","–","–"],
+  ["Cold Ischemia Foundation","✓","✓","✓","✓","✓"]
+];
+var compTable = document.getElementById("compTable");
+var thead = '<thead><tr>' + COMP_COLS.map(function(c){return '<th>'+c+'</th>';}).join('') + '</tr></thead>';
+var tbody = '<tbody>' + COMP_ROWS.map(function(row, i){
+  var isCif = row[0] === "Cold Ischemia Foundation";
+  var cells = row.map(function(cell, j){
+    if(j===0) return '<td>'+cell+'</td>';
+    var cls = cell === "✓" ? "chk" : (cell === "–" ? "dash" : "");
+    return '<td class="'+cls+'">'+cell+'</td>';
+  }).join('');
+  return '<tr'+(isCif?' class="cif"':'')+'>'+cells+'</tr>';
+}).join('') + '</tbody>';
+compTable.innerHTML = thead + tbody;
+
+/* ---------- references ---------- */
+var REFS = [
+  "Al Awadhi, S., Potter, T. B. H., et al. (2025). Developing and validating machine learning-driven risk indices to predict patient dropout during referral, evaluation, and waitlisting for kidney transplant. <i>Clinical Transplantation, 39</i>(9), e70325.",
+  "American Kidney Fund (AKF). (2021–2023). <i>Living Donor Protection Report Cards: State-by-State Analysis.</i>",
+  "Axelrod, D. A., Hall, E. C., Schnitzler, M. A., et al. (2021). Evaluation of community-level vulnerability and racial disparities in living donor kidney transplant. <i>JAMA Surgery, 156</i>(12), e214511.",
+  "Boadu, P., McLaughlin, L., Al-Haboubi, M., et al. (2023). A machine-learning approach to estimating public intentions to become a living kidney donor in England. <i>Frontiers in Public Health, 10</i>, 1052338.",
+  "Bossini, B., Turturici, L., Papalia, T., et al. (2023). Process control: simply a matter of efficiency or of survival and costs? A single-centre quality improvement project in living donor renal transplant. <i>BMC Nephrology, 24</i>(1), 42.",
+  "Buse, S., McLean, A., Muthusamy, A., et al. (2024). Comparison of outcomes after living and deceased donor kidney transplantation: UK national cohort study. <i>British Journal of Surgery, 111</i>(8), znae189.",
+  "Centers for Medicare &amp; Medicaid Services (CMS). (2023). <i>Calendar Year 2024 ESRD Prospective Payment System Final Rule</i> (CMS-1782-F).",
+  "Clifton, E., Windler, G. S., Lentine, K., et al. (2024). The psychosocial evaluation of living kidney donation: Time for standardization in practice. <i>Transplantation.</i>",
+  "Lam, N. N., Lentine, K. L., Garg, A. X., &amp; Storsley, L. (2023). Reviewing racial disparities in living donor kidney transplantation: A socioecological approach. <i>PMC.</i>",
+  "Lentine, K. L., Garfield, S. S., Song, H., et al. (2021). Characterization of candidates for living kidney donation who do not proceed to donation. <i>American Journal of Kidney Diseases, 78</i>(3), 394–405.",
+  "Lentine, K. L., Smith, J. M., Lyden, G. R., et al. (2025). OPTN/SRTR 2023 Annual Data Report: Kidney. <i>American Journal of Transplantation, 25</i>(Suppl. 1), S22–S137.",
+  "Mader, A., Torres, H., Kim, S., et al. (2024). Psychosocial characteristics of potential and actual living kidney donors. <i>BMC Nephrology, 25</i>(1), 48.",
+  "Muzaale, A. D., Massie, A. B., Wang, M. C., et al. (2014). Risk of end-stage renal disease following live kidney donation. <i>JAMA, 311</i>(6), 579–586.",
+  "Nawar, J., Motter, J. D., Long, J. J., et al. (2026). A brief review of artificial intelligence in living kidney donation. <i>Frontiers in Transplantation, 38.</i>",
+  "Office of the National Coordinator for Health IT (ONC). (2020). 21st Century Cures Act: Interoperability, Information Blocking, and the ONC Health IT Certification Program. <i>Federal Register, 85</i>(25), 25642–25961.",
+  "Organ Donation and Transplantation Alliance (ODTA). (2025). <i>The Human Side of AI: Patient Experience and Donation.</i> ODTA Insight Series.",
+  "Organ Procurement and Transplantation Network (OPTN). (2024). <i>Organ Donation Statistics.</i>",
+  "Ruck, J. M., Segev, D. L., &amp; McAdams-DeMarco, M. A. (2025). Psychosocial impact of being denied as a living kidney donor. <i>Transplantation.</i>",
+  "Sauthier, N., Bouchakri, R., Carrier, F. M., et al. (2023). Automated screening of potential organ donors using a temporal machine learning model. <i>Scientific Reports, 13</i>, 8426.",
+  "United States Renal Data System (USRDS). (2023). <i>USRDS Annual Data Report: Epidemiology of Kidney Disease in the United States.</i>",
+  "Waterman, A. D., Morgievich, M., &amp; Rodrigue, J. R. (2022). Impact of having potential living donors on ethnic/racial disparities in access to kidney transplantation. <i>PMC.</i>"
+];
+var refsList = document.getElementById("refsList");
+refsList.innerHTML = REFS.map(function(r){ return '<p>'+r+'</p>'; }).join('');
+
+})();
+</script>
