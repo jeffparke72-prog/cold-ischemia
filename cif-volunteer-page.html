@@ -1,0 +1,1032 @@
+<!-- CIF Volunteer Readiness & Application Page -->
+<title>Volunteer With CIF</title>
+<style>
+  :root{
+    --navy: #1B2A4A;
+    --navy-ink: #101a30;
+    --gold: #C9A84C;
+    --gold-soft: #e2cd94;
+    --teal: #2E7D74;
+    --blood: #B23A3A;
+    --amber: #D98A2B;
+    --bg: #F7F5F0;
+    --surface: #FFFFFF;
+    --surface-2: #EFEBE1;
+    --ink: #1C1A16;
+    --ink-soft: #55534c;
+    --line: #DCD6C7;
+    --focus: #2E7D74;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #12100D;
+      --surface: #1A1815;
+      --surface-2: #221F1A;
+      --ink: #EFEAE0;
+      --ink-soft: #B8B2A4;
+      --line: #37332B;
+      --navy: #2E4270;
+      --navy-ink: #16223D;
+      --gold: #D8BC6C;
+      --teal: #4CA396;
+      --blood: #D0665F;
+      --amber: #E6A24F;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #12100D;
+    --surface: #1A1815;
+    --surface-2: #221F1A;
+    --ink: #EFEAE0;
+    --ink-soft: #B8B2A4;
+    --line: #37332B;
+    --navy: #2E4270;
+    --navy-ink: #16223D;
+    --gold: #D8BC6C;
+    --teal: #4CA396;
+    --blood: #D0665F;
+    --amber: #E6A24F;
+    color-scheme: dark;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding-inline:20px;
+  }
+  h1,h2,h3,h4{
+    font-family:'Newsreader', Georgia, 'Times New Roman', serif;
+    font-weight:600;
+    color:var(--navy-ink);
+    text-wrap:balance;
+    margin:0 0 .5em;
+  }
+  :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3, :root[data-theme="dark"] h4{color:var(--ink);}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) h1, :root:not([data-theme="light"]) h2, :root:not([data-theme="light"]) h3, :root:not([data-theme="light"]) h4{color:var(--ink);} }
+  p{margin:0 0 1em; max-width:65ch;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:.6em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--teal);
+    display:inline-block;
+  }
+
+  /* HERO */
+  .hero{
+    background:
+      radial-gradient(1200px 400px at 15% -10%, rgba(201,168,76,.16), transparent 60%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-ink) 100%);
+    color:#F2EFE6;
+    padding-block: calc(56px + env(safe-area-inset-top,0px)) 64px;
+  }
+  .hero p{color:#CBD3E3; max-width:60ch;}
+  .hero h1{color:#fff; font-size:clamp(2rem, 4.4vw, 3rem); margin-top:.35em;}
+  .hero .eyebrow{color:var(--gold-soft);}
+  .hero .eyebrow::before{background:var(--gold-soft);}
+  .hero-stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:14px;
+    margin-top:36px;
+    border-top:1px solid rgba(255,255,255,.16);
+    padding-top:24px;
+  }
+  .hero-stat .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:1.5rem;
+    font-weight:600;
+    color:var(--gold-soft);
+    font-variant-numeric: tabular-nums;
+  }
+  .hero-stat .label{font-size:.8rem; color:#B7C0D6;}
+
+  section{padding-block:56px;}
+  .section-head{max-width:70ch; margin-bottom:32px;}
+
+  /* NAV DOTS / PROGRESS through page sections */
+  .toc{
+    display:flex; flex-wrap:wrap; gap:10px 18px;
+    margin-top:28px;
+  }
+  .toc a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.75rem;
+    color:#DCE2EF;
+    text-decoration:none;
+    border:1px solid rgba(255,255,255,.28);
+    padding:.5em .9em;
+    border-radius:999px;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .toc a:hover, .toc a:focus-visible{border-color:var(--gold-soft); background:rgba(255,255,255,.06);}
+
+  /* CARDS */
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:24px;
+  }
+
+  /* DOMAIN GRID (competencies) */
+  .domain-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:18px;
+  }
+  .domain{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-left:3px solid var(--teal);
+    border-radius:8px;
+    padding:22px 22px 20px;
+  }
+  .domain .idx{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    color:var(--teal);
+    letter-spacing:.1em;
+    font-weight:600;
+  }
+  .domain h3{font-size:1.08rem; margin-top:.3em;}
+  .domain ul{margin:.6em 0 0; padding-left:1.1em;}
+  .domain li{margin-bottom:.4em; color:var(--ink-soft); font-size:.95rem;}
+
+  /* RESPONSIBILITIES TABLE-LIKE LIST */
+  .resp-list{display:flex; flex-direction:column; border-top:1px solid var(--line);}
+  .resp-row{
+    display:grid;
+    grid-template-columns: 120px 1fr;
+    gap:18px;
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .resp-row .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--amber);
+    font-weight:600;
+    padding-top:2px;
+  }
+  .resp-row h4{margin:0 0 .3em; font-size:1.02rem;}
+  .resp-row p{margin:0; color:var(--ink-soft); font-size:.95rem;}
+  @media (max-width:560px){
+    .resp-row{grid-template-columns:1fr;}
+  }
+
+  /* ASSESSMENT TOOL */
+  .assess{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .assess-head{
+    background:var(--surface-2);
+    padding:22px 26px;
+    border-bottom:1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
+  }
+  .assess-head h3{margin:0; font-size:1.15rem;}
+  .assess-progress{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.78rem;
+    color:var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+  .assess-track{
+    height:4px; background:var(--line); border-radius:2px; overflow:hidden; margin-top:8px; width:100%;
+  }
+  .assess-track > span{display:block; height:100%; background:var(--teal); width:0%; transition:width .25s ease;}
+  .assess-body{padding:26px;}
+  .q{display:none;}
+  .q.active{display:block; animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;}}
+  .q .dim{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--teal); font-weight:600; margin-bottom:.6em; display:block;
+  }
+  .q h4{font-size:1.15rem; margin-bottom:1.1em; font-weight:500; font-family:'Newsreader', serif;}
+  .opt-list{display:flex; flex-direction:column; gap:10px;}
+  .opt{
+    display:flex; gap:12px; align-items:flex-start;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:14px 16px;
+    cursor:pointer;
+    background:var(--surface);
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .opt:hover{border-color:var(--teal);}
+  .opt input{margin-top:3px; accent-color:var(--teal);}
+  .opt.selected{border-color:var(--teal); background:color-mix(in srgb, var(--teal) 8%, var(--surface));}
+  .opt .opt-text{font-size:.95rem;}
+  .assess-nav{display:flex; justify-content:space-between; gap:12px; margin-top:24px;}
+  .btn{
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:.92rem;
+    padding:.75em 1.5em;
+    border-radius:999px;
+    border:1px solid var(--navy);
+    background:var(--navy);
+    color:#fff;
+    cursor:pointer;
+    transition:transform .1s ease, opacity .15s ease;
+  }
+  .btn:hover{opacity:.92;}
+  .btn:active{transform:scale(.98);}
+  .btn:disabled{opacity:.35; cursor:not-allowed;}
+  .btn.ghost{
+    background:transparent; color:var(--navy); border-color:var(--line);
+  }
+  :root[data-theme="dark"] .btn.ghost, .btn.ghost{color:var(--navy-ink);}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .btn.ghost{color:var(--ink);} }
+  :root[data-theme="dark"] .btn.ghost{color:var(--ink);}
+
+  .result{display:none; padding:26px;}
+  .result.active{display:block;}
+  .result-badge{
+    display:inline-flex; align-items:center; gap:.5em;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; font-weight:600;
+    padding:.4em .9em; border-radius:999px; margin-bottom:1em;
+  }
+  .result-bars{display:flex; flex-direction:column; gap:14px; margin:20px 0;}
+  .result-bar-row{display:grid; grid-template-columns: 160px 1fr 42px; gap:10px; align-items:center;}
+  .result-bar-row .rb-label{font-size:.85rem; color:var(--ink-soft);}
+  .result-bar-track{height:8px; background:var(--surface-2); border-radius:4px; overflow:hidden;}
+  .result-bar-fill{height:100%; border-radius:4px; background:var(--teal);}
+  .result-bar-row .rb-val{font-family:'IBM Plex Mono', monospace; font-size:.8rem; text-align:right; font-variant-numeric:tabular-nums; color:var(--ink-soft);}
+  @media (max-width:560px){ .result-bar-row{grid-template-columns:1fr 34px; grid-template-rows:auto auto;} .result-bar-row .rb-label{grid-column:1/3;} .result-bar-row .rb-val{grid-column:2; justify-self:end;} .result-bar-row .result-bar-track{grid-column:1/3;} }
+
+  /* FORM */
+  .form-card{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:30px;}
+  .f-section{margin-bottom:30px;}
+  .f-section:last-child{margin-bottom:0;}
+  .f-section h3{font-size:1.05rem; margin-bottom:.2em;}
+  .f-section .f-note{color:var(--ink-soft); font-size:.88rem; margin-bottom:1.1em;}
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block; font-size:.85rem; font-weight:600; margin-bottom:.4em; color:var(--ink);
+  }
+  .field .hint{font-weight:400; color:var(--ink-soft); font-size:.82rem; display:block; margin-top:.25em;}
+  .field input[type=text], .field input[type=email], .field input[type=tel], .field select, .field textarea{
+    width:100%;
+    font-family:'Work Sans', sans-serif;
+    font-size:.95rem;
+    padding:.7em .8em;
+    border-radius:7px;
+    border:1px solid var(--line);
+    background:var(--bg);
+    color:var(--ink);
+  }
+  .field textarea{min-height:96px; resize:vertical;}
+  .field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible{
+    outline:2px solid var(--focus); outline-offset:1px;
+  }
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:560px){.row2{grid-template-columns:1fr;}}
+  .check-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px;}
+  .check{
+    display:flex; gap:10px; align-items:flex-start;
+    border:1px solid var(--line); border-radius:7px; padding:10px 12px; font-size:.88rem;
+    cursor:pointer;
+  }
+  .check input{margin-top:2px; accent-color:var(--teal);}
+  .radio-line{display:flex; flex-wrap:wrap; gap:10px;}
+  .radio-pill{
+    border:1px solid var(--line); border-radius:999px; padding:.5em 1em; font-size:.85rem; cursor:pointer;
+    display:flex; gap:.5em; align-items:center;
+  }
+  .radio-pill input{accent-color:var(--teal);}
+  fieldset{border:none; padding:0; margin:0;}
+  .agree{
+    display:flex; gap:12px; align-items:flex-start;
+    background:var(--surface-2); border:1px solid var(--line); border-radius:8px; padding:16px;
+    font-size:.88rem; color:var(--ink-soft);
+  }
+  .agree input{margin-top:3px; accent-color:var(--teal);}
+  .submit-row{display:flex; align-items:center; gap:16px; margin-top:26px; flex-wrap:wrap;}
+  .form-msg{font-size:.85rem; color:var(--ink-soft);}
+  .success-panel{display:none; text-align:center; padding:50px 20px;}
+  .success-panel.active{display:block;}
+  .success-panel .mark{
+    width:56px;height:56px;border-radius:50%;
+    background:var(--teal); color:#fff; display:flex; align-items:center; justify-content:center;
+    margin:0 auto 18px; font-size:1.6rem;
+  }
+
+  .quote-block{
+    border-left:3px solid var(--gold);
+    padding-left:20px;
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--ink);
+    margin:24px 0;
+  }
+  .quote-block cite{display:block; font-family:'IBM Plex Mono', monospace; font-style:normal; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-top:.6em;}
+
+  footer{
+    padding-block:40px;
+    border-top:1px solid var(--line);
+    color:var(--ink-soft);
+    font-size:.85rem;
+  }
+  .skiplink{position:absolute; left:-9999px;}
+  .skiplink:focus{left:16px; top:16px; background:#fff; color:#000; padding:8px 12px; z-index:10;}
+  @media (prefers-reduced-motion: reduce){ *{animation-duration:.001ms !important; transition-duration:.001ms !important;} }
+</style>
+
+<a class="skiplink" href="#assessment">Skip to readiness assessment</a>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Cold Ischemia Foundation · Volunteer Program</span>
+    <h1>Advocacy is a discipline, not a feeling.</h1>
+    <p>We built this page instead of a sign-up button because we don't want your good intentions — we want your sustained, disciplined attention. Below: what the work actually requires, an honest self-assessment before you commit, and an application that asks real questions because we intend to read every answer.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">5</div><div class="label">Core competency domains</div></div>
+      <div class="hero-stat"><div class="num">7</div><div class="label">Volunteer tracks open now</div></div>
+      <div class="hero-stat"><div class="num">1</div><div class="label">Application, read in full</div></div>
+    </div>
+    <nav class="toc">
+      <a href="#why">Why we screen</a>
+      <a href="#responsibilities">Responsibilities</a>
+      <a href="#competencies">Competencies</a>
+      <a href="#tracks">Volunteer tracks</a>
+      <a href="#assessment">Readiness tool</a>
+      <a href="#apply">Application</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="why">
+    <div class="section-head">
+      <span class="eyebrow">Why this page is long</span>
+      <h2>The kidney disease and transplant system already fails people through good intentions applied carelessly.</h2>
+      <p>We are not going to replicate that pattern in our own volunteer program. Every advocacy organization worth its charter has a duty to the people it serves to make sure the people speaking on their behalf, in their name, or in their presence are prepared for what that actually involves — emotionally, ethically, and practically. That duty is the reason this page exists in this much detail, rather than as a two-line sign-up form.</p>
+      <p>Nothing below is designed to discourage you. It is designed to make sure that if you join us, you join with clear eyes, and that the patients and care partners we serve can trust every volunteer who represents CIF.</p>
+    </div>
+  </section>
+
+  <section id="responsibilities">
+    <div class="section-head">
+      <span class="eyebrow">What the role actually asks of you</span>
+      <h2>Core responsibilities of a CIF volunteer</h2>
+      <p>These are drawn from established patient-advocacy practice standards, adapted for a volunteer (non-clinical, non-certified) role. They apply whether you're drafting outreach copy from home or standing beside a patient at a hearing.</p>
+    </div>
+    <div class="resp-list">
+      <div class="resp-row">
+        <span class="tag">01 · Boundaries</span>
+        <div><h4>Know where advocacy ends and medical or legal practice begins</h4><p>You will encounter patients and care partners in genuine distress, sometimes asking for guidance CIF volunteers are not licensed to give. Your job is to recognize that line immediately and redirect to a qualified professional — never to guess, reassure past your knowledge, or improvise medical or legal opinions.</p></div>
+      </div>
+      <div class="resp-row">
+        <span class="tag">02 · Confidentiality</span>
+        <div><h4>Protect what people tell you as if it were your own medical record</h4><p>Patient stories, health details, and family circumstances shared with you in an advocacy context are held in confidence by default. Nothing is shared publicly, quoted, or used in CIF materials without the explicit, informed consent of the person it belongs to.</p></div>
+      </div>
+      <div class="resp-row">
+        <span class="tag">03 · Accuracy</span>
+        <div><h4>Represent CIF's positions with precision, not paraphrase</h4><p>CIF's policy positions are built on Lean Six Sigma analysis of real regulatory and clinical data. When you speak or write on our behalf, you represent the position as it is documented — not as you remember it, and not as you wish it were stronger or softer.</p></div>
+      </div>
+      <div class="resp-row">
+        <span class="tag">04 · Reliability</span>
+        <div><h4>Show up for what you commit to, or tell us early that you can't</h4><p>A patient waiting on a promised follow-up, a partner organization expecting a deliverable, a hearing that needs a prepared voice — all of it depends on volunteers doing what they said they'd do, on the timeline they agreed to. Life happens; silence does not serve anyone.</p></div>
+      </div>
+      <div class="resp-row">
+        <span class="tag">05 · Equity</span>
+        <div><h4>Advocate for every patient with the same rigor, regardless of their diagnosis, background, or how sympathetic their story is</h4><p>CIF exists because the system already sorts patients by how much noise they can make. Volunteers do not replicate that sorting.</p></div>
+      </div>
+      <div class="resp-row">
+        <span class="tag">06 · Escalation</span>
+        <div><h4>Report what's wrong, including when it's uncomfortable</h4><p>If you see a conflict of interest, a boundary violation, or a situation beyond what CIF is equipped to handle, you raise it — to your CIF point of contact, without delay, and without deciding on your own that it's not worth mentioning.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="competencies">
+    <div class="section-head">
+      <span class="eyebrow">What you bring, or build, before you start</span>
+      <h2>The five competency domains</h2>
+      <p>This framework is adapted from the domains recognized in professional patient-advocacy practice. You do not need credentials in any of these — you need working competence, honest self-awareness about where you're weaker, and willingness to be trained on the rest.</p>
+    </div>
+    <div class="domain-grid">
+      <div class="domain">
+        <span class="idx">DOMAIN 01</span>
+        <h3>Scope of practice</h3>
+        <ul>
+          <li>Can state clearly what you are and aren't qualified to advise on</li>
+          <li>Refers medical, legal, and financial questions to the right professional instead of answering them yourself</li>
+          <li>Documents what you did and said, so CIF has a record if it's ever needed</li>
+        </ul>
+      </div>
+      <div class="domain">
+        <span class="idx">DOMAIN 02</span>
+        <h3>Empowerment &amp; equity</h3>
+        <ul>
+          <li>Gives people the information to decide for themselves, rather than deciding for them</li>
+          <li>Respects a patient's choice even when you would choose differently</li>
+          <li>Treats access to care and to advocacy itself as a right, not a reward for being easy to help</li>
+        </ul>
+      </div>
+      <div class="domain">
+        <span class="idx">DOMAIN 03</span>
+        <h3>Communication</h3>
+        <ul>
+          <li>Listens fully before responding — including to anger, grief, or distrust of the system</li>
+          <li>Writes and speaks in plain language, not clinical or bureaucratic shorthand</li>
+          <li>Can disagree with a partner organization, a legislator's office, or another volunteer without becoming adversarial</li>
+        </ul>
+      </div>
+      <div class="domain">
+        <span class="idx">DOMAIN 04</span>
+        <h3>System literacy</h3>
+        <ul>
+          <li>Understands, at a working level, how dialysis, transplantation, and organ allocation actually function in the U.S.</li>
+          <li>Is willing to learn the regulatory and insurance landscape well enough to explain it to a frightened patient</li>
+          <li>Knows how to find CIF's toolkits and source material rather than answering from memory alone</li>
+        </ul>
+      </div>
+      <div class="domain">
+        <span class="idx">DOMAIN 05</span>
+        <h3>Professionalism &amp; ethics</h3>
+        <ul>
+          <li>Discloses any conflict of interest — financial, personal, or professional — before it becomes a problem</li>
+          <li>Maintains confidentiality as a default, not a favor</li>
+          <li>Accepts feedback on conduct without treating it as a personal attack</li>
+        </ul>
+      </div>
+      <div class="domain">
+        <span class="idx">DOMAIN 06</span>
+        <h3>Emotional resilience</h3>
+        <ul>
+          <li>Can sit with someone else's fear, anger, or grief without needing to fix it immediately</li>
+          <li>Has a way to process what you hear so it doesn't accumulate silently</li>
+          <li>Knows the difference between empathy and absorbing someone else's crisis as your own</li>
+        </ul>
+      </div>
+    </div>
+
+    <blockquote class="quote-block">
+      Competence in this work isn't measured by how many hours you can give. It's measured by whether the people you serve are better off, and more informed, for having spoken with you.
+      <cite>Cold Ischemia Foundation — Volunteer Standards</cite>
+    </blockquote>
+  </section>
+
+  <section id="tracks">
+    <div class="section-head">
+      <span class="eyebrow">Where the work actually happens</span>
+      <h2>Current volunteer tracks</h2>
+      <p>Every track below draws on the same six responsibilities and five domains above — the difference is where your time goes, not the standard you're held to.</p>
+    </div>
+    <div class="domain-grid">
+      <div class="domain" style="border-left-color:var(--gold)">
+        <span class="idx">TRACK</span>
+        <h3>Patient &amp; care-partner support</h3>
+        <ul><li>Direct contact with patients and families navigating diagnosis, dialysis, or transplant listing</li></ul>
+      </div>
+      <div class="domain" style="border-left-color:var(--gold)">
+        <span class="idx">TRACK</span>
+        <h3>Policy &amp; legislative outreach</h3>
+        <ul><li>Research, drafting, and direct contact with congressional and agency offices on bills like H.R. 8875</li></ul>
+      </div>
+      <div class="domain" style="border-left-color:var(--gold)">
+        <span class="idx">TRACK</span>
+        <h3>Content &amp; toolkit development</h3>
+        <ul><li>Writing, editing, and fact-checking guides, toolkits, and educational material</li></ul>
+      </div>
+      <div class="domain" style="border-left-color:var(--gold)">
+        <span class="idx">TRACK</span>
+        <h3>Data &amp; Lean Six Sigma analysis</h3>
+        <ul><li>Structured analysis of regulatory, clinical, or outcomes data behind CIF's published work</li></ul>
+      </div>
+      <div class="domain" style="border-left-color:var(--gold)">
+        <span class="idx">TRACK</span>
+        <h3>Digital &amp; social media</h3>
+        <ul><li>Managing outreach across CIF's platforms with editorial discipline, not just posting volume</li></ul>
+      </div>
+      <div class="domain" style="border-left-color:var(--gold)">
+        <span class="idx">TRACK</span>
+        <h3>Events &amp; community outreach</h3>
+        <ul><li>Representing CIF at community, medical, and advocacy events</li></ul>
+      </div>
+      <div class="domain" style="border-left-color:var(--gold)">
+        <span class="idx">TRACK</span>
+        <h3>Administrative &amp; operations support</h3>
+        <ul><li>Keeping the infrastructure of a small, high-output nonprofit actually running</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="assessment">
+    <div class="section-head">
+      <span class="eyebrow">Before you apply</span>
+      <h2>Is volunteering the right fit for you right now?</h2>
+      <p>Ten honest questions. There is no failing score — this tool exists to help you see your own profile clearly, the same way we'd want a patient to see their treatment options clearly, before you commit real time to something that deserves it. Answer as you actually are, not as you'd like to be.</p>
+    </div>
+
+    <div class="assess card">
+      <div class="assess-head">
+        <div>
+          <h3>Volunteer Readiness Self-Assessment</h3>
+        </div>
+        <div class="assess-progress" id="progressLabel">Question 1 of 10</div>
+      </div>
+      <div class="assess-track"><span id="progressBar"></span></div>
+
+      <div class="assess-body">
+        <form id="quizForm"></form>
+        <div class="assess-nav">
+          <button type="button" class="btn ghost" id="backBtn" disabled>Back</button>
+          <button type="button" class="btn" id="nextBtn" disabled>Next</button>
+        </div>
+      </div>
+
+      <div class="result" id="resultPanel">
+        <span class="result-badge" id="resultBadge"></span>
+        <h3 id="resultHeadline"></h3>
+        <p id="resultBody"></p>
+        <div class="result-bars" id="resultBars"></div>
+        <p id="resultAdvice" style="font-size:.92rem;"></p>
+        <div class="assess-nav" style="justify-content:flex-start;">
+          <button type="button" class="btn" id="toApplyBtn">Continue to the application</button>
+          <button type="button" class="btn ghost" id="retakeBtn">Retake the assessment</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply">
+    <div class="section-head">
+      <span class="eyebrow">The application</span>
+      <h2>Tell us who you are and why this, specifically</h2>
+      <p>We are not looking for a resume. We are looking for evidence that you understand what you're signing up for and have thought honestly about why CIF, specifically. Answer in your own words — this is read by a person, not filtered by keywords.</p>
+    </div>
+
+    <div class="form-card">
+      <form id="volunteerForm">
+
+        <div class="f-section">
+          <h3>1 · Contact information</h3>
+          <div class="row2">
+            <div class="field">
+              <label for="fname">Full name</label>
+              <input type="text" id="fname" name="fname" required>
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="phone">Phone <span class="hint">(optional — for time-sensitive advocacy only, e.g. a same-week hearing)</span></label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="field">
+              <label for="location">City &amp; state</label>
+              <input type="text" id="location" name="location" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="f-section">
+          <h3>2 · Why this, why now</h3>
+          <p class="f-note">These four questions matter more than anything else on this form. Take your time.</p>
+
+          <div class="field">
+            <label for="qMotivation">Why are you interested in volunteering with an advocacy organization — not just CIF, but this kind of work in general?</label>
+            <textarea id="qMotivation" name="qMotivation" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="qDiscovery">What brought you to the Cold Ischemia Foundation specifically? <span class="hint">A search, a referral, a personal experience, our published work — tell us the actual path.</span></label>
+            <textarea id="qDiscovery" name="qDiscovery" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="qFit">What about CIF's mission interests you more than a similar organization might?</label>
+            <textarea id="qFit" name="qFit" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="qDifficult">Describe a time you had to support someone through a difficult or emotional situation — professionally, personally, or as a volunteer elsewhere. What did you do, and what would you do differently now?</label>
+            <textarea id="qDifficult" name="qDifficult" required></textarea>
+          </div>
+        </div>
+
+        <div class="f-section">
+          <h3>3 · Connection to kidney disease <span class="hint" style="font-weight:400;">(optional)</span></h3>
+          <p class="f-note">Entirely your choice to answer. Many of our strongest volunteers have no personal connection at all — and some who do prefer not to discuss it here. Nothing below is required.</p>
+          <fieldset class="field">
+            <label>Do you have a personal or family connection to kidney disease, dialysis, or transplantation?</label>
+            <div class="radio-line">
+              <label class="radio-pill"><input type="radio" name="qConnection" value="patient"> Patient</label>
+              <label class="radio-pill"><input type="radio" name="qConnection" value="care-partner"> Care partner / family</label>
+              <label class="radio-pill"><input type="radio" name="qConnection" value="professional"> Healthcare professional</label>
+              <label class="radio-pill"><input type="radio" name="qConnection" value="none"> No personal connection</label>
+              <label class="radio-pill"><input type="radio" name="qConnection" value="prefer-not"> Prefer not to say</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="f-section">
+          <h3>4 · Where you'd contribute</h3>
+          <div class="field">
+            <label>Which volunteer tracks genuinely interest you? <span class="hint">Select as many as fit — this isn't a limit, it's a starting point.</span></label>
+            <div class="check-grid">
+              <label class="check"><input type="checkbox" name="tracks" value="patient-support"> Patient &amp; care-partner support</label>
+              <label class="check"><input type="checkbox" name="tracks" value="policy"> Policy &amp; legislative outreach</label>
+              <label class="check"><input type="checkbox" name="tracks" value="content"> Content &amp; toolkit development</label>
+              <label class="check"><input type="checkbox" name="tracks" value="data"> Data &amp; Lean Six Sigma analysis</label>
+              <label class="check"><input type="checkbox" name="tracks" value="social"> Digital &amp; social media</label>
+              <label class="check"><input type="checkbox" name="tracks" value="events"> Events &amp; community outreach</label>
+              <label class="check"><input type="checkbox" name="tracks" value="admin"> Administrative &amp; operations support</label>
+              <label class="check"><input type="checkbox" name="tracks" value="unsure"> Not sure yet — open to guidance</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="qSkills">What specific skills, training, or professional experience would you bring to that work?</label>
+            <textarea id="qSkills" name="qSkills"></textarea>
+          </div>
+        </div>
+
+        <div class="f-section">
+          <h3>5 · Availability &amp; commitment</h3>
+          <div class="row2">
+            <div class="field">
+              <label for="hours">Hours you can realistically commit per month</label>
+              <select id="hours" name="hours" required>
+                <option value="">Select one</option>
+                <option>1–4 hours</option>
+                <option>5–9 hours</option>
+                <option>10–19 hours</option>
+                <option>20+ hours</option>
+                <option>Project-based / as-needed only</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="duration">How long do you expect to be able to sustain that commitment?</label>
+              <select id="duration" name="duration" required>
+                <option value="">Select one</option>
+                <option>Less than 3 months</option>
+                <option>3–6 months</option>
+                <option>6–12 months</option>
+                <option>A year or more</option>
+                <option>Ongoing, indefinitely</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="qConflict">Do you have any current or past affiliation with a dialysis provider, transplant center, pharmaceutical company, or insurer that could present a conflict of interest with CIF's advocacy?</label>
+            <textarea id="qConflict" name="qConflict" placeholder="Describe it, or write 'none' if there isn't one."></textarea>
+          </div>
+        </div>
+
+        <div class="f-section">
+          <h3>6 · Reference <span class="hint" style="font-weight:400;">(optional, but appreciated for direct patient-contact roles)</span></h3>
+          <div class="row2">
+            <div class="field">
+              <label for="refName">Reference name</label>
+              <input type="text" id="refName" name="refName">
+            </div>
+            <div class="field">
+              <label for="refContact">Reference email or phone</label>
+              <input type="text" id="refContact" name="refContact">
+            </div>
+          </div>
+        </div>
+
+        <div class="f-section">
+          <label class="agree">
+            <input type="checkbox" id="agreeConfidentiality" required>
+            <span>I understand that CIF volunteers are held to standards of confidentiality, scope-of-practice, and conduct as described on this page, and I agree to complete orientation before taking on any direct patient-facing role.</span>
+          </label>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn" id="submitBtn">Submit application</button>
+          <span class="form-msg">Applications are reviewed personally — typically within two weeks.</span>
+        </div>
+      </form>
+
+      <div class="success-panel" id="successPanel">
+        <div class="mark">✓</div>
+        <h3>Thank you — this was received.</h3>
+        <p style="max-width:50ch; margin:0 auto;">Every application to CIF is read by a person, not a system. We'll follow up by email once it's been reviewed. In the meantime, our published toolkits and guides are free and available to you whether or not you end up volunteering.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="margin-bottom:.4em;"><strong>Cold Ischemia Foundation</strong> — Ellenton, Florida</p>
+    <p style="margin:0;">Questions about volunteering before you apply? Reach out through this page and note that in your message — someone will respond before asking you to fill out anything further.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var questions = [
+    {
+      dim: "Boundaries", key:"boundaries",
+      text: "A patient you're supporting asks whether they should stop a medication their doctor prescribed. You:",
+      opts: [
+        {t:"Tell them what you'd do in their position, based on what you've read.", v:0},
+        {t:"Explain you can't advise on that, and help them prepare specific questions for their care team.", v:3},
+        {t:"Say you're not sure and quietly change the subject.", v:1},
+        {t:"Reassure them their doctor probably knows best and leave it there.", v:1}
+      ]
+    },
+    {
+      dim: "Confidentiality", key:"confidentiality",
+      text: "A patient's story you heard in confidence would make a powerful example in a CIF social media post. You:",
+      opts: [
+        {t:"Post it with identifying details removed — that should be enough.", v:1},
+        {t:"Ask their explicit permission first, and use only what they agree to.", v:3},
+        {t:"Use it, since it's for a good cause.", v:0},
+        {t:"Never mention it publicly, even in general terms, without asking.", v:2}
+      ]
+    },
+    {
+      dim: "Reliability", key:"reliability",
+      text: "You committed to drafting outreach material by Friday. On Wednesday you realize you won't make it. You:",
+      opts: [
+        {t:"Say nothing and turn it in late — a few days won't matter.", v:0},
+        {t:"Message your CIF contact immediately with a revised timeline.", v:3},
+        {t:"Rush a lower-quality version to hit the deadline.", v:1},
+        {t:"Wait until Friday to explain what happened.", v:1}
+      ]
+    },
+    {
+      dim: "Emotional resilience", key:"resilience",
+      text: "After a hard conversation with a patient in crisis, your instinct afterward is usually to:",
+      opts: [
+        {t:"Carry it with you for days without really processing it.", v:1},
+        {t:"Debrief with someone, note what you'd do differently, and set it down.", v:3},
+        {t:"Distract yourself and avoid thinking about it at all.", v:1},
+        {t:"Take on more immediately, to feel like you're helping.", v:1}
+      ]
+    },
+    {
+      dim: "Communication", key:"communication",
+      text: "A congressional staffer pushes back hard on a CIF position during a call. You:",
+      opts: [
+        {t:"Match their tone to make sure the point lands.", v:0},
+        {t:"Restate the evidence calmly and ask what would change their view.", v:3},
+        {t:"Concede the point to keep things friendly.", v:1},
+        {t:"End the call and let someone more senior handle it next time.", v:2}
+      ]
+    },
+    {
+      dim: "System literacy", key:"literacy",
+      text: "Your honest current knowledge of how organ allocation and dialysis reimbursement actually work is:",
+      opts: [
+        {t:"Solid — I could explain it to a frightened new patient today.", v:3},
+        {t:"Decent, but I'd want to review CIF's materials before speaking to anyone.", v:2},
+        {t:"Basic — I know it's broken, not exactly how.", v:1},
+        {t:"Minimal — this would be new to me.", v:0}
+      ]
+    },
+    {
+      dim: "Time realism", key:"time",
+      text: "Thinking about the next six months honestly, not aspirationally, your available time for this is:",
+      opts: [
+        {t:"Consistent and protected — I can commit to a regular block.", v:3},
+        {t:"Real but variable — I'll need flexible, project-based work.", v:2},
+        {t:"Thin right now, but I want to start building the habit.", v:1},
+        {t:"Honestly uncertain — my schedule is in flux.", v:0}
+      ]
+    },
+    {
+      dim: "Conflict of interest", key:"conflict",
+      text: "If you discovered, after joining, that a project you were assigned overlapped with a former employer or financial interest, you would:",
+      opts: [
+        {t:"Disclose it immediately, even if it meant being reassigned.", v:3},
+        {t:"Mention it eventually, once you were sure it actually mattered.", v:1},
+        {t:"Say nothing unless directly asked.", v:0},
+        {t:"Handle it carefully on your own without telling anyone.", v:1}
+      ]
+    },
+    {
+      dim: "Equity", key:"equity",
+      text: "Two patients need help this week — one is articulate and easy to talk to, the other is frustrated, distrustful, and hard to reach. You:",
+      opts: [
+        {t:"Prioritize whichever one responds faster.", v:1},
+        {t:"Give both the same effort, even though one takes more patience.", v:3},
+        {t:"Focus on the easier case first and get to the other when you can.", v:1},
+        {t:"Ask CIF to reassign the harder case to someone more experienced.", v:2}
+      ]
+    },
+    {
+      dim: "Feedback", key:"feedback",
+      text: "A CIF staff member tells you that something you posted publicly misstated a policy detail. Your first reaction is to:",
+      opts: [
+        {t:"Feel defensive, but correct it and ask what the accurate version is.", v:3},
+        {t:"Explain why you phrased it that way before agreeing to change it.", v:1},
+        {t:"Take it personally and consider stepping back from the role.", v:0},
+        {t:"Fix it quietly without engaging much further.", v:2}
+      ]
+    }
+  ];
+
+  var current = 0;
+  var answers = new Array(questions.length).fill(null);
+  var formEl = document.getElementById('quizForm');
+  var nextBtn = document.getElementById('nextBtn');
+  var backBtn = document.getElementById('backBtn');
+  var progressLabel = document.getElementById('progressLabel');
+  var progressBar = document.getElementById('progressBar');
+
+  function renderQuestion(i){
+    formEl.innerHTML = '';
+    var q = questions[i];
+    var qDiv = document.createElement('div');
+    qDiv.className = 'q active';
+    var dim = document.createElement('span');
+    dim.className = 'dim';
+    dim.textContent = q.dim;
+    var h4 = document.createElement('h4');
+    h4.textContent = q.text;
+    var optList = document.createElement('div');
+    optList.className = 'opt-list';
+
+    q.opts.forEach(function(opt, oi){
+      var label = document.createElement('label');
+      label.className = 'opt';
+      if(answers[i] === oi) label.classList.add('selected');
+      var input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'q' + i;
+      input.value = oi;
+      if(answers[i] === oi) input.checked = true;
+      input.addEventListener('change', function(){
+        answers[i] = oi;
+        Array.prototype.forEach.call(optList.children, function(el){ el.classList.remove('selected'); });
+        label.classList.add('selected');
+        nextBtn.disabled = false;
+      });
+      var span = document.createElement('span');
+      span.className = 'opt-text';
+      span.textContent = opt.t;
+      label.appendChild(input);
+      label.appendChild(span);
+      optList.appendChild(label);
+    });
+
+    qDiv.appendChild(dim);
+    qDiv.appendChild(h4);
+    qDiv.appendChild(optList);
+    formEl.appendChild(qDiv);
+
+    progressLabel.textContent = 'Question ' + (i+1) + ' of ' + questions.length;
+    progressBar.style.width = (((i)/questions.length)*100) + '%';
+    backBtn.disabled = i === 0;
+    nextBtn.disabled = answers[i] === null;
+    nextBtn.textContent = i === questions.length - 1 ? 'See your results' : 'Next';
+  }
+
+  nextBtn.addEventListener('click', function(){
+    if(current < questions.length - 1){
+      current++;
+      renderQuestion(current);
+    } else {
+      showResults();
+    }
+  });
+  backBtn.addEventListener('click', function(){
+    if(current > 0){
+      current--;
+      renderQuestion(current);
+    }
+  });
+
+  function showResults(){
+    document.querySelector('.assess-body').style.display = 'none';
+    var panel = document.getElementById('resultPanel');
+    panel.classList.add('active');
+    progressBar.style.width = '100%';
+    progressLabel.textContent = 'Complete';
+
+    var total = 0, max = questions.length * 3;
+    var byDim = {};
+    questions.forEach(function(q, i){
+      var v = q.opts[answers[i]].v;
+      total += v;
+      byDim[q.dim] = v;
+    });
+    var pct = Math.round((total/max)*100);
+
+    var badge = document.getElementById('resultBadge');
+    var headline = document.getElementById('resultHeadline');
+    var body = document.getElementById('resultBody');
+    var advice = document.getElementById('resultAdvice');
+
+    if(pct >= 75){
+      badge.textContent = 'Strong alignment';
+      badge.style.background = 'color-mix(in srgb, var(--teal) 18%, transparent)';
+      badge.style.color = 'var(--teal)';
+      headline.textContent = 'This looks like a genuine fit — with orientation still required.';
+      body.textContent = "Your answers reflect the instincts this work depends on: deferring on scope, protecting confidentiality, and disclosing rather than hiding conflicts. That doesn't replace orientation and training, but it's a strong starting point.";
+      advice.textContent = "Continue to the application below. Note in your answers which track most matches where you scored highest.";
+    } else if(pct >= 45){
+      badge.textContent = 'Real potential, with gaps to name honestly';
+      badge.style.background = 'color-mix(in srgb, var(--amber) 22%, transparent)';
+      badge.style.color = 'var(--amber)';
+      headline.textContent = 'You could do this work well — with more structure around your weaker areas.';
+      body.textContent = "Some of your instincts are exactly right. Others suggest you'd benefit from starting in a track with more built-in support and less unsupervised patient contact at first — content, data, or administrative work, for instance — while you build the rest.";
+      advice.textContent = "You're welcome to apply now. Consider naming your lower-scoring areas honestly in the application; we'll match your first assignment accordingly.";
+    } else {
+      badge.textContent = 'Not the right entry point yet';
+      badge.style.background = 'color-mix(in srgb, var(--blood) 18%, transparent)';
+      badge.style.color = 'var(--blood)';
+      headline.textContent = 'This may not be the right fit right now — and that's genuinely useful to know.';
+      body.textContent = "Several of your answers point toward patterns — taking on too much personally, avoiding disclosure, or stepping past scope — that put both you and the people we serve at risk in a direct advocacy role. That isn't a character judgment. It may simply mean now isn't the moment, or that a different kind of contribution fits better.";
+      advice.textContent = "Consider supporting CIF instead through a donation, sharing our published toolkits, or a strictly administrative role with no direct patient contact. You're still welcome to apply — we read every application and may see a fit you don't.";
+    }
+
+    var barsDiv = document.getElementById('resultBars');
+    barsDiv.innerHTML = '';
+    Object.keys(byDim).forEach(function(dim){
+      var v = byDim[dim];
+      var row = document.createElement('div');
+      row.className = 'result-bar-row';
+      var label = document.createElement('div');
+      label.className = 'rb-label';
+      label.textContent = dim;
+      var track = document.createElement('div');
+      track.className = 'result-bar-track';
+      var fill = document.createElement('div');
+      fill.className = 'result-bar-fill';
+      fill.style.width = ((v/3)*100) + '%';
+      if(v <= 1){ fill.style.background = 'var(--blood)'; }
+      else if(v === 2){ fill.style.background = 'var(--amber)'; }
+      track.appendChild(fill);
+      var val = document.createElement('div');
+      val.className = 'rb-val';
+      val.textContent = v + '/3';
+      row.appendChild(label);
+      row.appendChild(track);
+      row.appendChild(val);
+      barsDiv.appendChild(row);
+    });
+  }
+
+  document.getElementById('retakeBtn').addEventListener('click', function(){
+    current = 0;
+    answers = new Array(questions.length).fill(null);
+    document.getElementById('resultPanel').classList.remove('active');
+    document.querySelector('.assess-body').style.display = '';
+    renderQuestion(0);
+  });
+
+  document.getElementById('toApplyBtn').addEventListener('click', function(){
+    document.getElementById('apply').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  renderQuestion(0);
+
+  // Application form — local confirmation only inside this preview.
+  var volForm = document.getElementById('volunteerForm');
+  var successPanel = document.getElementById('successPanel');
+  volForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    volForm.style.display = 'none';
+    successPanel.classList.add('active');
+    successPanel.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+})();
+</script>
