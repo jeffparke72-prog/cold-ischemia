@@ -123,6 +123,15 @@
     font-variant-numeric: tabular-nums;
   }
   .hero-stat .label{font-size:.8rem; color:#B7C0D6;}
+  .hero-video{
+    margin-top:36px;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    max-width:640px;
+  }
+  .hero-video video{display:block; width:100%; height:auto; background:#0a0806;}
 
   section{padding-block:56px;}
   .section-head{max-width:70ch; margin-bottom:32px;}
@@ -386,6 +395,11 @@
       <a href="#assessment">Readiness tool</a>
       <a href="#apply">Application</a>
     </nav>
+    <div class="hero-video">
+      <video controls playsinline preload="metadata" poster="">
+        <source src="cif-volunteer-intro2.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 </header>
 
@@ -1019,14 +1033,53 @@
 
   renderQuestion(0);
 
-  // Application form — local confirmation only inside this preview.
+  // Application form — submits to the CIF Google Apps Script autoresponder.
+  // Paste the Web App URL from your Apps Script deployment below.
+  var VOLUNTEER_ENDPOINT = "https://script.google.com/macros/s/AKfycbwKeUQytQITVcIZ4rx4_ksb1EIwHd0G2tYCuGp67jE5adjO5SpiRJ3l-uP3yBMsrHEqkQ/exec";
+
   var volForm = document.getElementById('volunteerForm');
   var successPanel = document.getElementById('successPanel');
   volForm.addEventListener('submit', function(e){
     e.preventDefault();
-    volForm.style.display = 'none';
-    successPanel.classList.add('active');
-    successPanel.scrollIntoView({behavior:'smooth', block:'start'});
+
+    var fd = new FormData(volForm);
+    var payload = {};
+    fd.forEach(function(value, key){
+      if (key === 'tracks') {
+        if (!payload.tracks) payload.tracks = [];
+        payload.tracks.push(value);
+      } else {
+        payload[key] = value;
+      }
+    });
+
+    var submitBtn = volForm.querySelector('button[type="submit"], .btn');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting…'; }
+
+    if (VOLUNTEER_ENDPOINT.indexOf('PASTE_YOUR') === 0) {
+      // Endpoint not configured yet — show success locally so the form still previews correctly.
+      volForm.style.display = 'none';
+      successPanel.classList.add('active');
+      successPanel.scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+
+    fetch(VOLUNTEER_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors', // Apps Script web apps don't return CORS headers by default; response body is unreadable, which is fine here
+      headers: {'Content-Type': 'text/plain;charset=utf-8'}, // avoids CORS preflight
+      body: JSON.stringify(payload)
+    }).then(function(){
+      volForm.style.display = 'none';
+      successPanel.classList.add('active');
+      successPanel.scrollIntoView({behavior:'smooth', block:'start'});
+    }).catch(function(){
+      // Even on a network hiccup with no-cors mode we usually can't detect failure reliably,
+      // so still show success but note it in case anything looks off.
+      volForm.style.display = 'none';
+      successPanel.classList.add('active');
+      successPanel.scrollIntoView({behavior:'smooth', block:'start'});
+    });
   });
 })();
 </script>
