@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Second Dose | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="A foreign protein given once may be forgiven; given twice, it meets an immune system that remembers, and the field has hardly begun to ask what follows">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,0.12);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nl img{height:32px;width:32px;object-fit:contain;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap;}
+.nm{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nm::-webkit-scrollbar{display:none;}
+.nm a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;white-space:nowrap;padding:4px 8px;border-radius:2px;transition:color .15s;}
+.nm a:hover{color:#d8cfc4;}
+.nr{flex-shrink:0;display:flex;gap:8px;}
+.nr a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;transition:all .15s;white-space:nowrap;}
+.nmy{color:rgba(216,207,196,0.45);border:1px solid rgba(100,140,200,0.15);}
+.nmy:hover{color:#c8902a;}
+.njn{background:#c8902a;color:#030509;}
+.njn:hover{background:#e8b84a;}
+@media(max-width:680px){.nm a:not(.nk){display:none;}.nb{display:none;}.nmy{display:none;}}
+footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px 40px 24px;}
+.fg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,.1);}
+@media(max-width:800px){.fg{grid-template-columns:1fr 1fr;gap:24px;}}
+.fli{height:26px;display:block;margin-bottom:10px;}
+.fb p{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.22);line-height:2.2;}
+.fb a{color:#c8902a;text-decoration:none;}
+.fct{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;}
+.fl{display:flex;flex-direction:column;gap:8px;}
+.fl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.38);text-decoration:none;transition:color .15s;}
+.fl a:hover{color:rgba(216,207,196,.85);}
+.fbot{max-width:1100px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fcp{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);}
+.fbl{display:flex;gap:14px;}
+.fbl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);text-decoration:none;}
+.fbl a:hover{color:#c8902a;}
+.fnr{color:#c8902a!important;border-color:rgba(200,144,42,.5)!important;}.nm{justify-content:flex-start;}.nm a.fnk{color:#c8902a;}.hero{padding-top:56px!important;}
+</style>
+</head>
+<body>
+<style id="cifnav-css">
+nav.cifnav{position:var(--cn-pos,sticky)!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;background:rgba(3,5,9,.97)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,.12)!important;padding:6px 20px!important;min-height:56px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;box-sizing:border-box!important;margin:0!important;width:auto!important}
+nav.cifnav *{box-sizing:border-box}
+nav.cifnav .cn-l{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+nav.cifnav .cn-l img{height:32px;width:32px;object-fit:contain;display:block}
+nav.cifnav .cn-b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap}
+nav.cifnav .cn-m{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 2px;flex:1}
+nav.cifnav .cn-m a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(216,207,196,.5);text-decoration:none;white-space:nowrap;padding:5px 7px;border-radius:2px;transition:color .15s;background:none;border:0}
+nav.cifnav .cn-m a:hover,nav.cifnav .cn-m a.on{color:#d8cfc4}
+nav.cifnav .cn-m a.cn-fn{color:#c8902a}
+nav.cifnav .cn-r{flex-shrink:0;display:flex;gap:8px}
+nav.cifnav .cn-r a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;white-space:nowrap}
+nav.cifnav .cn-t{color:rgba(216,207,196,.55);border:1px solid rgba(100,140,200,.2)}
+nav.cifnav .cn-t:hover{color:#c8902a}
+nav.cifnav .cn-d{background:#c8902a;color:#030509}
+nav.cifnav .cn-d:hover{background:#e8b84a}
+@media(max-width:900px){nav.cifnav{flex-wrap:wrap!important;justify-content:center!important}nav.cifnav .cn-b{display:none}nav.cifnav .cn-m{order:3;flex-basis:100%}}
+nav.cifnav{--cn-pos:sticky}.hero{padding-top:56px!important}</style><nav class="cifnav"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><div class="cn-m"><a href="about.html">About</a><a href="command-center.html">Command Center</a><a href="research.html">Research</a><a href="situation-room.html">Situation Room</a><a href="kidney-news.html">Kidney News</a><a href="cif-volunteer-page.html">Volunteer</a><a href="contact.html">Contact</a><a href="transplant-realities.html">What Nobody Tells You</a><a href="transplant-line.html">The Transplant Line</a><a href="donor-flow.html">Project Donor-Flow</a><a href="bhoc.html">BHOC</a><a href="field-notes.html" class="cn-fn">BHOC Field Notes</a><a href="accountability.html">Atlas</a><a href="demand-letters.html">Demand Letters</a><a href="congress-scorecard.html">Scorecard</a></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a><a href="donate.html" class="cn-d">Donate</a></div></nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="field-notes.html">Field Notes</a> &nbsp;/&nbsp; Post 20</div>
+<div class="eyebrow">Immunology &middot; November 15, 2026 &middot; 13 min read</div>
+<h1>The Second Dose</h1>
+<p class="dek">A foreign protein given once may be forgiven; given twice, it meets an immune system that remembers, and the field has hardly begun to ask what follows</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-20.docx" download>Download Word</a>
+<a class="cta" href="field-note-20.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-20.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>Almost every study of an oxygen carrier is a study of a first
+exposure. A patient bleeds, receives the product once or over a few
+days, and is followed until discharge or for a set number of weeks. The
+scientific and regulatory record is built on that pattern. Yet the
+patients who might benefit most from a carrier are not always one-time
+users. Some have conditions that recur: sickle cell crises, repeated
+bleeding from a vascular malformation, recurrent anemia in a person
+whose religious beliefs preclude transfusion. Some will be trauma
+survivors who, years later, face a second emergency. For all of them the
+question is what happens on the second exposure to a protein that comes
+from another species.</p>
+<p>That question has received far less attention than it deserves. This
+essay lays out what is known, what can be reasoned, and what has to be
+measured, and it tries not to pretend that the answer is settled.</p>
+<h2 id="why-a-second-dose-is-different">Why a second dose is
+different</h2>
+<p>The immune system meets a foreign protein in two ways. On first
+contact, it is a stranger, and the response takes days to develop. On
+the second contact, it is a familiar enemy, and the response is faster,
+larger and often of a different kind. This is the basis of vaccination
+and also of allergy.</p>
+<p>Bovine hemoglobin is a protein from another mammal. It is similar to
+human hemoglobin in structure and different enough in sequence that the
+human immune system can, in principle, recognize it as foreign. Two
+things reduce the likelihood of a strong response. Chemical
+modification, such as the cross-linking and polymerization used in the
+bovine products, may alter the surface in ways that hide some sites. And
+mammalian hemoglobins are closely related, which may render the molecule
+less provocative than a protein from a distant species. Neither
+guarantees tolerance.</p>
+<p>The other possibility is that the immune system does respond,
+producing antibodies that bind the carrier. Such antibodies could do
+several things. They could clear the carrier rapidly from the
+circulation, reducing its effect and its half-life. They could form
+complexes that deposit in the kidney or vessels. Or they could cause an
+allergic reaction of the kind that can be dangerous. Which of these
+happens, if any, is an empirical question.</p>
+<h2 id="what-the-veterinary-experience-suggests">What the veterinary
+experience suggests</h2>
+<p>The largest body of experience with repeated exposure comes not from
+human medicine but from veterinary practice, where a bovine carrier has
+been given to dogs and, off label, to other species for many years. The
+company that markets it has stated that the product has been used widely
+across species for over two decades. Some animals must have received it
+more than once, either in the same illness or in separate ones.</p>
+<p>I do not have access to a systematic analysis of the immunological
+consequences in those animals, and I would be inventing if I claimed
+otherwise. What can be said is that the experience has not, to my
+knowledge, produced a widely known pattern of severe reactions on
+re-exposure, and that the labeling for the veterinary product has
+historically described it as intended for a limited number of infusions.
+A serious effort to answer the question would search adverse event
+reports, ask veterinary specialists about their experience with second
+doses, and, where possible, measure antibodies in animals that received
+repeated treatments. Such data may already exist in scattered form, and
+collecting it would be inexpensive relative to its value.</p>
+<h2 id="the-human-data-problem">The human data problem</h2>
+<p>Human experience is more limited. Trials of bovine and other
+hemoglobin-based carriers included immunological monitoring in some
+cases. My understanding is that the general finding across several
+products was that antibody responses were infrequent and did not seem to
+produce clinical problems within the trials’ periods. I hold that
+statement loosely, because I cannot reconstruct the specific studies and
+because the trials followed patients for short periods after a single
+course.</p>
+<p>The key limitation is the design. To see a memory response, you need
+a second exposure after a delay long enough for immunity to develop,
+typically weeks to months. Most trials do not provide that. A patient
+who was exposed once, and was followed for thirty days, tells us nothing
+about what happens at day ninety. This is not a criticism of the trials,
+which were designed to answer other questions. It is an observation that
+the specific question has not been asked.</p>
+<h2 id="chemistry-and-immunity">Chemistry and immunity</h2>
+<p>Some features of the products matter for immunogenicity.
+Polymerization increases the molecular size, and larger particles are
+more likely to be taken up by immune cells that present them to the rest
+of the system. Cross-linking with glutaraldehyde creates new chemical
+structures that were not in the original protein, and such structures
+can act as haptens, small chemical groups that provoke an immune
+response when attached to a carrier. PEGylation, the attachment of
+polyethylene glycol chains, is used in some products to shield the
+protein, but antibodies against polyethylene glycol itself have been
+described in the general literature on PEGylated drugs, and they can
+accelerate clearance of such drugs on repeat dosing.</p>
+<p>The details vary by product, and the conclusion is that each product
+must be evaluated on its own. A finding of low immunogenicity for one
+chemistry does not transfer to another.</p>
+<p>There is also the matter of purity. Preparations that contain traces
+of other bovine proteins, from the plasma or the red cell membrane,
+present a wider range of targets to the immune system. The purification
+steps that remove these impurities are therefore also immunological
+safeguards. A change in manufacturing that lets more impurity through
+could change the immune profile without changing anything on the
+label.</p>
+<h2 id="endotoxin-and-other-contaminants">Endotoxin and other
+contaminants</h2>
+<p>Contaminants that are not proteins matter too. Bacterial endotoxin,
+the fragments of cell walls of gram-negative bacteria, is a potent
+stimulator of the immune system, and even small amounts in a product can
+cause fever, low blood pressure and inflammatory signaling. Such
+contamination can make an otherwise well-tolerated product seem
+immunogenic, and it can prime the immune system to respond more
+vigorously on subsequent exposures. Testing for endotoxin is standard in
+the manufacture of injectable products, and the limits are strict. For a
+product made from animal blood, collected in an environment that is not
+sterile in the way a pharmaceutical plant is, the discipline needed is
+greater.</p>
+<h2 id="sensitization-and-the-transfusion-analogy">Sensitization and the
+transfusion analogy</h2>
+<p>Physicians who care for patients needing repeated transfusions know
+the problem of alloimmunization. A patient who receives many units of
+red cells may develop antibodies to minor antigens on donor cells, which
+make later transfusions more difficult to match. In certain populations,
+such as patients with sickle cell disease, this is a serious clinical
+problem that is managed by extended matching of blood.</p>
+<p>The carrier’s promise to be free of such antigens is real: without
+cell surface markers, there is nothing to match. But that promise does
+not cover the carrier’s own immunogenicity. A patient who would
+otherwise become sensitized to red cells might instead become sensitized
+to a bovine protein. Whether that trade is favorable depends on the size
+and consequences of each. An honest description of the product would
+distinguish clearly between the absence of blood-group antigens, which
+is true, and the absence of immunogenicity, which has not been
+shown.</p>
+<h2 id="what-tests-would-answer-the-question">What tests would answer
+the question</h2>
+<p>A research program that took this issue seriously could proceed in
+stages, each modest and each informative.</p>
+<p>The first is to measure. In existing samples from earlier trials, and
+in veterinary populations, look for antibodies against the carrier and
+against the chemical modification. Test their ability to bind the
+product and whether they change its behavior in plasma.</p>
+<p>The second is to model. In animal studies, expose animals twice and
+three times, at intervals of weeks, and compare the circulating
+half-life and the clinical response at each dose. A shortening of the
+half-life on the second dose would be a signal of antibody-mediated
+clearance.</p>
+<p>The third is to observe in people. In a trial with planned repeat
+dosing, measure antibodies before each dose and at intervals afterward.
+Include clinical monitoring for allergic reactions and for signs of
+immune complex disease, such as rash, joint pain, and changes in kidney
+function.</p>
+<p>The fourth is to build a registry. For any product used under
+expanded access, where the physician is treating a single patient in
+extremity, systematic data on repeated exposure is rarely collected. A
+registry that logs each dose, the interval and the outcome would
+accumulate knowledge from cases that would otherwise be lost.</p>
+<h2 id="the-special-case-of-chronic-use">The special case of chronic
+use</h2>
+<p>The most challenging scenario is not the second dose but the tenth.
+Suppose an oxygen carrier were considered for use in a chronic
+condition, such as a severe anemia with no other option. Then a patient
+would receive many exposures over months or years. Immune tolerance to a
+foreign protein can develop under some circumstances, but sensitization
+is equally possible, and the balance depends on dose, route and
+frequency. The history of protein therapeutics, including enzymes and
+antibody drugs produced in animal cells, is full of cases where
+antibodies developed in a fraction of patients and reduced efficacy over
+time.</p>
+<p>The lesson is that chronic use cannot be extrapolated from acute use.
+It requires its own evidence, with long follow-up and immune monitoring.
+A responsible development plan would treat acute and chronic indications
+as distinct programs and would not allow success in the first to imply
+readiness for the second.</p>
+<h2 id="what-the-patient-should-know">What the patient should know</h2>
+<p>A patient offered a carrier under expanded access should understand a
+few things. It is made from a foreign protein. The chance of a serious
+allergic reaction on first exposure is believed to be low, though not
+zero. The risk on later exposure is not well known. If a second dose is
+contemplated, the physician should be told about the first, and the
+patient should be observed carefully during and after the infusion, with
+resuscitation equipment at hand.</p>
+<p>These points are unglamorous, and they belong in the consent
+conversation. The consent essays in this series argued that informed
+consent for an emergency product should include what is known and what
+is not known. Repeat dosing sits squarely in the second category, and
+saying so is part of respecting the patient.</p>
+<h2 id="why-this-gap-persists">Why this gap persists</h2>
+<p>One might ask why a question so basic remains open. The answer is a
+mixture of economics and incentives. A trial that follows patients for
+months after a single exposure is expensive, and a company with limited
+funds will choose the endpoints its regulator requires. Veterinary sales
+generate revenue without the obligation to collect immunological data.
+Academic laboratories rarely have access to the product. And the
+assumption that a bovine protein, chemically modified, will behave
+benignly has been reinforced by the absence of reports of trouble, an
+absence that may reflect the absence of anyone looking.</p>
+<p>That last point is worth stressing. A silence in the record is not
+evidence of safety. It is evidence that no one was asked to write
+anything down. The remedy is deliberate: ask, record, and publish.</p>
+<h2 id="a-modest-proposal">A modest proposal</h2>
+<p>I would propose that the community concerned with oxygen carriers
+agree on a minimal dataset for every exposure, whether in a trial, in
+expanded access, or in a veterinary clinic that is willing to share. The
+dataset would record the product and lot, the dose, the date, the
+species and the patient’s identifier, any prior exposure, any reaction
+within a defined period, and where possible a stored serum sample. The
+cost is small, the value is large, and the data would answer the
+second-dose question within a few years of accumulating.</p>
+<p>Such a shared record would also serve other purposes. It would
+support pharmacovigilance, would help detect manufacturing drift, and
+would give regulators a factual basis for decisions. The Foundation
+could host or sponsor the coordination, since the work is neutral,
+unglamorous and beneficial to every party.</p>
+<h2 id="reading-an-antibody-result">Reading an antibody result</h2>
+<p>Suppose a study does measure antibodies. What would the result mean?
+A positive test means that the patient’s serum contains something that
+binds the carrier. It does not by itself mean harm. Many people carry
+antibodies to many foreign proteins without symptoms, and binding in a
+laboratory dish is not the same as clearance in the body. The clinically
+relevant questions are graded. Do the antibodies neutralize the function
+of the carrier? Do they speed its removal? Do they form complexes that
+lodge in tissue? Do they accompany symptoms?</p>
+<p>A careful analysis therefore pairs the antibody test with a
+functional one, such as the circulating half-life after a repeat dose,
+and with a clinical one, such as the incidence of allergic reactions. A
+result that shows antibodies with no functional or clinical consequence
+is reassuring. One that shows a shortened half-life without symptoms is
+a practical problem, since the product would work less well the second
+time. One that shows symptoms is a safety signal. Reporting all three
+together prevents both false alarm and false comfort.</p>
+<h2 id="timing-and-the-window-of-vulnerability">Timing and the window of
+vulnerability</h2>
+<p>Immune responses follow a pattern in time. Antibodies of the first
+kind, which appear within about a week or two of exposure, are followed
+by a more mature response over the next weeks. If a second dose arrives
+during the transition, when antibody levels are rising, immune complexes
+are most likely to form. If it arrives long after, when antibody levels
+have fallen but memory cells remain, the response can be swift and
+strong. The riskiest interval may therefore not be the shortest or the
+longest but somewhere between, and it is unlikely to be the same for
+every patient.</p>
+<p>For a clinician, the practical consequence is that the date of the
+first exposure is a clinical fact that belongs in the record, easily
+accessible when a second is considered. Emergency care rarely provides
+for this. A patient treated in one hospital may arrive months later at
+another, with no link between the records. The registry proposed above
+would help, as would something as simple as a wallet card given to every
+recipient stating the product, the date and the lot.</p>
+<h2 id="species-and-the-choice-of-a-source">Species and the choice of a
+source</h2>
+<p>The question of immunogenicity feeds back into the choice of raw
+material. Bovine hemoglobin is one option. Others include hemoglobin
+from pigs, from horses, from human donors and from engineered microbes
+producing human sequences. In principle, a molecule with the human
+sequence should be less immunogenic than one from a cow. In practice,
+recombinant proteins produced in microbes can differ from natural ones
+in modification and folding, and chemical stabilization changes the
+surface regardless of the source.</p>
+<p>One reasonable view is that the immune question is a reason to keep
+several sources under study rather than to commit early to one. If
+repeat dosing turns out to be a problem for bovine products, a
+human-sequence alternative may be the only route for chronic use. If it
+turns out not to be, the bovine product retains its advantages of scale
+and experience. The information will only arrive if someone looks, and
+until it does, diversification is prudent.</p>
+<h2 id="what-regulators-could-reasonably-ask">What regulators could
+reasonably ask</h2>
+<p>A regulator reviewing an oxygen carrier for approval could ask for
+immunogenicity data proportional to the intended use. For a single-dose
+emergency indication, the demand for repeat-dose data might reasonably
+be modest, with a commitment to post-approval surveillance. For an
+indication that implies repeated exposure, the standard should be
+higher, and evidence from repeat-dose studies should be required before
+approval. Splitting the requirement by indication would avoid both
+extremes: burying an emergency product in paperwork and approving a
+chronic one on evidence collected for a different purpose.</p>
+<p>Post-approval surveillance deserves a special mention. Products
+approved under conditions of unmet need, with a commitment to further
+study, have a mixed record on fulfilling the commitment. A public
+schedule of the promised studies, with the results posted when they are
+due, would make the arrangement more than a formality.</p>
+<h2 id="closing-thought">Closing thought</h2>
+<p>The first dose of a carrier is a bet on the moment. The second is a
+bet on memory, the body’s and ours. The moment has been studied for a
+century, and memory has hardly been studied at all. If the field is to
+mature from emergency improvisation to reliable medicine, it must learn
+what its products do to the immune system that meets them twice. The
+experiments are not exotic, and the money required is small compared
+with a pivotal trial. What is needed is the decision to look.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>The immunogenicity of protein therapeutics and of PEGylated drugs is
+reviewed in the general pharmaceutical literature, including work on
+anti-polyethylene glycol antibodies. Immunological monitoring in
+hemoglobin-based oxygen carrier trials is described in individual trial
+reports and in reviews of the class published in transfusion and
+artificial cells journals. Alloimmunization in sickle cell disease is
+reviewed in hematology literature. The veterinary product’s labeling and
+the company’s statements on its use across species are available from
+the manufacturer. Claims above about the absence of reported problems
+reflect my limited reading and should be checked against adverse event
+databases.</p>
+
+</article>
+<div class="pn"><a href="field-note-19.html" data-release="2026-11-12"><span>Previous</span>Radiation and Oxygen</a></div>
+<p style="margin-top:28px"><a class="cta" href="field-notes.html">All posts</a></p>
+</main>
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" class="fli" onerror="this.style.display='none'">
+      <p>Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="https://coldischemia.foundation">coldischemia.foundation</a></p>
+    </div>
+    <div>
+      <span class="fct">Platform</span>
+      <div class="fl">
+        <a href="command-center.html">Command Center</a>
+        <a href="projects.html">Toolkit</a>
+        <a href="situation-room.html">Situation Room</a>
+        <a href="research.html">Research</a>
+        <a href="kidney-news.html">Kidney News</a>
+        <a href="cif-volunteer-page.html">Volunteer</a>
+        <a href="contact.html">Contact</a>
+        <a href="field-notes.html">BHOC Field Notes</a>
+        <a href="accountability.html">Atlas</a>
+        <a href="congress-scorecard.html">Scorecard</a>
+        <a href="donate.html">Donate</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Projects</span>
+      <div class="fl">
+        <a href="https://donorflow.coldischemia.foundation" target="_blank" rel="noopener">Project Donor-Flow</a>
+        <a href="https://collateral-damage.coldischemia.foundation" target="_blank" rel="noopener">Collateral Damage</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Foundation</span>
+      <div class="fl">
+        <a href="about.html">Our Story</a>        <a href="cif-amazon-library.html">Book &amp; Toolkit Library</a>
+        <a href="advocacy-news.html">Advocacy News</a>
+        <a href="care-partner-advocacy.html">Care Partner Advocacy</a>
+        <a href="transplant-line.html">The Transplant Line</a>
+    <a href="donor-flow.html">Project Donor-Flow</a>
+        <a href="donate.html">Donate</a>
+        <a href="free-guide.html">Free Guide</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Legal</span>
+      <div class="fl">
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+        
+        <a href="sales-letter.html">Our Case for You</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p class="fcp">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+    <div class="fbl">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>

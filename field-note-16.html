@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hemoglobin in the Trenches | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="A century of attempts to put hemoglobin into a wounded body, from a postpartum ward in 1949 to an Army laboratory in the 1980s, and the mistakes that each generation made in its own way">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,0.12);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nl img{height:32px;width:32px;object-fit:contain;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap;}
+.nm{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nm::-webkit-scrollbar{display:none;}
+.nm a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;white-space:nowrap;padding:4px 8px;border-radius:2px;transition:color .15s;}
+.nm a:hover{color:#d8cfc4;}
+.nr{flex-shrink:0;display:flex;gap:8px;}
+.nr a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;transition:all .15s;white-space:nowrap;}
+.nmy{color:rgba(216,207,196,0.45);border:1px solid rgba(100,140,200,0.15);}
+.nmy:hover{color:#c8902a;}
+.njn{background:#c8902a;color:#030509;}
+.njn:hover{background:#e8b84a;}
+@media(max-width:680px){.nm a:not(.nk){display:none;}.nb{display:none;}.nmy{display:none;}}
+footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px 40px 24px;}
+.fg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,.1);}
+@media(max-width:800px){.fg{grid-template-columns:1fr 1fr;gap:24px;}}
+.fli{height:26px;display:block;margin-bottom:10px;}
+.fb p{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.22);line-height:2.2;}
+.fb a{color:#c8902a;text-decoration:none;}
+.fct{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;}
+.fl{display:flex;flex-direction:column;gap:8px;}
+.fl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.38);text-decoration:none;transition:color .15s;}
+.fl a:hover{color:rgba(216,207,196,.85);}
+.fbot{max-width:1100px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fcp{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);}
+.fbl{display:flex;gap:14px;}
+.fbl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);text-decoration:none;}
+.fbl a:hover{color:#c8902a;}
+.fnr{color:#c8902a!important;border-color:rgba(200,144,42,.5)!important;}.nm{justify-content:flex-start;}.nm a.fnk{color:#c8902a;}.hero{padding-top:56px!important;}
+</style>
+</head>
+<body>
+<style id="cifnav-css">
+nav.cifnav{position:var(--cn-pos,sticky)!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;background:rgba(3,5,9,.97)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,.12)!important;padding:6px 20px!important;min-height:56px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;box-sizing:border-box!important;margin:0!important;width:auto!important}
+nav.cifnav *{box-sizing:border-box}
+nav.cifnav .cn-l{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+nav.cifnav .cn-l img{height:32px;width:32px;object-fit:contain;display:block}
+nav.cifnav .cn-b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap}
+nav.cifnav .cn-m{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 2px;flex:1}
+nav.cifnav .cn-m a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(216,207,196,.5);text-decoration:none;white-space:nowrap;padding:5px 7px;border-radius:2px;transition:color .15s;background:none;border:0}
+nav.cifnav .cn-m a:hover,nav.cifnav .cn-m a.on{color:#d8cfc4}
+nav.cifnav .cn-m a.cn-fn{color:#c8902a}
+nav.cifnav .cn-r{flex-shrink:0;display:flex;gap:8px}
+nav.cifnav .cn-r a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;white-space:nowrap}
+nav.cifnav .cn-t{color:rgba(216,207,196,.55);border:1px solid rgba(100,140,200,.2)}
+nav.cifnav .cn-t:hover{color:#c8902a}
+nav.cifnav .cn-d{background:#c8902a;color:#030509}
+nav.cifnav .cn-d:hover{background:#e8b84a}
+@media(max-width:900px){nav.cifnav{flex-wrap:wrap!important;justify-content:center!important}nav.cifnav .cn-b{display:none}nav.cifnav .cn-m{order:3;flex-basis:100%}}
+nav.cifnav{--cn-pos:sticky}.hero{padding-top:56px!important}</style><nav class="cifnav"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><div class="cn-m"><a href="about.html">About</a><a href="command-center.html">Command Center</a><a href="research.html">Research</a><a href="situation-room.html">Situation Room</a><a href="kidney-news.html">Kidney News</a><a href="cif-volunteer-page.html">Volunteer</a><a href="contact.html">Contact</a><a href="transplant-realities.html">What Nobody Tells You</a><a href="transplant-line.html">The Transplant Line</a><a href="donor-flow.html">Project Donor-Flow</a><a href="bhoc.html">BHOC</a><a href="field-notes.html" class="cn-fn">BHOC Field Notes</a><a href="accountability.html">Atlas</a><a href="demand-letters.html">Demand Letters</a><a href="congress-scorecard.html">Scorecard</a></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a><a href="donate.html" class="cn-d">Donate</a></div></nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="field-notes.html">Field Notes</a> &nbsp;/&nbsp; Post 16</div>
+<div class="eyebrow">Industry history &middot; November 3, 2026 &middot; 13 min read</div>
+<h1>Hemoglobin in the Trenches</h1>
+<p class="dek">A century of attempts to put hemoglobin into a wounded body, from a postpartum ward in 1949 to an Army laboratory in the 1980s, and the mistakes that each generation made in its own way</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-16.docx" download>Download Word</a>
+<a class="cta" href="field-note-16.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-16.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>The history of oxygen carriers is usually told as a sequence of
+products: this one failed, that one was withdrawn, another went
+bankrupt. That telling is accurate and misses what is most useful about
+the past, which is the sequence of ideas. Each generation of researchers
+believed it understood why its predecessors had failed. Each was partly
+right and partly wrong, and the wrong part turned out to be the one that
+mattered. This essay follows the ideas rather than the companies, and it
+pays attention to the moments at which a mistaken explanation held a
+field in place for a decade.</p>
+<p>I will be careful throughout about what the sources establish. The
+history here draws on a narrative review of hemoglobin-based oxygen
+carriers and on accounts of the Army’s research program, and where dates
+or numbers matter I give them as those sources do.</p>
+<h2
+id="the-first-thought-hemoglobin-is-the-oxygen-so-give-hemoglobin">The
+first thought: hemoglobin is the oxygen, so give hemoglobin</h2>
+<p>The idea appears early, and it is easy to see why. Hemoglobin is the
+molecule that carries oxygen in blood, and red cells are the awkward
+package that holds it. If a patient is bleeding and blood is
+unavailable, why not extract the hemoglobin and inject it?</p>
+<p>The first recorded attempts date to the end of the nineteenth
+century. A German physician, von Stark, gave hemoglobin under the skin
+to anemic patients in 1898 and could not obtain a stable preparation. In
+the years before and during the First World War, researchers refined the
+preparations. A pair of American physicians, Sellards and Minot, infused
+hemoglobin solutions into thirty-three subjects, in volumes of a few
+milliliters up to about thirty. Every recipient passed hemoglobin in the
+urine, a visible sign that the kidney was clearing it. Yet thirty
+reported no overt harm. It was an encouraging result for the wrong
+reason: the doses were tiny, and the kidney’s reaction was mistaken for
+tolerance.</p>
+<p>The first idea was thus simple and incomplete. It treated hemoglobin
+as a fuel and neglected the vessel, the organ and the immune system
+through which it would pass.</p>
+<h2 id="the-case-that-should-have-taught-more">The case that should have
+taught more</h2>
+<p>In 1949 a group led by Amberson published one of the most sobering
+cases in the whole literature. A woman had suffered a postpartum
+hemorrhage, compatible blood could not be found, and the physicians gave
+her a stroma-free hemoglobin solution, hemoglobin purified from red
+cells with the membrane fragments, the stroma, removed. The review I am
+following describes what happened: the patient improved initially, then
+developed oliguria, a sharp fall in urine output, and died of renal
+failure.</p>
+<p>It is a haunting account because it holds both halves of the story.
+The hemoglobin worked: it raised her oxygen-carrying capacity while
+nothing else was available. It also destroyed her kidneys. The same
+observation would be made again, in animals and in people, for the next
+fifty years, and the explanation would change three times.</p>
+<h2 id="the-second-idea-it-is-the-stroma">The second idea: it is the
+stroma</h2>
+<p>After the war, researchers noticed that the injury to the kidney
+seemed worse when the hemoglobin preparation was crude. The obvious
+suspect was the debris from broken red cells. Fragments of membrane are
+known to activate clotting and cause damage to small vessels, and a
+solution containing them could plausibly injure the kidney.</p>
+<p>The idea produced a program of purification. Researchers in the
+1960s, including Rabiner, showed in dogs that a well-purified,
+stroma-free hemoglobin could serve as an oxygen-carrying replacement in
+hemorrhagic shock and could sustain animals through exchange
+transfusions. The review describes his results as showing the solution
+to be lifesaving in dogs undergoing exchange transfusion. It looked as
+though the problem had been identified and solved.</p>
+<p>Then came the human data. In the late 1970s, studies by Savitsky and
+colleagues gave purified stroma-free hemoglobin to healthy volunteers.
+The review is direct about the results: all developed oliguria with
+reduced creatinine clearance; two reported abdominal pain; seven
+developed a slow heart rate and high blood pressure. The kidney was
+affected even though the stroma were gone. The second idea was wrong, or
+at least incomplete.</p>
+<h2 id="the-third-idea-it-is-the-dimer">The third idea: it is the
+dimer</h2>
+<p>The next explanation came from chemistry. A hemoglobin molecule
+outside a red cell is not stable as a four-chain unit. In dilute
+solution it splits into two-chain halves, called dimers, and the dimers
+are small enough to pass through the filter of the kidney. Once in the
+tubules they can precipitate, and they were held responsible for the
+kidney injury.</p>
+<p>That explanation led directly to the chemical modifications that
+defined the next generation. If the tetramer could be prevented from
+splitting, the dimers would never form. Chemists therefore developed
+ways to cross-link the four chains together, and to polymerize several
+tetramers into larger assemblies. The diaspirin cross-link, which
+bridges the two alpha chains, was one of these. Glutaraldehyde
+polymerization, used in the bovine products, was another.</p>
+<p>The third idea was much closer to the truth, and it produced the
+products that reached the clinic. But it too had an incomplete part.
+Cross-linking prevented the kidney injury from dimers, and yet the new
+products still raised blood pressure. The hypertension would need a
+fourth explanation.</p>
+<h2 id="the-army-laboratory">The Army laboratory</h2>
+<p>At this point in the history a particular institution enters. The
+United States Army had a strong interest in a blood substitute that
+could be carried to a battlefield, stored without refrigeration, and
+given without typing. It supported research at the Letterman Army
+Institute of Research and elsewhere, and its scientists helped develop
+the diaspirin cross-linked hemoglobin. The review describes that program
+as a collaborative effort between the pharmaceutical company Baxter and
+the Army, and says that Baxter later continued alone.</p>
+<p>A published account from the Letterman program bears a title that
+summarizes the state of the field as it stood: a review of modified
+hemoglobin research at Letterman, attempts to delineate the toxicity of
+cell-free tetrameric hemoglobin. The word delineate is honest. The
+researchers were trying to separate the effects of the molecule into
+parts, to say what came from the kidney, what from the vessels and what
+from contamination. They were doing what a good research program does,
+and it is instructive that after so many years they still framed the
+task as delineating toxicity.</p>
+<h2 id="the-fourth-idea-it-is-the-nitric-oxide">The fourth idea: it is
+the nitric oxide</h2>
+<p>The explanation for hypertension arrived in the 1990s and was, in
+retrospect, elegant. The lining of blood vessels makes nitric oxide, a
+gas that relaxes the smooth muscle in the vessel wall and keeps the
+vessel open. Free hemoglobin binds nitric oxide with extraordinary
+avidity, several orders of magnitude tighter than oxygen binds. When
+hemoglobin is loose in plasma, it can slip through gaps in the vessel
+lining, capture the nitric oxide near its source, and remove it. Without
+the gas, the vessels constrict, the pressure rises and blood flow to
+organs falls.</p>
+<p>This account explained the hypertension, the reduced flow to some
+organs, the abdominal pain from constriction of the gut vessels, and
+much else. It also suggested a design principle: make the hemoglobin too
+big to leave the vessel lumen, and it will not reach the source of the
+gas. The bovine glutamers and the PEGylated products can be read as
+attempts to apply that principle.</p>
+<p>Yet the fourth idea also turned out to be an incomplete story. Even
+large molecules seemed to produce some vasoconstriction, and it became
+clear that the gas is present in the lumen and not just in the wall. The
+hypothesis remains a leading explanation, and it is discussed elsewhere
+in this series. What I want to note here is the pattern: each
+generation’s insight was real, and each was mistaken in believing it
+complete.</p>
+<h2 id="what-the-human-trials-showed">What the human trials showed</h2>
+<p>Meanwhile, human trials proceeded, and their results were disturbing.
+The review reports the outcome of the trauma trial of the diaspirin
+product published in 1999: within twenty-eight days, twenty-four of the
+fifty-two patients who received the product had died, forty-six percent,
+against eight of forty-six, seventeen percent, who received saline. A
+trial of a polymerized human hemoglobin in trauma, published years
+later, reported thirty-day mortality of thirteen percent in the treated
+group against ten percent in the control group, a difference that did
+not reach conventional significance but pointed in an unfavorable
+direction. A pooled analysis in 2008, combining sixteen trials, reported
+increased risks of death and of heart attack.</p>
+<p>These results have been analyzed to exhaustion. I want only to
+observe how they interacted with the ideas. Each product had been
+designed on the basis of the explanation then current. Each failed for
+reasons that the explanation had not anticipated. The pattern suggests
+that the theory was always a step behind the biology.</p>
+<h2 id="the-fifth-idea-still-forming">The fifth idea, still forming</h2>
+<p>The field today holds a set of hypotheses rather than a single
+explanation. Nitric oxide scavenging is one. Oxidation of the iron,
+which produces free heme and reactive species, is another. The
+interaction of free hemoglobin with the endothelium and with platelets,
+the effect on the immune system, the role of oxygen affinity in
+triggering the arteriolar constriction described elsewhere on this site,
+the assay interference that clouds measurement, and the heterogeneity of
+the polymer mixtures are all in play.</p>
+<p>What distinguishes the present from the past is the tools.
+Researchers can now measure nitric oxide directly in tissue, they can
+characterize polymer distributions precisely, they can image
+microvessels, and they can compare molecules head to head in
+standardized animal models. None of these guarantees success, but they
+raise the odds that the next explanation will be tested before it is bet
+on.</p>
+<h2 id="the-lessons-of-the-sequence">The lessons of the sequence</h2>
+<p>I draw four lessons from the history, and I offer them as instruction
+to anyone entering the field now.</p>
+<p>Distrust the complete explanation. Every theory in the sequence was
+partial. The moment an explanation is presented as sufficient, it stops
+being examined, and the unexplained residue becomes the next
+disaster.</p>
+<p>Human data corrects animal data. The dog results of the 1960s were
+sound and did not predict the human response. Species differ in kidney
+handling, in vascular reactivity and in immune response. A compound that
+behaves well in animals has passed the first exam, not the last.</p>
+<p>Small doses mislead. The early human studies used doses that were too
+small to show harm and gave a false comfort. Toxicity that appears at
+high doses was not visible at low doses, and the doses that matter
+clinically are the high ones.</p>
+<p>Institutions matter. The Army’s interest was a driver of the
+research, and its willingness to pursue the problem over decades
+produced knowledge that a commercial firm alone might not have
+generated. It also shows that a strong sponsor is not a guarantee of
+success. Both statements are true.</p>
+<h2 id="a-note-on-the-war-that-started-it">A note on the war that
+started it</h2>
+<p>The title of this essay refers to trenches because the impulse behind
+the field has always come from war. Sellards and Minot worked in the era
+of the First World War, when the question of what to give a soldier who
+had lost blood at the front was pressing. The Army’s laboratory programs
+of the late twentieth century were driven by the same question. The
+current Department of Defense interest in prehospital trials is its
+descendant.</p>
+<p>That lineage carries a moral. The people who wanted a battlefield
+oxygen carrier were not chasing a curiosity. They were trying to keep
+young people alive who otherwise would die. A century of failures has
+not reduced the strength of that motive, and it explains why the effort
+has continued through so many discouraging results. The history should
+discourage credulity and should not discourage persistence.</p>
+<h2 id="what-the-past-asks-of-the-present">What the past asks of the
+present</h2>
+<p>If the pattern holds, the next generation of researchers will
+discover that today’s explanations were incomplete. The question is how
+to be ready for that. I would suggest three practices drawn from the
+sequence above.</p>
+<p>Design studies that can detect harm early, with adequate sample
+sizes, independent monitoring and pre-specified stopping rules.</p>
+<p>Keep the mechanisms open. Do not treat any single explanation as the
+answer, and measure more than one candidate cause in every study.</p>
+<p>Preserve the record. Much of the knowledge in this essay comes from a
+handful of review articles, and it is fragile. A patient community that
+supports an archive of the field’s history, with the original reports
+accessible, protects the next generation from repeating the last
+one.</p>
+<h2 id="why-the-early-doses-misled">Why the early doses misled</h2>
+<p>It is worth pausing on the arithmetic of caution. A few milliliters
+of hemoglobin solution is a trivial fraction of what a hemorrhaging
+adult needs. The blood volume of an adult is roughly five liters, and a
+resuscitation that hopes to replace a meaningful share of lost oxygen
+capacity must deliver quantities that are orders of magnitude larger
+than the early experiments used. When the dose rises by a factor of a
+hundred, effects that were invisible at the low end can become dominant.
+The kidney can clear a small load without difficulty and may be
+overwhelmed by a large one. A vessel that shrugs off a trace of nitric
+oxide scavenging may clamp down when the scavenging is sustained.</p>
+<p>This is a general feature of pharmacology, and it is easy to forget
+when a field is young and eager. The lesson for readers of the
+historical record is to ask, of any early safety claim, what dose it
+applied to and what dose the eventual use would require. A finding of no
+harm at a tenth of the intended dose is a finding about the tenth.</p>
+<h2 id="the-problem-of-names">The problem of names</h2>
+<p>A second difficulty in reading this history is terminological. The
+same substance has been called stroma-free hemoglobin, cell-free
+hemoglobin, modified hemoglobin, hemoglobin solution, blood substitute
+and oxygen therapeutic, and the field has argued at length over which
+label is honest. A blood substitute implies that the product does
+everything blood does, which none of them do. An oxygen carrier implies
+a narrower and more accurate claim. In this series the term is BHOC when
+the source is bovine and the discussion is of the class, and the older
+names are used only where they belong to a particular historical
+report.</p>
+<p>The naming matters because names shape expectations. Patients,
+physicians and regulators who hear substitute expect a replacement and
+are disappointed by a bridge. Those who hear carrier expect a limited
+tool and judge it accordingly. Much of the disillusionment recorded in
+the literature came from expectations set too high by the
+vocabulary.</p>
+<h2 id="what-the-archives-make-easy-to-miss">What the archives make easy
+to miss</h2>
+<p>Reading the review literature, one is struck by how much of the
+history depends on a few sentences repeated from paper to paper. The
+account of the 1949 case is short. The account of the volunteer studies
+is shorter still. It is entirely plausible that details have been lost
+or simplified in retelling, and a careful reader should treat every
+secondhand summary, including the ones in this essay, as an invitation
+to consult the original.</p>
+<p>There is also a survivorship problem in the record. Programs that
+ended quietly, with a few disappointing animal experiments and no
+publication, left almost no trace. What we know is weighted toward the
+programs that reached humans or generated controversy. The true history
+includes many unpublished dead ends, and the reader should assume that
+the ideas visible in the literature are only the ones that were pursued
+far enough to be written down.</p>
+<h2 id="the-patient-inside-the-history">The patient inside the
+history</h2>
+<p>It is easy, in a narrative of ideas, to forget that each entry in the
+record was a person. The woman in 1949 had a baby and a hemorrhage and a
+physician who reached for the only thing available. The volunteers in
+the 1970s agreed to an experiment and lay in a laboratory while their
+urine output fell. The trauma patients in the 1990s were enrolled under
+an exception to informed consent, because they were too injured to
+agree, and the community consultation that accompanied such trials is a
+subject of its own.</p>
+<p>Keeping those people in view changes the tone of the analysis. It
+becomes harder to speak of a failed generation as if it were a set of
+errors on a chart. The investigators were, on the whole, serious people
+trying to save lives, and the participants gave something real. The best
+way to honor both is to extract from the record everything it can teach,
+and to say so plainly.</p>
+<h2 id="a-short-chronology-for-orientation">A short chronology, for
+orientation</h2>
+<p>For readers who want the sequence in one place, here is the outline,
+as the sources give it. In 1898 hemoglobin was first tried in anemic
+patients. In the era of the First World War, Sellards and Minot infused
+small volumes into a group of subjects. In 1949 the postpartum case
+ended in renal failure. In the 1960s dogs survived exchange transfusion
+with purified hemoglobin. In the late 1970s human volunteers developed
+oliguria with the stroma-free preparation. Through the 1980s and 1990s,
+chemical modification produced cross-linked and polymerized products,
+with Army and industry collaboration. In 1999 the diaspirin trauma trial
+reported its mortality difference. In 2008 the pooled analysis appeared.
+Bovine products meanwhile reached veterinary use and limited human
+approval in two countries. Each of these dates is drawn from the reviews
+cited below, and the reader is encouraged to verify them.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>The history of hemoglobin-based oxygen carriers is reviewed in a
+narrative article published in Annals of Blood, on which the dates and
+case details above are based. The Army program is described in a report
+titled Review of Modified Hemoglobin Research at Letterman, published in
+Artificial Cells, Blood Substitutes, and Biotechnology. The 1999 trauma
+trial of the diaspirin cross-linked product appeared in the Journal of
+the American Medical Association, and the pooled analysis in the same
+journal in 2008. Figures quoted are from the review and should be
+checked against the original reports.</p>
+
+</article>
+<div class="pn"><a href="field-note-15.html" data-release="2026-10-31"><span>Previous</span>Words That Move Patients</a><a href="field-note-17.html" data-release="2026-11-06"><span>Next</span>How Many Cows Is a Life?</a></div>
+<p style="margin-top:28px"><a class="cta" href="field-notes.html">All posts</a></p>
+</main>
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" class="fli" onerror="this.style.display='none'">
+      <p>Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="https://coldischemia.foundation">coldischemia.foundation</a></p>
+    </div>
+    <div>
+      <span class="fct">Platform</span>
+      <div class="fl">
+        <a href="command-center.html">Command Center</a>
+        <a href="projects.html">Toolkit</a>
+        <a href="situation-room.html">Situation Room</a>
+        <a href="research.html">Research</a>
+        <a href="kidney-news.html">Kidney News</a>
+        <a href="cif-volunteer-page.html">Volunteer</a>
+        <a href="contact.html">Contact</a>
+        <a href="field-notes.html">BHOC Field Notes</a>
+        <a href="accountability.html">Atlas</a>
+        <a href="congress-scorecard.html">Scorecard</a>
+        <a href="donate.html">Donate</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Projects</span>
+      <div class="fl">
+        <a href="https://donorflow.coldischemia.foundation" target="_blank" rel="noopener">Project Donor-Flow</a>
+        <a href="https://collateral-damage.coldischemia.foundation" target="_blank" rel="noopener">Collateral Damage</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Foundation</span>
+      <div class="fl">
+        <a href="about.html">Our Story</a>        <a href="cif-amazon-library.html">Book &amp; Toolkit Library</a>
+        <a href="advocacy-news.html">Advocacy News</a>
+        <a href="care-partner-advocacy.html">Care Partner Advocacy</a>
+        <a href="transplant-line.html">The Transplant Line</a>
+    <a href="donor-flow.html">Project Donor-Flow</a>
+        <a href="donate.html">Donate</a>
+        <a href="free-guide.html">Free Guide</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Legal</span>
+      <div class="fl">
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+        
+        <a href="sales-letter.html">Our Case for You</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p class="fcp">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+    <div class="fbl">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>
