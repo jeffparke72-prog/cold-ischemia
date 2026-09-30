@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Penumbra Problem | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="Why the brain in the first hours of a stroke is the hardest place to test an oxygen carrier, and the most tempting">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-family:var(--mono);font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-btn{font-family:var(--mono);font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;padding:7px 16px;border-radius:2px;border:1px solid var(--b);color:var(--ink40);text-decoration:none;}
+.nav-btn-gold{background:var(--gold);color:var(--abyss)!important;border-color:var(--gold)!important;}
+@media(max-width:900px){.nav-links a{display:none;}nav{padding:0 16px;}}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+footer{background:var(--abyss);border-top:1px solid var(--b);padding:40px 24px 28px;text-align:center;}
+footer p{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.05em;color:var(--ink20);max-width:640px;margin:0 auto;line-height:1.7;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo"><img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../research.html">Research</a>
+    <a href="../bhoc.html">BHOC</a>
+    <a href="field-notes.html" class="active">Field Notes</a>
+    <a href="../accountability.html">Accountability</a>
+    <a href="../donate.html">Donate</a>
+  </div>
+  <div class="nav-actions"><a href="../donate.html" class="nav-btn nav-btn-gold">Donate Now</a></div>
+</nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="field-notes.html">Field Notes</a> &nbsp;/&nbsp; Post 18</div>
+<div class="eyebrow">Brain and stroke &middot; November 9, 2026 &middot; 13 min read</div>
+<h1>The Penumbra Problem</h1>
+<p class="dek">Why the brain in the first hours of a stroke is the hardest place to test an oxygen carrier, and the most tempting</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-18.docx" download>Download Word</a>
+<a class="cta" href="field-note-18.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-18.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>When a clot blocks an artery in the brain, the tissue it fed does not
+die all at once. That fact, which took decades to establish, is the
+whole reason anyone dreams of an oxygen carrier for stroke. In the
+region nearest the blockage, blood flow falls so low that cells die
+within minutes. Around that core lies a rim of tissue whose flow is
+reduced but not abolished, tissue that is silent but alive, held in
+suspension by a trickle of supply. That rim is called the ischemic
+penumbra, from the Latin for almost a shadow. Its fate depends on time,
+on collateral blood vessels, and on whether the blockage is cleared. If
+oxygen could be delivered to the penumbra by some route that does not
+depend on the blocked artery, the rim might be kept alive until the
+artery reopens.</p>
+<p>This essay examines that hope. It is one of the most seductive
+applications of an oxygen carrier and one of the least proven, and the
+reasons it is both are instructive.</p>
+<h2 id="what-the-penumbra-is">What the penumbra is</h2>
+<p>The concept came from experiments in animals, and the term was
+introduced in the late twentieth century by investigators who noticed
+that in the tissue surrounding a stroke core, electrical activity could
+be lost while the cell membranes remained intact. Silent cells that
+could still be rescued were a different category from dead ones. Later
+imaging studies in patients showed regions where perfusion was reduced
+and diffusion appeared normal, which was read as tissue at risk but not
+yet lost. The mismatch between those two images is the practical working
+definition of the penumbra in many stroke centers today.</p>
+<p>Two points deserve stress. The penumbra is dynamic. It shrinks as the
+core expands, and in the absence of reperfusion it can be consumed in
+hours, in some patients much faster and in others over a day or more.
+And it is not a single sharp boundary. It is a gradient of flow and of
+injury, with regions closer to the core more likely to die and regions
+farther out more likely to survive. Any therapy aimed at the penumbra is
+aimed at a moving target with blurred edges.</p>
+<h2 id="why-oxygen-carriers-seem-the-right-tool">Why oxygen carriers
+seem the right tool</h2>
+<p>The reasoning is straightforward. Blood carries oxygen in red cells,
+and a red cell is about the width of the smallest capillaries. In a
+narrowed or partially blocked vessel, cells may move slowly or not at
+all, and the oxygen they carry may not reach the tissue beyond. A
+solution of dissolved hemoglobin has no such constraint. It travels in
+plasma, and plasma can continue to move through channels too narrow for
+cells. Molecules of hemoglobin, being far smaller than cells, can slip
+past partial obstructions, deliver oxygen at the far side, and thereby
+supply the tissue in the shadow.</p>
+<p>The idea gets extra support from the way the bovine carrier releases
+oxygen. Its oxygen affinity, as discussed earlier in this series, is set
+by chloride rather than by the cofactor that human red cells use, and
+its release profile in tissue differs from that of a red cell. In some
+experiments the carrier’s ability to offload oxygen readily has been
+proposed as an advantage where oxygen tension is low. Whether that
+translates into benefit in the brain is a question for data, not for
+argument.</p>
+<h2 id="what-the-animal-experiments-suggest">What the animal experiments
+suggest</h2>
+<p>Studies in rodents and other animals have examined hemoglobin-based
+carriers in models of focal cerebral ischemia. I will describe the
+pattern in general terms rather than quote specific effect sizes,
+because I would not want to misreport them. Several groups have reported
+reductions in infarct volume when a carrier was given during or soon
+after the occlusion, and some have reported preservation of function.
+Others have found that the carriers worsen outcomes in certain
+conditions, especially when the blood pressure rises sharply or when the
+molecule is small enough to cross a leaky barrier.</p>
+<p>That variation matters. The results depend on the carrier used, on
+the dose, on the timing, on the species, and on the type of ischemia,
+whether a permanent blockage, a temporary one, or a hemorrhagic injury.
+Any claim that oxygen carriers help in stroke should be read in that
+light. The supporting evidence is a set of positive findings under
+specific conditions, not a general demonstration.</p>
+<h2 id="the-blood-pressure-trap">The blood pressure trap</h2>
+<p>The brain is a poor place to tolerate a pressor effect. As earlier
+essays described, cell-free hemoglobin scavenges nitric oxide and can
+raise blood pressure. In a healthy circulation this is a nuisance, and
+in a hypovolemic trauma patient it may even be useful. In a stroke
+patient it is a hazard in two ways.</p>
+<p>First, the vessels feeding the penumbra are already maximally dilated
+in an attempt to draw in more blood. A drug that constricts vessels can
+defeat that effort, reducing flow exactly where it is most needed.
+Second, a sudden rise in systemic pressure raises the risk of bleeding
+into damaged brain tissue, especially after clot-dissolving therapy.
+Stroke teams routinely manage blood pressure closely, and a product that
+pushes it up unpredictably would complicate that management.</p>
+<p>Designers have responded by favoring larger molecules, which are less
+able to reach the vessel wall, and by testing lower doses. Those
+strategies may narrow the problem without eliminating it. The most
+careful position is that the pressor effect is a serious obstacle to use
+in stroke that would have to be shown to be manageable, not assumed
+away.</p>
+<h2 id="the-competition-from-mechanical-thrombectomy">The competition
+from mechanical thrombectomy</h2>
+<p>The single largest change in the treatment of stroke in recent years
+has been mechanical thrombectomy: a catheter is threaded to the blocked
+artery and the clot is pulled out. For patients with large-vessel
+blockages, this procedure has been shown in randomized trials to improve
+outcomes, and it has extended the window during which treatment can
+help, in selected patients identified by imaging. It has changed what an
+adjunct therapy has to prove.</p>
+<p>An oxygen carrier for stroke has two possible roles in this
+landscape. It could serve as a bridge, given at the first point of
+contact, in an ambulance or a small hospital, to keep the penumbra alive
+during the transfer to a center that can perform thrombectomy. Or it
+could serve as an adjunct after reperfusion, to protect tissue during
+the vulnerable period after flow returns. Both roles are plausible, both
+are untested for carriers, and both must show benefit over a standard of
+care that has become very good.</p>
+<p>The bridge role is the more compelling, because delay to treatment is
+the largest determinant of outcome for patients in remote locations. If
+a carrier could extend the salvage window by even an hour or two, it
+would be valuable. But the same delays that make the bridge appealing
+make the trial difficult, because it must be run in ambulances and small
+hospitals, where consent, imaging and monitoring are hardest.</p>
+<h2 id="time-is-brain-and-what-that-phrase-hides">Time is brain, and
+what that phrase hides</h2>
+<p>Stroke physicians say that time is brain, and there is a widely
+quoted estimate that in a typical large-vessel stroke a great number of
+neurons are lost each minute that treatment is delayed. I will not
+repeat the figure, because it is an average across patients, calculated
+from assumptions, and individual patients vary enormously. What the
+phrase captures correctly is that the salvageable tissue diminishes as
+time passes.</p>
+<p>What it hides is heterogeneity. Some patients have excellent
+collateral circulation, and their penumbra persists for many hours.
+Others have poor collaterals, and their window is short. A therapy that
+buys time will help the second group most, and the first group least.
+That suggests that a trial should select patients by imaging, enrolling
+those with a large mismatch and a poor collateral pattern, rather than
+treating stroke as a uniform condition. Trials that enroll everyone
+dilute a real effect in a crowd of patients who do not need the therapy
+or cannot benefit from it.</p>
+<h2 id="the-problem-of-the-measurement">The problem of the
+measurement</h2>
+<p>How would we know whether a carrier helps? The classic outcome in
+stroke trials is the functional score at ninety days, a coarse scale
+from independence to death, assessed by a clinician. It is a meaningful
+outcome, and it is noisy. Small differences in function are hard to
+detect without large numbers of patients.</p>
+<p>Imaging offers an intermediate measure. The final infarct volume,
+measured on a scan several days after the event, indicates how much
+tissue was lost, and a therapy that reduces infarct volume would be a
+candidate for further trials. But infarct volume does not always track
+function, and regulators typically require a clinical outcome for
+approval.</p>
+<p>A cleverer approach would use imaging of oxygenation itself:
+techniques that estimate tissue oxygen extraction in the penumbra before
+and after a carrier is given. If the tissue in the shadow really
+receives more oxygen, that should be visible. Such measurements exist in
+research settings, and are not routine. A phase two study built on them
+could give a direct answer to the mechanistic question, which is whether
+the carrier delivers oxygen where it is needed, before a large outcome
+trial is attempted.</p>
+<h2 id="what-the-field-has-learned-from-other-neuroprotectants">What the
+field has learned from other neuroprotectants</h2>
+<p>The history of stroke research is littered with agents that protected
+the brain in animals and did nothing in humans. Dozens of
+neuroprotective drugs have failed in clinical trials, and the reasons
+have been analyzed at length: animal models that do not match human
+disease, treatment given earlier in animals than is achievable in
+patients, poor trial design, and underpowered studies. A serious
+proposal for an oxygen carrier in stroke has to reckon with that
+record.</p>
+<p>The lessons apply directly. Test in models that resemble human
+stroke, including older animals and animals with other illnesses. Treat
+at times that are achievable in practice, not at the moment of
+occlusion. Use imaging to select patients. Pre-specify the outcome.
+Replicate in more than one laboratory. Each of those steps is
+unglamorous, and skipping them is how the field ended up with so many
+disappointments.</p>
+<h2 id="the-hemorrhagic-side">The hemorrhagic side</h2>
+<p>Not all strokes are blockages. In hemorrhagic stroke, a vessel
+bursts, and blood damages the tissue around it. The role of an oxygen
+carrier here is different and more doubtful. Adding a fluid that can
+raise blood pressure to a patient who is bleeding into the brain is a
+dangerous idea, and no reasonable protocol would do it without an
+imaging diagnosis to rule out hemorrhage. The practical consequence is
+that any stroke trial of a carrier requires a scan first, which is a
+further barrier to prehospital use. Mobile stroke units, ambulances with
+a scanner, exist in some cities, and they are the most natural setting
+for a bridge trial. They are also few.</p>
+<h2 id="an-honest-statement-of-where-things-stand">An honest statement
+of where things stand</h2>
+<p>Putting these pieces together, the state of the evidence is as
+follows. The biological rationale is sound: dissolved hemoglobin can
+reach places cells cannot, and the penumbra is a place where that might
+matter. Some animal experiments show benefit. Others show harm. The
+pressor effect is a real hazard in a condition where blood pressure
+control is central. The standard of care has improved sharply, raising
+the bar. And human trials of carriers in stroke, to the best of my
+knowledge, have not established benefit. I hold that last sentence with
+some humility, because the literature is large and I cannot claim to
+have read all of it, and I encourage the reader to check the current
+registries.</p>
+<p>The right posture is neither enthusiasm nor dismissal. The idea
+deserves a proper test, designed with the lessons of the past in hand.
+It does not deserve premature claims.</p>
+<h2 id="what-a-proper-test-would-look-like">What a proper test would
+look like</h2>
+<p>If I were designing the first study, I would begin small and
+mechanistic. Enroll patients with a large-vessel blockage awaiting
+thrombectomy, selected by perfusion imaging for a substantial penumbra.
+Randomize them to the carrier or to standard care, under blinding where
+possible. Measure blood pressure continuously, with strict stopping
+rules if it crosses a threshold. Measure tissue oxygenation by imaging
+before and after. Compare the penumbra that survives at follow-up. The
+primary endpoint would be the amount of at-risk tissue that is saved,
+and the secondary endpoints would be function at ninety days and
+safety.</p>
+<p>Such a study would be modest in size and would answer the question of
+whether the mechanism operates in humans. If it does, a larger trial
+could test clinical benefit. If it does not, the field would have
+avoided spending years on a hope. Either outcome is progress.</p>
+<h2 id="the-readers-takeaway">The reader’s takeaway</h2>
+<p>For a patient’s family, the message is cautious. No oxygen carrier is
+an approved treatment for stroke, and anyone who says otherwise is ahead
+of the evidence. Standard care, clot removal and dissolution where
+appropriate, remains what works, and speed to a capable center is what
+matters most.</p>
+<p>For a researcher, the message is an invitation. The penumbra problem
+is one of the cleanest tests of the basic idea behind oxygen carriers,
+because the tissue in question is alive and starving and the oxygen has
+to travel a route that cells cannot. A carrier that fails there has a
+limitation worth knowing. A carrier that succeeds there has found its
+purpose. The experiment is worth doing carefully, and worth doing
+soon.</p>
+<h2 id="the-role-of-the-family-and-the-consent-problem">The role of the
+family and the consent problem</h2>
+<p>Stroke arrives without warning, and the patient often cannot speak.
+Language is among the functions most commonly lost, and the very act of
+consenting to a trial requires the faculty the stroke has taken. The
+usual solution is to seek consent from a relative, and a relative who
+has just watched a loved one collapse is in no state to weigh a research
+protocol. Investigators have long struggled with this, and the consent
+essays elsewhere in this series discuss the ethics of emergency
+exceptions and community consultation.</p>
+<p>In stroke there is an extra wrinkle. Because the treatments that work
+best are the ones given fastest, every minute spent explaining a trial
+is a minute of brain lost. Trial designers have tried short consent
+scripts, video explanations, and deferred consent, in which treatment
+starts under an exception and the patient or family is informed
+afterward. Each has its critics. The key point for oxygen carriers is
+that a trial in stroke inherits all these difficulties and adds one
+more: the product has a history of harm in earlier trials, and a family
+told that a product has an uncertain safety record is entitled to weigh
+it carefully. Honest disclosure, in plain words, is part of the design
+and not an obstacle to it.</p>
+<h2 id="rehabilitation-and-the-long-tail">Rehabilitation and the long
+tail</h2>
+<p>It is worth remembering that stroke outcomes are not decided in the
+first hours alone. Patients who survive spend months in rehabilitation,
+and their recovery depends on how much tissue was saved, but also on
+therapy, on age, and on whether they have other illnesses. A trial that
+reports a modest reduction in infarct volume must ask whether that
+reduction translates into a meaningful difference in a patient’s life:
+the ability to dress, to speak, to return to work. Patient advocates in
+stroke have pushed researchers to include measures that matter to
+survivors, and any oxygen carrier program should listen.</p>
+<h2 id="three-questions-for-the-first-responder">Three questions for the
+first responder</h2>
+<p>A paramedic asked to carry a stroke bridge would want answers to
+practical questions before anything else. Can the product be stored in
+the vehicle, and at what temperature? Room-temperature stability was one
+of the original attractions of the bovine carrier, and it is what makes
+the ambulance a plausible venue at all. Can it be given without knowing
+the blood type? Yes, in principle, because there are no red cell surface
+markers, which removes the delay of typing. And what must be checked
+before it is given? Here the answer is uncomfortable: at minimum, a
+rough assessment that the event is a blockage rather than a bleed, and a
+blood pressure that is not already high. Each requirement narrows the
+population who could receive it and lengthens the checklist, and each is
+a place where a well-meant protocol can fail in the field.</p>
+<p>The solution, if there is one, is to build the checklist into the
+trial itself and to test it on simulated calls before real patients are
+enrolled. Emergency medicine has a long tradition of doing so, and
+stroke teams have refined their own pathways for years. An oxygen
+carrier trial should borrow that discipline and not reinvent it.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>The concept of the ischemic penumbra is reviewed in the stroke
+literature, including articles in Stroke and The Lancet Neurology.
+Mechanical thrombectomy trials appeared in the New England Journal of
+Medicine and other journals from the middle of the past decade. Reviews
+of neuroprotective drug failures include the work of the STAIR committee
+on preclinical recommendations. Studies of hemoglobin-based oxygen
+carriers in animal models of cerebral ischemia are found in the journals
+of cerebral blood flow and of artificial cells and blood substitutes.
+Readers should consult the primary sources and current trial registries
+for the latest findings.</p>
+
+</article>
+<div class="pn"><a href="field-note-17.html" data-release="2026-11-06"><span>Previous</span>How Many Cows Is a Life?</a><a href="field-note-19.html" data-release="2026-11-12"><span>Next</span>Radiation and Oxygen</a></div>
+<p style="margin-top:28px"><a class="cta" href="field-notes.html">All posts</a></p>
+</main>
+<footer><p>Educational writing, not medical advice. Figures are approximate; check primary sources before relying on them. &copy; Cold Ischemia Foundation.</p></footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>

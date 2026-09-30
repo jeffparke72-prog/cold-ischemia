@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Simpler Competitor | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="Whole blood and dried plasma are winning the race that BHOC was built to run, and the honest map of where a cow protein still matters">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-family:var(--mono);font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-btn{font-family:var(--mono);font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;padding:7px 16px;border-radius:2px;border:1px solid var(--b);color:var(--ink40);text-decoration:none;}
+.nav-btn-gold{background:var(--gold);color:var(--abyss)!important;border-color:var(--gold)!important;}
+@media(max-width:900px){.nav-links a{display:none;}nav{padding:0 16px;}}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+footer{background:var(--abyss);border-top:1px solid var(--b);padding:40px 24px 28px;text-align:center;}
+footer p{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.05em;color:var(--ink20);max-width:640px;margin:0 auto;line-height:1.7;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo"><img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../research.html">Research</a>
+    <a href="../bhoc.html">BHOC</a>
+    <a href="field-notes.html" class="active">Field Notes</a>
+    <a href="../accountability.html">Accountability</a>
+    <a href="../donate.html">Donate</a>
+  </div>
+  <div class="nav-actions"><a href="../donate.html" class="nav-btn nav-btn-gold">Donate Now</a></div>
+</nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="field-notes.html">Field Notes</a> &nbsp;/&nbsp; Post 9</div>
+<div class="eyebrow">Field logistics &middot; October 13, 2026 &middot; 13 min read</div>
+<h1>The Simpler Competitor</h1>
+<p class="dek">Whole blood and dried plasma are winning the race that BHOC was built to run, and the honest map of where a cow protein still matters</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-9.docx" download>Download Word</a>
+<a class="cta" href="field-note-9.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-9.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>The standard pitch for an oxygen carrier goes like this: blood is
+scarce, perishable and dangerous, so give the patient something better.
+It is a pitch that made sense in 1985, when the blood supply had been
+shaken by a new virus and by a shortage of donors in a war zone. In 2026
+it needs a more careful hearing, because the thing it claims to beat has
+changed. Blood in the field is getting simpler, closer to the patient
+and better studied. The competitor is no longer a hospital blood bank a
+helicopter ride away. It is increasingly a cooler in the back of an
+ambulance.</p>
+<p>This essay is a stress test. It asks, with as little wishful thinking
+as possible, where a BHOC still has a defensible place given what the
+simpler alternatives can now do. I believe the answer is real and
+narrower than promoters suggest, and that a patient organization gains
+more from stating the narrow answer plainly than from repeating a broad
+one that experienced clinicians will pick apart.</p>
+<h2 id="the-competitor-learned-from-the-war">The competitor learned from
+the war</h2>
+<p>In the wars of the early twenty-first century, military medicine
+relearned an old lesson. Patients who die of hemorrhage die early, often
+within the first hour, and the intervention that changes their odds is
+giving blood products promptly and in something like the proportions in
+which they were lost. Whole blood, which contains red cells, plasma and
+platelets together, fits that principle naturally.</p>
+<p>Two developments then moved whole blood from the battlefield to the
+civilian ambulance. First, the concept of low-titer group O whole blood
+took hold. Group O red cells can be given to almost anyone. Group O
+plasma contains antibodies against A and B antigens, which can harm
+recipients of other groups, but if the antibody level is low the risk is
+small. Blood banks began screening group O donors for low antibody
+titers, with a common threshold in the trial described below being a
+titer below 256, and issuing that blood as a near-universal product.
+Second, small teams in helicopters and ground ambulances began carrying
+it, along with portable refrigerators.</p>
+<p>Meanwhile, plasma moved forward on a parallel track. A large
+randomized trial of plasma given during air medical transport, known as
+PAMPer and published in 2018, found lower mortality at 30 days in trauma
+patients who received plasma early. In the trial’s control group,
+mortality was about 33 percent, and in the plasma group roughly 23
+percent. A post hoc analysis in a later paper suggested that the benefit
+was concentrated in patients whose transport time was longer than about
+20 minutes. Dried plasma, which can be stored at room temperature and
+reconstituted with sterile water, offered a way to bring the same
+principle to places without refrigeration.</p>
+<h2 id="the-trial-that-complicated-the-story">The trial that complicated
+the story</h2>
+<p>The most recent large study of prehospital whole blood, called TOWAR,
+was published in the New England Journal of Medicine in May 2026. It
+enrolled 1,020 patients across 44 air medical bases and 11 trauma
+centers, between May 2022 and June 2025, using a design in which bases
+were randomly assigned, two to one, to carry whole blood or the usual
+component therapy. The primary outcome was death within 30 days.</p>
+<p>The result surprised many people who expected a benefit. According to
+the published summary, mortality at 30 days was 25.9 percent in the
+whole blood group and 20.5 percent in the component group, an adjusted
+odds ratio of 1.24 with a confidence interval running from 0.87 to 1.76,
+and a p-value of 0.24. In plain language, the trial did not show that
+whole blood helped, and the point estimate leaned the other way, though
+the uncertainty was wide enough that a benefit or a harm remained
+possible. The authors noted limitations: crossover between arms,
+variable volumes, an inability to mask the clinicians and limited data
+on coagulation. They also noted that overall mortality in the trial,
+24.3 percent, was lower than in the earlier trial, which suggests that
+modern trauma systems have become better at controlling bleeding and
+delivering blood quickly.</p>
+<p>I mention this trial for two reasons. First, it should humble anyone,
+including a BHOC advocate, who assumes that a physiologically attractive
+product will beat the alternative. Whole blood is about as
+physiologically attractive as a product can be, and in a rigorous test
+it did not win. Second, it shows what the bar looks like. A modern
+trauma system, delivering component therapy quickly, achieves a
+mortality figure around a fifth to a quarter in a severely injured
+population. A new product that hopes to demonstrate a mortality
+advantage in the same setting faces a very large sample size and a very
+narrow margin.</p>
+<h2 id="the-three-things-a-competitor-cannot-do">The three things a
+competitor cannot do</h2>
+<p>If the civilian trauma pathway is increasingly well served by blood,
+where is the gap? I would organize the answer around three functions
+that human blood products, however good, cannot perform. These are the
+defensible territory for a BHOC.</p>
+<p><strong>The first is to reach patients who will not accept
+blood.</strong> For patients whose conscience forbids transfusion, blood
+products are not competitors at all. They are unavailable by the
+patient’s own decision. For those patients the relevant comparison is
+between a BHOC and no oxygen-carrying support other than what their own
+bodies can manage, which may mean life-threatening anemia treated with
+iron, erythropoietin, oxygen and hope. This is the setting in which
+emergency compassionate access has been most often sought, and it is the
+one where the ethical case is strongest. The population is small, but
+the need in each case is acute.</p>
+<p><strong>The second is to reach patients who cannot be
+matched.</strong> Some patients have developed antibodies against many
+red cell antigens, through repeated transfusions or pregnancies, so that
+compatible blood is hard or impossible to find. Some have rare blood
+types. In such a patient, a product with no red cell antigens and no
+need for cross-matching is not a marginal convenience but the only
+feasible option. The number of such patients is again modest, and their
+situation often unfolds slowly enough that the search for compatible
+blood can continue while a bridge is given.</p>
+<p><strong>The third is to survive where the cold chain cannot.</strong>
+Whole blood is stored at refrigerator temperature, and in the trial
+discussed above the shelf life was up to 21 days. Dried plasma travels
+better, but it supplies clotting factors and volume without red cells.
+Neither delivers oxygen-carrying capacity in a stable room-temperature
+form. A BHOC, on the other hand, has been described in product
+literature as storable at room temperature for years. There are places,
+remote clinics, disaster zones, small vessels at sea, long-range
+military patrols, where a cooler with a monitored temperature is a
+logistical burden that cannot be met. For those places, a shelf-stable
+oxygen carrier is not a substitute for blood so much as a way to keep a
+patient alive until blood can be reached.</p>
+<h2 id="the-pack-mule-arithmetic">The pack-mule arithmetic</h2>
+<p>Logistics is a matter of grams and degrees, and a short calculation
+shows why the room-temperature niche is more than sentiment. The figures
+are illustrative round numbers and do not describe any specific product
+or unit.</p>
+<p>A medic on foot can carry perhaps a few kilograms of resuscitation
+supplies among everything else. A unit of refrigerated whole blood
+weighs roughly half a kilogram before packaging, and the insulated
+container and cold packs required to keep it between one and six degrees
+Celsius can multiply that several times over. The container must be
+opened rarely, monitored, and replaced when the ice runs out. A patrol
+that lasts three days in a hot climate has to plan for the ice.</p>
+<p>A bag of a room-temperature carrier of comparable volume weighs about
+the same as the blood, without the container, and can ride in a pack
+beside the bandages. It also has no expiry that arrives in three weeks.
+If the patrol does not need it, it comes home and goes back on a shelf.
+Whole blood that was not used may be wasted or returned with its clock
+running down.</p>
+<p>None of this makes the carrier better clinically. It makes it lighter
+and more forgiving, and in logistics that is sometimes the entire
+argument. Military planners talk about the burden of weight and the
+burden of refrigeration in the same breath, and any advocate who wants
+to be taken seriously by them will speak in those units.</p>
+<h2 id="the-blood-banks-view">The blood bank’s view</h2>
+<p>It is instructive to imagine how a hospital blood bank director hears
+the BHOC pitch. Her whole professional life is organized around the
+safety of a product that is difficult to keep safe: matching, screening,
+storage, expiry, tracing. She is proud of the record, and she should be.
+She hears a proposal to add a new product to the shelf, made from
+another species, with a troubled history and a large question mark over
+its cardiac safety.</p>
+<p>What would persuade her? Not a claim about the future of medicine.
+She would want four things. A defined list of patients for whom she can
+use it, so that her staff have a protocol and not a judgment call. A
+monitoring plan for the laboratory tests that a plasma pigment will
+disturb, so that chemistry results are not misread. A clear statement of
+who owns the decision to use it, and who documents consent. And a supply
+that does not run out, since a product that vanishes after she has
+written it into her protocols is worse than no product.</p>
+<p>This is a useful test for a patient organization: if you cannot
+answer those four questions in a page, you are not ready to ask a blood
+bank director for anything. If you can, you are speaking her language,
+and she is likely to listen. Blood bankers are, for the most part,
+people who would like their patients to have more options, provided the
+options are safe and the paperwork is honest.</p>
+<h2 id="where-the-pitch-overreaches">Where the pitch overreaches</h2>
+<p>It is just as useful to name the claims that a fair-minded clinician
+will not accept.</p>
+<p>The claim that a BHOC can replace blood in general trauma is
+unsupported. The history of the field, including the pooled analysis
+published in 2008, gives reasons to be cautious, and the modern
+comparator has improved.</p>
+<p>The claim that a BHOC is safer than blood because it lacks infectious
+risk is weaker than it was. The modern blood supply is screened for the
+known viruses, and the residual risks are very small. The bovine product
+introduces its own risks, addressed in another post in this series.</p>
+<p>The claim that a BHOC is a universal solution to blood shortage is
+unrealistic. Shortages are real, but they are chronic and regional, and
+the oxygen-carrying capacity of a few units of a carrier is a small
+fraction of what a bleeding patient needs. A carrier has a half-life
+measured in hours to a day, and it does not replace clotting factors or
+platelets. A patient bleeding from a torn vessel needs the bleeding
+controlled and clotting support, and a BHOC provides neither.</p>
+<p>That last point is worth dwelling on, because it changes the framing.
+Hemorrhage is a problem with three parts: stop the bleeding, restore
+clotting, restore oxygen delivery. The literature of the past two
+decades has shown that the first two have the greatest effect on
+survival, and that blood products address all three at once. A BHOC
+addresses only the third. It is a component, and a good use for it is as
+a bridge alongside other measures.</p>
+<h2 id="combination-not-competition">Combination, not competition</h2>
+<p>Here is a different way to see it. Suppose that the future of forward
+resuscitation lies in a combination of products chosen for their
+logistical properties. Dried plasma provides clotting factors and
+volume. A hemostatic agent controls bleeding. Whole blood, where cold
+chain exists, provides everything. And a shelf-stable oxygen carrier
+provides the oxygen-carrying capacity that plasma lacks when blood is
+unavailable.</p>
+<p>The Army has published thinking about a lyophilized product strategy
+along these lines, combining freeze-dried plasma with a freeze-dried red
+cell or platelet component. That work is aimed at closing the gap
+between what a medic can carry and what a patient needs. In that
+architecture a BHOC is one of several possible oxygen components, and
+the question is whether it wins on weight, stability, cost and safety
+against the other candidates.</p>
+<p>Stated that way, the comparison is more tractable and more honest. A
+BHOC does not have to beat blood. It has to beat the nearest alternative
+in a specific place. In a helicopter with a fridge, the alternative is
+blood. In a village three days’ walk from a road, the alternative is
+nothing.</p>
+<h2 id="the-evidence-that-would-settle-it">The evidence that would
+settle it</h2>
+<p>If a patient organization wanted to press the case in the sensible
+territory, what evidence would it ask for?</p>
+<p>For the conscience-based population, a registry of every emergency
+access case, recorded consistently, with outcomes at discharge and
+follow-up, safety events, dose, hemoglobin measured both in plasma and
+in red cells, and the reasons for choosing the product. These cases are
+already occurring. Without a common form, the information is scattered
+across case reports.</p>
+<p>For the unmatched population, a similar registry, together with a
+defined pathway under which a hospital blood bank can request the
+product when compatible blood cannot be found within a set time.</p>
+<p>For the cold-chain-limited setting, a field-feasibility study: stock
+the product at remote sites, train staff, track storage conditions and
+use, and measure whether it is used appropriately and whether patients
+survive to reach definitive care. This is not a randomized trial, but it
+produces something regulators and funders need, which is proof that the
+logistics work.</p>
+<p>For each, the outcome should be defined ahead of time and the
+comparator should be honest. Where the comparator is no oxygen-carrying
+therapy, a historical or registry control is acceptable if openly
+described. Where blood is available, the comparison should be to
+blood.</p>
+<p>One more distinction protects everyone from confusion. Saying that a
+BHOC belongs where blood cannot go is different from saying that blood
+should not be used where it can. A patient who is bleeding in a
+well-equipped hospital should receive what the best evidence supports,
+which is blood in the right proportions. Nobody serves the field by
+suggesting otherwise, and nobody in the field who is honest with
+themselves believes it.</p>
+<h2 id="the-strategic-point">The strategic point</h2>
+<p>There is a temptation to answer the whole-blood trial by dismissing
+it, arguing that it was underpowered or that the population differed.
+The sounder response is to accept it and adjust. A field that has spent
+decades trying to beat blood in a general population has spent decades
+on the hardest version of the question. The easier version, and the one
+in which a BHOC has a clear reason to exist, is to reach the people that
+blood cannot reach.</p>
+<p>That reframing also improves the ethics. A product aimed at patients
+who have no alternative has a favorable risk-benefit calculation even if
+its safety is imperfect, because the alternative is worse. A product
+aimed at patients who could receive blood must clear a higher bar. Being
+clear about which is which protects patients and protects the
+credibility of the advocates.</p>
+<p>It also protects the science. If the only trials ever run are large
+trials against blood in trauma, the likely result is another
+disappointment, and the class will suffer for it. If the trials are
+designed around the populations with no alternative, the likely result
+is a clear signal, one way or the other, at a manageable sample
+size.</p>
+<h2 id="what-i-would-say-to-a-skeptical-trauma-surgeon">What I would say
+to a skeptical trauma surgeon</h2>
+<p>Imagine that a trauma surgeon who has read the recent trial asks why
+anyone still cares about a cow protein. A fair answer might go like
+this. You are right that in your system, with a helicopter, a blood bank
+and a cooler, the case for a carrier is weak. But you do not treat all
+the patients. Some refuse blood, some cannot be matched and some are in
+places your system does not reach. For those patients your options are
+thinner than you would like. A stable, unmatched, room-temperature
+product that keeps someone alive until blood is possible is worth
+having. I am not asking you to replace your cooler. I am asking you not
+to let the better answer for most patients become the enemy of a
+workable answer for the rest.</p>
+<p>I think a surgeon might accept that. I think many would.</p>
+<h2 id="closing">Closing</h2>
+<p>The simpler competitor has raised the bar, and in doing so it has
+clarified the mission. The story of the last fifteen years is not that
+oxygen carriers lost. It is that blood got better, and the space that
+remained is the space where blood cannot go. That space is smaller than
+the promoters once imagined, and it is real. Every person in it has a
+name and a family, and every one of them is a reason to do the work
+properly.</p>
+<p>A cow protein will not rescue the general trauma patient. It might
+rescue the patient who has no other door. That is a modest ambition, and
+it happens to be the one the evidence can support.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>The prehospital plasma trial is Sperry and colleagues, New England
+Journal of Medicine, 2018 (PAMPer). The whole blood trial discussed here
+is TOWAR, published in the New England Journal of Medicine in 2026. A
+review of prehospital whole blood and plasma appeared in 2025, and the
+United States Army has published on a combined lyophilized product
+strategy. Numerical results quoted are from published summaries and
+abstracts and should be confirmed against the full reports.</p>
+
+</article>
+<div class="pn"><a href="field-note-8.html" data-release="2026-10-10"><span>Previous</span>Carbon Monoxide on Purpose</a><a href="field-note-10.html" data-release="2026-10-16"><span>Next</span>Cold Oxygen</a></div>
+<p style="margin-top:28px"><a class="cta" href="field-notes.html">All posts</a></p>
+</main>
+<footer><p>Educational writing, not medical advice. Figures are approximate; check primary sources before relying on them. &copy; Cold Ischemia Foundation.</p></footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>

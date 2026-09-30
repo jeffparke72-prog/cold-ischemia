@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Many Cows Is a Life? | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="An honest attempt at the supply arithmetic of bovine oxygen carriers, with every assumption labeled, and the ethical questions that arithmetic cannot settle">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-family:var(--mono);font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-btn{font-family:var(--mono);font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;padding:7px 16px;border-radius:2px;border:1px solid var(--b);color:var(--ink40);text-decoration:none;}
+.nav-btn-gold{background:var(--gold);color:var(--abyss)!important;border-color:var(--gold)!important;}
+@media(max-width:900px){.nav-links a{display:none;}nav{padding:0 16px;}}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+footer{background:var(--abyss);border-top:1px solid var(--b);padding:40px 24px 28px;text-align:center;}
+footer p{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.05em;color:var(--ink20);max-width:640px;margin:0 auto;line-height:1.7;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo"><img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../research.html">Research</a>
+    <a href="../bhoc.html">BHOC</a>
+    <a href="field-notes.html" class="active">Field Notes</a>
+    <a href="../accountability.html">Accountability</a>
+    <a href="../donate.html">Donate</a>
+  </div>
+  <div class="nav-actions"><a href="../donate.html" class="nav-btn nav-btn-gold">Donate Now</a></div>
+</nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="field-notes.html">Field Notes</a> &nbsp;/&nbsp; Post 17</div>
+<div class="eyebrow">Sourcing and safety &middot; November 6, 2026 &middot; 13 min read</div>
+<h1>How Many Cows Is a Life?</h1>
+<p class="dek">An honest attempt at the supply arithmetic of bovine oxygen carriers, with every assumption labeled, and the ethical questions that arithmetic cannot settle</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-17.docx" download>Download Word</a>
+<a class="cta" href="field-note-17.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-17.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>Nobody who works on bovine hemoglobin can avoid the question
+eventually. A skeptic at a conference, a journalist, a hospital
+administrator, or a patient’s relative will ask it plainly: how much
+cattle does this take? It sounds like a joke and is not one. The
+question contains three separate inquiries, which are technical (how
+much hemoglobin is in a cow, and how much of it can be recovered),
+economic (what does the raw material cost and who controls it), and
+moral (is it right to use an animal this way, and does the answer change
+if the use saves human lives). This essay works through the first
+honestly, gestures at the second, and treats the third with the
+seriousness it deserves.</p>
+<p>A warning about method. I am going to build an illustrative
+calculation from round numbers. The numbers are assumptions chosen to be
+plausible and are labeled as such, and none should be read as a
+measurement of any real manufacturing process. The purpose is to teach
+the shape of the reasoning, so that a reader can substitute better
+numbers and see how the answer moves.</p>
+<h2 id="the-basic-bookkeeping">The basic bookkeeping</h2>
+<p>Start with the animal. An adult beef animal weighs several hundred
+kilograms. Blood makes up a small percentage of body weight, and I will
+assume, for illustration, that a full-grown animal carries on the order
+of tens of liters of blood. I will also assume that cattle blood
+contains hemoglobin at a concentration broadly similar to human blood,
+in the neighborhood of a dozen grams per hundred milliliters. Real
+values vary with breed, age, health and the way blood is collected, and
+a reader with access to a veterinary physiology text should replace
+these with better ones.</p>
+<p>Not all of that blood can be collected. At slaughter, a substantial
+fraction is retained in the carcass and organs, and only part flows out
+during bleeding. So the collectable volume per animal is less than the
+total, perhaps by a large factor. Then the blood must be processed: red
+cells separated from plasma, washed, lysed, the hemoglobin purified from
+the debris, cross-linked and polymerized, filtered and formulated. Each
+step loses material. A realistic yield, from collected hemoglobin to
+finished product, might be well under one hundred percent, and I will
+treat it here as an unknown fraction, call it y.</p>
+<p>Now the demand side. A product dose is measured in grams of
+hemoglobin. The one bovine product with human approval in two countries
+has historically been supplied in bags of a couple of hundred
+milliliters at a concentration of roughly thirteen grams per deciliter,
+which is a few tens of grams per bag, according to the company’s
+published descriptions. A patient who needs the product over a course of
+treatment may receive one bag or several. A veterinary dose is scaled to
+body weight and is typically a fraction of a bag.</p>
+<p>Put the pieces together and the shape emerges. If one animal yields,
+after all losses, a quantity of finished hemoglobin equal to some number
+of bags, and a treatment course uses a few bags, then each animal
+supports a handful of treatments. That is the honest order of magnitude:
+not one animal per patient, and not a thousand patients per animal, but
+somewhere in a range that depends on the yield and the dose, and that a
+reader can compute for themselves once the assumptions are fixed.</p>
+<h2 id="where-the-number-really-lives">Where the number really
+lives</h2>
+<p>The calculation above is sensitive to two quantities more than any
+others. The first is the collection fraction. If blood is collected
+under conditions designed for the purpose, with anticoagulant, clean
+handling and controlled temperature, more can be recovered per animal
+than in ordinary slaughter, where blood is a byproduct of little value
+and is handled accordingly. The second is the process yield, which
+depends on the chemistry and on how much of the purified hemoglobin ends
+up in the target polymer size range. A process that discards the
+undesired fractions wastes more raw material than one that recycles
+them.</p>
+<p>Both quantities are improvable, and both have been the subject of
+engineering effort. A manufacturer that doubles the yield halves the
+number of animals per patient. That is why the supply question is not a
+fixed feature of the technology. It is a function of process
+engineering, and the engineers have every incentive to improve it.</p>
+<p>There is a further complication that a reader should keep in mind:
+the raw material must meet safety standards that ordinary slaughter
+blood does not. Earlier essays in this series discussed the sourcing
+regime for cattle, the herd controls and the regulatory limits set in
+response to prion disease. Those requirements restrict which animals can
+be used and therefore restrict supply independently of the arithmetic of
+hemoglobin content. A herd that meets the standard may be small, and a
+product that depends on it inherits the size.</p>
+<h2 id="a-comparison-that-is-easy-to-get-wrong">A comparison that is
+easy to get wrong</h2>
+<p>The natural comparison is with blood donation. A donor gives a unit
+of whole blood at a session, and a unit of red cells contains a quantity
+of hemoglobin that is in the same general range as a few bags of the
+oxygen carrier. One might therefore conclude that an animal is a rough
+equivalent to a number of donors. That comparison is misleading in two
+ways.</p>
+<p>First, a donor is renewable. A healthy adult can give again after a
+couple of months, and a population of donors supplies a continuous
+stream. An animal is used once. The comparison should therefore be
+between the donor population’s annual output and the herd’s annual
+turnover, not between one donor and one animal.</p>
+<p>Second, the product and the donation are not equivalent clinically. A
+unit of red cells carries oxygen inside cells that last weeks and
+interact with the vasculature in the way nature designed. The carrier is
+a temporary bridge with a short circulating life. One does not simply
+exchange the units one for one. The relevant question is what the
+patient needs during the window in which blood is not available, and
+that is usually a much smaller quantity of hemoglobin than a full
+replacement.</p>
+<h2 id="the-scale-of-the-herd">The scale of the herd</h2>
+<p>To get a sense of proportion, consider the scale at which cattle are
+raised and slaughtered. Beef production worldwide is measured in many
+tens of millions of animals per year. In any single country with a large
+beef industry, the annual slaughter runs into the millions. Compared
+with those figures, the number of animals that would be needed to supply
+an oxygen carrier for a specialized medical market is a very small
+fraction, unless the market becomes enormous.</p>
+<p>I say this cautiously, because the fraction depends entirely on which
+market. A niche supply for trauma patients who cannot receive blood, and
+for veterinary practice, is one thing. A general substitute for
+transfusion across a health system would be another, and would require a
+supply chain on a different scale. The honest position is that the
+technology could supply the first from existing beef infrastructure, and
+that the second remains speculative until the product’s clinical role is
+established. I do not have a defensible number for the second, and I
+would distrust anyone who offers one with confidence.</p>
+<h2 id="the-byproduct-argument">The byproduct argument</h2>
+<p>The strongest ethical argument in favor of bovine sourcing is that
+the blood is already there. Cattle are raised and slaughtered for food,
+and their blood is largely a waste stream or a low-value input to animal
+feed and industrial uses. If it can be converted into a medical product
+that saves human lives, the argument goes, no additional animal is
+killed on account of the product. The medical use adds value to
+something that would otherwise be discarded.</p>
+<p>There is force in this. It converts what looks like an extra harm
+into a use of an existing one. Someone who accepts the existing practice
+of raising cattle for food can reasonably accept the use of the
+blood.</p>
+<p>The argument is also incomplete. A byproduct that becomes valuable
+changes the economics of the primary product. If blood becomes worth a
+substantial amount per animal, it slightly raises the value of each
+animal and thereby slightly supports the industry that produces it. At
+small scale the effect is negligible. At large scale it is not. And the
+argument does nothing for a reader who objects to the industry itself.
+For that reader the question is whether a life-saving use is sufficient
+to justify participation in a practice they reject, and the byproduct
+framing does not answer it.</p>
+<h2 id="the-objection-from-the-other-side">The objection from the other
+side</h2>
+<p>Some readers will object from a very different direction, not that
+using cattle is wrong, but that it is unnecessary, because human donors
+and, eventually, engineered sources could do the job. Recombinant
+hemoglobin, produced in bacteria or yeast, avoids the animal entirely.
+Hemoglobin from outdated human blood avoids the herd. Hemoglobin from
+other sources, such as marine worms, has been proposed.</p>
+<p>These alternatives are real, and several are discussed elsewhere in
+this series. What can be said here is that each has its own
+difficulties. Recombinant production at the scale of grams per patient
+is expensive with current methods, and the molecules require engineering
+to overcome the same toxicities that plague other cell-free hemoglobins.
+Human-derived hemoglobin depends on the donor supply that the technology
+is meant to supplement. The bovine molecule has the advantage that it
+has been studied for decades, that its oxygen release does not depend on
+the cofactor that human hemoglobin needs, and that the raw material is
+available at scale. It is not the only possible answer. It is the answer
+with the most history.</p>
+<h2 id="what-the-animal-cannot-tell-us">What the animal cannot tell
+us</h2>
+<p>I want to say something about the moral status of the animal that is
+neither dismissive nor performatively grieving. Cattle are sentient, and
+the conditions in which they are raised and killed vary enormously. A
+responsible program would draw its blood from herds raised to high
+welfare standards, slaughtered by methods designed to minimize
+suffering, and audited by independent inspectors. Those requirements
+happen to align with the biosecurity requirements, since healthy,
+traceable animals are also the ones that meet the safety standards.</p>
+<p>That alignment is fortunate, and it should not be mistaken for the
+whole of the ethical case. The deeper question is whether the interests
+of an animal can be outweighed by the interests of a person who would
+otherwise die. Most moral traditions answer yes in some form, and some
+answer no. The reader who says no is not being irrational, and a serious
+advocate of the technology should say so, and should respect the
+position rather than trying to talk the person out of it.</p>
+<h2 id="religious-and-cultural-considerations">Religious and cultural
+considerations</h2>
+<p>There is a practical dimension of the ethical question that
+mainstream discussions rarely mention. Patients differ in their
+religious and cultural attitudes to animal-derived products. Some avoid
+products derived from particular species, and in a country where cattle
+are held sacred, the use of a bovine product in medicine may be
+contentious. In others, the objection may concern the manner of
+slaughter or the status of the blood itself.</p>
+<p>Hospitals that serve diverse populations already deal with these
+concerns for other medicines, including gelatin capsules, heparin from
+pigs and heart valves from cattle and pigs. The established practice is
+disclosure and choice: patients are told the source and can decline. For
+a product intended for emergency use, when a patient may be unable to
+speak, the difficulty is sharper. The consent essays in this series
+discuss it. The relevant point here is that supply arithmetic and
+cultural acceptability interact. A product that a significant share of
+potential patients would refuse has a smaller effective market than the
+herd could supply.</p>
+<h2 id="the-supply-chain-as-a-vulnerability">The supply chain as a
+vulnerability</h2>
+<p>A last practical consideration is fragility. A product that depends
+on a specific herd, a specific plant, and a specific regulatory
+certification is exposed to shocks. A disease outbreak in the herd, a
+contamination event at the plant or a change in the regulation of
+cattle-derived material could interrupt supply for months. The history
+of the field includes companies whose entire operation rested on a
+single facility, and the closure of that facility ended the
+business.</p>
+<p>A resilient design would diversify: several source herds in different
+regions, more than one manufacturing site, and a stockpile sufficient to
+bridge a temporary interruption. Each of those adds cost. In a
+low-margin market, the temptation is to skip them. The result is a
+technology that is theoretically abundant and practically brittle.</p>
+<h2 id="a-worked-example-with-the-assumptions-exposed">A worked example,
+with the assumptions exposed</h2>
+<p>To make the reasoning concrete, let me walk through a hypothetical,
+using invented round numbers that a reader can replace. Suppose that the
+blood collected from one animal, under controlled conditions, contains
+hemoglobin equal to a hundred bags of finished product at the strength
+described earlier, before losses. Suppose that the overall yield from
+collected hemoglobin to finished, releasable product is one in three.
+Then one animal yields about thirty-three bags. If a typical course uses
+three bags, one animal supports about eleven courses.</p>
+<p>Now vary the assumptions. If collection is half as efficient, the
+figure falls to five or six courses. If the yield doubles, it rises to
+twenty-odd. If a course uses only one bag, as in some veterinary cases
+and perhaps in some human bridge uses, the figure triples. The range
+from a handful to several dozen is not a scandal and not a miracle. It
+is a plain feature of the numbers.</p>
+<p>The reader should keep two things in mind about this example. First,
+every input is hypothetical. I have not reported the actual yield of any
+manufacturing process, and a published figure from a company would
+supersede the assumptions above. Second, the interesting question is not
+the central estimate but the sensitivity. Whatever the true numbers are,
+the answer is likely to move by a factor of several with plausible
+changes in process, and therefore the honest response to the question in
+the title is a range with reasons.</p>
+<h2 id="what-a-decent-answer-sounds-like">What a decent answer sounds
+like</h2>
+<p>Suppose the skeptic at the conference asks the question again. A
+decent answer would run as follows. Each animal supports a small number
+of treatments, the exact number depends on process yield and dose, and I
+would rather show you the calculation than quote a figure. The blood
+comes from animals raised for food, which changes the moral picture
+without erasing it. The supply is adequate for a specialized market and
+untested for a general one. And the alternatives, recombinant and
+human-derived, are worth pursuing in parallel, because a field that
+depends on one source is fragile.</p>
+<p>That answer contains no false precision and no evasion. It also
+leaves the moral question where it belongs, with the questioner. The
+arithmetic can tell you how many animals. It cannot tell you whether a
+life is worth them, and pretending otherwise is a way of avoiding the
+argument.</p>
+<h2 id="the-measure-that-matters">The measure that matters</h2>
+<p>There is a final reframing. The title asks how many cows is a life,
+and the question could be inverted. How many lives is a cow? If one
+animal supports, on the assumptions above, several patients whose
+alternative was death because compatible blood was unavailable, the
+ratio looks favorable to many people. If the patients would have
+survived anyway, or if the product does not reduce mortality, the ratio
+is meaningless.</p>
+<p>That is why the clinical evidence matters more than the supply
+arithmetic. Supply is a constraint on scale, but benefit is what
+justifies the effort. A product that saves few lives per animal is still
+worth making if the lives are real and the alternative is nothing. A
+product that saves none is not worth a single animal. Everything else,
+including the yield calculations, is secondary to the question of
+whether the carrier works when it is needed. The essays elsewhere on
+this site examine that question, and this one has tried to make sure
+that the supply question is asked in the right order: after the
+evidence, not before it.</p>
+<h2 id="questions-worth-putting-to-any-manufacturer">Questions worth
+putting to any manufacturer</h2>
+<p>A reader evaluating a company’s claims about supply can put a short
+list of questions to it. How many animals are in the qualified herd, and
+how is that herd audited? What fraction of collected hemoglobin ends up
+in releasable product, and what happens to the rest? How many days of
+stock does the company hold, and what is the plan if the single plant
+goes offline? What is the cost of raw material per finished bag, and how
+much of the price is the herd and how much the process? Which
+independent body has inspected the welfare and biosecurity arrangements,
+and are its reports public?</p>
+<p>None of these questions is hostile. A serious manufacturer will have
+answers, and the willingness to give them is itself informative. Vague
+answers about proprietary processes are a warning that the arithmetic
+has not been done, or has been done and is unflattering. In a field with
+a long record of promises that outran evidence, transparency about
+supply is one of the few things a patient community can reasonably
+demand.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>The manufacturing and sourcing of bovine-derived oxygen carriers is
+described in the published literature on the approved bovine product and
+in the company’s own technical descriptions, which state the
+concentration and bag size assumed above. The regulatory framework for
+cattle-derived materials is set out in the United States Food and Drug
+Administration’s rules on bovine spongiform encephalopathy, and
+comparable rules apply elsewhere. Beef production statistics are
+published by national agricultural agencies and by the United Nations
+Food and Agriculture Organization. All figures in the worked example are
+illustrative assumptions, not reported data.</p>
+
+</article>
+<div class="pn"><a href="field-note-16.html" data-release="2026-11-03"><span>Previous</span>Hemoglobin in the Trenches</a><a href="field-note-18.html" data-release="2026-11-09"><span>Next</span>The Penumbra Problem</a></div>
+<p style="margin-top:28px"><a class="cta" href="field-notes.html">All posts</a></p>
+</main>
+<footer><p>Educational writing, not medical advice. Figures are approximate; check primary sources before relying on them. &copy; Cold Ischemia Foundation.</p></footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>

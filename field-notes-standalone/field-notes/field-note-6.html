@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chloride, Not BPG | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="The quiet chemical accident that made a cow&#x27;s hemoglobin a better starting point than a person&#x27;s">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(3,5,9,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--b);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;display:block;}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-family:var(--mono);font-size:0.46rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink40);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-btn{font-family:var(--mono);font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;padding:7px 16px;border-radius:2px;border:1px solid var(--b);color:var(--ink40);text-decoration:none;}
+.nav-btn-gold{background:var(--gold);color:var(--abyss)!important;border-color:var(--gold)!important;}
+@media(max-width:900px){.nav-links a{display:none;}nav{padding:0 16px;}}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+footer{background:var(--abyss);border-top:1px solid var(--b);padding:40px 24px 28px;text-align:center;}
+footer p{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.05em;color:var(--ink20);max-width:640px;margin:0 auto;line-height:1.7;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo"><img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../research.html">Research</a>
+    <a href="../bhoc.html">BHOC</a>
+    <a href="field-notes.html" class="active">Field Notes</a>
+    <a href="../accountability.html">Accountability</a>
+    <a href="../donate.html">Donate</a>
+  </div>
+  <div class="nav-actions"><a href="../donate.html" class="nav-btn nav-btn-gold">Donate Now</a></div>
+</nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="field-notes.html">Field Notes</a> &nbsp;/&nbsp; Post 6</div>
+<div class="eyebrow">Chemistry &middot; October 4, 2026 &middot; 13 min read</div>
+<h1>Chloride, Not BPG</h1>
+<p class="dek">The quiet chemical accident that made a cow&#x27;s hemoglobin a better starting point than a person&#x27;s</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-6.docx" download>Download Word</a>
+<a class="cta" href="field-note-6.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-6.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>Ask a room of physicians why a person’s blood carries oxygen and most
+will say hemoglobin. Ask why hemoglobin outside a red cell fails at the
+job, and the room grows quieter. The answer is a small molecule that
+most clinicians met once in physiology class and forgot:
+2,3-bisphosphoglycerate, usually abbreviated BPG or, in older texts,
+DPG.</p>
+<p>This essay is about that molecule, about its absence from a cow’s red
+cells, and about how that absence turned bovine hemoglobin into the raw
+material of choice for the oxygen carriers that reached the clinic. It
+is a story about allostery, the way a protein changes shape in response
+to something binding at a distant site, and it is one of the cleaner
+examples I know of nature doing a favor to an engineer without meaning
+to.</p>
+<h2 id="the-problem-with-naked-human-hemoglobin">The problem with naked
+human hemoglobin</h2>
+<p>A red cell is a bag of hemoglobin at a concentration of roughly
+thirty-odd grams per deciliter of cell contents, together with the
+enzymes that keep the iron reduced and a bath of small molecules that
+tune the protein’s behavior. The most important tuner in humans is BPG.
+It binds in the central cavity of the deoxygenated hemoglobin tetramer,
+wedging between the two beta chains, and stabilizes the low-affinity
+form. The effect is to make hemoglobin release oxygen more readily.
+Without BPG the protein clings.</p>
+<p>The numbers make the point. Hemoglobin inside a normal human red cell
+half-saturates with oxygen at a partial pressure, called the P50, of
+around 26 to 27 millimeters of mercury. Take the same protein out of the
+cell, put it in plasma, and the BPG washes away. The P50 falls to
+something like 12 to 14 millimeters of mercury. That is a hemoglobin
+that will load beautifully in the lung and then refuse to give its
+oxygen up until the surrounding tissue is nearly anoxic. For a carrier
+meant to feed starving tissue, this is a fatal design flaw.</p>
+<p>There is a second problem. Outside the cell, the four-chain tetramer
+can split into two-chain halves. These dimers are small enough to slip
+through the kidney filter and out of the circulation, which shortens the
+useful life of the protein and delivers a burden of free hemoglobin to a
+delicate organ. So a successful carrier has to solve two problems at
+once: fix the oxygen affinity, and glue the pieces together.</p>
+<h2 id="the-early-workarounds">The early workarounds</h2>
+<p>The first generation of engineers attacked the two problems by brute
+chemical force applied to human hemoglobin.</p>
+<p>One approach, pyridoxylation, attaches a small phosphate-bearing
+group to mimic the effect of BPG and lower the affinity. Another, the
+diaspirin cross-link used in the product known as HemAssist, bridges the
+two alpha chains with a chemical clamp, locking the tetramer together
+and, as a side effect, shifting the P50 up toward the thirties. A third,
+polymerization with glutaraldehyde, stitches many tetramers into larger
+assemblies, addressing the filtration problem, though it can also trap
+the protein in a fixed conformation.</p>
+<p>These interventions worked, more or less, in the sense that the
+resulting molecules could hold together and give up oxygen. They also
+carried consequences. The chemical modifications were sometimes crude,
+and the final product was often a mixture. The trial history of the
+class, which I have discussed in other posts, includes serious safety
+signals, and it would be an oversimplification to blame any one design
+decision. But it is fair to say that starting from human hemoglobin
+meant starting from a protein whose native regulation had been taken
+away, and rebuilding it by hand.</p>
+<h2 id="the-cow-has-a-different-arrangement">The cow has a different
+arrangement</h2>
+<p>Now look at the ruminants. In cattle red cells, the concentration of
+BPG is very low, far lower than in humans. Bovine hemoglobin has evolved
+to work in a red cell that does not depend on BPG to tune its affinity.
+Instead its oxygen affinity is regulated largely by chloride ions, which
+are abundant in plasma at a concentration of about a hundred millimolar,
+and by the ordinary effects of pH and carbon dioxide.</p>
+<p>This is a startling fact when you first take it in. A protein that is
+tuned by chloride is a protein that is already tuned when you put it
+into plasma. Chloride does not wash away. It is the most common anion in
+extracellular fluid. Bovine hemoglobin dissolved in a
+chloride-containing solution therefore has a P50 in the neighborhood of
+thirty or forty millimeters of mercury, which is in a physiologically
+useful range, without any chemical addition.</p>
+<p>Reviewers of the field have noted this advantage repeatedly: chloride
+rather than BPG regulates affinity, giving bovine hemoglobin an edge
+over the human protein in cell-free form. It is not the only reason the
+bovine protein was chosen. Cattle are plentiful, slaughterhouses offer a
+large and regulated supply of blood, and bovine hemoglobin has been
+reported to be more thermally stable than the human protein. But the
+allosteric difference is the most elegant one, because it means the
+protein arrives at the manufacturer already behaving like a decent
+oxygen transporter.</p>
+<h2 id="gluing-the-halves-together">Gluing the halves together</h2>
+<p>The chloride trick does not solve the dissociation problem. The
+bovine tetramer still splits into dimers in dilute solution, and dimers
+still leak through the kidney. The manufacturers of the two best-known
+bovine products solved it with glutaraldehyde, a small molecule with an
+aldehyde at each end that reacts with the amino groups of lysine
+residues on the protein surface.</p>
+<p>Treated correctly, glutaraldehyde does two things. It forms bridges
+within a tetramer, holding it together, and it forms bridges between
+tetramers, building polymers. The resulting mixture contains molecules
+of many sizes. Both bovine products are named, in their formal
+nonproprietary names, for their average molecular mass: the product
+marketed for humans in some countries is hemoglobin glutamer-250
+(bovine), and the veterinary product is hemoglobin glutamer-200
+(bovine). The numbers refer, roughly, to average masses in kilodaltons.
+A single human tetramer is around 64 kilodaltons, so these products
+average three to four times heavier.</p>
+<p>I emphasize the word average because it hides the interesting
+engineering question. A polymerization reaction is statistical. It does
+not produce a single molecular species. It produces a distribution, from
+unpolymerized tetramer up through dimers of tetramers, trimers and
+larger assemblies. The shape of that distribution matters enormously,
+and it is the reason process chemists in this field are obsessed with
+size-exclusion chromatography, the technique that sorts molecules by
+size and lets them read the distribution like a bar chart.</p>
+<h2 id="why-the-small-end-of-the-distribution-matters">Why the small end
+of the distribution matters</h2>
+<p>The reason is the two ends of the size curve. Molecules that are too
+small leak through the kidney and slip out of the circulation into the
+space beneath the endothelial lining of vessels, where free hemoglobin
+scavenges nitric oxide and provokes vessel tone changes. That is one
+mechanism proposed for the blood pressure elevation seen with earlier
+products. Molecules that are too large increase the viscosity of plasma
+and may behave differently in the microcirculation.</p>
+<p>So a manufacturer wants to minimize the low end, and the
+specifications reflect that. The process aims to reduce unpolymerized
+tetramer and small oligomers to a low percentage through purification
+steps after the reaction, commonly ultrafiltration or chromatographic
+removal of the smallest species. I want to be careful here: the exact
+release specifications for the two bovine products are proprietary in
+part, and figures quoted in the literature vary. What can be said safely
+is that a lower fraction of low-molecular-weight material was a
+deliberate design goal, that the products were characterized by
+size-exclusion analysis, and that the distribution is a critical quality
+attribute.</p>
+<p>A second critical attribute is the fraction of hemoglobin in the
+oxidized form, methemoglobin. Ferric hemoglobin cannot bind oxygen, and
+it also releases heme, which is toxic. A manufacturer measures it in
+every lot and sets a ceiling, because it rises as the product ages. The
+stability of the ferrous form during storage is a reason packaging and
+storage conditions are chosen with such care. The engineering of shelf
+life turns out to be an engineering of iron chemistry.</p>
+<h2 id="the-tradeoff-hiding-in-the-p50">The tradeoff hiding in the
+P50</h2>
+<p>Now for a controversy that shows how much remains unsettled. Bovine
+glutamer products have a P50 in the thirties, roughly like or slightly
+above that of a person’s red cells. Is that ideal?</p>
+<p>A school of thought associated with the microvascular hypothesis
+argues that it is not. The argument runs as follows. In a healthy
+circulation, oxygen leaves red cells while they are still in the
+arterioles, the small upstream vessels, and the arteriolar wall senses
+the oxygen level and constricts to protect downstream tissue from
+excess. A carrier with a low affinity, like a bovine glutamer, releases
+oxygen early, triggering that constriction reflex more strongly and
+reducing flow. A carrier with a high affinity, which holds oxygen until
+the last moment, would deliver it to the capillary bed with less
+premature loss, avoiding vasoconstriction and preserving the perfusion
+of small vessels. Under that logic, the best oxygen carrier for shock is
+one with a P50 well below that of blood.</p>
+<p>The opposing view points out that a high-affinity carrier delivers
+oxygen only in tissue that is severely hypoxic, which is exactly where
+you need it in shock but is a poor design for resuscitating a patient
+who is anemic and otherwise stable. A carrier with a P50 in the thirties
+will offload in a broader range of conditions. The disagreement is not
+resolved. What is worth noticing is that the P50 of a bovine product is
+not an accident of chemistry alone; it is a physiological bet, and the
+bet can be argued either way.</p>
+<p>For a foundation thinking about which indications to advocate for,
+this matters. A carrier with a mid-range P50 sits comfortably in an
+anemia niche, such as a patient who cannot receive blood. A carrier with
+a very high affinity might sit better in an ischemic niche, where the
+task is to reach the last few oxygen-starved cells. They are different
+jobs, and they may call for different molecules.</p>
+<h2 id="the-bohr-effect-and-the-co2-handshake">The Bohr effect and the
+CO2 handshake</h2>
+<p>One more piece of regulation deserves mention, because it is a
+beautiful piece of physiology that a cell-free carrier keeps. Hemoglobin
+releases oxygen more readily when the surrounding tissue is acidic and
+rich in carbon dioxide. That is the Bohr effect. It is why exercising
+muscle, which makes acid and carbon dioxide, gets extra oxygen delivered
+exactly where it is needed.</p>
+<p>The Bohr effect does not depend on BPG. It depends on the protonation
+of particular amino acid side chains and on carbamate formation at the
+ends of the chains. A cell-free bovine polymer retains it, at least in
+part, though polymerization can dampen the response by restricting the
+protein’s movement. This means that even outside a cell, the molecule
+can respond to local acidity by releasing more oxygen, which is the
+outcome you want in a tissue that is failing. The extent of the retained
+response is a measurable property, and it varies among products and
+among lots.</p>
+<p>I mention it because it undermines a caricature. People sometimes
+describe a BHOC as a dumb sack of hemoglobin that can only hold and
+release oxygen according to one fixed curve. The truth is that it
+inherits much of the responsiveness of its parent protein, dampened by
+chemistry. That is a reason to take the design seriously, and a reason
+to measure it carefully.</p>
+<h2 id="reading-an-oxygen-curve-like-a-map">Reading an oxygen curve like
+a map</h2>
+<p>Physiologists draw the relation between oxygen pressure and
+hemoglobin saturation as an S-shaped curve, and the P50 is simply the
+pressure at the curve’s midpoint. It is more useful to think of the
+curve as a map with three regions.</p>
+<p>The upper flat region, above about sixty millimeters of mercury, is
+the lung. Here the curve barely rises with pressure, so hemoglobin loads
+to near-complete saturation even if the inspired air is thin. This
+flatness is a safety margin: a person on a mountain at reduced pressure
+still loads almost fully.</p>
+<p>The steep middle region, between roughly twenty and sixty, is the
+working zone of the tissues. A small drop in pressure produces a large
+release of oxygen. A carrier’s usefulness depends on where its steep
+region lies relative to the pressure of the tissue it feeds. Move the
+curve to the left, as high-affinity molecules do, and the steep zone
+slides toward the lower pressures, so the molecule gives up its cargo
+only in the most oxygen-poor territory. Move it to the right and it
+gives up cargo earlier.</p>
+<p>The lower region, below about twenty, is the reserve. A carrier with
+a curve that is too far to the left leaves much of its oxygen locked in
+this region, and no amount of extra hemoglobin will help a tissue
+sitting there. This is the arithmetic behind the early failure of
+unmodified human hemoglobin in plasma. It was not that the molecule
+carried too little oxygen, but that it declined to release it.</p>
+<p>Seen this way, the choice between a bovine glutamer and a
+high-affinity engineered molecule is a choice about which zone to serve.
+And chloride, in the bovine case, simply put the curve in the middle of
+the working zone by default.</p>
+<h2 id="questions-worth-putting-to-a-developer">Questions worth putting
+to a developer</h2>
+<p>For readers who advocate for access, the chemistry converts into a
+short list of questions that separate a serious program from a hopeful
+one.</p>
+<p>What is the P50 of the final product, measured in plasma-like
+conditions at body temperature, and how much does it vary from lot to
+lot?</p>
+<p>What does the size-exclusion profile look like, and what fraction of
+the material sits at the small end?</p>
+<p>What is the methemoglobin content at release and at the end of the
+labeled shelf life?</p>
+<p>How much of the Bohr response survives polymerization?</p>
+<p>None of these needs a doctorate to ask, and every serious
+manufacturer has the numbers.</p>
+<h2 id="what-the-accident-does-not-fix">What the accident does not
+fix</h2>
+<p>It would be a mistake to leave the impression that the chloride story
+solves the problem. It solves one problem, the affinity problem, and
+only partially.</p>
+<p>It does not solve nitric oxide scavenging, which depends on the
+availability of free hemoglobin to the vessel wall and on the size of
+the molecule. It does not solve auto-oxidation, the tendency of the iron
+to lose its electron and become useless. It does not solve
+immunogenicity, since bovine hemoglobin remains a foreign protein. And
+it does not solve the tension between a longer circulating half-life,
+which favors bigger polymers, and viscosity and vascular effects, which
+disfavor them.</p>
+<p>What it does is remove a whole category of chemical modification from
+the manufacturing process. A process that does not have to attach
+anything to mimic BPG has fewer reactions, fewer side products and fewer
+opportunities for variability. This is an unglamorous benefit, and in
+pharmaceutical manufacturing the unglamorous benefits are frequently the
+ones that decide whether a product survives scale-up.</p>
+<h2 id="temperature-a-footnote-that-becomes-a-chapter">Temperature, a
+footnote that becomes a chapter</h2>
+<p>Every P50 quoted in a brochure is measured at body temperature, and
+every P50 changes when the temperature does. Cooling shifts the curve to
+the left: hemoglobin holds oxygen more tightly in the cold. For a
+patient in shock or a surgical patient cooled on purpose, this is a
+modest correction. For a donor organ resting in ice, it is a large one,
+and it means that a molecule tuned for warm blood behaves like a
+different molecule at four degrees. That is the subject of a later post,
+but the seed is here. The chloride trick sets the default. It does not
+make the curve immune to the thermometer.</p>
+<h2 id="a-note-on-why-nobody-chose-the-pig">A note on why nobody chose
+the pig</h2>
+<p>Someone will ask why cattle, not pigs or horses. I do not have a
+definitive published answer, and I would be suspicious of anyone who
+claims one. The likely reasons are practical. Cattle produce a large
+volume of blood per animal, there is an established slaughter and
+inspection infrastructure, and the biochemistry of the bovine protein,
+with its chloride regulation, is convenient. Porcine hemoglobin does not
+offer the same allosteric advantage, as far as I know, and it introduces
+cultural and religious considerations of its own, discussed in another
+post on this site. The choice of species was probably made by a
+combination of chemistry and logistics, and both pointed toward the
+cow.</p>
+<h2 id="what-to-remember">What to remember</h2>
+<p>If you take one idea from this essay, take this. The success of the
+bovine approach was never a triumph of design so much as a gift of
+evolution accepted with gratitude. A cow’s red cell does not use BPG, so
+a cow’s hemoglobin is tuned by something that plasma already contains.
+Human hemoglobin needed to be repaired before it could be used outside
+its cell. Bovine hemoglobin needed only to be held together.</p>
+<p>That distinction should shape how patient communities talk about the
+technology. The choice of a bovine source is not a curiosity of the
+marketplace. It has a chemical reason, and the reason is one a
+non-specialist can understand: the cow’s protein works in plasma because
+it never needed the molecule that plasma lacks.</p>
+<p>The rest of the story, the questions of safety, of vessel tone, of
+oxidation and of immune response, remains open. The chloride, at least,
+is settled.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>Reviews of hemoglobin-based oxygen carriers describe chloride
+regulation of bovine hemoglobin affinity, glutaraldehyde polymerization
+and the naming of the glutamer products; one accessible open-access
+review is titled Hemoglobin-Based Oxygen Carriers: Current
+State-of-the-Art and Novel Molecules. Numeric values for P50 and
+molecular weight distributions vary across sources and lots and should
+be verified against product documentation before use.</p>
+
+</article>
+<div class="pn"><a href="field-note-5.html" data-release="2026-10-01"><span>Previous</span>The Herd and the Prion</a><a href="field-note-7.html" data-release="2026-10-07"><span>Next</span>Autopsy of Five Companies</a></div>
+<p style="margin-top:28px"><a class="cta" href="field-notes.html">All posts</a></p>
+</main>
+<footer><p>Educational writing, not medical advice. Figures are approximate; check primary sources before relying on them. &copy; Cold Ischemia Foundation.</p></footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>
