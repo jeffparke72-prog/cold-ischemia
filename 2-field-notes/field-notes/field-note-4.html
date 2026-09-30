@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Do You Know It Worked? | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="The instruments, the illusions, and the surrogate endpoints behind every claim about oxygen delivery">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,0.12);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nl img{height:32px;width:32px;object-fit:contain;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap;}
+.nm{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nm::-webkit-scrollbar{display:none;}
+.nm a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;white-space:nowrap;padding:4px 8px;border-radius:2px;transition:color .15s;}
+.nm a:hover{color:#d8cfc4;}
+.nr{flex-shrink:0;display:flex;gap:8px;}
+.nr a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;transition:all .15s;white-space:nowrap;}
+.nmy{color:rgba(216,207,196,0.45);border:1px solid rgba(100,140,200,0.15);}
+.nmy:hover{color:#c8902a;}
+.njn{background:#c8902a;color:#030509;}
+.njn:hover{background:#e8b84a;}
+@media(max-width:680px){.nm a:not(.nk){display:none;}.nb{display:none;}.nmy{display:none;}}
+footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px 40px 24px;}
+.fg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,.1);}
+@media(max-width:800px){.fg{grid-template-columns:1fr 1fr;gap:24px;}}
+.fli{height:26px;display:block;margin-bottom:10px;}
+.fb p{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.22);line-height:2.2;}
+.fb a{color:#c8902a;text-decoration:none;}
+.fct{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;}
+.fl{display:flex;flex-direction:column;gap:8px;}
+.fl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.38);text-decoration:none;transition:color .15s;}
+.fl a:hover{color:rgba(216,207,196,.85);}
+.fbot{max-width:1100px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fcp{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);}
+.fbl{display:flex;gap:14px;}
+.fbl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);text-decoration:none;}
+.fbl a:hover{color:#c8902a;}
+.fnr{color:#c8902a!important;border-color:rgba(200,144,42,.5)!important;}.nm{justify-content:flex-start;}.nm a.fnk{color:#c8902a;}.hero{padding-top:56px!important;}
+</style>
+</head>
+<body>
+<style id="cifnav-css">
+nav.cifnav{position:var(--cn-pos,sticky)!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;background:rgba(3,5,9,.97)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,.12)!important;padding:6px 20px!important;min-height:56px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;box-sizing:border-box!important;margin:0!important;width:auto!important}
+nav.cifnav *{box-sizing:border-box}
+nav.cifnav .cn-l{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+nav.cifnav .cn-l img{height:32px;width:32px;object-fit:contain;display:block}
+nav.cifnav .cn-b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap}
+nav.cifnav .cn-m{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 2px;flex:1}
+nav.cifnav .cn-m a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(216,207,196,.5);text-decoration:none;white-space:nowrap;padding:5px 7px;border-radius:2px;transition:color .15s;background:none;border:0}
+nav.cifnav .cn-m a:hover,nav.cifnav .cn-m a.on{color:#d8cfc4}
+nav.cifnav .cn-m a.cn-fn{color:#c8902a}
+nav.cifnav .cn-r{flex-shrink:0;display:flex;gap:8px}
+nav.cifnav .cn-r a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;white-space:nowrap}
+nav.cifnav .cn-t{color:rgba(216,207,196,.55);border:1px solid rgba(100,140,200,.2)}
+nav.cifnav .cn-t:hover{color:#c8902a}
+nav.cifnav .cn-d{background:#c8902a;color:#030509}
+nav.cifnav .cn-d:hover{background:#e8b84a}
+@media(max-width:900px){nav.cifnav{flex-wrap:wrap!important;justify-content:center!important}nav.cifnav .cn-b{display:none}nav.cifnav .cn-m{order:3;flex-basis:100%}}
+nav.cifnav{--cn-pos:sticky}.hero{padding-top:56px!important}</style><nav class="cifnav"><a href="../index.html" class="cn-l"><img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><div class="cn-m"><a href="../about.html">About</a><a href="../command-center.html">Command Center</a><a href="../research.html">Research</a><a href="../situation-room.html">Situation Room</a><a href="../kidney-news.html">Kidney News</a><a href="../cif-volunteer-page.html">Volunteer</a><a href="../contact.html">Contact</a><a href="../transplant-realities.html">What Nobody Tells You</a><a href="../transplant-line.html">The Transplant Line</a><a href="../donor-flow.html">Project Donor-Flow</a><a href="../bhoc.html">BHOC</a><a href="./" class="cn-fn">BHOC Field Notes</a><a href="../accountability.html">Atlas</a><a href="../demand-letters.html">Demand Letters</a><a href="../congress-scorecard.html">Scorecard</a></div><div class="cn-r"><a href="../projects.html" class="cn-t">Toolkit</a><a href="../donate.html" class="cn-d">Donate</a></div></nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="index.html">Field Notes</a> &nbsp;/&nbsp; Post 4</div>
+<div class="eyebrow">Measurement &middot; September 29, 2026 &middot; 9 min read</div>
+<h1>How Do You Know It Worked?</h1>
+<p class="dek">The instruments, the illusions, and the surrogate endpoints behind every claim about oxygen delivery</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-4.docx" download>Download Word</a>
+<a class="cta" href="field-note-4.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-4.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>Suppose a patient in shock receives a BHOC and, an hour later, looks
+better. The blood pressure has come up. The skin is warmer. The lactate
+is falling. Did the oxygen carrier do that?</p>
+<p>The honest answer depends almost entirely on what you measured, how,
+and with what instrument, and the instruments that we rely on were built
+for a world without free hemoglobin in plasma. This post walks through
+the measuring tools of oxygen delivery, what each can tell you, and the
+ways each can mislead when a cell-free carrier is present. It may be the
+most technical post on this site, but it is also the one that most
+affects whether a claim can be believed.</p>
+<h2 id="the-problem-in-one-sentence">The problem in one sentence</h2>
+<p>Oxygen delivery is the product of blood flow and the oxygen content
+of blood, and the aim of delivery is not the blood but the tissue.
+Everything measured at the bedside is an indirect reading of what the
+cells are actually receiving.</p>
+<p>A carrier can raise blood oxygen content and still fail the tissue,
+if it changes flow. It can look useless on a global measure and still
+rescue a small region. And it can distort the test itself. Each of the
+following tools has a way of being wrong.</p>
+<h2
+id="hemoglobin-concentration-the-number-that-stops-meaning-what-it-meant">Hemoglobin
+concentration: the number that stops meaning what it meant</h2>
+<p>The most common lab value in medicine is the hemoglobin. Every
+clinician reads it as a count of red cell hemoglobin and treats it as a
+fuel gauge. When a BHOC is circulating, that reading combines two
+populations: the hemoglobin inside cells, and the hemoglobin freely
+dissolved in plasma. A total hemoglobin of nine may hide a red cell
+fraction that is far lower.</p>
+<p>The hematocrit is even more revealing. It measures the volume
+fraction of cells and does not include plasma hemoglobin at all. A
+patient may have a hematocrit that looks alarming, and a total
+hemoglobin that looks acceptable, and both may be true at once. Clinical
+trial protocols have had to define separate plasma hemoglobin
+measurements, often by spinning a sample and reading the clear
+supernatant, to make sense of this.</p>
+<p>The danger is behavioral. A physician who sees a low hematocrit after
+a BHOC may give a red cell transfusion that was not needed, or refrain
+from giving one that was. The result is a distorted picture of both
+safety and efficacy in the data.</p>
+<h2 id="pulse-oximetry-and-the-color-problem">Pulse oximetry and the
+color problem</h2>
+<p>The finger clip works by shining two wavelengths of light through
+tissue and comparing absorption. It assumes that the only significant
+absorbers in arterial blood are oxygenated and deoxygenated hemoglobin.
+Cell-free carriers add a third pigment and, if the iron oxidizes, a
+fourth, methemoglobin. The result is that a saturation reading may be
+inaccurate in ways that vary by device and by product.</p>
+<p>Methemoglobin, the oxidized form that cannot carry oxygen, tends to
+pull the reading toward the low nineties regardless of the true value. A
+patient might be badly deprived of oxygen and see a stable number on the
+monitor, or be adequately oxygenated and see a worrisome one. A carrier
+that oxidizes quickly, which was a property of some first-generation
+products, makes this worse.</p>
+<p>The laboratory answer is co-oximetry, a bench instrument that
+measures light absorption at many wavelengths and separates
+oxyhemoglobin, deoxyhemoglobin, carboxyhemoglobin, and methemoglobin. It
+is the reference for whether the pigment in the sample is still working.
+It also has to be calibrated for the specific carrier, since the
+spectrum of a polymerized bovine hemoglobin is not identical to that of
+human hemoglobin.</p>
+<h2 id="colorimetric-chemistry-and-the-pink-plasma">Colorimetric
+chemistry and the pink plasma</h2>
+<p>Many routine laboratory tests read a color change. Free hemoglobin in
+plasma tints the sample and can add to or subtract from the reading.
+Liver enzyme assays, creatinine methods, bilirubin, and some cardiac
+markers have shown interference in the presence of free hemoglobin, with
+the size and direction depending on the method.</p>
+<p>This is not an academic footnote. A reported rise in a liver enzyme
+after a carrier could be genuine injury or an artifact of the assay. A
+troponin result, used to detect heart muscle damage, is central to the
+safety debate about hemoglobin carriers, and the reliability of that
+test in the presence of the product has been discussed in the
+literature. The way to handle it is to specify in advance which methods
+are validated for use with the product and to run a second method when
+the result matters.</p>
+<h2 id="near-infrared-spectroscopy-reading-the-muscle">Near-infrared
+spectroscopy: reading the muscle</h2>
+<p>Near-infrared spectroscopy shines light of several wavelengths
+through a small volume of tissue and estimates tissue oxygen saturation,
+usually written StO2. A common site is the thenar eminence, the fleshy
+pad at the base of the thumb. The device is noninvasive and can be kept
+on for hours. It offers something no blood test can: a continuous signal
+from the microcirculation.</p>
+<p>A clever use is the vascular occlusion test. A blood pressure cuff is
+inflated on the arm until flow stops, tissue saturation falls at a rate
+that reflects local oxygen consumption, and when the cuff is released
+the rate of recovery is a reading of microvascular responsiveness. Slow
+recovery in shock predicts worse outcomes. If a carrier improves
+recovery, it is doing something at the level that matters.</p>
+<p>The limitations are real. Light passes through skin, fat, and muscle,
+and the signal is a blend of arterial, venous, and capillary blood. Fat
+thickness changes the reading. Edema, which is common in resuscitation,
+changes it again. And because the algorithm assumes a certain set of
+absorbers, a plasma pigment can bias the result. Trend within a patient
+is more trustworthy than an absolute number, and comparisons between
+patients or between studies need caution.</p>
+<h2
+id="phosphorescence-quenching-measuring-oxygen-by-how-long-light-lingers">Phosphorescence
+quenching: measuring oxygen by how long light lingers</h2>
+<p>The most elegant tool in the field is one that most clinicians have
+never seen. Certain molecules, when excited by light, glow, and the glow
+fades over a characteristic time. Oxygen quenches that glow. The more
+oxygen is present, the faster it fades. By measuring the decay time, one
+can compute the oxygen pressure directly, with no reliance on the color
+of the blood.</p>
+<p>Researchers built probes from palladium porphyrin compounds designed
+to remain in the circulation or to stay in tissue, and they used them to
+map oxygen pressure in the microvessels of animals. In experiments, one
+can look at a single arteriole and a single venule and read the oxygen
+tension in each. This method is how the field knows, for example, that
+oxygen leaves the arterioles before it ever reaches the capillaries, a
+fact that changed how everyone thinks about where a carrier
+delivers.</p>
+<p>It is a research instrument, not a bedside device. It requires a
+microscope, a probe, and a window into the tissue. But it establishes
+the physiological truth against which everything else is judged. When a
+BHOC claims to improve tissue oxygenation, this is the type of
+measurement that can support or refute the claim.</p>
+<h2 id="functional-capillary-density-counting-the-open-roads">Functional
+capillary density: counting the open roads</h2>
+<p>One of the most influential ideas in this field came from intravital
+microscopy. In a transparent skin fold chamber on a hamster, capillaries
+can be watched directly. The count of capillaries with flowing red cells
+per unit area is called functional capillary density. In hemorrhagic
+shock it falls, because capillaries collapse or clog, and tissue oxygen
+falls with it.</p>
+<p>The finding that made the field pay attention was that resuscitation
+with fluids of different properties restored functional capillary
+density to very different degrees, even when the systemic numbers looked
+similar. Carriers with high oxygen affinity and low viscosity kept more
+capillaries open in these experiments, and the proposed reason was that
+they preserved flow rather than merely adding oxygen content. That idea
+became the microvascular hypothesis and drove a generation of product
+design.</p>
+<p>The catch is translation. Functional capillary density is measured in
+a hamster chamber, which cannot be used in a person. The bedside
+surrogates, sidestream dark-field imaging under the tongue, are useful
+but variable and depend heavily on operator technique. Whether the
+hamster result predicts survival in a person remains unresolved.</p>
+<h2 id="lactate-and-base-deficit-the-metabolic-trail">Lactate and base
+deficit: the metabolic trail</h2>
+<p>Lactate is the traditional marker of an oxygen debt. When cells
+cannot get enough oxygen they switch to a less efficient metabolism that
+produces lactate, and blood lactate rises. A falling lactate after
+resuscitation is read as evidence that delivery has improved.</p>
+<p>Lactate has flaws. The liver clears it, so a damaged liver can hold
+it high for reasons unrelated to oxygen. Stress and certain drugs raise
+it without hypoxia. And it lags: the number describes what has already
+happened, not what is happening now. Base deficit, a measure of acid
+load, has similar limits. Both are useful trends. Neither is a direct
+measurement of tissue oxygenation, and neither is immune to the changes
+a carrier can make to blood chemistry.</p>
+<h2 id="the-surrogate-trap">The surrogate trap</h2>
+<p>Put all of this together and a pattern emerges. The measurements that
+are easy, such as hemoglobin, saturation, and blood pressure, are the
+least reliable when a carrier is present. The measurements that are
+informative, such as phosphorescence quenching and capillary counts, are
+impossible at the bedside. The middle ground, near-infrared spectroscopy
+and lactate, is helpful but imperfect.</p>
+<p>The regulatory consequence is that trials must decide what to call
+success. A surrogate endpoint, such as an improved tissue saturation or
+a fall in lactate, is a stand-in for the outcome that matters, which is
+survival and recovery. A surrogate is only as good as the evidence that
+changes in it predict changes in the real outcome. For oxygen carriers,
+that evidence has been thin, and there is a history of products that
+improved a surrogate and did not improve survival.</p>
+<h2 id="what-a-careful-reader-should-ask">What a careful reader should
+ask</h2>
+<p>When a press release or a talk says a carrier improved oxygenation,
+ask which measurement was used, and whether it was validated in the
+presence of free hemoglobin. Ask whether the comparison was between
+patients or within the same patient over time. Ask whether the plasma
+hemoglobin was reported separately from the red cell hemoglobin. Ask
+whether the endpoint was a surrogate or a clinical outcome, and if it
+was a surrogate, what evidence links it to survival.</p>
+<p>These are not obstructive questions. They are the ones a trial
+statistician would ask, and an advocacy organization that can ask them
+will be listened to.</p>
+<h2 id="a-modest-proposal">A modest proposal</h2>
+<p>The field would benefit from a shared measurement protocol: a defined
+set of instruments, calibrated for the specific carrier, with a plasma
+hemoglobin measurement, co-oximetry, a near-infrared trend with the
+occlusion test, and lactate, all reported in a consistent format. It
+would not be glamorous. It would let results from different studies be
+compared, which today they largely cannot.</p>
+<p>Until that exists, every claim about a BHOC should be read as a claim
+about one instrument, on one patient population, in one laboratory. That
+is not a reason for despair. It is the ordinary discipline of science,
+and it is what will eventually separate the products that work from
+those that only look as if they do.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>Foundational work on phosphorescence quenching oximetry comes from
+the laboratories of David Wilson and Sergei Vinogradov. The
+microvascular hypothesis and functional capillary density studies are
+associated with Marcos Intaglietta and colleagues. Reviews of
+near-infrared spectroscopy in shock and of interference by cell-free
+hemoglobin in laboratory assays are available in critical care and
+clinical chemistry journals. Specific numerical claims here are
+qualitative and should be checked against those sources.</p>
+
+</article>
+<div class="pn"><a href="field-note-3.html" data-release="2026-09-29"><span>Previous</span>Consent at the Speed of Bleeding</a><a href="field-note-5.html" data-release="2026-10-01"><span>Next</span>The Herd and the Prion</a></div>
+<p style="margin-top:28px"><a class="cta" href="index.html">All posts</a></p>
+</main>
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" class="fli" onerror="this.style.display='none'">
+      <p>Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="https://coldischemia.foundation">coldischemia.foundation</a></p>
+    </div>
+    <div>
+      <span class="fct">Platform</span>
+      <div class="fl">
+        <a href="../command-center.html">Command Center</a>
+        <a href="../projects.html">Toolkit</a>
+        <a href="../situation-room.html">Situation Room</a>
+        <a href="../research.html">Research</a>
+        <a href="../kidney-news.html">Kidney News</a>
+        <a href="../cif-volunteer-page.html">Volunteer</a>
+        <a href="../contact.html">Contact</a>
+        <a href="./">BHOC Field Notes</a>
+        <a href="../accountability.html">Atlas</a>
+        <a href="../congress-scorecard.html">Scorecard</a>
+        <a href="../donate.html">Donate</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Projects</span>
+      <div class="fl">
+        <a href="https://donorflow.coldischemia.foundation" target="_blank" rel="noopener">Project Donor-Flow</a>
+        <a href="https://collateral-damage.coldischemia.foundation" target="_blank" rel="noopener">Collateral Damage</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Foundation</span>
+      <div class="fl">
+        <a href="../about.html">Our Story</a>        <a href="../cif-amazon-library.html">Book &amp; Toolkit Library</a>
+        <a href="../advocacy-news.html">Advocacy News</a>
+        <a href="../care-partner-advocacy.html">Care Partner Advocacy</a>
+        <a href="../transplant-line.html">The Transplant Line</a>
+    <a href="../donor-flow.html">Project Donor-Flow</a>
+        <a href="../donate.html">Donate</a>
+        <a href="../free-guide.html">Free Guide</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Legal</span>
+      <div class="fl">
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../contact.html">Contact</a>
+        
+        <a href="../sales-letter.html">Our Case for You</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p class="fcp">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+    <div class="fbl">
+      <a href="../terms.html">Terms</a>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>

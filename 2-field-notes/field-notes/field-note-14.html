@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borders and Approvals | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="A product can be legal in one country, restricted in another and unknown in a third, and the map of who approved what is itself a piece of scientific evidence">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,0.12);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nl img{height:32px;width:32px;object-fit:contain;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap;}
+.nm{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nm::-webkit-scrollbar{display:none;}
+.nm a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;white-space:nowrap;padding:4px 8px;border-radius:2px;transition:color .15s;}
+.nm a:hover{color:#d8cfc4;}
+.nr{flex-shrink:0;display:flex;gap:8px;}
+.nr a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;transition:all .15s;white-space:nowrap;}
+.nmy{color:rgba(216,207,196,0.45);border:1px solid rgba(100,140,200,0.15);}
+.nmy:hover{color:#c8902a;}
+.njn{background:#c8902a;color:#030509;}
+.njn:hover{background:#e8b84a;}
+@media(max-width:680px){.nm a:not(.nk){display:none;}.nb{display:none;}.nmy{display:none;}}
+footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px 40px 24px;}
+.fg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,.1);}
+@media(max-width:800px){.fg{grid-template-columns:1fr 1fr;gap:24px;}}
+.fli{height:26px;display:block;margin-bottom:10px;}
+.fb p{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.22);line-height:2.2;}
+.fb a{color:#c8902a;text-decoration:none;}
+.fct{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;}
+.fl{display:flex;flex-direction:column;gap:8px;}
+.fl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.38);text-decoration:none;transition:color .15s;}
+.fl a:hover{color:rgba(216,207,196,.85);}
+.fbot{max-width:1100px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fcp{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);}
+.fbl{display:flex;gap:14px;}
+.fbl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);text-decoration:none;}
+.fbl a:hover{color:#c8902a;}
+.fnr{color:#c8902a!important;border-color:rgba(200,144,42,.5)!important;}.nm{justify-content:flex-start;}.nm a.fnk{color:#c8902a;}.hero{padding-top:56px!important;}
+</style>
+</head>
+<body>
+<style id="cifnav-css">
+nav.cifnav{position:var(--cn-pos,sticky)!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;background:rgba(3,5,9,.97)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,.12)!important;padding:6px 20px!important;min-height:56px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;box-sizing:border-box!important;margin:0!important;width:auto!important}
+nav.cifnav *{box-sizing:border-box}
+nav.cifnav .cn-l{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+nav.cifnav .cn-l img{height:32px;width:32px;object-fit:contain;display:block}
+nav.cifnav .cn-b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap}
+nav.cifnav .cn-m{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 2px;flex:1}
+nav.cifnav .cn-m a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(216,207,196,.5);text-decoration:none;white-space:nowrap;padding:5px 7px;border-radius:2px;transition:color .15s;background:none;border:0}
+nav.cifnav .cn-m a:hover,nav.cifnav .cn-m a.on{color:#d8cfc4}
+nav.cifnav .cn-m a.cn-fn{color:#c8902a}
+nav.cifnav .cn-r{flex-shrink:0;display:flex;gap:8px}
+nav.cifnav .cn-r a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;white-space:nowrap}
+nav.cifnav .cn-t{color:rgba(216,207,196,.55);border:1px solid rgba(100,140,200,.2)}
+nav.cifnav .cn-t:hover{color:#c8902a}
+nav.cifnav .cn-d{background:#c8902a;color:#030509}
+nav.cifnav .cn-d:hover{background:#e8b84a}
+@media(max-width:900px){nav.cifnav{flex-wrap:wrap!important;justify-content:center!important}nav.cifnav .cn-b{display:none}nav.cifnav .cn-m{order:3;flex-basis:100%}}
+nav.cifnav{--cn-pos:sticky}.hero{padding-top:56px!important}</style><nav class="cifnav"><a href="../index.html" class="cn-l"><img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><div class="cn-m"><a href="../about.html">About</a><a href="../command-center.html">Command Center</a><a href="../research.html">Research</a><a href="../situation-room.html">Situation Room</a><a href="../kidney-news.html">Kidney News</a><a href="../cif-volunteer-page.html">Volunteer</a><a href="../contact.html">Contact</a><a href="../transplant-realities.html">What Nobody Tells You</a><a href="../transplant-line.html">The Transplant Line</a><a href="../donor-flow.html">Project Donor-Flow</a><a href="../bhoc.html">BHOC</a><a href="./" class="cn-fn">BHOC Field Notes</a><a href="../accountability.html">Atlas</a><a href="../demand-letters.html">Demand Letters</a><a href="../congress-scorecard.html">Scorecard</a></div><div class="cn-r"><a href="../projects.html" class="cn-t">Toolkit</a><a href="../donate.html" class="cn-d">Donate</a></div></nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="index.html">Field Notes</a> &nbsp;/&nbsp; Post 14</div>
+<div class="eyebrow">Regulation &middot; October 28, 2026 &middot; 14 min read</div>
+<h1>Borders and Approvals</h1>
+<p class="dek">A product can be legal in one country, restricted in another and unknown in a third, and the map of who approved what is itself a piece of scientific evidence</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-14.docx" download>Download Word</a>
+<a class="cta" href="field-note-14.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-14.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>There is a sentence in the press materials of nearly every company
+that has tried to sell a bovine hemoglobin oxygen carrier: it is
+approved in such-and-such a country. The sentence is true. It is also
+one of the most misunderstood facts in the field, because an approval is
+not a universal certificate of quality. It is a decision made by one
+regulator, under one set of rules, on one body of evidence, for one
+specified use, at one moment in time.</p>
+<p>This essay is about that map. It describes how approval, restriction
+and exceptional access differ, what the pattern for BHOC products
+actually looks like, and how a patient community should read a claim of
+approval elsewhere. I will try to be careful about what I can and cannot
+confirm, because the details vary with the source and this is a subject
+on which loose language does real harm.</p>
+<h2 id="what-an-approval-is">What an approval is</h2>
+<p>An approval is a regulator’s judgment that a product’s benefits
+outweigh its risks for a defined population under defined conditions.
+Each part of that sentence hides a variable.</p>
+<p>The judgment depends on the evidence submitted. A regulator in a
+small market may accept data from trials done elsewhere, may require
+local studies, or may weigh a company’s dossier differently from a
+regulator in a large market with a long history of assessing similar
+products.</p>
+<p>The benefit-risk balance depends on what alternatives exist. A
+product that would be marginal where safe blood is plentiful may be
+valuable where it is scarce. Regulators in different countries face
+different alternatives, and they legitimately reach different
+conclusions.</p>
+<p>The defined population and conditions matter enormously. An approval
+to treat anemia in adult surgical patients does not authorize use in
+trauma, in children, or in pregnancy. The label is a fence.</p>
+<p>And an approval is a snapshot. It can be revised, restricted or
+withdrawn. It says nothing about how the product has fared since.</p>
+<p>When a reader sees the phrase approved in a country, each of those
+questions is still open.</p>
+<h2 id="the-record-for-the-bovine-products">The record for the bovine
+products</h2>
+<p>Here is what I can state with reasonable confidence, drawing on a
+company’s own description and on published histories, and flagging where
+these sources differ.</p>
+<p>The veterinary product, Oxyglobin, was approved in the United States
+and Europe in the late 1990s, and its current owner describes it as
+approved for over twenty years, with more than 240,000 units sold and
+off-label use in about thirty species. That is a company statement, not
+an independent audit, but it is consistent with the general history.</p>
+<p>The human product, Hemopure, was approved in South Africa in 2001 for
+the treatment of acute anemia in adult surgical patients. That approval
+is reported consistently across sources. It was also approved in the
+Russian Federation. The company’s website gives the year as 2010 and
+describes the indication as acute, all-cause anemia. A published
+historical review states the same approval without giving a year, and
+one encyclopedic source reports the approval in a slightly different
+way. I mention the discrepancy because it illustrates a point: even the
+basic facts of approval are recounted with variations, and a careful
+writer should cite the regulator’s own record, which I have not
+seen.</p>
+<p>In the United States, Hemopure has never been approved for human use.
+The Food and Drug Administration placed a hold on a proposed trauma
+trial in 2003 and did not approve an application for orthopedic surgery
+that year. Since then the product has been available under the agency’s
+expanded access mechanism, used to treat patients with life-threatening
+anemia who cannot receive blood. A registered expanded access protocol
+exists for that purpose.</p>
+<p>I am not aware of any approval of a bovine hemoglobin carrier for
+human use in the European Union, though I would not be surprised to
+learn of specific national authorizations or named-patient arrangements,
+and I have not searched for them exhaustively.</p>
+<p>Two features of this map stand out. It is small: two countries, one
+indication. And it was not built through the largest, most demanding
+regulators. That does not make the approvals meaningless. It means they
+carry a particular kind of evidence.</p>
+<h2 id="why-small-market-approvals-happen">Why small-market approvals
+happen</h2>
+<p>There are several reasons a company might pursue approval in a
+smaller market first, and none of them is sinister.</p>
+<p>The regulatory path can be shorter and cheaper. A company running
+short of money has a strong incentive to reach any market where it can
+start to earn revenue and gather data.</p>
+<p>The need can be greater. In a country with a limited blood supply and
+a high burden of trauma or of diseases that cause anemia, the argument
+for an alternative is stronger, and a regulator can reasonably weigh it
+that way. South Africa, with both a high rate of trauma and constraints
+on blood availability, is a plausible example, although I would want to
+see the regulator’s own reasoning before saying so.</p>
+<p>Some regulators have procedures for products that meet an unmet need,
+allowing conditional or provisional authorization on less complete
+evidence than the largest agencies require, with post-marketing
+obligations to gather more.</p>
+<p>A first approval can provide a base for further trials. The product
+can be used in a real health system, adverse events can be recorded, and
+a supply chain can be tested. In principle, that is valuable. In
+practice, the value depends on whether the data are actually collected
+and published.</p>
+<h2
+id="what-an-approval-elsewhere-does-and-does-not-tell-a-regulator-here">What
+an approval elsewhere does and does not tell a regulator here</h2>
+<p>A frequent question from patient groups is why the United States does
+not simply accept an approval from another country. The answer is that a
+regulator’s obligations are to its own population and its own
+standards.</p>
+<p>An approval abroad is a piece of evidence. It shows that another
+agency reviewed the product and found the benefits to outweigh the risks
+in its context. If the reviewing agency is rigorous, and the data are
+complete, and the trial population resembles the domestic one, the
+approval carries weight. American law permits foreign clinical data to
+support an application under certain conditions, principally that the
+data come from well-conducted studies and apply to the American
+population.</p>
+<p>But the approval is not a substitute for the application. The
+regulator here will ask about the same issues it would ask about any
+product: the quality of the manufacturing, the completeness of the
+safety database, the adequacy of the trials, and above all the
+comparison with the standard of care. If the standard of care in the
+reviewing country differs from the standard here, the comparison may not
+transfer.</p>
+<p>There is also history. The class of products has a record that
+includes trials with excess deaths and a pooled analysis that raised
+alarms. A regulator looking at a new application inherits that memory
+and will look harder at the data than for a product from a class with a
+cleaner history. This is prudent, not vindictive.</p>
+<h2 id="the-exceptional-routes">The exceptional routes</h2>
+<p>Between approval and prohibition lies a range of exceptional access
+mechanisms, and understanding them is essential for a patient community,
+because most people who receive an unapproved oxygen carrier do so
+through one of them.</p>
+<p>In the United States the agency’s expanded access framework,
+sometimes called compassionate use, permits a patient with a serious or
+life-threatening condition, and no satisfactory alternative, to receive
+an investigational product outside a clinical trial. There are several
+forms. An individual patient request is made by a treating physician,
+who obtains the manufacturer’s agreement to supply the product and
+submits a request to the agency. In a true emergency the agency can
+authorize use by telephone and the paperwork follows. Larger forms cover
+intermediate-size groups of patients and broader treatment
+protocols.</p>
+<p>Each form requires the agreement of several parties: the manufacturer
+must be willing to supply, the physician must be willing to take on the
+responsibility of oversight, the hospital’s ethics committee generally
+must review, and the patient or a surrogate must consent. Any of them
+can say no, and the product is not owed to anyone.</p>
+<p>Other countries have their own arrangements, with names like
+named-patient supply, special access and authorization for unlicensed
+medicines. Their rules differ in what they require and how fast they
+move. In some, a physician can import a product for a single patient
+with relatively light paperwork. In others, the process is closer to a
+formal application.</p>
+<p>From a patient’s point of view, the key features of these routes are
+speed, cost and certainty. They can be fast, but only if everyone
+involved knows what to do. They can be expensive, because the
+manufacturer may charge and the hospital may bear administrative costs.
+And they are uncertain, because the answer is discretionary.</p>
+<h2 id="the-evidence-problem-in-exceptional-use">The evidence problem in
+exceptional use</h2>
+<p>Here is the difficulty that connects the map back to the science. The
+more a product is used through exceptional routes, the less it is
+studied.</p>
+<p>Expanded access is not designed to generate evidence. Patients are
+not randomized, outcomes are not standardized, follow-up is uneven, and
+reporting is voluntary. A collection of case reports, however moving,
+cannot show that a product works. Patients who receive the product are,
+by definition, in desperate circumstances, and some will die whatever is
+given. Others will survive for reasons that have nothing to do with the
+treatment.</p>
+<p>A registry that recorded each case in a common format would make the
+record more useful. It would specify what was collected, in whom, and
+how outcomes were defined, and it would be reported in aggregate. The
+FDA has encouraged data collection from expanded access, and companies
+sometimes publish series of cases, but the result is a scatter rather
+than a dataset.</p>
+<p>I raise this as a reason for patient groups to think of exceptional
+access as a responsibility as well as a right. A group that helps a
+patient obtain a product under expanded access might also help ensure
+that the case is recorded, with consent, in a way that can be pooled
+with others.</p>
+<h2 id="the-trial-that-crosses-a-border">The trial that crosses a
+border</h2>
+<p>One event in the recent record shows how the map can be used
+constructively. A press release announced that a trauma trial in the
+prehospital setting would be sponsored by the United States Department
+of Defense and coordinated by Stellenbosch University in South Africa,
+evaluating a bovine hemoglobin carrier. The arrangement is instructive
+on its face: an American funder interested in military applications, a
+South African academic center with experience in trauma care and a
+product already approved there, and a trial design that could produce
+data relevant to both.</p>
+<p>I have not found a completed report of that trial in the sources I
+could reach, and I will not describe results I cannot cite. What I can
+say is that the structure of it is sensible. An approved product in one
+jurisdiction can be tested under the local approval, in a setting with a
+genuine need, generating data that might eventually support an
+application elsewhere. It is a model that other programs could follow,
+and one a patient organization could encourage.</p>
+<h2 id="a-note-on-language">A note on language</h2>
+<p>Words on this map are slippery, and patient communications should be
+exact.</p>
+<p>Approved should be followed by a country, an indication, and a year,
+and by the source of the statement. Available under expanded access
+should not be shortened to available. Used in South Africa should not be
+turned into proven safe. Studied in a Department of Defense trial should
+not be translated into endorsed by the military.</p>
+<p>When a company says a product has been used in many patients, ask how
+many, in what setting, under what protocol and with what follow-up.
+Numbers without denominators and without outcomes are not evidence.</p>
+<p>And when a sentence begins with the phrase the FDA has not approved,
+it is worth completing it with what the FDA has actually done: held a
+trial, declined an application, or permitted use under expanded access.
+Each of those is a different fact.</p>
+<h2 id="what-a-good-map-would-show">What a good map would show</h2>
+<p>If I were drawing the ideal map for the community, it would have six
+columns for each product and each country: the regulator’s name, the
+year, the indication, the legal status, the type of evidence relied on,
+and a link to the regulator’s own document. It would be maintained by
+someone with no stake in the outcome. It would state what is
+unknown.</p>
+<p>Such a map does not exist in one place. Building it would be a
+service to patients, clinicians and journalists alike, and it is well
+within the capacity of an advocacy organization with the patience to
+read regulatory records. It would also protect the community against a
+common failure of the field, which is repeating a favorable sentence
+until it becomes a belief.</p>
+<h2 id="what-is-inside-a-dossier">What is inside a dossier</h2>
+<p>It helps to picture what a regulator actually reads, because the word
+approval compresses a mountain of paper into one syllable. A submission
+for a biologic product typically has four large parts.</p>
+<p>The first covers quality and manufacturing. It describes the source
+material, the herd or the donor pool, the steps of the process, the
+tests done on every batch, the limits set for impurities, and the
+evidence that the process is consistent from one batch to the next. For
+a bovine product this is where the animal-health documentation lives,
+and where the viral and prion clearance studies described in another
+post are submitted. Many products that are scientifically interesting
+founder here, because a process that works in a laboratory must be shown
+to work the same way every time at scale.</p>
+<p>The second part is nonclinical: studies in animals and in the
+laboratory that show what the product does, how long it lasts, which
+organs it reaches, and what happens at doses well above the intended
+one. Regulators look especially at the kidney, the heart and the vessels
+for a hemoglobin product, given the history.</p>
+<p>The third is the clinical section, the trials in people. For a
+product aimed at emergencies it is rarely as tidy as for a drug taken
+daily for a chronic condition. Trials may be small, may enroll a mixture
+of patients, and may use comparators that reflect local practice.</p>
+<p>The fourth is the proposed labeling and the plan for monitoring after
+approval: what the leaflet will say, who may use the product, and what
+data the company promises to collect once it is on the market.</p>
+<p>Each part can pass or fail on its own. A company can have persuasive
+clinical data and be refused because its manufacturing was inconsistent.
+It can have clean manufacturing and be refused because the trials could
+not distinguish benefit from chance. When a regulator says no, the
+reason can be found in the response letter, and a patient advocate who
+reads it learns more about the state of the product than from any press
+release.</p>
+<h2 id="a-checklist-for-reading-a-claim-of-approval">A checklist for
+reading a claim of approval</h2>
+<p>Suppose you receive a message, a brochure or a news story that says a
+product is approved somewhere. Here are the questions I would ask, in
+order.</p>
+<p>Who approved it? The name of the regulator, not just the country.
+Some agencies issue approvals that other authorities regard as thorough.
+Others act more quickly on less.</p>
+<p>For what? The indication as written on the label, in the label’s own
+words. Anemia in surgery, anemia from any cause and trauma are different
+claims.</p>
+<p>For whom? Adults or children, hospital or field, with or without
+blood available.</p>
+<p>When? A decade-old approval may predate newer information, and an
+approval can be quietly allowed to lapse when a company stops supplying
+a market.</p>
+<p>On what evidence? Randomized trials, uncontrolled series, or a
+decision based on prior approval elsewhere.</p>
+<p>With what conditions? Some approvals come with obligations to run
+further studies. Did the studies happen?</p>
+<p>Is it actually available? A product may be approved and yet not be
+manufactured, not be stocked, or not be affordable. Approved on paper
+and available in a hospital are two separate states.</p>
+<p>What has happened since? Have there been safety communications,
+restrictions or withdrawals?</p>
+<p>None of these questions requires expertise. Each one converts a
+comforting phrase into a set of specifics, and the specifics either hold
+up or they do not.</p>
+<h2 id="why-fragmentation-costs-patients">Why fragmentation costs
+patients</h2>
+<p>I want to end the substantive part of this essay on a practical
+worry. A fragmented map has a cost that falls on patients and that no
+single regulator is responsible for.</p>
+<p>When each country decides independently, developers must repeat work.
+Trials are designed to satisfy different agencies, files are prepared in
+different formats, and small companies exhaust their resources on
+parallel submissions. In a field already short of capital, duplication
+is lethal.</p>
+<p>Regulators in different countries do have mechanisms to cooperate,
+including shared inspections, mutual reliance on each other’s reviews in
+some circumstances, and international guidelines for the content of
+dossiers. These tend to work best among large, well-resourced agencies,
+and less well for the small markets where a niche product might first be
+approved.</p>
+<p>A patient organization cannot rewrite these systems. It can help in
+two ways. It can push for common data standards, so that the outcome of
+an emergency use in one country can be read in another. And it can
+support trials whose designs are acceptable to more than one regulator,
+so that a single study can serve several applications. Neither of these
+is glamorous. Both would reduce the number of patients who wait while
+paperwork repeats itself.</p>
+<h2 id="closing">Closing</h2>
+<p>Approval is a door, not a verdict. A product that has passed through
+one door has not thereby passed through all of them, and a product that
+has not passed through the largest one has not thereby failed. The fair
+way to read the map is as a set of partial answers to the same
+underlying question, asked by different people with different
+stakes.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>The company’s description of its approvals and expanded access
+program appears on the website of HbO2 Therapeutics. A narrative review
+of the history of hemoglobin-based oxygen carriers, published in Annals
+of Blood, states the approval of Hemopure in South Africa in 2001 and in
+Russia and describes its use in the United States under expanded access.
+Details of the Department of Defense sponsored prehospital trial were
+announced in a press release from the sponsor and coordinating center.
+Readers should consult the regulators’ own databases for the current
+status of any product, since approvals change and secondary sources
+vary.</p>
+
+</article>
+<div class="pn"><a href="field-note-13.html" data-release="2026-10-25"><span>Previous</span>Building the Cell Back</a><a href="field-note-15.html" data-release="2026-10-31"><span>Next</span>Words That Move Patients</a></div>
+<p style="margin-top:28px"><a class="cta" href="index.html">All posts</a></p>
+</main>
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" class="fli" onerror="this.style.display='none'">
+      <p>Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="https://coldischemia.foundation">coldischemia.foundation</a></p>
+    </div>
+    <div>
+      <span class="fct">Platform</span>
+      <div class="fl">
+        <a href="../command-center.html">Command Center</a>
+        <a href="../projects.html">Toolkit</a>
+        <a href="../situation-room.html">Situation Room</a>
+        <a href="../research.html">Research</a>
+        <a href="../kidney-news.html">Kidney News</a>
+        <a href="../cif-volunteer-page.html">Volunteer</a>
+        <a href="../contact.html">Contact</a>
+        <a href="./">BHOC Field Notes</a>
+        <a href="../accountability.html">Atlas</a>
+        <a href="../congress-scorecard.html">Scorecard</a>
+        <a href="../donate.html">Donate</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Projects</span>
+      <div class="fl">
+        <a href="https://donorflow.coldischemia.foundation" target="_blank" rel="noopener">Project Donor-Flow</a>
+        <a href="https://collateral-damage.coldischemia.foundation" target="_blank" rel="noopener">Collateral Damage</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Foundation</span>
+      <div class="fl">
+        <a href="../about.html">Our Story</a>        <a href="../cif-amazon-library.html">Book &amp; Toolkit Library</a>
+        <a href="../advocacy-news.html">Advocacy News</a>
+        <a href="../care-partner-advocacy.html">Care Partner Advocacy</a>
+        <a href="../transplant-line.html">The Transplant Line</a>
+    <a href="../donor-flow.html">Project Donor-Flow</a>
+        <a href="../donate.html">Donate</a>
+        <a href="../free-guide.html">Free Guide</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Legal</span>
+      <div class="fl">
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../contact.html">Contact</a>
+        
+        <a href="../sales-letter.html">Our Case for You</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p class="fcp">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+    <div class="fbl">
+      <a href="../terms.html">Terms</a>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>

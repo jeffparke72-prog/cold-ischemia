@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mountain&#x27;s Instructions | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="Populations that live where oxygen is thin have already run the experiment that oxygen-carrier designers keep trying to repeat, and they arrived at answers that look strange from a hospital">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,0.12);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nl img{height:32px;width:32px;object-fit:contain;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap;}
+.nm{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nm::-webkit-scrollbar{display:none;}
+.nm a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;white-space:nowrap;padding:4px 8px;border-radius:2px;transition:color .15s;}
+.nm a:hover{color:#d8cfc4;}
+.nr{flex-shrink:0;display:flex;gap:8px;}
+.nr a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;transition:all .15s;white-space:nowrap;}
+.nmy{color:rgba(216,207,196,0.45);border:1px solid rgba(100,140,200,0.15);}
+.nmy:hover{color:#c8902a;}
+.njn{background:#c8902a;color:#030509;}
+.njn:hover{background:#e8b84a;}
+@media(max-width:680px){.nm a:not(.nk){display:none;}.nb{display:none;}.nmy{display:none;}}
+footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px 40px 24px;}
+.fg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,.1);}
+@media(max-width:800px){.fg{grid-template-columns:1fr 1fr;gap:24px;}}
+.fli{height:26px;display:block;margin-bottom:10px;}
+.fb p{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.22);line-height:2.2;}
+.fb a{color:#c8902a;text-decoration:none;}
+.fct{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;}
+.fl{display:flex;flex-direction:column;gap:8px;}
+.fl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.38);text-decoration:none;transition:color .15s;}
+.fl a:hover{color:rgba(216,207,196,.85);}
+.fbot{max-width:1100px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fcp{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);}
+.fbl{display:flex;gap:14px;}
+.fbl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);text-decoration:none;}
+.fbl a:hover{color:#c8902a;}
+.fnr{color:#c8902a!important;border-color:rgba(200,144,42,.5)!important;}.nm{justify-content:flex-start;}.nm a.fnk{color:#c8902a;}.hero{padding-top:56px!important;}
+</style>
+</head>
+<body>
+<style id="cifnav-css">
+nav.cifnav{position:var(--cn-pos,sticky)!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;background:rgba(3,5,9,.97)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,.12)!important;padding:6px 20px!important;min-height:56px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;box-sizing:border-box!important;margin:0!important;width:auto!important}
+nav.cifnav *{box-sizing:border-box}
+nav.cifnav .cn-l{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+nav.cifnav .cn-l img{height:32px;width:32px;object-fit:contain;display:block}
+nav.cifnav .cn-b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap}
+nav.cifnav .cn-m{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 2px;flex:1}
+nav.cifnav .cn-m a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(216,207,196,.5);text-decoration:none;white-space:nowrap;padding:5px 7px;border-radius:2px;transition:color .15s;background:none;border:0}
+nav.cifnav .cn-m a:hover,nav.cifnav .cn-m a.on{color:#d8cfc4}
+nav.cifnav .cn-m a.cn-fn{color:#c8902a}
+nav.cifnav .cn-r{flex-shrink:0;display:flex;gap:8px}
+nav.cifnav .cn-r a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;white-space:nowrap}
+nav.cifnav .cn-t{color:rgba(216,207,196,.55);border:1px solid rgba(100,140,200,.2)}
+nav.cifnav .cn-t:hover{color:#c8902a}
+nav.cifnav .cn-d{background:#c8902a;color:#030509}
+nav.cifnav .cn-d:hover{background:#e8b84a}
+@media(max-width:900px){nav.cifnav{flex-wrap:wrap!important;justify-content:center!important}nav.cifnav .cn-b{display:none}nav.cifnav .cn-m{order:3;flex-basis:100%}}
+nav.cifnav{--cn-pos:sticky}.hero{padding-top:56px!important}</style><nav class="cifnav"><a href="../index.html" class="cn-l"><img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><div class="cn-m"><a href="../about.html">About</a><a href="../command-center.html">Command Center</a><a href="../research.html">Research</a><a href="../situation-room.html">Situation Room</a><a href="../kidney-news.html">Kidney News</a><a href="../cif-volunteer-page.html">Volunteer</a><a href="../contact.html">Contact</a><a href="../transplant-realities.html">What Nobody Tells You</a><a href="../transplant-line.html">The Transplant Line</a><a href="../donor-flow.html">Project Donor-Flow</a><a href="../bhoc.html">BHOC</a><a href="./" class="cn-fn">BHOC Field Notes</a><a href="../accountability.html">Atlas</a><a href="../demand-letters.html">Demand Letters</a><a href="../congress-scorecard.html">Scorecard</a></div><div class="cn-r"><a href="../projects.html" class="cn-t">Toolkit</a><a href="../donate.html" class="cn-d">Donate</a></div></nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="index.html">Field Notes</a> &nbsp;/&nbsp; Post 11</div>
+<div class="eyebrow">Physiology &middot; October 19, 2026 &middot; 13 min read</div>
+<h1>The Mountain&#x27;s Instructions</h1>
+<p class="dek">Populations that live where oxygen is thin have already run the experiment that oxygen-carrier designers keep trying to repeat, and they arrived at answers that look strange from a hospital</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-11.docx" download>Download Word</a>
+<a class="cta" href="field-note-11.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-11.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>Nobody designs a blood substitute by looking at a Himalayan village,
+and that is the first mistake. Every chemist working on hemoglobin-based
+products carries an assumption so deep that it rarely gets stated: more
+oxygen-carrying capacity is better. If a patient is anemic, add
+hemoglobin. If tissue is starved, add hemoglobin. If the first product
+fails, make a more concentrated one. The assumption feels like
+arithmetic.</p>
+<p>Populations who have lived for thousands of years at four thousand
+meters, and animals that dive for an hour on a single breath, have been
+running a much longer experiment on that assumption, and their answer is
+more complicated. In several of them, evolution pushed hemoglobin
+concentration down, not up. In others it pushed the storage of oxygen
+out of the blood altogether. Reading their results carefully does not
+give a designer a blueprint. It gives a set of warnings and a set of
+questions, and I think that is the more useful thing.</p>
+<h2 id="two-mountains-two-answers">Two mountains, two answers</h2>
+<p>Consider two large human populations who have lived at high altitude
+for a long time. The Tibetan plateau sits above four thousand meters,
+and the high Andean altiplano is similar. The air at those altitudes
+contains the same fraction of oxygen as at sea level, but the pressure
+is roughly forty percent lower, so each breath delivers correspondingly
+less. Every resident faces the same physical problem.</p>
+<p>Their solutions differ. Andean highlanders tend to respond the way
+lowlanders do when they climb: their bodies make more red cells, and
+hemoglobin concentration rises, in some individuals to very high values.
+This is an adaptation of a kind, since more hemoglobin means more oxygen
+per liter of blood. Tibetans do something else. A review of the research
+on hemoglobin at altitude summarizes their pattern as a relatively low
+erythropoietic response with a correspondingly low hemoglobin
+concentration. Tibetans living on the plateau have hemoglobin values
+that are strikingly close to those of people at low elevation, or only
+modestly higher.</p>
+<p>If you had to bet before looking at the data, you would have bet on
+the Andean strategy. It is the one a physician would recommend. The
+puzzle is that the Tibetan strategy appears to work better.</p>
+<h2 id="the-price-of-thick-blood">The price of thick blood</h2>
+<p>The explanation begins with a property of blood that clinicians know
+but rarely feel: viscosity. Blood is a suspension of cells, and as the
+fraction of cells rises, the fluid thickens, slowly at first and then
+steeply. Thicker blood is harder to pump, flows more sluggishly through
+small vessels, and can reduce delivery to tissues even though it
+contains more oxygen per milliliter.</p>
+<p>The relation between cell fraction and oxygen delivery therefore has
+a peak. Below the peak, adding cells helps, because capacity dominates.
+Above it, adding cells hurts, because viscosity dominates. Physiologists
+have estimated where the optimum falls in various circumstances, and it
+is lower than most people expect, and it moves with conditions.</p>
+<p>The Andean pattern can overshoot. Chronic mountain sickness is a
+syndrome of excessive red cell production at altitude, and it brings
+headaches, fatigue, blue lips, and an increased risk of stroke and heart
+attack. The review I mentioned reports that among Peruvian Andean males
+the condition can reach rates as high as 18 percent, while among
+Tibetans it is around 1 percent. In other words, the population that
+made the intuitively sensible response paid for it in disease, and the
+population that held back did not.</p>
+<p>This is not a story about one group being better than the other.
+Genetic and developmental factors differ, and Andeans have other
+adaptations, including changes in blood vessel function. It is a story
+about the shape of a curve: there is a range where more is better, and
+beyond it there is a range where more is worse. That shape is the first
+instruction the mountain gives.</p>
+<h2 id="the-gene-that-turned-the-dial-down">The gene that turned the
+dial down</h2>
+<p>The molecular story is unusually clear for a human adaptation. A gene
+called EPAS1 encodes a protein known as HIF-2 alpha, a transcription
+factor that helps cells respond to low oxygen, and among its targets is
+the erythropoietin gene, the master regulator of red cell production.
+Tibetans carry variants of EPAS1 that appear to reduce its activity. The
+review states that these variants function as loss-of-function alleles
+that downregulate the protein product, and that they reach a frequency
+of roughly 72 percent in Tibetan populations.</p>
+<p>The origin of the variant was a surprise. In 2014 researchers
+reported that the Tibetan version of the gene sits within a stretch of
+DNA that closely resembles the genome of Denisovans, an extinct group of
+ancient humans known from a cave in Siberia. The finding suggests that a
+variant useful for surviving on the plateau was inherited through
+interbreeding with an archaic population and then favored by natural
+selection in the mountains.</p>
+<p>The ironic part is worth stating clearly. A gene variant that reduces
+the body’s response to low oxygen was selected for in people living
+where oxygen is scarce. That sounds paradoxical until you recognize that
+the body’s response to low oxygen is a blunt instrument. Ramping up red
+cell production in response to every dip in oxygen level is a strategy
+that suits a short trip to altitude, and can be counterproductive over a
+lifetime.</p>
+<h2 id="what-else-the-tibetan-body-does">What else the Tibetan body
+does</h2>
+<p>If Tibetans do not compensate by adding hemoglobin, they must
+compensate some other way, and the research points to several. Their
+resting ventilation tends to be high, they show relatively strong oxygen
+delivery through increased blood flow to certain tissues, and studies
+have reported higher levels of nitric oxide in their circulation than in
+lowlanders at the same altitude, which would dilate vessels and improve
+flow. Some evidence suggests differences in how they use oxygen within
+cells.</p>
+<p>I would not lean too hard on any single item on that list; the field
+is active and the picture is still being filled in. What the collective
+evidence suggests is that the Tibetan strategy favors delivery through
+flow and efficiency rather than through capacity. It keeps blood thin,
+keeps vessels open, and makes each molecule of oxygen count.</p>
+<p>For a designer of oxygen carriers, this is instructive. The tissue
+does not need more hemoglobin. It needs oxygen delivered at the right
+place, at the right rate, through vessels that stay open. Those are
+three separate targets, and adding hemoglobin addresses only the
+first.</p>
+<h2 id="the-diving-animals">The diving animals</h2>
+<p>Move now from mountains to the sea. A Weddell seal can dive for tens
+of minutes on one breath, and some whales can dive for far longer, while
+a human freediver, with training, can reach several minutes. The seals
+do not have magical lungs. In fact, diving mammals often carry
+relatively little oxygen in their lungs, because compressed air in the
+chest is a hazard at depth. They carry it elsewhere.</p>
+<p>They store oxygen in three places. First, they have unusually large
+blood volume relative to body size. Second, their blood is rich in
+hemoglobin, and in some seals a contracting spleen squeezes a reservoir
+of packed red cells into the circulation during a dive, raising the
+concentration temporarily, a mechanism that lets the animal hold thin
+blood at rest and thick blood when it is needed. Third, and most
+strikingly, their muscles contain very high concentrations of myoglobin,
+the single-chain relative of hemoglobin that stores oxygen inside muscle
+cells. Seal and whale muscle is nearly black from it.</p>
+<p>The design principle is different from that of the mountain dweller.
+Here the animal maximizes stored oxygen, and it does so by putting the
+storage where it is used, inside the muscle, so that the oxygen does not
+have to travel. The blood serves as a supplemental reservoir and a
+transport line, but the emergency supply sits at the point of need.</p>
+<h2 id="why-storage-matters-to-a-carrier-designer">Why storage matters
+to a carrier designer</h2>
+<p>Storage and transport are usually confused in discussions of oxygen
+carriers, and the confusion has practical consequences.</p>
+<p>A transport system moves oxygen from where it is plentiful to where
+it is needed. Its value depends on flow. If flow stops, the transport
+system delivers nothing, however full its carriers.</p>
+<p>A storage system holds oxygen where it is needed. Its value depends
+on how much it holds and how fast the tissue draws on it. If flow stops,
+the store lasts until it is empty.</p>
+<p>Human blood evolved as a transport system with a modest reserve. The
+venous blood returning to the lungs is still about three-quarters
+saturated at rest, which is a reserve, but not a large one. When flow
+stops, as in a cardiac arrest or a clamped vessel, the reserve is spent
+within minutes.</p>
+<p>A cell-free carrier is also a transport system, and its main
+potential contribution is to reach places that red cells cannot. But it
+is worth asking whether there are situations in which a carrier could
+act more like storage. An organ held cold on a machine is one. If the
+preservation fluid holds a high dissolved oxygen content in the form of
+a carrier, the tissue has a small reserve to draw on even without flow.
+A tissue starved by a blockage, briefly, could use the same reserve. I
+raise this not as a claim about existing products but as a conceptual
+tool: when you evaluate a carrier for a particular use, ask whether the
+job is transport or storage, because the answer changes what properties
+matter.</p>
+<h2 id="affinity-revisited-from-the-rooftop-of-the-world">Affinity,
+revisited from the rooftop of the world</h2>
+<p>Another lesson from altitude concerns oxygen affinity, the tightness
+with which hemoglobin grips oxygen. In another post I described how the
+P50 is the pressure at which hemoglobin is half saturated, and how the
+tissue’s needs favor different values in different jobs.</p>
+<p>Animals at altitude show the effect in a beautiful way. The
+bar-headed goose migrates across the Himalayas at altitudes that would
+incapacitate most birds, and its hemoglobin is reported to have a higher
+oxygen affinity than that of lowland geese, a difference traced to
+changes in the amino acid sequence. Llamas, adapted to the Andes, also
+carry hemoglobin with higher affinity than other mammals of their size.
+The logic is plain: at low pressure, a hemoglobin that grips harder
+loads more completely in the lung, and the tissue still receives what it
+needs because the pressure drop from lung to tissue is steep.</p>
+<p>Humans at altitude do something related. A shift in the
+oxygen-binding curve toward higher affinity is seen in some highland
+populations and in pregnant women, and in the fetus, whose hemoglobin
+has a higher affinity than an adult’s so that it can extract oxygen
+across the placenta.</p>
+<p>The design implication runs against the intuitions of a first-time
+designer. The best affinity is not fixed; it depends on the environment.
+A product intended for a patient breathing thin air in an ambulance at
+altitude, or a patient with a lung problem that impairs loading, might
+want a higher affinity than one intended for a patient with a normal
+lung and a starved limb. There is no single right P50. The mountain
+tells you that the answer depends on where you live.</p>
+<h2 id="the-lesson-about-dilution">The lesson about dilution</h2>
+<p>There is a further link, and it involves a therapy that emergency
+physicians know well: hemodilution. When a patient loses blood and
+receives fluid, the remaining red cells are diluted. The patient’s
+hematocrit falls, and blood becomes thinner. It is easy to think of this
+as pure harm, and if it goes too far, it is.</p>
+<p>But moderate dilution improves flow through small vessels by reducing
+viscosity, and the body compensates for the lower capacity by pumping
+more blood. There is a range of hematocrit, lower than normal, in which
+delivery is about as good as or better than at normal values. The
+Tibetan pattern, seen from this angle, is a permanent version of
+controlled hemodilution.</p>
+<p>An oxygen carrier dissolved in plasma is a way to have it both ways.
+It adds oxygen capacity without adding cells, so it raises capacity
+while leaving viscosity low. In principle, it lets a patient be
+thin-blooded and well-supplied. This is the deepest of the arguments for
+the whole class of products, and the mountain reinforces it. The
+corresponding risk is that the dissolved carrier brings its own
+problems, discussed elsewhere on this site, including the scavenging of
+nitric oxide, which is exactly the molecule that the Tibetan body
+appears to keep at higher levels. The highlander’s physiology and the
+dissolved carrier pull in opposite directions on that one variable.</p>
+<h2 id="a-worked-example-of-the-peak">A worked example of the peak</h2>
+<p>A small calculation makes the shape of the curve concrete. The
+numbers are illustrative simplifications and should not be read as
+physiological constants.</p>
+<p>Suppose oxygen delivery is proportional to two things multiplied
+together: the oxygen content of a liter of blood, which rises in direct
+proportion to the fraction of cells, and the flow rate the heart can
+sustain, which falls as viscosity rises. Take a hematocrit of forty-five
+percent as the baseline, with an oxygen content of 1.0 in arbitrary
+units and a flow of 1.0. At a hematocrit of thirty, the content falls to
+about 0.67, but the flow rises, because thinner blood moves more easily.
+If the flow improves by, say, thirty percent, the product is 0.87, a
+modest loss. At sixty percent, the content rises to 1.33, but if flow
+drops by forty percent because the blood has thickened badly, the
+product is 0.80. Both extremes are worse than the middle.</p>
+<p>The exact peak depends on the vessel, the heart and the person, so
+this is only an outline. But it shows why a physician who sees a low
+hemoglobin should not automatically see a problem, and why a physician
+who sees a very high hemoglobin should not automatically see an
+advantage.</p>
+<h2 id="the-athletes-shortcut">The athlete’s shortcut</h2>
+<p>The sport of endurance racing supplies a second natural experiment,
+and an uncomfortable one. Athletes have long known that training at
+altitude raises red cell mass, and some have used shortcuts, including
+transfusion of their own stored blood and injections of erythropoietin,
+to raise hematocrit further. These practices are banned in sport for
+good reasons, including fairness and safety.</p>
+<p>The safety story is a direct illustration of the viscosity problem.
+Endurance athletes who pushed their hematocrit beyond natural limits
+were reported in the 1990s to have suffered serious cardiovascular
+events, and the sport introduced hematocrit limits, initially as a
+health measure. The lesson is the same as the mountain’s: raising
+capacity by making blood thicker has a ceiling, and exceeding it can be
+lethal.</p>
+<p>The athlete’s case also points at a design opportunity. If capacity
+can be raised without thickening the blood, the ceiling moves. That is
+precisely what a dissolved carrier promises, and precisely why the
+sporting world has watched such products with anxiety. Some carriers
+have appeared on lists of prohibited substances, as they were used or
+considered for use in sport, and their detection is a live topic in
+anti-doping laboratories. It is an unexpected reminder that the same
+property that might help a bleeding patient could distort a race.</p>
+<h2 id="cautions-from-the-mountain">Cautions from the mountain</h2>
+<p>It would be irresponsible to end on the note that nature has shown
+the way. It has shown several ways, and some of them do not
+translate.</p>
+<p>Populations differ from patients. A highlander’s body has been shaped
+over hundreds of generations to match its environment. A patient in
+shock has had minutes. Adaptation is not the same as resuscitation.</p>
+<p>The observations are correlational. We see a low hemoglobin and a low
+rate of chronic mountain sickness, and we infer a link, but many other
+differences accompany the pattern, from diet to lung size to genetics
+elsewhere in the genome. The gene story is stronger than most, because
+the variant has been mapped and its effect on hemoglobin quantified, but
+even here the wider consequences are still being studied.</p>
+<p>Finally, extrapolating from a healthy population to a sick one is a
+classic source of error. A lower hemoglobin is adaptive in a healthy
+Tibetan with intact vessels and lungs. It may be dangerous in a person
+with heart disease.</p>
+<h2 id="what-i-would-carry-into-a-design-meeting">What I would carry
+into a design meeting</h2>
+<p>If I were sitting with a group of developers, I would bring four
+questions from the mountain and the sea.</p>
+<p>Is your target patient limited by capacity, by flow, or by loading? A
+product that raises capacity does little for a patient whose problem is
+a blocked vessel, and a product that improves flow does little for a
+patient who is simply low on hemoglobin.</p>
+<p>Where on the curve of viscosity and capacity does your patient sit? A
+patient already thin-blooded may gain little from added capacity, and
+one already thick-blooded, for example after a long stay at altitude or
+with a blood disorder, may be harmed by it.</p>
+<p>What affinity does the environment call for? A single value for all
+uses is a compromise, and the compromise should be stated.</p>
+<p>Are you transporting or storing? If the answer is storing, the
+product might look more like myoglobin than like blood.</p>
+<p>The mountains do not answer those questions. They teach how to ask
+them.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>The comparison of hemoglobin concentration across highland
+populations is reviewed in a 2025 article in the American Journal of
+Human Biology on adaptive hemoglobin concentration at high altitude. The
+Tibetan EPAS1 variants were reported in a 2010 paper in the Proceedings
+of the National Academy of Sciences, and the Denisovan-like origin of
+the variant in a 2014 paper in Nature. Values quoted for disease
+prevalence come from the 2025 review and vary by study and definition.
+Statements about diving mammals reflect standard comparative physiology
+and should be confirmed in a specialist source before use.</p>
+
+</article>
+<div class="pn"><a href="field-note-10.html" data-release="2026-10-16"><span>Previous</span>Cold Oxygen</a><a href="field-note-12.html" data-release="2026-10-22"><span>Next</span>Oxygen That Needs a Mask</a></div>
+<p style="margin-top:28px"><a class="cta" href="index.html">All posts</a></p>
+</main>
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" class="fli" onerror="this.style.display='none'">
+      <p>Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="https://coldischemia.foundation">coldischemia.foundation</a></p>
+    </div>
+    <div>
+      <span class="fct">Platform</span>
+      <div class="fl">
+        <a href="../command-center.html">Command Center</a>
+        <a href="../projects.html">Toolkit</a>
+        <a href="../situation-room.html">Situation Room</a>
+        <a href="../research.html">Research</a>
+        <a href="../kidney-news.html">Kidney News</a>
+        <a href="../cif-volunteer-page.html">Volunteer</a>
+        <a href="../contact.html">Contact</a>
+        <a href="./">BHOC Field Notes</a>
+        <a href="../accountability.html">Atlas</a>
+        <a href="../congress-scorecard.html">Scorecard</a>
+        <a href="../donate.html">Donate</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Projects</span>
+      <div class="fl">
+        <a href="https://donorflow.coldischemia.foundation" target="_blank" rel="noopener">Project Donor-Flow</a>
+        <a href="https://collateral-damage.coldischemia.foundation" target="_blank" rel="noopener">Collateral Damage</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Foundation</span>
+      <div class="fl">
+        <a href="../about.html">Our Story</a>        <a href="../cif-amazon-library.html">Book &amp; Toolkit Library</a>
+        <a href="../advocacy-news.html">Advocacy News</a>
+        <a href="../care-partner-advocacy.html">Care Partner Advocacy</a>
+        <a href="../transplant-line.html">The Transplant Line</a>
+    <a href="../donor-flow.html">Project Donor-Flow</a>
+        <a href="../donate.html">Donate</a>
+        <a href="../free-guide.html">Free Guide</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Legal</span>
+      <div class="fl">
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../contact.html">Contact</a>
+        
+        <a href="../sales-letter.html">Our Case for You</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p class="fcp">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+    <div class="fbl">
+      <a href="../terms.html">Terms</a>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>

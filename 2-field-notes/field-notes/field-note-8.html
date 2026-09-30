@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carbon Monoxide on Purpose | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="A bovine oxygen carrier that arrives loaded with a famous poison, and the reasoning that says this is on purpose">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,0.12);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nl img{height:32px;width:32px;object-fit:contain;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap;}
+.nm{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nm::-webkit-scrollbar{display:none;}
+.nm a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;white-space:nowrap;padding:4px 8px;border-radius:2px;transition:color .15s;}
+.nm a:hover{color:#d8cfc4;}
+.nr{flex-shrink:0;display:flex;gap:8px;}
+.nr a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;transition:all .15s;white-space:nowrap;}
+.nmy{color:rgba(216,207,196,0.45);border:1px solid rgba(100,140,200,0.15);}
+.nmy:hover{color:#c8902a;}
+.njn{background:#c8902a;color:#030509;}
+.njn:hover{background:#e8b84a;}
+@media(max-width:680px){.nm a:not(.nk){display:none;}.nb{display:none;}.nmy{display:none;}}
+footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px 40px 24px;}
+.fg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,.1);}
+@media(max-width:800px){.fg{grid-template-columns:1fr 1fr;gap:24px;}}
+.fli{height:26px;display:block;margin-bottom:10px;}
+.fb p{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.22);line-height:2.2;}
+.fb a{color:#c8902a;text-decoration:none;}
+.fct{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;}
+.fl{display:flex;flex-direction:column;gap:8px;}
+.fl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.38);text-decoration:none;transition:color .15s;}
+.fl a:hover{color:rgba(216,207,196,.85);}
+.fbot{max-width:1100px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fcp{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);}
+.fbl{display:flex;gap:14px;}
+.fbl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);text-decoration:none;}
+.fbl a:hover{color:#c8902a;}
+.fnr{color:#c8902a!important;border-color:rgba(200,144,42,.5)!important;}.nm{justify-content:flex-start;}.nm a.fnk{color:#c8902a;}.hero{padding-top:56px!important;}
+</style>
+</head>
+<body>
+<style id="cifnav-css">
+nav.cifnav{position:var(--cn-pos,sticky)!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;background:rgba(3,5,9,.97)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,.12)!important;padding:6px 20px!important;min-height:56px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;box-sizing:border-box!important;margin:0!important;width:auto!important}
+nav.cifnav *{box-sizing:border-box}
+nav.cifnav .cn-l{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+nav.cifnav .cn-l img{height:32px;width:32px;object-fit:contain;display:block}
+nav.cifnav .cn-b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap}
+nav.cifnav .cn-m{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 2px;flex:1}
+nav.cifnav .cn-m a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(216,207,196,.5);text-decoration:none;white-space:nowrap;padding:5px 7px;border-radius:2px;transition:color .15s;background:none;border:0}
+nav.cifnav .cn-m a:hover,nav.cifnav .cn-m a.on{color:#d8cfc4}
+nav.cifnav .cn-m a.cn-fn{color:#c8902a}
+nav.cifnav .cn-r{flex-shrink:0;display:flex;gap:8px}
+nav.cifnav .cn-r a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;white-space:nowrap}
+nav.cifnav .cn-t{color:rgba(216,207,196,.55);border:1px solid rgba(100,140,200,.2)}
+nav.cifnav .cn-t:hover{color:#c8902a}
+nav.cifnav .cn-d{background:#c8902a;color:#030509}
+nav.cifnav .cn-d:hover{background:#e8b84a}
+@media(max-width:900px){nav.cifnav{flex-wrap:wrap!important;justify-content:center!important}nav.cifnav .cn-b{display:none}nav.cifnav .cn-m{order:3;flex-basis:100%}}
+nav.cifnav{--cn-pos:sticky}.hero{padding-top:56px!important}</style><nav class="cifnav"><a href="../index.html" class="cn-l"><img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><div class="cn-m"><a href="../about.html">About</a><a href="../command-center.html">Command Center</a><a href="../research.html">Research</a><a href="../situation-room.html">Situation Room</a><a href="../kidney-news.html">Kidney News</a><a href="../cif-volunteer-page.html">Volunteer</a><a href="../contact.html">Contact</a><a href="../transplant-realities.html">What Nobody Tells You</a><a href="../transplant-line.html">The Transplant Line</a><a href="../donor-flow.html">Project Donor-Flow</a><a href="../bhoc.html">BHOC</a><a href="./" class="cn-fn">BHOC Field Notes</a><a href="../accountability.html">Atlas</a><a href="../demand-letters.html">Demand Letters</a><a href="../congress-scorecard.html">Scorecard</a></div><div class="cn-r"><a href="../projects.html" class="cn-t">Toolkit</a><a href="../donate.html" class="cn-d">Donate</a></div></nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="index.html">Field Notes</a> &nbsp;/&nbsp; Post 8</div>
+<div class="eyebrow">Gas biology &middot; October 10, 2026 &middot; 13 min read</div>
+<h1>Carbon Monoxide on Purpose</h1>
+<p class="dek">A bovine oxygen carrier that arrives loaded with a famous poison, and the reasoning that says this is on purpose</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-8.docx" download>Download Word</a>
+<a class="cta" href="field-note-8.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-8.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>There is a product in the oxygen-carrier family whose central design
+feature will sound, on first hearing, like a mistake. It is a bovine
+hemoglobin, chemically wrapped in polyethylene glycol, and it is
+manufactured and stored with carbon monoxide already bound to its iron.
+Carbon monoxide is the gas that kills people in garages and closed rooms
+precisely because it takes the place of oxygen on hemoglobin. A medicine
+that begins by filling every binding site with carbon monoxide seems to
+be built backward.</p>
+<p>The product is known as Sanguinate, a PEGylated carboxyhemoglobin
+from bovine blood, developed by Prolong Pharmaceuticals. Reading how its
+developers justify the design is one of the more instructive exercises
+in this field, because it forces a rethinking of what an oxygen carrier
+is for. This essay walks through the argument, states clearly which
+parts are supported and which are hopeful, and draws the lessons that
+matter for patients following the wider BHOC story.</p>
+<h2 id="the-gas-we-mistake-for-only-a-poison">The gas we mistake for
+only a poison</h2>
+<p>Start with a fact that surprises many people. Your body makes carbon
+monoxide continuously. An enzyme called heme oxygenase breaks down heme,
+the iron-containing ring from old hemoglobin, and one of the products is
+carbon monoxide, along with iron and a green-yellow pigment called
+biliverdin. This is not a rare or pathological event. Every day a
+healthy adult breaks down a substantial quantity of hemoglobin and
+generates a small, steady flow of the gas.</p>
+<p>Over the past few decades, physiologists have shown that this
+endogenous carbon monoxide behaves as a signaling molecule. It relaxes
+blood vessels, dampens certain inflammatory responses, and influences
+how cells handle stress. It belongs to a small group of gaseous
+transmitters, sometimes called gasotransmitters, along with nitric oxide
+and hydrogen sulfide. The three share a history: each was known first as
+a poison, and each was later found to be a messenger the body makes on
+purpose. Readers of another post in this series will recognize hydrogen
+sulfide from the deep-sea tubeworm, which uses a protein to carry it
+safely.</p>
+<p>The step from that science to a drug is a small one conceptually. If
+carbon monoxide at low doses can calm inflamed, oxygen-starved tissue,
+then a delivery system for small, controlled amounts of the gas might
+help. Chemists developed several classes of carbon monoxide-releasing
+molecules to test the idea. The Sanguinate design takes a different
+route: it uses hemoglobin, the body’s own carbon monoxide carrier, as
+the delivery vehicle.</p>
+<h2 id="why-carboxyhemoglobin-is-a-good-storage-form">Why
+carboxyhemoglobin is a good storage form</h2>
+<p>There is a second, more prosaic reason to load hemoglobin with carbon
+monoxide, and it is pure chemistry. Free hemoglobin is fragile. In the
+oxygenated state it slowly loses an electron from its iron and turns
+into methemoglobin, which cannot carry oxygen and which sheds toxic
+heme. The oxygenated form is the most susceptible. In the deoxygenated
+state the iron is reactive in other ways, including toward nitric
+oxide.</p>
+<p>Carbon monoxide bound to hemoglobin protects the iron. The carboxy
+form is reported to be considerably more resistant to oxidation than the
+oxy form, because carbon monoxide binds tightly and holds the iron in
+its ferrous state. A manufacturer who stores the product as
+carboxyhemoglobin therefore has a molecule that stays useful on the
+shelf. When the product is infused, the carbon monoxide is gradually
+displaced by oxygen in the lung and in tissue, since oxygen at high
+concentration can compete with carbon monoxide, and the released carbon
+monoxide can act as a signal. The gas is at once a preservative and a
+payload.</p>
+<p>Those are two independent justifications, one from stability
+chemistry and one from pharmacology, that point to the same molecule.
+When two independent arguments converge, it is worth paying attention,
+though convergence is not proof that either is right.</p>
+<h2 id="wrapping-the-molecule">Wrapping the molecule</h2>
+<p>The second element of the design is the polyethylene glycol.
+PEGylation attaches long, water-loving chains to the protein surface. It
+has been used for decades to extend the circulation time of protein
+drugs and to shield them from immune recognition. In the context of a
+hemoglobin carrier, the chains do several things at once. They enlarge
+the molecule’s effective size in solution, which reduces leakage through
+the kidney. They add a hydration shell that increases viscosity and
+colloid osmotic pressure without requiring a high concentration of
+protein. And, as the developers argue, they lower the molecule’s
+tendency to trigger vasoconstriction, which in earlier products was
+linked to the scavenging of nitric oxide in the vessel wall.</p>
+<p>PEGylation also changes oxygen affinity. Reports on this class of
+PEGylated hemoglobins describe a high-affinity carrier, with a P50 well
+below that of normal blood. That is the opposite of the bovine glutamer
+products discussed in another post on this site. A high-affinity design
+is consistent with the microvascular hypothesis: a carrier that holds
+oxygen tightly delivers it only where tissue is severely hypoxic, and
+does not trigger arteriolar constriction upstream. The developers
+presented this as an advantage in conditions such as sickle cell crisis
+and ischemia, where blood vessels have narrowed and red cells cannot
+reach the tissue.</p>
+<h2 id="three-gases-one-protein">Three gases, one protein</h2>
+<p>It helps to line up the three gasotransmitters against the single
+protein that meets all of them, because the comparison shows why
+hemoglobin is both the problem and the opportunity.</p>
+<p>Nitric oxide is made by the vessel lining and diffuses a short
+distance to the smooth muscle around it, where it relaxes the muscle and
+widens the vessel. Free hemoglobin in plasma is an avid scavenger of
+nitric oxide, which is the root of the vasoconstriction that undermined
+earlier carriers. The problem is that hemoglobin removes a gas the body
+wants to keep.</p>
+<p>Carbon monoxide is made in small amounts by heme breakdown, binds
+hemoglobin about two hundred times more tightly than oxygen does, and
+relaxes vessels by a different route, through the same enzyme that
+nitric oxide activates and through potassium channels. Here the protein
+holds a gas that the body may want to release. Loading it in advance
+turns the scavenger into a depot.</p>
+<p>Hydrogen sulfide is made by several enzymes, is toxic at high levels,
+and in the tubeworm is carried on zinc sites of the protein without
+harming the heme. It shows that a hemoglobin can be engineered, by
+evolution, to carry a second gas safely.</p>
+<p>Seen together, the three gases suggest a design vocabulary. A future
+carrier might scavenge less nitric oxide, deliver a dose of carbon
+monoxide, and shield its iron from sulfide. That is speculative. It is
+also a coherent research program, and the PEGylated carboxy product is
+its first tangible example.</p>
+<h2 id="a-thought-experiment-about-dose">A thought experiment about
+dose</h2>
+<p>Because the safety argument depends on dose, a numerical thought
+experiment is helpful. The numbers below are illustrative only and are
+not drawn from any trial.</p>
+<p>Suppose a patient has five liters of blood with a total hemoglobin of
+ten grams per deciliter, so fifty grams circulating. Suppose an infusion
+adds three grams of a carboxy carrier, six percent of the total. If
+every molecule of the carrier were saturated with carbon monoxide, then
+in the first moments the carboxy fraction of the patient’s total
+hemoglobin would rise by about six percentage points from the carrier
+alone. In practice the carbon monoxide begins to exchange almost at once
+with oxygen in the lung, so the peak would be lower and the fraction
+would decline over hours.</p>
+<p>Compare this with a heavy smoker, who can have baseline
+carboxyhemoglobin of five to ten percent, and with a person in a garage,
+in whom levels above twenty or thirty percent produce headache,
+confusion and collapse. Under this admittedly rough arithmetic, a small
+dose sits in the range that a smoker tolerates daily, and a very large
+one would approach the range of clinical concern. That is why the
+protocol details matter, and why the honest summary has to include the
+phrase depends on the dose.</p>
+<p>The reason to go through this is not to reassure. It is to show the
+kind of reasoning a reader can apply to any claim about safety. Ask for
+the dose, ask what fraction of hemoglobin it represents, and ask how
+that compares with a familiar exposure. Numbers turn a scary word into a
+quantity.</p>
+<h2 id="the-clinical-ambitions">The clinical ambitions</h2>
+<p>The published descriptions of the product’s development list a set of
+targets that reads like a map of the places where oxygen fails locally
+rather than globally. The company obtained an orphan drug designation
+from the United States regulator for sickle cell disease. The
+designation was reported to be based on what the manufacturer described
+as the product’s ability to reverse sickling in laboratory settings, and
+it was cited in connection with complications including vaso-occlusive
+crisis, acute chest syndrome, leg ulcers and stroke. Trials were
+reported in other oxygen-deprivation conditions, including delayed
+cerebral ischemia after bleeding around the brain and delayed function
+in kidney grafts from donors. Early trials were also reported in
+beta-thalassemia outside the United States.</p>
+<p>There is also the use that made the product visible outside the
+specialty literature: emergency compassionate use for patients with
+life-threatening anemia who refused blood. These single-patient cases,
+like others in this field, generated case reports rather than controlled
+data.</p>
+<p>I want to be exact about what I know and do not know. I have read the
+developers’ summary papers and the regulator’s public designation
+notice. I have not seen complete, peer-reviewed results of a randomized
+trial showing that the product improves a clinical outcome in any of the
+listed conditions, and I will not imply otherwise. Where a phase 2 trial
+has been run, the responsible response is to consult the trial report
+itself. My purpose in this essay is to examine the logic of the design,
+not to certify its success.</p>
+<h2 id="what-the-sickle-cell-rationale-actually-is">What the sickle cell
+rationale actually is</h2>
+<p>Sickle cell disease is worth a moment because its logic is a good
+test of the whole idea. In sickle cell disease a mutation in the beta
+chain makes deoxygenated hemoglobin polymerize inside the red cell,
+deforming it into a rigid crescent that jams small vessels. The jam
+causes a local oxygen deficit, which promotes more deoxygenation, which
+promotes more sickling. It is a feedback loop.</p>
+<p>The argument for a cell-free, high-affinity carrier is that it can
+slip past the blockage. A red cell is a large, stiff object when sickled
+and cannot squeeze through a partly closed vessel. A dissolved polymer
+or a PEGylated protein moves with the plasma, and plasma still flows
+through narrow channels that cells cannot enter. If the protein delivers
+even a little oxygen to the tissue beyond the blockage, it might
+interrupt the loop. The addition of carbon monoxide may contribute an
+anti-inflammatory and vessel-relaxing effect that eases the vessel
+narrowing.</p>
+<p>This is a beautiful hypothesis. It is also a hypothesis, and a hard
+one to test, because sickle cell crises are unpredictable, patient
+reports of pain are subjective, and the natural course of a crisis is to
+improve on its own. Trials in this area are difficult to design and easy
+to misread. A modest positive signal in a small trial may be noise. A
+negative one may reflect the wrong dose or the wrong timing. That does
+not make the idea wrong. It means the honest summary is: interesting
+mechanism, limited proof.</p>
+<h2 id="the-measurement-puzzle">The measurement puzzle</h2>
+<p>Anyone who has read the earlier post on measurement will see a
+difficulty at once. If a product is loaded with carbon monoxide, the
+instruments we use to read oxygenation become unreliable in a specific
+way.</p>
+<p>A standard finger pulse oximeter, which uses two wavelengths of
+light, cannot distinguish oxyhemoglobin from carboxyhemoglobin; both
+absorb red light similarly, so it reads a falsely reassuring saturation
+when carbon monoxide is present. This is the same reason the instrument
+fails in real carbon monoxide poisoning. A laboratory co-oximeter, which
+measures at many wavelengths, can separate the two species, and so any
+trial of a carboxyhemoglobin product has to specify that arterial
+samples be analyzed on a co-oximeter and that finger readings not be
+relied on.</p>
+<p>Here is the rub. The total carboxyhemoglobin level in the blood after
+an infusion of a carboxyhemoglobin product is a mixture of the product’s
+own carbon monoxide and the patient’s native levels, and the
+interpretation depends on the dose. A small dose adds a fraction of a
+percent to the total carboxyhemoglobin fraction. A large one could raise
+it to a level that in a smoker or a poisoned patient would prompt
+concern. A careful protocol therefore has to define dose limits in terms
+of the carbon monoxide delivered, monitor carboxyhemoglobin by
+co-oximetry, and educate staff to disregard the pulse oximeter’s number.
+Any of these steps can fail in a busy emergency department, and that is
+a real operational hazard.</p>
+<h2 id="the-safety-question-asked-fairly">The safety question, asked
+fairly</h2>
+<p>Is it safe to give carbon monoxide to a patient? The pharmacologist’s
+answer is that dose determines the poison, as with most drugs. Carbon
+monoxide is dangerous when it displaces a large fraction of the body’s
+oxygen-carrying capacity, typically levels of carboxyhemoglobin well
+into the double digits. The amount delivered by a modest infusion of a
+carboxyhemoglobin carrier is a fraction of that, and it is diluted into
+a patient who is receiving less than a full replacement of their
+hemoglobin.</p>
+<p>But the pharmacologist’s answer is incomplete for three reasons.</p>
+<p>First, the patients most likely to receive the product are already
+compromised. A sickle cell patient in crisis, a patient with a brain
+bleed or a patient with a failing organ may have less reserve to
+tolerate any reduction in usable hemoglobin. Second, carbon monoxide
+binds not only to hemoglobin but also to other heme proteins, including
+cytochromes in mitochondria, and its net effect on cellular respiration
+depends on dose in ways that are still being mapped. Third, carbon
+monoxide has a long history as an occupational and environmental hazard,
+and the public and clinicians carry a strong prior against it. A
+hospital pharmacy committee may struggle to approve a drug whose active
+ingredient is a poison by common understanding, even if the pharmacology
+is sound.</p>
+<p>None of these objections is decisive. All of them are the kind of
+question a regulatory reviewer would ask, and the public documents
+suggest the developers took them seriously by monitoring
+carboxyhemoglobin levels in their early trials. I will simply state that
+a careful reader should treat the safety case as plausible but
+incompletely established.</p>
+<h2 id="what-the-design-teaches-about-the-whole-field">What the design
+teaches about the whole field</h2>
+<p>Step back from the product itself, because I think its importance is
+broader than any one program.</p>
+<p>The mainstream story of oxygen carriers is a story about
+substitution: a molecule replaces a red cell, and success is measured by
+whether it carries as much oxygen as blood. The carbon monoxide design
+proposes a different category. The molecule is a dual-purpose object, an
+oxygen transporter that is also a drug. It exploits the fact that
+hemoglobin is the natural carrier of gaseous signaling molecules as well
+as of oxygen, and it treats that as a feature.</p>
+<p>If the idea is right, it opens a path for the whole family. A carrier
+could be loaded with a therapeutic amount of a gas, or with nitric oxide
+in a protected form to counter the scavenging problem, or with a
+stabilizing ligand that extends shelf life. The bovine glutamers
+discussed in another post carry oxygen and nothing else. A future
+generation might carry oxygen and a dose of signal.</p>
+<p>If the idea is wrong, it teaches something too. It would mean the
+vessel-relaxing and anti-inflammatory actions of carbon monoxide at
+these doses are too weak to matter, and that the protective value of the
+PEG shield and the high affinity did the work. Either way, the
+comparison of PEGylated carboxy products with unmodified bovine polymers
+offers a natural experiment: two designs with related chemistry and very
+different philosophies. A well-organized field would design its trials
+to tell them apart.</p>
+<h2 id="a-word-for-patient-communities">A word for patient
+communities</h2>
+<p>The lesson for advocates is largely about vocabulary. When someone
+tells you a product is a bovine hemoglobin oxygen carrier, ask which
+kind. The category contains molecules that differ in size, in oxygen
+affinity, in what they carry besides oxygen, and in what disease they
+aim to treat. A bovine glutamer of average mass around two hundred fifty
+kilodaltons with a mid-range affinity is not the same object as a
+PEGylated carboxyhemoglobin with a high affinity. Lumping them together,
+as public discussion often does, makes evidence for one seem to apply to
+the other, and makes the failure of one seem to condemn both.</p>
+<p>It is equally important to be honest about the difference between
+mechanism and outcome. A design can be clever and still fail. The
+history of the field is littered with clever designs. What earns trust
+is a patient, transparent record of trial results, and until that record
+exists the appropriate stance toward any of these products is curiosity,
+not conviction.</p>
+<p>The poison bound to that iron is not a paradox. It is a proposition,
+stated in chemistry: that the body’s oldest toxin, given in a controlled
+dose and carried by its own transport protein, might be an ally. The
+proposition has been made. The test is the trial data.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>The developers’ summary of mechanism and clinical experience appears
+in an Artificial Organs paper from 2017 on PEGylated carboxyhemoglobin
+bovine. The regulator’s orphan designation for sickle cell disease was
+reported in 2015. Background on carbon monoxide as an endogenous
+signaling molecule, produced by heme oxygenase, is available in general
+physiology and pharmacology reviews. Readers should consult trial
+registries and peer-reviewed reports for current clinical results, which
+I have not attempted to summarize.</p>
+
+</article>
+<div class="pn"><a href="field-note-7.html" data-release="2026-10-07"><span>Previous</span>Autopsy of Five Companies</a><a href="field-note-9.html" data-release="2026-10-13"><span>Next</span>The Simpler Competitor</a></div>
+<p style="margin-top:28px"><a class="cta" href="index.html">All posts</a></p>
+</main>
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" class="fli" onerror="this.style.display='none'">
+      <p>Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="https://coldischemia.foundation">coldischemia.foundation</a></p>
+    </div>
+    <div>
+      <span class="fct">Platform</span>
+      <div class="fl">
+        <a href="../command-center.html">Command Center</a>
+        <a href="../projects.html">Toolkit</a>
+        <a href="../situation-room.html">Situation Room</a>
+        <a href="../research.html">Research</a>
+        <a href="../kidney-news.html">Kidney News</a>
+        <a href="../cif-volunteer-page.html">Volunteer</a>
+        <a href="../contact.html">Contact</a>
+        <a href="./">BHOC Field Notes</a>
+        <a href="../accountability.html">Atlas</a>
+        <a href="../congress-scorecard.html">Scorecard</a>
+        <a href="../donate.html">Donate</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Projects</span>
+      <div class="fl">
+        <a href="https://donorflow.coldischemia.foundation" target="_blank" rel="noopener">Project Donor-Flow</a>
+        <a href="https://collateral-damage.coldischemia.foundation" target="_blank" rel="noopener">Collateral Damage</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Foundation</span>
+      <div class="fl">
+        <a href="../about.html">Our Story</a>        <a href="../cif-amazon-library.html">Book &amp; Toolkit Library</a>
+        <a href="../advocacy-news.html">Advocacy News</a>
+        <a href="../care-partner-advocacy.html">Care Partner Advocacy</a>
+        <a href="../transplant-line.html">The Transplant Line</a>
+    <a href="../donor-flow.html">Project Donor-Flow</a>
+        <a href="../donate.html">Donate</a>
+        <a href="../free-guide.html">Free Guide</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Legal</span>
+      <div class="fl">
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../contact.html">Contact</a>
+        
+        <a href="../sales-letter.html">Our Case for You</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p class="fcp">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+    <div class="fbl">
+      <a href="../terms.html">Terms</a>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>
