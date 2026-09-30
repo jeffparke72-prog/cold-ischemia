@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autopsy of Five Companies | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="What the bankruptcies of the blood-substitute industry say about molecules, money and the odd survival of a cow protein">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,0.12);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nl img{height:32px;width:32px;object-fit:contain;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap;}
+.nm{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nm::-webkit-scrollbar{display:none;}
+.nm a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;white-space:nowrap;padding:4px 8px;border-radius:2px;transition:color .15s;}
+.nm a:hover{color:#d8cfc4;}
+.nr{flex-shrink:0;display:flex;gap:8px;}
+.nr a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;transition:all .15s;white-space:nowrap;}
+.nmy{color:rgba(216,207,196,0.45);border:1px solid rgba(100,140,200,0.15);}
+.nmy:hover{color:#c8902a;}
+.njn{background:#c8902a;color:#030509;}
+.njn:hover{background:#e8b84a;}
+@media(max-width:680px){.nm a:not(.nk){display:none;}.nb{display:none;}.nmy{display:none;}}
+footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px 40px 24px;}
+.fg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,.1);}
+@media(max-width:800px){.fg{grid-template-columns:1fr 1fr;gap:24px;}}
+.fli{height:26px;display:block;margin-bottom:10px;}
+.fb p{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.22);line-height:2.2;}
+.fb a{color:#c8902a;text-decoration:none;}
+.fct{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;}
+.fl{display:flex;flex-direction:column;gap:8px;}
+.fl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.38);text-decoration:none;transition:color .15s;}
+.fl a:hover{color:rgba(216,207,196,.85);}
+.fbot{max-width:1100px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fcp{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);}
+.fbl{display:flex;gap:14px;}
+.fbl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);text-decoration:none;}
+.fbl a:hover{color:#c8902a;}
+.fnr{color:#c8902a!important;border-color:rgba(200,144,42,.5)!important;}.nm{justify-content:flex-start;}.nm a.fnk{color:#c8902a;}.hero{padding-top:56px!important;}
+</style>
+</head>
+<body>
+<style id="cifnav-css">
+nav.cifnav{position:var(--cn-pos,sticky)!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;background:rgba(3,5,9,.97)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,.12)!important;padding:6px 20px!important;min-height:56px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;box-sizing:border-box!important;margin:0!important;width:auto!important}
+nav.cifnav *{box-sizing:border-box}
+nav.cifnav .cn-l{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+nav.cifnav .cn-l img{height:32px;width:32px;object-fit:contain;display:block}
+nav.cifnav .cn-b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap}
+nav.cifnav .cn-m{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 2px;flex:1}
+nav.cifnav .cn-m a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(216,207,196,.5);text-decoration:none;white-space:nowrap;padding:5px 7px;border-radius:2px;transition:color .15s;background:none;border:0}
+nav.cifnav .cn-m a:hover,nav.cifnav .cn-m a.on{color:#d8cfc4}
+nav.cifnav .cn-m a.cn-fn{color:#c8902a}
+nav.cifnav .cn-r{flex-shrink:0;display:flex;gap:8px}
+nav.cifnav .cn-r a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;white-space:nowrap}
+nav.cifnav .cn-t{color:rgba(216,207,196,.55);border:1px solid rgba(100,140,200,.2)}
+nav.cifnav .cn-t:hover{color:#c8902a}
+nav.cifnav .cn-d{background:#c8902a;color:#030509}
+nav.cifnav .cn-d:hover{background:#e8b84a}
+@media(max-width:900px){nav.cifnav{flex-wrap:wrap!important;justify-content:center!important}nav.cifnav .cn-b{display:none}nav.cifnav .cn-m{order:3;flex-basis:100%}}
+nav.cifnav{--cn-pos:sticky}.hero{padding-top:56px!important}</style><nav class="cifnav"><a href="../index.html" class="cn-l"><img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><div class="cn-m"><a href="../about.html">About</a><a href="../command-center.html">Command Center</a><a href="../research.html">Research</a><a href="../situation-room.html">Situation Room</a><a href="../kidney-news.html">Kidney News</a><a href="../cif-volunteer-page.html">Volunteer</a><a href="../contact.html">Contact</a><a href="../transplant-realities.html">What Nobody Tells You</a><a href="../transplant-line.html">The Transplant Line</a><a href="../donor-flow.html">Project Donor-Flow</a><a href="../bhoc.html">BHOC</a><a href="./" class="cn-fn">BHOC Field Notes</a><a href="../accountability.html">Atlas</a><a href="../demand-letters.html">Demand Letters</a><a href="../congress-scorecard.html">Scorecard</a></div><div class="cn-r"><a href="../projects.html" class="cn-t">Toolkit</a><a href="../donate.html" class="cn-d">Donate</a></div></nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="index.html">Field Notes</a> &nbsp;/&nbsp; Post 7</div>
+<div class="eyebrow">Industry history &middot; October 7, 2026 &middot; 13 min read</div>
+<h1>Autopsy of Five Companies</h1>
+<p class="dek">What the bankruptcies of the blood-substitute industry say about molecules, money and the odd survival of a cow protein</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-7.docx" download>Download Word</a>
+<a class="cta" href="field-note-7.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-7.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>Medicine likes to tell the story of its failed products as a story
+about the products. The molecule was toxic, the trial was underpowered,
+the mechanism was misunderstood. Those explanations are sometimes
+correct. But they leave out a second story running in parallel, which is
+about the organizations that made the molecules. Companies have
+anatomies. They have capital structures, burn rates, single points of
+failure and moments at which a bad quarter turns into an existential
+one.</p>
+<p>This essay reads the history of the oxygen-carrier industry as a
+series of corporate autopsies. I will not pretend to a level of detail
+that public sources do not support, and where I am uncertain I will say
+so. The aim is not gossip. The aim is to identify the patterns that
+repeat, because those patterns tell a patient community what has to be
+different this time if a BHOC is going to be available in five years and
+not merely promised.</p>
+<h2 id="the-peculiar-economics-of-a-product-with-no-customers-yet">The
+peculiar economics of a product with no customers yet</h2>
+<p>Begin with the structure of the problem. A company that wants to sell
+an oxygen carrier for human use has to do four expensive things in
+sequence, and it has to pay for each before it earns a dollar.</p>
+<p>First it has to build a manufacturing plant capable of producing a
+sterile injectable from an animal or recombinant source, at a scale that
+regulators will accept as representative of commercial supply. This is a
+capital project measured in tens of millions of dollars. Second, it has
+to run clinical trials in emergency and surgical settings, which are
+among the most difficult and costly trials in medicine, with sites that
+must screen patients in minutes and enroll them without consent. Third,
+it has to survive regulatory review, which for a first-of-class product
+with a troubled predecessor history is slow and unforgiving. Fourth, it
+has to build a market in hospitals that already have a working
+alternative in the blood bank.</p>
+<p>The difficulty is that none of these steps is optional and none can
+be shortened by cleverness. The fixed costs are borne before there is a
+revenue stream to service them. In the financial vocabulary, the
+business model demands long duration equity and offers a binary outcome.
+Investors call this the valley of death, and it swallowed more than one
+company in this field.</p>
+<h2 id="five-stories-told-briefly">Five stories, told briefly</h2>
+<p>The following sketches are drawn from public reporting and reviews.
+They are intentionally brief and I have kept to facts I could
+source.</p>
+<p><strong>Baxter and the diaspirin hemoglobin.</strong> The best-known
+early product from a major pharmaceutical firm was a human hemoglobin
+cross-linked between its alpha chains, sold under the developmental name
+HemAssist. A trauma trial published in the Journal of the American
+Medical Association in 1999 reported that 24 of the 52 patients given
+the product died within 28 days, 46 percent, against 8 of the 46
+patients given saline, 17 percent. The program ended. What is notable is
+that this was a large, well-financed company with regulatory expertise,
+and the failure was scientific rather than financial. It set the tone
+for the entire class in the eyes of regulators and journal editors, and
+the memory of that trial is still invoked when new products are
+discussed, even though the molecule is chemically different from a
+bovine polymer.</p>
+<p><strong>Hemosol and the raffinose-linked hemoglobin.</strong> A
+Canadian company developed a human hemoglobin cross-linked with a
+sugar-derived reagent. According to the same review, the program
+advanced to late-stage trials and was discontinued in 2003 after
+patients receiving the product experienced adverse cardiac events. The
+company’s own finances deteriorated in the years that followed, and it
+entered insolvency proceedings in the middle of the decade. Here,
+financial death followed scientific death by a short interval, which is
+the typical pattern for a company whose entire value is a single
+product.</p>
+<p><strong>Northfield and the polymerized human hemoglobin.</strong>
+This Illinois company pursued the field’s most ambitious trial, the
+prehospital trauma study discussed elsewhere on this site, which used an
+exception from informed consent. The regulatory outcome was unfavorable
+and the pooled safety analysis published in 2008 hurt further. The
+company filed for bankruptcy in 2009. What distinguishes Northfield’s
+case is that it was bold. It attempted the hardest indication first, in
+a setting where the comparator was standard emergency care and the
+endpoint was mortality. If it had succeeded, it would have transformed
+emergency medicine. It did not, and there was no second product to fall
+back on.</p>
+<p><strong>Biopure and the bovine glutamers.</strong> The Massachusetts
+company that developed the two bovine products, one for dogs and one for
+people, is the most relevant case here, and its history is documented in
+some detail. It was founded in 1984 and began by sourcing bovine blood
+from regional slaughterhouses. In 1999 the Food and Drug Administration
+and the European Commission approved the veterinary product for anemic
+dogs. In April 2001 South Africa approved the human product for surgical
+anemia. It was also approved in Russia. But the American regulator
+placed a hold on a proposed trauma study in April 2003 and rejected an
+application for use in orthopedic surgery in July of that year. Later
+that year the stock fell sharply after the Securities and Exchange
+Commission found misleading statements about the regulator’s stance, and
+in 2005 the commission brought charges against the company’s chief
+executive and other officers. In 2008 the pooled safety analysis
+appeared. On July 16, 2009 the company filed for Chapter 11 bankruptcy
+protection, and its assets were bought by a private entity that
+September.</p>
+<p><strong>The successor entities.</strong> The assets passed through
+more than one owner. By 2014 the human product was being made available
+through the regulator’s expanded access mechanism, and in 2022 a
+successor company filed a registration statement seeking about 30
+million dollars in an initial public offering, drawing a skeptical
+response from at least one financial journalist who called the attempt a
+long shot. I do not know how that filing ended, and I would rather say
+so than guess.</p>
+<h2 id="the-patterns">The patterns</h2>
+<p>Read the five stories side by side and five patterns emerge.</p>
+<p><strong>The single-product company.</strong> Every one of these
+organizations was built around one molecule. When the molecule stumbled,
+there was nothing to absorb the shock. Big pharmaceutical companies that
+took on hemoglobin projects, like Baxter, could shelve the effort and
+continue. A small company cannot. The lesson is not that small companies
+should not try, but that a small company needs a structure that
+separates its survival from any single trial result. Options include a
+platform with several indications, a diversified funding base, or a
+partnership in which a larger organization shares the downside.</p>
+<p><strong>Judgment by class.</strong> When one product harmed patients,
+regulators, reviewers and journalists learned to treat the whole class
+with suspicion. The pooled analysis in 2008 was an example: it combined
+trials of several different molecules and produced a single alarming
+number. That is a fair scientific act, because the products shared a
+mechanism of concern. It was also a commercial catastrophe for the
+companies whose products differed. A bovine polymer is not chemically
+the same as a cross-linked human dimer. But a company cannot argue its
+way out of a class reputation in a single meeting. It has to generate
+its own data, patiently, over years, and it has to be able to afford the
+years.</p>
+<p><strong>Improving comparators.</strong> The blood supply became safer
+over the same period, in large part because of the diseases that first
+motivated the search for substitutes. Screening for viruses improved,
+leukoreduction became routine, and transfusion practice grew more
+restrained. Every improvement raised the bar for a product whose main
+pitch was safety from infectious disease. A product designed in the
+1990s to offer protection against contamination that then became rare
+had a shrinking advantage.</p>
+<p><strong>Governance failures.</strong> The Biopure case includes an
+element that no chemistry explains. The commission’s findings about
+misleading statements to investors and the criminal charges against
+officers destroyed trust in the company’s public communications. It is
+difficult to overstate how corrosive this is. In a field where the
+science is already contested, the credibility of the sponsor becomes a
+scientific variable, because reviewers must decide how far to trust the
+sponsor’s reading of its own data. A company that has been caught
+shading its statements pays a tax on every subsequent claim.</p>
+<p><strong>Survival through niches.</strong> And here is the most useful
+pattern of all. The bovine product did not vanish. It survived, in a
+battered form, because three small niches kept it alive: a veterinary
+market that valued it, a handful of countries that had approved it, and
+a compassionate access route for patients who could not receive blood.
+None of these markets could support a company on its own, but together
+they preserved the manufacturing know-how, the regulatory dossier and a
+trickle of clinical experience. When a new owner acquired the assets, it
+acquired something that a start-up could not have built: a product that
+had already been made, shipped and used. The lesson for planners is that
+niches are not a consolation prize. They are scaffolding. A niche that
+pays even modestly keeps a validated process running, keeps trained
+people employed and keeps a pharmacovigilance record accumulating, and
+those three things are the hardest to rebuild once lost. An ephemeral
+company can leave behind an enduring capability, provided someone is
+diligent enough to preserve it through the wreckage.</p>
+<h2 id="what-a-durable-model-might-look-like">What a durable model might
+look like</h2>
+<p>Suppose a patient organization were asked to design the funding and
+governance structure for a BHOC program that could survive the next
+fifteen years. What would it insist on?</p>
+<p>I would begin with the customer. The natural early customers for an
+oxygen carrier are not consumers or even hospitals, but institutions
+that carry responsibility for people in places where blood cannot
+follow. Military medical commands, remote-region health services,
+disaster response agencies and organizations serving people who refuse
+blood on grounds of conscience all fit. Such buyers can fund development
+on contract, purchase in bulk and value a shelf-stable product for
+reasons the blood bank market does not. Because they pay before the
+commercial market matures, they reduce the valley.</p>
+<p>Next comes the regulatory strategy. A rare-disease or orphan
+designation, where it applies, offers incentives that improve the
+economics of a small market. Expanded access, used carefully, generates
+a record of real-world use and can be a modest revenue source, though a
+regulator will not allow it to substitute for trials. Foreign approvals,
+which have some precedent for this product, can open smaller markets and
+produce clinical data, provided their standards of evidence are
+transparent.</p>
+<p>Third is manufacturing. A plant that can only make one product at one
+scale is a fragile asset. Modular, smaller-scale facilities that can
+produce clinical lots and low-volume commercial supply reduce the
+capital at risk. I do not know which developers are pursuing this route,
+and I would ask them.</p>
+<p>Fourth is data discipline. The lasting damage to the field came from
+unfulfilled promises and disputed interpretations. A program that
+pre-registers its trials, publishes negative results and invites
+independent analysis builds a kind of credit that money cannot buy. This
+is not idealism. It is a strategy for lowering the tax on every future
+claim.</p>
+<p>Fifth is governance. A company whose communications have been audited
+by an independent committee, whose disclosures are conservative and
+whose leadership does not overstate its regulatory position offers an
+investor something rare in this sector: predictability. A patient
+organization has leverage here. It can decline to lend its name to
+promotional claims that go beyond the data, and it can say so
+publicly.</p>
+<h2 id="the-arithmetic-of-the-valley">The arithmetic of the valley</h2>
+<p>A worked example makes the structure vivid. The figures below are
+invented for illustration and do not describe any real company, but the
+shape is faithful to what the histories show.</p>
+<p>Imagine a developer that needs 40 million dollars for a pilot plant,
+25 million for two pivotal trials, and 8 million a year in overhead for
+five years before a decision. The total before any revenue is roughly
+105 million dollars. Suppose the chance that the first trial succeeds is
+one in three, that regulators approve given success is one in two, and
+that the first year of sales is small. The expected value of the
+enterprise at the start is dominated by a one-in-six event. An investor
+who understands that will demand a return of many times the money, and a
+founder who understands it will be tempted to shade the
+probabilities.</p>
+<p>Now add the peculiar feature of this field. A failure of one trial
+does not merely lose that trial’s cost. It changes the prior for the
+whole class, so the probability of success for the next company falls
+too. In economic language, each failure imposes a negative externality
+on competitors. That is why capital in this sector has come in bursts
+and then vanished for years: the informational damage of a failure
+lingers long after the balance sheet is cleaned up.</p>
+<p>The remedy is not obvious, but one piece is: reduce the amount that
+has to be raised at the riskiest point. A program that can reach an
+early human data point cheaply, through a small compassionate-use series
+or an ex vivo organ perfusion study where the drug never enters the
+patient’s bloodstream, spends a few million dollars to learn something
+that would otherwise cost tens of millions. Cheap early information is
+the most valuable asset a small developer can buy.</p>
+<h2 id="leading-indicators-an-outsider-could-have-watched">Leading
+indicators an outsider could have watched</h2>
+<p>It is easy to write an autopsy after the death. The harder and more
+useful task is to ask what an outside observer, such as a patient
+organization, could have noticed while the patient was still alive.</p>
+<p>Watch the ratio of announcements to publications. A developer that
+issues frequent press statements and rarely publishes peer-reviewed data
+is telling you something about where its evidence lives.</p>
+<p>Watch the language used about the regulator. Confident statements
+about what an agency has said or will say, unsupported by documents, are
+a warning. The Biopure episode with the securities regulator turned on
+exactly that kind of statement.</p>
+<p>Watch the trial design. A first trial that tries to prove survival
+benefit in the most severe emergency setting, without earlier smaller
+studies, is an all-or-nothing wager. It may be brave. It is also how a
+company puts its whole future on a single roll.</p>
+<p>Watch the manufacturing. If the company cannot describe its process,
+its lot release criteria and its supply redundancy in plain terms, its
+plant is either immature or its story is.</p>
+<p>Watch the cash runway. A company with fewer than eighteen months of
+funding and a trial that will read out in twenty-four is a company that
+will negotiate its next financing from a position of weakness.</p>
+<p>None of these indicators is proof of failure. Together they are a
+checklist that an advocacy group with access to public filings can
+apply, and it is a checklist that would have raised flags in several of
+the histories above.</p>
+<h2 id="where-advocacy-fits-in-the-ledger">Where advocacy fits in the
+ledger</h2>
+<p>There is a temptation for advocates to see the industry’s failures as
+an argument for more urgency and less caution. I think the history says
+the opposite. Every failure in this field included a moment of
+enthusiasm that outran the evidence: the early trial that was expanded
+before the signal was understood, the announcement that reached
+investors before regulators, the confidence that a favorable meeting
+meant approval.</p>
+<p>What advocacy can offer is something the market underprices: patient
+legitimacy. A trial that patients trust enrolls faster and drops out
+less. A program with a credible community voice is more likely to obtain
+the community consultation that emergency research demands. An
+organization that has read the history and can say what went wrong last
+time is better placed to make sure it does not happen again.</p>
+<p>It can also do something quieter. It can keep the record. The reason
+I can write this essay at all is that other people, journalists,
+regulators, reviewers, took the trouble to document how the companies
+rose and fell. Without that record, each new generation of developers
+would rediscover the same mistakes at the same cost. A patient
+organization that maintains a plain-language archive of what happened,
+product by product, is doing work the industry has no incentive to
+do.</p>
+<h2 id="the-uncomfortable-conclusion">The uncomfortable conclusion</h2>
+<p>Five companies, three bankruptcies or insolvencies among them by my
+count, and one cow protein that limped on. If you had to summarize the
+pattern in a sentence, you could say that this field has been unusually
+hard on its organizations and, oddly, kinder to its molecules. The
+bovine glutamer outlived the company that made it.</p>
+<p>That should reassure and warn in equal measure. It reassures because
+it suggests the molecule is not the weak point; a product that keeps
+finding a use after its sponsor collapses is doing something worth
+doing. It warns because a molecule without a durable steward has no
+future, however good it is. The next chapter will be decided less by
+chemistry than by whether the people who care about it, including the
+patients, insist on an organization worthy of the molecule.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>Company histories are drawn from public sources including reviews of
+blood substitutes, the published account of Biopure and its assets, and
+news reporting on the 2022 registration filing by its successor. The
+2008 pooled safety analysis appeared in the Journal of the American
+Medical Association. Specific figures, such as the 46 and 17 percent
+mortality figures for the diaspirin-linked product, come from a
+published historical review and should be checked against the original
+trial reports.</p>
+
+</article>
+<div class="pn"><a href="field-note-6.html" data-release="2026-10-04"><span>Previous</span>Chloride, Not BPG</a><a href="field-note-8.html" data-release="2026-10-10"><span>Next</span>Carbon Monoxide on Purpose</a></div>
+<p style="margin-top:28px"><a class="cta" href="index.html">All posts</a></p>
+</main>
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" class="fli" onerror="this.style.display='none'">
+      <p>Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="https://coldischemia.foundation">coldischemia.foundation</a></p>
+    </div>
+    <div>
+      <span class="fct">Platform</span>
+      <div class="fl">
+        <a href="../command-center.html">Command Center</a>
+        <a href="../projects.html">Toolkit</a>
+        <a href="../situation-room.html">Situation Room</a>
+        <a href="../research.html">Research</a>
+        <a href="../kidney-news.html">Kidney News</a>
+        <a href="../cif-volunteer-page.html">Volunteer</a>
+        <a href="../contact.html">Contact</a>
+        <a href="./">BHOC Field Notes</a>
+        <a href="../accountability.html">Atlas</a>
+        <a href="../congress-scorecard.html">Scorecard</a>
+        <a href="../donate.html">Donate</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Projects</span>
+      <div class="fl">
+        <a href="https://donorflow.coldischemia.foundation" target="_blank" rel="noopener">Project Donor-Flow</a>
+        <a href="https://collateral-damage.coldischemia.foundation" target="_blank" rel="noopener">Collateral Damage</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Foundation</span>
+      <div class="fl">
+        <a href="../about.html">Our Story</a>        <a href="../cif-amazon-library.html">Book &amp; Toolkit Library</a>
+        <a href="../advocacy-news.html">Advocacy News</a>
+        <a href="../care-partner-advocacy.html">Care Partner Advocacy</a>
+        <a href="../transplant-line.html">The Transplant Line</a>
+    <a href="../donor-flow.html">Project Donor-Flow</a>
+        <a href="../donate.html">Donate</a>
+        <a href="../free-guide.html">Free Guide</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Legal</span>
+      <div class="fl">
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../contact.html">Contact</a>
+        <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener">Store</a>
+        <a href="../sales-letter.html">Our Case for You</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p class="fcp">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+    <div class="fbl">
+      <a href="../terms.html">Terms</a>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>

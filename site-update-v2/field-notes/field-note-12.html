@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oxygen That Needs a Mask | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="Perfluorocarbons carry oxygen by a completely different physical rule than hemoglobin does, and the difference explains why they were both wildly promising and awkward to use">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,0.12);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nl img{height:32px;width:32px;object-fit:contain;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap;}
+.nm{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nm::-webkit-scrollbar{display:none;}
+.nm a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;white-space:nowrap;padding:4px 8px;border-radius:2px;transition:color .15s;}
+.nm a:hover{color:#d8cfc4;}
+.nr{flex-shrink:0;display:flex;gap:8px;}
+.nr a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;transition:all .15s;white-space:nowrap;}
+.nmy{color:rgba(216,207,196,0.45);border:1px solid rgba(100,140,200,0.15);}
+.nmy:hover{color:#c8902a;}
+.njn{background:#c8902a;color:#030509;}
+.njn:hover{background:#e8b84a;}
+@media(max-width:680px){.nm a:not(.nk){display:none;}.nb{display:none;}.nmy{display:none;}}
+footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px 40px 24px;}
+.fg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,.1);}
+@media(max-width:800px){.fg{grid-template-columns:1fr 1fr;gap:24px;}}
+.fli{height:26px;display:block;margin-bottom:10px;}
+.fb p{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.22);line-height:2.2;}
+.fb a{color:#c8902a;text-decoration:none;}
+.fct{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;}
+.fl{display:flex;flex-direction:column;gap:8px;}
+.fl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.38);text-decoration:none;transition:color .15s;}
+.fl a:hover{color:rgba(216,207,196,.85);}
+.fbot{max-width:1100px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fcp{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);}
+.fbl{display:flex;gap:14px;}
+.fbl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);text-decoration:none;}
+.fbl a:hover{color:#c8902a;}
+.fnr{color:#c8902a!important;border-color:rgba(200,144,42,.5)!important;}.nm{justify-content:flex-start;}.nm a.fnk{color:#c8902a;}.hero{padding-top:56px!important;}
+</style>
+</head>
+<body>
+<style id="cifnav-css">
+nav.cifnav{position:var(--cn-pos,sticky)!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;background:rgba(3,5,9,.97)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,.12)!important;padding:6px 20px!important;min-height:56px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;box-sizing:border-box!important;margin:0!important;width:auto!important}
+nav.cifnav *{box-sizing:border-box}
+nav.cifnav .cn-l{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+nav.cifnav .cn-l img{height:32px;width:32px;object-fit:contain;display:block}
+nav.cifnav .cn-b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap}
+nav.cifnav .cn-m{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 2px;flex:1}
+nav.cifnav .cn-m a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(216,207,196,.5);text-decoration:none;white-space:nowrap;padding:5px 7px;border-radius:2px;transition:color .15s;background:none;border:0}
+nav.cifnav .cn-m a:hover,nav.cifnav .cn-m a.on{color:#d8cfc4}
+nav.cifnav .cn-m a.cn-fn{color:#c8902a}
+nav.cifnav .cn-r{flex-shrink:0;display:flex;gap:8px}
+nav.cifnav .cn-r a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;white-space:nowrap}
+nav.cifnav .cn-t{color:rgba(216,207,196,.55);border:1px solid rgba(100,140,200,.2)}
+nav.cifnav .cn-t:hover{color:#c8902a}
+nav.cifnav .cn-d{background:#c8902a;color:#030509}
+nav.cifnav .cn-d:hover{background:#e8b84a}
+@media(max-width:900px){nav.cifnav{flex-wrap:wrap!important;justify-content:center!important}nav.cifnav .cn-b{display:none}nav.cifnav .cn-m{order:3;flex-basis:100%}}
+nav.cifnav{--cn-pos:sticky}.hero{padding-top:56px!important}</style><nav class="cifnav"><a href="../index.html" class="cn-l"><img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><div class="cn-m"><a href="../about.html">About</a><a href="../command-center.html">Command Center</a><a href="../research.html">Research</a><a href="../situation-room.html">Situation Room</a><a href="../kidney-news.html">Kidney News</a><a href="../cif-volunteer-page.html">Volunteer</a><a href="../contact.html">Contact</a><a href="../transplant-realities.html">What Nobody Tells You</a><a href="../transplant-line.html">The Transplant Line</a><a href="../donor-flow.html">Project Donor-Flow</a><a href="../bhoc.html">BHOC</a><a href="./" class="cn-fn">BHOC Field Notes</a><a href="../accountability.html">Atlas</a><a href="../demand-letters.html">Demand Letters</a><a href="../congress-scorecard.html">Scorecard</a></div><div class="cn-r"><a href="../projects.html" class="cn-t">Toolkit</a><a href="../donate.html" class="cn-d">Donate</a></div></nav>
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="index.html">Field Notes</a> &nbsp;/&nbsp; Post 12</div>
+<div class="eyebrow">Alternatives &middot; October 22, 2026 &middot; 13 min read</div>
+<h1>Oxygen That Needs a Mask</h1>
+<p class="dek">Perfluorocarbons carry oxygen by a completely different physical rule than hemoglobin does, and the difference explains why they were both wildly promising and awkward to use</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-12.docx" download>Download Word</a>
+<a class="cta" href="field-note-12.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-12.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p>A hemoglobin-based carrier is a chemical solution to a physical
+problem. Oxygen barely dissolves in water, so blood evolved a molecule
+that binds it. Everything about the BHOC story, from the affinity curve
+to the iron chemistry to the trouble with nitric oxide, follows from
+that fact.</p>
+<p>There is another way to carry oxygen, and it involves no binding at
+all. Certain synthetic liquids, chains and rings of carbon in which
+nearly every hydrogen has been replaced by fluorine, dissolve oxygen the
+way a sponge soaks up water. They are called perfluorocarbons, and they
+have a long and peculiar history as oxygen carriers. This essay lays out
+how they work, where they fit, and what the comparison teaches about the
+hemoglobin products that dominate the conversation on this site.</p>
+<h2 id="the-rule-of-the-sponge">The rule of the sponge</h2>
+<p>When oxygen dissolves in a liquid, the amount that dissolves is
+proportional to its partial pressure. This is Henry’s law, and it is one
+of the simplest relationships in physical chemistry. Double the pressure
+and you double the dissolved oxygen. In ordinary plasma, the solubility
+is low: at the pressure of arterial blood, a deciliter of plasma holds
+only a fraction of a milliliter of dissolved oxygen.</p>
+<p>A perfluorocarbon liquid dissolves far more, on the order of twenty
+times more than water by the figures usually quoted, and a pure liquid
+of this type can hold something like forty or fifty milliliters of
+oxygen per hundred milliliters when exposed to pure oxygen at
+atmospheric pressure. I offer those as rough figures from the
+literature, and they vary by compound.</p>
+<p>But the rule is a straight line. Hemoglobin follows an S-shaped
+curve: it loads almost fully at the pressure of ordinary lung air and
+then holds its oxygen tightly until the pressure falls near that of the
+tissue. A perfluorocarbon does neither. It picks up oxygen in proportion
+to how much is around and gives it up in proportion to how much is
+missing. The consequence is the defining feature of the whole class: to
+load a perfluorocarbon with a useful amount of oxygen, you need a high
+oxygen pressure. The patient must breathe oxygen-enriched air or oxygen.
+That is what I mean by needing a mask.</p>
+<p>This is not a small caveat. It is the opposite of hemoglobin’s
+design. A hemoglobin carrier can be loaded by breathing room air. A
+perfluorocarbon carrier needs an oxygen supply and a delivery apparatus
+in addition to the infusion, which is a logistical and clinical
+complication in the very settings where a carrier is most wanted.</p>
+<h2 id="turning-a-liquid-into-an-injectable">Turning a liquid into an
+injectable</h2>
+<p>Perfluorocarbons are hydrophobic and lipophobic, meaning they mix
+with neither water nor oil. You cannot inject them as they are. Making
+an intravenous product requires turning the liquid into a fine emulsion,
+tiny droplets suspended in water with the help of an emulsifier. The
+droplets in these products are on the order of a fifth of a micrometer
+across, smaller than a red cell by a factor of about thirty.</p>
+<p>That small size is what allows the droplets to travel through
+capillaries, and in principle to reach tissue that red cells cannot. It
+is the same rationale that motivates the hemoglobin carriers, achieved
+by a different route.</p>
+<p>The emulsions carry their own problems. Emulsions can be unstable,
+and the early ones had to be stored frozen, and thawed before use. The
+droplets are removed from the blood by cells of the reticuloendothelial
+system, mainly in the liver and spleen, so the product has a half-life
+measured in hours to days and leaves behind a burden of fluorinated
+material that is slowly exhaled over weeks to months. Recipients of
+early products commonly experienced flu-like symptoms, a reaction
+thought to be related to uptake of the droplets by macrophages and the
+release of inflammatory signals.</p>
+<h2 id="a-product-that-reached-the-market">A product that reached the
+market</h2>
+<p>The most notable perfluorocarbon product was called Fluosol,
+developed in Japan and approved in the United States around 1989 for use
+in a specific setting: protecting heart muscle during balloon
+angioplasty, when a vessel is briefly blocked. The idea was clever.
+During the few minutes that a balloon was inflated in a coronary artery,
+blood could not pass, but the small droplets could squeeze past the
+balloon through collateral channels, and if the patient was breathing
+high concentrations of oxygen, they carried a useful amount to the
+starved heart tissue.</p>
+<p>The product was subsequently withdrawn from the market. The reasons
+were commercial and practical as well as clinical: it needed to be
+stored frozen, prepared with several components before use, and required
+oxygen breathing, while advances in angioplasty equipment, such as
+balloons that allow blood to flow past, reduced the need for it. The
+details of its commercial life deserve better sourcing than I have
+gathered here, so I will keep to the shape of the story. It was
+approved, it was used, and it faded.</p>
+<p>A later generation of emulsions, made with a different compound and
+stabilized with a phospholipid, reached late-stage clinical trials in
+surgical patients. One of them, developed under the name Oxygent, was
+tested in surgery to reduce the need for blood transfusion, and the
+program encountered safety concerns in a trial and did not reach the
+market. I mention these to make a general point about the class. A
+physically elegant idea did not translate into a successful product. The
+reasons were mostly practical, and practical reasons are where the field
+lives.</p>
+<h2 id="what-hemoglobin-has-that-the-sponge-lacks">What hemoglobin has
+that the sponge lacks</h2>
+<p>Set the two designs side by side and each shows what the other
+lacks.</p>
+<p>Hemoglobin gives a lot of oxygen capacity at low oxygen pressure. A
+concentrated hemoglobin solution holds many times the oxygen of an equal
+volume of plasma at ordinary arterial pressure, without needing the
+patient to breathe enriched oxygen. That is the great advantage of
+chemistry over physics.</p>
+<p>The perfluorocarbon droplets, by contrast, hold oxygen in a way that
+responds smoothly to local conditions. In the lung, when the patient
+breathes oxygen, the droplets load; in the tissue, where pressure is
+low, they release. Because the relationship is linear, a perfluorocarbon
+delivers a large fraction of its oxygen in the tissue range, while
+hemoglobin at high affinity may not. In tissue that is very low in
+oxygen, the sponge gives up cargo readily.</p>
+<p>The perfluorocarbon has no iron and therefore no oxidation problem.
+It does not scavenge nitric oxide, so it does not cause the
+vasoconstriction associated with free hemoglobin. It is not a biological
+protein, so it does not raise concerns about foreign proteins or prions.
+It can be stored, if the emulsion is stable, at room temperature.</p>
+<p>The hemoglobin, meanwhile, has the S-curve, the ability to load in
+ordinary air, a greater carrying capacity per unit volume in the
+relevant pressure range, and the cooperative behavior that has been
+refined over hundreds of millions of years.</p>
+<p>I find the pairing instructive because it shows that the problems of
+hemoglobin carriers are not properties of oxygen carrying in general.
+They belong to a specific chemistry. If a patient community worries that
+all oxygen carriers cause vasoconstriction, the perfluorocarbon record
+is a counterexample. If it worries that all oxygen carriers require a
+breathing apparatus, the hemoglobin record is a counterexample. The
+properties that define a class are chemical.</p>
+<h2 id="a-worked-example-of-how-little-a-sponge-carries">A worked
+example of how little a sponge carries</h2>
+<p>The straight-line rule can be turned into arithmetic, and the
+arithmetic is sobering. The figures below are round numbers chosen for
+illustration, not values for any product.</p>
+<p>Start with ordinary blood. Hemoglobin at 12.5 grams per deciliter,
+fully saturated, holds about 17 milliliters of oxygen per deciliter,
+using the usual figure of 1.34 milliliters per gram. Plasma, by
+dissolved oxygen alone, adds about 0.003 milliliters per deciliter for
+each millimeter of mercury of pressure, so at an arterial pressure of
+100 it adds roughly 0.3. Tissues normally extract about 5 milliliters
+per deciliter on a single pass.</p>
+<p>Now suppose we infuse a perfluorocarbon emulsion until it makes up a
+tenth of the blood volume, and that the emulsion is 30 percent
+perfluorocarbon by volume, so that 3 percent of the blood is the liquid
+itself. Take a liquid that dissolves about 45 milliliters of oxygen per
+100 milliliters at one atmosphere of pure oxygen. While the patient
+breathes room air, with an arterial pressure near 100 millimeters of
+mercury, the perfluorocarbon adds about 0.18 milliliters per deciliter.
+That is smaller than the oxygen dissolved in plasma and negligible
+against the 17 in hemoglobin.</p>
+<p>Now let the patient breathe pure oxygen, raising arterial pressure to
+about 600. The perfluorocarbon load climbs to roughly 1 milliliter per
+deciliter. That is a six-fold increase, and it is meaningful for a
+patient whose hemoglobin has fallen very low. But it is still a small
+fraction of what healthy blood carries. The sponge does its best work
+when the patient has almost no red cells left, or when the flow is so
+poor that a little extra oxygen makes the difference.</p>
+<p>The arithmetic explains both the appeal and the disappointment. It
+shows why perfluorocarbons were tried as a bridge for patients who
+refused blood, and why the amounts involved could never replace a large
+hemoglobin deficit. It also shows why the concentration of the emulsion
+and the volume infused mattered so much, and why doses large enough to
+matter tested the limits of what patients tolerate.</p>
+<h2 id="the-frozen-product-and-the-thaw">The frozen product and the
+thaw</h2>
+<p>There is a practical detail of the first commercial emulsion that
+illustrates how much clinical adoption depends on mundane things. The
+product was supplied frozen, and it had to be thawed, combined with
+additional solutions, and prepared shortly before use. Hospital
+pharmacists and perfusionists had to schedule the preparation around the
+procedure. A drug that requires a checklist and a countdown is a drug
+that is used only when someone has planned for it.</p>
+<p>The comparison with a room-temperature bovine hemoglobin bag makes
+the point vividly. A shelf-stable product can be grabbed and hung. It
+does not depend on a pharmacy. Convenience is not a footnote in
+emergency medicine. It is often the deciding factor between a product
+used and a product admired.</p>
+<h2 id="the-oxygen-mask-paradox">The oxygen-mask paradox</h2>
+<p>Now the paradox that gives the essay its title. If a patient in shock
+is already receiving high-flow oxygen through a mask, as is standard in
+emergency care, then a perfluorocarbon may load in the lung and be
+effective. The need for supplemental oxygen is not an extra burden in a
+patient who would receive it anyway.</p>
+<p>The complication arises in the field. A soldier or an accident victim
+in a remote place has no oxygen cylinder, or has only a limited supply.
+The very setting that argues for a room-temperature, shelf-stable
+carrier, the field, is the setting where the extra requirement is
+hardest to meet. And in a patient who breathes room air, the droplets
+add little.</p>
+<p>There is a second complication in the opposite direction. High
+concentrations of oxygen are not benign. Prolonged breathing of very
+high oxygen levels can injure the lungs, and it changes the balance of
+reactive oxygen species in tissue. A treatment plan that depends on a
+high inspired oxygen fraction inherits those risks.</p>
+<p>The paradox teaches something about how to evaluate any carrier. Ask
+what the carrier requires in order to work. Hemoglobin requires that the
+lung function and that the iron remain reduced. Perfluorocarbons require
+enriched oxygen. Encapsulated hemoglobin requires that the vesicle
+remain intact. Each dependency is a potential failure point in a
+particular setting.</p>
+<h2 id="a-different-niche-where-oxygen-pressure-is-already-high">A
+different niche: where oxygen pressure is already high</h2>
+<p>The oddest and most encouraging uses of perfluorocarbons have been in
+places where the mask problem does not arise, because the oxygen is
+delivered directly.</p>
+<p>One is organ preservation. In some preservation methods, an organ is
+stored in a two-layer arrangement in which a perfluorocarbon layer at
+the bottom is bubbled with oxygen and the organ, usually a pancreas,
+floats at the interface, receiving oxygen by diffusion. The
+perfluorocarbon acts as an oxygen reservoir, with no need for a patient
+to breathe anything. This method has been studied in pancreas
+preservation for islet cell isolation, and the results have been
+described as encouraging in some studies and modest in others. I raise
+it because it demonstrates a use in which the sponge is well suited: an
+organ at low temperature and low metabolic demand, in a bath oxygenated
+from outside. This is exactly the scenario described in a companion
+essay on cold oxygen, and it shows that the perfluorocarbon approach
+might have a natural home in preservation.</p>
+<p>Another is eye surgery, where certain perfluorocarbon liquids are
+used as a temporary tool to flatten a detached retina. That use has
+nothing to do with oxygen carrying, and it is a reminder that these
+compounds are chemically inert and safe enough for direct contact with
+delicate tissue.</p>
+<p>A third, more speculative, is liquid ventilation, in which the lungs
+are partially filled with an oxygenated perfluorocarbon liquid. It was
+tested in premature infants and adults with lung injury, and it has been
+a favorite of science fiction. The clinical trials did not show the
+benefit that supporters hoped for. It nonetheless shows how far the
+field was willing to go.</p>
+<h2 id="the-sponge-in-cold-storage">The sponge in cold storage</h2>
+<p>Return to the cold. The physics of dissolved oxygen changes with
+temperature, and the change favors the sponge. Gas solubility in liquids
+increases as temperature falls. A perfluorocarbon at four degrees
+dissolves more oxygen than at body temperature. Hemoglobin, in contrast,
+grips oxygen more tightly in the cold, which makes it a poorer donor. In
+the cold, then, the relative merits reverse: the sponge gets better and
+the chemical carrier gets worse.</p>
+<p>That observation, which follows directly from Henry’s law and the
+temperature dependence of hemoglobin affinity, deserves attention from
+anyone thinking about preservation products. It suggests that a
+preservation fluid for an organ in the cold might do better with a
+physical carrier than a chemical one, or with a mixture in which each
+does the job it is best at.</p>
+<p>I would go further. The most interesting design for a warm perfusion
+might combine both: a bovine hemoglobin carrier for capacity at ordinary
+oxygen pressures, and a perfluorocarbon component to buffer oxygen in
+the microvessels. I am not aware of such a combination being tested in
+the clinic, and I mention it as a question rather than a proposal.</p>
+<h2 id="why-the-story-matters-to-the-patient-reader">Why the story
+matters to the patient reader</h2>
+<p>There are three points to take away for a patient audience.</p>
+<p>First, oxygen carrying is not synonymous with hemoglobin. When
+someone says a BHOC is the only way to carry oxygen without red cells,
+they are wrong, and the history of perfluorocarbons is the proof. That
+matters because it places the BHOC in a competitive landscape. An honest
+advocate says which of the alternatives it is meant to beat, and on
+what.</p>
+<p>Second, the history is a lesson in the difference between physical
+elegance and clinical success. Perfluorocarbons had beautiful physics
+and an ugly logistics profile. Hemoglobin has an ugly set of side
+reactions and a beautiful mechanism. Neither won. A patient community
+that understands both stories is less likely to be dazzled by a single
+clever property.</p>
+<p>Third, it shows how much depends on the setting of use. Every one of
+the perfluorocarbon successes was a niche with special conditions: a
+balloon in a coronary artery, a bath for a pancreas, an eye. The
+general-purpose blood substitute remains unsolved. This does not mean
+that niche uses are failures. On the contrary, they may be the only path
+by which a technology reaches patients at all. A BHOC that finds a
+defensible niche, whether organ preservation, patients who cannot
+receive blood, or remote care, stands a better chance than one that aims
+at replacing blood.</p>
+<p>One more observation belongs here, because it is easy to miss. The
+perfluorocarbon record is a reminder that regulators and clinicians
+judge a product by the whole system it lives in: the frozen box, the
+thaw, the oxygen tank, the mask, the monitoring. A carrier that is
+chemically brilliant and operationally clumsy loses to one that is
+chemically ordinary and operationally easy. That is worth remembering
+when the BHOC story is told in terms of molecules alone. The molecule is
+one part of the product. The bag, the label, the storage temperature and
+the training of the person who hangs it are the rest.</p>
+<h2 id="questions-to-ask-about-any-carrier">Questions to ask about any
+carrier</h2>
+<p>Borrowing from the comparison, I would suggest a short list for any
+product.</p>
+<p>What does the patient have to breathe, and what does the site need to
+supply?</p>
+<p>What is the carrier’s half-life, and what happens to it when it
+leaves the circulation?</p>
+<p>What is the physical form: a solution, an emulsion, a particle, and
+how stable is it on the shelf?</p>
+<p>What does the product do to the tissues that clear it, since every
+carrier is cleared by something?</p>
+<p>And what is the honest niche, the place where the property that
+limits the product is not limiting?</p>
+<p>Those are ordinary engineering questions, and the perfluorocarbon
+field, for all its disappointments, taught the community to ask
+them.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>Reviews of perfluorocarbon-based oxygen carriers, including a 2010
+review of products and trials and a review that traces the field from
+physics to physiology, describe oxygen solubility, emulsion properties
+and clinical experience in detail. Figures for solubility, droplet size
+and half-life vary by compound and formulation and are quoted here as
+rough orders of magnitude. The history of Fluosol’s approval and
+withdrawal and of the Oxygent trial deserves confirmation in primary
+sources before it is repeated.</p>
+
+</article>
+<div class="pn"><a href="field-note-11.html" data-release="2026-10-19"><span>Previous</span>The Mountain&#x27;s Instructions</a><a href="field-note-13.html" data-release="2026-10-25"><span>Next</span>Building the Cell Back</a></div>
+<p style="margin-top:28px"><a class="cta" href="index.html">All posts</a></p>
+</main>
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <img src="../cold-ischemia-logo.png" alt="Cold Ischemia Foundation" class="fli" onerror="this.style.display='none'">
+      <p>Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="https://coldischemia.foundation">coldischemia.foundation</a></p>
+    </div>
+    <div>
+      <span class="fct">Platform</span>
+      <div class="fl">
+        <a href="../command-center.html">Command Center</a>
+        <a href="../projects.html">Toolkit</a>
+        <a href="../situation-room.html">Situation Room</a>
+        <a href="../research.html">Research</a>
+        <a href="../kidney-news.html">Kidney News</a>
+        <a href="../cif-volunteer-page.html">Volunteer</a>
+        <a href="../contact.html">Contact</a>
+        <a href="./">BHOC Field Notes</a>
+        <a href="../accountability.html">Atlas</a>
+        <a href="../congress-scorecard.html">Scorecard</a>
+        <a href="../donate.html">Donate</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Projects</span>
+      <div class="fl">
+        <a href="https://donorflow.coldischemia.foundation" target="_blank" rel="noopener">Project Donor-Flow</a>
+        <a href="https://collateral-damage.coldischemia.foundation" target="_blank" rel="noopener">Collateral Damage</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Foundation</span>
+      <div class="fl">
+        <a href="../about.html">Our Story</a>        <a href="../cif-amazon-library.html">Book &amp; Toolkit Library</a>
+        <a href="../advocacy-news.html">Advocacy News</a>
+        <a href="../care-partner-advocacy.html">Care Partner Advocacy</a>
+        <a href="../transplant-line.html">The Transplant Line</a>
+    <a href="../donor-flow.html">Project Donor-Flow</a>
+        <a href="../donate.html">Donate</a>
+        <a href="../free-guide.html">Free Guide</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Legal</span>
+      <div class="fl">
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../contact.html">Contact</a>
+        <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener">Store</a>
+        <a href="../sales-letter.html">Our Case for You</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p class="fcp">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+    <div class="fbl">
+      <a href="../terms.html">Terms</a>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>
