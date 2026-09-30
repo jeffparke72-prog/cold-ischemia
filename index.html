@@ -137,31 +137,24 @@ footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="index.html" class="nl">
-    <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'">
-    <span class="nb">Cold Ischemia</span>
-  </a>
-  <div class="nm">
-    <a href="about.html">About</a>
-    <a href="command-center.html" class="nk">Command Center</a>
-    <a href="research.html">Research</a>
-    <a href="kidney-news.html">Kidney News</a>
-    <a href="cif-volunteer-page.html">Volunteer</a>
-    <a href="contact.html">Contact</a>
-    <a href="transplant-realities.html">What Nobody Tells You</a>
-    <a href="transplant-line.html">The Transplant Line</a>
-    <a href="donor-flow.html">Project Donor-Flow</a>
-    <a href="bhoc.html">BHOC</a>
-    <a href="accountability.html">Atlas</a>
-    <a href="demand-letters.html">Demand Letters</a>
-    <a href="congress-scorecard.html">Scorecard</a>
-  </div>
-  <div class="nr">
-    <a href="projects.html" class="nmy">Toolkit</a>
-    <a href="donate.html" class="njn">Donate</a>
-  </div>
-</nav>
+<style id="cifnav-css">
+nav.cifnav{position:var(--cn-pos,sticky)!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;background:rgba(3,5,9,.97)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,.12)!important;padding:6px 20px!important;min-height:56px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;box-sizing:border-box!important;margin:0!important;width:auto!important}
+nav.cifnav *{box-sizing:border-box}
+nav.cifnav .cn-l{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+nav.cifnav .cn-l img{height:32px;width:32px;object-fit:contain;display:block}
+nav.cifnav .cn-b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap}
+nav.cifnav .cn-m{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 2px;flex:1}
+nav.cifnav .cn-m a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(216,207,196,.5);text-decoration:none;white-space:nowrap;padding:5px 7px;border-radius:2px;transition:color .15s;background:none;border:0}
+nav.cifnav .cn-m a:hover,nav.cifnav .cn-m a.on{color:#d8cfc4}
+nav.cifnav .cn-m a.cn-fn,nav.cifnav .cn-m a.cn-bh{color:#c8902a}
+nav.cifnav .cn-r{flex-shrink:0;display:flex;gap:8px}
+nav.cifnav .cn-r a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;white-space:nowrap}
+nav.cifnav .cn-t{color:rgba(216,207,196,.55);border:1px solid rgba(100,140,200,.2)}
+nav.cifnav .cn-t:hover{color:#c8902a}
+nav.cifnav .cn-d{background:#c8902a;color:#030509}
+nav.cifnav .cn-d:hover{background:#e8b84a}
+@media(max-width:900px){nav.cifnav{flex-wrap:wrap!important;justify-content:center!important}nav.cifnav .cn-b{display:none}nav.cifnav .cn-m{order:3;flex-basis:100%}}
+nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><div class="cn-m"><a href="about.html">About</a><a href="command-center.html">Command Center</a><a href="research.html">Research</a><a href="situation-room.html">Situation Room</a><a href="kidney-news.html">Kidney News</a><a href="cif-volunteer-page.html">Volunteer</a><a href="contact.html">Contact</a><a href="transplant-realities.html">What Nobody Tells You</a><a href="transplant-line.html">The Transplant Line</a><a href="donor-flow.html">Project Donor-Flow</a><a href="bhoc.html" class="cn-bh">BHOC</a><a href="field-notes.html" class="cn-fn">BHOC Field Notes</a><a href="accountability.html">Atlas</a><a href="demand-letters.html">Demand Letters</a><a href="congress-scorecard.html">Scorecard</a></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a><a href="donate.html" class="cn-d">Donate</a></div></nav>
 
 
 <!-- HERO -->
@@ -379,7 +372,7 @@ footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px
         <a href="terms.html">Terms of Service</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="contact.html">Contact</a>
-        <a href="https://coldischemiafoundation.printful.me" target="_blank" rel="noopener">Store</a>
+        
         <a href="sales-letter.html">Our Case for You</a>
       </div>
     </div>
@@ -393,38 +386,12 @@ footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px
   </div>
 </footer>
 
-<!-- EXIT INTENT OVERLAY -->
-<div id="cif-exit-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(3,5,9,0.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;">
-  <div style="background:#07101c;border:1px solid rgba(200,144,42,0.3);border-radius:4px;max-width:460px;width:100%;padding:40px 36px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.6);">
-    <button onclick="document.getElementById('cif-exit-overlay').style.display='none'" style="position:absolute;top:14px;right:16px;background:none;border:none;color:rgba(216,207,196,0.4);font-size:1.2rem;cursor:pointer;line-height:1;">✕</button>
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:14px;">Before You Go</div>
-    <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:#d8cfc4;line-height:1.2;margin-bottom:12px;">Browse the CIF Book Store</div>
-    <p style="font-family:'Crimson Pro',Georgia,serif;font-size:1rem;line-height:1.75;color:rgba(216,207,196,0.6);margin-bottom:28px;">Guides, toolkits, and resources built for care partners and chronic illness patients. Independent. No pharmaceutical influence. Ever.</p>
-    <a href="https://payhip.com/coldischemia" target="_blank" rel="noopener" onclick="document.getElementById('cif-exit-overlay').style.display='none'" style="display:block;background:#c8902a;color:#030509;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 24px;border-radius:2px;text-decoration:none;text-align:center;font-weight:700;transition:background .2s;">Browse the Store →</a>
-    <div style="margin-top:14px;text-align:center;">
-      <button onclick="document.getElementById('cif-exit-overlay').style.display='none'" style="background:none;border:none;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.25);cursor:pointer;">No thanks, continue browsing</button>
-    </div>
-  </div>
-</div>
-
 <script>
 window.addEventListener("scroll",function(){
   document.getElementById("nav").style.background=window.scrollY>40?"rgba(3,5,9,0.97)":"rgba(3,5,9,0.85)";
 });
 
-// Exit intent
-(function(){
-  var shown = sessionStorage.getItem('cif_exit_shown');
-  if(shown) return;
-  document.addEventListener('mouseleave', function(e){
-    if(e.clientY <= 0 && !shown){
-      shown = true;
-      sessionStorage.setItem('cif_exit_shown','1');
-      var el = document.getElementById('cif-exit-overlay');
-      el.style.display = 'flex';
-    }
-  });
-})();
+
 </script>
 </body>
 </html>
