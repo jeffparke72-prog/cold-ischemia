@@ -52,7 +52,6 @@
   .pillars{display:flex;gap:2.2vw;margin-top:4vh;flex-wrap:wrap;justify-content:center}
   .pillar{width:min(26vw,250px);min-width:140px;padding:2.2vh 1.6vw;border:1px solid rgba(143,216,255,.35);background:linear-gradient(160deg,rgba(58,166,224,.18),rgba(5,8,15,.6));border-radius:14px;backdrop-filter:blur(4px);opacity:0;transform:translateY(34px)}
   .active .pillar{animation:rise .9s forwards}
-  .active .pillar:nth-child(2){animation-delay:.9s}.active .pillar:nth-child(3){animation-delay:1.8s}
   .pillar b{display:block;font:700 clamp(16px,2.4vw,28px)/1.1 Georgia,serif;color:var(--ice);margin-bottom:1vh}
   .pillar span{font:400 clamp(11px,1.4vw,16px)/1.45 'Helvetica Neue',Arial,sans-serif;color:#b8cde0}
 
@@ -61,7 +60,6 @@
   .node{font:700 clamp(12px,1.9vw,22px) 'Helvetica Neue',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:1.6vh 1.8vw;border:1px solid rgba(143,216,255,.3);border-radius:10px;color:#5d7a94;opacity:.35}
   .link{width:2.6vw;height:2px;background:rgba(143,216,255,.25)}
   .active .node{animation:light .8s forwards}
-  .active .node:nth-child(1){animation-delay:1s}.active .node:nth-child(3){animation-delay:2s}.active .node:nth-child(5){animation-delay:3s}.active .node:nth-child(7){animation-delay:4s}.active .node:nth-child(9){animation-delay:5s}
   @keyframes light{to{opacity:1;color:#04101c;background:var(--ice);border-color:var(--ice);box-shadow:0 0 28px rgba(143,216,255,.65)}}
 
   /* network */
@@ -84,7 +82,7 @@
   /* map route */
   .route{display:flex;align-items:center;gap:2vw;margin-top:4vh;font:600 clamp(13px,2vw,24px) 'Helvetica Neue',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
   .route i{display:block;height:2px;width:14vw;background:linear-gradient(90deg,var(--ice),var(--gold));transform:scaleX(0);transform-origin:left}
-  .active .route i{animation:grow 2.4s 1s ease-out forwards}
+  .active .route i{animation:grow 2.4s 5s ease-out forwards}
   @keyframes grow{to{transform:scaleX(1)}}
 
   /* end */
@@ -138,7 +136,7 @@
   <section class="scene" data-chap="Prologue">
     <div class="kicker">Cold Ischemia Foundation</div>
     <h1 class="big split" data-delay=".4">Every broken system carries <span class="accent glow">a price.</span></h1>
-    <p class="sub fade" style="animation-delay:3.2s">Someone is always made to pay it.</p>
+    <p class="sub fade" style="animation-delay:7.4s">Someone is always made to pay it.</p>
   </section>
 
   <!-- 2 -->
@@ -150,7 +148,7 @@
     </svg>
     <div class="kicker">The Problem</div>
     <h2 class="big split" data-delay=".3">A <span class="accent">labyrinthine</span> maze, built without a map.</h2>
-    <p class="sub fade" style="animation-delay:3.6s">Paperwork. Delay. Silence. Most people never see the blueprint.</p>
+    <p class="sub fade" style="animation-delay:5.6s">Paperwork. Delay. Silence. Most people never see the blueprint.</p>
   </section>
 
   <!-- 3 -->
@@ -158,7 +156,7 @@
     <div class="kicker">The Name Is The Mission</div>
     <div class="clockwrap"><span class="ring"></span><span class="ring"></span><span class="ring"></span><div class="clock" id="clk">00:00:00</div></div>
     <h2 class="mid fade" style="animation-delay:1.2s;margin-top:2vh">The inexorable clock that runs<br>while something vital is left waiting.</h2>
-    <p class="sub fade" style="animation-delay:4s">Delay is never neutral. <span class="hot">Every hour has a cost.</span></p>
+    <p class="sub fade" style="animation-delay:6.6s">Delay is never neutral. <span class="hot">Every hour has a cost.</span></p>
   </section>
 
   <!-- 4 -->
@@ -178,9 +176,9 @@
     <div class="kicker">Structural Advocacy</div>
     <h2 class="big split" data-delay=".3">We fix the <span class="accent">structure</span>, not just the symptoms.</h2>
     <div class="pillars">
-      <div class="pillar"><b>Analyze</b><span>Process mapping and root-cause analysis of systemic failure.</span></div>
-      <div class="pillar"><b>Expose</b><span>Conflicts of interest and barriers, documented in plain language.</span></div>
-      <div class="pillar"><b>Reform</b><span>Policy analysis delivered to decision-makers.</span></div>
+      <div class="pillar" style="animation-delay:7.4s"><b>Analyze</b><span>Process mapping and root-cause analysis of systemic failure.</span></div>
+      <div class="pillar" style="animation-delay:8.8s"><b>Expose</b><span>Conflicts of interest and barriers, documented in plain language.</span></div>
+      <div class="pillar" style="animation-delay:11.4s"><b>Reform</b><span>Policy analysis delivered to decision-makers.</span></div>
     </div>
   </section>
 
@@ -189,11 +187,11 @@
     <div class="kicker">Our Method</div>
     <h2 class="big split" data-delay=".3">Pragmatic. <span class="accent">Disciplined.</span> Proven.</h2>
     <div class="flow">
-      <div class="node">Define</div><div class="link"></div>
-      <div class="node">Measure</div><div class="link"></div>
-      <div class="node">Analyze</div><div class="link"></div>
-      <div class="node">Improve</div><div class="link"></div>
-      <div class="node">Control</div>
+      <div class="node" style="animation-delay:5.6s">Define</div><div class="link"></div>
+      <div class="node" style="animation-delay:7.2s">Measure</div><div class="link"></div>
+      <div class="node" style="animation-delay:8.8s">Analyze</div><div class="link"></div>
+      <div class="node" style="animation-delay:10.3s">Improve</div><div class="link"></div>
+      <div class="node" style="animation-delay:11.4s">Control</div>
     </div>
   </section>
 
@@ -208,7 +206,7 @@
     </svg>
     <div class="kicker">Care Partners</div>
     <h2 class="big split" data-delay=".3">No one should <span class="accent">navigate alone.</span></h2>
-    <p class="sub fade" style="animation-delay:3.2s">Clarity and confidence, placed directly in your hands.</p>
+    <p class="sub fade" style="animation-delay:3.8s">Clarity and confidence, placed directly in your hands.</p>
   </section>
 
   <!-- 8 -->
@@ -216,13 +214,13 @@
     <div class="kicker">Tools For The People</div>
     <h2 class="big split" data-delay=".3">The playbook, <span class="accent">free</span> in your hands.</h2>
     <div class="chips">
-      <span class="chip" style="animation-delay:1.6s">Free Toolkits</span>
-      <span class="chip" style="animation-delay:2.1s">Care Partner Playbooks</span>
-      <span class="chip" style="animation-delay:2.6s">Field Guides</span>
-      <span class="chip" style="animation-delay:3.1s">Published Books</span>
-      <span class="chip" style="animation-delay:3.6s">Policy Analyses</span>
+      <span class="chip" style="animation-delay:4.5s">Free Toolkits</span>
+      <span class="chip" style="animation-delay:5.4s">Care Partner Playbooks</span>
+      <span class="chip" style="animation-delay:6.4s">Field Guides</span>
+      <span class="chip" style="animation-delay:7.6s">Published Books</span>
+      <span class="chip" style="animation-delay:8.6s">Policy Analyses</span>
     </div>
-    <p class="sub fade" style="animation-delay:4.6s">No paywall. No gatekeeper.</p>
+    <p class="sub fade" style="animation-delay:10.8s">No paywall. No gatekeeper.</p>
   </section>
 
   <!-- 9 -->
@@ -236,22 +234,22 @@
   <section class="scene" data-chap="Our Standard">
     <div class="kicker">Our Standard</div>
     <h2 class="big split" data-delay=".3">Transparency is not a slogan.<br><span class="accent">It is a standard.</span></h2>
-    <p class="sub fade" style="animation-delay:3.4s">The truth, told plainly, by someone who has lived it.</p>
+    <p class="sub fade" style="animation-delay:5.7s">The truth, told plainly, by someone who has lived it.</p>
   </section>
 
   <!-- 11 -->
   <section class="scene" data-chap="Take Action">
     <div class="kicker">Take Action</div>
     <h2 class="big split" data-delay=".3">Learn. <span class="accent">Share.</span> <span class="gold">Support.</span></h2>
-    <p class="sub fade" style="animation-delay:3s">Every action tightens the pressure for change.</p>
+    <p class="sub fade" style="animation-delay:3.9s">Every action tightens the pressure for change.</p>
   </section>
 
   <!-- 12 -->
   <section class="scene" data-chap="Join Us">
     <div class="kicker">Join The Mission</div>
     <div class="logo split" data-delay=".2">Cold Ischemia <span class="accent">Foundation</span></div>
-    <h2 class="mid fade glow" style="animation-delay:1.6s;margin-top:2.4vh">Stop the clock.</h2>
-    <p class="sub fade" style="animation-delay:2.8s">coldischemia.foundation &nbsp;·&nbsp; Ellenton, Florida</p>
+    <h2 class="mid fade glow" style="animation-delay:3.7s;margin-top:2.4vh">Stop the clock.</h2>
+    <p class="sub fade" style="animation-delay:6s">coldischemia.foundation &nbsp;·&nbsp; Ellenton, Florida</p>
   </section>
 
 </div>
@@ -273,11 +271,11 @@
 (function(){
   /* ===== SYNC CONFIG =====
      AUDIO_SRC: the recorded narration. When this file exists, the visuals follow the audio clock.
-     STARTS:    second at which each of the 12 scenes begins. Retune these to the recording.
+     STARTS:    second at which each of the 12 scenes begins, cut on the pauses in cif-narration.mp3.
      END:       minimum trailer length in seconds (extended automatically if the audio is longer). */
   var AUDIO_SRC = 'cif-narration.mp3';
-  var STARTS = [0, 6, 14, 22, 29, 37, 45, 53, 61, 68, 75, 82];
-  var END = 90;
+  var STARTS = [0, 10.5, 22.6, 35.0, 42.2, 58.3, 71.0, 79.7, 94.1, 102.6, 113.3, 120.9];
+  var END = 135;
 
   var embedded = /[?&]embed=1/.test(location.search) && window.parent !== window;
   if (embedded) document.body.classList.add('embed');
@@ -348,7 +346,7 @@
     if(cur===2){
       var le=e-STARTS[2],sec=Math.floor(le*1800);
       clk.textContent=String(Math.floor(sec/3600)).padStart(2,'0')+':'+String(Math.floor(sec%3600/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0');
-      clk.classList.toggle('warn',le>4.5);
+      clk.classList.toggle('warn',le>6.6);
     }
     if(cur===3){
       var ye=Math.min(1,Math.max(0,(e-STARTS[3]-.4)/1.6));

@@ -32,6 +32,8 @@
     '.cifc-btn{font:500 9px "IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;letter-spacing:1.5px;text-transform:uppercase;color:#d8cfc4;background:transparent;border:1px solid rgba(200,144,42,.4);border-radius:3px;padding:5px 8px;cursor:pointer;line-height:1}',
     '.cifc-btn:hover,.cifc-btn:focus-visible{background:#c8902a;color:#030509;outline:none}',
     '.cifc-btn[hidden]{display:none}',
+    '.cifc-btn.snd{background:#c8902a;color:#030509;border-color:#c8902a;font-weight:600}',
+    '.cifc-btn.snd:hover,.cifc-btn.snd:focus-visible{background:#e8b84a}',
     '.cifc-pill{position:fixed;right:16px;bottom:16px;z-index:900;font:500 10px "IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;letter-spacing:2px;text-transform:uppercase;color:#030509;background:#c8902a;border:0;border-radius:999px;padding:10px 16px;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.45);opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease}',
     '.cifc-pill.on{opacity:1;transform:none}',
     '.cifc-pill:hover,.cifc-pill:focus-visible{background:#e8b84a;outline:none}',
@@ -52,7 +54,7 @@
     '<div class="cifc-frame"><iframe title="Cold Ischemia Foundation trailer" tabindex="-1" aria-hidden="true" allow="autoplay"></iframe></div>' +
     '<div class="cifc-bar">' +
       '<span class="cifc-title">Foundation trailer</span>' +
-      '<button type="button" class="cifc-btn" data-a="snd" hidden aria-label="Turn narration on">Sound on</button>' +
+      '<button type="button" class="cifc-btn snd" data-a="snd" hidden aria-label="Turn narration on">\u25B6 Sound on</button>' +
       '<button type="button" class="cifc-btn" data-a="size" aria-label="Enlarge trailer">Enlarge</button>' +
       '<button type="button" class="cifc-btn" data-a="min" aria-label="Minimize trailer">Hide</button>' +
     '</div>';
@@ -85,7 +87,7 @@
     try { iframe.contentWindow.postMessage(msg, location.origin); } catch (e) {}
   }
   function setSoundUI() {
-    bSnd.textContent = soundOn ? 'Mute' : 'Sound on';
+    bSnd.textContent = soundOn ? 'Mute' : '\u25B6 Sound on';
     bSnd.setAttribute('aria-label', soundOn ? 'Mute narration' : 'Turn narration on');
   }
   function startPump() {
