@@ -10,8 +10,8 @@
   if (window.__cifIntro) return;
   window.__cifIntro = true;
 
-  var VIDEO = 'cif-trailer.html?embed=1';
-  var AUDIO = 'cif-narration.mp3';
+  var VIDEO = 'cif-intro.html?embed=1';
+  var AUDIO = 'cif-intro-narration.mp3';
   var VW = 960, VH = 540;            /* the video is rendered at 960x540 and scaled to fit the dialog */
   var ONCE_PER_SESSION = true;       /* false = open on every homepage load */
   var OPEN_DELAY_MS = 1200;
@@ -73,11 +73,11 @@
     '<div class="cifp-back" data-close></div>' +
     '<div class="cifp-card">' +
       '<div class="cifp-head"><div class="cifp-ttl"><div class="cifp-eyebrow">Cold Ischemia Foundation</div>' +
-        '<h2 class="cifp-h" id="cifp-h">Welcome. Our mission in about two minutes.</h2></div>' +
+        '<h2 class="cifp-h" id="cifp-h">Welcome. Our mission in under three minutes.</h2></div>' +
         '<button type="button" class="cifp-x" data-close aria-label="Close introduction">✕</button></div>' +
       '<div class="cifp-frame"><iframe title="Cold Ischemia Foundation introduction video" tabindex="-1" allow="autoplay"></iframe>' +
         '<button type="button" class="cifp-snd" data-a="snd" hidden>▶&nbsp; Play with sound</button></div>' +
-      '<div class="cifp-foot"><span class="cifp-meta">Introduction · 2 min 14 sec</span>' +
+      '<div class="cifp-foot"><span class="cifp-meta">Introduction · 2 min 53 sec</span>' +
         '<button type="button" class="cifp-b" data-a="mute" hidden>Mute</button>' +
         '<button type="button" class="cifp-b" data-a="replay" hidden>Replay</button>' +
         '<a class="cifp-b" href="projects.html">Free Toolkit</a>' +

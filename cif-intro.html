@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cold Ischemia Foundation — Introduction</title>
+<meta name="description" content="A short, animated introduction to the mission of the Cold Ischemia Foundation, a patient-led 501(c)(3) structural advocacy organization in Ellenton, Florida.">
+<style>
+:root{--ice:#8fd8ff;--ice2:#3aa6e0;--red:#ff4d5e;--gold:#ffd27a;--ink:#05080f;--tx:#f4f9ff;--mut:#9fb6cc}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--ink);color:var(--tx);overflow:hidden;font-family:Georgia,'Times New Roman',serif}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+#vig{position:fixed;inset:0;pointer-events:none;z-index:3;background:radial-gradient(ellipse at center,transparent 52%,rgba(0,0,0,.62) 100%)}
+#view{position:fixed;left:50%;top:50%;width:960px;height:540px;margin:-270px 0 0 -480px;z-index:2;transform-origin:50% 50%}
+
+/* ---------- scene machinery ---------- */
+.scene{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;pointer-events:none;overflow:hidden}
+.scene.active{opacity:1}
+.cam{position:absolute;inset:0}
+.active .cam{animation:camIn 1.5s cubic-bezier(.2,.8,.2,1) both,drift 45s linear 1.5s infinite alternate}
+@keyframes camIn{from{transform:scale(1.16) rotate(.8deg);filter:blur(9px)}to{transform:none;filter:none}}
+@keyframes drift{from{transform:scale(1)}to{transform:scale(1.04)}}
+.g{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 56px}
+.active .g[data-x]{animation:gOut .6s var(--x,0s) forwards}
+.active .g.late{opacity:0;animation:gIn .3s var(--s,0s) forwards}
+.active .g.late[data-x]{animation:gIn .3s var(--s,0s) forwards,gOut .6s var(--x,0s) forwards}
+@keyframes gIn{to{opacity:1}}
+@keyframes gOut{to{opacity:0;transform:translateY(-26px) scale(.97);filter:blur(6px)}}
+.abs{position:absolute}
+svg{overflow:visible}
+
+/* ---------- type ---------- */
+.cap{font:600 13px/1 Helvetica,Arial,sans-serif;letter-spacing:.34em;text-transform:uppercase;color:var(--ice);margin-bottom:18px}
+.h1{font-weight:700;font-size:62px;line-height:1.06;letter-spacing:-.01em}
+.h2{font-weight:700;font-size:42px;line-height:1.1}
+.h3{font-weight:700;font-size:28px;line-height:1.2}
+.sub{font:400 21px/1.4 Helvetica,Arial,sans-serif;color:var(--mut)}
+.lab{font:600 13px/1.2 Helvetica,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--ice)}
+.ac{color:var(--ice)}.rd{color:var(--red)}.gd{color:var(--gold)}
+.mono{font-family:'Courier New',monospace}
+.ch{display:inline-block;white-space:pre}
+.sp{display:inline-block}
+
+/* ---------- reusable animations (delay comes from --d, set from the CUES table) ---------- */
+.active .a-rise{animation:rise .85s cubic-bezier(.2,.8,.2,1) var(--d,0s) both}
+.active .a-slam{animation:slam .75s cubic-bezier(.2,1.1,.3,1) var(--d,0s) both}
+.active .a-fade{animation:fadeIn 1s ease var(--d,0s) both}
+.active .a-pop{animation:pop .65s cubic-bezier(.2,1.5,.3,1) var(--d,0s) both}
+.active .a-wipe{animation:wipe 1s cubic-bezier(.7,0,.2,1) var(--d,0s) both}
+.active .a-unblur{animation:unblur 1.8s ease var(--d,0s) both}
+.active .a-flash{animation:flash .9s ease-out var(--d,0s) both}
+.active .ch{animation:chIn .6s cubic-bezier(.2,.9,.3,1.2) calc(var(--d,0s) + var(--i,0) * .032s) both}
+.dr{stroke-dasharray:1;stroke-dashoffset:1}
+.active .dr{animation:draw var(--dur,1.4s) cubic-bezier(.4,0,.2,1) var(--d,0s) both}
+@keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+@keyframes slam{0%{opacity:0;transform:scale(2.5);filter:blur(12px)}60%{opacity:1;transform:scale(.95);filter:blur(0)}100%{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0);opacity:.2}to{clip-path:inset(0 0 0 0);opacity:1}}
+@keyframes unblur{from{opacity:.35;filter:blur(26px);transform:scale(1.08)}to{opacity:1;filter:none;transform:none}}
+@keyframes flash{0%{opacity:0}12%{opacity:.9}100%{opacity:0}}
+@keyframes chIn{from{opacity:0;transform:translateY(46px) rotateX(-90deg) scale(.6);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes ripple{0%{transform:scale(.4);opacity:.7}100%{transform:scale(4.2);opacity:0}}
+.flashbox{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+
+/* ---------- scene 1 ---------- */
+.crack{position:absolute;inset:0;width:960px;height:540px}
+.crack path{fill:none;stroke:var(--red);stroke-width:2.4;opacity:.85;filter:drop-shadow(0 0 6px rgba(255,77,94,.9))}
+.big96{font-weight:700;font-size:104px;line-height:1;letter-spacing:-.02em}
+.swing{transform-origin:70px 70px;animation:swing 2.2s ease-in-out infinite alternate}
+@keyframes swing{from{transform:rotate(-15deg)}to{transform:rotate(15deg)}}
+.beam{position:absolute;left:50%;top:-40px;width:340px;height:640px;margin-left:-170px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(143,216,255,.28) 180deg,transparent 200deg);transform-origin:50% 0;opacity:0}
+.active .beam{animation:beam 6s ease-in-out var(--d,0s) infinite alternate,fadeIn 1s var(--d,0s) both}
+@keyframes beam{from{transform:rotate(-18deg)}to{transform:rotate(18deg)}}
+.person .ph{fill:rgba(143,216,255,.16);stroke:var(--ice);stroke-width:3}
+.person.cp .ph{stroke:var(--gold);fill:rgba(255,210,122,.12)}
+
+/* ---------- scene 2 ---------- */
+.count{font-weight:700;font-size:118px;line-height:1;color:var(--ice);text-shadow:0 0 50px rgba(58,166,224,.65);letter-spacing:.01em;font-variant-numeric:tabular-nums}
+.crowd{display:flex;gap:7px;margin-top:26px;justify-content:center;flex-wrap:nowrap}
+.crowd i{display:block;width:22px;height:36px;position:relative;opacity:0}
+.crowd i::before{content:'';position:absolute;left:5px;top:0;width:12px;height:12px;border-radius:50%;background:var(--ice)}
+.crowd i::after{content:'';position:absolute;left:1px;top:15px;width:20px;height:21px;border-radius:10px 10px 3px 3px;background:var(--ice2)}
+.active .crowd i{animation:pop .5s cubic-bezier(.2,1.5,.3,1) calc(var(--d,0s) + var(--i,0) * .055s) both}
+.strike{position:relative;display:inline-block;font-weight:700;font-size:66px;line-height:1.12;letter-spacing:.01em}
+.strike::after{content:'';position:absolute;left:-10px;right:-10px;top:52%;height:7px;background:var(--red);transform:scaleX(0);transform-origin:left;box-shadow:0 0 18px rgba(255,77,94,.9)}
+.active .strike::after{animation:grow .55s cubic-bezier(.7,0,.2,1) calc(var(--d,0s) + .95s) forwards}
+.active .strike.dim{animation:dimIn 1s ease calc(var(--d,0s) + 1.2s) forwards}
+@keyframes grow{to{transform:scaleX(1)}}
+@keyframes dimIn{to{color:#6a7b8d}}
+.maze path.m{fill:none;stroke:var(--ice2);stroke-width:3;opacity:.5}
+.maze path.r{fill:none;stroke:var(--red);stroke-width:3;opacity:.6}
+.trap{position:absolute;left:0;top:0;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#fff;box-shadow:0 0 18px 6px rgba(143,216,255,.9);offset-path:path("M120 120 H840 V420 H180 V190 H760 V350 H260 V260 H680");offset-rotate:0deg;offset-distance:0%;opacity:0}
+.active .trap{animation:trapGo 9s linear var(--d,0s) infinite,fadeIn .5s var(--d,0s) both}
+@keyframes trapGo{to{offset-distance:100%}}
+.chip{font:700 17px/1 Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;padding:11px 18px;border-radius:999px;border:1.5px solid rgba(255,210,122,.65);color:var(--gold);background:rgba(5,8,15,.55);display:inline-block}
+.chip.red{border-color:rgba(255,77,94,.75);color:#ff8a96}
+.chip.ice{border-color:rgba(143,216,255,.6);color:var(--ice)}
+.chips{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.paper{position:absolute;width:46px;height:60px;border:1.5px solid rgba(143,216,255,.45);border-radius:3px;background:rgba(143,216,255,.07);opacity:0}
+.paper::before{content:'';position:absolute;left:7px;right:7px;top:12px;height:2px;background:rgba(143,216,255,.5);box-shadow:0 9px 0 rgba(143,216,255,.4),0 18px 0 rgba(143,216,255,.4),0 27px 0 rgba(143,216,255,.3)}
+.active .paper{animation:floatUp 7s linear var(--d,0s) infinite}
+@keyframes floatUp{0%{opacity:0;transform:translateY(60px) rotate(-8deg)}15%{opacity:.8}85%{opacity:.8}100%{opacity:0;transform:translateY(-360px) rotate(14deg)}}
+
+/* ---------- scene 3 ---------- */
+.clockbox{position:absolute;left:70px;top:100px;width:340px;height:340px}
+.rings{position:absolute;left:240px;top:270px;width:0;height:0}
+.rings i{position:absolute;left:-60px;top:-60px;width:120px;height:120px;border-radius:50%;border:1.5px solid rgba(143,216,255,.5);opacity:0}
+.active .rings i{animation:ripple 3.4s ease-out infinite}
+.active .rings i:nth-child(2){animation-delay:1.1s}.active .rings i:nth-child(3){animation-delay:2.2s}
+.hand-m,.hand-h,.hand-s{transform-origin:0 0}
+.active .hand-m{animation:spinM 9s cubic-bezier(.45,0,.85,.55) .3s both}
+.active .hand-h{animation:spinH 9s cubic-bezier(.45,0,.85,.55) .3s both}
+.active .hand-s{animation:spinS 9s linear .3s both}
+@keyframes spinM{to{transform:rotate(2160deg)}}
+@keyframes spinH{to{transform:rotate(180deg)}}
+@keyframes spinS{to{transform:rotate(9000deg)}}
+.active .face{animation:faceRed 1.2s ease var(--d,0s) both}
+@keyframes faceRed{to{stroke:var(--red);filter:drop-shadow(0 0 14px rgba(255,77,94,.9))}}
+.readout{font:700 66px/1 'Courier New',monospace;color:var(--ice);text-shadow:0 0 36px rgba(58,166,224,.7);letter-spacing:.04em}
+.readout.hot{color:var(--red);text-shadow:0 0 36px rgba(255,77,94,.8)}
+.rcol{position:absolute;left:470px;top:92px;width:440px;text-align:left}
+.rcol .h3,.rcol .h2{margin-top:20px}
+
+/* ---------- scene 4 ---------- */
+.logo{width:150px;height:150px;object-fit:contain;border-radius:18px;filter:drop-shadow(0 0 30px rgba(58,166,224,.6))}
+.burst{position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;border:2px solid var(--ice);opacity:0}
+.active .burst{animation:ripple 2.4s ease-out var(--d,0s) both}
+.big160{font-weight:700;font-size:170px;line-height:.95;color:var(--gold);text-shadow:0 0 60px rgba(255,210,122,.5)}
+.shield{position:absolute;left:50%;top:50%;margin:-210px 0 0 -170px;width:340px;height:420px}
+.shield path{fill:rgba(255,210,122,.05);stroke:var(--gold);stroke-width:3;filter:drop-shadow(0 0 12px rgba(255,210,122,.6))}
+
+/* ---------- scene 5 ---------- */
+.bp path,.bp line,.bp rect{fill:none;stroke:rgba(143,216,255,.35);stroke-width:1.5}
+.col3{display:flex;gap:26px;margin-top:22px}
+.card{width:250px;padding:20px 16px 18px;border:1.5px solid rgba(143,216,255,.4);border-radius:14px;background:linear-gradient(160deg,rgba(58,166,224,.2),rgba(5,8,15,.7));text-align:center}
+.card b{display:block;font:700 26px/1 Georgia,serif;color:var(--ice);margin-top:12px;letter-spacing:.04em}
+.card small{display:block;font:400 14px/1.4 Helvetica,Arial,sans-serif;color:#b8cde0;margin-top:8px}
+.bar1{transform-origin:bottom}
+.active .bar1{animation:barUp 1.2s cubic-bezier(.2,.9,.3,1) calc(var(--d,0s) + var(--k,0) * .18s) both}
+@keyframes barUp{from{transform:scaleY(0)}to{transform:none}}
+.active .mag{animation:magMove 3s ease-in-out var(--d,0s) infinite alternate}
+@keyframes magMove{from{transform:translateX(-18px)}to{transform:translateX(26px)}}
+.active .blk{animation:blkIn .7s cubic-bezier(.2,1.3,.3,1) calc(var(--d,0s) + var(--k,0) * .35s) both}
+@keyframes blkIn{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:none}}
+.active .hid{animation:reveal 1s ease var(--d,0s) both}
+@keyframes reveal{from{fill:#1a2434;opacity:.4}to{fill:var(--red);opacity:1}}
+
+/* ---------- scene 6 ---------- */
+.wheel{position:absolute;left:50%;top:50%;margin:-215px 0 0 -215px;width:430px;height:430px}
+.node{opacity:.28}
+.active .node{animation:nodeOn .7s ease var(--d,0s) both}
+@keyframes nodeOn{to{opacity:1}}
+.active .node circle{animation:nodeFill .7s ease var(--d,0s) both}
+@keyframes nodeFill{to{fill:var(--ice);filter:drop-shadow(0 0 16px rgba(143,216,255,.95))}}
+.gear{transform-origin:0 0;animation:spin 14s linear infinite}
+.nlab{font:700 17px 'Helvetica Neue',Arial,sans-serif;letter-spacing:.2em;fill:#d9ecff}
+
+/* ---------- scene 7 ---------- */
+.stamp{display:inline-block;font:700 60px/1 Georgia,serif;letter-spacing:.12em;color:var(--gold);border:6px solid var(--gold);padding:8px 28px;border-radius:10px;margin-top:20px;transform:rotate(-7deg)}
+.active .stamp{animation:stamp .5s cubic-bezier(.2,1.4,.3,1) var(--d,0s) both}
+@keyframes stamp{0%{opacity:0;transform:rotate(-20deg) scale(3)}100%{opacity:1;transform:rotate(-7deg)}}
+.deck{display:flex;gap:20px;perspective:1100px;margin-top:6px}
+.tcard{width:190px;height:230px;border:1.5px solid rgba(143,216,255,.5);border-radius:14px;background:linear-gradient(165deg,rgba(58,166,224,.26),rgba(5,8,15,.8));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+.tcard b{font:700 20px/1 Helvetica,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ice)}
+.active .tcard{animation:cardFly 1s cubic-bezier(.2,1,.3,1.1) var(--d,0s) both}
+@keyframes cardFly{from{opacity:0;transform:translate3d(260px,-60px,-700px) rotateY(75deg) rotateZ(10deg)}to{opacity:1;transform:none}}
+.gatebar{transform-origin:0 50%}
+.active .gatebar{animation:gate 1s cubic-bezier(.6,0,.2,1) var(--d,0s) both}
+@keyframes gate{from{transform:rotate(0)}to{transform:rotate(-78deg)}}
+.active .shackle{animation:unlock .8s cubic-bezier(.3,1.4,.4,1) var(--d,0s) both}
+@keyframes unlock{to{transform:translateY(-22px) rotate(-28deg)}}
+.shackle{transform-origin:20px 40px}
+
+/* ---------- scene 8 ---------- */
+.pan{position:absolute;top:150px;width:276px;height:222px;border:1.5px solid rgba(143,216,255,.4);border-radius:14px;background:linear-gradient(165deg,rgba(58,166,224,.2),rgba(5,8,15,.8));overflow:hidden}
+.pan .lab{position:absolute;left:0;right:0;bottom:14px;text-align:center}
+.env{position:absolute;left:30px;width:60px;height:40px;border:2px solid var(--gold);border-radius:4px;background:rgba(255,210,122,.1);opacity:0}
+.env::before{content:'';position:absolute;left:0;right:0;top:0;height:20px;border-bottom:2px solid var(--gold);clip-path:polygon(0 0,50% 100%,100% 0)}
+.active .env{animation:envFly 2.6s ease-in var(--d,0s) infinite}
+@keyframes envFly{0%{opacity:0;transform:translate(-10px,0) scale(.7)}15%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translate(170px,-40px) scale(1.1) rotate(10deg)}}
+.sbar{position:absolute;left:40px;height:15px;border-radius:8px;background:linear-gradient(90deg,var(--ice2),var(--ice));transform-origin:left;transform:scaleX(0)}
+.active .sbar{animation:sbar 1.3s cubic-bezier(.2,.9,.3,1) calc(var(--d,0s) + var(--k,0) * .22s) forwards}
+@keyframes sbar{to{transform:scaleX(1)}}
+.ln{position:absolute;left:44px;height:4px;border-radius:2px;background:rgba(143,216,255,.7);transform-origin:left;transform:scaleX(0)}
+.active .ln{animation:sbar .8s ease calc(var(--d,0s) + var(--k,0) * .3s) forwards}
+.route{position:absolute;left:130px;top:430px;width:700px;height:4px}
+.route .rl{position:absolute;inset:0;background:linear-gradient(90deg,var(--ice),var(--gold));transform-origin:left;transform:scaleX(0);border-radius:2px}
+.active .route .rl{animation:sbar 2.4s cubic-bezier(.4,0,.2,1) var(--d,0s) forwards}
+.route .dot{position:absolute;left:0;top:-7px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 18px 6px rgba(255,210,122,.9);opacity:0}
+.active .route .dot{animation:dotGo 2.4s cubic-bezier(.4,0,.2,1) var(--d,0s) forwards}
+@keyframes dotGo{0%{opacity:1;left:0}100%{opacity:1;left:682px}}
+.rend{position:absolute;top:446px;font:700 15px Helvetica,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+
+/* ---------- scene 9 ---------- */
+.mol{position:absolute;left:60px;top:70px;width:400px;height:400px}
+.mol .bond{stroke:var(--ice);stroke-width:3;fill:none;opacity:.9}
+.mol .atom{fill:#08121f;stroke:var(--ice);stroke-width:3}
+.mol .atom.o{stroke:var(--red);fill:rgba(255,77,94,.25)}
+.molspin{transform-origin:200px 200px;animation:spin 26s linear infinite}
+.orb{transform-origin:200px 200px;animation:spin 6s linear infinite}
+.fan{position:absolute;width:150px;height:196px;border:1.5px solid rgba(143,216,255,.5);border-radius:8px;background:linear-gradient(160deg,rgba(58,166,224,.22),rgba(5,8,15,.85));left:520px;top:330px;transform-origin:0 100%;opacity:0}
+.fan::before{content:'';position:absolute;left:14px;right:14px;top:26px;height:3px;background:rgba(143,216,255,.7);box-shadow:0 14px 0 rgba(143,216,255,.5),0 28px 0 rgba(143,216,255,.5),0 42px 0 rgba(143,216,255,.35),0 56px 0 rgba(143,216,255,.35)}
+.active .fan{animation:fanOut 1s cubic-bezier(.2,1.1,.3,1) var(--d,0s) both}
+@keyframes fanOut{from{opacity:0;transform:rotate(0) translateY(40px)}to{opacity:1;transform:rotate(var(--r,0deg))}}
+
+/* ---------- scene 10 ---------- */
+.ring{position:absolute;left:50%;top:50%;width:170px;height:170px;margin:-85px 0 0 -85px;border-radius:50%;border:3px solid var(--ice);opacity:0}
+.active .ring{animation:ripple 2.2s ease-out var(--d,0s) both}
+.under{display:block;height:5px;background:linear-gradient(90deg,var(--ice),var(--gold));border-radius:3px;transform-origin:left;transform:scaleX(0);margin-top:12px}
+.active .under{animation:sbar 1.6s cubic-bezier(.4,0,.2,1) var(--d,0s) forwards}
+.qmark{position:absolute;left:60px;top:-30px;font:700 380px/1 Georgia,serif;color:rgba(143,216,255,.07)}
+
+/* ---------- scene 11 ---------- */
+.word3{display:flex;gap:44px;justify-content:center;align-items:flex-end}
+.word3>div{text-align:center}
+.word3 .h1{font-size:74px;margin-top:12px}
+.conv{position:absolute;left:50%;top:50%;margin:0;width:0;height:0}
+.conv i{position:absolute;border-radius:50%;border:2px solid rgba(255,210,122,.55);opacity:0}
+.active .conv i{animation:converge 3.6s cubic-bezier(.4,0,.2,1) calc(var(--d,0s) + var(--k,0) * .35s) infinite}
+@keyframes converge{0%{opacity:0;transform:scale(2.6)}20%{opacity:.8}100%{opacity:0;transform:scale(.15)}}
+.gauge{position:relative;width:260px;height:130px;margin:6px auto 10px}
+
+/* ---------- scene 12 ---------- */
+.tw{font:700 40px/1 'Courier New',monospace;color:var(--gold);letter-spacing:.04em;min-height:42px;margin-top:20px;text-shadow:0 0 24px rgba(255,210,122,.55)}
+.tw::after{content:'\25AE';animation:pulse .8s steps(2) infinite;margin-left:4px;color:var(--ice)}
+.glowtxt{text-shadow:0 0 50px rgba(143,216,255,.9)}
+.mini{width:120px;height:120px;margin-bottom:6px}
+.active .mini .hs{animation:spinStop 2.6s cubic-bezier(.2,.8,.2,1) var(--d,0s) both}
+@keyframes spinStop{from{transform:rotate(-1440deg)}to{transform:rotate(0)}}
+
+/* ---------- chrome ---------- */
+#sweep{position:absolute;top:-10%;left:-30%;width:26%;height:120%;background:linear-gradient(90deg,transparent,rgba(143,216,255,.55),transparent);transform:skewX(-18deg);opacity:0;pointer-events:none}
+#sweep.go{animation:sweep .9s ease-out}
+@keyframes sweep{0%{left:-30%;opacity:.9}100%{left:130%;opacity:0}}
+#bar{position:fixed;left:0;bottom:0;height:5px;width:0;background:linear-gradient(90deg,var(--ice2),var(--ice));z-index:5;box-shadow:0 0 14px var(--ice2)}
+#chap{position:fixed;left:18px;bottom:14px;z-index:6;font:600 11px Helvetica,Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#6f8aa3}
+#controls{position:fixed;top:14px;right:16px;z-index:6;display:flex;gap:10px}
+#home{position:fixed;top:14px;left:16px;z-index:6}
+.btn{font:600 12px Helvetica,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--tx);background:rgba(10,20,34,.72);border:1px solid rgba(143,216,255,.45);border-radius:999px;padding:9px 16px;cursor:pointer;text-decoration:none;display:inline-block;backdrop-filter:blur(6px)}
+.btn:hover,.btn:focus-visible{background:rgba(58,166,224,.4);outline:none}
+.btn[hidden]{display:none}
+#snd{border-color:var(--gold);color:var(--gold)}
+#end{position:fixed;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;background:rgba(5,8,15,.94);opacity:0;pointer-events:none;transition:opacity 1.1s ease;text-align:center;padding:24px}
+#end.show{opacity:1;pointer-events:auto}
+#end h2{font-size:clamp(28px,5vw,52px)}
+#end p{font:400 clamp(15px,2vw,20px)/1.6 Helvetica,Arial,sans-serif;color:#b8cde0;max-width:36em}
+#end .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn.go{background:var(--ice);color:#04101c;border-color:var(--ice);font-weight:700}
+body.embed #controls,body.embed #home,body.embed #chap,body.embed #end{display:none}
+body.embed #bar{height:4px}
+@media (prefers-reduced-motion:reduce){.active .cam{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div id="vig"></div>
+<a id="home" class="btn" href="index.html">&larr; Home</a>
+<div id="controls">
+  <button id="snd" class="btn" type="button" hidden>&#9654; Play narration</button>
+  <a class="btn" href="index.html">Enter the site &rarr;</a>
+</div>
+<div id="chap"></div>
+
+<div id="view">
+
+<!-- ============ 1 · COLD OPEN ============ -->
+<section class="scene" data-chap="Prologue" data-hue="0"><div class="cam">
+  <div class="g" data-x="1" data-xo="-0.5">
+    <div class="beam" data-c="0" data-o="0"></div>
+    <div class="cap a-rise" data-c="0" data-o="0">Cold Ischemia Foundation</div>
+    <h1 class="h1"><span class="sp" data-c="0" data-o="0">EVERY BROKEN SYSTEM</span><br><span class="sp ac" data-c="0" data-o="1.6">CARRIES A PRICE.</span></h1>
+    <svg class="crack" viewBox="0 0 960 540" aria-hidden="true">
+      <path class="dr" pathLength="1" data-c="0" data-o="1.1" style="--dur:.55s" d="M470 0 L452 90 L492 170 L440 255 L488 330 L452 420 L480 540"/>
+      <path class="dr" pathLength="1" data-c="0" data-o="1.25" style="--dur:.5s" d="M452 90 L360 120 L300 190 L210 205"/>
+      <path class="dr" pathLength="1" data-c="0" data-o="1.3" style="--dur:.5s" d="M492 170 L580 150 L650 215 L760 205"/>
+      <path class="dr" pathLength="1" data-c="0" data-o="1.4" style="--dur:.5s" d="M440 255 L350 300 L280 360 L170 372"/>
+      <path class="dr" pathLength="1" data-c="0" data-o="1.45" style="--dur:.5s" d="M488 330 L580 360 L660 420 L770 430"/>
+    </svg>
+    <div class="flashbox a-flash" data-c="0" data-o="1.1"></div>
+  </div>
+  <div class="g" data-x="2" data-xo="-0.5">
+    <svg class="abs a-fade" data-c="1" data-o="0" style="left:96px;top:0" width="140" height="230" viewBox="0 0 140 230" aria-hidden="true">
+      <line x1="70" y1="0" x2="70" y2="70" stroke="#8fd8ff" stroke-width="2"/>
+      <g class="swing"><path d="M70 70 L120 100 V182 Q120 197 105 197 H35 Q20 197 20 182 V100 Z" fill="rgba(58,166,224,.18)" stroke="#8fd8ff" stroke-width="3"/>
+      <circle cx="70" cy="96" r="7" fill="#05080f" stroke="#8fd8ff" stroke-width="2"/>
+      <text x="70" y="168" text-anchor="middle" font-size="58" fill="#ff4d5e" font-family="Georgia" font-weight="700">$</text></g>
+    </svg>
+    <div class="big96 a-slam" data-c="1" data-o="0.2">SOMEONE</div>
+    <div class="h2 a-rise" data-c="1" data-o="1.2" style="margin-top:14px">IS ALWAYS MADE <span class="rd">TO PAY IT.</span></div>
+  </div>
+  <div class="g">
+    <div class="cap a-rise" data-c="2" data-o="0">Too often, that someone is</div>
+    <svg width="560" height="270" viewBox="0 0 560 270" aria-hidden="true">
+      <g transform="translate(150,150)"><g class="person a-rise" data-c="2" data-o="1.8"><circle class="ph" cx="0" cy="-62" r="28"/><path class="ph" d="M-60 62 Q-60 -22 0 -22 Q60 -22 60 62 Z"/></g></g>
+      <g transform="translate(410,150)"><g class="person cp a-rise" data-c="2" data-o="3.5"><circle class="ph" cx="0" cy="-62" r="28"/><path class="ph" d="M-60 62 Q-60 -22 0 -22 Q60 -22 60 62 Z"/></g></g>
+      <path class="dr" pathLength="1" data-c="2" data-o="4.2" d="M205 120 Q280 40 355 120" fill="none" stroke="#ffd27a" stroke-width="4" stroke-linecap="round" style="filter:drop-shadow(0 0 8px rgba(255,210,122,.9))"/>
+    </svg>
+    <div style="display:flex;gap:150px;margin-top:6px">
+      <div class="lab a-rise" data-c="2" data-o="2.0" style="font-size:18px">The patient</div>
+      <div class="lab a-rise gd" data-c="2" data-o="3.6" style="font-size:18px;color:var(--gold)">The care partner</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ 2 · THE PROBLEM ============ -->
+<section class="scene" data-chap="The Problem" data-hue="1"><div class="cam">
+  <div class="g" data-x="1" data-xo="-0.5">
+    <div class="cap a-rise" data-c="0" data-o="0">The Problem</div>
+    <div class="count"><span class="cnt" data-to="55000000" data-c="0" data-o="0.4" data-dur="2.6" data-fmt="int">0</span></div>
+    <div class="sub a-rise" data-c="0" data-o="2.8" style="margin-top:10px;letter-spacing:.12em;text-transform:uppercase;font-size:17px">Americans managing a loved one's chronic illness, right now</div>
+    <div class="crowd" data-c="0" data-o="1.2" data-n="22"></div>
+  </div>
+  <div class="g" data-x="2" data-xo="-0.5">
+    <div class="strike dim a-slam" data-c="1" data-o="0">LEGAL PROTECTION</div>
+    <div class="strike dim a-slam" data-c="1" data-o="1.7" style="margin-top:18px">COMPENSATION</div>
+    <div class="sub a-fade" data-c="1" data-o="3.2" style="margin-top:24px;letter-spacing:.14em;text-transform:uppercase;font-size:16px">Without them</div>
+  </div>
+  <div class="g">
+    <svg class="maze abs" style="left:0;top:0" width="960" height="540" viewBox="0 0 960 540" aria-hidden="true">
+      <path class="m dr" pathLength="1" data-c="2" data-o="0.5" style="--dur:3.2s" d="M120 120 H840 V420 H180 V190 H760 V350 H260 V260 H680"/>
+      <path class="r dr" pathLength="1" data-c="2" data-o="1.2" style="--dur:2.6s" d="M60 60 H900 V480 H110 V120"/>
+      <path class="m dr" pathLength="1" data-c="2" data-o="1.8" style="--dur:2.6s" d="M300 150 V320 H600 V210 H420"/>
+    </svg>
+    <div class="trap" data-c="2" data-o="0.8"></div>
+    <div class="paper" style="left:70px;top:420px;--d:12.5s"></div><div class="paper" style="left:840px;top:430px;--d:13.4s"></div><div class="paper" style="left:520px;top:440px;--d:14.2s"></div>
+    <div class="cap a-rise" data-c="2" data-o="0">A labyrinthine maze of</div>
+    <div class="h1" style="font-size:58px;line-height:1.2;text-shadow:0 0 30px rgba(5,8,15,1)"><span class="a-slam sp" data-c="2" data-o="3.4">PAPERWORK</span><br><span class="a-slam sp rd" data-c="2" data-o="4.6">DELAY</span><span class="sp">&nbsp;&amp;&nbsp;</span><span class="a-slam sp ac" data-c="2" data-o="5.4">SILENCE</span></div>
+  </div>
+</div></section>
+
+<!-- ============ 3 · THE NAME ============ -->
+<section class="scene" data-chap="The Name" data-hue="2"><div class="cam">
+  <div class="rings"><i></i><i></i><i></i></div>
+  <svg class="clockbox" viewBox="-200 -200 400 400" aria-hidden="true">
+    <circle r="192" fill="none" stroke="rgba(143,216,255,.22)" stroke-width="2"/>
+    <circle class="face" data-c="2" data-o="0" r="172" fill="rgba(5,8,15,.55)" stroke="#8fd8ff" stroke-width="4"/>
+    <g id="ticks"></g>
+    <g class="hand-h"><line x1="0" y1="0" x2="0" y2="-88" stroke="#d9ecff" stroke-width="9" stroke-linecap="round"/></g>
+    <g class="hand-m"><line x1="0" y1="0" x2="0" y2="-132" stroke="#8fd8ff" stroke-width="6" stroke-linecap="round"/></g>
+    <g class="hand-s"><line x1="0" y1="22" x2="0" y2="-150" stroke="#ff4d5e" stroke-width="2.5"/></g>
+    <circle r="11" fill="#8fd8ff"/>
+  </svg>
+  <div class="rcol">
+    <div class="cap a-rise" data-c="0" data-o="0">The Name Is The Mission</div>
+    <div class="readout" id="readout"><span class="cnt" data-to="259200" data-c="0" data-o="0.4" data-dur="9" data-fmt="hms">00:00:00</span></div>
+    <div class="h3 a-rise" data-c="0" data-o="1.2">The inexorable clock that runs while something <span class="ac">vital</span> waits.</div>
+    <div class="h2 a-slam" data-c="1" data-o="0" style="margin-top:26px">DELAY IS NEVER <span class="ac">NEUTRAL.</span></div>
+    <div class="h2 a-slam rd" data-c="2" data-o="0" style="margin-top:14px">EVERY HOUR HAS A COST.</div>
+  </div>
+</div></section>
+
+<!-- ============ 4 · WHO WE ARE ============ -->
+<section class="scene" data-chap="Who We Are" data-hue="3"><div class="cam">
+  <div class="g" data-x="1" data-xo="-0.5">
+    <div class="burst" data-c="0" data-o="0"></div><div class="burst" data-c="0" data-o="0.5"></div>
+    <img class="logo a-pop" data-c="0" data-o="0" src="cold-ischemia-logo.png" alt="" onerror="this.style.display='none'">
+    <h2 class="h1" style="font-size:54px;margin-top:20px"><span class="sp" data-c="0" data-o="0.5">COLD ISCHEMIA</span> <span class="sp ac" data-c="0" data-o="1.4">FOUNDATION</span></h2>
+    <div class="chips">
+      <span class="chip ice a-pop" data-c="0" data-o="3.3">Patient-led</span>
+      <span class="chip a-pop" data-c="0" data-o="4.4">501(c)(3)</span>
+      <span class="chip ice a-pop" data-c="0" data-o="8.0">Ellenton, Florida</span>
+    </div>
+  </div>
+  <div class="g" data-x="2" data-xo="-0.5">
+    <div class="cap a-rise" data-c="1" data-o="0">Built on</div>
+    <div class="count" style="font-size:150px"><span class="cnt" data-to="19" data-c="1" data-o="0.2" data-dur="1.6" data-fmt="int">0</span><span style="font-size:.28em;color:var(--mut);letter-spacing:.1em"> YEARS</span></div>
+    <div class="chips">
+      <span class="chip ice a-pop" data-c="1" data-o="2.2">Clinical operations</span>
+      <span class="chip a-pop" data-c="1" data-o="4.4">Lean Six Sigma</span>
+      <span class="chip ice a-pop" data-c="1" data-o="6.4">Lived experience</span>
+    </div>
+  </div>
+  <div class="g">
+    <svg class="shield" viewBox="0 0 340 420" aria-hidden="true"><path class="dr" pathLength="1" data-c="2" data-o="0" style="--dur:2s" d="M170 8 L320 62 V210 Q320 330 170 412 Q20 330 20 210 V62 Z"/></svg>
+    <div class="big160 a-slam" data-c="2" data-o="0.3">$0</div>
+    <div class="h3 a-rise" data-c="2" data-o="1.9" style="letter-spacing:.14em;margin-top:6px">PHARMA FUNDING</div>
+    <div class="h1 a-slam gd" data-c="2" data-o="3.2" style="font-size:70px;margin-top:6px">EVER.</div>
+  </div>
+</div></section>
+
+<!-- ============ 5 · THE MISSION ============ -->
+<section class="scene" data-chap="The Mission" data-hue="4"><div class="cam">
+  <svg class="bp abs" style="left:0;top:0" width="960" height="540" viewBox="0 0 960 540" aria-hidden="true">
+    <path class="dr" pathLength="1" data-c="0" data-o="0.2" style="--dur:3s" d="M120 470 H840 M170 470 V150 H790 V470 M170 150 L480 60 L790 150 M300 470 V250 H400 V470 M560 470 V250 H660 V470 M170 310 H790"/>
+    <line class="dr" pathLength="1" data-c="0" data-o="0.8" style="--dur:2.6s" x1="170" y1="150" x2="790" y2="470"/>
+    <line class="dr" pathLength="1" data-c="0" data-o="1.2" style="--dur:2.6s" x1="790" y1="150" x2="170" y2="470"/>
+  </svg>
+  <div class="g" data-x="1" data-xo="-0.5">
+    <div class="cap a-rise" data-c="0" data-o="0">Our Mission</div>
+    <h1 class="h1" style="font-size:76px"><span class="sp" data-c="0" data-o="0.3">STRUCTURAL</span><br><span class="sp ac" data-c="0" data-o="0.9">ADVOCACY</span></h1>
+  </div>
+  <div class="g">
+    <div class="h3 a-rise" data-c="1" data-o="0" style="letter-spacing:.02em">We do not patch <span class="strike dim" style="font-size:inherit;--d:calc(var(--d,0s))" data-c="1" data-o="0">symptoms</span>.</div>
+    <div class="col3">
+      <div class="card a-rise" data-c="1" data-o="2.5">
+        <svg width="120" height="84" viewBox="0 0 120 84" aria-hidden="true"><g fill="rgba(143,216,255,.7)"><rect class="bar1" x="8" y="40" width="16" height="40" style="--d:inherit;--k:0"/><rect class="bar1" x="32" y="22" width="16" height="58" style="--k:1"/><rect class="bar1" x="56" y="48" width="16" height="32" style="--k:2"/><rect class="bar1" x="80" y="12" width="16" height="68" style="--k:3"/></g><g class="mag"><circle cx="60" cy="40" r="22" fill="rgba(5,8,15,.4)" stroke="#ffd27a" stroke-width="4"/><line x1="76" y1="56" x2="96" y2="76" stroke="#ffd27a" stroke-width="6" stroke-linecap="round"/></g></svg>
+        <b>ANALYZE</b><small>the structure behind the failure</small></div>
+      <div class="card a-rise" data-c="1" data-o="5.0">
+        <svg width="120" height="84" viewBox="0 0 120 84" aria-hidden="true"><path d="M60 0 L24 84 H96 Z" fill="rgba(255,210,122,.22)"/><circle class="hid" data-c="1" data-o="5.6" cx="60" cy="66" r="12" fill="#1a2434" stroke="#ff4d5e" stroke-width="3"/></svg>
+        <b>EXPOSE</b><small>the conflicts and the barriers</small></div>
+      <div class="card a-rise" data-c="1" data-o="7.6">
+        <svg width="120" height="84" viewBox="0 0 120 84" aria-hidden="true"><g fill="rgba(143,216,255,.75)"><rect class="blk" x="10" y="52" width="28" height="30" style="--k:0;--d:inherit"/><rect class="blk" x="82" y="52" width="28" height="30" style="--k:1"/><rect class="blk" x="22" y="22" width="28" height="30" style="--k:2"/><rect class="blk" x="70" y="22" width="28" height="30" style="--k:3"/><rect class="blk" x="38" y="0" width="44" height="22" fill="#ffd27a" style="--k:4"/></g></svg>
+        <b>REFORM</b><small>that holds</small></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ 6 · THE METHOD ============ -->
+<section class="scene" data-chap="Our Method" data-hue="5"><div class="cam">
+  <div class="g" data-x="1" data-xo="-0.5">
+    <div class="cap a-rise" data-c="0" data-o="0">Our Method</div>
+    <h1 class="h1" style="font-size:70px;line-height:1.15"><span class="a-slam sp" data-c="0" data-o="1.4">PRAGMATIC.</span><br><span class="a-slam sp ac" data-c="0" data-o="3.6">DILIGENT.</span> <span class="a-slam sp gd" data-c="0" data-o="4.8">PROVEN.</span></h1>
+  </div>
+  <div class="wheel a-fade" data-c="1" data-o="0">
+    <svg width="430" height="430" viewBox="-215 -215 430 430" aria-hidden="true">
+      <circle r="150" fill="none" stroke="rgba(143,216,255,.18)" stroke-width="3"/>
+      <circle class="dr" pathLength="1" data-c="1" data-o="0.2" style="--dur:4.8s" r="150" fill="none" stroke="#8fd8ff" stroke-width="5" transform="rotate(-90)"/>
+      <circle r="196" fill="none" stroke="rgba(143,216,255,.12)" stroke-width="1.5" stroke-dasharray="3 12"/>
+      <g class="gear"><circle r="64" fill="none" stroke="rgba(255,210,122,.6)" stroke-width="3" stroke-dasharray="8 8"/><circle r="48" fill="none" stroke="rgba(255,210,122,.35)" stroke-width="2"/></g>
+      <text y="-6" text-anchor="middle" font-family="Georgia" font-weight="700" font-size="22" fill="#f4f9ff">LEAN</text>
+      <text y="22" text-anchor="middle" font-family="Georgia" font-weight="700" font-size="22" fill="#ffd27a">SIX SIGMA</text>
+      <g class="node" data-c="1" data-o="0.2" transform="translate(0,-150)"><circle r="17" fill="#05080f" stroke="#8fd8ff" stroke-width="4"/></g><text class="nlab" text-anchor="middle" x="0" y="-182">DEFINE</text>
+      <g class="node" data-c="1" data-o="1.2" transform="translate(142.7,-46.4)"><circle r="17" fill="#05080f" stroke="#8fd8ff" stroke-width="4"/></g><text class="nlab" x="166" y="-44">MEASURE</text>
+      <g class="node" data-c="1" data-o="2.2" transform="translate(88.2,121.4)"><circle r="17" fill="#05080f" stroke="#8fd8ff" stroke-width="4"/></g><text class="nlab" x="104" y="160">ANALYZE</text>
+      <g class="node" data-c="1" data-o="3.2" transform="translate(-88.2,121.4)"><circle r="17" fill="#05080f" stroke="#8fd8ff" stroke-width="4"/></g><text class="nlab" text-anchor="end" x="-104" y="160">IMPROVE</text>
+      <g class="node" data-c="1" data-o="4.2" transform="translate(-142.7,-46.4)"><circle r="17" fill="#05080f" stroke="#ffd27a" stroke-width="4"/></g><text class="nlab" text-anchor="end" x="-166" y="-44" style="fill:#ffd27a">CONTROL</text>
+    </svg>
+  </div>
+</div></section>
+
+<!-- ============ 7 · FREE TOOLS ============ -->
+<section class="scene" data-chap="Free Tools" data-hue="6"><div class="cam">
+  <div class="g" data-x="1" data-xo="-0.5">
+    <div class="cap a-rise" data-c="0" data-o="0">Tools For The People</div>
+    <h1 class="h1" style="font-size:56px"><span class="sp" data-c="0" data-o="0.3">THE PLAYBOOK,</span><br><span class="sp ac" data-c="0" data-o="1.2">IN YOUR HANDS.</span></h1>
+    <div class="stamp" data-c="0" data-o="4.0">FREE</div>
+  </div>
+  <div class="g" data-x="2" data-xo="-0.5">
+    <div class="deck">
+      <div class="tcard" data-c="1" data-o="0"><svg width="84" height="70" viewBox="0 0 84 70"><rect x="4" y="20" width="76" height="46" rx="6" fill="rgba(143,216,255,.2)" stroke="#8fd8ff" stroke-width="3"/><path d="M28 20 V10 Q28 4 34 4 H50 Q56 4 56 10 V20" fill="none" stroke="#8fd8ff" stroke-width="3"/><line x1="4" y1="40" x2="80" y2="40" stroke="#8fd8ff" stroke-width="3"/></svg><b>Toolkits</b></div>
+      <div class="tcard" data-c="1" data-o="1.0"><svg width="84" height="70" viewBox="0 0 84 70"><rect x="14" y="4" width="56" height="64" rx="6" fill="rgba(143,216,255,.2)" stroke="#8fd8ff" stroke-width="3"/><line x1="26" y1="22" x2="58" y2="22" stroke="#ffd27a" stroke-width="3"/><line x1="26" y1="34" x2="58" y2="34" stroke="#8fd8ff" stroke-width="3"/><line x1="26" y1="46" x2="48" y2="46" stroke="#8fd8ff" stroke-width="3"/></svg><b>Playbooks</b></div>
+      <div class="tcard" data-c="1" data-o="2.0"><svg width="84" height="70" viewBox="0 0 84 70"><circle cx="42" cy="35" r="30" fill="rgba(143,216,255,.18)" stroke="#8fd8ff" stroke-width="3"/><path d="M42 12 L50 35 L42 58 L34 35 Z" fill="#ffd27a"/></svg><b>Field guides</b></div>
+      <div class="tcard" data-c="1" data-o="3.3"><svg width="84" height="70" viewBox="0 0 84 70"><path d="M42 12 Q22 2 6 8 V60 Q22 54 42 64 Q62 54 78 60 V8 Q62 2 42 12 Z" fill="rgba(143,216,255,.2)" stroke="#8fd8ff" stroke-width="3"/><line x1="42" y1="12" x2="42" y2="64" stroke="#8fd8ff" stroke-width="3"/></svg><b>Books</b></div>
+    </div>
+  </div>
+  <div class="g">
+    <svg width="200" height="150" viewBox="0 0 200 150" aria-hidden="true">
+      <g transform="translate(60,60)"><g class="shackle" data-c="2" data-o="0.6"><path d="M20 40 V22 Q20 0 40 0 Q60 0 60 22 V40" fill="none" stroke="#ffd27a" stroke-width="9" stroke-linecap="round"/></g><rect x="0" y="38" width="80" height="62" rx="10" fill="rgba(255,210,122,.2)" stroke="#ffd27a" stroke-width="5"/><circle cx="40" cy="64" r="8" fill="#ffd27a"/></g>
+      <g transform="translate(150,110)"><rect class="gatebar" data-c="2" data-o="1.7" x="0" y="-6" width="86" height="12" rx="3" fill="#ff4d5e"/></g>
+    </svg>
+    <div class="h1 a-slam" data-c="2" data-o="0" style="font-size:54px">NO <span class="ac">PAYWALL.</span></div>
+    <div class="h1 a-slam" data-c="2" data-o="1.5" style="font-size:54px;margin-top:6px">NO <span class="gd">GATEKEEPER.</span></div>
+  </div>
+</div></section>
+
+<!-- ============ 8 · ACCOUNTABILITY ============ -->
+<section class="scene" data-chap="Accountability" data-hue="7"><div class="cam">
+  <div class="abs" style="left:0;right:0;top:44px;text-align:center">
+    <div class="cap a-rise" data-c="0" data-o="0">Accountability</div>
+    <h1 class="h1" style="font-size:50px"><span class="sp" data-c="0" data-o="0.2">WE HOLD</span> <span class="sp ac" data-c="0" data-o="0.7">POWER TO ACCOUNT.</span></h1>
+  </div>
+  <div class="pan a-rise" style="left:44px" data-c="0" data-o="2.2">
+    <div class="env" style="top:44px;--d:3.2s"></div><div class="env" style="top:92px;--d:4.0s"></div><div class="env" style="top:140px;--d:4.8s"></div>
+    <svg class="abs" style="right:30px;top:60px" width="64" height="100" viewBox="0 0 64 100"><path d="M8 20 H56 V90 H8 Z M8 20 L32 0 L56 20" fill="rgba(143,216,255,.15)" stroke="#8fd8ff" stroke-width="3"/><line x1="18" y1="44" x2="46" y2="44" stroke="#8fd8ff" stroke-width="3"/><line x1="18" y1="58" x2="46" y2="58" stroke="#8fd8ff" stroke-width="3"/></svg>
+    <div class="lab">Demand letters</div></div>
+  <div class="pan a-rise" style="left:342px" data-c="0" data-o="5.4">
+    <div class="sbar" style="top:28px;width:190px;--k:0;--d:5.8s"></div><div class="sbar" style="top:56px;width:130px;--k:1;--d:5.8s"></div><div class="sbar" style="top:84px;width:210px;--k:2;--d:5.8s"></div><div class="sbar" style="top:112px;width:90px;--k:3;--d:5.8s"></div><div class="sbar" style="top:140px;width:160px;--k:4;--d:5.8s"></div>
+    <div class="lab">Congress scorecard</div></div>
+  <div class="pan a-rise" style="left:640px" data-c="0" data-o="8.2">
+    <div class="ln" style="top:34px;width:180px;--k:0;--d:8.6s"></div><div class="ln" style="top:58px;width:140px;--k:1;--d:8.6s"></div><div class="ln" style="top:82px;width:196px;--k:2;--d:8.6s"></div><div class="ln" style="top:106px;width:120px;--k:3;--d:8.6s"></div><div class="ln" style="top:130px;width:170px;--k:4;--d:8.6s"></div>
+    <svg class="abs" style="right:24px;top:20px" width="40" height="40" viewBox="0 0 40 40"><path d="M6 20 L16 30 L34 8" fill="none" stroke="#ffd27a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="lab">Policy analysis</div></div>
+  <div class="route" data-c="0" data-o="9.0"><div class="rl"></div><div class="dot"></div></div>
+  <div class="rend a-fade" style="left:96px;color:var(--ice)" data-c="0" data-o="9.0">Ellenton, Florida</div>
+  <div class="rend a-fade" style="right:92px;color:var(--gold)" data-c="0" data-o="10.6">Capitol Hill</div>
+</div></section>
+
+<!-- ============ 9 · BHOC ============ -->
+<section class="scene" data-chap="BHOC Field Notes" data-hue="8"><div class="cam">
+  <svg class="mol a-fade" data-c="0" data-o="0" viewBox="0 0 400 400" aria-hidden="true">
+    <g class="molspin">
+      <path class="bond dr" pathLength="1" data-c="0" data-o="0.3" style="--dur:2.4s" d="M200 90 L295 145 V255 L200 310 L105 255 V145 Z"/>
+      <path class="bond dr" pathLength="1" data-c="0" data-o="1.0" style="--dur:1.8s" d="M295 145 L385 95 M295 255 L385 305 M105 145 L15 95 M105 255 L15 305 M200 90 V20 M200 310 V380"/>
+      <circle class="atom" cx="200" cy="90" r="16"/><circle class="atom o" cx="295" cy="145" r="16"/><circle class="atom" cx="295" cy="255" r="16"/><circle class="atom o" cx="200" cy="310" r="16"/><circle class="atom" cx="105" cy="255" r="16"/><circle class="atom" cx="105" cy="145" r="16"/>
+      <circle class="atom" cx="385" cy="95" r="12"/><circle class="atom" cx="385" cy="305" r="12"/><circle class="atom o" cx="15" cy="95" r="12"/><circle class="atom" cx="15" cy="305" r="12"/><circle class="atom" cx="200" cy="20" r="12"/><circle class="atom o" cx="200" cy="380" r="12"/>
+    </g>
+    <g class="orb"><circle cx="200" cy="-10" r="7" fill="#ffd27a"/></g>
+    <circle cx="200" cy="200" r="56" fill="rgba(255,77,94,.18)" stroke="#ff4d5e" stroke-width="3"/>
+    <text x="200" y="208" text-anchor="middle" font-family="Georgia" font-weight="700" font-size="24" fill="#f4f9ff">Fe</text>
+  </svg>
+  <div class="fan" style="--r:-12deg;--d:3.4s" data-c="0" data-o="2.4"></div><div class="fan" style="--r:2deg;left:560px;--d:3.4s" data-c="0" data-o="3.0"></div><div class="fan" style="--r:16deg;left:600px;--d:3.4s" data-c="0" data-o="3.6"></div>
+  <div class="abs" style="left:470px;top:70px;width:440px">
+    <div class="cap a-rise" data-c="0" data-o="0.2">Field Notes</div>
+    <div class="h1" style="font-size:56px"><span class="sp" data-c="0" data-o="0.4">BHOC</span></div>
+    <div class="h2 a-rise ac" data-c="0" data-o="2.5" style="margin-top:12px;font-size:36px">EMERGING SCIENCE,</div>
+    <div class="h2 a-rise gd" data-c="0" data-o="4.4" style="font-size:36px">IN PLAIN LANGUAGE.</div>
+  </div>
+</div></section>
+
+<!-- ============ 10 · OUR STANDARD ============ -->
+<section class="scene" data-chap="Our Standard" data-hue="9"><div class="cam">
+  <div class="qmark">&ldquo;</div>
+  <div class="g" data-x="1" data-xo="-0.5">
+    <div class="ring" data-c="0" data-o="3.4"></div><div class="ring" data-c="0" data-o="3.9"></div>
+    <div class="cap a-rise" data-c="0" data-o="0">Our Standard</div>
+    <div class="h1 a-unblur" data-c="0" data-o="0.4" style="font-size:54px">TRANSPARENCY IS NOT A SLOGAN.</div>
+    <div class="h1 a-slam ac" data-c="0" data-o="3.4" style="font-size:78px;margin-top:20px">IT IS A STANDARD.</div>
+    <svg class="a-fade" data-c="0" data-o="4.2" width="70" height="70" viewBox="0 0 70 70" style="margin-top:14px"><circle class="dr" pathLength="1" data-c="0" data-o="4.2" style="--dur:.8s" cx="35" cy="35" r="30" fill="none" stroke="#8fd8ff" stroke-width="4" transform="rotate(-90 35 35)"/><path class="dr" pathLength="1" data-c="0" data-o="4.8" style="--dur:.6s" d="M20 36 L31 47 L51 24" fill="none" stroke="#ffd27a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="g">
+    <div class="h1 a-rise" data-c="1" data-o="0" style="font-size:46px">THE TRUTH, <span class="ac">TOLD PLAINLY,</span></div>
+    <div class="h1 a-rise" data-c="1" data-o="2.4" style="font-size:46px;margin-top:8px">BY SOMEONE WHO <span class="gd">HAS LIVED IT.</span></div>
+    <span class="under" data-c="1" data-o="3.0" style="width:520px"></span>
+  </div>
+</div></section>
+
+<!-- ============ 11 · TAKE ACTION ============ -->
+<section class="scene" data-chap="Take Action" data-hue="10"><div class="cam">
+  <div class="g" data-x="1" data-xo="-0.5">
+    <div class="word3">
+      <div class="a-rise" data-c="0" data-o="0"><svg width="90" height="70" viewBox="0 0 90 70"><path d="M45 12 Q24 2 6 8 V60 Q24 54 45 64 Q66 54 84 60 V8 Q66 2 45 12 Z" fill="rgba(143,216,255,.2)" stroke="#8fd8ff" stroke-width="4"/></svg><div class="h1 ac"><span class="sp" data-c="0" data-o="0">LEARN.</span></div></div>
+      <div class="a-rise" data-c="0" data-o="0.95"><svg width="90" height="70" viewBox="0 0 90 70"><circle cx="20" cy="36" r="10" fill="#ffd27a"/><circle cx="68" cy="14" r="10" fill="#ffd27a"/><circle cx="68" cy="58" r="10" fill="#ffd27a"/><path d="M28 32 L60 17 M28 40 L60 55" stroke="#ffd27a" stroke-width="4"/></svg><div class="h1 gd"><span class="sp" data-c="0" data-o="0.95">SHARE.</span></div></div>
+      <div class="a-rise" data-c="0" data-o="1.9"><svg width="90" height="70" viewBox="0 0 90 70"><path d="M45 62 C10 38 8 12 28 10 C38 9 45 18 45 18 C45 18 52 9 62 10 C82 12 80 38 45 62 Z" fill="rgba(255,77,94,.25)" stroke="#ff4d5e" stroke-width="4"/></svg><div class="h1" style="color:#ff8a96"><span class="sp" data-c="0" data-o="1.9">SUPPORT.</span></div></div>
+    </div>
+  </div>
+  <div class="g">
+    <div class="conv"><i style="left:-230px;top:-230px;width:460px;height:460px;--k:0"></i><i style="left:-230px;top:-230px;width:460px;height:460px;--k:1"></i><i style="left:-230px;top:-230px;width:460px;height:460px;--k:2"></i><i style="left:-230px;top:-230px;width:460px;height:460px;--k:3"></i></div>
+    <div class="cap a-rise" data-c="1" data-o="0">Every action</div>
+    <div class="h1" style="font-size:56px"><span class="sp" data-c="1" data-o="0.3">TIGHTENS THE</span><br><span class="sp gd" data-c="1" data-o="1.2">PRESSURE FOR CHANGE.</span></div>
+  </div>
+</div></section>
+
+<!-- ============ 12 · CLOSE ============ -->
+<section class="scene" data-chap="Join Us" data-hue="11"><div class="cam">
+  <div class="g">
+    <svg class="mini a-pop" data-c="0" data-o="0" viewBox="-60 -60 120 120" aria-hidden="true"><circle r="54" fill="rgba(5,8,15,.6)" stroke="#8fd8ff" stroke-width="4"/><line x1="0" y1="-44" x2="0" y2="-52" stroke="#8fd8ff" stroke-width="3"/><g class="hs" data-c="1" data-o="0" style="transform-origin:0 0"><line x1="0" y1="0" x2="0" y2="-38" stroke="#ff4d5e" stroke-width="5" stroke-linecap="round"/></g><circle r="6" fill="#8fd8ff"/></svg>
+    <h1 class="h1" style="font-size:54px"><span class="sp" data-c="0" data-o="0.2">COLD ISCHEMIA</span> <span class="sp ac" data-c="0" data-o="0.9">FOUNDATION</span></h1>
+    <div class="h1 glowtxt a-slam" data-c="1" data-o="0" style="font-size:88px;margin-top:10px">STOP THE CLOCK.</div>
+    <div class="flashbox a-flash" data-c="1" data-o="0.15"></div>
+    <div class="tw" data-text="coldischemia.foundation" data-c="2" data-o="0.5" data-dur="2.5"></div>
+    <div class="sub a-fade" data-c="2" data-o="3.2" style="margin-top:12px;letter-spacing:.2em;text-transform:uppercase;font-size:15px">Ellenton, Florida</div>
+  </div>
+</div></section>
+
+<div id="sweep"></div>
+</div>
+
+<div id="bar"></div>
+<div id="end">
+  <div class="cap" style="margin:0">Cold Ischemia Foundation</div>
+  <h2>Stop the clock.</h2>
+  <p>A patient-led 501(c)(3) structural advocacy organization in Ellenton, Florida. Free tools, formal demand letters, public accountability, and plain-language research for patients and care partners.</p>
+  <div class="row"><a class="btn go" href="index.html">Enter the site</a><a class="btn" href="projects.html">Free toolkit</a><a class="btn" href="donate.html">Donate</a><a class="btn" href="#" id="replay">Replay</a></div>
+</div>
+
+<script>
+(function(){
+  /* ============ SYNC CONFIG — edit these to retime the video to the narration ============
+     AUDIO_SRC : the recorded narration (when this file exists, the visuals follow the audio clock).
+     CUES      : one entry per scene. start = second the scene begins; lines = seconds (from the scene start)
+                 at which each spoken line begins. Every animation is placed relative to these.
+     END       : minimum video length in seconds (auto-extended if the recording is longer). */
+  var AUDIO_SRC = 'cif-intro-narration.mp3';
+  var CUES = /*CUES*/[{"start":0.0,"lines":[0.6,5.3,11.0]},{"start":18.8,"lines":[0.4,7.9,12.1]},{"start":38.4,"lines":[0.4,8.0,10.9]},{"start":53.0,"lines":[0.4,11.3,19.4]},{"start":77.8,"lines":[0.4,3.9]},{"start":94.2,"lines":[0.4,6.1]},{"start":106.2,"lines":[0.4,6.1,11.3]},{"start":121.2,"lines":[0.4]},{"start":133.6,"lines":[0.4]},{"start":140.9,"lines":[0.4,6.8]},{"start":154.1,"lines":[0.4,3.9]},{"start":162.7,"lines":[0.4,2.7,5.3]}];
+  var END = /*END*/173.3;
+  var HUE = [[58,166,224],[255,77,94],[58,166,224],[58,166,224],[255,210,122],[58,166,224],[255,210,122],[58,166,224],[143,216,255],[58,166,224],[255,210,122],[58,166,224]];
+
+  var qs = location.search;
+  var embedded = /[?&]embed=1/.test(qs) && window.parent !== window;
+  var jump = (qs.match(/[?&]at=([\d.]+)/) || [])[1];                     /* ?at=SECONDS for previewing */
+  if (embedded) document.body.classList.add('embed');
+
+  var view = document.getElementById('view');
+  function fit(){ view.style.transform = 'scale(' + Math.min(innerWidth / 960, innerHeight / 540) + ')'; }
+  fit(); addEventListener('resize', fit);
+
+  /* ---------- background: ice particles, scene-tinted glow, light bursts ---------- */
+  var cv = document.getElementById('bg'), cx = cv.getContext('2d'), W, H, P = [], bursts = [], tint = [58,166,224], tgt = [58,166,224];
+  function size(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+  size(); addEventListener('resize', size);
+  for (var i = 0; i < (embedded ? 70 : 120); i++) P.push({x:Math.random(), y:Math.random(), r:Math.random()*2.3+.4, s:Math.random()*.0003+.00007, a:Math.random()*.6+.15});
+  function burst(){ for (var k = 0; k < 140; k++){ var a = Math.random()*6.283, v = Math.random()*5+2; bursts.push({x:W/2, y:H/2, vx:Math.cos(a)*v, vy:Math.sin(a)*v, l:1, c:Math.random()<.5?'255,210,122':'143,216,255'}); } }
+  function paint(){
+    for (var q = 0; q < 3; q++) tint[q] += (tgt[q]-tint[q])*.03;
+    var g = cx.createRadialGradient(W*.5, H*.42, 0, W*.5, H*.5, Math.max(W,H)*.82);
+    g.addColorStop(0, 'rgba('+(tint[0]*.22|0)+','+(tint[1]*.22+8|0)+','+(tint[2]*.22+14|0)+',1)'); g.addColorStop(1, '#05080f');
+    cx.fillStyle = g; cx.fillRect(0, 0, W, H);
+    P.forEach(function(p){ p.y -= p.s*16; if (p.y < 0){ p.y = 1; p.x = Math.random(); }
+      cx.beginPath(); cx.fillStyle = 'rgba('+(tint[0]|0)+','+(tint[1]+50>255?255:tint[1]+50|0)+','+(tint[2]|0)+','+p.a+')'; cx.arc(p.x*W, p.y*H, p.r, 0, 6.283); cx.fill(); });
+    for (var b = bursts.length-1; b >= 0; b--){ var o = bursts[b]; o.x += o.vx; o.y += o.vy; o.vx *= .985; o.vy *= .985; o.l -= .012;
+      if (o.l <= 0){ bursts.splice(b,1); continue; } cx.beginPath(); cx.fillStyle = 'rgba('+o.c+','+o.l+')'; cx.arc(o.x, o.y, 2.4, 0, 6.283); cx.fill(); }
+    requestAnimationFrame(paint);
+  }
+  paint();
+
+  /* ---------- clock ticks ---------- */
+  var tk = document.getElementById('ticks'), s = '';
+  for (var t = 0; t < 60; t++){ var a = t*6*Math.PI/180, big = t%5===0, r1 = big?150:160, r2 = 168;
+    s += '<line x1="'+(Math.sin(a)*r1).toFixed(1)+'" y1="'+(-Math.cos(a)*r1).toFixed(1)+'" x2="'+(Math.sin(a)*r2).toFixed(1)+'" y2="'+(-Math.cos(a)*r2).toFixed(1)+'" stroke="'+(big?'#d9ecff':'rgba(143,216,255,.45)')+'" stroke-width="'+(big?4:2)+'"/>'; }
+  tk.innerHTML = s;
+
+  /* ---------- crowd of people glyphs, letter splitting ---------- */
+  document.querySelectorAll('.crowd').forEach(function(c){ var n = +c.dataset.n || 20, h = ''; for (var i = 0; i < n; i++) h += '<i style="--i:'+i+'"></i>'; c.innerHTML = h; });
+  document.querySelectorAll('.sp').forEach(function(el){
+    var n = 0;
+    (function walk(node){ [].slice.call(node.childNodes).forEach(function(c){
+      if (c.nodeType === 3){ var f = document.createDocumentFragment(); c.textContent.split('').forEach(function(ch){ var sp = document.createElement('span'); sp.className = 'ch'; sp.textContent = ch === ' ' ? ' ' : ch; sp.style.setProperty('--i', n++); f.appendChild(sp); }); node.replaceChild(f, c); }
+      else if (c.nodeType === 1 && c.tagName !== 'BR') walk(c); }); })(el);
+  });
+
+  /* ---------- engine ---------- */
+  var scenes = [].slice.call(document.querySelectorAll('.scene'));
+  var bar = document.getElementById('bar'), chap = document.getElementById('chap'), endEl = document.getElementById('end'), sweep = document.getElementById('sweep'), snd = document.getElementById('snd');
+  var total = END, cur = -1, done = false, raf, t0 = performance.now(), ext = null, track = null, sound = false, burstFired = false;
+  var counters = [], typers = [];
+
+  scenes.forEach(function(sc, i){
+    var cue = CUES[i]; if (!cue) return;
+    sc.querySelectorAll('[data-c]').forEach(function(el){ el.style.setProperty('--d', (cue.lines[+el.dataset.c] + (+el.dataset.o || 0)).toFixed(2) + 's'); });
+    sc.querySelectorAll('.g[data-x]').forEach(function(el){ el.style.setProperty('--x', (cue.lines[+el.dataset.x] + (+el.dataset.xo || 0)).toFixed(2) + 's'); });
+    [].slice.call(sc.querySelectorAll('.g')).forEach(function(g, gi){ if (!gi) return; var m = 1e9;
+      g.querySelectorAll('[data-c]').forEach(function(el){ m = Math.min(m, cue.lines[+el.dataset.c] + (+el.dataset.o || 0)); });
+      if (m < 1e9){ g.classList.add('late'); g.style.setProperty('--s', Math.max(0, m - .2).toFixed(2) + 's'); } });
+    sc.querySelectorAll('.cnt').forEach(function(el){ counters.push({el:el, s:i, at:cue.lines[+el.dataset.c] + (+el.dataset.o || 0), dur:+el.dataset.dur || 2, to:+el.dataset.to, fmt:el.dataset.fmt}); });
+    sc.querySelectorAll('.tw').forEach(function(el){ typers.push({el:el, s:i, at:cue.lines[+el.dataset.c] + (+el.dataset.o || 0), dur:+el.dataset.dur || 2, text:el.dataset.text}); });
+  });
+
+  function fmt(v, f){ if (f === 'hms'){ var h = Math.floor(v/3600), m = Math.floor(v%3600/60), s2 = Math.floor(v%60); return (h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(s2<10?'0':'')+s2; } return Math.round(v).toLocaleString('en-US'); }
+  function clock(){
+    if (ext) return ext.playing ? ext.t + (performance.now()-ext.at)/1000 : ext.t;
+    if (sound && track) return track.currentTime;
+    return (performance.now()-t0)/1000;
+  }
+  function show(i){
+    scenes.forEach(function(s){ s.classList.remove('active'); });
+    void document.body.offsetWidth;
+    scenes[i].classList.add('active');
+    var le0 = clock() - CUES[i].start;
+    if (le0 > .25) scenes[i].getAnimations({subtree:true}).forEach(function(a){ try{ a.currentTime = le0*1000; }catch(e){} });
+    chap.textContent = (i+1) + ' / ' + scenes.length + '  ·  ' + scenes[i].dataset.chap;
+    tgt = HUE[i] || HUE[0].slice(); burstFired = false;
+    sweep.classList.remove('go'); void sweep.offsetWidth; sweep.classList.add('go');
+    counters.forEach(function(c){ if (c.s === i) c.el.textContent = fmt(0, c.fmt); });
+    typers.forEach(function(c){ if (c.s === i) c.el.textContent = ''; });
+  }
+  function tick(){
+    var e = clock(), idx = 0;
+    bar.style.width = Math.min(100, e/total*100) + '%';
+    for (var k = 0; k < CUES.length; k++) if (e >= CUES[k].start) idx = k;
+    if (idx !== cur){ cur = idx; show(idx); }
+    var le = e - CUES[cur].start;
+    counters.forEach(function(c){ if (c.s !== cur) return; var p = Math.min(1, Math.max(0, (le-c.at)/c.dur)); c.el.textContent = fmt(c.to*(1-Math.pow(1-p,3)), c.fmt); });
+    typers.forEach(function(c){ if (c.s !== cur) return; var p = Math.min(1, Math.max(0, (le-c.at)/c.dur)); c.el.textContent = c.text.slice(0, Math.round(p*c.text.length)); });
+    if (cur === 11 && !burstFired && le >= CUES[11].lines[1] + .15){ burstFired = true; burst(); }
+    if (cur === 2){ var ro = document.getElementById('readout'); if (ro) ro.classList.toggle('hot', le >= CUES[2].lines[2]); }
+    if (e >= total){ finish(); return; }
+    raf = requestAnimationFrame(tick);
+  }
+  function start(){ done = false; cur = -1; endEl.classList.remove('show'); t0 = performance.now() - (jump ? +jump*1000 : 0); cancelAnimationFrame(raf); raf = requestAnimationFrame(tick); }
+  function finish(){
+    if (done) return; done = true; cancelAnimationFrame(raf); bar.style.width = '100%'; chap.textContent = '';
+    if (embedded) parent.postMessage({cif:'done'}, location.origin);
+    else setTimeout(function(){ endEl.classList.add('show'); }, 1500);
+  }
+
+  /* ---------- standalone page: owns its narration ---------- */
+  if (!embedded){
+    track = new Audio(); track.preload = 'metadata';
+    track.addEventListener('loadedmetadata', function(){ total = Math.max(END, track.duration + 1.5); snd.hidden = false; });
+    track.addEventListener('ended', function(){ t0 = performance.now() - track.duration*1000; sound = false; snd.textContent = '▶ Replay narration'; });
+    track.src = AUDIO_SRC;
+    snd.onclick = function(){
+      if (!sound){ track.currentTime = 0; var p = track.play(); sound = true; snd.textContent = 'Mute'; start();
+        if (p && p.catch) p.catch(function(){ sound = false; snd.textContent = '▶ Play narration'; }); }
+      else { sound = false; track.pause(); t0 = performance.now() - track.currentTime*1000; snd.textContent = '▶ Play narration'; }
+    };
+    document.getElementById('replay').onclick = function(e){ e.preventDefault(); sound = false; if (track) track.pause(); start(); };
+  }
+
+  /* ---------- embedded in the homepage pop-up: parent owns the narration and feeds the clock ---------- */
+  if (embedded){
+    addEventListener('message', function(ev){
+      if (ev.source !== parent || ev.origin !== location.origin) return;
+      var m = ev.data; if (!m || !m.cif) return;
+      if (m.cif === 'duration') total = Math.max(END, m.d + 1.5);
+      else if (m.cif === 'audio-start'){ ext = {t:m.t||0, at:performance.now(), playing:true}; start(); }
+      else if (m.cif === 'clock'){ if (ext){ ext.t = m.t; ext.at = performance.now(); ext.playing = !!m.playing; } }
+      else if (m.cif === 'audio-off'){ if (ext){ t0 = performance.now() - (m.t != null ? m.t : clock())*1000; ext = null; } }
+      else if (m.cif === 'replay'){ ext = null; start(); }
+    });
+    parent.postMessage({cif:'ready'}, location.origin);
+  }
+  start();
+})();
+</script>
+</body>
+</html>
