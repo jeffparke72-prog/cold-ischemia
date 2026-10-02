@@ -73,11 +73,11 @@
     '<div class="cifp-back" data-close></div>' +
     '<div class="cifp-card">' +
       '<div class="cifp-head"><div class="cifp-ttl"><div class="cifp-eyebrow">Cold Ischemia Foundation</div>' +
-        '<h2 class="cifp-h" id="cifp-h">Welcome. Our mission in under three minutes.</h2></div>' +
+        '<h2 class="cifp-h" id="cifp-h">Welcome. Our mission, in three and a half minutes.</h2></div>' +
         '<button type="button" class="cifp-x" data-close aria-label="Close introduction">✕</button></div>' +
       '<div class="cifp-frame"><iframe title="Cold Ischemia Foundation introduction video" tabindex="-1" allow="autoplay"></iframe>' +
         '<button type="button" class="cifp-snd" data-a="snd" hidden>▶&nbsp; Play with sound</button></div>' +
-      '<div class="cifp-foot"><span class="cifp-meta">Introduction · 2 min 53 sec</span>' +
+      '<div class="cifp-foot"><span class="cifp-meta">Introduction · 3 min 26 sec</span>' +
         '<button type="button" class="cifp-b" data-a="mute" hidden>Mute</button>' +
         '<button type="button" class="cifp-b" data-a="replay" hidden>Replay</button>' +
         '<a class="cifp-b" href="projects.html">Free Toolkit</a>' +
