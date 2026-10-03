@@ -1,0 +1,40 @@
+# Refreshes the Transplant & Kidney Wire (news/feed.json and news/feed.xml) every 30 minutes.
+# Sources live in _feeds/feeds.json. No accounts, keys, or sign-ups are needed.
+name: Update news feed
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["_feeds/feeds.json", "_tools/build-feed.py"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: news-feed
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet feedparser==6.0.11
+      - name: Fetch all sources
+        run: python _tools/build-feed.py
+      - name: Save the updated feed
+        run: |
+          git config user.name "cif-news-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add news/feed.json news/feed.xml
+          if git diff --cached --quiet; then echo "No new articles."; exit 0; fi
+          git commit -m "News feed: update $(date -u +'%Y-%m-%d %H:%M') UTC"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0; sleep 5; done
+          exit 1
