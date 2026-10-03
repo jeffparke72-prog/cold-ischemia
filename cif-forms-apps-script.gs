@@ -23,6 +23,14 @@
 
 var OWNER_EMAIL = "jeffparke72@gmail.com";
 var SHEET_NAME = "CIF Website Submissions";
+// Added to every automatic reply, so people always know how to keep reaching out.
+var FOLLOW_UP = "\n\n---\nHOW TO KEEP IN TOUCH\n" +
+  "• Reply to this email any time. It comes straight to me, and your earlier message stays in the same thread.\n" +
+  "• Or use the Contact page (coldischemia.foundation/contact.html), or the \"Questions?\" button on any page of the site.\n" +
+  "• Expect a personal reply as soon as possible, usually within a few days. If you haven't heard back within a week, reply to this email and I will follow up.\n" +
+  "• Free toolkits and guides: coldischemia.foundation/projects.html\n\n" +
+  "In an emergency, call 911. In emotional crisis, call or text 988 (Suicide & Crisis Lifeline), 24/7.\n\n" +
+  "For your records, here is what you sent us:\n";
 var SIGNATURE = "\n\n— Jeff A. Parke\nFounder & Executive Director\nCold Ischemia Foundation\ncoldischemia.foundation";
 
 var LABELS = {
@@ -36,7 +44,7 @@ var LABELS = {
 };
 
 var CATEGORY_LABELS = {
-  volunteer: "Volunteer & Involvement", media: "Media & Press", donate: "Support & Partnerships",
+  innovation: "Innovation & Research", volunteer: "Volunteer & Involvement", media: "Media & Press", donate: "Support & Partnerships",
   patient: "Patient & Care Partner Support", research: "Research & Policy", general: "General Inquiry"
 };
 
@@ -46,6 +54,7 @@ var CATEGORY_RESPONSES = {
   media: "Thank you for reaching out on a press or media matter. The Cold Ischemia Foundation exists specifically to put verified, patient-grounded, non-industry-funded information into public reporting on kidney disease, dialysis, and transplant policy — a beat that is chronically underserved because so much of the available commentary is funded, directly or indirectly, by the dialysis and pharmaceutical industries it should be scrutinizing.\n\nI am glad to speak on the record, provide background, or connect you with patients and care partners willing to share their experience. Please include your outlet, your deadline, and the specific angle you're pursuing in your message, and I will respond personally as quickly as I can.",
   donate: "Thank you for wanting to support the Cold Ischemia Foundation. CIF does not accept donations, gifts, grants, or sponsorships of any kind. That independence is the entire premise of this organization: the patients and care partners who write to us are the only constituency we answer to.\n\nThe most powerful support you can give costs nothing. Share our free toolkits with someone who needs them, tell your story if you are willing, or volunteer your time and skills. If you are proposing a non-financial partnership, tell me more and I will respond personally.",
   patient: "Thank you for writing, and I'm sorry if it's kidney disease that's brought you here — it usually is. The Cold Ischemia Foundation was built by people who have lived through dialysis and transplantation ourselves, precisely because so much of what patients and care partners are handed is written by people who never have.\n\nOur free toolkits and the Research Library cover dialysis access, transplant navigation, patient rights, and the financial and legal pressure points most people are never warned about. Tell me more about where you or your loved one are in this process and what you're up against, and I will point you to what's most useful — or simply talk it through with you directly.",
+  innovation: "Thank you for reaching out about innovation and research. The Cold Ischemia Foundation follows emerging transplant science, including oxygen-carrier research such as BHOC, machine perfusion, and new ways to preserve donated organs, and explains it in plain language for patients and care partners.\n\nWe are an independent, non-clinical advocacy organization. We do not run clinical trials, enroll patients, or endorse products, and we accept no funding from the companies developing them. That independence is what lets us describe new science honestly.\n\nIf you are a researcher, clinician, or developer, tell me what you are working on, what stage it is at, and what you hope for from CIF: a patient and care-partner perspective, a review of plain-language materials, or a conversation about what families need. If you are a patient or care partner asking whether a new technology is available to you, please also talk with your transplant team. I am glad to help you prepare the questions to bring to them.",
   research: "Thank you for your interest in CIF's research and policy work. Our analyses — including work on physician self-referral in vascular access, home dialysis legislation, and structural reform of the U.S. transplant system — are built using Lean Six Sigma methodology and are held to a standard of sourcing meant to survive contact with legislative staff, journalists, and industry pushback alike.\n\nIf you have a specific research question, a citation request, or are working on related legislation or reporting, let me know the specifics and I'll respond directly.",
   general: "Thank you for contacting the Cold Ischemia Foundation. I read every message that comes through this page personally. CIF is an independent, patient- and care-partner-led advocacy organization confronting structural failures in American kidney care — we take no pharmaceutical or dialysis-industry funding, which means the people writing to us are the only constituency we answer to. I'll review what you've shared and follow up directly as soon as I can."
 };
@@ -91,7 +100,9 @@ function doPost(e) {
     MailApp.sendEmail(mail);
 
     if (email.indexOf("@") > 0) {
-      MailApp.sendEmail({ to: email, subject: "Thank you — Cold Ischemia Foundation", body: reply + SIGNATURE, replyTo: OWNER_EMAIL });
+      var yours = String(d.message || d.summary || "").trim();
+      MailApp.sendEmail({ to: email, subject: "Thank you — Cold Ischemia Foundation" + (d.subject ? ": " + d.subject : ""),
+        body: reply + SIGNATURE + FOLLOW_UP + (yours ? "\n" + yours.replace(/^/gm, "> ") : "\n(your application or form details)") , replyTo: OWNER_EMAIL });
     }
 
     log_(type, who, email, d);

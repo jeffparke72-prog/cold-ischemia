@@ -13,6 +13,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GROUPS = [
     ("About", [
         ("about.html", "Our Story"),
+        ("independence.html", "What Independence Means"),
         ("cif-volunteer-page.html", "Volunteer"),
         ("volunteer-training.html", "Volunteer Training"),
         ("contact.html", "Contact"),
