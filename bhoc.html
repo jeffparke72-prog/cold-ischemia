@@ -98,6 +98,25 @@ footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:
 .bt-link{display:inline-block;margin-top:14px;font-family:'Crimson Pro',Georgia,serif;font-size:1.12rem;font-weight:600;color:#e8b84a;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;}
 .bt-link:hover,.bt-link:focus-visible{color:#ffffff;}
 .bt-card .bt-note{font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1.6;letter-spacing:0.04em;color:#8fa6c8;margin:14px 0 0;}
+
+/* BHOC TRANSPLANT CARD — oxygen teal / deep indigo from bhoctransplant.com, gold from CIF */
+.bx-card{position:relative;max-width:820px;margin-top:22px;background:linear-gradient(160deg,#16203f 0%,#232847 45%,#07101c 100%);border:1px solid rgba(117,210,220,0.35);border-radius:6px;padding:36px 38px 32px;box-shadow:0 24px 60px rgba(0,0,0,0.5);overflow:hidden;}
+.bx-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#75d2dc,#8bc4b6 55%,#c8902a);}
+.bx-card::after{content:'';position:absolute;right:-110px;top:-110px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(117,210,220,0.16),transparent 70%);pointer-events:none;}
+.bx-card .bt-eyebrow{color:#75d2dc;}
+.bx-card p{color:#e1ecef;max-width:none;font-size:1.02rem;line-height:1.8;margin-bottom:1em;}
+.bx-card p strong{color:#fff;}
+.bx-why{border-left:3px solid #c8902a;background:rgba(200,144,42,0.08);padding:12px 16px;border-radius:0 4px 4px 0;}
+.bx-steps{list-style:none;padding:0;margin:20px 0 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;counter-reset:bx;}
+@media(max-width:760px){.bx-steps{grid-template-columns:1fr 1fr;}.bx-card{padding:28px 20px 24px;}}
+@media(max-width:440px){.bx-steps{grid-template-columns:1fr;}}
+.bx-steps li{counter-increment:bx;background:rgba(7,16,28,0.55);border:1px solid rgba(117,210,220,0.22);border-radius:4px;padding:12px 14px;font-family:'Crimson Pro',Georgia,serif;font-size:0.98rem;line-height:1.45;color:#e1ecef;}
+.bx-steps li::before{content:counter(bx,decimal-leading-zero);display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#75d2dc;margin-bottom:4px;}
+.bx-steps li b{display:block;color:#fff;font-weight:600;}
+.bx-card .bt-col{border-color:rgba(117,210,220,0.22);}
+.bx-card .bt-col p{font-size:0.98rem;line-height:1.6;margin:0;}
+.bx-card .bt-col li::before{background:#75d2dc;}
+.bx-card .bt-note{font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1.6;letter-spacing:0.04em;color:#93aab5;margin:14px 0 0;}
 </style>
 </head>
 <body>
@@ -143,8 +162,43 @@ footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:
         </div>
       </div>
       <p class="bt-motto">&ldquo;One Oxygen. Every Species. One Living Planet.&rdquo;</p>
-      <a class="bt-link" href="https://bhoctherapeutics.com/#company" target="_blank" rel="noopener">Visit the BHOC Therapeutics company page &rarr;</a>
+      <a class="bt-link" href="https://bhoctherapeutics.com/" target="_blank" rel="noopener">Visit BHOC Therapeutics at bhoctherapeutics.com &rarr;</a>
       <p class="bt-note">Opens bhoctherapeutics.com in a new tab. BHOC Therapeutics notes that these are areas of research and development, not approved therapeutic claims.</p>
+    </article>
+    <article class="bt-card bx-card" aria-labelledby="bx-name">
+      <div class="bt-eyebrow">Transplant Research Program</div>
+      <h2 class="bt-name" id="bx-name">BHOC Transplant</h2>
+      <div class="bt-tag">Oxygen continuity. Across every transition.</div>
+      <p>BHOC Transplant is BHOC Therapeutics&rsquo; transplant research program. It studies whether BHOC, their cell-free hemoglobin oxygen carrier, could <strong>keep a donated organ supplied with oxygen</strong> during preservation, machine perfusion, and transplantation, following the organ from donor care through support outside the body to the recipient&rsquo;s recovery.</p>
+      <p class="bx-why"><strong>Why it matters here:</strong> the stretch they study most closely, cooling, transport, and rewarming, is the cold ischemia window this foundation is named for. Their research asks whether controlled oxygen could protect an organ during that clock.</p>
+      <ol class="bx-steps" aria-label="The six stages of the transplant journey they study">
+        <li><b>Donor care &amp; decision</b>Before the organ is recovered</li>
+        <li><b>Procure, cool &amp; transport</b>Oxygen during cold storage and travel</li>
+        <li><b>Organ preparation</b>Assess, sustain, and prepare the organ</li>
+        <li><b>Controlled rewarming</b>From cold back to body temperature</li>
+        <li><b>Transplant &amp; reperfuse</b>The organ meets the patient</li>
+        <li><b>Healing &amp; graft function</b>Recovery, measured by real outcomes</li>
+      </ol>
+      <div class="bt-grid">
+        <div class="bt-col">
+          <h3>The Science</h3>
+          <p>Hemoglobin holds oxygen and releases it as the tissue around it runs low. They plan to measure how that release changes from cold to warm, and whether it supports organ energy and function compared with standard preservation.</p>
+        </div>
+        <div class="bt-col">
+          <h3>First Step</h3>
+          <p>Start with one organ and one protocol: a kidney, kept outside the body and moved from cold to warm, with every measurement defined in advance before wider testing.</p>
+        </div>
+        <div class="bt-col">
+          <h3>Their Standard</h3>
+          <ul>
+            <li>Every stage needs its own evidence</li>
+            <li>Results and time gained are still to be proven</li>
+            <li>Patients, care partners, and clinicians are invited to challenge the work</li>
+          </ul>
+        </div>
+      </div>
+      <a class="bt-link" href="https://bhoctransplant.com/" target="_blank" rel="noopener">Visit BHOC Transplant at bhoctransplant.com &rarr;</a>
+      <p class="bt-note">Opens bhoctransplant.com in a new tab. BHOC Transplant describes this as a research concept. It is not an approved treatment, and they state that BHOC has not been shown to prevent rejection or change transplant outcomes.</p>
     </article>
   </div>
 </section>
