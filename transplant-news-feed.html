@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transplant &amp; Kidney Wire | Cold Ischemia Foundation</title>
+<meta name="description" content="A live feed of transplant policy, organ donation, kidney disease, dialysis and ESRD research and news, refreshed every 30 minutes from public journals, PubMed, the Federal Register and news sources.">
+<link rel="alternate" type="application/rss+xml" title="Cold Ischemia Foundation: Transplant & Kidney Wire" href="news/feed.xml">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--deep:#050810;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--ink:#d8cfc4;--ink80:rgba(216,207,196,.84);--ink60:rgba(216,207,196,.62);--ink40:rgba(216,207,196,.42);--gold:#c8902a;--gold-l:#e8b84a;--pulse:#2ac4c8;--green:#50c878;--danger:#e0566f;--b:rgba(100,140,200,.12);--b2:rgba(100,140,200,.26)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--gold-l)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:300;line-height:1.15;color:#f3ede4}
+h1 em{font-style:italic;color:var(--gold-l)}
+.hero{padding:84px 0 34px;background:radial-gradient(800px 380px at 85% -10%,rgba(42,196,200,.13),transparent 60%),var(--abyss);border-bottom:1px solid var(--b)}
+.hero h1{font-size:clamp(36px,6vw,66px);margin:14px 0 14px}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--ink80);max-width:780px}
+.live{display:inline-flex;align-items:center;gap:10px;color:var(--pulse)}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(80,200,120,.7);animation:beat 2s infinite}
+.live.stale i{background:var(--gold);animation:none}
+@keyframes beat{0%{box-shadow:0 0 0 0 rgba(80,200,120,.6)}70%{box-shadow:0 0 0 10px rgba(80,200,120,0)}100%{box-shadow:0 0 0 0 rgba(80,200,120,0)}}
+.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink60)}
+.meta b{color:#f3ede4;font-weight:500}
+.meta a{color:var(--gold-l);text-decoration:none}
+.bar{position:sticky;top:56px;z-index:30;background:rgba(3,5,9,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--b);padding:12px 0}
+.bar .wrap{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{background:none;border:1px solid var(--b2);border-radius:999px;color:var(--ink80);font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--pulse);border-color:var(--pulse);color:var(--abyss)}
+.tab span{opacity:.7;margin-left:4px}
+.bar input{flex:1 1 220px;background:var(--surf);border:1px solid var(--b2);border-radius:6px;color:#fff;font:17px 'Crimson Pro',serif;padding:9px 12px}
+.bar select{background:var(--surf);border:1px solid var(--b2);border-radius:6px;color:#fff;font:16px 'Crimson Pro',serif;padding:9px 10px;max-width:260px}
+main{padding:26px 0 60px}
+.newbar{display:none;margin-bottom:14px;background:rgba(42,196,200,.12);border:1px solid rgba(42,196,200,.4);border-radius:8px;padding:10px 14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--pulse);cursor:pointer}
+.newbar.on{display:block}
+.list{display:grid;gap:10px}
+.item{display:grid;grid-template-columns:110px 1fr;gap:16px;background:var(--surf);border:1px solid var(--b);border-radius:10px;padding:16px 18px;transition:border-color .2s,transform .2s}
+.item:hover{border-color:var(--b2);transform:translateY(-1px)}
+@media(max-width:600px){.item{grid-template-columns:1fr;gap:6px}}
+.when{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink60);line-height:1.5}
+.when b{display:block;color:#f3ede4;font-weight:500;font-size:12.5px}
+.item h3{font-size:20px;font-weight:600;line-height:1.3;margin-bottom:4px}
+.item h3 a{color:#f3ede4;text-decoration:none}
+.item h3 a:hover{color:var(--gold-l);text-decoration:underline}
+.item p{font-size:16px;color:var(--ink60)}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;border:1px solid var(--b2);border-radius:999px;padding:2px 9px;color:var(--ink80)}
+.tag.Policy{border-color:rgba(200,144,42,.55);color:var(--gold-l)}.tag.Research{border-color:rgba(42,196,200,.5);color:var(--pulse)}.tag.Journals{border-color:rgba(160,140,240,.5);color:#c4b5ff}.tag.News{border-color:rgba(80,200,120,.45);color:#8fe0ad}
+.tag.new{background:var(--gold);border-color:var(--gold);color:var(--abyss);font-weight:600}
+.more{display:block;margin:18px auto 0;background:none;border:1px solid var(--b2);color:var(--ink);border-radius:4px;padding:12px 22px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.empty{padding:40px 0;text-align:center;color:var(--ink60)}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+@media(max-width:820px){.side{grid-template-columns:1fr}}
+.box{background:var(--void);border:1px solid var(--b2);border-radius:10px;padding:20px}
+.box h2{font-size:24px;margin-bottom:10px}
+.src{list-style:none;display:grid;gap:7px;font-size:15.5px}
+.src li{display:grid;grid-template-columns:16px 1fr auto;gap:8px;align-items:baseline}
+.src .d{width:9px;height:9px;border-radius:50%;background:var(--green);display:inline-block}
+.src .d.f{background:var(--danger)}
+.src a{color:var(--ink);text-decoration:none}.src a:hover{color:var(--gold-l)}
+.src small{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink40)}
+.box p,.box li{font-size:16px;color:var(--ink80)}
+.box ol{padding-left:20px;display:grid;gap:6px}
+.box code{font-family:'IBM Plex Mono',monospace;font-size:12.5px;background:var(--surf);padding:1px 6px;border-radius:4px;color:var(--gold-l)}
+.btn{display:inline-block;margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-radius:3px;padding:12px 18px;background:var(--gold);color:var(--abyss)}
+.btn.line{background:none;border:1px solid var(--b2);color:var(--ink);margin-left:6px}
+footer{border-top:1px solid var(--b);padding:30px 0 44px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink40)}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" class="on" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+
+<header class="hero">
+  <div class="wrap">
+    <span class="mono live" id="live"><i></i><span id="livetxt">Loading the live feed&hellip;</span></span>
+    <h1>The Transplant &amp; <em>Kidney Wire.</em></h1>
+    <p class="lead">Every new article on transplant policy, organ donation, kidney disease, dialysis, and ESRD, gathered from medical journals, PubMed, the Federal Register, and the news. It refreshes on its own every 30 minutes. No sign-ups, no paywalled feeds, nothing to install.</p>
+    <div class="meta"><span><b id="mcount">&ndash;</b> articles</span><span><b id="msrc">&ndash;</b> live sources</span><span>Last update: <b id="mupd">&ndash;</b></span><a href="news/feed.xml">&#9673; Subscribe via RSS</a></div>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="tabs" role="group" aria-label="Filter by type" id="tabs"></div>
+    <label class="sr" for="q">Search articles</label><input id="q" type="search" placeholder="Search: xenotransplant, OPTN, home dialysis&hellip;">
+    <label class="sr" for="s">Source</label><select id="s"><option value="">All sources</option></select>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="newbar" id="newbar" role="status"></div>
+    <div class="list" id="list" aria-live="polite"></div>
+    <button class="more" id="more" type="button" hidden>Show more</button>
+
+    <div class="side">
+      <div class="box">
+        <h2>Live sources</h2>
+        <ul class="src" id="srcs"><li>Loading&hellip;</li></ul>
+        <p style="margin-top:10px;font-size:14px;color:var(--ink40)">A green dot means the source answered on the last check. If one is temporarily down, its earlier articles stay and the rest keep updating.</p>
+      </div>
+      <div class="box">
+        <h2>Add a source any time</h2>
+        <ol>
+          <li>Open the <a href="https://github.com/jeffparke72-prog/cold-ischemia/edit/main/_feeds/feeds.json" target="_blank" rel="noopener">source list on GitHub</a>.</li>
+          <li>Copy any line, paste it below itself, and change the <code>name</code>, <code>url</code> (any RSS or Atom feed), and <code>category</code> (Policy, Research, Journals, or News).</li>
+          <li>For general news feeds, add <code>"filter": true</code> so only transplant and kidney articles are kept.</li>
+          <li>Click <b>Commit changes</b>. The new source appears within minutes.</li>
+        </ol>
+        <p style="margin-top:10px">Or just tell Claude the feed address, and it will add and verify it for you.</p>
+        <a class="btn" href="news/feed.xml">RSS feed</a><a class="btn line" href="https://github.com/jeffparke72-prog/cold-ischemia/actions/workflows/update-news-feed.yml" target="_blank" rel="noopener">Update history</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>&copy; Cold Ischemia Foundation &nbsp;&middot;&nbsp; Headlines link to their original publishers. Summaries are excerpts from each source&rsquo;s own feed.</footer>
+
+<script>
+(function(){
+'use strict';
+var URLS=['https://raw.githubusercontent.com/jeffparke72-prog/cold-ischemia/main/news/feed.json','news/feed.json'];
+var CATS=['All','Policy','Research','Journals','News'], cat='All', shown=40, data=null, lastIds=null, SEEN='cifWireSeen';
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function ago(iso){var d=(Date.now()-new Date(iso).getTime())/1000;if(d<0)d=0;if(d<3600)return Math.max(1,Math.round(d/60))+' min ago';if(d<86400)return Math.round(d/3600)+' hr ago';if(d<86400*30)return Math.round(d/86400)+' days ago';return new Date(iso).toLocaleDateString()}
+function day(iso){return new Date(iso).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})}
+var seen=0;try{seen=+localStorage.getItem(SEEN)||0}catch(e){}
+
+function load(manual){
+  var i=0;(function next(){if(i>=URLS.length){if(!data)document.getElementById('list').innerHTML='<div class="empty">The live feed is starting up. The first update arrives within 30 minutes of launch; please check back shortly.</div>';return}
+    fetch(URLS[i++]+(URLS[i-1].indexOf('http')===0?'?t='+Math.floor(Date.now()/60000):''),{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){
+      if(!j||!j.items)throw 0;
+      if(data&&j.updated<=data.updated&&!manual)return;
+      var prevIds=data?data.items.map(function(x){return x.id}):null;data=j;draw(prevIds)}).catch(next)})();
+}
+function draw(prevIds){
+  var items=data.items, ok=data.sources.filter(function(s){return s.ok}).length;
+  var age=(Date.now()-new Date(data.updated).getTime())/60000;
+  document.getElementById('live').className='mono live'+(age>90?' stale':'');
+  document.getElementById('livetxt').textContent=age>90?'Feed paused, showing the latest saved articles':'Live: refreshed every 30 minutes';
+  document.getElementById('mcount').textContent=items.length;document.getElementById('msrc').textContent=ok+' of '+data.sources.length;document.getElementById('mupd').textContent=ago(data.updated);
+  var tabs=document.getElementById('tabs');tabs.innerHTML=CATS.map(function(c){var n=c==='All'?items.length:items.filter(function(x){return x.category===c}).length;return '<button type="button" class="tab" aria-pressed="'+(c===cat)+'" data-c="'+c+'">'+c+'<span>'+n+'</span></button>'}).join('');
+  [].forEach.call(tabs.querySelectorAll('.tab'),function(b){b.onclick=function(){cat=b.dataset.c;shown=40;draw()}});
+  var sel=document.getElementById('s'),cur=sel.value;sel.innerHTML='<option value="">All sources</option>'+data.sources.map(function(s){return '<option'+(s.name===cur?' selected':'')+'>'+esc(s.name)+'</option>'}).join('');
+  document.getElementById('srcs').innerHTML=data.sources.map(function(s){return '<li><span class="d'+(s.ok?'':' f')+'" title="'+(s.ok?'Working':'Not responding: '+esc(s.error||''))+'"></span><a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+'</a><small>'+(s.ok?s.count+' new':'retrying')+'</small></li>'}).join('');
+  list();
+  if(prevIds){var fresh=data.items.filter(function(x){return prevIds.indexOf(x.id)<0}).length;var nb=document.getElementById('newbar');if(fresh){nb.textContent='▲ '+fresh+' new article'+(fresh>1?'s':'')+' just arrived';nb.classList.add('on');nb.onclick=function(){nb.classList.remove('on');window.scrollTo({top:0,behavior:'smooth'})}}}
+}
+function list(){
+  var q=document.getElementById('q').value.trim().toLowerCase(), src=document.getElementById('s').value;
+  var L=data.items.filter(function(x){return (cat==='All'||x.category===cat)&&(!src||x.source===src)&&(!q||(x.title+' '+x.summary+' '+x.source+' '+(x.outlet||'')).toLowerCase().indexOf(q)>-1)});
+  document.getElementById('list').innerHTML=L.slice(0,shown).map(function(x){var isNew=new Date(x.first_seen).getTime()>Math.max(seen,Date.now()-86400000);
+    return '<article class="item"><div class="when"><b>'+ago(x.published)+'</b>'+day(x.published)+'</div><div><h3><a href="'+esc(x.link)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a></h3>'+(x.summary?'<p>'+esc(x.summary)+'</p>':'')+
+      '<div class="tags">'+(isNew?'<span class="tag new">New</span>':'')+'<span class="tag '+esc(x.category)+'">'+esc(x.category)+'</span><span class="tag">'+esc(x.source)+'</span>'+(x.outlet&&x.outlet!==x.source?'<span class="tag">'+esc(x.outlet)+'</span>':'')+'</div></div></article>'}).join('')||'<div class="empty">No articles match.</div>';
+  document.getElementById('more').hidden=L.length<=shown;
+}
+document.getElementById('q').addEventListener('input',function(){shown=40;if(data)list()});
+document.getElementById('s').addEventListener('change',function(){shown=40;if(data)list()});
+document.getElementById('more').onclick=function(){shown+=40;list()};
+window.addEventListener('beforeunload',function(){try{localStorage.setItem(SEEN,Date.now())}catch(e){}});
+load(true);
+setInterval(function(){load(false)},5*60*1000);
+setInterval(function(){if(data)document.getElementById('mupd').textContent=ago(data.updated)},60000);
+})();
+</script>
+</body>
+</html>
