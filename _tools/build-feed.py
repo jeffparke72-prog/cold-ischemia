@@ -19,8 +19,10 @@ OUT_JSON = os.path.join(ROOT, "news", "feed.json")
 OUT_XML = os.path.join(ROOT, "news", "feed.xml")
 SITE = "https://coldischemia.foundation"
 KEEP_DAYS = 90
-MAX_ITEMS = 400
-UA = "Mozilla/5.0 (compatible; CIF-NewsFeed/1.0; +https://coldischemia.foundation/transplant-news-feed.html)"
+MAX_ITEMS = 500
+FEED_VERSION = 2         # bump to discard previously saved articles after a format/date fix
+PER_SOURCE = 30          # newest items kept per source per run, so no single journal floods the feed
+UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36 CIF-NewsFeed/1.1"
 
 TOPIC = re.compile(r"\b(transplant\w*|organ donor\w*|organ donation|donat\w+ (an |a )?(kidney|liver|organ)|living donor\w*|"
                    r"organ procurement|OPOs?\b|OPTN|UNOS|SRTR|xenotransplant\w*|kidney\w*|renal|nephr\w*|dialysis|"
@@ -54,11 +56,37 @@ def entry_time(e):
     return None
 
 
-def from_rss(src):
-    raw = get(src["url"])
+MONTHS = {m: i for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july", "august",
+                                       "september", "october", "november", "december"], 1)}
+
+
+def date_in_text(text):
+    """Publisher feeds without a date field (e.g. ScienceDirect) put it in the description:
+    'Publication date: Available online 1 October 2026' or 'Publication date: October 2026'."""
+    m = re.search(r"(?:Available online|Publication date:?)\s*(?:Available online\s*)?(\d{1,2})?\s*([A-Za-z]+)\s+(\d{4})", text or "")
+    if not m or m.group(2).lower() not in MONTHS:
+        return None
+    return dt.datetime(int(m.group(3)), MONTHS[m.group(2).lower()], int(m.group(1) or 1), 12, tzinfo=dt.timezone.utc)
+
+
+def parse_feed(url):
+    raw = get(url)
     parsed = feedparser.parse(raw)
     if parsed.bozo and not parsed.entries:
         raise ValueError("not a readable RSS/Atom feed (%s)" % getattr(parsed, "bozo_exception", "unknown"))
+    return parsed
+
+
+def from_rss(src):
+    errors = []
+    for url in [src["url"]] + list(src.get("fallbacks", [])):
+        try:
+            parsed = parse_feed(url)
+            break
+        except Exception as ex:
+            errors.append("%s: %s" % (type(ex).__name__, ex))
+    else:
+        raise ValueError(" | ".join(errors))
     items = []
     for e in parsed.entries[:60]:
         title = clean(e.get("title"))
@@ -71,7 +99,12 @@ def from_rss(src):
         outlet = ""
         if isinstance(e.get("source"), dict):
             outlet = e["source"].get("title", "")
-        when = entry_time(e)
+        when = entry_time(e) or date_in_text(e.get("summary") or e.get("description"))
+        if when and when > now_utc():
+            when = now_utc()
+        if summary.startswith("Publication date:"):   # ScienceDirect: keep just the authors
+            m = re.search(r"Author\(s\):\s*(.+)$", summary)
+            summary = ("By " + m.group(1)) if m else ""
         items.append({"title": title, "link": link, "summary": summary, "outlet": outlet,
                       "published": when.isoformat() if when else None})
     return items
@@ -93,12 +126,20 @@ def from_pubmed(src):
         if not title:
             continue
         when = None
-        for key in ("sortpubdate", "epubdate", "pubdate"):
+        for h in r.get("history") or []:
+            if h.get("pubstatus") in ("entrez", "pubmed"):
+                m = re.match(r"(\d{4})/(\d{2})/(\d{2})", h.get("date", ""))
+                if m:
+                    when = dt.datetime(int(m[1]), int(m[2]), int(m[3]), 12, tzinfo=dt.timezone.utc)
+                    break
+        for key in ([] if when else ["epubdate", "sortpubdate", "pubdate"]):
             v = (r.get(key) or "").strip()
             m = re.match(r"(\d{4})/(\d{2})/(\d{2})", v)
             if m:
                 when = dt.datetime(int(m[1]), int(m[2]), int(m[3]), 12, tzinfo=dt.timezone.utc)
                 break
+        if when and when > now_utc():
+            when = now_utc()
         authors = ", ".join(a.get("name", "") for a in (r.get("authors") or [])[:3])
         items.append({"title": title, "link": "https://pubmed.ncbi.nlm.nih.gov/%s/" % pmid,
                       "summary": clean("%s%s. %s" % (authors, " et al" if len(r.get("authors") or []) > 3 else "", r.get("fulljournalname") or r.get("source") or "")),
@@ -111,8 +152,10 @@ def main():
     old = {}
     if os.path.exists(OUT_JSON):
         try:
-            for it in json.load(open(OUT_JSON, encoding="utf-8")).get("items", []):
-                old[it["id"]] = it
+            prev = json.load(open(OUT_JSON, encoding="utf-8"))
+            if prev.get("version") == FEED_VERSION:
+                for it in prev.get("items", []):
+                    old[it["id"]] = it
         except Exception:
             pass
     fetched_at = now_utc()
@@ -123,6 +166,8 @@ def main():
         st = {"name": src["name"], "category": src.get("category", "News"), "url": src["url"], "ok": False, "count": 0, "error": None}
         try:
             items = from_pubmed(src) if src.get("type") == "pubmed" else from_rss(src)
+            items.sort(key=lambda it: it["published"] or "", reverse=True)
+            items = items[:PER_SOURCE]
             for it in items:
                 key = re.sub(r"[?#].*$", "", it["link"]) if "news.google.com" not in it["link"] else it["title"].lower()
                 it["id"] = hashlib.sha1(key.encode("utf-8")).hexdigest()[:16]
@@ -150,7 +195,7 @@ def main():
     items = items[:MAX_ITEMS]
 
     os.makedirs(os.path.dirname(OUT_JSON), exist_ok=True)
-    data = {"updated": fetched_at.isoformat(), "sources": statuses, "items": items}
+    data = {"version": FEED_VERSION, "updated": fetched_at.isoformat(), "sources": statuses, "items": items}
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=0)
 

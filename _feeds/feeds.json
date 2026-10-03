@@ -1,22 +1,114 @@
 {
   "_how_to_add_a_feed": "Copy any entry below, change name/url/category, and save. type is 'rss' (any RSS or Atom feed) or 'pubmed' (a PubMed search term). Set filter to true for general news feeds so only transplant/kidney articles are kept. The page updates on the next run (every 30 minutes).",
   "feeds": [
-    {"name": "PubMed: transplant, donation & kidney failure research", "type": "pubmed", "category": "Research",
-     "term": "(\"kidney transplantation\"[MeSH] OR \"tissue and organ procurement\"[MeSH] OR \"living donors\"[MeSH] OR \"kidney failure, chronic\"[MeSH] OR \"organ transplantation\"[MeSH]) AND hasabstract", "url": "https://pubmed.ncbi.nlm.nih.gov/"},
-    {"name": "American Journal of Transplantation", "type": "rss", "category": "Journals", "url": "https://rss.sciencedirect.com/publication/science/16006135"},
-    {"name": "Kidney International", "type": "rss", "category": "Journals", "url": "https://rss.sciencedirect.com/publication/science/00852538"},
-    {"name": "American Journal of Kidney Diseases", "type": "rss", "category": "Journals", "url": "https://rss.sciencedirect.com/publication/science/02726386"},
-    {"name": "Kidney International Reports", "type": "rss", "category": "Journals", "url": "https://rss.sciencedirect.com/publication/science/24680249"},
-    {"name": "Kidney Medicine", "type": "rss", "category": "Journals", "url": "https://rss.sciencedirect.com/publication/science/25900595"},
-    {"name": "Nature Reviews Nephrology", "type": "rss", "category": "Journals", "url": "https://www.nature.com/nrneph.rss"},
-    {"name": "BMC Nephrology", "type": "rss", "category": "Journals", "url": "https://bmcnephrol.biomedcentral.com/articles/most-recent/rss.xml"},
-    {"name": "Clinical Transplantation", "type": "rss", "category": "Journals", "url": "https://onlinelibrary.wiley.com/feed/13990012/most-recent"},
-    {"name": "medRxiv: Nephrology preprints", "type": "rss", "category": "Research", "url": "https://connect.medrxiv.org/medrxiv_xml.php?subject=Nephrology"},
-    {"name": "Federal Register: organ transplant policy", "type": "rss", "category": "Policy", "url": "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=%22organ+procurement%22+OR+%22organ+transplant%22+OR+%22end-stage+renal+disease%22+OR+dialysis&order=newest"},
-    {"name": "Google News: transplant & organ donation policy", "type": "rss", "category": "News", "filter": true, "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en"},
-    {"name": "Google News: kidney disease, dialysis & ESRD", "type": "rss", "category": "News", "filter": true, "url": "https://news.google.com/rss/search?q=dialysis+OR+%22kidney+disease%22+OR+%22kidney+failure%22+OR+ESRD+OR+%22kidney+transplant%22+when:7d&hl=en-US&gl=US&ceid=US:en"},
-    {"name": "KFF Health News", "type": "rss", "category": "News", "filter": true, "url": "https://kffhealthnews.org/feed/"},
-    {"name": "UNOS News", "type": "rss", "category": "Policy", "url": "https://unos.org/feed/"},
-    {"name": "Healio Nephrology", "type": "rss", "category": "News", "url": "https://www.healio.com/sws/feed/news/nephrology"}
+    {
+      "name": "PubMed: transplant, donation & kidney failure research",
+      "type": "pubmed",
+      "category": "Research",
+      "term": "(\"kidney transplantation\"[MeSH] OR \"tissue and organ procurement\"[MeSH] OR \"living donors\"[MeSH] OR \"kidney failure, chronic\"[MeSH] OR \"organ transplantation\"[MeSH]) AND hasabstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/"
+    },
+    {
+      "name": "American Journal of Transplantation",
+      "type": "rss",
+      "category": "Journals",
+      "url": "https://rss.sciencedirect.com/publication/science/16006135"
+    },
+    {
+      "name": "Kidney International",
+      "type": "rss",
+      "category": "Journals",
+      "url": "https://rss.sciencedirect.com/publication/science/00852538"
+    },
+    {
+      "name": "American Journal of Kidney Diseases",
+      "type": "rss",
+      "category": "Journals",
+      "url": "https://rss.sciencedirect.com/publication/science/02726386"
+    },
+    {
+      "name": "Kidney International Reports",
+      "type": "rss",
+      "category": "Journals",
+      "url": "https://rss.sciencedirect.com/publication/science/24680249"
+    },
+    {
+      "name": "Kidney Medicine",
+      "type": "rss",
+      "category": "Journals",
+      "url": "https://rss.sciencedirect.com/publication/science/25900595"
+    },
+    {
+      "name": "Nature Reviews Nephrology",
+      "type": "rss",
+      "category": "Journals",
+      "url": "https://www.nature.com/nrneph.rss",
+      "fallbacks": [
+        "https://www.nature.com/nrneph.rss?format=xml",
+        "https://feeds.nature.com/nrneph/rss/current"
+      ]
+    },
+    {
+      "name": "BMC Nephrology",
+      "type": "rss",
+      "category": "Journals",
+      "url": "https://bmcnephrol.biomedcentral.com/articles/most-recent/rss.xml",
+      "fallbacks": [
+        "https://link.springer.com/search.rss?facet-journal-id=12882&sortOrder=newestFirst",
+        "https://bmcnephrol.biomedcentral.com/articles/most-recent/rss.xml?format=xml"
+      ]
+    },
+    {
+      "name": "Clinical Transplantation",
+      "type": "rss",
+      "category": "Journals",
+      "url": "https://onlinelibrary.wiley.com/feed/13990012/most-recent"
+    },
+    {
+      "name": "medRxiv: Nephrology preprints",
+      "type": "rss",
+      "category": "Research",
+      "url": "https://connect.medrxiv.org/medrxiv_xml.php?subject=Nephrology"
+    },
+    {
+      "name": "Federal Register: organ transplant policy",
+      "type": "rss",
+      "category": "Policy",
+      "url": "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=transplant+%7C+dialysis+%7C+%22organ+procurement%22+%7C+%22end-stage+renal%22&order=newest",
+      "filter": true
+    },
+    {
+      "name": "Google News: transplant & organ donation policy",
+      "type": "rss",
+      "category": "News",
+      "filter": true,
+      "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News: kidney disease, dialysis & ESRD",
+      "type": "rss",
+      "category": "News",
+      "filter": true,
+      "url": "https://news.google.com/rss/search?q=dialysis+OR+%22kidney+disease%22+OR+%22kidney+failure%22+OR+ESRD+OR+%22kidney+transplant%22+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "KFF Health News",
+      "type": "rss",
+      "category": "News",
+      "filter": true,
+      "url": "https://kffhealthnews.org/feed/"
+    },
+    {
+      "name": "UNOS News",
+      "type": "rss",
+      "category": "Policy",
+      "url": "https://unos.org/feed/"
+    },
+    {
+      "name": "Healio Nephrology",
+      "type": "rss",
+      "category": "News",
+      "url": "https://www.healio.com/sws/feed/news/nephrology"
+    }
   ]
 }
