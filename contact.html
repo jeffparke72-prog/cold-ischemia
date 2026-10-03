@@ -215,7 +215,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
       .catch(function(){ errorNote.classList.add('show'); });
   } else {
     // Backend not set up yet: hand the message to the visitor's own email app so it still reaches the foundation.
-    const mailto = (window.cifMailto ? window.cifMailto : function(su, bo){ return 'mailto:contact@coldischemia.foundation?subject=' + encodeURIComponent(su) + '&body=' + encodeURIComponent(bo); })
+    const mailto = (window.cifMailto ? window.cifMailto : function(su, bo){ return 'mailto:jeffparke72@gmail.com?subject=' + encodeURIComponent(su) + '&body=' + encodeURIComponent(bo); })
       ('[CIF Contact] ' + (subject || 'General Inquiry'), message + '\n\n— ' + name + ' (' + email + ')');
     document.getElementById('rp-body').textContent = responseText + '\n\nYour email app is opening with your message filled in. Please press Send there so it reaches us.';
     location.href = mailto;

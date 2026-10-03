@@ -10,7 +10,7 @@
                    you're not. The "Questions?" button is then replaced by the tawk.to chat bubble. */
 window.CIF_CONFIG = {
   formsEndpoint: "PASTE_URL_HERE",
-  fallbackEmail: "contact@coldischemia.foundation",   // tested: accepts mail (jeff@ bounces until a Porkbun forward is added)
+  fallbackEmail: "jeffparke72@gmail.com",
   tawkPropertyId: "",
   tawkWidgetId: "default"
 };
