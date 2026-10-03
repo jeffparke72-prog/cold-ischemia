@@ -63,7 +63,7 @@ def render(page, tail, nav_id=False):
         '<span></span><span></span><span></span></button>'
         '<div class="cn-menu" id="cn-menu"><div class="cn-m">%s</div>'
         '<div class="cn-r"><a href="%s" class="cn-t"%s>%s</a><a href="%s" class="cn-d">%s</a></div></div>'
-        '</nav><script src="cif-nav.js" defer></script><!--/CIFNAV-->'
+        '</nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->'
     ) % (tail, ' id="nav"' if nav_id else '', DONATE[0], DONATE[1], ''.join(groups), TOOLKIT[0], ' aria-current="page"' if page == TOOLKIT[0] else '',
          TOOLKIT[1], DONATE[0], DONATE[1])
 
