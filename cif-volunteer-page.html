@@ -1,4 +1,6 @@
 <!-- CIF Volunteer Readiness & Application Page -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Volunteer With CIF</title>
 <style>
   :root{
@@ -374,11 +376,27 @@
   .skiplink:focus{left:16px; top:16px; background:#fff; color:#000; padding:8px 12px; z-index:10;}
   @media (prefers-reduced-motion: reduce){ *{animation-duration:.001ms !important; transition-duration:.001ms !important;} }
 nav.toc{top:56px!important}
+
+  /* Required readiness training (volunteer-training.html) */
+  .vt-banner{position:relative;overflow:hidden;border-radius:18px;padding:clamp(24px,4vw,44px);margin:0 0 8px;color:#F3EEE3;background:radial-gradient(900px 380px at 90% -20%,rgba(201,168,76,.28),transparent 60%),linear-gradient(150deg,#101a30,#1B2A4A 60%,#0c1424);box-shadow:0 22px 60px rgba(16,26,48,.28)}
+  .vt-banner .vt-k{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#e2cd94}
+  .vt-banner h2{font-family:'Newsreader',Georgia,serif;font-size:clamp(28px,4.4vw,44px);line-height:1.12;margin:12px 0 14px;color:#FFFDF8 !important}
+  .vt-banner h2 em{color:#e2cd94;font-weight:500}
+  .vt-banner p{font-family:'Newsreader',Georgia,serif;font-size:clamp(17px,2vw,20px);line-height:1.6;max-width:720px;color:#E4DCCB;margin:0 0 20px}
+  .vt-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px;padding:0;list-style:none}
+  .vt-pills li{border:1px solid rgba(226,205,148,.4);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600;color:#F3EEE3}
+  .vt-go{display:inline-flex;align-items:center;gap:10px;background:#C9A84C;color:#101a30 !important;font-weight:700;font-size:17px;text-decoration:none;border-radius:999px;padding:15px 28px;box-shadow:0 10px 28px rgba(201,168,76,.35)}
+  .vt-go:hover{background:#d8bc6c}
+  .vt-status{display:inline-block;margin-left:14px;font-size:15px;color:#cfc6b2}
+  .vt-app{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--surface-2)}
+  .vt-app.ok{border-color:var(--teal)}
+  .vt-app.missing{border-color:var(--blood)}
+  .vt-app pre{white-space:pre-wrap;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.55;margin:10px 0 0;color:var(--ink)}
 </style>
 
 <a class="skiplink" href="#assessment">Skip to readiness assessment</a>
 
-<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><a href="donate.html" class="cn-dm">Donate</a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="cif-volunteer-page.html" class="on" role="menuitem">Volunteer</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a><a href="donate.html" class="cn-d">Donate</a></div></div></nav><script src="cif-nav.js" defer></script><!--/CIFNAV--><header class="hero">
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><a href="donate.html" class="cn-dm">Donate</a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="cif-volunteer-page.html" class="on" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a><a href="donate.html" class="cn-d">Donate</a></div></div></nav><script src="cif-nav.js" defer></script><!--/CIFNAV--><header class="hero">
   <div class="wrap">
     <span class="eyebrow">Cold Ischemia Foundation · Volunteer Program</span>
     <h1>Advocacy is a discipline, not a feeling.</h1>
@@ -394,6 +412,7 @@ nav.toc{top:56px!important}
       <a href="#competencies">Competencies</a>
       <a href="#tracks">Volunteer tracks</a>
       <a href="#assessment">Readiness tool</a>
+      <a href="volunteer-training.html">Required training</a>
       <a href="#apply">Application</a>
     </nav>
     <div class="hero-video">
@@ -560,6 +579,16 @@ nav.toc{top:56px!important}
         <h3>Administrative &amp; operations support</h3>
         <ul><li>Keeping the infrastructure of a small, high-output nonprofit actually running</li></ul>
       </div>
+    </div>
+  </section>
+
+  <section id="training" aria-labelledby="vt-h">
+    <div class="vt-banner">
+      <div class="vt-k">Required before you apply · Self-paced</div>
+      <h2 id="vt-h">Volunteer Readiness Training: <em>100 questions, no time limit.</em></h2>
+      <p>Ten modules teach what this work really asks: the mission, the transplant system, the lives of care partners, the boundaries that keep people safe, and how to speak with someone on the worst day of their life. Then the training asks, honestly, whether you have the time and the commitment. Your progress saves as you go. Your summary attaches to your application.</p>
+      <ul class="vt-pills"><li>10 modules</li><li>100 questions</li><li>Drop-down, true/false &amp; written answers</li><li>Instant explanations</li><li>Honest readiness profile</li></ul>
+      <a class="vt-go" href="volunteer-training.html">Start the training →</a><span class="vt-status" id="vtStatus"></span>
     </div>
   </section>
 
@@ -741,6 +770,14 @@ nav.toc{top:56px!important}
               <input type="text" id="refContact" name="refContact">
             </div>
           </div>
+        </div>
+
+        <div class="f-section">
+          <h3>7 · Readiness training</h3>
+          <div class="vt-app" id="vtApp">
+            <p style="margin:0">Completing the <a href="volunteer-training.html">Volunteer Readiness Training</a> is required before you submit. When you finish it on this device, your summary appears here automatically.</p>
+          </div>
+          <textarea name="trainingSummary" id="trainingSummary" hidden></textarea>
         </div>
 
         <div class="f-section">
@@ -988,7 +1025,7 @@ nav.toc{top:56px!important}
       badge.textContent = 'Not the right entry point yet';
       badge.style.background = 'color-mix(in srgb, var(--blood) 18%, transparent)';
       badge.style.color = 'var(--blood)';
-      headline.textContent = 'This may not be the right fit right now — and that's genuinely useful to know.';
+      headline.textContent = "This may not be the right fit right now — and that's genuinely useful to know.";
       body.textContent = "Several of your answers point toward patterns — taking on too much personally, avoiding disclosure, or stepping past scope — that put both you and the people we serve at risk in a direct advocacy role. That isn't a character judgment. It may simply mean now isn't the moment, or that a different kind of contribution fits better.";
       advice.textContent = "Consider supporting CIF instead through a donation, sharing our published toolkits, or a strictly administrative role with no direct patient contact. You're still welcome to apply — we read every application and may see a fit you don't.";
     }
@@ -1082,5 +1119,27 @@ nav.toc{top:56px!important}
       successPanel.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
+})();
+</script>
+
+<script>
+/* Readiness training hand-off: pulls the summary saved by volunteer-training.html into the application. */
+(function(){
+  var sum=''; try{ sum=localStorage.getItem('cifVolTrainingSummary')||''; }catch(e){}
+  var prog=0; try{ var st=JSON.parse(localStorage.getItem('cifVolTraining.v1')||'null'); if(st&&st.a) prog=Object.keys(st.a).length; }catch(e){}
+  var status=document.getElementById('vtStatus'), box=document.getElementById('vtApp'), field=document.getElementById('trainingSummary'), form=document.getElementById('volunteerForm');
+  if(status) status.textContent = sum ? '\u2713 Completed on this device' : (prog ? prog+' of 100 answered. Pick up where you left off.' : '');
+  if(sum && box){
+    field.value=sum; box.classList.add('ok');
+    box.innerHTML='<strong>&#10003; Training complete.</strong> This summary will be included with your application:<pre></pre><p style="margin:10px 0 0;font-size:14px"><a href="volunteer-training.html">Review or retake the training</a></p>';
+    box.querySelector('pre').textContent=sum;
+  }
+  if(form) form.addEventListener('submit', function(e){
+    if(field.value) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    box.classList.add('missing');
+    box.innerHTML='<strong>Please complete the readiness training first.</strong> <a href="volunteer-training.html">Open the training</a>. It\'s self-paced, and your progress saves automatically.';
+    box.scrollIntoView({behavior:'smooth', block:'center'});
+  }, true);
 })();
 </script>
