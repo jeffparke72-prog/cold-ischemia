@@ -9,7 +9,7 @@
                    can chat live with you when you're online, and leave a message (emailed to you) when
                    you're not. The "Questions?" button is then replaced by the tawk.to chat bubble. */
 window.CIF_CONFIG = {
-  formsEndpoint: "PASTE_URL_HERE",
+  formsEndpoint: "https://script.google.com/macros/s/AKfycbzqGfZFtHjIKnAF1E2wmK3kfs-idXOj72vEU3qVygwIa2hP_SbEEkPOnoTb2wcXOWkzTg/exec",
   fallbackEmail: "jeffparke72@gmail.com",
   tawkPropertyId: "",
   tawkWidgetId: "default"
