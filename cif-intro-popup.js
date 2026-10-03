@@ -81,8 +81,7 @@
         '<button type="button" class="cifp-b" data-a="mute" hidden>Mute</button>' +
         '<button type="button" class="cifp-b" data-a="replay" hidden>Replay</button>' +
         '<a class="cifp-b" href="projects.html">Free Toolkit</a>' +
-        '<a class="cifp-b" href="donate.html">Donate</a>' +
-        '<button type="button" class="cifp-b go" data-close>Explore the site →</button></div>' +
+                '<button type="button" class="cifp-b go" data-close>Explore the site →</button></div>' +
     '</div>';
 
   var pill = document.createElement('button');

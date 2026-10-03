@@ -33,7 +33,7 @@ nav.cifnav a:focus-visible,nav.cifnav button:focus-visible{outline:2px solid #c8
   nav.cifnav{padding:0 14px!important}
   nav.cifnav .cn-b{display:none}
   nav.cifnav .cn-dm{display:inline-block;margin-left:auto;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:9px 15px;border-radius:2px}
-  nav.cifnav .cn-burger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:40px;padding:0 10px;background:none;border:1px solid rgba(100,140,200,.28);border-radius:3px;cursor:pointer}
+  nav.cifnav .cn-burger{margin-left:auto;display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:40px;padding:0 10px;background:none;border:1px solid rgba(100,140,200,.28);border-radius:3px;cursor:pointer}
   nav.cifnav .cn-burger span{display:block;height:2px;background:#d8cfc4;transition:transform .2s,opacity .2s}
   nav.cifnav.open .cn-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   nav.cifnav.open .cn-burger span:nth-child(2){opacity:0}
