@@ -63,8 +63,19 @@ form{display:flex;flex-direction:column;gap:18px;max-width:600px;}
 .direct-email a:hover{text-decoration:underline;}
 
 /* RESPONSE PANEL */
-.response-panel{display:none;margin-top:28px;max-width:640px;background:rgba(42,196,200,0.05);border:1px solid rgba(42,196,200,0.3);border-radius:10px;padding:26px 28px;}
-.response-panel.show{display:block;}
+.response-panel{position:fixed;inset:0;z-index:950;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(2,4,8,0.82);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);}
+.response-panel[hidden]{display:none;}
+.rp-card{position:relative;width:min(680px,100%);max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto;background:#07101c;border:1px solid rgba(42,196,200,0.35);border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);padding:30px 30px 26px;animation:rpIn .35s cubic-bezier(.2,.8,.2,1);}
+@keyframes rpIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.rp-card{animation:none}}
+.rp-x{position:absolute;right:12px;top:10px;background:none;border:0;color:rgba(216,207,196,.6);font-size:28px;line-height:1;cursor:pointer;padding:4px 10px;}
+.rp-x:hover{color:#e8b84a;}
+.rp-title{font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;color:#f3ede4;margin:4px 0 12px;}
+.rp-status{font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.04em;color:#e8b84a;background:rgba(200,144,42,.1);border:1px solid rgba(200,144,42,.3);border-radius:6px;padding:10px 12px;margin-bottom:16px;}
+.rp-status.ok{color:#7fd6c3;background:rgba(42,196,200,.08);border-color:rgba(42,196,200,.35);}
+.rp-follow{margin-top:18px;border-top:1px solid rgba(100,140,200,0.18);padding-top:14px;font-size:.92rem;color:rgba(216,207,196,0.75);white-space:pre-line;}
+.rp-done{margin-top:20px;}
+.response-panel-legacy{display:none;margin-top:28px;max-width:640px;background:rgba(42,196,200,0.05);border:1px solid rgba(42,196,200,0.3);border-radius:10px;padding:26px 28px;}
 .response-panel .rp-cat{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#2ac4c8;margin-bottom:10px;}
 .response-panel .rp-body{font-size:.98rem;color:rgba(216,207,196,0.88);white-space:pre-line;}
 .response-panel .rp-note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:rgba(216,207,196,0.45);}
@@ -78,13 +89,13 @@ footer a:hover{color:#c8902a;}
 </head>
 <body>
 
-<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" class="on" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" class="on" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
 
 <header class="ph">
   <div class="wrap">
     <div class="eyebrow">Get In Touch</div>
     <h1>Contact the <span class="g">Foundation</span></h1>
-    <p class="lede">Whether you want to volunteer, you're a journalist working a story, you're proposing a partnership, you or someone you love is navigating kidney disease, or you have a research or policy question — write to us below. Every message is read personally, and this page routes your inquiry automatically so you hear back with something useful right away.</p>
+    <p class="lede">Whether you want to volunteer, you're a journalist working a story, you're proposing a partnership, you or someone you love is navigating kidney disease, or you have a question about research, innovation, or policy — write to us below. Every message is read personally, and this page routes your inquiry automatically so you hear back with something useful right away.</p>
   </div>
 </header>
 
@@ -96,6 +107,7 @@ footer a:hover{color:#c8902a;}
       <div class="route-card"><span class="rc-label">Media &amp; Press</span><p>Reporters, producers, and researchers working a story or citation.</p></div>
       <div class="route-card"><span class="rc-label">Support &amp; Partnerships</span><p>Non-financial partnerships and ways to help. CIF accepts no donations, gifts, or sponsorships.</p></div>
       <div class="route-card"><span class="rc-label">Patient &amp; Care Partner Support</span><p>You or someone you love is living with kidney disease, dialysis, or transplant.</p></div>
+      <div class="route-card"><span class="rc-label">Innovation &amp; Research</span><p>New transplant science and technology, such as BHOC oxygen carriers, organ preservation, and research collaboration.</p></div>
       <div class="route-card"><span class="rc-label">Research &amp; Policy</span><p>Questions on CIF's published analyses, data, or legislative work.</p></div>
       <div class="route-card"><span class="rc-label">General</span><p>Anything else — we'll make sure it reaches the right place.</p></div>
     </div>
@@ -114,6 +126,19 @@ footer a:hover{color:#c8902a;}
         <input type="email" id="cf-email" name="email" required>
       </div>
       <div class="field">
+        <label for="cf-topic">Topic</label>
+        <select id="cf-topic" name="topic">
+          <option value="">Choose a topic, or let us route it for you</option>
+          <option value="innovation">Innovation &amp; Research</option>
+          <option value="patient">Patient &amp; Care Partner Support</option>
+          <option value="research">Research &amp; Policy</option>
+          <option value="volunteer">Volunteer &amp; Involvement</option>
+          <option value="media">Media &amp; Press</option>
+          <option value="donate">Support &amp; Partnerships</option>
+          <option value="general">Something else</option>
+        </select>
+      </div>
+      <div class="field">
         <label for="cf-subject">Subject</label>
         <input type="text" id="cf-subject" name="subject" placeholder="What is this regarding?" required>
       </div>
@@ -126,10 +151,16 @@ footer a:hover{color:#c8902a;}
       <div class="direct-email">Prefer email directly? Write to <a href="mailto:jeffparke72@gmail.com">jeffparke72@gmail.com</a></div>
     </form>
 
-    <div class="response-panel" id="responsePanel">
-      <div class="rp-cat" id="rp-cat"></div>
-      <div class="rp-body" id="rp-body"></div>
-      <div class="rp-note">A copy of this response has also been sent to your email, and your message has been delivered to our team directly.</div>
+    <div class="response-panel" id="responsePanel" role="dialog" aria-modal="true" aria-labelledby="rp-title" hidden>
+      <div class="rp-card" tabindex="-1">
+        <button type="button" class="rp-x" id="rp-x" aria-label="Close">&times;</button>
+        <div class="rp-cat" id="rp-cat"></div>
+        <h2 class="rp-title" id="rp-title">Thank you. Your message is on its way.</h2>
+        <div class="rp-status" id="rp-status" role="status">Sending your message&hellip;</div>
+        <div class="rp-body" id="rp-body"></div>
+        <div class="rp-follow" id="rp-follow"></div>
+        <button type="button" class="submit-btn rp-done" id="rp-done">Close</button>
+      </div>
     </div>
   </div>
 </section>
@@ -143,6 +174,12 @@ footer a:hover{color:#c8902a;}
 // Messages are delivered by the site-wide forms backend: see cif-help.js and cif-forms-apps-script.gs.
 
 const CATEGORIES = [
+  {
+    id: 'innovation',
+    label: 'Innovation & Research',
+    keywords: ['innovation','innovat','bhoc','oxygen carrier','hemoglobin','technology','xenotransplant','perfusion','preservation','clinical trial','biotech','collaborat','new treatment','breakthrough','research partner'],
+    response: "Thank you for reaching out about innovation and research. The Cold Ischemia Foundation follows emerging transplant science, including oxygen-carrier research such as BHOC, machine perfusion, and new ways to preserve donated organs, and explains it in plain language for patients and care partners.\n\nWe are an independent, non-clinical advocacy organization. We do not run clinical trials, enroll patients, or endorse products, and we accept no funding from the companies developing them. That independence is what lets us describe new science honestly.\n\nIf you are a researcher, clinician, or developer, tell me what you are working on, what stage it is at, and what you hope for from CIF: a patient and care-partner perspective, a review of plain-language materials, or a conversation about what families need. If you are a patient or care partner asking whether a new technology is available to you, please also talk with your transplant team. I am glad to help you prepare the questions to bring to them."
+  },
   {
     id: 'volunteer',
     label: 'Volunteer & Involvement',
@@ -177,6 +214,26 @@ const CATEGORIES = [
 
 const DEFAULT_RESPONSE = "Thank you for contacting the Cold Ischemia Foundation. I read every message that comes through this page personally. CIF is an independent, patient- and care-partner-led advocacy organization confronting structural failures in American kidney care — we take no pharmaceutical or dialysis-industry funding, which means the people writing to us are the only constituency we answer to. I'll review what you've shared and follow up directly as soon as I can.";
 
+// Same "how to keep in touch" text the automatic email ends with (cif-forms-apps-script.gs).
+const FOLLOW_UP = "How to keep in touch\n\u2022 Reply to the confirmation email any time. It comes straight to Jeff, and your earlier message stays in the same thread.\n\u2022 Or use this Contact page, or the \u201cQuestions?\u201d button on any page of the site.\n\u2022 Expect a personal reply as soon as possible, usually within a few days. If you haven\u2019t heard back within a week, reply to the confirmation email and we will follow up.\n\u2022 Free toolkits and guides: coldischemia.foundation/projects.html\n\nIn an emergency, call 911. In emotional crisis, call or text 988, 24/7.";
+
+const LABELS = {general: 'General Inquiry'};
+CATEGORIES.forEach(c => { LABELS[c.id] = c.label; });
+
+function openPanel(){
+  const p = document.getElementById('responsePanel');
+  p.hidden = false; document.body.style.overflow = 'hidden';
+  setTimeout(() => p.querySelector('.rp-card').focus(), 30);
+}
+function closePanel(){
+  document.getElementById('responsePanel').hidden = true; document.body.style.overflow = '';
+  document.getElementById('cf-submit').focus();
+}
+document.getElementById('rp-x').addEventListener('click', closePanel);
+document.getElementById('rp-done').addEventListener('click', closePanel);
+document.getElementById('responsePanel').addEventListener('click', e => { if (e.target.id === 'responsePanel') closePanel(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !document.getElementById('responsePanel').hidden) closePanel(); });
+
 function categorize(subject, message){
   const t = (subject + ' ' + message).toLowerCase();
   for(const cat of CATEGORIES){
@@ -196,23 +253,33 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
   const subject = document.getElementById('cf-subject').value.trim();
   const message = document.getElementById('cf-message').value.trim();
 
-  const matched = categorize(subject, message);
+  const topic = document.getElementById('cf-topic').value;
+  const matched = topic ? (CATEGORIES.find(c => c.id === topic) || null) : categorize(subject, message);
   const categoryId = matched ? matched.id : 'general';
   const categoryLabel = matched ? matched.label : 'General Inquiry';
   const responseText = matched ? matched.response : DEFAULT_RESPONSE;
+  const status = document.getElementById('rp-status');
 
-  // Show the immediate on-page response right away, regardless of network speed
+  // Pop-up with the full response appears right away, regardless of network speed
   document.getElementById('rp-cat').textContent = 'Routed as: ' + categoryLabel;
   document.getElementById('rp-body').textContent = responseText;
-  document.getElementById('responsePanel').classList.add('show');
-  document.getElementById('responsePanel').scrollIntoView({behavior:'smooth', block:'center'});
+  document.getElementById('rp-follow').textContent = FOLLOW_UP;
+  status.className = 'rp-status'; status.textContent = 'Sending your message\u2026';
+  openPanel();
 
   btn.disabled = true;
-  btn.textContent = 'Sent';
+  btn.textContent = 'Sending\u2026';
 
   if (window.cifFormsReady && window.cifFormsReady()) {
     window.cifSend({formType: 'contact', name, email, subject, message, category: categoryId})
+      .then(function(){
+        status.className = 'rp-status ok';
+        status.textContent = '\u2713 Delivered to Jeff. A copy of this reply, with more detail, is on its way to ' + email + '.';
+        btn.disabled = false; btn.textContent = 'Send Message';
+      })
       .catch(function(){
+        status.textContent = 'Opening your email app so your message still reaches us.';
+        btn.disabled = false; btn.textContent = 'Send Message';
         // The backend didn't confirm: hand the message to the visitor's email app so it still arrives.
         document.getElementById('rp-body').textContent = responseText + '\n\nWe couldn\u2019t send your message automatically, so your email app is opening with it filled in. Please press Send there so it reaches us.';
         location.href = window.cifMailto('[CIF Contact] ' + (subject || 'General Inquiry'), message + '\n\n— ' + name + ' (' + email + ')');
@@ -222,6 +289,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
     const mailto = (window.cifMailto ? window.cifMailto : function(su, bo){ return 'mailto:jeffparke72@gmail.com?subject=' + encodeURIComponent(su) + '&body=' + encodeURIComponent(bo); })
       ('[CIF Contact] ' + (subject || 'General Inquiry'), message + '\n\n— ' + name + ' (' + email + ')');
     document.getElementById('rp-body').textContent = responseText + '\n\nYour email app is opening with your message filled in. Please press Send there so it reaches us.';
+    status.textContent = 'Opening your email app so your message still reaches us.';
+    btn.disabled = false; btn.textContent = 'Send Message';
     location.href = mailto;
   }
 
