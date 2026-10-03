@@ -9,6 +9,20 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/"
     },
     {
+      "name": "PubMed: transplant policy & organ procurement",
+      "type": "pubmed",
+      "category": "Policy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "term": "(\"organ procurement organization*\"[tiab] OR \"organ allocation\"[tiab] OR \"allocation policy\"[tiab] OR \"organ discard\"[tiab] OR \"OPTN\"[tiab] OR \"transplant policy\"[tiab] OR \"health policy\"[MeSH] AND transplantation[MeSH])"
+    },
+    {
+      "name": "PubMed: living organ donation",
+      "type": "pubmed",
+      "category": "Research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "term": "(\"living donors\"[MeSH] OR \"living donor\"[tiab] OR \"living kidney donation\"[tiab] OR \"living donation\"[tiab]) AND hasabstract"
+    },
+    {
       "name": "American Journal of Transplantation",
       "type": "rss",
       "category": "Journals",
@@ -43,20 +57,16 @@
       "type": "rss",
       "category": "Journals",
       "url": "https://www.nature.com/nrneph.rss",
-      "fallbacks": [
-        "https://www.nature.com/nrneph.rss?format=xml",
-        "https://feeds.nature.com/nrneph/rss/current"
-      ]
+      "enabled": false,
+      "note": "Paused: the publisher returns a web page instead of a feed to automated readers (checked 2026-10-03). Set enabled to true to retry."
     },
     {
       "name": "BMC Nephrology",
       "type": "rss",
       "category": "Journals",
       "url": "https://bmcnephrol.biomedcentral.com/articles/most-recent/rss.xml",
-      "fallbacks": [
-        "https://link.springer.com/search.rss?facet-journal-id=12882&sortOrder=newestFirst",
-        "https://bmcnephrol.biomedcentral.com/articles/most-recent/rss.xml?format=xml"
-      ]
+      "enabled": false,
+      "note": "Paused: the publisher returns a web page instead of a feed to automated readers (checked 2026-10-03). Set enabled to true to retry."
     },
     {
       "name": "Clinical Transplantation",

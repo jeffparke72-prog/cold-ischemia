@@ -20,7 +20,7 @@ OUT_XML = os.path.join(ROOT, "news", "feed.xml")
 SITE = "https://coldischemia.foundation"
 KEEP_DAYS = 90
 MAX_ITEMS = 500
-FEED_VERSION = 2         # bump to discard previously saved articles after a format/date fix
+FEED_VERSION = 3         # bump to discard previously saved articles after a format/date fix
 PER_SOURCE = 30          # newest items kept per source per run, so no single journal floods the feed
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36 CIF-NewsFeed/1.1"
 
@@ -101,7 +101,7 @@ def from_rss(src):
             outlet = e["source"].get("title", "")
         when = entry_time(e) or date_in_text(e.get("summary") or e.get("description"))
         if when and when > now_utc():
-            when = now_utc()
+            when = now_utc() - dt.timedelta(minutes=1)
         if summary.startswith("Publication date:"):   # ScienceDirect: keep just the authors
             m = re.search(r"Author\(s\):\s*(.+)$", summary)
             summary = ("By " + m.group(1)) if m else ""
@@ -175,8 +175,8 @@ def main():
                 it["category"] = st["category"]
                 prev = old.get(it["id"])
                 it["first_seen"] = prev["first_seen"] if prev else fetched_at.isoformat()
-                if not it["published"]:
-                    it["published"] = it["first_seen"]
+                if not it["published"] or it["published"] > it["first_seen"]:
+                    it["published"] = it["first_seen"]   # never show a date later than when we first saw it
                 fresh[it["id"]] = it
             st["ok"], st["count"] = True, len(items)
         except Exception as ex:  # one failing source never stops the others
