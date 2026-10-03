@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U.S. OPO Directory | Cold Ischemia Foundation</title>
+<meta name="description" content="Every U.S. organ procurement organization (OPO): name, address, phone, states served, CMS performance tier, and affiliated transplant programs, from HRSA's official data, plus the national organizations that support living and deceased donation.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--deep:#050810;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--ink:#d8cfc4;--ink80:rgba(216,207,196,.84);--ink60:rgba(216,207,196,.64);--ink40:rgba(216,207,196,.44);--gold:#c8902a;--gold-l:#e8b84a;--pulse:#2ac4c8;--green:#50c878;--amber:#e6a24f;--danger:#e0566f;--b:rgba(100,140,200,.12);--b2:rgba(100,140,200,.26)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--gold-l)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.k{color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:14px}.k::before{content:'';width:28px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:300;line-height:1.12;color:#f3ede4}
+h1 em,h2 em{font-style:italic;color:var(--gold-l)}
+.hero{padding:96px 0 50px;background:radial-gradient(900px 420px at 85% -10%,rgba(42,196,200,.13),transparent 60%),var(--abyss);border-bottom:1px solid var(--b)}
+.hero h1{font-size:clamp(38px,6.4vw,72px);margin-bottom:18px}
+.lead{font-size:clamp(18px,2.1vw,21px);color:var(--ink80);max-width:800px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b);border:1px solid var(--b);margin-top:30px}
+@media(max-width:820px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--void);padding:18px}
+.fact b{display:block;font-family:'Fraunces',serif;font-size:38px;font-weight:600;color:var(--gold-l);line-height:1}
+.fact span{font-size:15.5px;color:var(--ink80)}
+.role{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+@media(max-width:760px){.role{grid-template-columns:1fr}}
+.role div{background:var(--surf);border:1px solid var(--b2);border-radius:10px;padding:18px 20px}
+.role b{display:block;font-family:'Fraunces',serif;font-size:21px;color:#f3ede4;margin-bottom:4px}
+.role span{font-size:16.5px;color:var(--ink80)}
+section{padding:60px 0;border-bottom:1px solid var(--b)}
+h2{font-size:clamp(28px,4vw,42px);margin-bottom:12px}
+/* tile map */
+.mapwrap{display:grid;grid-template-columns:1.25fr 1fr;gap:26px;margin-top:22px;align-items:start}
+@media(max-width:900px){.mapwrap{grid-template-columns:1fr}}
+.tiles{display:grid;grid-template-columns:repeat(12,1fr);gap:4px}
+.tile{aspect-ratio:1;border-radius:5px;border:1px solid var(--b2);background:var(--surf);color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:clamp(9px,1.2vw,12px);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1;transition:transform .15s,border-color .15s;padding:0}
+.tile small{font-size:.78em;opacity:.75}
+.tile:hover{transform:scale(1.08);border-color:var(--pulse);z-index:2}
+.tile[aria-pressed="true"]{border-color:var(--gold-l);box-shadow:0 0 0 2px var(--gold-l)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink60)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+.side{background:var(--void);border:1px solid var(--b2);border-radius:10px;padding:20px;min-height:220px}
+.side h3{font-size:26px;margin-bottom:6px}
+.side .s{font-size:16px;color:var(--ink60)}
+.side ul{list-style:none;margin-top:10px;display:grid;gap:8px}
+.side li{font-size:16.5px;border-top:1px solid var(--b);padding-top:8px}
+.side li a{color:#f3ede4;text-decoration:none}.side li a:hover{color:var(--gold-l)}
+/* controls */
+.ctrl{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 18px}
+.ctrl input,.ctrl select{background:var(--surf);border:1px solid var(--b2);border-radius:6px;color:#fff;font:17px 'Crimson Pro',serif;padding:11px 13px}
+.ctrl input{flex:1 1 260px}
+.count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink60);margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:960px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surf);border:1px solid var(--b2);border-radius:10px;padding:18px;display:flex;flex-direction:column;scroll-margin-top:80px}
+.card:target{border-color:var(--gold-l)}
+.card h3{font-size:21px;font-weight:600;margin-bottom:2px}
+.card .reg{font-size:14px;color:var(--ink40);margin-bottom:8px}
+.card .ad{font-size:16px;color:var(--ink80)}
+.card .ph{font-family:'IBM Plex Mono',monospace;font-size:15px;margin:8px 0;color:var(--gold-l);text-decoration:none;display:inline-block}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;border:1px solid var(--b2);border-radius:999px;padding:3px 9px;color:var(--ink80)}
+.tag.t1{border-color:rgba(80,200,120,.5);color:var(--green)}.tag.t2{border-color:rgba(230,162,79,.5);color:var(--amber)}.tag.t3{border-color:rgba(224,86,111,.5);color:var(--danger)}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em}
+.links a{text-decoration:none}
+details{margin-top:8px}
+summary{cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--pulse);letter-spacing:.06em}
+details ul{list-style:none;margin-top:8px;font-size:15px;color:var(--ink80);display:grid;gap:5px;max-height:220px;overflow:auto}
+details li span{color:var(--ink40);font-size:13.5px}
+.nat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+@media(max-width:900px){.nat{grid-template-columns:1fr 1fr}}@media(max-width:560px){.nat{grid-template-columns:1fr}}
+.nat a{display:block;background:var(--void);border:1px solid var(--b2);border-radius:10px;padding:16px 18px;text-decoration:none;color:var(--ink);transition:border-color .2s}
+.nat a:hover{border-color:var(--gold)}
+.nat b{display:block;font-family:'Fraunces',serif;font-size:19px;color:#f3ede4;margin-bottom:4px}
+.nat span{font-size:15.5px;color:var(--ink80)}
+.nat em{display:block;font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold-l);margin-top:8px}
+.notes{font-size:15px;color:var(--ink60);max-width:920px}
+.notes p{margin-bottom:8px}
+footer{padding:32px 0 44px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink40)}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="opo-directory.html" class="on" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+
+<header class="hero">
+  <div class="wrap">
+    <div class="mono k">Project Donor-Flow · National Directory</div>
+    <h1>Every organ procurement organization <em>in the United States.</em></h1>
+    <p class="lead">Each part of the country is served by one OPO, the nonprofit that coordinates deceased organ donation in its area. Here is every one: who they are, where they are, how to reach them, and which transplant programs they work with, from the federal government&rsquo;s own records.</p>
+    <div class="facts">
+      <div class="fact"><b id="f1">57</b><span>OPOs in HRSA&rsquo;s records</span></div>
+      <div class="fact"><b id="f2">251</b><span>affiliated transplant programs</span></div>
+      <div class="fact"><b id="f3">52</b><span>states, D.C. &amp; Puerto Rico covered</span></div>
+      <div class="fact"><b id="f4">&ndash;</b><span>OPOs in CMS&rsquo;s top performance tier</span></div>
+    </div>
+    <div class="role">
+      <div><b>Thinking about living donation?</b><span>Living donation is arranged by <strong>transplant centers</strong> with a living donor program. Use the transplant programs listed under each OPO, and the national resources below, to find one. Our <a href="living-donor-journey.html">Living Donor Journey</a> walks you through the process.</span></div>
+      <div><b>Want to be a donor after death?</b><span>Your local OPO coordinates deceased donation and can answer questions about registering. You can also register nationally at <a href="https://registerme.org" target="_blank" rel="noopener">registerme.org</a> or through your state&rsquo;s registry.</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="mono k">The Map</div>
+    <h2>Tap a state to see <em>who serves it.</em></h2>
+    <div class="mapwrap">
+      <div>
+        <div class="tiles" id="tiles" role="group" aria-label="Map of U.S. states; choose a state"></div>
+        <div class="legend"><span><i style="background:#0f2f3a"></i>1 OPO</span><span><i style="background:#13506a"></i>2 OPOs</span><span><i style="background:#1b7496"></i>3 or more</span><span>Number = OPOs serving all or part of the state</span></div>
+      </div>
+      <div class="side" id="side" aria-live="polite"><h3>Choose a state</h3><p class="s">Select a state on the map to list the OPOs that serve it, with phone numbers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="list">
+  <div class="wrap">
+    <div class="mono k">The Directory</div>
+    <h2>All <em>57</em> OPOs.</h2>
+    <div class="ctrl">
+      <label class="sr" for="qq" style="position:absolute;left:-9999px">Search</label>
+      <input id="qq" type="search" placeholder="Search by name, city, or transplant program">
+      <select id="qs" aria-label="Filter by state"><option value="">All states</option></select>
+      <select id="qt" aria-label="Filter by CMS tier"><option value="">All CMS tiers</option><option value="1">Tier 1</option><option value="2">Tier 2</option><option value="3">Tier 3</option></select>
+    </div>
+    <div class="count" id="cnt"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="mono k">National Organizations</div>
+    <h2>The organizations behind <em>the whole system.</em></h2>
+    <div class="nat">
+      <a href="https://optn.transplant.hrsa.gov/" target="_blank" rel="noopener"><b>Organ Procurement and Transplantation Network (OPTN)</b><span>The federal network that manages the national waiting list and matching, and sets policy, including the living donor rules in Policy 14.</span><em>optn.transplant.hrsa.gov &#8599;</em></a>
+      <a href="https://www.organdonor.gov/" target="_blank" rel="noopener"><b>HRSA &middot; organdonor.gov</b><span>The federal agency that oversees the transplant system. Official statistics and how to register.</span><em>organdonor.gov &#8599;</em></a>
+      <a href="https://www.srtr.org/" target="_blank" rel="noopener"><b>Scientific Registry of Transplant Recipients (SRTR)</b><span>Public performance data for every transplant program and OPO.</span><em>srtr.org &#8599;</em></a>
+      <a href="https://livingdonorassistance.org/" target="_blank" rel="noopener"><b>National Living Donor Assistance Center (NLDAC)</b><span>Federally funded help with living donors&rsquo; travel, lost wages, and dependent care, up to $6,000.</span><em>livingdonorassistance.org &#8599;</em></a>
+      <a href="https://www.kidneyregistry.org/" target="_blank" rel="noopener"><b>National Kidney Registry</b><span>The largest paired kidney exchange program, connecting incompatible donor-recipient pairs across many centers.</span><em>kidneyregistry.org &#8599;</em></a>
+      <a href="https://paireddonation.org/" target="_blank" rel="noopener"><b>Alliance for Paired Kidney Donation</b><span>A nonprofit paired exchange program working with transplant centers.</span><em>paireddonation.org &#8599;</em></a>
+      <a href="https://transplantliving.org/living-donation/" target="_blank" rel="noopener"><b>UNOS Transplant Living</b><span>Patient-friendly explanations of living donation and transplantation.</span><em>transplantliving.org &#8599;</em></a>
+      <a href="https://registerme.org/" target="_blank" rel="noopener"><b>Donate Life America &middot; National Donate Life Registry</b><span>Register as an organ, eye, and tissue donor online.</span><em>registerme.org &#8599;</em></a>
+      <a href="https://www.aopo.org/" target="_blank" rel="noopener"><b>Association of Organ Procurement Organizations (AOPO)</b><span>The national association of OPOs.</span><em>aopo.org &#8599;</em></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap notes">
+    <div class="mono k">About This Data</div>
+    <p><b>Addresses, phone numbers, and affiliated transplant programs</b> come from the Health Resources and Services Administration&rsquo;s data downloads (OPO and transplant center facts file), retrieved September 28, 2026. <b>Current public names, states served, and CMS performance tiers</b> (2023 data cycle) were compiled from opodata.org and CMS&rsquo;s QCOR system by the open-source <a href="https://github.com/ah1053/opo-scraper" target="_blank" rel="noopener">opo-scraper</a> project. Where an OPO now uses a different public name than its registered name, both are shown.</p>
+    <p><b>CMS tiers</b> come from the 2020 OPO Conditions for Coverage rule, which ranks OPOs on donation and transplantation rates: Tier 1 meets the top standard, and Tier 3 OPOs are at risk of decertification. Tiers are recalculated as new data is released. OPOs may serve only part of a listed state.</p>
+    <p>Spotted something out of date? <a href="contact.html">Tell us</a> and we will correct it.</p>
+  </div>
+</section>
+
+<footer>&copy; Cold Ischemia Foundation &nbsp;&middot;&nbsp; Ellenton, Florida &nbsp;&middot;&nbsp; <a href="living-donor-journey.html" style="color:inherit">Living Donor Journey</a></footer>
+
+<script src="opo-data.js"></script>
+<script>
+(function(){
+'use strict';
+var O=(window.CIF_OPOS||[]).slice().sort(function(a,b){return a.name.localeCompare(b.name)});
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+var NAMES={AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',PR:'Puerto Rico',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
+/* tile-grid map positions [row, col] on a 12-column grid */
+var POS={AK:[0,0],ME:[0,11],VT:[1,10],NH:[1,11],WA:[2,1],ID:[2,2],MT:[2,3],ND:[2,4],MN:[2,5],IL:[2,6],WI:[2,7],MI:[2,8],NY:[2,9],MA:[2,10],RI:[2,11],OR:[3,1],NV:[3,2],WY:[3,3],SD:[3,4],IA:[3,5],IN:[3,6],OH:[3,7],PA:[3,8],NJ:[3,9],CT:[3,10],CA:[4,1],UT:[4,2],CO:[4,3],NE:[4,4],MO:[4,5],KY:[4,6],WV:[4,7],VA:[4,8],MD:[4,9],DE:[4,10],AZ:[5,2],NM:[5,3],KS:[5,4],AR:[5,5],TN:[5,6],NC:[5,7],SC:[5,8],DC:[5,9],OK:[6,4],LA:[6,5],MS:[6,6],AL:[6,7],GA:[6,8],HI:[7,0],TX:[7,4],FL:[7,8],PR:[7,10]};
+function servingState(st){return O.filter(function(o){return o.serves.indexOf(st)>-1||o.state===st})}
+var tiles=document.getElementById('tiles'), cells=[];
+for(var r=0;r<8;r++)for(var c=0;c<12;c++)cells.push('');
+Object.keys(POS).forEach(function(st){var p=POS[st],n=servingState(st).length,bg=n>=3?'#1b7496':n===2?'#13506a':n===1?'#0f2f3a':'#0a1628';
+  cells[p[0]*12+p[1]]='<button type="button" class="tile" data-st="'+st+'" aria-pressed="false" aria-label="'+NAMES[st]+': '+n+' OPO'+(n===1?'':'s')+'" style="background:'+bg+'">'+st+'<small>'+n+'</small></button>'});
+tiles.innerHTML=cells.map(function(x){return x||'<span></span>'}).join('');
+function pick(st){[].forEach.call(tiles.querySelectorAll('.tile'),function(t){t.setAttribute('aria-pressed',t.dataset.st===st)});
+  var L=servingState(st);document.getElementById('side').innerHTML='<h3>'+esc(NAMES[st]||st)+'</h3><p class="s">'+L.length+' OPO'+(L.length===1?'':'s')+' serve all or part of this state.</p><ul>'+L.map(function(o){return '<li><a href="#opo-'+o.code+'">'+esc(o.name)+'</a><br><span class="s">'+esc(o.city)+', '+o.state+' &middot; <a href="tel:'+o.phone.replace(/\D/g,'')+'" style="color:var(--gold-l)">'+esc(o.phone)+'</a></span></li>'}).join('')+'</ul>';
+  document.getElementById('qs').value=st;draw()}
+tiles.addEventListener('click',function(e){var t=e.target.closest('.tile');if(t)pick(t.dataset.st)});
+var sel=document.getElementById('qs');Object.keys(NAMES).sort(function(a,b){return NAMES[a].localeCompare(NAMES[b])}).forEach(function(st){var o=document.createElement('option');o.value=st;o.textContent=NAMES[st];sel.appendChild(o)});
+function card(o){var t=o.tier?'<span class="tag t'+o.tier+'">CMS Tier '+o.tier+'</span>':'';
+  var maps='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(o.registered+', '+o.address+', '+o.city+', '+o.state+' '+o.zip);
+  var web='https://www.google.com/search?q='+encodeURIComponent(o.name+' organ procurement organization');
+  return '<article class="card" id="opo-'+o.code+'"><h3>'+esc(o.name)+'</h3>'+(o.registered&&o.registered.toLowerCase()!==o.name.toLowerCase()?'<div class="reg">Registered as '+esc(o.registered)+'</div>':'<div class="reg">&nbsp;</div>')+
+   '<div class="ad">'+esc(o.address)+'<br>'+esc(o.city)+', '+o.state+' '+esc(o.zip)+'</div><a class="ph" href="tel:'+o.phone.replace(/\D/g,'')+'">&#9742; '+esc(o.phone)+'</a>'+
+   '<div class="tags">'+t+'<span class="tag">Serves: '+o.serves.join(', ')+'</span><span class="tag">'+o.centers.length+' transplant program'+(o.centers.length===1?'':'s')+'</span></div>'+
+   (o.centers.length?'<details><summary>Affiliated transplant programs</summary><ul>'+o.centers.map(function(c){return '<li>'+esc(c.n)+' <span>&middot; '+esc(c.c)+' &middot; '+esc(c.s.join(', '))+'</span></li>'}).join('')+'</ul></details>':'')+
+   '<div class="links"><a href="'+maps+'" target="_blank" rel="noopener">Map &#8599;</a><a href="'+web+'" target="_blank" rel="noopener">Find website &#8599;</a></div></article>'}
+function draw(){var q=document.getElementById('qq').value.trim().toLowerCase(),st=sel.value,tr=document.getElementById('qt').value;
+  var L=O.filter(function(o){if(st&&o.serves.indexOf(st)<0&&o.state!==st)return false;if(tr&&String(o.tier)!==tr)return false;
+    if(q){var hay=(o.name+' '+o.registered+' '+o.city+' '+o.serves.join(' ')+' '+o.centers.map(function(c){return c.n+' '+c.c}).join(' ')).toLowerCase();if(hay.indexOf(q)<0)return false}return true});
+  document.getElementById('grid').innerHTML=L.map(card).join('')||'<p>No OPOs match.</p>';
+  document.getElementById('cnt').textContent='Showing '+L.length+' of '+O.length+' OPOs';}
+['qq','qt'].forEach(function(id){document.getElementById(id).addEventListener('input',draw)});sel.addEventListener('change',function(){if(sel.value)pick(sel.value);else draw()});
+document.getElementById('f1').textContent=O.length;
+document.getElementById('f2').textContent=O.reduce(function(n,o){return n+o.centers.length},0);
+var cov={};O.forEach(function(o){o.serves.concat([o.state]).forEach(function(s){cov[s]=1})});document.getElementById('f3').textContent=Object.keys(cov).length;
+document.getElementById('f4').textContent=O.filter(function(o){return o.tier===1}).length;
+draw();
+var h=(location.hash||'').slice(1).toUpperCase();if(NAMES[h])pick(h);
+})();
+</script>
+</body>
+</html>

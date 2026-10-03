@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living Donor Journey | Cold Ischemia Foundation</title>
+<meta name="description" content="An interactive guide to living organ donation: the process step by step, why so many willing donors are lost, how a connected multi-center system would change that, and a personalized readiness profile.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030509;--deep:#050810;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,.84);--ink60:rgba(216,207,196,.64);--ink40:rgba(216,207,196,.44);
+  --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,.14);
+  --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,.12);--danger:#e0566f;--danger-d:rgba(224,86,111,.12);
+  --amber:#e6a24f;--amber-d:rgba(230,162,79,.12);--green:#50c878;--green-d:rgba(80,200,120,.12);
+  --b:rgba(100,140,200,.12);--b2:rgba(100,140,200,.26);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;font-size:19px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--gold-l)}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.k{color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.k::before{content:'';width:28px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:300;line-height:1.12;color:#f3ede4}
+h2{font-size:clamp(30px,4.4vw,46px);margin-bottom:16px}
+h1 em,h2 em{font-style:italic;color:var(--gold-l)}
+section{padding:80px 0;border-bottom:1px solid var(--b)}
+.lead{font-size:clamp(19px,2.2vw,22px);color:var(--ink80);max-width:780px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.src{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--ink40)}
+.src a{color:var(--ink60)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-radius:3px;padding:15px 24px;cursor:pointer;border:1px solid transparent;transition:background .2s,border-color .2s,transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.gold{background:var(--gold);color:var(--abyss)}
+.btn.gold:hover{background:var(--gold-l)}
+.btn.line{background:transparent;border-color:var(--b2);color:var(--ink)}
+.btn.line:hover{border-color:var(--gold);color:var(--gold-l)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+/* HERO */
+.hero{position:relative;padding:110px 0 80px;overflow:hidden;background:radial-gradient(900px 460px at 82% -10%,rgba(42,196,200,.14),transparent 60%),radial-gradient(700px 400px at 0% 110%,rgba(200,144,42,.12),transparent 60%),var(--abyss)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(42px,7.2vw,84px);margin-bottom:22px;letter-spacing:-.01em}
+.hero .lead{margin-bottom:30px}
+.pulse-ring{position:absolute;right:-80px;top:40px;width:420px;height:420px;pointer-events:none;opacity:.5}
+@media(max-width:860px){.pulse-ring{display:none}}
+.pulse-ring circle{fill:none;stroke:var(--pulse);stroke-width:1.2;transform-origin:210px 210px;animation:ring 4.5s ease-out infinite}
+.pulse-ring circle:nth-child(2){animation-delay:1.5s}.pulse-ring circle:nth-child(3){animation-delay:3s}
+@keyframes ring{0%{transform:scale(.25);opacity:.9}100%{transform:scale(1);opacity:0}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b);border:1px solid var(--b);margin-top:8px}
+@media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--void);padding:22px 20px}
+.stat b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(32px,4.6vw,48px);line-height:1;color:var(--gold-l);margin-bottom:8px}
+.stat span{display:block;font-size:16px;color:var(--ink80);line-height:1.45}
+.stat .src{display:block;margin-top:8px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+
+/* JOURNEY */
+.track{position:relative;margin-top:34px}
+.steps{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;position:relative}
+@media(max-width:860px){.steps{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:520px){.steps{grid-template-columns:repeat(2,1fr)}}
+.step{background:var(--surf);border:1px solid var(--b2);border-radius:8px;padding:14px 12px;cursor:pointer;text-align:left;color:var(--ink);transition:border-color .2s,background .2s,transform .2s}
+.step:hover{border-color:rgba(42,196,200,.5);transform:translateY(-2px)}
+.step[aria-selected="true"]{border-color:var(--pulse);background:linear-gradient(160deg,rgba(42,196,200,.16),var(--surf))}
+.step .n{font-family:'Fraunces',serif;font-size:26px;color:var(--pulse);line-height:1}
+.step .t{display:block;font-size:15px;line-height:1.3;margin-top:6px;color:#f3ede4}
+.bar{height:4px;background:var(--b);border-radius:9px;margin:16px 0 0;overflow:hidden}
+.bar i{display:block;height:100%;width:14%;background:linear-gradient(90deg,var(--pulse),var(--gold));transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.panel{margin-top:18px;background:var(--void);border:1px solid var(--b2);border-radius:10px;padding:26px 26px 22px;min-height:250px}
+.panel h3{font-size:28px;margin-bottom:6px}
+.panel .meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--b2);border-radius:999px;padding:5px 11px;color:var(--ink80)}
+.chip.t{border-color:rgba(42,196,200,.45);color:var(--pulse)}
+.panel p{font-size:18px;color:var(--ink80);margin-bottom:10px}
+.panel .tip{border-left:3px solid var(--gold);background:var(--gold-d);padding:10px 14px;border-radius:0 6px 6px 0;font-size:17px;color:var(--ink)}
+.panel .tip b{color:var(--gold-l)}
+.panel-nav{display:flex;justify-content:space-between;margin-top:16px}
+.organ-toggle{display:inline-flex;border:1px solid var(--b2);border-radius:999px;overflow:hidden;margin-top:14px}
+.organ-toggle button{background:none;border:0;color:var(--ink60);padding:9px 18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.organ-toggle button[aria-pressed="true"]{background:var(--pulse);color:var(--abyss)}
+
+/* FUNNEL */
+.funnel{display:grid;gap:10px;margin-top:30px;max-width:820px}
+.fl{display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:center}
+@media(max-width:600px){.fl{grid-template-columns:1fr}}
+.fl .lab{font-size:16px;color:var(--ink80);line-height:1.35}
+.fl .lab b{display:block;font-family:'Fraunces',serif;font-size:26px;color:#f3ede4;font-weight:600}
+.fl .rail{height:34px;background:var(--surf);border-radius:4px;overflow:hidden}
+.fl .rail i{display:block;height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--pulse),rgba(42,196,200,.5));transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
+.fl:last-child .rail i{background:linear-gradient(90deg,var(--gold),var(--gold-l))}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+@media(max-width:820px){.why{grid-template-columns:1fr}}
+.reasons{display:grid;gap:9px}
+.rs{display:grid;grid-template-columns:1fr 54px;gap:4px 12px;align-items:center}
+.rs span{font-size:16px;color:var(--ink80)}
+.rs b{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink);text-align:right}
+.rs .rail{grid-column:1/-1;height:8px;background:var(--surf);border-radius:9px;overflow:hidden}
+.rs .rail i{display:block;height:100%;width:0;border-radius:9px;background:var(--danger);transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.rs.fix .rail i{background:var(--amber)}
+.callout{background:linear-gradient(150deg,rgba(200,144,42,.12),var(--void) 70%);border:1px solid rgba(200,144,42,.4);border-radius:10px;padding:24px}
+.callout h3{font-size:24px;margin-bottom:10px}
+.callout p{font-size:17px;color:var(--ink80);margin-bottom:10px}
+
+/* MYTHS */
+.myths{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+@media(max-width:900px){.myths{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.myths{grid-template-columns:1fr}}
+.myth{display:block;width:100%;perspective:1000px;min-height:230px;cursor:pointer;background:none;border:0;padding:0;text-align:left;color:inherit}
+.myth .inner{display:block;position:relative;width:100%;height:100%;min-height:230px;transition:transform .7s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.myth[aria-pressed="true"] .inner{transform:rotateY(180deg)}
+.myth .face{box-sizing:border-box;position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:10px;padding:20px;display:flex;flex-direction:column}
+.myth .front{background:var(--surf);border:1px solid var(--b2)}
+.myth .back{background:linear-gradient(160deg,rgba(42,196,200,.18),var(--void));border:1px solid rgba(42,196,200,.45);transform:rotateY(180deg)}
+.myth .lbl{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+.myth .front .lbl{color:var(--danger)}
+.myth .back .lbl{color:var(--pulse)}
+.myth q{display:block;font-family:'Fraunces',serif;font-size:20px;line-height:1.3;color:#f3ede4;quotes:'\201C' '\201D'}
+.myth .back p{display:block;font-size:16px;line-height:1.5;color:var(--ink)}
+.myth .hint{display:block;margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:var(--ink40);text-transform:uppercase}
+@media (prefers-reduced-motion: reduce){.myth .inner{transition:none}}
+
+/* SYSTEM */
+.sys{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+@media(max-width:820px){.sys{grid-template-columns:1fr}}
+.sysc{background:var(--void);border:1px solid var(--b2);border-radius:10px;padding:22px}
+.sysc.new{border-color:rgba(200,144,42,.5);background:linear-gradient(160deg,rgba(200,144,42,.08),var(--void) 60%)}
+.sysc h3{font-size:24px;margin-bottom:6px}
+.sysc p{font-size:16px;color:var(--ink60);margin-bottom:10px}
+.sysc svg{width:100%;height:auto;display:block}
+.sysc svg text{font-family:'IBM Plex Mono',monospace;font-size:11px;fill:#d8cfc4;letter-spacing:.06em}
+.dash{stroke-dasharray:5 7;animation:dash 1.5s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-24}}
+@media (prefers-reduced-motion: reduce){.dash{animation:none}}
+.gains{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+@media(max-width:820px){.gains{grid-template-columns:1fr 1fr}}
+.gain{background:var(--surf);border:1px solid var(--b);border-radius:8px;padding:16px}
+.gain b{display:block;font-family:'Fraunces',serif;font-size:20px;color:#f3ede4;font-weight:600;margin-bottom:4px}
+.gain span{font-size:15.5px;color:var(--ink80);line-height:1.5}
+
+/* ASSESSMENT */
+#assess{background:radial-gradient(800px 400px at 50% 0%,rgba(42,196,200,.08),transparent 70%),var(--abyss)}
+.quiz{margin-top:28px;background:var(--void);border:1px solid var(--b2);border-radius:14px;padding:clamp(20px,4vw,38px);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.qdom{color:var(--pulse)}
+.qcount{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink40)}
+.qbar{height:6px;background:var(--surf);border-radius:9px;overflow:hidden;margin:10px 0 24px}
+.qbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pulse),var(--gold));transition:width .5s ease}
+.qtext{font-family:'Fraunces',serif;font-size:clamp(23px,3vw,30px);line-height:1.25;color:#f3ede4;margin-bottom:8px}
+.qhelp{font-size:16.5px;color:var(--ink60);margin-bottom:20px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;background:var(--surf);border:1.5px solid var(--b2);border-radius:10px;padding:14px 16px;color:var(--ink);cursor:pointer;font-size:17.5px;line-height:1.4;transition:border-color .15s,background .15s}
+.opt:hover{border-color:rgba(42,196,200,.6)}
+.opt[aria-pressed="true"]{border-color:var(--pulse);background:rgba(42,196,200,.1)}
+.opt .dot{flex:0 0 18px;height:18px;border-radius:50%;border:2px solid var(--ink40);margin-top:3px}
+.opt[aria-pressed="true"] .dot{border-color:var(--pulse);background:var(--pulse);box-shadow:inset 0 0 0 3px var(--surf)}
+.nums{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end}
+.nums label{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink60);margin-bottom:6px}
+.nums input,.nums select{background:var(--surf);border:1.5px solid var(--b2);border-radius:8px;color:#fff;font:500 20px 'Crimson Pro',serif;padding:12px 14px;width:120px}
+.nums select{width:260px}
+.nums input:focus,.nums select:focus{outline:none;border-color:var(--pulse)}
+.qfb{margin-top:16px;border-radius:10px;padding:12px 16px;font-size:16.5px;line-height:1.5;display:none}
+.qfb.on{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.qfb.G{background:var(--green-d);border:1px solid rgba(80,200,120,.35)}
+.qfb.A1,.qfb.A2{background:var(--amber-d);border:1px solid rgba(230,162,79,.4)}
+.qfb.R{background:var(--danger-d);border:1px solid rgba(224,86,111,.4)}
+.qfb.I{background:var(--pulse-d);border:1px solid rgba(42,196,200,.35)}
+.qnav{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
+.note{font-size:15px;color:var(--ink40);margin-top:14px}
+
+/* RESULTS */
+.res{display:none}
+.res.on{display:block;animation:fade .5s ease}
+.rtop{display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:center}
+@media(max-width:640px){.rtop{grid-template-columns:1fr;text-align:center}}
+.ring{position:relative;width:180px;height:180px;margin:0 auto}
+.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:'Fraunces',serif;font-size:50px;font-weight:600;color:#f3ede4}
+.ring small{position:absolute;left:0;right:0;bottom:44px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--ink40)}
+.verdict{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,40px);color:#f3ede4;line-height:1.15;margin-bottom:10px}
+.verdict.R{color:#ffb4c0}.verdict.A{color:#ffd59a}.verdict.G{color:#a8f0c4}
+.doms{display:grid;gap:12px;margin:26px 0}
+.dm{display:grid;grid-template-columns:210px 1fr 56px;gap:14px;align-items:center}
+@media(max-width:560px){.dm{grid-template-columns:1fr 56px}.dm .dl{grid-column:1/-1}}
+.dm .dl{font-size:17px}
+.dm .dr{height:12px;background:var(--surf);border-radius:9px;overflow:hidden}
+.dm .dr i{display:block;height:100%;width:0;border-radius:9px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.dm b{font-family:'IBM Plex Mono',monospace;font-size:14px;text-align:right}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.rgrid{grid-template-columns:1fr}}
+.rbox{background:var(--surf);border:1px solid var(--b2);border-radius:10px;padding:20px}
+.rbox h3{font-size:22px;margin-bottom:10px}
+.rbox ul{list-style:none;display:grid;gap:10px}
+.rbox li{font-size:16.5px;line-height:1.5;padding-left:20px;position:relative;color:var(--ink80)}
+.rbox li::before{content:'';position:absolute;left:0;top:.6em;width:9px;height:9px;border-radius:50%;background:var(--pulse)}
+.rbox.fix li::before{background:var(--amber)}
+.rbox.ask li::before{background:var(--danger)}
+.rbox.good li::before{background:var(--green)}
+.rbox li b{color:#f3ede4}
+.rbox.wide{grid-column:1/-1}
+.cent{max-height:260px;overflow:auto;margin-top:8px;font-size:15.5px;color:var(--ink80)}
+.cent div{padding:6px 0;border-bottom:1px solid var(--b)}
+.share{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.disclaimer{margin-top:22px;border:1px solid var(--b2);border-radius:10px;padding:16px 18px;font-size:15.5px;color:var(--ink60);background:var(--deep)}
+.sendrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.sendrow input{flex:1 1 200px;background:var(--abyss);border:1px solid var(--b2);border-radius:6px;color:#fff;font:17px 'Crimson Pro',serif;padding:11px 12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--raised);border:1px solid var(--b2);color:#fff;padding:12px 20px;border-radius:99px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;opacity:0;transition:.3s;z-index:999;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%)}
+
+.sources{padding:56px 0 70px}
+.sources h3{font-size:22px;margin-bottom:12px}
+.sources ol{padding-left:22px;font-size:15px;color:var(--ink60);line-height:1.7;max-width:920px}
+.sources a{color:var(--ink80)}
+footer{border-top:1px solid var(--b);padding:32px 0 44px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--ink40)}
+@media print{nav,.hero,.toast,#journey,#lost,#myths,#system,.qnav,.share,.sendrow,footer,.noprint{display:none!important}body{background:#fff;color:#000}.quiz,.rbox{background:#fff;border-color:#999}h1,h2,h3,.verdict,.rbox li,.rbox li b{color:#000!important}}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}.pulse-ring circle{animation:none}}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-journey.html" class="on" role="menuitem">Living Donor Journey</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+
+<header class="hero">
+  <svg class="pulse-ring" viewBox="0 0 420 420" aria-hidden="true"><circle cx="210" cy="210" r="200"/><circle cx="210" cy="210" r="200"/><circle cx="210" cy="210" r="200"/></svg>
+  <div class="wrap">
+    <div class="mono k">Project Donor-Flow · Living Donor Journey</div>
+    <h1>One person. One kidney.<br><em>One more life.</em></h1>
+    <p class="lead">Living donation is one of the most generous things a person can do, and one of the least understood. This guide walks you through every step, shows where willing donors get lost, and ends with a readiness profile built around <em>your</em> answers, so you can start the conversation with clear eyes.</p>
+    <div class="stats">
+      <div class="stat"><b data-count="103223">103,223</b><span>people on the U.S. transplant waiting list</span><span class="src"><a href="#s1">organdonor.gov [1]</a></span></div>
+      <div class="stat"><b data-count="86" data-suffix="%">86%</b><span>of them are waiting for a kidney</span><span class="src"><a href="#s1">organdonor.gov [1]</a></span></div>
+      <div class="stat"><b data-count="13">13</b><span>people die every day while waiting</span><span class="src"><a href="#s1">organdonor.gov [1]</a></span></div>
+      <div class="stat"><b data-count="7030">7,030</b><span>living donors in 2024, a near-record year</span><span class="src"><a href="#s2">OPTN [2]</a></span></div>
+    </div>
+    <div class="row">
+      <a class="btn gold" href="#assess">Take the readiness profile</a>
+      <a class="btn line" href="#journey">See the journey</a>
+      <a class="btn line" href="opo-directory.html">U.S. OPO directory</a>
+    </div>
+  </div>
+</header>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="wrap">
+    <div class="mono k reveal">The Journey, Step by Step</div>
+    <h2 class="reveal">Seven stages. <em>You can stop at any of them.</em></h2>
+    <p class="lead reveal">Tap a stage to see what happens, how long it usually takes, who pays, and how to keep from getting stuck. Switch between kidney and liver donation to see what changes.</p>
+    <div class="organ-toggle reveal" role="group" aria-label="Choose organ">
+      <button type="button" data-organ="kidney" aria-pressed="true">Kidney</button><button type="button" data-organ="liver" aria-pressed="false">Liver</button>
+    </div>
+    <div class="track reveal">
+      <div class="steps" role="tablist" aria-label="Stages of living donation" id="steps"></div>
+      <div class="bar" aria-hidden="true"><i id="stepbar"></i></div>
+      <div class="panel" role="tabpanel" id="panel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE DONORS ARE LOST -->
+<section id="lost">
+  <div class="wrap">
+    <div class="mono k reveal">Where Willing Donors Are Lost</div>
+    <h2 class="reveal">Half of evaluated candidates <em>never get to donate.</em></h2>
+    <p class="lead reveal">The Living Donor Collective followed 2,107 consecutive kidney donor candidates at 10 U.S. programs. Here is what happened to them.</p>
+    <div class="funnel" id="funnel">
+      <div class="fl"><div class="lab"><b>2,107</b>candidates started an evaluation</div><div class="rail"><i data-w="100"></i></div></div>
+      <div class="fl"><div class="lab"><b>1,578</b>received a decision</div><div class="rail"><i data-w="74.9"></i></div></div>
+      <div class="fl"><div class="lab"><b>790</b>were approved to donate</div><div class="rail"><i data-w="37.5"></i></div></div>
+    </div>
+    <p class="src reveal" style="margin-top:10px"><a href="#s3">Kasiske et al., Transplantation Direct, 2021 [3]</a></p>
+    <div class="why">
+      <div class="reveal">
+        <h3 style="font-size:24px;margin-bottom:14px">Why the others were not approved</h3>
+        <div class="reasons" id="reasons">
+          <div class="rs"><span>Medical issues (other than kidney-disease risk)</span><b>25.3%</b><div class="rail"><i data-w="25.3"></i></div></div>
+          <div class="rs"><span>Risk of future kidney disease</span><b>18.5%</b><div class="rail"><i data-w="18.5"></i></div></div>
+          <div class="rs fix"><span>The candidate withdrew</span><b>15.2%</b><div class="rail"><i data-w="15.2"></i></div></div>
+          <div class="rs fix"><span>A reason on the recipient&rsquo;s side</span><b>13.6%</b><div class="rail"><i data-w="13.6"></i></div></div>
+          <div class="rs"><span>Anatomy that posed a risk to the recipient</span><b>10.3%</b><div class="rail"><i data-w="10.3"></i></div></div>
+          <div class="rs fix"><span>Psychosocial (not economic)</span><b>10.3%</b><div class="rail"><i data-w="10.3"></i></div></div>
+          <div class="rs fix"><span>Other reasons</span><b>6.4%</b><div class="rail"><i data-w="6.4"></i></div></div>
+        </div>
+        <p class="src" style="margin-top:10px">Share of 617 candidates not approved. Amber bars are reasons that better information, planning, or coordination can often change.</p>
+      </div>
+      <div class="callout reveal">
+        <h3>Many of these losses are preventable.</h3>
+        <p>People withdraw when the process is slow, confusing, or costly. They are declined when a fixable issue, such as unmeasured blood pressure, weight, smoking, or a missing support plan, surfaces late. Recipients change status, and the donor&rsquo;s whole evaluation is lost instead of redirected.</p>
+        <p>This tool exists to move those discoveries to the <b style="color:var(--gold-l)">beginning</b>: to help you understand the process, spot what you can work on now, and arrive at a transplant center prepared.</p>
+        <a class="btn gold" href="#assess" style="margin-top:6px">Build my profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MYTHS -->
+<section id="myths">
+  <div class="wrap">
+    <div class="mono k reveal">Myths That Stop People</div>
+    <h2 class="reveal">Tap a card. <em>Flip the myth.</em></h2>
+    <div class="myths" id="mythgrid"></div>
+  </div>
+</section>
+
+<!-- SYSTEM -->
+<section id="system">
+  <div class="wrap">
+    <div class="mono k reveal">A Bigger, Smoother System</div>
+    <h2 class="reveal">Today, every transplant center <em>starts from zero.</em></h2>
+    <p class="lead reveal">A donor who is declined at one program, whose recipient changes, or who moves, usually starts over somewhere else: new forms, repeated tests, a new wait. Project Donor-Flow proposes a connected system.</p>
+    <div class="sys">
+      <div class="sysc reveal"><h3>Siloed today</h3><p>Each center runs its own intake and evaluation. Records rarely travel with the donor.</p>
+        <svg viewBox="0 0 460 230" role="img" aria-label="Diagram: a donor is sent separately to three transplant centers, each repeating the same tests">
+          <circle cx="60" cy="115" r="30" fill="rgba(42,196,200,.15)" stroke="#2ac4c8"/><text x="60" y="119" text-anchor="middle">DONOR</text>
+          <g><rect x="290" y="18" width="150" height="46" rx="5" fill="#0f1e38" stroke="rgba(224,86,111,.6)"/><text x="365" y="38" text-anchor="middle">CENTER A</text><text x="365" y="54" text-anchor="middle" style="fill:rgba(216,207,196,.6);font-size:10px">INTAKE · TESTS · WAIT</text></g>
+          <g><rect x="290" y="92" width="150" height="46" rx="5" fill="#0f1e38" stroke="rgba(224,86,111,.6)"/><text x="365" y="112" text-anchor="middle">CENTER B</text><text x="365" y="128" text-anchor="middle" style="fill:rgba(216,207,196,.6);font-size:10px">INTAKE · TESTS · WAIT</text></g>
+          <g><rect x="290" y="166" width="150" height="46" rx="5" fill="#0f1e38" stroke="rgba(224,86,111,.6)"/><text x="365" y="186" text-anchor="middle">CENTER C</text><text x="365" y="202" text-anchor="middle" style="fill:rgba(216,207,196,.6);font-size:10px">INTAKE · TESTS · WAIT</text></g>
+          <path class="dash" d="M90 108 C180 40 220 41 290 41" fill="none" stroke="#e0566f" stroke-width="2"/>
+          <path class="dash" d="M90 115 L290 115" fill="none" stroke="#e0566f" stroke-width="2"/>
+          <path class="dash" d="M90 122 C180 190 220 189 290 189" fill="none" stroke="#e0566f" stroke-width="2"/>
+          <text x="190" y="102" text-anchor="middle" style="fill:#e0566f;font-size:10px">START OVER</text>
+        </svg>
+      </div>
+      <div class="sysc new reveal"><h3>Connected: Project Donor-Flow</h3><p>One shared intake, one portable record, one coordinated hand-off to the right program.</p>
+        <svg viewBox="0 0 460 230" role="img" aria-label="Diagram: a donor completes one shared intake and portable record, which is routed to the best-matched transplant center">
+          <circle cx="50" cy="115" r="28" fill="rgba(42,196,200,.15)" stroke="#2ac4c8"/><text x="50" y="119" text-anchor="middle">DONOR</text>
+          <rect x="120" y="82" width="140" height="66" rx="6" fill="rgba(200,144,42,.14)" stroke="#c8902a"/><text x="190" y="108" text-anchor="middle">SHARED INTAKE</text><text x="190" y="124" text-anchor="middle">+ PORTABLE</text><text x="190" y="140" text-anchor="middle">RECORD</text>
+          <path class="dash" d="M78 115 L120 115" fill="none" stroke="#e8b84a" stroke-width="2"/>
+          <rect x="320" y="18" width="120" height="40" rx="5" fill="#0f1e38" stroke="rgba(100,140,200,.4)"/><text x="380" y="42" text-anchor="middle">CENTER A</text>
+          <rect x="320" y="95" width="120" height="40" rx="5" fill="rgba(80,200,120,.12)" stroke="#50c878"/><text x="380" y="119" text-anchor="middle">BEST MATCH</text>
+          <rect x="320" y="172" width="120" height="40" rx="5" fill="#0f1e38" stroke="rgba(100,140,200,.4)"/><text x="380" y="196" text-anchor="middle">CENTER C</text>
+          <path class="dash" d="M260 115 L320 115" fill="none" stroke="#50c878" stroke-width="2.5"/>
+          <path d="M260 104 C290 60 300 38 320 38" fill="none" stroke="rgba(100,140,200,.35)" stroke-width="1.5"/>
+          <path d="M260 126 C290 170 300 192 320 192" fill="none" stroke="rgba(100,140,200,.35)" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+    <div class="gains">
+      <div class="gain reveal"><b>Faster decisions</b><span>Fixable issues surface at first contact instead of months in.</span></div>
+      <div class="gain reveal"><b>Lower overhead</b><span>Tests and records are shared, not repeated at each program.</span></div>
+      <div class="gain reveal"><b>Better access</b><span>Donors are routed to programs and paired exchanges that fit them.</span></div>
+      <div class="gain reveal"><b>More donors</b><span>A clear, respectful process keeps willing people from walking away.</span></div>
+    </div>
+    <p class="src reveal" style="margin-top:14px">This is the Cold Ischemia Foundation&rsquo;s proposal. Read the full framework on the <a href="donor-flow.html">Project Donor-Flow</a> page.</p>
+  </div>
+</section>
+
+<!-- ASSESSMENT -->
+<section id="assess">
+  <div class="wrap">
+    <div class="mono k">Your Readiness Profile</div>
+    <h2>About 30 questions. <em>A profile that is yours alone.</em></h2>
+    <p class="lead">Questions adapt to the organ you choose and the answers you give. Every answer gets an immediate, honest explanation. Your answers stay in your browser unless you choose to send them.</p>
+    <div class="quiz" id="quiz">
+      <div id="qview">
+        <div class="qhead"><span class="mono qdom" id="qdom"></span><span class="qcount" id="qcount"></span></div>
+        <div class="qbar"><i id="qbar"></i></div>
+        <div id="qbody"></div>
+        <div class="qfb" id="qfb" role="status"></div>
+        <div class="qnav"><button class="btn line" type="button" id="qback">&larr; Back</button><button class="btn gold" type="button" id="qnext" disabled>Next &rarr;</button></div>
+        <p class="note">Educational self-assessment only. Only a transplant center can evaluate whether you can donate.</p>
+      </div>
+      <div class="res" id="res"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sources">
+  <div class="wrap">
+    <h3>Sources</h3>
+    <ol>
+      <li id="s1">HRSA, <a href="https://www.organdonor.gov/learn/organ-donation-statistics" target="_blank" rel="noopener">Organ Donation Statistics</a> (organdonor.gov).</li>
+      <li id="s2">OPTN, <a href="https://optn.transplant.hrsa.gov/news/organ-transplants-exceeded-48-000-in-2024-a-33-percent-increase-from-the-transplants-performed-in-2023" target="_blank" rel="noopener">&ldquo;Organ transplants exceeded 48,000 in 2024&rdquo;</a>.</li>
+      <li id="s3">Kasiske BL et al., <a href="https://srtr.org/media/1483/kasiske-ldc-kidney-transplantation-direct-042221.pdf" target="_blank" rel="noopener">&ldquo;Outcomes of Living Kidney Donor Candidate Evaluations in the Living Donor Collective Pilot Registry,&rdquo; <em>Transplantation Direct</em>, 2021</a>.</li>
+      <li id="s4">KDIGO, <a href="https://kdigo.org/wp-content/uploads/2026/04/KDIGO-2017-Living-Kidney-Donors-Guideline.pdf" target="_blank" rel="noopener">Clinical Practice Guideline on the Evaluation and Care of Living Kidney Donors (2017)</a>.</li>
+      <li id="s5">OPTN, <a href="https://optn.transplant.hrsa.gov/professionals/by-topic/guidance/new-living-kidney-donor-program-requirements-standardizing-patient-care" target="_blank" rel="noopener">Living donor program requirements (Policy 14)</a>; UNOS Transplant Living, <a href="https://transplantliving.org/living-donation/being-a-living-donor/qualifications/" target="_blank" rel="noopener">Living donor qualifications</a>.</li>
+      <li id="s6">Larson DB et al., <a href="https://scholars.houstonmethodist.org/en/publications/return-to-normal-activities-and-work-after-living-donor-laparosco/" target="_blank" rel="noopener">&ldquo;Return to normal activities and work after living donor laparoscopic nephrectomy&rdquo;</a> (646 donors surveyed).</li>
+      <li id="s7">National Living Donor Assistance Center, <a href="https://livingdonorassistance.org/How-to-Apply/Eligibility-Guidelines" target="_blank" rel="noopener">Eligibility guidelines</a> and <a href="https://livingdonorassistance.org/How-to-Apply/How-NLDAC-Helps" target="_blank" rel="noopener">how NLDAC helps</a>.</li>
+      <li id="s8">Living liver donation: <a href="https://www.mountsinai.org/care/transplant/services/living-donor/liver-surgery-recovery" target="_blank" rel="noopener">Mount Sinai, liver donor surgery recovery</a>; <a href="https://www.ucsfbenioffchildrens.org/treatments/living-donor-liver-transplant" target="_blank" rel="noopener">UCSF Benioff Children&rsquo;s, living donor liver transplant</a>.</li>
+      <li id="s9">National Organ Transplant Act of 1984 (42 U.S.C. &sect;274e) prohibits buying or selling organs; reimbursement of donors&rsquo; reasonable expenses is permitted.</li>
+    </ol>
+  </div>
+</section>
+
+<footer>&copy; Cold Ischemia Foundation &nbsp;&middot;&nbsp; Ellenton, Florida &nbsp;&middot;&nbsp; Educational resource, not medical advice &nbsp;&middot;&nbsp; <a href="opo-directory.html" style="color:inherit">U.S. OPO Directory</a></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="opo-data.js"></script>
+<script>
+(function(){
+'use strict';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function toast(t){var e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){e.classList.remove('on')},2400)}
+
+/* ---------- reveal + counters + bars ---------- */
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;var t=en.target;t.classList.add('in');
+  $$('[data-w]',t).forEach(function(i){i.style.width=i.dataset.w+'%'});
+  if(t.dataset&&t.dataset.count!==undefined)count(t);
+  io.unobserve(t)})},{rootMargin:'0px 0px -8% 0px'}):null;
+function count(el){var to=+el.dataset.count,suf=el.dataset.suffix||'',t0=null;function f(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1400);el.textContent=Math.round(to*(1-Math.pow(1-p,3))).toLocaleString()+suf;if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+setTimeout(function(){$$('#funnel [data-w],#reasons [data-w]').forEach(function(i){if(!i.style.width)i.style.width=i.dataset.w+'%'})},4000);
+$$('.reveal,#funnel,#reasons,[data-count]').forEach(function(e){if(io)io.observe(e);else{e.classList.add('in');$$('[data-w]',e).forEach(function(i){i.style.width=i.dataset.w+'%'})}});
+
+/* ---------- journey ---------- */
+var STAGES={
+ kidney:[
+  {t:'Learn & decide',time:'Your own pace',pay:'Free',p:['Learn what donation involves, talk with the people closest to you, and decide whether to explore it. Deciding to explore is not a commitment.','You can donate to someone you know (directed donation), or to a stranger on the waiting list (non-directed donation). Both save lives.'],tip:'Share this page with your family first. Donors whose families understand the process feel more supported and are less likely to drop out.'},
+  {t:'Contact a transplant center',time:'Days to weeks',pay:'Free',p:['Living donation is handled by transplant centers with a living donor program, not by OPOs, which coordinate deceased donation. The recipient&rsquo;s center is a common starting point, but you can choose any program.','Most start with a confidential health questionnaire online or by phone.'],tip:'Ask on the first call: &ldquo;How long does your evaluation usually take, and who will be my contact person?&rdquo; Having one named contact keeps people from falling through the cracks.'},
+  {t:'Compatibility',time:'1&ndash;4 weeks',pay:'Recipient&rsquo;s insurance',p:['Blood type and tissue tests (crossmatch) show whether your kidney is compatible with your intended recipient.','<b>Not compatible? You can still help.</b> In a paired exchange, you donate to a stranger and your loved one receives a compatible kidney from another donor.'],tip:'An incompatible result is not a dead end. Ask: &ldquo;Do you work with a paired exchange program?&rdquo;'},
+  {t:'Full evaluation',time:'Weeks to months',pay:'Recipient&rsquo;s insurance',p:['Medical tests (blood and urine studies, kidney function, imaging, heart and cancer screening as needed) plus a psychosocial evaluation by a social worker or mental health professional.','By federal transplant policy (OPTN Policy 14), you are assigned an <b>Independent Living Donor Advocate</b> whose job is to look out for you, not the recipient.'],tip:'The most common delays are scheduling gaps and missing records. Bring your recent medical records and ask whether any tests can be done close to home.'},
+  {t:'Approval & consent',time:'Days to weeks',pay:'&mdash;',p:['A team that is independent from the recipient&rsquo;s care decides whether donation is safe for you, and you sign an informed consent.','You can change your mind at any time, for any reason, and the team will keep your reason confidential.'],tip:'If you are declined, ask why, in writing. Some reasons are fixable, and another program may assess your risk differently.'},
+  {t:'Surgery',time:'1&ndash;3 days in hospital',pay:'Recipient&rsquo;s insurance',p:['Most kidney donations today are laparoscopic (small incisions). Donors usually go home within 1&ndash;3 days.'],tip:'Plan your support person, transportation, and time off before the surgery date is set.'},
+  {t:'Recovery & follow-up',time:'About 4&ndash;6 weeks',pay:'Help available',p:['In a survey of 646 donors, the average return to work was about 5 weeks, longer for physical jobs. Heavy lifting usually waits about 6 weeks.','Federal policy requires your center to follow up at 6 months, 1 year, and 2 years.'],tip:'Travel, lodging, and lost wages may be reimbursed through the National Living Donor Assistance Center if you qualify. Ask your center to help you apply early.'}
+ ],
+ liver:[
+  {t:'Learn & decide',time:'Your own pace',pay:'Free',p:['Living liver donors give part of their liver: often 40&ndash;60% (part of the right lobe) for an adult, or a smaller piece for a child. The liver regrows.','Liver donation is a larger operation than kidney donation, with more risk and a longer recovery. Take your time.'],tip:'Talk with your family about the longer recovery, typically several weeks away from work.'},
+  {t:'Contact a transplant center',time:'Days to weeks',pay:'Free',p:['Fewer centers perform living liver donation. Your recipient&rsquo;s liver program is usually the place to start.','Programs typically accept donors about 18 to 60 years old.'],tip:'Ask how many living liver donor surgeries the program performs each year. Experience matters.'},
+  {t:'Compatibility & size',time:'1&ndash;4 weeks',pay:'Recipient&rsquo;s insurance',p:['Blood type compatibility, plus imaging to check that the piece of liver would be large enough for the recipient while leaving enough for you.'],tip:'Liver size and anatomy can only be judged by imaging. A &ldquo;no&rdquo; here is about anatomy, not about you.'},
+  {t:'Full evaluation',time:'Weeks',pay:'Recipient&rsquo;s insurance',p:['Detailed blood work, liver imaging, sometimes a liver biopsy, heart screening, and a psychosocial evaluation. You will have an Independent Living Donor Advocate.','Programs usually ask donors to avoid alcohol completely through recovery.'],tip:'Fatty liver is a common reason for delay, and it can often improve with weight loss. Ask whether that applies to you.'},
+  {t:'Approval & consent',time:'Days',pay:'&mdash;',p:['An independent team approves donation, and you give informed consent. You can withdraw at any time, confidentially.'],tip:'Ask the team to walk you through the specific risks of the operation they propose for you.'},
+  {t:'Surgery',time:'About 5&ndash;7 days in hospital',pay:'Recipient&rsquo;s insurance',p:['Open or minimally invasive surgery, followed by close monitoring in the hospital.'],tip:'Arrange a support person for at least the first two weeks at home.'},
+  {t:'Recovery & regrowth',time:'About 6&ndash;8 weeks off work',pay:'Help available',p:['The liver regrows quickly: much of it within the first six weeks, with growth continuing for months.','Federal policy requires follow-up at 6 months, 1 year, and 2 years.'],tip:'Ask about the National Living Donor Assistance Center for travel and lost-wage support.'}
+ ]};
+var organ='kidney', cur=0;
+function drawSteps(){
+  var st=STAGES[organ];
+  $('#steps').innerHTML=st.map(function(s,i){return '<button class="step" role="tab" type="button" aria-selected="'+(i===cur)+'" aria-controls="panel" data-i="'+i+'"><span class="n">'+(i+1)+'</span><span class="t">'+s.t+'</span></button>'}).join('');
+  $$('#steps .step').forEach(function(b){b.onclick=function(){cur=+b.dataset.i;drawSteps()}});
+  var s=st[cur];
+  $('#panel').innerHTML='<div class="mono" style="color:var(--pulse);font-size:11px">Stage '+(cur+1)+' of 7 &middot; '+(organ==='kidney'?'Kidney':'Liver')+'</div><h3>'+s.t+'</h3><div class="meta"><span class="chip t">&#9201; '+s.time+'</span><span class="chip">Who pays: '+s.pay+'</span></div>'+s.p.map(function(p){return '<p>'+p+'</p>'}).join('')+'<p class="tip"><b>Avoid getting stuck:</b> '+s.tip+'</p><div class="panel-nav"><button class="btn line" type="button" id="pv"'+(cur?'':' disabled')+'>&larr; Previous</button><button class="btn line" type="button" id="nx"'+(cur<6?'':' disabled')+'>Next &rarr;</button></div>';
+  $('#pv').onclick=function(){if(cur>0){cur--;drawSteps()}};
+  $('#nx').onclick=function(){if(cur<6){cur++;drawSteps()}};
+  $('#stepbar').style.width=((cur+1)/7*100)+'%';
+}
+$$('.organ-toggle button').forEach(function(b){b.onclick=function(){organ=b.dataset.organ;$$('.organ-toggle button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});drawSteps()}});
+drawSteps();
+
+/* ---------- myths ---------- */
+var MYTHS=[
+ ['I would have to pay for my own surgery.','No. The recipient&rsquo;s insurance usually covers the donor&rsquo;s evaluation and surgery. Travel and lost wages may be reimbursed through NLDAC if you qualify.'],
+ ['I have to be a family member.','No. Friends, coworkers, and even strangers donate. Non-directed donors give to whoever needs it most.'],
+ ['My blood type has to match.','Not anymore. Paired exchange lets incompatible pairs swap with other pairs, so your loved one still gets a kidney.'],
+ ['Living with one kidney will shorten my life.','Studies of carefully screened donors show normal life expectancy. There is a small increase in the risk of kidney failure later, which your team will discuss with you.'],
+ ['Once I start, I can&rsquo;t back out.','You can stop at any time, for any reason, and the team keeps your reason confidential.'],
+ ['Recovery takes months.','Most kidney donors go home in 1&ndash;3 days and return to work in about 5 weeks. Liver recovery is longer.'],
+ ['I could be paid for donating.','Buying or selling organs is illegal under federal law. Reimbursement of reasonable expenses is legal.'],
+ ['I&rsquo;m too old.','There is no single age limit for kidney donation. Healthy older adults are evaluated case by case. Liver programs usually accept ages 18 to 60.']];
+$('#mythgrid').innerHTML=MYTHS.map(function(m,i){return '<button class="myth reveal" type="button" aria-pressed="false" aria-label="Myth: '+m[0].replace(/&[a-z]+;/g,"'")+'. Tap to see the fact."><span class="inner"><span class="face front"><span class="lbl">Myth</span><q>'+m[0]+'</q><span class="hint">Tap to flip &#8635;</span></span><span class="face back"><span class="lbl">Fact</span><p>'+m[1]+'</p></span></span></button>'}).join('');
+$$('.myth').forEach(function(b){b.onclick=function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true')};if(io)io.observe(b);else b.classList.add('in')});
+
+/* ---------- assessment ----------
+   Each option returns a status: G (no concern), I (information only), A1 (minor / easily addressed),
+   A2 (significant / reviewed case by case), R (commonly a reason centers decline; talk to a center), X (cannot proceed).
+   Domains: med (medical), life (lifestyle), mind (emotional & support), logi (logistics & finances), know (understanding). */
+var STATES=[['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['DC','District of Columbia'],['FL','Florida'],['GA','Georgia'],['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],['MA','Massachusetts'],['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['PR','Puerto Rico'],['RI','Rhode Island'],['SC','South Carolina'],['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming']];
+function isL(a){return a.organ_k==='liver'}
+var Q=[
+ {id:'organ',dom:'Getting started',q:'Which organ are you thinking about donating?',o:[
+   ['Kidney','I','Kidney donation is by far the most common type of living donation.',{organ_k:'kidney'}],
+   ['Part of my liver','I','Liver donation involves a larger operation and longer recovery. Questions will adjust.',{organ_k:'liver'}],
+   ['I&rsquo;m not sure yet','I','We&rsquo;ll use kidney donation, the most common path, and note where liver differs.',{organ_k:'kidney',unsure:1}]]},
+ {id:'age',dom:'Getting started',type:'num',q:'How old are you?',help:'Living donors must be adults.',fields:[['age','Age','years',10,100]],score:function(v,a){var x=v.age;
+   if(x<18)return['X','Living donors must be at least 18 years old. Thank you for caring this much. Please come back when you&rsquo;re 18, and share this page with adults in your life.'];
+   if(isL(a)){if(x>60)return['R','Most living liver donor programs accept donors about 18 to 60. Talk with a liver program before going further.'];if(x<21)return['A1','Programs are especially careful with young donors and may ask you to wait.'];return['G','Your age is within the range most liver programs accept.']}
+   if(x<21)return['A1','Some centers are cautious with very young donors, because lifetime kidney risk is estimated over more years.'];
+   if(x<=60)return['G','Your age is within the range most kidney programs accept.'];
+   if(x<=70)return['A1','Healthy older donors are often accepted. Centers review each person individually.'];
+   return['A2','Some centers accept very healthy donors over 70, but many have an upper limit. Ask programs directly.']}},
+ {id:'rel',dom:'Getting started',q:'Who would you donate to?',o:[
+   ['A specific person I know','I','Directed donation. Your intended recipient&rsquo;s center is a natural starting point.'],
+   ['Anyone who needs it (non-directed)','I','Non-directed donors can start a chain of transplants through paired exchange, helping several people.'],
+   ['I&rsquo;m still deciding','I','That&rsquo;s fine. You can explore without committing to either path.']]},
+ {id:'blood',dom:'Getting started',q:'Do you know whether your blood type is compatible with your recipient&rsquo;s?',when:function(a){return a.rel==='A specific person I know'},o:[
+   ['Yes, it&rsquo;s compatible','G','Good news, though the center will still confirm with its own tests.'],
+   ['No, it isn&rsquo;t compatible','I','You can still help. Paired exchange matches you with another donor-recipient pair.',{pe:1}],
+   ['I don&rsquo;t know','I','The center will test this early, and it&rsquo;s free to you.']]},
+ {id:'bmi',dom:'Medical baseline',type:'num',q:'What are your height and weight?',help:'Used only to calculate your body mass index (BMI). Nothing leaves your browser.',fields:[['ft','Feet','ft',3,8],['in','Inches','in',0,11],['lb','Weight','lb',70,600]],score:function(v,a){var h=v.ft*12+v.in,b=h?703*v.lb/(h*h):0;a._bmi=Math.round(b*10)/10;var s='Your BMI is about '+a._bmi+'. ';
+   if(!h||!v.lb)return['A1','We couldn&rsquo;t calculate your BMI. Centers will measure it.'];
+   if(b<18.5)return['A1',s+'That is below the typical range. Centers will check your overall health.'];
+   if(b<30)return['G',s+'That&rsquo;s within the range programs typically prefer.'];
+   if(b<35)return['A2',s+(isL(a)?'Liver programs often require a lower BMI, typically under 30 to 32, by the time of surgery. Weight loss can open this door.':'A BMI over 30 is reviewed case by case (KDIGO guideline). Many programs ask for some weight loss first.'),{mod:'weight'}];
+   if(b<40)return[isL(a)?'R':'A2',s+(isL(a)?'Most liver programs will not accept this BMI without significant weight loss.':'Many kidney programs set their limit around 35. Weight loss often makes donation possible.'),{mod:'weight'}];
+   return['R',s+'Most programs will not accept a BMI over 40, mainly to protect your own long-term health. Weight loss may change this.',{mod:'weight'}]}},
+ {id:'bp',dom:'Medical baseline',q:'Which best describes your blood pressure?',o:[
+   ['Normal, and I take no blood pressure medicine','G','Healthy blood pressure is one of the most important factors in donor safety.'],
+   ['Sometimes borderline or high, but not treated','A1','Get it checked now. Unmeasured or untreated high blood pressure is a common reason people are delayed late in evaluation.',{mod:'bp'}],
+   ['Controlled with one medicine','A2','Some programs accept donors whose blood pressure is well controlled on medication and shows no organ damage (KDIGO). Others do not.'],
+   ['I need two or more medicines, or it isn&rsquo;t controlled','R','Hard-to-control blood pressure is commonly a reason programs decline donors, to protect your remaining kidney.'],
+   ['I don&rsquo;t know','A1','A simple check at a pharmacy or clinic answers this. Do it before you contact a center.',{mod:'bp'}]]},
+ {id:'dm',dom:'Medical baseline',q:'Have you ever been told you have diabetes or prediabetes?',o:[
+   ['No','G','Good. Centers will still check your blood sugar.'],
+   ['Prediabetes, or diabetes only during pregnancy','A2','This raises your own future risk, so programs review it case by case.'],
+   ['Type 2 diabetes','R','Many programs decline donors with type 2 diabetes to protect their long-term kidney health, though a few consider it case by case.'],
+   ['Type 1 diabetes','R','Type 1 diabetes is generally a reason programs decline donors.']]},
+ {id:'kd',dom:'Medical baseline',q:'Any history of kidney problems?',when:function(a){return !isL(a)},o:[
+   ['None that I know of','G','Your kidney function will be measured in detail during evaluation.'],
+   ['One kidney stone in the past','A1','A single past stone is often acceptable after testing.'],
+   ['Repeated kidney stones','A2','Recurrent stones are reviewed carefully, since they could affect your remaining kidney.'],
+   ['Protein or blood found in my urine','A2','This needs testing first. Sometimes it is harmless, and sometimes it rules out donation.'],
+   ['A diagnosed kidney disease','R','Known kidney disease is generally a reason programs decline donors.']]},
+ {id:'ld',dom:'Medical baseline',q:'Any history of liver problems?',when:isL,o:[
+   ['None that I know of','G','Your liver will be studied with blood tests and imaging.'],
+   ['Fatty liver','A2','Fatty liver is common and can often improve with weight loss and avoiding alcohol.',{mod:'weight'}],
+   ['Past hepatitis B or C','A2','This needs specialist review before you go further.'],
+   ['Cirrhosis or other liver disease','R','Known liver disease generally rules out liver donation.']]},
+ {id:'heart',dom:'Medical baseline',q:'Have you had heart disease, a stroke, or blood clots?',o:[
+   ['No','G','Your heart will still be screened as part of the evaluation.'],
+   ['Yes','R','These conditions raise surgical risk and are commonly reasons programs decline donors. A center can tell you for sure.']]},
+ {id:'cancer',dom:'Medical baseline',q:'Any history of cancer?',o:[
+   ['Never','G','Routine cancer screening is part of the evaluation.'],
+   ['In the past, treated and in remission','A2','Some past cancers, such as certain skin cancers or cancers cured long ago, may be acceptable. Programs review each case.'],
+   ['I currently have cancer','R','Active cancer rules out donation for now.']]},
+ {id:'inf',dom:'Medical baseline',q:'Have you been diagnosed with HIV, hepatitis B or C, or tuberculosis?',o:[
+   ['No','G','The center will test for infections to protect both you and the recipient.'],
+   ['Yes','A2','This needs specialist review. In research settings, donors with HIV can donate to recipients with HIV.'],
+   ['I&rsquo;m not sure','A1','Testing is part of the evaluation, and it&rsquo;s confidential.']]},
+ {id:'preg',dom:'Medical baseline',q:'Are you pregnant, or planning a pregnancy in the next 12 months?',o:[
+   ['Not applicable to me','G',''],['No','G','Good to know. Many donors have healthy pregnancies after donating, and your team will advise on timing.'],
+   ['Yes','A1','Programs usually wait until after pregnancy. Timing is something to discuss.']]},
+ {id:'smoke',dom:'Lifestyle',q:'Do you smoke or vape nicotine?',o:[
+   ['Never','G','Excellent.'],['I quit more than a year ago','G','Great work. That helps your surgical safety.'],
+   ['I quit within the past year','A1','Stay quit. Programs may ask for proof that you&rsquo;re nicotine-free.'],
+   ['Yes, currently','A2','Most programs require you to stop before surgery, because smoking raises surgical and kidney risks. Quitting is the single most fixable item on this list.',{mod:'smoke'}]]},
+ {id:'alc',dom:'Lifestyle',q:'How many alcoholic drinks do you have in a typical week?',o:[
+   ['0 to 7','G',''],
+   ['8 to 14','A1',function(a){return isL(a)?'Liver donors are usually asked to stop drinking completely through recovery.':'Cutting back supports your recovery and long-term health.'}],
+   ['15 or more','A2','Programs will ask about this. Cutting back now helps your health and your evaluation.',{mod:'alcohol'}],
+   ['I&rsquo;m in recovery from alcohol use','A1','Programs typically look for a stable period of recovery. Your advocate can help you talk about it.']]},
+ {id:'sub',dom:'Lifestyle',q:'Do you use recreational drugs or take opioids that weren&rsquo;t prescribed?',o:[
+   ['No','G',''],['In the past, and I&rsquo;m in recovery','A1','Many programs consider donors in stable recovery.'],
+   ['Yes, currently','R','Current substance use is commonly a reason programs decline donors, for your own safety.']]},
+ {id:'meds',dom:'Lifestyle',q:'Do you take blood thinners, or painkillers like ibuprofen or naproxen most days?',o:[
+   ['No','G',''],['Yes','A1',function(a){return (isL(a)?'Blood thinners and some painkillers need careful planning around liver surgery.':'After donation, daily NSAIDs such as ibuprofen are usually avoided to protect your remaining kidney. Blood thinners need surgical planning.')+' Bring a list of your medicines to your first call.'}]]},
+ {id:'why',dom:'Emotional readiness',q:'Which best describes why you&rsquo;re considering donation?',o:[
+   ['I want to help someone I love','G','A powerful and common reason.'],
+   ['I want to help a stranger','G','Non-directed donors are among the most generous people in medicine.'],
+   ['I feel I don&rsquo;t really have a choice','R','You always have a choice. Your Independent Living Donor Advocate exists to protect that choice, and you can say no confidentially.'],
+   ['I&rsquo;m still figuring it out','I','That&rsquo;s a healthy place to start.']]},
+ {id:'press',dom:'Emotional readiness',q:'Has anyone pressured you, or offered you money or gifts, to donate?',o:[
+   ['No','G','Good. Your decision should be freely yours.'],
+   ['Some pressure from family or friends','A2','Tell your donor advocate. Programs take pressure seriously and will protect you.'],
+   ['Someone offered me money or gifts','R','Selling an organ is illegal in the U.S. (National Organ Transplant Act). Reimbursement of reasonable expenses is legal; payment is not.']]},
+ {id:'mh',dom:'Emotional readiness',q:'How is your mental and emotional health right now?',o:[
+   ['Stable, with no ongoing concerns','G',''],
+   ['I have a condition that is well managed','A1','Many donors live with well-managed conditions. Be open about it during your psychosocial evaluation.'],
+   ['I&rsquo;m struggling, or recently had a crisis','A2','Donation can wait. Taking care of yourself comes first, and programs will want to support you. If you are in crisis, call or text 988.']]},
+ {id:'sup',dom:'Support & logistics',q:'Will someone be able to help you for the first one to two weeks after surgery?',o:[
+   ['Yes, definitely','G','A support person makes recovery smoother. Programs often ask who yours will be.'],
+   ['Maybe, I need to arrange it','A1','Line this up early. It&rsquo;s a common last-minute delay.',{mod:'support'}],
+   ['No','A2','Programs usually require a support plan. Tell them early; they can sometimes help.',{mod:'support'}]]},
+ {id:'job',dom:'Support & logistics',q:'What kind of work do you do?',o:[
+   ['Desk or remote work','I','',{jobk:'desk'}],['On my feet, like retail, healthcare, or teaching','I','',{jobk:'feet'}],
+   ['Heavy physical labor','I','',{jobk:'heavy'}],['Self-employed or gig work','I','',{jobk:'self'}],['Not working, retired, or a student','I','',{jobk:'none'}]],
+   fb:function(a){var k={desk:['2&ndash;4 weeks','6&ndash;8 weeks'],feet:['4&ndash;6 weeks','8 weeks or more'],heavy:['6&ndash;8 weeks','8&ndash;12 weeks'],self:['4&ndash;6 weeks','8 weeks or more'],none:['4&ndash;6 weeks to feel fully yourself','6&ndash;8 weeks']}[a.jobk];return 'Plan on roughly <b>'+(isL(a)?k[1]:k[0])+'</b> before returning to this kind of work. Physical jobs take longer.'}},
+ {id:'leave',dom:'Support & logistics',q:'Could you take that time off work?',when:function(a){return a.jobk!=='none'},o:[
+   ['Yes, with paid leave','G','That removes one of the biggest worries donors have.'],
+   ['Yes, but some of it would be unpaid','A1','The National Living Donor Assistance Center can reimburse some lost wages if you qualify, and some states offer leave or tax benefits for donors.',{fin:1}],
+   ['I&rsquo;m not sure I could take the time','A2','Work out a plan with your employer before you start. Federal employees get 30 days of paid leave for organ donation.',{fin:1,mod:'leave'}]]},
+ {id:'care',dom:'Support & logistics',q:'Do you care for children or other family members?',o:[
+   ['No','G',''],['Yes, and I have backup help','G','Good planning.'],
+   ['Yes, and I don&rsquo;t have backup','A1','You&rsquo;ll need help with lifting and care for a few weeks. NLDAC can cover some dependent-care costs if you qualify.',{mod:'support'}]]},
+ {id:'travel',dom:'Support & logistics',q:'How far are you from the nearest transplant center?',o:[
+   ['Less than an hour','G',''],['One to three hours','G','Ask whether some tests can be done closer to home.'],
+   ['More than three hours','A1','Travel is a common reason donors drop out. NLDAC can help with travel and lodging if you qualify.',{fin:1}],
+   ['I don&rsquo;t know','I','Your profile will list programs near you.']]},
+ {id:'ins',dom:'Support & logistics',q:'Do you have your own health insurance?',o:[
+   ['Yes','G','Good for your long-term care. The recipient&rsquo;s insurance usually covers your donation-related costs.'],
+   ['No','A1','Your donation costs are usually billed to the recipient&rsquo;s insurance, but some programs prefer donors to have their own coverage for future care. Ask.']]},
+ {id:'state',dom:'Support & logistics',type:'state',q:'Which state do you live in?',help:'Used to show organ procurement organizations and transplant programs in your area.'},
+ {id:'k1',dom:'Understanding the process',q:'True or false: the recipient&rsquo;s insurance usually pays for the donor&rsquo;s medical evaluation and surgery.',tf:true},
+ {id:'k2',dom:'Understanding the process',q:'True or false: once you start an evaluation, you are committed to donating.',tf:false},
+ {id:'k3',dom:'Understanding the process',q:'True or false: if your blood type doesn&rsquo;t match your loved one&rsquo;s, you can&rsquo;t help them get a kidney.',tf:false,when:function(a){return !isL(a)}},
+ {id:'k4',dom:'Understanding the process',q:'True or false: you will have an advocate whose only job is to look out for you, not the recipient.',tf:true},
+ {id:'k5',dom:'Understanding the process',q:'True or false: donors may legally be paid for an organ in the U.S.',tf:false}
+];
+var KF={k1:'True. The recipient&rsquo;s insurance usually covers the donor&rsquo;s evaluation and surgery.',k2:'False. You can stop at any time, for any reason, confidentially.',k3:'False. Paired exchange lets incompatible pairs swap, so your loved one can still receive a compatible kidney.',k4:'True. Federal policy requires an Independent Living Donor Advocate for every living donor.',k5:'False. Buying or selling organs is illegal under the National Organ Transplant Act. Reimbursement of reasonable expenses is allowed.'};
+var DOMKEY={'Getting started':'med','Medical baseline':'med','Lifestyle':'life','Emotional readiness':'mind','Support & logistics':'logi','Understanding the process':'know'};
+
+var KEY='cifDonorProfile.v1', A={}, R={}, step=0;
+try{var sv=JSON.parse(localStorage.getItem(KEY)||'null');if(sv&&sv.A){A=sv.A;R=sv.R||{};step=sv.step||0}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({A:A,R:R,step:step}))}catch(e){}}
+function vis(){return Q.filter(function(q){return !q.when||q.when(A)})}
+function txt(x){return typeof x==='function'?x(A):(x||'')}
+
+function render(){
+  var list=vis(); if(step>=list.length){return results()}
+  $('#res').classList.remove('on'); $('#qview').style.display='';
+  var q=list[step], prev=R[q.id];
+  $('#qdom').textContent=q.dom; $('#qcount').textContent='Question '+(step+1)+' of '+list.length;
+  $('#qbar').style.width=(step/list.length*100)+'%';
+  var h='<div class="qtext" id="qt">'+q.q+'</div>'+(q.help?'<div class="qhelp">'+q.help+'</div>':'<div style="height:12px"></div>');
+  if(q.type==='num'){h+='<div class="nums">'+q.fields.map(function(f){var v=prev&&prev.v?prev.v[f[0]]:'';return '<div><label for="f_'+f[0]+'">'+f[1]+'</label><input id="f_'+f[0]+'" type="number" inputmode="numeric" min="'+f[3]+'" max="'+f[4]+'" value="'+(v===undefined?'':v)+'" placeholder="'+f[2]+'"></div>'}).join('')+'<button class="btn line" type="button" id="chk">Check</button></div>'}
+  else if(q.type==='state'){h+='<div class="nums"><div><label for="f_state">State</label><select id="f_state"><option value="">Choose your state</option>'+STATES.map(function(s){return '<option value="'+s[0]+'"'+(A.state===s[0]?' selected':'')+'>'+s[1]+'</option>'}).join('')+'</select></div></div>'}
+  else if(q.tf!==undefined){h+='<div class="opts" role="group" aria-labelledby="qt">'+['True','False'].map(function(t){return '<button type="button" class="opt" aria-pressed="'+(prev&&prev.v===t)+'" data-v="'+t+'"><span class="dot"></span><span>'+t+'</span></button>'}).join('')+'</div>'}
+  else {h+='<div class="opts" role="group" aria-labelledby="qt">'+q.o.map(function(o,i){return '<button type="button" class="opt" aria-pressed="'+(prev&&prev.i===i)+'" data-i="'+i+'"><span class="dot"></span><span>'+o[0]+'</span></button>'}).join('')+'</div>'}
+  $('#qbody').innerHTML=h;
+  var fb=$('#qfb'); fb.className='qfb'; fb.innerHTML='';
+  if(prev) showFb(prev.s,prev.m);
+  $('#qnext').disabled=!prev; $('#qnext').innerHTML=step===list.length-1?'See my profile &rarr;':'Next &rarr;';
+  $('#qback').disabled=step===0;
+  if(q.type==='num'){var go=function(){var v={},ok=true;q.fields.forEach(function(f){var n=parseFloat($('#f_'+f[0]).value);if(isNaN(n)){if(f[0]==='in'){n=0}else ok=false}v[f[0]]=n});if(!ok){showFb('A1','Please fill in each box.');return}var r=q.score(v,A);if(q.id==='age')A.age=v.age;set(q,{v:v,s:r[0],m:r[1],x:r[2]})};$('#chk').onclick=go;$$('.nums input').forEach(function(i){i.onkeydown=function(e){if(e.key==='Enter'){e.preventDefault();go()}}})}
+  else if(q.type==='state'){$('#f_state').onchange=function(){var v=this.value;if(!v)return;A.state=v;var n=opoFor(v).length;set(q,{v:v,s:'I',m:n?'We found '+n+' organ procurement organization'+(n>1?'s':'')+' serving your state. Your profile will list them, along with transplant programs in those service areas.':'Your profile will link to the national OPO directory.'})}}
+  else if(q.tf!==undefined){$$('.opt').forEach(function(b){b.onclick=function(){var v=b.dataset.v,ok=(v==='True')===q.tf;$$('.opt').forEach(function(x){x.setAttribute('aria-pressed',x===b)});set(q,{v:v,s:ok?'G':'A1',m:(ok?'Correct. ':'Not quite. ')+KF[q.id],ok:ok})}})}
+  else {$$('.opt').forEach(function(b){b.onclick=function(){var o=q.o[+b.dataset.i];$$('.opt').forEach(function(x){x.setAttribute('aria-pressed',x===b)});A[q.id]=o[0].replace(/&rsquo;/g,"'");if(o[3])Object.keys(o[3]).forEach(function(k){A[k]=o[3][k]});var m=q.fb?q.fb(A):txt(o[2]);set(q,{i:+b.dataset.i,s:o[1],m:m,x:o[3]})}})}
+}
+function set(q,r){
+  if(r.x&&r.x.mod){r.mod=r.x.mod} if(r.x&&r.x.fin){r.fin=1}
+  R[q.id]=r; save(); showFb(r.s,r.m); $('#qnext').disabled=false;
+  if(r.s==='X'){$('#qnext').innerHTML='See my profile &rarr;'}
+}
+function showFb(s,m){var fb=$('#qfb');if(!m){fb.className='qfb';return}fb.className='qfb on '+s;var tag={G:'&#10003; ',I:'',A1:'Worth knowing: ',A2:'Discuss with a center: ',R:'Important: ',X:''}[s]||'';fb.innerHTML='<b>'+tag+'</b>'+m}
+$('#qnext').onclick=function(){var list=vis(),q=list[step];if(R[q.id]&&R[q.id].s==='X'){step=list.length;save();return results()}step++;save();render();$('#quiz').scrollIntoView({behavior:'smooth',block:'start'})};
+$('#qback').onclick=function(){if(step>0){step--;save();render()}};
+
+function opoFor(st){return (window.CIF_OPOS||[]).filter(function(o){return o.serves.indexOf(st)>-1||o.state===st})}
+
+function results(){
+  var list=vis(); $('#qview').style.display='none'; var res=$('#res');
+  var stop=list.some(function(q){return R[q.id]&&R[q.id].s==='X'});
+  var pen={G:0,I:0,A1:8,A2:22,R:55};
+  var D={med:100,life:100,mind:100,logi:100}, hasR={}, kn=[0,0], good=[], fix=[], ask=[];
+  list.forEach(function(q){var r=R[q.id];if(!r)return;var d=DOMKEY[q.dom];
+    if(d==='know'){kn[1]++;if(r.ok)kn[0]++;else fix.push('<b>Fact to remember:</b> '+KF[q.id].replace(/^(True|False)\. /,''));return}
+    if(D[d]!==undefined){D[d]=Math.max(0,D[d]-(pen[r.s]||0)); if(r.s==='R')hasR[d]=1}
+    var label=q.q.replace(/<[^>]+>/g,'');
+    if(r.s==='G'&&d!=='start'&&r.m)good.push(r.m);
+    if(r.s==='A1'||(r.s==='A2'&&r.mod))fix.push(r.m);
+    else if(r.s==='A2'||r.s==='R')ask.push('<b>'+label+'</b> '+r.m);
+  });
+  var know=kn[1]?Math.round(kn[0]/kn[1]*100):100;
+  var score=Math.round(D.med*.35+D.life*.15+D.mind*.2+D.logi*.2+know*.1);
+  if(hasR.med||hasR.mind)score=Math.min(score,49);
+  if(stop)score=0;
+  var v;
+  if(stop)v=['R','Not yet: living donors must be 18 or older.','Thank you for caring this much. The best thing you can do today is share this page with the adults in your life, and register as a deceased donor when you&rsquo;re eligible in your state.'];
+  else if(score>=80&&!Object.keys(hasR).length)v=['G','A strong starting profile.','Based on your answers, nothing here commonly stops a donor early. You are ready to start the conversation with a transplant center. Only their evaluation can confirm whether you can donate.'];
+  else if(score>=55&&!hasR.med&&!hasR.mind)v=['A','Promising, with items to address first.','You have real strengths. A few items below could delay or stop an evaluation. Many are within your control, and working on them now can save months later.'];
+  else v=['R','Talk with a transplant center before going further.','One or more of your answers is commonly a reason programs decline donors. That is not a final answer: programs assess risk differently, and a short call can tell you where you stand.'];
+  var circ=2*Math.PI*78, col=v[0]==='G'?'#50c878':v[0]==='A'?'#e6a24f':'#e0566f';
+  var h='<div class="rtop"><div class="ring"><svg width="180" height="180" viewBox="0 0 180 180"><circle cx="90" cy="90" r="78" fill="none" stroke="rgba(100,140,200,.15)" stroke-width="12"/><circle id="rc" cx="90" cy="90" r="78" fill="none" stroke="'+col+'" stroke-width="12" stroke-linecap="round" stroke-dasharray="'+circ+'" stroke-dashoffset="'+circ+'" style="transition:stroke-dashoffset 1.4s cubic-bezier(.2,.8,.2,1)"/></svg><b id="rs">0</b><small>READINESS</small></div>'+
+    '<div><div class="mono" style="color:var(--pulse);font-size:11px">Your living donor readiness profile &middot; '+(isL(A)?'Liver':'Kidney')+(A._bmi?' &middot; BMI '+A._bmi:'')+'</div><div class="verdict '+v[0]+'">'+v[1]+'</div><p style="font-size:18px;color:var(--ink80)">'+v[2]+'</p></div></div>';
+  if(!stop){
+    var dl=[['Medical baseline',D.med,'#2ac4c8'],['Lifestyle',D.life,'#e8b84a'],['Emotional readiness',D.mind,'#c38ef0'],['Support & logistics',D.logi,'#50c878'],['Understanding the process',know,'#8fb5ff']];
+    h+='<div class="doms">'+dl.map(function(d){return '<div class="dm"><div class="dl">'+d[0]+'</div><div class="dr"><i data-w="'+d[1]+'" style="background:'+d[2]+'"></i></div><b>'+d[1]+'</b></div>'}).join('')+'</div>';
+    h+='<div class="rgrid">';
+    if(good.length)h+='<div class="rbox good"><h3>Your strengths</h3><ul>'+good.slice(0,6).map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>';
+    if(fix.length)h+='<div class="rbox fix"><h3>Work on these now</h3><ul>'+fix.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>';
+    if(ask.length)h+='<div class="rbox ask"><h3>Ask the transplant team about</h3><ul>'+ask.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>';
+    var path=[];
+    path.push(isL(A)?'<b>Time in hospital:</b> about 5&ndash;7 days. <b>Time off work:</b> plan on about 6&ndash;8 weeks, longer for physical jobs.':'<b>Time in hospital:</b> usually 1&ndash;3 days. <b>Time off work:</b> about 5 weeks on average, longer for physical jobs.');
+    if(A.jobk&&R.job)path.push(R.job.m);
+    if(A.pe)path.push('<b>Paired exchange:</b> since your blood type isn&rsquo;t compatible, ask your recipient&rsquo;s center whether it works with a paired exchange program.');
+    if(A.rel&&A.rel.indexOf('Anyone')===0)path.push(isL(A)?'<b>Non-directed liver donation:</b> only some programs accept liver donors who have no intended recipient. Ask liver programs directly.':'<b>Non-directed donation:</b> you can contact any transplant center with a living donor program, and your gift may start a chain of several transplants.');
+    var fin=list.some(function(q){return R[q.id]&&R[q.id].fin});
+    path.push('<b>Costs:</b> the recipient&rsquo;s insurance usually covers your evaluation and surgery.'+(fin?' Because travel or lost wages may be a concern for you, ask your center early about the <a href="https://livingdonorassistance.org/How-to-Apply/Eligibility-Guidelines" target="_blank" rel="noopener">National Living Donor Assistance Center</a> (up to $6,000 for travel, lost wages, and dependent care, based on the recipient&rsquo;s household income).':''));
+    h+='<div class="rbox"><h3>Your path</h3><ul>'+path.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>';
+    var ops=A.state?opoFor(A.state):[], org=isL(A)?'Liver':'Kidney';
+    var cents=[];ops.forEach(function(o){o.centers.forEach(function(c){if(c.s.indexOf(org)>-1)cents.push(c.n+' &middot; '+c.c)})});
+    cents=cents.filter(function(c,i){return cents.indexOf(c)===i}).sort();
+    h+='<div class="rbox wide"><h3>Near you'+(A.state?' &middot; '+esc((STATES.filter(function(s){return s[0]===A.state})[0]||[])[1]||A.state):'')+'</h3>'+
+      '<p style="font-size:16px;color:var(--ink60);margin-bottom:8px">Living donation is arranged through <b style="color:var(--ink)">transplant centers</b> with a living donor program. Organ procurement organizations (OPOs) coordinate <i>deceased</i> donation and registration.</p>'+
+      (cents.length?'<div class="mono" style="font-size:11px;color:var(--pulse);margin-top:10px">'+cents.length+' '+org.toLowerCase()+' transplant program'+(cents.length>1?'s':'')+' in your area&rsquo;s OPO service region'+(cents.length>1?'s':'')+'. Ask each whether it has a living donor program.</div><div class="cent">'+cents.map(function(c){return '<div>'+c+'</div>'}).join('')+'</div>':'')+
+      (ops.length?'<div class="mono" style="font-size:11px;color:var(--pulse);margin-top:14px">OPOs serving your state</div><div class="cent">'+ops.map(function(o){return '<div><b style="color:#f3ede4">'+esc(o.name)+'</b> &middot; '+esc(o.city)+', '+o.state+' &middot; <a href="tel:'+o.phone.replace(/[^0-9]/g,'')+'">'+o.phone+'</a></div>'}).join('')+'</div>':'')+
+      '<p style="margin-top:12px"><a href="opo-directory.html'+(A.state?'#'+A.state:'')+'">Open the full U.S. OPO directory &rarr;</a></p></div>';
+    h+='</div>';
+  }
+  h+='<div class="rbox wide noprint" style="margin-top:16px"><h3>Share it, save it, start the conversation</h3>'+
+     '<p style="font-size:16px;color:var(--ink60)">Families who learn together decide together. Send this guide to the people you&rsquo;d want beside you.</p>'+
+     '<div class="share"><button class="btn gold" type="button" id="shr">Share this guide</button><button class="btn line" type="button" id="prt">Print or save as PDF</button><button class="btn line" type="button" id="cpy">Copy my summary</button><button class="btn line" type="button" id="rst">Start over</button></div>'+
+     '<p style="font-size:16px;color:var(--ink60);margin-top:16px">Want the foundation to see your profile and follow up? We&rsquo;ll reply personally.</p>'+
+     '<div class="sendrow"><input id="sn" placeholder="Your name" autocomplete="name"><input id="se" type="email" placeholder="Your email" autocomplete="email"><button class="btn line" type="button" id="snd">Send to the foundation</button></div></div>';
+  h+='<div class="disclaimer"><b style="color:var(--ink)">This is an educational readiness profile, not a medical evaluation.</b> It reflects common criteria from the KDIGO living kidney donor guideline, OPTN policy, and published program requirements, but every transplant center assesses donors individually, and only a center&rsquo;s evaluation can determine whether you can safely donate.</div>';
+  res.innerHTML=h; res.classList.add('on');
+  requestAnimationFrame(function(){var rc=$('#rc');if(rc)rc.style.strokeDashoffset=circ*(1-score/100);$$('.dm i',res).forEach(function(i){i.style.width=i.dataset.w+'%'});
+    var t0=null,el=$('#rs');(function f(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1300);el.textContent=Math.round(score*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(performance.now())});
+  var sum='Living Donor Readiness Profile ('+(isL(A)?'liver':'kidney')+')\nReadiness: '+score+'/100. '+v[1].replace(/&[a-z]+;/g,"'")+(stop?'':'\nMedical '+D.med+' | Lifestyle '+D.life+' | Emotional '+D.mind+' | Support & logistics '+D.logi+' | Understanding '+know)+
+    (A.state?'\nState: '+A.state:'')+'\n\nItems to address:\n'+fix.concat(ask).map(function(x){return '- '+x.replace(/<[^>]+>/g,'').replace(/&[a-z]+;/g,"'")}).join('\n');
+  var url=location.origin+location.pathname;
+  $('#shr').onclick=function(){var t='I found this guide to living organ donation from the Cold Ischemia Foundation. It explains the whole process and includes a short readiness profile.';if(navigator.share){navigator.share({title:'Living Donor Journey',text:t,url:url}).catch(function(){})}else{location.href='mailto:?subject='+encodeURIComponent('A guide to living organ donation')+'&body='+encodeURIComponent(t+'\n\n'+url)}};
+  $('#prt').onclick=function(){window.print()};
+  $('#cpy').onclick=function(){(navigator.clipboard?navigator.clipboard.writeText(sum):Promise.reject()).then(function(){toast('Summary copied')},function(){prompt('Copy your summary:',sum)})};
+  $('#rst').onclick=function(){if(confirm('Start the profile over?')){A={};R={};step=0;save();render();$('#quiz').scrollIntoView({behavior:'smooth'})}};
+  $('#snd').onclick=function(){var n=$('#sn').value.trim(),em=$('#se').value.trim();if(!n)return toast('Please add your name');if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em))return toast('Please add a valid email');
+    var data={formType:'contact',name:n,email:em,subject:'Living Donor Readiness Profile',message:sum,category:'patient'};var b=this;b.disabled=true;b.textContent='Sending…';
+    var fall=function(){location.href=(window.cifMailto?window.cifMailto('Living Donor Readiness Profile',sum+'\n\n— '+n+' ('+em+')'):'mailto:jeffparke72@gmail.com?subject=Living%20Donor%20Readiness%20Profile&body='+encodeURIComponent(sum))};
+    if(window.cifFormsReady&&window.cifFormsReady()){window.cifSend(data).then(function(){b.textContent='Sent ✓';toast('Sent. A confirmation email is on its way.')},function(){b.disabled=false;b.textContent='Send to the foundation';fall()})}else fall()};
+  $('#qbar').style.width='100%';
+}
+render();
+})();
+</script>
+</body>
+</html>
