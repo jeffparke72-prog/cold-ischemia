@@ -14,6 +14,7 @@ GROUPS = [
     ("About", [
         ("about.html", "Our Story"),
         ("cif-volunteer-page.html", "Volunteer"),
+        ("volunteer-training.html", "Volunteer Training"),
         ("contact.html", "Contact"),
     ]),
     ("Advocacy", [

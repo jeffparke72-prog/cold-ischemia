@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volunteer Readiness Training | Cold Ischemia Foundation</title>
+<meta name="description" content="The Cold Ischemia Foundation's self-paced volunteer readiness training: 10 modules, 100 questions, no time limit. Required before applying to volunteer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A4A; --navy-ink:#101a30; --gold:#C9A84C; --gold-soft:#e2cd94; --teal:#2E7D74; --blood:#B23A3A; --amber:#D98A2B;
+    --bg:#F7F5F0; --surface:#FFFFFF; --surface-2:#EFEBE1; --ink:#1C1A16; --ink-soft:#55534c; --line:#DCD6C7; --focus:#2E7D74;
+    --ok:#2E7D74; --ok-bg:rgba(46,125,116,.1); --no:#B23A3A; --no-bg:rgba(178,58,58,.08);
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12100D; --surface:#1A1815; --surface-2:#221F1A; --ink:#EFEAE0; --ink-soft:#B8B2A4; --line:#37332B;
+      --navy:#2E4270; --navy-ink:#16223D; --gold:#D8BC6C; --teal:#4CA396; --blood:#D0665F; --amber:#E6A24F; --focus:#4CA396;
+      --ok:#4CA396; --ok-bg:rgba(76,163,150,.14); --no:#D0665F; --no-bg:rgba(208,102,95,.12);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12100D; --surface:#1A1815; --surface-2:#221F1A; --ink:#EFEAE0; --ink-soft:#B8B2A4; --line:#37332B;
+    --navy:#2E4270; --navy-ink:#16223D; --gold:#D8BC6C; --teal:#4CA396; --blood:#D0665F; --amber:#E6A24F; --focus:#4CA396;
+    --ok:#4CA396; --ok-bg:rgba(76,163,150,.14); --no:#D0665F; --no-bg:rgba(208,102,95,.12);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Work Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:600;line-height:1.15;margin:0}
+  a{color:var(--teal)}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;font-size:12px;font-weight:600}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  /* ---------- hero (always deep navy, both themes) ---------- */
+  .hero{position:relative;overflow:hidden;background:radial-gradient(1200px 500px at 80% -10%,rgba(201,168,76,.22),transparent 60%),linear-gradient(160deg,#101a30 0%,#1B2A4A 55%,#0c1424 100%);color:#F3EEE3;padding:72px 0 64px}
+  .hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 calc(100%/12 - 1px),rgba(255,255,255,.03) calc(100%/12 - 1px) calc(100%/12));pointer-events:none}
+  .hero .wrap{position:relative;z-index:1}
+  .hero .mono{color:var(--gold-soft)}
+  .hero h1{font-size:clamp(34px,6vw,60px);margin:14px 0 18px;color:#FFFDF8;letter-spacing:-.01em}
+  .hero h1 em{font-style:italic;color:#e2cd94;font-weight:500}
+  .hero p.lead{font-family:'Newsreader',Georgia,serif;font-size:clamp(19px,2.3vw,23px);line-height:1.55;max-width:720px;color:#E4DCCB;margin:0 0 28px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(226,205,148,.18);border:1px solid rgba(226,205,148,.18);border-radius:10px;overflow:hidden;max-width:760px;margin-bottom:30px}
+  .stat{background:rgba(16,26,48,.72);padding:16px 14px}
+  .stat b{display:block;font-family:'Newsreader',serif;font-size:32px;font-weight:600;color:#fff;line-height:1}
+  .stat span{font-size:13px;color:#cfc6b2}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .clock{position:absolute;right:-60px;top:40px;width:340px;height:340px;opacity:.16;pointer-events:none}
+  @media(max-width:860px){.clock{display:none}}
+  .clock .hand{transform-origin:170px 170px;animation:spin 60s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 16px 'Work Sans',sans-serif;border-radius:999px;padding:14px 26px;border:2px solid transparent;cursor:pointer;text-decoration:none;transition:transform .15s ease,background .2s,box-shadow .2s;min-height:48px}
+  .btn:hover{transform:translateY(-1px)}
+  .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+  .btn.gold{background:#C9A84C;color:#101a30;box-shadow:0 8px 24px rgba(201,168,76,.35)}
+  .btn.gold:hover{background:#d8bc6c}
+  .btn.primary{background:var(--navy);color:#fff}
+  :root[data-theme="dark"] .btn.primary{background:var(--gold);color:#101a30}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{background:var(--gold);color:#101a30}}
+  .btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--ink-soft)}
+  .hero .btn.ghost{border-color:rgba(226,205,148,.45);color:#F3EEE3}
+  .btn.link{background:none;border:0;padding:8px 4px;color:var(--ink-soft);text-decoration:underline;min-height:auto;font-weight:500;font-size:15px}
+  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+  /* ---------- global progress strip ---------- */
+  .strip{position:sticky;top:56px;z-index:40;background:var(--surface);border-bottom:1px solid var(--line)}
+  .strip .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px}
+  .strip .bar{flex:1;height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden}
+  .strip .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--gold));border-radius:99px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+  .strip .count{font:600 14px 'IBM Plex Mono',monospace;color:var(--ink-soft);white-space:nowrap}
+  .strip .home{font-size:14px;font-weight:600;color:var(--ink-soft);background:none;border:0;cursor:pointer;padding:6px 0;white-space:nowrap}
+
+  main{padding:44px 0 80px}
+  .view{animation:enter .45s cubic-bezier(.2,.8,.2,1)}
+  @keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  /* ---------- home ---------- */
+  .how{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 40px}
+  @media(max-width:820px){.how{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.how{grid-template-columns:1fr}}
+  .how div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .how b{display:block;font-family:'Newsreader',serif;font-size:19px;margin-bottom:4px}
+  .how span{font-size:15px;color:var(--ink-soft)}
+  .sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+  .sec-h h2{font-size:clamp(26px,3.4vw,34px)}
+  .mods{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:720px){.mods{grid-template-columns:1fr}}
+  .mod{display:flex;gap:16px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;cursor:pointer;color:var(--ink);font:inherit;transition:border-color .2s,transform .15s,box-shadow .2s}
+  .mod:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.08)}
+  .mod .ring{flex:0 0 56px;height:56px;position:relative}
+  .mod .ring svg{transform:rotate(-90deg)}
+  .mod .ring b{position:absolute;inset:0;display:grid;place-items:center;font:600 15px 'IBM Plex Mono',monospace}
+  .mod .t{flex:1;min-width:0}
+  .mod .t small{display:block;color:var(--ink-soft);font-size:13px;margin-bottom:2px}
+  .mod .t strong{font-family:'Newsreader',serif;font-size:19px;font-weight:600;line-height:1.25}
+  .mod .st{font-size:13px;font-weight:600;color:var(--ink-soft);white-space:nowrap}
+  .mod.done .st{color:var(--ok)}
+  .mod.locked-crit{border-color:var(--no)}
+  .note{background:var(--surface-2);border-left:4px solid var(--gold);border-radius:8px;padding:16px 18px;margin:28px 0 0;font-size:15px;color:var(--ink-soft)}
+  .note strong{color:var(--ink)}
+
+  /* ---------- lesson ---------- */
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,4vw,44px);box-shadow:0 18px 50px rgba(0,0,0,.06)}
+  .kick{color:var(--teal)}
+  .lesson h2{font-size:clamp(30px,4.6vw,46px);margin:10px 0 22px}
+  .lesson p{font-family:'Newsreader',Georgia,serif;font-size:clamp(18px,2.1vw,21px);line-height:1.65;margin:0 0 16px;max-width:760px}
+  .keys{list-style:none;padding:0;margin:26px 0 30px;display:grid;gap:10px}
+  .keys li{display:flex;gap:12px;align-items:flex-start;background:var(--surface-2);border-radius:10px;padding:12px 14px;font-weight:500}
+  .keys li::before{content:'';flex:0 0 10px;height:10px;margin-top:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(201,168,76,.2)}
+  .dots{display:flex;gap:6px;margin:0 0 22px;flex-wrap:wrap}
+  .dots i{width:22px;height:6px;border-radius:99px;background:var(--line)}
+  .dots i.a{background:var(--teal)}
+  .dots i.c{background:var(--gold)}
+
+  /* ---------- question ---------- */
+  .qtop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  .badge{display:inline-flex;align-items:center;gap:8px;border-radius:99px;padding:6px 12px;background:var(--surface-2);color:var(--ink-soft)}
+  .badge.crit{background:var(--no-bg);color:var(--no)}
+  .qnum{font-family:'Newsreader',serif;font-size:15px;color:var(--ink-soft)}
+  .qtext{font-size:clamp(23px,3.2vw,31px);margin:14px 0 26px;font-weight:500;letter-spacing:-.005em}
+  .field{position:relative;max-width:720px}
+  .sel{width:100%;appearance:none;-webkit-appearance:none;font:500 17px 'Work Sans',sans-serif;color:var(--ink);background:var(--surface-2);border:2px solid var(--line);border-radius:12px;padding:16px 48px 16px 16px;cursor:pointer;min-height:56px;line-height:1.35}
+  .sel:hover{border-color:var(--ink-soft)}
+  .sel:disabled{cursor:default;opacity:1}
+  .field::after{content:'';position:absolute;right:20px;top:50%;width:10px;height:10px;border-right:2.5px solid var(--ink-soft);border-bottom:2.5px solid var(--ink-soft);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+  .tf{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px}
+  .tf button{font:600 20px 'Newsreader',serif;padding:22px;border-radius:14px;border:2px solid var(--line);background:var(--surface-2);color:var(--ink);cursor:pointer;transition:transform .15s,border-color .2s,background .2s}
+  .tf button:hover:not(:disabled){border-color:var(--gold);transform:translateY(-2px)}
+  .tf button:disabled{cursor:default}
+  .tf button.pick{border-color:var(--ink)}
+  .tf button.right{border-color:var(--ok);background:var(--ok-bg)}
+  .tf button.wrong{border-color:var(--no);background:var(--no-bg)}
+  .line{width:100%;font:500 18px 'Newsreader',Georgia,serif;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--line);padding:12px 2px;outline:none;transition:border-color .2s}
+  .line:focus{border-bottom-color:var(--gold)}
+  .cc{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);margin-top:8px}
+  .cc.met{color:var(--ok)}
+  .actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:30px;flex-wrap:wrap}
+  .fb{margin-top:24px;border-radius:14px;padding:18px 20px;border:1px solid var(--line);background:var(--surface-2);max-width:720px;animation:enter .35s ease}
+  .fb.ok{border-color:var(--ok);background:var(--ok-bg)}
+  .fb.no{border-color:var(--no);background:var(--no-bg)}
+  .fb .h{font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+  .fb.ok .h{color:var(--ok)} .fb.no .h{color:var(--no)}
+  .fb p{margin:0;font-size:16px}
+  .fb .ans{margin-top:8px;font-weight:600}
+  .streak{font:600 13px 'IBM Plex Mono',monospace;color:var(--gold);letter-spacing:.1em}
+
+  /* ---------- module complete ---------- */
+  .done-v{text-align:center;position:relative;overflow:hidden}
+  .done-v h2{font-size:clamp(30px,4.6vw,44px);margin:14px 0 10px}
+  .done-v p{font-family:'Newsreader',serif;font-size:20px;color:var(--ink-soft);max-width:600px;margin:0 auto 26px}
+  .big-ring{width:150px;height:150px;margin:6px auto 0;position:relative}
+  .big-ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:'Newsreader',serif;font-size:38px;font-weight:600}
+  .burst{position:absolute;inset:0;pointer-events:none}
+  .burst i{position:absolute;left:50%;top:120px;width:8px;height:8px;border-radius:2px;opacity:0;animation:pop 1.3s ease-out forwards}
+  @keyframes pop{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(540deg)}}
+
+  /* ---------- results ---------- */
+  .verdict{border-radius:18px;padding:clamp(22px,4vw,40px);color:#F3EEE3;background:linear-gradient(150deg,#101a30,#1B2A4A);margin-bottom:22px;position:relative;overflow:hidden}
+  .verdict.ready{background:linear-gradient(150deg,#0f2b29,#1B2A4A)}
+  .verdict.support{background:linear-gradient(150deg,#2b2410,#1B2A4A)}
+  .verdict.notyet{background:linear-gradient(150deg,#2b1414,#1B2A4A)}
+  .verdict .mono{color:#e2cd94}
+  .verdict h2{font-size:clamp(30px,4.8vw,48px);margin:10px 0 12px;color:#fff}
+  .verdict p{font-family:'Newsreader',serif;font-size:19px;line-height:1.6;margin:0;max-width:720px;color:#E4DCCB}
+  .dims{display:grid;gap:14px;margin:6px 0 4px}
+  .dim{display:grid;grid-template-columns:200px 1fr 54px;gap:14px;align-items:center}
+  @media(max-width:560px){.dim{grid-template-columns:1fr 54px}.dim .dl{grid-column:1/-1}}
+  .dim .dl b{display:block;font-weight:600}
+  .dim .dl small{color:var(--ink-soft);font-size:13px}
+  .dim .db{height:12px;background:var(--surface-2);border-radius:99px;overflow:hidden}
+  .dim .db i{display:block;height:100%;width:0;border-radius:99px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+  .dim .dv{font:600 15px 'IBM Plex Mono',monospace;text-align:right}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .card h3{font-size:24px;margin-bottom:12px}
+  .card ul{margin:0;padding-left:20px}
+  .card li{margin-bottom:8px}
+  .refl{border-top:1px solid var(--line);padding:14px 0}
+  .refl:first-of-type{border-top:0}
+  .refl small{display:block;color:var(--ink-soft);font-size:14px;margin-bottom:4px}
+  .refl p{margin:0;font-family:'Newsreader',serif;font-size:18px;font-style:italic}
+  .review-btn{background:none;border:0;color:var(--teal);font:inherit;text-decoration:underline;cursor:pointer;padding:0;text-align:left}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--navy-ink);color:#fff;padding:12px 20px;border-radius:99px;font-weight:600;opacity:0;transition:.3s;z-index:100;pointer-events:none}
+  .toast.on{opacity:1;transform:translateX(-50%)}
+
+  footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--ink-soft);font-size:14px}
+
+  @media print{
+    nav,.strip,.hero,.actions,.row,.toast,footer,.noprint{display:none!important}
+    body{background:#fff;color:#000}
+    .card,.verdict{box-shadow:none;border:1px solid #999;color:#000;background:#fff!important}
+    .verdict h2,.verdict p,.verdict .mono{color:#000}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><a href="donate.html" class="cn-dm">Donate</a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" class="on" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a><a href="donate.html" class="cn-d">Donate</a></div></div></nav><script src="cif-nav.js" defer></script><!--/CIFNAV-->
+
+<header class="hero" id="hero">
+  <svg class="clock" viewBox="0 0 340 340" aria-hidden="true"><circle cx="170" cy="170" r="160" fill="none" stroke="#e2cd94" stroke-width="3"/><circle cx="170" cy="170" r="120" fill="none" stroke="#e2cd94" stroke-width="1" stroke-dasharray="2 10"/><line class="hand" x1="170" y1="170" x2="170" y2="40" stroke="#e2cd94" stroke-width="4" stroke-linecap="round"/><circle cx="170" cy="170" r="8" fill="#e2cd94"/></svg>
+  <div class="wrap">
+    <div class="mono">Cold Ischemia Foundation · Volunteer Program · Required Training</div>
+    <h1>Before you speak for someone,<br><em>learn what they're living.</em></h1>
+    <p class="lead">This is the foundation's self-led readiness training. Ten modules. One hundred questions. No time limit and no shortcuts. It teaches what the work really asks of you, then asks you, honestly, whether you have the time, the commitment, and the judgment to do it well. Every answer you give helps protect a patient or care partner you haven't met yet.</p>
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><b>100</b><span>questions</span></div>
+      <div class="stat" role="listitem"><b>10</b><span>modules</span></div>
+      <div class="stat" role="listitem"><b>0</b><span>time limits</span></div>
+      <div class="stat" role="listitem"><b>~60</b><span>minutes, at your pace</span></div>
+    </div>
+    <div class="row">
+      <button class="btn gold" id="heroStart" type="button">Begin the training</button>
+      <a class="btn ghost" href="cif-volunteer-page.html">Back to the volunteer page</a>
+    </div>
+  </div>
+</header>
+
+<div class="strip" id="strip" hidden>
+  <div class="wrap">
+    <button class="home" id="toHome" type="button">← All modules</button>
+    <div class="bar" role="progressbar" aria-label="Overall progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="pbar"><i id="pfill"></i></div>
+    <div class="count" id="pcount">0 / 100</div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap" id="app" aria-live="polite"></div>
+  <noscript><div class="wrap"><p>This training needs JavaScript turned on.</p></div></noscript>
+</main>
+
+<footer>
+  <div class="wrap">Cold Ischemia Foundation · Ellenton, Florida · Your progress is saved in this browser only, on this device. Nothing is sent anywhere until you choose to include your summary in your volunteer application.</div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="volunteer-training-data.js"></script>
+<script>
+(function(){
+  'use strict';
+  var D = window.CIF_TRAINING, M = D.modules;
+  var KEY = 'cifVolTraining.v' + D.version, SUMKEY = 'cifVolTrainingSummary';
+  var DIMS = {
+    K:{n:'Knowledge', s:'Mission, system, and facts', c:'var(--teal)'},
+    J:{n:'Judgment & boundaries', s:'Scope, confidentiality, conduct', c:'var(--navy)'},
+    T:{n:'Time & availability', s:'Realistic capacity', c:'var(--amber)'},
+    C:{n:'Commitment & reliability', s:'Follow-through', c:'var(--gold)'},
+    E:{n:'Empathy & resilience', s:'Presence, care, self-care', c:'var(--blood)'},
+    R:{n:'Reflection', s:'Written answers completed', c:'var(--ink-soft)'}
+  };
+  var TYPE = {mc:'Multiple choice', tf:'True or false', self:'Honest self-assessment', text:'Written reflection'};
+  var TOTAL = M.reduce(function(n,m){return n+m.q.length},0);
+
+  /* ---------- state ---------- */
+  var S = load();
+  function blank(){ return {a:{}, v:'home', m:0, i:0, started:null, finished:null}; }
+  function load(){ try{ var s = JSON.parse(localStorage.getItem(KEY)); if(s && s.a) return s; }catch(e){} return blank(); }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+  function id(m,i){ return m+'-'+i; }
+  function ans(m,i){ return S.a[id(m,i)]; }
+  function answered(){ return Object.keys(S.a).length; }
+  function modCount(m){ var n=0; for(var i=0;i<M[m].q.length;i++) if(ans(m,i)) n++; return n; }
+
+  var app = document.getElementById('app'), strip = document.getElementById('strip');
+  var pfill = document.getElementById('pfill'), pcount = document.getElementById('pcount'), pbar = document.getElementById('pbar');
+
+  function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]}); }
+  function ring(pct, size, stroke, color){
+    var r=(size-stroke)/2, c=2*Math.PI*r;
+    return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 '+size+' '+size+'" aria-hidden="true"><circle cx="'+size/2+'" cy="'+size/2+'" r="'+r+'" fill="none" stroke="var(--surface-2)" stroke-width="'+stroke+'"/><circle cx="'+size/2+'" cy="'+size/2+'" r="'+r+'" fill="none" stroke="'+(color||'var(--teal)')+'" stroke-width="'+stroke+'" stroke-linecap="round" stroke-dasharray="'+c+'" stroke-dashoffset="'+(c*(1-pct))+'" style="transition:stroke-dashoffset .8s cubic-bezier(.2,.8,.2,1)"/></svg>';
+  }
+  function progress(){
+    var n=answered(); pfill.style.width=(n/TOTAL*100)+'%'; pcount.textContent=n+' / '+TOTAL; pbar.setAttribute('aria-valuenow', Math.round(n/TOTAL*100));
+  }
+  function toast(t){ var e=document.getElementById('toast'); e.textContent=t; e.classList.add('on'); clearTimeout(toast.t); toast.t=setTimeout(function(){e.classList.remove('on')},2200); }
+  function go(v,m,i){ S.v=v; if(m!=null) S.m=m; if(i!=null) S.i=i; save(); render(true); }
+  function focusHead(){ var h=app.querySelector('h2,.qtext'); if(h){ h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); } }
+
+  function render(scroll){
+    progress();
+    var inTraining = S.v!=='home';
+    strip.hidden = !inTraining;
+    document.getElementById('hero').style.display = inTraining ? 'none' : '';
+    if(S.v==='home') home(); else if(S.v==='lesson') lesson(); else if(S.v==='q') question(); else if(S.v==='done') moduleDone(); else results();
+    if(scroll){ window.scrollTo({top:0, behavior:'smooth'}); focusHead(); }
+  }
+
+  /* ---------- home ---------- */
+  function nextUnanswered(){ for(var m=0;m<M.length;m++) for(var i=0;i<M[m].q.length;i++) if(!ans(m,i)) return [m,i]; return null; }
+  function home(){
+    var n=answered(), nu=nextUnanswered();
+    var h='<section class="view">';
+    h+='<div class="how">'+
+       '<div><b>Learn</b><span>Every module opens with a short, honest lesson about the real work.</span></div>'+
+       '<div><b>Answer</b><span>Drop-down choices, true or false, honest self-assessments, and short written reflections.</span></div>'+
+       '<div><b>Understand</b><span>Every answer explains <em>why</em>, right away. This is training, not a trick.</span></div>'+
+       '<div><b>Know</b><span>Finish with an honest readiness profile, then carry it into your application.</span></div></div>';
+    h+='<div class="sec-h"><h2>'+(n? 'Welcome back. You\'re '+Math.round(n/TOTAL*100)+'% of the way there.' : 'Ten modules. Take them in order.')+'</h2>';
+    if(n) h+='<span class="mono" style="color:var(--ink-soft)">'+n+' of '+TOTAL+' answered</span>';
+    h+='</div><div class="mods">';
+    M.forEach(function(mod,m){
+      var c=modCount(m), done=c===mod.q.length;
+      h+='<button class="mod'+(done?' done':'')+'" type="button" data-m="'+m+'"><span class="ring">'+ring(c/mod.q.length,56,6,done?'var(--gold)':'var(--teal)')+'<b>'+(m+1)+'</b></span>'+
+         '<span class="t"><small>'+esc(mod.kicker)+'</small><strong>'+esc(mod.title)+'</strong></span><span class="st">'+(done?'Complete ✓':c? c+' / 10':'Start')+'</span></button>';
+    });
+    h+='</div><div class="row" style="margin-top:26px">';
+    if(!nu) h+='<button class="btn primary" type="button" id="toResults">See your readiness profile</button>';
+    else h+='<button class="btn primary" type="button" id="cont">'+(n?'Continue where you left off':'Begin Module 1')+'</button>';
+    if(n) h+='<button class="btn link" type="button" id="reset">Start over</button>';
+    h+='</div><div class="note"><strong>No time limit. No penalty for pausing.</strong> Your progress saves automatically in this browser, so you can stop and come back whenever you need to. Multiple-choice and true-or-false answers lock once you choose; that keeps the profile honest. Self-assessments and written answers can be revised until you finish.</div></section>';
+    app.innerHTML=h;
+    app.querySelectorAll('.mod').forEach(function(b){ b.onclick=function(){ var m=+b.dataset.m; var c=modCount(m); if(c===0) go('lesson',m,0); else if(c<M[m].q.length){ for(var i=0;i<M[m].q.length;i++) if(!ans(m,i)) break; go('q',m,i);} else go('lesson',m,0); }; });
+    var cont=document.getElementById('cont'); if(cont) cont.onclick=function(){ if(!S.started){S.started=new Date().toISOString();} if(!nu) return; if(modCount(nu[0])===0 && nu[1]===0) go('lesson',nu[0],0); else go('q',nu[0],nu[1]); };
+    var tr=document.getElementById('toResults'); if(tr) tr.onclick=function(){ go('results'); };
+    var rs=document.getElementById('reset'); if(rs) rs.onclick=function(){ if(confirm('Start the training over? All of your answers will be cleared.')){ S=blank(); save(); try{localStorage.removeItem(SUMKEY)}catch(e){} render(true); } };
+  }
+
+  /* ---------- lesson ---------- */
+  function lesson(){
+    var mod=M[S.m];
+    var h='<article class="view card lesson"><div class="mono kick">'+esc(mod.kicker)+'</div><h2>'+esc(mod.title)+'</h2>';
+    mod.lesson.forEach(function(p){ h+='<p>'+esc(p)+'</p>'; });
+    h+='<ul class="keys">'+mod.keys.map(function(k){return '<li>'+esc(k)+'</li>'}).join('')+'</ul>';
+    var c=modCount(S.m);
+    h+='<div class="actions"><button class="btn ghost" type="button" id="back">'+(S.m? '← Module '+S.m : '← Overview')+'</button><button class="btn primary" type="button" id="begin">'+(c? 'Continue the questions →':'Begin the 10 questions →')+'</button></div></article>';
+    app.innerHTML=h;
+    document.getElementById('back').onclick=function(){ if(S.m) go('done',S.m-1); else go('home'); };
+    document.getElementById('begin').onclick=function(){ if(!S.started) S.started=new Date().toISOString(); var i=0; while(i<mod.q.length-1 && ans(S.m,i)) i++; go('q',S.m, c===mod.q.length?0:i); };
+  }
+
+  /* ---------- question ---------- */
+  function streak(){ var s=0, list=[]; M.forEach(function(mod,m){ mod.q.forEach(function(q,i){ var a=ans(m,i); if(a && (q.t==='mc'||q.t==='tf')) list.push(a.ok); }); }); for(var k=list.length-1;k>=0 && list[k];k--) s++; return s; }
+  function question(){
+    var mod=M[S.m], q=mod.q[S.i], a=ans(S.m,S.i), num=S.m*10+S.i+1;
+    var h='<article class="view card"><div class="dots" aria-hidden="true">';
+    for(var k=0;k<mod.q.length;k++) h+='<i class="'+(k===S.i?'c':ans(S.m,k)?'a':'')+'"></i>';
+    h+='</div><div class="qtop"><span class="badge mono'+(q.c?' crit':'')+'">'+(q.c?'Critical boundary · ':'')+TYPE[q.t]+'</span><span class="qnum">'+esc(mod.title)+' · Question '+(S.i+1)+' of '+mod.q.length+' · #'+num+'</span></div>';
+    h+='<h2 class="qtext" id="qtext">'+esc(q.q)+'</h2><div id="ctl">';
+    if(q.t==='mc' || q.t==='self'){
+      var opts = q.t==='mc' ? q.o : q.o.map(function(o){return o[0]});
+      h+='<div class="field"><label class="sr" for="sel">Choose an answer</label><select class="sel" id="sel"'+(a && q.t==='mc'?' disabled':'')+'><option value="">'+(q.t==='mc'?'Choose the best answer…':'Choose what is honestly true for you…')+'</option>';
+      opts.forEach(function(o,j){ h+='<option value="'+j+'"'+(a && a.v===j?' selected':'')+'>'+esc(o)+'</option>'; });
+      h+='</select></div>';
+    } else if(q.t==='tf'){
+      h+='<div class="tf" role="group" aria-labelledby="qtext">';
+      [true,false].forEach(function(v){
+        var cls=''; if(a){ if(v===q.a) cls='right'; else if(a.v===v) cls='wrong'; }
+        h+='<button type="button" data-v="'+v+'" class="'+cls+'"'+(a?' disabled':'')+'>'+(v?'True':'False')+'</button>';
+      });
+      h+='</div>';
+    } else {
+      h+='<div class="field" style="max-width:760px"><label class="sr" for="txt">Your answer</label><input class="line" id="txt" type="text" maxlength="600" autocomplete="off" placeholder="'+esc(q.ph||'')+'" value="'+(a?esc(a.v):'')+'"><div class="cc" id="cc"><span>At least '+q.min+' characters</span><span id="ccn">0</span></div></div>';
+    }
+    h+='</div><div id="fb">'+(a?feedback(q,a):'')+'</div>';
+    var last = S.i===mod.q.length-1;
+    h+='<div class="actions"><button class="btn ghost" type="button" id="prev">← Back</button><span class="streak" id="stk"></span>';
+    if(q.t==='mc') h+='<button class="btn primary" type="button" id="act"'+(a?'':' disabled')+'>'+(a?(last?'Finish module →':'Next →'):'Check answer')+'</button>';
+    else if(q.t==='self'||q.t==='text') h+='<button class="btn primary" type="button" id="act"'+(a?'':' disabled')+'>'+(a?(last?'Finish module →':'Next →'):'Save answer')+'</button>';
+    else h+='<button class="btn primary" type="button" id="act"'+(a?'':' disabled')+'>'+(last?'Finish module →':'Next →')+'</button>';
+    h+='</div></article>';
+    app.innerHTML=h;
+    var st=streak(); if(st>=3) document.getElementById('stk').textContent='🔥 '+st+' in a row';
+
+    var act=document.getElementById('act'), sel=document.getElementById('sel'), txt=document.getElementById('txt');
+    function next(){ if(last) go('done'); else go('q',S.m,S.i+1); }
+    function commit(v){
+      var rec={v:v};
+      if(q.t==='mc'){ rec.ok = v===q.a; }
+      else if(q.t==='tf'){ rec.ok = v===q.a; }
+      else if(q.t==='self'){ rec.p = q.o[v][1]; }
+      else { rec.ok = String(v).trim().length>=q.min; }
+      S.a[id(S.m,S.i)]=rec; save(); progress();
+      document.getElementById('fb').innerHTML=feedback(q,rec);
+      act.disabled=false; act.textContent= last?'Finish module →':'Next →';
+      if(q.t==='mc'){ sel.disabled=true; }
+      var s2=streak(); document.getElementById('stk').textContent = s2>=3 ? '🔥 '+s2+' in a row' : '';
+    }
+    if(sel){
+      sel.onchange=function(){
+        if(q.t==='self' && ans(S.m,S.i)){ if(sel.value!=='') commit(+sel.value); return; }
+        act.disabled = sel.value===''; };
+      act.onclick=function(){ if(ans(S.m,S.i) && (q.t==='mc'||act.textContent.indexOf('→')>-1)) return next(); if(sel.value==='') return; commit(+sel.value); };
+    } else if(txt){
+      var ccn=document.getElementById('ccn'), cc=document.getElementById('cc');
+      function upd(){ var n=txt.value.trim().length; ccn.textContent=n+' / '+q.min; cc.classList.toggle('met', n>=q.min);
+        var had=ans(S.m,S.i);
+        if(had){ if(n>=q.min && txt.value!==had.v){ act.textContent='Save changes'; act.disabled=false; } else if(n<q.min){ act.disabled=true; } else { act.textContent=last?'Finish module →':'Next →'; } }
+        else act.disabled = n<q.min; }
+      txt.oninput=upd; upd();
+      txt.onkeydown=function(e){ if(e.key==='Enter' && !act.disabled){ e.preventDefault(); act.click(); } };
+      act.onclick=function(){ var had=ans(S.m,S.i); if(had && txt.value===had.v) return next(); if(txt.value.trim().length<q.min) return; commit(txt.value.trim()); txt.value=txt.value.trim(); upd(); toast('Saved'); };
+    } else {
+      app.querySelectorAll('.tf button').forEach(function(b){ b.onclick=function(){
+        var v=b.dataset.v==='true'; commit(v);
+        app.querySelectorAll('.tf button').forEach(function(x){ x.disabled=true; var xv=x.dataset.v==='true'; if(xv===q.a) x.classList.add('right'); else if(xv===v) x.classList.add('wrong'); });
+      }; });
+      act.onclick=next;
+    }
+    document.getElementById('prev').onclick=function(){ if(S.i===0) go('lesson'); else go('q',S.m,S.i-1); };
+  }
+  function feedback(q,a){
+    if(q.t==='mc'||q.t==='tf'){
+      var right = q.t==='mc' ? q.o[q.a] : (q.a?'True':'False');
+      return '<div class="fb '+(a.ok?'ok':'no')+'"><div class="h">'+(a.ok?'Correct':'Not quite')+'</div>'+(a.ok?'':'<p class="ans">Best answer: '+esc(right)+'</p>')+'<p>'+esc(q.e)+'</p></div>';
+    }
+    if(q.t==='self'){ var o=q.o[a.v]; return '<div class="fb"><div class="h" style="color:var(--gold)">Thank you for answering honestly</div><p>'+esc(o[2])+'</p></div>'; }
+    return '<div class="fb ok"><div class="h">Saved</div><p>'+esc(q.e)+'</p></div>';
+  }
+
+  /* ---------- module complete ---------- */
+  var CHEERS=['Strong start.','That took honesty.','Now you understand the clock.','You see them now.','Honest answers protect people.','Reliability is respect.','These are the lines that keep people safe.','Listening is a skill. You just practiced it.','Credibility, earned.','You made it.'];
+  function modStats(m){ var g=0,t=0; M[m].q.forEach(function(q,i){ if(q.t==='mc'||q.t==='tf'){ t++; var a=ans(m,i); if(a&&a.ok) g++; } }); return [g,t]; }
+  function moduleDone(){
+    var m=S.m, mod=M[m], st=modStats(m), c=modCount(m), complete=c===mod.q.length;
+    var pct = st[1]? st[0]/st[1] : 1;
+    var h='<section class="view card done-v"><div class="burst" id="burst"></div><div class="mono kick">'+esc(mod.kicker)+(complete?' · Complete':'')+'</div>';
+    h+='<div class="big-ring">'+ring(complete?1:c/mod.q.length,150,10,'var(--gold)')+'<b>'+(m+1)+'</b></div>';
+    h+='<h2>'+(complete? esc(CHEERS[m]) : 'A few questions remain in this module.')+'</h2>';
+    h+='<p>'+(st[1]? 'You answered <strong>'+st[0]+' of '+st[1]+'</strong> knowledge and judgment questions correctly in this module. ' : 'This module was about you, so there are no right answers, only honest ones. ')+(complete?'':'You can go back and finish them any time.')+'</p>';
+    h+='<div class="row" style="justify-content:center">';
+    h+='<button class="btn ghost" type="button" id="rev">Review this module</button>';
+    if(m<M.length-1) h+='<button class="btn primary" type="button" id="nx">Module '+(m+2)+': '+esc(M[m+1].title)+' →</button>';
+    else h+='<button class="btn gold" type="button" id="nx">See your readiness profile →</button>';
+    h+='</div></section>';
+    app.innerHTML=h;
+    document.getElementById('rev').onclick=function(){ go('q',m,0); };
+    document.getElementById('nx').onclick=function(){ if(m<M.length-1){ go(modCount(m+1)?'q':'lesson', m+1, 0); } else go('results'); };
+    if(complete && pct>=0.6) burst();
+  }
+  function burst(){
+    var b=document.getElementById('burst'); if(!b) return; var cols=['#C9A84C','#2E7D74','#e2cd94','#B23A3A','#1B2A4A'];
+    for(var k=0;k<36;k++){ var i=document.createElement('i'); var ang=Math.random()*Math.PI*2, d=120+Math.random()*220;
+      i.style.cssText='background:'+cols[k%5]+';--x:'+Math.cos(ang)*d+'px;--y:'+(Math.sin(ang)*d-60)+'px;animation-delay:'+(Math.random()*.15)+'s'; b.appendChild(i); }
+  }
+
+  /* ---------- results ---------- */
+  function scores(){
+    var acc={}; Object.keys(DIMS).forEach(function(k){acc[k]=[0,0]});
+    var crit=[];
+    M.forEach(function(mod,m){ mod.q.forEach(function(q,i){
+      var a=ans(m,i), d=acc[q.d];
+      if(q.t==='self'){ d[1]+=3; if(a) d[0]+=a.p; }
+      else { d[1]+=1; if(a && a.ok) d[0]+=1; }
+      if(q.c && !(a && a.ok)) crit.push([m,i]);
+    }); });
+    var pct={}; Object.keys(acc).forEach(function(k){ pct[k]= acc[k][1]? Math.round(acc[k][0]/acc[k][1]*100) : 100; });
+    return {pct:pct, crit:crit};
+  }
+  function verdictOf(sc){
+    var p=sc.pct;
+    if(!sc.crit.length && p.K>=80 && p.J>=85 && p.T>=60 && p.C>=70 && p.E>=65) return {k:'ready', t:'Ready to serve.', d:'You understand the mission, the system, and the lines we hold, and you have been honest that you have the time and commitment to show up. Carry this profile into your application. We\'re grateful you\'re here.'};
+    if(p.K>=65 && p.J>=70 && p.T>=40 && p.C>=50) return {k:'support', t:'Ready, with support.', d:'You have a real foundation to build on. A few areas below need attention before you take on everything, and that is exactly what orientation and mentorship are for. Apply, and tell us honestly where you\'d like support.'};
+    return {k:'notyet', t:'Not yet, and that\'s an honest answer.', d:'Right now, the time, the commitment, or the judgment this role requires isn\'t all in place. That is not a judgment of your heart. Review the modules below and come back when the timing is right. Our free tools are yours either way, and so is our respect for answering truthfully.'};
+  }
+  function textAns(m,i){ var a=ans(m,i); return a? a.v : ''; }
+  function results(){
+    var nu=nextUnanswered();
+    if(nu){
+      var left=TOTAL-answered();
+      app.innerHTML='<section class="view card"><div class="mono kick">Readiness profile</div><h2 style="font-size:34px;margin:10px 0 12px">'+left+' question'+(left===1?'':'s')+' still to answer.</h2><p style="font-family:Newsreader,serif;font-size:19px;color:var(--ink-soft)">Your profile is built from all 100 answers, so it can be honest. There\'s no rush.</p><div class="row" style="margin-top:18px"><button class="btn primary" id="gonu" type="button">Go to the next unanswered question →</button><button class="btn ghost" id="gohome" type="button">All modules</button></div></section>';
+      document.getElementById('gonu').onclick=function(){ go('q',nu[0],nu[1]); };
+      document.getElementById('gohome').onclick=function(){ go('home'); };
+      return;
+    }
+    if(!S.finished){ S.finished=new Date().toISOString(); save(); }
+    var sc=scores(), v=verdictOf(sc), p=sc.pct;
+    var h='<section class="view"><div class="verdict '+v.k+'"><div class="mono">Your readiness profile · '+new Date(S.finished).toLocaleDateString()+'</div><h2>'+v.t+'</h2><p>'+v.d+'</p></div>';
+    h+='<div class="card"><h3>Where you stand</h3><div class="dims">';
+    Object.keys(DIMS).forEach(function(k){ h+='<div class="dim"><div class="dl"><b>'+DIMS[k].n+'</b><small>'+DIMS[k].s+'</small></div><div class="db"><i data-w="'+p[k]+'" style="background:'+DIMS[k].c+'"></i></div><div class="dv">'+p[k]+'%</div></div>'; });
+    h+='</div></div><div class="grid2">';
+    // guidance
+    var g=[];
+    if(sc.crit.length) g.push('<strong>Critical boundary questions to review:</strong> '+sc.crit.map(function(x){return '<button class="review-btn" data-m="'+x[0]+'" data-i="'+x[1]+'">#'+(x[0]*10+x[1]+1)+'</button>'}).join(', ')+'. These protect patients, so they must be right before direct patient-facing work.');
+    if(p.K<80) g.push('Revisit <button class="review-btn" data-m="1" data-i="0">Module 2</button> and <button class="review-btn" data-m="2" data-i="0">Module 3</button> to strengthen your understanding of the foundation and the transplant system.');
+    if(p.J<85) g.push('Spend time with <button class="review-btn" data-m="6" data-i="0">Module 7: Boundaries &amp; Confidentiality</button>. It\'s the heart of safe advocacy.');
+    if(p.T<50) g.push('Your available time suggests <strong>project-based tracks</strong> (content &amp; toolkits, data analysis, or operations) where deadlines are set in advance.');
+    else if(p.T<70) g.push('Your time fits most tracks. For patient support, make sure you can reply within 48 hours.');
+    else g.push('Your availability fits <strong>any track</strong>, including time-sensitive patient and care-partner support.');
+    if(p.C<70) g.push('Before committing, set up a simple system for tracking promises, and start with one small, defined project.');
+    if(p.E<65) g.push('Consider a non-patient-facing track to start, and build your support practices (Module 10) before direct contact.');
+    if(!g.length) g.push('Nothing to fix. Bring your clear eyes and steady commitment to orientation.');
+    h+='<div class="card"><h3>What this means for you</h3><ul>'+g.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>';
+    // reflections
+    h+='<div class="card"><h3>In your own words</h3>';
+    [[0,0,'Why you want to volunteer'],[9,7,'The track that fits you'],[5,9,'Your monthly commitment'],[9,9,'Your pledge']].forEach(function(r){ h+='<div class="refl"><small>'+r[2]+'</small><p>&ldquo;'+esc(textAns(r[0],r[1]))+'&rdquo;</p></div>'; });
+    h+='</div></div>';
+    h+='<div class="card noprint" style="margin-top:18px"><h3>Next step</h3><p style="margin:0 0 16px;color:var(--ink-soft)">Your training summary (scores, verdict, track, and pledge) will be attached to your volunteer application automatically when you continue from this device. Your other answers stay private in your browser.</p><div class="row"><button class="btn gold" type="button" id="apply">Continue to your application →</button><button class="btn ghost" type="button" id="print">Print or save as PDF</button><button class="btn ghost" type="button" id="copy">Copy summary</button><button class="btn link" type="button" id="again">Retake the training</button></div></div></section>';
+    app.innerHTML=h;
+    requestAnimationFrame(function(){ app.querySelectorAll('.db i').forEach(function(i){ i.style.width=i.dataset.w+'%'; }); });
+    var sum=summary(sc,v); try{ localStorage.setItem(SUMKEY, sum); }catch(e){}
+    app.querySelectorAll('.review-btn').forEach(function(b){ b.onclick=function(){ go('q',+b.dataset.m,+b.dataset.i); }; });
+    document.getElementById('apply').onclick=function(){ location.href='cif-volunteer-page.html#apply'; };
+    document.getElementById('print').onclick=function(){ window.print(); };
+    document.getElementById('copy').onclick=function(){ (navigator.clipboard? navigator.clipboard.writeText(sum) : Promise.reject()).then(function(){toast('Summary copied')},function(){ prompt('Copy your summary:', sum); }); };
+    document.getElementById('again').onclick=function(){ if(confirm('Retake the whole training? Your current answers will be cleared.')){ S=blank(); save(); try{localStorage.removeItem(SUMKEY)}catch(e){} render(true); } };
+  }
+  function summary(sc,v){
+    var p=sc.pct;
+    return 'CIF Volunteer Readiness Training: completed '+S.finished.slice(0,10)+'\n'+
+      'Verdict: '+v.t+'\n'+
+      'Knowledge '+p.K+'% · Judgment & boundaries '+p.J+'% · Time '+p.T+'% · Commitment '+p.C+'% · Empathy '+p.E+'% · Reflection '+p.R+'%\n'+
+      'Critical boundary questions: '+(sc.crit.length? sc.crit.length+' to review (#'+sc.crit.map(function(x){return x[0]*10+x[1]+1}).join(', #')+')' : 'all correct')+'\n'+
+      'Track that fits: '+textAns(9,7)+'\n'+
+      'Monthly commitment: '+textAns(5,9)+'\n'+
+      'Support requested: '+textAns(9,8)+'\n'+
+      'Pledge: '+textAns(9,9);
+  }
+
+  document.getElementById('heroStart').onclick=function(){ var nu=nextUnanswered(); if(!S.started) S.started=new Date().toISOString(); if(!nu) return go('results'); if(modCount(nu[0])===0 && nu[1]===0) go('lesson',nu[0],0); else go('q',nu[0],nu[1]); };
+  document.getElementById('toHome').onclick=function(){ go('home'); };
+  if(S.v!=='home' && S.v!=='results'){ S.v='home'; }
+  render(false);
+})();
+</script>
+</body>
+</html>
