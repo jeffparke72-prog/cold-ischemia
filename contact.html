@@ -212,7 +212,11 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
 
   if (window.cifFormsReady && window.cifFormsReady()) {
     window.cifSend({formType: 'contact', name, email, subject, message, category: categoryId})
-      .catch(function(){ errorNote.classList.add('show'); });
+      .catch(function(){
+        // The backend didn't confirm: hand the message to the visitor's email app so it still arrives.
+        document.getElementById('rp-body').textContent = responseText + '\n\nWe couldn\u2019t send your message automatically, so your email app is opening with it filled in. Please press Send there so it reaches us.';
+        location.href = window.cifMailto('[CIF Contact] ' + (subject || 'General Inquiry'), message + '\n\n— ' + name + ' (' + email + ')');
+      });
   } else {
     // Backend not set up yet: hand the message to the visitor's own email app so it still reaches the foundation.
     const mailto = (window.cifMailto ? window.cifMailto : function(su, bo){ return 'mailto:jeffparke72@gmail.com?subject=' + encodeURIComponent(su) + '&body=' + encodeURIComponent(bo); })

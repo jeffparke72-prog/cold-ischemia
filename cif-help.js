@@ -24,10 +24,16 @@ window.CIF_CONFIG = {
   window.cifFormsReady = function () { return ready; };
   window.cifSend = function (data) {
     if (!ready) return Promise.reject(new Error('not-configured'));
+    // Resolves only when the Apps Script confirms {"status":"ok"}; anything else (wrong access setting,
+    // old code, network trouble) rejects so the caller can fall back to the visitor's email app.
     return fetch(C.formsEndpoint, {
-      method: 'POST', mode: 'no-cors',                       // Apps Script returns no CORS headers; the email still sends
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // avoids a CORS preflight
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // simple request: no CORS preflight
       body: JSON.stringify(data)
+    }).then(function (r) { return r.text(); }).then(function (t) {
+      var j; try { j = JSON.parse(t); } catch (e) { throw new Error('unexpected-response'); }
+      if (!j || j.status !== 'ok') throw new Error((j && j.message) || 'not-ok');
+      return j;
     });
   };
   window.cifMailto = function (subject, body) {
@@ -99,7 +105,10 @@ window.CIF_CONFIG = {
       if (!ready) { location.href = window.cifMailto('Question from the website: ' + page, m + '\n\n— ' + n + ' (' + em + ')'); return; }
       go.disabled = true; go.textContent = 'Sending…';
       window.cifSend({ formType: 'question', name: n, email: em, message: m, page: page + ' (' + location.pathname.replace(/^\//, '') + ')' })
-        .then(done, done);
+        .then(done, function () {
+          form.outerHTML = '<div class="ok"><strong>Almost there.</strong><br>We couldn\u2019t send it automatically, so your email app is opening with your question filled in. Please press Send there.</div>';
+          location.href = window.cifMailto('Question from the website: ' + page, m + '\n\n— ' + n + ' (' + em + ')');
+        });
       function done() { form.outerHTML = '<div class="ok"><strong>Sent. Thank you, ' + n.replace(/[<>&]/g, '') + '.</strong><br>You’ll get a confirmation email now, and a personal reply soon.</div>'; }
     };
   }

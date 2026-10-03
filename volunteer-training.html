@@ -512,7 +512,7 @@
       if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){ document.getElementById('se').focus(); return toast('Please add a valid email'); }
       if(!(window.cifFormsReady && window.cifFormsReady())){ location.href = window.cifMailto ? window.cifMailto('[CIF Training Results] '+n, sum+'\n\n— '+n+' ('+em+')') : 'mailto:jeffparke72@gmail.com'; return; }
       sendB.disabled=true; sendB.textContent='Sending…';
-      window.cifSend({formType:'training', name:n, email:em, summary:sum}).then(fin,fin);
+      window.cifSend({formType:'training', name:n, email:em, summary:sum}).then(fin,function(){ sendB.disabled=false; sendB.textContent='Send my results'; toast('Opening your email app instead'); location.href=window.cifMailto('[CIF Training Results] '+n, sum+'\n\n— '+n+' ('+em+')'); });
       function fin(){ S.sentAt=new Date().toISOString(); save(); var c=document.getElementById('sendCard'); c.innerHTML='<h3>Send your results to the foundation</h3><p style="margin:0;color:var(--ok);font-weight:600">&#10003; Sent. Thank you, '+esc(n)+'. A confirmation email is on its way to you.</p>'; }
     };
     document.getElementById('apply').onclick=function(){ location.href='cif-volunteer-page.html#apply'; };
