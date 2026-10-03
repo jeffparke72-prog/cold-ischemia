@@ -37,7 +37,6 @@ GROUPS = [
     ]),
 ]
 TOOLKIT = ("projects.html", "Toolkit")
-DONATE = ("donate.html", "Donate")
 
 OLD_BLOCK = re.compile(r'<style id="cifnav-css">(.*?)</style>\s*<nav(?: id="nav")? class="cifnav".*?</nav>', re.S)
 NEW_BLOCK = re.compile(r'<!--CIFNAV-->(.*?)<!--/CIFNAV-->', re.S)
@@ -58,14 +57,13 @@ def render(page, tail, nav_id=False):
         '<nav%s class="cifnav" aria-label="Main">'
         '<a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" '
         'onerror="this.style.display=\'none\'"><span class="cn-b">Cold Ischemia</span></a>'
-        '<a href="%s" class="cn-dm">%s</a>'
         '<button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu">'
         '<span></span><span></span><span></span></button>'
         '<div class="cn-menu" id="cn-menu"><div class="cn-m">%s</div>'
-        '<div class="cn-r"><a href="%s" class="cn-t"%s>%s</a><a href="%s" class="cn-d">%s</a></div></div>'
+        '<div class="cn-r"><a href="%s" class="cn-t"%s>%s</a></div></div>'
         '</nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->'
-    ) % (tail, ' id="nav"' if nav_id else '', DONATE[0], DONATE[1], ''.join(groups), TOOLKIT[0], ' aria-current="page"' if page == TOOLKIT[0] else '',
-         TOOLKIT[1], DONATE[0], DONATE[1])
+    ) % (tail, ' id="nav"' if nav_id else '', ''.join(groups), TOOLKIT[0], ' aria-current="page"' if page == TOOLKIT[0] else '',
+         TOOLKIT[1])
 
 
 def wants_id(text, own_block):
