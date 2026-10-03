@@ -1116,11 +1116,14 @@ nav.toc{top:56px!important}
       successPanel.classList.add('active');
       successPanel.scrollIntoView({behavior:'smooth', block:'start'});
     }).catch(function(){
-      // Even on a network hiccup with no-cors mode we usually can't detect failure reliably,
-      // so still show success but note it in case anything looks off.
-      volForm.style.display = 'none';
-      successPanel.classList.add('active');
-      successPanel.scrollIntoView({behavior:'smooth', block:'start'});
+      // The backend didn't confirm the application: open the applicant's email app with it filled in.
+      var lines = [];
+      Object.keys(payload).forEach(function(k){ var v = payload[k]; if (Array.isArray(v)) v = v.join(', '); if (v) lines.push(k + ': ' + v); });
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit application'; }
+      var msg = volForm.querySelector('.form-msg');
+      if (msg) msg.textContent = 'We could not submit this automatically, so your email app is opening with your application filled in. Please press Send there.';
+      location.href = window.cifMailto ? window.cifMailto('[CIF Volunteer Application] ' + (payload.fname || ''), lines.join('\n\n'))
+                                       : 'mailto:jeffparke72@gmail.com?subject=' + encodeURIComponent('[CIF Volunteer Application]');
     });
   });
 })();
