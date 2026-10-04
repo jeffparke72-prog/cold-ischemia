@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stop Doing This Alone — Cold Ischemia Foundation Film</title>
+<meta name="description" content="A three-minute film on the mission of the Cold Ischemia Foundation: patient-led, independent transplant and kidney care partner advocacy.">
+<style>
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:block;src:url(fonts/bebasneue-400-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400 500;font-display:block;src:url(fonts/ibmplexmono-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400;font-display:block;src:url(fonts/playfairdisplay-400-italic.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:900;font-display:block;src:url(fonts/playfairdisplay-900-normal.woff2) format('woff2')}
+/* Cold Ischemia Foundation: "Stop Doing This Alone", a 3-minute film.
+   Everything on screen is a pure function of time (render(t)), so the same code plays live in a browser
+   and renders frame-perfect to cif-commercial.mp4 (see _tools/render-commercial.js).
+   The script lives in SCENES below; captions, titles and the score are timed from it automatically.
+   Optional narration: put a recording at cif-commercial-voice.mp3 and it plays in sync, with the music ducked. */
+:root{--ink:#030509;--tx:#ece4d8;--mut:#9aa6b4;--gold:#e0a53a;--gold2:#ffd27a;--ice:#8fd8ff;--red:#e8324c}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000;color:var(--tx);overflow:hidden;font-family:'Playfair Display',Georgia,serif}
+#wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#000}
+#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;background:#02040a;transform-origin:0 0}
+.L{position:absolute;inset:0}
+.shot{position:absolute;inset:-4%;opacity:0;will-change:transform,opacity}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shot .fill{filter:blur(40px) brightness(.45) saturate(.8);transform:scale(1.15)}
+.shot .fg{object-fit:contain;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+#shade{background:linear-gradient(90deg,rgba(2,4,10,.82) 0%,rgba(2,4,10,.35) 45%,rgba(2,4,10,.1) 70%,rgba(2,4,10,.55) 100%),linear-gradient(0deg,rgba(2,4,10,.9) 0%,rgba(2,4,10,0) 38%)}
+#tint{mix-blend-mode:soft-light}
+#grid{opacity:0;background:
+  radial-gradient(ellipse at 50% 40%,rgba(40,90,160,.35),transparent 70%),
+  repeating-linear-gradient(0deg,rgba(143,216,255,.06) 0 1px,transparent 1px 80px),
+  repeating-linear-gradient(90deg,rgba(143,216,255,.06) 0 1px,transparent 1px 80px),#030812}
+#pres{position:absolute;bottom:0;width:860px;height:1080px;opacity:0;will-change:transform,opacity}
+#pres .glow{position:absolute;inset:8% 6% 0;background:radial-gradient(ellipse at 50% 45%,rgba(224,165,58,.32),transparent 65%);filter:blur(30px)}
+#pres img{position:absolute;left:50%;bottom:0;height:1060px;transform:translateX(-50%);
+  -webkit-mask-image:radial-gradient(ellipse 46% 62% at 50% 44%,#000 58%,transparent 100%);
+  mask-image:radial-gradient(ellipse 46% 62% at 50% 44%,#000 58%,transparent 100%);
+  filter:contrast(1.08) saturate(.92) brightness(.98)}
+#pres .rim{position:absolute;inset:0;background:linear-gradient(100deg,transparent 40%,rgba(143,216,255,.12) 62%,transparent 75%);mix-blend-mode:screen}
+#pres .tag{position:absolute;bottom:150px;left:50%;transform:translateX(-50%);white-space:nowrap;font:500 15px 'IBM Plex Mono',monospace;letter-spacing:5px;text-transform:uppercase;color:var(--gold);opacity:.85;text-shadow:0 2px 12px #000}
+.t{position:absolute;opacity:0;will-change:transform,opacity,filter;text-shadow:0 4px 30px rgba(0,0,0,.75)}
+.t.c{left:0;right:0;top:50%;text-align:center;transform-origin:50% 50%}
+.t.l{left:150px;width:980px;transform-origin:0 50%}
+.t.r{right:150px;width:960px;text-align:right;transform-origin:100% 50%}
+.bb{font-family:'Bebas Neue',Impact,sans-serif;line-height:.9;letter-spacing:.02em}
+.mono{font:500 22px 'IBM Plex Mono',monospace;letter-spacing:6px;text-transform:uppercase;color:var(--mut)}
+.xl{font-size:250px}.l1{font-size:170px}.l2{font-size:132px}.l3{font-size:100px}.l4{font-size:76px}
+.gold{color:var(--gold2)}.ice{color:var(--ice)}.red{color:var(--red)}.dim{color:var(--mut)}
+.serif{font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:1.02}
+.ital{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400}
+.stamp{display:inline-block;border:5px solid var(--red);color:var(--red);padding:10px 26px 2px;font-family:'Bebas Neue',sans-serif;font-size:84px;letter-spacing:.06em;line-height:1;background:rgba(10,0,4,.35)}
+.stamp.s{font-size:58px;border-width:4px;padding:8px 20px 0}
+.rule{display:block;height:3px;width:180px;background:var(--gold);margin:26px 0}
+.c .rule{margin:26px auto}
+.chip{display:inline-block;font:500 18px 'IBM Plex Mono',monospace;letter-spacing:5px;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:10px 18px;margin-bottom:22px}
+/* tool cards */
+.card{position:absolute;width:640px;height:300px;border:1px solid rgba(143,216,255,.28);background:linear-gradient(160deg,rgba(14,30,52,.92),rgba(5,10,20,.92));border-radius:14px;padding:30px 34px;opacity:0;box-shadow:0 30px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06);will-change:transform,opacity}
+.card h4{font:500 17px 'IBM Plex Mono',monospace;letter-spacing:4px;text-transform:uppercase;color:var(--ice);margin-bottom:14px}
+.card .big{font-family:'Bebas Neue',sans-serif;font-size:96px;line-height:.9;color:#fff}
+.card .sm{font:400 20px 'IBM Plex Mono',monospace;color:var(--mut);letter-spacing:1px;margin-top:10px}
+.card svg{position:absolute;right:34px;top:50%;margin-top:-95px}
+.wire{margin-top:8px}
+.wire div{font:400 21px/1.5 'IBM Plex Mono',monospace;color:#cfe2f3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-bottom:1px solid rgba(143,216,255,.12);padding:6px 0}
+.live{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--red);margin-right:10px;box-shadow:0 0 12px var(--red)}
+.chk div{font:400 23px/1.65 'IBM Plex Mono',monospace;color:#cfe2f3}
+.chk b{display:inline-block;width:30px;color:var(--gold2)}
+#fx{position:absolute;inset:0;pointer-events:none}
+#bars i{position:absolute;left:0;right:0;height:86px;background:#000}
+#bars i:first-child{top:0}#bars i:last-child{bottom:0}
+#chap{position:absolute;left:150px;top:118px;font:500 16px 'IBM Plex Mono',monospace;letter-spacing:6px;text-transform:uppercase;color:rgba(236,228,216,.6);opacity:0}
+#chap b{color:var(--gold);font-weight:500;margin-right:14px}
+#cap{position:absolute;left:220px;right:220px;bottom:118px;text-align:center;font:italic 400 38px/1.3 'Playfair Display',Georgia,serif;color:#fff;text-shadow:0 2px 6px #000,0 0 26px rgba(0,0,0,.9);opacity:0}
+.nocc #cap{display:none}
+#flash{background:#fff;opacity:0;mix-blend-mode:screen}
+/* player chrome (hidden when rendering) */
+#ui{position:fixed;left:0;right:0;bottom:0;z-index:9;display:flex;align-items:center;gap:12px;padding:12px 16px;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);transition:opacity .4s;font:500 12px 'IBM Plex Mono',monospace;letter-spacing:1.5px;color:#d8cfc4}
+#ui button{font:inherit;letter-spacing:inherit;text-transform:uppercase;color:#030509;background:var(--gold);border:0;border-radius:999px;padding:9px 16px;cursor:pointer}
+#ui button.o{background:transparent;color:#d8cfc4;border:1px solid rgba(224,165,58,.5)}
+#ui input{flex:1;accent-color:#e0a53a;min-width:60px}
+#ui span{min-width:92px;text-align:center}
+body.idle #ui{opacity:0}
+#big{position:fixed;z-index:10;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:14px;background:none;border:0;cursor:pointer;color:#fff;font:500 13px 'IBM Plex Mono',monospace;letter-spacing:4px;text-transform:uppercase;text-shadow:0 2px 10px #000}
+#big i{width:110px;height:110px;border-radius:50%;background:rgba(224,165,58,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 0 rgba(224,165,58,.6);animation:pulse 2s infinite}
+#big i:after{content:"";margin-left:8px;border-left:34px solid #030509;border-top:21px solid transparent;border-bottom:21px solid transparent}
+@keyframes pulse{50%{box-shadow:0 0 0 22px rgba(224,165,58,0)}}
+#big[hidden],#ui[hidden]{display:none}
+body.render #ui,body.render #big{display:none}
+@media (max-width:640px){#ui{gap:8px;padding:10px}#ui span{display:none}#ui button{padding:8px 11px}}
+</style>
+</head>
+<body>
+<div id="wrap"><div id="stage">
+  <div class="L" id="grid"></div>
+  <div class="L" id="shots"></div>
+  <div class="L" id="shade"></div>
+  <div class="L" id="tint"></div>
+  <div id="pres"><div class="glow"></div><img src="jeff-headshot.png" alt=""><div class="rim"></div></div>
+  <div class="L" id="titles"></div>
+  <canvas id="fx" width="1920" height="1080"></canvas>
+  <div class="L" id="flash"></div>
+  <div id="chap"></div>
+  <div id="cap"></div>
+  <div id="bars"><i></i><i></i></div>
+</div></div>
+<button id="big" type="button" aria-label="Play the film with sound"><i></i><span>Play the film · 3 min</span></button>
+<div id="ui" hidden>
+  <button id="pp" type="button">Pause</button>
+  <button id="rs" type="button" class="o">Restart</button>
+  <input id="sk" type="range" min="0" max="180" step="0.1" value="0" aria-label="Seek">
+  <span id="tc">0:00 / 3:00</span>
+  <button id="cc" type="button" class="o" aria-pressed="true">CC</button>
+  <button id="fs" type="button" class="o">Full screen</button>
+</div>
+<script>
+(function(){
+'use strict';
+var DUR = 180, WPS = 2.55, LINE_GAP = 0.4, SCENE_GAP = 0.9, LEAD = 2.5;
+var VOICE = 'cif-commercial-voice.mp3';
+
+/* ------------------------------------------------------------------ SCRIPT + PICTURE
+   lines: the narration, in order (also shown as captions).
+   shots: backdrop images; "at" = which line it cuts in on.  pres: presenter on screen (side, from line, to line).
+   titles: on-screen type; at/to are line numbers (to = until that line ends; omitted = end of scene). */
+var SCENES = [
+ { ch:'', dark:true, lines:[
+   'There is a clock most families never hear about.',
+   'It starts the moment a donated organ leaves the body.',
+   'Doctors call it cold ischemia time.',
+   'And every minute counts.'],
+   titles:[
+   {at:0, to:1, pos:'c', y:-40, a:'fade', h:'<div class="mono">Organ recovered &nbsp;·&nbsp; on ice</div><div class="bb l2 ice" style="margin-top:22px" data-clock="1">00:00:00</div>'},
+   {at:2, to:2, pos:'c', y:-60, a:'smash', hit:1, h:'<div class="bb xl ice">COLD ISCHEMIA</div><div class="ital" style="font-size:40px;color:#cfe2f3;margin-top:18px">the hours a donated organ spends on ice, waiting for someone</div>'},
+   {at:3, pos:'c', y:-40, a:'rise', h:'<div class="bb l1 red">EVERY MINUTE COUNTS.</div>'}]},
+
+ { ch:'01 | The people', bg:'warm', lines:[
+   'Behind every transplant is a patient, a family,',
+   'and a care partner holding everything together.',
+   'They deserve a map.',
+   'Too often, they are handed a maze.'],
+   shots:[{img:'march-for-care.jpg', at:0, blur:6}],
+   pres:{side:'r', from:0},
+   titles:[
+   {at:0, to:1, pos:'l', y:-150, a:'rise', h:'<div class="bb l3">A PATIENT.</div>'},
+   {at:0, to:1, pos:'l', y:-40, d:1.3, a:'rise', h:'<div class="bb l3">A FAMILY.</div>'},
+   {at:1, to:1, pos:'l', y:70, d:.6, a:'rise', h:'<div class="bb l3 gold">A CARE PARTNER.</div>'},
+   {at:2, to:3, pos:'l', y:-90, a:'smash', hit:1, h:'<div class="bb l2">THEY DESERVE<br><span class="gold">A MAP.</span></div>'},
+   {at:3, pos:'l', y:140, d:.5, a:'stamp', hit:.6, h:'<div class="stamp">NOT A MAZE</div>'}]},
+
+ { ch:'02 | The gap', bg:'cold', lines:[
+   'Paperwork at midnight. Policies no one explains.',
+   'Decisions made behind closed doors.',
+   'Fifty-three million Americans care for someone they love,',
+   'and most of them are doing it alone.'],
+   shots:[{img:'night-shift.png', at:0}, {img:'stress.png', at:2, fit:'contain'}],
+   titles:[
+   {at:0, to:0, pos:'l', y:-60, a:'type', h:'<div class="mono" style="color:#cfe2f3">02:14 AM &nbsp;·&nbsp; another form &nbsp;·&nbsp; another hold</div>'},
+   {at:1, to:1, pos:'l', y:-60, a:'type', h:'<div class="mono" style="color:#cfe2f3">Decision pending &nbsp;·&nbsp; reason not provided</div>'},
+   {at:2, to:3, pos:'l', y:-120, a:'smash', hit:1, h:'<div class="bb xl gold" data-count="53000000">0</div><div class="mono" style="margin-top:12px">American care partners</div>'},
+   {at:3, pos:'l', y:150, a:'rise', h:'<div class="bb l3 red">MOST OF THEM ALONE.</div>'}]},
+
+ { ch:'03 | The system', bg:'red', lines:[
+   'More than one hundred thousand people are waiting for a transplant.',
+   'Yet donated organs are still thrown away,',
+   'and the rules meant to protect patients are full of loopholes.',
+   'The policy exists. The conduct does not follow.'],
+   shots:[{img:'transplant-loopholes.png', at:0}, {img:'post-image.png', at:3, fit:'contain', cut:1}],
+   titles:[
+   {at:0, to:0, pos:'l', y:-100, a:'smash', hit:1, h:'<div class="bb xl" data-count="100000" data-suffix="+">0</div><div class="mono" style="margin-top:12px">People waiting for a transplant</div>'},
+   {at:1, to:2, pos:'l', y:-80, a:'stamp', hit:.6, h:'<div class="stamp">ORGANS DISCARDED</div>'},
+   {at:2, to:2, pos:'l', y:60, d:.4, a:'stamp', hit:.6, h:'<div class="stamp">RULES FULL OF LOOPHOLES</div>'}]},
+
+ { ch:'04 | The difference', bg:'gold', grid:true, lines:[
+   'So we built something different.',
+   'The Cold Ischemia Foundation is patient-led and fiercely independent.',
+   'No pharmaceutical money. No dialysis corporations.',
+   'No hospital systems. No insurers.',
+   'Our independence is not a feature. It is the product.'],
+   pres:{side:'l', from:0},
+   titles:[
+   {at:0, to:1, pos:'r', y:-170, a:'rise', h:'<div class="bb l3">SO WE BUILT<br>SOMETHING DIFFERENT.</div>'},
+   {at:1, to:1, pos:'r', y:80, d:.8, a:'rise', h:'<div class="mono gold">Patient-led &nbsp;·&nbsp; fiercely independent</div>'},
+   {at:2, to:3, pos:'r', y:-230, a:'stamp', hit:.5, h:'<div class="stamp s">NO PHARMACEUTICAL MONEY</div>'},
+   {at:2, to:3, pos:'r', y:-120, d:1.6, a:'stamp', hit:.5, h:'<div class="stamp s">NO DIALYSIS CORPORATIONS</div>'},
+   {at:3, to:3, pos:'r', y:-10, a:'stamp', hit:.5, h:'<div class="stamp s">NO HOSPITAL SYSTEMS</div>'},
+   {at:3, to:3, pos:'r', y:100, d:1.2, a:'stamp', hit:.5, h:'<div class="stamp s">NO INSURERS</div>'},
+   {at:4, pos:'r', y:-60, a:'smash', hit:1, h:'<div class="mono">Our independence is</div><div class="bb l2 gold" style="margin-top:10px">THE PRODUCT.</div>'}]},
+
+ { ch:'05 | Facts into force', bg:'cold', lines:[
+   'We turn facts into force.',
+   'The Situation Room tracks what institutions would rather you never see.',
+   'Our Accountability Atlas and demand letters put it on the record,',
+   'and the Congress Scorecard shows who stands with patients.'],
+   shots:[{img:'the-situation-room.png', at:0}, {img:'accountability-corridor.png', at:2}, {img:'advocacy-infographic.png', at:3, fit:'contain'}],
+   titles:[
+   {at:0, to:0, pos:'c', y:-60, a:'smash', hit:1, h:'<div class="bb xl">FACTS <span class="gold">INTO</span> FORCE.</div>'},
+   {at:1, to:1, pos:'c', y:300, a:'rise', h:'<div class="chip">The Situation Room</div>'},
+   {at:2, to:2, pos:'c', y:300, a:'rise', h:'<div class="chip">Accountability Atlas &nbsp;·&nbsp; Demand Letters</div>'},
+   {at:2, to:2, pos:'r', y:-200, d:1.4, a:'stamp', hit:.6, h:'<div class="stamp">ON THE RECORD</div>'},
+   {at:3, pos:'c', y:300, a:'rise', h:'<div class="chip">Congress Scorecard</div>'}]},
+
+ { ch:'06 | Real tools', bg:'cold', grid:true, lines:[
+   'We put real tools in your hands:',
+   'a living donor journey with your own readiness score,',
+   'a directory of every organ procurement organization in America,',
+   'a live wire of transplant and kidney research,',
+   'and a crisis guide for the first twenty-four hours.',
+   'Free. No sign-up. No catch.'],
+   cards:true,
+   titles:[
+   {at:0, to:4, pos:'c', y:-385, a:'rise', h:'<div class="bb l4">REAL TOOLS. <span class="gold">IN YOUR HANDS.</span></div>'},
+   {at:5, pos:'c', y:-70, a:'smash', hit:1, h:'<div class="bb l1">FREE. <span class="gold">NO SIGN-UP.</span> NO CATCH.</div>'}]},
+
+ { ch:'07 | Together', bg:'warm', lines:[
+   'Because truth does not weaken a caregiver.',
+   'It empowers one.',
+   'And when care partners stand together,',
+   'the systems that ignored us have to listen.'],
+   shots:[{img:'research-banner.png', at:0}, {img:'united_we_stand.jpg', at:2, cut:1, blur:6, dim:.6}, {img:'march-for-care.jpg', at:3}],
+   titles:[
+   {at:2, to:2, pos:'c', y:-60, a:'smash', hit:1, h:'<div class="bb xl">STAND TOGETHER.</div>'},
+   {at:3, pos:'l', y:-60, a:'rise', h:'<div class="bb l2">AND MAKE THEM<br><span class="gold">LISTEN.</span></div>'}]},
+
+ { ch:'08 | Who we are', bg:'warm', lines:[
+   'This started with two people who lived it, in Ellenton, Florida.',
+   'It grows with every volunteer who trains,',
+   'every family who speaks up,',
+   'every story that refuses to be buried.'],
+   shots:[{img:'marie_and_jeff.jpg', at:0}, {img:'jeff-marie-founders.png', at:1, fit:'contain'}, {img:'marie-st-pete.jpg', at:3}],
+   titles:[
+   {at:0, to:0, pos:'l', y:180, a:'type', h:'<div class="mono" style="color:#fff">Ellenton, Florida &nbsp;·&nbsp; founded by care partners</div>'},
+   {at:1, to:3, pos:'l', y:-180, a:'rise', h:'<div class="bb l3">EVERY VOLUNTEER.</div>'},
+   {at:2, to:3, pos:'l', y:-70, a:'rise', h:'<div class="bb l3">EVERY FAMILY.</div>'},
+   {at:3, pos:'l', y:40, a:'rise', h:'<div class="bb l3 gold">EVERY STORY.</div>'}]},
+
+ { ch:'', bg:'gold', lines:[
+   'You do not need permission to fight for the person you love.',
+   'You need a map.',
+   'We built it.',
+   'Now walk it with us.',
+   'Cold Ischemia Foundation.',
+   'Stop doing this alone.'],
+   shots:[{img:'united_we_stand.jpg', at:0, blur:14}, {img:'hero-banner.jpg', at:4, blur:10, dim:.35, cut:1}],
+   pres:{side:'r', from:0, to:3},
+   titles:[
+   {at:0, to:0, pos:'l', y:-60, a:'rise', h:'<div class="bb l3">YOU DON\'T NEED<br>PERMISSION.</div>'},
+   {at:1, to:3, pos:'l', y:-170, a:'smash', hit:1, h:'<div class="bb l2">YOU NEED <span class="gold">A MAP.</span></div>'},
+   {at:2, to:3, pos:'l', y:-20, a:'rise', h:'<div class="bb l3">WE BUILT IT.</div>'},
+   {at:3, to:3, pos:'l', y:90, a:'rise', h:'<div class="bb l3 gold">NOW WALK IT WITH US.</div>'},
+   {at:4, pos:'c', y:-250, a:'smash', hit:1.3, h:'<img src="cold-ischemia-logo-clear.png" alt="" style="height:300px"><div class="bb l3" style="margin-top:14px;letter-spacing:.08em">COLD ISCHEMIA FOUNDATION</div>'},
+   {at:5, pos:'c', y:110, a:'rise', h:'<div class="serif" style="font-size:96px">Stop doing this <span class="gold">alone.</span></div><div class="mono" style="margin-top:34px;color:#fff;letter-spacing:5px">coldischemia.foundation</div><div class="mono" style="margin-top:16px;font-size:17px">Patient-led &nbsp;·&nbsp; Independent &nbsp;·&nbsp; Free tools &nbsp;·&nbsp; No pharmaceutical funding</div>'}]}
+];
+
+/* ------------------------------------------------------------------ TIMING */
+var LINES = [], t = LEAD;
+SCENES.forEach(function(sc, si){
+  sc.L = [];
+  sc.t0 = si === 0 ? 0 : t - 0.5;
+  sc.lines.forEach(function(txt){
+    var d = txt.split(/\s+/).length / WPS + 0.25;
+    var ln = {text: txt, t0: t, t1: t + d, scene: si};
+    LINES.push(ln); sc.L.push(ln); t += d + LINE_GAP;
+  });
+  t += SCENE_GAP;
+});
+SCENES.forEach(function(sc, si){ sc.t1 = si < SCENES.length - 1 ? SCENES[si + 1].t0 : DUR; });
+window.CIF_FILM = {lines: LINES, scenes: SCENES};
+
+/* ------------------------------------------------------------------ HELPERS */
+function cl(x, a, b){ return x < a ? a : x > b ? b : x; }
+function ss(a, b, x){ x = cl((x - a) / (b - a), 0, 1); return x * x * (3 - 2 * x); }
+function eo(x){ return 1 - Math.pow(1 - cl(x, 0, 1), 4); }
+function eexp(x){ x = cl(x, 0, 1); return x === 1 ? 1 : 1 - Math.pow(2, -10 * x); }
+function hash(n){ n = Math.sin(n * 127.1 + 311.7) * 43758.5453; return n - Math.floor(n); }
+function lineT(sc, i){ return sc.L[cl(i, 0, sc.L.length - 1)]; }
+var $ = function(id){ return document.getElementById(id); };
+var stage = $('stage'), shotsEl = $('shots'), titlesEl = $('titles');
+
+/* build shots */
+var SHOTS = [];
+SCENES.forEach(function(sc, si){
+  (sc.shots || []).forEach(function(s, k){
+    var next = sc.shots[k + 1];
+    var o = {s: s, si: si, t0: k === 0 ? sc.t0 : lineT(sc, s.at).t0 - 0.3, t1: next ? lineT(sc, next.at).t0 - 0.3 : sc.t1, seed: SHOTS.length + 1};
+    var el = document.createElement('div'); el.className = 'shot';
+    if (s.fit === 'contain') el.innerHTML = '<img class="fill" src="' + s.img + '" alt=""><img class="fg" src="' + s.img + '" alt="">';
+    else el.innerHTML = '<img src="' + s.img + '" alt="">';
+    var im = el.querySelector('img:last-child');
+    var f = 'contrast(1.06) saturate(.9)';
+    if (s.blur) f += ' blur(' + s.blur + 'px) brightness(.7)';
+    if (s.dim) f += ' brightness(' + s.dim + ')';
+    im.style.filter = f;
+    shotsEl.appendChild(el); o.el = el; SHOTS.push(o);
+  });
+});
+/* build titles */
+var TITLES = [], HITS = [];
+SCENES.forEach(function(sc, si){
+  (sc.titles || []).forEach(function(ti){
+    var t0 = lineT(sc, ti.at).t0 + (ti.d || 0) - (ti.a === 'smash' ? 0.15 : 0);
+    var t1 = ti.to == null ? sc.t1 - 0.35 : lineT(sc, ti.to).t1 + 0.35;
+    if (si === SCENES.length - 1 && ti.to == null) t1 = DUR + 1;
+    var el = document.createElement('div'); el.className = 't ' + ti.pos; el.innerHTML = ti.h;
+    titlesEl.appendChild(el);
+    var o = {ti: ti, t0: t0, t1: t1, el: el, count: el.querySelector('[data-count]'), clock: el.querySelector('[data-clock]'), chars: null};
+    if (ti.a === 'type') { var m = el.querySelector('.mono'); o.full = m.innerHTML; o.plain = m.textContent; o.m = m; }
+    TITLES.push(o);
+    if (ti.hit) HITS.push({t: t0 + 0.12, k: ti.hit, big: ti.a === 'smash'});
+  });
+});
+/* tool cards (scene 6) */
+var CARDS = [], toolScene = SCENES[6];
+(function(){
+  var ring = '<svg width="190" height="190" viewBox="0 0 190 190"><circle cx="95" cy="95" r="78" fill="none" stroke="rgba(143,216,255,.15)" stroke-width="14"/><circle class="arc" cx="95" cy="95" r="78" fill="none" stroke="#ffd27a" stroke-width="14" stroke-linecap="round" stroke-dasharray="490" stroke-dashoffset="490" transform="rotate(-90 95 95)"/><text x="95" y="112" text-anchor="middle" font-family="Bebas Neue" font-size="64" fill="#fff" class="pct">0</text></svg>';
+  var defs = [
+    {x:250, y:330, h:'<h4>Living Donor Journey</h4><div class="big">READINESS</div><div class="sm">Your personal score,<br>step by step.</div>' + ring},
+    {x:1030, y:330, h:'<h4>U.S. OPO Directory</h4><div class="big" data-n="57">0</div><div class="sm">organ procurement organizations<br>251 transplant centers mapped</div>'},
+    {x:250, y:665, h:'<h4><span class="live"></span>Transplant &amp; Kidney Wire</h4><div class="wire"><div>PubMed · transplant &amp; kidney failure research</div><div>American Journal of Transplantation</div><div>Federal Register · organ transplant policy</div><div>Kidney International · AJKD · medRxiv</div></div>'},
+    {x:1030, y:665, h:'<h4>The First 24 Hours</h4><div class="chk"><div><b>✓</b>Who to call first</div><div><b>✓</b>What to write down</div><div><b>✓</b>Your rights, in plain words</div></div>'}];
+  defs.forEach(function(d, i){
+    var el = document.createElement('div'); el.className = 'card'; el.style.left = d.x + 'px'; el.style.top = d.y + 'px'; el.innerHTML = d.h;
+    titlesEl.appendChild(el);
+    CARDS.push({el: el, t0: lineT(toolScene, i + 1).t0 - 0.1, arc: el.querySelector('.arc'), pct: el.querySelector('.pct'), n: el.querySelector('[data-n]'), wire: el.querySelector('.wire'), chk: el.querySelectorAll('.chk div')});
+  });
+})();
+
+/* ------------------------------------------------------------------ FX CANVAS */
+var fx = $('fx'), g = fx.getContext('2d');
+var NOISE = [];
+for (var n = 0; n < 4; n++) {
+  var c = document.createElement('canvas'); c.width = c.height = 256;
+  var cx = c.getContext('2d'), id = cx.createImageData(256, 256), seed = n * 9973 + 7;
+  for (var p = 0; p < id.data.length; p += 4) { seed = (seed * 16807) % 2147483647; var v = seed & 255; id.data[p] = id.data[p+1] = id.data[p+2] = v; id.data[p+3] = 255; }
+  cx.putImageData(id, 0, 0); NOISE.push(g.createPattern(c, 'repeat'));
+}
+var PCOUNT = 140;
+function drawFx(t, sc, si){
+  g.clearRect(0, 0, 1920, 1080);
+  /* ice dust */
+  var warm = sc.bg === 'warm' || sc.bg === 'gold';
+  for (var i = 0; i < PCOUNT; i++) {
+    var sp = 8 + hash(i) * 30, x = (hash(i + 3) * 2200 + t * sp * (hash(i + 9) > .5 ? 1 : -.6)) % 2200 - 140;
+    if (x < -140) x += 2200;
+    var y = (hash(i + 5) * 1180 - t * (4 + hash(i + 7) * 14)) % 1180; if (y < 0) y += 1180; y -= 50;
+    var r = .6 + hash(i + 11) * 2.4, a = (.18 + .5 * hash(i + 13)) * (.6 + .4 * Math.sin(t * (.5 + hash(i)) + i));
+    g.fillStyle = warm ? 'rgba(255,214,150,' + a + ')' : 'rgba(170,225,255,' + a + ')';
+    g.beginPath(); g.arc(x, y, r, 0, 6.283); g.fill();
+  }
+  /* cold-open ECG line */
+  if (si === 0) {
+    var s0 = SCENES[0], k = ss(0.5, 2.5, t) * (1 - ss(s0.t1 - 1.5, s0.t1, t));
+    if (k > 0) {
+      g.save(); g.globalAlpha = .75 * k; g.strokeStyle = '#ff4d5e'; g.lineWidth = 3; g.shadowColor = '#ff4d5e'; g.shadowBlur = 18;
+      g.beginPath();
+      var head = (t * 520) % 2400 - 200;
+      for (var X = 0; X <= 1920; X += 6) {
+        var ph = ((X - head) % 520 + 520) % 520, Y = 840;
+        if (ph > 200 && ph < 214) Y -= (ph - 200) * 9; else if (ph >= 214 && ph < 232) Y -= 126 - (ph - 214) * 12; else if (ph >= 232 && ph < 244) Y += 90 - (ph - 232) * 7.5; else if (ph > 270 && ph < 300) Y -= Math.sin((ph - 270) / 30 * 3.14) * 24;
+        var fade = cl(1 - Math.abs(X - head) / 1600, 0, 1);
+        if (X === 0) g.moveTo(X, Y); else g.lineTo(X, Y);
+        if (fade <= 0 && X > head) break;
+      }
+      g.stroke(); g.restore();
+    }
+  }
+  /* light leak */
+  var lx = 960 + Math.sin(t * .13) * 700, ly = 300 + Math.cos(t * .09) * 200;
+  var lg = g.createRadialGradient(lx, ly, 0, lx, ly, 900);
+  var la = warm ? .16 : sc.bg === 'red' ? .12 : .08;
+  lg.addColorStop(0, warm ? 'rgba(255,170,70,' + la + ')' : sc.bg === 'red' ? 'rgba(255,60,60,' + la + ')' : 'rgba(80,170,255,' + la + ')');
+  lg.addColorStop(1, 'rgba(0,0,0,0)');
+  g.globalCompositeOperation = 'screen'; g.fillStyle = lg; g.fillRect(0, 0, 1920, 1080);
+  g.globalCompositeOperation = 'source-over';
+  /* vignette */
+  var vg = g.createRadialGradient(960, 540, 420, 960, 540, 1150);
+  vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.72)');
+  g.fillStyle = vg; g.fillRect(0, 0, 1920, 1080);
+  /* grain */
+  var f = Math.floor(t * 24);
+  g.save(); g.globalAlpha = .07; g.globalCompositeOperation = 'overlay';
+  g.translate(-(hash(f) * 256), -(hash(f + 1) * 256)); g.fillStyle = NOISE[f % 4]; g.fillRect(0, 0, 2200, 1340);
+  g.restore();
+}
+
+/* ------------------------------------------------------------------ RENDER(t) */
+var TINT = {warm:'linear-gradient(120deg,rgba(255,150,60,.35),rgba(20,60,120,.3))', cold:'linear-gradient(120deg,rgba(40,120,200,.4),rgba(10,20,40,.4))', red:'linear-gradient(120deg,rgba(220,40,50,.35),rgba(20,10,30,.4))', gold:'linear-gradient(120deg,rgba(224,165,58,.35),rgba(10,30,60,.35))'};
+var lastScene = -1, presEl = $('pres'), capEl = $('cap'), chapEl = $('chap'), flashEl = $('flash'), gridEl = $('grid'), tintEl = $('tint'), shadeEl = $('shade');
+function sceneAt(t){ for (var i = SCENES.length - 1; i >= 0; i--) if (t >= SCENES[i].t0) return i; return 0; }
+function fmtClock(sec){ sec = Math.floor(sec); var h = Math.floor(sec / 3600), m = Math.floor(sec / 60) % 60, s = sec % 60; return (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s; }
+
+function render(t){
+  var si = sceneAt(t), sc = SCENES[si];
+  if (si !== lastScene) { tintEl.style.background = TINT[sc.bg] || 'none'; chapEl.innerHTML = sc.ch ? '<b>' + sc.ch.split(' | ')[0] + '</b>' + sc.ch.split(' | ')[1] : ''; lastScene = si; }
+  /* global fade in/out */
+  var master = ss(0, 1.2, t) * (1 - ss(DUR - 1.2, DUR, t));
+  stage.style.opacity = master.toFixed(3);
+  /* shots: crossfade + slow push (Ken Burns) */
+  SHOTS.forEach(function(o){
+    var fin = o.s.cut ? ss(o.t0, o.t0 + .12, t) : ss(o.t0 - .5, o.t0 + .7, t);
+    var fout = 1 - ss(o.t1 - .2, o.t1 + 1, t);
+    var a = fin * fout;
+    if (a <= 0.001) { if (o.el.style.opacity !== '0') o.el.style.opacity = '0'; return; }
+    var p = cl((t - o.t0) / (o.t1 - o.t0 + 1), 0, 1), h = hash(o.seed);
+    var s = 1.02 + .1 * p + (o.s.cut ? .05 * (1 - eo((t - o.t0) / .8)) : 0);
+    var x = (h - .5) * 3 * (1 - 2 * p), y = (hash(o.seed + 2) - .5) * 2 * (1 - 2 * p);
+    o.el.style.opacity = a.toFixed(3);
+    o.el.style.transform = 'translate(' + x.toFixed(2) + '%,' + y.toFixed(2) + '%) scale(' + s.toFixed(4) + ')';
+  });
+  /* grid backdrop (designed scenes) */
+  var gr = 0;
+  SCENES.forEach(function(s2){ if (s2.grid) gr = Math.max(gr, ss(s2.t0 - .4, s2.t0 + .8, t) * (1 - ss(s2.t1 - .3, s2.t1 + .9, t))); });
+  gridEl.style.opacity = gr.toFixed(3);
+  shadeEl.style.opacity = sc.dark ? 0 : 1;
+  /* presenter */
+  var pa = 0, side = 'r', px = 0;
+  SCENES.forEach(function(s2){
+    if (!s2.pres) return;
+    var a0 = lineT(s2, s2.pres.from).t0 - .6, a1 = s2.pres.to == null ? s2.t1 : lineT(s2, s2.pres.to).t1 + .5;
+    var k = ss(a0 - .3, a0 + 1, t) * (1 - ss(a1 - .4, a1 + .6, t));
+    if (k > pa) { pa = k; side = s2.pres.side; px = cl((t - a0) / (a1 - a0), 0, 1); }
+  });
+  if (pa > .001) {
+    presEl.style.opacity = pa.toFixed(3);
+    presEl.style.left = side === 'r' ? '1020px' : '60px';
+    var breathe = 1 + .004 * Math.sin(t * 1.7);
+    presEl.style.transform = 'translateX(' + ((side === 'r' ? 1 : -1) * 60 * (1 - eo(pa))).toFixed(1) + 'px) scale(' + ((1 + .05 * px) * breathe).toFixed(4) + ')';
+    presEl.style.transformOrigin = '50% 40%';
+  } else presEl.style.opacity = '0';
+  /* titles */
+  var flash = 0;
+  TITLES.forEach(function(o){
+    var el = o.el, ti = o.ti;
+    if (t < o.t0 - .05 || t > o.t1 + .7) { if (el.style.opacity !== '0') el.style.opacity = '0'; return; }
+    var pin = (t - o.t0), out = 1 - ss(o.t1, o.t1 + .55, t), op = 1, tr = '', fl = '';
+    var baseY = 'translateY(calc(-50% + ' + (ti.y || 0) + 'px))';
+    if (ti.pos !== 'c') el.style.top = '50%';
+    if (ti.a === 'smash') { var e = eexp(pin / .55); op = cl(pin / .18, 0, 1); tr = ' scale(' + (1.55 - .55 * e).toFixed(4) + ')'; fl = 'blur(' + (14 * (1 - e)).toFixed(1) + 'px)'; tr += ' scale(' + (1 + .025 * cl((t - o.t0) / 5, 0, 1)).toFixed(4) + ')'; }
+    else if (ti.a === 'stamp') { var e2 = eo(pin / .28); op = cl(pin / .1, 0, 1); tr = ' scale(' + (2.1 - 1.1 * e2).toFixed(4) + ') rotate(' + (-4 * e2).toFixed(2) + 'deg)'; }
+    else if (ti.a === 'rise') { var e3 = eo(pin / .9); op = cl(pin / .6, 0, 1); tr = ' translateY(' + (46 * (1 - e3)).toFixed(1) + 'px)'; fl = 'blur(' + (6 * (1 - e3)).toFixed(1) + 'px)'; }
+    else if (ti.a === 'type') { op = cl(pin / .2, 0, 1); var nch = Math.floor(cl(pin / 1.6, 0, 1) * o.plain.length); var shown = o.plain.slice(0, nch) + (pin % .6 < .3 || nch < o.plain.length ? '▌' : ''); if (o.m.textContent !== shown) o.m.textContent = shown; }
+    else { op = ss(0, .8, pin); }
+    if (out < 1) { fl = 'blur(' + (8 * (1 - out)).toFixed(1) + 'px)'; tr += ' translateY(' + (-24 * (1 - out)).toFixed(1) + 'px)'; }
+    el.style.opacity = (op * out).toFixed(3);
+    el.style.transform = baseY + tr;
+    el.style.filter = fl || 'none';
+    if (o.count) { var N = +o.count.getAttribute('data-count'), cv = Math.round(N * eo(pin / 2.2)); o.count.textContent = cv.toLocaleString('en-US') + (o.count.getAttribute('data-suffix') || ''); }
+    if (o.clock) o.clock.textContent = fmtClock(cl(pin, 0, 99) * 977);
+  });
+  HITS.forEach(function(h){ var d = t - h.t; if (d >= 0 && d < .5) flash = Math.max(flash, (h.big ? .32 : .16) * h.k * (1 - d / .5)); });
+  flashEl.style.opacity = flash.toFixed(3);
+  /* tool cards */
+  var cardsOut = 1 - ss(lineT(toolScene, 5).t0 - .4, lineT(toolScene, 5).t0 + .3, t), cardsGone = 1 - ss(toolScene.t1 - .5, toolScene.t1, t);
+  CARDS.forEach(function(c, i){
+    var p = t - c.t0;
+    if (p < 0 || t > toolScene.t1 + .2) { c.el.style.opacity = '0'; return; }
+    var e = eo(p / .9);
+    var active = (i < 3 ? t < CARDS[i + 1].t0 : true);
+    c.el.style.opacity = (cl(p / .5, 0, 1) * (cardsOut * .85 + .15 * cardsGone) * cardsGone * (cardsOut < 1 ? cardsOut : 1)).toFixed(3);
+    c.el.style.transform = 'perspective(1400px) translateY(' + (70 * (1 - e)).toFixed(1) + 'px) rotateX(' + (14 * (1 - e)).toFixed(2) + 'deg) scale(' + (active ? 1.03 : .97) + ')';
+    c.el.style.borderColor = active ? 'rgba(255,210,122,.7)' : 'rgba(143,216,255,.22)';
+    if (c.arc) { var v = eo((p - .3) / 2.2) * .82; c.arc.setAttribute('stroke-dashoffset', (490 * (1 - v)).toFixed(1)); c.pct.textContent = Math.round(v * 100); }
+    if (c.n) c.n.textContent = Math.round(57 * eo((p - .2) / 1.6));
+    if (c.wire) c.wire.querySelectorAll('div').forEach(function(d, k){ d.style.opacity = cl((p - .3 - k * .45) / .3, 0, 1); });
+    if (c.chk.length) c.chk.forEach(function(d, k){ d.style.opacity = cl((p - .3 - k * .5) / .3, 0, 1); });
+  });
+  /* chapter tag */
+  chapEl.style.opacity = sc.ch ? (.9 * ss(sc.t0 + .3, sc.t0 + 1.2, t) * (1 - ss(sc.t0 + 5, sc.t0 + 6, t))).toFixed(3) : '0';
+  /* captions */
+  var cap = '', ca = 0;
+  for (var i = 0; i < LINES.length; i++) { var L = LINES[i]; if (t >= L.t0 - .1 && t <= L.t1 + .25) { cap = L.text; ca = ss(L.t0 - .1, L.t0 + .15, t) * (1 - ss(L.t1, L.t1 + .25, t)); break; } }
+  if (capEl.textContent !== cap) capEl.textContent = cap;
+  capEl.style.opacity = ca.toFixed(3);
+  drawFx(t, sc, si);
+}
+
+/* ------------------------------------------------------------------ SCORE (Web Audio, generated) */
+function buildScore(ctx, out, startAt, offset, voiceBuf){
+  offset = offset || 0;
+  var R = function(st){ return startAt + st - offset; };
+  var now = ctx.currentTime;
+  var master = ctx.createGain(); master.gain.value = voiceBuf ? .55 : .9;
+  var comp = ctx.createDynamicsCompressor(); comp.threshold.value = -16; comp.ratio.value = 4; comp.attack.value = .01; comp.release.value = .25;
+  master.connect(comp); comp.connect(out);
+  /* reverb */
+  var ir = ctx.createBuffer(2, ctx.sampleRate * 3.6, ctx.sampleRate), rs = 12345;
+  for (var ch = 0; ch < 2; ch++) { var d = ir.getChannelData(ch); for (var i = 0; i < d.length; i++) { rs = (rs * 16807) % 2147483647; d[i] = (rs / 2147483647 * 2 - 1) * Math.pow(1 - i / d.length, 3.2); } }
+  var verb = ctx.createConvolver(); verb.buffer = ir; var vret = ctx.createGain(); vret.gain.value = .5; verb.connect(vret); vret.connect(master);
+  var nb = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate), nd = nb.getChannelData(0); rs = 777;
+  for (i = 0; i < nd.length; i++) { rs = (rs * 16807) % 2147483647; nd[i] = rs / 2147483647 * 2 - 1; }
+  function bus(gv, send){ var b = ctx.createGain(); b.gain.value = gv; b.connect(master); if (send) { var s = ctx.createGain(); s.gain.value = send; b.connect(s); s.connect(verb); } return b; }
+  var padB = bus(.36, .7), arpB = bus(.3, .5), lowB = bus(.26, .1), hitB = bus(.9, .6), drumB = bus(.55, .25), riseB = bus(.2, .5);
+  function ok(st, dur){ return R(st + dur) > now; }
+  function env(gn, st, a, peak, dur, rel){
+    var s = R(st); if (s < now) { gn.gain.setValueAtTime(peak, now); }
+    else { gn.gain.setValueAtTime(0, s); gn.gain.linearRampToValueAtTime(peak, s + a); }
+    var e = Math.max(R(st + dur), now + .01); gn.gain.setValueAtTime(peak, Math.max(e, s + a)); gn.gain.exponentialRampToValueAtTime(.0001, Math.max(e, s + a) + rel);
+    return Math.max(e, s + a) + rel + .05;
+  }
+  function osc(type, f, st, dur, peak, dest, a, rel, cut, det){
+    if (!ok(st, dur + rel)) return;
+    var o = ctx.createOscillator(), gn = ctx.createGain(), fl = ctx.createBiquadFilter();
+    o.type = type; o.frequency.value = f; if (det) o.detune.value = det;
+    fl.type = 'lowpass'; fl.frequency.value = cut || 2000; fl.Q.value = .7;
+    o.connect(fl); fl.connect(gn); gn.connect(dest);
+    var end = env(gn, st, a, peak, dur, rel); o.start(Math.max(R(st), now)); o.stop(end);
+  }
+  function mf(m){ return 440 * Math.pow(2, (m - 69) / 12); }
+  function kick(st, peak, f0){
+    if (!ok(st, .6)) return; var s = Math.max(R(st), now);
+    var o = ctx.createOscillator(), gn = ctx.createGain(); o.type = 'sine';
+    o.frequency.setValueAtTime(f0 || 120, s); o.frequency.exponentialRampToValueAtTime(38, s + .35);
+    gn.gain.setValueAtTime(peak, s); gn.gain.exponentialRampToValueAtTime(.0001, s + .55);
+    o.connect(gn); gn.connect(drumB); o.start(s); o.stop(s + .6);
+  }
+  function noise(st, dur, peak, dest, type, f0, f1, a){
+    if (!ok(st, dur)) return; var s = Math.max(R(st), now);
+    var src = ctx.createBufferSource(); src.buffer = nb; src.loop = true;
+    var fl = ctx.createBiquadFilter(); fl.type = type; fl.Q.value = type === 'bandpass' ? 2 : .7;
+    fl.frequency.setValueAtTime(f0, s); fl.frequency.exponentialRampToValueAtTime(f1, s + dur);
+    var gn = ctx.createGain();
+    if (a) { gn.gain.setValueAtTime(.0001, s); gn.gain.exponentialRampToValueAtTime(peak, s + dur * a); gn.gain.setValueAtTime(peak, s + dur * a); gn.gain.linearRampToValueAtTime(.0001, s + dur); }
+    else { gn.gain.setValueAtTime(peak, s); gn.gain.exponentialRampToValueAtTime(.0001, s + dur); }
+    src.connect(fl); fl.connect(gn); gn.connect(dest); src.start(s, hash(st) * 1.5); src.stop(s + dur + .05);
+  }
+  function boom(st, k){
+    kick(st, .9 * k, 90);
+    osc('sine', 55, st, .2, .55 * k, hitB, .005, 2.2, 400);
+    noise(st, 1.4, .35 * k, hitB, 'lowpass', 3000, 200);
+    osc('sawtooth', mf(33), st, .3, .12 * k, hitB, .01, 2.5, 600);
+  }
+  function riser(t1, len){ noise(t1 - len, len, .5, riseB, 'bandpass', 300, 7000, .95); osc('sawtooth', 110, t1 - len, len - .1, .05, riseB, len * .9, .1, 3000); }
+
+  var S = SCENES, T = function(i){ return S[i].t0; };
+  var intensity = [.25, .4, .5, .6, .62, .78, .82, .86, .7, 1];
+  /* heartbeat (cold open, fades as the music arrives) */
+  for (var hb = .8; hb < T(1) + 6; hb += 1.05) { var hk = hb < T(1) ? 1 : 1 - (hb - T(1)) / 6; kick(hb, .7 * hk, 80); kick(hb + .22, .45 * hk, 70); }
+  /* low drone across the whole film, swelling with each chapter */
+  [[45, 0], [45.07, 7], [33, -4]].forEach(function(v){
+    if (!ok(0, DUR)) return;
+    var o = ctx.createOscillator(), gn = ctx.createGain(), fl = ctx.createBiquadFilter(); o.type = 'sawtooth'; o.frequency.value = mf(v[0]); o.detune.value = v[1];
+    fl.type = 'lowpass'; fl.frequency.value = 180; o.connect(fl); fl.connect(gn); gn.connect(lowB);
+    gn.gain.setValueAtTime(0, Math.max(R(0), now));
+    S.forEach(function(s, i){ var at = R(s.t0); if (at >= now) { gn.gain.linearRampToValueAtTime(.1 + .2 * intensity[i], at + 2); fl.frequency.setValueAtTime(fl.frequency.value, at); fl.frequency.linearRampToValueAtTime(150 + 500 * intensity[i], at + 3); } });
+    gn.gain.linearRampToValueAtTime(.0001, R(DUR)); o.start(Math.max(R(0), now)); o.stop(R(DUR) + .1);
+  });
+  /* harmony: A minor through the struggle, opening to C major for the turn */
+  var BEAT = 60 / 96, BAR = BEAT * 4;
+  var minor = [[57, 60, 64], [53, 57, 60], [48, 55, 64], [55, 59, 62]];       /* Am F C G */
+  var lift = [[53, 57, 60, 65], [55, 59, 62, 67], [57, 60, 64, 69], [48, 55, 60, 64]]; /* F G Am C */
+  var turn = T(6);
+  for (var bt = T(1) - BAR; bt < DUR - 6; bt += BAR * 2) {
+    var idx = Math.round((bt - (T(1) - BAR)) / (BAR * 2)), chord = (bt < turn ? minor : lift)[idx % 4], si2 = sceneAt(bt), it = intensity[si2];
+    chord.forEach(function(m, k){
+      osc('sawtooth', mf(m), bt, BAR * 2 - .2, .06 + .05 * it, padB, 1.4, 1.6, 1100 + 2400 * it, -8);
+      osc('sawtooth', mf(m), bt, BAR * 2 - .2, .06 + .05 * it, padB, 1.4, 1.6, 1100 + 2400 * it, 8);
+      if (bt >= turn) osc('triangle', mf(m + 24), bt + .5, BAR * 2 - .8, .025, padB, 1.2, 1.5, 8000);
+      if (k === 0) osc('triangle', mf(m - 12), bt, BAR * 2 - .1, .2 + .15 * it, lowB, .05, .8, 400);
+    });
+    /* pulsing eighths from chapter 2 */
+    if (bt >= T(2) - BAR * 2) for (var e8 = 0; e8 < 16; e8++) {
+      var nt = bt + e8 * BEAT / 2, m8 = chord[(e8 * (e8 % 3 === 0 ? 1 : 2)) % chord.length] + 12 + (e8 % 8 === 7 ? 12 : 0);
+      osc('triangle', mf(m8), nt, .08, .1 + .12 * it, arpB, .004, .22, 2200 + 3000 * it);
+    }
+    /* drums build from chapter 5 */
+    if (bt >= T(5) - BAR * 2) for (var b = 0; b < 8; b++) {
+      var dt = bt + b * BEAT, sI = sceneAt(dt);
+      if (b % 4 === 0 || (sI >= 6 && b % 2 === 0)) kick(dt, .55 + .3 * intensity[sI], 110);
+      if (b % 4 === 2) noise(dt, .25, .25 * intensity[sI], drumB, 'highpass', 1800, 900);
+      if (sI >= 7) noise(dt + BEAT / 2, .05, .07, drumB, 'highpass', 8000, 7000);
+    }
+  }
+  /* final resolve: big C major chord under the end card */
+  var endT = lineT(S[9], 4).t0 - .15;
+  [36, 48, 55, 60, 64, 67, 72, 76].forEach(function(m){ osc('sawtooth', mf(m), endT, DUR - endT - 4, .07, padB, .4, 4, 2600, (m % 3) * 5 - 5); });
+  osc('sine', mf(84), endT + 1, DUR - endT - 5, .05, padB, 2, 4, 9000);
+  /* impacts and risers on every title hit */
+  HITS.forEach(function(h){ if (h.big) { boom(h.t - .1, h.k); } else { kick(h.t - .08, .6 * h.k, 140); noise(h.t - .08, .5, .2 * h.k, hitB, 'lowpass', 5000, 400); } });
+  [S[3].L[3].t0, S[4].L[4].t0, S[6].L[5].t0, endT].forEach(function(x){ riser(x - .1, 3.6); });
+  /* sub drop + tail to silence */
+  osc('sine', 40, DUR - 9, 5, .5, lowB, .01, 4, 200);
+  return master;
+}
+
+/* ------------------------------------------------------------------ RENDER MODE (used by _tools/render-commercial.js) */
+var Q = new URLSearchParams(location.search);
+function fit(){
+  var w = innerWidth, h = innerHeight, s = Math.min(w / 1920, h / 1080);
+  stage.style.transform = 'translate(' + ((w - 1920 * s) / 2) + 'px,' + ((h - 1080 * s) / 2) + 'px) scale(' + s + ')';
+}
+addEventListener('resize', fit); fit();
+function loadVoice(ctx){
+  return fetch(VOICE, {cache: 'no-store'}).then(function(r){ if (!r.ok) throw 0; return r.arrayBuffer(); })
+    .then(function(b){ return ctx.decodeAudioData(b); }).catch(function(){ return null; });
+}
+if (Q.has('render')) {
+  document.body.classList.add('render');
+  if (Q.get('cc') === '0') document.body.classList.add('nocc');
+  window.__seek = function(tt){ render(tt); };
+  window.__renderScore = function(){
+    var sr = 48000, off = new OfflineAudioContext(2, sr * DUR, sr);
+    return loadVoice(off).then(function(vb){
+      buildScore(off, off.destination, 0, 0, vb);
+      if (vb) { var src = off.createBufferSource(), vg = off.createGain(); vg.gain.value = 1; src.buffer = vb; src.connect(vg); vg.connect(off.destination); src.start(0); }
+      return off.startRendering();
+    }).then(function(buf){
+      var L = buf.getChannelData(0), Rr = buf.getChannelData(1), n = L.length, ab = new ArrayBuffer(44 + n * 4), v = new DataView(ab);
+      function ws(o, s){ for (var i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); }
+      ws(0, 'RIFF'); v.setUint32(4, 36 + n * 4, true); ws(8, 'WAVEfmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 2, true);
+      v.setUint32(24, sr, true); v.setUint32(28, sr * 4, true); v.setUint16(32, 4, true); v.setUint16(34, 16, true); ws(36, 'data'); v.setUint32(40, n * 4, true);
+      for (var i = 0, o = 44; i < n; i++, o += 4) { v.setInt16(o, cl(L[i], -1, 1) * 32767, true); v.setInt16(o + 2, cl(Rr[i], -1, 1) * 32767, true); }
+      var bytes = new Uint8Array(ab), s = '', CH = 0x8000;
+      for (i = 0; i < bytes.length; i += CH) s += String.fromCharCode.apply(null, bytes.subarray(i, i + CH));
+      return btoa(s);
+    });
+  };
+  render(Q.has('t') ? +Q.get('t') : 0);
+  return;
+}
+
+/* ------------------------------------------------------------------ LIVE PLAYER */
+var ctx = null, scoreOut = null, voiceEl = null, playing = false, t0wall = 0, pos = 0, raf = 0;
+var big = $('big'), ui = $('ui'), pp = $('pp'), sk = $('sk'), tc = $('tc');
+function clock(){ return playing ? (voiceEl && !voiceEl.paused ? voiceEl.currentTime : (performance.now() - t0wall) / 1000) : pos; }
+function fmt(s){ s = Math.max(0, Math.floor(s)); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+function tick(){
+  var tt = clock();
+  if (tt >= DUR) { stop(); pos = DUR; render(DUR - .01); big.hidden = false; big.querySelector('span').textContent = 'Watch again'; return; }
+  render(tt); sk.value = tt; tc.textContent = fmt(tt) + ' / 3:00';
+  raf = requestAnimationFrame(tick);
+}
+function stop(){
+  pos = clock(); playing = false; cancelAnimationFrame(raf);
+  if (scoreOut) { try { scoreOut.disconnect(); } catch (e) {} scoreOut = null; }
+  if (voiceEl) voiceEl.pause();
+  pp.textContent = 'Play';
+}
+function play(from){
+  if (from != null) pos = from;
+  if (!ctx) { var AC = window.AudioContext || window.webkitAudioContext; ctx = AC ? new AC() : null; }
+  if (ctx && ctx.state === 'suspended') ctx.resume();
+  if (scoreOut) { try { scoreOut.disconnect(); } catch (e) {} }
+  if (ctx) scoreOut = buildScore(ctx, ctx.destination, ctx.currentTime + .05, pos, voiceEl && voiceEl.__ok);
+  if (voiceEl && voiceEl.__ok) { voiceEl.currentTime = pos; voiceEl.play().catch(function(){}); }
+  t0wall = performance.now() - pos * 1000; playing = true; pp.textContent = 'Pause';
+  big.hidden = true; ui.hidden = false;
+  cancelAnimationFrame(raf); raf = requestAnimationFrame(tick);
+}
+/* optional narration file */
+voiceEl = new Audio(); voiceEl.preload = 'auto'; voiceEl.src = VOICE;
+voiceEl.addEventListener('canplaythrough', function(){ voiceEl.__ok = true; });
+voiceEl.addEventListener('error', function(){ voiceEl.__ok = false; });
+big.addEventListener('click', function(){ play(pos >= DUR ? 0 : pos); });
+pp.addEventListener('click', function(){ playing ? stop() : play(pos >= DUR ? 0 : pos); });
+$('rs').addEventListener('click', function(){ stop(); play(0); });
+sk.addEventListener('input', function(){ var was = playing; if (was) stop(); pos = +sk.value; render(pos); tc.textContent = fmt(pos) + ' / 3:00'; if (was) play(pos); });
+$('cc').addEventListener('click', function(){ var on = document.body.classList.toggle('nocc'); this.setAttribute('aria-pressed', String(!on)); });
+$('fs').addEventListener('click', function(){ var d = document.documentElement; if (document.fullscreenElement) document.exitFullscreen(); else if (d.requestFullscreen) d.requestFullscreen(); });
+addEventListener('keydown', function(e){ if (e.key === ' ' && e.target === document.body) { e.preventDefault(); playing ? stop() : play(); } });
+var idleT; addEventListener('pointermove', function(){ document.body.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(function(){ if (playing) document.body.classList.add('idle'); }, 2500); });
+render(Q.has('t') ? +Q.get('t') : 6.2);
+})();
+</script>
+</body>
+</html>
