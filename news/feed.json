@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-04T14:19:27.260426+00:00",
+"updated": "2026-10-04T18:19:35.816983+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -78,9 +78,9 @@
 "name": "medRxiv: Nephrology preprints",
 "category": "Research",
 "url": "https://connect.medrxiv.org/medrxiv_xml.php?subject=Nephrology",
-"ok": true,
-"count": 30,
-"error": null
+"ok": false,
+"count": 0,
+"error": "ValueError: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
 },
 {
 "name": "Federal Register: organ transplant policy",
@@ -137,7 +137,7 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S246802492603305X?dgcid=rss_sd_all",
 "summary": "By Jakub Ruszkowski, Alicja M. Dębska-Ślizień, Jolanta Małyszko",
 "outlet": "",
-"published": "2026-10-04T14:18:33.692347+00:00",
+"published": "2026-10-04T14:19:27.260426+00:00",
 "id": "725b517b846673dd",
 "source": "Kidney International Reports",
 "category": "Journals",
@@ -148,7 +148,7 @@
 "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTVdqNEVvZDhvZWJGVjNoNE5YYkg0T0k5OFpReFpqY196VzAtemZTS0s3MUg0cXV0NWFVeHRvSnE5UTBKak9wMWxxNTRiMjk3Q2ZBVWdNc3dhd1VBcDFHbGFXY3BHWlNObnRETXE2UXQwUTRuMGYzM3M2OEpCX19mTzZ6MVJQQnFMTkJNQkppWEx4TzdPTTduVllXU1ROSlNBVTRtXzdCV2ltUQ?oc=5",
 "summary": "From kidney transplant to ESPN, father and son score remarkable victories Pittsburgh Post-Gazette",
 "outlet": "Pittsburgh Post-Gazette",
-"published": "2026-10-04T14:00:57+00:00",
+"published": "2026-10-04T14:19:27.260426+00:00",
 "id": "44d38a61823ebfb9",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
@@ -208,6 +208,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-04T08:19:04.782464+00:00"
+},
+{
+"title": "Sen. Culver To Co-Host Organ Donation Advocacy Walk | - 1070 WKOK",
+"link": "https://news.google.com/rss/articles/CBMiREFVX3lxTFBvQk1pRGpaY0swaWtCN1JWTHB2QW5oRWpPRjdxUXYyWnVqUVd4TnJBTnItdXRNVlNYTUg2REFZcnhxekZY?oc=5",
+"summary": "Sen. Culver To Co-Host Organ Donation Advocacy Walk | 1070 WKOK",
+"outlet": "1070 WKOK",
+"published": "2026-10-04T03:37:53+00:00",
+"id": "b2519bdcfc1b86a7",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-04T18:19:35.816983+00:00"
 },
 {
 "title": "St. Augustine family searches for living kidney donor to save 19-year-old son’s life - News4JAX",
@@ -573,6 +584,17 @@
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
 },
 {
+"title": "Organ transplant institute to be completed in 30 months: CM - timesofindia.indiatimes.com",
+"link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPbEdhbW9fU3hyaWhMR3NsQ1ZJaVBVc2ExdXRUSjI2cFpZQWRMeThvYUZScHNJZWNFOFlWNDFYWHVnSlVYdmNVU1k5TXV3TjFDTVRNLUF0aW1HVjNvYnkyYWlzQkd2Ym9BRVVSNXdnanExdTVPVE9WWmZkY3ZTdWJqUWFlMldUdkZGYmVBOWJDWVY0eW9fWS1idm81dm5lTTI4M3lpRlhjTEwybGZLUG1UUEpmUUtfTHo0TUhOMTFKeVNudF92c1VIZ3lVTdIB0AFBVV95cUxPaE4xZkhBYkVINjVBTDcwdWRnWU1KR0M0UEo0X3JpakZMeG9lOFNWWi1yU0hsYm9ZanZXeXlZUTFTa1JFdXdUd1NYdUJpRWZOcFpVZlI1V2NKcWx6bDk3NzJSMF9lZ0Y3UjJBb2JaaE5EdDdCd29Cd3pGaS1UWUMyT2Z1cFRncEE3dkUxdWtmU1E3MW9rc0dNZHhnT3NPVWw0MDEtRHhxNGd2V1hpYjB3ZVREcU9vQ3NVdzB5LXRvQmNyRDVaNk1UQndFRjdYdVBq?oc=5",
+"summary": "Organ transplant institute to be completed in 30 months: CM timesofindia.indiatimes.com",
+"outlet": "timesofindia.indiatimes.com",
+"published": "2026-10-03T17:41:00+00:00",
+"id": "29480e82da5dd64b",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-04T18:19:35.816983+00:00"
+},
+{
 "title": "Govt warns UNOs to stay alert - Daily Observer",
 "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1TMi1TZHdIV0RBaU11RzJ0UEVldmZKTWhHazVXM1F0MFhvT25SbVphbDZUUXNibnVNWjAwR09Nckt2blI5VHdnLVdR?oc=5",
 "summary": "Govt warns UNOs to stay alert Daily Observer",
@@ -650,6 +672,17 @@
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
 },
 {
+"title": "North Belfast man who donated kidney takes part in 'Grand Organ Donation Life Cycle' at Grand Central Station - belfastmedia.com",
+"link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQbE45VFpuOHRwejNYWDlfUTZzdDJXLUpHR2V4NXJUV1Z3QzZ3bFhzem90aXlJaFVJUTNHUG5MQkR2TTFIZU9GVkk0cWI5WDNZaS1FUWo3aHlhRkZYVXBud25OQlFBYWlQV09zcmJHRUN4RnY3dHZXVFJoZUE0ZVpFRjQzaTZLQ0pkUlpITHN2VVk3OFAtYzN5T1pBZnZpdGNOR3FEMUhVekUtZzFmdjdaYUZPekVaUkwwbW53eWZvbWp0RFpwa1FreFFkVFo?oc=5",
+"summary": "North Belfast man who donated kidney takes part in 'Grand Organ Donation Life Cycle' at Grand Central Station belfastmedia.com",
+"outlet": "belfastmedia.com",
+"published": "2026-10-03T08:34:54+00:00",
+"id": "d6f3d430b8dd6434",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-04T18:19:35.816983+00:00"
+},
+{
 "title": "DW News. . Germany's one of the few countries in Europe that still have an exclusively \"opt-in\" system for organ donation - where people have to sign up to become donors - despite long waiting times for more than 8,000 people currently in need of an organ tr - facebook.com",
 "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOclN3aUFHSmJmTC1Gc0dNYzhBenlkRy1veDV2S0NtMWxzQU5lZFd6RTFGbGgtRkoyLUhTUE9CdlNEbkFuR2RadHFQM3ZwY3daRzBSeUlFUS02ZjZBbXpPaFVWNVNMSXAxd0dxVWJlNV9lWVkxdW1SMjJjWkZKM0dHa3hfLVAtUUZXZVVUNi0xUEF1RkN6NXBHWHMtX1hka2kwSHlGd3hIa1VNSkVPYUxjOElEeXJabGVxMUlZeFQtWUtUZXNoRW9nZU5BdWJwOVJkNlZMbGNDdkpOUENqUklFUVBR?oc=5",
 "summary": "DW News. . Germany's one of the few countries in Europe that still have an exclusively \"opt-in\" system for organ donation - where people have to sign up to become donors - despite long waiting times for more than 8,000 people currently in need of an organ tr facebook.com",
@@ -683,6 +716,17 @@
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
 },
 {
+"title": "DOH pushes wider organ donation - manilatimes.net",
+"link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNT29NbUlpQ1NpZmpqbTlDRjZiZm5TeGx0cklLb0ZmYXl6YlBSbjVBVTJneU5kdENockVkQ1VGUlRNdnAxMEltTGUwSWxycTZOM1hrZ3pRQ3VBOFhSOGJMcDNaWjNpbmJVZkVKLVIxVm4wei1sdE5wRnFBck1NT2RxXzNEQ21HQi1WT2Rz0gGQAUFVX3lxTE1ZSnY3TGRFR1pEVnNheXg3ZjZUblM4LW1NbWdkY3ZTN0U0WFNkREJhS2I0RVAzYnhaaVdDeFd2OTZCY2Mtb2FDeC15UHI1Z01fa01pbkVzbmNuLTBBWFI4RDlwMWM2dEpENDNKSTZYNW9qR0xGMEhYeEFXVEFjMFY0RFJ2MHJNV0ZmM3pQTXgtLQ?oc=5",
+"summary": "DOH pushes wider organ donation manilatimes.net",
+"outlet": "manilatimes.net",
+"published": "2026-10-03T02:40:00+00:00",
+"id": "35aa5e344faca84a",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-04T18:19:35.816983+00:00"
+},
+{
 "title": "‘That’s what he lived for’: Buffalo Grove High School security guard’s legacy lives on through organ donation - Daily Herald",
 "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPbXFKQkxJc1hYaVZlU192R3NTLTR0UGhUZFR5SGstVTB1SzJoYmgtaHRLYzFzR3BpUGdndGZGNUs3QWxYMF81aW91WWhZTll3Sm1BZk52Q1ZGZ1p3THRIRG5WXy14YXVwS2xUelNtUmUzalktT2dhSXVWMUNXb09tVTVuT3BhNm1HU09tT2o5QjU0NzhRTTh2dFFiVXJrLW9taUNSRzNlOVVTR29zUkZ2NVFFeHhDbGFOVVhvdzIzYkxVTW43dXh6YWxWNnpfTnlTSWNtcA?oc=5",
 "summary": "‘That’s what he lived for’: Buffalo Grove High School security guard’s legacy lives on through organ donation Daily Herald",
@@ -705,10 +749,10 @@
 "first_seen": "2026-10-03T22:23:03.287060+00:00"
 },
 {
-"title": "Randy Rogers Memorial Clay Shoot honors life and promotes organ donation - WBOY.com",
+"title": "Randy Rogers Memorial Clay Shoot honors life and promotes organ donation - wboy.com",
 "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNM3lQbnZTWkY1Y21MaTg0OE1Kd2l2cGlWUGlnOURaRTJKTFB3a3ZhNGdVVkF6VTZpSWI5dmFnUlVsMFFiVHYtRE5RYlE2bGNqaV9YVlFXVHZsNHBtVWRuR3Z0MXM1WXI4UmlWX2o5U2RsMk5obWdKYzVDSGdkYUpBQi1CQUQ4SmdoVFFTdFc4Q0lsaXhRT3U1cnkxQlRYdlJrNnNmd2VzNHg?oc=5",
-"summary": "Randy Rogers Memorial Clay Shoot honors life and promotes organ donation WBOY.com",
-"outlet": "WBOY.com",
+"summary": "Randy Rogers Memorial Clay Shoot honors life and promotes organ donation wboy.com",
+"outlet": "wboy.com",
 "published": "2026-10-02T22:27:32+00:00",
 "id": "36929b7a7b83d680",
 "source": "Google News: transplant & organ donation policy",
@@ -991,6 +1035,17 @@
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
 },
 {
+"title": "VCU pharmacy student earns national recognition for organ donation advocacy - vcuhealth.org",
+"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPMVN6bTB4a0pWTW9LSWFYUERySzhtOEo0TUxMa3d1X2p4b3hZVGdCQjB2UV9oS19sTlpzZkVmZXJRejA4a01SVEUzM2hwdWE2T3JzQkJHNlhva2pTWnJGWGx1a1Q3V3lJVkozMHFCOTlUZm5xaElPNHB6YUJZMzJwNUU1YXFNUWRSVVNMZjNYWEhfV3ZINXZEZWJkREhGV1RSYmo5WHFId0tfMGs?oc=5",
+"summary": "VCU pharmacy student earns national recognition for organ donation advocacy vcuhealth.org",
+"outlet": "vcuhealth.org",
+"published": "2026-10-01T21:12:45+00:00",
+"id": "f4b61091aac78317",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-04T18:19:35.816983+00:00"
+},
+{
 "title": "Q&A: How to build a nontraditional career as a physician",
 "link": "https://www.healio.com/news/pediatrics/20261001/qa-how-to-build-a-nontraditional-career-as-a-physician",
 "summary": "Growing up, Naomi Lawrence-Reid, MD, always knew she wanted to be a doctor. Her career as a physician looks different from what she pictured as a medical student, but she said she wouldn’t have it any other way. After medical school, Lawrence-Reid completed a pediatrics residency and then began working in a pediatric…",
@@ -1134,6 +1189,17 @@
 "first_seen": "2026-10-03T22:23:03.287060+00:00"
 },
 {
+"title": "Man's organ donation helps dozens of people - fox8.com",
+"link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxORHRnUFlTX2N6emNnU2lmdkNlZ1Jtc0V2dGFXaWdwMW9zN0Y4dnFmMnZ4X01JTE9UeDNxS3BlakEyNFgxVk53WF94bzR4R3lfanczNTlOclZqTjZRaWR1THNtQ0FXakplSTZOMWpBWnZJRlVKRXllZThkWFBHbVMzNA?oc=5",
+"summary": "Man's organ donation helps dozens of people fox8.com",
+"outlet": "fox8.com",
+"published": "2026-10-01T13:03:49+00:00",
+"id": "3bacb51655ad0997",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-03T19:19:46.657233+00:00"
+},
+{
 "title": "Turning experience into impact: Vanessa Evans’ journey through kidney disease - Fresenius Medical Care",
 "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQbGhXQXFrMzVoN2hGdk1zTTh5bG1Yb25hMV9JQmdzbTktSEFiYXdsQzBNV3lwMmFEaFB4SXdWT0c4S0kyZzJOeFNpZUZROG85NWd4YkkwMjFzMU1KSEQ5cGJOWjJiUFpoUUR3NHlPbVNOOHFRQjRrQW05dHc2MkFSc1YyZ0lSY3VjUnJaYzVZVkNLQ0N0bVZfX2xnT1FLWWFRbldvTEQ0Y1g1MzcwQnd4UUFQd3Q0cmNfMDVIcjBfWEVqQlppTXJscEludjlyTVU?oc=5",
 "summary": "Turning experience into impact: Vanessa Evans’ journey through kidney disease Fresenius Medical Care",
@@ -1141,17 +1207,6 @@
 "published": "2026-10-01T13:02:40+00:00",
 "id": "b3f2391116ae6439",
 "source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Man's organ donation helps dozens of people - fox8.com",
-"link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxORHRnUFlTX2N6emNnU2lmdkNlZ1Jtc0V2dGFXaWdwMW9zN0Y4dnFmMnZ4X01JTE9UeDNxS3BlakEyNFgxVk53WF94bzR4R3lfanczNTlOclZqTjZRaWR1THNtQ0FXakplSTZOMWpBWnZJRlVKRXllZThkWFBHbVMzNA?oc=5",
-"summary": "Man's organ donation helps dozens of people fox8.com",
-"outlet": "fox8.com",
-"published": "2026-10-01T12:53:00+00:00",
-"id": "3bacb51655ad0997",
-"source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
 },
@@ -2309,6 +2364,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
+},
+{
+"title": "Kidney Disease Expert Warns Diabetes May Contribute to Kidney Damage - thehoya.com",
+"link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPLWpJaDNBSjREMkhOUzltTGhQZ1BwcUcyeHBndDRob21pQlhRVW9xUTBOcTg2Yks0M0pWTi04Y0M5YWNrQm8xTElWdnlwdjVZZV9iY0VvYUtQaFNLYTlZNVprZ3ZqVDBHN0NZdWk2bkg4aEsxWmRjZWQtelUyTDVtRFJJRDltSTFoUGdYVDNqVDBfTm5YX29hRi1JbDVQZw?oc=5",
+"summary": "Kidney Disease Expert Warns Diabetes May Contribute to Kidney Damage thehoya.com",
+"outlet": "thehoya.com",
+"published": "2026-10-01T05:20:54+00:00",
+"id": "6d4f246ddf072cba",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-04T18:19:35.816983+00:00"
 },
 {
 "title": "Coaching through kidney failure, David Finn uses football to keep fighting - WLKY",
