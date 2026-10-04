@@ -308,33 +308,15 @@ footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px
   </div>
 </section>
 
-<!-- FILM: "Stop Doing This Alone" (3 min). Source: cif-commercial.html; rendered by _tools/render-commercial.js -->
+<!-- FILM: "Stop Doing This Alone" (3 min). Light player: nothing downloads until Play is pressed. -->
 <section id="film" aria-labelledby="film-h" style="background:#000;padding:72px 24px 80px;border-top:1px solid rgba(200,144,42,.2);">
   <div style="max-width:1100px;margin:0 auto;">
     <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;">The Film &middot; 3 minutes</div>
     <h2 id="film-h" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,72px);line-height:.95;color:#d8cfc4;margin-bottom:24px;">Stop doing this alone.</h2>
-    <div id="filmBox" style="position:relative;aspect-ratio:16/9;background:#02040a;border:1px solid rgba(200,144,42,.35);border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6);">
-      <video id="filmVid" src="cif-commercial.mp4" poster="cif-commercial-poster.jpg" playsinline muted preload="metadata" controls style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000"></video>
-      <button id="filmSnd" type="button" style="position:absolute;left:50%;bottom:16%;transform:translateX(-50%);background:#c8902a;color:#030509;border:0;border-radius:999px;padding:13px 24px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.55);white-space:nowrap;">&#9654; Play with sound</button>
-    </div>
-    <p style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;color:rgba(216,207,196,.45);">Captions are built in. <a href="cif-commercial.html" style="color:#c8902a;">Open the full-screen version &rarr;</a></p>
+    <video controls playsinline preload="none" poster="cif-commercial-poster.jpg" src="cif-commercial-web.mp4" style="width:100%;aspect-ratio:16/9;background:#02040a;border:1px solid rgba(200,144,42,.35);border-radius:10px;"></video>
+    <p style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;color:rgba(216,207,196,.45);"><a href="cif-commercial.mp4" download style="color:#c8902a;">Download the HD film</a> &middot; <a href="cif-commercial.html" style="color:#c8902a;">Open on its own page</a></p>
   </div>
 </section>
-<script>
-(function(){
-  var v=document.getElementById('filmVid'),b=document.getElementById('filmSnd'),withSound=false;
-  if(!v)return;
-  b.addEventListener('click',function(){withSound=true;v.muted=false;v.currentTime=0;v.play();b.hidden=true;});
-  v.addEventListener('volumechange',function(){if(!v.muted){withSound=true;b.hidden=true;}});
-  v.addEventListener('ended',function(){b.hidden=false;b.innerHTML='&#8635; Watch again';withSound=false;});
-  if('IntersectionObserver' in window&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){
-    new IntersectionObserver(function(es){es.forEach(function(e){
-      if(e.isIntersecting&&e.intersectionRatio>=.5){if(v.paused&&!v.ended&&!withSound){v.muted=true;v.play().catch(function(){});}}
-      else if(!v.paused){v.pause();}
-    });},{threshold:[0,.5]}).observe(v);
-  }
-})();
-</script>
 
 <!-- FOOTER -->
 <footer>
