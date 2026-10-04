@@ -1,4 +1,4 @@
-// Renders cif-commercial.html to cif-commercial.mp4 (1920x1080, 30 fps, with the generated score
+// Renders cif-commercial-source.html to cif-commercial.mp4 (1920x1080, 30 fps, with the generated score
 // and, if present, the narration in cif-commercial-voice.mp3).
 //   python3 -m http.server 8765 &      (from the repo root)
 //   node _tools/render-commercial.js   [--fps 30] [--from 0] [--to 180] [--out cif-commercial.mp4]
@@ -12,7 +12,7 @@ const pw = (() => { try { return require('playwright'); } catch (e) { return req
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
 const FPS = +arg('fps', 30), FROM = +arg('from', 0), TO = +arg('to', 180);
 const OUT = arg('out', 'cif-commercial.mp4');
-const URL = arg('url', 'http://localhost:8765/cif-commercial.html?render=1');
+const URL = arg('url', 'http://localhost:8765/cif-commercial-source.html?render=1');
 const TMP = arg('tmp', fs.mkdtempSync(path.join(require('os').tmpdir(), 'cifc-')));
 
 (async () => {
