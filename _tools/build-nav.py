@@ -26,7 +26,7 @@ GROUPS = [
         ("accountability.html", "Accountability Atlas"),
     ]),
     ("Learn", [
-        ("living-donor-guide.html", "Not a Spare: Donor Guide"),
+        ("living-donor-guide.html", "Free Donor Guide (PDF)"),
         ("research.html", "Research"),
         ("kidney-news.html", "Kidney News"),
         ("transplant-news-feed.html", "Transplant & Kidney Wire"),
