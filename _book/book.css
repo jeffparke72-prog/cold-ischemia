@@ -109,3 +109,4 @@ html.no-cover .cover{display:none!important}
 @media print{.medical{min-height:9in;padding:0 .2in;page-break-before:always;break-before:page}.backcover{display:none}html.only-back .backcover{display:flex}html.only-back{background:#0a1628}.fig{margin:1.2em 0}.fig svg{border:0}.part .orn{width:90px}}
 html.only-back body>*:not(.backcover){display:none!important}
 @media print{.fig svg{max-height:3.6in}}
+.c-ref{margin-top:22px;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#a9b6c6}
