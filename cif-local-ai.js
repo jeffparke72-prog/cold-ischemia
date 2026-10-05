@@ -513,4 +513,88 @@
     return out.join('\n\n');
   };
 
+
+  /* ====================================================================================================
+     MERIDIAN: three living documents from one intake. ctx = collectData() from the page.
+     Returns {journey, collective, pressure}, each markdown with H3 headers. Uses only statistics the site already cites.
+  ==================================================================================================== */
+  var TERR = {
+    grief: 'a grief that has no ceremony', love: 'a love that goes unrewarded', exhaustion: 'an exhaustion that sleep does not reach',
+    pride: 'a pride held privately', anger: 'anger at what you were never warned about', hope: 'a hope that has survived being tested',
+    isolation: 'isolation even among people', meaning: 'a hard-won sense of meaning', fear: 'a fear that has become part of the furniture', gratitude: 'a gratitude that sits beside the rest', resolve: 'resolve'
+  };
+  function q1(x, n) { x = L.clean(x, n || 220); return x ? '“' + x.replace(/[.!?]+$/, '') + '.”' : ''; }
+  L.meridian = function (d) {
+    var name = L.clean(d.name, 60) || 'you'; if (/^anonymous/i.test(name)) name = 'you'; var first = name.split(' ')[0];
+    var hrs = L.num(d.hrs), cost = L.num(String(d.cost || '').replace(/[,$]/g, '')), last = L.num(d.lastday), net = L.num(d.network), years = L.clean(d.years, 20);
+    if (/^\d+(\.\d+)?$/.test(years)) years = years + (parseFloat(years) === 1 ? ' year' : ' years');
+    var terr = (d.terrain || []).map(function (t) { return TERR[t] || t; });
+    var cond = L.clean(d.condition, 60) || 'a chronic illness', rel = L.clean(d.rel, 40) || 'care partner', state = L.clean(d.state, 40) || 'the United States'; if (/^united states$/i.test(state)) state = 'the United States';
+    var today = new Date(), dateStr = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    var in90 = new Date(today.getTime() + 90 * 86400000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    var J = [], C = [], P = [];
+
+    J.push('### Who You Were Before');
+    J.push(d.before ? 'Before any of this, you were a person with a life that had its own gravity. In your words: ' + q1(d.before, 300) + ' That is the portrait, and it is not a footnote. Everything you have done since was done by that person, which is why it has cost so much and why it has been possible at all.' : 'You did not describe who you were before, and that silence may be telling: sometimes the old self is too far away to describe. It existed. It had preferences, a way of laughing, plans that were nobody’s business but yours. This record leaves a place for it.');
+
+    J.push('### The Transformation');
+    J.push((d.moment ? 'There was a moment when it changed. You described it this way: ' + q1(d.moment, 300) + ' ' : 'There was a moment when it changed, even if you cannot date it. ') + 'No one gave you an orientation. You were handed ' + cond + ' and the unspoken expectation that you would learn the job, ' + (years && years !== 'unspecified' ? 'and for ' + years + ' ' : 'and ') + 'you have been learning it as a ' + rel.toLowerCase() + ': the schedules, the vocabulary, the phone trees, the particular silence of a waiting room. The transformation was not a decision. It was an accumulation, and it deserves to be named as the achievement it is.');
+
+    J.push('### What Has Been Lost — And What Was Found');
+    J.push((d.taken ? 'What has been taken, in your words: ' + q1(d.taken, 260) + ' That belongs in the record without being softened. ' : 'You did not name what has been taken, but the cost exists whether or not it has a name. ') + (d.found ? 'And what you found: ' + q1(d.found, 260) + ' Loss and discovery are not a trade; neither cancels the other. You are carrying both.' : 'What you have found may not have words yet. That is not a failure. Some discoveries only become speakable later.') + (terr.length ? ' The emotional terrain you marked is ' + L.list(terr.slice(0, 4)) + '. That is not a mood. It is a landscape, and it is yours.' : ''));
+
+    J.push('### The Hidden Life: What No Chart Has Ever Counted');
+    var hid = [];
+    if (hrs) hid.push('You give about ' + hrs + ' hours of care a week, roughly ' + Math.round(hrs * 52).toLocaleString('en-US') + ' hours a year, the equivalent of about ' + Math.round(hrs * 52 / 40) + ' full-time work weeks');
+    if (cost) hid.push('You spend about $' + Math.round(cost).toLocaleString('en-US') + ' a year of your own money');
+    if (last != null) hid.push(last === 0 ? 'You have recently had a full day to yourself' : 'It has been ' + last + ' week' + (last === 1 ? '' : 's') + ' since you had a full day to yourself');
+    if (net != null) hid.push(net === 0 ? 'No one else shares the load' : 'Your support network is ' + net + ' ' + (net === 1 ? 'person' : 'people'));
+    J.push((hid.length ? hid.join('. ') + '. ' : '') + (d.collapse ? 'What you described as the invisible collapse: ' + q1(d.collapse, 300) + ' ' : '') + (d.employ && !/^none|no impact|^$/i.test(d.employ) ? 'Your work has been affected (' + L.clean(d.employ, 60).toLowerCase() + '), and ' : '') + (d.health && !/^none|no impact|^$/i.test(d.health) ? 'your own health has been affected (' + L.clean(d.health, 60).toLowerCase() + '). ' : '') + 'None of this appears on any chart in the building where your person is treated. The chart records the patient. It has no column for the person who makes the treatment possible, and that absence is not neutral. It is how a system hides what it costs.');
+
+    J.push('### Who You Are Protecting');
+    J.push((d.who ? 'What you celebrate about the person you care for: ' + q1(d.who, 300) + ' ' : '') + (d.best ? 'Their best day looks like this: ' + q1(d.best, 260) + ' ' : '') + (d.love ? 'And here is what love looks like in your house: ' + q1(d.love, 260) + ' ' : '') + (d.who || d.best || d.love ? 'These are not the details of a case. They are the details of a person, and you are the one keeping the record of them. That is part of the work, and it is the part that lasts.' : 'You did not describe the person you are protecting. When you are ready, write down three things about them that no chart will ever hold: how they laugh, what they refuse to give up, what they say when no one is listening. That is what you are guarding.'));
+
+    J.push('### Where Joy Lives In This');
+    J.push(d.joy ? 'You described a moment of real joy: ' + q1(d.joy, 300) + ' It is not a contradiction of everything above. It is the reason everything above is worth carrying. Joy in the middle of this is not denial. It is evidence that the person you love is still here, and that you are still able to see it.' : 'You did not describe a moment of joy, which does not mean there have been none. Joy in this kind of life is small and quick: a joke in a waiting room, a good meal, the end of a bad day. Start collecting them. They are the most reliable proof that the life is still a life.');
+
+    J.push('### Your Legacy Words');
+    J.push('Whatever else happens, this is what you chose to leave. It is not a conclusion. It is a record of who you were at this moment and what you meant by it. You will not be remembered for the paperwork. You will be remembered for what you chose to stand for while carrying it.');
+    J.push(d.legacy ? '**' + (function () { var t = L.clean(d.legacy, 300); return /[.!?]$/.test(t) ? t : t + '.'; })() + '**' : '**You did not write a legacy sentence yet. Write one when you are ready: it takes only one.**');
+
+    /* ---- collective ---- */
+    C.push('### You Are Not An Anomaly — You Are The Pattern');
+    C.push('At your lowest, the experience of caring for someone with ' + cond + ' feels singular: no one else could understand this particular texture of tired. But the number of Americans who provide unpaid care for a chronically ill family member is about 53 million (AARP and the National Alliance for Caregiving, 2020). You are not the exception. You are one of the most common people in the country, and one of the least counted.');
+    C.push(terr.length ? 'You marked ' + L.list(terr.slice(0, 3)) + '. These are not private quirks. They are among the emotional patterns most often described by people in your position, and the feeling of being alone with them is part of the pattern itself.' : 'Whatever you are feeling is more shared than it seems. The sense of being the only one is itself one of the most common features of caregiving.');
+    C.push('### What The Data Shows About People Who Carry What You Carry');
+    C.push('Research is consistent about the cost. A widely cited meta-analysis found that caregivers experience higher stress and depression and lower well-being than people who are not caregivers (Pinquart and Sörensen, 2003). AARP estimates the economic value of unpaid family care at about $600 billion a year (AARP Public Policy Institute, 2023), more than the entire annual spending of Medicaid. ' + (hrs ? 'Your ' + hrs + ' hours a week is part of that number. ' : '') + (cost ? 'Your $' + Math.round(cost).toLocaleString('en-US') + ' a year is part of what the system does not count. ' : '') + 'These are not abstractions. They are your life, summed across millions of kitchens.');
+    C.push('### The Invisible Workforce: What 53 Million Care Partners Prove Together');
+    C.push((d.invisible ? 'You named what the system fails to see: ' + q1(d.invisible, 260) + ' ' : '') + 'Taken together, millions of people are doing skilled work, scheduling, medication management, advocacy, and nursing tasks, without training, pay, protection or a seat at the tables where the rules are made. A system that depends on this labor and does not count it has built a hidden subsidy out of people’s lives. Seeing that clearly is the first step toward refusing to treat it as natural.');
+    C.push('### What Your Experience, Added To All The Others, Now Makes Possible');
+    C.push('One account can be dismissed as an anecdote. A pattern cannot. When the same structural failure is described in the same terms by many people, in writing, with dates, it becomes evidence. The Cold Ischemia Foundation was built to collect and use that evidence, and it does so without drug-company or hospital money. Your record is private on this page. If you choose to share it, it becomes one more documented voice. If you do not, it is still a true account of one life, and it belongs to you.');
+
+    /* ---- pressure ---- */
+    var tgt = { Congress: 'the United States Congress, including the Senate Committee on Health, Education, Labor and Pensions and the House Committee on Energy and Commerce', CMS: 'the Centers for Medicare and Medicaid Services, Office of Policy', Hospital: 'the hospital system’s Chief Patient Experience Officer and Chief Quality Officer', Insurance: 'the insurer’s Medical Director and Chief Medical Officer' }[d.pressure] || 'the decision-makers with authority over this policy';
+    P.push('### Statement of Standing and Purpose');
+    P.push('I am ' + (name === 'you' ? 'a ' + rel.toLowerCase() : name + ', a ' + rel.toLowerCase()) + ' in ' + state + ', and ' + (years && years !== 'unspecified' ? 'for ' + years + ' ' : '') + 'I have provided unpaid care to a person with ' + cond + '. I am writing to ' + tgt + ' because the arrangement I describe below is within your authority to change. This statement is dated ' + dateStr + '.');
+    P.push('### The Measurable Impact: What This Life Actually Costs');
+    var imp = [];
+    if (hrs) imp.push('I provide about ' + hrs + ' hours of care each week, roughly ' + Math.round(hrs * 52).toLocaleString('en-US') + ' hours a year');
+    if (cost) imp.push('I spend about $' + Math.round(cost).toLocaleString('en-US') + ' a year of my own money');
+    if (last != null && last > 0) imp.push('It has been ' + last + ' weeks since I had a full day free of care');
+    if (net != null) imp.push('My support network is ' + net + ' ' + (net === 1 ? 'person' : 'people'));
+    if (d.employ && !/^none|no impact|^$/i.test(d.employ)) imp.push('My employment has been affected: ' + L.clean(d.employ, 60).toLowerCase());
+    if (d.health && !/^none|no impact|^$/i.test(d.health)) imp.push('My own health has been affected: ' + L.clean(d.health, 60).toLowerCase());
+    P.push(imp.length ? imp.join('. ') + '. These figures are mine and are provided as testimony; they are consistent with national estimates that about 53 million Americans provide unpaid care (AARP and the National Alliance for Caregiving, 2020) with an economic value of about $600 billion a year (AARP Public Policy Institute, 2023).' : 'I have provided care without compensation, protection or training. These costs are real, and I am prepared to document them. They are consistent with national estimates that about 53 million Americans provide unpaid care (AARP and the National Alliance for Caregiving, 2020).');
+    P.push('### The Structural Failure: What This Institution Has Failed To Do');
+    P.push((d.invisible ? 'The failure I experienced is this: ' + q1(d.invisible, 400) + ' ' : '') + 'This is not a personal grievance. It is a pattern in how the system is designed: it depends on my labor, assigns me responsibilities, and provides no corresponding training, support, protection or voice. A responsible institution would have anticipated this. This one has not.');
+    P.push('### The Demand: One Specific, Named, Actionable Change');
+    P.push(d.change ? 'I am requesting one change: ' + q1(d.change, 400) + ' I ask that you respond in writing, naming who is responsible for the decision and the date by which it will be made.' : 'I am requesting one specific, written commitment to address the failure described above, with a named person responsible and a date.');
+    if (d.direct) P.push('In my own words to the decision-makers: ' + q1(d.direct, 400));
+    P.push('### The Consequence of Inaction: What The Record Will Show');
+    P.push('If this is not addressed, the record will show that the failure was documented, communicated in writing on ' + dateStr + ', and left unresolved. It will show that the person responsible was informed, and what was done or not done in response. I am keeping a copy of this statement and the date it was sent.');
+    P.push('A copy of this statement is retained by me and, with my consent, may be shared with the Cold Ischemia Foundation, which compiles care partner testimony and public-record evidence of system failures. If the change requested above has not been addressed by ' + in90 + ', I intend to bring this statement, together with any response I receive, to my elected representatives and the relevant oversight bodies. This document is not a request for dialogue. It is a record.');
+
+    return { journey: J.join('\n\n'), collective: C.join('\n\n'), pressure: P.join('\n\n') };
+  };
+
 })();
