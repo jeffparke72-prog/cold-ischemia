@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Independent: film source</title>
+<style>
+@font-face{font-family:'Anton';font-weight:400;src:url(../fonts/anton-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Bebas Neue';font-weight:400;src:url(../fonts/bebasneue-400-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:400 500;src:url(../fonts/ibmplexmono-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400;src:url(../fonts/playfairdisplay-400-italic.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:900;src:url(../fonts/playfairdisplay-900-normal.woff2) format('woff2')}
+html,body{margin:0;height:100%;background:#000;overflow:hidden}canvas{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0}
+</style></head><body><canvas id="c" width="1920" height="1080"></canvas>
+<script>
+(function(){
+var cv=document.getElementById('c'),g=cv.getContext('2d'),Q=new URLSearchParams(location.search);
+var PACE=2.62,GAP=.45,OPEN=5.0,ENDCARD=7;
+var SEG,DUR,SENT=[];
+function cl(x,a,b){return x<a?a:x>b?b:x}
+function ss(a,b,x){x=cl((x-a)/(b-a),0,1);return x*x*(3-2*x)}
+function eo(x){x=cl(x,0,1);return 1-Math.pow(1-x,4)}
+function hash(n){n=Math.sin(n*127.1+311.7)*43758.5453;return n-Math.floor(n)}
+function lerp(a,b,x){return a+(b-a)*x}
+var ORGS=['American Kidney Fund','National Kidney Foundation','American Association of Kidney Patients','Dialysis Patient Citizens','Caregiver Action Network','National Alliance on Mental Illness','American Diabetes Association','American Heart Association','Alliance for Patient Access','Patients Rising'];
+var LOGO={};
+function build(j){
+  var t=0;SEG=j;
+  SEG.forEach(function(s,i){
+    s.w=s.text.split(/\s+/).length;s.t0=t+(i===0?.8:0);
+    var d=s.id==='open'?OPEN-.8:s.w/PACE;
+    s.t1=s.t0+d;s.sent=s.text.match(/[^.?!]+[.?!]+/g).map(function(x){return x.trim()});
+    var tot=s.w,acc=0;s.sentT=s.sent.map(function(x){var n=x.split(/\s+/).length,a=s.t0+d*acc/tot;acc+=n;return {text:x,t0:a,t1:s.t0+d*acc/tot}});
+    t=s.t1+(s.id==='open'?0:GAP);
+  });
+  DUR=Math.ceil(t+ENDCARD);
+}
+function segAt(t){for(var i=SEG.length-1;i>=0;i--)if(t>=SEG[i].t0-.3)return SEG[i];return SEG[0]}
+function S(id){for(var i=0;i<SEG.length;i++)if(SEG[i].id===id)return SEG[i]}
+
+/* --- primitives --- */
+function T(txt,x,y,font,col,al,a,ls){g.save();g.globalAlpha=cl(a==null?1:a,0,1);g.font=font;g.fillStyle=col||'#f3ede4';g.textAlign=al||'left';g.textBaseline='alphabetic';if(ls&&'letterSpacing' in g)g.letterSpacing=ls+'px';g.fillText(txt,x,y);g.restore()}
+function wrap(txt,font,maxw){g.font=font;var w=txt.split(' '),lines=[],cur='';w.forEach(function(x){var tt=cur?cur+' '+x:x;if(g.measureText(tt).width>maxw&&cur){lines.push(cur);cur=x}else cur=tt});lines.push(cur);return lines}
+function R(x,y,w,h,col,a){g.save();g.globalAlpha=cl(a==null?1:a,0,1);g.fillStyle=col;g.fillRect(x,y,w,h);g.restore()}
+function glow(x,y,r,col,a){var gr=g.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,col);gr.addColorStop(1,'rgba(0,0,0,0)');g.save();g.globalAlpha=a;g.fillStyle=gr;g.fillRect(x-r,y-r,2*r,2*r);g.restore()}
+var GOLD='#e8b84a',RED='#ff4d5e',ICE='#8fd8ff',INK='#f3ede4',DIM='rgba(243,237,228,.55)';
+
+var noise=document.createElement('canvas');noise.width=noise.height=256;
+(function(){var n=noise.getContext('2d'),d=n.createImageData(256,256);for(var i=0;i<d.data.length;i+=4){var v=Math.floor(hash(i)*255);d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=16}n.putImageData(d,0,0)})();
+
+/* --- background --- */
+var tone={open:[8,10,18],intro:[10,16,30],nejm:[28,12,18],kff:[26,14,16],akf:[12,18,34],cal:[30,12,14],wall:[10,16,30],nami:[24,12,20],legal:[8,10,18],us:[14,20,30],close:[8,10,18]};
+function bg(t,seg){
+  var c=tone[seg.id]||[10,14,24];
+  var gr=g.createRadialGradient(960+Math.sin(t*.11)*160,430,50,960,540,1250);
+  gr.addColorStop(0,'rgb('+(c[0]+16)+','+(c[1]+22)+','+(c[2]+36)+')');gr.addColorStop(1,'#02040a');
+  g.fillStyle=gr;g.fillRect(0,0,1920,1080);
+  /* light shafts */
+  g.save();g.globalCompositeOperation='screen';
+  for(var i=0;i<3;i++){var x=lerp(300,1700,hash(i+4))+Math.sin(t*.07+i*2)*140;var gg=g.createLinearGradient(x,0,x+360,1080);gg.addColorStop(0,'rgba(200,144,42,'+(.05+.02*i)+')');gg.addColorStop(1,'rgba(200,144,42,0)');g.fillStyle=gg;g.beginPath();g.moveTo(x,0);g.lineTo(x+120,0);g.lineTo(x+520,1080);g.lineTo(x+160,1080);g.fill()}
+  g.restore();
+  /* dust */
+  for(i=0;i<70;i++){var px=(hash(i)*1920+t*(6+hash(i+9)*14))%1920,py=(hash(i+30)*1080-t*(8+hash(i+7)*10)+2160)%1080,r=1+hash(i+50)*2.4,a=.05+.18*hash(i+70)*(.6+.4*Math.sin(t*.8+i));
+    g.fillStyle='rgba(255,230,180,'+a+')';g.beginPath();g.arc(px,py,r,0,7);g.fill()}
+}
+/* floating organisation names (scattered through the film) */
+function orgLayer(t,amt){
+  if(amt<=0)return;
+  for(var i=0;i<ORGS.length;i++){
+    var x=((hash(i+1)*2400+t*(10+8*hash(i+3)))%2400)-240,y=170+hash(i+11)*700+Math.sin(t*.25+i)*26;
+    var lg=LOGO[i];
+    if(lg&&lg.complete&&lg.naturalWidth){g.save();g.globalAlpha=.16*amt;var h=70,w=lg.naturalWidth/lg.naturalHeight*h;g.drawImage(lg,x,y-h/2,w,h);g.restore()}
+    else T(ORGS[i].toUpperCase(),x,y,'500 24px "IBM Plex Mono"','#cfe3ff',null,.13*amt,3);
+  }
+}
+/* --- caption --- */
+function band(t){var seg=segAt(t);if(seg.id==='open'||seg.id==='close'||seg.id==='legal'||seg.id==='us')return;var a=ss(seg.t0,seg.t0+.6,t);var gr=g.createLinearGradient(0,700,0,960);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(.35,'rgba(0,0,0,.62)');gr.addColorStop(1,'rgba(0,0,0,.8)');g.save();g.globalAlpha=a;g.fillStyle=gr;g.fillRect(0,700,1920,260);g.restore()}
+function caption(t){
+  var seg=segAt(t);if(seg.id==='open')return;
+  var cur=null;for(var i=0;i<seg.sentT.length;i++){var s=seg.sentT[i];if(t>=s.t0-.05&&t<=s.t1+.5)cur=s}
+  if(!cur)return;
+  var a=ss(cur.t0-.05,cur.t0+.35,t)*(1-ss(cur.t1+.15,cur.t1+.5,t));
+  var f='italic 400 54px "Playfair Display"',lines=wrap(cur.text,f,1380),y=(seg.id==='close'||seg.id==='legal'||seg.id==='us'?830:808)-(lines.length-1)*34;
+  var words=cur.text.split(' '),n=words.length,seen=0;
+  var prog=cl((t-cur.t0)/Math.max(.1,cur.t1-cur.t0),0,1);
+  g.save();g.shadowColor='rgba(0,0,0,.85)';g.shadowBlur=24;g.font=f;
+  lines.forEach(function(ln,li){
+    var ws=ln.split(' '),total=ln,wd=g.measureText(total).width,x=960-wd/2;
+    ws.forEach(function(w){
+      var idx=seen++,on=ss(idx/n-.02,idx/n+.04,prog);
+      var ww=g.measureText(w+' ').width;
+      g.globalAlpha=cl(a*(.28+.72*on),0,1);g.fillStyle=on>.5?INK:'#a9b6c6';g.textAlign='left';g.fillText(w,x,y+li*68);x+=ww});
+  });
+  g.restore();
+}
+function lower(t,seg){
+  if(!seg.src)return;
+  var a=ss(seg.t0,seg.t0+.6,t)*(1-ss(seg.t1,seg.t1+.6,t));
+  T('SOURCE',120,1012,'500 17px "IBM Plex Mono"',GOLD,null,a,5);
+  T(seg.src.toUpperCase(),230,1012,'500 17px "IBM Plex Mono"','#c5cfdc',null,a,1.4);
+}
+/* --- scenes --- */
+function counter(v,x,y,fs,col,al,a,pre,suf){T((pre||'')+Math.round(v).toLocaleString('en-US')+(suf||''),x,y,'400 '+fs+'px "Anton"',col||GOLD,al||'center',a)}
+var sc={};
+sc.open=function(t,s,p){
+  var a=ss(.2,1,t)*(1-ss(4.3,4.9,t)),gl=(hash(Math.floor(t*30))>.93&&t>2)?(hash(Math.floor(t*60))-.5)*30:0;
+  T('INDEPENDENT',960+gl,640,'400 250px "Anton"',INK,'center',a,18);
+  if(t>2.2){var w=ss(2.2,3.0,t)*1250;g.save();g.globalAlpha=a;g.strokeStyle=RED;g.lineWidth=14;g.beginPath();g.moveTo(960-w/2,590);g.lineTo(960+w/2,590);g.stroke();g.restore()}
+  if(t>3.2)T('IT IS A WORD. NOT A GUARANTEE.',960,730,'500 28px "IBM Plex Mono"',RED,'center',ss(3.2,3.9,t)*a,10);
+};
+sc.intro=function(t,s,p){
+  T('WHO REALLY PAYS',960,520,'400 170px "Anton"',INK,'center',eo(p*5),8);
+  T('FOR THE VOICE?',960,690,'400 170px "Anton"',GOLD,'center',eo(p*5-.7),8);
+  T('COLD ISCHEMIA FOUNDATION  ·  FOUNDER',960,230,'500 22px "IBM Plex Mono"',ICE,'center',ss(.2,.4,p),9);
+};
+sc.nejm=function(t,s,p){
+  var cols=13,rows=8,gx=860,gy=265,dx=50,dy=46,lit=Math.round(86*eo((p-.12)/.55));
+  for(var i=0;i<104;i++){var c=i%cols,r=Math.floor(i/cols),x=gx+c*dx,y=gy+r*dy,on=i<lit,one=i===103;
+    var col=one&&p>.7?'#44e0b0':(on?RED:'rgba(143,216,255,.35)'),rad=one&&p>.7?15+3*Math.sin(t*5):10;
+    g.fillStyle=col;if(on||one&&p>.7){glow(x,y,26,col,.35)}g.beginPath();g.arc(x,y,rad,0,7);g.fill()}
+  T('104',240,420,'400 190px "Anton"',INK,'left',1);T('LARGEST PATIENT GROUPS',250,468,'500 20px "IBM Plex Mono"',DIM,'left',1,4);
+  var pct=Math.round(83*eo((p-.12)/.55));T(pct+'%',240,650,'400 230px "Anton"',RED,'left',ss(.1,.25,p));
+  T('TOOK INDUSTRY MONEY',250,700,'500 20px "IBM Plex Mono"',DIM,'left',ss(.15,.3,p),4);
+  T('36%  HAD AN INDUSTRY EXECUTIVE ON THE BOARD',250,760,'500 20px "IBM Plex Mono"',GOLD,'left',ss(.45,.6,p),3);
+  T('ONE OF 104 SAID IT TAKES NONE',gx+330,gy+rows*dy+36,'500 20px "IBM Plex Mono"','#44e0b0','center',ss(.72,.85,p),5);
+};
+sc.kff=function(t,s,p){
+  counter(116*eo(p*2.2),960,520,330,GOLD,'center',1,'$','M');
+  T('FROM DRUGMAKERS  ·  IN ONE YEAR',960,585,'500 22px "IBM Plex Mono"',DIM,'center',ss(.2,.4,p),6);
+  var cols=33,rows=18,n=Math.round(594*eo((p-.1)/.7)),x0=620,y0=640;
+  for(var i=0;i<594;i++){var c=i%cols,r=Math.floor(i/cols);g.fillStyle=i<n?'rgba(232,184,74,.9)':'rgba(143,216,255,.14)';g.fillRect(x0+c*20,y0+r*0+0,0,0)}
+  /* tiny squares row-wise below title */
+  for(i=0;i<594;i++){c=i%66;r=Math.floor(i/66);g.fillStyle=i<n?'rgba(232,184,74,.9)':'rgba(143,216,255,.14)';g.fillRect(300+c*20,630+r*20,13,13)}
+  T(Math.round(594*eo((p-.1)/.7))+' PATIENT GROUPS',960,545+0,'1px sans-serif','rgba(0,0,0,0)','center',0);
+  T('594 PATIENT GROUPS',960,860,'400 38px "Anton"',INK,'center',ss(.3,.5,p),5);
+};
+sc.akf=function(t,s,p){
+  var A=ss(.04,.12,p);
+  T('DAVITA',330,330,'400 90px "Anton"',INK,'center',A,4);T('FRESENIUS',330,440,'400 90px "Anton"',INK,'center',A,4);
+  T('THE TWO LARGEST DIALYSIS COMPANIES',330,490,'500 17px "IBM Plex Mono"',DIM,'center',A,3);
+  var bx=1420,by=330,bw=440,bh=210;g.save();g.globalAlpha=A;g.strokeStyle=GOLD;g.lineWidth=3;g.strokeRect(bx-bw/2,by-70,bw,bh);g.restore();
+  T('AMERICAN',bx,by,'400 70px "Anton"',GOLD,'center',A,4);T('KIDNEY FUND',bx,by+80,'400 70px "Anton"',GOLD,'center',A,4);
+  /* money particles */
+  if(p>.1)for(var i=0;i<46;i++){var u=((t*.55+hash(i)*3)%1),x=lerp(500,1190,u),y=lerp(340+hash(i+3)*70,420,u)+Math.sin(u*9+i)*12,al=Math.sin(u*Math.PI)*.9*ss(.1,.2,p);
+    g.fillStyle='rgba(232,184,74,'+al+')';g.beginPath();g.arc(x,y,3+hash(i+8)*3,0,7);g.fill()}
+  var v=247*eo((p-.12)/.15);counter(v,960,640,200,RED,'center',ss(.1,.2,p),'$','M');
+  T('IN 2018  ·  ≈ 80% OF ITS DONOR BASE (INDEPENDENT AUDIT)',960,690,'500 20px "IBM Plex Mono"',DIM,'center',ss(.18,.3,p),4);
+  /* timeline */
+  var ev=[['2016','FORMER EMPLOYEE SUES: AID STEERED TO DONORS\' PATIENTS',.38],['DISMISSED','JUSTICE DEPT. DECLINED TO JOIN',.62],['2023','DAVITA DISCLOSES D.C. ATTORNEY GENERAL DEMAND',.84]];
+  g.save();g.globalAlpha=ss(.3,.4,p);g.fillStyle='rgba(243,237,228,.25)';g.fillRect(330,770,1260,3);g.restore();
+  ev.forEach(function(e,i){var x=450+i*510,a=ss(e[2]-.02,e[2]+.06,p);g.fillStyle=i===1?'#9aa8bb':RED;g.globalAlpha=a;g.beginPath();g.arc(x,772,11,0,7);g.fill();g.globalAlpha=1;
+    T(e[0],x,745,'400 34px "Anton"',INK,'center',a,3);var ls=wrap(e[1],'500 17px "IBM Plex Mono"',380);ls.forEach(function(l,k){T(l,x,810+k*24,'500 17px "IBM Plex Mono"',DIM,'center',a,1)})});
+};
+sc.cal=function(t,s,p){
+  var cards=[
+   {a:.02,b:'2004',h:'DAVITA PATIENT CITIZENS',s:'BECAME "DIALYSIS PATIENT CITIZENS"',n:'FOUNDED WITH A DAVITA GRANT'},
+   {a:.28,b:'$233M',h:'CALIFORNIA CAMPAIGNS',s:'2017 – 2020',n:'DIALYSIS INDUSTRY SPENDING'},
+   {a:.56,b:'$350M',h:'DAVITA · 2014',s:'DOJ KICKBACK ALLEGATIONS SETTLED',n:'THIRD SUCH CASE IN A DECADE'}];
+  cards.forEach(function(c,i){var x=380+i*580,al=ss(c.a,c.a+.08,p),y=540-40*(1-al);
+    g.save();g.globalAlpha=al*.9;g.strokeStyle=i===0?ICE:RED;g.lineWidth=2;g.strokeRect(x-250,y-210,500,420);g.restore();
+    var big=c.b;if(i===1)big='$'+Math.round(233*eo((p-c.a)/.18))+'M';if(i===2)big='$'+Math.round(350*eo((p-c.a)/.18))+'M';
+    T(big,x,y-40,'400 130px "Anton"',i===0?ICE:RED,'center',al,2);
+    T(c.h,x,y+25,'400 38px "Anton"',INK,'center',al,3);T(c.s,x,y+75,'500 17px "IBM Plex Mono"',DIM,'center',al,2);T(c.n,x,y+115,'500 17px "IBM Plex Mono"',GOLD,'center',al,2)});
+  var cap=ss(.3,.4,p);T('AMERICAN KIDNEY FUND AND DIALYSIS PATIENT CITIZENS SUED TO BLOCK CALIFORNIA\'S AB 290',960,860,'500 20px "IBM Plex Mono"',GOLD,'center',ss(.34,.44,p)*(1-ss(.78,.82,p)),3);
+};
+sc.wall=function(t,s,p){
+  var cards=[['NATIONAL KIDNEY FOUNDATION','PLATINUM: Boehringer Ingelheim · Novo Nordisk · Vertex',.04],['AMERICAN ASSOCIATION OF KIDNEY PATIENTS','Amgen · AstraZeneca · Baxter · Bayer · DaVita · Fresenius',.36],['CAREGIVER ACTION NETWORK','Pfizer · Astellas · Eisai · Teva',.7]];
+  cards.forEach(function(c,i){var al=ss(c[2],c[2]+.07,p),y=370+i*190,x=240+(1-al)*80;
+    g.save();g.globalAlpha=al*.14;g.fillStyle='#8fd8ff';g.fillRect(200,y-70,1520,150);g.restore();
+    R(200,y-70,6,150,GOLD,al);T(c[0],x+30,y-10,'400 58px "Anton"',INK,'left',al,4);T(c[1].toUpperCase(),x+30,y+40,'500 22px "IBM Plex Mono"',GOLD,'left',al,2)});
+};
+sc.nami=function(t,s,p){
+  /* donut: 75% */
+  var cx=500,cy=500,r=170,a1=eo((p-.04)/.2);g.lineWidth=46;g.strokeStyle='rgba(143,216,255,.2)';g.beginPath();g.arc(cx,cy,r,0,7);g.stroke();
+  g.strokeStyle=RED;g.beginPath();g.arc(cx,cy,r,-Math.PI/2,-Math.PI/2+Math.PI*2*.75*a1);g.stroke();
+  T('~75%',cx,cy+30,'400 100px "Anton"',INK,'center',ss(.05,.12,p));T('NATIONAL ALLIANCE ON MENTAL ILLNESS',cx,cy+255,'500 17px "IBM Plex Mono"',DIM,'center',ss(.05,.12,p),2);T('2006–2008',cx,cy+285,'500 17px "IBM Plex Mono"',DIM,'center',ss(.05,.12,p),4);
+  T('$'+Math.round(23*eo((p-.04)/.2))+'M',cx,cy+355,'400 70px "Anton"',GOLD,'center',ss(.05,.12,p));
+  var al=ss(.34,.42,p);T('$1.8M+',1230,430,'400 150px "Anton"',RED,'center',al);T('FROM PHRMA, THE DRUG LOBBY',1230,480,'500 20px "IBM Plex Mono"',DIM,'center',al,4);T('ALLIANCE FOR PATIENT ACCESS',1230,540,'400 40px "Anton"',INK,'center',al,3);
+  T('ITS DIRECTOR RAN A WASHINGTON LOBBYING FIRM',1230,580,'500 18px "IBM Plex Mono"',GOLD,'center',al,2);
+  var small=[['PATIENTS RISING',.62,GOLD],['AMERICAN DIABETES ASSOCIATION',.72,GOLD],['AMERICAN HEART ASSOCIATION: DISCLOSES  ≈5%',.82,'#44e0b0']];
+  small.forEach(function(x,i){T(x[0],1230,700+i*54,'500 24px "IBM Plex Mono"',x[2],'center',ss(x[1],x[1]+.06,p),3)});
+};
+sc.legal=function(t,s,p){
+  var w=[['LEGAL.',.08],['COMMON.',.24],['DISCLOSED.',.40]];
+  w.forEach(function(x,i){T(x[0],960,350+i*150,'400 150px "Anton"',i===2?GOLD:INK,'center',ss(x[1],x[1]+.07,p),6)});
+  T('BUT WHEN DID THEY LAST NAME A FUNDER\'S PRICES?',960,830,'500 24px "IBM Plex Mono"',RED,'center',ss(.66,.76,p),5);
+};
+sc.us=function(t,s,p){
+  glow(960,500,700,'rgba(232,184,74,.5)',ss(.05,.3,p)*.5);
+  T('$0',960,640,'400 520px "Anton"',GOLD,'center',ss(.03,.14,p));
+  var n=['DONATIONS','GRANTS','SPONSORS'];n.forEach(function(x,i){var a=ss(.22+i*.12,.3+i*.12,p);T(x,420+i*540,820,'400 52px "Anton"',INK,'center',a,5);g.save();g.globalAlpha=a;g.strokeStyle=RED;g.lineWidth=6;var wd=g.measureText?260:0;g.beginPath();g.moveTo(420+i*540-wd/2,806);g.lineTo(420+i*540+wd/2,806);g.stroke();g.restore()});
+};
+sc.close=function(t,s,p){
+  T('WHO PAYS',960,480,'400 190px "Anton"',INK,'center',ss(.35,.5,p),8);
+  T('FOR THE VOICE?',960,670,'400 190px "Anton"',GOLD,'center',ss(.5,.66,p),8);
+};
+function endcard(t){
+  var a=ss(DUR-ENDCARD+.3,DUR-ENDCARD+1.5,t);if(a<=0)return;
+  g.save();g.globalAlpha=a;g.fillStyle='rgba(2,4,10,.96)';g.fillRect(0,0,1920,1080);g.restore();
+  T('INDEPENDENT IS WHAT YOU CAN PROVE.',960,330,'400 84px "Anton"',GOLD,'center',a,5);
+  T('COLD ISCHEMIA FOUNDATION',960,420,'500 24px "IBM Plex Mono"',INK,'center',a,10);
+  var L=['Every figure is drawn from the public sources shown on screen.','Accepting industry funding is legal, and the organizations named do other work.','Statements about lawsuits and investigations describe allegations and their documented outcomes only.','Sources: NEJM 2017 (McCoy et al.) · KFF Health News 2018, 2020 · The American Prospect 2019 · Bloomberg 2019','STAT 2023 · Healio 2020 · U.S. Dept. of Justice 2014 · U.S. Senate Finance Committee 2009 · Associated Press','American Heart Association FY2024-25 disclosure · each organization\'s own published partner pages'];
+  L.forEach(function(l,i){T(l,960,540+i*44,'500 19px "IBM Plex Mono"',i<3?INK:DIM,'center',a*ss(.5+i*.15,1.2+i*.15,t-(DUR-ENDCARD)),1)});
+}
+/* --- render --- */
+function render(t){
+  var seg=segAt(t),p=cl((t-seg.t0)/(seg.t1-seg.t0),0,1);
+  g.clearRect(0,0,1920,1080);bg(t,seg);
+  var amt=(seg.id==='open'||seg.id==='close'||seg.id==='legal')?.0:1;if(seg.id==='us')amt=0;
+  orgLayer(t,.6*amt*ss(S('nejm').t0-1,S('nejm').t0+1,t));
+  var fin=ss(seg.t0-.3,seg.t0+.5,t);g.save();g.globalAlpha=fin;
+  var zoom=(.78+.02*p);if(seg.id==='open'||seg.id==='close'||seg.id==='legal'||seg.id==='us'){zoom=1+.025*p;g.translate(960,540);g.scale(zoom,zoom);g.translate(-960,-540)}else{g.translate(960,150);g.scale(zoom,zoom);g.translate(-960,-170)}
+  if(sc[seg.id])sc[seg.id](t,seg,p);g.restore();
+  band(t);caption(t);lower(t,seg);
+  /* grain, vignette, letterbox, fades */
+  g.save();g.globalAlpha=.9;var ox=Math.floor(hash(Math.floor(t*24))*256),oy=Math.floor(hash(Math.floor(t*24)+9)*256);
+  for(var x=-ox;x<1920;x+=256)for(var y=-oy;y<1080;y+=256)g.drawImage(noise,x,y);g.restore();
+  var v=g.createRadialGradient(960,540,420,960,540,1180);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.72)');g.fillStyle=v;g.fillRect(0,0,1920,1080);
+  g.fillStyle='#000';g.fillRect(0,0,1920,120);g.fillRect(0,960,1920,120);
+  endcard(t);
+  var f=1-ss(0,1.4,t)*1+0;if(t<1.4){g.fillStyle='rgba(0,0,0,'+(1-ss(0,1.4,t))+')';g.fillRect(0,0,1920,1080)}
+  if(t>DUR-1.2){g.fillStyle='rgba(0,0,0,'+ss(DUR-1.2,DUR,t)+')';g.fillRect(0,0,1920,1080)}
+}
+/* --- score --- */
+function score(ctx,out){
+  var master=ctx.createGain();master.gain.value=.9;var comp=ctx.createDynamicsCompressor();comp.threshold.value=-18;comp.ratio.value=3.5;master.connect(comp);comp.connect(out);
+  var ir=ctx.createBuffer(2,ctx.sampleRate*4,ctx.sampleRate),rs=777;for(var ch=0;ch<2;ch++){var d=ir.getChannelData(ch);for(var i=0;i<d.length;i++){rs=(rs*16807)%2147483647;d[i]=(rs/2147483647*2-1)*Math.pow(1-i/d.length,2.8)}}
+  var verb=ctx.createConvolver();verb.buffer=ir;var vr=ctx.createGain();vr.gain.value=.6;verb.connect(vr);vr.connect(master);
+  var nb=ctx.createBuffer(1,ctx.sampleRate*2,ctx.sampleRate),nd=nb.getChannelData(0);rs=55;for(i=0;i<nd.length;i++){rs=(rs*16807)%2147483647;nd[i]=rs/2147483647*2-1}
+  function bus(gn,s){var b=ctx.createGain();b.gain.value=gn;b.connect(master);if(s){var x=ctx.createGain();x.gain.value=s;b.connect(x);x.connect(verb)}return b}
+  var padB=bus(.26,.8),lowB=bus(.4,.08),hitB=bus(.95,.5),strB=bus(.3,.7),dB=bus(.6,.3),pnoB=bus(.5,.9);
+  function mf(m){return 440*Math.pow(2,(m-69)/12)}
+  function osc(type,f,st,dur,pk,dest,a,rel,cut,det,vib){var o=ctx.createOscillator(),gn=ctx.createGain(),fl=ctx.createBiquadFilter();o.type=type;o.frequency.value=f;if(det)o.detune.value=det;fl.type='lowpass';fl.frequency.value=cut||2000;o.connect(fl);fl.connect(gn);gn.connect(dest);gn.gain.setValueAtTime(0,st);gn.gain.linearRampToValueAtTime(pk,st+a);gn.gain.setValueAtTime(pk,st+Math.max(a,dur));gn.gain.exponentialRampToValueAtTime(.0001,st+Math.max(a,dur)+rel);if(vib){var l=ctx.createOscillator(),lg=ctx.createGain();l.frequency.value=5;lg.gain.value=f*.006;l.connect(lg);lg.connect(o.frequency);l.start(st);l.stop(st+dur+rel+.1)}o.start(st);o.stop(st+dur+rel+.1)}
+  function piano(m,st,v){var f=mf(m);osc('sine',f,st,.02,.5*v,pnoB,.004,2.8,3500);osc('triangle',f*2,st,.02,.12*v,pnoB,.003,1.4,5000)}
+  function boom(st,k){var o=ctx.createOscillator(),gn=ctx.createGain();o.type='sine';o.frequency.setValueAtTime(100,st);o.frequency.exponentialRampToValueAtTime(34,st+.5);gn.gain.setValueAtTime(.95*k,st);gn.gain.exponentialRampToValueAtTime(.0001,st+1.6);o.connect(gn);gn.connect(hitB);o.start(st);o.stop(st+1.7);var s=ctx.createBufferSource();s.buffer=nb;var fl=ctx.createBiquadFilter();fl.type='lowpass';fl.frequency.setValueAtTime(2500,st);fl.frequency.exponentialRampToValueAtTime(120,st+1.8);var g2=ctx.createGain();g2.gain.setValueAtTime(.4*k,st);g2.gain.exponentialRampToValueAtTime(.0001,st+2);s.connect(fl);fl.connect(g2);g2.connect(hitB);s.start(st);s.stop(st+2.1)}
+  function beat(st,k){var o=ctx.createOscillator(),gn=ctx.createGain();o.type='sine';o.frequency.setValueAtTime(70,st);o.frequency.exponentialRampToValueAtTime(40,st+.2);gn.gain.setValueAtTime(.8*k,st);gn.gain.exponentialRampToValueAtTime(.0001,st+.3);o.connect(gn);gn.connect(dB);o.start(st);o.stop(st+.35)}
+  function riser(st,len){if(st<.2)return;var s=ctx.createBufferSource();s.buffer=nb;s.loop=true;var fl=ctx.createBiquadFilter();fl.type='bandpass';fl.Q.value=1.6;fl.frequency.setValueAtTime(250,st);fl.frequency.exponentialRampToValueAtTime(6500,st+len);var gn=ctx.createGain();gn.gain.setValueAtTime(.0001,st);gn.gain.exponentialRampToValueAtTime(.3,st+len*.96);gn.gain.linearRampToValueAtTime(.0001,st+len+.05);s.connect(fl);fl.connect(gn);gn.connect(strB);s.start(st);s.stop(st+len+.1)}
+  /* drone */
+  [[26,-5],[26,6],[33,0]].forEach(function(v){var o=ctx.createOscillator(),gn=ctx.createGain(),fl=ctx.createBiquadFilter();o.type='sawtooth';o.frequency.value=mf(v[0]);o.detune.value=v[1];fl.type='lowpass';fl.frequency.value=140;o.connect(fl);fl.connect(gn);gn.connect(lowB);gn.gain.setValueAtTime(0,0);gn.gain.linearRampToValueAtTime(.22,5);
+    SEG.forEach(function(s){var lv={nejm:.3,kff:.3,akf:.34,cal:.38,wall:.3,nami:.38,legal:.2,us:.3,close:.32}[s.id]||.22;gn.gain.linearRampToValueAtTime(lv,s.t0+2);fl.frequency.linearRampToValueAtTime(110+lv*800,s.t0+3)});gn.gain.linearRampToValueAtTime(.0001,DUR-.4);o.start(0);o.stop(DUR)});
+  /* heartbeat under the opening and the legal beat */
+  [[0.8,S('intro').t0+5],[S('legal').t0,S('us').t0]].forEach(function(r){for(var h=r[0];h<r[1];h+=1.1){beat(h,.9);beat(h+.24,.55)}});
+  /* harmony */
+  var chords=[[50,57,62,65],[46,53,58,62],[43,50,55,62],[45,52,57,64]];
+  for(var b=0,st=1;st<DUR-ENDCARD+4;b++,st+=6){var c=chords[b%4];var late=st>S('us').t0-1;if(late)c=[[50,57,62,66],[43,50,55,62],[45,52,57,64],[50,57,62,66]][b%4];
+    c.forEach(function(m,k){osc('sawtooth',mf(m),st,6.8,late?.12:.08,padB,2.2,2.4,late?2000:900,(k%2?7:-7),k===3)});osc('sawtooth',mf(c[0]-12),st,6.8,.1,strB,1.4,2.2,700,0,true)}
+  /* sparse piano */
+  for(var t=3,pi=0;t<DUR-ENDCARD;t+=2.4,pi++){var cc=chords[Math.floor(t/6)%4];piano(cc[[3,2,1,2,0,1][pi%6]]+12,t,.55+.25*hash(pi))}
+  /* hits on the big numbers */
+  var H=[['nejm',.12],['nejm',.72],['kff',.0],['akf',.14],['akf',.38],['akf',.84],['cal',.28],['cal',.56],['nami',.04],['nami',.36],['us',.03],['close',.5]];
+  H.forEach(function(h){var s=S(h[0]);boom(s.t0+h[1]*(s.t1-s.t0)-.1,.8)});
+  SEG.forEach(function(s,i){if(i>0)riser(s.t0-2.4,2.4)});
+  /* the end: lift */
+  var ce=S('close').t0+.5*(S('close').t1-S('close').t0);[38,50,57,62,66,69,74].forEach(function(m){osc('sawtooth',mf(m),ce,DUR-ce-1,.07,padB,1.5,4,2600,(m%3)*5-5)});
+  return master;
+}
+window.__ready=fetch('script.json').then(function(r){return r.json()}).then(function(j){build(j);
+  return Promise.all(['400 100px "Anton"','500 20px "IBM Plex Mono"','italic 400 54px "Playfair Display"'].map(function(f){return document.fonts.load(f)}))}).then(function(){return document.fonts.ready}).then(function(){render(Q.has('t')?+Q.get('t'):20);return true});
+window.__dur=function(){return DUR};window.__plan=function(){return SEG.map(function(s){return {id:s.id,t0:s.t0,t1:s.t1,sent:s.sentT}})};
+window.__seek=function(t){render(t)};
+window.__renderScore=function(){var sr=48000,off=new OfflineAudioContext(2,sr*DUR,sr);score(off,off.destination);return off.startRendering().then(function(buf){var L=buf.getChannelData(0),R=buf.getChannelData(1),n=L.length,ab=new ArrayBuffer(44+n*4),v=new DataView(ab);function ws(o,s){for(var i=0;i<s.length;i++)v.setUint8(o+i,s.charCodeAt(i))}ws(0,'RIFF');v.setUint32(4,36+n*4,true);ws(8,'WAVEfmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,2,true);v.setUint32(24,sr,true);v.setUint32(28,sr*4,true);v.setUint16(32,4,true);v.setUint16(34,16,true);ws(36,'data');v.setUint32(40,n*4,true);for(var i=0,o=44;i<n;i++,o+=4){v.setInt16(o,cl(L[i],-1,1)*32767,true);v.setInt16(o+2,cl(R[i],-1,1)*32767,true)}var bytes=new Uint8Array(ab),s='',CH=32768;for(i=0;i<bytes.length;i+=CH)s+=String.fromCharCode.apply(null,bytes.subarray(i,i+CH));return btoa(s)})};
+function fit(){var w=innerWidth,h=innerHeight,s=Math.min(w/1920,h/1080);cv.style.transform='translate('+((w-1920*s)/2)+'px,'+((h-1080*s)/2)+'px) scale('+s+')'}addEventListener('resize',fit);fit();
+})();
+</script></body></html>
