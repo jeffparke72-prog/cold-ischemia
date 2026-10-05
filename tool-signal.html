@@ -609,11 +609,7 @@
     </div>
   </div>
 
-  <div class="api-row">
-    <label for="apiKey">API Key</label>
-    <input type="password" id="apiKey" placeholder="sk-ant-api03-…  (required to generate your Intelligence Report)" autocomplete="off">
-  </div>
-
+  <div class="api-row" style="border:1px solid rgba(80,200,120,.35);background:rgba(80,200,120,.07);padding:12px 16px;border-radius:6px;margin:14px 0;font-size:.82rem;line-height:1.6;letter-spacing:.02em"><b style="color:#50c878">No key. No account. Nothing leaves your device.</b> This instrument runs entirely in your browser. It is a built-in writer, not a chat model: every sentence was written by a person, and your own scores and words decide which ones you get.</div>
   <!-- MODULE 1: WASTE CLASSIFIER -->
   <div class="module">
     <div class="module-header">
@@ -753,6 +749,7 @@
 <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
 
 
+<script src="cif-local-ai.js"></script>
 <script>
 /* ════════════════════════════════════════════════
    HERO CANVAS — dual data streams converging
@@ -1333,8 +1330,6 @@ function drawLoadChart(){
    MAIN REPORT GENERATOR
 ════════════════════════════════════════════════ */
 async function runSignal(){
-  const apiKey=document.getElementById('apiKey').value.trim();
-  if(!apiKey){alert('Please enter your Anthropic API key.');return;}
 
   // Show output section
   const outSec=document.getElementById('outputSection');
@@ -1370,74 +1365,9 @@ async function runSignal(){
   const p6=document.getElementById('p6').value||'(not provided)';
   const loadEff=Math.max(5,100-Math.round(wasteTotal/40*100));
 
-  const prompt=`You are a Master Black Belt in Lean Six Sigma with 20 years of clinical systems improvement experience, and a specialist in care partner psychology grounded in Frankl's Logotherapy, Acceptance and Commitment Therapy, and caregiver trajectory research (Pinquart & Sörensen, 2003). You have spent your career applying industrial process improvement methodology to human care systems — not health systems, but the lives of the people running them.
-
-You are analyzing the complete SIGNAL system scan of a care partner. This is not a wellness assessment. This is an operational intelligence report. Write with the precision of a systems analyst and the humanity of someone who understands what this data means in lived experience.
-
-═══ WASTE TOPOLOGY ═══
-${wasteVals.map(w=>`${w.name}: ${w.sev}/5 ${w.sev>=4?'[CRITICAL]':w.sev>=3?'[HIGH]':''}`).join('\n')}
-Total Waste Index: ${wasteTotal}/40 (${Math.round(wasteTotal/40*100)}% waste load)
-Critical Wastes (≥4): ${criticalWastes.length>0?criticalWastes.join(', '):'None identified'}
-Dominant Waste: ${domWaste.name} at ${domWaste.sev}/5
-
-═══ STATISTICAL PROCESS CONTROL ═══
-8-Week Stability Data: ${weekVals.join(', ')}
-Mean (Center Line): ${spcData.mean.toFixed(2)}/10
-Standard Deviation (σ): ${spcData.sigma.toFixed(2)}
-Upper Control Limit (UCL): ${spcData.UCL.toFixed(2)}
-Lower Control Limit (LCL): ${spcData.LCL.toFixed(2)}
-Out-of-Control Data Points: ${spcData.ooc} of 8
-System Status: ${spcData.ooc>=2?'STATISTICALLY UNSTABLE — special cause variation present':spcData.ooc===1?'BORDERLINE — approaching instability':'IN STATISTICAL CONTROL'}
-
-═══ ROOT CAUSE ANALYSIS (Ishikawa) ═══
-Primary Problem Statement: ${probLabel}
-${Object.keys(activeCausesByBone).length===0?'No root causes selected':`Active Root Causes by Category:\n${Object.entries(activeCausesByBone).map(([cat,causes])=>`  ${cat}: ${causes.join(', ')}`).join('\n')}`}
-Total Active Causes: ${activeCauses.size}/18
-
-═══ PROCESS REALITY ═══
-Weekly caregiving hours: ${p1}
-Hours with zero positive outcome: ${p2}
-Weeks since last full day off: ${p3}
-Support network size: ${p4} people
-Most energy-draining task: "${p5}"
-What they'd do with 6 free hours: "${p6}"
-Computed process efficiency: ${loadEff}%
-
-═══════════════════════════════════════════════
-Generate an Intelligence Report using these exact four H3 section headers:
-
-### System Diagnosis
-What does this data pattern tell you — as a systems analyst who also understands the human experience of caregiving — about the current operational state of this person's care system? Analyze the interaction between the waste profile, the SPC stability data, and the root cause density. What is the system actually telling you? Name the three most significant signals in the data. Be direct and specific. Do not describe what care partner burnout is in general — describe what THIS data shows about THIS person's system. Use process engineering language alongside human language.
-
-### Root Cause Cascade
-Using the active Ishikawa causes and the waste topology, identify the PRIMARY root cause — the one upstream cause that, if unaddressed, continues to generate all downstream failures. Then show the cascade: how does that primary cause produce secondary effects that compound across the other waste categories? This is the cascade analysis. It should read like a systems engineer explaining why the bridge failed — specific, logical, without blame, and devastatingly clear.
-
-### The 30-Day Process Improvement Map
-Design a 30-day process improvement plan with four phases: Days 1–7 (Define & Measure), Days 8–14 (Analyze), Days 15–21 (Improve), Days 22–30 (Control). Each phase must contain ONE specific, named, actionable intervention — not a list of possibilities, one concrete action. These must be achievable without money, without anyone's permission, and without perfect circumstances. Name each intervention. Describe exactly how to execute it. Ground each in process improvement methodology, not wellness advice. The language should feel like a project plan, not a suggestion list.
-
-### Existential Integration
-After the system stabilizes — after waste is reduced and the process becomes manageable — what then? Using Frankl's framework, identify where meaning has been buried under the waste load and what becomes recoverable when the process improves. This is not motivational. This is honest. What specific thing — named concretely — does this person appear to have sacrificed that the data suggests they most need to recover? And what would it mean for the patient's care quality if the care partner recovered it?
-
-Write in second person ("you"). Write with the authority of deep expertise and the precision of systems methodology. Never use the phrase "self-care." Never use wellness language. Never soften the findings. End on the existential integration — what becomes possible, not what is currently broken.`;
-
   try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key':apiKey,
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
-      },
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:1800,
-        messages:[{role:'user',content:prompt}]
-      })
-    });
-    if(!res.ok){const err=await res.json();throw new Error(err.error?.message||`API error ${res.status}`);}
-    const data=await res.json();
-    const raw=data.content.find(b=>b.type==='text')?.text||'';
+    await CIFLocal.delay(1200);
+    const raw=CIFLocal.signal({wasteVals,wasteTotal,criticalWastes,domWaste,spc:spcData,weekVals,causes:activeCausesByBone,causeCount:activeCauses.size,problem:probLabel,p1:document.getElementById('p1').value,p2:document.getElementById('p2').value,p3:document.getElementById('p3').value,p4:document.getElementById('p4').value,p5:document.getElementById('p5').value,p6:document.getElementById('p6').value});
 
     const h3Colors=['danger','amber','cyan','ok'];
     let h3Count=0;
@@ -1460,7 +1390,7 @@ Write in second person ("you"). Write with the authority of deep expertise and t
 
     body.innerHTML=html;
   }catch(err){
-    body.innerHTML=`<p style="color:var(--danger);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;line-height:1.8;">Error: ${err.message}<br>Please verify your API key and try again.</p>`;
+    body.innerHTML=`<p style="color:var(--danger);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;line-height:1.8;">Something went wrong: ${err.message}. Please try again.</p>`;
   }
 }
 
