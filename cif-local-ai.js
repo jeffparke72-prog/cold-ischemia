@@ -404,4 +404,113 @@
     return out.join('\n\n');
   };
 
+
+  /* ====================================================================================================
+     AUTHORITY DISPATCH: a private stabilization brief + a formal escalation letter, joined by ===LETTER===.
+     ctx: situation, cogState, pressures (comma string), urgency, instType, instName, recipient, relationship,
+          failures (comma string), failDetail, demand, evidence (comma string), consequence
+  ==================================================================================================== */
+  var COG = {
+    overloaded: 'You reported being overloaded: too many things arriving at once and no clear way to rank them. When everything is urgent, the mind either freezes or grabs whatever is loudest, and the loudest thing is rarely the most important. Your judgment is not gone. It is being asked to process more inputs than any working memory can hold.',
+    shutdown: 'You reported being shut down. That is not weakness; it is a protective response. When a threat feels both enormous and unsolvable, the nervous system stops offering options. The practical effect is that you may know exactly what needs to happen and be unable to start. That gap is what we are designing around.',
+    reactive: 'You reported reacting emotionally rather than strategically. That is the normal result of being under threat for long enough: anger and fear move faster than planning. Reactions are useful information, but they are poor negotiators. The institution you are dealing with is counting on the version of you that responds in the moment.',
+    exhausted: 'You reported exhaustion. Tired minds narrow: they take the shortest path, accept the first answer, and read neutral signals as hostile ones. You are likely to be most vulnerable to saying yes to something you will regret, or to dropping something that matters, in the next few days.',
+    frightened: 'You reported that fear is making the decisions. Fear is rational here, because the stakes are real. But fear shortens time horizons and exaggerates the power of the other side. It makes the institution look larger and you look smaller than either of you is.',
+    functional: 'You reported that you are functioning. That is useful, and it can be misleading. Functional people tend to delay asking for help because they are still coping, and the moment they stop coping is usually the moment the hardest decision lands.'
+  };
+  var PRESS = {
+    'sleep deprivation': 'Lack of sleep is degrading your judgment more than you can feel from the inside. Do not make irreversible decisions on a night you have not slept.',
+    'grief or anticipatory loss': 'Grief, including the grief you feel in advance, competes with strategy for the same attention. It is not a distraction. It is a second job running at the same time.',
+    'financial stress': 'Financial pressure tied to care decisions pushes people toward accepting a worse option because it is cheaper today.',
+    'information overload': 'Medical information overload means you may be holding more facts than you can weigh. Reduce them to the three that matter before you act.',
+    'institutional stonewalling': 'Stonewalling is a tactic that works by exhausting you. It is not evidence that you are wrong; it is evidence that delay is cheaper for them than an answer.',
+    'time pressure': 'Extreme time pressure is the condition under which people agree to things they would otherwise refuse. If a decision does not have to be made in the next hour, say so and ask for the deadline in writing.',
+    'isolation': 'You are doing this without support, which means no one is checking your reasoning. Find one person to read what you are about to send.',
+    'fear of retaliation': 'Fear of retaliation is common and has a practical answer: put everything in writing, calmly and factually, so that any change in how your family is treated becomes visible.'
+  };
+  var MECH = {
+    'dialysis center': 'the facility’s own written grievance process, the ESRD Network for your region, the state survey agency, and the Centers for Medicare & Medicaid Services (CMS), which sets the federal conditions for coverage that dialysis facilities must meet (42 CFR Part 494)',
+    'transplant hospital': 'the hospital’s patient advocate, the OPTN Patient Services line, the Health Resources and Services Administration (HRSA), CMS, and the state department of health',
+    'hospital or health system': 'the hospital’s grievance process (hospitals that take Medicare must have one, 42 CFR 482.13), the state department of health, CMS, and The Joint Commission',
+    'insurance company': 'the plan’s internal appeal, an independent external review, and your state insurance commissioner (or, for a Medicare Advantage plan, the plan’s appeal process and CMS)',
+    'Medicare or Medicaid': 'the program’s appeal process, your state Medicaid agency or the CMS regional office, and your member of Congress',
+    'pharmacy or PBM': 'the plan’s appeals process, your state insurance commissioner or pharmacy board, and, where applicable, CMS',
+    'specialist office': 'the practice’s patient relations office, the state medical board, and the patient’s insurer',
+    'home health agency': 'the agency’s grievance process, the state department of health, and CMS (home health agencies that take Medicare are bound by federal conditions of participation)',
+    'state health department': 'the department’s own appeals procedures, the state ombudsman, and CMS where federal programs apply',
+    'federal agency': 'the agency’s ombudsman or inspector general, and your member of Congress',
+    'other healthcare institution': 'the institution’s grievance process, the relevant state licensing authority, and CMS where applicable'
+  };
+
+  L.authority = function (c) {
+    var rel = c.relationship || 'care partner', cog = c.cogState || 'functional', urg = parseInt(c.urgency, 10) || 3, inst = c.instType || 'other healthcare institution';
+    var instName = L.clean(c.instName, 120) || '[Institution Name]', recipient = L.clean(c.recipient, 80) || 'responsible party';
+    var fails = (c.failures || '').split(',').map(function (x) { return x.trim(); }).filter(Boolean);
+    var ev = (c.evidence || '').split(',').map(function (x) { return x.trim(); }).filter(function (x) { return x && x !== 'none specified'; });
+    var pres = (c.pressures || '').split(',').map(function (x) { return x.trim(); }).filter(function (x) { return x && x !== 'none specified'; });
+    var sit = L.clean(c.situation, 600), det = L.clean(c.failDetail, 800), dem = L.clean(c.demand, 400), con = L.clean(c.consequence, 400);
+    var deadline = urg >= 4 ? '48 hours' : urg === 3 ? '72 hours' : '5 business days';
+    var today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    var isPatient = rel === 'I am the patient';
+    var out = [];
+
+    /* ---- stabilization brief ---- */
+    out.push('WHAT IS HAPPENING TO YOUR AUTHORITY');
+    out.push(COG[cog] || COG.functional);
+    var pl = pres.filter(function (x) { return PRESS[x]; }).slice(0, 3).map(function (x) { return PRESS[x]; });
+    out.push(pl.length ? pl.join(' ') : 'You did not flag specific pressure signals, which may mean they are quietly present rather than absent. Assume your judgment is working at a discount until you have slept and eaten.');
+    out.push(urg >= 4 ? 'You rated this ' + urg + ' out of 5 in urgency. That level of urgency is real, and it is also the level at which institutions are most likely to exploit hurry. Move fast on the written record and slowly on any agreement.' : 'You rated this ' + urg + ' out of 5 in urgency, which gives you a little room. Use it to document before you escalate.');
+
+    out.push('WHAT REMAINS INTACT');
+    var intact = [];
+    if (ev.length) intact.push('You have ' + L.list(ev.map(function (e) { return e.toLowerCase(); })) + '. In every dispute with an institution, the person who holds the paper holds most of the leverage, because the institution’s version of events is only a memory until yours is in writing.');
+    else intact.push('You did not list documentation, which is the first thing to fix. Start tonight: a dated note of who you spoke to, what was said and what was promised.');
+    intact.push(isPatient ? 'As the patient, you have the strongest standing in this conversation: it is your care, your records and your decision.' : rel === 'legal guardian or POA' ? 'As guardian or POA, you hold documented legal authority, and you are entitled to treat the institution’s obligations to the patient as obligations to you.' : 'As the person who shows up, you hold knowledge no one else has: the timeline, the patterns and what has actually happened at home. Institutions depend on that knowledge and rarely say so.');
+    intact.push('You also have this: you are specific. You can name the failure, the date and the demand. Most complaints fail because they are vague. Yours does not have to be.');
+    out.push(intact.join(' '));
+
+    out.push('YOUR PRIORITY SEQUENCE — NEXT 72 HOURS');
+    var steps = [];
+    steps.push('Write down the timeline tonight, in plain sentences: date, who, what was said, what was promised, what was refused. Do this before you speak to anyone else. It anchors the story in your own words and makes every later conversation easier.');
+    steps.push(ev.length ? 'Gather the documents you listed into one folder, paper or digital, and put the single strongest one on top. Strength means it states the failure in the institution’s own words.' : 'Ask for the missing paper in writing: a denial letter, a written reason, the policy they say applies. A refusal to put it in writing is itself useful information.');
+    steps.push('Send the escalation letter below by a method that leaves a record, such as email plus certified mail or the patient portal. Note the date and time. Do not wait for a reply before taking the next step.');
+    if (fails.indexOf('insurance denial') >= 0) steps.push('File the formal internal appeal today. In parallel, ask in writing about expedited review if delay could harm health. Ask about external review, which is an independent decision outside the insurer.');
+    else if (fails.indexOf('records access refusal') >= 0) steps.push('Make the records request in writing, citing your right of access under HIPAA (45 CFR 164.524), which generally requires a response within 30 days. Keep a copy.');
+    else if (fails.indexOf('patient safety concern') >= 0 || fails.indexOf('provider misconduct or negligence') >= 0) steps.push('Report the safety concern in writing to the facility’s patient safety or risk office and, separately, to the state department of health. A safety report is a different channel from a complaint and is handled differently.');
+    else steps.push('Identify the formal grievance channel for this institution and file there as well. A complaint that exists only as a phone call is deniable. A complaint that exists in a grievance log is not.');
+    steps.push('Tell one person what you have done and what you plan to do next. Ask them to check on you at the deadline. You are not doing this alone, and the plan is stronger when someone else holds it.');
+    steps.push('At the deadline, escalate exactly as the letter says. Do not renegotiate it down in your head. Follow through is the only thing that makes a deadline real.');
+    out.push(steps.map(function (x, i) { return (i + 1) + '. ' + x; }).join('\n'));
+
+    out.push('YOUR COMMUNICATION POSITION');
+    out.push('You are going into this letter as someone who has done the reasonable thing, asked politely and been delayed, and who is now putting the request in writing. That is a strong position. The tone that fits it is calm, specific and unemotional: not hostile, because hostility gives the institution a way to change the subject, and not deferential, because deference signals that the request is optional. A realistic outcome is not an apology but a written response, a corrected action or a documented reason. Any of those moves the situation forward. If none arrives by the deadline, the paths you can take are ' + (MECH[inst] || MECH['other healthcare institution']) + '.');
+
+    /* ---- letter ---- */
+    out.push('===LETTER===');
+    var letter = [];
+    letter.push('Date: ' + today);
+    letter.push('From: [Your Name], [Your Address], [Your Phone and Email]');
+    letter.push('To: ' + (c.recipient ? 'The ' : 'The ') + recipient.replace(/\b\w/g, function (m) { return m.toUpperCase(); }) + ', ' + instName);
+    letter.push('Re: Formal request for resolution on behalf of [Patient Name], [Date of Birth / Account or Member Number]' + (fails.length ? ' — ' + L.list(fails.slice(0, 3)) : ''));
+    letter.push('');
+    letter.push('To the ' + recipient.replace(/\b\w/g, function (m) { return m.toUpperCase(); }) + ':');
+    letter.push('I am writing as ' + (isPatient ? 'the patient' : 'the ' + rel + ' of [Patient Name]') + ' regarding the matter described below. I am requesting a written response and resolution within ' + deadline + ' of the date of this letter.');
+    if (sit) letter.push('Background. ' + sit);
+    if (det) letter.push('The failure. ' + det);
+    if (ev.length) letter.push('Documentation. I hold ' + L.list(ev.map(function (e) { return e.toLowerCase(); })) + ', and I am prepared to provide copies on request.');
+    if (con) letter.push('Consequence. If this is not resolved, the result for the patient is: ' + con.charAt(0).toLowerCase() + con.slice(1) + (/[.!?]$/.test(con) ? '' : '.') + ' I am putting this on the record so that it is not later described as unforeseen.');
+    letter.push('Request. ' + (dem || '[State the specific action you are requesting.]') + (dem && !/[.!?]$/.test(dem) ? '.' : ''));
+    letter.push('Please respond in writing within ' + deadline + ' to the address and email above. If I do not receive a response, I will escalate this matter through ' + (MECH[inst] || MECH['other healthcare institution']) + ', and I will ask that this letter be included in the patient’s record and in any grievance log.');
+    letter.push('I would prefer to resolve this directly and promptly. Thank you for your attention.');
+    letter.push('');
+    letter.push('Sincerely,');
+    letter.push('[Your Signature]');
+    letter.push('[Your Printed Name]');
+    letter.push('[Relationship to Patient]');
+    letter.push('');
+    letter.push('Prepared with the Cold Ischemia Foundation Authority Dispatch tool. This letter is a template for your use and is not legal advice; consider having it reviewed by a patient advocate or attorney before sending.');
+    out.push(letter.join('\n'));
+    return out.join('\n\n');
+  };
+
 })();
