@@ -746,11 +746,7 @@
     <p>No editing · No performance · No correct answer · Just what is real right now</p>
   </div>
 
-  <div class="api-row">
-    <label for="apiKey">API Key</label>
-    <input type="password" id="apiKey" placeholder="sk-ant-api03-…  (required for your Mirror reflection)" autocomplete="off">
-  </div>
-
+  <div class="api-row" style="border:1px solid rgba(80,200,120,.35);background:rgba(80,200,120,.07);padding:12px 16px;border-radius:6px;margin:14px 0;font-size:.82rem;line-height:1.6;letter-spacing:.02em"><b style="color:#50c878">No key. No account. Nothing leaves your device.</b> This instrument runs entirely in your browser. It is a built-in writer, not a chat model: every sentence was written by a person, and your own scores and words decide which ones you get.</div>
   <p class="nudge-label">If you don't know where to start</p>
   <div class="nudge-row">
     <button class="nudge-btn" onclick="nudge(0)">What today actually felt like</button>
@@ -799,6 +795,7 @@
 <!-- ═══════════ FOOTER ═══════════ -->
 
 
+<script src="cif-local-ai.js"></script>
 <script>
 /* ───────────────────────────────────────
    HERO CANVAS — Ink/text particle effect
@@ -1053,8 +1050,6 @@ function buildSignalCards(sig) {
    MAIN MIRROR FUNCTION
 ─────────────────────────────────────────*/
 async function runMirror() {
-  const apiKey = document.getElementById('apiKey').value.trim();
-  if (!apiKey) { alert('Please enter your Anthropic API key.'); return; }
   const text = textarea.value.trim();
   if (!text) return;
 
@@ -1068,59 +1063,9 @@ async function runMirror() {
   panel.style.display = 'block';
   panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-  const prompt = `You are a psychological language analyst trained in Narrative Therapy (White & Epston, 1990), Viktor Frankl's Logotherapy, Acceptance and Commitment Therapy, and caregiver psychology research. You do not provide therapy. You provide honest, literary, psychologically grounded reflection.
-
-A care partner — someone providing ongoing care for a person with a serious or chronic illness — has written the following freely. They were asked to write what is actually true about their life right now, with no performance and no editing:
-
----
-${text}
----
-
-My local language analysis has already detected these signals:
-- Dominant narrative pattern: ${sig.dominantName}
-- Helplessness language count: ${sig.helplessCount} signals
-- Identity fracture signals: ${sig.identityCount} ("I used to be" / "before this" framing)
-- Suppressed resentment signals: ${sig.resentCount}
-- Agency language count: ${sig.agencyCount} (I choose / I will / I can)
-- Future orientation language: ${sig.futureCount} signals
-- Total word count: ${sig.total}
-
-Your task is to generate a Mirror Reflection using these exact three H3 sections:
-
-### What Your Language Is Actually Saying
-Read their text as a language analyst, not a therapist. What story is their word choice constructing? Which words, phrases, or patterns are most significant? What is the dominant psychological narrative this language is building — and what does that narrative cost them? Be specific to their actual words. Quote nothing, but reference what you see. Be direct, literary, and honest.
-
-### The Fracture Points
-What does the language reveal about where meaning has been damaged or lost? Use Frankl's framework: where has the narrative thread that makes suffering meaningful been broken? Name the specific existential losses you can see — not generally, but in what they actually wrote. What are the two or three most significant psychological red flags in this text? Name them directly. Do not soften them.
-
-### The Reframe and First Step
-In Narrative Therapy, the goal is not to change the facts — it is to author a different story about the same facts. Identify the one most powerful linguistic reframe available in their text: a moment, phrase, or pattern that could anchor a different narrative if they chose to see it differently. Then offer one specific, concrete, non-generic practice — named and described — from Narrative Therapy, Logotherapy, or ACT. Tell them exactly how to do it. Make it actionable in the next 48 hours. Do not give a list of five tips.
-
-Write in second person ("you"). Be direct and honest without being harsh. Do not manage their feelings or end with a motivational closing. End with the concrete practice. This person has already heard every platitude caregiving has to offer. They need to be seen, not soothed.`;
-
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1400,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.error?.message || `API error ${res.status}`);
-    }
-
-    const data = await res.json();
-    const raw  = data.content.find(b => b.type === 'text')?.text || '';
+    await CIFLocal.delay(1300);
+    const raw = CIFLocal.mirror(text, sig);
 
     const html = raw
       .replace(/### (.*)/g, '<h3>$1</h3>')
@@ -1139,7 +1084,7 @@ Write in second person ("you"). Be direct and honest without being harsh. Do not
 
   } catch (err) {
     body.innerHTML = `<p style="color:var(--danger);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;line-height:1.8;">
-      Error: ${err.message}<br>Please verify your API key and try again.
+      Something went wrong: ${err.message}. Please try again.
     </p>`;
   }
 }
