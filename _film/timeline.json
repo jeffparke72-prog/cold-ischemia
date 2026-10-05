@@ -1,0 +1,561 @@
+{
+ "total": 180.0,
+ "scenes": [
+  {
+   "id": "am",
+   "lead": 1.5
+  },
+  {
+   "id": "truth",
+   "lead": 1.3
+  },
+  {
+   "id": "room",
+   "lead": 1.6
+  },
+  {
+   "id": "legacy",
+   "lead": 1.4
+  },
+  {
+   "id": "work",
+   "lead": 1.2
+  },
+  {
+   "id": "close",
+   "lead": 1.4
+  }
+ ],
+ "items": [
+  {
+   "s": "am",
+   "w": "N",
+   "text": "At three in the morning, the mind does arithmetic.",
+   "gap": 1.0,
+   "big": [
+    {
+     "t": "3:07 AM",
+     "c": "a",
+     "pos": "c",
+     "y": -90,
+     "at": 0
+    },
+    {
+     "t": "the mind does arithmetic",
+     "c": "i",
+     "pos": "c",
+     "y": 60,
+     "at": 0.45
+    }
+   ],
+   "t0": 1.5,
+   "t1": 4.871
+  },
+  {
+   "s": "am",
+   "w": "N",
+   "text": "How long does a kidney last? How long do I?",
+   "gap": 0.9,
+   "big": [
+    {
+     "t": "HOW LONG?",
+     "c": "a r",
+     "pos": "c",
+     "y": -20,
+     "at": 0.35
+    }
+   ],
+   "t0": 5.963,
+   "t1": 9.27
+  },
+  {
+   "s": "am",
+   "w": "N",
+   "text": "How many names are ahead of mine?",
+   "gap": 1.6,
+   "big": [
+    {
+     "t": "?",
+     "c": "a",
+     "pos": "c",
+     "y": -20,
+     "at": 0.5
+    }
+   ],
+   "t0": 10.254,
+   "t1": 12.558
+  },
+  {
+   "s": "am",
+   "w": "N",
+   "text": "You were told to be patient. To be compliant. To trust the process.",
+   "gap": 0.9,
+   "big": [
+    {
+     "t": "PATIENT.",
+     "c": "a",
+     "pos": "l",
+     "y": -165,
+     "at": 0.12
+    },
+    {
+     "t": "COMPLIANT.",
+     "c": "a",
+     "pos": "l",
+     "y": -15,
+     "at": 0.4
+    },
+    {
+     "t": "TRUST THE PROCESS.",
+     "c": "a g",
+     "pos": "l",
+     "y": 135,
+     "at": 0.68
+    }
+   ],
+   "t0": 14.306,
+   "t1": 18.594
+  },
+  {
+   "s": "am",
+   "w": "N",
+   "text": "So you became a very good patient. You filled out every form. You kept the phone close.",
+   "gap": 1.1,
+   "big": [
+    {
+     "t": "you kept the phone close",
+     "c": "i",
+     "pos": "l",
+     "y": -20,
+     "at": 0.62
+    }
+   ],
+   "t0": 19.577,
+   "t1": 25.679
+  },
+  {
+   "s": "am",
+   "w": "N",
+   "text": "And underneath it all, one quiet question. Is the process thinking about me at all?",
+   "gap": 2.4,
+   "big": [
+    {
+     "t": "Is the process thinking about me",
+     "c": "i",
+     "pos": "c",
+     "y": -40,
+     "at": 0.35
+    },
+    {
+     "t": "AT ALL?",
+     "c": "a r",
+     "pos": "c",
+     "y": 110,
+     "at": 0.8
+    }
+   ],
+   "t0": 26.881,
+   "t1": 33.195
+  },
+  {
+   "s": "truth",
+   "w": "N",
+   "text": "Here is what the brochures leave out.",
+   "gap": 1.0,
+   "big": [
+    {
+     "t": "WHAT THE BROCHURES LEAVE OUT",
+     "c": "a",
+     "pos": "l",
+     "y": 0,
+     "at": 0.1
+    }
+   ],
+   "t0": 37.118,
+   "t1": 39.785
+  },
+  {
+   "s": "truth",
+   "w": "N",
+   "text": "Seventeen people die every day waiting for an organ.",
+   "gap": 1.3,
+   "big": [
+    {
+     "t": "17",
+     "c": "x r",
+     "pos": "r",
+     "y": -60,
+     "at": 0.28
+    },
+    {
+     "t": "every day",
+     "c": "m",
+     "pos": "r",
+     "y": 160,
+     "at": 0.5
+    }
+   ],
+   "dots": true,
+   "t0": 40.877,
+   "t1": 44.717
+  },
+  {
+   "s": "truth",
+   "w": "N",
+   "text": "Not only from disease. From delay. From a form in the wrong stack. From a decision made in a room they were never invited into.",
+   "gap": 1.2,
+   "big": [
+    {
+     "t": "DELAY.",
+     "c": "a",
+     "pos": "l",
+     "y": -135,
+     "at": 0.22
+    },
+    {
+     "t": "THE WRONG STACK.",
+     "c": "a",
+     "pos": "l",
+     "y": 0,
+     "at": 0.42
+    },
+    {
+     "t": "A ROOM THEY WERE NEVER INVITED INTO.",
+     "c": "a r",
+     "pos": "l",
+     "y": 135,
+     "at": 0.68
+    }
+   ],
+   "t0": 46.138,
+   "t1": 55.524
+  },
+  {
+   "s": "truth",
+   "w": "N",
+   "text": "The rules exist. The conduct does not follow. And almost no one with power is asking why.",
+   "gap": 2.2,
+   "big": [
+    {
+     "t": "THE RULES EXIST.",
+     "c": "a",
+     "pos": "c",
+     "y": -80,
+     "at": 0.05
+    },
+    {
+     "t": "THE CONDUCT DOES NOT FOLLOW.",
+     "c": "a g",
+     "pos": "c",
+     "y": 50,
+     "at": 0.28
+    },
+    {
+     "t": "almost no one is asking why",
+     "c": "i",
+     "pos": "c",
+     "y": 170,
+     "at": 0.7
+    }
+   ],
+   "t0": 56.836,
+   "t1": 63.79
+  },
+  {
+   "s": "room",
+   "w": "V",
+   "text": "I almost didn't come.",
+   "gap": 0.7,
+   "big": [
+    {
+     "t": "ELLENTON, FLORIDA  \u00b7  9:40 PM",
+     "c": "m",
+     "pos": "c",
+     "y": -400,
+     "at": -0.5
+    }
+   ],
+   "t0": 67.794,
+   "t1": 69.309
+  },
+  {
+   "s": "room",
+   "w": "V",
+   "text": "I'm tired. I'm sick of being a case number. And I don't know what one person can even do.",
+   "gap": 0.9,
+   "t0": 70.074,
+   "t1": 77.818
+  },
+  {
+   "s": "room",
+   "w": "F",
+   "text": "One person is exactly how this started.",
+   "gap": 0.8,
+   "t0": 78.801,
+   "t1": 81.148
+  },
+  {
+   "s": "room",
+   "w": "V",
+   "text": "Against all of that?",
+   "gap": 0.7,
+   "t0": 82.022,
+   "t1": 83.558
+  },
+  {
+   "s": "room",
+   "w": "F",
+   "text": "Read the page everyone else skimmed. Ask the question nobody wanted asked. Put a name where the system put a number.",
+   "gap": 1.0,
+   "t0": 84.323,
+   "t1": 90.958
+  },
+  {
+   "s": "room",
+   "w": "V",
+   "text": "And when they ignore you?",
+   "gap": 0.7,
+   "t0": 92.051,
+   "t1": 93.523
+  },
+  {
+   "s": "room",
+   "w": "F",
+   "text": "Then we write it down. Dates. Names. Decisions. A record doesn't get tired. A record doesn't get scared.",
+   "gap": 1.0,
+   "t0": 94.288,
+   "t1": 100.218
+  },
+  {
+   "s": "room",
+   "w": "V",
+   "text": "Who pays for this?",
+   "gap": 0.7,
+   "t0": 101.311,
+   "t1": 102.89
+  },
+  {
+   "s": "room",
+   "w": "F",
+   "text": "Nobody who profits from the answer. No drug money. No dialysis money. No hospital money. That is the only reason you can trust a word we say.",
+   "gap": 1.0,
+   "t0": 103.654,
+   "t1": 113.105
+  },
+  {
+   "s": "room",
+   "w": "V",
+   "text": "That sounds lonely.",
+   "gap": 0.9,
+   "t0": 114.198,
+   "t1": 115.841
+  },
+  {
+   "s": "room",
+   "w": "F",
+   "text": "It was. Until tonight.",
+   "gap": 2.2,
+   "t0": 116.824,
+   "t1": 118.296
+  },
+  {
+   "s": "legacy",
+   "w": "N",
+   "text": "Everyone leaves something behind.",
+   "gap": 1.0,
+   "big": [
+    {
+     "t": "EVERYONE LEAVES SOMETHING BEHIND.",
+     "c": "a",
+     "pos": "l",
+     "y": 0,
+     "at": 0.1
+    }
+   ],
+   "t0": 122.1,
+   "t1": 124.447
+  },
+  {
+   "s": "legacy",
+   "w": "N",
+   "text": "A name on a chart. Or a change in the chart.",
+   "gap": 1.2,
+   "big": [
+    {
+     "t": "A NAME ON A CHART.",
+     "c": "a",
+     "pos": "l",
+     "y": -60,
+     "at": 0.1
+    },
+    {
+     "t": "OR A CHANGE IN IT.",
+     "c": "a g",
+     "pos": "l",
+     "y": 70,
+     "at": 0.55
+    }
+   ],
+   "t0": 125.539,
+   "t1": 128.995
+  },
+  {
+   "s": "legacy",
+   "w": "N",
+   "text": "You cannot choose how long the clock runs. You can choose what you do while it runs.",
+   "gap": 2.2,
+   "big": [
+    {
+     "t": "you cannot choose how long",
+     "c": "i",
+     "pos": "l",
+     "y": -90,
+     "at": 0.08
+    },
+    {
+     "t": "YOU CAN CHOOSE",
+     "c": "a g",
+     "pos": "l",
+     "y": 40,
+     "at": 0.55
+    },
+    {
+     "t": "what you do while it runs",
+     "c": "i",
+     "pos": "l",
+     "y": 160,
+     "at": 0.75
+    }
+   ],
+   "t0": 130.307,
+   "t1": 135.981
+  },
+  {
+   "s": "work",
+   "w": "N",
+   "text": "We investigate what the system hides. We document it. We confront it, in writing, on the record.",
+   "gap": 1.0,
+   "big": [
+    {
+     "t": "INVESTIGATE",
+     "c": "a",
+     "pos": "l",
+     "y": -150,
+     "at": 0.12
+    },
+    {
+     "t": "DOCUMENT",
+     "c": "a",
+     "pos": "l",
+     "y": -5,
+     "at": 0.35
+    },
+    {
+     "t": "CONFRONT",
+     "c": "a r",
+     "pos": "l",
+     "y": 140,
+     "at": 0.58
+    }
+   ],
+   "t0": 139.585,
+   "t1": 146.583
+  },
+  {
+   "s": "work",
+   "w": "N",
+   "text": "And we build the tools, free, so no one has to read the fine print alone.",
+   "gap": 2.0,
+   "big": [
+    {
+     "t": "BUILT FREE.",
+     "c": "a g",
+     "pos": "l",
+     "y": -20,
+     "at": 0.3
+    },
+    {
+     "t": "so no one reads the fine print alone",
+     "c": "i",
+     "pos": "l",
+     "y": 110,
+     "at": 0.55
+    }
+   ],
+   "t0": 147.675,
+   "t1": 152.689
+  },
+  {
+   "s": "close",
+   "w": "N",
+   "text": "One of the very few truly independent voices in American transplant.",
+   "gap": 1.0,
+   "big": [
+    {
+     "t": "TRULY INDEPENDENT.",
+     "c": "a",
+     "pos": "c",
+     "y": 0,
+     "at": 0.25
+    }
+   ],
+   "t0": 156.274,
+   "t1": 161.544
+  },
+  {
+   "s": "close",
+   "w": "N",
+   "text": "Unbought. Unafraid. Unfinished.",
+   "gap": 1.1,
+   "big": [
+    {
+     "t": "UNBOUGHT.",
+     "c": "a",
+     "pos": "c",
+     "y": -130,
+     "at": 0.05
+    },
+    {
+     "t": "UNAFRAID.",
+     "c": "a",
+     "pos": "c",
+     "y": 0,
+     "at": 0.4
+    },
+    {
+     "t": "UNFINISHED.",
+     "c": "a g",
+     "pos": "c",
+     "y": 130,
+     "at": 0.72
+    }
+   ],
+   "t0": 162.636,
+   "t1": 165.004
+  },
+  {
+   "s": "close",
+   "w": "N",
+   "text": "Be the reason the next person doesn't wait in the dark.",
+   "gap": 3.0,
+   "big": [
+    {
+     "t": "BE THE REASON.",
+     "c": "a g",
+     "pos": "c",
+     "y": -60,
+     "at": 0.1
+    },
+    {
+     "t": "the next person doesn't wait in the dark",
+     "c": "i",
+     "pos": "c",
+     "y": 70,
+     "at": 0.5
+    }
+   ],
+   "t0": 166.206,
+   "t1": 169.684
+  }
+ ]
+}
