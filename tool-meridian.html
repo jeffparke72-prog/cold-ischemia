@@ -493,7 +493,7 @@
     </div>
     <div class="live-badge">
       <div class="live-dot"></div>
-      Living Registry &nbsp;·&nbsp; <span id="heroCount">0</span> Witnesses &nbsp;·&nbsp; Growing
+      Private by default &nbsp;·&nbsp; Runs on your device &nbsp;·&nbsp; Nothing stored
     </div>
     <p class="scroll-cue">↓ &nbsp; Enter The Meridian</p>
   </div>
@@ -524,8 +524,8 @@
         <div class="layer-num">III</div>
         <h3 class="layer-head">The Pressure Instrument</h3>
         <div class="layer-body">
-          <p>This is the mechanism no chronic illness foundation has ever built. When the collective layer identifies a critical pattern — enough voices describing the same structural failure, the same insurance wall, the same provider blindness — the Pressure Instrument activates.</p>
-          <p>It converts the aggregate truth into institutional force: a regulatory pattern document, a coordinated advocacy submission, and a named pressure point delivered to the specific decision-maker with jurisdiction. The care partners did nothing except tell the truth. Their truth did the rest.</p>
+          <p>One account can be dismissed as an anecdote. A pattern cannot. The Pressure Instrument turns your testimony into a formal, evidence-ready statement that names the decision-maker, the failure and the one change you are asking for, ready to send today.</p>
+          <p>When many people send the same demand, in writing and with dates, institutions notice. Nothing here is stored or sent for you: your statement is yours to send, keep, or share with the foundation if you choose.</p>
         </div>
       </div>
     </div>
@@ -535,19 +535,17 @@
 <!-- ══════════ COLLECTIVE CANVAS ══════════ -->
 <section style="padding-bottom:90px;">
   <div class="wrap">
-    <div class="sec-mark teal">The Living Registry — Right Now</div>
+    <div class="sec-mark teal">The Collective Picture — An Illustration</div>
     <div class="collective-outer">
       <div class="collective-header">
         <div class="live-dot"></div>
-        <span class="col-title">National Care Partner Constellation &nbsp;·&nbsp; Every Node Is A Real Life</span>
+        <span class="col-title">An illustration of the national pattern &nbsp;·&nbsp; simulated points, not real testimonies</span>
       </div>
       <canvas id="collectiveCanvas" height="380"></canvas>
       <div class="collective-stats">
-        <div class="cstat">Total voices: <strong id="totalVoices">0</strong></div>
-        <div class="cstat">Conditions represented: <strong>131 categories</strong></div>
-        <div class="cstat">Patterns identified: <strong id="patternCount">0</strong></div>
-        <div class="cstat">Pressure events triggered: <strong>14</strong></div>
-        <div class="cstat">Your node: <strong id="yourNodeStatus">Not yet placed</strong></div>
+        <div class="cstat">Illustrative points: <strong id="totalVoices">0</strong></div>
+        <div class="cstat">Emotional patterns shown: <strong id="patternCount">0</strong></div>
+        <div class="cstat">Your point: <strong id="yourNodeStatus">Not yet placed</strong></div>
       </div>
     </div>
   </div>
@@ -559,8 +557,7 @@
   <p class="intake-sub">Five movements · Your voice in full · Approximately 10 minutes</p>
 
   <div class="api-bar">
-    <label for="apiKey">API Key</label>
-    <input type="password" id="apiKey" placeholder="sk-ant-api03-…  (required to generate your three living documents)">
+    <div class="api-row" style="border:1px solid rgba(80,200,120,.35);background:rgba(80,200,120,.07);padding:12px 16px;border-radius:6px;margin:14px 0;font-size:.82rem;line-height:1.6;letter-spacing:.02em"><b style="color:#50c878">No key. No account. Nothing leaves your device.</b> This instrument runs entirely in your browser. It is a built-in writer, not a chat model: every sentence was written by a person, and your own scores and words decide which ones you get.</div>
   </div>
 
   <!-- MOVEMENT NAV -->
@@ -861,6 +858,7 @@
 
 
 
+<script src="cif-local-ai.js"></script>
 <script>
 /* ═══════════════════════════════════════════
    HERO CANVAS — meridian lines of human light
@@ -977,7 +975,6 @@ let colFrame=0;
   window.addEventListener('resize',resize); resize();
 
   document.getElementById('totalVoices').textContent=SIM_TOTAL.toLocaleString();
-  document.getElementById('heroCount').textContent=SIM_TOTAL.toLocaleString();
 
   // Regional seeding roughly matching US population density
   const regions=[
@@ -1286,7 +1283,7 @@ function drawTruthCanvas(d){
     ctx.fillText(counts[t].toLocaleString(),x+barW/2,y-3);
   });
   ctx.fillStyle='rgba(216,207,196,0.2)'; ctx.font='8px "IBM Plex Mono",monospace'; ctx.textAlign='center';
-  ctx.fillText('COLLECTIVE EMOTIONAL TERRAIN — YOUR PROFILE HIGHLIGHTED  ('+SIM_TOTAL.toLocaleString()+' VOICES)',W/2,12);
+  ctx.fillText('ILLUSTRATION — SIMULATED POINTS, NOT REAL TESTIMONIES — YOUR PROFILE HIGHLIGHTED',W/2,12);
 }
 
 /* ═══════════════════════════════════════════
@@ -1315,7 +1312,7 @@ function drawPressureCanvas(d){
   const trackW=W-padL-padR;
 
   ctx.fillStyle='rgba(216,207,196,0.2)'; ctx.font='8px "IBM Plex Mono",monospace'; ctx.textAlign='center';
-  ctx.fillText('PRESSURE ACCUMULATION BY CATEGORY — THRESHOLD FOR ACTIVATION: '+THRESHOLD+' VOICES',W/2,11);
+  ctx.fillText('ILLUSTRATION (SIMULATED) — HOW COLLECTIVE PRESSURE BUILDS',W/2,11);
 
   keys.forEach((k,i)=>{
     const y=padT+18+i*(barH+gap);
@@ -1335,7 +1332,7 @@ function drawPressureCanvas(d){
       ctx.strokeRect(padL,y,pct*trackW,barH);
       ctx.shadowBlur=0;
       ctx.fillStyle='rgba(128,80,200,0.9)'; ctx.font='bold 7.5px "IBM Plex Mono",monospace'; ctx.textAlign='left';
-      ctx.fillText('⚡ THRESHOLD EXCEEDED — PRESSURE ACTIVE',padL+pct*trackW+5,y+barH/2+3);
+      ctx.fillText('ABOVE ILLUSTRATIVE THRESHOLD',padL+pct*trackW+5,y+barH/2+3);
     } else {
       ctx.fillStyle='rgba(216,207,196,0.3)'; ctx.font='7px "IBM Plex Mono",monospace'; ctx.textAlign='left';
       ctx.fillText(val+'/'+THRESHOLD,padL+pct*trackW+5,y+barH/2+3);
@@ -1347,7 +1344,7 @@ function drawPressureCanvas(d){
   const exceeded=Object.values(categories).filter(v=>v>=THRESHOLD).length;
   document.getElementById('thresholdStatus').textContent=`${exceeded} of 6 categories at threshold`;
   document.getElementById('targetInst').textContent=d.pressure;
-  document.getElementById('pressureStatus').textContent=exceeded>=2?'⚡ ACTIVE — Documents Generated':'⏳ Accumulating';
+  document.getElementById('pressureStatus').textContent=exceeded>=2?'Your document is ready':'Your document is ready';
 }
 
 /* ═══════════════════════════════════════════
@@ -1364,9 +1361,7 @@ function animateConvergence(){
   }
   // Add user node to constellation
   userNode={ x:0.38+Math.random()*0.24, y:0.30+Math.random()*0.35 };
-  document.getElementById('yourNodeStatus').textContent='Node placed — you are in the count';
-  document.getElementById('totalVoices').textContent=(SIM_TOTAL+1).toLocaleString();
-  document.getElementById('heroCount').textContent=(SIM_TOTAL+1).toLocaleString();
+  document.getElementById('yourNodeStatus').textContent='Shown on the illustration only (nothing is stored)';
 
   function draw(){
     frame++;
@@ -1405,7 +1400,7 @@ function animateConvergence(){
     ctx.fillStyle=`rgba(216,207,196,${0.4+0.3*Math.sin(frame*0.04)})`;
     ctx.font='7.5px "IBM Plex Mono",monospace';
     ctx.textAlign='center';
-    ctx.fillText('YOUR NODE IS LIVE IN THE MERIDIAN REGISTRY',W/2,H-10);
+    ctx.fillText('YOUR RECORD IS BUILT ON YOUR DEVICE ONLY',W/2,H-10);
 
     if(frame<300) requestAnimationFrame(draw);
   }
@@ -1434,25 +1429,9 @@ function md(text){
 }
 
 /* ═══════════════════════════════════════════
-   API CALL HELPER
-═══════════════════════════════════════════ */
-async function callClaude(apiKey,prompt,maxTokens=1400){
-  const res=await fetch('https://api.anthropic.com/v1/messages',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-    body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:maxTokens,messages:[{role:'user',content:prompt}]})
-  });
-  if(!res.ok){ const e=await res.json(); throw new Error(e.error?.message||`API error ${res.status}`); }
-  const data=await res.json();
-  return data.content.find(b=>b.type==='text')?.text||'';
-}
-
-/* ═══════════════════════════════════════════
    MAIN — RUN MERIDIAN
 ═══════════════════════════════════════════ */
 async function runMeridian(){
-  const apiKey=document.getElementById('apiKey').value.trim();
-  if(!apiKey){ alert('Please enter your Anthropic API key.'); return; }
   const d=collectData();
 
   // Show output
@@ -1471,109 +1450,21 @@ async function runMeridian(){
   const today=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
   const terrainStr=d.terrain.length>0?d.terrain.join(', '):'not specified';
 
-  // ─── PROMPT 1: JOURNEY MAP NARRATIVE ───
-  const p1=`You are a care partner biographer and psychologist trained in Narrative Therapy, Logotherapy (Frankl), existential psychology, and caregiver trajectory research. You write with literary precision and complete human dignity. You are not writing a clinical report. You are writing the permanent narrative record of a care partner's transformation — the biography of who they became through this experience.
-
-CARE PARTNER DATA:
-Name: ${d.name} | State: ${d.state} | Relationship: ${d.rel} | Years: ${d.years}
-Condition: ${d.condition}
-Life before: "${d.before}"
-The moment everything changed: "${d.moment}"
-What has been taken: "${d.taken}"
-What has been found: "${d.found}"
-The invisible collapse: "${d.collapse}"
-Emotional terrain: ${terrainStr}
-Employment impact: ${d.employ} | Health impact: ${d.health}
-Support network: ${d.network} people
-What they celebrate about their person: "${d.who}"
-A moment of real joy: "${d.joy}"
-What their best day looks like: "${d.best}"
-What love looks like here: "${d.love}"
-Legacy sentence: "${d.legacy}"
-
-Generate a PERSONAL MERIDIAN RECORD using these H3 headers. Write in second person ("you"). Every section should feel like it was written by someone who has known this care partner for years and is honoring them completely:
-
-### Who You Were Before
-### The Transformation
-### What Has Been Lost — And What Was Found
-### The Hidden Life: What No Chart Has Ever Counted
-### Who You Are Protecting
-### Where Joy Lives In This
-### Your Legacy Words
-
-Write with literary depth. Do not summarize. Render each section as a portrait. The person being cared for must be celebrated as a full human being — named qualities, specific moments. The final section should close with their legacy sentence, set apart as its own paragraph, as the final word of the entire document.`;
-
-  // ─── PROMPT 2: COLLECTIVE TRUTH ───
-  const p2=`You are a sociologist and care partner advocate who studies collective experience patterns in chronic illness caregiving. You have access to the Cold Ischemia Foundation's MERIDIAN database of ${SIM_TOTAL.toLocaleString()} care partner testimonies. You write with authority, warmth, and the specific directness of someone who has spent 20 years proving that isolated experiences are systemic patterns.
-
-THIS CARE PARTNER'S PROFILE:
-Condition: ${d.condition} | Years: ${d.years} | State: ${d.state}
-Emotional terrain: ${terrainStr}
-What the system fails to see: "${d.invisible}"
-The invisible collapse they described: "${d.collapse}"
-Employment impact: ${d.employ} | Health impact: ${d.health}
-Weekly hours: ${d.hrs||'not specified'} | Annual cost: ${d.cost?'$'+d.cost:'not specified'}
-
-Generate a COLLECTIVE TRUTH MIRROR using these H3 headers. Write in second person ("you"). Use real statistics and research where relevant. The purpose is to break isolation — to show this care partner exactly where their experience sits in the national pattern, what it means that thousands of others are living what they are living, and what the aggregate makes visible that the individual experience cannot:
-
-### You Are Not An Anomaly — You Are The Pattern
-### What The Data Shows About People Who Carry What You Carry
-### The Invisible Workforce: What 53 Million Care Partners Prove Together
-### What Your Experience, Added To All The Others, Now Makes Possible
-
-Write with the authority of a researcher who has seen the data and the humanity of someone who understands what it means to see yourself in it for the first time.`;
-
-  // ─── PROMPT 3: PRESSURE INSTRUMENT ───
-  const pressTargets={
-    Congress: 'United States Congress, specifically the Senate Health, Education, Labor and Pensions (HELP) Committee and the House Energy and Commerce Committee',
-    CMS: 'Centers for Medicare and Medicaid Services, Office of Policy',
-    Hospital: 'Hospital System Chief Patient Experience Officer and Chief Quality Officer',
-    Insurance: 'Insurance Company Medical Director and Chief Medical Officer',
-  };
-  const pressTarget=pressTargets[d.pressure]||pressTargets.Congress;
-
-  const p3=`You are the Cold Ischemia Foundation's lead policy writer and advocacy strategist with 25 years of experience drafting documents that reach Congressional hearings, CMS public comment periods, and hospital system board presentations. You write with the authority of deep institutional knowledge and the moral clarity of someone who has watched the healthcare system ignore care partners for decades.
-
-CARE PARTNER DATA:
-Name: ${d.name} | State: ${d.state} | Condition: ${d.condition} | Years: ${d.years}
-Weekly hours: ${d.hrs||'unspecified'} | Annual cost: ${d.cost?'$'+d.cost:'unspecified'}
-Employment: ${d.employ} | Health: ${d.health}
-Network: ${d.network} people | Weeks since day off: ${d.lastday||'unspecified'}
-System failure: "${d.invisible}"
-Specific change needed: "${d.change}"
-Direct statement to decision-makers: "${d.direct}"
-TARGET INSTITUTION: ${pressTarget}
-Today: ${today}
-
-Generate a PRESSURE INSTRUMENT — an institutional advocacy document ready for immediate deployment — using these H3 headers. Write in first person ("I"). Use formal language. This document must be ready to submit without editing:
-
-### Statement of Standing and Purpose
-### The Measurable Impact: What This Life Actually Costs
-### The Structural Failure: What This Institution Has Failed To Do
-### The Demand: One Specific, Named, Actionable Change
-### The Consequence of Inaction: What The Record Will Show
-
-End with a paragraph that references the Cold Ischemia Foundation's MERIDIAN registry and states that this testimony is part of a documented, growing national record that will be submitted to the relevant oversight bodies if the demanded change is not addressed within 90 days. Do not soften this. Do not end with a request for dialogue. End with the weight of what this document represents.`;
-
-  // Run all three in sequence
+  // Run all three in sequence (built-in writer: no key, nothing leaves the device)
   try {
-    // Journey Narrative
-    const raw1=await callClaude(apiKey,p1,1400);
-    document.getElementById('journeyNarrative').innerHTML=md(raw1);
+    await CIFLocal.delay(900);
+    const out=CIFLocal.meridian(d);
+    document.getElementById('journeyNarrative').innerHTML=md(out.journey);
     document.getElementById('jcopybar').style.display='flex';
-
-    // Collective Truth
-    const raw2=await callClaude(apiKey,p2,1000);
-    document.getElementById('collectiveNarrative').innerHTML=md(raw2);
+    await CIFLocal.delay(700);
+    document.getElementById('collectiveNarrative').innerHTML=md(out.collective);
     document.getElementById('ccopybar').style.display='flex';
-
-    // Pressure Instrument
-    const raw3=await callClaude(apiKey,p3,1200);
-    document.getElementById('pressureNarrative').innerHTML=md(raw3);
+    await CIFLocal.delay(700);
+    document.getElementById('pressureNarrative').innerHTML=md(out.pressure);
     document.getElementById('pcopybar').style.display='flex';
-
+    window.__meridianLast=out;
   } catch(err){
-    const errMsg=`<p style="color:var(--truth);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;line-height:1.8;">Error: ${err.message}<br>Please verify your API key and try again.</p>`;
+    const errMsg=`<p style="color:var(--truth);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;line-height:1.8;">Something went wrong: ${err.message}. Please try again.</p>`;
     document.getElementById('journeyNarrative').innerHTML=errMsg;
     document.getElementById('collectiveNarrative').innerHTML=errMsg;
     document.getElementById('pressureNarrative').innerHTML=errMsg;

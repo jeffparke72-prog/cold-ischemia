@@ -939,8 +939,7 @@
   </div>
 
   <div class="api-field">
-    <label for="apiKey">API Key</label>
-    <input type="password" id="apiKey" placeholder="sk-ant-api03-…  (required to generate your Two Futures)">
+    <div class="api-row" style="border:1px solid rgba(80,200,120,.35);background:rgba(80,200,120,.07);padding:12px 16px;border-radius:6px;margin:14px 0;font-size:.82rem;line-height:1.6;letter-spacing:.02em"><b style="color:#50c878">No key. No account. Nothing leaves your device.</b> This instrument runs entirely in your browser. It is a built-in writer, not a chat model: every sentence was written by a person, and your own scores and words decide which ones you get.</div>
   </div>
 
   <!-- Dimension 1: Sleep -->
@@ -1099,6 +1098,7 @@
 <!-- ════════════════════ FOOTER ════════════════════ -->
 
 
+<script src="cif-local-ai.js"></script>
 <script>
 /* ════════════════════════════════════════
    HERO CANVAS — diverging path animation
@@ -1279,8 +1279,6 @@ function buildPathCards(dims) {
    MAIN ENGINE
 ════════════════════════════════════════ */
 async function runEngine() {
-  const apiKey = document.getElementById('apiKey').value.trim();
-  if (!apiKey) { alert('Please enter your Anthropic API key.'); return; }
 
   const dims = getDimensions();
   const risk = totalRisk(dims);
@@ -1307,61 +1305,9 @@ async function runEngine() {
   panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   animateBars();
 
-  const dimSummary = dims.map((d, i) =>
-    `Dimension ${i+1} — ${d.name}: ${d.score}/5${d.context ? '\n  Context: "' + d.context + '"' : ''}`
-  ).join('\n');
-
-  const highestDim  = dims.reduce((a, b) => a.score > b.score ? a : b);
-  const riskProfile = risk >= 18 ? 'critical — this person is in a pre-collapse state'
-                    : risk >= 13 ? 'high stress — significant burnout risk within months'
-                    : risk >= 9  ? 'moderate — trajectory is concerning but recoverable'
-                    : 'manageable — early intervention is effective';
-
-  const prompt = `You are a specialist in caregiver trajectory psychology, trained in Motivational Interviewing (Miller & Rollnick, 2012), caregiver burnout research (Pinquart & Sörensen, 2003), and Acceptance and Commitment Therapy. You are generating a Two Futures narrative for a care partner.
-
-They have rated their current reality across five dimensions:
-
-${dimSummary}
-
-Total stress load: ${risk}/25 — Risk profile: ${riskProfile}
-Highest-pressure dimension: ${highestDim.name} (${highestDim.score}/5)
-
-Your task: Generate the Three Sections below using H3 headers. Be specific, concrete, and narrative. Do not write in lists or bullet points anywhere. Write in full paragraphs and full scenes.
-
-### The Trajectory: A Week in Your Life — Six Months From Now
-Write a specific, detailed, narrative portrait of what a week in this care partner's life looks like if nothing changes — their current trajectory extended six months forward. Do not list what will happen. Write it as a scene: Tuesday morning, a phone call, the body, the kitchen at 11pm. Make it feel real. Ground it specifically in their five dimension scores and context. Use second person ("you"). Be honest about what caregiver trajectory research says happens on this path. Do not soften it. The goal is that they recognize themselves and feel the weight of where this leads.
-
-### The Alternate Week: Six Months on the Intervention Path
-Now write the same week — but six months after one real intervention was made. Do not write a fantasy. Write a realistic portrayal of what changes when the single highest-leverage dimension shifts. It is not perfect. It is not healed. But something specific and real is different. What does Tuesday morning feel like then? What is possible that was not possible before? Ground it in what the research shows actually changes when care partners make one sustained intervention. Same structure, same day — different weight.
-
-### The Leverage Point and 72-Hour Plan
-Name the single highest-leverage intervention point visible in their five dimensions — not the worst-scoring, but the one where a real change would produce the most systemic shift. Explain why this is the fulcrum, using the specific MI and caregiver research framework. Then give a 72-hour micro-plan with three timed, specific actions — labeled Hour 0-24, Hour 24-48, and Hour 48-72. Each action must be named, described in one concrete paragraph, and actionable without money, permission from anyone, or perfect circumstances. This is not a wellness plan. This is the minimum viable intervention.
-
-Write in second person ("you"). Be direct, literary, and honest. Do not end with encouragement. End with the last action in the 72-hour plan.`;
-
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1600,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.error?.message || `API error ${res.status}`);
-    }
-
-    const data = await res.json();
-    const raw  = data.content.find(b => b.type === 'text')?.text || '';
+    await CIFLocal.delay(1300);
+    const raw = CIFLocal.twoFutures({ dims, risk });
 
     // Render — apply color classes to H3s based on order
     let h3Count = 0;
@@ -1386,7 +1332,7 @@ Write in second person ("you"). Be direct, literary, and honest. Do not end with
 
   } catch(err) {
     body.innerHTML = `<p style="color:var(--path-a);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;line-height:1.8;">
-      Error: ${err.message}<br>Please verify your API key and try again.</p>`;
+      Something went wrong: ${err.message}. Please try again.</p>`;
   }
 }
 

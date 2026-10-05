@@ -459,6 +459,7 @@
 
 </div><!-- /page -->
 
+<script src="cif-local-ai.js"></script>
 <script>
 let selectedSit = '';
 let analysisData = null;
@@ -530,72 +531,10 @@ async function startAnalysis() {
   const stepEl = document.getElementById('loading-step');
   const iv = setInterval(() => { si = (si+1)%steps.length; stepEl.textContent = steps[si]; }, 1800);
 
-  const system = `You are the Cold Ischemia Foundation's federal patient rights analysis engine. You specialize in ESRD (End-Stage Renal Disease) patient rights, dialysis facility regulations, and transplant system accountability under federal law.
-
-Deep expertise in:
-- 42 CFR Part 494 (ESRD Conditions for Coverage — especially §494.70 patient rights, §494.180 grievances, §494.90 patient care plans)
-- 42 CFR Part 482 (Hospital Conditions of Participation — §482.13 patient rights)
-- 42 CFR Part 489 (Provider agreements — §489.102 advance directives)
-- 42 U.S.C. §1395rr (Medicare ESRD Program statutory rights)
-- NOTA (National Organ Transplant Act) and 42 CFR Part 121 (OPTN — §121.4 listing criteria)
-- EMTALA — 42 U.S.C. §1395dd
-- HIPAA — 45 CFR Part 164 (patient access to records)
-- ADA protections for ESRD patients — 42 U.S.C. §12101
-- CMS enforcement: State Survey Agencies, ESRD Networks (QIA contractors), CMS Regional Offices
-- OIG hotline jurisdiction — 42 U.S.C. §1320a-7a
-
-Analysis requirements:
-1. Cite exact CFR sections — never vague references
-2. Every violation maps to a concrete action
-3. Honest severity — never minimize, never catastrophize
-4. Written for a stressed care partner, not a lawyer
-
-Return ONLY valid JSON matching this exact structure — no preamble, no markdown fences:
-{
-  "severity": "critical|high|moderate",
-  "severityText": "One sentence on overall urgency",
-  "plainLanguage": "2-3 paragraphs in plain English explaining what is happening legally and what rights are being violated. Use <p> tags. Bold key phrases with <strong>.",
-  "violations": [
-    {"cfr": "42 CFR §494.180(f)", "title": "Short title", "description": "What this requires and how it is being violated"}
-  ],
-  "agencySequence": [
-    {"step": 1, "timing": "Within 24 hours", "agency": "Agency name", "action": "Specific action to take", "cfr": "Relevant authority"}
-  ],
-  "immediateActions": ["Direct instruction written as an imperative sentence"]
-}`;
-
-  const userMsg = `Analyze this patient/care partner situation:
-
-Situation type: ${selectedSit || 'not specified'}
-State: ${state || 'not specified'}
-Treatment type: ${treatment || 'not specified'}
-Duration: ${duration || 'not specified'}
-
-Description: ${text}
-
-Provide a complete federal rights analysis with specific CFR citations, all applicable violations, the full agency contact sequence in priority order, and at least 4 immediate action steps.`;
-
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 2000,
-        system,
-        messages: [{ role: 'user', content: userMsg }]
-      })
-    });
-
+    await new Promise(r => setTimeout(r, 1500));
     clearInterval(iv);
-
-    if (!res.ok) throw new Error('API ' + res.status);
-    const d = await res.json();
-    const raw = d.content[0].text.trim().replace(/^```json\s*/,'').replace(/\s*```$/,'').trim();
-    analysisData = JSON.parse(raw);
+    analysisData = CIFLocal.rights({ text, state, treatment, duration, sit: selectedSit });
     analysisData._text = text;
     analysisData._state = state;
     analysisData._treatment = treatment;
@@ -682,29 +621,10 @@ async function generateDocument() {
   };
 
   const r = analysisData;
-  const viols = (r.violations||[]).map(v => `${v.cfr}: ${v.title}`).join('; ');
-
+  
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 2000,
-        system: `You are a federal patient rights attorney specializing in ESRD, dialysis, and transplant law. You draft precise, legally grounded advocacy documents for patients and care partners. Documents must be formally structured, cite exact CFR sections, be assertive but professional, and ready to send without editing. Use [PATIENT NAME], [CARE PARTNER NAME], [FACILITY NAME], [FACILITY ADDRESS] as placeholders. Include today's date: ${new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}.`,
-        messages: [{
-          role: 'user',
-          content: `Generate a ${labels[selectedDocType]} based on this situation:\n\nState: ${r._state||'Not specified'}\nTreatment: ${r._treatment||'Not specified'}\nType: ${r._sit||'Not specified'}\nDescription: ${r._text}\nViolations: ${viols}\nSeverity: ${r.severity}\n\nWrite the complete ready-to-send document with proper date, addresses, subject line, body paragraphs citing specific CFR sections, a clear demand with deadline, and CC line to relevant agencies.`
-        }]
-      })
-    });
-
-    if (!res.ok) throw new Error('API error');
-    const d = await res.json();
-    document.getElementById('doc-content').textContent = d.content[0].text.trim();
+    await new Promise(r => setTimeout(r, 900));
+    document.getElementById('doc-content').textContent = CIFLocal.rightsDoc(r, selectedDocType);
     document.getElementById('doc-output').classList.add('visible');
     document.getElementById('doc-output').scrollIntoView({ behavior:'smooth', block:'start' });
   } catch(e) {
