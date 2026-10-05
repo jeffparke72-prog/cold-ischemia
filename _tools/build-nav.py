@@ -32,6 +32,7 @@ GROUPS = [
         ("transplant-realities.html", "What Nobody Tells You"),
         ("transplant-line.html", "The Transplant Line"),
         ("donor-flow.html", "Project Donor-Flow"),
+        ("living-donor-hub.html", "Living Donor Hub"),
         ("living-donor-journey.html", "Living Donor Journey"),
         ("opo-directory.html", "U.S. OPO Directory"),
     ]),
