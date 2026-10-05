@@ -4,6 +4,7 @@
 <head>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M95EH0B5BK"></script>
+<script src="cif-local-ai.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -575,8 +576,7 @@ footer a { color: var(--gold); text-decoration: none; }
   </div>
 
   <div class="api-row" style="max-width:700px; margin:0 auto 28px;">
-    <label for="apiKey">API Key</label>
-    <input type="password" id="apiKey" placeholder="sk-ant-api03-…  (required to generate your Field Dispatch)" autocomplete="off">
+    <div class="api-row" style="border:1px solid rgba(80,200,120,.35);background:rgba(80,200,120,.07);padding:12px 16px;border-radius:6px;margin:14px 0;font-size:.82rem;line-height:1.6;letter-spacing:.02em"><b style="color:#50c878">No key. No account. Nothing leaves your device.</b> This instrument runs entirely in your browser. It is a built-in writer, not a chat model: every sentence was written by a person, and your own scores and words decide which ones you get.</div>
   </div>
 
   <div class="canvas-wrap">
@@ -1024,12 +1024,6 @@ footer a { color: var(--gold); text-decoration: none; }
 
   // ─── Read The Map ───
   document.getElementById('readBtn').addEventListener('click', async () => {
-    const apiKey = document.getElementById('apiKey').value.trim();
-    if (!apiKey) {
-      alert('Please enter your Anthropic API key above the canvas.');
-      return;
-    }
-
     const t = analyzeTopology();
     const dispSec = document.getElementById('dispatchSection');
     const dispBody = document.getElementById('dispatchBody');
@@ -1072,68 +1066,9 @@ footer a { color: var(--gold); text-decoration: none; }
     dispSec.style.display = 'block';
     dispSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    const prompt = `You are a psychological field analyst specializing in care partner wellness. You are trained in Ambiguous Loss Theory (Pauline Boss, 1999), Attachment Theory (John Bowlby, 1969–1980), Acceptance and Commitment Therapy, Narrative Therapy, and Viktor Frankl's Logotherapy.
-
-A care partner has just used the Relationship Cartography Engine to spatially map their emotional world. The eight nodes they placed are: SELF (core identity), PATIENT (the person they care for), IDENTITY (who they were before caregiving), GRIEF, RESENTMENT, LOVE, EXHAUSTION, and FUTURE.
-
-Here is the topology of their map:
-
-**SELF ↔ PATIENT proximity reading:** ${t.proximity} (spatial distance: ${t.selfPatDist}% of canvas diagonal)
-**SELF ↔ PATIENT explicitly connected:** ${t.selfPatConnected ? 'Yes' : 'No'}
-
-**Nodes collapsed into SELF** (very close proximity — absorbed into identity):
-${t.collapsedIntoSelf.length > 0 ? t.collapsedIntoSelf.join(', ') : 'None'}
-
-**Nodes severed from SELF** (pushed to periphery — exiled or suppressed):
-${t.severedFromSelf.length > 0 ? t.severedFromSelf.join(', ') : 'None'}
-
-**Nodes explicitly connected to SELF:**
-${t.connectedToSelf.length > 0 ? t.connectedToSelf.join(', ') : 'None'}
-
-**Completely isolated nodes** (no connections to anything):
-${t.isolated.length > 0 ? t.isolated.join(', ') : 'None'}
-
-**Total connections drawn:** ${t.totalConnections}
-
-**Detailed proximity from SELF** (sorted nearest to farthest):
-${t.nodeData.map(n=>`- ${n.label}: ${(n.dFromSelf*100).toFixed(0)}% distance from SELF`).join('\n')}
-
-Generate a Field Dispatch with these three exact sections, using H3 headers:
-
-### The Terrain
-What does this specific configuration reveal about this care partner's emotional landscape right now? Use the language of geography, weather, and topology. What has collapsed together? What has been pushed out? What is the dominant feature of this terrain? Be specific to THEIR map — do not give generic caregiver information.
-
-### The Red Flags
-What does this configuration signal as the most urgent psychological risks? Name them directly with no hedging. Explicitly reference the relevant frameworks: Ambiguous Loss, role engulfment, disenfranchised grief, attachment disruption, compassion fatigue, or identity erosion — but only those that are actually visible in this map. Be honest about what you see.
-
-### The Leverage Point
-Identify the ONE highest-leverage intervention visible in this map — the single node relationship or spatial pattern, that if changed, would shift the most. Then offer one specific, concrete, non-generic practice from ACT, Narrative Therapy, or Logotherapy that addresses exactly that point. Name the practice. Describe how to do it. Make it actionable within 72 hours.
-
-Write in second person ("you"). Be direct, literary, and compassionate — not clinical. This person does not need to be managed. They need to be seen. Do not soften your observations. Do not end with platitudes.`;
-
     try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-direct-browser-access': 'true'
-        },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1400,
-          messages: [{ role: 'user', content: prompt }]
-        })
-      });
-
-      if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.error?.message || `API error ${res.status}`);
-      }
-
-      const data = await res.json();
-      const raw  = data.content.find(b => b.type === 'text')?.text || '';
+      await CIFLocal.delay(1200);
+      const raw = CIFLocal.cartography(t);
 
       // Render markdown-ish output
       const html = raw
@@ -1148,8 +1083,7 @@ Write in second person ("you"). Be direct, literary, and compassionate — not c
 
     } catch (err) {
       dispBody.innerHTML = `<p style="color:#d06060;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;">
-        Error: ${err.message}<br>
-        Please check your API key and try again.
+        Something went wrong: ${err.message}. Please try again.
       </p>`;
     }
   });

@@ -320,4 +320,88 @@
     return out.join('\n\n');
   };
 
+
+  /* ====================================================================================================
+     CARTOGRAPHY: reads the spatial map of eight emotional nodes. ctx = the page's analyzeTopology() result.
+     Returns three H3 sections: The Terrain / The Red Flags / The Leverage Point.
+  ==================================================================================================== */
+  var NODE_CLOSE = {
+    IDENTITY: 'your old identity sits right against you, which is rare and good: the person you were before this has not been exiled',
+    GRIEF: 'grief has moved in with you and taken a room. It is close enough to color every decision, which usually means it has not yet been given a place of its own',
+    RESENTMENT: 'resentment is at your elbow. Anger that close is not a flaw. It is an unacknowledged signal that something is being asked of you that is not fair',
+    LOVE: 'love is within arm’s reach, which tells me the bond is alive and is not buried under the logistics',
+    EXHAUSTION: 'exhaustion has collapsed into you entirely. It is no longer something you feel; it is the medium you are standing in',
+    FUTURE: 'the future is close, which means you can still picture it and reach for it'
+  };
+  var NODE_FAR = {
+    IDENTITY: 'your pre-caregiving identity has been pushed to the far edge of the map. That is exile, not forgetting: the self you were is somewhere out there, unvisited',
+    GRIEF: 'grief has been pushed to the periphery. That is usually not because it is small but because there has been no permission to feel it, and grief that is kept at a distance does not leave, it waits',
+    RESENTMENT: 'resentment has been exiled to the edge. Anger kept that far away is anger that is being managed rather than heard, and it tends to come back through other doors',
+    LOVE: 'love has drifted to the edge. This is often the most painful placement on the map: not an absence of love, but the sense that duty has crowded it out of reach',
+    EXHAUSTION: 'exhaustion has been placed far away, which often means it is being denied. The body knows differently, and eventually it will send the bill',
+    FUTURE: 'the future is far away, near the edge of the map. When tomorrow shrinks to the next appointment, the mind stops planning, and with it goes the sense that anything you do now will matter later'
+  };
+  var PRACTICES = {
+    identity: ['The Old Self Interview', 'In Acceptance and Commitment Therapy, values are the compass you keep even when circumstances take the map away. Write down three things the person you were before this cared about, not achievements but values: making things, being outdoors, being funny, being curious. Then choose one and give it fifteen minutes this week, in whatever form is possible. The goal is not to reclaim the old life. It is to prove to yourself that the person who valued those things still exists and can act on them.'],
+    grief: ['The Ledger of What Has Changed', 'Ambiguous loss, in Pauline Boss’s work, is loss without closure: someone is physically present but not what they were, so the grief has no ceremony. Write two columns. In the first, name specifically what has been lost: a shared joke, a trip, a division of labor, a future you assumed. In the second, name what remains, just as specifically. Then read the first column aloud to someone safe. The point is not to resolve it. It is to give it a form, because grief that has a name takes up less of the room.'],
+    resentment: ['Defusion and the Unsent Letter', 'ACT teaches that you can acknowledge a feeling without being governed by it. Say the thought in a new frame: “I am having the thought that this is unfair.” Notice the small gap between you and the thought. Then write the letter you will never send, to the person, the institution or the situation that has made you angry. Say everything. Keep it for a day, then decide whether to burn it or keep it. The anger is not the enemy. Unspoken, it becomes the thing that decides things for you.'],
+    exhaustion: ['The Permission Ledger', 'Exhaustion this central is a signal about structure, not character. For one week, write down every task you did and mark each one: required, requested, or assumed. Most people discover that a third of what they carry is assumed, meaning no one asked and no one would notice if it stopped. Pick one assumed task and stop doing it. Watch what happens. Often the answer is nothing, and nothing is a significant finding.'],
+    future: ['The Task of Tomorrow', 'Viktor Frankl observed that people endured the unendurable when they could point to a task waiting for them. Choose one small, specific thing that is yours and that sits two to four weeks ahead: a call, a trip, a person you will see, a piece of writing. It does not have to be large. It has to be concrete, dated and yours. Put it on the calendar. A future the mind can see is a future it can walk toward.'],
+    merged: ['The Hour of Separate Facts', 'When two lives are this close, it becomes hard to know which feelings, which fatigue and which preferences are yours. Once a day for a week, take ten minutes and write three facts that are only about you: what you ate, what you noticed, what you wanted. This is not selfishness. It is differentiation, the slow practice of remembering where your edges are, so that you can stay close without disappearing.'],
+    distant: ['The Ten-Minute Bond', 'When the distance between you and the person you care for has grown, the repair is usually small. Choose ten minutes this week with no task attached: no medication, no appointment, no planning. Sit near them and do something ordinary together, a show, a song, a meal. Attachment research is consistent that connection is rebuilt in small repeated moments, not in grand gestures.']
+  };
+
+  L.cartography = function (t) {
+    var out = [], key = JSON.stringify([t.proximity, t.collapsedIntoSelf, t.severedFromSelf, t.isolated, t.totalConnections]);
+    var col = t.collapsedIntoSelf || [], sev = t.severedFromSelf || [], iso = t.isolated || [], nd = t.nodeData || [];
+    var has = function (arr, x) { return arr.indexOf(x) >= 0; };
+    var prox = { 'near-merged': 'Self and Patient are almost the same landmass, with no water between them.', 'closely entangled': 'Self and Patient sit close, with only a narrow channel between them.', 'moderate distance': 'Self and Patient are a comfortable distance apart: close enough to reach, far enough to remain two.', 'significant distance': 'Self and Patient have drifted apart, with real water between them.', 'severe separation': 'Self and Patient are on opposite shores.' }[t.proximity] || '';
+
+    out.push('### The Terrain');
+    out.push('This is the map you drew, read as land. ' + prox + (t.selfPatConnected ? ' You drew a line between them, so the bond is acknowledged even where the space between is large.' : ' You did not draw a line between them, which is its own statement: the closeness or the distance has not been named as a relationship.'));
+    var lines = [];
+    col.forEach(function (n) { if (NODE_CLOSE[n]) lines.push(L.cap(NODE_CLOSE[n].replace(/^your /, 'Your ')) + '.'); });
+    if (lines.length) out.push('Here is what sits against you. ' + lines.join(' '));
+    else out.push('Nothing has collapsed against you. Every node on your map holds some distance from the center, which is a structural kind of health.');
+    var flines = [];
+    sev.forEach(function (n) { if (NODE_FAR[n]) flines.push(L.cap(NODE_FAR[n]) + '.'); });
+    if (flines.length) out.push('And here is what has been pushed to the edges. ' + flines.join(' '));
+    if (iso.length) out.push((iso.length === 1 ? 'The only node with no connections at all is ' : 'The nodes with no connections at all are ') + L.list(iso.map(function (n) { return n.toLowerCase(); })) + '. Isolation on a map is the same as it is in a life: something that is present but not related to anything else, and therefore unable to be integrated.');
+    out.push('The dominant feature of your terrain is ' + (col.indexOf('EXHAUSTION') >= 0 ? 'a plain of exhaustion that everything else is built on' : col.indexOf('GRIEF') >= 0 ? 'a grief-shaped basin at your center' : sev.indexOf('IDENTITY') >= 0 ? 'the distance between you and your own identity' : sev.indexOf('FUTURE') >= 0 ? 'a future that has been moved to the horizon' : t.proximity === 'near-merged' || t.proximity === 'closely entangled' ? 'how little space there is between you and the person you care for' : t.totalConnections === 0 ? 'disconnection: eight points with no lines between them' : 'a map with space on it, which is the best precondition for change') + '. You drew ' + t.totalConnections + ' connection' + (t.totalConnections === 1 ? '' : 's') + (t.totalConnections < 3 ? ', few enough that most of what you feel is still unrelated to the rest.' : ', which suggests you can see how some of these parts relate.'));
+
+    out.push('### The Red Flags');
+    var flags = [];
+    if ((t.proximity === 'near-merged' || t.proximity === 'closely entangled') && (sev.indexOf('IDENTITY') >= 0 || iso.indexOf('IDENTITY') >= 0 || (nd.filter(function (n) { return n.label === 'IDENTITY'; })[0] || { dFromSelf: 0 }).dFromSelf > 0.3))
+      flags.push('**Role engulfment.** The person you care for is almost fused with your sense of self, and your own identity has been moved out of reach. This is the classic pattern of a caregiver whose role has swallowed the person. It does not feel like a problem from inside, because the role is full of meaning. The danger is that when the role changes or ends, there is no one standing behind it.');
+    if (has(col, 'GRIEF') || has(sev, 'GRIEF') || has(iso, 'GRIEF'))
+      flags.push('**Ambiguous loss and disenfranchised grief.** Your map puts grief ' + (has(col, 'GRIEF') ? 'in the middle of everything' : 'at a distance or without connection') + '. Boss’s research on ambiguous loss shows that grief with no ceremony, for a person who is still here, is among the hardest to carry because the world does not recognize that anything has been lost. Disenfranchised grief is grief no one has given you permission to feel.');
+    if (has(col, 'EXHAUSTION') && (has(sev, 'LOVE') || has(iso, 'LOVE')))
+      flags.push('**Compassion fatigue.** Exhaustion has collapsed onto you while love has drifted to the edge. This is the signature pattern: not that you have stopped caring, but that the capacity to feel it has been spent. It is a signal of depletion, not of failure.');
+    if (has(sev, 'IDENTITY') && !flags.length)
+      flags.push('**Identity erosion.** Your sense of who you were has been pushed far out. Without regular contact, identities do not disappear, they go quiet, and the quiet can be mistaken for permanence.');
+    if (has(col, 'RESENTMENT') || has(sev, 'RESENTMENT'))
+      flags.push('**Unspoken anger.** Resentment ' + (has(col, 'RESENTMENT') ? 'is pressed against you' : 'has been exiled') + '. Either way, it is not being heard. Unacknowledged resentment in caregivers is strongly associated with guilt, which then compounds the isolation.');
+    if (t.proximity === 'severe separation' || t.proximity === 'significant distance')
+      flags.push('**Attachment disruption.** You placed yourself far from the person you care for. In attachment terms this can reflect protective distance, burnout, or a bond under strain. Whichever it is, the distance is information, not a verdict.');
+    if (t.totalConnections === 0) flags.push('**Fragmentation.** With no connections drawn, each part of your emotional life is holding its own weight. Nothing is shared between them. That is exhausting in itself.');
+    if (!flags.length) flags.push('**No acute flags.** Your map is not showing collapse or exile. The risk in a balanced map is drift: the quiet movement toward the patterns above if the load continues unchanged. Notice which node moves first.');
+    out.push(flags.join('\n\n'));
+    out.push('None of these are diagnoses, and this is not therapy. They are patterns that the research on caregiving has named, and they are named here because naming is the first step.');
+
+    out.push('### The Leverage Point');
+    var pick, why;
+    if (has(sev, 'IDENTITY') || has(iso, 'IDENTITY')) { pick = 'identity'; why = 'the most useful move is to reconnect SELF with IDENTITY. Almost everything else on your map is organized around the absence of that line.'; }
+    else if (has(col, 'GRIEF') || has(sev, 'GRIEF')) { pick = 'grief'; why = 'the highest-leverage point is the position of GRIEF. It is either too close to function around or too far to be felt, and either way it is shaping everything near it.'; }
+    else if (has(col, 'RESENTMENT') || has(sev, 'RESENTMENT')) { pick = 'resentment'; why = 'the highest-leverage point is RESENTMENT. Most of the other tensions on your map are being held in place by anger that has not been allowed to speak.'; }
+    else if (has(col, 'EXHAUSTION')) { pick = 'exhaustion'; why = 'the highest-leverage point is EXHAUSTION, which has collapsed into your center. Nothing else on the map can move while it occupies that ground.'; }
+    else if (has(sev, 'FUTURE')) { pick = 'future'; why = 'the highest-leverage point is FUTURE. It has drifted to the horizon, and a mind without a visible tomorrow cannot hold the present for long.'; }
+    else if (t.proximity === 'near-merged' || t.proximity === 'closely entangled') { pick = 'merged'; why = 'the highest-leverage point is the space between SELF and PATIENT. The closeness is love, and it is also the reason nothing on the map has room to move.'; }
+    else if (t.proximity === 'severe separation' || t.proximity === 'significant distance') { pick = 'distant'; why = 'the highest-leverage point is the distance between SELF and PATIENT. Repairing even a little of it will reorganize more of the map than any other change.'; }
+    else { pick = 'future'; why = 'the highest-leverage point is FUTURE. Your map is balanced, so the best investment is to give it somewhere to go.'; }
+    var pr = PRACTICES[pick];
+    out.push('In your map, ' + why);
+    out.push('**' + pr[0] + '.** ' + pr[1]);
+    return out.join('\n\n');
+  };
+
 })();
