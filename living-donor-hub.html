@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living Donor Hub | Cold Ischemia Foundation</title>
+<meta name="description" content="One place for living donation: find transplant programs near you, write a message that gets answered, build a private packet to share, and read the research behind the decision. No account. No cost.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;
+  --ink:#d8cfc4;--ink80:rgba(216,207,196,.84);--ink60:rgba(216,207,196,.64);--ink40:rgba(216,207,196,.44);
+  --gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,.14);
+  --pulse:#2ac4c8;--pulse-d:rgba(42,196,200,.12);--danger:#e0566f;--green:#50c878;--green-d:rgba(80,200,120,.12);
+  --b:rgba(100,140,200,.14);--b2:rgba(100,140,200,.3);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;font-size:19px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--gold-l)}
+button,select,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.kick{color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.kick::before{content:'';width:28px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:300;line-height:1.12;color:#f3ede4}
+h1{font-size:clamp(38px,6vw,68px);letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:10px}
+h3{font-size:22px;font-weight:600}
+em{color:var(--gold-l)}
+.lead{font-size:clamp(19px,2.2vw,22px);color:var(--ink80);max-width:760px}
+.small{font-size:15px;color:var(--ink60)}
+/* hero */
+.hero{padding:70px 0 34px;background:radial-gradient(900px 400px at 85% -10%,rgba(42,196,200,.12),transparent 70%),radial-gradient(700px 380px at 5% 0,rgba(200,144,42,.12),transparent 70%)}
+.hero h1{margin:6px 0 18px}
+.prog{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.prog .pill{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border:1px solid var(--b2);border-radius:99px;color:var(--ink60);background:rgba(10,22,40,.6);cursor:pointer;transition:.2s}
+.prog .pill.done{border-color:var(--green);color:var(--green);background:var(--green-d)}
+.prog .pill:hover{border-color:var(--gold)}
+.meter{height:4px;background:var(--b);border-radius:9px;margin-top:16px;overflow:hidden;max-width:520px}
+.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--pulse));transition:width .6s ease}
+/* tabs */
+.tabs{position:sticky;top:56px;z-index:30;background:rgba(3,5,9,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--b)}
+.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs .wrap::-webkit-scrollbar{display:none}
+.tab{flex:none;background:none;border:0;border-bottom:2px solid transparent;padding:16px 16px 14px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink60);cursor:pointer;white-space:nowrap}
+.tab[aria-selected=true]{color:var(--gold-l);border-bottom-color:var(--gold)}
+.tab b{display:inline-block;min-width:20px;padding:1px 6px;margin-left:6px;border-radius:99px;background:var(--gold-d);color:var(--gold-l);font-weight:500}
+.panel{padding:54px 0 70px;min-height:60vh}
+.panel[hidden]{display:none}
+/* controls */
+.row{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin:22px 0}
+label.f{display:block}
+label.f span{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink60);margin-bottom:7px}
+select,input[type=text],input[type=email],input[type=search],textarea{width:100%;background:var(--surf);border:1px solid var(--b2);border-radius:5px;padding:13px 14px;font-size:17px;color:var(--ink)}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:38px}
+select option{background:#0a1628}
+textarea{min-height:260px;line-height:1.55;resize:vertical;font-size:16.5px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-radius:4px;padding:14px 20px;cursor:pointer;border:1px solid var(--b2);background:transparent;color:var(--ink);transition:.2s}
+.btn:hover{border-color:var(--gold);color:var(--gold-l)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss)}
+.btn.gold:hover{background:var(--gold-l);color:var(--abyss)}
+.btn[disabled]{opacity:.5;cursor:default}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+/* role cards */
+.roles{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin:24px 0}
+.role{text-align:left;background:var(--surf);border:1px solid var(--b);border-radius:10px;padding:22px;cursor:pointer;transition:.25s;display:block;width:100%}
+.role:hover{border-color:var(--b2);transform:translateY(-2px)}
+.role[aria-pressed=true]{border-color:var(--gold);background:linear-gradient(160deg,rgba(200,144,42,.14),var(--surf))}
+.role .n{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--gold)}
+.role h3{margin:6px 0 6px}
+.role p{font-size:16px;color:var(--ink60);line-height:1.5}
+.next{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:26px}
+.nx{background:var(--void);border:1px solid var(--b);border-radius:10px;padding:20px}
+.nx h3{font-size:19px;margin-bottom:6px}
+.nx p{font-size:16px;color:var(--ink60);margin-bottom:12px;line-height:1.5}
+/* centers */
+.cnt{margin:6px 0 16px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--ink60)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(310px,1fr))}
+.card{background:var(--surf);border:1px solid var(--b);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:.2s}
+.card:hover{border-color:var(--b2)}
+.card.on{border-color:var(--gold)}
+.card h3{font-size:19px;line-height:1.25}
+.meta{font-size:15px;color:var(--ink60);line-height:1.45}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:99px;border:1px solid var(--b2);color:var(--ink60);margin:0 5px 5px 0}
+.tag.k{border-color:rgba(42,196,200,.5);color:var(--pulse)}
+.tag.t1{border-color:rgba(80,200,120,.5);color:var(--green)}
+.add{margin-top:auto;align-self:flex-start;padding:10px 14px;font-size:11px}
+.short{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--gold-d);border:1px solid rgba(200,144,42,.4);border-radius:99px;padding:6px 8px 6px 14px;font-size:15px}
+.chip button{background:none;border:0;color:var(--gold-l);cursor:pointer;font-size:17px;line-height:1;padding:0 4px}
+.more{margin:22px auto 0;display:block}
+/* composer */
+.two{display:grid;gap:30px;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
+.qs{display:grid;gap:8px;margin-top:6px}
+.q{display:flex;gap:10px;align-items:flex-start;background:var(--void);border:1px solid var(--b);border-radius:8px;padding:11px 13px;cursor:pointer;font-size:16px;line-height:1.45}
+.q input{margin-top:5px;accent-color:#c8902a}
+.q.on{border-color:rgba(200,144,42,.6)}
+.note{border-left:3px solid var(--gold);background:var(--gold-d);padding:14px 18px;border-radius:0 8px 8px 0;font-size:16.5px;color:var(--ink80);margin:20px 0}
+.note.teal{border-color:var(--pulse);background:var(--pulse-d)}
+/* library */
+.art{display:flex;flex-direction:column;gap:9px}
+.art h3{font-size:18px;line-height:1.3}
+.art h3 a{color:#f3ede4;text-decoration:none}
+.art h3 a:hover{color:var(--gold-l);text-decoration:underline}
+.art p{font-size:16px;color:var(--ink60);line-height:1.5}
+.art .src{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--ink40)}
+.art .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto}
+.star{background:none;border:1px solid var(--b2);border-radius:99px;color:var(--ink60);cursor:pointer;padding:7px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.star[aria-pressed=true]{border-color:var(--gold);color:var(--gold-l);background:var(--gold-d)}
+/* packet */
+.pk{background:var(--void);border:1px solid var(--b2);border-radius:10px;padding:22px;margin-top:18px}
+.inc{display:grid;gap:8px;margin:12px 0}
+.consent{background:rgba(224,86,111,.07);border:1px solid rgba(224,86,111,.3);border-radius:8px;padding:16px;font-size:16px;margin-top:14px}
+.consent label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.consent input{margin-top:6px;accent-color:#c8902a}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);background:#f3ede4;color:#030509;padding:12px 20px;border-radius:99px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;opacity:0;transition:.3s;z-index:2000;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.foot-note{padding:36px 0 60px;border-top:1px solid var(--b);font-size:14.5px;color:var(--ink40)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{nav.cifnav,.tabs,.btns,.hero .prog,.foot-note,.toast{display:none!important}body{background:#fff;color:#000}.panel[hidden]{display:none}textarea{border:0}}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-hub.html" class="on" role="menuitem">Living Donor Hub</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+
+<header class="hero">
+  <div class="wrap">
+    <div class="mono kick">Living Donor Hub &middot; free &middot; no account</div>
+    <h1>Every living donor deserves <em>a clear path</em>, and every patient a fair chance to be offered one.</h1>
+    <p class="lead">Find transplant programs near you, write a message that actually gets answered, put a private packet together, and read the research behind the decision. Built on the foundation&rsquo;s independence: no one here is paid to steer you.</p>
+    <div class="prog" id="prog" aria-label="Your progress"></div>
+    <div class="meter"><i id="meter"></i></div>
+  </div>
+</header>
+
+<div class="tabs" role="tablist" aria-label="Hub sections"><div class="wrap">
+  <button class="tab" role="tab" id="t-start" aria-selected="true" data-p="start">1 &middot; Start here</button>
+  <button class="tab" role="tab" id="t-find" aria-selected="false" data-p="find">2 &middot; Find a program <b id="c-short">0</b></button>
+  <button class="tab" role="tab" id="t-write" aria-selected="false" data-p="write">3 &middot; Write the message</button>
+  <button class="tab" role="tab" id="t-read" aria-selected="false" data-p="read">4 &middot; Read the evidence <b id="c-read">0</b></button>
+  <button class="tab" role="tab" id="t-share" aria-selected="false" data-p="share">5 &middot; Your packet</button>
+</div></div>
+
+<main>
+<!-- 1 START -->
+<section class="panel" id="p-start" role="tabpanel" aria-labelledby="t-start"><div class="wrap">
+  <div class="mono kick">Step one</div>
+  <h2>Who is this for?</h2>
+  <p class="lead">Pick the one that fits today. You can change it any time, and everything stays on your own device unless you choose to send it.</p>
+  <div class="roles" id="roles">
+    <button class="role" data-r="donor" aria-pressed="false"><div class="n">01</div><h3>I&rsquo;m thinking about donating</h3><p>You want the honest version: what the evaluation involves, what the risks are, and who is on your side.</p></button>
+    <button class="role" data-r="patient" aria-pressed="false"><div class="n">02</div><h3>I need a kidney or a liver</h3><p>You want to widen your search for a living donor without feeling like you&rsquo;re begging.</p></button>
+    <button class="role" data-r="supporter" aria-pressed="false"><div class="n">03</div><h3>I&rsquo;m supporting someone</h3><p>You want to help a friend or family member through it, and know what to ask on their behalf.</p></button>
+  </div>
+  <div class="row">
+    <label class="f"><span>Organ</span><select id="organ"><option value="Kidney">Kidney</option><option value="Liver">Part of a liver</option></select></label>
+    <label class="f"><span>State</span><select id="state"></select></label>
+  </div>
+  <div id="nextBox" class="next"></div>
+  <div class="note teal"><b>Our independence, plainly:</b> the foundation takes no money from pharmaceutical companies, dialysis companies or hospital systems, and nothing on this page is an advertisement. We also don&rsquo;t ask you for money. This is educational and is not medical or legal advice; your transplant team makes every clinical decision.</div>
+</div></section>
+
+<!-- 2 FIND -->
+<section class="panel" id="p-find" role="tabpanel" aria-labelledby="t-find" hidden><div class="wrap">
+  <div class="mono kick">Step two</div>
+  <h2>Find programs <em>near you</em></h2>
+  <p class="lead">These are U.S. transplant programs from the federal government&rsquo;s own facility data, grouped by the organ procurement organization (OPO) that serves the area. Add up to five to your shortlist, then call and confirm they run a living donor program.</p>
+  <div class="row">
+    <label class="f"><span>State</span><select id="fState"></select></label>
+    <label class="f"><span>Organ</span><select id="fOrgan"><option value="Kidney">Kidney</option><option value="Liver">Liver</option></select></label>
+    <label class="f"><span>Search by name or city</span><input type="search" id="fQ" placeholder="e.g. Tampa, Mayo, Children&rsquo;s"></label>
+  </div>
+  <div class="cnt" id="fCnt"></div>
+  <div class="short" id="shortlist"></div>
+  <div class="grid" id="centers" style="margin-top:18px"></div>
+  <button class="btn more" id="moreBtn" hidden>Show more programs</button>
+  <div class="note">The data lists which programs perform each type of transplant. It doesn&rsquo;t say which ones run a <em>living donor</em> program, so always ask. CMS tier 1 is the top performance tier for the local OPO, and tier 3 is the lowest. The OPO phone number is from federal records and the OPO can point you to the right place. Prefer a second opinion? Compare programs&rsquo; outcomes at <a href="https://www.srtr.org/" target="_blank" rel="noopener">srtr.org</a> and see every OPO in the <a href="opo-directory.html">U.S. OPO Directory</a>.</div>
+</div></section>
+
+<!-- 3 WRITE -->
+<section class="panel" id="p-write" role="tabpanel" aria-labelledby="t-write" hidden><div class="wrap">
+  <div class="mono kick">Step three</div>
+  <h2>Say it <em>well</em>, once</h2>
+  <p class="lead">Choose a few things and the message writes itself. Edit it freely. Nothing is sent from this page; you decide where it goes.</p>
+  <div class="two">
+    <div>
+      <label class="f"><span>I&rsquo;m writing to</span><select id="wTo"><option value="center">A transplant program&rsquo;s living donor team</option><option value="person">Someone I&rsquo;d like to ask to be tested</option></select></label>
+      <div class="row" style="margin:14px 0">
+        <label class="f"><span>My name</span><input type="text" id="wName" placeholder="Your name" autocomplete="name"></label>
+        <label class="f"><span id="wOtherL">Relationship to the patient</span><select id="wRel"></select></label>
+        <label class="f"><span>Tone</span><select id="wTone"><option value="warm">Warm</option><option value="direct">Direct</option><option value="brief">Brief</option></select></label>
+      </div>
+      <div id="wCenterBox"><span class="mono" style="color:var(--ink60);font-size:11px">What I want to ask</span><div class="qs" id="qs"></div></div>
+      <div id="wPersonBox" hidden>
+        <label class="f"><span>Their first name</span><input type="text" id="wThem" placeholder="Their first name"></label>
+        <label class="f" style="margin-top:12px"><span>One honest sentence about how you&rsquo;re doing</span><input type="text" id="wHow" placeholder="e.g. Dialysis three times a week is wearing me down"></label>
+      </div>
+      <div class="note teal" id="wTip"></div>
+    </div>
+    <div>
+      <label class="f"><span>Your message (editable)</span><textarea id="wOut"></textarea></label>
+      <div class="btns"><button class="btn gold" id="wCopy">Copy message</button><button class="btn" id="wMail">Open in my email</button><button class="btn" id="wPrint">Print</button></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 4 READ -->
+<section class="panel" id="p-read" role="tabpanel" aria-labelledby="t-read" hidden><div class="wrap">
+  <div class="mono kick">Step four</div>
+  <h2>Read what the <em>evidence</em> actually says</h2>
+  <p class="lead">A curated shelf of official guides, peer-reviewed studies, law and reporting. Every link goes to the original source. Star the ones you want to bring to your appointment and they&rsquo;ll be added to your packet.</p>
+  <div class="row">
+    <label class="f"><span>Topic</span><select id="aTopic"></select></label>
+    <label class="f"><span>Kind of source</span><select id="aType"><option value="">All kinds</option><option>Official guide</option><option>Research</option><option>Law &amp; policy</option><option>Journalism</option></select></label>
+    <label class="f"><span>Search</span><input type="search" id="aQ" placeholder="e.g. insurance, risk, advocate"></label>
+  </div>
+  <div class="cnt" id="aCnt"></div>
+  <div class="grid" id="arts"></div>
+  <p class="small" style="margin-top:22px">Links were gathered from public search results and point to each publisher&rsquo;s own page. Publishers sometimes move pages, so if one doesn&rsquo;t open, search its title. Summaries are ours and are not a substitute for reading the source.</p>
+</div></section>
+
+<!-- 5 SHARE -->
+<section class="panel" id="p-share" role="tabpanel" aria-labelledby="t-share" hidden><div class="wrap">
+  <div class="mono kick">Step five</div>
+  <h2>Your <em>packet</em>, in your hands</h2>
+  <p class="lead">Put your shortlist, your message and your reading list in one place. Take it to a transplant program yourself, or, only if you choose, send a copy to the foundation.</p>
+  <div class="pk">
+    <h3>What goes in</h3>
+    <div class="inc">
+      <label class="q on"><input type="checkbox" id="iShort" checked> <span>My shortlist of programs (<b id="nShort">0</b>)</span></label>
+      <label class="q on"><input type="checkbox" id="iMsg" checked> <span>The message I wrote</span></label>
+      <label class="q on"><input type="checkbox" id="iRead" checked> <span>My reading list (<b id="nRead">0</b>)</span></label>
+      <label class="q"><input type="checkbox" id="iProf"> <span>That I started the <a href="living-donor-journey.html">readiness profile</a> (no answers are shared)</span></label>
+    </div>
+    <label class="f"><span>Preview (editable)</span><textarea id="pkOut" style="min-height:300px"></textarea></label>
+    <div class="btns"><button class="btn gold" id="pkCopy">Copy packet</button><button class="btn" id="pkMail">Email it to myself</button><button class="btn" id="pkPrint">Print / save as PDF</button></div>
+  </div>
+  <div class="pk">
+    <h3>Optional: send a copy to the foundation</h3>
+    <p class="small" style="margin:6px 0 14px">We will reply by email and can help you think through next steps. We do <b>not</b> forward your details to any transplant program unless you ask us to in writing. Programs run their own medical intake, and your health information should only go where you choose.</p>
+    <div class="row" style="margin:10px 0"><label class="f"><span>Your name</span><input type="text" id="sName" autocomplete="name"></label><label class="f"><span>Your email</span><input type="email" id="sEmail" autocomplete="email"></label></div>
+    <div class="consent"><label><input type="checkbox" id="sOk"> <span>I understand this sends the packet above to the Cold Ischemia Foundation by email, that it is not medical care, and that nothing is shared with a transplant program without my written say-so.</span></label></div>
+    <div class="btns"><button class="btn gold" id="sSend">Send to the foundation</button></div>
+  </div>
+</div></section>
+</main>
+
+<div class="wrap foot-note">The Living Donor Hub is educational and independent. It is not medical, legal or financial advice and it does not assess eligibility. Program and OPO details come from HRSA data (retrieved September 28, 2026); confirm everything by phone. Your choices on this page are stored only in your browser. <a href="living-donor-journey.html">Living Donor Journey</a> &middot; <a href="opo-directory.html">U.S. OPO Directory</a> &middot; <a href="donor-readiness-explorer.html">Questions to ask before you donate</a></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="opo-data.js"></script>
+<script>
+(function(){
+'use strict';
+var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var KEY='cifHub.v1',H={role:'',organ:'Kidney',state:'',short:[],read:[],wrote:0,name:''};
+try{var sv=JSON.parse(localStorage.getItem(KEY)||'null');if(sv)for(var k in sv)H[k]=sv[k]}catch(e){}
+var PROF=null;try{PROF=JSON.parse(localStorage.getItem('cifDonorProfile.v1')||'null')}catch(e){}
+if(!H.state&&PROF&&PROF.A&&PROF.A.state)H.state=PROF.A.state;
+if(PROF&&PROF.A&&PROF.A.organ_k==='liver'&&!H.role)H.organ='Liver';
+function save(){try{localStorage.setItem(KEY,JSON.stringify(H))}catch(e){}}
+function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove('on')},2600)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+/* ---------- data ---------- */
+var STATES={AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',PR:'Puerto Rico',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
+var PROG=[];
+(window.CIF_OPOS||[]).forEach(function(o){(o.centers||[]).forEach(function(c,i){
+  PROG.push({id:o.code+'-'+i,name:c.n,city:c.c,organs:c.s,opo:o.name,opoPhone:o.phone,serves:(o.serves&&o.serves.length?o.serves:[o.state]),state:o.state,tier:o.tier})})});
+var PBY={};PROG.forEach(function(p){PBY[p.id]=p});
+
+var ART=[
+ {id:'a1',t:'Evaluation',k:'Official guide',h:'Living Kidney Donor Evaluation',s:'National Kidney Foundation',u:'https://www.kidney.org/kidney-topics/living-kidney-donor-evaluation',d:'What the evaluation involves, who you will meet (nurse coordinator, nephrologist, social worker, surgeon, dietitian and an independent donor advocate), and how long it usually takes.'},
+ {id:'a2',t:'Evaluation',k:'Official guide',h:'Testing Involved in the Living Donor Evaluation Process',s:'National Kidney Foundation',u:'https://www.kidney.org/testing-involved-living-donor-evaluation-process',d:'The lab work and imaging a donor candidate should expect, and why each test is done.'},
+ {id:'a3',t:'Evaluation',k:'Law & policy',h:'New Living Kidney Donor Program Requirements: Standardizing Patient Care',s:'OPTN (HRSA)',u:'https://optn.transplant.hrsa.gov/professionals/by-topic/guidance/new-living-kidney-donor-program-requirements-standardizing-patient-care/',d:'The national requirements living donor programs must meet. Useful for knowing what you are entitled to ask for.'},
+ {id:'a4',t:'Evaluation',k:'Official guide',h:'Kidney Transplant',s:'NIDDK, National Institutes of Health',u:'https://www.niddk.nih.gov/health-information/kidney-disease/kidney-failure/kidney-transplant',d:'A plain-language federal overview of kidney transplant, including living donation.'},
+ {id:'a5',t:'Safety & outcomes',k:'Research',h:'Long-Term Consequences of Kidney Donation',s:'New England Journal of Medicine, 2009',u:'https://www.nejm.org/doi/full/10.1056/NEJMoa0804883',d:'A long-term follow-up of donors that found survival similar to non-donors and no increase in kidney failure, with age and higher body mass tied to lower kidney function and high blood pressure.'},
+ {id:'a6',t:'Safety & outcomes',k:'Research',h:'Risk of End-Stage Renal Disease Following Live Kidney Donation',s:'JAMA, 2014',u:'https://jamanetwork.com/journals/jama/fullarticle/1829682',d:'Estimated 15-year kidney-failure risk of 30.8 per 10,000 donors versus 3.9 per 10,000 matched healthy non-donors: a higher relative risk, with a small absolute increase.'},
+ {id:'a7',t:'Safety & outcomes',k:'Research',h:'Kidney-Failure Risk Projection for the Living Kidney-Donor Candidate',s:'New England Journal of Medicine, 2016',u:'https://www.nejm.org/doi/full/10.1056/NEJMoa1510491',d:'A tool-building study that projects a candidate&rsquo;s long-term kidney-failure risk with and without donation, so the decision can be personal rather than generic.'},
+ {id:'a8',t:'Safety & outcomes',k:'Research',h:'Long-Term Risks of Living Kidney Donation: State of the Evidence and Strategies to Resolve Knowledge Gaps',s:'Annual Review of Medicine',u:'https://www.annualreviews.org/content/journals/10.1146/annurev-med-050223-112648',d:'A recent review of what is known, what isn&rsquo;t, and where better data is needed.'},
+ {id:'a9',t:'Money & protection',k:'Official guide',h:'National Living Donor Assistance Center',s:'NLDAC (HRSA program)',u:'https://www.livingdonorassistance.org/',d:'A federal program that can help eligible donors with travel, lodging and meals tied to evaluation, surgery and follow-up. Check current eligibility before you apply.'},
+ {id:'a10',t:'Money & protection',k:'Research',h:'Development of the National Living Donor Assistance Center: reducing financial disincentives to living organ donation',s:'Peer-reviewed article, PubMed Central',u:'https://pmc.ncbi.nlm.nih.gov/articles/PMC4374738/',d:'The history and reasoning behind covering donors&rsquo; non-medical costs.'},
+ {id:'a11',t:'Money & protection',k:'Law & policy',h:'Living Donor Protection Act reaches Senate HELP Committee markup',s:'National Kidney Foundation',u:'https://www.kidney.org/press-room/living-donor-protection-act-reaches-senate-help-committee-markup-historic-milestone',d:'Where federal protections stand against insurance discrimination and for job-protected recovery leave for living donors.'},
+ {id:'a12',t:'Money & protection',k:'Official guide',h:'State of the States: living donor protections',s:'American Kidney Fund',u:'https://livingdonor.kidneyfund.org/',d:'A state-by-state look at protections and benefits for living donors.'},
+ {id:'a13',t:'Fairness',k:'Research',h:'Addressing Racial/Ethnic Disparities in Live Donor Kidney Transplantation: Priorities for Research and Intervention',s:'Peer-reviewed article, PubMed Central',u:'https://pmc.ncbi.nlm.nih.gov/articles/PMC2818251',d:'Why some groups receive living-donor kidneys far less often, and what research and programs could change that.'},
+ {id:'a14',t:'Fairness',k:'Research',h:'Racial Equity in Living Donor Kidney Transplant Centers, 2008-2018',s:'JAMA Network Open',u:'https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2812962',d:'A look at whether transplant centers differ in equity of living-donor transplant access.'},
+ {id:'a15',t:'Fairness',k:'Research',h:'Expanding Access to Living Donor Kidney Transplants Through Social Networks',s:'Peer-reviewed article, PubMed Central',u:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10209734/',d:'How patients&rsquo; own networks can widen the pool of potential donors.'},
+ {id:'a16',t:'Paired exchange',k:'Official guide',h:'Kidney Paired Donation Program',s:'National Kidney Registry',u:'https://www.kidneyregistry.com/for-donors/paired-donation/',d:'How swaps and donor chains let an incompatible donor still help someone, and how you can enroll through a transplant center.'},
+ {id:'a17',t:'Paired exchange',k:'Official guide',h:'Incompatible Blood Types and Paired Exchange Programs',s:'National Kidney Foundation',u:'https://www.kidney.org/kidney-topics/incompatible-blood-types-and-paired-exchange-programs',d:'What to do when a willing donor is not a match for the person they want to help.'},
+ {id:'a18',t:'Asking for a kidney',k:'Official guide',h:'How to ask for living kidney donation',s:'Ohio State Wexner Medical Center',u:'https://health.osu.edu/health/general-health/how-to-ask-for-living-kidney-donation',d:'Practical, respectful ways to start the conversation, including how to leave people a graceful way to say no.'},
+ {id:'a19',t:'Asking for a kidney',k:'Official guide',h:'How to find a living donor when you need an organ transplant',s:'UChicago Medicine',u:'https://www.uchicagomedicine.org/forefront/transplant-articles/2022/april/how-to-ask-for-a-living-organ-donation',d:'Where to begin, who to tell, and how a friend can act as your &ldquo;donor champion.&rdquo;'},
+ {id:'a20',t:'Asking for a kidney',k:'Official guide',h:'5 Tips on How to Ask For a Living Kidney Donation',s:'Temple Health',u:'https://www.templehealth.org/about/blog/5-tips-on-how-to-ask-for-a-living-kidney-donation',d:'Short, concrete advice for patients who find asking the hardest part.'},
+ {id:'a21',t:'Your rights',k:'Law & policy',h:'Guidance for the Informed Consent of Living Donors',s:'OPTN (HRSA)',u:'https://www.hrsa.gov/optn/professionals/resources/guidance/guidance-for-the-informed-consent-of-living-donors',d:'What a potential donor must be told before agreeing, and your right to stop at any point.'},
+ {id:'a22',t:'Your rights',k:'Research',h:'The Independent Living Donor Advocate: A Guidance Document',s:'American Journal of Transplantation (AST Living Donor Community of Practice)',u:'https://www.sciencedirect.com/science/article/pii/S1600613522000430',d:'What the independent advocate does for you, separate from the recipient&rsquo;s team.'},
+ {id:'a23',t:'Your rights',k:'Research',h:'The Psychosocial and Independent Living Donor Advocate Evaluation and Post-Surgery Care of Living Donors',s:'Peer-reviewed article, PubMed Central',u:'https://pmc.ncbi.nlm.nih.gov/articles/PMC4575900/',d:'How the emotional and social side of donation is screened and supported.'},
+ {id:'a24',t:'Your rights',k:'Official guide',h:'Living Organ Donation: Making an Informed Decision',s:'Transplant Recipients International Organization (TRIO)',u:'https://www.transplants.org/donation/organ-donation/living-donation/evaluation/informed-decision',d:'A donor-facing explanation of informed consent, in plain language.'},
+ {id:'a25',t:'System accountability',k:'Journalism',h:'&ldquo;It&rsquo;s Very Unethical&rdquo;: Audio Shows Hospital Kept Vegetative Patient on Life Support to Boost Survival Rates',s:'ProPublica',u:'https://www.propublica.org/article/audio-shows-hospital-kept-vegetative-patient-on-life-support-to-boost-survival-rates',d:'Reporting on how hospital incentives and metrics can distort decisions near the end of life. One example of why independent scrutiny of transplant-adjacent systems matters.'}
+];
+var TOPICS=['','Evaluation','Safety & outcomes','Money & protection','Fairness','Paired exchange','Asking for a kidney','Your rights','System accountability'];
+var QS=[
+ ['q1','How long does an evaluation usually take from first call to a decision, and what does the first step look like?'],
+ ['q2','Who is your Independent Living Donor Advocate, and when would I meet them?'],
+ ['q3','Which costs are covered, and can your team help me apply to the National Living Donor Assistance Center for travel expenses?'],
+ ['q4','What paperwork can you provide for time off work, and what is recovery usually like for someone with my kind of job?'],
+ ['q5','If I turn out not to be a match for the person I want to help, does your program take part in paired exchange?'],
+ ['q6','What follow-up care do you provide after donation, and for how long?'],
+ ['q7','How is my information kept private from the recipient&rsquo;s team while I am still deciding?'],
+ ['q8','If I change my mind at any point, how is that handled confidentially?']
+];
+var QSEL={q1:1,q2:1,q3:1};
+var REL={center:['A family member','A friend','A coworker or community member','Someone I don’t know yet (non-directed)','I’m not sure yet'],person:['A family member','A close friend','A coworker','A member of my community or congregation','Someone I know less well']};
+
+/* ---------- tabs ---------- */
+function go(p,noScroll){$$('.tab').forEach(function(b){b.setAttribute('aria-selected',b.dataset.p===p)});$$('.panel').forEach(function(s){s.hidden=s.id!=='p-'+p});
+  if(p==='share')buildPacket();if(!noScroll){var t=$('.tabs');window.scrollTo({top:t.offsetTop-56,behavior:'smooth'})}try{history.replaceState(null,'','#'+p)}catch(e){}}
+$$('.tab').forEach(function(b){b.onclick=function(){go(b.dataset.p)}});
+
+/* ---------- progress ---------- */
+function steps(){return[
+ {k:'start',l:'Set up',d:!!H.role},
+ {k:'find',l:'Shortlist a program',d:H.short.length>0},
+ {k:'write',l:'Write a message',d:!!H.wrote},
+ {k:'read',l:'Save 2 readings',d:H.read.length>=2},
+ {k:'share',l:'Start the readiness profile',d:!!(PROF&&PROF.A&&Object.keys(PROF.A).length)}]}
+function paint(){var s=steps(),n=s.filter(function(x){return x.d}).length;
+  $('#prog').innerHTML=s.map(function(x){return '<button class="pill'+(x.d?' done':'')+'" data-g="'+(x.k==='share'?'journey':x.k)+'">'+(x.d?'✓ ':'')+x.l+'</button>'}).join('');
+  $$('#prog .pill').forEach(function(b){b.onclick=function(){if(b.dataset.g==='journey')location.href='living-donor-journey.html';else go(b.dataset.g)}});
+  $('#meter').style.width=(n/s.length*100)+'%';$('#c-short').textContent=H.short.length;$('#c-read').textContent=H.read.length;save()}
+
+/* ---------- start ---------- */
+function fillStates(sel,withAll){sel.innerHTML=(withAll?'<option value="">All states</option>':'<option value="">Choose your state</option>')+Object.keys(STATES).map(function(k){return '<option value="'+k+'">'+STATES[k]+'</option>'}).join('')}
+fillStates($('#state'));fillStates($('#fState'),0);
+$('#organ').value=H.organ;$('#state').value=H.state;
+function nextCards(){var r=H.role,c={
+ donor:[['Check where you stand','A five-minute, private readiness profile that adapts to your answers.','Open the profile','living-donor-journey.html'],['Find a program','Compare programs in your state and add the ones you want to call.','Find programs',null,'find'],['Know your rights first','You can stop at any point, and you must be offered an independent advocate. Read what that means.','Read the evidence',null,'read']],
+ patient:[['Widen your search without begging','A short, private message you can send to the people in your life, written the way transplant teams recommend.','Write the message',null,'write'],['Learn paired exchange','If a donor is not a match for you, a swap can still get you a kidney.','Read about it',null,'read'],['Find programs near you','Add centers to a shortlist and bring questions to each.','Find programs',null,'find']],
+ supporter:[['Learn the process together','Read the guides patients and donors are usually given, in plain language.','Read the evidence',null,'read'],['Help them ask well','Draft a respectful message to a transplant program or to a possible donor.','Write the message',null,'write'],['Build the packet','Collect programs, questions and reading in one place to bring to an appointment.','Open your packet',null,'share']]}[r];
+  $('#nextBox').innerHTML=c?c.map(function(x){return '<div class="nx"><h3>'+x[0]+'</h3><p>'+x[1]+'</p>'+(x[3]?'<a class="btn" href="'+x[3]+'">'+x[2]+' →</a>':'<button class="btn" data-g="'+x[4]+'">'+x[2]+' →</button>')+'</div>'}).join(''):'<div class="nx"><h3>Choose one above</h3><p>Pick who this is for and we’ll suggest where to begin.</p></div>';
+  $$('#nextBox [data-g]').forEach(function(b){b.onclick=function(){go(b.dataset.g)}})}
+$$('.role').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.r===H.role);b.onclick=function(){H.role=b.dataset.r;$$('.role').forEach(function(x){x.setAttribute('aria-pressed',x===b)});nextCards();paint();setRel()}});
+$('#organ').onchange=function(){H.organ=this.value;$('#fOrgan').value=this.value;save();renderCenters(1)};
+$('#state').onchange=function(){H.state=this.value;$('#fState').value=this.value;save();renderCenters(1)};
+
+/* ---------- find ---------- */
+var shown=24;
+function renderShort(){$('#shortlist').innerHTML=H.short.map(function(id){var p=PBY[id];return p?'<span class="chip">'+esc(p.name)+' <button aria-label="Remove '+esc(p.name)+'" data-x="'+id+'">×</button></span>':''}).join('');
+  $$('#shortlist [data-x]').forEach(function(b){b.onclick=function(){H.short=H.short.filter(function(x){return x!==b.dataset.x});paint();renderShort();renderCenters()}})}
+function matches(){var st=$('#fState').value,og=$('#fOrgan').value,q=$('#fQ').value.trim().toLowerCase();
+  return PROG.filter(function(p){if(st&&p.serves.indexOf(st)<0&&p.state!==st)return false;if(og&&p.organs.indexOf(og)<0)return false;
+    if(q&&(p.name+' '+p.city+' '+p.opo).toLowerCase().indexOf(q)<0)return false;return true})}
+function renderCenters(reset){if(reset)shown=24;var L=matches(),st=$('#fState').value;
+  $('#fCnt').textContent=L.length+' program'+(L.length===1?'':'s')+(st?' serving '+STATES[st]:' nationwide')+' that perform '+$('#fOrgan').value.toLowerCase()+' transplants';
+  $('#centers').innerHTML=L.slice(0,shown).map(function(p){var on=H.short.indexOf(p.id)>=0;
+    return '<div class="card'+(on?' on':'')+'"><h3>'+esc(p.name)+'</h3><div class="meta">'+esc(p.city)+', '+esc(p.state)+'</div><div>'+p.organs.slice(0,5).map(function(o){return '<span class="tag'+(o==='Kidney'||o==='Liver'?' k':'')+'">'+esc(o)+'</span>'}).join('')+'</div><div class="meta">Served by '+esc(p.opo)+(p.tier?' <span class="tag t'+p.tier+'">CMS tier '+p.tier+'</span>':'')+'<br>OPO phone: <a href="tel:'+esc(p.opoPhone)+'">'+esc(p.opoPhone)+'</a></div><button class="btn add" data-a="'+p.id+'">'+(on?'✓ On my shortlist':'+ Add to shortlist')+'</button></div>'}).join('')||'<p class="small">No programs match. Try a different state or clear the search.</p>';
+  $('#moreBtn').hidden=L.length<=shown;
+  $$('#centers [data-a]').forEach(function(b){b.onclick=function(){var id=b.dataset.a,i=H.short.indexOf(id);if(i>=0)H.short.splice(i,1);else{if(H.short.length>=5)return toast('Five is the limit. Remove one first.');H.short.push(id);toast('Added to your shortlist')}paint();renderShort();renderCenters()}})}
+$('#fState').value=H.state;$('#fOrgan').value=H.organ;
+$('#fState').onchange=$('#fOrgan').onchange=function(){renderCenters(1)};$('#fQ').oninput=function(){renderCenters(1)};$('#moreBtn').onclick=function(){shown+=24;renderCenters()};
+
+/* ---------- write ---------- */
+function setRel(){var to=$('#wTo').value,cur=$('#wRel').value;$('#wRel').innerHTML=REL[to].map(function(x){return '<option>'+x+'</option>'}).join('');if(cur&&REL[to].indexOf(cur)>=0)$('#wRel').value=cur;
+  $('#wOtherL').textContent=to==='center'?'My relationship to the patient':'How I know them';
+  $('#wCenterBox').hidden=to!=='center';$('#wPersonBox').hidden=to!=='person';
+  $('#wTip').innerHTML=to==='center'?'<b>Tip:</b> we left blood type out on purpose. The program tests it themselves, and it keeps the first message simple. Mention the donor champion idea if a friend is helping you.':'<b>Tip from transplant programs:</b> keep blood type out of the message. Acknowledge that donation is not right for everyone and that nothing changes between you if they say no. If they are not a match, paired exchange may still help.'}
+function drawQs(){$('#qs').innerHTML=QS.map(function(q){return '<label class="q'+(QSEL[q[0]]?' on':'')+'"><input type="checkbox" data-q="'+q[0]+'"'+(QSEL[q[0]]?' checked':'')+'> <span>'+q[1]+'</span></label>'}).join('');
+  $$('#qs input').forEach(function(i){i.onchange=function(){if(i.checked)QSEL[i.dataset.q]=1;else delete QSEL[i.dataset.q];i.parentNode.classList.toggle('on',i.checked);compose()}})}
+function plain(s){return s.replace(/&rsquo;/g,'’').replace(/&ldquo;|&rdquo;/g,'"')}
+function compose(){var to=$('#wTo').value,tone=$('#wTone').value,nm=$('#wName').value.trim()||'[Your name]',rel=$('#wRel').value,org=H.organ==='Liver'?'a portion of my liver':'a kidney',out='';
+  if(to==='center'){
+    var pg=H.short.map(function(id){return PBY[id]}).filter(Boolean),greet=pg.length===1?'Hello '+pg[0].name+' living donor team,':'Hello,',
+      who={'A family member':'a family member','A friend':'a friend','A coworker or community member':'someone in my community','Someone I don’t know yet (non-directed)':'someone I may never meet (non-directed donation)','I’m not sure yet':'someone who needs a transplant'}[rel],
+      open={warm:'I’m writing because I’m seriously considering donating '+org+' to '+who+', and I want to understand how your program works before I decide anything. I appreciate the work you do.',direct:'I’m considering donating '+org+' to '+who+' and would like to understand your living donor process before deciding.',brief:'I’m considering living donation ('+(H.organ==='Liver'?'liver':'kidney')+') and have a few questions.'}[tone],
+      qs=QS.filter(function(q){return QSEL[q[0]]}).map(function(q,i){return (i+1)+'. '+plain(q[1])}).join('\n'),
+      close={warm:'Thank you for your time. The best way to reach me is by reply to this message, or tell me a good time to call.',direct:'Please reply with next steps or a good time to call.',brief:'Thank you.'}[tone];
+    out=greet+'\n\n'+open+'\n\n'+(qs?(tone==='brief'?'My questions:':'It would help to know:')+'\n'+qs+'\n\n':'')+'I understand I can stop at any point and that my decision is mine to make.\n\n'+close+'\n\n'+nm}
+  else{var th=$('#wThem').value.trim()||'[Their name]',how=$('#wHow').value.trim(),
+    a={warm:'I hope you’re well. I wanted to share something with you directly, because you matter to me and I’d rather you hear it from me.',direct:'I wanted to tell you something directly.',brief:'I have something personal to share.'}[tone];
+    out='Hi '+th+',\n\n'+a+'\n\nMy doctors have told me that a kidney from a living donor is the best option for me. '+(how?how.replace(/\.?$/,'.')+' ':'')+'I’m telling a few people close to me, and I’m not asking for an answer.\n\nPlease know that donating isn’t right for everyone, and that this is entirely your decision. Nothing between us will change if the answer is no, and you never have to explain.\n\nIf you’re curious, the transplant program would handle every step privately, and you would have your own independent advocate whose only job is you. You can contact them directly and I would never need to know what you decide. And if you aren’t a match, there are paired-exchange programs, so even then you could still help someone.\n\nEither way, thank you for reading this.\n\n'+nm}
+  $('#wOut').value=out}
+['#wTo','#wTone','#wRel'].forEach(function(s){$(s).onchange=function(){if(s==='#wTo')setRel();compose()}});['#wName','#wThem','#wHow'].forEach(function(s){$(s).oninput=compose});
+$('#wName').value=H.name||'';$('#wName').addEventListener('input',function(){H.name=this.value;save()});
+function wrote(){if(!H.wrote){H.wrote=1;paint()}}
+$('#wCopy').onclick=function(){var t=$('#wOut').value;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){toast('Message copied');wrote()},function(){$('#wOut').select();toast('Select all and copy');wrote()})};
+$('#wMail').onclick=function(){var t=$('#wOut').value;wrote();location.href='mailto:?subject='+encodeURIComponent($('#wTo').value==='center'?'Question about living donation':'Something personal')+'&body='+encodeURIComponent(t)};
+$('#wPrint').onclick=function(){wrote();window.print()};
+
+/* ---------- read ---------- */
+$('#aTopic').innerHTML=TOPICS.map(function(t){return '<option value="'+t+'">'+(t||'All topics')+'</option>'}).join('');
+function renderArts(){var tp=$('#aTopic').value,ty=$('#aType').value.replace('&amp;','&'),q=$('#aQ').value.trim().toLowerCase();
+  var L=ART.filter(function(a){return(!tp||a.t===tp)&&(!ty||a.k===ty)&&(!q||(plain(a.h)+' '+plain(a.d)+' '+a.s+' '+a.t).toLowerCase().indexOf(q)>=0)});
+  $('#aCnt').textContent=L.length+' of '+ART.length+' sources';
+  $('#arts').innerHTML=L.map(function(a){var on=H.read.indexOf(a.id)>=0;return '<div class="card art"><div><span class="tag k">'+a.t+'</span><span class="tag">'+a.k+'</span></div><h3><a href="'+a.u+'" target="_blank" rel="noopener">'+a.h+'</a></h3><div class="src">'+a.s+'</div><p>'+a.d+'</p><div class="foot"><a class="small" href="'+a.u+'" target="_blank" rel="noopener">Open source ↗</a><button class="star" aria-pressed="'+on+'" data-s="'+a.id+'">'+(on?'★ Saved':'☆ Save')+'</button></div></div>'}).join('')||'<p class="small">Nothing matches. Clear a filter to see more.</p>';
+  $$('#arts [data-s]').forEach(function(b){b.onclick=function(){var i=H.read.indexOf(b.dataset.s);if(i>=0)H.read.splice(i,1);else H.read.push(b.dataset.s);paint();renderArts()}})}
+['#aTopic','#aType'].forEach(function(s){$(s).onchange=renderArts});$('#aQ').oninput=renderArts;
+
+/* ---------- packet ---------- */
+function packetText(){var o='LIVING DONOR HUB PACKET\nPrepared '+new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})+'  ·  Cold Ischemia Foundation (educational; not medical advice)\n';
+  var rl={donor:'Considering donating',patient:'Needs a living donor',supporter:'Supporting someone'}[H.role];
+  o+='\nAbout: '+(rl||'Not specified')+' · '+H.organ+(H.state?' · '+STATES[H.state]:'')+'\n';
+  if($('#iShort').checked){o+='\nPROGRAMS TO CALL ('+H.short.length+')\n';o+=H.short.length?H.short.map(function(id,i){var p=PBY[id];return (i+1)+'. '+p.name+', '+p.city+', '+p.state+'\n   Local OPO: '+p.opo+' · '+p.opoPhone}).join('\n'):'(none chosen yet)';o+='\n'}
+  if($('#iMsg').checked){o+='\nMY MESSAGE\n'+($('#wOut').value||'(not written yet)')+'\n'}
+  if($('#iRead').checked){o+='\nMY READING LIST ('+H.read.length+')\n';o+=H.read.length?H.read.map(function(id){var a=ART.filter(function(x){return x.id===id})[0];return '- '+plain(a.h).replace(/<[^>]+>/g,'')+' ('+a.s+')\n  '+a.u}).join('\n'):'(none saved yet)';o+='\n'}
+  if($('#iProf').checked)o+='\nI started the Living Donor Journey readiness profile (answers not shared).\n';
+  return o}
+function buildPacket(){if(!$('#iMsg').dataset.t){}$('#nShort').textContent=H.short.length;$('#nRead').textContent=H.read.length;$('#pkOut').value=packetText();if(!$('#sName').value)$('#sName').value=H.name||''}
+['#iShort','#iMsg','#iRead','#iProf'].forEach(function(s){$(s).onchange=function(){this.parentNode.classList.toggle('on',this.checked);$('#pkOut').value=packetText()}});
+$('#pkCopy').onclick=function(){var t=$('#pkOut').value;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){toast('Packet copied')},function(){$('#pkOut').select();toast('Select all and copy')})};
+$('#pkMail').onclick=function(){location.href='mailto:?subject='+encodeURIComponent('My living donor packet')+'&body='+encodeURIComponent($('#pkOut').value)};
+$('#pkPrint').onclick=function(){window.print()};
+$('#sSend').onclick=function(){var n=$('#sName').value.trim(),em=$('#sEmail').value.trim();
+  if(!$('#sOk').checked)return toast('Please tick the consent box first');if(!n)return toast('Please add your name');if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em))return toast('Please add a valid email');
+  var msg=$('#pkOut').value+'\n\n— '+n+' ('+em+')\nConsent given on the Living Donor Hub to send this packet to the foundation only.',b=this;
+  var data={formType:'contact',name:n,email:em,subject:'Living Donor Hub packet',message:msg,category:'patient'};b.disabled=true;b.textContent='Sending…';
+  var fall=function(){b.disabled=false;b.textContent='Send to the foundation';location.href=(window.cifMailto?window.cifMailto('Living Donor Hub packet',msg):'mailto:jeffparke72@gmail.com?subject='+encodeURIComponent('Living Donor Hub packet')+'&body='+encodeURIComponent(msg))};
+  if(window.cifFormsReady&&window.cifFormsReady()){window.cifSend(data).then(function(){b.textContent='Sent ✓';toast('Sent. A confirmation email is on its way.')},fall)}else fall()};
+
+/* ---------- boot ---------- */
+setRel();drawQs();compose();renderShort();renderCenters(1);renderArts();nextCards();paint();
+var h=(location.hash||'').replace('#','');if(['start','find','write','read','share'].indexOf(h)>=0)go(h,1);
+})();
+</script>
+</body>
+</html>
