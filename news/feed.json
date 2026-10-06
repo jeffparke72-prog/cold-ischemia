@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-06T09:19:48.101846+00:00",
+"updated": "2026-10-06T16:13:14.019634+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -133,11 +133,176 @@
 ],
 "items": [
 {
+"title": "Eicosanoids as Biomarkers of Hyperfiltration-Mediated Injury in CKD",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032845?dgcid=rss_sd_all",
+"summary": "By Tarak Srivastava, Ginger L. Milne, Jianping Zhou, Mohammad H. Rezaiekhaligh, Derek K. Ng, Jennifer L. Roem, Bradley A. Warady, Susan L. Furth, Ram Sharma, Mukut Sharma, Kyle Deville, Anjali Nayak, Tom Blydt-Hansen,…",
+"outlet": "",
+"published": "2026-10-06T16:12:20.692366+00:00",
+"id": "991ca9538186234d",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "A National Survey of Kidney Supportive Care Services in Ireland",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033048?dgcid=rss_sd_all",
+"summary": "By Sorcha O’Brien, Jacob Mackey, Barnaby Hole, Kathryn Ducharlet, Brendan Smyth, John Curtin, Eva B. Long, Sarah M. Moran, Aoife C. Lowney",
+"outlet": "",
+"published": "2026-10-06T16:12:20.692275+00:00",
+"id": "a0f4e90ef39edd05",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "Humboldt area stories show the life-changing power of organ donation - DiscoverHumboldt",
+"link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNMHlmeXk5RnVPcDNqMnNZeDBEbmM1XzZzVjNGX3pUNUlYdEFzY2l3Z3FrMVA3OWpoSXlQZDdvZFhzRm9WR2xQUmpnamROa3ZiWldyQjFnb0RmOVd4NldTaEdYWjB4VGM2LTZPdE85ZU0wVDlBS1ZPVDY3Zm9ESWIzUjdzSnA1OGVfbnVuNmJfdzB4M2N4STl0ZnRXZ3UtQ1NBcXpLcC0weFh3b0VWNlUtSg?oc=5",
+"summary": "Humboldt area stories show the life-changing power of organ donation DiscoverHumboldt",
+"outlet": "DiscoverHumboldt",
+"published": "2026-10-06T15:52:43+00:00",
+"id": "88c579eb35478698",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "Sweet Home HS football player dies after head injury, saves others with organ donation - KATU",
+"link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNREJCaGh5UHJMb3NQWW41UDE0a3ZlSzFLSGRFcDhUVjNkTDlRdS1DR09CcUcwUG9DU1FKNi1ZZmVYMGhaekxZbmhKR1N3RGxtQ2NaVXFqbmc4bkNTTlBEWEVvaG1CTVNwSFJ1MzAzZklnS2Z0Nk1nYWJTV2RrQ3pISlA0RjlsbnNVMUx1RWl4U1JTOTBCSnNDWFhESUpVT3BHc3VVa09wNUZrMHhMTWk3eWUtaw?oc=5",
+"summary": "Sweet Home HS football player dies after head injury, saves others with organ donation KATU",
+"outlet": "KATU",
+"published": "2026-10-06T15:12:41+00:00",
+"id": "6d55cb47a6010023",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "Fibrillary GN: Cardiovascular Protection and Recurrence After Kidney Transplant - HCPLive",
+"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPXzZaaU8welpBWEEzSS1yeC1hbF9oejBPSmFlOUFMX3ZucUUtRldNWHJqS0hhTUVJR3NDOXMwRzBCUWxXb2ZIWTJnNWJQcFNFWGtlSGZ3djlMRTVOd285LTBOVTRuMWpFZGVBZVNxVzdsdTZHM2k5a082dFZwcnRINFhvYzJ4RXIwQkpOeEVpSkl3SVBGakZ6SmxEd0hzQ0plTEd1OW8yUXFKOXM?oc=5",
+"summary": "Fibrillary GN: Cardiovascular Protection and Recurrence After Kidney Transplant HCPLive",
+"outlet": "HCPLive",
+"published": "2026-10-06T14:40:06+00:00",
+"id": "1fbd212e81ee91c3",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "Nocturnal Home Hemodialysis: Reconsidering an Underused Modality - DocWireNews",
+"link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPcG45QkpjRHFiUG8yb3FRejlVOUpvVXRueHZnM1FibWg3eGgwTUhmdnBtbzV1aEpKVTFycHpjeFZuUmVlbHdIcDU4d1JVV1NudTk2TktRalVneDQybnFhTE9jUGNDRllBYlRPenVJTzBHZnlIbC0tSDlBYUx5bFh3V19hUEVFUVJlZW54YTV0Z1AxWVJCM3drLVNCTDI?oc=5",
+"summary": "Nocturnal Home Hemodialysis: Reconsidering an Underused Modality DocWireNews",
+"outlet": "DocWireNews",
+"published": "2026-10-06T14:15:01+00:00",
+"id": "029e7cbb2a8e0ea3",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "Q&A: How women physicians can find joy in personal finance",
+"link": "https://www.healio.com/news/nephrology/20261006/qa-how-women-physicians-can-find-joy-in-personal-finance",
+"summary": "Brittne Halford, MD, MPH, paid off $138,000 in medical school debt in 2 years and 9 months without feeling (terribly) deprived of the good things in life. “I am from a family that’s rich in culture and community and support, but not as far as passing down wealth. My parents could not afford to send me to college, but…",
+"outlet": "",
+"published": "2026-10-06T14:06:38+00:00",
+"id": "993c66e4f3ea5b85",
+"source": "Healio Nephrology",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "NKF Innovation Fund Invests in Nephrogen to Advance One-Time Gene Editing Therapies for Kidney Disease - themountaineer.com",
+"link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQc1BhcVBfa08tQl94NkV1MjFITzI2YjgtTjA2Q200YU9IbWxtakVNX0VYR0RxUS1VZkY5bXd6S0U4enNMN0hLYkpSMUpHWTdJVmU4a2xNQ0FDUGJmeXJnY1pCOGp6U25rQkttSWNRRlN5SXVSRkJqbjdIYkVZRXNXUmJVRHFCY0luczZMUFN2SWxfQ3Y3b0s5OXRwZEFiVTJ2S3hSWGZidWwzRzdvdHc3R3JRVzdqQ0FrQnd0alhlbjk3YmN3UlJlRFM0UWpUcmV1aVlKSDFYQUMwdzlKWllBc2ZITXFPX2NkS2V2N3FyUUlyTGRRV3RPMl9hZmN1cHcwQ2kyaXFn?oc=5",
+"summary": "NKF Innovation Fund Invests in Nephrogen to Advance One-Time Gene Editing Therapies for Kidney Disease themountaineer.com",
+"outlet": "themountaineer.com",
+"published": "2026-10-06T13:45:00+00:00",
+"id": "4fa17f669369cc54",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "LOOKING AHEAD: Thousands To Join Fight Against Kidney Disease in 22nd Annual Walk - WBFF",
+"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOcng1SzV1Z3kxT3BhMTVmRUcxM2NNeHNBUjhneXRSUENWWktwbzY4OG45TWN4M1dERG9DUFRuZ3BzWE5vLVBJTVcyUkczR0VBUnhjZU5UVXVrOVNhMVBIY29ka20tN096Y1ZTWU8tRTR3a3IzLVV5U0xZWUVjT29ncV9xc1B0Um4xT3Q2dlk3RHRhR1hSVXB4ZUVoenlIOUJtVXlORTJCTVpzY09qVFFfX1o4STdTaFJ6UWNPUQ?oc=5",
+"summary": "LOOKING AHEAD: Thousands To Join Fight Against Kidney Disease in 22nd Annual Walk WBFF",
+"outlet": "WBFF",
+"published": "2026-10-06T13:00:20+00:00",
+"id": "8da6a04139bab814",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "Learning Curve and Outcomes of Pure Laparoscopic Donor Major Hepatectomy Performed by Fellowship-Trained Surgeons: Cumulative Sum and Propensity Score Matching Analysis.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42834553/",
+"summary": "Cho CW, Oh N, Rhu J et al. Annals of transplantation",
+"outlet": "Ann Transplant",
+"published": "2026-10-06T12:00:00+00:00",
+"id": "3e7cab7009dc0354",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "Three Decades of Living Liver Donor Outcomes: A National Cohort Analysis of Patterns in Mortality and Recovery.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42835360/",
+"summary": "Kelly ME, Truby TM, Lai JC et al. Journal of transplantation",
+"outlet": "J Transplant",
+"published": "2026-10-06T12:00:00+00:00",
+"id": "c338e6963ba2c599",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "Mitochondrial pyruvate carrier inhibition restrains germinal center T follicular helper cells attenuating chronic graft-versus-host disease",
+"link": "https://www.sciencedirect.com/science/article/pii/S1600613526028030?dgcid=rss_sd_all",
+"summary": "By Eun Ko, Fathima A. Mohamed, Stephanie Y. Rhee, Yujie Zhao, Rocio Amaro Marquez, Joanna Ly, Ethan G. Aguilar, Haley Melin, Peter T. Sage, Tanner Schumacher, Conor Ronayne, Angela Panoskaltsis-Mortari, Megan Riddle,…",
+"outlet": "",
+"published": "2026-10-06T12:00:00+00:00",
+"id": "7f5490ea35521500",
+"source": "American Journal of Transplantation",
+"category": "Journals",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "Culver, Mako Highlight Lifesaving Impact Of Organ Donation - Eagle 107",
+"link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQTjYtOEF5X0pVWkI3bmotWTlIb3BkOWd3NUZhX1ptcUZuLWNObzgzTTN3ZHRHcmFqU0F4VDd2QmgzMmREUVg3N1pWMm5sVDdrZ3hvQ0pZZUV3UVpGXzlKWHdORzYtSnU5NXdzcmNFbkdBM0F0aDJ3VnFsWnNuM2xrY2Mxd0FpWGF0eXFqRGVHY3ZwbUZqQ3RybDhn?oc=5",
+"summary": "Culver, Mako Highlight Lifesaving Impact Of Organ Donation Eagle 107",
+"outlet": "Eagle 107",
+"published": "2026-10-06T11:42:17+00:00",
+"id": "aa4d9c76d4bb0137",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "ACT Brief: Ibogaine Trial Design Guidance, Outsourcing Model Oversight Gaps, and Kidney Disease Partnership - Applied Clinical Trials",
+"link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQUUxSM1RBblNITWZ1bnhQbTR2SVJ1c21wY0E1U3NuZ1ozQUhlTDFIRDRLRmNUT0VEYVhIQTFsREpXRnp1NTlVVlU4NzJ6VEo3blFMc1JqbjliLU50TndoeUMyWC15V3RSYWFINnRuY1ZpeTRnUVdUNXBVVUZBQ05kcnNUOTUtRkd3TW5TcDdzQ01IaC03MmM1Q3VwekhOZlhwX1Bycm1KSzdSd2JQZktNVGF2Q2ZKSEVWdjVEY0V1elZnVlZteHJmRnlKT2xUU3NKM3ptOUJ3?oc=5",
+"summary": "ACT Brief: Ibogaine Trial Design Guidance, Outsourcing Model Oversight Gaps, and Kidney Disease Partnership Applied Clinical Trials",
+"outlet": "Applied Clinical Trials",
+"published": "2026-10-06T11:10:48+00:00",
+"id": "d10e4f864d4980dc",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
+"title": "BBC Surrey. . People are being asked to \"speak to their families\" about their organ donation decisions as transplant waiting lists grow. More here: https://bbc.in/4eeoz8c - Facebook",
+"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOakE3WUw2T0FnZVVIWUpwUFFtZGR6Nmg1NUR1eUg2dWZfaWttVk9HMmRoZk5LenZsN0lsdS1yYXpvVl9rUjFEbmlLc0YwNjQzZE1RdFByZnd0bGtsVEd5Q1FYcXNhSktpcnBLbkNOQXFTVlVtdmlqYS1QN3h2WXBJZGlTS1VFSHM1akhiQ2NDUmJGd1JINUJZRktMOTh3YXMyLVlDcDZxWQ?oc=5",
+"summary": "BBC Surrey. . People are being asked to \"speak to their families\" about their organ donation decisions as transplant waiting lists grow. More here: https://bbc.in/4eeoz8c Facebook",
+"outlet": "Facebook",
+"published": "2026-10-06T09:30:04+00:00",
+"id": "f7e2189d211357b6",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
 "title": "Four Pillars in Type 2 Diabetes and Chronic Kidney Disease G4-G5: Mission Impossible—or Not Too Late to Start?",
 "link": "https://www.sciencedirect.com/science/article/pii/S2590059526002785?dgcid=rss_sd_all",
 "summary": "By Masayuki Yamanouchi, Naoki Sawa, Kengo Furuichi, Takashi Wada",
 "outlet": "",
-"published": "2026-10-06T09:18:54.706690+00:00",
+"published": "2026-10-06T09:19:48.101846+00:00",
 "id": "76643b623cf88114",
 "source": "Kidney Medicine",
 "category": "Journals",
@@ -155,11 +320,22 @@
 "first_seen": "2026-10-06T09:19:48.101846+00:00"
 },
 {
+"title": "'Talk to your loved ones about organ donation' - Yahoo",
+"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMlowR1IzQ0J4YlBPWmhNaDFZVks0dTczVzJzN1BxZGdtUUFpbHpnYW4wa2x1b1p2Rk0zSjRmRVJKNUZqa2ROVnNwMWZCbDFsRTZXTHJyNXl5ZHFwZWZJMHRwZ3UxM1dqbHZueUFFNnQ2Q0hPWXpxLVBYRWdjQnpCYXNDZktBTmJTQ1JUOEhxREo?oc=5",
+"summary": "'Talk to your loved ones about organ donation' Yahoo",
+"outlet": "Yahoo",
+"published": "2026-10-06T08:47:01+00:00",
+"id": "6519af0bacfcba8a",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
 "title": "Florida Federal Court Upholds CMS 2020 OPO Rule: Implications for Organ Procurement Organizations - Crowell & Moring LLP",
 "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSy1UZHBhRlNXMEdHZG9TR3JsMGU1eHNpVFpPZ0I2M1Qzc043Ny1YZjlMRFFqckJyX21wblY3NzloYmxQQmlON091ZWRmMXE4LVZ2bWdtWUtHMnduWE9NOVlzTGNaRjVlT29DalQta3M0SE1VY1NLd0JGeUJPUmxacFBVZno1cWMyUzlHZVZHdE8xblNNLWpFNGRlU2tqOWxNdjRTLWoyaEVISVJ6aTZDWUl2SVUyZw?oc=5",
 "summary": "Florida Federal Court Upholds CMS 2020 OPO Rule: Implications for Organ Procurement Organizations Crowell & Moring LLP",
 "outlet": "Crowell & Moring LLP",
-"published": "2026-10-06T08:15:00+00:00",
+"published": "2026-10-06T08:22:08+00:00",
 "id": "cfe6e0e9380a0ba7",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
@@ -175,6 +351,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-06T09:19:48.101846+00:00"
+},
+{
+"title": "Organ transplant institute proposed by Keralam CM already inaugurated by LDF govt: George - ThePrint",
+"link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQbEdpbkt3VnlOQ2lWRkhnNHBFUTUtQXFvc0YydmZCNzhQV2ctbFFDbmtQaDR1bU5jVURteVF3ZGVwOEMxX2tuM0VjTjVTeGQxTWV2QlRtTFZ3VXlPRkJRS2VibWVCM2VzVGZ0eUt6MjFfVVVoMWJxdURyV2ZlLTItc3FYUkZYMl9rbzVNVVBmanhjUlhrNTJGS0V1Q0pEQ3duMnZhSGtqTzEtT1U0dlY4VkR3WFBzbnVucHpSSVVub0_SAcYBQVVfeXFMT09sVlJrUl9xRVV6enBtOUlXczBWU1MwOUVaclp5SGMwdUdSZmd6WDRORjd6SWs0UU5UZkJWclN0b0lQWUJNaTZFbmNUbHJOazVRTHlyeEYxSEk5N0NlYWJnN2d5Z1prSURBeWVXMVJGb3JzZGhOZWljTXNDcjhUTmFnblRtZ3BQalNFLTl0NTI5dEphMnJGZ29oQ3VvSXlhUzVMcjNOU0VUd1gzd2pzYlVrNVVjQWtNNV9ndGRaT1NvVlhLUVdR?oc=5",
+"summary": "Organ transplant institute proposed by Keralam CM already inaugurated by LDF govt: George ThePrint",
+"outlet": "ThePrint",
+"published": "2026-10-06T06:47:43+00:00",
+"id": "41a422a193afcf58",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
 },
 {
 "title": "'Talk to your loved ones about organ donation' - BBC",
@@ -230,6 +417,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-06T09:19:48.101846+00:00"
+},
+{
+"title": "Organ donation musical inspired by San Diego story premieres Off-Broadway - Yahoo",
+"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPbTlibGdYT2Q1VTFkZ1laeVQ4azFqdEJCOUZWVEFhS3VVaWYyUkJtTmpucFFrdXhjdjRRNFhqRm15cElhb0FhSmEydEJSb0lRTFZnNnlCSGFxZi1GRjA2Um9TRGg4UGZJbkE3VlVFVlpodHlScjc3Tm54bzFlZFFEU2dqMndrU1Q1TzNyNzJSSUsyTjVCMWticTBfRS1YOWZWUF9n?oc=5",
+"summary": "Organ donation musical inspired by San Diego story premieres Off-Broadway Yahoo",
+"outlet": "Yahoo",
+"published": "2026-10-06T02:09:00+00:00",
+"id": "4e544e840a1ea45d",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
 },
 {
 "title": "10-year-old's organ donation story inspires off-Broadway musical - cbs8.com",
@@ -461,6 +659,17 @@
 "source": "PubMed: living organ donation",
 "category": "Research",
 "first_seen": "2026-10-05T22:31:35.611544+00:00"
+},
+{
+"title": "Evolution of Stakeholder Involvement and Scope of Research Priority-Setting Studies in Kidney Disease: A Systematic Review",
+"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011224?dgcid=rss_sd_all",
+"summary": "By Dale Coghlan, Allison Jaure, Jonathan C. Craig, Shilpanjali Jesudason, Chandana Guha, Germaine Wong, Shingisai Chando, Sally Crowe, Braden Manns, Brenda Hemmelgarn, Wolfgang C. Winkelmayer, Nicole Scholes-Robertson",
+"outlet": "",
+"published": "2026-10-05T12:00:00+00:00",
+"id": "a18c4fd0f30bcb5b",
+"source": "American Journal of Kidney Diseases",
+"category": "Journals",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
 },
 {
 "title": "Elanco launches new feline CKD treatment - Vet Times",
@@ -1209,6 +1418,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
+},
+{
+"title": "DW News. . Germany's one of the few countries in Europe that still have an exclusively \"opt-in\" system for organ donation - where people have to sign up to become donors - despite long waiting times for more than 8,000 people currently in need of an organ tr - Facebook",
+"link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOclN3aUFHSmJmTC1Gc0dNYzhBenlkRy1veDV2S0NtMWxzQU5lZFd6RTFGbGgtRkoyLUhTUE9CdlNEbkFuR2RadHFQM3ZwY3daRzBSeUlFUS02ZjZBbXpPaFVWNVNMSXAxd0dxVWJlNV9lWVkxdW1SMjJjWkZKM0dHa3hfLVAtUUZXZVVUNi0xUEF1RkN6NXBHWHMtX1hka2kwSHlGd3hIa1VNSkVPYUxjOElEeXJabGVxMUlZeFQtWUtUZXNoRW9nZU5BdWJwOVJkNlZMbGNDdkpOUENqUklFUVBR?oc=5",
+"summary": "DW News. . Germany's one of the few countries in Europe that still have an exclusively \"opt-in\" system for organ donation - where people have to sign up to become donors - despite long waiting times for more than 8,000 people currently in need of an organ tr Facebook",
+"outlet": "Facebook",
+"published": "2026-10-03T05:30:23+00:00",
+"id": "54532956358d0e4c",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
 },
 {
 "title": "A Tiny Worm Helps Scientists Unravel a Genetic Clue to Kidney Disease - Technology Org",
@@ -5061,6 +5281,17 @@
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
 },
 {
+"title": "Donor Dilemma: A National Simulation-Based Case Curriculum for Teaching Donor Call Decision-Making in Infectious Diseases Trainees.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42482349/",
+"summary": "Tyler RS, Colven RB, Mills AG et al. Transplant infectious disease : an official journal of the Transplantation Society",
+"outlet": "Transpl Infect Dis",
+"published": "2026-07-22T12:00:00+00:00",
+"id": "1c885e8c524086e4",
+"source": "PubMed: transplant policy & organ procurement",
+"category": "Policy",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
+},
+{
 "title": "Donor anti-cytomegalovirus IgG titer and risk of cytomegalovirus infection after D+R- kidney transplantation, results from the TransplantLines Biobank and Cohort Study.",
 "link": "https://pubmed.ncbi.nlm.nih.gov/42480143/",
 "summary": "Jonker J, Dielwart IJC, Sanders JSF et al. Journal of clinical virology : the official publication of the Pan American Society for Clinical Virology",
@@ -5125,6 +5356,17 @@
 "source": "medRxiv: Nephrology preprints",
 "category": "Research",
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
+},
+{
+"title": "Positive Strongyloides Serology: A Descriptive Analysis Across Geographically Distinct Academic Medical Centers.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42446036/",
+"summary": "Nagarakanti SR, Shubeilat JL, Abdulsahib A et al. Transplant infectious disease : an official journal of the Transplantation Society",
+"outlet": "Transpl Infect Dis",
+"published": "2026-07-14T12:00:00+00:00",
+"id": "ef94bf4977534447",
+"source": "PubMed: transplant policy & organ procurement",
+"category": "Policy",
+"first_seen": "2026-10-06T16:13:14.019634+00:00"
 },
 {
 "title": "Challenges in Meeting UNOS Personnel Requirements for Pancreas Transplant Programs Amid Declining National Case Volumes.",
