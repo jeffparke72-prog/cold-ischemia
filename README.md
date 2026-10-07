@@ -4,7 +4,7 @@
 
 Cold Ischemia is an independent structural advocacy organization confronting systemic failure in American kidney care. We serve 808,000+ ESKD (end-stage kidney disease) patients navigating involuntary dialysis discharge, transplant evaluation denial, and living donor decline.
 
-The Foundation accepts no pharmaceutical, dialysis-corporation, or hospital-system funding. It is built and maintained by patients and care partners, for patients and care partners.
+The Foundation does not accept donations and takes no funding from drug, biologic, medical-device or pharmaceutical companies, dialysis organizations, hospital systems, or advocacy organizations funded by them. Optional services are offered at posted rates; fees never buy influence. It is built and maintained by patients and care partners, for patients and care partners.
 
 ## What's in this repository
 

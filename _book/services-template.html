@@ -37,6 +37,8 @@ section{padding:80px 0;border-bottom:1px solid var(--b)}.lead{font-size:clamp(19
 .box{border:1px solid var(--b2);border-radius:10px;padding:24px;background:var(--surf)}.box h3{font-size:24px;margin-bottom:10px}.box ul{padding-left:20px;color:var(--ink80)}.box li{margin-bottom:6px}.box.no{border-color:rgba(255,77,94,.45)}
 .faq details{border-top:1px solid var(--b2);padding:16px 0}.faq summary{cursor:pointer;font:600 22px 'Fraunces',serif;color:#f3ede4}.faq p{margin-top:10px;color:var(--ink80);max-width:820px}
 .cta{text-align:center}.cta h2{max-width:760px;margin:0 auto 16px}.small{font-size:15px;color:var(--ink60);max-width:820px;margin:26px auto 0;text-align:center}
+.calc{margin-top:28px;background:var(--surf);border:1px solid var(--b2);border-radius:10px;padding:24px}.calc select,.calc input{display:block;width:100%;max-width:420px;margin-top:8px;padding:12px 14px;font:500 16px 'IBM Plex Mono',monospace;background:var(--void);color:var(--ink);border:1px solid var(--b2);border-radius:6px}.calc .note{font-size:15px;color:var(--ink60);margin-top:16px}
+#out{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 22px}@media(max-width:700px){#out{grid-template-columns:1fr}}#out div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--b);padding:8px 0;font-size:17px}#out b{font:600 19px 'Fraunces',serif;color:var(--gold-l);white-space:nowrap}
 footer{padding:36px 0;text-align:center;font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--ink40)}
 </style>
 </head>
@@ -45,7 +47,7 @@ footer{padding:36px 0;text-align:center;font:500 12px 'IBM Plex Mono',monospace;
 <header class="hero"><div class="wrap">
 <div class="k mono">Our services</div>
 <h1>What we do. <em>What&rsquo;s free.</em> What costs.</h1>
-<p class="lead">Twelve ways we help patients, living donors and care partners. The basics are always free. When a request takes real work, a fair, posted rate applies, so the free parts stay free for everyone.</p>
+<p class="lead">Twelve ways we help patients, living donors and care partners. The basics are always free. When a request takes real work, a small, posted rate applies, scaled to what things cost where you live, so the free parts stay free for everyone.</p>
 <div class="btns"><a class="btn p" href="contact.html">Request a service</a><a class="btn" href="cif-services-infographic.png" download>Download the infographic</a></div>
 <div class="info"><img src="cif-services-infographic.png" alt="Infographic: twelve Cold Ischemia Foundation services, what is free for each, and the rate when it takes more work. Individuals $65 per hour, organizations $150 per hour." width="1080" height="2041"><p>SHARE IT. SAVE IT. SEND IT TO SOMEONE WHO NEEDS IT.</p></div>
 </div></header>
@@ -64,25 +66,42 @@ footer{padding:36px 0;text-align:center;font:500 12px 'IBM Plex Mono',monospace;
 <div class="svs">{{CARDS}}</div>
 </div></section>
 
+<section id="local"><div class="wrap">
+<div class="k mono">Priced for where you live</div>
+<h2>Your price follows <em>your cost of living.</em></h2>
+<p class="lead">A family in a low-cost area should not pay what a family in a high-cost city pays. So every base price is scaled to your area: <b>your price = base price &times; your area&rsquo;s cost-of-living index &divide; 100</b>. We use the U.S. Bureau of Economic Analysis Regional Price Parities (RPP), where 100 is the national average.</p>
+<div class="calc reveal">
+<label for="area" class="mono" style="color:var(--ink60)">Choose your state</label>
+<select id="area"></select>
+<div id="custom" style="display:none;margin-top:12px"><label for="rppIn" class="mono" style="color:var(--ink60)">Enter your area&rsquo;s index</label><input id="rppIn" type="number" min="70" max="140" step="0.1" value="100"></div>
+<p id="idx" class="mono" style="margin:14px 0 10px;color:var(--gold-l)"></p>
+<div id="out"></div>
+<p class="note">Index values are from BEA&rsquo;s published Regional Price Parities (2022&ndash;2023 releases; the year is shown with each state). Do not see your state or city? Look up your state or metro area on the <a href="https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area" rel="noopener">BEA table</a> and choose &ldquo;My area&rdquo;, or just tell us your ZIP code and we will confirm the index and quote your price in writing. Prices are rounded to the nearest dollar.</p>
+</div>
+</div></section>
+
 <section id="rates"><div class="wrap">
 <div class="k mono">Posted rates</div>
 <h2>Simple, <em>public</em> rates.</h2>
-<p class="lead">Packages above use these rates. Anything custom is quoted in writing before work begins, and you can say no at any point before then.</p>
+<p class="lead">These are base rates for an area at the U.S. average cost of living. Your price is scaled to where you live (above). Anything custom is quoted in writing before work begins, and you can say no at any point before then.</p>
 <div class="rates">
-<div class="rate"><small>INDIVIDUALS</small><strong>$65/hr</strong><p>Patients, living donors, care partners and their families.</p></div>
-<div class="rate"><small>ORGANIZATIONS</small><strong>$150/hr</strong><p>Nonprofits, patient groups, schools, media, law firms and public officials.</p></div>
+<div class="rate"><small>INDIVIDUALS</small><strong>$20/hr</strong><p>Patients, living donors, care partners and their families.</p></div>
+<div class="rate"><small>ORGANIZATIONS</small><strong>$50/hr</strong><p>Nonprofits, patient groups, schools, media, law firms and public officials.</p></div>
 <div class="rate h"><small>CAN&rsquo;T AFFORD IT?</small><strong>Say so.</strong><p>Tell us in your request. Hardship requests are reviewed, and often free.</p></div>
 </div>
 <div class="two2">
 <div class="box"><h3>Who we serve</h3><ul><li>Patients, living donors and care partners</li><li>Patient and community groups, support circles, schools</li><li>Journalists and newsrooms</li><li>Legislators, staff and public agencies</li><li>Attorneys and nonprofits working on patient rights</li></ul></div>
-<div class="box no"><h3>Who we don&rsquo;t work for</h3><ul><li>Drug and device makers</li><li>Dialysis companies</li><li>Insurers and payers</li><li>Hospital and transplant-program systems whose practices are at issue</li></ul><p style="margin-top:10px;color:var(--ink80)">That is how independence works in practice: no one who profits from patients&rsquo; care buys our time. Paying clients never get editorial control.</p></div>
+<div class="box no"><h3>Who we don&rsquo;t work for</h3><ul><li>Drug and device makers</li><li>Dialysis companies</li><li>Insurers and payers</li><li>Hospital and transplant-program systems whose practices are at issue</li><li>Advocacy organizations funded by any of the above</li></ul><p style="margin-top:10px;color:var(--ink80)">That is how independence works in practice: no one who profits from patients&rsquo; care buys our time. Paying clients never get editorial control.</p></div>
 </div>
 </div></section>
+
+<section id="pledge"><div class="wrap"><div class="box" style="border-color:var(--gold)"><h3>Our independence pledge</h3><p style="color:var(--ink80)">We do not accept donations. We take no funding of any kind from drug, biologic, medical-device or pharmaceutical companies, dialysis organizations, insurers, hospital systems, or any advocacy organization funded by them. We charge fees only for services you request, at posted rates, and fees never buy influence over what we research or say.</p></div></div></section>
 
 <section id="faq" class="faq"><div class="wrap">
 <div class="k mono">Questions</div><h2>Straight <em>answers.</em></h2>
 <details><summary>Are you lawyers, doctors or financial advisors?</summary><p>No. We are advocates, writers and researchers. Nothing we provide is medical, legal, tax or financial advice. Letters and briefs are advocacy documents you review and sign. For medical advice, talk to your healthcare team, and in an emergency call 911.</p></details>
 <details><summary>Do paying clients get a say in what you publish?</summary><p>No. Fees pay for our time on your request. They never buy influence over our research, our conclusions or what we say about anyone.</p></details>
+<details><summary>How is my price set?</summary><p>We start from a base price and scale it to your local cost of living using the U.S. Bureau of Economic Analysis index for your state or metro area. A family in a lower-cost state pays less than the base; a family in a higher-cost area pays somewhat more. We confirm the number and quote it in writing before any paid work starts.</p></details>
 <details><summary>What if I can&rsquo;t pay?</summary><p>Ask. Say so in your request and we will review it. The free tools, guides and one orientation call are always available.</p></details>
 <details><summary>How do I get started?</summary><p>Send a request through the contact page. Tell us what you need and the deadline. We reply with what is free, what would cost, and a written quote before any paid work starts.</p></details>
 </div></section>
@@ -95,6 +114,14 @@ footer{padding:36px 0;text-align:center;font:500 12px 'IBM Plex Mono',monospace;
 </div></section>
 
 <footer>&copy; Cold Ischemia Foundation &middot; Ellenton, Florida</footer>
+<script>(function(){var B={{BASES}};var A=[["U.S. average",100,""],["Arkansas",86.5,"2023"],["Mississippi",87.3,"2023"],["South Dakota",88.1,"2023"],["Ohio",91.5,"2022"],["Michigan",93.4,"2022"],["Georgia",95.8,"2022"],["Texas",97.5,"2022"],["Florida",102.1,"2022"],["Colorado",102.3,"2022"],["Hawaii",108.6,"2023"],["New Jersey",108.9,"2023"],["District of Columbia",110.8,"2023"],["California",112.6,"2023"],["My area (enter the number)",null,""]];
+var sel=document.getElementById('area'),inp=document.getElementById('rppIn'),cu=document.getElementById('custom'),out=document.getElementById('out'),idx=document.getElementById('idx');if(!sel)return;
+A.forEach(function(a,i){var o=document.createElement('option');o.value=i;o.textContent=a[0]+(a[1]&&a[2]?' ('+a[1]+', '+a[2]+')':'');sel.appendChild(o)});
+function money(n){return '$'+Math.round(n).toLocaleString('en-US')}
+function draw(){var a=A[sel.value],r=a[1];cu.style.display=r===null?'block':'none';if(r===null)r=parseFloat(inp.value)||100;r=Math.max(70,Math.min(140,r));
+idx.textContent='Cost-of-living index: '+r+'  ·  multiplier ×'+(r/100).toFixed(3);
+out.innerHTML=B.map(function(b){var v=b[1].map(function(x){return money(x*r/100)}).join(' · ');var pre=(b[0]==='Funding & Independence Audit'||b[0]==='Cinematic Explainer Films')?'from ':'';return '<div><span>'+b[0]+'</span><b>'+pre+v+'</b></div>'}).join('')}
+sel.addEventListener('change',draw);inp.addEventListener('input',draw);draw()})()</script>
 <script>(function(){var r=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)){r.forEach(function(x){x.classList.add('in')});return}var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}})},{threshold:.12});r.forEach(function(x){o.observe(x)})})()</script>
 </body>
 </html>

@@ -16,21 +16,21 @@ I = {  # 40x40 line icons
  'people': '<circle cx="13" cy="15" r="5"/><circle cx="27" cy="15" r="5"/><path d="M4 33c0-6 4-9 9-9s9 3 9 9M18 33c0-6 4-9 9-9s9 3 9 9"/>',
  'ring': '<circle cx="20" cy="20" r="13" stroke-dasharray="2 5"/><circle cx="20" cy="7" r="3"/><circle cx="33" cy="20" r="3"/><circle cx="20" cy="33" r="3"/><circle cx="7" cy="20" r="3"/><circle cx="20" cy="20" r="4"/>',
 }
-S = [  # name, icon, free, price, price note, long description (for the page)
- ('Navigation Calls','compass','20-minute orientation call and a personal roadmap.','$65','per hour, extended sessions','We listen, map where you are in the process, and tell you the next three honest steps. Longer sessions are billed by the hour.'),
- ('Evaluation-Day Prep','list','Question lists and a pre-visit checklist.','$95','flat · 60-min prep + written plan','A one-hour prep session, a mock visit, and a written plan for the day you walk into the transplant program.'),
- ('Insurance Appeals','shield','Appeal guide and letter tool.','$225','per appeal letter, fully cited','We draft the appeal letter with the policy language, the deadlines and the evidence, ready for your signature.'),
- ('Records & Paper Trail','folder','Request templates and a running log.','$150','flat · done-with-you setup','We set up your records system and write the first round of records requests with you.'),
- ('Advocacy Letters','letter','Sourced demand-letter templates.','$350 / $750','individual / organization','A custom, sourced demand letter to an agency, a legislator or an institution: facts, law, ask, deadline.'),
- ('Funding & Independence Audit','lens','Five-minute self-check, plus three claims checked.','from $1,200','full sourced audit of one group','A written, sourced profile of who funds an organization and where its voice may be limited, with every claim cited.'),
- ('Policy Briefs & Comments','scales','Plain-language policy summaries.','$450 · $1,500+','comment letter · briefing paper','A formal public-comment letter, or a briefing paper for a legislator, board or newsroom.'),
- ('Fact-Check & Source Review','check','Up to three claims checked, sources attached.','$150','per 1,000 words reviewed','We trace every claim in your document to a primary source and mark what is confirmed, disputed or only alleged.'),
- ('Voice & Script Writing','pen','Voice guide and a sample paragraph.','$250 · $400','script · op-ed','Posts, speeches, three-minute scripts and op-eds in your own voice, with sources.'),
- ('Cinematic Explainer Films','play','Script outline and storyboard.','from $2,500','3-minute film, score, captions','A fully produced three-minute explainer with motion graphics, original score and on-screen text.'),
- ('Workshops & Talks','people','30-minute webinar for patient groups.','$750 · $1,800','90-minute · half-day','Live training for support groups, volunteers, classrooms and conferences.'),
- ('Support-Circle Launch','ring','Full starter kit and meeting guide.','$600','four facilitated sessions','We help you start a trust-based circle and run its first four meetings.'),
+S = [  # name, icon, free, price, price note, long description, numeric base prices (US-average area)
+ ('Navigation Calls','compass','20-minute orientation call and a personal roadmap.','$20','per hour, extended sessions','We listen, map where you are in the process, and tell you the next three honest steps. Longer sessions are billed by the hour.',[20]),
+ ('Evaluation-Day Prep','list','Question lists and a pre-visit checklist.','$30','flat · 60-min prep + written plan','A one-hour prep session, a mock visit, and a written plan for the day you walk into the transplant program.',[30]),
+ ('Insurance Appeals','shield','Appeal guide and letter tool.','$40','per appeal letter, fully cited','We draft the appeal letter with the policy language, the deadlines and the evidence, ready for your signature.',[40]),
+ ('Records & Paper Trail','folder','Request templates and a running log.','$30','flat · done-with-you setup','We set up your records system and write the first round of records requests with you.',[30]),
+ ('Advocacy Letters','letter','Sourced demand-letter templates.','$50 / $200','family / organization','A custom, sourced demand letter to an agency, a legislator or an institution: facts, law, ask, deadline.',[50,200]),
+ ('Funding & Independence Audit','lens','Five-minute self-check, plus three claims checked.','from $350','full sourced audit of one group','A written, sourced profile of who funds an organization and where its voice may be limited, with every claim cited. Built for organizations, journalists and researchers.',[350]),
+ ('Policy Briefs & Comments','scales','Plain-language policy summaries.','$75 · $400+','comment letter · briefing paper','A formal public-comment letter, or a briefing paper for a legislator, board or newsroom.',[75,400]),
+ ('Fact-Check & Source Review','check','Up to three claims checked, sources attached.','$25','per 1,000 words reviewed','We trace every claim in your document to a primary source and mark what is confirmed, disputed or only alleged.',[25]),
+ ('Voice & Script Writing','pen','Voice guide and a sample paragraph.','$50 · $75','script · op-ed','Posts, speeches, three-minute scripts and op-eds in your own voice, with sources.',[50,75]),
+ ('Cinematic Explainer Films','play','Script outline and storyboard.','from $600','3-minute film, score, captions','A fully produced three-minute explainer with motion graphics, original score and on-screen text, for groups and organizations.',[600]),
+ ('Workshops & Talks','people','30-minute webinar for patient groups.','$150 · $350','90-minute · half-day','Live training for support groups, volunteers, classrooms and conferences.',[150,350]),
+ ('Support-Circle Launch','ring','Full starter kit and meeting guide.','$100','four facilitated sessions','We help you start a trust-based circle and run its first four meetings.',[100]),
 ]
-TIERS = [('01','FREE','Self-serve + one 20-min call','$0'),('02','GUIDED','About an hour of our time','$65–$150'),('03','CUSTOM','A few hours of real work','$225–$900'),('04','PROJECT','Days of work, built to order','from $1,200')]
+TIERS = [('01','FREE','Self-serve + one 20-min call','$0'),('02','GUIDED','About an hour of our time','$20–$40'),('03','CUSTOM','A few hours of real work','$50–$200'),('04','PROJECT','Days of work, built to order','from $350')]
 e = html.escape
 def icon(k, w=40): return '<svg viewBox="0 0 40 40" width="%d" height="%d" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">%s</svg>' % (w, w, I[k])
 CSS_FONTS = '''@font-face{font-family:'Anton';src:url(fonts/anton-400-normal.woff2) format('woff2')}
@@ -41,7 +41,7 @@ CSS_FONTS = '''@font-face{font-family:'Anton';src:url(fonts/anton-400-normal.wof
 @font-face{font-family:'Crimson Pro';font-style:italic;src:url(fonts/crimsonpro-400-italic.woff2) format('woff2')}'''
 # ---------- infographic ----------
 tiles = ''
-for n, (name, ic, free, price, note, _) in enumerate(S, 1):
+for n, (name, ic, free, price, note, _, _b) in enumerate(S, 1):
     tiles += '<div class="t"><div class="th"><span class="n">%02d</span><span class="ic">%s</span></div><h3>%s</h3><div class="f"><b>FREE</b><span>%s</span></div><div class="m"><b>MORE</b><div class="p">%s</div><div class="pn">%s</div></div></div>' % (n, icon(ic, 38), e(name), e(free), e(price), e(note))
 lad = ''.join('<div class="l"><span class="ln">%s</span><b>%s</b><i>%s</i><em>%s</em></div>' % (a, b, c, d) for a, b, c, d in TIERS)
 INFO = '''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Cold Ischemia Foundation: Services infographic</title><style>
@@ -63,24 +63,27 @@ h3{font:400 24px/1.08 'Anton',sans-serif;letter-spacing:.035em;text-transform:up
 .f{font:400 16px/1.25 'Crimson Pro',serif;color:#d8cfc4;min-height:42px;margin-bottom:8px}.f b,.m b{display:inline-block;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.2em;padding:2px 7px;border-radius:3px;margin-right:6px;vertical-align:1px}.f b{background:rgba(42,196,200,.2);color:#2ac4c8}.m b{background:rgba(232,184,74,.2);color:#e8b84a}
 .m{margin-top:auto;border-top:1px dashed rgba(243,237,228,.2);padding-top:8px}.p{font:400 30px/1.05 'Anton',sans-serif;color:#e8b84a;letter-spacing:.02em;margin-top:5px}.pn{font:500 12px/1.3 'IBM Plex Mono',monospace;color:#9fb0c4;letter-spacing:.03em;margin-top:3px}
 .ft{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px}.r{border:1px solid rgba(232,184,74,.45);border-radius:10px;padding:12px 16px;background:rgba(10,22,40,.8)}.r small{display:block;font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.2em;color:#9fb0c4}.r strong{font:400 44px/1 'Anton',sans-serif;color:#e8b84a;display:block;margin:4px 0}.r span{font:400 15px/1.25 'Crimson Pro',serif;color:#cfc6b6}.r.h{border-color:#2ac4c8}.r.h strong{color:#2ac4c8;font-size:36px;padding:4px 0}
+.col{margin-top:14px;border:1px dashed rgba(42,196,200,.6);border-radius:10px;padding:11px 16px;background:rgba(42,196,200,.08);font:400 17px/1.35 'Crimson Pro',serif;color:#e8e2d6}.col b{display:block;font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.22em;color:#2ac4c8;margin-bottom:4px}.col em{font-style:normal;color:#e8b84a;font-weight:600}
 .vow{margin-top:14px;text-align:center;font:italic 400 26px/1.3 'Playfair Display',serif;color:#fff;padding:12px 10px;border-top:2px solid #e8b84a;border-bottom:2px solid #e8b84a}.vow b{font-weight:400;color:#e8b84a}
 .url{display:flex;justify-content:space-between;gap:12px;margin:12px 4px 0;font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.07em;color:#8fa0b4;white-space:nowrap}
 </style></head><body><div id="g"><div class="in">
 <div class="k">COLD ISCHEMIA FOUNDATION &middot; SERVICES</div>
 <h1><span>What we do.</span><span class="a">What&rsquo;s free.</span><span class="b">What costs.</span></h1>
-<p class="sub">Twelve ways we help patients, donors and care partners. The basics are always free. When it takes real work, you pay a fair, posted rate.</p>
+<p class="sub">Twelve ways we help patients, donors and care partners. The basics are always free. When it takes real work, you pay a small, posted rate, scaled to your local cost of living.</p>
 <div class="lad">%s</div>
 <div class="grid">%s</div>
-<div class="ft"><div class="r"><small>INDIVIDUALS</small><strong>$65/hr</strong><span>Patients, donors, care partners</span></div><div class="r"><small>ORGANIZATIONS</small><strong>$150/hr</strong><span>Nonprofits, schools, media, law firms, officials</span></div><div class="r h"><small>CAN&rsquo;T AFFORD IT?</small><strong>SAY SO.</strong><span>Hardship requests are reviewed, and often free</span></div></div>
-<div class="vow">No funders. No sponsors. No strings. <b>Fees pay for our time, never for our opinions.</b></div>
+<div class="ft"><div class="r"><small>INDIVIDUALS</small><strong>$20/hr</strong><span>Patients, donors, care partners</span></div><div class="r"><small>ORGANIZATIONS</small><strong>$50/hr</strong><span>Nonprofits, schools, media, law firms, officials</span></div><div class="r h"><small>CAN&rsquo;T AFFORD IT?</small><strong>SAY SO.</strong><span>Hardship requests are reviewed, and often free</span></div></div>
+<div class="col"><b>PRICED FOR WHERE YOU LIVE</b><span>Price = base price &times; your area&rsquo;s cost-of-living index &divide; 100 (U.S. BEA). Insurance appeal letter: <em>Arkansas $35</em> &middot; <em>U.S. average $40</em> &middot; <em>California $45</em></span></div><div class="vow">No donations. No industry funding. No strings. <b>Fees pay for our time, never for our opinions.</b></div>
 <div class="url"><span>WE DO NOT WORK FOR DRUGMAKERS, DIALYSIS COMPANIES, INSURERS OR HOSPITAL SYSTEMS</span><span>COLDISCHEMIA.FOUNDATION</span></div>
 </div></div></body></html>''' % (CSS_FONTS.replace('url(fonts/', 'url(../fonts/'), lad, tiles)
 open(os.path.join(R, '_film2/services-infographic.html'), 'w', encoding='utf-8').write(INFO)
 # ---------- page ----------
 cards = ''
-for n, (name, ic, free, price, note, long) in enumerate(S, 1):
+for n, (name, ic, free, price, note, long, _b) in enumerate(S, 1):
     cards += '<article class="sv reveal"><div class="sh"><span class="sn">%02d</span><span class="si">%s</span></div><h3>%s</h3><p class="ld">%s</p><div class="two"><div class="fr"><b>Free</b><p>%s</p></div><div class="pd"><b>When it takes more work</b><p class="pr">%s</p><p class="pnn">%s</p></div></div></article>' % (n, icon(ic, 34), e(name), e(long), e(free), e(price), e(note))
 lad2 = ''.join('<div class="step"><span>%s</span><h3>%s</h3><p>%s</p><b>%s</b></div>' % (a, b, c, d) for a, b, c, d in TIERS)
-PAGE = open(os.path.join(R, '_book/services-template.html'), encoding='utf-8').read().replace('{{CARDS}}', cards).replace('{{LADDER}}', lad2)
+import json
+BASES = json.dumps([[x[0], x[6], x[5]] for x in S])
+PAGE = open(os.path.join(R, '_book/services-template.html'), encoding='utf-8').read().replace('{{CARDS}}', cards).replace('{{LADDER}}', lad2).replace('{{BASES}}', BASES.replace('</','<\\/'))
 open(os.path.join(R, 'services.html'), 'w', encoding='utf-8').write(PAGE)
 print('ok', len(S), 'services')
