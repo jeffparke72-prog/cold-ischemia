@@ -13,7 +13,6 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GROUPS = [
     ("About", [
         ("about.html", "Our Story"),
-        ("services.html", "Our Services"),
         ("independence.html", "What Independence Means"),
         ("cif-volunteer-page.html", "Volunteer"),
         ("volunteer-training.html", "Volunteer Training"),
@@ -44,6 +43,7 @@ GROUPS = [
     ]),
 ]
 TOOLKIT = ("projects.html", "Toolkit")
+SERVICES = ("services.html", "Services We Offer")
 
 OLD_BLOCK = re.compile(r'<style id="cifnav-css">(.*?)</style>\s*<nav(?: id="nav")? class="cifnav".*?</nav>', re.S)
 NEW_BLOCK = re.compile(r'<!--CIFNAV-->(.*?)<!--/CIFNAV-->', re.S)
@@ -67,10 +67,11 @@ def render(page, tail, nav_id=False):
         '<button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu">'
         '<span></span><span></span><span></span></button>'
         '<div class="cn-menu" id="cn-menu"><div class="cn-m">%s</div>'
-        '<div class="cn-r"><a href="%s" class="cn-t"%s>%s</a></div></div>'
+        '<div class="cn-r"><a href="%s" class="cn-t cn-s"%s>%s</a><a href="%s" class="cn-t"%s>%s</a></div></div>'
         '</nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->'
-    ) % (tail, ' id="nav"' if nav_id else '', ''.join(groups), TOOLKIT[0], ' aria-current="page"' if page == TOOLKIT[0] else '',
-         TOOLKIT[1])
+    ) % (tail, ' id="nav"' if nav_id else '', ''.join(groups),
+         SERVICES[0], ' aria-current="page"' if page == SERVICES[0] else '', SERVICES[1],
+         TOOLKIT[0], ' aria-current="page"' if page == TOOLKIT[0] else '', TOOLKIT[1])
 
 
 def wants_id(text, own_block):
