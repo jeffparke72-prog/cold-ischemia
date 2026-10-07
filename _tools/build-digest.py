@@ -50,12 +50,12 @@ for f in sorted(glob.glob(os.path.join(D, 'issue-*-essay.md'))):
         m = re.match(r'\[\[STAT (.+?)\|(.+?)\]\]', ln)
         if m: out.append('<div class="stat"><b>%s</b><span>%s</span></div>' % (e(m[1]), e(m[2]))); continue
         if ln.startswith('- '): out.append('<li>%s</li>' % inline(ln[2:])); continue
-        if sect == 'Verification status': out.append('<p class="ver">%s</p>' % inline(ln)); continue
+        if sect in ('Verification status', 'How we checked'): out.append('<p class="ver">%s</p>' % inline(ln)); continue
         if ln.startswith('*') and ln.endswith('*') and 'Educational' in ln: out.append('<p class="disc">%s</p>' % inline(ln.strip('*'))); continue
         out.append('<p>%s</p>' % inline(ln))
-        if sect not in ('Sources', 'Verification status'): words += len(ln.split())
+        if sect not in ('Sources', 'Verification status', 'How we checked'): words += len(ln.split())
     body = '\n'.join(out)
-    st = status.get(num, 'draft'); lbl = '<div class="draft">Draft for review &middot; verification in progress</div>' if st != 'published' else ''
+    st = status.get(num, 'draft'); lbl = ('<div class="draft">Awaiting publication approval</div>' if st == 'ready' else '<div class="draft">Draft for review &middot; verification in progress</div>') if st != 'published' else ''
     pdf = 'research-digest-%s.pdf' % num
     page = '''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>%s | Cold Ischemia Foundation Research Digest</title>

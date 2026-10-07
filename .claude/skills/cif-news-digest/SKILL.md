@@ -14,7 +14,23 @@ The audience is patients, living donors and care partners. Write for an intellig
 Every issue is one cohesive essay of about 1,000 words (title, deck, headings and body; sources and the verification note are extra). A bulleted list of links is not a digest. The essay should read like a person who has read the papers explaining them to a friend: one human opening, one section per finding (each with a verified number set apart as a big stat), what each finding cannot show, who paid for it, one question to take to the care team, and a closing that names the thread running through the week.
 It must be downloadable directly from the site as a PDF, not only readable on screen. The build for this is in the repo: put the essay in `_digest/issue-NNN-essay.md` (format below), set its status in `_digest/status.json`, run `python3 _tools/build-digest.py`, then (with the repo served on port 8765) `node _tools/digest-pdf.js`. That produces `research-digest-NNN.html` (the readable page) and `research-digest-NNN.pdf` (the download), and updates `research-digest.html` (the index). Before delivering, open the PDF and confirm the page count, the download link and that no fact is unflagged.
 Essay file format: first line `# Title`; second line `*Deck / issue line*`; `## Section` headings; plain paragraphs; `[[STAT 1,863|what the number counts]]` for each big number; a `## Sources` list of `- ` bullets; a `## Verification status` paragraph; a final italic disclaimer line.
-Status stays `draft` (the page and PDF show a visible DRAFT banner) until every fact is verified and the user approves; then set it to `published`. Never merge or post a draft as final.
+Status is `draft` while working and `ready` once the essay has passed the gate and is built; only the founder's approval makes it `published`. A draft or ready issue shows a visible banner and is not listed on the index.
+
+## Screen ten, keep the best two
+Each run does the filtering so the founder only sees the strongest material.
+1. Gather a batch of at least 10 candidate studies or reports.
+2. Score each on: patient and care-partner relevance, not-yet-mainstream, source tier, and whether it can be fully verified.
+3. Run the **verification gate** below on the top candidates. Keep the best two that pass. If only one passes, use one. If none pass, say so in the summary; a skipped issue is better than a wrong one.
+4. Write the essay about those two (about 1,000 words: a short opening, roughly 350 to 400 words per study, a closing).
+
+**Verification gate** (all must be true for an item to be used):
+- A DOI or PubMed ID, or an official report number, confirmed on two independent pages (for example PubMed plus the journal or PMC, or the agency page plus a second source).
+- Every number you state appears in text you actually read (abstract, results or report summary). Copy it exactly; never round up or infer.
+- Published within the window, not retracted, and the study design supports the sentence you write (say "associated with", not "causes", for observational work).
+- Funding and disclosures: read them from the article if you can. If you cannot, write exactly "Funding and disclosures: not reviewed by CIF; see the source article." Never write that a study has no conflicts unless the article says so.
+- Nothing accuses a named person or organization of wrongdoing beyond what the cited source states; lawsuits and investigations are described as allegations with their documented outcome.
+
+When the gate passes, set the essay's status to `ready` in `_digest/status.json`, title its last section `## How we checked` (say plainly what was and was not confirmed), build the page and PDF, push to your assigned branch, and report in your summary. Publishing to `main` is a separate step that the founder authorizes; do not merge or open a pull request yourself.
 
 ## The workflow
 1. **Scope the week.** Default window: the last 30 to 90 days. Topics: kidney failure and dialysis, transplant access and outcomes, living donation, care partners and caregiving, policy and payment rules, and industry influence on patient advocacy. If the user names a topic, narrow to it.
