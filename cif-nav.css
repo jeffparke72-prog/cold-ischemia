@@ -25,6 +25,8 @@ nav.cifnav .cn-r{display:flex;gap:8px;flex-shrink:0}
 nav.cifnav .cn-r a{font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:8px 14px;border-radius:2px;white-space:nowrap}
 nav.cifnav .cn-t{color:rgba(216,207,196,.68);border:1px solid rgba(100,140,200,.26)}
 nav.cifnav .cn-t:hover{color:#c8902a;border-color:rgba(200,144,42,.55)}
+nav.cifnav .cn-s{color:#e8b84a;border-color:rgba(232,184,74,.6);background:rgba(200,144,42,.1)}
+nav.cifnav .cn-s:hover{background:rgba(200,144,42,.22);color:#f3d27a}
 nav.cifnav .cn-d,nav.cifnav .cn-dm{background:#c8902a;color:#030509;font-weight:500}
 nav.cifnav .cn-d:hover,nav.cifnav .cn-dm:hover{background:#e8b84a}
 nav.cifnav .cn-burger,nav.cifnav .cn-dm{display:none}
