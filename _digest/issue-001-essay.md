@@ -41,13 +41,13 @@ Four studies, one thread: the research is strongest on the patient, thinner on t
 
 ## Sources
 - Heidelberg living-donor cohort (632 donors, 1991–2020). Transplant International, 2026. DOI 10.3389/ti.2026.16266.
-- Swiss Organ Living-Donor Health Registry (1,863 donors). Kidney International Reports, 2026.
-- "Long-term clinical outcomes in living kidney donors: a comparative study with matched controls." PMID 41175287. DOI 10.1007/s11255-025-04880-w.
+- Swiss Organ Living-Donor Health Registry (1,863 donors). Kidney International Reports, 2026. Full DOI not confirmed.
+- "Long-term clinical outcomes in living kidney donors: a comparative study with matched controls." PMID 41175287. DOI 10.1007/s11255-025-04880-w. Publication year not confirmed.
 - "Caregiver Perspectives on Supporting Kidney Transplant Recipients Through Graft Loss." 2026. PMID 42088030.
-- "A Qualitative Study of Patients, Caregivers, and Providers on Barriers to Kidney Retransplantation following Graft Loss." Clinical Journal of the American Society of Nephrology, 2026. DOI prefix 10.2215/CJN.0000001162.
+- "A Qualitative Study of Patients, Caregivers, and Providers on Barriers to Kidney Retransplantation following Graft Loss." Clinical Journal of the American Society of Nephrology, 2026. Full DOI not confirmed.
 - "A Single-Center Assessment of the Race Neutral eGFR Calculation and Access to Kidney Transplantation for Black Patients: A Policy Change Is Not Enough." Journal of Racial and Ethnic Health Disparities. DOI 10.1007/s40615-025-02573-9. PMID 41811668.
 
-## Verification status
-This issue is a draft. Journal sites could not be opened while it was written, so each fact comes from search-result summaries and must be checked against the source before distribution. Funding and conflict-of-interest disclosures have not yet been confirmed for any study. Confirm the Swiss registry DOI and unit, the Turkish paper's publication year (its DOI suggests 2025), the CJASN full DOI, and the publication year of the single-center eGFR study.
+## How we checked
+We could not open the journal websites while preparing this issue, so every figure comes from the study titles, abstracts and summaries returned by search and indexing pages, cross-checked where two sources were available. Funding and conflict-of-interest disclosures: not reviewed by CIF; see each source article. We did not confirm the full DOI of the Swiss registry paper or the CJASN article, the exact unit behind the Swiss eGFR figure, or the publication year of the Turkish comparison and the single-center eGFR study, so those details are described as reported in the sources and should be verified there. If you find an error, tell us and we will correct it in public.
 
 *Educational, not medical advice. Talk to your healthcare team. In an emergency, call 911.*
