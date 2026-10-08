@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh api *repos/jeffparke72-prog/cold-ischemia/pulls*)"
+      "Bash(gh api *repos/jeffparke72-prog/cold-ischemia/pulls*)",
+      "mcp__claude-code-remote__update_trigger"
     ]
   }
 }
+
+
