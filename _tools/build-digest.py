@@ -25,11 +25,15 @@ h1{font:900 clamp(34px,5.4vw,56px)/1.08 'Playfair Display',Georgia,serif;color:#
 article{padding:36px 0 60px}h2{font:900 30px/1.15 'Playfair Display',serif;color:#f3ede4;margin:1.8em 0 .5em}p{margin-bottom:1.05em}
 .stat{margin:1.6em 0;padding:18px 22px;border-left:5px solid var(--gold);background:var(--surf);page-break-inside:avoid;break-inside:avoid}.stat b{display:block;font:400 64px/1 'Anton',sans-serif;color:var(--gold-l);letter-spacing:.02em}.stat span{font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ink60)}
 .src,.ver{font-size:16px;color:var(--ink80)}.src li{margin:0 0 .5em 1.2em}.ver{border:1px dashed rgba(255,138,150,.5);padding:16px 18px;border-radius:6px}.disc{font:italic 17px/1.5 'Crimson Pro',serif;color:var(--ink60);margin-top:1.4em}
+form.sub{margin:36px 0 10px;padding:22px;border:1px solid var(--b2);border-left:5px solid var(--gold);border-radius:8px;background:var(--surf);position:relative}form.sub label{display:block;font:900 24px/1.2 'Playfair Display',serif;color:#f3ede4;margin-bottom:6px}form.sub p{font-size:16px;color:var(--ink80);margin:0 0 12px}form.sub .row{display:flex;gap:10px;flex-wrap:wrap}form.sub input[type=email]{flex:1;min-width:220px;padding:13px 14px;font:500 16px 'IBM Plex Mono',monospace;background:#07101c;color:var(--ink);border:1px solid var(--b2);border-radius:4px}form.sub button{font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;padding:13px 20px;border:0;border-radius:4px;background:var(--gold);color:#0a1628;cursor:pointer}form.sub #submsg{margin:10px 0 0;color:var(--gold-l)}
 footer{padding:30px 0;text-align:center;font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--ink60)}
 .card{display:block;text-decoration:none;color:inherit;background:var(--surf);border:1px solid var(--b2);border-left:5px solid var(--gold);border-radius:8px;padding:24px;margin:18px 0}.card h3{font:900 26px/1.2 'Playfair Display',serif;color:#f3ede4;margin:6px 0 8px}.card p{font-size:17px;color:var(--ink80);margin:0 0 12px}
 @page{size:Letter;margin:.9in 1in 1in;@bottom-center{content:counter(page) '  \\00b7  Cold Ischemia Foundation Research Digest';font:8.5pt Georgia,serif;color:#777}}
-@media print{body{background:#fff;color:#1d1a16;font-size:11.3pt;line-height:1.55}.wrap{max-width:none;padding:0}.mast{padding:0 0 14pt;border-color:#bbb}h1,h2{color:#111}.deck,.src,.ver,.disc{color:#444}.stat{background:#f4efe2;border-left-color:#a8761c}.stat b{color:#a8761c}.stat span{color:#555}.btns,footer,nav,.cifnav{display:none!important}h1{font-size:26pt}h2{font-size:16pt;break-after:avoid}.k{color:#a8761c}.stat,.ver{-webkit-print-color-adjust:exact;print-color-adjust:exact}.ver{border-color:#a23a46}.draft{color:#a23a46;border-color:#a23a46}a{color:inherit;text-decoration:none}}
+@media print{body{background:#fff;color:#1d1a16;font-size:11.3pt;line-height:1.55}.wrap{max-width:none;padding:0}.mast{padding:0 0 14pt;border-color:#bbb}h1,h2{color:#111}.deck,.src,.ver,.disc{color:#444}.stat{background:#f4efe2;border-left-color:#a8761c}.stat b{color:#a8761c}.stat span{color:#555}.btns,footer,nav,.cifnav,form.sub{display:none!important}h1{font-size:26pt}h2{font-size:16pt;break-after:avoid}.k{color:#a8761c}.stat,.ver{-webkit-print-color-adjust:exact;print-color-adjust:exact}.ver{border-color:#a23a46}.draft{color:#a23a46;border-color:#a23a46}a{color:inherit;text-decoration:none}}
 '''
+SUBSCRIBE_URL = 'https://script.google.com/macros/s/AKfycbxRtOYNjNvo7_fkqsdphr3Gc_tb_6CwY9i4Ht84nzoqGrkLBqFMBq6SB36Y2Ovp1bTr/exec'
+SUB = '''<form class="sub" id="subf" novalidate><label for="subemail">Get the Research Digest by email</label><p>A short, sourced essay every few days on kidney, transplant and living-donor research, with who funded it and what it does not show. No donations asked. Unsubscribe any time.</p><div class="row"><input type="email" id="subemail" required placeholder="you@example.com" autocomplete="email"><input type="text" id="subhp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"><button type="submit">Subscribe</button></div><p id="submsg" role="status"></p></form>
+<script>(function(){var f=document.getElementById('subf');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var em=document.getElementById('subemail').value.trim(),m=document.getElementById('submsg');if(!/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(em)){m.textContent='Please enter a valid email address.';return}m.textContent='Sending...';fetch('https://script.google.com/macros/s/AKfycbxRtOYNjNvo7_fkqsdphr3Gc_tb_6CwY9i4Ht84nzoqGrkLBqFMBq6SB36Y2Ovp1bTr/exec',{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({email:em,website:document.getElementById('subhp').value})}).then(function(){m.textContent='Almost done: check your inbox for a confirmation email (look in spam if you do not see it within a few minutes).';f.querySelector('.row').style.display='none'}).catch(function(){m.textContent='Something went wrong. Please try again in a moment.'})})})()</script>'''
 issues = []
 for f in sorted(glob.glob(os.path.join(D, 'issue-*-essay.md'))):
     num = re.search(r'issue-(\d+)-essay', f)[1]
@@ -64,8 +68,8 @@ for f in sorted(glob.glob(os.path.join(D, 'issue-*-essay.md'))):
 <!--CIFNAV--><!--/CIFNAV-->
 <header class="mast"><div class="wrap">%s<div class="k">Research Digest &middot; Issue %s</div><h1>%s</h1><p class="deck">%s</p>
 <div class="btns"><a class="btn p" href="%s" download>Download the PDF</a><a class="btn" href="research-digest.html">All issues</a></div></div></header>
-<main class="wrap"><article>%s</article></main>
-<footer>&copy; Cold Ischemia Foundation &middot; No donations &middot; No industry funding</footer></body></html>''' % (e(title), e(deck), CSS, lbl, num, e(title), e(deck), pdf, body)
+<main class="wrap"><article>%s</article>%s</main>
+<footer>&copy; Cold Ischemia Foundation &middot; No donations &middot; No industry funding</footer></body></html>''' % (e(title), e(deck), CSS, lbl, num, e(title), e(deck), pdf, body, SUB)
     open(os.path.join(R, 'research-digest-%s.html' % num), 'w', encoding='utf-8').write(page)
     issues.append((num, title, deck, words, st, pdf))
 pub = [i for i in issues if i[4] == 'published']
@@ -75,8 +79,8 @@ idx = '''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="
 <meta name="description" content="A weekly, sourced essay on kidney, transplant, living-donor and care-partner research that mainstream outlets rarely cover, with who funded it and what it does not show. Free PDF download.">
 <style>%s</style></head><body>
 <!--CIFNAV--><!--/CIFNAV-->
-<header class="mast"><div class="wrap"><div class="k">Research Digest</div><h1>The research your care team may not have time to read.</h1><p class="deck">One sourced, plain-language essay each week from peer-reviewed journals and primary reports. Every item names who funded it and what it does not show. Free to read and download.</p></div></header>
-<main class="wrap"><article>%s</article></main>
-<footer>&copy; Cold Ischemia Foundation &middot; No donations &middot; No industry funding</footer></body></html>''' % (CSS, cards)
+<header class="mast"><div class="wrap"><div class="k">Research Digest</div><h1>The research your care team may not have time to read.</h1><p class="deck">A sourced, plain-language essay every few days from peer-reviewed journals and primary reports. Every item names who funded it and what it does not show. Free to read and download.</p></div></header>
+<main class="wrap">%s<article>%s</article></main>
+<footer>&copy; Cold Ischemia Foundation &middot; No donations &middot; No industry funding</footer></body></html>''' % (CSS, SUB, cards)
 open(os.path.join(R, 'research-digest.html'), 'w', encoding='utf-8').write(idx)
 print([(i[0], i[3], i[4]) for i in issues])
