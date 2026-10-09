@@ -83,4 +83,7 @@ idx = '''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="
 <main class="wrap">%s<article>%s</article></main>
 <footer>&copy; Cold Ischemia Foundation &middot; No donations &middot; No industry funding</footer></body></html>''' % (CSS, SUB, cards)
 open(os.path.join(R, 'research-digest.html'), 'w', encoding='utf-8').write(idx)
+SITE = 'https://coldischemia.foundation'
+feed = {'issues': [{'n': int(n), 'title': t, 'deck': d, 'url': SITE + '/research-digest-%s.html' % n, 'pdf': SITE + '/' + pdf_, 'published': st == 'published'} for n, t, d, w, st, pdf_ in issues]}
+json.dump(feed, open(os.path.join(R, 'research-digest-feed.json'), 'w'), indent=1)
 print([(i[0], i[3], i[4]) for i in issues])
