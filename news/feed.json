@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-09T00:15:00.377302+00:00",
+"updated": "2026-10-09T06:35:39.508994+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -87,7 +87,7 @@
 "category": "Policy",
 "url": "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=transplant+%7C+dialysis+%7C+%22organ+procurement%22+%7C+%22end-stage+renal%22&order=newest",
 "ok": true,
-"count": 3,
+"count": 5,
 "error": null
 },
 {
@@ -133,6 +133,28 @@
 ],
 "items": [
 {
+"title": "Agency Information Collection Activities: Submission to OMB for Review and Approval; Public Comment Request; Data System for Organ Procurement and Transplantation Network, OMB No. 0906-0110-Revision",
+"link": "https://www.federalregister.gov/documents/2026/10/09/2026-20732/agency-information-collection-activities-submission-to-omb-for-review-and-approval-public-comment",
+"summary": "In compliance with of the Paperwork Reduction Act of 1995, HRSA submitted an Information Collection Request (ICR) to the Office of Management and Budget (OMB) for review and approval. Comments submitted during the first public review of this ICR will be provided to OMB. OMB will accept further comments from the public…",
+"outlet": "",
+"published": "2026-10-09T04:00:00+00:00",
+"id": "51ec8f490f19ed1a",
+"source": "Federal Register: organ transplant policy",
+"category": "Policy",
+"first_seen": "2026-10-09T06:35:39.508994+00:00"
+},
+{
+"title": "Agency Information Collection Activities: Submission to OMB for Review and Approval; Public Comment Request; Applicant Organizational National Provider Identifiers and Centers for Medicare & Medicaid Services Certification Numbers Form",
+"link": "https://www.federalregister.gov/documents/2026/10/09/2026-20731/agency-information-collection-activities-submission-to-omb-for-review-and-approval-public-comment",
+"summary": "In compliance with the Paperwork Reduction Act of 1995, HRSA submitted an Information Collection Request (ICR) to the Office of Management and Budget (OMB) for review and approval. Comments submitted during the first public review of this ICR will be provided to OMB. OMB will accept further comments from the public…",
+"outlet": "",
+"published": "2026-10-09T04:00:00+00:00",
+"id": "3adbdc5d3a54d463",
+"source": "Federal Register: organ transplant policy",
+"category": "Policy",
+"first_seen": "2026-10-09T06:35:39.508994+00:00"
+},
+{
 "title": "Latino families face organ donation misconceptions amid critical need - FOX5 Vegas",
 "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPN3doRklrM2tQTk80UFd6d3dONUdTbVNIbUpDbFFmbkgxS0JMTjlCbzVBa3dKWGx1UUxVZkEzVjdzNnc3Y1RqM2w4eXczLW9GdlF2WFlUaGtZUWlaSTI5WXJYYUxOX2RSOFlyNXZ2TnlsYmJlSHVYR0VzR3dscnBUc05lNGxla2dobmFjLTA2VEQ2MmNzdWN2X1MxUzRpcHlabWN0VVliTkVlTU0?oc=5",
 "summary": "Latino families face organ donation misconceptions amid critical need FOX5 Vegas",
@@ -145,7 +167,7 @@
 },
 {
 "title": "Potsdam man’s organ donation helped 8 people after fatal work accident - WWNY",
-"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNeUxnOGhUVGNjcTNwQWNkd3ZvTHlzUzBsMFphUEd6UFpDTDJXRVQwNkN4Q3BjQWZjMmxDWEtQcGNla3RMRkRCMTBOZHY3REZpQXdYbmVES0NkNHJZcm5KeVJkc0JWU0pmWEw3bEdXNFU0THdZVGtray1xZDdwS24wa2FGZlpsTHUzT1c1dTM4TmxySEtXTk4xYWZxUFVkRy1mRTJXYS14aw?oc=5",
+"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNeUxnOGhUVGNjcTNwQWNkd3ZvTHlzUzBsMFphUEd6UFpDTDJXRVQwNkN4Q3BjQWZjMmxDWEtQcGNla3RMRkRCMTBOZHY3REZpQXdYbmVES0NkNHJZcm5KeVJkc0JWU0pmWEw3bEdXNFU0THdZVGtray1xZDdwS24wa2FGZlpsTHUzT1c1dTM4TmxySEtXTk4xYWZxUFVkRy1mRTJXYS14a9IBuwFBVV95cUxOWERsaE5NOFk2Zk42eVJlRkdlU0JUTVVzUnVqQVNPNXRZLVZzZmlMNXZKYks0dnBwdEQ5d095Sm5qU2NuMUtFOXZRaUFEd1Y0Ulh1ajVNZEpQM01YNFpsYVFDRVg4MWFwcTQ1TWlGdjBGTEFaaXlSeXNKUjRBdXFkT0xsTFFfOUdDNW5QYmZDOFNGNzZJZzVfaXF5ZnRYZl9Edng5MVB5Y3NUSTRyckk4QlhqdkVjMGM4TlFZ?oc=5",
 "summary": "Potsdam man’s organ donation helped 8 people after fatal work accident WWNY",
 "outlet": "WWNY",
 "published": "2026-10-08T21:38:00+00:00",
@@ -225,7 +247,7 @@
 "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPb0lsRXRTZ1NsRndUWTdnSDZudE9oc2t5LTdvVnhUM2V4a1BlcnF3azFFVy1vU1pDbkczbkFfWF9KTzJUeGNrTjRxTnhhSEdRNXFvblV4WFJGcDBPcENMNzBhVEx0dGRicXJmY25Ec0hOa3hzU2NZUmNubFpRRHJfMURyU1JHNFNRZDREc3FPM19QanJrcE10MXJ4SkVwdXFwc1NfUWNaSTJ4T19OUVhrMG44M0o?oc=5",
 "summary": "Organ donation in Luxembourg plummets to just two donors in 2025 Luxembourg Times",
 "outlet": "Luxembourg Times",
-"published": "2026-10-08T18:15:00+00:00",
+"published": "2026-10-08T19:48:39.860163+00:00",
 "id": "b805cdd8d0c44b8c",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
@@ -331,6 +353,17 @@
 "first_seen": "2026-10-08T13:57:18.246699+00:00"
 },
 {
+"title": "Asahi Kasei Therapeutics Announces First Patient Dosed in Phase 2a Trial of AIC468 for BK Virus Infection in Kidney Transplant Recipients - Business Wire",
+"link": "https://news.google.com/rss/articles/CBMinwJBVV95cUxNc1lMYTlMb2c1TjU2NUFpT0k0aHpuNmdMR3ZEWEtVQWtBM05XdU9HbWRoNWVROGhzSFpEbkwxYVJNUVhfZmZKdldvTUJ5cXhyS1ZHVHJHdjR5LXFVdm5LQXc2eXpQMk5WQkV0cTlVZFpEdEgzejZ2YmxxSmp2Zk5CODJ0U2JSR09vQW5YOTZfNFM3QmlPenUycnFQamFaalpZaVFhXzRBYk82QnZpWVRHX0dUeDVBSlN5U3lLYVpLYzl0czRqMHJlb3RrSVJ5czg4ZlBGaTlNR3ctakFzZWk4eFBfOWNiTTB3ZGxNX2VZalI5bExUNVl1cHdtOUhqTHVUUFhtd2JhYWtqZXlrb2tZaFlyb0txSnJJTzU1bHk3Yw?oc=5",
+"summary": "Asahi Kasei Therapeutics Announces First Patient Dosed in Phase 2a Trial of AIC468 for BK Virus Infection in Kidney Transplant Recipients Business Wire",
+"outlet": "Business Wire",
+"published": "2026-10-08T12:30:00+00:00",
+"id": "f06018a863ba0f50",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-09T06:35:39.508994+00:00"
+},
+{
 "title": "Consensus statement from the International Society of Glomerular Disease for Certification of Centers of Excellence in Glomerular Disease",
 "link": "https://www.sciencedirect.com/science/article/pii/S0085253826007076?dgcid=rss_sd_all",
 "summary": "By Ghada Ankawi, Alessia Fornoni, Sarah E. Panzer, Brad H. Rovin, Sharon Adler, Silke R. Brix, Laurel Damashek, Duvuru Geetha, Larry A. Greenbaum, Sangeeta Hingorani, Tobias B. Huber, J. Ashley Jefferson, Vivekanand Jha, Tingting…",
@@ -406,6 +439,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-08T13:57:18.246699+00:00"
+},
+{
+"title": "Kentucky organ donation group concerned after federal decertification of procurement organization - Z93 Country",
+"link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBZM3NlS19uMHMtU2tGWVp0LUx5ZVlyV0hnWS1RQkR1UEMzSVdadFBnRjZxb3VQdG0wSTNMdTMtemhOUS13YW1nbDBWZGpwQlhWR2lPOXY2TS1sU1BnbUtF?oc=5",
+"summary": "Kentucky organ donation group concerned after federal decertification of procurement organization Z93 Country",
+"outlet": "Z93 Country",
+"published": "2026-10-08T05:33:42+00:00",
+"id": "3e4d884bd2bfbd16",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-09T06:35:39.508994+00:00"
 },
 {
 "title": "Donate Life Kentucky offers film on organ donation - pmg-ky1.com",
@@ -881,6 +925,17 @@
 "first_seen": "2026-10-07T00:58:45.420751+00:00"
 },
 {
+"title": "Organ Donation: How to give the gift of life - AOL.com",
+"link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9kanQ1YXhBanN0dmdkYXpqbVNaeXNDXzZfVGJiY0JQb2ltWkpZZV9kOHE2X0tKb3lqLTZLUVdNWkNjUTBoaEdMVlZhbmJ4WFJVc0M0MThhcTZRU1pZUmhwRUVMN1k5RXR4R1ktYkJSeVlkenlnSEpz?oc=5",
+"summary": "Organ Donation: How to give the gift of life AOL.com",
+"outlet": "AOL.com",
+"published": "2026-10-06T19:56:31+00:00",
+"id": "068dbe2bc4fff01d",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-09T06:35:39.508994+00:00"
+},
+{
 "title": "R&B Crooner Freddie Jackson Dies at 69: In 2024, He Shared Kidney Disease Struggles - Men's Journal",
 "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPd2M1NzN6aWR0YXRrMjVzVWRFaEJNSDVWcngxMi1QdzY0MHZ6d0dQXzhwc0lNX1pVSzBZU0VkOWNjNjh2LUNtSHRNb3NjZlB1dVJrclBQV3A0a3NfTXFJY3VqYk1ocDV2dk56eERLLUlBQm92UHd2RzcySUMtT0pHZXZZZm9CRVpJWW1zRVg4d0Q1RG1uX0hxYTJOUnRab1FKek9YQWIwWnJ2MlNzVk9laXc4OA?oc=5",
 "summary": "R&B Crooner Freddie Jackson Dies at 69: In 2024, He Shared Kidney Disease Struggles Men's Journal",
@@ -904,10 +959,10 @@
 },
 {
 "title": "Saskatchewan organ donation campaign highlights Bella Thomson's legacy - WestCentralOnline",
-"link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNT0ZWVUNXZmhvMlZxMHdEdTlYRm50ekFVamFMRDJMb2tjMm9KQzZJZkNSamxqRGJQT1lvMXZ3eWpaN1h6V0NWd25fY3hsR3ROOEZCZzNzUk13VWxHd0owSFQ5aldnVVp2bEN3MlZEbVVzaGtZTUJaM0taS01OVXBvM0dYdktkRm0tSmd1UUZmeVN4Z25XMUxsNXhFLUl0Y3BtS00yUm5ELXFVXzFtbXRPb2dR?oc=5",
+"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPZkllVmFVbGVSdkJZbWMzQmh2X2hBb281V19WVW9VUGs3R2dUaGE0UU8ycHJwMFk1M1BHYmdkSThRUERpUVVFSkN4T0d4MmF0NkFKdHVlNXg5YkRvOG5zOU1kOWczZjAzQVVkblZucVEtNEVZWmxncHJOb2N3M1ZnNHRKdVlkTC1lWEdxTV9BaTNXbGZrN2I4V1dKSm1Hc1BkRHhMQ3QzaEEyM05E?oc=5",
 "summary": "Saskatchewan organ donation campaign highlights Bella Thomson's legacy WestCentralOnline",
 "outlet": "WestCentralOnline",
-"published": "2026-10-06T18:03:10+00:00",
+"published": "2026-10-06T18:03:33+00:00",
 "id": "19d0d82e75a395ce",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
@@ -5573,61 +5628,6 @@
 "outlet": "",
 "published": "2026-09-22T12:00:00+00:00",
 "id": "09e95bd0fa00a1ea",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "The hemodynamic cost of intermittent hemodialysis and systemic organ stunning.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42765170/",
-"summary": "Jiang Z, Zhong L, Fang J et al. Renal failure",
-"outlet": "Ren Fail",
-"published": "2026-09-21T12:00:00+00:00",
-"id": "62c0ee50512a4dc5",
-"source": "PubMed: transplant, donation & kidney failure research",
-"category": "Research",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Serum BDNF and cognitive risk in maintenance hemodialysis: a machine learning study.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42764337/",
-"summary": "Tang Q, Tian J, Ying X et al. Renal failure",
-"outlet": "Ren Fail",
-"published": "2026-09-21T12:00:00+00:00",
-"id": "f4c29385361d6ee6",
-"source": "PubMed: transplant, donation & kidney failure research",
-"category": "Research",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Donor Acidosis and Post-Transplant Survival Across Heart Allocation Eras: A National Registry Analysis.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42767659/",
-"summary": "Kadir S, Sasidharan S, Perez V et al. Clinical transplantation",
-"outlet": "Clin Transplant",
-"published": "2026-09-21T12:00:00+00:00",
-"id": "888d3d4b6ba93b24",
-"source": "PubMed: transplant policy & organ procurement",
-"category": "Policy",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Beyond generic principles: a framework for the ethical analysis of artificial intelligence in organ transplantation.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42761011/",
-"summary": "Primc N. Transplant international : official journal of the European Society for Organ Transplantation",
-"outlet": "Transpl Int",
-"published": "2026-09-19T12:00:00+00:00",
-"id": "4b355f53339c1801",
-"source": "PubMed: transplant policy & organ procurement",
-"category": "Policy",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Matrix metalloproteinase 9 associates with post-transplant liver injury despite attenuation by normothermic machine perfusion",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526027863?dgcid=rss_sd_all",
-"summary": "By Abraham M.P. den Dekker, Jason B. Doppenberg, Maxime J. van Kekem, Sadr-ul Shaheed, David Nasralla, Peter Friend, Bart van Hoek, Rutger J. Ploeg, Ian P.J. Alwayn, Maria Letitiza Lo Faro, Maarten E. Tushuizen",
-"outlet": "",
-"published": "2026-09-19T12:00:00+00:00",
-"id": "5ef3612fb74e0227",
 "source": "American Journal of Transplantation",
 "category": "Journals",
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
