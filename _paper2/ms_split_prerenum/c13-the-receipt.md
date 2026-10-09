@@ -1,0 +1,31 @@
+# Chapter 13: The Receipt
+EPIGRAPH: "The cost of a thing is the amount of what I will call life which is required to be exchanged for it, immediately or in the long run."
+BY: Henry David Thoreau, Walden (1854)
+
+Imagine a woman who has decided to give a kidney to her brother-in-law. She has been evaluated, approved, and scheduled. Then she sits at her kitchen table with a pencil, the way people do before a big decision, and begins to write down what it will cost.
+
+The medical bills are covered. That part she has been told, and it is true. But there are things the bills do not include. Gas and a motel for the evaluation trips, and for a second trip, and a third. The two weeks she will miss from work, unpaid, since her employer offers no leave she can use. The child care for the week she is in the hospital. The elder care for her mother. The friend who will take the dog. When she is done the list runs to the bottom of the page, and she looks at it for a long while. She will probably give anyway. Not everyone does.
+
+This is a composite. It is also the situation of a large number of people who might otherwise give.
+
+## A decline with a pattern
+
+The count of living kidney donors in the United States has recovered somewhat from its pandemic dip, but it has not recovered to where it stood before. One news report, drawing on registry data, put the number of living kidney donors at 6,522 in 2025, up from 6,419 in 2024 and 6,290 in 2023, and still below the 6,867 of 2019 (PhillyVoice, 2026†). I classify that as a single-source figure and urge anyone who quotes it to check the registry. An older analysis described a longer decline after a peak in 2004, most pronounced among men, Black adults, and younger and lower-income adults (Source Notes S25). The pattern is not only American. A 2026 article reports that Australia performed 253 living-donor kidney transplants in 2024, down from 354 in 2008, with people from lower socioeconomic groups disadvantaged (Source Notes S26).
+
+When a decline appears in more than one country and concentrates among those with the least cushion, it is reasonable to suspect that the cause is not a failure of kindness. A 2015 consensus conference of transplant professionals reached that conclusion a decade ago, naming the financial burden on donors as a possible source of the decline, and recommending standardized reimbursement for lost wages and incidental costs along with legal protection for employment and insurability (Tushla et al., 2015†).
+
+## What changed in 2026
+
+In February 2026 Congress acted. The Honor Our Living Donors Act, part of that year's appropriations law, took away a rule that had always seemed backward: the federal reimbursement program could previously consider the recipient's household income when deciding whether a donor qualified for help. Under the new law, the recipient's income no longer counts, and the donor's own circumstances determine priority. Eligible donors may receive up to $6,000 per organ for travel, meals, lost wages, and child and elder care, and the program is now required to report to Congress each year on how much it spent, how many donors it reimbursed, and how many applied without being reimbursed (Source Notes S27).
+
+A physicians' group, in a funding letter, said that 21 percent of donors in the program reach the $6,000 cap (Source Notes S27). That detail deserves attention. If one in five donors exhausts the ceiling, the ceiling is binding for a meaningful minority, and the woman at the kitchen table with her list may be one of them. In July 2026 the federal health-resources agency requested public comment on the rules (Health Resources and Services Administration, 2026a†). The final shape of the program is still being written.
+
+State law is a patchwork. The American Kidney Fund's report card in May 2026 found gains in several states and little or no progress in many others, and reported that 28 states have laws guarding living donors against insurance discrimination, though protection can be lost if a donor moves (American Kidney Fund, 2026). Private programs fill some gaps, such as wage reimbursement and life insurance offered through the paired-donation registry of the last chapter (Source Notes S28).
+
+## The harder question
+
+There is a bolder proposal before Congress, and it deserves a fair hearing. The End Kidney Deaths Act, introduced in 2025, would create a refundable federal tax credit of $10,000 a year for five years, a total of $50,000, for people who donate a kidney to a stranger, and it would sunset after ten years (End Kidney Deaths Act, 2025). It was still in committee as of spring 2026, and a policy tracker rated its chances as low (Source Notes S29).
+
+Honest people are divided, and they are divided for good reasons. The case against is that payment could draw poor people into risks they would otherwise decline, that it might crowd out the altruism that gives a gift its meaning, and that a system built on the idea that organs are given, not sold, might lose public trust if that idea blurred. A federal law, the National Organ Transplant Act of 1984, prohibits the transfer of organs for valuable consideration, and the bill's designers chose a tax credit to respect that principle while changing the incentive (National Organ Transplant Act, 1984). The case for is that the status quo already asks donors to pay, and that the waiting list is a place where people die.
+
+I have a modest view, and it is a conservative one in the sense of caution. Whatever one concludes about payment, no one should object to ending the receipt. A society that asks a person to give an organ to a family member or a stranger should not also ask her to subsidize the operation. Reimbursement that is complete, simple, and not means-tested for the recipient is a debt of ordinary decency. After that, if anyone wishes to test an incentive, it should be tested as an experiment, with outcomes defined in advance and independent evaluation. Policy without evidence is a wager made with other people's lives. Thoreau's accounting is the right one. The price of a thing is the life it costs. The donor deserves to know the price, and to be told it will not be charged to her twice.
