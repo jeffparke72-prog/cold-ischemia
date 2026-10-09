@@ -1,0 +1,585 @@
+{
+ "title": "What Sets Us Apart",
+ "pace": 2.6,
+ "gap": 0.45,
+ "lead": 0.8,
+ "style": {
+  "accent": "#e8b84a",
+  "accent2": "#8fd8ff",
+  "alert": "#ff4d5e",
+  "bar": 120
+ },
+ "bg": {
+  "dim": 0.65,
+  "zoom": 0.05
+ },
+ "music": {
+  "mood": "ominous",
+  "level": 0.95,
+  "heartbeat": true,
+  "piano": true,
+  "lift": true
+ },
+ "end": {
+  "headline": "Check every number.",
+  "sub": "Cold Ischemia Foundation",
+  "lines": [
+   "Sources: McCoy et al., New England Journal of Medicine, 2017 \u00b7 KFF Health News, 2018.",
+   "Settlements and lawsuits are as documented in public records. Not medical or legal advice.",
+   "Narrated with a synthetic voice."
+  ],
+  "strong": 1,
+  "hold": 9
+ },
+ "segments": [
+  {
+   "id": "open",
+   "type": "title",
+   "dur": 5.2,
+   "text": "",
+   "kicker": "THE KIDNEY & TRANSPLANT ECOSYSTEM",
+   "lines": [
+    {
+     "t": "WHAT SETS US",
+     "c": "ink"
+    },
+    {
+     "t": "APART.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.5,
+    "pan": "right",
+    "zoom": 0.09
+   },
+   "heartbeat": true,
+   "intensity": 0.2,
+   "t0": 0.8
+  },
+  {
+   "id": "voices",
+   "type": "title",
+   "text": "There are hundreds of voices in the kidney and transplant world. Hospitals have voices. Dialysis companies have voices. Drugmakers have voices. And the patients, the people who actually live this, are told that somebody speaks for them.",
+   "lines": [
+    {
+     "t": "HOSPITALS.",
+     "c": "ink"
+    },
+    {
+     "t": "DIALYSIS COMPANIES.",
+     "c": "ink"
+    },
+    {
+     "t": "DRUGMAKERS.",
+     "c": "ink"
+    },
+    {
+     "t": "AND THE PATIENT?",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.62,
+    "blur": 3,
+    "pan": "left",
+    "zoom": 0.07
+   },
+   "intensity": 0.35,
+   "heartbeat": true,
+   "cues": [
+    [
+     0.4,
+     5.081
+    ],
+    [
+     5.501,
+     7.644
+    ],
+    [
+     8.064,
+     10.719
+    ],
+    [
+     11.139,
+     13.175
+    ],
+    [
+     13.595,
+     19.897
+    ]
+   ],
+   "dur": 20.747,
+   "t0": 6.45
+  },
+  {
+   "id": "nejm",
+   "type": "dots",
+   "text": "So we ask one question. Who pays for the voice? In a study of the hundred and four largest patient advocacy groups in America, eighty-three percent took money from drug, device, or biotech companies. Only one said plainly that it takes none.",
+   "dots": {
+    "total": 104,
+    "lit": 86,
+    "special": true,
+    "stat": {
+     "big": "83%",
+     "label": "took industry money"
+    },
+    "notes": [
+     {
+      "t": "1 of 104 said it takes none",
+      "c": "#44e0b0"
+     }
+    ]
+   },
+   "src": "McCoy et al., New England Journal of Medicine, 2017",
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.7,
+    "blur": 16,
+    "pan": "none",
+    "zoom": 0.04
+   },
+   "intensity": 0.75,
+   "cues": [
+    [
+     0.4,
+     2.628
+    ],
+    [
+     3.048,
+     4.935
+    ],
+    [
+     5.685,
+     18.089
+    ],
+    [
+     18.509,
+     21.697
+    ]
+   ],
+   "dur": 22.547,
+   "t0": 27.647
+  },
+  {
+   "id": "kff",
+   "type": "stat",
+   "text": "In a single year, drugmakers gave a hundred and sixteen million dollars to five hundred ninety-four patient groups. Nobody was required to tell you.",
+   "stat": {
+    "value": 116,
+    "prefix": "$",
+    "suffix": "M",
+    "label": "from drugmakers to 594 patient groups in one year"
+   },
+   "src": "KFF Health News, 2018",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.62,
+    "blur": 10,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.85,
+   "cues": [
+    [
+     0.4,
+     8.921
+    ],
+    [
+     9.341,
+     12.081
+    ]
+   ],
+   "dur": 12.931,
+   "t0": 50.644
+  },
+  {
+   "id": "exception",
+   "type": "title",
+   "text": "We built the Cold Ischemia Foundation to be the exception. Not by promising to be good. By building it so that we cannot be bought.",
+   "lines": [
+    {
+     "t": "NOT A PROMISE.",
+     "c": "ink"
+    },
+    {
+     "t": "A STRUCTURE.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.66,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.07
+   },
+   "intensity": 0.55,
+   "cues": [
+    [
+     0.4,
+     4.569
+    ],
+    [
+     4.989,
+     7.345
+    ],
+    [
+     7.765,
+     10.847
+    ]
+   ],
+   "dur": 11.697,
+   "t0": 64.025
+  },
+  {
+   "id": "nomoney",
+   "type": "cards",
+   "text": "We take no donations. No grants. No sponsorships. No money from drugmakers, dialysis companies, hospitals, or insurers. We charge a small, posted fee only when you ask us to do real work for you. And the basics are always free.",
+   "cards": [
+    {
+     "big": "$0",
+     "head": "Donations",
+     "sub": "never accepted",
+     "c": "#ff4d5e"
+    },
+    {
+     "big": "$0",
+     "head": "Industry money",
+     "sub": "drugmakers \u00b7 dialysis \u00b7 hospitals \u00b7 insurers",
+     "c": "#ff4d5e"
+    },
+    {
+     "big": "FREE",
+     "head": "The basics",
+     "sub": "always",
+     "c": "#44e0b0"
+    },
+    {
+     "big": "POSTED",
+     "head": "Fees",
+     "sub": "only for work you ask for",
+     "c": "#e8b84a"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.68,
+    "blur": 8,
+    "pan": "none",
+    "zoom": 0.04
+   },
+   "intensity": 0.7,
+   "cues": [
+    [
+     0.4,
+     2.521
+    ],
+    [
+     2.941,
+     4.295
+    ],
+    [
+     4.715,
+     6.452
+    ],
+    [
+     6.872,
+     12.684
+    ],
+    [
+     13.104,
+     19.129
+    ],
+    [
+     19.549,
+     22.14
+    ]
+   ],
+   "dur": 22.99,
+   "t0": 76.172
+  },
+  {
+   "id": "offlimits",
+   "type": "quote",
+   "center": true,
+   "captions": false,
+   "text": "When nobody pays for your voice, nothing is off limits.",
+   "quote": {
+    "text": "When nobody pays for your voice, nothing is off limits.",
+    "by": "Cold Ischemia Foundation",
+    "size": 78
+   },
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.68,
+    "blur": 14,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.95,
+   "hits": [
+    0.05,
+    0.55
+   ],
+   "cues": [
+    [
+     0.4,
+     4.633
+    ]
+   ],
+   "dur": 5.483,
+   "t0": 99.612
+  },
+  {
+   "id": "public",
+   "type": "list",
+   "text": "So we say what others cannot afford to say. We publish how every member of Congress has voted on kidney and transplant legislation. We publish every organ procurement organization in America, with its federal performance tier. And we send formal demands to Congress, to CMS, and to the OPTN board. Not asking permission. Demanding answers.",
+   "say": "So we say what others cannot afford to say. We publish how every member of Congress has voted on kidney and transplant legislation. We publish every organ procurement organization in America, with its federal performance tier. And we send formal demands to Congress, to C M S, and to the O P T N board. Not asking permission. Demanding answers.",
+   "rows": [
+    {
+     "t": "Congress Scorecard",
+     "s": "How every Senator and Representative voted"
+    },
+    {
+     "t": "OPO Directory",
+     "s": "Every U.S. organ procurement organization \u00b7 federal data"
+    },
+    {
+     "t": "Formal Demand Letters",
+     "s": "Congress \u00b7 CMS \u00b7 HHS \u00b7 NIH \u00b7 OPTN Board"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.68,
+    "blur": 9,
+    "pan": "left",
+    "zoom": 0.05
+   },
+   "intensity": 0.6,
+   "cues": [
+    [
+     0.4,
+     3.631
+    ],
+    [
+     4.051,
+     10.545
+    ],
+    [
+     10.965,
+     17.737
+    ],
+    [
+     18.157,
+     25.271
+    ],
+    [
+     25.691,
+     27.663
+    ],
+    [
+     28.083,
+     29.948
+    ]
+   ],
+   "dur": 30.798,
+   "t0": 105.545
+  },
+  {
+   "id": "work",
+   "type": "cards",
+   "text": "We show our work. Every claim carries its source. Every essay tells you how we checked it, and what we could not verify. If we are wrong, we want to know.",
+   "cards": [
+    {
+     "big": "1",
+     "head": "Every claim",
+     "sub": "carries its source",
+     "c": "#8fd8ff"
+    },
+    {
+     "big": "2",
+     "head": "How we checked",
+     "sub": "and what we could not verify",
+     "c": "#8fd8ff"
+    },
+    {
+     "big": "3",
+     "head": "If we are wrong",
+     "sub": "we want to know",
+     "c": "#e8b84a"
+    }
+   ],
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.7,
+    "blur": 15,
+    "pan": "none",
+    "zoom": 0.04
+   },
+   "intensity": 0.5,
+   "cues": [
+    [
+     0.4,
+     2.18
+    ],
+    [
+     2.6,
+     4.977
+    ],
+    [
+     5.397,
+     10.463
+    ],
+    [
+     10.883,
+     13.409
+    ]
+   ],
+   "dur": 14.259,
+   "t0": 136.793
+  },
+  {
+   "id": "forgotten",
+   "type": "title",
+   "text": "And we are built for the people this system forgets. The living donor who gives a kidney, and then has to fight to be made whole. The care partner who gives up a paycheck to keep someone alive. The patient who is told no, and never learns they could appeal.",
+   "lines": [
+    {
+     "t": "THE LIVING DONOR.",
+     "c": "ink"
+    },
+    {
+     "t": "THE CARE PARTNER.",
+     "c": "ink"
+    },
+    {
+     "t": "THE PATIENT TOLD NO.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/stress.png",
+    "dim": 0.6,
+    "blur": 3,
+    "pan": "up",
+    "zoom": 0.08
+   },
+   "intensity": 0.45,
+   "cues": [
+    [
+     0.4,
+     3.609
+    ],
+    [
+     4.029,
+     9.137
+    ],
+    [
+     9.557,
+     14.025
+    ],
+    [
+     14.445,
+     18.892
+    ]
+   ],
+   "dur": 19.742,
+   "t0": 151.502
+  },
+  {
+   "id": "prove",
+   "type": "quote",
+   "text": "Don't take our word for it. Check every number. Read their filings. Read ours. Then ask every organization the same question. Independent is not what you call yourself. It is what you can prove.",
+   "quote": {
+    "text": "Independent is not what you call yourself. It is what you can prove.",
+    "by": "Cold Ischemia Foundation",
+    "size": 64
+   },
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.58,
+    "blur": 5,
+    "pan": "right",
+    "zoom": 0.08
+   },
+   "intensity": 1.0,
+   "hits": [
+    0.7
+   ],
+   "cues": [
+    [
+     0.4,
+     2.479
+    ],
+    [
+     2.899,
+     4.529
+    ],
+    [
+     4.949,
+     6.815
+    ],
+    [
+     7.235,
+     8.695
+    ],
+    [
+     9.115,
+     12.623
+    ],
+    [
+     13.043,
+     16.529
+    ],
+    [
+     16.949,
+     19.028
+    ]
+   ],
+   "dur": 19.878,
+   "t0": 171.694
+  },
+  {
+   "id": "you",
+   "type": "title",
+   "text": "We are the Cold Ischemia Foundation. We answer to one group of people. You.",
+   "lines": [
+    {
+     "t": "COLD ISCHEMIA FOUNDATION",
+     "c": "accent2"
+    },
+    {
+     "t": "WE ANSWER TO YOU.",
+     "c": "ink"
+    }
+   ],
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.62,
+    "blur": 10,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.7,
+   "cues": [
+    [
+     0.4,
+     3.225
+    ],
+    [
+     3.645,
+     6.279
+    ],
+    [
+     6.699,
+     7.668
+    ]
+   ],
+   "dur": 8.518,
+   "t0": 192.022
+  }
+ ]
+}
