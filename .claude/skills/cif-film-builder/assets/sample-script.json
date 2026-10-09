@@ -1,0 +1,16 @@
+{
+ "title": "Sample film",
+ "pace": 2.6,
+ "music": { "mood": "ominous", "level": 0.9, "heartbeat": true, "piano": true, "lift": true },
+ "style": { "accent": "#e8b84a", "accent2": "#8fd8ff", "alert": "#ff4d5e" },
+ "bg": { "dim": 0.62, "zoom": 0.05 },
+ "end": { "headline": "Check every number.", "sub": "Cold Ischemia Foundation", "lines": ["Every figure comes from the public sources shown on screen."], "strong": 1, "hold": 5 },
+ "segments": [
+  { "id": "open", "type": "title", "dur": 4, "text": "", "lines": [ { "t": "WHO PAYS", "c": "ink" }, { "t": "FOR THE VOICE?", "c": "accent" } ], "bg": { "src": "/hero-banner.jpg", "dim": 0.7, "pan": "left", "zoom": 0.08 }, "heartbeat": true, "intensity": 0.2 },
+  { "id": "stat", "type": "stat", "text": "In a single year, drugmakers gave a hundred and sixteen million dollars to patient groups.", "stat": { "value": 116, "prefix": "$", "suffix": "M", "label": "from drugmakers in one year" }, "src": "Example source, 2018", "bg": { "src": "/march-for-care.jpg", "dim": 0.72, "pan": "right" }, "intensity": 0.6 },
+  { "id": "dots", "type": "dots", "text": "Eighty-three percent of the largest groups took industry money.", "dots": { "total": 104, "lit": 86, "special": true, "stat": { "big": "83%", "label": "took industry money" }, "notes": [ { "t": "1 of 104 said it takes none", "c": "#44e0b0" } ] }, "bg": { "src": "/march-for-care.jpg", "dim": 0.8 }, "intensity": 0.7 },
+  { "id": "cards", "type": "cards", "text": "Three numbers tell the story.", "cards": [ { "big": "2004", "head": "Founded", "sub": "with a grant", "c": "accent2" }, { "big": "$233M", "head": "Spent", "sub": "in four years", "c": "alert" }, { "big": "$350M", "head": "Settled", "sub": "allegations resolved", "c": "alert" } ], "intensity": 0.8 },
+  { "id": "list", "type": "list", "text": "Here is who lists these partners.", "rows": [ { "t": "First organization", "s": "Partner A · Partner B" }, { "t": "Second organization", "s": "Partner C · Partner D" } ], "intensity": 0.5 },
+  { "id": "quote", "type": "quote", "text": "Independent is not what you call yourself. It is what you can prove.", "quote": { "text": "Independent is not what you call yourself.", "by": "Cold Ischemia Foundation" }, "center": true, "intensity": 0.9 }
+ ]
+}
