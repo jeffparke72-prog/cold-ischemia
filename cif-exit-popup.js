@@ -64,7 +64,7 @@
 .xp-scan{position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(25,195,230,.9),transparent);box-shadow:0 0 18px rgba(25,195,230,.9);animation:xpScan 1s linear infinite}
 .xp.drop .xp-pre{display:none}
 /* main layout */
-.xp-main{position:relative;z-index:10;flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:26px 22px 16px;opacity:0}
+.xp-main{position:relative;z-index:10;flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:26px 22px 38px;opacity:0}
 .xp.drop .xp-main{opacity:1}
 .xp.drop .xp-glow,.xp.drop .xp-rays{opacity:1}
 .xp.drop .xp-glow{animation:xpBeat .5s ease-out infinite}
@@ -100,6 +100,53 @@
 .xp-no:hover,.xp-no:focus-visible{color:#ffd98f;outline:none}
 .xp-bar{position:absolute;left:0;right:0;bottom:0;height:5px;background:rgba(255,255,255,.08);z-index:30}
 .xp-bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#19c3e6,#ffb347,#ff8a1f);transform-origin:0 50%;animation:xpBar ${SHOW_FOR_MS}ms linear forwards}
+
+.xp-fx{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .6s}
+.xp.drop .xp-fx{opacity:1}
+.xp-wm{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);white-space:nowrap;font:900 clamp(120px,24vw,300px)/1 "Playfair Display",Georgia,serif;letter-spacing:6px;color:transparent;-webkit-text-stroke:2px rgba(255,170,60,.22);opacity:0;translate:calc(var(--mx,0) * -26px) calc(var(--my,0) * -16px);pointer-events:none;user-select:none}
+.xp.drop .xp-wm{animation:xpWm 1.2s ease-out .1s both}
+.xp-hud{position:absolute;width:34px;height:34px;border:0 solid #19c3e6;opacity:0;z-index:12}
+.xp-hud.a{left:88px;top:12px;border-top-width:2px;border-left-width:2px}.xp-hud.b{right:58px;top:12px;border-top-width:2px;border-right-width:2px}
+.xp-hud.c{left:12px;bottom:36px;border-bottom-width:2px;border-left-width:2px}.xp-hud.d{right:12px;bottom:36px;border-bottom-width:2px;border-right-width:2px}
+.xp.drop .xp-hud{animation:xpRise .5s ease-out .2s both}
+.xp-vt{position:absolute;top:50%;z-index:12;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(25,195,230,.75);white-space:nowrap;opacity:0}
+.xp-vt{writing-mode:vertical-rl;margin-top:-90px}
+.xp-vt.l{left:16px;transform:rotate(180deg)}
+.xp-vt.r{right:16px}
+.xp.drop .xp-vt{animation:xpFade .6s ease-out .6s both}
+.xp-ecg{position:absolute;left:0;right:0;top:46%;width:100%;height:120px;margin-top:-60px;opacity:0;pointer-events:none;z-index:5}
+.xp.drop .xp-ecg{opacity:.75;transition:opacity .6s .4s}
+.xp-ecg path{fill:none;stroke:#19c3e6;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:260 740;filter:drop-shadow(0 0 6px #19c3e6);animation:xpEcg 2s linear infinite}
+.xp-ecg path.g{stroke:rgba(25,195,230,.18);stroke-dasharray:none;animation:none;filter:none}
+.xp-links{position:absolute;inset:0;width:100%;height:100%;z-index:6;pointer-events:none;overflow:visible}
+.xp-links line{stroke:rgba(255,190,90,.55);stroke-width:1.4;stroke-dasharray:5 7;animation:xpDash 1.2s linear infinite}
+.xp-links circle{fill:#ffb347;filter:drop-shadow(0 0 5px #ffb347)}
+.xp-orbit{position:absolute;inset:-26px;border-radius:50%;border:1px dashed rgba(25,195,230,.55);animation:xpSpin 18s linear infinite;pointer-events:none}
+.xp-orbit:before,.xp-orbit:after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:#19c3e6;box-shadow:0 0 12px #19c3e6;left:50%;top:-5px}
+.xp-orbit:after{top:auto;bottom:-5px;background:#ffb347;box-shadow:0 0 12px #ffb347}
+.xp-ticker{position:absolute;left:0;right:0;bottom:5px;height:24px;overflow:hidden;z-index:12;border-top:1px solid rgba(255,179,71,.28);background:rgba(3,5,9,.55);opacity:0}
+.xp.drop .xp-ticker{opacity:1;transition:opacity .5s .5s}
+.xp-ticker div{display:inline-block;white-space:nowrap;padding-left:100%;line-height:24px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#ffd98f;animation:xpTick 22s linear infinite}
+.xp-chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.xp-chips span{padding:6px 12px;border:1px solid rgba(255,179,71,.55);border-radius:3px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#ffd98f;background:rgba(255,138,31,.1)}
+.xp-chips span:first-child{border-color:#19c3e6;color:#19c3e6;background:rgba(25,195,230,.08)}
+.xp-h{position:relative}
+.xp.drop .xp-h:before,.xp.drop .xp-h:after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none;-webkit-text-fill-color:currentColor;background:none}
+.xp.drop .xp-h:before{color:#19c3e6;animation:xpGlitch 3.2s steps(1) 1s infinite}
+.xp.drop .xp-h:after{color:#ff3d6e;animation:xpGlitch 3.2s steps(1) 1.04s infinite reverse}
+.xp-book{translate:calc(var(--mx,0) * var(--d,10) * 1px) calc(var(--my,0) * var(--d,10) * .6px);-webkit-box-reflect:below 3px linear-gradient(transparent 72%,rgba(255,255,255,.2))}
+.xp-book.l1{--d:-14}.xp-book.l2{--d:-8}.xp-book.r1{--d:14}.xp-book.r2{--d:8}
+.xp-me{translate:calc(var(--mx,0) * 6px) calc(var(--my,0) * 4px)}
+.xp-rays{translate:calc(var(--mx,0) * 10px) calc(var(--my,0) * 8px)}
+@keyframes xpFade{0%{opacity:0}100%{opacity:1}}
+@keyframes xpWm{0%{opacity:0;transform:translate(-50%,-50%) scale(1.3)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes xpEcg{to{stroke-dashoffset:-1000}}
+@keyframes xpDash{to{stroke-dashoffset:-24}}
+@keyframes xpTick{to{transform:translateX(-100%)}}
+@keyframes xpGlitch{0%,92%,100%{opacity:0;transform:none}93%{opacity:.8;transform:translate(-4px,1px)}95%{opacity:.8;transform:translate(5px,-2px)}97%{opacity:.8;transform:translate(-2px,2px)}}
+@media(max-width:700px){.xp-vt,.xp-links,.xp-wm{display:none}.xp-hud.a{left:84px}.xp-chips span{padding:5px 8px;letter-spacing:2px}}
+@media(max-height:560px){.xp-chips{display:none}}
+
 @keyframes xpSpin{to{transform:rotate(360deg)}}
 @keyframes xpHue{to{filter:hue-rotate(360deg)}}
 @keyframes xpShake{0%{transform:translate(0,0)}25%{transform:translate(2px,-2px)}50%{transform:translate(-3px,1px)}75%{transform:translate(1px,3px)}100%{transform:translate(0,0)}}
@@ -121,7 +168,7 @@
 @media(max-width:700px){
   .xp{padding:6px}
   .xp-card{height:calc(100vh - 12px);height:calc(100dvh - 12px)}
-  .xp-main{padding:50px 12px 12px}
+  .xp-main{padding:50px 12px 36px}
   .xp-stage{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-content:center;align-items:start}
   .xp-col{display:contents}
   .xp-me{grid-column:1/-1;order:-1;justify-self:center;width:clamp(130px,44vw,190px)}
@@ -133,7 +180,7 @@
 @media(max-height:560px) and (min-width:701px){.xp-sub{display:none}.xp-main{padding-top:14px}}
 @media(prefers-reduced-motion:reduce){
   .xp,.xp *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}
-  .xp-rays{animation:none!important}.xp-me:before{animation:none!important}
+  .xp-rays,.xp-orbit,.xp-ticker div,.xp-ecg path,.xp-links line{animation:none!important}.xp-me:before{animation:none!important}
   .xp-bar i{animation:xpBar ${SHOW_FOR_MS}ms linear forwards!important}
 }`;
 
@@ -147,22 +194,25 @@
   root.innerHTML = `
 <div class="xp-back" data-close></div>
 <div class="xp-card">
-  <div class="xp-grid"></div><div class="xp-rays"></div><div class="xp-glow"></div>
+  <div class="xp-grid"></div><div class="xp-rays"></div><div class="xp-glow"></div><canvas class="xp-fx"></canvas><div class="xp-wm" aria-hidden="true">LIBRARY</div>
+  <svg class="xp-ecg" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path class="g" d="M0 60H330l12-8 10 8h20l14-44 18 86 16-70 12 28h30H640l12-8 10 8h20l14-44 18 86 16-70 12 28H1000"/><path d="M0 60H330l12-8 10 8h20l14-44 18 86 16-70 12 28h30H640l12-8 10 8h20l14-44 18 86 16-70 12 28H1000"/></svg>
+  <i class="xp-hud a"></i><i class="xp-hud b"></i><i class="xp-hud c"></i><i class="xp-hud d"></i><span class="xp-vt l" aria-hidden="true">Cold Ischemia Foundation &middot; Library</span><span class="xp-vt r" aria-hidden="true">Toolkits &middot; Playbooks &middot; Guides</span>
   <button type="button" class="xp-snd" hidden>Sound on</button>
   <button type="button" class="xp-x" aria-label="Close" data-close>&times;</button>
   <div class="xp-pre" aria-hidden="true"><div class="xp-scan"></div><div class="xp-wait">WAIT.</div><div class="xp-prel">Before you go</div></div>
   <div class="xp-main">
     <div class="xp-top">
       <p class="xp-eyebrow">Before you go</p>
-      <h2 class="xp-h" id="xp-title">The toolkit is waiting</h2>
+      <h2 class="xp-h" id="xp-title" data-t="The toolkit is waiting">The toolkit is waiting</h2>
       <p class="xp-sub">Four books and a growing library of resources for patients, care partners and families, written by someone who has lived this system.</p>
+      <div class="xp-chips" aria-hidden="true"><span>Exit detected</span><span>4 books</span><span>1 library</span></div>
     </div>
-    <div class="xp-stage">
+    <div class="xp-stage"><svg class="xp-links" aria-hidden="true"></svg>
       <div class="xp-col">
         <img class="xp-book l1" src="${A}toolkit.jpg" alt="Book cover: Toolkit for Blacklisted Dialysis Patients, by Jeff Parke" width="288" height="422">
         <img class="xp-book l2" src="${A}onhold.jpg" alt="Book cover: Dying on Hold, What the Kidney Transplant List Isn't Telling You, by Jeff Parke" width="288" height="422">
       </div>
-      <figure class="xp-me" style="margin:0"><img src="${A}jeff.jpg" alt="Jeff Parke, founder of the Cold Ischemia Foundation" width="640" height="960"><figcaption><b>Jeff A. Parke</b>Founder &middot; Cold Ischemia Foundation</figcaption></figure>
+      <figure class="xp-me" style="margin:0"><i class="xp-orbit"></i><img src="${A}jeff.jpg" alt="Jeff Parke, founder of the Cold Ischemia Foundation" width="640" height="960"><figcaption><b>Jeff A. Parke</b>Founder &middot; Cold Ischemia Foundation</figcaption></figure>
       <div class="xp-col">
         <img class="xp-book r1" src="${A}playbook.jpg" alt="Book cover: Renal Care Partner's Playbook, by Jeff Parke" width="277" height="422">
         <img class="xp-book r2" src="${A}lifeafter.jpg" alt="Book cover: Chronic Kidney, Life After Diagnosis, by Jeff Parke" width="277" height="422">
@@ -173,6 +223,7 @@
       <div class="xp-meta"><span class="xp-count" aria-hidden="true">Closing in 10s</span><button type="button" class="xp-no" data-close>No thanks</button></div>
     </div>
   </div>
+  <div class="xp-ticker" aria-hidden="true"><div>Toolkits &nbsp;&middot;&nbsp; Playbooks &nbsp;&middot;&nbsp; Field guides &nbsp;&middot;&nbsp; For patients &nbsp;&middot;&nbsp; For care partners &nbsp;&middot;&nbsp; For families &nbsp;&middot;&nbsp; Cold Ischemia Foundation Library &nbsp;&middot;&nbsp; payhip.com/coldischemia</div></div>
   <div class="xp-shock"></div><div class="xp-flash"></div>
   <div class="xp-bar"><i></i></div>
 </div>`;
@@ -313,6 +364,53 @@
     };
   }
 
+
+  /* ------------------------------------------------------------ graphics: embers, links, parallax */
+  var fxRaf = 0, fxOn = false, dropT = 0;
+  function startFx() {
+    var cv = root.querySelector('.xp-fx'), card = root.querySelector('.xp-card');
+    var g = cv.getContext('2d'), dpr = Math.min(2, window.devicePixelRatio || 1), W = 0, H = 0, P = [];
+    function size() { W = card.clientWidth; H = card.clientHeight; cv.width = W * dpr; cv.height = H * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0); }
+    size();
+    var n = reduceMotion ? 0 : (W < 700 ? 34 : 70);
+    for (var i = 0; i < n; i++) P.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: -.15 - Math.random() * .5, r: .8 + Math.random() * 2, h: Math.random() < .3 ? 190 : 32 });
+    fxOn = true;
+    function frame() {
+      if (!fxOn) return;
+      var beat = dropT ? ((performance.now() - dropT) / 1000 % .5) / .5 : 1;       /* 0 on the beat, 1 just before the next */
+      g.clearRect(0, 0, W, H);
+      for (var i = 0; i < P.length; i++) {
+        var a = P[i]; a.x += a.vx; a.y += a.vy;
+        if (a.y < -6) { a.y = H + 6; a.x = Math.random() * W; } if (a.x < -6) a.x = W + 6; if (a.x > W + 6) a.x = -6;
+        g.beginPath(); g.fillStyle = 'hsla(' + a.h + ',100%,65%,' + (.35 + .5 * (1 - beat)) + ')'; g.arc(a.x, a.y, a.r * (1 + .7 * (1 - beat)), 0, 6.283); g.fill();
+        for (var j = i + 1; j < P.length; j++) {
+          var b = P[j], dx = a.x - b.x, dy = a.y - b.y, d = dx * dx + dy * dy;
+          if (d < 9000) { g.strokeStyle = 'rgba(25,195,230,' + (.22 * (1 - d / 9000)) + ')'; g.lineWidth = 1; g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke(); }
+        }
+      }
+      fxRaf = requestAnimationFrame(frame);
+    }
+    frame();
+  }
+  function stopFx() { fxOn = false; cancelAnimationFrame(fxRaf); dropT = 0; }
+  function drawLinks() {
+    var svg = root.querySelector('.xp-links'), st = root.querySelector('.xp-stage');
+    if (!svg || window.innerWidth <= 700) return;
+    var sb = st.getBoundingClientRect(), m = root.querySelector('.xp-me').getBoundingClientRect();
+    var cx = m.left + m.width / 2 - sb.left, cy = m.top + m.height / 2 - sb.top, h = '';
+    ['l1', 'l2', 'r1', 'r2'].forEach(function (k) {
+      var r = root.querySelector('.xp-book.' + k).getBoundingClientRect();
+      var x = r.left + r.width / 2 - sb.left, y = r.top + r.height / 2 - sb.top;
+      h += '<line x1="' + cx + '" y1="' + cy + '" x2="' + x + '" y2="' + y + '"/><circle cx="' + x + '" cy="' + y + '" r="4"/>';
+    });
+    svg.innerHTML = h;
+  }
+  function onMove(e) {
+    var r = root.querySelector('.xp-card').getBoundingClientRect();
+    root.style.setProperty('--mx', (((e.clientX - r.left) / r.width) * 2 - 1).toFixed(3));
+    root.style.setProperty('--my', (((e.clientY - r.top) / r.height) * 2 - 1).toFixed(3));
+  }
+
   /* ------------------------------------------------------------ behaviour */
   var openedAt = 0, timers = [], pendingHref = null, lastFocus = null, shown = false;
   var sndBtn, countEl, goEl;
@@ -347,7 +445,10 @@
     sndBtn = root.querySelector('.xp-snd'); countEl = root.querySelector('.xp-count'); goEl = root.querySelector('.xp-go');
     openedAt = performance.now();
     requestAnimationFrame(function () { root.classList.add('on'); });
-    if (reduceMotion) root.classList.add('drop'); else timers.push(setTimeout(function () { root.classList.add('drop'); }, DROP_AT_S * 1000));
+    startFx();
+    if (!reduceMotion) root.addEventListener('mousemove', onMove);
+    function doDrop() { root.classList.add('drop'); dropT = performance.now(); setTimeout(drawLinks, 900); }
+    if (reduceMotion) doDrop(); else timers.push(setTimeout(doDrop, DROP_AT_S * 1000));
     if (reduceMotion) { /* no build-up and no strobing; the score still plays unless muted */ }
     startAudio();
     syncSoundButton();
@@ -364,6 +465,7 @@
     if (root.hidden) return;
     timers.forEach(function (t) { clearTimeout(t); clearInterval(t); }); timers = [];
     if (audio) { audio.stop(); audio = null; }
+    stopFx(); root.removeEventListener('mousemove', onMove);
     root.classList.remove('on');
     var go = pendingHref; pendingHref = null;
     setTimeout(function () {
