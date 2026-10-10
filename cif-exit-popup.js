@@ -147,6 +147,25 @@
 @media(max-width:700px){.xp-vt,.xp-links,.xp-wm{display:none}.xp-hud.a{left:84px}.xp-chips span{padding:5px 8px;letter-spacing:2px}}
 @media(max-height:560px){.xp-chips{display:none}}
 
+ 
+.xp-tile{position:relative;width:clamp(120px,17vw,176px);padding:12px 12px 11px;border:1px solid rgba(255,179,71,.45);border-radius:8px;background:linear-gradient(145deg,rgba(255,138,31,.16),rgba(25,195,230,.07));box-shadow:0 10px 30px rgba(0,0,0,.5),inset 0 0 20px rgba(255,170,60,.08);opacity:0;display:grid;grid-template-columns:30px 1fr;column-gap:10px;align-items:center;text-align:left;overflow:hidden}
+.xp-tile svg{grid-row:1/3;width:30px;height:30px;fill:none;stroke:#ffb347;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 6px rgba(255,170,60,.8))}
+.xp-tile b{font:700 12px "IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;letter-spacing:2px;text-transform:uppercase;color:#fff}
+.xp-tile span{font-size:9px;letter-spacing:1px;color:rgba(239,230,216,.65)}
+.xp-tile:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(#19c3e6,#ff8a1f)}
+.xp-col:last-of-type .xp-tile svg{stroke:#19c3e6;filter:drop-shadow(0 0 6px rgba(25,195,230,.8))}
+.xp.drop .xp-tile{animation:xpTile .6s cubic-bezier(.2,1.4,.3,1) both,xpFloat2 4s ease-in-out 1s infinite}
+.xp.drop .xp-col:first-child .xp-tile:nth-child(1){animation-delay:.1s,1s}.xp.drop .xp-col:first-child .xp-tile:nth-child(2){animation-delay:.22s,1.4s}.xp.drop .xp-col:first-child .xp-tile:nth-child(3){animation-delay:.34s,1.8s}
+.xp.drop .xp-col:nth-child(3) .xp-tile:nth-child(1){animation-delay:.16s,1.2s}.xp.drop .xp-col:nth-child(3) .xp-tile:nth-child(2){animation-delay:.28s,1.6s}.xp.drop .xp-col:nth-child(3) .xp-tile:nth-child(3){animation-delay:.4s,2s}
+.xp-col:first-child .xp-tile{--sx:-80px}.xp-col:nth-child(3) .xp-tile{--sx:80px}
+.xp-eq{position:absolute;left:6%;right:6%;bottom:0;height:70px;display:flex;align-items:flex-end;gap:4px;opacity:0;z-index:2;pointer-events:none}
+.xp.drop .xp-eq{opacity:.55;transition:opacity .6s .5s}
+.xp-eq i{flex:1;background:linear-gradient(#19c3e6,#ff8a1f);border-radius:2px 2px 0 0;height:20%;animation:xpEq .5s ease-in-out infinite alternate}
+@keyframes xpTile{0%{opacity:0;transform:translateX(var(--sx,0)) scale(.7)}100%{opacity:1;transform:none}}
+@keyframes xpFloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes xpEq{to{height:100%}}
+@media(max-width:700px){.xp-stage{grid-template-columns:repeat(3,1fr)}.xp-col{display:contents}.xp-tile{width:100%;grid-template-columns:1fr;row-gap:2px;padding:8px 6px;text-align:center;justify-items:center}.xp-tile svg{grid-row:auto;width:22px;height:22px}.xp-tile span{display:none}.xp-tile b{font-size:8px;letter-spacing:1px}.xp-eq{height:40px}}
+
 @keyframes xpSpin{to{transform:rotate(360deg)}}
 @keyframes xpHue{to{filter:hue-rotate(360deg)}}
 @keyframes xpShake{0%{transform:translate(0,0)}25%{transform:translate(2px,-2px)}50%{transform:translate(-3px,1px)}75%{transform:translate(1px,3px)}100%{transform:translate(0,0)}}
@@ -169,10 +188,9 @@
   .xp{padding:6px}
   .xp-card{height:calc(100vh - 12px);height:calc(100dvh - 12px)}
   .xp-main{padding:50px 12px 36px}
-  .xp-stage{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-content:center;align-items:start}
+  .xp-stage{display:grid;gap:8px;align-content:center;align-items:start}
   .xp-col{display:contents}
   .xp-me{grid-column:1/-1;order:-1;justify-self:center;width:clamp(130px,44vw,190px)}
-  .xp-book{width:100%}
   .xp-eyebrow{letter-spacing:4px}
   .xp-go{padding:14px 22px;letter-spacing:2px}
 }
@@ -180,7 +198,7 @@
 @media(max-height:560px) and (min-width:701px){.xp-sub{display:none}.xp-main{padding-top:14px}}
 @media(prefers-reduced-motion:reduce){
   .xp,.xp *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}
-  .xp-rays,.xp-orbit,.xp-ticker div,.xp-ecg path,.xp-links line{animation:none!important}.xp-me:before{animation:none!important}
+  .xp-rays,.xp-orbit,.xp-ticker div,.xp-ecg path,.xp-links line,.xp-eq i,.xp-tile{animation:none!important}.xp-me:before{animation:none!important}
   .xp-bar i{animation:xpBar ${SHOW_FOR_MS}ms linear forwards!important}
 }`;
 
@@ -204,19 +222,14 @@
     <div class="xp-top">
       <p class="xp-eyebrow">Before you go</p>
       <h2 class="xp-h" id="xp-title" data-t="The toolkit is waiting">The toolkit is waiting</h2>
-      <p class="xp-sub">Four books and a growing library of resources for patients, care partners and families, written by someone who has lived this system.</p>
-      <div class="xp-chips" aria-hidden="true"><span>Exit detected</span><span>4 books</span><span>1 library</span></div>
+      <p class="xp-sub">Toolkits, playbooks and guides for patients, care partners and families, written by someone who has lived this system.</p>
+      <div class="xp-chips" aria-hidden="true"><span>Exit detected</span><span>Toolkits</span><span>1 library</span></div>
     </div>
-    <div class="xp-stage"><svg class="xp-links" aria-hidden="true"></svg>
-      <div class="xp-col">
-        <img class="xp-book l1" src="${A}toolkit.jpg" alt="Book cover: Toolkit for Blacklisted Dialysis Patients, by Jeff Parke" width="288" height="422">
-        <img class="xp-book l2" src="${A}onhold.jpg" alt="Book cover: Dying on Hold, What the Kidney Transplant List Isn't Telling You, by Jeff Parke" width="288" height="422">
-      </div>
+    <div class="xp-stage">
+      <div class="xp-col"><div class="xp-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg><b>Toolkits</b><span>Step by step</span></div><div class="xp-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-2v13c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2zM12 6v13"/></svg><b>Playbooks</b><span>Plans you can use</span></div><div class="xp-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg><b>Guides</b><span>Find your way</span></div></div>
       <figure class="xp-me" style="margin:0"><i class="xp-orbit"></i><img src="${A}jeff.jpg" alt="Jeff Parke, founder of the Cold Ischemia Foundation" width="640" height="960"><figcaption><b>Jeff A. Parke</b>Founder &middot; Cold Ischemia Foundation</figcaption></figure>
-      <div class="xp-col">
-        <img class="xp-book r1" src="${A}playbook.jpg" alt="Book cover: Renal Care Partner's Playbook, by Jeff Parke" width="277" height="422">
-        <img class="xp-book r2" src="${A}lifeafter.jpg" alt="Book cover: Chronic Kidney, Life After Diagnosis, by Jeff Parke" width="277" height="422">
-      </div>
+      <div class="xp-col"><div class="xp-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><b>Patients</b><span>Dialysis &amp; CKD</span></div><div class="xp-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 1.5 6 5.5"/></svg><b>Care partners</b><span>Beside the patient</span></div><div class="xp-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9H3zM10 20v-6h4v6"/></svg><b>Families</b><span>Together</span></div></div>
+      <div class="xp-eq" aria-hidden="true"><i style="animation-delay:-0.00s;animation-duration:0.38s"></i><i style="animation-delay:-0.04s;animation-duration:0.45s"></i><i style="animation-delay:-0.07s;animation-duration:0.52s"></i><i style="animation-delay:-0.11s;animation-duration:0.59s"></i><i style="animation-delay:-0.15s;animation-duration:0.66s"></i><i style="animation-delay:-0.18s;animation-duration:0.38s"></i><i style="animation-delay:-0.22s;animation-duration:0.45s"></i><i style="animation-delay:-0.26s;animation-duration:0.52s"></i><i style="animation-delay:-0.30s;animation-duration:0.59s"></i><i style="animation-delay:-0.33s;animation-duration:0.66s"></i><i style="animation-delay:-0.37s;animation-duration:0.38s"></i><i style="animation-delay:-0.41s;animation-duration:0.45s"></i><i style="animation-delay:-0.44s;animation-duration:0.52s"></i><i style="animation-delay:-0.48s;animation-duration:0.59s"></i><i style="animation-delay:-0.52s;animation-duration:0.66s"></i><i style="animation-delay:-0.55s;animation-duration:0.38s"></i><i style="animation-delay:-0.59s;animation-duration:0.45s"></i><i style="animation-delay:-0.63s;animation-duration:0.52s"></i><i style="animation-delay:-0.67s;animation-duration:0.59s"></i><i style="animation-delay:-0.70s;animation-duration:0.66s"></i><i style="animation-delay:-0.74s;animation-duration:0.38s"></i><i style="animation-delay:-0.78s;animation-duration:0.45s"></i><i style="animation-delay:-0.81s;animation-duration:0.52s"></i><i style="animation-delay:-0.85s;animation-duration:0.59s"></i><i style="animation-delay:-0.89s;animation-duration:0.66s"></i><i style="animation-delay:-0.02s;animation-duration:0.38s"></i><i style="animation-delay:-0.06s;animation-duration:0.45s"></i><i style="animation-delay:-0.10s;animation-duration:0.52s"></i><i style="animation-delay:-0.14s;animation-duration:0.59s"></i><i style="animation-delay:-0.17s;animation-duration:0.66s"></i><i style="animation-delay:-0.21s;animation-duration:0.38s"></i><i style="animation-delay:-0.25s;animation-duration:0.45s"></i><i style="animation-delay:-0.28s;animation-duration:0.52s"></i><i style="animation-delay:-0.32s;animation-duration:0.59s"></i><i style="animation-delay:-0.36s;animation-duration:0.66s"></i><i style="animation-delay:-0.39s;animation-duration:0.38s"></i><i style="animation-delay:-0.43s;animation-duration:0.45s"></i><i style="animation-delay:-0.47s;animation-duration:0.52s"></i><i style="animation-delay:-0.51s;animation-duration:0.59s"></i><i style="animation-delay:-0.54s;animation-duration:0.66s"></i><i style="animation-delay:-0.58s;animation-duration:0.38s"></i><i style="animation-delay:-0.62s;animation-duration:0.45s"></i><i style="animation-delay:-0.65s;animation-duration:0.52s"></i><i style="animation-delay:-0.69s;animation-duration:0.59s"></i><i style="animation-delay:-0.73s;animation-duration:0.66s"></i><i style="animation-delay:-0.76s;animation-duration:0.38s"></i><i style="animation-delay:-0.80s;animation-duration:0.45s"></i><i style="animation-delay:-0.84s;animation-duration:0.52s"></i></div>
     </div>
     <div class="xp-bottom">
       <a class="xp-go" href="${LIBRARY}" target="_blank" rel="noopener">Open the library <span aria-hidden="true">&rarr;</span></a>
@@ -447,7 +460,7 @@
     requestAnimationFrame(function () { root.classList.add('on'); });
     startFx();
     if (!reduceMotion) root.addEventListener('mousemove', onMove);
-    function doDrop() { root.classList.add('drop'); dropT = performance.now(); setTimeout(drawLinks, 900); }
+    function doDrop() { root.classList.add('drop'); dropT = performance.now(); }
     if (reduceMotion) doDrop(); else timers.push(setTimeout(doDrop, DROP_AT_S * 1000));
     if (reduceMotion) { /* no build-up and no strobing; the score still plays unless muted */ }
     startAudio();
