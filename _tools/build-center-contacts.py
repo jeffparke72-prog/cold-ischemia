@@ -16,7 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 API = "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0"
 STOP = set("the of and at for hospital hospitals medical center centre health system university campus children childrens s inc llc clinic regional memorial".split())
-MIN_SCORE = 0.6
+MIN_SCORE = 0.75
 
 
 def norm(s):
