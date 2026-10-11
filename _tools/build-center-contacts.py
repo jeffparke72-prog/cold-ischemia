@@ -77,7 +77,10 @@ def match(opos, hospitals, today):
                 sc = score(c["n"], h["name"]) + (0.25 if h["city"].lower() == c["c"].lower() else 0)
                 if sc > bs:
                     best, bs = h, sc
-            if best and bs >= MIN_SCORE + 0.25 * (best["city"].lower() == c["c"].lower()):
+            same_city = bool(best) and best["city"].lower() == c["c"].lower()
+            # Same city: name similarity >= 0.6. Different or unknown city: the names must be essentially identical (>= 0.9).
+            # A wrong number is worse than no number, so near-misses fall through to a search link.
+            if best and (bs - 0.25 * same_city >= (MIN_SCORE if same_city else 0.9)) and not re.search(r"behavioral|psychiatric|rehab", best["name"], re.I):
                 result[cid] = {"phone": best["phone"], "line": "main hospital line", "matched": best["name"], "city": best["city"], "state": best["state"],
                                "source": "CMS Provider Data Catalog, Hospital General Information", "ccn": best["id"], "retrieved": today, "confidence": round(min(bs, 1.25) / 1.25, 2)}
                 report["matched"] += 1
@@ -97,6 +100,9 @@ def self_test():
     assert list(res) == ["houston-methodist-hospital-houston"], res
     assert res["houston-methodist-hospital-houston"]["phone"] == "713-790-3311"
     assert rep["unmatched"] == ["Nowhere Clinic (Austin)"]
+    wrong = [{"facility_name": "SAINT BARNABAS BEHAVIORAL HEALTH CENTER", "citytown": "TOMS RIVER", "state": "NJ", "telephone_number": "7325550100", "facility_id": "z"}]
+    r2, _ = match([{"state": "NJ", "serves": ["NJ"], "centers": [{"n": "Saint Barnabas Medical Center", "c": "New Providence", "s": ["Kidney"]}]}], wrong, "2026-01-01")
+    assert r2 == {}, r2
     print("self-test OK")
 
 
