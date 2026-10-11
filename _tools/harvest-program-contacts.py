@@ -30,6 +30,30 @@ PERSON = re.compile(r"\b([A-Z][a-z]+(?:\s[A-Z]\.)?\s[A-Z][a-z]+(?:-[A-Z][a-z]+)?
 TITLE = re.compile(r"(living donor (?:nurse )?coordinator|donor coordinator|transplant social worker|social worker|independent living donor advocate|donor advocate|coordinator)", re.I)
 
 
+BAD_NEAR = re.compile(r"parking|valet|billing|\bfax\b|medical records|pharmacy|prescription|medication|gift shop|cafeteria|security|human resources|careers|support group|financial (assistance|counsel)|insurance|referring physician|for physicians|international", re.I)
+NATIONAL = {"888-870-5002", "866-678-6411", "888-894-6361", "800-855-2880"}   # NLDAC, OPTN, UNOS, and a common national donor line: never listed as a program's own
+
+
+def clean_phone(entry):
+    """True if a harvested phone entry looks like a donor-contact line (used when harvesting and on stored data)."""
+    q = entry.get("quote", "")
+    if entry["number"] in NATIONAL or "<a" in q or "\\" in q or "href" in q:
+        return False
+    i = q.replace("(", "").replace(")", "").replace(".", "-").replace(" ", "").find(entry["number"].replace("-", "")[:3])
+    around = q
+    if BAD_NEAR.search(around) and not re.search(r"living[\s-]*(kidney\s+|liver\s+)?donor|donor coordinator|donor team|donor office", q, re.I):
+        return False
+    if re.search(r"support group|prescription|billing|financial", q, re.I) and not re.search(r"call (our|the) (living|donor)", q, re.I):
+        return False
+    return True
+
+
+def organ_of(*texts):
+    t = " ".join(texts).lower()
+    k, l = "kidney" in t, "liver" in t
+    return "kidney" if k and not l else "liver" if l and not k else "both" if k and l else "unknown"
+
+
 def get(url, timeout=25):
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/html,application/xhtml+xml"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -69,7 +93,7 @@ def extract(page_html, url):
     out = {"phones": {}, "emails": {}, "people": {}}
     lines = [re.sub(r"\s+", " ", l).strip() for l in t.split("\n")]
     lines = [l for l in lines if l]
-    BAD = re.compile(r"parking|valet|billing|\bfax\b|medical records|pharmacy|gift shop|cafeteria|security|human resources|careers", re.I)
+    BAD = BAD_NEAR
     for i, line in enumerate(lines):
         if not KEY.search(line):
             continue
@@ -81,7 +105,9 @@ def extract(page_html, url):
                 continue
             if BAD.search(win[max(0, pm.start() - 40): pm.start()]):
                 continue
-            out["phones"].setdefault(num, {"number": num, "url": url, "quote": quote})
+            ent = {"number": num, "url": url, "quote": quote, "organ": organ_of(url, quote)}
+            if clean_phone(ent):
+                out["phones"].setdefault(num, ent)
         for em in EMAIL.finditer(win):
             e = em.group(0).lower().rstrip(".")
             if not e.endswith((".png", ".jpg", ".gif")):
@@ -89,7 +115,8 @@ def extract(page_html, url):
         for pe in PERSON.finditer(win):
             before = list(TITLE.finditer(win[: pe.start()]))
             tm = before[-1] if before else TITLE.search(win)
-            out["people"].setdefault(pe.group(1), {"name": pe.group(1), "credentials": pe.group(2), "role": tm.group(1).lower() if tm else "", "url": url, "quote": quote})
+            if tm:   # only people named next to a coordinator, advocate or social-worker title
+                out["people"].setdefault(pe.group(1), {"name": pe.group(1), "credentials": pe.group(2), "role": tm.group(1).lower(), "url": url, "quote": quote})
     for mt in re.finditer(r'href=["\']mailto:([^"\'?]+)', page_html, re.I):
         e = mt.group(1).lower().strip()
         i = page_html.lower().find(mt.group(1).lower())
@@ -226,12 +253,25 @@ def self_test():
     assert name_ok(text_of(page), "Houston Test Hospital") and not name_ok("random page about shoes", "Houston Test Hospital")
     assert links('<a href="/living-donor/contact">Contact the team</a><a href="https://other.com/x">donor</a><a href="/about">About</a>', "https://htest.org/")[0] == "https://htest.org/living-donor/contact"
     assert not any(b in "https://www.healthgrades.com/x" for b in BLOCK[1:]) or True
+    assert not clean_phone({"number": "888-870-5002", "quote": "call the National Living Donor Assistance Center"})
+    assert not clean_phone({"number": "504-703-3166", "quote": "keeping up with prescription costs can be challenging, we offer assistance"})
+    assert not clean_phone({"number": "662-399-0318", "quote": '<a href=\\"/content/care.html\\">I need'})
+    assert clean_phone({"number": "502-587-4358", "quote": "Kidney/Liver/Pancreas/Living Kidney Donor : 502-587-4358 Referral Form"})
+    assert organ_of("https://x.org/living-donor-liver", "") == "liver" and organ_of("", "living kidney donor") == "kidney"
     print("self-test OK")
 
 
 def main():
     if "--self-test" in sys.argv:
         return self_test()
+    if "--clean" in sys.argv:                      # re-apply today's rules to a stored program-contacts.json
+        f = ROOT / "program-contacts.json"; j = json.loads(f.read_text()); keep = {}
+        for k, v in j["contacts"].items():
+            v["phones"] = [dict(x, organ=organ_of(x.get("url", ""), x.get("quote", ""))) for x in v["phones"] if clean_phone(x)]
+            v["people"] = [x for x in v["people"] if x.get("role")]
+            if v["phones"] or v["emails"] or v["people"]:
+                keep[k] = v
+        j["contacts"] = keep; f.write_text(json.dumps(j, indent=1, sort_keys=True)); print("kept", len(keep)); return
     today = datetime.date.today().isoformat()
     args = dict(zip(sys.argv[1::2], sys.argv[2::2]))
     only = set(args.get("--only", "").split(",")) - {""}
@@ -240,6 +280,10 @@ def main():
     sites = json.loads(sites_f.read_text()) if sites_f.exists() else {}
     out_f = ROOT / "program-contacts.json"
     old = json.loads(out_f.read_text()).get("contacts", {}) if out_f.exists() else {}
+    for v in old.values():                         # stored records are re-checked against today's rules every run
+        v["phones"] = [dict(x, organ=organ_of(x.get("url", ""), x.get("quote", ""))) for x in v.get("phones", []) if clean_phone(x)]
+        v["people"] = [x for x in v.get("people", []) if x.get("role")]
+    old = {k: v for k, v in old.items() if v["phones"] or v["emails"] or v["people"]}
     progs = [p for p in programs() if not only or p["id"] in only][:limit]
     new, miss = dict(old), []
     t0 = time.time()
