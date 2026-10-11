@@ -22,7 +22,8 @@ UA = "ColdIschemiaFoundationBot/1.0 (+https://coldischemia.foundation; public pr
 DELAY = 2.0
 BLOCK = ("healthgrades", "usnews", "yelp", "facebook", "wikipedia", "kidney.org", "srtr.org", "unos.org", "optn.", "linkedin", "youtube", "twitter", "x.com",
          "instagram", "webmd", "vitals.com", "doximity", "zocdoc", "nih.gov", "cms.gov", "livingdonorassistance", "donatelife", "organdonor.gov", "reddit", "indeed", "glassdoor")
-KEY = re.compile(r"living[\s-]*(kidney\s+)?donor|live[\s-]*donor|donor coordinator|transplant coordinator|donor advocate|transplant social work|social worker", re.I)
+KEY = re.compile(r"living[\s-]*(kidney\s+|liver\s+)?donor|live[\s-]*donor|donor coordinator|transplant coordinator|donor advocate|transplant social work", re.I)
+LIVING = re.compile(r"living[\s-]*(kidney\s+|liver\s+)?donor|live[\s-]*donor", re.I)
 PHONE = re.compile(r"(?<!\d)(?:\+?1[\s.\-]?)?\(?([2-9]\d{2})\)?[\s.\-]?([2-9]\d{2})[\s.\-]?(\d{4})(?!\d)")
 EMAIL = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
 PERSON = re.compile(r"\b([A-Z][a-z]+(?:\s[A-Z]\.)?\s[A-Z][a-z]+(?:-[A-Z][a-z]+)?),?\s+(RN|BSN|MSN|MSW|LCSW|LMSW|LISW|APRN|NP|PA-C|CCTC|MD|DO|MPH|PhD)\b")
@@ -97,15 +98,31 @@ def extract(page_html, url):
     return out
 
 
+def link_score(href, label):
+    t = (href + " " + label).lower()
+    sc = 0
+    if re.search(r"living[\s_-]*(kidney[\s_-]*)?donor|live[\s_-]*donor", t): sc += 5
+    if "transplant" in t: sc += 2
+    if "kidney" in t: sc += 1
+    if re.search(r"contact|coordinator|get[\s_-]*started|refer|evaluation|team", t): sc += 1
+    if re.search(r"donor", t): sc += 1
+    if re.search(r"login|portal|careers|news|events|billing|pay|donate|giving|privacy|terms|pediatric-heart|cardiac|cancer|ortho", t): sc -= 4
+    return sc
+
+
 def links(page_html, base):
     seen, res = set(), []
+    host = urllib.parse.urlparse(base).netloc.replace("www.", "")
     for m in re.finditer(r'<a[^>]+href=["\']([^"\'#]+)["\'][^>]*>(.*?)</a>', page_html, re.I | re.S):
         href, label = m.group(1), re.sub(r"<[^>]+>", " ", m.group(2))
-        if re.search(r"living|donor|contact|coordinator|evaluation|get[- ]started|refer", href + " " + label, re.I):
-            u = urllib.parse.urljoin(base, href)
-            if urllib.parse.urlparse(u).netloc == urllib.parse.urlparse(base).netloc and u not in seen and not re.search(r"\.(pdf|jpg|png|zip)$", u, re.I):
-                seen.add(u); res.append(u)
-    return res[:6]
+        u = urllib.parse.urljoin(base, href).split("#")[0]
+        if not u.startswith("http") or urllib.parse.urlparse(u).netloc.replace("www.", "") != host or u in seen or re.search(r"\.(pdf|jpg|png|zip|docx?)$", u, re.I):
+            continue
+        sc = link_score(href, label)
+        if sc >= 2:
+            seen.add(u); res.append((sc, u))
+    res.sort(key=lambda x: -x[0])
+    return [u for _, u in res[:5]]
 
 
 def name_ok(page_text, prog_name):
@@ -127,35 +144,50 @@ def discover(name, city):
     return urls[:3]
 
 
+MAX_PAGES, MAX_DEPTH = 12, 3
+
+
+def tokens_ok(require, page_text, url):
+    hay = (page_text + " " + url).lower().replace("-", " ")
+    return all(r.replace("-", " ") in hay for r in require)
+
+
 def harvest_one(c, sites, today):
-    start = sites.get(c["id"]) and [sites[c["id"]]] or discover(c["n"], c["c"])
+    seed = sites.get(c["id"])
+    if isinstance(seed, str):
+        seed = {"url": seed}
+    starts = [seed["url"]] if seed else discover(c["n"], c["c"])
+    require = (seed or {}).get("require", [])
     found = {"phones": {}, "emails": {}, "people": {}}
-    pages = []
-    for u in start:
-        queue = [u]
-        tried = 0
-        while queue and tried < 6:
-            url = queue.pop(0); tried += 1
-            if not allowed(url):
+    pages, seen = [], set()
+    for u in starts:
+        queue, fetched = [(u, 0)], 0
+        while queue and fetched < MAX_PAGES:
+            url, depth = queue.pop(0)
+            if url in seen or not allowed(url):
                 continue
+            seen.add(url); fetched += 1
             try:
                 h = get(url)
             except Exception:
                 continue
             finally:
                 time.sleep(DELAY)
-            if not h or not name_ok(text_of(h), c["n"]):
-                if tried == 1:
-                    break
+            if not h:
                 continue
-            ex = extract(h, url)
-            if any(ex.values()):
-                pages.append(url)
-                for k in found:
-                    for kk, vv in ex[k].items():
-                        found[k].setdefault(kk, vv)
-            if tried == 1:
-                queue += links(h, url)
+            txt = text_of(h)
+            if fetched == 1 and not seed and not name_ok(txt, c["n"]):
+                break                      # a discovered site must name the program; a curated seed is trusted
+            if LIVING.search(txt) and (not require or tokens_ok(require, txt, url)):
+                ex = extract(h, url)
+                if any(ex.values()):
+                    pages.append(url)
+                    for k in found:
+                        for kk, vv in ex[k].items():
+                            found[k].setdefault(kk, vv)
+            if depth < MAX_DEPTH and not (len(pages) >= 2):
+                queue += [(l, depth + 1) for l in links(h, url)]
+                queue.sort(key=lambda q: (q[1], -link_score(q[0], "")))
         if pages:
             break
     if not any(found.values()):
@@ -210,7 +242,10 @@ def main():
     old = json.loads(out_f.read_text()).get("contacts", {}) if out_f.exists() else {}
     progs = [p for p in programs() if not only or p["id"] in only][:limit]
     new, miss = dict(old), []
+    t0 = time.time()
     for i, p in enumerate(progs, 1):
+        if time.time() - t0 > 8100:
+            print('time limit reached; saving what we have'); break
         r = None
         try:
             r = harvest_one(p, sites, today)
