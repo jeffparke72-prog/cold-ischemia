@@ -52,9 +52,19 @@
       return '<button type="button" role="radio" aria-checked="' + (l.stars === n) + '" aria-label="' + n + ' of 5" data-s="' + n + '">' + (l.stars >= n ? '★' : '☆') + '</button>'; }).join('') + '</span>';
   }
 
-  function row(c, log, pub) {
+  function pubBlock(pc) {
+    if (!pc) return '';
+    var h = '<div class="cc-prog"><div class="cc-src">From the program\u2019s own website, retrieved ' + esc(pc.retrieved) + '. Confirm by phone.</div>';
+    (pc.people || []).forEach(function (x) { h += '<div><b>' + esc(x.name) + '</b>, ' + esc(x.credentials) + (x.role ? ' &middot; ' + esc(x.role) : '') + '</div>'; });
+    (pc.phones || []).forEach(function (x) { h += '<div><a href="' + tel(x.number) + '">' + esc(x.number) + '</a> <span class="cc-sub">&ldquo;' + esc(String(x.quote).slice(0, 110)) + '&hellip;&rdquo;</span></div>'; });
+    (pc.emails || []).forEach(function (x) { h += '<div><a href="mailto:' + esc(x.email) + '">' + esc(x.email) + '</a></div>'; });
+    var u = (pc.pages || [])[0]; if (u && /^https?:\/\//.test(u)) h += '<div><a href="' + esc(u) + '" target="_blank" rel="noopener">Open the program\u2019s page</a></div>';
+    return h + '</div>';
+  }
+
+  function row(c, log, pub, pcs) {
     var l = log[c.id] || {}, p = pub[c.id], h = '<div class="cc" data-id="' + esc(c.id) + '"><div class="cc-top"><div><b>' + esc(c.name) + '</b>' + (c.city ? '<span class="cc-sub"> &middot; ' + esc(c.city) + '</span>' : '') +
-      '<div class="cc-why">' + esc(c.why) + '</div>' +
+      '<div class="cc-why">' + esc(c.why) + '</div>' + pubBlock((pcs || {})[c.id]) +
       (c.phone && c.retrieved ? '<div class="cc-src">Public record: ' + esc(c.line) + ', ' + esc(c.source) + ', retrieved ' + esc(c.retrieved) + '</div>' : '') +
       (p && p.direct ? '<div class="cc-pub">People reached this program at ' + esc(p.direct) + '</div>' : '') +
       (p && p.reports >= MIN_REPORTS ? '<div class="cc-pub">' + p.reports + ' people reported: ' + Math.round(p.reached * 100) + '% reached a person' + (p.respect != null ? ', ' + p.respect.toFixed(1) + ' of 6 respect checks met on average' : '') + '</div>' : '') +
@@ -81,7 +91,7 @@
     var cities = progs.map(function (p) { return p.city; }).filter(function (x, i, a) { return a.indexOf(x) === i; }).sort();
     var fixed = (ctx.opos || []).map(function (o) { return { id: slug(o.name), name: o.name + ' (OPO)', city: o.city + ', ' + o.state, phone: o.phone, line: 'OPO office', source: 'HRSA OPO directory', retrieved: '2026-09-28', why: 'Handles deceased donation. They can tell you which nearby programs run a living donor program, but they do not evaluate living donors.' }; })
       .concat(NATIONAL.map(function (n) { return { id: n.id, name: n.name, phone: n.phone, line: n.line, source: 'official page', retrieved: '2026-10', why: n.why }; }));
-    var css = '<style>.cc{border:1px solid var(--b2);border-radius:8px;padding:14px;margin-top:10px;background:var(--surf)}.cc-top{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}.cc-sub,.cc-why,.cc-when,.cc-src{font-size:14px;color:var(--ink60)}.cc-src{font-family:\'IBM Plex Mono\',monospace;font-size:11px;margin-top:4px}.cc-pub{font-size:14px;color:#50c878;margin-top:6px}.cc-log{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}.cc-log select,.cc-direct{background:var(--void);color:var(--ink);border:1px solid var(--b2);border-radius:6px;padding:8px;font:inherit;font-size:15px}.cc-direct{width:230px;max-width:100%}.cc-stars button{background:none;border:0;color:#e8b84a;font-size:22px;cursor:pointer;padding:0 2px}.cc pre{white-space:pre-wrap;font:inherit;font-size:15.5px;background:var(--void);padding:12px;border-radius:6px;border:1px solid var(--b2)}.cc-note{font-size:14px;color:var(--ink60);margin-top:12px}.cc-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}.cc-tools select{background:var(--void);color:var(--ink);border:1px solid var(--b2);border-radius:6px;padding:8px;font:inherit}@media print{.cc-log{display:none}}</style>';
+    var css = '<style>.cc{border:1px solid var(--b2);border-radius:8px;padding:14px;margin-top:10px;background:var(--surf)}.cc-top{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}.cc-sub,.cc-why,.cc-when,.cc-src{font-size:14px;color:var(--ink60)}.cc-src{font-family:\'IBM Plex Mono\',monospace;font-size:11px;margin-top:4px}.cc-pub{font-size:14px;color:#50c878;margin-top:6px}.cc-log{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}.cc-log select,.cc-direct{background:var(--void);color:var(--ink);border:1px solid var(--b2);border-radius:6px;padding:8px;font:inherit;font-size:15px}.cc-direct{width:230px;max-width:100%}.cc-stars button{background:none;border:0;color:#e8b84a;font-size:22px;cursor:pointer;padding:0 2px}.cc pre{white-space:pre-wrap;font:inherit;font-size:15.5px;background:var(--void);padding:12px;border-radius:6px;border:1px solid var(--b2)}.cc-prog{margin-top:8px;padding:8px 10px;border-left:3px solid #50c878;background:rgba(80,200,120,.07);font-size:15px}.cc-note{font-size:14px;color:var(--ink60);margin-top:12px}.cc-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}.cc-tools select{background:var(--void);color:var(--ink);border:1px solid var(--b2);border-radius:6px;padding:8px;font:inherit}@media print{.cc-log{display:none}}</style>';
     var h = css + '<div class="rbox wide" id="callpanel"><h3>Your first calls</h3>' +
       '<p style="font-size:17px;color:var(--ink80)">Nothing starts until a coordinator hears from you. Call two or three programs the same day: each has its own limits, and a no from one is not a no from all. Tap a number on your phone, or copy it and dial. Your own phone places the call; this page never dials for you and never stores your number.</p>' +
       '<div class="mono" style="font-size:11px;color:var(--pulse);margin-top:12px">Your call script, built from your answers</div><div class="cc"><pre id="ccs">' + esc(script(ctx)) + '</pre><button type="button" class="btn line" id="ccc">Copy script</button></div>' +
@@ -90,29 +100,31 @@
       '<div id="ccprogs"></div><div id="ccmore"></div>' +
       '<div class="mono" style="font-size:11px;color:var(--pulse);margin-top:16px">Also worth a call</div><div id="ccfixed"></div>' +
       (ctx.pe ? '<div class="mono" style="font-size:11px;color:var(--pulse);margin-top:16px">Paired exchange registries</div><div class="cc">' + REGISTRIES.map(function (r) { return '<div><a href="' + r[1] + '" target="_blank" rel="noopener">' + r[0] + '</a></div>'; }).join('') + '<div class="cc-why" style="margin-top:6px">You usually join through a transplant program, not on your own. Ask which registries it uses.</div></div>' : '') +
-      '<div class="cc-note"><b>Where these numbers come from.</b> Program names are from HRSA’s organ procurement organization data. Phone numbers come from CMS’s public hospital records and are each hospital’s <i>main line</i>, with the date retrieved. No public record lists a transplant social worker’s or coordinator’s direct number, so on the main line ask for the living donor coordinator or transplant social worker by title. If you get a direct line, enter it above and share it: that is how this list gets better. A number we cannot match with confidence is not shown; you get a search link instead.</div>' +
+      '<div class="cc-note"><b>Where these numbers come from.</b> Program names are from HRSA’s organ procurement organization data. Phone numbers come from CMS’s public hospital records and are each hospital’s <i>main line</i>, with the date retrieved. Names, direct phone numbers and emails come only from a program’s own website, shown with the date we read it and a link to the page. Where a program lists none, call the main line and ask for the living donor coordinator or transplant social worker by title. If you get a direct line, enter it above and share it: that is how this list gets better. A number we cannot match with confidence is not shown; you get a search link instead.</div>' +
       '<div class="cc-note"><b>How ratings work.</b> Your log stays on this device. If you choose &ldquo;Share this,&rdquo; only the program, outcome, stars and any direct line you typed go to the foundation, with no name or number of yours. A program’s reliability appears here only after ' + MIN_REPORTS + ' or more people report on it, and direct lines are shown only after the foundation has checked them.</div></div>';
     return {
       html: h,
       bind: function (root, toast, send) {
-        var log = load(), pub = {}, contacts = {}, city = '', shown = PAGE;
+        var log = load(), pub = {}, contacts = {}, pcs = {}, city = '', shown = PAGE;
         var all = progs.concat(fixed);
         var byId = {}; all.forEach(function (c) { byId[c.id] = c; });
         var rank = function () {
           var withPhone = function (c) { return c.phone ? 1 : 0; };
           return progs.slice().sort(function (a, b) {
             var ca = city && a.city === city ? 1 : 0, cb = city && b.city === city ? 1 : 0;
-            return (cb - ca) || (withPhone(b) - withPhone(a)) || a.name.localeCompare(b.name);
+            var da = pcs[a.id] ? 1 : 0, db = pcs[b.id] ? 1 : 0;
+            return (cb - ca) || (db - da) || (withPhone(b) - withPhone(a)) || a.name.localeCompare(b.name);
           });
         };
         var paint = function () {
           progs.forEach(function (p) { var k = contacts[p.id]; if (k) { p.phone = k.phone; p.line = k.line; p.source = 'CMS Hospital General Information'; p.retrieved = k.retrieved; } });
           var r = rank();
-          root.querySelector('#ccprogs').innerHTML = r.slice(0, shown).map(function (c) { return row(c, log, pub); }).join('') || '<div class="cc-why">No programs found for this state in our data. Use the national lines below.</div>';
+          root.querySelector('#ccprogs').innerHTML = r.slice(0, shown).map(function (c) { return row(c, log, pub, pcs); }).join('') || '<div class="cc-why">No programs found for this state in our data. Use the national lines below.</div>';
           root.querySelector('#ccmore').innerHTML = r.length > shown ? '<button type="button" class="btn line" id="ccm" style="margin-top:10px">Show ' + Math.min(PAGE, r.length - shown) + ' more (' + (r.length - shown) + ' left)</button>' : '';
-          root.querySelector('#ccfixed').innerHTML = fixed.map(function (c) { return row(c, log, pub); }).join('');
+          root.querySelector('#ccfixed').innerHTML = fixed.map(function (c) { return row(c, log, pub, pcs); }).join('');
         };
         paint();
+        getJSON('program-contacts.json').then(function (j) { pcs = (j && j.contacts) || {}; paint(); });
         getJSON('center-contacts.json').then(function (j) { contacts = (j && j.contacts) || {}; paint(); });
         getJSON('contact-ratings.json').then(function (j) { if (j && j.contacts) { pub = j.contacts; paint(); } });
         var ep = window.CIF_CONFIG && window.CIF_CONFIG.formsEndpoint;

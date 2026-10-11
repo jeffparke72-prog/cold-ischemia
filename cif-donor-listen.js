@@ -23,7 +23,7 @@
       say: 'Time matters, and so does your own health. The most useful thing you can do for them is start your own separate evaluation early, because your team works only for you and the recipient’s team works only for them. That separation protects both of you.', ask: 'Can my evaluation start now, in parallel with my loved one’s listing?' },
     nondirected: { re: /\b(stranger|anonymous|non[- ]?directed|altruistic|good samaritan|anyone who needs|don'?t know (who|anyone)|no one in particular)\b/, label: 'Giving to someone you don’t know',
       say: 'This is called non-directed (or altruistic) donation. Not every program accepts non-directed donors, so ask early. A single non-directed kidney can start a chain of several transplants through a paired exchange.', ask: 'Do you accept non-directed living donors, and do you take part in kidney chains?', flag: 'nondirected' },
-    paired: { re: /\b(blood type|incompatible|not a match|isn'?t a match|wrong blood|crossmatch|antibod\w+|mismatch\w*|paired|swap|exchange|chain)\b/, label: 'A match problem (blood type or antibodies)',
+    paired: { re: /\b(blood types?|incompatible|not a match|isn'?t a match|wrong blood|crossmatch|antibod\w+|mismatch\w*|paired|swap|exchange|chain)\b/, label: 'A match problem (blood type or antibodies)',
       say: 'Not matching your recipient does not end the story. In a paired exchange your kidney goes to a compatible stranger and a compatible donor gives to your recipient. Programs usually join one or more registries: the National Kidney Registry, the Alliance for Paired Donation, or the OPTN pilot program. Ask which ones your recipient’s center uses.', ask: 'Do you take part in paired exchange, and which registries do you use?', flag: 'paired' },
     bp: { re: /\b(blood pressure|hypertension|high bp|bp meds?|lisinopril|amlodipine|losartan)\b/, label: 'Blood pressure',
       say: 'Blood pressure that is well controlled can still be reviewed, though many programs are stricter about hypertension in donors, especially under 50 or on several medicines. Bring your readings (a home log helps) to the first call.', ask: 'What are your blood pressure limits for donors, and does a home log count?' },
@@ -53,7 +53,7 @@
   function hit(re, s) {
     var m, g = new RegExp(re.source, 'g'); s = s.toLowerCase();
     while ((m = g.exec(s))) {
-      var before = s.slice(Math.max(0, m.index - 28), m.index);
+      var before = s.slice(Math.max(0, m.index - 14), m.index);
       var hasNeg = NEG.test(before);
       if (!hasNeg) return true;
     }
@@ -71,7 +71,7 @@
         var t = T[k], re = t.need || t.re;
         // Fear needs a fear word AND a surgery word in the same sentence, otherwise "worried about money" would trigger it.
         var ok = ss.some(function (s) {
-          if (k === 'fear_surgery') return hit(t.re, s) && hit(t.need, s) && /(scared|afraid|fear|terrified|nervous|worr|anxious|complication|die)/.test(s.toLowerCase()) && /(surger|operation|anesthesia|table|complication)/.test(s.toLowerCase());
+          if (k === 'fear_surgery') return hit(/\b(scared|afraid|fear\w*|terrified|nervous|worr\w*|anxious|die on the table)\b/, s) && /(surger|operation|anesthesia|table|complication)/.test(s.toLowerCase());
           return hit(t.re, s);
         });
         if (ok) found.push(k);

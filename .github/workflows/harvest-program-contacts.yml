@@ -1,0 +1,47 @@
+# Collects living-donor contacts that transplant programs publish on their own websites (program-contacts.json).
+# Obeys robots.txt, waits between requests, keeps the source page and date for every contact, never guesses.
+# Add known program pages to _tools/program-sites.json as {"program-id": "https://..."} to skip the search step.
+name: Harvest program contacts
+
+on:
+  schedule:
+    - cron: "41 7 3 * *"
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Optional: comma-separated program ids to test (see center-contacts.json for ids)"
+        default: ""
+  push:
+    branches: [main]
+    paths: ["_tools/harvest-program-contacts.py", "_tools/program-sites.json"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: program-contacts
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 _tools/harvest-program-contacts.py --self-test
+      - name: Harvest
+        env:
+          ONLY: ${{ inputs.only }}
+        run: |
+          if [ -n "$ONLY" ]; then python3 _tools/harvest-program-contacts.py --only "$ONLY"; else python3 _tools/harvest-program-contacts.py; fi
+      - name: Save
+        run: |
+          git config user.name "cif-contacts-bot"; git config user.email "actions@users.noreply.github.com"
+          git add program-contacts.json _tools/program-contacts-report.txt
+          if git diff --cached --quiet; then echo "No change."; exit 0; fi
+          git commit -m "Program contacts: refresh $(date -u +%Y-%m-%d) [skip ci]"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0; sleep 5; done
+          exit 1
