@@ -170,7 +170,7 @@ section{padding:80px 0;border-bottom:1px solid var(--b)}
 .qfb.G{background:var(--green-d);border:1px solid rgba(80,200,120,.35)}
 .qfb.A1,.qfb.A2{background:var(--amber-d);border:1px solid rgba(230,162,79,.4)}
 .qfb.R{background:var(--danger-d);border:1px solid rgba(224,86,111,.4)}
-#f_words{width:100%;background:var(--void);color:var(--ink);border:1px solid var(--b2);border-radius:10px;padding:14px;font:inherit;font-size:17px;line-height:1.5;resize:vertical}
+#f_words,#wtxt{width:100%;margin-top:6px;background:var(--void);color:var(--ink);border:1px solid var(--b2);border-radius:10px;padding:14px;font:inherit;font-size:17px;line-height:1.5;resize:vertical}
 .wchips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.wchip{display:flex;gap:8px;align-items:flex-start;background:var(--surf);border:1px solid var(--b2);border-radius:10px;padding:9px 12px;font-size:15.5px;cursor:pointer}.wchip input{margin-top:4px}
 .wsay{border-left:3px solid var(--pulse);padding:6px 0 6px 14px;margin:10px 0;font-size:16px;color:var(--ink80)}.wsay b{color:#f3ede4}
 .wcrisis{background:var(--danger-d);border:1px solid rgba(224,86,111,.5);border-radius:10px;padding:14px;margin:12px 0;font-size:17px}
@@ -256,6 +256,18 @@ footer{border-top:1px solid var(--b);padding:32px 0 44px;text-align:center;font-
   </div>
 </header><!--CIFGUIDE--><aside style="max-width:980px;margin:28px auto;padding:0 20px"><div style="display:flex;gap:26px;align-items:center;flex-wrap:wrap;background:linear-gradient(135deg,#0a1628,#10233f);border:1px solid rgba(200,144,42,.6);border-radius:10px;padding:22px 26px;color:#e8dfcf;font-family:Georgia,'Crimson Pro',serif;box-shadow:0 10px 40px rgba(0,0,0,.25)"><img src="not-a-spare-cover.jpg" alt="Cover of Not a Spare: The Living Kidney Donor's Field Guide" width="132" height="171" loading="lazy" style="border-radius:4px;box-shadow:0 6px 24px rgba(0,0,0,.5);flex:none"><div style="flex:1;min-width:240px"><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:#e8b84a;margin-bottom:6px">Free download &middot; PDF &middot; 109 pages</div><div style="font:700 26px/1.15 Georgia,serif;color:#fff;margin-bottom:8px">Not a Spare: The Living Kidney Donor&rsquo;s Field Guide</div><p style="margin:0 0 14px;font-size:16.5px;line-height:1.5;color:#cfc5b3">The complete guide to the law, the money, the medicine, the psychology and the community around giving a kidney while alive. No sign-up. No cost.</p><div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><a href="not-a-spare-extended-edition.pdf" download style="background:#c8902a;color:#0a1628;text-decoration:none;font:700 13px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;padding:12px 20px;border-radius:4px">Download the free guide</a><a href="not-a-spare-living-donor-guide.pdf" download style="color:#e8b84a;text-decoration:none;font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;padding:12px 16px;border:1px solid rgba(232,184,74,.5);border-radius:4px">1,400-word short version</a></div><p style="margin:12px 0 0;font-size:13.5px;color:#9fa9b8">Won&rsquo;t open? <a href="not-a-spare-109-page-guide-picture-version.pdf" download style="color:#e8b84a">Get the picture version</a>. We are not medical experts. For medical advice, talk to your healthcare team. In an emergency, call 911.</p></div></div></aside><!--/CIFGUIDE-->
 
+<!-- WORRY -->
+<section id="worry">
+  <div class="wrap">
+    <div class="mono k">Start with the worry, not the form</div>
+    <h2>What worries you most? <em>Say it. Get a straight answer.</em></h2>
+    <p class="lead">Most people who think about donating never make the first call, and the biggest reasons are fear and not knowing. Tap what is on your mind, or type it in your own words. You get an honest answer now, and nothing leaves your device.</p>
+    <div class="wchips" id="wq" role="group" aria-label="Common worries"></div>
+    <textarea id="wtxt" rows="3" maxlength="800" aria-label="Type your worry" placeholder="Or type it here: for example, I am afraid of the surgery and I cannot miss work."></textarea>
+    <div class="row" style="margin-top:10px"><button class="btn gold" type="button" id="wgo">Answer my worry</button><a class="btn line" href="#assess">Skip to the readiness profile</a></div>
+    <div id="wans" aria-live="polite"></div>
+  </div>
+</section>
 <!-- JOURNEY -->
 <section id="journey">
   <div class="wrap">
@@ -619,7 +631,7 @@ function render(){
   var h='<div class="qtext" id="qt">'+q.q+'</div>'+(q.help?'<div class="qhelp">'+q.help+'</div>':'<div style="height:12px"></div>');
   if(q.type==='num'){h+='<div class="nums">'+q.fields.map(function(f){var v=prev&&prev.v?prev.v[f[0]]:'';return '<div><label for="f_'+f[0]+'">'+f[1]+'</label><input id="f_'+f[0]+'" type="number" inputmode="numeric" min="'+f[3]+'" max="'+f[4]+'" value="'+(v===undefined?'':v)+'" placeholder="'+f[2]+'"></div>'}).join('')+'<button class="btn line" type="button" id="chk">Check</button></div>'}
   else if(q.type==='state'){h+='<div class="nums"><div><label for="f_state">State</label><select id="f_state"><option value="">Choose your state</option>'+STATES.map(function(s){return '<option value="'+s[0]+'"'+(A.state===s[0]?' selected':'')+'>'+s[1]+'</option>'}).join('')+'</select></div></div>'}
-  else if(q.type==='text'){h+='<textarea id="f_words" rows="6" maxlength="1500" aria-label="Your words" placeholder="For example: My brother has been on dialysis for two years. I am worried about missing work, and I do not know who to call first.">'+esc((prev&&prev.v&&prev.v.text)||'')+'</textarea><div class="nums" style="margin-top:10px"><button class="btn gold" type="button" id="wread">Read what I wrote</button><button class="btn line" type="button" id="wskip">Skip this question</button></div><div id="wout"></div>'}
+  else if(q.type==='text'){h+='<textarea id="f_words" rows="6" maxlength="1500" aria-label="Your words" placeholder="For example: My brother has been on dialysis for two years. I am worried about missing work, and I do not know who to call first.">'+esc((prev&&prev.v&&prev.v.text)||(function(){try{return (JSON.parse(localStorage.getItem('cifWorry')||'{}').text)||''}catch(e){return ''}})())+'</textarea><div class="nums" style="margin-top:10px"><button class="btn gold" type="button" id="wread">Read what I wrote</button><button class="btn line" type="button" id="wskip">Skip this question</button></div><div id="wout"></div>'}
   else if(q.tf!==undefined){h+='<div class="opts" role="group" aria-labelledby="qt">'+['True','False'].map(function(t){return '<button type="button" class="opt" aria-pressed="'+(prev&&prev.v===t)+'" data-v="'+t+'"><span class="dot"></span><span>'+t+'</span></button>'}).join('')+'</div>'}
   else {h+='<div class="opts" role="group" aria-labelledby="qt">'+q.o.map(function(o,i){return '<button type="button" class="opt" aria-pressed="'+(prev&&prev.i===i)+'" data-i="'+i+'"><span class="dot"></span><span>'+o[0]+'</span></button>'}).join('')+'</div>'}
   $('#qbody').innerHTML=h;
@@ -745,6 +757,26 @@ function results(){
   $('#qbar').style.width='100%';
 }
 render();
+})();
+</script>
+<script>
+(function(){
+var L=window.CIFListen;if(!L)return;var $=function(s){return document.querySelector(s)};
+var chips=['fear_surgery','cost','job','family','pressure','turned_down','weight','bp','paired','nondirected','distrust','distance'];
+var sel={};
+function save(t){try{localStorage.setItem('cifWorry',JSON.stringify({text:t||$('#wtxt').value,themes:Object.keys(sel).filter(function(k){return sel[k]})}))}catch(e){}}
+$('#wq').innerHTML=chips.map(function(k){return '<label class="wchip"><input type="checkbox" data-k="'+k+'"><span>'+L.THEMES[k].label+'</span></label>'}).join('');
+function show(keys){var out=$('#wans');if(!keys.length){out.innerHTML='<p style="margin-top:14px;color:var(--ink80)">Pick a worry above or type a few words, and I will answer.</p>';return}
+ var cr=keys.indexOf('crisis')>-1;
+ out.innerHTML=(cr?'<div class="wcrisis"><b>'+L.THEMES.crisis.say+'</b></div>':'')+keys.filter(function(k){return k!=='crisis'}).map(function(k){var t=L.THEMES[k];return '<div class="wsay"><b>'+t.label+'.</b> '+t.say+(t.ask?'<div style="margin-top:6px;font-size:15px;color:var(--ink60)">Ask the program: <i>'+t.ask+'</i></div>':'')+'</div>'}).join('')+
+ '<div class="row" style="margin-top:14px"><a class="btn gold" href="#assess">See where I stand</a><button class="btn line" type="button" id="wsh">Send this to someone thinking about donating</button></div>';
+ var sh=$('#wsh');if(sh)sh.onclick=function(){var u=location.origin+location.pathname+'#worry',t='Thinking about donating a kidney? This page answers the common worries honestly, and shows who to call first.';if(navigator.share){navigator.share({title:'Living Donor Journey',text:t,url:u}).catch(function(){})}else{location.href='mailto:?subject='+encodeURIComponent('Honest answers about living donation')+'&body='+encodeURIComponent(t+'\n\n'+u)}}}
+$('#wq').addEventListener('change',function(e){var k=e.target.dataset.k;sel[k]=e.target.checked;save();show(Object.keys(sel).filter(function(x){return sel[x]}))});
+$('#wgo').onclick=function(){var t=$('#wtxt').value.trim();var found=L.analyze(t).themes;Object.keys(sel).forEach(function(k){if(sel[k]&&found.indexOf(k)<0)found.push(k)});
+ document.querySelectorAll('#wq input').forEach(function(i){i.checked=found.indexOf(i.dataset.k)>-1;sel[i.dataset.k]=i.checked});
+ if(!found.length&&t){$('#wans').innerHTML='<p style="margin-top:14px;color:var(--ink80)">I did not pick out a specific worry from that, and I would rather say so than guess. Try a few more words, tap a worry above, or ask the transplant team directly. Everything you wrote stays on your device.</p>';save(t);return}
+ save(t);show(found)};
+show([]);
 })();
 </script>
 </body>
