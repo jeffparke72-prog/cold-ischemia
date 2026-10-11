@@ -52,11 +52,15 @@
       return '<button type="button" role="radio" aria-checked="' + (l.stars === n) + '" aria-label="' + n + ' of 5" data-s="' + n + '">' + (l.stars >= n ? '★' : '☆') + '</button>'; }).join('') + '</span>';
   }
 
+  var LIVER = false;
   function pubBlock(pc) {
     if (!pc) return '';
+    var okOrgan = function (x) { return !x.organ || x.organ === 'both' || x.organ === 'unknown' || x.organ === (LIVER ? 'liver' : 'kidney'); };
+    pc = { retrieved: pc.retrieved, pages: pc.pages, people: pc.people, emails: pc.emails, phones: (pc.phones || []).filter(okOrgan) };
+    if (!(pc.people || []).length && !pc.phones.length && !(pc.emails || []).length) return '';
     var h = '<div class="cc-prog"><div class="cc-src">From the program\u2019s own website, retrieved ' + esc(pc.retrieved) + '. Confirm by phone.</div>';
     (pc.people || []).forEach(function (x) { h += '<div><b>' + esc(x.name) + '</b>, ' + esc(x.credentials) + (x.role ? ' &middot; ' + esc(x.role) : '') + '</div>'; });
-    (pc.phones || []).forEach(function (x) { h += '<div><a href="' + tel(x.number) + '">' + esc(x.number) + '</a> <span class="cc-sub">&ldquo;' + esc(String(x.quote).slice(0, 110)) + '&hellip;&rdquo;</span></div>'; });
+    (pc.phones || []).forEach(function (x) { h += '<div><a href="' + tel(x.number) + '">' + esc(x.number) + '</a>' + (x.organ === 'kidney' || x.organ === 'liver' ? ' <span class="cc-sub">(' + x.organ + ')</span>' : '') + ' <span class="cc-sub">&ldquo;' + esc(String(x.quote).slice(0, 110)) + '&hellip;&rdquo;</span></div>'; });
     (pc.emails || []).forEach(function (x) { h += '<div><a href="mailto:' + esc(x.email) + '">' + esc(x.email) + '</a></div>'; });
     var u = (pc.pages || [])[0]; if (u && /^https?:\/\//.test(u)) h += '<div><a href="' + esc(u) + '" target="_blank" rel="noopener">Open the program\u2019s page</a></div>';
     return h + '</div>';
@@ -82,6 +86,7 @@
   }
 
   window.cifCallPanel = function (ctx) {
+    LIVER = !!ctx.liver;
     var progs = [];
     var seen = {};
     (ctx.centers || []).forEach(function (c) {
