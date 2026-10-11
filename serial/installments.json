@@ -1,0 +1,466 @@
+{
+ "series": {
+  "title": "The Inside Files",
+  "tagline": "A serial investigation of kidney transplant and dialysis, built from what insiders put on the public record.",
+  "thesis": "The transplant and dialysis systems correct themselves only when someone inside refuses to stay quiet. The proof is in the timelines.",
+  "target_words": 15000,
+  "planned": 12,
+  "first_date": "2026-10-11",
+  "window_days": 90,
+  "rules": [
+   "Every installment is anchored to an event or filing dated within 90 days of publication; older material appears only as labelled background.",
+   "Sources are public records: testimony, filings, agency findings, named and verifiable people. No leaked, hacked or anonymous material.",
+   "Claims are graded. A = we opened and quoted the primary document. B = a government source plus independent reports agree. C = a single or secondary source. Allegations stay allegations until a court or agency rules.",
+   "Every named organization gets its reply on the page, and a person is named as a wrongdoer only where a court or agency has found it."
+  ]
+ },
+ "grades": {
+  "A": "Opened and quoted the primary document",
+  "B": "Government source plus independent reports agree",
+  "C": "Single or secondary source",
+  "X": "Disputed or unresolved"
+ },
+ "sources": {
+  "S1": {
+   "title": "HHS Decertifies Kentucky Organ Procurement Organization to Protect Patients, Restore Trust",
+   "publisher": "U.S. Department of Health and Human Services",
+   "date": "2026-08-05",
+   "type": "Government release",
+   "url": "https://www.hhs.gov/press-room/hhs-decertifies-kentucky-organ-procurement-organization.html"
+  },
+  "S2": {
+   "title": "Second Tax-Exempt Organ Procurement Organization Under Investigation by Ways & Means Committee Decertified by Trump Administration",
+   "publisher": "House Committee on Ways and Means",
+   "date": "2026-08-05",
+   "type": "Congressional release",
+   "url": "https://waysandmeans.house.gov/2026/08/05/second-tax-exempt-organ-procurement-organization-under-investigation-by-ways-means-committee-decertified-by-trump-administration/"
+  },
+  "S3": {
+   "title": "HHS shutting down Kentucky organ procurement group over safety concerns",
+   "publisher": "CNN",
+   "date": "2026-08-05",
+   "type": "News report",
+   "url": "https://www.cnn.com/2026/08/05/health/kentucky-organ-procurement-organization-hhs"
+  },
+  "S4": {
+   "title": "U.S. decertifies transplant group that tried to collect organs from living patients",
+   "publisher": "The Washington Post",
+   "date": "2026-08-05",
+   "type": "News report",
+   "url": "https://www.washingtonpost.com/health/2026/08/05/us-decertifies-transplant-group-that-tried-collect-organs-living-patients/"
+  },
+  "S5": {
+   "title": "HHS announces decertification of Kentucky-based organ procurement organization Network for Hope",
+   "publisher": "Fierce Healthcare",
+   "date": "2026-08-05",
+   "type": "Trade press",
+   "url": "https://www.fiercehealthcare.com/regulatory/hhs-announces-decertification-kentucky-based-organ-procurement-organization-network-hope"
+  },
+  "S6": {
+   "title": "HHS Begins Decertification of Network for Hope, Kentucky's Organ Procurement Organization",
+   "publisher": "Hall Render (law firm)",
+   "date": "2026-08-07",
+   "type": "Legal analysis",
+   "url": "https://hallrender.com/2026/08/07/hhs-begins-decertification-of-network-for-hope-kentuckys-organ-procurement-organization/"
+  },
+  "S7": {
+   "title": "AOPO Statement on HHS Announcement of Network for Hope Decertification",
+   "publisher": "Association of Organ Procurement Organizations",
+   "date": "2026-08",
+   "type": "Industry statement (the reply)",
+   "url": "https://aopo.org/aopo-statement-on-hhs-announcement-of-network-for-hope-decertification/"
+  },
+  "S8": {
+   "title": "E&C Leaders Send Bipartisan Letter to HRSA Following Oversight Hearing on Concerning Practices in Organ Procurement and Transplant System",
+   "publisher": "House Energy and Commerce Committee (Democrats)",
+   "date": "2025-08",
+   "type": "Congressional release",
+   "url": "https://democrats-energycommerce.house.gov/media/press-releases/ec-leaders-send-bipartisan-letter-hrsa-following-oversight-hearing-concerning"
+  },
+  "S9": {
+   "title": "Ky. nonprofit pushed organ donation procedures despite signs of life, federal investigation finds",
+   "publisher": "WKYT",
+   "date": "2025-06-06",
+   "type": "News report",
+   "url": "https://www.wkyt.com/2025/06/06/ky-nonprofit-pushed-organ-donation-procedures-despite-signs-life-federal-investigation-finds/"
+  },
+  "S10": {
+   "title": "After Richmond case, former organ donation employees say reform is essential",
+   "publisher": "Spectrum News 1 Kentucky",
+   "date": "2024-12-16",
+   "type": "News report",
+   "url": "https://spectrumnews1.com/ky/louisville/news/2024/12/16/whistleblowers-organ-donation-reform"
+  },
+  "S11": {
+   "title": "Congressional oversight hearing highlights HRSA findings of patient-safety failures in organ procurement",
+   "publisher": "CitizenPortal.ai (hearing summary)",
+   "date": "2025-07",
+   "type": "Aggregator summary",
+   "url": "https://citizenportal.ai/articles/6501541/Congressional-oversight-hearing-highlights-HRSA-findings-of-patient-safety-failures-in-organ-procurement-OPTN-OPOs-face-corrective-actions"
+  },
+  "S12": {
+   "title": "HHS moves to decertify Miami organ transplant group amid efforts to reform organ donation system",
+   "publisher": "Fierce Healthcare",
+   "date": "2025-09",
+   "type": "Trade press",
+   "url": "https://www.fiercehealthcare.com/regulatory/hhs-moves-decertify-miami-organ-transplant-group-it-seeks-reform-organ-donation-system"
+  },
+  "S13": {
+   "title": "CMS announces new provider of organ procurement services in South Florida",
+   "publisher": "Centers for Medicare & Medicaid Services",
+   "date": "2026-01-08",
+   "type": "Government release",
+   "url": "https://cms.gov/newsroom/press-releases/cms-announces-new-provider-organ-procurement-services-south-florida"
+  }
+ },
+ "installments": [
+  {
+   "n": 1,
+   "slug": "sixteen-months",
+   "title": "Sixteen Months",
+   "dek": "A whistleblower's account, a federal review, two congressional hearings and one decertification: the clock behind the Kentucky headline.",
+   "publish": "2026-10-11",
+   "hook_date": "2026-08-05",
+   "window_days": 90,
+   "status": "published",
+   "editor_note": "Verification status: this installment was built from agency releases, news reports and summaries. We could not open the primary documents themselves (the HHS release, HRSA's March 2025 report and the July 2025 hearing transcript), so no claim has earned our top grade yet. The Sources tab links to them. Read them, and tell us what we got wrong.",
+   "sections": [
+    {
+     "id": "clock",
+     "heading": "The headline and the clock",
+     "html": "<p>On August 5, 2026, HHS announced that the Centers for Medicare &amp; Medicaid Services had begun decertifying Network for Hope, the organ procurement organization (OPO) that serves Kentucky. It is described as the second time under this administration that a federal agency has pulled an OPO&rsquo;s certification before the end of its contract cycle {S1}{S2}{S3}. The Washington Post put the story in its starkest form: the group, its headline says, &ldquo;tried to collect organs from living patients&rdquo; {S4}. Network for Hope disputes the decision, says it will appeal, and says it complies with organ procurement and transplantation policy {S5}{S6}.</p><p>That headline is the story everyone already has. This installment is about the clock underneath it. A decertification is the last link in a long chain, and the chain is where a whistleblower&rsquo;s account either moves a regulator or dies in a drawer. So we pulled the dates and laid them end to end.</p>"
+    },
+    {
+     "id": "inside",
+     "heading": "What the inside account said",
+     "html": "<p>The public record starts with people who worked inside. By December 2024, former employees of the Kentucky organization were telling reporters that reform was essential {S10}. One of them, a former employee of the predecessor group, Kentucky Organ Donor Affiliates (KODA), later told Congress about a case in which, as the testimony described it, recovery was started on a patient who was not yet dead {S2}{S4}. KODA and LifeCenter Organ Donor Network merged in 2024 to form Network for Hope {S2}.</p><p>What matters for the timeline is that the account did not stay an account. In March 2025, HRSA, the federal agency that oversees the transplant system, issued a report on its investigation of KODA. It examined an &ldquo;index case&rdquo; and 351 further cases of patients who were authorized for donation after circulatory death but from whom no organ was recovered. Of those 351, 103 cases, 29.3 percent, showed &ldquo;concerning features&rdquo; {S8}. By June 2025 local television was reporting that the federal investigation found the nonprofit had pushed ahead with donation procedures despite signs of life {S9}.</p>"
+    },
+    {
+     "id": "hearing",
+     "heading": "The hearing, and the price of speaking",
+     "html": "<p>On July 22, 2025, the House Energy and Commerce oversight subcommittee held a hearing on concerning practices in the organ procurement and transplant system {S8}. Asked whether the problem was confined to Kentucky, HRSA&rsquo;s Dr. Raymond Lynch said it was not {S8}.</p><p>A summary of the hearing says members raised testimony that the whistleblower who first brought the Kentucky concerns had faced pressure at work, that HRSA said it learned of the reported retaliation from media accounts, and that HRSA excluded signers of a widely publicized industry letter from certain OPTN review committees {S11}. That summary is a single secondary source, so we mark the claim as weak and send the reader to the hearing transcript. If it holds, it is the part of the story most likely to discourage the next person from speaking.</p>"
+    },
+    {
+     "id": "numbers",
+     "heading": "The numbers, and what they do not say",
+     "html": "<p>Of 351 reviewed cases, 103 were flagged, a share of 29.3 percent {S8}. Two cautions belong beside that figure. First, sources differ on whether 351 includes the index case or sits beside it, and we have not seen the report&rsquo;s own table, so the chart shows 103 of 351 as reported. Second, &ldquo;concerning features&rdquo; is HRSA&rsquo;s phrase. A flagged case is a case that deserved a closer look. It is not, by itself, proof that a patient was harmed. The report is the place to see exactly what was counted, and we list it as the first document to open.</p>"
+    },
+    {
+     "id": "elapsed",
+     "heading": "Sixteen months",
+     "html": "<p>From HRSA&rsquo;s report on March 24, 2025 to the decertification announcement on August 5, 2026 is 499 days, about sixteen months. Between them sit a hearing, a bipartisan letter to HRSA, a CMS review in May 2026 that, per the HHS announcement, found earlier quality concerns kept surfacing, and the August decision {S1}{S6}{S8}.</p><p>The Miami precedent shows what comes after the announcement. HHS moved against Life Alliance Organ Recovery Agency in September 2025 {S12}. CMS named Nevada Donor Network as the new provider for South Florida on January 8, 2026 {S13}, roughly four months later. For Network for Hope, reporting we found says HHS has not yet detailed transition plans, replacement coverage or timelines {S6}. Under the rules as summarized by trade press, an OPO has 15 business days after notice to request reconsideration and may then ask for a hearing {S6}. The counter in the charts tab shows the days since the announcement, counted from today.</p>"
+    },
+    {
+     "id": "reply",
+     "heading": "The reply",
+     "html": "<p>A serial about whistleblowers has to carry the other side with the same weight. Network for Hope says it will appeal and says it complies with all organ procurement and transplantation policy {S5}. The industry association for OPOs issued its own statement on the announcement {S7}; we link it here so readers can weigh it and we do not characterize what we have not read in full. The reply table in the charts tab sets the two positions side by side.</p>"
+    },
+    {
+     "id": "method",
+     "heading": "How we checked this",
+     "html": "<p>Every statement above is tied to a numbered source, and every source is dated. The evidence tab lists each claim with a grade, so you can see how firmly it stands. We graded conservatively on purpose. Grade A is reserved for a primary document we opened and quoted, and nothing in this installment has earned it yet, because the documents we could reach were agency releases, news reports and summaries rather than the underlying reports. Where two independent outlets and a government release agree we say so, and where a claim rests on one summary we say that too.</p><p>The 90-day rule works like this. The event that prompted this installment, the August 5 decertification announcement, falls inside the window. Earlier events appear because they explain it, and the timeline marks them as background. A reader should be able to tell at a glance which facts are new and which are context.</p>"
+    },
+    {
+     "id": "unknown",
+     "heading": "What we do not know",
+     "html": "<ul><li>Whether the decertification becomes final, and what an appeal changes.</li><li>Who will serve Kentucky, and how fast.</li><li>Whether the 351 reviewed cases include the index case, and how many of the 103 involved signs of life rather than other features.</li><li>What came of the reported retaliation, and whether it was investigated.</li><li>Reports of Justice Department False Claims Act probes of OPOs rest on weaker sourcing than anything above. We have left them out until we can test them against primary records.</li></ul>"
+    },
+    {
+     "id": "next",
+     "heading": "Why it matters, and what we open next",
+     "html": "<p>The pattern in the dates is the finding: a federal review, hearings and a decertification each took months, and the people most able to describe what happened were the ones with the most to lose by saying so. For a patient or a donor family the practical question is simpler. When your local OPO is decertified, who answers the phone? That is the thread for the second installment.</p><p><strong>Before you rely on any line above,</strong> open the HHS release and HRSA&rsquo;s March 2025 report. This draft was built from agency releases, news reports and summaries; our tools could not open the primary documents, so no claim here has yet earned our top grade.</p>"
+    }
+   ],
+   "evidence": [
+    {
+     "id": "E1",
+     "claim": "HHS announced on Aug. 5, 2026 that CMS has begun decertifying Network for Hope, described as the second mid-cycle OPO decertification under this administration.",
+     "grade": "B",
+     "status": "Reported by a government release and four independent outlets; primary text not yet opened by us.",
+     "sources": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6"
+     ]
+    },
+    {
+     "id": "E2",
+     "claim": "Network for Hope disputes the decision, says it will appeal, and says it complies with OPTN policy.",
+     "grade": "B",
+     "status": "Reported by trade press and a law-firm analysis; the organization's own statement not yet opened.",
+     "sources": [
+      "S5",
+      "S6"
+     ]
+    },
+    {
+     "id": "E3",
+     "claim": "KODA and LifeCenter merged in 2024 to form Network for Hope.",
+     "grade": "C",
+     "status": "Stated in one congressional release; needs a second source.",
+     "sources": [
+      "S2"
+     ]
+    },
+    {
+     "id": "E4",
+     "claim": "Former employees were speaking publicly about reform by December 2024.",
+     "grade": "C",
+     "status": "One dated local news report.",
+     "sources": [
+      "S10"
+     ]
+    },
+    {
+     "id": "E5",
+     "claim": "HRSA's March 2025 report reviewed 351 authorized-not-recovered cases; 103 (29.3%) had 'concerning features'.",
+     "grade": "B",
+     "status": "Reported in a congressional release and a hearing summary; HRSA report itself not yet opened. Sources differ on whether 351 includes the index case.",
+     "sources": [
+      "S8",
+      "S11"
+     ]
+    },
+    {
+     "id": "E6",
+     "claim": "By June 2025 the federal investigation was reported to have found procedures pursued despite signs of life.",
+     "grade": "C",
+     "status": "Single local news report of the finding; HRSA report not yet opened.",
+     "sources": [
+      "S9"
+     ]
+    },
+    {
+     "id": "E7",
+     "claim": "At the July 22, 2025 hearing HRSA's Dr. Lynch said the problem was not limited to Kentucky.",
+     "grade": "C",
+     "status": "One congressional release; transcript not yet opened.",
+     "sources": [
+      "S8"
+     ]
+    },
+    {
+     "id": "E8",
+     "claim": "Reported retaliation against the whistleblower, HRSA learning of it from media, and exclusion of letter signers from certain OPTN committees.",
+     "grade": "C",
+     "status": "Single aggregator summary of the hearing. Treat as unconfirmed until the transcript is read.",
+     "sources": [
+      "S11"
+     ]
+    },
+    {
+     "id": "E9",
+     "claim": "HHS moved against Life Alliance (Miami) in Sept. 2025; CMS named Nevada Donor Network as replacement on Jan. 8, 2026.",
+     "grade": "B",
+     "status": "Trade press plus a CMS release.",
+     "sources": [
+      "S12",
+      "S13"
+     ]
+    },
+    {
+     "id": "E10",
+     "claim": "HHS has not detailed transition plans or timelines for Network for Hope; an OPO has 15 business days to ask for reconsideration.",
+     "grade": "C",
+     "status": "Law-firm analysis and trade press summaries; regulation text not yet opened.",
+     "sources": [
+      "S6"
+     ]
+    }
+   ],
+   "charts": [
+    {
+     "id": "C1",
+     "type": "timeline",
+     "title": "The chain, in order",
+     "note": "Each node carries its source. Dates are as reported; the center line is time.",
+     "events": [
+      {
+       "date": "2024-12-16",
+       "lane": "Inside voices",
+       "label": "Former employees speak publicly",
+       "s": "S10"
+      },
+      {
+       "date": "2025-03-24",
+       "lane": "Regulator",
+       "label": "HRSA report: 103 of 351 cases flagged",
+       "s": "S8"
+      },
+      {
+       "date": "2025-06-06",
+       "lane": "Inside voices",
+       "label": "Local report: procedures pursued despite signs of life",
+       "s": "S9"
+      },
+      {
+       "date": "2025-07-22",
+       "lane": "Congress",
+       "label": "House oversight hearing",
+       "s": "S8"
+      },
+      {
+       "date": "2025-09-15",
+       "lane": "Regulator",
+       "label": "Life Alliance (Miami) decertification begins (Sept., day not confirmed)",
+       "s": "S12",
+       "approx": true
+      },
+      {
+       "date": "2026-01-08",
+       "lane": "Regulator",
+       "label": "CMS names Miami's replacement OPO",
+       "s": "S13"
+      },
+      {
+       "date": "2026-05-15",
+       "lane": "Regulator",
+       "label": "CMS review (May, day not confirmed)",
+       "s": "S6",
+       "approx": true
+      },
+      {
+       "date": "2026-08-05",
+       "lane": "Regulator",
+       "label": "HHS begins decertifying Network for Hope",
+       "s": "S1"
+      }
+     ]
+    },
+    {
+     "id": "C2",
+     "type": "waffle",
+     "title": "103 of 351",
+     "note": "One square is one reviewed case. Squares in red were flagged with 'concerning features'. Whether 351 includes the index case is unresolved.",
+     "n": 103,
+     "total": 351,
+     "s": "S8"
+    },
+    {
+     "id": "C3",
+     "type": "elapsed",
+     "title": "Where the 597 days went",
+     "note": "From public accounts to decertification.",
+     "segments": [
+      {
+       "label": "Public accounts to HRSA report",
+       "start": "2024-12-16",
+       "end": "2025-03-24"
+      },
+      {
+       "label": "HRSA report to hearing",
+       "start": "2025-03-24",
+       "end": "2025-07-22"
+      },
+      {
+       "label": "Hearing to decertification",
+       "start": "2025-07-22",
+       "end": "2026-08-05"
+      }
+     ]
+    },
+    {
+     "id": "C4",
+     "type": "counter",
+     "title": "After the announcement: who answers the phone?",
+     "note": "Miami took about 4 months from announcement to a named replacement. Kentucky's count runs from Aug. 5, 2026 to today; we found no named replacement in our searches.",
+     "rows": [
+      {
+       "label": "Life Alliance (Miami)",
+       "days": 115,
+       "note": "Sept. 2025 to Jan. 8, 2026, about 4 months; the start day is approximate",
+       "done": true
+      },
+      {
+       "label": "Network for Hope (Kentucky)",
+       "since": "2026-08-05",
+       "note": "No replacement found in our searches",
+       "done": false
+      }
+     ]
+    },
+    {
+     "id": "C5",
+     "type": "reply",
+     "title": "Two positions, side by side",
+     "note": "We summarize only what we could confirm from the sources listed.",
+     "cols": [
+      "Federal side",
+      "Network for Hope",
+      "Industry association"
+     ],
+     "rows": [
+      [
+       "What it says",
+       "HHS and CMS: independent reviews found the group did not show enough improvement; concerns involved donor evaluation, adverse-event review and administration (as reported).",
+       "It will appeal and says it complies with OPTN policy.",
+       "Issued a statement on the announcement; we have not summarized its content."
+      ],
+      [
+       "Where to read it",
+       "S1, S2, S6",
+       "S5, S6",
+       "S7"
+      ],
+      [
+       "Status",
+       "Process begun; appeal pending",
+       "Appeal intended",
+       "Statement published"
+      ]
+     ]
+    }
+   ],
+   "figures": [
+    {
+     "src": "serial/img/plate-3-coldbox.jpg",
+     "alt": "Vintage-style plate: a transport cooler open to show a kidney in a bag on crushed ice beside a thermometer",
+     "caption": "Plate III. The cold box. Static cold storage slows the organ's metabolism but does not stop the clock. Original illustration in the manner of mid-century medical plates.",
+     "where": "elapsed"
+    },
+    {
+     "src": "serial/img/plate-1-kidney.jpg",
+     "alt": "Vintage-style plate: a kidney in section with cortex, medulla, pelvis, ureter, artery and vein labelled",
+     "caption": "Plate I. The kidney in section. Original illustration.",
+     "where": "inside"
+    },
+    {
+     "src": "serial/img/plate-2-drum.jpg",
+     "alt": "Vintage-style plate: a rotating drum wrapped in tubing, half submerged in a bath, with blood lines in and out",
+     "caption": "Plate II. A rotating-drum artificial kidney, 1940s style, schematic. Original illustration.",
+     "where": "reply"
+    }
+   ],
+   "glossary": [
+    {
+     "term": "OPO",
+     "text": "Organ procurement organization: the federally designated group that handles donation in a region."
+    },
+    {
+     "term": "Decertification",
+     "text": "CMS ends an OPO's agreement to operate. Mid-cycle means before the contract period ends."
+    },
+    {
+     "term": "ANR",
+     "text": "Authorized, not recovered: a patient was authorized for donation but no organ was recovered."
+    },
+    {
+     "term": "HRSA",
+     "text": "Health Resources and Services Administration, the HHS agency that oversees the national transplant system."
+    },
+    {
+     "term": "DCD",
+     "text": "Donation after circulatory death: donation after the heart has stopped, as opposed to after brain death."
+    }
+   ],
+   "next": {
+    "n": 2,
+    "date": "2026-10-18",
+    "teaser": "When your OPO is decertified, who answers the phone? The handover problem, tested against primary records."
+   }
+  }
+ ]
+}
