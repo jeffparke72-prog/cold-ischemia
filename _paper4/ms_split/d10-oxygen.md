@@ -46,7 +46,7 @@ First, the study was small. Second, the paired design, which is a strength of th
 
 A randomized trial, OxyOp2, was designed to answer the question properly, and its protocol was published in 2023. I could find no results (Source Notes S70).
 
-None of that makes the work worthless. It makes it a first signal. It is exactly the kind of finding that deserves to be followed by a larger, better trial, and exactly the kind that often is not.
+None of that makes the work worthless. It makes it a first signal, the kind that deserves a larger trial.
 
 ## The program
 
@@ -61,8 +61,6 @@ The five failed companies teach something beyond their molecules, and a few of t
 The *single-product company* has nothing to absorb a bad trial; every one of these companies was built on one molecule. *Judgment by class* means a failure of one product taints all of them: a bovine polymer is not chemically a cross-linked human protein, but the 2008 analysis did not distinguish. *Governance failures* are scientific variables: a sponsor caught shading its statements pays a tax on every later claim. *Improving comparators* mean the blood supply became safer, shrinking the original advantage. And *survival through niches* suggests that a modest market, veterinary use, a few foreign approvals, compassionate access, can keep alive a manufacturing process, a regulatory file and a clinical record that no start-up could build from nothing (Source Notes S68).
 
 There is also a simple checklist, which an outsider can apply from public documents. Watch the ratio of announcements to publications. Watch how the company speaks about the regulator. Watch whether the first trial is an all-or-nothing wager. Watch whether the company can describe its manufacturing plainly. Watch the cash runway against the date the trial will read out.
-
-Apply it to any claim you read about organ preservation, including mine.
 
 ## What must be done
 

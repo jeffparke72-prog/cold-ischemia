@@ -58,8 +58,6 @@ Whoever manages the first fifty xenotransplants will decide something important 
 
 This is why I ask, in the fourth part of this book, that trials of new technologies report their enrollment by race, geography, income and sex, as they go. A technology that reaches only the well connected will deepen the divide it was meant to heal.
 
-It is also why I think the five tests of Chapter 12 should be applied to these technologies in advance. Does the person who must act see the benefit? Does the one who pays gain? Does it move a number someone is judged on? Is it easy at three in the morning? If the answer to the third question is *no*, because a pig kidney that fails will hurt a program's results and one that works will not help them, then the technology will wait on the shelf, and we will have built a miracle and then hidden it.
-
 ## What must be done
 
 *Decide the scoreboard first.* The federal agencies that oversee transplant programs should state, before the first commercial xenotransplant, how it will count in program evaluations, and should protect centers that adopt it responsibly from penalty for expected early failures.

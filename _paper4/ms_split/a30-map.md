@@ -38,6 +38,10 @@ If you are a patient or a care partner, read chapters 1, 2 and 14 first. They te
 
 If you work in transplantation, policy or journalism, read chapters 4, 5, 9, 10 and 13. They contain the material that is least often discussed together, and the evidence most open to challenge.
 
+## Three words, defined once
+
+*Recovered* means a kidney was removed from a deceased donor in order to be transplanted. *Nonuse*, the registry's term, means a recovered kidney that was not transplanted into anyone; I use *discard* for the same thing when I want to name the human act behind the statistic. *Declined* means a transplant program turned down an offer of a kidney for one of its candidates. A declined kidney can still be transplanted elsewhere, and most are. A discarded one cannot.
+
 ## How to read the numbers
 
 You will meet a great many figures. Two conventions will keep them honest.

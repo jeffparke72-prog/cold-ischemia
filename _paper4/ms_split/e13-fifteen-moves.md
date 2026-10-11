@@ -10,7 +10,7 @@ A demand has three parts: a request, an addressee and a date. Most advocacy fail
 
 Before the list, a word about what I am not proposing. I am not proposing that surgeons be forced to accept kidneys they believe will harm a patient. I am not proposing to eliminate the one-year outcome measure or to abandon oversight of procurement. I am not proposing any technology as a cure. Every move below is a change to payment, information, accountability or evidence, the four levers that, in the earlier chapters, appear to govern behavior.
 
-[[FIG:moves|Figure 11.1. The fifteen moves, grouped by who must act, with the chapter in which each is argued.]]
+[[FIG:moves|Figure 13.1. The fifteen moves, grouped by who must act, with the chapter in which each is argued.]]
 
 | # | Move | Who must act | First test, within 12 months |
 |---|---|---|---|

@@ -22,7 +22,7 @@ Sixteen years later, in November 2025, the same group published a ten-year follo
 
 There is an old principle in medicine that an intervention proven in a randomized trial should become the standard of care within a few years. The pump has a randomized trial, a decade of follow-up, the consistent testimony of surgeons, and a recent survey in which 92 percent of respondents endorsed it for helping them choose which kidneys to use and 90 percent endorsed it for reducing delayed graft function (Source Notes S64).
 
-[[FIG:pump|Figure 8.1. Left: kidneys still working at ten years, machine perfusion versus cold storage. Right: the share of United States deceased-donor kidneys that are machine-perfused.]]
+[[FIG:pump|Figure 9.1. Left: kidneys still working at ten years, machine perfusion versus cold storage. Right: the share of United States deceased-donor kidneys that are machine-perfused.]]
 
 ## What the country did with it
 

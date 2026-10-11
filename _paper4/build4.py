@@ -94,7 +94,7 @@ h3{font-size:13pt;margin:1.5em 0 .5em;line-height:1.25;page-break-after:avoid}
 .epi{margin:.1in .4in .45in;font-style:italic;color:#3a4756;font-size:10.6pt;line-height:1.5} .epi .by{display:block;text-align:right;font-style:normal;font-size:9pt;letter-spacing:.4px;margin-top:.4em;color:#6b7684}
 figure{margin:1.2em 0;text-align:center;page-break-inside:avoid} figure img{width:100%;height:auto} figcaption{font-size:9pt;color:#4a5563;text-align:left;margin-top:.5em;line-height:1.4;font-style:italic}
 .note{border-left:4px solid #c96a14;background:#f6efe3;padding:.7em 1em;margin:1.1em 0;page-break-inside:avoid} .note p{text-indent:0;margin:0 0 .4em;font-size:10.4pt}
-table{page-break-inside:avoid;border-collapse:collapse;width:100%;margin:1.1em 0;font-size:9pt;text-align:left} th{background:#1c2b3a;color:#fff;padding:5px 7px;text-align:left} td{border-bottom:1px solid #d3dae2;padding:6px 7px;vertical-align:top} tr{page-break-inside:avoid}
+table{border-collapse:collapse;width:100%;margin:1.1em 0;font-size:9pt;text-align:left} tr{page-break-inside:avoid} thead{display:table-header-group} table.keep{page-break-inside:avoid} th{background:#1c2b3a;color:#fff;padding:5px 7px;text-align:left} td{border-bottom:1px solid #d3dae2;padding:6px 7px;vertical-align:top} tr{page-break-inside:avoid}
 .toc{font-size:9pt} .toc div{display:flex;align-items:baseline;margin:1.5px 0;line-height:1.28} .toc a{color:#1c2b3a;text-decoration:none} .toc .l1{margin-top:6px;font-family:"Bebas Neue",sans-serif;letter-spacing:2.5px;font-size:11pt;color:#c96a14} .toc .l2{padding-left:1.2em} .toc .l3{font-weight:700} .toc .dots{flex:1;border-bottom:1px dotted #9aa5b1;margin:0 6px;transform:translateY(-3px)}
 .title{text-align:center;padding-top:2.4in} .title h1{font-size:38pt;letter-spacing:3px;text-align:center;margin:0;line-height:1.05} .title .sub{font-style:italic;font-size:13.5pt;margin:.45in .45in;color:#3a4756;line-height:1.45} .title .au{font-family:"Bebas Neue",sans-serif;letter-spacing:8px;font-size:22pt;margin-top:1in;color:#1c2b3a} .title .fd{font-size:8.5pt;letter-spacing:3px;color:#6b7684;text-transform:uppercase;margin-top:.1in}
 .copy{padding-top:3.1in;font-size:9pt;line-height:1.5;text-align:left} .copy p{text-indent:0;margin-bottom:.8em}
@@ -135,7 +135,7 @@ def render(toc_pages=None,epub=False):
         if t=='fig': out.append(f'<figure><img src="fig/{b[1]}.png" alt="{html.escape(ALT[b[1]])}"/><figcaption>{inline_html(b[2])}</figcaption></figure>'); continue
         if t=='note': out.append('<div class="note">'+''.join(f'<p>{inline_html(x)}</p>' for x in b[2])+'</div>'); continue
         if t=='table':
-            r=b[1]; out.append('<table><thead><tr>'+''.join(f'<th>{inline_html(c)}</th>' for c in r[0])+'</tr></thead><tbody>'+''.join('<tr>'+''.join(f'<td>{inline_html(c)}</td>' for c in x)+'</tr>' for x in r[1:])+'</tbody></table>'); continue
+            r=b[1]; out.append(('<table class="keep">' if len(r)<=9 else '<table>')+'<thead><tr>'+''.join(f'<th>{inline_html(c)}</th>' for c in r[0])+'</tr></thead><tbody>'+''.join('<tr>'+''.join(f'<td>{inline_html(c)}</td>' for c in x)+'</tr>' for x in r[1:])+'</tbody></table>'); continue
         if t=='p':
             if refs: out.append(f'<div class="refs"><p>{inline_html(b[1])}</p></div>')
             else: out.append(f'<p class="{"first" if first else ""}">{inline_html(b[1])}</p>')
@@ -173,12 +173,21 @@ def build_pdf():
         ids=[h[0] for h in HEADS]
         for i,hid in enumerate(ids):
             if toc.get(hid) is None: toc[hid]=toc.get(ids[i+1],'')
-    cover=fitz.open(); w,h=432,691.2; pg=cover.new_page(width=w,height=h); pg.insert_image(fitz.Rect(0,0,w,h),filename=HERE+'/cover4.jpg')
+    BOOKMARKS=[[1,'Cover',1],[1,'Contents',5]]; prev_part=False
+    for hid,lvl,txt,tgt in HEADS:
+        pg=toc.get(hid)
+        if not isinstance(pg,int): continue
+        is_part=txt.startswith('Part '); is_ch=txt.startswith('Chapter ')
+        level=1 if is_part or (not is_ch and not prev_part) else 2
+        BOOKMARKS.append([level,smart(txt),pg]); prev_part=is_part
+    cover=fitz.open(); w,h=432,648; pg=cover.new_page(width=w,height=h); pg.insert_image(fitz.Rect(0,0,w,h),filename=HERE+'/cover_book.jpg')
     m=fitz.open(); m.insert_pdf(cover); m.insert_pdf(fitz.open(bp))
+    _f=fitz.Font(fontfile='/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf')
     for pi in range(len(m)):
         if pi<5: continue
-        p=m[pi]; r=p.rect; p.insert_text((r.width/2-6,r.height-38),str(pi+1),fontsize=9,fontname='tiro',color=(.35,.4,.47))
-    m.set_metadata({'title':f'{TITLE}: {SUB}','author':AUTHOR,'subject':'A human account of kidney disease, waiting, and care','keywords':'kidney disease, dialysis, transplant, patient-centered care'})
+        p=m[pi]; r=p.rect; t=str(pi+1); wd=_f.text_length(t,fontsize=9)
+        p.insert_text((r.width/2-wd/2,r.height-38),t,fontsize=9,fontname='libserif',fontfile='/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf',color=(.35,.4,.47))
+    m.set_metadata({'title':f'{TITLE}: {SUB}','author':AUTHOR,'subject':'An investigation of kidney discards, transplant allocation, dialysis economics and the innovations left unused','keywords':'kidney transplant, organ allocation, organ discard, dialysis, machine perfusion, patient advocacy, health policy'}); m.set_toc(BOOKMARKS)
     m.save(f'{OUT}/The-Discard.pdf',deflate=True,garbage=3)
     blank=[i+1 for i in range(1,len(m)) if len(m[i].get_text().strip())<25]
     print('PDF pages',len(m),'blank-ish pages:',blank)
@@ -193,7 +202,7 @@ def build_epub():
     z.writestr('META-INF/container.xml','<?xml version="1.0"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>')
     z.writestr('OEBPS/style.css',css)
     X=lambda t,i:f'<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="en"><head><meta charset="utf-8"/><title>{html.escape(t)}</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body>{i}</body></html>'
-    z.writestr('OEBPS/cover.xhtml',X('Cover','<div style="text-align:center"><img src="images/cover.jpg" alt="Cover of The Discard" style="max-width:100%;height:auto"/></div>')); z.write(HERE+'/cover4.jpg','OEBPS/images/cover.jpg')
+    z.writestr('OEBPS/cover.xhtml',X('Cover','<div style="text-align:center"><img src="images/cover.jpg" alt="Cover of The Discard" style="max-width:100%;height:auto"/></div>')); z.write(HERE+'/cover_book.jpg','OEBPS/images/cover.jpg')
     for k in ALT: z.write(f'{FIG}/{k}.png',f'OEBPS/fig/{k}.png')
     items=['<item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/>','<item id="css" href="style.css" media-type="text/css"/>','<item id="coverimg" href="images/cover.jpg" media-type="image/jpeg" properties="cover-image"/>','<item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>']+[f'<item id="img_{k}" href="fig/{k}.png" media-type="image/png"/>' for k in ALT]
     spine=['<itemref idref="cover" linear="no"/>','<itemref idref="nav"/>']; nav=[]
@@ -244,8 +253,16 @@ def build_docx():
     def shade(p):
         pr=p._p.get_or_add_pPr(); sh=OxmlElement('w:shd'); sh.set(qn('w:val'),'clear'); sh.set(qn('w:color'),'auto'); sh.set(qn('w:fill'),'F6EFE3'); pr.append(sh)
         bd=OxmlElement('w:pBdr'); l=OxmlElement('w:left'); l.set(qn('w:val'),'single'); l.set(qn('w:sz'),'24'); l.set(qn('w:space'),'6'); l.set(qn('w:color'),'C96A14'); bd.append(l); pr.append(bd); p.paragraph_format.left_indent=Inches(0.15)
-    pc=d.add_paragraph(style='Centered'); pc.paragraph_format.space_after=Pt(0); pc.add_run().add_picture(HERE+'/cover4.jpg',width=Inches(4.3))
-    d.core_properties.title=f'{TITLE}: {SUB}'; d.core_properties.author=AUTHOR
+    pc=d.add_paragraph(style='Centered'); pc.paragraph_format.space_after=Pt(0); pc.add_run().add_picture(HERE+'/cover_book.jpg',width=Inches(4.3))
+    d.core_properties.title=f'{TITLE}: {SUB}'; d.core_properties.author=AUTHOR; d.core_properties.subject='An investigation of kidney discards, transplant allocation, dialysis economics and the innovations left unused'; d.core_properties.keywords='kidney transplant, organ allocation, organ discard, dialysis, machine perfusion, patient advocacy, health policy'
+    sec0=d.sections[0]; sec0.different_first_page_header_footer=True
+    fp=sec0.footer.paragraphs[0]; fp.alignment=WD_ALIGN_PARAGRAPH.CENTER
+    def _fld(par,instr):
+        for typ,txt in (('begin',None),(None,instr),('end',None)):
+            r=par.add_run(); r.font.size=Pt(9); r.font.color.rgb=RGBColor(0x59,0x66,0x78)
+            if typ: e=OxmlElement('w:fldChar'); e.set(qn('w:fldCharType'),typ); r._r.append(e)
+            else: e=OxmlElement('w:instrText'); e.set(qn('xml:space'),'preserve'); e.text=txt; r._r.append(e)
+    _fld(fp,' PAGE ')
     first=False; pend=None; hn=0; refs=False; pbnext=True
     def pbp(style,text=None,break_=True,**kw):
         p=d.add_paragraph(style=style);

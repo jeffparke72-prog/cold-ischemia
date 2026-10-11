@@ -49,8 +49,6 @@ The table is crude, and the entries in several cells are my judgment. But look a
 
 ## The idea that deserved to lose
 
-I owe you the story of the cooler fluid, because a book about slow ideas has to include a fast one that was wrong.
-
 For years, nephrologists had observed that some patients felt better, with fewer drops in blood pressure, when the fluid used in dialysis was a little cooler than body temperature. Small studies supported the idea, some with dozens of patients. The reasoning was sensible: cooler blood constricts vessels and holds pressure. The change was almost free. A unit could implement it in an afternoon, and patients who felt better said so.
 
 In 2022 the largest trial ever done in hemodialysis tested it. Called MyTEMP, it was a cluster-randomized trial across dialysis centers in Ontario, using the province's health records, and it compared a personalized cooler dialysate, 0.5 to 0.9 degrees below each patient's own temperature, with a standard fluid at 36.5 degrees. The outcome was cardiovascular death or hospital admission for a heart attack, stroke or heart failure. It occurred in 21.4 percent of patients receiving the cooler fluid and 22.4 percent of those receiving the standard, a difference too small to be distinguished from chance. Blood-pressure drops during treatment were the same (Source Notes S4). The authors concluded that there was no justification for adopting cooler fluid for all patients, and noted that some patients found it uncomfortable.
@@ -63,15 +61,13 @@ The lesson is not that cooler dialysis is useless. Some patients may benefit, an
 
 The physicist Max Planck, in the last pages of his autobiography, offered a bleak account of how scientific ideas succeed. "A new scientific truth does not triumph by convincing its opponents and making them see the light," he wrote, "but rather because its opponents eventually die, and a new generation grows up that is familiar with it."
 
-It is a funny sentence, and the field of kidney medicine cannot afford it. Planck's remedy, waiting for a generation to pass, is a remedy for physicists. Patients on the list die on a shorter schedule. In 2024 alone, 3,743 candidates were removed from the kidney waiting list because they died (Source Notes S6). The cost of waiting for the old to retire is counted in people.
+It is a funny sentence, and the field of kidney medicine cannot afford it. Planck's remedy, waiting for a generation to pass, is a remedy for physicists. Patients on the list die on a shorter schedule. In 2024 alone, 3,743 candidates were removed from the kidney waiting list because they died (Source Notes S6).
 
 What the five tests suggest is that adoption is not mostly a matter of persuasion. It is a matter of design. A tool becomes routine when the person who must use it can see the benefit, pays a fair price, is judged by the result, and finds it easy to do at night. None of these requires waiting for anyone to die. All of them require someone to decide that adoption is their job.
 
 ## The owner of the adoption
 
 And that is the missing piece. In the case of the pump, the oxygen carrier, hemodiafiltration, and the offer ledger of Chapter 2, no institution has the task of moving a proven idea from the journal to the bedside. The journals publish, the regulators approve, the payers reimburse, the societies recommend. None of them owns the gap between what is known and what is done.
-
-Machiavelli, five centuries ago, said what to expect: that the reformer will have many enemies and few defenders. He was describing princes, but the pattern generalizes. The defenders of the new order are lukewarm because they do not yet have what it will give them. The enemies are fierce because they have what the old order gave them now.
 
 ## What must be done
 

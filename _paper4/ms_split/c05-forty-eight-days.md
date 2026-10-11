@@ -46,8 +46,6 @@ This is the central asymmetry of Part Two, and it applies far beyond transplanta
 
 ## The case on the other side
 
-I have been asked, by people whose opinions I respect, not to make this chapter a villain story, and I have tried not to.
-
 The agency has a duty to protect the integrity of the list. Candidates who have waited for years have a right to expect that the order will be honored. Out-of-sequence placement, done in the dark and unevenly, can undermine that trust, and trust is the thing every other part of this system depends on. The federal agency has also, in the last two years, been working to rebuild oversight of a network that had been criticized for decades, including by Congress. Seen from the agency's desk, the memo was a reasonable attempt to restore discipline to a practice that had grown fast and quietly.
 
 And I do not know what happened next. In April 2026 the network's board heard an update from a working group that had drafted a definition of what counts as an offer, criteria for an expedited placement pathway, and a framework for auditing it. The board took no action on the proposals at that meeting, and several projects remained paused pending federal review (Source Notes S34). I have not found a report of how the question was settled by the autumn.
@@ -56,9 +54,7 @@ What I can say is that an expedited pathway with a clear definition and a public
 
 ## What the chapter proves
 
-It proves something narrower and more useful than that regulators are careless. It proves that the system is *responsive*. Within seven weeks, a national network of fifty-five procurement organizations and nearly two hundred kidney transplant programs altered what it did.
-
-That is good news. A system that can change in seven weeks can change. The question is whether we will ever point that speed in a better direction. Later chapters describe the tools, the reforms and the plan. Here we simply note that the reflexes exist.
+It proves something narrower and more useful than that regulators are careless: the system is *responsive*. Within seven weeks, a national network of fifty-five procurement organizations and nearly two hundred kidney transplant programs altered what it did. A system that can change in seven weeks can change. The question is whether we will ever point that speed in a better direction.
 
 ## What must be done
 
