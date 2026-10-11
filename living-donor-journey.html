@@ -390,7 +390,7 @@ footer{border-top:1px solid var(--b);padding:32px 0 44px;text-align:center;font-
 <footer>&copy; Cold Ischemia Foundation &nbsp;&middot;&nbsp; Ellenton, Florida &nbsp;&middot;&nbsp; Educational resource, not medical advice &nbsp;&middot;&nbsp; <a href="opo-directory.html" style="color:inherit">U.S. OPO Directory</a></footer>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="opo-data.js"></script>
+<script src="opo-data.js"></script><script src="cif-donor-call.js"></script>
 <script>
 (function(){
 'use strict';
@@ -670,6 +670,9 @@ function results(){
       (ops.length?'<div class="mono" style="font-size:11px;color:var(--pulse);margin-top:14px">OPOs serving your state</div><div class="cent">'+ops.map(function(o){return '<div><b style="color:#f3ede4">'+esc(o.name)+'</b> &middot; '+esc(o.city)+', '+o.state+' &middot; <a href="tel:'+o.phone.replace(/[^0-9]/g,'')+'">'+o.phone+'</a></div>'}).join('')+'</div>':'')+
       '<p style="margin-top:12px"><a href="opo-directory.html'+(A.state?'#'+A.state:'')+'">Open the full U.S. OPO directory &rarr;</a></p></div>';
     h+='</div>';
+    var ctxC=[];ops.forEach(function(o){o.centers.forEach(function(c){if(c.s.indexOf(org)>-1)ctxC.push({n:c.n,c:c.c,st:o.state})})});
+    window._callCtx={liver:isL(A),nonDirected:!!(A.rel&&A.rel.indexOf('Anyone')===0),recipient:'',centers:ctxC,opos:ops};
+    if(window.cifCallPanel){window._callPanel=window.cifCallPanel(window._callCtx);h+=window._callPanel.html}
   }
   h+='<div class="rbox wide noprint" style="margin-top:16px"><h3>Share it, save it, start the conversation</h3>'+
      '<p style="font-size:16px;color:var(--ink60)">Families who learn together decide together. Send this guide to the people you&rsquo;d want beside you.</p>'+
@@ -680,6 +683,7 @@ function results(){
   res.innerHTML=h; res.classList.add('on');
   requestAnimationFrame(function(){var rc=$('#rc');if(rc)rc.style.strokeDashoffset=circ*(1-score/100);$$('.dm i',res).forEach(function(i){i.style.width=i.dataset.w+'%'});
     var t0=null,el=$('#rs');(function f(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1300);el.textContent=Math.round(score*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(performance.now())});
+  if(window._callPanel&&res.querySelector('#callpanel'))window._callPanel.bind(res,toast,function(d){return window.cifFormsReady&&window.cifFormsReady()?window.cifSend(d):Promise.reject()});
   var sum='Living Donor Readiness Profile ('+(isL(A)?'liver':'kidney')+')\nReadiness: '+score+'/100. '+v[1].replace(/&[a-z]+;/g,"'")+(stop?'':'\nMedical '+D.med+' | Lifestyle '+D.life+' | Emotional '+D.mind+' | Support & logistics '+D.logi+' | Understanding '+know)+
     (A.state?'\nState: '+A.state:'')+'\n\nItems to address:\n'+fix.concat(ask).map(function(x){return '- '+x.replace(/<[^>]+>/g,'').replace(/&[a-z]+;/g,"'")}).join('\n');
   var url=location.origin+location.pathname;
