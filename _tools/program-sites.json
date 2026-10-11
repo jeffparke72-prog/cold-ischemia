@@ -1,1 +1,833 @@
-{}
+{
+ "abbott-northwestern-hospital-minneapolis": {
+  "url": "https://www.allina.com/"
+ },
+ "advocate-christ-medical-center-itasca": {
+  "url": "https://www.advocatehealth.com/"
+ },
+ "albany-medical-center-hospital-albany": {
+  "url": "https://www.amc.edu/"
+ },
+ "albert-einstein-medical-center-philadelphia": {
+  "url": "https://www.einstein.edu/"
+ },
+ "alfred-i-dupont-hospital-for-children-philadelphia": {
+  "url": "https://www.nemours.org/"
+ },
+ "allegheny-general-hospital-pittsburgh": {
+  "url": "https://www.ahn.org/"
+ },
+ "ann-robert-h-lurie-children-s-hospital-of-chicago-itasca": {
+  "url": "https://www.luriechildrens.org/"
+ },
+ "arkansas-children-s-hospital-little-rock": {
+  "url": "https://www.archildrens.org/"
+ },
+ "au-medical-center-inc-peachtree-corners": {
+  "url": "https://www.augustahealth.org/"
+ },
+ "aurora-st-luke-s-medical-center-milwaukee": {
+  "require": [
+   "milwaukee"
+  ],
+  "url": "https://www.advocateaurorahealth.org/"
+ },
+ "auxilio-mutuo-hospital-guaynabo": {
+  "url": "https://www.auxiliomutuo.com/"
+ },
+ "avera-mckennan-hospital-minneapolis": {
+  "url": "https://www.avera.org/"
+ },
+ "banner-university-medical-center-phoenix-phoenix": {
+  "require": [
+   "phoenix"
+  ],
+  "url": "https://www.bannerhealth.com/"
+ },
+ "banner-university-medical-center-tucson-phoenix": {
+  "require": [
+   "tucson"
+  ],
+  "url": "https://www.bannerhealth.com/"
+ },
+ "barnes-jewish-hospital-saint-louis": {
+  "url": "https://www.barnesjewish.org/"
+ },
+ "baylor-scott-and-white-all-saints-medical-center-fort-worth-houston": {
+  "require": [
+   "fort-worth"
+  ],
+  "url": "https://www.bswhealth.com/"
+ },
+ "baylor-university-medical-center-dallas": {
+  "require": [
+   "dallas"
+  ],
+  "url": "https://www.bswhealth.com/"
+ },
+ "beth-israel-deaconess-medical-center-waltham": {
+  "url": "https://www.bidmc.org/"
+ },
+ "birmingham-va-medical-center-birmingham": {
+  "url": "https://www.va.gov/birmingham-health-care/"
+ },
+ "boston-children-s-hospital-waltham": {
+  "url": "https://www.childrenshospital.org/"
+ },
+ "boston-medical-center-waltham": {
+  "url": "https://www.bmc.org/"
+ },
+ "brigham-and-women-s-hospital-waltham": {
+  "url": "https://www.brighamandwomens.org/"
+ },
+ "broward-general-medical-center-miami": {
+  "url": "https://www.browardhealth.org/"
+ },
+ "california-pacific-medical-center-san-ramon": {
+  "url": "https://www.cpmc.org/"
+ },
+ "cardinal-glennon-children-s-hospital-saint-louis": {
+  "require": [
+   "cardinal"
+  ],
+  "url": "https://www.ssmhealth.com/"
+ },
+ "carolinas-medical-center-charlotte": {
+  "url": "https://atriumhealth.org/"
+ },
+ "cedars-sinai-medical-center-los-angeles": {
+  "url": "https://www.cedars-sinai.org/"
+ },
+ "centennial-medical-center-nashville": {
+  "url": "https://www.hcahealthcare.com/"
+ },
+ "centura-porter-adventist-hospital-denver": {
+  "url": "https://www.adventhealth.com/hospital/adventhealth-porter"
+ },
+ "charleston-area-medical-center-pittsburgh": {
+  "url": "https://www.camcare.com/"
+ },
+ "chi-st-luke-s-health-baylor-college-of-medicine-medical-center-houston": {
+  "url": "https://www.stlukeshealth.org/"
+ },
+ "children-s-healthcare-of-atlanta-at-egleston-peachtree-corners": {
+  "url": "https://www.choa.org/"
+ },
+ "children-s-hospital-colorado-denver": {
+  "url": "https://www.childrenscolorado.org/"
+ },
+ "children-s-hospital-medical-center-cincinnati": {
+  "url": "https://www.cincinnatichildrens.org/"
+ },
+ "children-s-hospital-metairie": {
+  "url": "https://www.chnola.org/"
+ },
+ "children-s-hospital-of-michigan-ann-arbor": {
+  "url": "https://www.dmc.org/"
+ },
+ "children-s-hospital-of-oklahoma-oklahoma-city": {
+  "url": "https://www.oumedicine.com/"
+ },
+ "children-s-hospital-of-philadelphia-philadelphia": {
+  "url": "https://www.chop.edu/"
+ },
+ "children-s-hospital-of-pittsburgh-of-upmc-pittsburgh": {
+  "url": "https://www.chp.edu/"
+ },
+ "children-s-hospital-of-the-king-s-daughters-virginia-beach": {
+  "url": "https://www.chkd.org/"
+ },
+ "children-s-hospital-of-wisconsin-milwaukee": {
+  "url": "https://www.chw.org/"
+ },
+ "children-s-medical-center-of-dallas-dallas": {
+  "url": "https://www.childrens.com/"
+ },
+ "children-s-mercy-hospital-westwood": {
+  "url": "https://www.childrensmercy.org/"
+ },
+ "children-s-national-medical-center-falls-church": {
+  "url": "https://childrensnational.org/"
+ },
+ "children-s-of-alabama-birmingham": {
+  "url": "https://www.childrensal.org/"
+ },
+ "childrens-hospital-los-angeles-los-angeles": {
+  "url": "https://www.chla.org/"
+ },
+ "christiana-care-health-services-philadelphia": {
+  "url": "https://christianacare.org/"
+ },
+ "christus-santa-rosa-hospital-medical-center-san-antonio": {
+  "url": "https://www.christushealth.org/"
+ },
+ "cleveland-clinic-florida-weston-miami": {
+  "url": "https://my.clevelandclinic.org/florida"
+ },
+ "cook-children-s-medical-center-houston": {
+  "url": "https://www.cookchildrens.org/"
+ },
+ "crozer-chester-medical-center-philadelphia": {
+  "url": "https://www.crozer.org/"
+ },
+ "doctor-s-hospital-at-renaissance-san-antonio": {
+  "url": "https://www.dhrhealth.com/"
+ },
+ "driscoll-children-s-hospital-dallas": {
+  "url": "https://driscollchildrens.org/"
+ },
+ "duke-university-hospital-greenville": {
+  "url": "https://www.dukehealth.org/"
+ },
+ "emory-university-hospital-peachtree-corners": {
+  "url": "https://www.emoryhealthcare.org/"
+ },
+ "erie-county-medical-center-buffalo": {
+  "url": "https://www.ecmc.edu/"
+ },
+ "erlanger-medical-center-nashville": {
+  "url": "https://www.erlanger.org/"
+ },
+ "florida-hospital-medical-center-winter-park": {
+  "require": [
+   "orlando"
+  ],
+  "url": "https://www.adventhealth.com/"
+ },
+ "froedtert-memorial-lutheran-hospital-milwaukee": {
+  "url": "https://www.froedtert.com/"
+ },
+ "geisinger-medical-center-philadelphia": {
+  "url": "https://www.geisinger.org/"
+ },
+ "george-washington-university-hospital-falls-church": {
+  "url": "https://www.gwhospital.com/"
+ },
+ "georgetown-university-medical-center-falls-church": {
+  "require": [
+   "georgetown"
+  ],
+  "url": "https://www.medstarhealth.org/"
+ },
+ "gulf-coast-medical-center-tampa": {
+  "url": "https://www.leehealth.org/"
+ },
+ "hackensack-university-medical-center-new-providence": {
+  "url": "https://www.hackensackmeridianhealth.org/"
+ },
+ "hahnemann-university-hospital-philadelphia": {
+  "url": "https://www.tenethealth.com/"
+ },
+ "halifax-medical-center-winter-park": {
+  "url": "https://www.halifaxhealth.org/"
+ },
+ "harbor-ucla-medical-center-los-angeles": {
+  "url": "https://www.dhs.lacounty.gov/harbor-ucla-medical-center/"
+ },
+ "harper-university-hospital-detroit-medical-center-ann-arbor": {
+  "url": "https://www.dmc.org/"
+ },
+ "helen-devos-children-s-hospital-ann-arbor": {
+  "require": [
+   "grand-rapids"
+  ],
+  "url": "https://www.corewellhealth.org/"
+ },
+ "hennepin-county-medical-center-minneapolis": {
+  "url": "https://www.hennepinhealthcare.org/"
+ },
+ "henrico-doctors-hospital-virginia-beach": {
+  "url": "https://www.hcahealthcare.com/"
+ },
+ "henry-ford-hospital-ann-arbor": {
+  "url": "https://www.henryford.com/"
+ },
+ "hospital-of-the-university-of-pennsylvania-philadelphia": {
+  "url": "https://www.pennmedicine.org/"
+ },
+ "houston-methodist-hospital-houston": {
+  "url": "https://www.houstonmethodist.org/"
+ },
+ "indiana-university-health-indianapolis": {
+  "url": "https://iuhealth.org/"
+ },
+ "inova-fairfax-hospital-falls-church": {
+  "url": "https://www.inova.org/"
+ },
+ "integris-baptist-medical-center-oklahoma-city": {
+  "url": "https://integrishealth.org/"
+ },
+ "intermountain-medical-center-salt-lake-city": {
+  "url": "https://intermountainhealthcare.org/"
+ },
+ "iowa-methodist-medical-center-north-liberty": {
+  "require": [
+   "des-moines"
+  ],
+  "url": "https://www.unitypoint.org/"
+ },
+ "jackson-memorial-hospital-university-of-miami-school-of-medicine-miami": {
+  "url": "https://jacksonhealth.org/"
+ },
+ "james-j-peters-va-medical-center-new-york": {
+  "url": "https://www.va.gov/bronx-health-care/"
+ },
+ "jewish-hospital-louisville": {
+  "url": "https://www.uoflhealth.org/"
+ },
+ "johns-hopkins-hospital-baltimore": {
+  "url": "https://www.hopkinsmedicine.org/"
+ },
+ "keck-hospital-of-usc-los-angeles": {
+  "url": "https://www.keckmedicine.org/"
+ },
+ "lahey-clinic-medical-center-waltham": {
+  "url": "https://www.lahey.org/"
+ },
+ "largo-medical-center-tampa": {
+  "url": "https://largomedical.com/"
+ },
+ "las-palmas-medical-center-dallas": {
+  "url": "https://www.laspalmasmedicalcenter.com/"
+ },
+ "le-bonheur-children-s-medical-center-cordova": {
+  "url": "https://www.lebonheur.org/"
+ },
+ "legacy-good-samaritan-hospital-and-medical-center-portland": {
+  "url": "https://www.legacyhealth.org/"
+ },
+ "lehigh-valley-hospital-philadelphia": {
+  "url": "https://www.lvhn.org/"
+ },
+ "loma-linda-university-medical-center-los-angeles": {
+  "url": "https://lomalindahealth.org/"
+ },
+ "long-island-jewish-medical-center-cohen-children-s-medical-center-new-york": {
+  "url": "https://www.northwell.edu/"
+ },
+ "loyola-university-medical-center-itasca": {
+  "url": "https://www.loyolamedicine.org/"
+ },
+ "lucile-salter-packard-children-s-hospital-at-stanford-san-ramon": {
+  "url": "https://www.stanfordchildrens.org/"
+ },
+ "lutheran-hospital-of-fort-wayne-indianapolis": {
+  "url": "https://www.lutheranhealth.net/"
+ },
+ "maine-medical-center-waltham": {
+  "url": "https://mmcnec.org/"
+ },
+ "mary-hitchcock-memorial-hospital-waltham": {
+  "url": "https://www.dartmouth-hitchcock.org/"
+ },
+ "massachusetts-general-hospital-waltham": {
+  "url": "https://www.massgeneral.org/"
+ },
+ "mayo-clinic-florida-gainesville": {
+  "require": [
+   "jacksonville"
+  ],
+  "url": "https://www.mayoclinic.org/"
+ },
+ "mayo-clinic-hospital-phoenix": {
+  "require": [
+   "arizona"
+  ],
+  "url": "https://www.mayoclinic.org/"
+ },
+ "medical-city-dallas-hospital-dallas": {
+  "require": [
+   "dallas"
+  ],
+  "url": "https://medicalcityhealthcare.com/"
+ },
+ "medical-city-fort-worth-houston": {
+  "require": [
+   "fort-worth"
+  ],
+  "url": "https://medicalcityhealthcare.com/"
+ },
+ "medical-college-of-virginia-hospitals-virginia-beach": {
+  "url": "https://www.vcuhealth.org/"
+ },
+ "medical-university-of-south-carolina-charleston": {
+  "url": "https://muschealth.org/"
+ },
+ "memorial-hermann-hospital-university-of-texas-at-houston-houston": {
+  "url": "https://www.memorialhermann.org/"
+ },
+ "memorial-medical-center-itasca": {
+  "url": "https://www.memorialmedical.com/"
+ },
+ "memorial-regional-hospital-miami": {
+  "url": "https://www.mhs.net/"
+ },
+ "mercy-health-saint-mary-s-ann-arbor": {
+  "url": "https://www.trinityhealthmichigan.org/"
+ },
+ "mercy-medical-center-des-moines-north-liberty": {
+  "url": "https://www.mercydesmoines.org/"
+ },
+ "methodist-dallas-medical-center-dallas": {
+  "require": [
+   "dallas"
+  ],
+  "url": "https://www.methodisthealthsystem.org/"
+ },
+ "methodist-specialty-and-transplant-hospital-san-antonio": {
+  "url": "https://www.sahealth.com/"
+ },
+ "methodist-university-hospital-cordova": {
+  "require": [
+   "memphis"
+  ],
+  "url": "https://www.methodisthealth.org/"
+ },
+ "michael-e-debakey-va-medical-center-houston": {
+  "url": "https://www.va.gov/houston-health-care/"
+ },
+ "montefiore-medical-center-new-york": {
+  "url": "https://www.montefiore.org/"
+ },
+ "mount-sinai-medical-center-new-york": {
+  "url": "https://www.mountsinai.org/"
+ },
+ "nationwide-children-s-hospital-columbus": {
+  "url": "https://www.nationwidechildrens.org/"
+ },
+ "new-york-presbyterian-hospital-weill-cornell-medical-center-new-york": {
+  "require": [
+   "cornell"
+  ],
+  "url": "https://www.nyp.org/"
+ },
+ "new-york-university-medical-center-new-york": {
+  "url": "https://nyulangone.org/"
+ },
+ "newark-beth-israel-medical-center-new-providence": {
+  "require": [
+   "newark"
+  ],
+  "url": "https://www.rwjbh.org/"
+ },
+ "north-austin-medical-center-san-antonio": {
+  "url": "https://www.stdavids.com/"
+ },
+ "north-shore-university-hospital-northwell-health-new-york": {
+  "require": [
+   "north-shore"
+  ],
+  "url": "https://www.northwell.edu/"
+ },
+ "northwestern-memorial-hospital-itasca": {
+  "url": "https://www.nm.org/"
+ },
+ "norton-children-s-hospital-louisville": {
+  "url": "https://nortonchildrens.com/"
+ },
+ "ny-presbyterian-hospital-columbia-univ-medical-center-new-york": {
+  "require": [
+   "columbia"
+  ],
+  "url": "https://www.nyp.org/"
+ },
+ "ochsner-foundation-hospital-metairie": {
+  "url": "https://www.ochsner.org/"
+ },
+ "ohio-state-university-medical-center-columbus": {
+  "url": "https://wexnermedical.osu.edu/"
+ },
+ "oregon-health-and-science-university-portland": {
+  "url": "https://www.ohsu.edu/"
+ },
+ "osf-saint-francis-medical-center-itasca": {
+  "require": [
+   "peoria"
+  ],
+  "url": "https://www.osfhealthcare.org/"
+ },
+ "ou-medical-center-oklahoma-city": {
+  "url": "https://www.oumedicine.com/"
+ },
+ "our-lady-of-lourdes-medical-center-philadelphia": {
+  "url": "https://www.lourdesnet.org/"
+ },
+ "parkland-health-and-hospital-system-dallas": {
+  "url": "https://www.parklandhospital.com/"
+ },
+ "penn-state-milton-s-hershey-medical-center-philadelphia": {
+  "url": "https://pennstatehealth.org/"
+ },
+ "phoenix-children-s-hospital-phoenix": {
+  "url": "https://www.phoenixchildrens.org/"
+ },
+ "piedmont-hospital-peachtree-corners": {
+  "url": "https://www.piedmont.org/"
+ },
+ "pinnacle-health-system-at-harrisburg-hospital-philadelphia": {
+  "require": [
+   "harrisburg"
+  ],
+  "url": "https://www.upmc.com/"
+ },
+ "presbyterian-hospital-albuquerque": {
+  "url": "https://www.phs.org/"
+ },
+ "presbyterian-st-luke-s-medical-center-denver": {
+  "url": "https://www.hcahealthcare.com/"
+ },
+ "primary-children-s-hospital-salt-lake-city": {
+  "require": [
+   "primary"
+  ],
+  "url": "https://intermountainhealthcare.org/"
+ },
+ "providence-sacred-heart-medical-center-children-s-hospital-bellevue": {
+  "require": [
+   "spokane"
+  ],
+  "url": "https://www.providence.org/"
+ },
+ "rady-children-s-hospital-and-health-center-san-diego": {
+  "url": "https://www.rchsd.org/"
+ },
+ "research-medical-center-westwood": {
+  "url": "https://researchmedicalcenter.com/"
+ },
+ "rhode-island-hospital-waltham": {
+  "url": "https://www.lifespan.org/"
+ },
+ "riverside-community-hospital-los-angeles": {
+  "url": "https://www.riversidecommunityhospital.com/"
+ },
+ "rochester-methodist-hospital-mayo-clinic-minneapolis": {
+  "require": [
+   "rochester"
+  ],
+  "url": "https://www.mayoclinic.org/"
+ },
+ "rush-university-medical-center-itasca": {
+  "url": "https://www.rush.edu/"
+ },
+ "sacred-heart-hospital-pensacola-gainesville": {
+  "require": [
+   "pensacola"
+  ],
+  "url": "https://www.ascension.org/"
+ },
+ "saint-barnabas-medical-center-new-providence": {
+  "require": [
+   "barnabas"
+  ],
+  "url": "https://www.rwjbh.org/"
+ },
+ "saint-francis-hospital-oklahoma-city": {
+  "url": "https://www.saintfrancistulsa.com/"
+ },
+ "saint-joseph-hospital-los-angeles": {
+  "url": "https://www.providence.org/locations/socal/saint-joseph-hospital-orange"
+ },
+ "saint-marys-hospital-mayo-clinic-minneapolis": {
+  "require": [
+   "rochester"
+  ],
+  "url": "https://www.mayoclinic.org/"
+ },
+ "saint-thomas-hospital-nashville": {
+  "require": [
+   "nashville"
+  ],
+  "url": "https://healthcare.ascension.org/"
+ },
+ "sanford-bismarck-medical-center-minneapolis": {
+  "require": [
+   "bismarck"
+  ],
+  "url": "https://www.sanfordhealth.org/"
+ },
+ "sanford-health-usd-medical-center-minneapolis": {
+  "require": [
+   "sioux"
+  ],
+  "url": "https://www.sanfordhealth.org/"
+ },
+ "sanford-medical-center-fargo-minneapolis": {
+  "require": [
+   "fargo"
+  ],
+  "url": "https://www.sanfordhealth.org/"
+ },
+ "scott-and-white-memorial-hospital-dallas": {
+  "require": [
+   "temple"
+  ],
+  "url": "https://www.bswhealth.com/"
+ },
+ "scripps-green-hospital-san-diego": {
+  "url": "https://www.scripps.org/"
+ },
+ "seattle-children-s-hospital-bellevue": {
+  "url": "https://www.seattlechildrens.org/"
+ },
+ "sentara-norfolk-general-hospital-virginia-beach": {
+  "url": "https://www.sentara.com/"
+ },
+ "sharp-memorial-hospital-san-diego": {
+  "url": "https://www.sharp.com/"
+ },
+ "ssm-health-saint-louis-university-hospital-saint-louis": {
+  "require": [
+   "saint"
+  ],
+  "url": "https://www.ssmhealth.com/"
+ },
+ "st-christopher-s-hospital-for-children-philadelphia": {
+  "url": "https://www.towerhealth.org/"
+ },
+ "st-john-hospital-and-medical-center-ann-arbor": {
+  "require": [
+   "detroit"
+  ],
+  "url": "https://www.ascension.org/"
+ },
+ "st-john-medical-center-oklahoma-city": {
+  "require": [
+   "tulsa"
+  ],
+  "url": "https://www.ascension.org/"
+ },
+ "st-joseph-s-hospital-and-medical-center-phoenix": {
+  "require": [
+   "phoenix"
+  ],
+  "url": "https://www.dignityhealth.org/arizona/locations/stjosephs"
+ },
+ "st-louis-children-s-hospital-at-washington-university-medical-center-saint-louis": {
+  "url": "https://www.stlouischildrens.org/"
+ },
+ "st-luke-s-hospital-of-kansas-city-westwood": {
+  "url": "https://www.saintlukeskc.org/"
+ },
+ "st-vincent-hospital-and-health-care-center-indianapolis": {
+  "require": [
+   "indianapolis"
+  ],
+  "url": "https://healthcare.ascension.org/"
+ },
+ "st-vincent-medical-center-los-angeles": {
+  "url": "https://www.stvincentmedicalcenter.com/"
+ },
+ "stanford-health-care-san-ramon": {
+  "url": "https://stanfordhealthcare.org/"
+ },
+ "state-university-of-new-york-downstate-medical-center-new-york": {
+  "url": "https://www.downstate.edu/"
+ },
+ "state-university-of-new-york-upstate-medical-university-rochester": {
+  "url": "https://www.upstate.edu/"
+ },
+ "strong-memorial-hospital-university-of-rochester-medical-center-rochester": {
+  "url": "https://www.urmc.rochester.edu/"
+ },
+ "swedish-medical-center-bellevue": {
+  "url": "https://www.swedish.org/"
+ },
+ "tampa-general-hospital-tampa": {
+  "url": "https://www.tgh.org/"
+ },
+ "temple-university-hospital-philadelphia": {
+  "url": "https://www.templehealth.org/"
+ },
+ "texas-children-s-hospital-houston": {
+  "url": "https://www.texaschildrens.org/"
+ },
+ "texas-health-harris-methodist-fort-worth-hospital-houston": {
+  "url": "https://www.texashealth.org/"
+ },
+ "the-christ-hospital-cincinnati": {
+  "url": "https://www.thechristhospital.com/"
+ },
+ "the-cleveland-clinic-foundation-cleveland": {
+  "url": "https://my.clevelandclinic.org/"
+ },
+ "the-iowa-city-va-health-care-system-north-liberty": {
+  "url": "https://www.va.gov/iowa-city-health-care/"
+ },
+ "the-lankenau-hospital-philadelphia": {
+  "url": "https://www.mainlinehealth.org/"
+ },
+ "the-nebraska-medical-center-omaha": {
+  "url": "https://www.nebraskamed.com/"
+ },
+ "the-queen-s-medical-center-honolulu": {
+  "url": "https://www.queens.org/"
+ },
+ "the-university-of-vermont-medical-center-albany": {
+  "url": "https://www.uvmhealth.org/"
+ },
+ "thomas-jefferson-university-hospital-philadelphia": {
+  "url": "https://www.jeffersonhealth.org/"
+ },
+ "tufts-medical-center-waltham": {
+  "url": "https://www.tuftsmedicalcenter.org/"
+ },
+ "tulane-medical-center-metairie": {
+  "url": "https://tulanemedicalfaculty.com/"
+ },
+ "uams-medical-center-little-rock": {
+  "url": "https://uamshealth.com/"
+ },
+ "ucsf-medical-center-at-mission-bay-san-ramon": {
+  "url": "https://www.ucsfhealth.org/"
+ },
+ "uf-health-shands-hospital-gainesville": {
+  "url": "https://ufhealth.org/"
+ },
+ "umass-memorial-medical-center-waltham": {
+  "url": "https://www.umassmemorialhealth.org/"
+ },
+ "university-hospital-new-providence": {
+  "url": "https://www.uhnj.org/"
+ },
+ "university-hospital-of-state-university-of-new-york-at-stony-brook-new-york": {
+  "url": "https://www.stonybrookmedicine.edu/"
+ },
+ "university-hospital-university-of-new-mexico-health-sciences-center-albuquerque": {
+  "url": "https://hsc.unm.edu/"
+ },
+ "university-hospital-university-of-texas-health-science-center-san-antonio": {
+  "url": "https://www.universityhealthsystem.com/"
+ },
+ "university-hospitals-of-cleveland-cleveland": {
+  "url": "https://www.uhhospitals.org/"
+ },
+ "university-medical-center-of-southern-nevada-las-vegas": {
+  "url": "https://www.umcsn.com/"
+ },
+ "university-of-alabama-hospital-birmingham": {
+  "url": "https://www.uabmedicine.org/"
+ },
+ "university-of-california-at-los-angeles-medical-center-los-angeles": {
+  "url": "https://www.uclahealth.org/"
+ },
+ "university-of-california-davis-medical-center-west-sacramento": {
+  "url": "https://health.ucdavis.edu/"
+ },
+ "university-of-california-irvine-medical-center-los-angeles": {
+  "url": "https://www.ucihealth.org/"
+ },
+ "university-of-california-san-diego-medical-center-san-diego": {
+  "url": "https://health.ucsd.edu/"
+ },
+ "university-of-california-san-francisco-medical-center-san-ramon": {
+  "url": "https://www.ucsfhealth.org/"
+ },
+ "university-of-chicago-medical-center-itasca": {
+  "url": "https://www.uchicagomedicine.org/"
+ },
+ "university-of-cincinnati-medical-center-cincinnati": {
+  "url": "https://www.uchealth.com/"
+ },
+ "university-of-colorado-hospital-health-science-center-denver": {
+  "url": "https://www.uchealth.org/"
+ },
+ "university-of-illinois-medical-center-itasca": {
+  "url": "https://hospital.uillinois.edu/"
+ },
+ "university-of-iowa-hospitals-and-clinics-transplant-programs-north-liberty": {
+  "url": "https://uihc.org/"
+ },
+ "university-of-kansas-hospital-westwood": {
+  "url": "https://www.kansashealthsystem.com/"
+ },
+ "university-of-kentucky-medical-center-louisville": {
+  "url": "https://ukhealthcare.uky.edu/"
+ },
+ "university-of-maryland-medical-system-baltimore": {
+  "url": "https://www.umms.org/"
+ },
+ "university-of-michigan-medical-center-ann-arbor": {
+  "url": "https://www.uofmhealth.org/"
+ },
+ "university-of-minnesota-medical-center-fairview-minneapolis": {
+  "url": "https://www.mhealthfairview.org/"
+ },
+ "university-of-mississippi-medical-center-flowood": {
+  "url": "https://www.umc.edu/"
+ },
+ "university-of-missouri-hospital-and-clinics-westwood": {
+  "url": "https://www.muhealth.org/"
+ },
+ "university-of-north-carolina-hospitals-greenville": {
+  "url": "https://www.unchealthcare.org/"
+ },
+ "university-of-pittsburgh-medical-center-pittsburgh": {
+  "url": "https://www.upmc.com/"
+ },
+ "university-of-tennessee-medical-center-at-knoxville-nashville": {
+  "url": "https://www.utmedicalcenter.org/"
+ },
+ "university-of-texas-medical-branch-at-galveston-dallas": {
+  "url": "https://www.utmb.edu/"
+ },
+ "university-of-toledo-medical-center-maumee": {
+  "url": "https://www.utoledo.edu/med/"
+ },
+ "university-of-utah-medical-center-salt-lake-city": {
+  "url": "https://healthcare.utah.edu/"
+ },
+ "university-of-virginia-health-sciences-center-virginia-beach": {
+  "url": "https://uvahealth.com/"
+ },
+ "university-of-washington-medical-center-bellevue": {
+  "url": "https://www.uwmedicine.org/"
+ },
+ "university-of-wisconsin-hospital-and-clinics-madison": {
+  "url": "https://www.uwhealth.org/"
+ },
+ "upmc-hamot-pittsburgh": {
+  "require": [
+   "hamot"
+  ],
+  "url": "https://www.upmc.com/"
+ },
+ "ut-southwestern-medical-center-william-p-clements-jr-university-hospital-dallas": {
+  "url": "https://utswmed.org/"
+ },
+ "va-pittsburgh-healthcare-system-pittsburgh": {
+  "url": "https://www.va.gov/pittsburgh-health-care/"
+ },
+ "va-portland-health-care-system-portland": {
+  "url": "https://www.va.gov/portland-health-care/"
+ },
+ "vanderbilt-university-medical-center-and-nashville-va-medical-center-nashville": {
+  "url": "https://www.vumc.org/"
+ },
+ "vidant-medical-center-greenville": {
+  "url": "https://www.ecuhealth.org/"
+ },
+ "virginia-mason-medical-center-bellevue": {
+  "url": "https://www.virginiamason.org/"
+ },
+ "wake-forest-baptist-medical-center-greenville": {
+  "url": "https://www.wakehealth.edu/"
+ },
+ "walter-reed-national-military-medical-center-at-bethesda-falls-church": {
+  "url": "https://walterreed.tricare.mil/"
+ },
+ "westchester-medical-center-new-york": {
+  "url": "https://www.westchestermedicalcenter.com/"
+ },
+ "william-beaumont-hospital-ann-arbor": {
+  "require": [
+   "royal-oak"
+  ],
+  "url": "https://www.corewellhealth.org/"
+ },
+ "willis-knighton-medical-center-metairie": {
+  "url": "https://www.wkhs.com/"
+ },
+ "yale-new-haven-hospital-waltham": {
+  "url": "https://www.ynhh.org/"
+ }
+}
