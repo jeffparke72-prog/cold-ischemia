@@ -76,10 +76,10 @@ function doPost(e) {
     if (type === "donor-assessment" || type === "contact-rating") {   // anonymous, no email sent, tab per type
       tab_(type === "donor-assessment" ? "Donor Assessments" : "Contact Ratings", type === "donor-assessment" ?
         ["Received", "Organ", "State", "Score", "Band", "Medical", "Lifestyle", "Emotional", "Logistics", "Knowledge", "Themes", "Paired", "Non-directed"] :
-        ["Received", "Id", "Contact", "City", "Listed phone", "Outcome", "Stars", "Direct line given"],
+        ["Received", "Id", "Contact", "City", "Listed phone", "Outcome", "Stars", "Direct line given", "Respect checks met"],
         type === "donor-assessment" ?
         [new Date(), d.organ, d.state, d.score, d.band, d.medical, d.lifestyle, d.emotional, d.logistics, d.knowledge, d.themes, d.paired, d.nonDirected] :
-        [new Date(), d.id, d.contact, d.city, d.listedPhone, d.outcome, d.stars, d.directLine]);
+        [new Date(), d.id, d.contact, d.city, d.listedPhone, d.outcome, d.stars, d.directLine, d.respect]);
       return json_({ status: "ok" });
     }
     var who = d.fname || d.name || "Someone";
@@ -147,11 +147,11 @@ function doGet(e) {
       var id = PropertiesService.getScriptProperties().getProperty("SHEET_ID");
       var sh = SpreadsheetApp.openById(id).getSheetByName("Contact Ratings");
       if (sh) sh.getDataRange().getValues().slice(1).forEach(function (r) {
-        var o = out[r[1]] || (out[r[1]] = { reports: 0, reached: 0 }); o.reports++; if (r[5] === "reached") o.reached++;
+        var o = out[r[1]] || (out[r[1]] = { reports: 0, reached: 0, rs: 0 }); o.reports++; if (r[5] === "reached") o.reached++; o.rs += String(r[8] || "").split(",").filter(String).length;
       });
     } catch (x) {}
     var res = {};
-    Object.keys(out).forEach(function (k) { if (out[k].reports >= 3) res[k] = { reports: out[k].reports, reached: out[k].reached / out[k].reports }; });
+    Object.keys(out).forEach(function (k) { if (out[k].reports >= 3) res[k] = { reports: out[k].reports, reached: out[k].reached / out[k].reports, respect: out[k].rs / out[k].reports }; });
     return json_({ status: "ok", contacts: res });
   }
   return json_({ status: "ok", service: "CIF forms" });

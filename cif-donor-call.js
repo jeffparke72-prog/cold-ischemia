@@ -18,6 +18,7 @@
     ['OPTN kidney paired donation', 'https://optn.transplant.hrsa.gov/patients/by-organ/kidney/kidney-paired-donation/']
   ];
   var OUT = [['reached', 'Reached a person'], ['voicemail', 'Left a voicemail'], ['hold', 'On hold or transferred, no answer'], ['wrong', 'Wrong or disconnected number'], ['redirect', 'Told to call somewhere else']];
+  var RESPECT = [['cb', 'Called back within 2 business days'], ['steps', 'Explained the steps and timeline'], ['adv', 'Named an independent donor advocate'], ['local', 'Offered testing near my home'], ['bundle', 'Offered to bundle visits'], ['resp', 'Treated me with respect']];
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   var slug = function (s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); };
   var tel = function (p) { return 'tel:+1' + String(p).replace(/\D/g, '').replace(/^1/, ''); };
@@ -56,7 +57,7 @@
       '<div class="cc-why">' + esc(c.why) + '</div>' +
       (c.phone && c.retrieved ? '<div class="cc-src">Public record: ' + esc(c.line) + ', ' + esc(c.source) + ', retrieved ' + esc(c.retrieved) + '</div>' : '') +
       (p && p.direct ? '<div class="cc-pub">People reached this program at ' + esc(p.direct) + '</div>' : '') +
-      (p && p.reports >= MIN_REPORTS ? '<div class="cc-pub">' + p.reports + ' people reported: ' + Math.round(p.reached * 100) + '% reached a person</div>' : '') +
+      (p && p.reports >= MIN_REPORTS ? '<div class="cc-pub">' + p.reports + ' people reported: ' + Math.round(p.reached * 100) + '% reached a person' + (p.respect != null ? ', ' + p.respect.toFixed(1) + ' of 6 respect checks met on average' : '') + '</div>' : '') +
       '</div><div class="cc-act">' +
       (c.phone ? '<a class="btn gold" href="' + tel(c.phone) + '">Call ' + esc(c.phone) + '</a>' :
         '<a class="btn line" target="_blank" rel="noopener" href="https://www.google.com/search?q=' + encodeURIComponent(c.name + ' ' + (c.city || '') + ' living donor program phone number') + '">Find the living donor line</a>') +
@@ -64,6 +65,7 @@
       OUT.map(function (o) { return '<option value="' + o[0] + '"' + (l.out === o[0] ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('') + '</select>' + stars(c, l) +
       '<input class="cc-direct" inputmode="tel" placeholder="Direct line you were given (optional)" value="' + esc(l.direct || '') + '" aria-label="Direct number you were given">' +
       '<button type="button" class="btn line cc-rem">Remind me in 2 business days</button>' +
+      '<details class="cc-resp" style="flex-basis:100%"><summary style="cursor:pointer;font-size:15px;color:var(--ink80)">Respect check: what did they actually do?</summary>' + RESPECT.map(function (r) { return '<label style="display:block;font-size:15px;margin:4px 0"><input type="checkbox" class="cc-r" data-k="' + r[0] + '"' + ((l.r || {})[r[0]] ? ' checked' : '') + '> ' + r[1] + '</label>'; }).join('') + '</details>' +
       (l.out ? '<button type="button" class="btn line cc-send">Share this (anonymous)</button>' : '') + '</div>' +
       (l.at ? '<div class="cc-when">Logged ' + esc(l.at) + (l.sent ? ' &middot; shared, thank you' : '') + '</div>' : '') + '</div>';
     return h;
@@ -123,6 +125,7 @@
         panel.addEventListener('change', function (e) {
           var c = find(e); if (!c) return; var l = log[c.id] = log[c.id] || {};
           if (e.target.tagName === 'SELECT') { l.out = e.target.value; l.at = new Date().toLocaleDateString(); save(log); paint(); }
+          else if (e.target.classList.contains('cc-r')) { l.r = l.r || {}; l.r[e.target.dataset.k] = e.target.checked; l.at = new Date().toLocaleDateString(); save(log); }
           else if (e.target.classList.contains('cc-direct')) { l.direct = e.target.value.replace(/[^\d()+\-. ext]/gi, '').slice(0, 24); save(log); }
         });
         panel.addEventListener('click', function (e) {
@@ -132,7 +135,7 @@
           else if (e.target.classList.contains('cc-rem')) { remind(c.name); toast('Reminder file downloaded'); }
           else if (e.target.classList.contains('cc-send')) {
             e.target.disabled = true;
-            send({ formType: 'contact-rating', id: c.id, contact: c.name, city: c.city || '', listedPhone: c.phone || '', outcome: l.out, stars: l.stars || '', directLine: l.direct || '' })
+            send({ formType: 'contact-rating', id: c.id, contact: c.name, city: c.city || '', listedPhone: c.phone || '', outcome: l.out, stars: l.stars || '', directLine: l.direct || '', respect: Object.keys(l.r || {}).filter(function (k) { return l.r[k]; }).join(',') })
               .then(function () { l.sent = 1; save(log); paint(); toast('Thank you. Shared.'); }, function () { e.target.disabled = false; toast('Could not send. Your log is saved on this device.'); });
           }
         });

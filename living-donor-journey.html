@@ -175,6 +175,11 @@ section{padding:80px 0;border-bottom:1px solid var(--b)}
 .wsay{border-left:3px solid var(--pulse);padding:6px 0 6px 14px;margin:10px 0;font-size:16px;color:var(--ink80)}.wsay b{color:#f3ede4}
 .wcrisis{background:var(--danger-d);border:1px solid rgba(224,86,111,.5);border-radius:10px;padding:14px;margin:12px 0;font-size:17px}
 .goal{border:1px solid rgba(232,184,74,.5);background:linear-gradient(135deg,rgba(232,184,74,.08),transparent);border-radius:12px;padding:18px 22px;margin:0 0 22px}.goal b.t{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#e8b84a;margin-bottom:6px}.goal p{margin:0;font-size:17px;color:var(--ink80)}
+.stg{margin:12px 0 0 0;padding:0;list-style:none;counter-reset:s}.stg li{counter-increment:s;position:relative;padding:10px 0 10px 46px;border-bottom:1px solid var(--b2);font-size:16.5px;color:var(--ink80)}.rbox .stg li{padding-left:46px}.rbox .stg li::before{content:counter(s);left:0;top:8px;width:32px;height:32px;border-radius:50%;background:var(--pulse);color:#031018;font:700 16px 'Fraunces',serif;display:flex;align-items:center;justify-content:center}.rbox .stg2 li{padding-left:6px}.rbox .stg2 li::before{content:none}.stg b{color:#f3ede4}.stg-t{font-size:14px;color:var(--ink60)}
+.stg2{margin:10px 0 12px 20px;font-size:16.5px;color:var(--ink80)}.stg2 li{margin:6px 0}
+.est{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:10px}.est label{font-size:13.5px;color:var(--ink60);display:flex;flex-direction:column;gap:4px}.est input{background:var(--void);color:var(--ink);border:1px solid var(--b2);border-radius:6px;padding:9px;font:inherit;font-size:16px}
+.est-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:12px}.est-out div{border:1px solid var(--b2);border-radius:10px;padding:12px;background:var(--surf)}.est-out span{display:block;font-size:13px;color:var(--ink60)}.est-out b{display:block;font:600 28px 'Fraunces',serif;color:#f3ede4}.est-out small{color:var(--ink60)}.est-out .save{border-color:#50c878}.est-out .save b{color:#50c878}
+.charter{border:1px solid var(--b2);border-radius:12px;padding:18px 22px;margin:0 0 22px;background:var(--surf)}.charter h3{margin:0 0 8px;font-family:'Fraunces',serif;font-size:22px}.charter ul{margin:0;padding-left:20px;font-size:16.5px;color:var(--ink80)}.charter li{margin:5px 0}
 .lik{display:inline-block;margin-top:10px;padding:5px 12px;border-radius:99px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;border:1px solid currentColor}
 .qfb.I{background:var(--pulse-d);border:1px solid rgba(42,196,200,.35)}
 .qnav{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
@@ -363,6 +368,14 @@ footer{border-top:1px solid var(--b);padding:32px 0 44px;text-align:center;font-
     <h2>About 35 questions. <em>A profile that is yours alone.</em></h2>
     <p class="lead">Questions adapt to the organ you choose and the answers you give. Every answer gets an immediate, honest explanation. Your answers stay in your browser unless you choose to send them.</p>
     <div class="goal"><b class="t">Our goal</b><p>Make the path from &ldquo;yes&rdquo; to the operating table faster, without ever making it less careful. Every week lost in a stalled evaluation is a week a person spends on dialysis, and a kidney that could have been used can go to waste. Efficiency here means fewer dropped calls, clearer next steps and no one lost between steps. It never means skipping medical tests, the psychosocial review, informed consent or your independent living donor advocate. The more efficient and the more thorough the process, the fewer organs are wasted and the more people get a second or third chance at a normal life.</p></div>
+    <div class="charter"><h3>What every donor should expect</h3><ul>
+      <li><b>Respect for your time.</b> A call back within two business days, and a clear list of next steps. This is our standard for a fair program, not a legal rule.</li>
+      <li><b>Hard limits told up front,</b> by phone, before you travel or lose pay.</li>
+      <li><b>Testing near home and one bundled visit</b> wherever the program can do it.</li>
+      <li><b>An independent living donor advocate,</b> whose only job is you. Programs are required to provide one.</li>
+      <li><b>A reason in writing</b> if you are declined, and no judgment if you change your mind.</li>
+      <li><b>Honest costs.</b> The recipient&rsquo;s insurance usually covers evaluation and surgery; ask early about help with travel and lost wages.</li>
+    </ul><p style="margin:10px 0 0;font-size:14.5px;color:var(--ink60)">After each call you can check which of these a program actually did. Reports from donors, once enough people report, show which programs treat people well.</p></div>
     <div class="quiz" id="quiz">
       <div id="qview">
         <div class="qhead"><span class="mono qdom" id="qdom"></span><span class="qcount" id="qcount"></span></div>
@@ -397,7 +410,7 @@ footer{border-top:1px solid var(--b);padding:32px 0 44px;text-align:center;font-
 <footer>&copy; Cold Ischemia Foundation &nbsp;&middot;&nbsp; Ellenton, Florida &nbsp;&middot;&nbsp; Educational resource, not medical advice &nbsp;&middot;&nbsp; <a href="opo-directory.html" style="color:inherit">U.S. OPO Directory</a></footer>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="opo-data.js"></script><script src="cif-donor-listen.js"></script><script src="cif-donor-call.js"></script>
+<script src="opo-data.js"></script><script src="cif-donor-listen.js"></script><script src="cif-donor-respect.js"></script><script src="cif-donor-call.js"></script>
 <script>
 (function(){
 'use strict';
@@ -700,6 +713,7 @@ function results(){
     var ctxC=[];ops.forEach(function(o){o.centers.forEach(function(c){if(c.s.indexOf(org)>-1)ctxC.push({n:c.n,c:c.c,st:o.state})})});
     var asks=TH.filter(function(k){return LT[k]&&LT[k].ask&&k!=='paired'&&k!=='nondirected'}).map(function(k){return LT[k].ask});
     window._callCtx={liver:isL(A),nonDirected:nd,pe:pe,asks:asks,centers:ctxC,opos:ops};
+    if(window.cifRespectPanel){window._respPanel=window.cifRespectPanel({A:A,R:R});h+=window._respPanel.html}
     if(window.cifCallPanel){window._callPanel=window.cifCallPanel(window._callCtx);h+=window._callPanel.html}
   }
   h+='<div class="rbox wide noprint" style="margin-top:16px"><h3>Share it, save it, start the conversation</h3>'+
@@ -712,6 +726,7 @@ function results(){
   res.innerHTML=h; res.classList.add('on');
   requestAnimationFrame(function(){var rc=$('#rc');if(rc)rc.style.strokeDashoffset=circ*(1-score/100);$$('.dm i',res).forEach(function(i){i.style.width=i.dataset.w+'%'});
     var t0=null,el=$('#rs');(function f(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1300);el.textContent=Math.round(score*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(performance.now())});
+  if(window._respPanel&&res.querySelector('#respectpanel'))window._respPanel.bind(res,toast);
   if(window._callPanel&&res.querySelector('#callpanel'))window._callPanel.bind(res,toast,function(d){return window.cifFormsReady&&window.cifFormsReady()?window.cifSend(d):Promise.reject()});
   var sum='Living Donor Readiness Profile ('+(isL(A)?'liver':'kidney')+')\nReadiness: '+score+'/100. '+v[1].replace(/&[a-z]+;/g,"'")+(stop?'':'\nMedical '+D.med+' | Lifestyle '+D.life+' | Emotional '+D.mind+' | Support & logistics '+D.logi+' | Understanding '+know)+
     (A.state?'\nState: '+A.state:'')+'\n\nItems to address:\n'+fix.concat(ask).map(function(x){return '- '+x.replace(/<[^>]+>/g,'').replace(/&[a-z]+;/g,"'")}).join('\n');
