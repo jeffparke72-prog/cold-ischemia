@@ -1,0 +1,38 @@
+# Refreshes center-contacts.json (public hospital main numbers from CMS) on the 1st of each month.
+# If CMS's data format changes, the script refuses to write rather than publish bad numbers.
+name: Refresh center contacts
+
+on:
+  schedule:
+    - cron: "17 6 1 * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["_tools/build-center-contacts.py", "opo-data.js"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: center-contacts
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 _tools/build-center-contacts.py --self-test
+      - run: python3 _tools/build-center-contacts.py
+      - name: Save
+        run: |
+          git config user.name "cif-contacts-bot"; git config user.email "actions@users.noreply.github.com"
+          git add center-contacts.json _tools/center-contacts-report.txt
+          if git diff --cached --quiet; then echo "No change."; exit 0; fi
+          git commit -m "Center contacts: refresh from CMS $(date -u +%Y-%m-%d) [skip ci]"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0; sleep 5; done
+          exit 1

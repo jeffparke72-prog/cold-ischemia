@@ -6,6 +6,8 @@
 //   • Volunteer training results ("Send my results to the foundation")
 //   • Questions from the "Questions?" button on every page
 //   • The Contact page
+//   • Living Donor Journey: anonymous assessment results (tab "Donor Assessments") and contact ratings (tab "Contact Ratings"),
+//     with a read-only summary at  <web app URL>?ratings=1  that the page can show once 3+ people report on a program
 // Every submission is emailed to OWNER_EMAIL and logged as a row in a Google
 // Sheet named "CIF Website Submissions" in your Google Drive (created automatically).
 // The person who wrote in gets an automatic, personal thank-you reply.
@@ -71,6 +73,15 @@ function doPost(e) {
   try {
     var d = parse_(e);
     var type = d.formType || (d.fname || d.qMotivation ? "application" : (d.category ? "contact" : "question"));
+    if (type === "donor-assessment" || type === "contact-rating") {   // anonymous, no email sent, tab per type
+      tab_(type === "donor-assessment" ? "Donor Assessments" : "Contact Ratings", type === "donor-assessment" ?
+        ["Received", "Organ", "State", "Score", "Band", "Medical", "Lifestyle", "Emotional", "Logistics", "Knowledge", "Themes", "Paired", "Non-directed"] :
+        ["Received", "Id", "Contact", "City", "Listed phone", "Outcome", "Stars", "Direct line given"],
+        type === "donor-assessment" ?
+        [new Date(), d.organ, d.state, d.score, d.band, d.medical, d.lifestyle, d.emotional, d.logistics, d.knowledge, d.themes, d.paired, d.nonDirected] :
+        [new Date(), d.id, d.contact, d.city, d.listedPhone, d.outcome, d.stars, d.directLine]);
+      return json_({ status: "ok" });
+    }
     var who = d.fname || d.name || "Someone";
     var email = String(d.email || "").trim();
     var subject, intro, reply;
@@ -115,7 +126,36 @@ function doPost(e) {
   }
 }
 
-function doGet() { return json_({ status: "ok", service: "CIF forms" }); }
+// Row writer for the anonymous tabs. Cells starting with = + - @ are neutralised so a visitor cannot inject formulas.
+function tab_(name, header, row) {
+  var props = PropertiesService.getScriptProperties();
+  var id = props.getProperty("SHEET_ID"), ss = null;
+  if (id) { try { ss = SpreadsheetApp.openById(id); } catch (x) { ss = null; } }
+  if (!ss) { ss = SpreadsheetApp.create(SHEET_NAME); ss.getSheets()[0].appendRow(["Received", "Type", "Name", "Email", "Details"]); props.setProperty("SHEET_ID", ss.getId()); }
+  var sh = ss.getSheetByName(name);
+  if (!sh) { sh = ss.insertSheet(name); sh.appendRow(header); sh.setFrozenRows(1); }
+  sh.appendRow(row.map(function (v) { v = (v instanceof Date) ? v : String(v == null ? "" : v).slice(0, 200); return (typeof v === "string" && /^[=+\-@]/.test(v)) ? "'" + v : v; }));
+}
+
+// ?ratings=1 returns, per contact id, how many people reported and what share reached a person.
+// Only contacts with 3+ reports are returned. Direct lines are NOT published automatically: copy a number
+// you have checked into contact-ratings.json yourself.
+function doGet(e) {
+  if (e && e.parameter && e.parameter.ratings) {
+    var out = {};
+    try {
+      var id = PropertiesService.getScriptProperties().getProperty("SHEET_ID");
+      var sh = SpreadsheetApp.openById(id).getSheetByName("Contact Ratings");
+      if (sh) sh.getDataRange().getValues().slice(1).forEach(function (r) {
+        var o = out[r[1]] || (out[r[1]] = { reports: 0, reached: 0 }); o.reports++; if (r[5] === "reached") o.reached++;
+      });
+    } catch (x) {}
+    var res = {};
+    Object.keys(out).forEach(function (k) { if (out[k].reports >= 3) res[k] = { reports: out[k].reports, reached: out[k].reached / out[k].reports }; });
+    return json_({ status: "ok", contacts: res });
+  }
+  return json_({ status: "ok", service: "CIF forms" });
+}
 
 function parse_(e) {
   var d = {};

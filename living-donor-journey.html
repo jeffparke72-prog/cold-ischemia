@@ -170,6 +170,12 @@ section{padding:80px 0;border-bottom:1px solid var(--b)}
 .qfb.G{background:var(--green-d);border:1px solid rgba(80,200,120,.35)}
 .qfb.A1,.qfb.A2{background:var(--amber-d);border:1px solid rgba(230,162,79,.4)}
 .qfb.R{background:var(--danger-d);border:1px solid rgba(224,86,111,.4)}
+#f_words{width:100%;background:var(--void);color:var(--ink);border:1px solid var(--b2);border-radius:10px;padding:14px;font:inherit;font-size:17px;line-height:1.5;resize:vertical}
+.wchips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.wchip{display:flex;gap:8px;align-items:flex-start;background:var(--surf);border:1px solid var(--b2);border-radius:10px;padding:9px 12px;font-size:15.5px;cursor:pointer}.wchip input{margin-top:4px}
+.wsay{border-left:3px solid var(--pulse);padding:6px 0 6px 14px;margin:10px 0;font-size:16px;color:var(--ink80)}.wsay b{color:#f3ede4}
+.wcrisis{background:var(--danger-d);border:1px solid rgba(224,86,111,.5);border-radius:10px;padding:14px;margin:12px 0;font-size:17px}
+.goal{border:1px solid rgba(232,184,74,.5);background:linear-gradient(135deg,rgba(232,184,74,.08),transparent);border-radius:12px;padding:18px 22px;margin:0 0 22px}.goal b.t{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#e8b84a;margin-bottom:6px}.goal p{margin:0;font-size:17px;color:var(--ink80)}
+.lik{display:inline-block;margin-top:10px;padding:5px 12px;border-radius:99px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;border:1px solid currentColor}
 .qfb.I{background:var(--pulse-d);border:1px solid rgba(42,196,200,.35)}
 .qnav{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
 .note{font-size:15px;color:var(--ink40);margin-top:14px}
@@ -354,8 +360,9 @@ footer{border-top:1px solid var(--b);padding:32px 0 44px;text-align:center;font-
 <section id="assess">
   <div class="wrap">
     <div class="mono k">Your Readiness Profile</div>
-    <h2>About 30 questions. <em>A profile that is yours alone.</em></h2>
+    <h2>About 35 questions. <em>A profile that is yours alone.</em></h2>
     <p class="lead">Questions adapt to the organ you choose and the answers you give. Every answer gets an immediate, honest explanation. Your answers stay in your browser unless you choose to send them.</p>
+    <div class="goal"><b class="t">Our goal</b><p>Make the path from &ldquo;yes&rdquo; to the operating table faster, without ever making it less careful. Every week lost in a stalled evaluation is a week a person spends on dialysis, and a kidney that could have been used can go to waste. Efficiency here means fewer dropped calls, clearer next steps and no one lost between steps. It never means skipping medical tests, the psychosocial review, informed consent or your independent living donor advocate. The more efficient and the more thorough the process, the fewer organs are wasted and the more people get a second or third chance at a normal life.</p></div>
     <div class="quiz" id="quiz">
       <div id="qview">
         <div class="qhead"><span class="mono qdom" id="qdom"></span><span class="qcount" id="qcount"></span></div>
@@ -390,7 +397,7 @@ footer{border-top:1px solid var(--b);padding:32px 0 44px;text-align:center;font-
 <footer>&copy; Cold Ischemia Foundation &nbsp;&middot;&nbsp; Ellenton, Florida &nbsp;&middot;&nbsp; Educational resource, not medical advice &nbsp;&middot;&nbsp; <a href="opo-directory.html" style="color:inherit">U.S. OPO Directory</a></footer>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="opo-data.js"></script><script src="cif-donor-call.js"></script>
+<script src="opo-data.js"></script><script src="cif-donor-listen.js"></script><script src="cif-donor-call.js"></script>
 <script>
 (function(){
 'use strict';
@@ -573,6 +580,7 @@ var Q=[
  {id:'ins',dom:'Support & logistics',q:'Do you have your own health insurance?',o:[
    ['Yes','G','Good for your long-term care. The recipient&rsquo;s insurance usually covers your donation-related costs.'],
    ['No','A1','Your donation costs are usually billed to the recipient&rsquo;s insurance, but some programs prefer donors to have their own coverage for future care. Ask.']]},
+ {id:'words',dom:'In your own words',type:'text',q:'Is there anything you want us to know, in your own words?',help:'Optional. Tell us what is on your mind: who you want to help, what worries you, what has gone wrong so far. A rules-based reader (not a chat model, and not a person) picks out themes so we can answer your real questions. It runs in your browser and nothing is sent unless you choose to share.'},
  {id:'state',dom:'Support & logistics',type:'state',q:'Which state do you live in?',help:'Used to show organ procurement organizations and transplant programs in your area.'},
  {id:'k1',dom:'Understanding the process',q:'True or false: the recipient&rsquo;s insurance usually pays for the donor&rsquo;s medical evaluation and surgery.',tf:true},
  {id:'k2',dom:'Understanding the process',q:'True or false: once you start an evaluation, you are committed to donating.',tf:false},
@@ -581,7 +589,7 @@ var Q=[
  {id:'k5',dom:'Understanding the process',q:'True or false: donors may legally be paid for an organ in the U.S.',tf:false}
 ];
 var KF={k1:'True. The recipient&rsquo;s insurance usually covers the donor&rsquo;s evaluation and surgery.',k2:'False. You can stop at any time, for any reason, confidentially.',k3:'False. Paired exchange lets incompatible pairs swap, so your loved one can still receive a compatible kidney.',k4:'True. Federal policy requires an Independent Living Donor Advocate for every living donor.',k5:'False. Buying or selling organs is illegal under the National Organ Transplant Act. Reimbursement of reasonable expenses is allowed.'};
-var DOMKEY={'Getting started':'med','Medical baseline':'med','Lifestyle':'life','Emotional readiness':'mind','Support & logistics':'logi','Understanding the process':'know'};
+var DOMKEY={'Getting started':'med','Medical baseline':'med','Lifestyle':'life','Emotional readiness':'mind','Support & logistics':'logi','Understanding the process':'know','In your own words':'words'};
 
 var KEY='cifDonorProfile.v1', A={}, R={}, step=0;
 try{var sv=JSON.parse(localStorage.getItem(KEY)||'null');if(sv&&sv.A){A=sv.A;R=sv.R||{};step=sv.step||0}}catch(e){}
@@ -598,6 +606,7 @@ function render(){
   var h='<div class="qtext" id="qt">'+q.q+'</div>'+(q.help?'<div class="qhelp">'+q.help+'</div>':'<div style="height:12px"></div>');
   if(q.type==='num'){h+='<div class="nums">'+q.fields.map(function(f){var v=prev&&prev.v?prev.v[f[0]]:'';return '<div><label for="f_'+f[0]+'">'+f[1]+'</label><input id="f_'+f[0]+'" type="number" inputmode="numeric" min="'+f[3]+'" max="'+f[4]+'" value="'+(v===undefined?'':v)+'" placeholder="'+f[2]+'"></div>'}).join('')+'<button class="btn line" type="button" id="chk">Check</button></div>'}
   else if(q.type==='state'){h+='<div class="nums"><div><label for="f_state">State</label><select id="f_state"><option value="">Choose your state</option>'+STATES.map(function(s){return '<option value="'+s[0]+'"'+(A.state===s[0]?' selected':'')+'>'+s[1]+'</option>'}).join('')+'</select></div></div>'}
+  else if(q.type==='text'){h+='<textarea id="f_words" rows="6" maxlength="1500" aria-label="Your words" placeholder="For example: My brother has been on dialysis for two years. I am worried about missing work, and I do not know who to call first.">'+esc((prev&&prev.v&&prev.v.text)||'')+'</textarea><div class="nums" style="margin-top:10px"><button class="btn gold" type="button" id="wread">Read what I wrote</button><button class="btn line" type="button" id="wskip">Skip this question</button></div><div id="wout"></div>'}
   else if(q.tf!==undefined){h+='<div class="opts" role="group" aria-labelledby="qt">'+['True','False'].map(function(t){return '<button type="button" class="opt" aria-pressed="'+(prev&&prev.v===t)+'" data-v="'+t+'"><span class="dot"></span><span>'+t+'</span></button>'}).join('')+'</div>'}
   else {h+='<div class="opts" role="group" aria-labelledby="qt">'+q.o.map(function(o,i){return '<button type="button" class="opt" aria-pressed="'+(prev&&prev.i===i)+'" data-i="'+i+'"><span class="dot"></span><span>'+o[0]+'</span></button>'}).join('')+'</div>'}
   $('#qbody').innerHTML=h;
@@ -607,6 +616,18 @@ function render(){
   $('#qback').disabled=step===0;
   if(q.type==='num'){var go=function(){var v={},ok=true;q.fields.forEach(function(f){var n=parseFloat($('#f_'+f[0]).value);if(isNaN(n)){if(f[0]==='in'){n=0}else ok=false}v[f[0]]=n});if(!ok){showFb('A1','Please fill in each box.');return}var r=q.score(v,A);if(q.id==='age')A.age=v.age;set(q,{v:v,s:r[0],m:r[1],x:r[2]})};$('#chk').onclick=go;$$('.nums input').forEach(function(i){i.onkeydown=function(e){if(e.key==='Enter'){e.preventDefault();go()}}})}
   else if(q.type==='state'){$('#f_state').onchange=function(){var v=this.value;if(!v)return;A.state=v;var n=opoFor(v).length;set(q,{v:v,s:'I',m:n?'We found '+n+' organ procurement organization'+(n>1?'s':'')+' serving your state. Your profile will list them, along with transplant programs in those service areas.':'Your profile will link to the national OPO directory.'})}}
+  else if(q.type==='text'){var drawW=function(text,themes){var L=window.CIFListen,out=$('#wout');if(!L){return}var all=Object.keys(L.THEMES),cr=themes.indexOf('crisis')>-1;
+      var hh=(cr?'<div class="wcrisis"><b>'+esc(L.THEMES.crisis.say)+'</b></div>':'')+'<p style="margin-top:14px;color:var(--ink80)">'+L.reflect(themes)+'</p><div class="wchips">'+all.filter(function(k){return k!=='crisis'}).map(function(k){var on=themes.indexOf(k)>-1;return '<label class="wchip" style="'+(on?'':'display:none')+'" data-k="'+k+'"><input type="checkbox" '+(on?'checked':'')+' data-k="'+k+'"><span>'+L.THEMES[k].label+'</span></label>'}).join('')+'</div>'+
+        '<label style="font-size:15px;color:var(--ink60)">Something I missed? <select id="wadd"><option value="">Add a topic</option>'+all.filter(function(k){return k!=='crisis'&&themes.indexOf(k)<0}).map(function(k){return '<option value="'+k+'">'+L.THEMES[k].label+'</option>'}).join('')+'</select></label>'+
+        '<div id="wsay">'+themes.filter(function(k){return k!=='crisis'}).map(function(k){return '<div class="wsay"><b>'+L.THEMES[k].label+'.</b> '+L.THEMES[k].say+'</div>'}).join('')+'</div>';
+      out.innerHTML=hh;
+      var commit=function(ts){set(q,{v:{text:text,themes:ts},s:'I',m:ts.length?'Thank you for telling me. I will build these into your results and your call script.':'Thank you. Nothing specific came up, and that is fine.'});drawW(text,ts)};
+      $$('#wout input[type=checkbox]').forEach(function(c){c.onchange=function(){var ts=$$('#wout input[type=checkbox]').filter(function(x){return x.checked}).map(function(x){return x.dataset.k});if(themes.indexOf('crisis')>-1)ts.unshift('crisis');R.words=R.words||{};set(q,{v:{text:text,themes:ts},s:'I',m:'Updated.'});themes=ts;$('#wsay').innerHTML=ts.filter(function(k){return k!=='crisis'}).map(function(k){return '<div class="wsay"><b>'+L.THEMES[k].label+'.</b> '+L.THEMES[k].say+'</div>'}).join('')}});
+      var ad=$('#wadd');if(ad)ad.onchange=function(){if(!ad.value)return;commit(themes.concat(ad.value))};
+      if(!R[q.id]||!R[q.id].v||R[q.id].v.themes.join()!==themes.join())commit(themes)};
+    var pv=prev&&prev.v;if(pv&&pv.text!==undefined&&(pv.text||pv.themes.length))drawW(pv.text,pv.themes);
+    $('#wread').onclick=function(){var t=$('#f_words').value.trim();var an=window.CIFListen?window.CIFListen.analyze(t):{themes:[]};drawW(t,an.themes)};
+    $('#wskip').onclick=function(){set(q,{v:{text:'',themes:[]},s:'I',m:'Skipped. You can always come back.'});$('#qnext').click()}}
   else if(q.tf!==undefined){$$('.opt').forEach(function(b){b.onclick=function(){var v=b.dataset.v,ok=(v==='True')===q.tf;$$('.opt').forEach(function(x){x.setAttribute('aria-pressed',x===b)});set(q,{v:v,s:ok?'G':'A1',m:(ok?'Correct. ':'Not quite. ')+KF[q.id],ok:ok})}})}
   else {$$('.opt').forEach(function(b){b.onclick=function(){var o=q.o[+b.dataset.i];$$('.opt').forEach(function(x){x.setAttribute('aria-pressed',x===b)});A[q.id]=o[0].replace(/&rsquo;/g,"'");if(o[3])Object.keys(o[3]).forEach(function(k){A[k]=o[3][k]});var m=q.fb?q.fb(A):txt(o[2]);set(q,{i:+b.dataset.i,s:o[1],m:m,x:o[3]})}})}
 }
@@ -634,6 +655,8 @@ function results(){
     if(r.s==='A1'||(r.s==='A2'&&r.mod))fix.push(r.m);
     else if(r.s==='A2'||r.s==='R')ask.push('<b>'+label+'</b> '+r.m);
   });
+  var TH=(R.words&&R.words.v&&R.words.v.themes)||[], LT=window.CIFListen?window.CIFListen.THEMES:{};
+  TH.forEach(function(k){if(LT[k]&&LT[k].ask)ask.push('<b>'+LT[k].label+'.</b> '+esc(LT[k].ask))});
   var know=kn[1]?Math.round(kn[0]/kn[1]*100):100;
   var score=Math.round(D.med*.35+D.life*.15+D.mind*.2+D.logi*.2+know*.1);
   if(hasR.med||hasR.mind)score=Math.min(score,49);
@@ -645,7 +668,7 @@ function results(){
   else v=['R','Talk with a transplant center before going further.','One or more of your answers is commonly a reason programs decline donors. That is not a final answer: programs assess risk differently, and a short call can tell you where you stand.'];
   var circ=2*Math.PI*78, col=v[0]==='G'?'#50c878':v[0]==='A'?'#e6a24f':'#e0566f';
   var h='<div class="rtop"><div class="ring"><svg width="180" height="180" viewBox="0 0 180 180"><circle cx="90" cy="90" r="78" fill="none" stroke="rgba(100,140,200,.15)" stroke-width="12"/><circle id="rc" cx="90" cy="90" r="78" fill="none" stroke="'+col+'" stroke-width="12" stroke-linecap="round" stroke-dasharray="'+circ+'" stroke-dashoffset="'+circ+'" style="transition:stroke-dashoffset 1.4s cubic-bezier(.2,.8,.2,1)"/></svg><b id="rs">0</b><small>READINESS</small></div>'+
-    '<div><div class="mono" style="color:var(--pulse);font-size:11px">Your living donor readiness profile &middot; '+(isL(A)?'Liver':'Kidney')+(A._bmi?' &middot; BMI '+A._bmi:'')+'</div><div class="verdict '+v[0]+'">'+v[1]+'</div><p style="font-size:18px;color:var(--ink80)">'+v[2]+'</p></div></div>';
+    '<div><div class="mono" style="color:var(--pulse);font-size:11px">Your living donor readiness profile &middot; '+(isL(A)?'Liver':'Kidney')+(A._bmi?' &middot; BMI '+A._bmi:'')+'</div><div class="verdict '+v[0]+'">'+v[1]+'</div><p style="font-size:18px;color:var(--ink80)">'+v[2]+'</p>'+(stop?'':'<span class="lik" style="color:'+col+'">'+(v[0]==='G'?'Likely to be accepted for evaluation at many programs':v[0]==='A'?'Possible: a few items could slow or stop an evaluation':'Uncertain: ask a program before going further')+'</span><p style="font-size:14px;color:var(--ink60);margin-top:8px">This is a screening estimate from public criteria, not a medical decision. Only a transplant center can decide.</p>')+'</div></div>';
   if(!stop){
     var dl=[['Medical baseline',D.med,'#2ac4c8'],['Lifestyle',D.life,'#e8b84a'],['Emotional readiness',D.mind,'#c38ef0'],['Support & logistics',D.logi,'#50c878'],['Understanding the process',know,'#8fb5ff']];
     h+='<div class="doms">'+dl.map(function(d){return '<div class="dm"><div class="dl">'+d[0]+'</div><div class="dr"><i data-w="'+d[1]+'" style="background:'+d[2]+'"></i></div><b>'+d[1]+'</b></div>'}).join('')+'</div>';
@@ -666,17 +689,23 @@ function results(){
     cents=cents.filter(function(c,i){return cents.indexOf(c)===i}).sort();
     h+='<div class="rbox wide"><h3>Near you'+(A.state?' &middot; '+esc((STATES.filter(function(s){return s[0]===A.state})[0]||[])[1]||A.state):'')+'</h3>'+
       '<p style="font-size:16px;color:var(--ink60);margin-bottom:8px">Living donation is arranged through <b style="color:var(--ink)">transplant centers</b> with a living donor program. Organ procurement organizations (OPOs) coordinate <i>deceased</i> donation and registration.</p>'+
-      (cents.length?'<div class="mono" style="font-size:11px;color:var(--pulse);margin-top:10px">'+cents.length+' '+org.toLowerCase()+' transplant program'+(cents.length>1?'s':'')+' in your area&rsquo;s OPO service region'+(cents.length>1?'s':'')+'. Ask each whether it has a living donor program.</div><div class="cent">'+cents.map(function(c){return '<div>'+c+'</div>'}).join('')+'</div>':'')+
-      (ops.length?'<div class="mono" style="font-size:11px;color:var(--pulse);margin-top:14px">OPOs serving your state</div><div class="cent">'+ops.map(function(o){return '<div><b style="color:#f3ede4">'+esc(o.name)+'</b> &middot; '+esc(o.city)+', '+o.state+' &middot; <a href="tel:'+o.phone.replace(/[^0-9]/g,'')+'">'+o.phone+'</a></div>'}).join('')+'</div>':'')+
+      '<p style="font-size:16px;color:var(--ink60)">'+cents.length+' '+org.toLowerCase()+' transplant program'+(cents.length===1?'':'s')+' serve'+(cents.length===1?'s':'')+' your area. The ranked list with phone numbers is under <b style="color:var(--ink)">Your first calls</b> below.</p>'+
       '<p style="margin-top:12px"><a href="opo-directory.html'+(A.state?'#'+A.state:'')+'">Open the full U.S. OPO directory &rarr;</a></p></div>';
     h+='</div>';
+    var heard=TH.filter(function(k){return k!=='crisis'&&LT[k]});
+    if(TH.indexOf('crisis')>-1)h+='<div class="wcrisis" style="grid-column:1/-1"><b>'+esc(LT.crisis.say)+'</b></div>';
+    if(heard.length)h+='<div class="rbox wide"><h3>What you told us, and what is true</h3>'+heard.map(function(k){return '<div class="wsay"><b>'+LT[k].label+'.</b> '+LT[k].say+'</div>'}).join('')+'</div>';
+    var pe=!!(A.pe||TH.indexOf('paired')>-1), nd=!!((A.rel&&A.rel.indexOf('Anyone')===0)||TH.indexOf('nondirected')>-1);
+    if(pe)h+='<div class="rbox wide"><h3>Paired donation could be your route</h3><p style="font-size:17px;color:var(--ink80)">If your blood type or antibodies do not match the person you want to help, your kidney can go to a compatible stranger while a matching donor gives to your person. Chains started by a single donor have linked many transplants. Your calls below include the question to ask every program: <i>which paired exchange registries do you use?</i></p></div>';
     var ctxC=[];ops.forEach(function(o){o.centers.forEach(function(c){if(c.s.indexOf(org)>-1)ctxC.push({n:c.n,c:c.c,st:o.state})})});
-    window._callCtx={liver:isL(A),nonDirected:!!(A.rel&&A.rel.indexOf('Anyone')===0),recipient:'',centers:ctxC,opos:ops};
+    var asks=TH.filter(function(k){return LT[k]&&LT[k].ask&&k!=='paired'&&k!=='nondirected'}).map(function(k){return LT[k].ask});
+    window._callCtx={liver:isL(A),nonDirected:nd,pe:pe,asks:asks,centers:ctxC,opos:ops};
     if(window.cifCallPanel){window._callPanel=window.cifCallPanel(window._callCtx);h+=window._callPanel.html}
   }
   h+='<div class="rbox wide noprint" style="margin-top:16px"><h3>Share it, save it, start the conversation</h3>'+
      '<p style="font-size:16px;color:var(--ink60)">Families who learn together decide together. Send this guide to the people you&rsquo;d want beside you.</p>'+
      '<div class="share"><button class="btn gold" type="button" id="shr">Share this guide</button><button class="btn line" type="button" id="prt">Print or save as PDF</button><button class="btn line" type="button" id="cpy">Copy my summary</button><button class="btn line" type="button" id="rst">Start over</button></div>'+
+     '<label style="display:block;margin-top:14px;font-size:15.5px;color:var(--ink60)"><input type="checkbox" id="anon"> Help improve this tool: share my results anonymously (state, score band, themes. No name, no email, no free text.) <button class="btn line" type="button" id="anonsend" style="margin-left:8px">Share anonymously</button></label>'+
      '<p style="font-size:16px;color:var(--ink60);margin-top:16px">Want the foundation to see your profile and follow up? We&rsquo;ll reply personally.</p>'+
      '<div class="sendrow"><input id="sn" placeholder="Your name" autocomplete="name"><input id="se" type="email" placeholder="Your email" autocomplete="email"><button class="btn line" type="button" id="snd">Send to the foundation</button></div></div>';
   h+='<div class="disclaimer"><b style="color:var(--ink)">This is an educational readiness profile, not a medical evaluation.</b> It reflects common criteria from the KDIGO living kidney donor guideline, OPTN policy, and published program requirements, but every transplant center assesses donors individually, and only a center&rsquo;s evaluation can determine whether you can safely donate.</div>';
@@ -689,6 +718,9 @@ function results(){
   var url=location.origin+location.pathname;
   $('#shr').onclick=function(){var t='I found this guide to living organ donation from the Cold Ischemia Foundation. It explains the whole process and includes a short readiness profile.';if(navigator.share){navigator.share({title:'Living Donor Journey',text:t,url:url}).catch(function(){})}else{location.href='mailto:?subject='+encodeURIComponent('A guide to living organ donation')+'&body='+encodeURIComponent(t+'\n\n'+url)}};
   $('#prt').onclick=function(){window.print()};
+  $('#anonsend').onclick=function(){if(!$('#anon').checked)return toast('Tick the box first');var b=this;b.disabled=true;
+    var payload={formType:'donor-assessment',organ:isL(A)?'liver':'kidney',state:A.state||'',score:score,band:stop?'under18':v[0],medical:D.med,lifestyle:D.life,emotional:D.mind,logistics:D.logi,knowledge:know,themes:TH.join(','),paired:(A.pe||TH.indexOf('paired')>-1)?'yes':'no',nonDirected:((A.rel&&A.rel.indexOf('Anyone')===0)||TH.indexOf('nondirected')>-1)?'yes':'no',page:'living-donor-journey'};
+    (window.cifFormsReady&&window.cifFormsReady()?window.cifSend(payload):Promise.reject()).then(function(){b.textContent='Shared, thank you';toast('Shared anonymously. Thank you.')},function(){b.disabled=false;toast('Could not send right now')})};
   $('#cpy').onclick=function(){(navigator.clipboard?navigator.clipboard.writeText(sum):Promise.reject()).then(function(){toast('Summary copied')},function(){prompt('Copy your summary:',sum)})};
   $('#rst').onclick=function(){if(confirm('Start the profile over?')){A={};R={};step=0;save();render();$('#quiz').scrollIntoView({behavior:'smooth'})}};
   $('#snd').onclick=function(){var n=$('#sn').value.trim(),em=$('#se').value.trim();if(!n)return toast('Please add your name');if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em))return toast('Please add a valid email');
