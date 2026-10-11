@@ -1,0 +1,68 @@
+# When new first-party content reaches main (a new top-level .html page or a new files/*.pdf),
+# announce it on X, LinkedIn, Facebook and Instagram. A platform is used only if its secrets exist.
+# Run manually with live=false to preview the posts in the log.
+name: Social autopublish
+
+on:
+  push:
+    branches: [main]
+    paths: ["*.html", "files/*.pdf"]
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "Post for real (true) or preview only (false)"
+        default: "false"
+      files:
+        description: "Optional: space-separated files to announce, e.g. new-page.html"
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-autopublish
+  cancel-in-progress: false
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      X_API_KEY: ${{ secrets.X_API_KEY }}
+      X_API_SECRET: ${{ secrets.X_API_SECRET }}
+      X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+      X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+      LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+      LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+      LINKEDIN_API_VERSION: ${{ secrets.LINKEDIN_API_VERSION }}
+      FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+      FACEBOOK_PAGE_TOKEN: ${{ secrets.FACEBOOK_PAGE_TOKEN }}
+      INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+      INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet requests requests-oauthlib pillow
+      - name: Which platforms are connected
+        run: python3 _tools/social/social_publish.py --check
+      - name: Announce
+        run: |
+          LIVE=""
+          if [ "${{ github.event_name }}" = "push" ] || [ "${{ inputs.live }}" = "true" ]; then LIVE="--live"; fi
+          if [ -n "${{ inputs.files }}" ]; then
+            python3 _tools/social/social_publish.py $LIVE --only ${{ inputs.files }}
+          else
+            python3 _tools/social/social_publish.py $LIVE --before "${{ github.event.before }}" --after "${{ github.sha }}"
+          fi
+      - name: Save dedupe record
+        run: |
+          git config user.name "cif-social-bot"; git config user.email "actions@users.noreply.github.com"
+          git add _social/posted.json
+          if git diff --cached --quiet; then echo "No state change."; exit 0; fi
+          git commit -m "Social: record posted items [skip ci]"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0; sleep 5; done
+          exit 1
