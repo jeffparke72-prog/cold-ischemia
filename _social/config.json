@@ -1,0 +1,9 @@
+{
+  "skip_pages": ["404.html", "cif-commercial-source.html", "cif-volunteer-page_1.html"],
+  "skip_prefixes": ["_", "google", "test", "draft"],
+  "hashtags": ["#KidneyTransplant", "#OrganDonation", "#Dialysis", "#ColdIschemia"],
+  "max_per_run": 3,
+  "linkedin_version": "202506",
+  "graph_version": "v21.0",
+  "disabled": []
+}

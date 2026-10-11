@@ -1,0 +1,59 @@
+# PART FOUR: IMPROVE
+EPIGRAPH: "He that will not apply new remedies must expect new evils: for time is the greatest innovator."
+BY: Francis Bacon, "Of Innovations," Essays (1625)
+
+Improvement, in the Six Sigma lexicon, is the phase in which solutions are generated, tested, and chosen. It is also the phase in which advocates are most tempted to abandon rigor, because solutions are exciting and evidence is slow. Part Four attempts to keep both qualities in view. It examines the technologies that might widen the margin of time and function, the awareness efforts that are supposed to widen the circle of donors and patients who understand the system, the financial barriers that block the poor, and a platform of reforms assembled from everything that came before.
+
+# Chapter 12: The Innovation Deficit
+EPIGRAPH: "Nothing will ever be attempted, if all possible objections must be first overcome."
+BY: Samuel Johnson, Rasselas (1759)
+
+## Defining "lackluster" with care
+
+Critics who describe the transplant industry as lackluster in innovation risk an injustice, and I want to avoid it. The field has produced real advances: machine perfusion has become established practice, hepatitis C-positive kidneys that were once discarded are now routinely used, and a gene-edited pig kidney has entered a formal clinical trial. A fair indictment must be narrower. My claim is that the system's capacity to produce, test, and adopt improvements in organ preservation is out of proportion to the scale of its losses. A process that discards 29.3% of the organs it recovers (SRTR & OPTN, 2026b) and that moves only by the slow accumulation of small single-center trials is not an innovation engine. It is a pilot program that has been left running for decades.
+
+To make the assessment concrete, I have arranged the principal preservation and replacement technologies on a ladder of evidence, in the spirit of the readiness scales that engineers use to track a technology from concept to deployment.
+
+[[FIG:ladder|Figure 10.1. Evidence ladder for kidney preservation and replacement technologies, October 2026. Placement is the author's reading of the evidence cited in this chapter.]]
+
+## The record: machine perfusion and the stubborn question of oxygen
+
+At the base of the ladder sits static cold storage, the cooler of this book's title, which remains the baseline against which everything else is compared. One rung up is hypothermic machine perfusion, supported by the randomized trial of 672 recipients discussed in Chapter 6 (Moers et al., 2009) and, according to the device manufacturer, by a ten-year follow-up reporting a 27% lower risk of graft failure (Organ Recovery Systems, 2025). A 2025 forward-looking review states that renal hypothermic perfusion today reduces delayed graft function and improves graft survival (Frontiers in Transplantation, 2025†).
+
+The evidence above that rung is much thinner. Warming the organ to body temperature during perfusion, known as normothermic perfusion, has been tested in two randomized trials that I found. In a trial of kidneys from donors after circulatory death, normothermic perfusion proved feasible and safe but did not reduce delayed graft function, with rates of 60.7% against 58.5% under static cold storage and an adjusted odds ratio of 1.13 (Hosgood et al., 2023†). In a 2026 single-center trial that added two hours of normothermic perfusion at the end of hypothermic perfusion, immediate graft function occurred in 39% of the treated group (16 of 41) and 49% of the control group (19 of 39), an odds ratio of 0.68 with a 95% confidence interval of 0.28 to 1.64 (Normothermic versus hypothermic machine perfusion in kidney transplantation, 2026†). Total cold ischemia was balanced between the groups at 9.5 and 9.4 hours.
+
+A responsible reader must resist two opposite temptations when facing such results. The first is to conclude that normothermic perfusion does not work. The confidence interval, which spans from a 72% reduction to a 64% increase in the odds, shows that the trial was too small to rule out a meaningful effect in either direction. The second is to conclude that it will eventually prove its worth because the biology is attractive. A 2025 review in a leading nephrology journal captured the position soberly: the addition of oxygen during hypothermic perfusion has shown mixed results, sometimes benefiting higher-risk donors, and the clinical benefit of normothermic perfusion remains unproven (Nature Reviews Nephrology, 2025†). Absence of evidence is not evidence of absence. It is, however, an absence.
+
+Oxygenated hypothermic perfusion has a similarly mixed record. A randomized trial of expanded-criteria donor kidneys found that adding oxygen at the end of cold storage did not improve graft survival or function, though the authors acknowledged that the study was underpowered because overall graft survival was high (Appendix A, item F4). A single-center United States report described a lower rate of delayed graft function, 35.7% against 49.2%, despite longer cold times, though the difference did not reach statistical significance (Appendix A, item F4).
+
+## The record: oxygen carriers
+
+Oxygen carriers are the newest rung that has any human data at all. The idea is to add to the perfusion fluid a molecule that carries oxygen as red cells do, but without the cells, so that an organ can be supplied with oxygen during the interval when it has no circulation. A French program tested one such product, derived from a marine worm and known as HEMO2life, as an additive to kidney preservation solution. In the first study, 60 kidney grafts at six centers were treated and compared with the contralateral kidneys from the same donors (Appendix A, item F6). The investigators reported that patient survival at 48 months was 98.3% in the treated group against 86% in the comparison group, a difference with a p-value of 0.016. The manufacturer's materials add a figure for delayed graft function of 7% against 26% in some subgroups (Appendix A, item F6).
+
+I classify all of this as preliminary and I would encourage readers to treat it with unusual caution, for three reasons. The comparison was non-randomized and based on pairing, and the design makes it hard to say what drove any difference. A difference in recipient survival at four years is a surprising thing to attribute to an additive in a preservation solution, and extraordinary results of that sort are usually the beginning of an investigation rather than the end of one. And the figures that are most favorable come from sources with an interest in the outcome. A registry entry for a four-year follow-up describes an observational case-control design with an estimated enrollment of 116, which differs from the 60-graft study described above, and a separate randomized trial exists, registered under NCT04181710, for which I found no published results (ClinicalTrials.gov, n.d.).
+
+The Cold Ischemia Foundation has published educational material about one company in this space, BHOC Therapeutics, and I owe the reader the Foundation's own stated position, which is stricter than any critic's. The company describes a cell-free hemoglobin oxygen carrier designed to be compatible across blood groups, and its transplant program states that it is a research concept, that it is not an approved treatment, and that it has not been shown to prevent rejection or to change transplant outcomes (Cold Ischemia Foundation, n.d.-a). The Foundation's evidence brief notes that no oxygen carrier has full regulatory approval for intravenous use in humans, and it recounts the history of safety setbacks that has kept this class of molecule out of routine use for twenty years (Cold Ischemia Foundation, n.d.-b). I repeat those statements here because they represent the correct posture toward any technology that is still on the lower rungs of the ladder. Interest is warranted. Promotion is not.
+
+## The record: replacing the organ
+
+At the top of the ladder, in terms of ambition, stands xenotransplantation. The first clinical trial of a gene-edited pig kidney, called EXPAND and sponsored by United Therapeutics, announced its first transplant at NYU Langone Health on 3 November 2025. The organ comes from a pig with ten genetic modifications, six human genes added and four pig genes removed, and participants are monitored for 24 weeks, with lifelong follow-up to screen for infections that could pass from animal to human (United Therapeutics Corporation, 2025). The trial is designed to support a regulatory application and is intended for patients who are unlikely to receive a human kidney within five years.
+
+I found no published patient outcome data from the trial in 2026. Earlier compassionate-use cases provide the only evidence so far. A review reports that a recipient at Massachusetts General Hospital had a pig kidney that functioned for 271 days before being removed for progressive dysfunction in October 2025, the longest survival reported to that date, while a New York recipient had a pig kidney removed in April 2025 after complications from an unrelated infection (Appendix A, item F8). These cases are extraordinary and they are anecdotes. A single trial's first transplant is not a result. It is a beginning.
+
+## The reading: why the ladder is so slow to climb
+
+Why does the ladder take decades, and why are its upper rungs occupied by so few technologies? I offer five hypotheses, each of which is the author's analysis and not a finding.
+
+The evidence threshold is rightly high. A mistake in organ preservation can cost a graft, and a graft is a life. That is a justification for rigor, and rigor is not the thing I am criticizing.
+
+The trials are small. The two normothermic trials above enrolled 277 and 80 patients, and the oxygen-carrier studies enrolled 60. At those sample sizes, confidence intervals are cathedral-wide. Because no organization owns the question, no one has assembled the multicenter, registry-embedded randomized trials that could deliver an answer.
+
+Payment is misaligned. The costs of better preservation fall on the center or the procurement organization that buys the device or the additive. Many of the benefits, fewer episodes of delayed graft function and longer graft survival, accrue later and to others. A cost borne now for a benefit enjoyed by a stranger later is a textbook case of an externality. The new federal payment model's quality domain, which rewards graft survival, is the first attempt I know of to internalize it (CMS, n.d.).
+
+Ownership is fragmented. As Chapter 2 argued, no one owns the cold chain end to end. A technology that crosses the seam between recovery and transplantation has no natural sponsor.
+
+The development path is long and expensive, and small companies run out of money long before trials report. That is a structural feature of biotechnology and not a scandal. It does mean that a good idea needs a patient funder, and patience is a scarce commodity.
+
+## A conservative proposal: embed trials in the registry
+
+The remedy I propose is not more enthusiasm. It is infrastructure. The national registry already captures nearly every transplant. A system that embedded randomization within routine allocation, offering a participating center a kidney that has been randomly assigned to one preservation method or another with the consent of the recipient, could generate in a few years the kind of evidence that single-center trials produce in decades. Regulators should require that favorable results announced by a manufacturer be replicated by an independent group before they are described as established. And funders, public and private, should be asked to pay for outcomes: graft survival at one, five, and ten years, measured by the registry and not by the vendor.
