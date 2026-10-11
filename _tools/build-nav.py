@@ -28,6 +28,7 @@ GROUPS = [
     ("Learn", [
         ("living-donor-guide.html", "Free Donor Guide (PDF)"),
         ("research-digest.html", "Research Digest"),
+        ("inside-files.html", "The Inside Files"),
         ("research.html", "Research"),
         ("kidney-news.html", "Kidney News"),
         ("transplant-news-feed.html", "Transplant & Kidney Wire"),
