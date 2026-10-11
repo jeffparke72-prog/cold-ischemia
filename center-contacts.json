@@ -341,17 +341,6 @@
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "AL"
   },
-  "childrens-hospital-los-angeles-los-angeles": {
-   "ccn": "050373",
-   "city": "LOS ANGELES",
-   "confidence": 0.73,
-   "line": "main hospital line",
-   "matched": "LOS ANGELES GENERAL MEDICAL CENTER",
-   "phone": "323-226-2800",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "CA"
-  },
   "christus-santa-rosa-hospital-medical-center-san-antonio": {
    "ccn": "450237",
    "city": "SAN ANTONIO",
@@ -726,17 +715,6 @@
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "VA"
   },
-  "memorial-hermann-hospital-university-of-texas-at-houston-houston": {
-   "ccn": "450068",
-   "city": "HOUSTON",
-   "confidence": 0.73,
-   "line": "main hospital line",
-   "matched": "MEMORIAL HERMANN - TEXAS MEDICAL CENTER",
-   "phone": "713-704-3700",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "TX"
-  },
   "methodist-dallas-medical-center-dallas": {
    "ccn": "450051",
    "city": "DALLAS",
@@ -791,28 +769,6 @@
    "retrieved": "2026-10-11",
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "OH"
-  },
-  "new-york-presbyterian-hospital-weill-cornell-medical-center-new-york": {
-   "ccn": "330101",
-   "city": "NEW YORK",
-   "confidence": 0.68,
-   "line": "main hospital line",
-   "matched": "NEW YORK-PRESBYTERIAN HOSPITAL",
-   "phone": "212-746-5454",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "NY"
-  },
-  "new-york-university-medical-center-new-york": {
-   "ccn": "330101",
-   "city": "NEW YORK",
-   "confidence": 0.73,
-   "line": "main hospital line",
-   "matched": "NEW YORK-PRESBYTERIAN HOSPITAL",
-   "phone": "212-746-5454",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "NY"
   },
   "newark-beth-israel-medical-center-new-providence": {
    "ccn": "310002",
@@ -913,17 +869,6 @@
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "NM"
   },
-  "presbyterian-st-luke-s-medical-center-denver": {
-   "ccn": "060014",
-   "city": "DENVER",
-   "confidence": 0.68,
-   "line": "main hospital line",
-   "matched": "HCA HealthOne Presbyterian St. Lukes",
-   "phone": "303-839-6000",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "CO"
-  },
   "primary-children-s-hospital-salt-lake-city": {
    "ccn": "463301",
    "city": "SALT LAKE CITY",
@@ -1000,17 +945,6 @@
    "retrieved": "2026-10-11",
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "OK"
-  },
-  "saint-thomas-hospital-nashville": {
-   "ccn": "440082",
-   "city": "NASHVILLE",
-   "confidence": 0.73,
-   "line": "main hospital line",
-   "matched": "ASCENSION SAINT THOMAS HOSPITAL",
-   "phone": "615-222-2111",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "TN"
   },
   "sanford-bismarck-medical-center-minneapolis": {
    "ccn": "350015",
@@ -1132,17 +1066,6 @@
    "retrieved": "2026-10-11",
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "AZ"
-  },
-  "st-louis-children-s-hospital-at-washington-university-medical-center-saint-louis": {
-   "ccn": "263301",
-   "city": "SAINT LOUIS",
-   "confidence": 0.73,
-   "line": "main hospital line",
-   "matched": "ST LOUIS CHILDRENS HOSPITAL",
-   "phone": "314-454-6000",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "MO"
   },
   "st-luke-s-hospital-of-kansas-city-westwood": {
    "ccn": "260138",
@@ -1440,28 +1363,6 @@
    "retrieved": "2026-10-11",
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "TX"
-  },
-  "va-pittsburgh-healthcare-system-pittsburgh": {
-   "ccn": "39012F",
-   "city": "PITTSBURGH",
-   "confidence": 0.68,
-   "line": "main hospital line",
-   "matched": "VA PITTSBURGH HEALTHCARE SYSTEM - UNIV DR",
-   "phone": "412-688-6100",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "PA"
-  },
-  "va-portland-health-care-system-portland": {
-   "ccn": "38003F",
-   "city": "PORTLAND",
-   "confidence": 0.73,
-   "line": "main hospital line",
-   "matched": "PORTLAND VA MEDICAL CENTER",
-   "phone": "503-220-8262",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "OR"
   },
   "virginia-mason-medical-center-bellevue": {
    "ccn": "500005",
