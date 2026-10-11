@@ -143,17 +143,6 @@
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "MO"
   },
-  "baylor-scott-and-white-all-saints-medical-center-fort-worth-houston": {
-   "ccn": "450137",
-   "city": "FORT WORTH",
-   "confidence": 0.57,
-   "line": "main hospital line",
-   "matched": "BAYLOR SCOTT AND WHITE ALL SAINTS MEDICAL CENTER",
-   "phone": "817-926-2544",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "TX"
-  },
   "baylor-university-medical-center-dallas": {
    "ccn": "450021",
    "city": "DALLAS",
@@ -396,17 +385,6 @@
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "PA"
   },
-  "doctor-s-hospital-at-renaissance-san-antonio": {
-   "ccn": "450869",
-   "city": "EDINBURG",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "DOCTORS HOSPTAL AT RENAISSANCE",
-   "phone": "956-362-8677",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "TX"
-  },
   "driscoll-children-s-hospital-dallas": {
    "ccn": "453301",
    "city": "CORPUS CHRISTI",
@@ -483,28 +461,6 @@
    "retrieved": "2026-10-11",
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "PA"
-  },
-  "george-washington-university-hospital-falls-church": {
-   "ccn": "090001",
-   "city": "WASHINGTON",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "GEORGE WASHINGTON UNIV HOSPITAL",
-   "phone": "202-716-4605",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "DC"
-  },
-  "gulf-coast-medical-center-tampa": {
-   "ccn": "100220",
-   "city": "FORT MYERS",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "GULF COAST MEDICAL CENTER LEE HEALTH",
-   "phone": "239-343-1000",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "FL"
   },
   "hackensack-university-medical-center-new-providence": {
    "ccn": "310001",
@@ -693,17 +649,6 @@
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "CA"
   },
-  "long-island-jewish-medical-center-cohen-children-s-medical-center-new-york": {
-   "ccn": "330195",
-   "city": "NEW HYDE PARK",
-   "confidence": 0.6,
-   "line": "main hospital line",
-   "matched": "LONG ISLAND JEWISH MEDICAL CENTER",
-   "phone": "718-470-7000",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "NY"
-  },
   "loyola-university-medical-center-itasca": {
    "ccn": "140276",
    "city": "MAYWOOD",
@@ -714,17 +659,6 @@
    "retrieved": "2026-10-11",
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "IL"
-  },
-  "lucile-salter-packard-children-s-hospital-at-stanford-san-ramon": {
-   "ccn": "053305",
-   "city": "PALO ALTO",
-   "confidence": 0.64,
-   "line": "main hospital line",
-   "matched": "LUCILE SALTER PACKARD CHILDREN'S HSP AT STANFORD",
-   "phone": "650-497-8000",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "CA"
   },
   "mary-hitchcock-memorial-hospital-waltham": {
    "ccn": "300003",
@@ -902,17 +836,6 @@
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "TX"
   },
-  "north-shore-university-hospital-northwell-health-new-york": {
-   "ccn": "330106",
-   "city": "MANHASSET",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "NORTH SHORE UNIVERSITY HOSPITAL",
-   "phone": "516-562-0100",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "NY"
-  },
   "northwestern-memorial-hospital-itasca": {
    "ccn": "140281",
    "city": "CHICAGO",
@@ -945,28 +868,6 @@
    "retrieved": "2026-10-11",
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "OH"
-  },
-  "osf-saint-francis-medical-center-itasca": {
-   "ccn": "140067",
-   "city": "PEORIA",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "SAINT FRANCIS MEDICAL CENTER",
-   "phone": "309-655-2000",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "IL"
-  },
-  "our-lady-of-lourdes-medical-center-philadelphia": {
-   "ccn": "310029",
-   "city": "CAMDEN",
-   "confidence": 0.6,
-   "line": "main hospital line",
-   "matched": "VIRTUA OUR LADY OF LOURDES HOSPITAL",
-   "phone": "856-886-5373",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "NJ"
   },
   "parkland-health-and-hospital-system-dallas": {
    "ccn": "450015",
@@ -1078,17 +979,6 @@
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "NJ"
   },
-  "rochester-methodist-hospital-mayo-clinic-minneapolis": {
-   "ccn": "240010",
-   "city": "ROCHESTER",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "MAYO CLINIC HOSPITAL ROCHESTER",
-   "phone": "507-255-5123",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "MN"
-  },
   "rush-university-medical-center-itasca": {
    "ccn": "140119",
    "city": "CHICAGO",
@@ -1099,28 +989,6 @@
    "retrieved": "2026-10-11",
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "IL"
-  },
-  "sacred-heart-hospital-pensacola-gainesville": {
-   "ccn": "100025",
-   "city": "PENSACOLA",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "SACRED HEART HOSPITAL",
-   "phone": "850-416-7000",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "FL"
-  },
-  "saint-barnabas-medical-center-new-providence": {
-   "ccn": "314022",
-   "city": "TOMS RIVER",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "SAINT BARNABAS BEHAVIORAL HEALTH CENTER",
-   "phone": "732-914-1688",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "NJ"
   },
   "saint-francis-hospital-oklahoma-city": {
    "ccn": "370091",
@@ -1210,17 +1078,6 @@
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "VA"
   },
-  "seton-medical-center-austin-san-antonio": {
-   "ccn": "450056",
-   "city": "AUSTIN",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "ASCENSION SETON MEDICAL CENTER AUSTIN",
-   "phone": "512-324-1000",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "TX"
-  },
   "sharp-memorial-hospital-san-diego": {
    "ccn": "050100",
    "city": "SAN DIEGO",
@@ -1265,17 +1122,6 @@
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "PA"
   },
-  "st-john-medical-center-oklahoma-city": {
-   "ccn": "370114",
-   "city": "TULSA",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "ASCENSION ST JOHN MEDICAL CENTER",
-   "phone": "918-744-2296",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "OK"
-  },
   "st-joseph-s-hospital-and-medical-center-phoenix": {
    "ccn": "030024",
    "city": "PHOENIX",
@@ -1316,17 +1162,6 @@
    "line": "main hospital line",
    "matched": "STANFORD HEALTH CARE",
    "phone": "650-723-4000",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "CA"
-  },
-  "sutter-meidcal-center-sacramento-west-sacramento": {
-   "ccn": "050108",
-   "city": "SACRAMENTO",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "SUTTER MEDICAL CENTER, SACRAMENTO",
-   "phone": "916-454-2222",
    "retrieved": "2026-10-11",
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "CA"
@@ -1397,17 +1232,6 @@
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "OH"
   },
-  "the-iowa-city-va-health-care-system-north-liberty": {
-   "ccn": "16004F",
-   "city": "IOWA CITY",
-   "confidence": 0.6,
-   "line": "main hospital line",
-   "matched": "IOWA CITY VA MEDICAL CENTER",
-   "phone": "319-338-0581",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "IA"
-  },
   "the-nebraska-medical-center-omaha": {
    "ccn": "280013",
    "city": "OMAHA",
@@ -1473,17 +1297,6 @@
    "retrieved": "2026-10-11",
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "MA"
-  },
-  "university-hospital-university-of-texas-health-science-center-san-antonio": {
-   "ccn": "450690",
-   "city": "TYLER",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "UNIVERSITY OF TEXAS HEALTH SCIENCE CENTER AT TYLER",
-   "phone": "903-877-7777",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "TX"
   },
   "university-hospitals-of-cleveland-cleveland": {
    "ccn": "360180",
@@ -1583,17 +1396,6 @@
    "retrieved": "2026-10-11",
    "source": "CMS Provider Data Catalog, Hospital General Information",
    "state": "MI"
-  },
-  "university-of-north-carolina-hospitals-greenville": {
-   "ccn": "340047",
-   "city": "WINSTON-SALEM",
-   "confidence": 0.53,
-   "line": "main hospital line",
-   "matched": "NORTH CAROLINA BAPTIST HOSPITAL",
-   "phone": "336-716-2011",
-   "retrieved": "2026-10-11",
-   "source": "CMS Provider Data Catalog, Hospital General Information",
-   "state": "NC"
   },
   "university-of-texas-medical-branch-at-galveston-dallas": {
    "ccn": "450018",
