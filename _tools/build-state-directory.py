@@ -128,7 +128,13 @@ def build(centers, cms, today, overrides=None):
             if ok: cands.append((sc, ci, h))
     cands.sort(key=lambda t: -t[0])
     assigned, used = {}, {}
-    for sc, ci, h in cands:                       # best pairs first; one hospital record serves one center unless they share a street address
+    for ci, c in enumerate(kept):                 # hand-picked CMS record (see directory-overrides.json): used as is
+        cid = overrides.get(c["name"], {}).get("cms_id")
+        if cid:
+            for h in by.get(c["state"], []):
+                if h["facility_id"] == cid and phone(h["telephone_number"]):
+                    assigned[ci] = (1.75, h); break
+    for sc, ci, h in [t for t in cands if t[1] not in assigned]:   # best pairs first; one hospital record serves one center unless they share a street address
         if ci in assigned: continue
         owner = used.get(h["facility_id"])
         if owner is not None and street_key(kept[owner]["address"]) != street_key(kept[ci]["address"]): continue
@@ -183,6 +189,12 @@ def self_test():
     vaa = [dict(code="V1", name="University Hospital, University of New Mexico Health Sciences Center", address="2211 Lomas Blvd NE", city="Albuquerque", state="NM", zip="87106", lat=1, lon=1, opo="")]
     cm3 = [dict(facility_name="VA NEW MEXICO HEALTHCARE SYSTEM", address="1501 SAN PEDRO DR SE", citytown="ALBUQUERQUE", state="NM", zip_code="87108", telephone_number="(505) 265-1711", facility_id="x2")]
     assert "phone" not in build(vaa, cm3, "2026-01-01", {"University Hospital, University of New Mexico Health Sciences Center": {"alias": "University of New Mexico Hospital"}})["NM"][0]
+    nyu = [dict(code="N1", name="New York University Medical Center", address="550 1st Ave", city="New York", state="NY", zip="10016", lat=1, lon=1, opo="")]
+    cm4 = [dict(facility_name="NYU LANGONE HOSPITALS", address="550 FIRST AVENUE", citytown="NEW YORK", state="NY", zip_code="10016", telephone_number="(212) 263-7300", facility_id="330214"),
+           dict(facility_name="BELLEVUE HOSPITAL CENTER", address="462 FIRST AVENUE", citytown="NEW YORK", state="NY", zip_code="10016", telephone_number="(212) 561-4132", facility_id="330204")]
+    got = build(nyu, cm4, "2026-01-01", {"New York University Medical Center": {"cms_id": "330214"}})["NY"][0]
+    assert got["phone"] == "212-263-7300" and got["cms_id"] == "330214", got
+    assert "phone" not in build(nyu, cm4, "2026-01-01")["NY"][0]   # without the hand-picked id the names are too different to match
     print("self-test OK")
 
 
