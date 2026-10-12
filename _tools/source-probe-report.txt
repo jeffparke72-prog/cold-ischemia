@@ -1,0 +1,195 @@
+
+=== PAGE https://data.hrsa.gov/data/download
+   /DataDownload/DD_Files/Active_Grants_Data_Download_Metadata.xlsx
+   /DataDownload/DD_Files/Awarded_Grants_Data_Download_Metadata.xlsx
+   /DataDownload/DD_Files/BCD_HPSA_FCT_DET_DH.csv
+   /DataDownload/DD_Files/BCD_HPSA_FCT_DET_DH.xlsx
+   /DataDownload/DD_Files/BCD_HPSA_FCT_DET_MH.csv
+   /DataDownload/DD_Files/BCD_HPSA_FCT_DET_MH.xlsx
+   /DataDownload/DD_Files/BCD_HPSA_FCT_DET_PC.csv
+   /DataDownload/DD_Files/BCD_HPSA_FCT_DET_PC.xlsx
+   /DataDownload/DD_Files/DD_AUTO_HPSA_SITE_METADATA.XLSX
+   /DataDownload/DD_Files/EHB_ACTIVE_GRANT_FA_AGR.csv
+   /DataDownload/DD_Files/EHB_ACTIVE_GRANT_FA_AGR.xlsx
+   /DataDownload/DD_Files/FS_EHB_AWARD_GRANT_FA_AGR_MVX.csv
+   /DataDownload/DD_Files/FS_EHB_AWARD_GRANT_FA_AGR_MVX.xlsx
+   /DataDownload/DD_Files/HAB_Recipient_and_Subrecipient.csv
+   /DataDownload/DD_Files/HAB_Recipient_and_Subrecipient.xlsx
+   /DataDownload/DD_Files/HPSA_DATAMART_METADATA.XLSX
+   /DataDownload/DD_Files/Health_Center_Service_Delivery_and_LookAlike_Sites.csv
+   /DataDownload/DD_Files/Health_Center_Service_Delivery_and_LookAlike_Sites.xlsx
+   /DataDownload/DD_Files/Health_Center_Service_Delivery_and_LookAlike_Sites_Data_Download_Metadata.xlsx
+   /DataDownload/DD_Files/MUA_DATAMART_METADATA.XLSX
+   /DataDownload/DD_Files/MUA_DET.csv
+   /DataDownload/DD_Files/MUA_DET.xlsx
+   /DataDownload/DD_Files/Organ_Donation_and_Transplantation_Data.xlsx
+   /DataDownload/DD_Files/Ryan_White_HIV_AIDS_Recipients_and_SubRecipients_Data_Download_Metadata.xlsx
+   /DataDownload/DD_Files/SDMS_AUTO_HPSA_SITE_DH.csv
+   /DataDownload/DD_Files/SDMS_AUTO_HPSA_SITE_DH.xlsx
+   /DataDownload/DD_Files/SDMS_AUTO_HPSA_SITE_MH.csv
+   /DataDownload/DD_Files/SDMS_AUTO_HPSA_SITE_MH.xlsx
+   /DataDownload/DD_Files/SDMS_AUTO_HPSA_SITE_PC.csv
+   /DataDownload/DD_Files/SDMS_AUTO_HPSA_SITE_PC.xlsx
+   /DataDownload/DD_Files/SITE_DASHBOARD.csv
+   /DataDownload/DD_Files/SITE_DASHBOARD.xlsx
+   /DataDownload/DD_Files/SITE_DASHBOARD_METADATA.xlsx
+   /DataDownload/Dashboards/BPMH/BPMH_COURSES_INFORMATION.xlsx
+   /DataDownload/Dashboards/BPMH/BPMH_GRADUATE_FOLLOW-UP_INFORMATION.xlsx
+   /DataDownload/Dashboards/BPMH/BPMH_HOME_DASHBOARD_SUMMARY_INFORMATION.xlsx
+   /DataDownload/Dashboards/BPMH/BPMH_PARTICIPANTS_DEMOGRAPHICS_INFORMATION.xlsx
+   /DataDownload/Dashboards/BPMH/BPMH_PARTICIPANT_SUMMARY_INFORMATION.xlsx
+   /DataDownload/Dashboards/BPMH/BPMH_SITES_INFORMATION.xlsx
+   /DataDownload/StaticDocuments/CHQR_Badge_Data.xlsx
+   /DataDownload/StaticDocuments/External_Clinician_Dashboard_Data_v2025.xlsx
+   /DataDownload/StaticDocuments/FY%202019%20NC%20Field%20Strength%20External%20HDW.xlsx
+   /DataDownload/StaticDocuments/FY%202019%20NHSC%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202020%20NHSC%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202020%20Nurse%20Corps%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202021%20FLRP%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202021%20NHHSP%20Scholars%20in%20School.xlsx
+   /DataDownload/StaticDocuments/FY%202021%20NHSC%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202021%20NHSC%20Scholar%20Pipeline.xlsx
+   /DataDownload/StaticDocuments/FY%202021%20Nurse%20Corps%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202021%20Nurse%20Corps%20Scholar%20Pipeline.xlsx
+   /DataDownload/StaticDocuments/FY%202021%20STAR%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202022%20FLRP%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202022%20NHHSP%20Scholars%20in%20School.xlsx
+   /DataDownload/StaticDocuments/FY%202022%20NHSC%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202022%20NHSC%20Scholar%20Pipeline.xlsx
+   /DataDownload/StaticDocuments/FY%202022%20Nurse%20Corps%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202022%20Nurse%20Corps%20Scholar%20Pipeline.xlsx
+   /DataDownload/StaticDocuments/FY%202022%20STAR%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202023%20FLRP%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202023%20NHHSP%20Scholars%20in%20School.xlsx
+   /DataDownload/StaticDocuments/FY%202023%20NHSC%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202023%20NHSC%20Scholar%20Pipeline.xlsx
+   /DataDownload/StaticDocuments/FY%202023%20Nurse%20Corps%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202023%20Nurse%20Corps%20Scholar%20Pipeline.xlsx
+   /DataDownload/StaticDocuments/FY%202023%20PS%20LRP%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202023%20STAR%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20FLRP%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20FLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20NCLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20NCSP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20NHHSP%20Scholars%20in%20School.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20NHSC%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20NHSC%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20NHSC%20SP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20NHSC%20Scholar%20Pipeline.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20Nurse%20Corps%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20Nurse%20Corps%20Scholar%20Pipeline.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20PS%20LRP%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20PS%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20S2S%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20STAR%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202024%20STAR%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY%202025%20FLRP%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202025%20NHHSP%20Scholars%20in%20School.xlsx
+   /DataDownload/StaticDocuments/FY%202025%20NHSC%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202025%20NHSC%20Scholar%20Pipeline.xlsx
+   /DataDownload/StaticDocuments/FY%202025%20Nurse%20Corps%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202025%20Nurse%20Corps%20Scholar%20Pipeline.xlsx
+   /DataDownload/StaticDocuments/FY%202025%20PS%20LRP%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY%202025%20STAR%20Field%20Strength.xlsx
+   /DataDownload/StaticDocuments/FY2020%20FLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2020%20NCLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2020%20NCSP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2020%20NHSC%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2020%20NHSC%20SP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2020%20S2S%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2021%20FLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2021%20NCLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2021%20NCSP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2021%20NHSC%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2021%20NHSC%20SP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2021%20S2S%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2021%20STAR%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2022%20FLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2022%20NCLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2022%20NCSP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2022%20NHSC%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2022%20NHSC%20SP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2022%20S2S%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2022%20STAR%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2023%20FLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2023%20NCLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2023%20NCSP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2023%20NHSC%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2023%20NHSC%20SP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2023%20PS%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2023%20S2S%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2023%20STAR%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2025%20FLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2025%20NCLRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2025%20NCSP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2025%20NHSC%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2025%20NHSC%20SP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2025%20PS%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2025%20S2S%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/FY2025%20STAR%20LRP%20Program%20Applicant%20Metrics.xlsx
+   /DataDownload/StaticDocuments/H80-1999.xlsx
+   /DataDownload/StaticDocuments/H80-2000.xlsx
+   /DataDownload/StaticDocuments/H80-2001.xlsx
+   /DataDownload/StaticDocuments/H80-2002.xlsx
+   /DataDownload/StaticDocuments/H80-2003.xlsx
+   /DataDownload/StaticDocuments/H80-2004.xlsx
+   /DataDownload/StaticDocuments/H80-2005.xlsx
+   /DataDownload/StaticDocuments/H80-2006.xlsx
+   /DataDownload/StaticDocuments/H80-2007.xlsx
+   /DataDownload/StaticDocuments/H80-2008.xlsx
+   /DataDownload/StaticDocuments/H80-2009.xlsx
+   /DataDownload/StaticDocuments/H80-2010.xlsx
+   /DataDownload/StaticDocuments/H80-2011.xlsx
+   /DataDownload/StaticDocuments/H80-2012.xlsx
+   /DataDownload/StaticDocuments/H80-2013.xlsx
+   /DataDownload/StaticDocuments/H80-2014.xlsx
+   /DataDownload/StaticDocuments/H80-2015.xlsx
+   /DataDownload/StaticDocuments/H80-2016.xlsx
+   /DataDownload/StaticDocuments/H80-2017.xlsx
+   /DataDownload/StaticDocuments/H80-2018.xlsx
+   /DataDownload/StaticDocuments/H80-2019.xlsx
+   /DataDownload/StaticDocuments/H80-2020.xlsx
+   /DataDownload/StaticDocuments/H80-2021.xlsx
+   /DataDownload/StaticDocuments/H80-2022.xlsx
+   /DataDownload/StaticDocuments/H80-2023.xlsx
+   /DataDownload/StaticDocuments/H80-2024.xlsx
+   /DataDownload/StaticDocuments/H80-2025.xlsx
+   /DataDownload/StaticDocuments/Hypertension_NHCI_UDS_2019-2024.xlsx
+   /DataDownload/StaticDocuments/LAL-2012.xlsx
+   /DataDownload/StaticDocuments/LAL-2013.xlsx
+   /DataDownload/StaticDocuments/LAL-2014.xlsx
+   /DataDownload/StaticDocuments/LAL-2015.xlsx
+   /DataDownload/StaticDocuments/LAL-2016.xlsx
+   /DataDownload/StaticDocuments/LAL-2017.xlsx
+   /DataDownload/StaticDocuments/LAL-2018.xlsx
+   /DataDownload/StaticDocuments/LAL-2019.xlsx
+   /DataDownload/StaticDocuments/LAL-2020.xlsx
+   /DataDownload/StaticDocuments/LAL-2021.xlsx
+   /DataDownload/StaticDocuments/LAL-2022.xlsx
+   /DataDownload/StaticDocuments/LAL-2023.xlsx
+   /DataDownload/StaticDocuments/LAL-2024.xlsx
+   /DataDownload/StaticDocuments/LAL-2025.xlsx
+   /DataDownload/StaticDocuments/Nursing_Workforce_2018_NSSRN_Dashboard_Data.xlsx
+   /DataDownload/StaticDocuments/Nursing_Workforce_2022_NSSRN_Dashboard_Data.xlsx
+   /DataDownload/StaticDocuments/Workforce_Projections_FullData.xlsx
+   https://data.hrsa.gov/DataDownload/DD_Files/EHB_GRANT_DATAMART_METADATA.XLSX
+   https://data.hrsa.gov/DataDownload/DD_Files/EHB_SITE_DATAMART_METADATA.XLSX
+   https://data.hrsa.gov/DataDownload/DD_Files/HAB_RDR_DATAMART_METADATA.XLSX
+   https://data.hrsa.gov/DataDownload/DD_Files/HPSA_DATAMART_METADATA.XLSX
+   https://data.hrsa.gov/DataDownload/DD_Files/NHSC_PROV_DATAMART_METADATA.XLSX
+
+=== XLSX https://data.hrsa.gov/DataDownload/DD_Files/ORG_OTC_FCT_DET.xlsx
+  bytes: 111008 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+  sheet 'ORG_OTC_FCT_DET': 810 rows
+    ['OPO Name', 'OTC Name', 'OTC Service List', 'OPO Provider #', 'Address', 'City', 'State', 'ZIP', 'OPO Telephone #', 'OTC Code', 'Address', 'City', 'ZIP', 'Organ Transplantation Center Service Typ', 'Common Region Code', 'Common Region Name', 'Common State Name', 'Common State Abbreviation', 'Common State FIPS Code', 'Common State County FIPS Code', 'Common County Name', 'Common City Name with State Abbreviation', 'Common Congressional District Name', 'Common Congress Number Text', 'Common State FIPS Code Congressional Dis', 'Common Postal Code', 'Longitude', 'Latitude', 'Data Warehouse Record Create Date', 'Data Warehouse Record Create Date Text']
+    ['New England Organ Bank', 'Massachusetts General Hospital', ' Heart, Intestine, Kidney, Liver, Lung, ', '22P001', '60 1st Ave', 'Waltham', 'MA', '02451-1106', '617-244-8000', 'MAMG', '55 Fruit St', 'Boston', '02114', 'Intestine', '01', 'Region 1', 'Massachusetts', 'MA', '25', '25025', 'Suffolk County, MA', 'Boston, MA', 'Massachusetts District 08', '115', '2508', '02114', '-71.069292', '42.36248784', '2021-05-27 00:00:00', '2021/05/27']
+    ['New England Organ Bank', 'Massachusetts General Hospital', ' Heart, Intestine, Kidney, Liver, Lung, ', '22P001', '60 1st Ave', 'Waltham', 'MA', '02451-1106', '617-244-8000', 'MAMG', '55 Fruit St', 'Boston', '02114', 'Heart', '01', 'Region 1', 'Massachusetts', 'MA', '25', '25025', 'Suffolk County, MA', 'Boston, MA', 'Massachusetts District 08', '115', '2508', '02114', '-71.069292', '42.36248784', '2021-05-27 00:00:00', '2021/05/27']
+    ['New England Organ Bank', 'Massachusetts General Hospital', ' Heart, Intestine, Kidney, Liver, Lung, ', '22P001', '60 1st Ave', 'Waltham', 'MA', '02451-1106', '617-244-8000', 'MAMG', '55 Fruit St', 'Boston', '02114', 'Lung', '01', 'Region 1', 'Massachusetts', 'MA', '25', '25025', 'Suffolk County, MA', 'Boston, MA', 'Massachusetts District 08', '115', '2508', '02114', '-71.069292', '42.36248784', '2021-05-27 00:00:00', '2021/05/27']
+  sheet 'Data Dictionary': 32 rows
+    ['Column', 'Description']
+    ['Organ Procurement and Transplantation Or', 'This entity represents the table of full']
+    ['OPO Name', 'This attribute represents the organizati']
+    ['OTC Name', 'This attribute represents the name of an']
+
+=== CMS hospital general information (first record keys)
+{"facility_id": "010001", "facility_name": "SOUTHEAST HEALTH MEDICAL CENTER", "address": "1108 ROSS CLARK CIRCLE", "citytown": "DOTHAN", "state": "AL", "zip_code": "36301", "countyparish": "HOUSTON", "telephone_number": "(334) 793-8701", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Government - Hospital District or Authority", "emergency_services": "Yes", "meets_criteria_for_birthing_friendly_designation": "Y", "hospital_overall_rating": "4", "hospital_overall_rating_footnote": "", "mort_group_measure_count": "8", "count_of_facility_mort_measures": "8", "count_of_mort_measures_better": "0", "count_of_mort_measures_no_different": "8", "count_of_mort_measures_worse": "0", "m
