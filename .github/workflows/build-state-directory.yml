@@ -1,0 +1,34 @@
+# Rebuilds kidney-centers.json (every U.S. kidney transplant center by state, with a main phone from CMS) monthly and on demand.
+name: Build state directory
+on:
+  schedule:
+    - cron: "23 5 2 * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["_tools/build-state-directory.py"]
+permissions:
+  contents: write
+concurrency:
+  group: state-directory
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet openpyxl
+      - run: python3 _tools/build-state-directory.py --self-test
+      - run: python3 _tools/build-state-directory.py
+      - name: Save
+        run: |
+          git config user.name "cif-data-bot"; git config user.email "actions@users.noreply.github.com"
+          git add kidney-centers.json _tools/state-directory-report.txt
+          if git diff --cached --quiet; then echo "No change."; exit 0; fi
+          git commit -m "State directory: refresh $(date -u +%Y-%m-%d) [skip ci]"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0; sleep 5; done
+          exit 1
