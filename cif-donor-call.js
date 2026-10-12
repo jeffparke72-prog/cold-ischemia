@@ -90,8 +90,8 @@
     var progs = [];
     var seen = {};
     (ctx.centers || []).forEach(function (c) {
-      var id = slug(c.n + '-' + c.c); if (seen[id]) return; seen[id] = 1;
-      progs.push({ id: id, name: c.n, city: c.c, why: 'Ask for the living donor coordinator or the transplant social worker.' });
+      var id = c.code ? 'c-' + c.code : slug(c.n + '-' + c.c); if (seen[id]) return; seen[id] = 1;
+      progs.push({ id: id, name: c.n, city: c.c, phone: c.phone || '', line: c.phone ? 'main hospital line' : '', source: 'CMS hospital records', retrieved: c.updated || '', address: c.address || '', why: 'Ask for the living donor coordinator, the transplant social worker, or the transplant program\u2019s administrative office.' });
     });
     var cities = progs.map(function (p) { return p.city; }).filter(function (x, i, a) { return a.indexOf(x) === i; }).sort();
     var fixed = (ctx.opos || []).map(function (o) { return { id: slug(o.name), name: o.name + ' (OPO)', city: o.city + ', ' + o.state, phone: o.phone, line: 'OPO office', source: 'HRSA OPO directory', retrieved: '2026-09-28', why: 'Handles deceased donation. They can tell you which nearby programs run a living donor program, but they do not evaluate living donors.' }; })
@@ -129,8 +129,7 @@
           root.querySelector('#ccfixed').innerHTML = fixed.map(function (c) { return row(c, log, pub, pcs); }).join('');
         };
         paint();
-        getJSON('program-contacts.json').then(function (j) { pcs = (j && j.contacts) || {}; paint(); });
-        getJSON('center-contacts.json').then(function (j) { contacts = (j && j.contacts) || {}; paint(); });
+        progs.forEach(function (p) { var d = window.CIFReach && window.CIFReach.contactFor(p.name); if (d) pcs[p.id] = d; }); paint();
         getJSON('contact-ratings.json').then(function (j) { if (j && j.contacts) { pub = j.contacts; paint(); } });
         var ep = window.CIF_CONFIG && window.CIF_CONFIG.formsEndpoint;
         if (ep && window.cifFormsReady && window.cifFormsReady()) getJSON(ep + '?ratings=1').then(function (j) {

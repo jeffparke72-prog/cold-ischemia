@@ -37,6 +37,7 @@ GROUPS = [
         ("donor-flow.html", "Project Donor-Flow"),
         ("living-donor-hub.html", "Living Donor Hub"),
         ("living-donor-journey.html", "Living Donor Journey"),
+        ("kidney-transplant-centers.html", "Kidney Transplant Centers by State"),
         ("opo-directory.html", "U.S. OPO Directory"),
     ]),
     ("BHOC", [
