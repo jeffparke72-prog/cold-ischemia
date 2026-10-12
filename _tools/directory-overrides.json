@@ -1,59 +1,214 @@
 {
- "_note": "Hand-checked fixes for HRSA names that CMS lists differently (renames, mergers) and programs known to have closed. Key = the center name exactly as HRSA lists it. alias = the name CMS uses; closed = leave the program out of the directory.",
- "Hahnemann University Hospital": {"closed": true, "note": "Hahnemann University Hospital in Philadelphia closed in 2019"},
- "St. Vincent Medical Center": {"closed": true, "note": "St. Vincent Medical Center in Los Angeles closed in 2020"},
- "UAMS Medical Center": {"alias": "University of Arkansas for Medical Sciences"},
- "California Pacific Medical Center": {"alias": "California Pacific Medical Center Pacific Campus"},
- "Harbor UCLA Medical Center": {"alias": "Harbor-UCLA Medical Center"},
- "Saint Joseph Hospital": {"alias": "St Joseph Hospital Orange"},
- "UCSF Medical Center at Mission Bay": {"alias": "UCSF Medical Center"},
- "University of California San Francisco Medical Center": {"alias": "UCSF Medical Center"},
- "University of California Irvine Medical Center": {"alias": "UC Irvine Medical Center"},
- "University of California San Diego Medical Center": {"alias": "UC San Diego Health Hillcrest Medical Center"},
- "University of California at Los Angeles Medical Center": {"alias": "Ronald Reagan UCLA Medical Center"},
- "Alfred I duPont Hospital for Children": {"alias": "Nemours Alfred I duPont Hospital for Children"},
- "Christiana Care Health Services": {"alias": "Christiana Hospital"},
- "Cleveland Clinic Florida Weston": {"alias": "Cleveland Clinic Florida"},
- "Florida Hospital Medical Center": {"alias": "AdventHealth Orlando"},
- "Jackson Memorial Hospital University of Miami School of Medicine": {"alias": "Jackson Memorial Hospital"},
- "Largo Medical Center": {"alias": "HCA Florida Largo Hospital"},
- "Memorial Regional Hospital": {"alias": "Memorial Regional Hospital"},
- "AU Medical Center, Inc.": {"alias": "Augusta University Medical Center"},
- "Children's Healthcare of Atlanta at Egleston": {"alias": "Children's Healthcare of Atlanta Egleston"},
- "Memorial Medical Center": {"alias": "Memorial Medical Center"},
- "Children's Hospital": {"alias": "Children's Hospital New Orleans"},
- "Ochsner Foundation Hospital": {"alias": "Ochsner Medical Center"},
- "Tulane Medical Center": {"alias": "Tulane Medical Center"},
- "Lahey Clinic Medical Center": {"alias": "Lahey Hospital and Medical Center"},
- "Walter Reed National Military Medical Center at Bethesda": {"alias": "Walter Reed National Military Medical Center"},
- "Helen DeVos Children's Hospital": {"alias": "Corewell Health Helen DeVos Children's Hospital"},
- "William Beaumont Hospital": {"alias": "Corewell Health William Beaumont University Hospital"},
- "Saint Marys Hospital (Mayo Clinic)": {"alias": "Mayo Clinic Hospital Saint Marys Campus"},
- "University of Minnesota Medical Center, Fairview": {"alias": "M Health Fairview University of Minnesota Medical Center"},
- "Cardinal Glennon Children's Hospital": {"alias": "SSM Health Cardinal Glennon Children's Hospital"},
- "University of Missouri Hospital and Clinics": {"alias": "University of Missouri Hospital"},
- "University of North Carolina Hospitals": {"alias": "UNC Hospitals North Carolina Memorial Hospital"},
- "Vidant Medical Center": {"alias": "ECU Health Medical Center"},
- "Wake Forest Baptist Medical Center": {"alias": "Atrium Health Wake Forest Baptist"},
- "University Hospital, University of New Mexico Health Sciences Center": {"alias": "University of New Mexico Hospital"},
- "University Medical Center of Southern Nevada": {"alias": "University Medical Center"},
- "James J. Peters VA Medical Center": {"alias": "James J Peters VA Medical Center"},
- "NY Presbyterian Hospital/Columbia Univ. Medical Center": {"alias": "NewYork-Presbyterian Hospital Columbia University Irving Medical Center"},
- "State University of New York Upstate Medical University": {"alias": "Upstate University Hospital"},
- "State University of New York, Downstate Medical Center": {"alias": "SUNY Downstate University Hospital of Brooklyn"},
- "University Hospital of State University of New York at Stony Brook": {"alias": "Stony Brook University Hospital"},
- "Children's Hospital Medical Center": {"alias": "Cincinnati Children's Hospital Medical Center"},
- "Children's Hospital of Oklahoma": {"alias": "OU Health University of Oklahoma Children's Hospital"},
- "OU Medical Center": {"alias": "OU Health University of Oklahoma Medical Center"},
- "Oregon Health and Science University": {"alias": "Oregon Health and Science University Hospital"},
- "Albert Einstein Medical Center": {"alias": "Einstein Medical Center Philadelphia"},
- "Pinnacle Health System at Harrisburg Hospital": {"alias": "UPMC Harrisburg"},
- "University of Pittsburgh Medical Center": {"alias": "UPMC Presbyterian Shadyside"},
- "Medical University of South Carolina": {"alias": "MUSC Health University Medical Center"},
- "Le Bonheur Children's Medical Center": {"alias": "Le Bonheur Children's Hospital"},
- "University of Tennessee Medical Center at Knoxville": {"alias": "University of Tennessee Medical Center"},
- "Vanderbilt University Medical Center and Nashville VA Medical Center": {"alias": "Vanderbilt University Hospital"},
- "Methodist Specialty and Transplant Hospital": {"alias": "Methodist Hospital Specialty and Transplant"},
- "University Hospital, University of Texas Health Science Center": {"alias": "University Hospital"},
- "Providence Sacred Heart Medical Center & Children's Hospital": {"alias": "Providence Sacred Heart Medical Center and Children's Hospital"}
+ "_note": "Hand-checked fixes for HRSA names that CMS lists differently (renames, mergers) and programs known to have closed. Key = the center name exactly as HRSA lists it. alias = the name CMS uses; closed = leave the program out of the directory. cms_id = a CMS facility id chosen by hand because it is the same hospital or campus (same street address, or the same hospital under its current name); the main line of that record is used.",
+ "Hahnemann University Hospital": {
+  "closed": true,
+  "note": "Hahnemann University Hospital in Philadelphia closed in 2019"
+ },
+ "St. Vincent Medical Center": {
+  "closed": true,
+  "note": "St. Vincent Medical Center in Los Angeles closed in 2020"
+ },
+ "UAMS Medical Center": {
+  "alias": "University of Arkansas for Medical Sciences"
+ },
+ "California Pacific Medical Center": {
+  "alias": "California Pacific Medical Center Pacific Campus"
+ },
+ "Harbor UCLA Medical Center": {
+  "alias": "Harbor-UCLA Medical Center"
+ },
+ "Saint Joseph Hospital": {
+  "alias": "St Joseph Hospital Orange"
+ },
+ "UCSF Medical Center at Mission Bay": {
+  "alias": "UCSF Medical Center",
+  "cms_id": "050454"
+ },
+ "University of California San Francisco Medical Center": {
+  "alias": "UCSF Medical Center",
+  "cms_id": "050454"
+ },
+ "University of California Irvine Medical Center": {
+  "alias": "UC Irvine Medical Center",
+  "cms_id": "050348"
+ },
+ "University of California San Diego Medical Center": {
+  "alias": "UC San Diego Health Hillcrest Medical Center"
+ },
+ "University of California at Los Angeles Medical Center": {
+  "alias": "Ronald Reagan UCLA Medical Center"
+ },
+ "Alfred I duPont Hospital for Children": {
+  "alias": "Nemours Alfred I duPont Hospital for Children",
+  "cms_id": "083300"
+ },
+ "Christiana Care Health Services": {
+  "alias": "Christiana Hospital"
+ },
+ "Cleveland Clinic Florida Weston": {
+  "alias": "Cleveland Clinic Florida"
+ },
+ "Florida Hospital Medical Center": {
+  "alias": "AdventHealth Orlando"
+ },
+ "Jackson Memorial Hospital University of Miami School of Medicine": {
+  "alias": "Jackson Memorial Hospital"
+ },
+ "Largo Medical Center": {
+  "alias": "HCA Florida Largo Hospital"
+ },
+ "Memorial Regional Hospital": {
+  "alias": "Memorial Regional Hospital"
+ },
+ "AU Medical Center, Inc.": {
+  "alias": "Augusta University Medical Center",
+  "cms_id": "110034"
+ },
+ "Children's Healthcare of Atlanta at Egleston": {
+  "alias": "Children's Healthcare of Atlanta Egleston",
+  "cms_id": "113301"
+ },
+ "Memorial Medical Center": {
+  "alias": "Memorial Medical Center"
+ },
+ "Children's Hospital": {
+  "alias": "Children's Hospital New Orleans"
+ },
+ "Ochsner Foundation Hospital": {
+  "alias": "Ochsner Medical Center"
+ },
+ "Tulane Medical Center": {
+  "alias": "Tulane Medical Center"
+ },
+ "Lahey Clinic Medical Center": {
+  "alias": "Lahey Hospital and Medical Center"
+ },
+ "Walter Reed National Military Medical Center at Bethesda": {
+  "alias": "Walter Reed National Military Medical Center"
+ },
+ "Helen DeVos Children's Hospital": {
+  "alias": "Corewell Health Helen DeVos Children's Hospital",
+  "cms_id": "230038"
+ },
+ "William Beaumont Hospital": {
+  "alias": "Corewell Health William Beaumont University Hospital",
+  "cms_id": "230130"
+ },
+ "Saint Marys Hospital (Mayo Clinic)": {
+  "alias": "Mayo Clinic Hospital Saint Marys Campus",
+  "cms_id": "240010"
+ },
+ "University of Minnesota Medical Center, Fairview": {
+  "alias": "M Health Fairview University of Minnesota Medical Center"
+ },
+ "Cardinal Glennon Children's Hospital": {
+  "alias": "SSM Health Cardinal Glennon Children's Hospital"
+ },
+ "University of Missouri Hospital and Clinics": {
+  "alias": "University of Missouri Hospital"
+ },
+ "University of North Carolina Hospitals": {
+  "alias": "UNC Hospitals North Carolina Memorial Hospital"
+ },
+ "Vidant Medical Center": {
+  "alias": "ECU Health Medical Center"
+ },
+ "Wake Forest Baptist Medical Center": {
+  "alias": "Atrium Health Wake Forest Baptist",
+  "cms_id": "340047"
+ },
+ "University Hospital, University of New Mexico Health Sciences Center": {
+  "alias": "University of New Mexico Hospital",
+  "cms_id": "320001"
+ },
+ "University Medical Center of Southern Nevada": {
+  "alias": "University Medical Center"
+ },
+ "James J. Peters VA Medical Center": {
+  "alias": "James J Peters VA Medical Center",
+  "cms_id": "33016F"
+ },
+ "NY Presbyterian Hospital/Columbia Univ. Medical Center": {
+  "alias": "NewYork-Presbyterian Hospital Columbia University Irving Medical Center"
+ },
+ "State University of New York Upstate Medical University": {
+  "alias": "Upstate University Hospital",
+  "cms_id": "330241"
+ },
+ "State University of New York, Downstate Medical Center": {
+  "alias": "SUNY Downstate University Hospital of Brooklyn"
+ },
+ "University Hospital of State University of New York at Stony Brook": {
+  "alias": "Stony Brook University Hospital"
+ },
+ "Children's Hospital Medical Center": {
+  "alias": "Cincinnati Children's Hospital Medical Center"
+ },
+ "Children's Hospital of Oklahoma": {
+  "alias": "OU Health University of Oklahoma Children's Hospital",
+  "cms_id": "370093"
+ },
+ "OU Medical Center": {
+  "alias": "OU Health University of Oklahoma Medical Center",
+  "cms_id": "370093"
+ },
+ "Oregon Health and Science University": {
+  "alias": "Oregon Health and Science University Hospital",
+  "cms_id": "380009"
+ },
+ "Albert Einstein Medical Center": {
+  "alias": "Einstein Medical Center Philadelphia"
+ },
+ "Pinnacle Health System at Harrisburg Hospital": {
+  "alias": "UPMC Harrisburg",
+  "cms_id": "390067"
+ },
+ "University of Pittsburgh Medical Center": {
+  "alias": "UPMC Presbyterian Shadyside"
+ },
+ "Medical University of South Carolina": {
+  "alias": "MUSC Health University Medical Center"
+ },
+ "Le Bonheur Children's Medical Center": {
+  "alias": "Le Bonheur Children's Hospital"
+ },
+ "University of Tennessee Medical Center at Knoxville": {
+  "alias": "University of Tennessee Medical Center"
+ },
+ "Vanderbilt University Medical Center and Nashville VA Medical Center": {
+  "alias": "Vanderbilt University Hospital",
+  "cms_id": "440039"
+ },
+ "Methodist Specialty and Transplant Hospital": {
+  "alias": "Methodist Hospital Specialty and Transplant",
+  "cms_id": "450388"
+ },
+ "University Hospital, University of Texas Health Science Center": {
+  "alias": "University Hospital"
+ },
+ "Providence Sacred Heart Medical Center & Children's Hospital": {
+  "alias": "Providence Sacred Heart Medical Center and Children's Hospital",
+  "cms_id": "500054"
+ },
+ "University of Colorado Hospital/Health Science Center": {
+  "cms_id": "060024"
+ },
+ "George Washington University Hospital": {
+  "cms_id": "090001"
+ },
+ "Mercy Medical Center-Des Moines": {
+  "cms_id": "160083"
+ },
+ "St Vincent Hospital and Health Care Center": {
+  "cms_id": "150084"
+ },
+ "Long Island Jewish Medical Center-Cohen Children's Medical Center": {
+  "cms_id": "330195"
+ },
+ "New York University Medical Center": {
+  "cms_id": "330214"
+ },
+ "VA Pittsburgh Healthcare System": {
+  "cms_id": "39012F"
+ }
 }
