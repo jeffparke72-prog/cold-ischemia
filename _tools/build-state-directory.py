@@ -81,28 +81,32 @@ def fetch_cms():
         off += 500; time.sleep(0.4)
 
 
-def match_phone(center, cms_by_state):
+def match_phone(center, cms_by_state, alias=None):
     best, bs = None, 0.0
     ck = street_key(center["address"])
     for h in cms_by_state.get(center["state"], []):
-        nj = jac(center["name"], h["facility_name"])
+        nj = max(jac(center["name"], h["facility_name"]), jac(alias, h["facility_name"]) if alias else 0)
         same_zip = bool(center["zip"]) and zip5(h["zip_code"]) == center["zip"]
         same_city = center["city"].lower() == str(h["citytown"]).lower()
         hk = street_key(h["address"]); same_addr = bool(ck and hk and ck == hk and same_zip)
         sc = nj + 0.5 * same_zip + 0.5 * same_addr + 0.25 * same_city
-        ok = (same_addr and nj >= 0.1) or (same_zip and nj >= 0.34) or (same_city and nj >= 0.6) or nj >= 0.85
+        ok = (same_addr and nj >= 0.1) or (same_zip and nj >= 0.34) or (same_city and nj >= 0.6) or nj >= 0.85 or (alias and (same_zip or same_city) and nj >= 0.5)
         if ok and sc > bs: best, bs = h, sc
     if not best or not phone(best["telephone_number"]): return None
     return dict(phone=phone(best["telephone_number"]), cms_name=best["facility_name"], cms_id=best["facility_id"], confidence=round(min(bs / 1.75, 1.0), 2))
 
 
-def build(centers, cms, today):
+def build(centers, cms, today, overrides=None):
+    overrides = overrides or {}
     by = {}
     for h in cms: by.setdefault(h["state"], []).append(h)
     states = {s: [] for s in STATES}
     for c in centers:
         if c["state"] not in states: continue
-        m = match_phone(c, by) or {}
+        ov = overrides.get(c["name"], {})
+        if ov.get("closed"):
+            continue
+        m = match_phone(c, by, ov.get("alias")) or {}
         states[c["state"]].append(dict(c, **m, line="main hospital line" if m else None))
     for s in states: states[s].sort(key=lambda x: x["name"])
     return states
@@ -132,6 +136,10 @@ def self_test():
     assert st["MA"][0]["phone"] == "617-726-2000" and st["MA"][0]["cms_id"] == "220071", st["MA"]
     assert "phone" not in st["WY"][0] and st["AK"] == [], st["WY"]
     assert "TOTAL | 2 | 1" in report(st)
+    st2 = build([dict(center, name="Hahnemann University Hospital")], cms, "2026-01-01", {"Hahnemann University Hospital": {"closed": True}})
+    assert st2["MA"] == []
+    st3 = build([dict(center, name="Weird Old Name", address="1 Nope Rd")], cms, "2026-01-01", {"Weird Old Name": {"alias": "Massachusetts General Hospital"}})
+    assert st3["MA"][0]["phone"] == "617-726-2000", st3["MA"]
     print("self-test OK")
 
 
@@ -140,7 +148,8 @@ def main():
     today = datetime.date.today().isoformat()
     centers = read_hrsa(get(HRSA)); cms = fetch_cms()
     if len(centers) < 150 or len(cms) < 4000: sys.exit(f"suspicious sizes: {len(centers)} kidney centers, {len(cms)} CMS hospitals; not writing")
-    states = build(centers, cms, today)
+    ov = json.loads((ROOT / "_tools" / "directory-overrides.json").read_text())
+    states = build(centers, cms, today, ov)
     (ROOT / "kidney-centers.json").write_text(json.dumps(dict(updated=today, sources=["HRSA Organ Transplantation Center file (ORG_OTC_FCT_DET)", "CMS Hospital General Information (xubh-q36u)"], names=STATES, states=states), indent=0, sort_keys=True))
     r = report(states); (ROOT / "_tools" / "state-directory-report.txt").write_text(r); print(r[:3000])
 
