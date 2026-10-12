@@ -16,7 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 HRSA = "https://data.hrsa.gov/DataDownload/DD_Files/ORG_OTC_FCT_DET.xlsx"
 CMS = "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0"
-STOP = set("the of and at for hospital hospitals medical center centre health system university campus children childrens s inc llc clinic regional memorial".split())
+STOP = set("the of and at for a hospital hospitals medical center centre health healthcare system campus s inc llc clinic".split())
 STATES = {"AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware", "DC": "District of Columbia", "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "ID": "Idaho", "IL": "Illinois", "IN": "Indiana", "IA": "Iowa", "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine", "MD": "Maryland", "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota", "MS": "Mississippi", "MO": "Missouri", "MT": "Montana", "NE": "Nebraska", "NV": "Nevada", "NH": "New Hampshire", "NJ": "New Jersey", "NM": "New Mexico", "NY": "New York", "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio", "OK": "Oklahoma", "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina", "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas", "UT": "Utah", "VT": "Vermont", "VA": "Virginia", "WA": "Washington", "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming", "PR": "Puerto Rico"}
 
 
@@ -81,19 +81,36 @@ def fetch_cms():
         off += 500; time.sleep(0.4)
 
 
-def match_phone(center, cms_by_state, alias=None):
-    best, bs = None, 0.0
-    ck = street_key(center["address"])
-    for h in cms_by_state.get(center["state"], []):
-        nj = max(jac(center["name"], h["facility_name"]), jac(alias, h["facility_name"]) if alias else 0)
-        same_zip = bool(center["zip"]) and zip5(h["zip_code"]) == center["zip"]
-        same_city = center["city"].lower() == str(h["citytown"]).lower()
-        hk = street_key(h["address"]); same_addr = bool(ck and hk and ck == hk and same_zip)
-        sc = nj + 0.5 * same_zip + 0.5 * same_addr + 0.25 * same_city
-        ok = (same_addr and nj >= 0.1) or (same_zip and nj >= 0.34) or (same_city and nj >= 0.6) or nj >= 0.85 or (alias and (same_zip or same_city) and nj >= 0.5)
-        if ok and sc > bs: best, bs = h, sc
-    if not best or not phone(best["telephone_number"]): return None
-    return dict(phone=phone(best["telephone_number"]), cms_name=best["facility_name"], cms_id=best["facility_id"], confidence=round(min(bs / 1.75, 1.0), 2))
+def is_peds(*names):
+    return any(re.search(r"\bchild", str(n or ""), re.I) for n in names)
+
+
+def is_va(*names):
+    return any(re.search(r"\b(va|veterans?)\b", str(n or ""), re.I) for n in names)
+
+
+def overlap(a, b):
+    A, B = toks(a), toks(b)
+    return len(A & B) / min(len(A), len(B)) if A and B else 0.0
+
+
+def score_pair(center, h, alias=None):
+    """Return (score, ok) for one HRSA center against one CMS hospital in the same state."""
+    names = [center["name"]] + ([alias] if alias else [])
+    # different kinds of hospital are never the same hospital: children's vs adult, VA vs non-VA
+    if is_peds(*names) != is_peds(h["facility_name"]) and not is_peds(alias):
+        return 0.0, False
+    if is_va(*names) != is_va(h["facility_name"]):
+        return 0.0, False
+    nj = max(jac(n, h["facility_name"]) for n in names)
+    ov = max(overlap(n, h["facility_name"]) for n in names)
+    ck, hk = street_key(center["address"]), street_key(h["address"])
+    same_zip = bool(center["zip"]) and zip5(h["zip_code"]) == center["zip"]
+    same_city = center["city"].lower() == str(h["citytown"]).lower()
+    same_addr = bool(ck and hk and ck == hk and same_zip)
+    sc = nj + 0.5 * same_zip + 0.5 * same_addr + 0.25 * same_city
+    ok = (same_addr and ov >= 0.5) or (same_zip and ov >= 0.67 and nj >= 0.34) or (same_city and nj >= 0.6) or nj >= 0.85 or (alias is not None and (same_zip or same_city) and nj >= 0.5)
+    return sc, ok
 
 
 def build(centers, cms, today, overrides=None):
@@ -101,12 +118,26 @@ def build(centers, cms, today, overrides=None):
     by = {}
     for h in cms: by.setdefault(h["state"], []).append(h)
     states = {s: [] for s in STATES}
-    for c in centers:
-        if c["state"] not in states: continue
-        ov = overrides.get(c["name"], {})
-        if ov.get("closed"):
-            continue
-        m = match_phone(c, by, ov.get("alias")) or {}
+    kept = [c for c in centers if c["state"] in states and not overrides.get(c["name"], {}).get("closed")]
+    cands = []
+    for ci, c in enumerate(kept):
+        alias = overrides.get(c["name"], {}).get("alias")
+        for h in by.get(c["state"], []):
+            if not phone(h["telephone_number"]): continue
+            sc, ok = score_pair(c, h, alias)
+            if ok: cands.append((sc, ci, h))
+    cands.sort(key=lambda t: -t[0])
+    assigned, used = {}, {}
+    for sc, ci, h in cands:                       # best pairs first; one hospital record serves one center unless they share a street address
+        if ci in assigned: continue
+        owner = used.get(h["facility_id"])
+        if owner is not None and street_key(kept[owner]["address"]) != street_key(kept[ci]["address"]): continue
+        assigned[ci] = (sc, h); used.setdefault(h["facility_id"], ci)
+    for ci, c in enumerate(kept):
+        m = {}
+        if ci in assigned:
+            sc, h = assigned[ci]
+            m = dict(phone=phone(h["telephone_number"]), cms_name=h["facility_name"], cms_id=h["facility_id"], confidence=round(min(sc / 1.75, 1.0), 2))
         states[c["state"]].append(dict(c, **m, line="main hospital line" if m else None))
     for s in states: states[s].sort(key=lambda x: x["name"])
     return states
@@ -140,6 +171,18 @@ def self_test():
     assert st2["MA"] == []
     st3 = build([dict(center, name="Weird Old Name", address="1 Nope Rd")], cms, "2026-01-01", {"Weird Old Name": {"alias": "Massachusetts General Hospital"}})
     assert st3["MA"][0]["phone"] == "617-726-2000", st3["MA"]
+    al = [dict(code="A1", name="Children's of Alabama", address="1600 7th Ave S", city="Birmingham", state="AL", zip="35233", lat=1, lon=1, opo=""),
+          dict(code="A2", name="University of Alabama Hospital", address="1802 6th Ave S", city="Birmingham", state="AL", zip="35233", lat=1, lon=1, opo="")]
+    cm = [dict(facility_name="UNIVERSITY OF ALABAMA HOSPITAL", address="1802 6TH AVE SOUTH", citytown="BIRMINGHAM", state="AL", zip_code="35233", telephone_number="(205) 934-4011", facility_id="010033"),
+          dict(facility_name="CHILDREN'S OF ALABAMA", address="1600 7TH AVE SOUTH", citytown="BIRMINGHAM", state="AL", zip_code="35233", telephone_number="(205) 638-9100", facility_id="013300")]
+    r = build(al, cm, "2026-01-01")["AL"]
+    assert {x["name"]: x["phone"] for x in r} == {"Children's of Alabama": "205-638-9100", "University of Alabama Hospital": "205-934-4011"}, r
+    co = [dict(code="C1", name="University of Colorado Hospital/Health Science Center", address="1635 Aurora Ct", city="Aurora", state="CO", zip="80045", lat=1, lon=1, opo="")]
+    cm2 = [dict(facility_name="CHILDREN'S HOSPITAL COLORADO", address="13123 E 16TH AVE", citytown="AURORA", state="CO", zip_code="80045", telephone_number="(720) 777-1234", facility_id="x1")]
+    assert "phone" not in build(co, cm2, "2026-01-01")["CO"][0]   # a children's hospital is never an adult hospital's phone
+    vaa = [dict(code="V1", name="University Hospital, University of New Mexico Health Sciences Center", address="2211 Lomas Blvd NE", city="Albuquerque", state="NM", zip="87106", lat=1, lon=1, opo="")]
+    cm3 = [dict(facility_name="VA NEW MEXICO HEALTHCARE SYSTEM", address="1501 SAN PEDRO DR SE", citytown="ALBUQUERQUE", state="NM", zip_code="87108", telephone_number="(505) 265-1711", facility_id="x2")]
+    assert "phone" not in build(vaa, cm3, "2026-01-01", {"University Hospital, University of New Mexico Health Sciences Center": {"alias": "University of New Mexico Hospital"}})["NM"][0]
     print("self-test OK")
 
 
