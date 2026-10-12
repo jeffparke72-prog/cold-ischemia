@@ -56,7 +56,7 @@ def read_hrsa(raw):
     rows = list(ws.iter_rows(values_only=True)); head = [str(h or "").strip() for h in rows[0]]
     def col(name, nth=0):
         idx = [i for i, h in enumerate(head) if h == name]; return idx[nth] if len(idx) > nth else None
-    c = dict(name=col("OTC Name"), code=col("OTC Code"), addr=col("Address", 1), city=col("City", 1), zip=col("ZIP", 1), svc=col("Organ Transplantation Center Service Typ") or col("Organ Transplantation Center Service Type"),
+    c = dict(name=col("OTC Name"), code=col("OTC Code"), addr=col("Address", 1), city=col("City", 1), zip=col("ZIP", 1), svc=next((i for i, h in enumerate(head) if h.startswith("Organ Transplantation Center Service Type")), None),
              state=col("Common State Abbreviation"), lon=col("Longitude"), lat=col("Latitude"), opo=col("OPO Name"), pcode=col("Common Postal Code"))
     for k in ("name", "code", "svc", "state"):
         if c[k] is None: raise SystemExit(f"HRSA file layout changed: column for {k} not found in {head}")
