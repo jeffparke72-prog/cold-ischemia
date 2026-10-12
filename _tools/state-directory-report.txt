@@ -1,0 +1,114 @@
+state | kidney centers | with a phone
+AK | 0 | 0
+AL | 3 | 3
+AR | 2 | 1
+AZ | 5 | 5
+CA | 20 | 11
+CO | 4 | 4
+CT | 2 | 2
+DC | 3 | 3
+DE | 2 | 0
+FL | 11 | 6
+GA | 4 | 2
+HI | 1 | 1
+IA | 4 | 4
+ID | 0 | 0
+IL | 9 | 8
+IN | 3 | 3
+KS | 1 | 1
+KY | 3 | 3
+LA | 4 | 1
+MA | 9 | 8
+MD | 3 | 2
+ME | 1 | 1
+MI | 8 | 6
+MN | 5 | 3
+MO | 8 | 6
+MS | 1 | 1
+MT | 0 | 0
+NC | 5 | 2
+ND | 2 | 2
+NE | 1 | 1
+NH | 1 | 1
+NJ | 4 | 4
+NM | 2 | 1
+NV | 1 | 0
+NY | 15 | 10
+OH | 8 | 7
+OK | 5 | 3
+OR | 3 | 2
+PA | 18 | 14
+PR | 1 | 1
+RI | 1 | 1
+SC | 1 | 0
+SD | 2 | 2
+TN | 7 | 4
+TX | 24 | 22
+UT | 3 | 3
+VA | 6 | 6
+VT | 1 | 1
+WA | 5 | 4
+WI | 4 | 4
+WV | 1 | 1
+WY | 0 | 0
+TOTAL | 237 | 181
+
+states with no kidney center: AK, ID, MT, WY
+
+centers without a phone:
+  AR UAMS Medical Center (Little Rock, zip 72205)
+  CA California Pacific Medical Center (San Francisco, zip 94115)
+  CA Harbor UCLA Medical Center (Torrance, zip 90502)
+  CA Saint Joseph Hospital (Orange, zip 92868)
+  CA St. Vincent Medical Center (Los Angeles, zip 90057)
+  CA UCSF Medical Center at Mission Bay (San Francisco, zip 94143)
+  CA University of California Irvine Medical Center (Orange, zip 92868)
+  CA University of California San Diego Medical Center (San Diego, zip 92103)
+  CA University of California San Francisco Medical Center (San Francisco, zip 94117)
+  CA University of California at Los Angeles Medical Center (Los Angeles, zip 90095)
+  DE Alfred I duPont Hospital for Children (Wilmington, zip 19803)
+  DE Christiana Care Health Services (Newark, zip 19713)
+  FL Cleveland Clinic Florida Weston (Weston, zip 33331)
+  FL Florida Hospital Medical Center (Orlando, zip 32804)
+  FL Jackson Memorial Hospital University of Miami School of Medicine (Miami, zip 33136)
+  FL Largo Medical Center (Largo, zip 33770)
+  FL Memorial Regional Hospital (Hollywood, zip 33021)
+  GA AU Medical Center, Inc. (Augusta, zip 30912)
+  GA Children's Healthcare of Atlanta at Egleston (Atlanta, zip 30322)
+  IL Memorial Medical Center (Springfield, zip 62781)
+  LA Children's Hospital (New Orleans, zip 70118)
+  LA Ochsner Foundation Hospital (New Orleans, zip 70121)
+  LA Tulane Medical Center (New Orleans, zip 70112)
+  MA Lahey Clinic Medical Center (Burlington, zip 01805)
+  MD Walter Reed National Military Medical Center at Bethesda (Bethesda, zip 20889)
+  MI Helen DeVos Children's Hospital (Grand Rapids, zip 49503)
+  MI William Beaumont Hospital (Royal Oak, zip 48073)
+  MN Saint Marys Hospital (Mayo Clinic) (Rochester, zip 55902)
+  MN University of Minnesota Medical Center, Fairview (Minneapolis, zip 55455)
+  MO Cardinal Glennon Children's Hospital (Saint Louis, zip 63104)
+  MO University of Missouri Hospital and Clinics (Columbia, zip 65212)
+  NC University of North Carolina Hospitals (Chapel Hill, zip 27514)
+  NC Vidant Medical Center (Greenville, zip 27834)
+  NC Wake Forest Baptist Medical Center (Winston Salem, zip 27157)
+  NM University Hospital, University of New Mexico Health Sciences Center (Albuquerque, zip 87106)
+  NV University Medical Center of Southern Nevada (Las Vegas, zip 89102)
+  NY James J. Peters VA Medical Center (Bronx, zip 10468)
+  NY NY Presbyterian Hospital/Columbia Univ. Medical Center (New York, zip 10032)
+  NY State University of New York Upstate Medical University (Syracuse, zip 13210)
+  NY State University of New York, Downstate Medical Center (Brooklyn, zip 11203)
+  NY University Hospital of State University of New York at Stony Brook (Stony Brook, zip 11790)
+  OH Children's Hospital Medical Center (Cincinnati, zip 45229)
+  OK Children's Hospital of Oklahoma (Oklahoma City, zip 73104)
+  OK OU Medical Center (Oklahoma City, zip 73104)
+  OR Oregon Health and Science University (Portland, zip 97239)
+  PA Albert Einstein Medical Center (Philadelphia, zip 19141)
+  PA Hahnemann University Hospital (Philadelphia, zip 19102)
+  PA Pinnacle Health System at Harrisburg Hospital (Harrisburg, zip 17101)
+  PA University of Pittsburgh Medical Center (Pittsburgh, zip 15213)
+  SC Medical University of South Carolina (Charleston, zip 29425)
+  TN Le Bonheur Children's Medical Center (Memphis, zip 38103)
+  TN University of Tennessee Medical Center at Knoxville (Knoxville, zip 37920)
+  TN Vanderbilt University Medical Center and Nashville VA Medical Center (Nashville, zip 37232)
+  TX Methodist Specialty and Transplant Hospital (San Antonio, zip 78229)
+  TX University Hospital, University of Texas Health Science Center (San Antonio, zip 78229)
+  WA Providence Sacred Heart Medical Center & Children's Hospital (Spokane, zip 99204)
