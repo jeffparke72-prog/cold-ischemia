@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-13T01:58:08.392394+00:00",
+"updated": "2026-10-13T09:17:08.749427+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -133,6 +133,83 @@
 ],
 "items": [
 {
+"title": "Progress on the related mechanisms of vascular calcification in autogenous arteriovenous fistula in hemodialysis patients.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42864269/",
+"summary": "Guo Y, Liang L, Kong X. Renal failure",
+"outlet": "Ren Fail",
+"published": "2026-10-13T09:17:08.749427+00:00",
+"id": "cea0ecd1b9e43eeb",
+"source": "PubMed: transplant, donation & kidney failure research",
+"category": "Research",
+"first_seen": "2026-10-13T09:17:08.749427+00:00"
+},
+{
+"title": "First Series of Purely Robotic Liver Transplantation in Children.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42863632/",
+"summary": "Broering DC, Rescigno L, Elsheikh Y et al. American journal of transplantation : official journal of the American Society of Transplantation and the American Society of Transplant Surgeons",
+"outlet": "Am J Transplant",
+"published": "2026-10-13T09:17:08.749427+00:00",
+"id": "6e742e218457cab0",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-10-13T09:17:08.749427+00:00"
+},
+{
+"title": "Diagnostic accuracy of preoperative magnetic resonance cholangiopancreatography in delineating biliary anatomy in live liver donors: An ambispective observational study.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42864265/",
+"summary": "Peer JA, Singhvi SK, Sain S et al. Annals of hepato-biliary-pancreatic surgery",
+"outlet": "Ann Hepatobiliary Pancreat Surg",
+"published": "2026-10-13T09:17:08.749427+00:00",
+"id": "c3c2efe7391e43b6",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-10-13T09:17:08.749427+00:00"
+},
+{
+"title": "Prognostic Impact of the C-Reactive Protein-Albumin-Lymphocyte (CALLY) Index in Patients With Hepatocellular Carcinoma Undergoing Living Donor Liver Transplantation.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42864307/",
+"summary": "Mita J, Itoh S, Toshima T et al. Journal of hepato-biliary-pancreatic sciences",
+"outlet": "J Hepatobiliary Pancreat Sci",
+"published": "2026-10-13T09:17:08.749427+00:00",
+"id": "a1708ccc45835015",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-10-13T09:17:08.749427+00:00"
+},
+{
+"title": "After son’s life-saving kidney transplant, Franklin Square mom hopes to save another child’s life - News12 | Bronx",
+"link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSmstRDBzb2cxWFhjekoyQmVwdkE1N0lwbFhCcHZBSW1jR3owajhzb2Q1Sk5jN0l2NDNXNkMtaS0tWHBGTzhubzRDeDJpb3d0c1JGZ0J0bVd0VGhidmNGcEZJNDd6SU9McUVHLTlXOWt3MXFqdFptRDJqNFhKeWNLT0RLcmkxQ3R2eDZVeUlXTXN3anc2eDlZOUEtN212LW12WTl6Y0M3NlF0ZFpvc0ZwampkMmdKVTl0V1Jj?oc=5",
+"summary": "After son’s life-saving kidney transplant, Franklin Square mom hopes to save another child’s life News12 | Bronx",
+"outlet": "News12 | Bronx",
+"published": "2026-10-13T06:33:03+00:00",
+"id": "d417b35ece285923",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-13T09:17:08.749427+00:00"
+},
+{
+"title": "'The greatest gift': Suffolk man's plea after experiencing both sides of organ donation - Rayo",
+"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPb1FET2RHN2VjLXphdDNqcjh0S05TOElJYndKUEZIcjBXRHJkUThxZEpubDlidGNja21ZM2FoeXF3MGVRdWwwaE9tSElka241S2pTU3BHbm9CYl9fbjBhbWlMa2lHdHVLSlR1eWFGaEprSjZiT3NZa21DS3VvZzRxZk1JbWM3bFd4TVdzai1odTVLSVg5UXhKYmRzc3lJaGNlZXV3anV1ODJxRHo5ZTNCdUpDSXVhNU0?oc=5",
+"summary": "'The greatest gift': Suffolk man's plea after experiencing both sides of organ donation Rayo",
+"outlet": "Rayo",
+"published": "2026-10-13T04:30:31+00:00",
+"id": "cdbf1c3f18eb2617",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-13T09:17:08.749427+00:00"
+},
+{
+"title": "Hidden flaws: Soft consent laws fail to boost organ donation - DT Next",
+"link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPVkd6T0RSeUxTQzRQUTUtQzZYWk1hX0NwMnB2eUNibmZZR3VxaEpQV1djRERhYV8tZlM3ZDNDbm0zLVJ4VEpGdkdLODllMFpxRGpoOFRpMFFBczNuUTVfSUw4eHd3U0xubmZGSkk3bFZRbXdrOFlydTBNc2JaaUlUOHA5MkxXTGx0SGgzRlFjVdIBnAFBVV95cUxOVW9HZzFwSlhSNHozRVoyWGl2OWRsbHktaS1BNFd2MVhDZXhoTjFDeHhrb1NadXBhdFowenByTnBrTEVzSURUMUI4elpOS25UMTRqalYzTEJWamh6T2k4c3J6clF2N2wwTGtyeXBCQ2h4SXAwaDJlZV9adTZUVnRQUDVMWkdiNEEwYlVHLW9qd29IREE0cFZxclVkbFU?oc=5",
+"summary": "Hidden flaws: Soft consent laws fail to boost organ donation DT Next",
+"outlet": "DT Next",
+"published": "2026-10-13T03:05:18+00:00",
+"id": "7b28dd2479426156",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-13T09:17:08.749427+00:00"
+},
+{
 "title": "Port St. Lucie family chooses organ donation after teen's death, creating hope through tragedy - WPTV",
 "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPMVNPT3lrUkc3RVpNNXpBS0FsdzVpMkFkRklLTHdoWWRNOS1mNnMyaUpQRUwyVGw2aUktMGh5TWNtX1M0WFNQMDVsaEtXMFlKb19iSUh2SGo5NVVsS01Yb3FpT3F1UWxnVjdoeWRDX0RNeE5wWmQzV0pERm9IMG8zaXpNU193U3JmWHRBY3Z1RDNTZU9BNkpuUnFYdFN6UXVrT004b1ZIWDZpb2dwWWtxeXQ4U09xY2Uzb1hndDJFSHBLUFF1eTJJYVNWX3lSdkNhcmpVVldRRFBRWDhTQzdjVGZTRk5hZjMyWUJwTA?oc=5",
 "summary": "Port St. Lucie family chooses organ donation after teen's death, creating hope through tragedy WPTV",
@@ -144,15 +221,15 @@
 "first_seen": "2026-10-13T01:58:08.392394+00:00"
 },
 {
-"title": "Your Turn: Feedback on deported foster daughter, Massena dogs & organ donation - WWNY",
-"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQN0I0dlJ3djVEWEw4aFNVYmxJejRUTy1IbUx5SzVpMHB5cmRhQ2s3QWpfSWFXRGdRdEtDanh0OEU5a0lxdzlIaExMeDF0c1p4RFRHZjZ2N0lkQm1Ma1lBNVktQlhGNlBial9qeDRjSDVKR2xHQXdFQ0Y3dVR6QXp1cHNXSU5nZUNQWmh1azFnYUNEcERFck00SVJWQWtiM2RZUjJtUkVwcmI4Z9IBvgFBVV95cUxNZWU0azNaeHh5Rlc2SEk0T20wZVhlMTJaWVRZNERzdkVDRGk4dUxJZDhBbDd3aFlaUGg1NXI5bktacE9QNDIyY3lCM3J5UUp2bU85RHFjT3FrS2pldFppNzlVNzAwZHlxU1dmVWkzWkFGajlMeTc4UGNJVTZWVS1pNDdJZU44Z0RFMlJXSzZBa0JDQW1LV25qUVBpeDZkdlRjdmxPUUpMRnV1Q09UT2UxVExRVmJxMlJjMGtfTTF3?oc=5",
-"summary": "Your Turn: Feedback on deported foster daughter, Massena dogs & organ donation WWNY",
-"outlet": "WWNY",
-"published": "2026-10-12T19:00:00+00:00",
-"id": "6fd4ce18823af460",
+"title": "Assam Rifles Rifleman V Teja Dies of Gunshot Wound on Duty in Nagaland, Organ Donation Honoured - Shop SSBCrack",
+"link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPSXoxODdzRjhmT2U3OUg2M2hKSDl0ckpkY0dxYktXeGE4S00zcVBmRkFjVGw2TW53TDRUSWpIWlVFWXE0YVFyc3Z0bGNhUHJCTkp4U3hhSUFfZHItcl93azlwcWNrUjlpNklTR2NrNHEwWWpHalVLNkJfUG5ZTU80amlVZ3hFeGJNX2t0clkyNzBlV21RRDM5MG9samJ6TThEWFlhS3N5Mmdzb1FqZlpyellPN1lWMTl2bXNmMjdES210cXhvQTBaMEtoZw?oc=5",
+"summary": "Assam Rifles Rifleman V Teja Dies of Gunshot Wound on Duty in Nagaland, Organ Donation Honoured Shop SSBCrack",
+"outlet": "Shop SSBCrack",
+"published": "2026-10-12T22:59:39+00:00",
+"id": "02de264ef3b3a689",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
-"first_seen": "2026-10-12T19:59:09.158600+00:00"
+"first_seen": "2026-10-13T09:17:08.749427+00:00"
 },
 {
 "title": "Year’s 13th organ donation in city saves three lives - The Times of India",
@@ -230,6 +307,28 @@
 "source": "Healio Nephrology",
 "category": "News",
 "first_seen": "2026-10-12T19:59:09.158600+00:00"
+},
+{
+"title": "Geneva General Hospital Offers Free Pre-Dialysis Education Class in Geneva - Finger Lakes Daily News",
+"link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOYTlLcGVLRzJvd0swcThiejBQY0N0eUtJbjRubk9yMHBtNVU4N21ySnplZUIyMW5SbzczX1BhRW1mMzllbjhmRktUVjk1clBLMjhlZlNlemlXMVEwOXFqdnlfS1ZhSVFabHZDUF9FbGlOeS1GWXVCWm53MEVCNVlXTzlQNG13cUszSFRpVHR0cXo4UkpDb0pwMDR6dTFKemQ5ajEtVC01UnVUVjZ1T09aeklHREVvWE82NHFEZkYwNlBCUTI2Y0h3OGlKaW9iT0NrWFE?oc=5",
+"summary": "Geneva General Hospital Offers Free Pre-Dialysis Education Class in Geneva Finger Lakes Daily News",
+"outlet": "Finger Lakes Daily News",
+"published": "2026-10-12T13:38:27+00:00",
+"id": "0bc2ad33cbfc6375",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-13T09:17:08.749427+00:00"
+},
+{
+"title": "Humacyte’s phase 3 dialysis access trial results to be presented - Investing.com",
+"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOd1NQQVZoMklZa21oUlNYNEVRaG15LTBZSmVWQnFiZWJGZW5SbG9Nc0NzNGZmLUctNzFzd29fdnVtM3BjenYyaFJHUnR1SFEtQmJtUE1pZm9TWjFydFZOb19qbGp1dk1MUzVnWTB5YWU3U3N0aEoyZUdXeDZXOERJZVF0NGFKYXhsMGVSV0NhMDJkR2NEU3FoRTMxbG5KV1BsMU05OWZtdGE5ak8tX0xVVmlhTFZEcjBORkdfMw?oc=5",
+"summary": "Humacyte’s phase 3 dialysis access trial results to be presented Investing.com",
+"outlet": "Investing.com",
+"published": "2026-10-12T13:23:51+00:00",
+"id": "57cf1a9c5feb7849",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-13T09:17:08.749427+00:00"
 },
 {
 "title": "Corrigendum to West Nile virus encephalitis posttransplantation: A case report and literature review [American Journal of Transplantation, Date: January 2026, Page: S15, Volume: Volume 26, Issue 1, Supplement 1]",
@@ -320,6 +419,17 @@
 "first_seen": "2026-10-12T10:37:17.854249+00:00"
 },
 {
+"title": "Your Turn: Feedback on deported foster daughter, Massena dogs & organ donation - WWNY",
+"link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxON0Vsd3p3VFd0Xzk1WjFDemdORTZOX042aVd4SUthV1I5RTNGV1pYU09naXh6WGNzUEpBSVJZMHJTZDFYNW1lLWQtOFVDMTVKd3BxNWNkT0ZhMEE4cDNzUEtzVkVOdmpmTGNSRlN1bXBsR1J5UmNpZ2lXRWtpRkl2SV9uYVlYZllqQm1DSUk1VFhIbms0YmRUSVZheDlfajR0Zm41dUVtdUVmNkRqZmFWcVhR?oc=5",
+"summary": "Your Turn: Feedback on deported foster daughter, Massena dogs & organ donation WWNY",
+"outlet": "WWNY",
+"published": "2026-10-12T01:34:29+00:00",
+"id": "6fd4ce18823af460",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-12T19:59:09.158600+00:00"
+},
+{
 "title": "Treasure Coast High School student struck by SUV remembered through organ donation - WPEC",
 "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOOHZvWkRQYjhDMW1OZVVWZUVhdUFxdE9lOGJ2aGhxTW10anU0UjNmTENQNVk4YnNfX1JpZGR5QU83b0RXdGJ5SUgtZnRVWFdBcC1YbHFwakk3ZmlZQjBoMkdWb0VDY1N2ZmFpQkhxbzhyS1ZLOTBhblVZNTNQdl9qZ1V4Q3BBQlV5cG5GajIyRl9jTGZsR2NPUGYzY3YyMGJ6ODItTEVjOXFteTNXajRmcw?oc=5",
 "summary": "Treasure Coast High School student struck by SUV remembered through organ donation WPEC",
@@ -351,6 +461,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-13T01:58:08.392394+00:00"
+},
+{
+"title": "PGI promotes organ donation awareness - The Tribune",
+"link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNN1RwejBQcElhUDBuaGIwcG52OWY4bzFNV3pNTjc3NnR2SXVUVGdvSGpFVjE5dHhMVm15cWRuSDVtalcteVlNeVczUTN5UTE3TDVoOXZULUJ4dWtIQzNKOGZQWC1QaFVVZ0s4c0RQY1NIaUFRREpZSUFLZ0I4Y1pCZ0U0Nm9WN3Q5cWxz0gGPAUFVX3lxTE1sczV5d3ZPOHVDUncxTDNicW81MnNRUGpQQlJYVkNFV2VJUGhkSjlSdEgxbGFsZkNMZXlDLWRqZkpfNWNTS0ZReHpfNHhpenlkM0dzV2dUQ2hSR2hMUGJTd1I2QzlvRGpISXpETUlYSkNjYUN6Q2Rsa1d4cUdnWjN4VlRHeWVidHNzd2lrWG1Z?oc=5",
+"summary": "PGI promotes organ donation awareness The Tribune",
+"outlet": "The Tribune",
+"published": "2026-10-11T19:32:26+00:00",
+"id": "8046ec26f728c44b",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-11T23:35:08.381917+00:00"
 },
 {
 "title": "Donor kidney volume relative to recipient body size and longitudinal graft function in living donor kidney transplantation.",
@@ -626,17 +747,6 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-10T09:42:36.861224+00:00"
-},
-{
-"title": "PGI promotes organ donation awareness - The Tribune",
-"link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNN1RwejBQcElhUDBuaGIwcG52OWY4bzFNV3pNTjc3NnR2SXVUVGdvSGpFVjE5dHhMVm15cWRuSDVtalcteVlNeVczUTN5UTE3TDVoOXZULUJ4dWtIQzNKOGZQWC1QaFVVZ0s4c0RQY1NIaUFRREpZSUFLZ0I4Y1pCZ0U0Nm9WN3Q5cWxz0gGPAUFVX3lxTE1sczV5d3ZPOHVDUncxTDNicW81MnNRUGpQQlJYVkNFV2VJUGhkSjlSdEgxbGFsZkNMZXlDLWRqZkpfNWNTS0ZReHpfNHhpenlkM0dzV2dUQ2hSR2hMUGJTd1I2QzlvRGpISXpETUlYSkNjYUN6Q2Rsa1d4cUdnWjN4VlRHeWVidHNzd2lrWG1Z?oc=5",
-"summary": "PGI promotes organ donation awareness The Tribune",
-"outlet": "The Tribune",
-"published": "2026-10-10T07:00:00+00:00",
-"id": "8046ec26f728c44b",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-11T23:35:08.381917+00:00"
 },
 {
 "title": "Lawsuit says infant suffered kidney failure after eating recalled cheese - ABC10",
@@ -1101,6 +1211,17 @@
 "first_seen": "2026-10-09T13:41:52.588829+00:00"
 },
 {
+"title": "Potsdam man’s organ donation helped 8 people after fatal work accident - WWNY",
+"link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPbkc4ME1mNHNwcWlKd1QyVW9UYW42M3BYSVNXX0VhRWxpNkRYY1h3UUVQOV8wYkhIVjB6RGlCMGNZZGFJcU15YjhHR3dIaVRwY2hEbExXMGpGUy1QTGNib2RzX3F0VldHaExkS1VES2lTd1R1LXVXeW9xSHlrVkhLYmNlRjdzaXMxckNHbjhUemJHbUJYRl9ud2FHUVdRZ1Z1bExCZFdBdTF2a3JxNGpZ?oc=5",
+"summary": "Potsdam man’s organ donation helped 8 people after fatal work accident WWNY",
+"outlet": "WWNY",
+"published": "2026-10-09T00:15:00.377302+00:00",
+"id": "235c810bd20e32ad",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-09T00:15:00.377302+00:00"
+},
+{
 "title": "Prevalence of Enteric Hyperoxaluria in Crohn's Disease, Cystic Fibrosis, and After Bariatric Surgery: A Systematic Review",
 "link": "https://www.medrxiv.org/content/10.64898/2026.10.07.26364847v1?rss=1",
 "summary": "Abstract Background. Enteric hyperoxaluria (EH) causes calcium oxalate kidney stones, oxalate nephropathy, and chronic kidney disease (CKD), and can progress to end-stage kidney disease. It occurs in Crohn's disease (CD), cystic fibrosis (CF), chronic pancreatitis, celiac disease, short bowel syndrome, and after…",
@@ -1118,17 +1239,6 @@
 "outlet": "FOX5 Vegas",
 "published": "2026-10-08T22:09:00+00:00",
 "id": "7f248bcdc9dac38b",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-09T00:15:00.377302+00:00"
-},
-{
-"title": "Potsdam man’s organ donation helped 8 people after fatal work accident - WWNY",
-"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNeUxnOGhUVGNjcTNwQWNkd3ZvTHlzUzBsMFphUEd6UFpDTDJXRVQwNkN4Q3BjQWZjMmxDWEtQcGNla3RMRkRCMTBOZHY3REZpQXdYbmVES0NkNHJZcm5KeVJkc0JWU0pmWEw3bEdXNFU0THdZVGtray1xZDdwS24wa2FGZlpsTHUzT1c1dTM4TmxySEtXTk4xYWZxUFVkRy1mRTJXYS14a9IBuwFBVV95cUxOWERsaE5NOFk2Zk42eVJlRkdlU0JUTVVzUnVqQVNPNXRZLVZzZmlMNXZKYks0dnBwdEQ5d095Sm5qU2NuMUtFOXZRaUFEd1Y0Ulh1ajVNZEpQM01YNFpsYVFDRVg4MWFwcTQ1TWlGdjBGTEFaaXlSeXNKUjRBdXFkT0xsTFFfOUdDNW5QYmZDOFNGNzZJZzVfaXF5ZnRYZl9Edng5MVB5Y3NUSTRyckk4QlhqdkVjMGM4TlFZ?oc=5",
-"summary": "Potsdam man’s organ donation helped 8 people after fatal work accident WWNY",
-"outlet": "WWNY",
-"published": "2026-10-08T21:38:00+00:00",
-"id": "235c810bd20e32ad",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-09T00:15:00.377302+00:00"
@@ -1575,10 +1685,10 @@
 },
 {
 "title": "Former Detroit Tigers announcer gets kidney transplant at Henry Ford Hospital in Detroit - WSMH",
-"link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTVdaMGp4d3l3TUR1WS1BSWV1bDZuVnhfYU9INXZGZ3A4dzJQYTdVc2piTmxHcTNMbzQzc2JiV1NvZm1uY2VEbE9Zdmlib1hvdFNpNU50U2hHb25hcm1pR0N5bnd0UUkwcXFjS3dobDlhRzNtbG9BTTl2THBZeGQ4SzZ1UnF0Y3ZKV3B6amRWN2xqSGhwcUxhdF8xaFpNYk56UnlPZ1Y0ZEZGME5xNmdraTQ2S2xnbkhvek1rZUNQZS1jN2RG?oc=5",
+"link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNRlNkVjd3MkFOWERSYS1tUjYzUlZyaTlITjhUS1M3Y2hZUWo5NzY2Z3RuMThXVVdjUHV2amVvYzltdWtnZFVaSHJmZGV0TnN5RGxPWWsxU0VaTkQ5RWEyd1lCRExsNzFZY3FtdG83Sl9jRlhoNTBoQ2R3WXZSUHE5LUlfMmtlcU5KQ21qN05pQUxySG55LXBCQnZaZ3Q1TVBFQmhxVGpXVEppX0dBVkVNTlBpOTZFTHdkSGNjX0VxaG1vRW1yRVBDNm1ael9hY2ltazFxS3FpQ3RqQQ?oc=5",
 "summary": "Former Detroit Tigers announcer gets kidney transplant at Henry Ford Hospital in Detroit WSMH",
 "outlet": "WSMH",
-"published": "2026-10-07T23:54:27+00:00",
+"published": "2026-10-08T00:09:09.395270+00:00",
 "id": "4d5f75f7c2f72f46",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
@@ -5518,116 +5628,6 @@
 "outlet": "",
 "published": "2026-10-01T12:00:00+00:00",
 "id": "f4f14a0434c1ceb6",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-08T19:48:39.860163+00:00"
-},
-{
-"title": "Trajectory-based weight modeling distinguishes pathologic weight loss and predicts adverse events in nonhuman primate allogeneic kidney transplantation",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526026079?dgcid=rss_sd_all",
-"summary": "By Cole W. Myers, Cheyenna M. Espinoza, Scott H. Oppler, Westley Timmerman, Sydney N. Phu, Sierra D. Palmer, Lucas A. Mutch, Benjamin Langworthy, Laura L. Hocum Stone, Sabarinathan Ramachandran, Bernhard J. Hering,…",
-"outlet": "",
-"published": "2026-10-01T12:00:00+00:00",
-"id": "5e02114ad81b350f",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-08T19:48:39.860163+00:00"
-},
-{
-"title": "Comparative evaluation of distinct dual hypothermic oxygenated perfusion strategies in a porcine donation after circulatory death liver transplantation model",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526001632?dgcid=rss_sd_all",
-"summary": "By Tongdi Fang, Yu Jia, Tielong Wang, Jiayi Zhang, Shirui Chen, Zehua Jia, Xiaorui Liu, Yefu Li, Tao Luo, Dawei Zou, Andrea Schlegel, Yunhua Tang, Xiaoshun He, Zhiyong Guo",
-"outlet": "",
-"published": "2026-10-01T12:00:00+00:00",
-"id": "e58ae8c8a3958567",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-08T19:48:39.860163+00:00"
-},
-{
-"title": "Donor macrophage depletion permits posttransplant tolerance induction in a murine islet transplant model",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526025724?dgcid=rss_sd_all",
-"summary": "By Miriam Dilts, Olivia K. Fay, Yang Yu, Collin Z. Jordan, Xunrong Luo",
-"outlet": "",
-"published": "2026-10-01T12:00:00+00:00",
-"id": "ce06235fe918d203",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-08T19:48:39.860163+00:00"
-},
-{
-"title": "Hyperglycemia following pancreas transplantation: Rethinking graft function and metabolic control",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526009809?dgcid=rss_sd_all",
-"summary": "By Neeraj Singh, Sandesh Parajuli, Swati Rao, Tarek Alhamad, Silke Niederhaus, Francheska Nieves, Amer Diab, Meaghan Stumpf, Melissa Albritton, Ayush Singh, Ronald Pelletier, Advaith Bongu, Ronald F. Parsons, Robert…",
-"outlet": "",
-"published": "2026-10-01T12:00:00+00:00",
-"id": "291678959429fc4b",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-08T19:48:39.860163+00:00"
-},
-{
-"title": "Viewpoint regarding the importance of patient-centered frailty research in kidney transplantation",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526025542?dgcid=rss_sd_all",
-"summary": "By Elizabeth C. Lorenz, Valen Keefer, Goni Katz-Greenberg, Arpita Basu",
-"outlet": "",
-"published": "2026-10-01T12:00:00+00:00",
-"id": "2eb2787e8b402312",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-08T19:48:39.860163+00:00"
-},
-{
-"title": "Best practices of hind limb transplantation in mice",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526026626?dgcid=rss_sd_all",
-"summary": "By Byoung Chol Oh, Sheri Krams, Leonardo V. Riella, Gerald Brandacher, Giorgio Raimondi",
-"outlet": "",
-"published": "2026-10-01T12:00:00+00:00",
-"id": "133b964583e12e39",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-08T19:48:39.860163+00:00"
-},
-{
-"title": "Normothermic regional perfusion and donation after circulatory death kidney transplantation: Essential intervention or unnecessary complexity?",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526026663?dgcid=rss_sd_all",
-"summary": "By James A. Richards, Gavin J. Pettigrew",
-"outlet": "",
-"published": "2026-10-01T12:00:00+00:00",
-"id": "2e3d94228a8ba60c",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-08T19:48:39.860163+00:00"
-},
-{
-"title": "Dying on the waitlist: Mexico’s kidney allocation system as a public health scandal",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526026195?dgcid=rss_sd_all",
-"summary": "By Magdalena Madero",
-"outlet": "",
-"published": "2026-10-01T12:00:00+00:00",
-"id": "740deac7bcc72f49",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-08T19:48:39.860163+00:00"
-},
-{
-"title": "Investigation of donor-transmitted Strongyloides stercoralis infections in solid organ transplant recipients, United States, 2012-2024",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526026924?dgcid=rss_sd_all",
-"summary": "By Marcus R. Pereira",
-"outlet": "",
-"published": "2026-10-01T12:00:00+00:00",
-"id": "3c0aff1f8ac616c8",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-08T19:48:39.860163+00:00"
-},
-{
-"title": "Antibody-cytokine fusion enables spatially targeted modification of immune responses to tumors",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526027012?dgcid=rss_sd_all",
-"summary": "By Eva M. Gillis Buck, Shreya R. Aghi, James M. Gardner",
-"outlet": "",
-"published": "2026-10-01T12:00:00+00:00",
-"id": "4a002c6abb1b04f3",
 "source": "American Journal of Transplantation",
 "category": "Journals",
 "first_seen": "2026-10-08T19:48:39.860163+00:00"
