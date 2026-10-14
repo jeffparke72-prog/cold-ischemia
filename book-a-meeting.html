@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Meeting | Cold Ischemia Foundation</title>
+<meta name="description" content="Book a consultation, speaking engagement, event or media conversation with the Cold Ischemia Foundation. Pick a date from the next seven months and your request reaches us immediately.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--ink:#e6dccd;--ink80:rgba(230,220,205,.84);--ink60:rgba(230,220,205,.62);--ink40:rgba(230,220,205,.42);--gold:#c8902a;--gold-l:#f0c15a;--pulse:#2ac4c8;--rose:#e0566f;--green:#50c878;--b:rgba(110,150,210,.16);--b2:rgba(110,150,210,.3)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#0d2038 0%,#030509 60%);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;font-size:19px;line-height:1.6;min-height:100vh}
+a{color:var(--gold-l)}.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.mono{font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse)}
+:focus-visible{outline:3px solid var(--gold-l);outline-offset:2px}
+.hero{padding:54px 0 26px;text-align:center;position:relative}
+.hero h1{font:400 clamp(44px,8vw,92px)/.98 'Bebas Neue',sans-serif;margin:10px 0 12px;letter-spacing:.01em}.hero h1 em{font-style:normal;color:var(--gold-l)}
+.hero p{max-width:720px;margin:0 auto 20px;font-size:21px;color:var(--ink80)}
+.big{display:inline-block;background:linear-gradient(180deg,#f6cf72,#c8902a);color:#0a1628;border:0;border-radius:14px;padding:20px 38px;font:700 clamp(15px,2.6vw,20px) 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;text-decoration:none;box-shadow:0 0 0 0 rgba(240,193,90,.6),0 14px 40px rgba(200,144,42,.35);animation:pulse 2.6s infinite}
+.big:hover{filter:brightness(1.08);transform:translateY(-1px)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(240,193,90,.55),0 14px 40px rgba(200,144,42,.35)}70%{box-shadow:0 0 0 22px rgba(240,193,90,0),0 14px 40px rgba(200,144,42,.35)}100%{box-shadow:0 0 0 0 rgba(240,193,90,0),0 14px 40px rgba(200,144,42,.35)}}
+@media(prefers-reduced-motion:reduce){.big{animation:none}html{scroll-behavior:auto}}
+.sub{font-size:15.5px;color:var(--ink60);margin-top:12px}
+.types{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:26px 0 8px}
+.type{background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--b2);border-radius:14px;padding:16px 18px;cursor:pointer;text-align:left;color:var(--ink);font:inherit;transition:.2s}
+.type b{display:block;font:600 21px 'Fraunces',serif;color:#fff}.type span{font-size:15.5px;color:var(--ink60)}.type i{display:block;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--gold-l);margin-top:6px;font-style:normal;text-transform:uppercase}
+.type[aria-pressed=true]{border-color:var(--gold-l);box-shadow:0 0 0 2px rgba(240,193,90,.35),0 10px 30px rgba(0,0,0,.4);background:linear-gradient(160deg,rgba(240,193,90,.14),rgba(255,255,255,.02))}
+.type:hover{transform:translateY(-2px)}
+section{padding:26px 0}
+h2{font:600 32px 'Fraunces',serif;margin:0 0 6px}
+.cal-shell{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:22px;align-items:start}
+@media(max-width:940px){.cal-shell{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,rgba(15,30,56,.85),rgba(7,16,28,.9));border:1px solid var(--b2);border-radius:18px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.pills{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin-bottom:10px;scrollbar-width:thin}
+.pill{flex:none;background:rgba(255,255,255,.04);border:1px solid var(--b);border-radius:99px;padding:8px 14px;color:var(--ink80);font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.pill small{color:var(--gold-l);margin-left:6px}.pill[aria-pressed=true]{background:var(--gold);color:#0a1628;border-color:var(--gold)}.pill[aria-pressed=true] small{color:#0a1628}
+.mhead{display:flex;align-items:center;justify-content:space-between;margin:6px 0 12px}
+.mhead h3{margin:0;font:400 44px 'Bebas Neue',sans-serif;letter-spacing:.04em}.mhead .nav{display:flex;gap:8px}
+.nb{width:44px;height:44px;border-radius:12px;border:1px solid var(--b2);background:rgba(255,255,255,.04);color:var(--ink);font-size:22px;cursor:pointer}.nb:disabled{opacity:.3;cursor:default}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dow{font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--ink40);text-align:center;padding:4px 0;text-transform:uppercase}
+.day{aspect-ratio:1/1;border-radius:12px;border:1px solid var(--b);background:rgba(255,255,255,.025);color:var(--ink);font:600 20px 'Fraunces',serif;cursor:pointer;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;transition:.15s}
+.day small{font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:var(--green);margin-top:2px;text-transform:uppercase}
+.day.blank{visibility:hidden;border:0}.day.off{color:var(--ink40);background:transparent;border-style:dashed;cursor:default}.day.off small{color:var(--ink40)}
+.day.full{color:var(--ink40);text-decoration:line-through;cursor:default;background:rgba(224,86,111,.06)}.day.full small{color:var(--rose);text-decoration:none}
+.day.open:hover{border-color:var(--gold-l);background:rgba(240,193,90,.1);transform:translateY(-2px)}
+.day.today{box-shadow:inset 0 0 0 2px var(--pulse)}
+.day[aria-pressed=true]{background:linear-gradient(160deg,#f6cf72,#c8902a);color:#0a1628;border-color:var(--gold-l)}.day[aria-pressed=true] small{color:#0a1628}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14.5px;color:var(--ink60);margin-top:14px}.legend i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:6px;vertical-align:-1px}
+.panel h3{font:600 26px 'Fraunces',serif;margin:2px 0 4px}.panel .when{color:var(--gold-l);font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+.empty{color:var(--ink60);padding:30px 6px;text-align:center}
+.step{margin-top:16px}.step>b{display:block;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--pulse);text-transform:uppercase;margin-bottom:8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--b2);background:rgba(255,255,255,.04);color:var(--ink);padding:10px 14px;border-radius:10px;font:500 13px 'IBM Plex Mono',monospace;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--gold);color:#0a1628;border-color:var(--gold);font-weight:700}.chip:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}
+.local{font-size:14px;color:var(--ink60);margin-top:6px}
+.f{display:grid;gap:10px}.f label{font-size:14.5px;color:var(--ink80);display:grid;gap:4px}
+.f input,.f textarea,.f select{background:#07101c;color:var(--ink);border:1px solid var(--b2);border-radius:10px;padding:12px;font:inherit;font-size:17px;width:100%}.f textarea{min-height:90px;resize:vertical}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.sum{border:1px dashed var(--b2);border-radius:12px;padding:12px 14px;background:rgba(240,193,90,.06);font-size:16.5px}
+.go{width:100%;margin-top:6px;border:0;border-radius:12px;padding:16px;background:linear-gradient(180deg,#f6cf72,#c8902a);color:#0a1628;font:700 15px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}.go:disabled{opacity:.5;cursor:wait}
+.err{color:#ff8a9b;font-size:15.5px;margin-top:8px}
+.ok{text-align:center;padding:10px 0}.ok .tick{width:72px;height:72px;border-radius:50%;margin:6px auto 10px;background:rgba(80,200,120,.15);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;font-size:36px;color:var(--green)}
+.ok .acts{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px}.ok .acts a,.ok .acts button{border:1px solid var(--b2);border-radius:10px;padding:11px 16px;background:rgba(255,255,255,.05);color:var(--ink);font:500 12.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:10px}.how div{border:1px solid var(--b);border-radius:14px;padding:16px;background:rgba(255,255,255,.03)}.how b{font:600 20px 'Fraunces',serif;color:var(--gold-l)}
+.all{display:none}.all.on{display:block}.all .am{margin-bottom:22px}.all h4{font:400 30px 'Bebas Neue',sans-serif;letter-spacing:.05em;margin:0 0 8px;color:var(--gold-l)}
+.sw{margin:14px 0 0;font-size:15px}.sw button{background:none;border:0;color:var(--gold-l);text-decoration:underline;cursor:pointer;font:inherit}
+footer{padding:36px 0 70px;color:var(--ink60);font-size:15px;text-align:center}
+.alt{margin-top:12px}.alt a{display:inline-block;border:1px solid var(--b2);border-radius:10px;padding:10px 16px;text-decoration:none;font:500 12.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:560px){.day{font-size:16px;border-radius:9px}.day small{display:none}.mhead h3{font-size:34px}.card{padding:14px}}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="living-donor-guide.html" role="menuitem">Free Donor Guide (PDF)</a><a href="research-digest.html" role="menuitem">Research Digest</a><a href="inside-files.html" role="menuitem">The Inside Files</a><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-hub.html" role="menuitem">Living Donor Hub</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="kidney-transplant-centers.html" role="menuitem">Kidney Transplant Centers by State</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="services.html" class="cn-t cn-s">Services We Offer</a><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+<header class="hero"><div class="wrap">
+  <div class="mono">Consultations &middot; Speaking &middot; Events &middot; Media</div>
+  <h1>Book a meeting <em>with us today</em></h1>
+  <p>Choose a day in the next seven months, tell us what you need, and your request reaches us the moment you send it. Your time is held for you while we confirm.</p>
+  <a class="big" href="https://calendar.app.google/JQaXVSprh26bTwdg7" target="_blank" rel="noopener" id="bigbtn">Book a meeting with us today</a>
+  <div class="sub">We reply within one business day. All times are Eastern.</div>
+  <div class="alt" id="alt"></div>
+</div></header>
+<div class="wrap">
+  <section id="calendar"><div class="mono">Pick a day and time</div><h2>Our calendar</h2>
+    <div class="card" style="text-align:center;padding:36px 20px">
+      <p style="font-size:21px;margin:0 0 18px">Pick an open day and time on our live Google Calendar. You will get an instant confirmation, and we are notified right away.</p>
+      <a class="big" href="https://calendar.app.google/JQaXVSprh26bTwdg7" target="_blank" rel="noopener">Open the calendar</a>
+      <p class="sub">Opens in a new tab. Works on phone and desktop.</p></div>
+    <p class="sub" style="text-align:center">Prefer email? <a href="mailto:jeffparke72@gmail.com?subject=Meeting%20request">Send us a request</a> and we will find a time.</p>
+  </section>
+</div>
+<footer><div class="wrap">Cold Ischemia Foundation &middot; Meetings are free of charge. Your details are used only to answer your request. If you need medical help, call your care team. In an emergency, call 911.</div></footer>
+
+</body>
+</html>
