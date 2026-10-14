@@ -96,7 +96,7 @@ var SC={};
 function box(seg){return seg.sent.length&&seg.captions!==false&&!seg.center?{y0:165,y1:655}:{y0:170,y1:900}}
 SC.title=function(t,seg,p){
   var b=box(seg),L=seg.lines||[],n=L.length,size=Math.min(190,(b.y1-b.y0)/(n*1.12)),mid=(b.y0+b.y1)/2,lh=size*1.1;
-  L.forEach(function(l,i){var s=Math.min(size,fit(l.t,'Anton',size,1230,6)),y=mid-(n-1)*lh/2+i*lh+s*.35;T(l.t,960,y,'400 '+s+'px Anton',col(l.c),'center',eo(p*6-i*.7),6)});
+  L.forEach(function(l,i){var s=Math.min(size,fit(l.t,'Anton',size,1170,6)),y=mid-(n-1)*lh/2+i*lh+s*.35;T(l.t,960,y,'400 '+s+'px Anton',col(l.c),'center',eo(p*6-i*.7),6)});
   if(seg.kicker)T(String(seg.kicker).toUpperCase(),960,b.y0+10,'500 22px "IBM Plex Mono"',ST.accent2,'center',ss(.05,.15,p),9);
 };
 SC.stat=function(t,seg,p){
