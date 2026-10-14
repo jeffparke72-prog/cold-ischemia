@@ -1,0 +1,700 @@
+{
+ "lead": 0,
+ "gap": 0,
+ "style": {
+  "bar": 110
+ },
+ "music": {
+  "mood": "ominous",
+  "level": 0.9,
+  "piano": true,
+  "liftAt": 201.94,
+  "heartbeat": false
+ },
+ "open": {
+  "logo": "/_filmwork/policy/img/logo.png",
+  "w": 900,
+  "y": 90,
+  "until": 3.5
+ },
+ "overlay": {
+  "src": "/_filmwork/policy/img/jeff-cut.png",
+  "right": 1840,
+  "y": 136,
+  "w": 230,
+  "in": 3.4,
+  "tag": "Jeff Parke",
+  "tag2": "Founder"
+ },
+ "end": {
+  "logo": "/_filmwork/policy/img/logo.png",
+  "logoW": 520,
+  "logoY": 90,
+  "mark": "/_filmwork/policy/img/donate.png",
+  "markW": 130,
+  "markY": 800,
+  "headline": "No one waits in the cold alone",
+  "sub": "Cold Ischemia Foundation",
+  "lines": [
+   "coldischemia.foundation",
+   "Independent. Patient and care-partner led.",
+   "Educational advocacy, not medical or legal advice."
+  ],
+  "strong": 1,
+  "hold": 10
+ },
+ "segments": [
+  {
+   "id": "intro",
+   "type": "title",
+   "text": "Hello everyone, my name is Jeff Parke, founder of the Cold Ischemia Foundation. Many of you know me from LinkedIn or other social media platforms, or we've met at some conferences or meetings. But what this video is about is the founding declaration of the Cold Ischemia Foundation.",
+   "t0": 3.08,
+   "dur": 23.83,
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.58,
+    "blur": 6,
+    "zoom": 0.06,
+    "pan": "left"
+   },
+   "lines": [
+    {
+     "t": "THE FOUNDING",
+     "c": "ink"
+    },
+    {
+     "t": "DECLARATION",
+     "c": "accent"
+    }
+   ],
+   "kicker": "Cold Ischemia Foundation",
+   "intensity": 0.35,
+   "hits": [
+    0.02
+   ]
+  },
+  {
+   "id": "record",
+   "type": "title",
+   "text": "Keep in mind that this is not an advertisement, it's not a fundraiser, and it's not a feel good message meant to be watched and forgotten. This is a record.",
+   "t0": 28.57,
+   "dur": 10.53,
+   "bg": {
+    "src": "/research-banner.png",
+    "dim": 0.68,
+    "blur": 22,
+    "zoom": 0.06,
+    "pan": "right"
+   },
+   "lines": [
+    {
+     "t": "NOT AN ADVERTISEMENT.",
+     "c": "ink"
+    },
+    {
+     "t": "NOT A FUNDRAISER.",
+     "c": "ink"
+    },
+    {
+     "t": "A RECORD.",
+     "c": "accent"
+    }
+   ],
+   "intensity": 0.4,
+   "hits": [
+    0.9
+   ]
+  },
+  {
+   "id": "evidence",
+   "type": "title",
+   "text": "I am recording this so that there is evidence. Evidence of what we saw, what we said, and what we promised to do about it.",
+   "t0": 39.61,
+   "dur": 8.7,
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.58,
+    "blur": 6,
+    "zoom": 0.06,
+    "pan": "up"
+   },
+   "lines": [
+    {
+     "t": "WHAT WE SAW.",
+     "c": "ink"
+    },
+    {
+     "t": "WHAT WE SAID.",
+     "c": "ink"
+    },
+    {
+     "t": "WHAT WE PROMISED.",
+     "c": "accent"
+    }
+   ],
+   "intensity": 0.45
+  },
+  {
+   "id": "hold",
+   "type": "title",
+   "text": "And if we ever fall short of these words, play this back to us. Hold us to it. That's the point.",
+   "t0": 48.93,
+   "dur": 7.42,
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.58,
+    "blur": 6,
+    "zoom": 0.06,
+    "pan": "right"
+   },
+   "lines": [
+    {
+     "t": "HOLD US",
+     "c": "ink"
+    },
+    {
+     "t": "TO IT.",
+     "c": "accent"
+    }
+   ],
+   "intensity": 0.5,
+   "hits": [
+    0.62
+   ]
+  },
+  {
+   "id": "name",
+   "type": "title",
+   "text": "There is a name for the time something living can survive after it's been cut off from what sustains it. Medicine calls it cold ischemia.",
+   "t0": 58.0,
+   "dur": 9.46,
+   "bg": {
+    "src": "/research-banner.png",
+    "dim": 0.68,
+    "blur": 22,
+    "zoom": 0.06,
+    "pan": "left"
+   },
+   "lines": [
+    {
+     "t": "COLD ISCHEMIA",
+     "c": "accent2"
+    }
+   ],
+   "kicker": "The medical term",
+   "intensity": 0.5,
+   "hits": [
+    0.85
+   ]
+  },
+  {
+   "id": "people",
+   "type": "title",
+   "text": "We took that name for a reason, because we have watched the same thing happen to people. Not to organs. To human beings, cut off from answers, from respect, from any say in their own lives, and kept alive and slowly going cold.",
+   "t0": 68.6,
+   "dur": 18.11,
+   "bg": {
+    "src": "/stress.png",
+    "dim": 0.66,
+    "blur": 12,
+    "zoom": 0.06,
+    "pan": "left"
+   },
+   "lines": [
+    {
+     "t": "NOT ORGANS.",
+     "c": "ink"
+    },
+    {
+     "t": "HUMAN BEINGS.",
+     "c": "alert"
+    }
+   ],
+   "intensity": 0.6,
+   "heartbeat": true,
+   "hits": [
+    0.42
+   ]
+  },
+  {
+   "id": "installments",
+   "type": "list",
+   "text": "It never happens all at once. A voice is surrendered in installments. A question waved away. Fear answered with a pamphlet. A concern written into a chart as non-compliance. A care partner sent to the hallway while an entire life is decided behind a closed door. An appointment that ends before the sentence does.",
+   "t0": 87.76,
+   "dur": 25.17,
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.7,
+    "blur": 8,
+    "zoom": 0.06,
+    "pan": "down"
+   },
+   "rows": [
+    {
+     "t": "A question waved away"
+    },
+    {
+     "t": "Fear answered with a pamphlet"
+    },
+    {
+     "t": "A concern charted as \"non-compliance\""
+    },
+    {
+     "t": "A care partner sent to the hallway"
+    },
+    {
+     "t": "An appointment that ends before the sentence does"
+    }
+   ],
+   "kicker": null,
+   "intensity": 0.6
+  },
+  {
+   "id": "quiet",
+   "type": "title",
+   "text": "Till one day the person who once asked, argued, and fought simply goes quiet. Stops sharing. Stops showing up. Stops believing their expectations count as knowledge.",
+   "t0": 113.87,
+   "dur": 14.09,
+   "bg": {
+    "src": "/stress.png",
+    "dim": 0.66,
+    "blur": 12,
+    "zoom": 0.06,
+    "pan": "right"
+   },
+   "lines": [
+    {
+     "t": "ASKED. ARGUED. FOUGHT.",
+     "c": "ink"
+    },
+    {
+     "t": "THEN, SILENCE.",
+     "c": "alert"
+    }
+   ],
+   "intensity": 0.65,
+   "heartbeat": true,
+   "hits": [
+    0.5
+   ]
+  },
+  {
+   "id": "erasure",
+   "type": "title",
+   "text": "The world calls that isolation. We call it what it is. Slow, insidious erasure in a system that is relieved by the silence, because a quiet patient is an inexpensive patient.",
+   "t0": 129.49,
+   "dur": 20.5,
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.68,
+    "blur": 22,
+    "zoom": 0.06,
+    "pan": "left"
+   },
+   "lines": [
+    {
+     "t": "THE WORLD CALLS IT ISOLATION.",
+     "c": "ink"
+    },
+    {
+     "t": "WE CALL IT ERASURE.",
+     "c": "alert"
+    }
+   ],
+   "intensity": 0.7,
+   "hits": [
+    0.3
+   ]
+  },
+  {
+   "id": "failure",
+   "type": "title",
+   "text": "So hear this clearly, and hear it very clearly. Your silence was never your failure. It was engineered.",
+   "t0": 151.51,
+   "dur": 10.19,
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.58,
+    "blur": 6,
+    "zoom": 0.06,
+    "pan": "left"
+   },
+   "lines": [
+    {
+     "t": "YOUR SILENCE WAS",
+     "c": "ink"
+    },
+    {
+     "t": "NEVER YOUR FAILURE.",
+     "c": "accent"
+    }
+   ],
+   "intensity": 0.8,
+   "hits": [
+    0.45,
+    0.9
+   ]
+  },
+  {
+   "id": "engineered",
+   "type": "title",
+   "text": "Engineered by a system that thrives on keeping patients, families, and care partners quiet.",
+   "t0": 161.88,
+   "dur": 8.04,
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.68,
+    "blur": 22,
+    "zoom": 0.06,
+    "pan": "right"
+   },
+   "lines": [
+    {
+     "t": "IT WAS",
+     "c": "ink"
+    },
+    {
+     "t": "ENGINEERED.",
+     "c": "alert"
+    }
+   ],
+   "intensity": 0.85,
+   "hits": [
+    0.1
+   ]
+  },
+  {
+   "id": "rushed",
+   "type": "list",
+   "text": "Every rushed visit, every unreturned call, every decision made about you, without you, was an instruction to just disappear.",
+   "t0": 170.71,
+   "dur": 10.22,
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.7,
+    "blur": 8,
+    "zoom": 0.06,
+    "pan": "left"
+   },
+   "rows": [
+    {
+     "t": "Every rushed visit"
+    },
+    {
+     "t": "Every unreturned call"
+    },
+    {
+     "t": "Every decision made about you, without you",
+     "s": "Was an instruction to disappear"
+    }
+   ],
+   "intensity": 0.8
+  },
+  {
+   "id": "obeyed",
+   "type": "title",
+   "text": "And too many of us have obeyed, not because we were weak, but because exhaustion is persuasive and despair is patient. The Cold Ischemia Foundation exists to end the cold interval, not with slogans,",
+   "t0": 180.74,
+   "dur": 21.09,
+   "bg": {
+    "src": "/stress.png",
+    "dim": 0.66,
+    "blur": 12,
+    "zoom": 0.06,
+    "pan": "down"
+   },
+   "lines": [
+    {
+     "t": "NOT BECAUSE",
+     "c": "ink"
+    },
+    {
+     "t": "WE WERE WEAK.",
+     "c": "ink"
+    },
+    {
+     "t": "DESPAIR IS PATIENT.",
+     "c": "accent2"
+    }
+   ],
+   "intensity": 0.7
+  },
+  {
+   "id": "arch",
+   "type": "title",
+   "text": "With architecture. Tools that let you document what you are told and what you are promised so no one can rewrite it later.",
+   "t0": 201.94,
+   "dur": 9.21,
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.68,
+    "blur": 22,
+    "zoom": 0.06,
+    "pan": "right"
+   },
+   "lines": [
+    {
+     "t": "NOT WITH SLOGANS.",
+     "c": "ink"
+    },
+    {
+     "t": "WITH ARCHITECTURE.",
+     "c": "accent"
+    }
+   ],
+   "intensity": 0.6,
+   "hits": [
+    0.1
+   ]
+  },
+  {
+   "id": "tools",
+   "type": "list",
+   "text": "Tools that let you document what you are told. Data that belongs to the person it describes, and not to the institution that profits from it. Measures that judge a system by how fast it listens, not how efficiently it builds.",
+   "t0": 210.65,
+   "dur": 16.23,
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.68,
+    "blur": 22,
+    "zoom": 0.06,
+    "pan": "left"
+   },
+   "rows": [
+    {
+     "t": "Tools that let you document",
+     "s": "What you are told and what you are promised"
+    },
+    {
+     "t": "Data that belongs to the person",
+     "s": "Not to the institution that profits from it"
+    },
+    {
+     "t": "Measures that judge a system by how fast it listens"
+    }
+   ],
+   "intensity": 0.55
+  },
+  {
+   "id": "care",
+   "type": "list",
+   "text": "Care partners written into the record as experts. Technology that holds the line when every office is closed and every phone goes unanswered. And an advocacy that does not ask for a seat at the table, but audits the table itself.",
+   "t0": 227.45,
+   "dur": 24.21,
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.68,
+    "blur": 22,
+    "zoom": 0.06,
+    "pan": "right"
+   },
+   "rows": [
+    {
+     "t": "Care partners written into the record as experts"
+    },
+    {
+     "t": "Technology that holds the line",
+     "s": "When every office is closed and every phone goes unanswered"
+    },
+    {
+     "t": "An advocacy that audits the table itself",
+     "s": "Not one that asks for a seat"
+    }
+   ],
+   "intensity": 0.6
+  },
+  {
+   "id": "polite",
+   "type": "title",
+   "text": "This is not reform requested politely. The status quo is obdurate.",
+   "t0": 252.77,
+   "dur": 7.2,
+   "bg": {
+    "src": "/transplant-loopholes.png",
+    "dim": 0.68,
+    "blur": 22,
+    "zoom": 0.06,
+    "pan": "left"
+   },
+   "lines": [
+    {
+     "t": "NOT REFORM",
+     "c": "ink"
+    },
+    {
+     "t": "REQUESTED POLITELY.",
+     "c": "accent"
+    }
+   ],
+   "intensity": 0.75,
+   "hits": [
+    0.15
+   ]
+  },
+  {
+   "id": "outlasted",
+   "type": "list",
+   "text": "It has outlasted every press release, every task force, and every promise made in a ballroom and forgotten by the parking lot.",
+   "t0": 260.18,
+   "dur": 10.36,
+   "bg": {
+    "src": "/transplant-loopholes.png",
+    "dim": 0.68,
+    "blur": 22,
+    "zoom": 0.06,
+    "pan": "right"
+   },
+   "rows": [
+    {
+     "t": "Every press release"
+    },
+    {
+     "t": "Every task force"
+    },
+    {
+     "t": "Every promise made in a ballroom",
+     "s": "And forgotten by the parking lot"
+    }
+   ],
+   "intensity": 0.75
+  },
+  {
+   "id": "permission",
+   "type": "title",
+   "text": "We are not asking for permission. We are building what the system declined to build, and we are measuring what it refused to measure.",
+   "t0": 271.24,
+   "dur": 9.35,
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.58,
+    "blur": 6,
+    "zoom": 0.06,
+    "pan": "up"
+   },
+   "lines": [
+    {
+     "t": "WE ARE NOT ASKING",
+     "c": "ink"
+    },
+    {
+     "t": "FOR PERMISSION.",
+     "c": "accent"
+    }
+   ],
+   "intensity": 0.85,
+   "hits": [
+    0.1,
+    0.5
+   ]
+  },
+  {
+   "id": "invite",
+   "type": "title",
+   "text": "If you're one that has gone quiet, this is your invitation back.",
+   "t0": 282.24,
+   "dur": 7.08,
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.58,
+    "blur": 4,
+    "zoom": 0.08,
+    "pan": "left"
+   },
+   "lines": [
+    {
+     "t": "THIS IS YOUR",
+     "c": "ink"
+    },
+    {
+     "t": "INVITATION BACK.",
+     "c": "accent"
+    }
+   ],
+   "intensity": 0.8
+  },
+  {
+   "id": "evid",
+   "type": "title",
+   "text": "Your experience is evidence. Your questions are data. Your voice was never merciless.",
+   "t0": 289.86,
+   "dur": 6.2,
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.58,
+    "blur": 4,
+    "zoom": 0.08,
+    "pan": "right"
+   },
+   "lines": [
+    {
+     "t": "YOUR EXPERIENCE",
+     "c": "ink"
+    },
+    {
+     "t": "IS EVIDENCE.",
+     "c": "accent"
+    }
+   ],
+   "intensity": 0.85,
+   "hits": [
+    0.1
+   ]
+  },
+  {
+   "id": "voice",
+   "type": "title",
+   "text": "It was waiting for a place where it would be heard. And that place begins now.",
+   "t0": 296.39,
+   "dur": 8.28,
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.58,
+    "blur": 4,
+    "zoom": 0.1,
+    "pan": "left"
+   },
+   "lines": [
+    {
+     "t": "THAT PLACE",
+     "c": "ink"
+    },
+    {
+     "t": "BEGINS NOW.",
+     "c": "accent"
+    }
+   ],
+   "intensity": 0.95,
+   "hits": [
+    0.82
+   ]
+  },
+  {
+   "id": "close",
+   "type": "title",
+   "text": "We are the Cold Ischemia Foundation, and with us, no one waits in the cold alone.",
+   "t0": 306.24,
+   "dur": 8.71,
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.58,
+    "blur": 4,
+    "zoom": 0.06,
+    "pan": "right"
+   },
+   "lines": [
+    {
+     "t": "NO ONE WAITS",
+     "c": "ink"
+    },
+    {
+     "t": "IN THE COLD ALONE.",
+     "c": "accent"
+    }
+   ],
+   "intensity": 0.9,
+   "hits": [
+    0.55
+   ]
+  }
+ ]
+}
