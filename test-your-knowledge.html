@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Your Knowledge: The Unspoken Curriculum | Cold Ischemia Foundation</title>
+<meta name="description" content="A free two-week, self-paced course from the Cold Ischemia Foundation on what patients and care partners are never told about kidney disease, dialysis, and transplant. 100 scenario-based questions. Certificate at 80% or higher.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f1033; --ink2:#3a3c63; --muted:#6b6e92;
+  --bg:#fbfaff; --card:#ffffff; --line:#e7e4f7;
+  --indigo:#3b2bd1; --violet:#7b2ff7; --magenta:#e0218a; --coral:#ff5a5f;
+  --amber:#ffb703; --teal:#00b3a4; --sky:#2ec4f1;
+  --good:#12b76a; --goodbg:#e8fbf1; --bad:#e5484d; --badbg:#fff0f0;
+  --radius:18px; --shadow:0 10px 30px rgba(35,20,120,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:Fraunces,Georgia,serif;letter-spacing:-.01em}
+a{color:var(--indigo)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- NAV ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(15,16,51,.92);backdrop-filter:blur(10px);color:#fff}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:.02em}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:conic-gradient(from 200deg,var(--sky),var(--violet),var(--magenta),var(--amber),var(--sky));display:grid;place-items:center}
+.brand-mark span{width:14px;height:14px;border-radius:50%;background:#0f1033}
+.brand small{display:block;font-weight:500;font-size:.72rem;opacity:.7;letter-spacing:.06em;text-transform:uppercase}
+.nav-links{display:flex;gap:18px;font-size:.92rem}
+.nav-links a{color:#fff;text-decoration:none;opacity:.85}
+.nav-links a:hover{opacity:1}
+.nav-cta{background:linear-gradient(90deg,var(--amber),var(--coral));color:#1a0f2e!important;padding:8px 14px;border-radius:999px;font-weight:700;opacity:1!important}
+@media(max-width:820px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ---------- HERO CAROUSEL ---------- */
+.hero{position:relative;height:min(88vh,760px);min-height:560px;overflow:hidden;color:#fff;background:#0f1033}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;display:flex;align-items:center}
+.slide.active{opacity:1;z-index:2}
+.slide .bg{position:absolute;inset:0}
+.slide .art{position:absolute;right:-2%;top:50%;transform:translateY(-50%) scale(1.04);width:min(58vw,720px);height:auto;opacity:.95;transition:transform 7s ease}
+.slide.active .art{transform:translateY(-50%) scale(1.12)}
+.slide .content{position:relative;z-index:3;max-width:1180px;margin:0 auto;padding:0 16px;width:100%}
+.slide .content > div{max-width:600px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:999px}
+.hero h1,.hero h2{font-size:clamp(2.1rem,5.2vw,4rem);line-height:1.05;margin:18px 0 14px;font-weight:900}
+.hero p{font-size:clamp(1rem,1.6vw,1.2rem);opacity:.92;max-width:540px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:inherit;font-weight:700;padding:14px 22px;border-radius:999px;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(90deg,var(--amber),var(--coral));color:#1a0f2e;box-shadow:0 10px 30px rgba(255,90,95,.35)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-outline{background:#fff;color:var(--indigo);border:2px solid var(--indigo)}
+.hero-ctrl{position:absolute;z-index:5;bottom:26px;left:0;right:0}
+.hero-ctrl .wrap{display:flex;align-items:center;gap:14px}
+.dots{display:flex;gap:8px}
+.dots button{width:34px;height:6px;border-radius:6px;border:0;background:rgba(255,255,255,.35);cursor:pointer;transition:all .3s}
+.dots button.on{background:#fff;width:56px}
+.arrow{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);color:#fff;font-size:1.2rem;cursor:pointer}
+.slide-count{margin-left:auto;font-size:.85rem;opacity:.8;font-variant-numeric:tabular-nums}
+@media(max-width:820px){
+  .slide .art{width:120vw;right:-35%;opacity:.35}
+  .hero{min-height:620px}
+}
+/* svg animations */
+@keyframes flow{to{stroke-dashoffset:-400}}
+@keyframes flowrev{to{stroke-dashoffset:400}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes ripple{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+.flow{stroke-dasharray:14 12;animation:flow 6s linear infinite}
+.flowrev{stroke-dasharray:14 12;animation:flowrev 6s linear infinite}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 12s linear infinite}
+.twinkle{animation:pulse 3s ease-in-out infinite}
+.ripple{transform-box:fill-box;transform-origin:center;animation:ripple 3.6s ease-out infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- SECTIONS ---------- */
+section{padding:84px 0}
+.kicker{font-size:.8rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;background:linear-gradient(90deg,var(--violet),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.title{font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.1;margin:10px 0 18px;font-weight:900}
+.lead{font-size:1.15rem;color:var(--ink2);max-width:820px}
+.grad-text{background:linear-gradient(90deg,var(--indigo),var(--magenta),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.why{background:linear-gradient(180deg,#fff,#f4f0ff)}
+.why-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start;margin-top:30px}
+.why-body p{margin-bottom:16px;color:var(--ink2);font-size:1.05rem}
+.why-body strong{color:var(--ink)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{border-radius:var(--radius);padding:22px;color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.stat:nth-child(1){background:linear-gradient(135deg,#3b2bd1,#7b2ff7)}
+.stat:nth-child(2){background:linear-gradient(135deg,#e0218a,#ff5a5f)}
+.stat:nth-child(3){background:linear-gradient(135deg,#00a39b,#2ec4f1)}
+.stat:nth-child(4){background:linear-gradient(135deg,#f08c00,#ffb703)}
+.stat b{display:block;font-family:Fraunces,serif;font-size:2.2rem;line-height:1}
+.stat span{display:block;font-size:.92rem;margin-top:8px;opacity:.95}
+.stat cite{display:block;font-size:.72rem;font-style:normal;opacity:.8;margin-top:10px}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr}}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.pillar{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border-top:6px solid var(--c)}
+.pillar h3{font-size:1.25rem;margin-bottom:8px}
+.pillar p{color:var(--ink2);font-size:.98rem}
+@media(max-width:900px){.pillars{grid-template-columns:1fr}}
+
+/* how it works */
+.how{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.how::before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(123,47,247,.45),transparent 70%);top:-200px;right:-150px}
+.how::after{content:"";position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,179,164,.35),transparent 70%);bottom:-220px;left:-120px}
+.how .wrap{position:relative;z-index:2}
+.how .lead{color:#cfd0ee}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.step{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:22px}
+.step .num{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-family:Fraunces,serif;font-size:1.3rem;margin-bottom:14px;background:var(--c);color:#1a0f2e}
+.step h3{font-size:1.1rem;margin-bottom:6px}
+.step p{color:#cfd0ee;font-size:.95rem}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* curriculum */
+.progress-shell{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow);margin:28px 0 22px;flex-wrap:wrap}
+.pbar{flex:1;min-width:180px;height:12px;border-radius:12px;background:#eeeaff;overflow:hidden}
+.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--violet),var(--magenta));transition:width .5s}
+.week-label{display:flex;align-items:center;gap:12px;margin:34px 0 14px}
+.week-label h3{font-size:1.5rem}
+.week-chip{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;padding:6px 10px;border-radius:999px;color:#fff}
+.days{display:grid;gap:12px}
+details.day{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 4px 14px rgba(35,20,120,.05);overflow:hidden;border-left:6px solid var(--c)}
+details.day summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;align-items:center;gap:14px}
+details.day summary::-webkit-details-marker{display:none}
+.dnum{flex:none;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--c);font-size:.78rem;text-align:center;line-height:1.1}
+.dnum b{display:block;font-size:1.25rem;font-family:Fraunces,serif}
+.dtitle{flex:1}
+.dtitle h4{font-family:Fraunces,serif;font-size:1.15rem;line-height:1.25}
+.dtitle span{font-size:.85rem;color:var(--muted)}
+.done-badge{flex:none;font-size:.75rem;font-weight:700;padding:5px 10px;border-radius:999px;background:#f1effb;color:var(--muted)}
+details.day.complete .done-badge{background:var(--goodbg);color:var(--good)}
+.chev{flex:none;transition:transform .25s;color:var(--muted)}
+details[open] .chev{transform:rotate(180deg)}
+.dbody{padding:0 22px 22px 22px;border-top:1px dashed var(--line)}
+.dbody p{margin-top:14px;color:var(--ink2)}
+.reflect{margin-top:18px;border-radius:14px;padding:16px 18px;background:linear-gradient(135deg,#fff7e6,#ffeef5);border:1px solid #ffd9a8}
+.reflect b{display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#b35c00;margin-bottom:4px}
+.srcs{margin-top:16px;font-size:.84rem;color:var(--muted)}
+.srcs b{color:var(--ink2)}
+.srcs li{margin:4px 0 0 18px}
+.mark{margin-top:18px;display:inline-flex;align-items:center;gap:10px;font-weight:700;cursor:pointer;user-select:none;background:#f4f2ff;padding:10px 16px;border-radius:999px;border:2px solid transparent}
+.mark input{width:20px;height:20px;accent-color:var(--good)}
+details.day.complete .mark{background:var(--goodbg);border-color:#b6efd2;color:#0a7a46}
+
+/* ---------- QUIZ ---------- */
+.quiz-sec{background:radial-gradient(1200px 500px at 10% 0%,#efe9ff,transparent),radial-gradient(900px 500px at 100% 100%,#ffe9f3,transparent),var(--bg)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0 22px}
+.tab{text-align:left;border:2px solid var(--line);background:#fff;border-radius:var(--radius);padding:18px 20px;cursor:pointer;font:inherit;transition:all .2s;position:relative}
+.tab h3{font-size:1.15rem}
+.tab p{font-size:.9rem;color:var(--muted)}
+.tab .tscore{position:absolute;top:16px;right:16px;font-weight:800;font-size:.85rem;padding:4px 10px;border-radius:999px;background:#f1effb;color:var(--muted)}
+.tab.on{border-color:transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,var(--violet),var(--magenta),var(--amber)) border-box;box-shadow:var(--shadow)}
+.tab.finished .tscore{background:var(--goodbg);color:var(--good)}
+@media(max-width:640px){.tabs{grid-template-columns:1fr}}
+
+.qcard{background:#fff;border-radius:24px;box-shadow:0 20px 50px rgba(35,20,120,.12);overflow:hidden}
+.qhead{padding:18px 22px;color:#fff;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.qhead .qn{font-family:Fraunces,serif;font-weight:900;font-size:1.4rem}
+.qhead .qday{font-size:.8rem;font-weight:700;background:rgba(255,255,255,.18);padding:5px 10px;border-radius:999px}
+.qhead .qsc{margin-left:auto;font-weight:700;font-size:.9rem;background:rgba(0,0,0,.18);padding:6px 12px;border-radius:999px}
+.qprog{height:6px;background:rgba(255,255,255,.25)}
+.qprog i{display:block;height:100%;background:#fff;transition:width .4s}
+.qbody{padding:26px 22px 22px}
+.qtext{font-size:clamp(1.08rem,1.9vw,1.3rem);font-weight:600;line-height:1.5;margin-bottom:20px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;font:inherit;font-size:1rem;padding:14px 16px;border-radius:14px;border:2px solid var(--line);background:#fff;cursor:pointer;transition:all .15s;color:var(--ink)}
+.opt:hover:not(:disabled){border-color:var(--violet);background:#faf8ff;transform:translateX(3px)}
+.opt .key{flex:none;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-weight:800;background:#f1effb;color:var(--indigo);font-size:.9rem}
+.opt .mk{margin-left:auto;flex:none;font-weight:900;font-size:1.2rem}
+.opt:disabled{cursor:default}
+.opt.correct{border-color:var(--good);background:var(--goodbg);color:#0a5c36}
+.opt.correct .key{background:var(--good);color:#fff}
+.opt.wrong{border-color:var(--bad);background:var(--badbg);color:#8a1c20}
+.opt.wrong .key{background:var(--bad);color:#fff}
+.opt.dim{opacity:.55}
+.fb{margin-top:18px;border-radius:16px;padding:16px 18px;display:none;animation:pop .35s ease}
+@keyframes pop{from{transform:scale(.97);opacity:0}to{transform:none;opacity:1}}
+.fb.show{display:block}
+.fb.ok{background:var(--goodbg);border:2px solid #9ee6c1}
+.fb.no{background:#fff7ec;border:2px solid #ffd59e}
+.fb h4{display:flex;align-items:center;gap:10px;font-size:1.05rem;margin-bottom:6px}
+.fb .ic{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900}
+.fb.ok .ic{background:var(--good)}
+.fb.no .ic{background:#f08c00}
+.fb p{color:var(--ink2)}
+.qfoot{display:flex;gap:10px;justify-content:space-between;align-items:center;padding:0 22px 22px;flex-wrap:wrap}
+.qmap{display:flex;flex-wrap:wrap;gap:6px;padding:0 22px 24px}
+.qmap button{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:#fff;font:inherit;font-size:.75rem;font-weight:700;cursor:pointer;color:var(--muted)}
+.qmap button.c{background:var(--good);border-color:var(--good);color:#fff}
+.qmap button.w{background:var(--bad);border-color:var(--bad);color:#fff}
+.qmap button.cur{outline:3px solid var(--amber);outline-offset:1px}
+.summary{padding:34px 24px;text-align:center}
+.ring{width:170px;height:170px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--good) calc(var(--p)*1%),#eeeaff 0)}
+.ring div{width:132px;height:132px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:Fraunces,serif;font-weight:900;font-size:2.2rem}
+.summary h3{font-size:1.6rem;margin-bottom:8px}
+.summary p{color:var(--ink2);max-width:620px;margin:0 auto 18px}
+
+/* ---------- CERTIFICATE ---------- */
+.cert-sec{background:linear-gradient(135deg,#140f45,#3b2bd1 45%,#e0218a);color:#fff}
+.cert-sec .lead{color:#e6e3ff}
+.cert-panel{margin-top:30px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:26px}
+.overall{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+.overall div{background:rgba(255,255,255,.1);border-radius:16px;padding:16px;text-align:center}
+.overall b{display:block;font-family:Fraunces,serif;font-size:2rem}
+.overall span{font-size:.85rem;opacity:.85}
+@media(max-width:640px){.overall{grid-template-columns:1fr}}
+.cert-form{display:flex;gap:10px;flex-wrap:wrap}
+.cert-form input{flex:1;min-width:220px;padding:14px 16px;border-radius:999px;border:0;font:inherit;font-size:1rem}
+.cert-msg{padding:14px 18px;border-radius:14px;background:rgba(0,0,0,.18);margin-bottom:16px}
+#certPreview{margin-top:22px;display:none}
+#certPreview img{width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.4);background:#fff}
+#certPreview .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+
+/* footer */
+footer{background:#0b0c26;color:#c9cae8;padding:50px 0 34px;font-size:.92rem}
+footer .fgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:30px}
+footer h4{color:#fff;font-family:Fraunces,serif;font-size:1.2rem;margin-bottom:8px}
+footer .fund{border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:16px;background:rgba(255,255,255,.04)}
+footer .legal{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem;opacity:.75}
+@media(max-width:800px){footer .fgrid{grid-template-columns:1fr}}
+@media print{body *{visibility:hidden}#certPrintable,#certPrintable *{visibility:visible}#certPrintable{position:fixed;inset:0;width:100%}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="cold-ischemia-logo.png" alt="" style="width:36px;height:36px;object-fit:contain" onerror="this.style.display='none'"><span>Cold Ischemia Foundation<small>Operational Advocacy™</small></span></a>
+    <div class="nav-links">
+      <a href="#why">Why This Exists</a>
+      <a href="#curriculum">14-Day Curriculum</a>
+      <a href="#certificate">Certificate</a>
+      <a class="nav-cta" href="#quiz">Start the Quiz</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO CAROUSEL ================= -->
+<header class="hero" id="top" aria-roledescription="carousel" aria-label="The Unspoken Curriculum">
+
+  <!-- Slide 1: Kidney constellation -->
+  <div class="slide active" role="group" aria-roledescription="slide" aria-label="1 of 5">
+    <div class="bg" style="background:radial-gradient(900px 600px at 80% 40%,#7b2ff7 0%,transparent 60%),linear-gradient(120deg,#0f1033 0%,#2a1a8c 55%,#e0218a 130%)"></div>
+    <svg class="art" viewBox="0 0 600 500" aria-hidden="true">
+      <defs><radialGradient id="g1" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb703" stop-opacity=".55"/><stop offset="1" stop-color="#ffb703" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="320" cy="250" r="220" fill="url(#g1)"/>
+      <path d="M320 60 C450 55 515 160 505 265 C495 375 425 450 320 448 C235 446 192 385 222 322 C240 284 262 274 262 252 C262 230 240 218 220 178 C190 118 232 63 320 60 Z" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2.5" stroke-dasharray="6 8"/>
+      <g stroke="#2ec4f1" stroke-opacity=".55" stroke-width="1.4">
+        <line x1="320" y1="60" x2="410" y2="120"/><line x1="410" y1="120" x2="470" y2="200"/><line x1="470" y1="200" x2="500" y2="290"/><line x1="500" y1="290" x2="455" y2="380"/><line x1="455" y1="380" x2="380" y2="440"/><line x1="380" y1="440" x2="290" y2="440"/><line x1="290" y1="440" x2="225" y2="350"/><line x1="225" y1="350" x2="262" y2="252"/><line x1="262" y1="252" x2="215" y2="170"/><line x1="215" y1="170" x2="320" y2="60"/>
+        <line x1="262" y1="252" x2="360" y2="250"/><line x1="360" y1="250" x2="410" y2="120"/><line x1="360" y1="250" x2="500" y2="290"/><line x1="360" y1="250" x2="380" y2="440"/><line x1="360" y1="250" x2="420" y2="330"/><line x1="420" y1="330" x2="455" y2="380"/><line x1="360" y1="250" x2="400" y2="190"/>
+      </g>
+      <g fill="#fff">
+        <circle class="twinkle" cx="320" cy="60" r="5"/><circle class="twinkle" style="animation-delay:.4s" cx="410" cy="120" r="4"/><circle class="twinkle" style="animation-delay:.9s" cx="470" cy="200" r="6"/><circle class="twinkle" style="animation-delay:1.3s" cx="500" cy="290" r="4"/><circle class="twinkle" style="animation-delay:.2s" cx="455" cy="380" r="5"/><circle class="twinkle" style="animation-delay:1.7s" cx="380" cy="440" r="4"/><circle class="twinkle" style="animation-delay:.6s" cx="290" cy="440" r="5"/><circle class="twinkle" style="animation-delay:2.1s" cx="225" cy="350" r="4"/><circle class="twinkle" style="animation-delay:1.1s" cx="262" cy="252" r="6"/><circle class="twinkle" style="animation-delay:2.4s" cx="215" cy="170" r="4"/><circle cx="360" cy="250" r="10" fill="#ffb703"/><circle class="twinkle" cx="420" cy="330" r="3"/><circle class="twinkle" cx="400" cy="190" r="3"/>
+      </g>
+    </svg>
+    <div class="content"><div>
+      <span class="eyebrow">★ Free 2-Week Course · Cold Ischemia Foundation</span>
+      <h1>The Unspoken Curriculum</h1>
+      <p>Everything about kidney disease, dialysis, and transplant that nobody sat you down to explain. Fourteen days. One hundred scenarios. Zero brochure talk.</p>
+      <div class="btns"><a class="btn btn-primary" href="#curriculum">Begin Day 1 →</a><a class="btn btn-ghost" href="#quiz">Go to the Quiz</a></div>
+    </div></div>
+  </div>
+
+  <!-- Slide 2: Countercurrent circulation -->
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+    <div class="bg" style="background:radial-gradient(800px 600px at 75% 50%,#ff5a5f 0%,transparent 60%),linear-gradient(120deg,#0f1033 0%,#5a1060 60%,#ff5a5f 140%)"></div>
+    <svg class="art" viewBox="0 0 600 500" aria-hidden="true">
+      <rect x="150" y="200" width="300" height="100" rx="50" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
+      <path class="flow" d="M40 230 C120 230 140 230 450 230 C520 230 560 160 520 100 C480 40 380 60 330 110" fill="none" stroke="#ff5a5f" stroke-width="10" stroke-linecap="round"/>
+      <path class="flowrev" d="M560 270 C480 270 460 270 150 270 C80 270 40 340 80 400 C120 460 220 440 270 390" fill="none" stroke="#2ec4f1" stroke-width="10" stroke-linecap="round"/>
+      <g stroke="#fff" stroke-opacity=".5" stroke-width="2">
+        <line x1="190" y1="238" x2="190" y2="262"/><line x1="230" y1="238" x2="230" y2="262"/><line x1="270" y1="238" x2="270" y2="262"/><line x1="310" y1="238" x2="310" y2="262"/><line x1="350" y1="238" x2="350" y2="262"/><line x1="390" y1="238" x2="390" y2="262"/><line x1="430" y1="238" x2="430" y2="262"/>
+      </g>
+      <circle class="spin" cx="330" cy="110" r="38" fill="none" stroke="#ffb703" stroke-width="4" stroke-dasharray="20 10"/>
+      <circle class="spin" cx="270" cy="390" r="38" fill="none" stroke="#ffb703" stroke-width="4" stroke-dasharray="20 10" style="animation-direction:reverse"/>
+      <text x="150" y="330" fill="#fff" fill-opacity=".7" font-family="Inter" font-size="16" letter-spacing="3">COUNTERCURRENT</text>
+    </svg>
+    <div class="content"><div>
+      <span class="eyebrow">Week 1 · Living Inside the Machine</span>
+      <h2>Twelve hours a week. A lifetime nobody explained.</h2>
+      <p>The law that made the chair a federal entitlement, the economics that decide who sits in it, and the rights the clinic never posts on the wall.</p>
+      <div class="btns"><a class="btn btn-primary" href="#curriculum">See Week 1 →</a></div>
+    </div></div>
+  </div>
+
+  <!-- Slide 3: Care partners -->
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+    <div class="bg" style="background:radial-gradient(800px 600px at 78% 45%,#00b3a4 0%,transparent 60%),linear-gradient(120deg,#0f1033 0%,#0b3f5c 55%,#00b3a4 140%)"></div>
+    <svg class="art" viewBox="0 0 600 500" aria-hidden="true" id="peopleArt"></svg>
+    <div class="content"><div>
+      <span class="eyebrow">For the 55 Million Who Hold Everything Together</span>
+      <h2>59 million care partners. $1.01 trillion in unpaid labor.</h2>
+      <p>The system runs on people it never trained, never paid, and never counted. This course counts them.</p>
+      <div class="btns"><a class="btn btn-primary" href="#why">Why it matters →</a></div>
+    </div></div>
+  </div>
+
+  <!-- Slide 4: Cold ischemia clock -->
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+    <div class="bg" style="background:radial-gradient(800px 600px at 75% 45%,#2ec4f1 0%,transparent 60%),linear-gradient(120deg,#0f1033 0%,#12306e 55%,#2ec4f1 150%)"></div>
+    <svg class="art" viewBox="0 0 600 500" aria-hidden="true">
+      <g fill="none" stroke="#bfefff" stroke-opacity=".6" stroke-width="2">
+        <polygon points="120,90 150,72 180,90 180,125 150,143 120,125"/>
+        <polygon points="480,380 510,362 540,380 540,415 510,433 480,415"/>
+        <polygon points="470,70 492,57 514,70 514,96 492,109 470,96"/>
+        <polygon points="90,370 112,357 134,370 134,396 112,409 90,396"/>
+      </g>
+      <g stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".7">
+        <g transform="translate(510 230)"><line x1="-22" y1="0" x2="22" y2="0"/><line x1="0" y1="-22" x2="0" y2="22"/><line x1="-16" y1="-16" x2="16" y2="16"/><line x1="-16" y1="16" x2="16" y2="-16"/></g>
+        <g transform="translate(90 240)"><line x1="-16" y1="0" x2="16" y2="0"/><line x1="0" y1="-16" x2="0" y2="16"/><line x1="-11" y1="-11" x2="11" y2="11"/><line x1="-11" y1="11" x2="11" y2="-11"/></g>
+      </g>
+      <circle cx="300" cy="250" r="160" fill="rgba(255,255,255,.06)" stroke="#fff" stroke-opacity=".7" stroke-width="3"/>
+      <circle cx="300" cy="250" r="140" fill="none" stroke="#2ec4f1" stroke-width="10" stroke-dasharray="4 18"/>
+      <g class="spin" style="animation-duration:20s"><line x1="300" y1="250" x2="300" y2="135" stroke="#ffb703" stroke-width="6" stroke-linecap="round"/></g>
+      <g class="spin" style="animation-duration:120s"><line x1="300" y1="250" x2="380" y2="250" stroke="#fff" stroke-width="8" stroke-linecap="round"/></g>
+      <circle cx="300" cy="250" r="12" fill="#fff"/>
+      <text x="300" y="350" text-anchor="middle" fill="#fff" font-family="Fraunces" font-size="22" font-weight="700">CIT</text>
+    </svg>
+    <div class="content"><div>
+      <span class="eyebrow">Week 2 · The Gift, The List, The Ledger</span>
+      <h2>Every hour on ice is a decision someone made.</h2>
+      <p>Cold ischemia is our name for a reason. Learn who controls the clock, the list, and the organs that are recovered and never transplanted.</p>
+      <div class="btns"><a class="btn btn-primary" href="#curriculum">See Week 2 →</a></div>
+    </div></div>
+  </div>
+
+  <!-- Slide 5: Voice -->
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+    <div class="bg" style="background:radial-gradient(800px 600px at 75% 50%,#ffb703 0%,transparent 55%),linear-gradient(120deg,#0f1033 0%,#3b2bd1 55%,#ffb703 160%)"></div>
+    <svg class="art" viewBox="0 0 600 500" aria-hidden="true">
+      <g fill="none" stroke="#fff" stroke-width="3">
+        <circle class="ripple" cx="190" cy="250" r="60"/>
+        <circle class="ripple" style="animation-delay:1.2s" cx="190" cy="250" r="60"/>
+        <circle class="ripple" style="animation-delay:2.4s" cx="190" cy="250" r="60"/>
+      </g>
+      <rect x="170" y="200" width="40" height="80" rx="20" fill="#ffb703"/>
+      <path d="M150 255 C150 300 230 300 230 255" fill="none" stroke="#fff" stroke-width="5"/>
+      <line x1="190" y1="300" x2="190" y2="330" stroke="#fff" stroke-width="5"/>
+      <line x1="165" y1="332" x2="215" y2="332" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+      <g fill="#fff" fill-opacity=".9" transform="translate(330 150)">
+        <path d="M80 30 C80 10 100 0 110 0 C120 0 140 10 140 30 Z"/><rect x="106" y="-14" width="8" height="16"/>
+        <path d="M40 90 C40 40 180 40 180 90 Z"/><rect x="30" y="90" width="160" height="12"/>
+        <rect x="40" y="104" width="10" height="70"/><rect x="66" y="104" width="10" height="70"/><rect x="92" y="104" width="10" height="70"/><rect x="118" y="104" width="10" height="70"/><rect x="144" y="104" width="10" height="70"/><rect x="170" y="104" width="10" height="70"/>
+        <rect x="20" y="176" width="180" height="14"/><rect x="5" y="192" width="210" height="14"/>
+      </g>
+    </svg>
+    <div class="content"><div>
+      <span class="eyebrow">Day 14 · Voice & Legacy</span>
+      <h2>Your experience is evidence. Learn to submit it.</h2>
+      <p>Finish both parts at 80% or higher and earn the CIF Certificate of Completion — proof that you understand the system well enough to challenge it.</p>
+      <div class="btns"><a class="btn btn-primary" href="#quiz">Take the Quiz →</a><a class="btn btn-ghost" href="#certificate">About the Certificate</a></div>
+    </div></div>
+  </div>
+
+  <div class="hero-ctrl"><div class="wrap">
+    <button class="arrow" id="prevSlide" aria-label="Previous slide">‹</button>
+    <div class="dots" id="dots" role="tablist"></div>
+    <button class="arrow" id="nextSlide" aria-label="Next slide">›</button>
+    <span class="slide-count" id="slideCount">01 / 05</span>
+  </div></div>
+</header>
+
+<!-- ================= WHY ================= -->
+<section class="why" id="why">
+  <div class="wrap">
+    <span class="kicker">Why this course exists</span>
+    <h2 class="title">You were handed a diagnosis. <span class="grad-text">Nobody handed you the system.</span></h2>
+    <div class="why-grid">
+      <div class="why-body">
+        <p>Patients and care partners are taught to count fluid, memorize lab ranges, and show up on time. They are not taught who profits from the chair, what federal rules govern the clinic, why a kidney sits on ice for hours and then gets thrown away, or how to file a grievance without losing their treatment slot. That omission is not an accident. A population that does not understand the system cannot challenge it.</p>
+        <p><strong>The Unspoken Curriculum</strong> closes that gap. It covers the history, the economics, the regulations, the ethics, and the philosophy of kidney failure in the United States — the material that sits behind the brochure. It is built for people who have never been asked what they think, and who are more than capable of thinking.</p>
+        <p>This is not a test of memorized trivia. Every question places you inside a real situation — a discharge threat, an organ offer, a conversation about stopping treatment, a care partner who has disappeared into the role — and asks you to reason your way to the structurally sound answer. Each answer comes with an explanation and its source. <strong>You learn from every question, whether you get it right or not.</strong></p>
+        <p>The course serves three purposes: to protect the person in the chair, to protect the person holding everything together at home, and to equip both to turn lived experience into documented, submitted, undeniable evidence. That is how a legacy outlasts a diagnosis.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>35.5M</b><span>Americans living with chronic kidney disease</span><cite>USRDS, 2024</cite></div>
+        <div class="stat"><b>59M</b><span>family caregivers providing unpaid care</span><cite>AARP PPI, 2026</cite></div>
+        <div class="stat"><b>103K+</b><span>people on the kidney transplant waitlist</span><cite>USRDS, 2024; OPTN</cite></div>
+        <div class="stat"><b>$1.01T</b><span>value of unpaid care — more than all Medicaid spending</span><cite>AARP PPI, 2026</cite></div>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar" style="--c:var(--violet)"><h3>Psychological</h3><p>How chronic treatment reshapes identity, decision-making, grief, power, and fear — and how to recognize when those forces are steering your choices.</p></div>
+      <div class="pillar" style="--c:var(--magenta)"><h3>Existential</h3><p>Choice, finitude, meaning, the weight of a gift from a stranger, and the right to decide how your own story ends.</p></div>
+      <div class="pillar" style="--c:var(--teal)"><h3>Philosophical &amp; Structural</h3><p>The laws, money, metrics, and institutions behind every decision made about you — and the precise mechanisms that let you answer back.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW ================= -->
+<section class="how" id="how">
+  <div class="wrap">
+    <span class="kicker" style="background:linear-gradient(90deg,var(--amber),var(--coral));-webkit-background-clip:text;background-clip:text">How it works</span>
+    <h2 class="title">Two weeks. Your pace. One standard.</h2>
+    <p class="lead">Read one lesson a day, or several in one sitting. Your progress saves automatically in this browser. The quizzes are open-book by design: the lessons contain everything you need.</p>
+    <div class="steps">
+      <div class="step" style="--c:var(--sky)"><div class="num">1</div><h3>Read 14 lessons</h3><p>Seven days per week. Each lesson ends with a reflection prompt and its sources.</p></div>
+      <div class="step" style="--c:var(--amber)"><div class="num">2</div><h3>Part I · 50 scenarios</h3><p>Week 1: dialysis, its history, its economics, your rights, your body, your self.</p></div>
+      <div class="step" style="--c:var(--coral)"><div class="num">3</div><h3>Part II · 50 scenarios</h3><p>Week 2: the transplant system, living donation, care partners, voice and legacy.</p></div>
+      <div class="step" style="--c:#7dffb0"><div class="num">4</div><h3>Earn your certificate</h3><p>Score 80 or more out of 100 across both parts and your certificate generates instantly.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CURRICULUM ================= -->
+<section id="curriculum">
+  <div class="wrap">
+    <span class="kicker">The 14-day curriculum</span>
+    <h2 class="title">Read it. Sit with it. Then prove it.</h2>
+    <p class="lead">Open each day, read the lesson, answer the reflection for yourself, and mark it complete. Questions in the quiz are tagged by day so you can return to the lesson behind any answer.</p>
+    <div class="progress-shell">
+      <strong id="lessonCount">0 of 14 lessons complete</strong>
+      <div class="pbar"><i id="lessonBar"></i></div>
+    </div>
+    <div id="weeks"></div>
+  </div>
+</section>
+
+<!-- ================= QUIZ ================= -->
+<section class="quiz-sec" id="quiz">
+  <div class="wrap">
+    <span class="kicker">The assessment</span>
+    <h2 class="title">100 situations. <span class="grad-text">Think your way through.</span></h2>
+    <p class="lead">Choose an answer. A green check means you reasoned it correctly; if not, the correct answer lights up green and the explanation shows you why. Answers lock once chosen. Take the parts in either order.</p>
+    <div class="tabs" role="tablist">
+      <button class="tab" data-part="p1" role="tab"><span class="tscore" id="tsc-p1">0 / 50</span><h3>Part I · Living Inside the Machine</h3><p>Days 1–7 · Kidney failure &amp; dialysis</p></button>
+      <button class="tab" data-part="p2" role="tab"><span class="tscore" id="tsc-p2">0 / 50</span><h3>Part II · The Gift, The List, The Ledger</h3><p>Days 8–14 · Transplant, care partners, voice</p></button>
+    </div>
+    <div class="qcard" id="qcard" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATE ================= -->
+<section class="cert-sec" id="certificate">
+  <div class="wrap">
+    <span class="kicker" style="background:linear-gradient(90deg,var(--amber),#fff);-webkit-background-clip:text;background-clip:text">Certificate of Completion</span>
+    <h2 class="title">Earned, not attended.</h2>
+    <p class="lead">Complete both parts with a combined score of 80 or higher. Your personalized CIF certificate generates on the spot with a unique verification ID — ready to download, print, or share on LinkedIn as proof that you understand kidney disease, dialysis, your treatment options, and the transplant system at a level most people inside it never reach.</p>
+    <div class="cert-panel">
+      <div class="overall">
+        <div><b id="ovP1">—</b><span>Part I score</span></div>
+        <div><b id="ovP2">—</b><span>Part II score</span></div>
+        <div><b id="ovT">—</b><span>Combined (80 required)</span></div>
+      </div>
+      <div class="cert-msg" id="certMsg">Finish both parts of the quiz to unlock your certificate.</div>
+      <div class="cert-form" id="certForm" style="display:none">
+        <label class="sr" for="certName">Name for certificate</label>
+        <input id="certName" type="text" maxlength="60" placeholder="Your full name as it should appear" autocomplete="name">
+        <button class="btn btn-primary" id="makeCert">Generate my certificate</button>
+      </div>
+      <div id="certPreview">
+        <img id="certImg" alt="Your Cold Ischemia Foundation certificate of completion">
+        <div class="btns">
+          <a class="btn btn-primary" id="certDl" download="CIF-Unspoken-Curriculum-Certificate.png">Download PNG</a>
+          <button class="btn btn-ghost" id="certPrint">Print</button>
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/company/cold-ischemia-foundation">Tag CIF on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="certPrintable" style="position:absolute;left:-9999px"><img id="certPrintImg" alt="" style="width:100%"></div>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>Cold Ischemia Foundation</h4>
+        <p>Operational Advocacy™ — advocacy built as tools, accountability mechanisms, and measurable interventions. For the 55 Million Who Hold Everything Together.</p>
+        <p style="margin-top:10px">Ellenton, Florida · <a href="https://coldischemia.foundation" style="color:#fff">coldischemia.foundation</a> · <a href="https://www.linkedin.com/company/cold-ischemia-foundation" style="color:#fff">LinkedIn</a></p>
+      </div>
+      <div class="fund"><strong style="color:#fff">100% independently funded.</strong> Zero pharmaceutical funding. Zero device manufacturer funding. Zero industry sponsorship. Every word of this course is written without a sponsor looking over our shoulder.</div>
+    </div>
+    <div class="legal">This course is educational. It does not replace individualized medical, legal, or financial advice, and it does not direct any person to start, stop, or change treatment. Use what you learn here to ask sharper questions of your care team and to hold the system to its own rules. Progress and scores are stored only in your browser. © <span id="yr"></span> Cold Ischemia Foundation | coldischemia.foundation</div>
+  </div>
+</footer>
+
+<script>
+/* ===================== LESSONS ===================== */
+const DAYS = [
+{n:1,w:1,c:"#3b2bd1",t:"The Contract You Never Signed",s:"Who decided you would live — and how",
+p:["In 1962, a committee of seven anonymous Seattle citizens — a lawyer, a minister, a banker, a housewife, a labor leader, a state official, and a surgeon — chose which people with failing kidneys would get one of the few dialysis machines at the Seattle Artificial Kidney Center. Shana Alexander’s Life magazine exposé, “They Decide Who Lives, Who Dies,” revealed they weighed “social worth”: occupation, church membership, number of dependents, community contribution. The press called it the God Committee. Bioethics as a field was born partly out of the outrage.",
+"Long-term dialysis was possible only because of a device: the Scribner shunt (1960), a Teflon tube that kept an artery and vein open for repeated access. It converted dialysis from a one-time rescue into a chronic, life-sustaining therapy — and created the rationing problem overnight.",
+"In November 1971, Shep Glazer dialyzed in front of the House Ways and Means Committee. One year later, Congress passed the Social Security Amendments of 1972 (Public Law 92-603), extending Medicare to people with kidney failure regardless of age. It remains the most sweeping diagnosis-based entitlement in American history. Testimony from people living the condition changed federal law.",
+"The God Committee disappeared. Rationing did not. Today access is shaped by geography, insurance status, referral patterns, and clinic economics instead of an explicit committee. When a single path is presented as the only path — “dialysis is what happens next” — the principle under attack is autonomy: your right to informed self-determination."],
+r:"If a committee were deciding your care today, what “social worth” criteria would it be using — and would anyone tell you?",
+src:["Alexander S. “They Decide Who Lives, Who Dies.” Life, Nov 9, 1962","Social Security Amendments of 1972, Pub. L. 92-603, §2991","Rettig RA. Origins of the Medicare Kidney Disease Entitlement. In: Biomedical Politics. National Academies Press, 1991","Beauchamp TL, Childress JF. Principles of Biomedical Ethics"]},
+
+{n:2,w:1,c:"#5a2be0",t:"The Business of the Chair",s:"Market power, payer rules, and who profits",
+p:["Two corporations — DaVita and Fresenius Kidney Care — operate the large majority of U.S. dialysis clinics. In a market that concentrated, the patient has little ability to choose a provider and almost no leverage to demand better treatment.",
+"Medicare pays for most dialysis through a bundled payment: one fixed amount per treatment that covers most drugs, labs, and supplies. Every additional item a clinic provides reduces its margin. Private insurers pay far higher rates — often several times Medicare’s. Under the Medicare Secondary Payer rules (42 CFR 411.162), an employer group health plan pays first for a 30-month coordination period after a person becomes eligible for Medicare because of kidney failure. That 30-month window is the most profitable period of a patient’s treatment.",
+"The American Kidney Fund pays insurance premiums for dialysis patients and receives the bulk of its funding from dialysis providers. In 2016, UnitedHealthcare sued American Renal Associates, alleging it steered patients into commercial plans with charity-paid premiums. When anyone urges you to switch coverage, ask who funds the charity and who profits from your insurance status.",
+"In Marietta Memorial Hospital v. DaVita (2022), the Supreme Court held that an employer plan can pay limited rates for outpatient dialysis if it applies that limit uniformly to every member. The effect: employer plans can push dialysis patients toward Medicare sooner.",
+"The ESRD Quality Incentive Program cuts payment up to 2% for facilities that miss targets. Economist Charles Goodhart warned that when a measure becomes a target, it ceases to be a good measure. Pay-for-performance creates an incentive to avoid patients whose results drag scores down."],
+r:"Which decisions about your care are clinical — and which are financial decisions wearing clinical language?",
+src:["USRDS 2024 Annual Data Report, ESRD Providers chapter","42 CFR 411.162; 42 CFR 413.177 (ESRD QIP)","Marietta Memorial Hospital Employee Health Benefit Plan v. DaVita Inc., 596 U.S. (2022)","UnitedHealthcare of Florida v. American Renal Associates, S.D. Fla., 2016","Goodhart CAE. Problems of Monetary Management, 1975"]},
+
+{n:3,w:1,c:"#7b2ff7",t:"Your Rights Inside the Clinic",s:"The federal rules posted nowhere you will see them",
+p:["Every Medicare-certified dialysis facility operates under the ESRD Conditions for Coverage, 42 CFR Part 494. Section 494.70 lists patients’ rights: to be informed about and participate in your plan of care, to be informed of every treatment modality — including home dialysis and transplant — and to file grievances without reprisal or denial of services. HIPAA gives you the right to your records. “That’s for internal use” is not a legal answer.",
+"Involuntary discharge is governed by 42 CFR 494.180(f). Permitted grounds are narrow: nonpayment, facility closure, transfer, medical needs the facility cannot meet, or ongoing disruptive and abusive behavior that seriously impairs operations. The facility must document its attempts to resolve the problem, give 30 days’ notice (except for immediate severe threats), attempt placement elsewhere, and notify the ESRD Network. Complaining is not a lawful reason to discharge anyone.",
+"CMS contracts with 18 regional ESRD Networks. Your Network accepts grievances from outside the clinic. Your state survey agency accepts complaints too.",
+"Many patients stay silent anyway. When survival depends on one building three times a week, complaint feels dangerous. That power asymmetry is structural — sociologist Erving Goffman would recognize the clinic’s rigid schedules, constant observation, and staff authority as features of a total institution.",
+"The most protective first step after any incident is documentation: a written, dated record with names, times, and specifics, sent to the facility, with your own copy kept. If it is not documented, it did not happen."],
+r:"What would you say if you were certain nothing could be taken away from you for saying it?",
+src:["42 CFR 494.70 (Patients’ rights); 42 CFR 494.180(f) (Involuntary discharge)","CMS ESRD Network Program","Goffman E. Asylums, 1961"]},
+
+{n:4,w:1,c:"#9b25d6",t:"The Options They Don’t Offer",s:"Modalities, access, and the default setting",
+p:["Since 2008 (MIPPA), Medicare has covered up to six sessions of Kidney Disease Education for people with stage 4 kidney disease — taught before failure, covering every treatment option including transplant. The benefit is chronically underused.",
+"Without that preparation, many people “crash” into dialysis: starting urgently in a hospital, with a catheter instead of a planned access and no modality chosen. The default becomes in-center hemodialysis because nobody built an alternative in time.",
+"Peritoneal dialysis (PD) uses your own peritoneum — the lining of the abdomen — as the filter, at home. Home hemodialysis usually requires a trained care partner, which quietly shifts clinical labor onto unpaid family members.",
+"Conservative kidney management is a recognized medical pathway: choosing not to start dialysis while receiving active care focused on symptoms and quality of life, particularly for older people with serious other illness.",
+"Access matters. Central venous catheters carry markedly higher bloodstream-infection and death risk than an arteriovenous fistula. Persistent catheter use often reflects delays in surgical planning, not patient choice.",
+"CMS’s mandatory ESRD Treatment Choices Model (42 CFR Part 512) adjusts payments in randomly selected regions based on home dialysis and transplant waitlisting rates. Its existence is an admission: regulators know the system defaults to the chair and needs financial pressure to make the other options visible."],
+r:"Which option were you never shown — and who benefited from that silence?",
+src:["MIPPA 2008 §152; 42 CFR 410.48 (Kidney Disease Education)","42 CFR Part 512 (ETC Model)","CDC. Dialysis Safety: bloodstream infections and vascular access"]},
+
+{n:5,w:1,c:"#c21f9f",t:"The Body as Ledger",s:"What the machine does — and what it costs you",
+p:["A dialyzer works by diffusion: waste moves across a semipermeable membrane from higher to lower concentration, with blood and dialysate flowing in opposite directions (countercurrent) to keep the gradient steep. Fluid is pulled off by ultrafiltration, a pressure gradient. When fluid is removed from the blood faster than the body’s tissues can refill it, blood pressure drops — cramping and “crashing” follow.",
+"The standard three-times-weekly schedule leaves one long two-day gap. A 2011 New England Journal of Medicine study found deaths and hospitalizations spike after that long gap. The schedule was built around clinic operations, not human physiology.",
+"Researchers validated a simple question — “How long does it take you to recover from a dialysis session?” — because recovery time measures how much of life the treatment consumes outside the chair. Hours lost after every session are hours of life.",
+"Cognitive impairment is common and under-recognized in people on hemodialysis. Serious conversations and consent decisions should not happen mid-session or immediately after.",
+"Persistent itch (CKD-associated pruritus) affects a large share of patients and frequently goes untreated. Clinic metrics track lab values, not patient-reported symptoms. What is not measured is not managed.",
+"Depression affects roughly one in four people on dialysis by interview-based studies and is independently tied to hospitalization, death, and withdrawal from treatment. Screening is a survival issue, not a courtesy."],
+r:"If your clinic measured what you actually feel, which number would shame them most?",
+src:["Foley RN et al. Long interdialytic interval and mortality. NEJM 2011;365:1099-1107","Lindsay RM et al. Minutes to recovery after a hemodialysis session. CJASN 2006","Murray AM et al. Cognitive impairment in hemodialysis patients. Neurology 2006","Rayner HC et al. International comparisons of pruritus (DOPPS). CJASN 2017","Palmer S et al. Prevalence of depression in CKD. Kidney Int 2013"]},
+
+{n:6,w:1,c:"#e0218a",t:"The Self Under Treatment",s:"Identity, power, and being believed",
+p:["Sociologist Michael Bury called it biographical disruption (1982): chronic illness breaks the story you expected your life to tell and forces you to rebuild it.",
+"Talcott Parsons’ sick role (1951) exempts the sick from normal duties on the condition that they try to get well. Chronic illness breaks the bargain — “getting well” is not on offer — so patients get the obligations without the exemption.",
+"Psychiatrist Arthur Kleinman distinguished disease (what the clinician measures) from illness (what the person lives). Michel Foucault described the clinical gaze, which reduces a person to readings and findings.",
+"Juliet Corbin and Anselm Strauss identified three lines of work in chronic illness: illness work (treatments, meds), everyday-life work (keeping the household running), and biographical work (rebuilding who you are). Care partners do all three.",
+"Susan Sontag’s Illness as Metaphor (1978) warns that battle language — “he lost his fight” — implies the dead did not fight hard enough. Disease is not a moral contest.",
+"Philosopher Miranda Fricker named epistemic injustice (2007). Testimonial injustice occurs when a person’s report is given less credibility because of who they are — the patient whose symptom is dismissed as anxiety, the care partner treated as “just family.”"],
+r:"Whose story about your illness is written in your chart — yours, or theirs?",
+src:["Bury M. Chronic illness as biographical disruption. Sociol Health Illn 1982","Parsons T. The Social System, 1951","Kleinman A. The Illness Narratives, 1988","Corbin J, Strauss A. Unending Work and Care, 1988","Sontag S. Illness as Metaphor, 1978","Fricker M. Epistemic Injustice, 2007","Foucault M. The Birth of the Clinic, 1963"]},
+
+{n:7,w:1,c:"#ff4d6d",t:"Choosing the Ending",s:"Finitude, refusal, and the right to decide",
+p:["Withdrawing from dialysis precedes a substantial share of deaths among U.S. dialysis patients. Ethically and legally, it is the refusal of life-sustaining treatment — a right affirmed in Cruzan v. Director, Missouri Department of Health (1990) — not suicide.",
+"A structural trap waits at the end: when kidney failure is the hospice diagnosis, Medicare’s hospice benefit is responsible for dialysis-related care, so most hospices will not provide dialysis. Patients are forced to choose between dialysis and hospice rather than receive both.",
+"A time-limited trial of dialysis is an agreed period of treatment followed by a planned reassessment against the person’s own goals. It turns an open-ended default into a deliberate decision.",
+"An advance directive puts your values in charge when you cannot speak — and spares your care partner from guessing under pressure. A surrogate uses substituted judgment: deciding as you would decide, not as they wish.",
+"Viktor Frankl, who survived the Nazi camps, wrote that the last of human freedoms is to choose one’s attitude in any set of circumstances. Martin Heidegger argued that facing mortality honestly, rather than fleeing it, makes authentic choice possible. Neither is morbid. Both are practical."],
+r:"If you wrote one page tonight about how you want the hard decisions made, what would be on it?",
+src:["Cruzan v. Director, Missouri Dept. of Health, 497 U.S. 261 (1990)","Renal Physicians Association. Shared Decision-Making in the Appropriate Initiation of and Withdrawal from Dialysis, 2nd ed., 2010","Frankl V. Man’s Search for Meaning, 1946","Heidegger M. Being and Time, 1927"]},
+
+{n:8,w:2,c:"#00a39b",t:"The Architecture of the List",s:"Who built the waitlist and who runs it",
+p:["The National Organ Transplant Act of 1984 (NOTA) created the Organ Procurement and Transplantation Network (OPTN) and made it a federal crime to buy or sell organs for “valuable consideration.” The United Network for Organ Sharing (UNOS) held the OPTN contract alone from 1986.",
+"In 2022, the U.S. Senate Finance Committee documented patient deaths, injuries, more than a thousand complaints, and failed oversight across the system. In 2023, the Securing the U.S. OPTN Act broke the single-contractor monopoly, allowing HRSA to award OPTN work to multiple contractors.",
+"In 2021, kidney allocation replaced old donation service area boundaries with circles of 250 nautical miles around the donor hospital.",
+"Waiting time is credited back to the date you started dialysis once you are listed. Someone on dialysis for three years who is only now referred does not start at zero.",
+"You can be listed at more than one transplant center (multiple listing), subject to each center’s evaluation and your coverage.",
+"Dialysis facilities must inform patients of every modality, including transplant (42 CFR 494.70). Many patients are never referred at all. The waitlist only counts people someone bothered to send."],
+r:"Who in your life has the authority to put your name forward — and have they?",
+src:["National Organ Transplant Act, Pub. L. 98-507 (1984); 42 CFR Part 121","Securing the U.S. OPTN Act, Pub. L. 118-14 (2023)","U.S. Senate Finance Committee. Examining UNOS and the Organ Transplant Network, Aug 2022","OPTN Kidney Allocation Policy"]},
+
+{n:9,w:2,c:"#0096c7",t:"Cold Ischemia",s:"The clock, the discard, and the decline",
+p:["Cold ischemia time is the period an organ spends chilled without blood supply between recovery and transplant. Longer cold ischemia is linked to delayed graft function (DGF) — needing dialysis in the first week after transplant — which affects 20–30% of deceased-donor kidney recipients.",
+"Roughly one in four deceased-donor kidneys recovered in the U.S. is never transplanted. A 2019 JAMA Internal Medicine study found France transplanted many kidneys of the type the U.S. discards, with good results. Discard reflects risk-averse center behavior shaped by performance metrics — Goodhart’s Law again.",
+"The Kidney Donor Profile Index (KDPI) ranks expected kidney longevity. Kidneys above 85% KDPI require the recipient’s advance consent. For many people, a higher-KDPI kidney now beats years more on dialysis waiting for a “perfect” one.",
+"Hypothermic machine perfusion — pumping cold solution through the kidney — reduced DGF compared with static cold storage in a 2009 NEJM trial.",
+"Out-of-sequence allocation — placing kidneys outside the order of the match run — has grown sharply, bypassing patients in priority order and favoring well-connected centers.",
+"Transplant centers decline organ offers on patients’ behalf, often without telling them. Many people who died waiting had received multiple declined offers. You have the right to ask how many offers were declined for you, and why."],
+r:"How many offers have been declined in your name? Have you asked?",
+src:["USRDS 2024 Annual Data Report","Aubert O et al. Disparities in acceptance of deceased donor kidneys between the US and France. JAMA Intern Med 2019","Moers C et al. Machine perfusion or cold storage in deceased-donor kidney transplantation. NEJM 2009","Husain SA et al. Declined offers and outcomes. JAMA Netw Open 2019"]},
+
+{n:10,w:2,c:"#2ec4f1",t:"The Gatekeepers",s:"Organ procurement and the rules of death",
+p:["Organ Procurement Organizations (OPOs) are federally designated nonprofits, each holding a monopoly over a territory, responsible for recovering organs.",
+"Before 2020, OPOs largely self-reported the numbers used to judge them — they could shape their own denominators. CMS’s 2020 OPO final rule replaced that with objective metrics (donation rate and transplant rate) drawn from federal death data, ranked OPOs in tiers, and set decertification of the worst performers starting with the 2026 cycle.",
+"CMS certifies OPOs and transplant hospitals. HRSA oversees the OPTN. Knowing which agency regulates which actor tells you where a complaint belongs.",
+"Donation after brain death and donation after circulatory death (DCD) are different pathways. DCD follows withdrawal of life support and the stopping of the heart. Both rest on the dead donor rule: vital organs may only be taken from people who are dead, and procurement must never cause death. A 2025 HRSA investigation into a Kentucky OPO found serious failures in how potential DCD donors showing signs of neurological activity were handled — proof that safeguards require independent, enforced oversight.",
+"Under the Uniform Anatomical Gift Act, registering as a donor is first-person authorization: legally sufficient consent."],
+r:"Who checks the people who decide when a person is dead? Who checks them?",
+src:["CMS OPO Conditions for Coverage Final Rule, 85 FR 77898 (Dec 2, 2020); 42 CFR 486","HRSA OPTN oversight; 2025 HRSA review of Kentucky Organ Donor Affiliates","Revised Uniform Anatomical Gift Act (2006)"]},
+
+{n:11,w:2,c:"#00b3a4",t:"Living Donation",s:"Asking, giving, and protecting the giver",
+p:["Living-donor kidneys typically function longer than deceased-donor kidneys.",
+"In paired kidney exchange, a donor incompatible with their intended recipient donates to a stranger while their recipient receives a compatible kidney from another pair. The Charlie W. Norwood Living Organ Donation Act (2007) confirmed that paired donation does not violate NOTA’s valuable-consideration ban.",
+"Voucher programs let a donor give now so that a named person receives priority for a living-donor kidney later, when they need it.",
+"The National Living Donor Assistance Center (NLDAC) reimburses travel, lodging, and meal expenses for eligible living donors. Lost income remains a documented barrier.",
+"Federal transplant hospital rules (42 CFR 482.98) require an independent living donor advocate — someone separate from the recipient’s team whose only job is the donor’s interests.",
+"Many patients will not ask anyone to donate; guilt and fear of burdening others stop them. A champion — a friend or family member who spreads the word on the patient’s behalf — changes who does the asking."],
+r:"What is harder for you: asking for a kidney, or letting someone ask for you?",
+src:["Charlie W. Norwood Living Organ Donation Act, Pub. L. 110-144 (2007)","National Living Donor Assistance Center (HRSA)","42 CFR 482.98 (Independent living donor advocate)"]},
+
+{n:12,w:2,c:"#12b76a",t:"After the Gift",s:"Debt, intrusion, and what the drugs cost",
+p:["For decades, Medicare stopped paying for immunosuppressive drugs 36 months after transplant for people whose Medicare was based only on kidney failure. People lost transplanted kidneys because they could not afford the drugs that protected them. Since January 1, 2023, Medicare Part B-ID provides lifetime immunosuppressive drug coverage — and only that coverage — for eligible kidney recipients without other insurance.",
+"Sociologists Renée Fox and Judith Swazey named the tyranny of the gift: a gift that can never be repaid creates a burden of indebtedness that can weigh on the recipient’s identity.",
+"French philosopher Jean-Luc Nancy, who received a heart transplant, wrote L’Intrus (The Intruder, 2000), describing how a foreign organ — and the drugs suppressing his immune system — made him a stranger to himself.",
+"Recipients may write to a donor family through the OPO, anonymously. It is an option, not an obligation, and donor families may or may not reply.",
+"Survivor guilt is common. The donor’s death was not caused by the recipient’s need.",
+"Missed medications usually reflect cost, side effects, and regimen complexity — structural problems, not character flaws."],
+r:"What would you write to the family of the person whose kidney you carry — or would carry?",
+src:["Comprehensive Immunosuppressive Drug Coverage for Kidney Transplant Patients Act (Consolidated Appropriations Act, 2021); Medicare Part B-ID","Fox RC, Swazey JP. The Courage to Fail, 1974; Spare Parts, 1992","Nancy J-L. L’Intrus, 2000"]},
+
+{n:13,w:2,c:"#f08c00",t:"The Care Partner Ledger",s:"The labor nobody invoices",
+p:["AARP’s 2026 Valuing the Invaluable report counts 59 million family caregivers providing 49.5 billion hours of care worth $1.01 trillion a year — more than total Medicaid spending ($932 billion). The average is 27 hours a week. 47% report negative financial impact.",
+"Transplant centers commonly require an identified support person before listing. People without one are delayed or excluded: the system converts the presence of unpaid family labor into an eligibility criterion.",
+"Home dialysis training transfers clinical work to family members, unpaid and uncertified.",
+"Psychologist Pauline Boss named ambiguous loss: grieving someone who is still physically present but changed. Anticipatory grief is mourning a loss before it happens.",
+"Skaff and Pearlin described role engulfment (1992): the caregiver identity expands until it consumes the rest of the self."],
+r:"If your hours were invoiced, who would receive the bill — and would they pay it?",
+src:["AARP Public Policy Institute. Valuing the Invaluable 2026","AARP & National Alliance for Caregiving. Caregiving in the U.S. 2025","Boss P. Ambiguous Loss, 1999","Skaff MM, Pearlin LI. Caregiving: role engulfment and the loss of self. The Gerontologist 1992"]},
+
+{n:14,w:2,c:"#ff5a5f",t:"Voice & Legacy",s:"From experience to evidence",
+p:["Sherry Arnstein’s Ladder of Citizen Participation (1969) separates tokenism — informing, consultation, placation — from real power: partnership, delegated power, citizen control. A patient advisory council with no vote and no budget is tokenism.",
+"Anyone can submit public comment on OPTN policy proposals. Under the Administrative Procedure Act (5 U.S.C. §553), CMS proposed rules published in the Federal Register are open to public comment, and agencies must consider significant comments before finalizing.",
+"A 2017 JAMA Internal Medicine study of 104 large patient advocacy organizations found at least 83% received industry funding. Before trusting any advocacy organization, ask who funds it and whether it publishes that funding.",
+"Sociologist Arthur Frank identified three illness narratives: restitution (“I’ll get back to normal”), chaos (no story at all, only overwhelm), and quest (using the experience to testify and change something).",
+"The most effective congressional contact pairs a personal account with data and one specific ask, in writing, followed up. An ethical will records your values and lessons for the people who come after you.",
+"Operational Advocacy converts lived experience into documented, measurable, demand-backed action. It does not stop at awareness."],
+r:"What is the one sentence you want a member of Congress to read with your name under it?",
+src:["Arnstein SR. A Ladder of Citizen Participation. J Am Inst Planners 1969","Administrative Procedure Act, 5 U.S.C. §553","Rose SL et al. Patient advocacy organizations, industry funding, and conflicts of interest. JAMA Intern Med 2017;177(3):344-350","Frank AW. The Wounded Storyteller, 1995"]}
+];
+
+/* ===================== QUESTIONS =====================
+   o[0] is always the correct answer; options are shuffled at display. */
+const Q = {p1:[
+{d:1,q:"In 1962, a Seattle committee of seven lay citizens chose who would receive scarce dialysis. What did Life magazine reveal about how they chose?",o:["They weighed “social worth” — job, church membership, dependents, community value","They used a random lottery to avoid bias","They relied only on laboratory test results","They gave machines to whoever could pay the most"],e:"Shana Alexander’s 1962 exposé showed the “God Committee” judged social worth. Rationing by perceived value never vanished — it changed form."},
+{d:1,q:"Your neighbor says, “Medicare covers me because I’m on dialysis — that’s just how it is.” Which law made that true?",o:["The Social Security Amendments of 1972 (Pub. L. 92-603)","The Affordable Care Act of 2010","The National Organ Transplant Act of 1984","The Medicare Modernization Act of 2003"],e:"The 1972 amendments extended Medicare to people with kidney failure regardless of age — coverage won by testimony and political pressure, not handed down."},
+{d:1,q:"What makes the 1972 kidney failure entitlement unusual in U.S. health policy?",o:["It is the most sweeping Medicare entitlement ever granted on the basis of a single diagnosis","It was the first law to create private insurance","It applied only to veterans","It was repealed in 1984"],e:"No other condition received such broad diagnosis-based entitlement. That makes kidney patients a federal policy population — with standing to demand accountability."},
+{d:1,q:"In 1971, Shep Glazer dialyzed in front of the House Ways and Means Committee. What is the structural lesson?",o:["Direct testimony by people living the condition can change federal law","Congress only responds to physicians","Public demonstrations harm credibility","Medical technology alone drives policy"],e:"A year later the entitlement passed. Lived experience, delivered to the right body at the right time, is evidence lawmakers act on."},
+{d:1,q:"What did the Scribner shunt (1960) change?",o:["It made repeated long-term dialysis possible, turning a one-time rescue into chronic therapy","It allowed kidneys to be stored for days","It replaced the need for dialysis","It made transplant rejection impossible"],e:"Durable vascular access created chronic dialysis — and created the rationing crisis that the God Committee was formed to manage."},
+{d:1,q:"A doctor tells you, “There’s nothing to choose — dialysis is what happens next.” Which ethical principle is most directly undermined?",o:["Autonomy — the right to informed self-determination","Beneficence — acting for the patient’s good","Justice — fair distribution of resources","Fidelity — keeping promises"],e:"Presenting one option as the only option removes choice before it starts. Informed choice requires every option on the table, including transplant, home therapies, and conservative care."},
+{d:1,q:"What does CIF mean by “rationing never disappeared, it changed form”?",o:["Access is now shaped by geography, insurance, referral patterns, and clinic economics instead of an explicit committee","Dialysis machines are still assigned by committees","Rationing ended completely in 1972","Only transplant is rationed, never dialysis"],e:"Implicit rationing is harder to see and harder to challenge than an openly named committee — which is why it persists."},
+
+{d:2,q:"Two corporations operate the large majority of U.S. dialysis clinics. What is the most direct consequence for patients?",o:["Little real choice of provider and little leverage to demand better treatment","Lower prices for all insurers","More home dialysis options everywhere","Stronger patient rights enforcement"],e:"Concentrated markets reduce the patient’s ability to walk away. When you can’t leave, you can’t bargain."},
+{d:2,q:"Under Medicare Secondary Payer rules, how long does an employer group health plan pay first after someone becomes Medicare-eligible due to kidney failure?",o:["30 months","6 months","12 months","It never pays first"],e:"42 CFR 411.162 sets a 30-month coordination period — the window in which providers collect commercial rates far above Medicare’s."},
+{d:2,q:"Why would a dialysis provider prefer that a patient keep private insurance rather than switch to Medicare?",o:["Private insurers pay far higher rates per treatment — often several times Medicare’s","Medicare refuses to cover dialysis","Private plans require fewer treatments","Medicare pays providers more"],e:"Commercially insured patients generate a disproportionate share of profit. Coverage advice from a party that profits from your coverage is not neutral advice."},
+{d:2,q:"A clinic social worker urges you to drop Medicare for a private plan, with premiums paid by a kidney charity. Which question exposes the conflict of interest?",o:["“Who funds the charity paying my premium, and who profits when I’m privately insured?”","“Will the new plan have a nicer website?”","“Is the charity a registered nonprofit?”","“Can I keep the same chair time?”"],e:"The American Kidney Fund receives the bulk of its funding from dialysis providers. UnitedHealthcare’s 2016 lawsuit alleged a provider steered patients into commercial plans this way."},
+{d:2,q:"What did the Supreme Court decide in Marietta Memorial Hospital v. DaVita (2022)?",o:["Employer plans can pay limited rates for outpatient dialysis if applied uniformly to all members","Dialysis providers must accept Medicare rates from all insurers","Charities may no longer pay insurance premiums","Employer plans must cover dialysis for life"],e:"The ruling lets employer plans limit dialysis reimbursement — pushing patients toward Medicare sooner and shifting cost to the public."},
+{d:2,q:"Economist Charles Goodhart warned about measurement. How does his law apply to dialysis quality programs?",o:["When a measure becomes a target, it stops being a good measure — clinics optimize scores, not people","Measuring quality always improves care","Targets eliminate gaming","Only financial measures matter"],e:"Pay-for-performance rewards the score. That creates incentives to avoid patients whose results would drag the score down."},
+{d:2,q:"What is the maximum payment reduction under the ESRD Quality Incentive Program?",o:["2%","25%","10%","50%"],e:"Under 42 CFR 413.177, facilities face up to a 2% cut — small enough that many treat it as a cost of doing business."},
+{d:2,q:"Medicare pays dialysis clinics a bundled payment. What does that mean in practice?",o:["One fixed amount per treatment covers most drugs, labs, and supplies — every extra item reduces the margin","Each drug is billed separately at full price","Patients pay the bundle directly","The bundle covers transplant surgery"],e:"Bundling controls spending, but it also rewards providing less. Ask what was removed from your care when costs were cut."},
+
+{d:3,q:"You ask to see your plan of care and records. Staff says, “That’s for internal use.” What is true?",o:["Federal rules give you the right to participate in your plan of care, and HIPAA gives you access to your records","Clinics may keep plans of care confidential from patients","Only your nephrologist may see the plan","You need a court order"],e:"42 CFR 494.70 guarantees participation in your plan of care. HIPAA guarantees access to your records. “Internal use” is not a lawful refusal."},
+{d:3,q:"A patient is threatened with discharge after complaining about unsafe practices. What does federal law require?",o:["Complaining is not a permitted reason; discharge requires documented grounds, 30 days’ notice in most cases, placement attempts, and Network notification","Clinics may discharge any patient at will","Discharge requires only a verbal warning","Patients cannot challenge discharge"],e:"42 CFR 494.180(f) narrows lawful grounds and imposes process. Retaliatory discharge violates the federal Conditions for Coverage."},
+{d:3,q:"Outside the clinic, where can a dialysis patient file a grievance?",o:["The regional ESRD Network (CMS contracts with 18 of them), or the state survey agency","The clinic’s parent corporation only","The patient’s employer","Nowhere — only internal grievances are allowed"],e:"ESRD Networks and state survey agencies exist precisely so patients have recourse beyond the building they depend on."},
+{d:3,q:"Federal Conditions for Coverage say patients may file grievances “without reprisal or denial of services.” Why does this protection matter so much in dialysis?",o:["Patients depend on one facility for survival-level treatment, so fear of retaliation silences complaints","Dialysis patients rarely have complaints","Reprisal is common in all industries","It only applies to staff"],e:"The power asymmetry is extreme. The protection exists on paper; enforcing it requires patients who know it exists."},
+{d:3,q:"Many dialysis patients never report rights violations. What is the most accurate structural explanation?",o:["Dependence on one facility three times a week makes complaint feel dangerous","Patients don’t notice problems","Violations never happen","Reporting is illegal"],e:"Silence is a rational response to dependency — which is why external reporting channels and documentation matter."},
+{d:3,q:"Rigid schedules, constant observation, and staff authority over daily life. Which concept from sociologist Erving Goffman describes this kind of setting?",o:["Total institution","Hawthorne effect","Tragedy of the commons","Gemeinschaft"],e:"Goffman’s Asylums (1961) described institutions that regulate every part of life. Naming the structure helps you resist being absorbed by it."},
+{d:3,q:"After an unsafe incident during treatment, what is the most protective first step?",o:["A written, dated record with names, times, and specifics — sent to the facility, copy kept","Mention it casually to another patient","Wait to see if it happens again","Post about it anonymously without details"],e:"Documentation converts experience into evidence. If it isn’t documented, it didn’t happen."},
+
+{d:4,q:"Before kidney failure, what does Medicare’s Kidney Disease Education benefit cover?",o:["Up to six sessions explaining every option, including home dialysis and transplant, for people with stage 4 disease","Unlimited counseling after starting dialysis","Only nutrition classes","Transplant surgery costs"],e:"Created by MIPPA in 2008, the benefit is chronically underused — which means most people meet the system unprepared."},
+{d:4,q:"What does it mean to “crash” into dialysis?",o:["Starting urgently in a hospital without a planned access or a chosen treatment option","Fainting during treatment","Switching providers suddenly","Stopping dialysis abruptly"],e:"Crash starts make in-center hemodialysis the default because no alternative was prepared in time."},
+{d:4,q:"In peritoneal dialysis, what acts as the filter?",o:["Your own peritoneum — the lining of the abdomen","A synthetic membrane in a machine","Your liver","A donated kidney"],e:"PD uses the body’s own membrane, at home — an option many people are never offered."},
+{d:4,q:"Home hemodialysis usually requires a trained care partner. Structurally, what is happening?",o:["Clinical labor shifts onto an unpaid family member","Care becomes free for everyone","The clinic does more work","Medicare pays the family member’s salary"],e:"Home therapy expands freedom for the patient — and silently expands unpaid labor for the care partner. Both truths must be named."},
+{d:4,q:"An 84-year-old with several serious illnesses asks whether declining dialysis is a real option. What is accurate?",o:["Yes — conservative kidney management is a recognized pathway focused on symptoms and quality of life","No — dialysis is legally required","Only if a court approves","Only after one year of dialysis"],e:"Conservative care is legitimate medicine, not abandonment. Being told otherwise is a failure of informed choice."},
+{d:4,q:"Why does the type of vascular access matter so much?",o:["Catheters carry far higher infection and death risk, and prolonged catheter use often reflects system delays, not patient choice","Catheters are always safer","Access type has no effect on outcomes","Fistulas are cosmetic only"],e:"When a catheter stays in for months, ask who failed to schedule the surgery — not what the patient did wrong."},
+{d:4,q:"CMS created the mandatory ESRD Treatment Choices Model (42 CFR Part 512). What does its existence reveal?",o:["Regulators recognized the system defaults to in-center dialysis and needs financial pressure to make home and transplant options visible","Home dialysis is unsafe","Transplant is no longer needed","Clinics already offered every option"],e:"A federal payment experiment designed to force options into view is an admission that patients were not getting them."},
+
+{d:5,q:"A dialyzer moves waste out of blood mainly through which process?",o:["Diffusion across a semipermeable membrane, with blood and fluid flowing in opposite directions","Magnetism","Freezing and thawing","Heating the blood"],e:"Countercurrent flow keeps the concentration gradient steep across the whole filter."},
+{d:5,q:"A patient cramps and their blood pressure drops when a lot of fluid is removed in a short session. Why?",o:["Fluid is pulled from the blood faster than the tissues can refill it","The machine adds too much salt","Cramping is purely psychological","The patient moved too much"],e:"Ultrafiltration rate matters. Short sessions designed to keep shifts moving force faster removal — and the body pays."},
+{d:5,q:"A 2011 New England Journal of Medicine study examined the long two-day gap in the three-times-weekly schedule. What did it find?",o:["Deaths and hospitalizations rise after the long gap","The gap improves outcomes","No difference at all","The gap only affects transplant patients"],e:"The schedule follows clinic operations, not physiology. People die on the day after the weekend at higher rates."},
+{d:5,q:"Researchers validated the question “How long does it take you to recover after a session?” Why does it matter?",o:["Recovery time measures how much life the treatment consumes outside the chair","It replaces lab testing","It determines insurance eligibility","It measures staff performance only"],e:"Hours lost after each session add up to a huge share of waking life — a cost no clinic metric records."},
+{d:5,q:"Cognitive impairment is common in people on hemodialysis. What practical rule follows?",o:["Major conversations and consent decisions should not happen mid-session or right after","Patients should never make decisions","Care partners should decide everything","Cognition has no bearing on consent"],e:"Timing matters for valid consent. Ask for serious discussions on non-treatment days, with your care partner present."},
+{d:5,q:"Persistent itching affects many dialysis patients and frequently goes untreated. Why?",o:["Clinic metrics track lab values, not patient-reported symptoms — what isn’t measured isn’t managed","Itching is not real","Nothing can treat it","Patients are told to ignore it by law"],e:"Symptoms that never enter a quality score rarely enter a treatment plan. Report them in writing."},
+{d:5,q:"Why is screening for depression in dialysis a survival issue rather than a courtesy?",o:["Depression is independently linked to hospitalization, death, and withdrawal from treatment","Depression only affects mood","Screening is required by every insurer","Depression is rare in dialysis"],e:"Roughly one in four people on dialysis meets criteria in interview-based studies. Untreated, it shortens lives."},
+
+{d:6,q:"After diagnosis, a teacher says, “The life I planned is gone and I don’t know who I am now.” Which concept describes this?",o:["Biographical disruption","Confirmation bias","Social loafing","Groupthink"],e:"Michael Bury (1982) described how chronic illness breaks the expected life story and forces reconstruction."},
+{d:6,q:"Talcott Parsons’ “sick role” exempts the sick from duties if they try to get well. Why does this fail in chronic kidney failure?",o:["“Getting well” isn’t available, so patients carry the obligations without the exemption","Kidney patients are always exempt","The sick role only applies to children","Parsons studied only surgeons"],e:"Chronic patients are expected to perform like the healthy while managing a full-time illness — an impossible contract."},
+{d:6,q:"Arthur Kleinman distinguished “disease” from “illness.” What is “illness”?",o:["The lived experience of being sick — what it does to a person’s life","The lab findings","The insurance code","The name of the diagnosis"],e:"Clinicians treat disease. People live illness. Good care addresses both."},
+{d:6,q:"A care partner manages medications, drives to every appointment, and also helps her husband rebuild a sense of who he is. That last task is which line of work?",o:["Biographical work","Illness work","Everyday-life work","Administrative work"],e:"Corbin and Strauss identified three lines of chronic illness work. Biographical work is the least visible and least supported."},
+{d:6,q:"An obituary says, “He lost his long battle with kidney disease.” What critique would Susan Sontag raise?",o:["Battle metaphors imply the dead didn’t fight hard enough — disease is not a moral contest","The phrase is medically precise","Metaphors have no effect","Only poets should use metaphors"],e:"Illness as Metaphor (1978) showed how language assigns blame. Systems kill people; people do not “lose.”"},
+{d:6,q:"A patient reports a new symptom and is told, “You’re probably just anxious.” Later it proves serious. Which concept names what happened?",o:["Testimonial injustice — a form of epistemic injustice","The placebo effect","Informed consent","Shared decision-making"],e:"Miranda Fricker (2007): giving a person’s testimony less credibility because of who they are. Patients and care partners face it constantly."},
+{d:6,q:"Michel Foucault described a way of seeing that reduces the person to readings and findings. What did he call it?",o:["The clinical gaze","The veil of ignorance","The invisible hand","The social contract"],e:"In The Birth of the Clinic (1963), Foucault showed how medicine learned to see bodies instead of people."},
+
+{d:7,q:"A man on dialysis for nine years decides to stop. His son calls it suicide. What is accurate?",o:["Stopping dialysis is the legally and ethically recognized refusal of life-sustaining treatment, not suicide","It is legally suicide","It requires a court order","It is illegal for clinics to allow"],e:"Cruzan (1990) affirmed the right to refuse life-sustaining treatment. Withdrawal precedes a substantial share of dialysis deaths."},
+{d:7,q:"A patient wants hospice support but is not ready to stop dialysis. What structural trap does she face?",o:["When kidney failure is the hospice diagnosis, hospice must cover dialysis-related care, so most hospices won’t provide dialysis — forcing a choice","Hospice always includes dialysis","Hospice is banned for kidney patients","Medicare pays separately for both without issue"],e:"Payment design, not medicine, forces patients to choose between comfort care and the treatment keeping them alive."},
+{d:7,q:"What is a time-limited trial of dialysis?",o:["An agreed period of treatment followed by a planned reassessment against the person’s own goals","A free trial offered by clinics","A clinical drug study","Dialysis for exactly one year by law"],e:"It replaces an open-ended default with a deliberate, revisitable decision."},
+{d:7,q:"What is the core purpose of a written advance directive?",o:["To ensure your own values govern decisions when you cannot speak, and spare your care partner from guessing","To transfer property","To refuse all treatment automatically","To name a transplant recipient"],e:"An advance directive is a gift of clarity to the people who will be asked to decide."},
+{d:7,q:"Viktor Frankl, a concentration camp survivor, described “the last of the human freedoms.” What is it?",o:["To choose one’s attitude in any given set of circumstances","To choose one’s doctor","To own property","To vote"],e:"Man’s Search for Meaning (1946). Circumstances can be imposed; meaning cannot."},
+{d:7,q:"A philosopher argued that facing mortality honestly, rather than fleeing it, makes authentic choice possible. Who?",o:["Martin Heidegger","René Descartes","Adam Smith","Jeremy Bentham"],e:"Heidegger’s Being and Time (1927) — “being-toward-death.” Naming finitude is not giving up; it is taking ownership."},
+{d:7,q:"A wife must make treatment decisions for her husband, who can no longer speak. Under substituted judgment, how should she decide?",o:["As he would decide based on his values — not as she wishes","As the doctor recommends, always","Whatever costs least","As the clinic prefers"],e:"Substituted judgment honors the person’s own voice, even when someone else must speak it."},
+],
+p2:[
+{d:8,q:"Which 1984 law created the national transplant network and banned buying or selling organs?",o:["The National Organ Transplant Act (NOTA)","The Social Security Amendments of 1972","HIPAA","The Affordable Care Act"],e:"NOTA created the OPTN and made organ sales for “valuable consideration” a federal crime."},
+{d:8,q:"What did the Securing the U.S. OPTN Act (2023) change?",o:["It ended the single-contractor monopoly, letting HRSA award OPTN work to multiple contractors","It abolished organ allocation","It made organ sales legal","It created Medicare"],e:"UNOS had held the contract alone since 1986. The law followed documented system failures."},
+{d:8,q:"The 2022 Senate Finance Committee investigation of the transplant network documented what?",o:["Patient deaths, injuries, more than a thousand complaints, and failed oversight","A flawless system","Only paperwork delays","No complaints at all"],e:"Congressional findings are primary evidence. Cite them when you demand reform."},
+{d:8,q:"A woman on dialysis for three years is finally referred and listed. Does her waiting time start today?",o:["No — waiting time is credited back to the date she started dialysis","Yes — it always starts at listing","Only if a judge orders it","Only for children"],e:"Under the kidney allocation system, dialysis start date counts. Late referral still costs her years of health — but not her place."},
+{d:8,q:"Can a patient be listed at more than one transplant center?",o:["Yes — multiple listing is allowed, subject to each center’s evaluation and coverage","No — it is illegal","Only celebrities can","Only within one city"],e:"Multiple listing in different areas can shorten waits. Few patients are told it exists."},
+{d:8,q:"In 2021, kidney allocation replaced donation service areas with what?",o:["Circles of 250 nautical miles around the donor hospital","State borders","A national lottery","Hospital rankings"],e:"Geography was redrawn — and with it, who gets offered which kidneys."},
+{d:8,q:"Federal dialysis rules require facilities to inform patients about which options?",o:["All treatment modalities, including transplant","Only in-center hemodialysis","Only the facility’s own services","None — it is optional"],e:"42 CFR 494.70. The waitlist only counts people someone bothered to refer."},
+
+{d:9,q:"What is cold ischemia time?",o:["The time an organ spends chilled without blood supply between recovery and transplant","The time a patient waits on the list","The time dialysis fluid is cooled","The length of surgery"],e:"It is this Foundation’s name for a reason: the clock is controlled by decisions made by people."},
+{d:9,q:"Longer cold ischemia is linked to delayed graft function. What does DGF mean for a recipient?",o:["Needing dialysis in the first week after transplant","Immediate rejection","Losing the kidney permanently","Not needing medications"],e:"DGF affects 20–30% of deceased-donor kidney recipients and is tied to longer hospital stays and worse outcomes."},
+{d:9,q:"Roughly one in four recovered deceased-donor kidneys in the U.S. is never transplanted. What does the evidence point to?",o:["Risk-averse center behavior shaped by performance metrics","All discarded kidneys are unusable","Patients refuse the kidneys","Discards are random"],e:"A 2019 study found France transplanted many kidneys of the type the U.S. discards, with good results."},
+{d:9,q:"A 64-year-old on dialysis is asked to consent to receiving a high-KDPI kidney. What is the core trade-off?",o:["A kidney with shorter expected function now versus years more on dialysis waiting for a “better” one","There is no trade-off","High KDPI means guaranteed failure","It requires a living donor"],e:"For many people, a high-KDPI kidney now delivers more life than waiting. Consent is required because the choice belongs to the patient."},
+{d:9,q:"What did a 2009 NEJM trial find about hypothermic machine perfusion?",o:["Pumping cold solution through the kidney reduced delayed graft function compared with static cold storage","It doubled rejection","It made no difference","It replaced immunosuppressants"],e:"Better technology exists. Whether it is used is a decision, not an inevitability."},
+{d:9,q:"Why is the sharp rise in “out-of-sequence” kidney allocation a concern?",o:["Kidneys bypass patients in priority order, favoring well-connected centers and reducing transparency","It speeds every transplant fairly","It only affects research","It was mandated by NOTA"],e:"When the match run is skipped, the rules that define fairness stop applying."},
+{d:9,q:"What should a patient on the waitlist ask their transplant center?",o:["“How many organ offers have been declined on my behalf, and why?”","“What color is the waiting room?”","“Can I skip my labs?”","Nothing — centers handle it"],e:"Centers decline offers without telling patients. Many who died waiting had received multiple declined offers."},
+
+{d:10,q:"What is an Organ Procurement Organization (OPO)?",o:["A federally designated nonprofit holding a monopoly territory, responsible for recovering organs","A hospital billing office","A patient charity","A transplant surgeon group"],e:"Each OPO controls its area. Performance varies enormously between them."},
+{d:10,q:"What was wrong with how OPOs were judged before 2020?",o:["They largely self-reported the numbers used to evaluate them","They were judged by patients only","They had no oversight at all by law","They were judged by Congress weekly"],e:"Self-reported denominators can be shaped. You cannot audit yourself into accountability."},
+{d:10,q:"What did CMS’s 2020 OPO final rule do?",o:["Introduced objective metrics from federal death data, tiered rankings, and decertification of the worst performers starting with the 2026 cycle","Abolished OPOs","Allowed organ sales","Made OPOs for-profit"],e:"For the first time, OPOs face real consequences tied to measurable performance."},
+{d:10,q:"Which agency oversees the OPTN, and which certifies OPOs and transplant hospitals?",o:["HRSA oversees the OPTN; CMS certifies OPOs and transplant hospitals","The FDA does both","State governments do both","Private insurers do both"],e:"Knowing who regulates whom tells you exactly where a complaint belongs."},
+{d:10,q:"What is donation after circulatory death (DCD)?",o:["Donation after withdrawal of life support and the stopping of the heart","Donation from a living person","Donation after brain death only","Donation of blood"],e:"DCD and brain-death donation follow different pathways and different safeguards."},
+{d:10,q:"The “dead donor rule” states what?",o:["Vital organs may only be taken from people who are dead, and procurement must never cause death","Anyone may donate at any time","Families decide when death occurs","Organs may be taken from anyone on life support"],e:"A 2025 HRSA investigation into a Kentucky OPO found serious failures in handling potential DCD donors — proof that safeguards require independent, enforced oversight."},
+{d:10,q:"A man registered as an organ donor dies. His family objects. Under the Uniform Anatomical Gift Act, what is his registration?",o:["First-person authorization — legally sufficient consent","A suggestion the family can override by law","Invalid without a will","Valid only in his home state"],e:"Registration is the donor’s own decision. That is why documenting your wishes matters."},
+
+{d:11,q:"How do living-donor kidneys generally compare to deceased-donor kidneys?",o:["They typically function longer","They fail faster","They are identical","They cannot be used for adults"],e:"Living donation is often the best outcome available — yet many patients never ask."},
+{d:11,q:"A sister wants to donate to her brother, but they are incompatible. What option allows her gift to still help him?",o:["Paired kidney exchange — she donates to a stranger and he receives a compatible kidney from another pair","She cannot help","She must donate to a lottery","He must wait for a deceased donor only"],e:"Exchange chains turn incompatibility into opportunity for multiple people."},
+{d:11,q:"Why did Congress pass the Charlie W. Norwood Living Organ Donation Act in 2007?",o:["To confirm paired donation does not violate NOTA’s ban on organ sales","To legalize organ sales","To end living donation","To create Medicare"],e:"Exchanging kidneys is not “valuable consideration.” The law removed legal doubt that was blocking exchanges."},
+{d:11,q:"What does a kidney voucher program allow?",o:["A donor gives now so a named person receives priority for a living-donor kidney later","Patients to buy kidneys","Donors to be paid","Recipients to skip evaluation"],e:"Vouchers let a donor give when they are able, for someone who will need it in the future."},
+{d:11,q:"What does the National Living Donor Assistance Center reimburse for eligible donors?",o:["Travel, lodging, and meal expenses","A cash payment for the kidney","Lifetime salary","Nothing at all"],e:"Lost income remains a documented barrier — a reform target, not a settled matter."},
+{d:11,q:"Federal rules require transplant hospitals to provide every living donor with whom?",o:["An independent living donor advocate, separate from the recipient’s team","The recipient’s lawyer","A pharmaceutical representative","No one"],e:"42 CFR 482.98. The donor’s interests get their own defender."},
+{d:11,q:"A patient refuses to ask anyone to donate because he can’t bear to burden them. What strategy changes who does the asking?",o:["A champion — a friend or family member who spreads the word on his behalf","Waiting silently","Hiring a broker","Asking strangers to pay"],e:"Guilt silences patients. A champion carries the ask so the patient does not have to."},
+
+{d:12,q:"Before 2023, what happened 36 months after transplant for many people whose Medicare was based only on kidney failure?",o:["Medicare stopped paying for their immunosuppressive drugs","Their transplant was reversed","They got free drugs for life","They had to return to dialysis by law"],e:"People lost kidneys because they could not afford the drugs protecting them — a policy failure measured in lost organs."},
+{d:12,q:"What does Medicare Part B-ID, in effect since January 1, 2023, provide?",o:["Lifetime coverage of immunosuppressive drugs only, for eligible kidney recipients without other coverage","Full Medicare for life","Free dialysis","Coverage of all prescriptions"],e:"Narrow but vital. Know whether you qualify before your 36 months end."},
+{d:12,q:"A recipient says, “I can never repay this — I feel like I owe the world my whole life.” Which concept names this burden?",o:["The tyranny of the gift","Survivorship bias","Moral hazard","Learned helplessness"],e:"Renée Fox and Judith Swazey described how an unrepayable gift can weigh on identity."},
+{d:12,q:"Philosopher Jean-Luc Nancy received a heart transplant and wrote L’Intrus. What did “the intruder” refer to?",o:["The foreign organ and drugs that made him feel a stranger to himself","A hospital visitor","A burglar","His surgeon"],e:"Living with someone else’s organ can unsettle the boundaries of the self. Naming it makes it bearable."},
+{d:12,q:"A recipient wonders if she is required to write to her donor’s family. What is accurate?",o:["Writing through the OPO is optional and anonymous; the family may or may not reply","It is legally required","She must meet them in person","Contact is forbidden forever"],e:"Gratitude can be expressed on the recipient’s timeline. There is no debt collector."},
+{d:12,q:"A recipient feels, “Someone had to die so I could live.” What reframing is accurate?",o:["The donor’s death was not caused by the recipient’s need","The recipient caused the death","Survivor guilt means the transplant failed","Recipients should hide the feeling"],e:"Survivor guilt is common and real — but the causation runs the other way. A death became a gift."},
+{d:12,q:"A recipient misses doses. What does the evidence usually point to?",o:["Cost, side effects, and regimen complexity — structural problems, not character flaws","Laziness","Ingratitude","Lack of intelligence"],e:"Blaming the patient protects the system that made the drugs unaffordable and the regimen unmanageable."},
+
+{d:13,q:"According to AARP’s 2026 report, the $1.01 trillion value of unpaid family care exceeds what?",o:["Total Medicaid spending","The entire U.S. economy","Total military spending","Nothing — it is minor"],e:"The care economy runs on people the reimbursement system pretends do not exist."},
+{d:13,q:"How many hours per week does the average family caregiver provide, per AARP 2026?",o:["27","5","10","60"],e:"That is a part-time job — unpaid, untrained, and uncounted in policy."},
+{d:13,q:"A man needs a transplant but has no identified support person. What often happens?",o:["He is delayed or excluded from listing — unpaid family labor becomes an eligibility rule","He is listed immediately","The hospital assigns a paid caregiver","The requirement doesn’t exist"],e:"When the system requires a care partner but provides none, people without family are filtered out."},
+{d:13,q:"A care partner grieves the husband she still lives with because illness has changed him. Which concept names this?",o:["Ambiguous loss","Postpartum depression","Social anxiety","Stockholm syndrome"],e:"Pauline Boss described grieving someone physically present but psychologically changed."},
+{d:13,q:"A daughter mourns her mother’s death before it has happened. What is this called?",o:["Anticipatory grief","Delayed grief","Denial","Complicated grief"],e:"Mourning in advance is a normal response to a long illness — and deserves support, not dismissal."},
+{d:13,q:"A care partner says, “I don’t know who I am anymore except his caregiver.” Which concept names this?",o:["Role engulfment","Role reversal","Role play","Role ambiguity"],e:"Skaff and Pearlin (1992): the caregiver role expands until it consumes the rest of the self."},
+{d:13,q:"Home dialysis training turns a spouse into an unpaid clinical worker. How does CIF characterize this structurally?",o:["Unpaid labor extraction from family care partners","A free bonus for families","Optional volunteering","A clinical certification"],e:"Naming the extraction is the first step toward demanding training, compensation, and recognition."},
+
+{d:14,q:"A clinic invites patients to an advisory council that has no vote and no budget. On Arnstein’s Ladder of Citizen Participation, this is what?",o:["Tokenism","Citizen control","Delegated power","Partnership"],e:"Consultation without power is placation. Ask what authority the council actually holds."},
+{d:14,q:"Who may submit public comment on OPTN policy proposals?",o:["Anyone — patients, care partners, and the public","Only transplant surgeons","Only UNOS staff","Only members of Congress"],e:"Public comment is open. Every comment from a patient or care partner becomes part of the record."},
+{d:14,q:"CMS publishes a proposed rule in the Federal Register. What does the Administrative Procedure Act require?",o:["A public comment period, and agencies must consider significant comments before finalizing","Nothing — rules are final on publication","Only lobbyists may comment","Comments are confidential"],e:"5 U.S.C. §553. A well-documented comment from a patient is a formal legal input."},
+{d:14,q:"A 2017 JAMA Internal Medicine study of 104 large patient advocacy organizations found what?",o:["At least 83% received industry funding","None received industry funding","Only 5% received industry funding","Funding is never disclosed"],e:"Before trusting any advocacy organization, ask: who funds you, and do you publish it?"},
+{d:14,q:"A care partner turns her experience into testimony to change a policy. Which of Arthur Frank’s narratives is she living?",o:["Quest narrative","Restitution narrative","Chaos narrative","Tragedy narrative"],e:"Frank (1995): the quest narrative uses illness as the ground for testimony and change."},
+{d:14,q:"What is the most effective form of contact with a congressional office?",o:["A personal account paired with data and one specific ask, in writing, followed up","An angry anonymous call","A general complaint about healthcare","A social media post without an ask"],e:"Specific, sourced, and followed up. Offices act on constituents who make action easy and visible."},
+{d:14,q:"What distinguishes Operational Advocacy from awareness campaigns?",o:["It converts lived experience into documented, measurable, demand-backed action","It focuses on sharing feelings","It depends on industry sponsorship","It avoids naming responsible institutions"],e:"Awareness without demands changes nothing. Documentation plus demands changes systems."},
+{d:14,q:"After completing this course, which action best reflects CIF’s standard?",o:["Document one specific failure with sources and submit it to the agency or office with authority to act","Share a general post about kidney disease","Wait for someone else to fix it","Keep the knowledge private"],e:"Knowledge becomes power only when it is submitted to someone who can be held accountable."}
+]};
+
+/* ===================== STORAGE ===================== */
+const KEY="cif-unspoken-curriculum-v1";
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+let S=load();
+S.lessons=S.lessons||{};
+S.p1=S.p1||null; S.p2=S.p2||null;
+S.active=S.active||"p1";
+
+/* ===================== HERO ===================== */
+(function(){
+  // People grid for slide 3
+  const svg=document.getElementById("peopleArt");let h="";
+  const cols=11,rows=9;
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+    const x=60+c*48,y=40+r*50,hi=(r===4&&(c===5||c===6));
+    const col=hi?"#ffb703":(Math.random()<.18?"#2ec4f1":"rgba(255,255,255,.55)");
+    const d=(Math.random()*3).toFixed(2);
+    h+=`<g class="${hi?"":"twinkle"}" style="animation-delay:${d}s"><circle cx="${x}" cy="${y}" r="${hi?9:6}" fill="${col}"/><path d="M${x-(hi?13:9)} ${y+(hi?28:20)} Q${x} ${y+(hi?4:4)} ${x+(hi?13:9)} ${y+(hi?28:20)} Z" fill="${col}"/></g>`;
+  }
+  h+=`<path d="M300 290 C270 250 330 230 340 262 C350 230 410 250 380 290 L340 330 Z" fill="none" stroke="#ff5a5f" stroke-width="4" opacity=".9" transform="translate(-40 -20)"/>`;
+  svg.innerHTML=h;
+
+  const slides=[...document.querySelectorAll(".slide")],dots=document.getElementById("dots"),cnt=document.getElementById("slideCount");
+  let i=0,timer;
+  slides.forEach((_,k)=>{const b=document.createElement("button");b.setAttribute("aria-label","Go to slide "+(k+1));b.onclick=()=>{go(k);reset()};dots.appendChild(b)});
+  function go(k){slides[i].classList.remove("active");i=(k+slides.length)%slides.length;slides[i].classList.add("active");[...dots.children].forEach((d,j)=>d.classList.toggle("on",j===i));cnt.textContent=String(i+1).padStart(2,"0")+" / "+String(slides.length).padStart(2,"0")}
+  function reset(){clearInterval(timer);timer=setInterval(()=>go(i+1),6500)}
+  document.getElementById("prevSlide").onclick=()=>{go(i-1);reset()};
+  document.getElementById("nextSlide").onclick=()=>{go(i+1);reset()};
+  const hero=document.querySelector(".hero");hero.addEventListener("mouseenter",()=>clearInterval(timer));hero.addEventListener("mouseleave",reset);
+  let sx=null;hero.addEventListener("touchstart",e=>sx=e.touches[0].clientX,{passive:true});
+  hero.addEventListener("touchend",e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50){go(i+(dx<0?1:-1));reset()}sx=null});
+  go(0);reset();
+})();
+
+/* ===================== CURRICULUM ===================== */
+function esc(s){return s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+function renderCurriculum(){
+  const box=document.getElementById("weeks");let html="";
+  [1,2].forEach(w=>{
+    html+=`<div class="week-label"><span class="week-chip" style="background:${w===1?"linear-gradient(90deg,#3b2bd1,#e0218a)":"linear-gradient(90deg,#00a39b,#ff5a5f)"}">Week ${w}</span><h3>${w===1?"Living Inside the Machine":"The Gift, The List, The Ledger"}</h3></div><div class="days">`;
+    DAYS.filter(d=>d.w===w).forEach(d=>{
+      const done=!!S.lessons[d.n];
+      html+=`<details class="day${done?" complete":""}" style="--c:${d.c}" id="day${d.n}">
+        <summary><span class="dnum">DAY<b>${d.n}</b></span><span class="dtitle"><h4>${esc(d.t)}</h4><span>${esc(d.s)}</span></span><span class="done-badge">${done?"✓ Complete":"Not started"}</span><svg class="chev" width="20" height="20" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></summary>
+        <div class="dbody">${d.p.map(x=>`<p>${esc(x)}</p>`).join("")}
+          <div class="reflect"><b>Reflection</b>${esc(d.r)}</div>
+          <div class="srcs"><b>Sources</b><ul>${d.src.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+          <label class="mark"><input type="checkbox" data-day="${d.n}" ${done?"checked":""}> Mark Day ${d.n} complete</label>
+        </div></details>`;
+    });
+    html+=`</div>`;
+  });
+  box.innerHTML=html;
+  box.querySelectorAll("input[data-day]").forEach(cb=>cb.addEventListener("change",e=>{
+    const n=e.target.dataset.day;if(e.target.checked)S.lessons[n]=1;else delete S.lessons[n];save();
+    const det=document.getElementById("day"+n);det.classList.toggle("complete",e.target.checked);
+    det.querySelector(".done-badge").textContent=e.target.checked?"✓ Complete":"Not started";updateLessonBar();
+  }));
+  updateLessonBar();
+}
+function updateLessonBar(){const n=Object.keys(S.lessons).length;document.getElementById("lessonCount").textContent=n+" of 14 lessons complete";document.getElementById("lessonBar").style.width=(n/14*100)+"%"}
+
+/* ===================== QUIZ ENGINE ===================== */
+const PART_META={p1:{name:"Part I · Living Inside the Machine",grad:"linear-gradient(90deg,#3b2bd1,#7b2ff7,#e0218a)"},p2:{name:"Part II · The Gift, The List, The Ledger",grad:"linear-gradient(90deg,#00a39b,#2ec4f1,#ff5a5f)"}};
+function shuffle(n){const a=[...Array(n).keys()];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function newRun(p){return {order:Q[p].map(q=>shuffle(q.o.length)),ans:Array(Q[p].length).fill(null),idx:0,done:false}}
+function run(p){if(!S[p]||!S[p].order||S[p].order.length!==Q[p].length)S[p]=newRun(p);return S[p]}
+function score(p){if(!S[p])return 0;return S[p].ans.reduce((t,a,k)=>t+(a!==null&&S[p].order[k][a]===0?1:0),0)}
+function answered(p){return S[p]?S[p].ans.filter(a=>a!==null).length:0}
+
+function renderTabs(){
+  document.querySelectorAll(".tab").forEach(t=>{
+    const p=t.dataset.part;t.classList.toggle("on",p===S.active);
+    t.classList.toggle("finished",!!(S[p]&&S[p].done));
+    document.getElementById("tsc-"+p).textContent=S[p]&&S[p].done?`✓ ${score(p)} / 50`:`${answered(p)} / 50 answered`;
+  });
+}
+function renderQuiz(){
+  renderTabs();
+  const p=S.active,R=run(p),card=document.getElementById("qcard"),meta=PART_META[p];
+  if(R.done){renderSummary(p);return}
+  const k=R.idx,q=Q[p][k],ord=R.order[k],chosen=R.ans[k];
+  const pct=(answered(p)/50*100).toFixed(1);
+  let opts=ord.map((oi,pos)=>{
+    let cls="",mk="";
+    if(chosen!==null){
+      if(oi===0){cls="correct";mk="✓"}
+      else if(pos===chosen){cls="wrong";mk="✗"}
+      else cls="dim";
+    }
+    return `<button class="opt ${cls}" data-pos="${pos}" ${chosen!==null?"disabled":""}><span class="key">${"ABCD"[pos]}</span><span>${esc(q.o[oi])}</span><span class="mk">${mk}</span></button>`;
+  }).join("");
+  let fb="";
+  if(chosen!==null){
+    const ok=ord[chosen]===0;
+    fb=`<div class="fb show ${ok?"ok":"no"}"><h4><span class="ic">${ok?"✓":"!"}</span>${ok?"Correct — well reasoned.":"Not quite. The correct answer is highlighted in green."}</h4><p>${esc(q.e)}</p><p style="margin-top:8px;font-size:.85rem"><a href="#day${q.d}" data-open="${q.d}">Revisit Day ${q.d}: ${esc(DAYS[q.d-1].t)} →</a></p></div>`;
+  }
+  const map=R.ans.map((a,j)=>{let c="";if(a!==null)c=R.order[j][a]===0?"c":"w";return `<button class="${c}${j===k?" cur":""}" data-jump="${j}" aria-label="Question ${j+1}">${j+1}</button>`}).join("");
+  const allDone=answered(p)===50;
+  card.innerHTML=`
+   <div class="qhead" style="background:${meta.grad}"><span class="qn">Q${k+1}<span style="opacity:.7;font-size:1rem"> / 50</span></span><span class="qday">Day ${q.d} · ${esc(DAYS[q.d-1].t)}</span><span class="qsc">Score: ${score(p)} ✓</span></div>
+   <div class="qprog"><i style="width:${pct}%"></i></div>
+   <div class="qbody"><div class="qtext">${esc(q.q)}</div><div class="opts">${opts}</div>${fb}</div>
+   <div class="qfoot">
+     <button class="btn btn-outline" id="qPrev" ${k===0?"disabled style='opacity:.4'":""}>← Previous</button>
+     ${allDone?`<button class="btn btn-primary" id="qFinish">See my ${p==="p1"?"Part I":"Part II"} results →</button>`:`<button class="btn btn-dark" id="qNext">${chosen===null?"Skip for now →":"Next question →"}</button>`}
+   </div>
+   <div class="qmap" aria-label="Question map">${map}</div>`;
+  card.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{R.ans[k]=+b.dataset.pos;save();renderQuiz();updateCert()});
+  const nx=document.getElementById("qNext");if(nx)nx.onclick=()=>{R.idx=nextIdx(R,k);save();renderQuiz();scrollCard()};
+  const pv=document.getElementById("qPrev");if(pv)pv.onclick=()=>{if(k>0){R.idx=k-1;save();renderQuiz();scrollCard()}};
+  const fn=document.getElementById("qFinish");if(fn)fn.onclick=()=>{R.done=true;save();renderQuiz();updateCert();scrollCard()};
+  card.querySelectorAll("[data-jump]").forEach(b=>b.onclick=()=>{R.idx=+b.dataset.jump;save();renderQuiz()});
+  card.querySelectorAll("[data-open]").forEach(a=>a.onclick=()=>{const d=document.getElementById("day"+a.dataset.open);if(d)d.open=true});
+}
+function nextIdx(R,k){for(let j=1;j<=50;j++){const n=(k+j)%50;if(R.ans[n]===null)return n}return Math.min(k+1,49)}
+function scrollCard(){const c=document.getElementById("qcard");const y=c.getBoundingClientRect().top+window.scrollY-80;window.scrollTo({top:y,behavior:"smooth"})}
+function renderSummary(p){
+  const sc=score(p),pct=Math.round(sc/50*100),other=p==="p1"?"p2":"p1",meta=PART_META[p];
+  const otherDone=S[other]&&S[other].done;
+  let msg=pct>=90?"Exceptional. You understand this system better than most of the people running it.":pct>=80?"Strong. You can name the structures, the rules, and the levers.":pct>=60?"Solid foundation. Revisit the days behind your missed questions and retake to push past 80%.":"This material is dense by design. Reread the lessons tagged on your missed questions and retake — every attempt teaches.";
+  document.getElementById("qcard").innerHTML=`
+   <div class="qhead" style="background:${meta.grad}"><span class="qn">${meta.name}</span><span class="qsc">Complete</span></div>
+   <div class="summary"><div class="ring" style="--p:${pct}"><div>${sc}<span style="font-size:1rem;opacity:.6">/50</span></div></div>
+   <h3>${pct}% on ${p==="p1"?"Part I":"Part II"}</h3><p>${msg}</p>
+   <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+     ${otherDone?`<a class="btn btn-primary" href="#certificate">Go to my certificate →</a>`:`<button class="btn btn-primary" id="goOther">Start ${other==="p1"?"Part I":"Part II"} →</button>`}
+     <button class="btn btn-outline" id="review">Review my answers</button>
+     <button class="btn btn-dark" id="retake">Retake ${p==="p1"?"Part I":"Part II"}</button>
+   </div></div>`;
+  const go=document.getElementById("goOther");if(go)go.onclick=()=>{S.active=other;save();renderQuiz();scrollCard()};
+  document.getElementById("review").onclick=()=>{S[p].done=false;S[p].idx=0;save();renderQuiz()};
+  document.getElementById("retake").onclick=()=>{if(confirm("Retake this part? Your current answers for this part will be cleared.")){S[p]=newRun(p);save();renderQuiz();updateCert()}};
+}
+document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{S.active=t.dataset.part;save();renderQuiz()});
+
+/* ===================== CERTIFICATE ===================== */
+function updateCert(){
+  const d1=S.p1&&S.p1.done,d2=S.p2&&S.p2.done,s1=score("p1"),s2=score("p2"),t=s1+s2;
+  document.getElementById("ovP1").textContent=d1?s1+"/50":"—";
+  document.getElementById("ovP2").textContent=d2?s2+"/50":"—";
+  document.getElementById("ovT").textContent=(d1&&d2)?t+"/100":"—";
+  const msg=document.getElementById("certMsg"),form=document.getElementById("certForm");
+  if(!(d1&&d2)){msg.textContent="Finish both parts of the quiz to unlock your certificate. "+(d1?"Part I complete. ":"")+(d2?"Part II complete.":"");form.style.display="none";return}
+  if(t>=80){msg.innerHTML="<strong>Certificate unlocked.</strong> Combined score: "+t+"/100. Enter your name exactly as it should appear.";form.style.display="flex"}
+  else{msg.innerHTML="Combined score: <strong>"+t+"/100</strong>. The certificate requires 80. Review the lessons behind your missed questions and retake either part — your best attempt counts.";form.style.display="none"}
+}
+function hash(str){let h=2166136261;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(36).toUpperCase().padStart(7,"0")}
+function wrap(ctx,text,x,y,maxW,lh){const words=text.split(" ");let line="";for(const w of words){const t=line+w+" ";if(ctx.measureText(t).width>maxW&&line){ctx.fillText(line.trim(),x,y);line=w+" ";y+=lh}else line=t}ctx.fillText(line.trim(),x,y);return y}
+function drawCert(name){
+  const W=2000,H=1414,c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
+  const t=score("p1")+score("p2");
+  const date=new Date();const ds=date.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+  const id="CIF-UC-"+hash(name+"|"+date.toISOString().slice(0,10)+"|"+t).slice(0,7)+"-"+t;
+  // background
+  x.fillStyle="#fffdf8";x.fillRect(0,0,W,H);
+  let g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,"#3b2bd1");g.addColorStop(.35,"#7b2ff7");g.addColorStop(.65,"#e0218a");g.addColorStop(1,"#ffb703");
+  x.fillStyle=g;x.fillRect(0,0,W,28);x.fillRect(0,H-28,W,28);x.fillRect(0,0,28,H);x.fillRect(W-28,0,28,H);
+  x.strokeStyle="#d9d3f7";x.lineWidth=3;x.strokeRect(60,60,W-120,H-120);
+  x.strokeStyle="#efe9ff";x.lineWidth=1;x.strokeRect(78,78,W-156,H-156);
+  // corner arcs
+  [[60,60],[W-60,60],[60,H-60],[W-60,H-60]].forEach(([cx,cy])=>{for(let r=40;r<=120;r+=40){x.beginPath();x.arc(cx,cy,r,0,Math.PI*2);x.strokeStyle="rgba(123,47,247,.10)";x.lineWidth=2;x.stroke()}});
+  // seal
+  const sx=W/2,sy=250;
+  let sg=x.createRadialGradient(sx,sy,10,sx,sy,95);sg.addColorStop(0,"#ffb703");sg.addColorStop(1,"#ff5a5f");
+  x.beginPath();for(let i=0;i<48;i++){const a=i/48*Math.PI*2,r=i%2?88:100;x.lineTo(sx+Math.cos(a)*r,sy+Math.sin(a)*r)}x.closePath();x.fillStyle=sg;x.fill();
+  x.beginPath();x.arc(sx,sy,70,0,Math.PI*2);x.fillStyle="#0f1033";x.fill();
+  x.fillStyle="#fff";x.textAlign="center";x.font="800 46px Fraunces, Georgia, serif";x.fillText("CIF",sx,sy+8);
+  x.font="700 13px Inter, sans-serif";x.fillText("CERTIFIED",sx,sy+36);
+  // text
+  x.fillStyle="#6b6e92";x.font="700 26px Inter, sans-serif";x.fillText("COLD ISCHEMIA FOUNDATION",W/2,410);
+  x.fillStyle="#0f1033";x.font="900 92px Fraunces, Georgia, serif";x.fillText("Certificate of Completion",W/2,520);
+  x.fillStyle="#3a3c63";x.font="400 32px Inter, sans-serif";x.fillText("This certifies that",W/2,600);
+  let ng=x.createLinearGradient(W/2-500,0,W/2+500,0);ng.addColorStop(0,"#3b2bd1");ng.addColorStop(.5,"#e0218a");ng.addColorStop(1,"#ff5a5f");
+  x.fillStyle=ng;let fs=110;x.font=`900 ${fs}px Fraunces, Georgia, serif`;while(x.measureText(name).width>1500&&fs>50){fs-=4;x.font=`900 ${fs}px Fraunces, Georgia, serif`}
+  x.fillText(name,W/2,730);
+  x.strokeStyle="#e0218a";x.lineWidth=3;x.beginPath();x.moveTo(W/2-520,760);x.lineTo(W/2+520,760);x.stroke();
+  x.fillStyle="#3a3c63";x.font="400 31px Inter, sans-serif";
+  wrap(x,"has completed The Unspoken Curriculum — a two-week course on kidney disease, dialysis, and transplant — and demonstrated command of the history, economics, regulation, ethics, and lived reality of the U.S. kidney care system, including treatment options, patient and care partner rights, and the mechanisms for holding that system accountable.",W/2,825,1500,46);
+  x.fillStyle="#0f1033";x.font="800 34px Inter, sans-serif";x.fillText(`Score: ${t} / 100   ·   Awarded ${ds}`,W/2,1030);
+  // signatures
+  x.font="italic 600 44px Fraunces, Georgia, serif";x.fillStyle="#2a1a8c";
+  x.fillText("Jeff A. Parke",560,1170);x.fillText("Marie Parke",W-560,1170);
+  x.strokeStyle="#0f1033";x.lineWidth=2;x.beginPath();x.moveTo(330,1190);x.lineTo(790,1190);x.moveTo(W-790,1190);x.lineTo(W-330,1190);x.stroke();
+  x.fillStyle="#3a3c63";x.font="600 22px Inter, sans-serif";
+  x.fillText("Co-Founder & Executive Director",560,1228);x.fillText("Co-Founder",W-560,1228);
+  x.fillStyle="#6b6e92";x.font="500 20px Inter, sans-serif";
+  x.fillText(`Certificate ID ${id}   ·   coldischemia.foundation   ·   100% independently funded`,W/2,1300);
+  return c.toDataURL("image/png");
+}
+document.getElementById("makeCert").onclick=async()=>{
+  const n=document.getElementById("certName").value.trim().replace(/\s+/g," ");
+  if(n.length<2){document.getElementById("certName").focus();return}
+  if(score("p1")+score("p2")<80)return;
+  try{await document.fonts.ready}catch(e){}
+  const url=drawCert(n);
+  document.getElementById("certImg").src=url;document.getElementById("certPrintImg").src=url;
+  document.getElementById("certDl").href=url;
+  document.getElementById("certPreview").style.display="block";
+  S.certName=n;save();
+};
+document.getElementById("certPrint").onclick=()=>window.print();
+
+/* ===================== INIT ===================== */
+document.getElementById("yr").textContent=new Date().getFullYear();
+renderCurriculum();renderQuiz();updateCert();
+if(S.certName)document.getElementById("certName").value=S.certName;
+</script>
+</body>
+</html>
