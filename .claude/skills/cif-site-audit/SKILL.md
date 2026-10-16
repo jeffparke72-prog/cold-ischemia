@@ -27,8 +27,8 @@ Checks every HTML page in the `cold-ischemia` repo (GitHub Pages source for cold
 - Jeff's standing rule: anything duplicated by accident (copy-pasted text, copied pages, stray `_1`/`-embedded` copies) gets removed, and anything that doesn't work (broken buttons, links, images) gets fixed. Repeated text is only acceptable when it clearly makes sense, such as each edition of a guide carrying its own disclaimer page.
 - On a scheduled run, fix clear-cut problems directly (dead links, missing images recoverable from the repo, broken button handlers, accidental duplicate pages and copied text), commit with a clear message and push to `main`. Report anything that needs a judgment call instead of guessing.
 - When the user asks for fixes: fix clear-cut problems (a mistyped filename, a missing anchor, a doubled paragraph), never overwrite the homepage wholesale, keep the full sitewide nav, commit with a clear message and push to `main`.
-- Never delete pages or files without the user's explicit say-so.
+- Removing accidental duplicate copies is pre-approved by Jeff. Never delete an original page (one that is linked from the site or is the only copy of its content).
 
 ## Report format
 
-Short and phone-readable: one line saying whether the site is healthy, then a short list of real problems with the page name and what's wrong, then what you'd fix. No raw dumps.
+Short and phone-readable: one line saying whether the site is healthy, then what you fixed (page and what changed), then anything left for Jeff to decide. No raw dumps.
