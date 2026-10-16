@@ -259,6 +259,71 @@ footer p{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:
   </div>
 </section>
 
+<div class="divider"></div>
+<section class="lc-sec" aria-labelledby="lc-h">
+<style>
+.lc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:32px;}
+@media(max-width:860px){.lc-grid{grid-template-columns:1fr;}}
+.lc-card{background:var(--surf);border:1px solid var(--b2);border-radius:6px;padding:26px 22px;display:flex;flex-direction:column;gap:14px;}
+.lc-top{display:flex;gap:14px;align-items:center;}
+.lc-av{width:64px;height:64px;flex-shrink:0;border-radius:50%;background:var(--raised);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.4rem;color:var(--ink);}
+.lc-av.hist{border-color:var(--pulse);}
+.lc-role{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-l);margin-bottom:4px;}
+.lc-av.hist + div .lc-role{color:var(--pulse);}
+.lc-card h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;color:var(--ink);margin:0 0 2px;}
+.lc-org{font-family:'Crimson Pro',Georgia,serif;font-size:0.95rem;color:var(--ink60);line-height:1.35;}
+.lc-card p{font-family:'Crimson Pro',Georgia,serif;font-size:1rem;line-height:1.6;color:var(--ink80);margin:0;max-width:none;}
+.lc-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.lc-card li{font-family:'Crimson Pro',Georgia,serif;font-size:0.95rem;line-height:1.5;color:var(--ink80);padding-left:16px;position:relative;}
+.lc-card li::before{content:'';position:absolute;left:0;top:0.62em;width:7px;height:1px;background:var(--gold);}
+.lc-foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--b);font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;letter-spacing:0.03em;color:var(--ink40);}
+</style>
+  <div class="wrap">
+    <div class="lbl">The People Behind BHOC</div>
+    <h2 id="lc-h">The scientists and builders <strong>CIF works alongside.</strong></h2>
+    <p>Biologic Hemoglobin Oxygen Carrier science did not appear overnight. It rests on four decades of purification chemistry, regulatory battles and evidence-building by a small circle of people &mdash; the same people Cold Ischemia Foundation collaborates with to bring this work into the open.</p>
+    <div class="lc-grid">
+      <article class="lc-card">
+        <div class="lc-top">
+          <div class="lc-av" aria-hidden="true">AJ</div>
+          <div><div class="lc-role">Architect of BHOC</div><h3>Archil Jaliashvili</h3><div class="lc-org">BHOC Therapeutics</div></div>
+        </div>
+        <p>A biotechnology and healthcare executive with more than 20 years of experience who leads the scientific and strategic development of BHOC Therapeutics, and who defined BHOC around controlled, tissue-level oxygen delivery.</p>
+        <ul>
+          <li>Co-author of the 2026 preprint establishing the BHOC and Precision Oxygen Therapeutics framework</li>
+          <li>Built the BHOC Scientific Evidence Hub and BHOC Veterinary resources</li>
+          <li>Keeps human, veterinary and regulatory evidence source-linked and separate</li>
+        </ul>
+        <div class="lc-foot">ORCID 0009-0006-4712-4942</div>
+      </article>
+      <article class="lc-card">
+        <div class="lc-top">
+          <div class="lc-av" aria-hidden="true">CR</div>
+          <div><div class="lc-role">Scientific Pioneer</div><h3>Carl W. Rausch</h3><div class="lc-org">Co-founder &amp; former Chairman and CEO, Biopure</div></div>
+        </div>
+        <p>An MIT-trained chemical engineer who spearheaded the patented purification and molecular cross-linking techniques behind the first hemoglobin oxygen therapeutics ever approved &mdash; the technical bedrock BHOC builds on.</p>
+        <ul>
+          <li>Co-founded Biopure in 1984 and led development of Oxyglobin and Hemopure</li>
+          <li>Oxyglobin became the first FDA-approved veterinary oxygen therapeutic (1998); Hemopure won human approval in South Africa (2001)</li>
+          <li>Holds 11 patents; co-author of the 2026 BHOC framework preprint</li>
+        </ul>
+        <div class="lc-foot">MS Chemical Engineering, MIT</div>
+      </article>
+      <article class="lc-card">
+        <div class="lc-top">
+          <div class="lc-av hist" aria-hidden="true">DJ</div>
+          <div><div class="lc-role">Historical Foundation</div><h3>David Judelson</h3><div class="lc-org">Co-founder, Biopure Corporation</div></div>
+        </div>
+        <p>Co-founded Biopure alongside Carl Rausch in 1984, helping launch the company whose bovine hemoglobin research produced the oxygen therapeutics that BHOC&rsquo;s evidence library now traces as its scientific lineage.</p>
+        <ul>
+          <li>Co-founder of Biopure Fine Chemicals, later renamed Biopure Corporation</li>
+        </ul>
+        <div class="lc-foot">Biopure Corporation &middot; Cambridge, Massachusetts</div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <footer>
   <p>Cold Ischemia Foundation &middot; Ellenton, Florida &middot; Zero pharmaceutical, dialysis, or insurance industry funding. This page is educational, not a promise of clinical availability or outcomes.</p>
 </footer>
