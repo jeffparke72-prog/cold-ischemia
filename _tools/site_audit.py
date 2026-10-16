@@ -100,7 +100,23 @@ def main():
         except Exception as e:
             print(f'parse error {p}: {e}', file=sys.stderr)
 
+    raw = {p: open(os.path.join(root, p), encoding='utf-8', errors='replace').read() for p in pages}
     broken, anchors, dup_ids, external = [], [], [], set()
+    dead_buttons = []
+    BUILTIN = {'alert', 'confirm', 'prompt', 'window', 'this', 'event', 'history', 'location', 'document',
+               'print', 'setTimeout', 'if', 'for', 'while', 'switch', 'return', 'void', 'typeof', 'scrollTo', 'open', 'close', 'navigator', 'console', 'Object', 'JSON'}
+    for p, s in raw.items():
+        code = s
+        for src in re.findall(r'<script[^>]+src="([^"]+)"', s):
+            f = os.path.normpath(os.path.join(root, os.path.dirname(p), src))
+            if os.path.exists(f):
+                code += open(f, encoding='utf-8', errors='replace').read()
+        for fn in set(re.findall(r'on(?:click|change|input|submit|keyup|keydown)="\s*(?:return\s+)?([A-Za-z_$][\w$]*)\s*\(', s)):
+            if fn in BUILTIN:
+                continue
+            e = re.escape(fn)
+            if not re.search(r'(function\s+%s\b|[\s,;{(]%s\s*=[^=]|window\.%s\s*=|\b%s\s*:)' % (e, e, e, e), code):
+                dead_buttons.append((p, fn))
     for p, pg in pages.items():
         seen = defaultdict(int)
         for i in pg.ids:
@@ -125,7 +141,8 @@ def main():
             target, full, frag = resolve(root, p, url)
             if not os.path.exists(full):
                 broken.append((p, line, url))
-            elif frag and target in pages and frag not in pages[target].ids and tag == 'a':
+            elif frag and target in pages and frag not in pages[target].ids and tag == 'a' \
+                    and ("'%s'" % frag) not in raw.get(target, '') and ('"%s"' % frag) not in raw.get(target, '').replace('id="%s"' % frag, ''):
                 anchors.append((p, line, url))
 
     # duplicate whole files
@@ -162,6 +179,7 @@ def main():
     L.append(f'Pages scanned: {len(pages)}\n')
     L.append('| Check | Count |\n|---|---|')
     L.append(f'| Broken internal links | {len(broken)} |')
+    L.append(f'| Buttons calling missing functions | {len(dead_buttons)} |')
     L.append(f'| Links to missing anchors | {len(anchors)} |')
     L.append(f'| Duplicate ids on a page | {len(dup_ids)} |')
     L.append(f'| Identical duplicate files | {len(dup_files)} |')
@@ -176,6 +194,7 @@ def main():
         L.append('')
 
     sec('Broken internal links', [f'- `{p}` line {ln}: `{u}`' for p, ln, u in broken])
+    sec('Buttons calling missing functions', [f'- `{p}`: `{fn}()` is not defined' for p, fn in dead_buttons])
     sec('Links to missing anchors', [f'- `{p}` line {ln}: `{u}`' for p, ln, u in anchors])
     sec('Duplicate ids', [f'- `{p}`: id `{i}` ×{n}' for p, i, n in dup_ids])
     sec('Identical duplicate files', ['- ' + ', '.join(f'`{x}`' for x in v) for v in dup_files])

@@ -12,6 +12,7 @@ Checks every HTML page in the `cold-ischemia` repo (GitHub Pages source for cold
 1. Pull the latest `main`.
 2. Run `python3 _tools/site_audit.py --out _audit/report.md`. It reports:
    - broken internal links and image/script references (files that don't exist)
+   - buttons and controls whose onclick/onchange handler calls a function that does not exist
    - links to `#anchors` that aren't on the target page
    - duplicate `id`s on one page
    - identical duplicate HTML files
@@ -23,7 +24,8 @@ Checks every HTML page in the `cold-ischemia` repo (GitHub Pages source for cold
 
 ## Fixing
 
-- Do NOT change the site on a scheduled run. Report only.
+- Jeff's standing rule: anything duplicated by accident (copy-pasted text, copied pages, stray `_1`/`-embedded` copies) gets removed, and anything that doesn't work (broken buttons, links, images) gets fixed. Repeated text is only acceptable when it clearly makes sense, such as each edition of a guide carrying its own disclaimer page.
+- On a scheduled run, fix clear-cut problems directly (dead links, missing images recoverable from the repo, broken button handlers, accidental duplicate pages and copied text), commit with a clear message and push to `main`. Report anything that needs a judgment call instead of guessing.
 - When the user asks for fixes: fix clear-cut problems (a mistyped filename, a missing anchor, a doubled paragraph), never overwrite the homepage wholesale, keep the full sitewide nav, commit with a clear message and push to `main`.
 - Never delete pages or files without the user's explicit say-so.
 
