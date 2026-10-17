@@ -140,8 +140,8 @@ let sim=null;
 function home(){
   document.title='BHOC Field Notes';
   app.innerHTML='';
-  const hero=$('section','hero',`<div><span class="mono">Field notes on Biologic Hemoglobin Oxygen Carriers</span><h1>Tissue lives<br>on <em>oxygen.</em></h1></div>
-  <div><p class="lede">When blood cannot reach a cell, the cell has minutes, not days. A BHOC is oxygen-carrying hemoglobin from cattle, purified and delivered without the red cell. These essays test that idea against the evidence, the chemistry and the hard questions.</p>
+  const hero=$('section','hero',`<div><span class="mono">Field notes on Biological Hemoglobin Oxygen Carriers</span><h1>Tissue lives<br>on <em>oxygen.</em></h1></div>
+  <div><p class="lede">When blood cannot reach a cell, the cell has minutes, not days. A BHOC, a Biological Hemoglobin Oxygen Carrier, is hemoglobin working outside the red cell, carrying oxygen without it. These essays test that idea against the evidence, the chemistry and the hard questions.</p>
   <div class="stamp"><span class="mono">${POSTS.length} essays</span><span class="mono">Read online</span><span class="mono">Word and PDF</span></div></div>`);
   app.append(hero);
   const s=$('section','sim');s.id='simulation';
@@ -169,7 +169,7 @@ function home(){
       c.innerHTML=`<div class="meta"><span class="mono tag">${esc(CH[p.ch].n)}</span><span class="mono">${esc(p.date)} &middot; ${p.mins} min</span></div><h3><a href="#post-${p.n}">${esc(p.title)}</a></h3><p>${esc(p.dek)}</p>`;
       const note=$('div','note');c.append(actions(p,note,true),note);grid.append(c)})}
   draw();
-  app.append($('footer','',`<p>Educational writing. It is not medical advice and does not recommend any product for any patient. Figures are approximate; check primary sources before relying on them. The BHOC campaign is a collaboration with BHOC/GeoBio Pharm.</p>`));
+  app.append($('footer','',`<p>Educational writing. It is not medical advice and does not recommend any product for any patient. Figures are approximate; check primary sources before relying on them. The BHOC campaign is a collaboration with BHOC Therapeutics (<a href="https://bhoctherapeutics.com/" target="_blank" rel="noopener">bhoctherapeutics.com</a>).</p>`));
   startSim();window.scrollTo(0,0);
 }
 function post(n){location.replace('field-note-'+n+'.html');return;
