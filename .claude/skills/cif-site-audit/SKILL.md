@@ -19,7 +19,7 @@ Checks every HTML page in the `cold-ischemia` repo (GitHub Pages source for cold
    - pages sharing the same `<title>`
    - paragraphs repeated within a page, and long paragraphs repeated across pages
 3. External links: the workspace shell cannot reach outside sites, so the script only lists them in `_audit/external-links.json`. Spot-check the most important ones (BHOC, Payhip, Fundrazr, government links) with WebFetch, at most ~15 per run, and report any that fail or redirect somewhere unexpected.
-4. Fetch the live homepage and `bhoc.html` with WebFetch to confirm the site is up.
+4. Fetch the live homepage and `bhoc.html` with WebFetch to confirm the site is up. Grep every page for BHOC links: the only allowed BHOC domain is bhoctherapeutics.com (see the BHOC rule in CLAUDE.md); replace any other BHOC domain.
 5. Judge the findings before reporting. Shared nav, footer and boilerplate repeated across pages is expected; flag only content that looks accidentally duplicated. Underscore folders (`_book`, `_paper*`, `_film*`, `_serial`, `_scripts`) are drafts and are skipped by default; add `--include-drafts` only if the user asks about them.
 
 ## Fixing
