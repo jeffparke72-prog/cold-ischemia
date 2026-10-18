@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-18T11:37:19.228302+00:00",
+"updated": "2026-10-18T15:46:42.456298+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -94,17 +94,17 @@
 "name": "Google News: transplant & organ donation policy",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": false,
-"count": 0,
-"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=dialysis+OR+%22kidney+disease%22+OR+%22kidney+failure%22+OR+ESRD+OR+%22kidney+transplant%22+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": false,
-"count": 0,
-"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "KFF Health News",
@@ -132,6 +132,39 @@
 }
 ],
 "items": [
+{
+"title": "World Organ Donation Day: Around 100 people a year wait for an organ in Luxembourg - RTL Today",
+"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOUlZVNThKQmxmVGc3c2s3RG5KcGpCbTBnSmtJaF9zRVdPNkZxWHhxQjVRSzFMaVhEYmw1WWlkMUhnTGg5LV9wbGZGQzAxZFl1dHhFMHZoSTVXVGk3NlpJTkJGb2cxNVRCZy1CajV2QkVFdzhsMDJ3Zm5FNU4yRGRFUUpuWEdfdGJiTFhUTk1fOWhKSGhVbURDcktDa2FvRlZZd21aQ3BQSQ?oc=5",
+"summary": "World Organ Donation Day: Around 100 people a year wait for an organ in Luxembourg RTL Today",
+"outlet": "RTL Today",
+"published": "2026-10-18T13:03:35+00:00",
+"id": "05d78d5451e88a87",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-18T15:46:42.456298+00:00"
+},
+{
+"title": "Organ Donation Team invests £35k to transform patient experience in Western Trust ICUs - Derry Now",
+"link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOWWZVcDZ4VVo0S0NPTmNqZlJnbS1BTEI4UHB2WWtHQzRHVTRXTXJtbzNJRlFMRmpFZ3VnV1B2ck1ZNDd3VXVtbzd0U1dLQVVoOXhUMEZlNjNMTG5xMThNMlM0Q0IxWEh2ZXAtMmg4Ni14V2lkS1lncVg2TWt0OEFGTWdNRmVZVkxhczFZVkoxZ3oyNnFDLS1SVThSZnVQWC0zOXFIWmc1M2I2MGthNlN2enI0VVViOEx5NVFKajQ4Rm50RjYxSnR6T1MxQU8?oc=5",
+"summary": "Organ Donation Team invests £35k to transform patient experience in Western Trust ICUs Derry Now",
+"outlet": "Derry Now",
+"published": "2026-10-18T09:30:00+00:00",
+"id": "28ce0a0b35f58e84",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-18T15:46:42.456298+00:00"
+},
+{
+"title": "Peritoneal Dialysis Equipment Market To 2035: Home Care Shift Fuels Growth - News and Statistics - IndexBox",
+"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOYmp2M1pISTZuTzFpNUlBVmNYZVFvRGVKUXFNUVptVHFWVnN6U0xUYTNfZHdad3ZwVjFSdms5czktUjZDUzVHc1RPQ0tIdGR5ZERUV0FsS1IyRlY2dDNFV2N0WmpWY2FySVljY2RSTVk0T093QmF0RkFHc3VyMk9sdl9qSzhyNXBQTDMyVW1OZm5mY0NSWFdBRmQ0bWZEczdsazBwLUw4WUZrQm9STzdWak16V3JVQQ?oc=5",
+"summary": "Peritoneal Dialysis Equipment Market To 2035: Home Care Shift Fuels Growth - News and Statistics IndexBox",
+"outlet": "IndexBox",
+"published": "2026-10-18T04:46:04+00:00",
+"id": "f7e3621575a9ba98",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-18T15:46:42.456298+00:00"
+},
 {
 "title": "Water Treatment For Dialysis Market To 2035: Home Therapy Shift Supports Growth - News and Statistics - IndexBox",
 "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNWltcVNoLTluSTdjTXNwTjI1dkJvN21SYzNkZFZtbkhuQkpzenFoOWJXWEVTc1hWWGhKLXVSX2pkN24wQjByTmlrXzdCWTN1dFJkUHo4emx0OGU0YVFOLWZJZGNURG1jMk5Pb3BKUW5kM3N2TU5rMXZOaGlrMXdHdHY1TlByOGMzbk82dm9BemdrSEN0dkU1b2JyWUljb2JSeWFWelIxZUpTOF84N1JhTzFzbmZuclkzYi11U3JWUnFsLWdE?oc=5",
@@ -219,6 +252,28 @@
 "source": "PubMed: living organ donation",
 "category": "Research",
 "first_seen": "2026-10-18T06:30:43.545380+00:00"
+},
+{
+"title": "Response to: Comment on “A comparative study of once-daily versus twice-daily tacrolimus in deceased donor kidney transplant recipients: a national cohort analysis”",
+"link": "https://www.sciencedirect.com/science/article/pii/S1600613526028406?dgcid=rss_sd_all",
+"summary": "By Bekir Tanriover, Gaurav Gupta, Ahmet B. Gungor",
+"outlet": "",
+"published": "2026-10-17T12:00:00+00:00",
+"id": "5d0336b47d89dfb7",
+"source": "American Journal of Transplantation",
+"category": "Journals",
+"first_seen": "2026-10-18T15:46:42.456298+00:00"
+},
+{
+"title": "Transparency and Continuity in Organ Safety and Vigilance: Concerns Regarding the Transition from DTAC to TRACE",
+"link": "https://www.sciencedirect.com/science/article/pii/S1600613526028418?dgcid=rss_sd_all",
+"summary": "By Michael G. Ison, Emily Blumberg, Michael Green, Dan Kaul, Cameron R. Wolfe, Marian G. Michaels, Ricardo M. La Hoz, Lara Danziger-Isakov",
+"outlet": "",
+"published": "2026-10-17T12:00:00+00:00",
+"id": "a1bf93048097f3eb",
+"source": "American Journal of Transplantation",
+"category": "Journals",
+"first_seen": "2026-10-18T15:46:42.456298+00:00"
 },
 {
 "title": "Severe Amphetamine-Associated Rhabdomyolysis With Dialysis-Requiring Acute Kidney Injury in Two Patients: A Case Report - Cureus",
@@ -651,7 +706,7 @@
 },
 {
 "title": "Singer Kim Ha-neul says sibling declared brain-dead, family opts for organ donation - 헤럴드경제",
-"link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5hUndHMXJQTk9CLS14dy1LVEJEUWZwdWMwUTNqbGhCNk9sWVMwWlJhd1pIZEpOeXBsRTRZVk9VdmEyRUxlaGczbXRaN0JPM3dEVDVCYi1B?oc=5",
+"link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9kNjVPbnQ2QTRFTG9LcWtraFAwWUYxYmR4QjgtNTZCZ1VBMzhwRHpkcTlBNEgwUlpYVU1raGhQOEhsaDMtZjF4a3RJOVRmLXVlZzA2dmdDdw?oc=5",
 "summary": "Singer Kim Ha-neul says sibling declared brain-dead, family opts for organ donation 헤럴드경제",
 "outlet": "헤럴드경제",
 "published": "2026-10-16T07:33:04+00:00",
@@ -728,10 +783,10 @@
 },
 {
 "title": "Northwest Ohio family turns twin sons’ battle with kidney failure into advocacy ahead of fundraiser - WTVG",
-"link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOVnh3d216em5EQ3hVVFIyVTJuU3kyUmhWSnlBN21CWE1mWUpPeklqTF9jZU52eUJmbWRrUWxpX09YdjZnTHNPTUlfQi12Q0laRDFSbTBPREljcWpYVzVrcWxNMTVpaGU0UEloMWxqb3Bnc2cwdjBuWDg2XzVZWEVQTTN2RzA2MjRFakFUV0w5czM4N1NVWllzaG5TVENDanpZclhyanJ0aldTUW1CeGJfd2xEZmxVNG14cUFUYXU4dmdFUUVTZ0wwQWpLa3pHbVZz?oc=5",
+"link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPcUZfRXhZR2x3SV9CNXNTd19ZUWMxMFZtbUpyRHAzNnhXM0V1RGdnUWdvdXZuSHQtZW9YOUxQbFRCMnozY2YzaW9zRVdjNjZqWDRnYlRHejd3enp5eFRCMTlTVlRCLUVEdFZ2c3NUU0RDUTB4dDRJdVd6QnVLZzFaMm5rQ1FDZXBQUFRQSWx4NGJvNG1xVzJUdkpUZkk3TVp0VXl2Ul84RjJUZUQzS05pLXMxSG5wVGZuUHZuYl9nSFlFZ3VHcGg1X9IB3AFBVV95cUxQbi1Pa3dLazVhNGV4OTRNZ3ozYmVnMkp5VndjT25fdGRVRDhHbXpPbFJKZllEMkdkRTQ4VTVMaEdJQXZjTHNjblphX0d5UGx3cEJzdHBjUGl5S2VQT3hwdld2RXBQYmdnZ0NGa0tETTg3UzkxdjZvRFVUYmp2enNZNVZyQ1k0MGNGaWlRWFh6Y2RWOEVIXzlmdDVKYkdmS3htQmZCX3pKVWZiSW5nNkVFSEhsTTc3NHZjcS1IMnhiLVZvcUVnRnI3cHdQQnpYOGVOREJ6TzlqNVhhbkVD?oc=5",
 "summary": "Northwest Ohio family turns twin sons’ battle with kidney failure into advocacy ahead of fundraiser WTVG",
 "outlet": "WTVG",
-"published": "2026-10-16T00:05:00+00:00",
+"published": "2026-10-16T00:07:00+00:00",
 "id": "f68a828938e4f8b7",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
@@ -5573,61 +5628,6 @@
 "outlet": "The Hindu",
 "published": "2026-10-03T14:54:50+00:00",
 "id": "35c647226cf2497b",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Organ transplant institute in Kozhikode to be completed in 30 months, says Satheesan - The Hindu",
-"link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPdzZlZG9FcWhHeWFreEk2SW1JdHBBb1dlckYyeHBUWjBYeUM5TzRyQ2k5Mmo4VXNROUx1bWliZURjQ0hrYy1jVjhEQzdUTDJXak9BeUw0bEhXazdtYzJseXBZQ1doNlc0a1NvUXlWU0RQSFZlSC1MNDlhVGtiMExpcEZmUGVfM0FicWtXWFY4M055cmVreHVocTh4UnVTak1XNGxRcks3NGtMTGs0RnBuZFdWU1pxWlp0RGdqbUo3YS1pM3FHOXZDNlc4bTFnZ0gyLUxDOFdDZzBWdlJaTWZFWXlxTi1IeDF4ZS01bHN30gH0AUFVX3lxTE1SdE41TnhpcjFwZzg1N0hDX0JNYUZ3cmFSY005X0xxQUt4dVNHa0lyX2tRamVQRWtvcHVpTlVFMWlZQlZMRFp4ZHY1SEc1cGlGeS0xQXNiSTRPVWlqcDhDV3hCcHg0dVd0Y0JwY21qYTdPcWNFbVBFeXdHOS1TajZFT1RCdU96QWRqMjlTNXNreE5tRDF3RTJ6WmdGc2l3UzVsVjNFaXl5ek1SaE1XTW51N05CT3RCeDFJblgzOVZXTHBpNkE5VHd4VFZiYXg2SEdScVZZbXVpMS10Q1ZHTHRGTHMtNUY5LVBncmM1WXhHbjlhWlo?oc=5",
-"summary": "Organ transplant institute in Kozhikode to be completed in 30 months, says Satheesan The Hindu",
-"outlet": "The Hindu",
-"published": "2026-10-03T14:54:50+00:00",
-"id": "ea95cc090fe12d3a",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-08T00:09:09.395270+00:00"
-},
-{
-"title": "Keralam to establish organ transplant hospital in 30 months: CM Satheesan - The Economic Times",
-"link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOUklnUEpjTkJVWlRVR2ZnYktHQU82N3VYOWJIQUN4N0xmMUl2ZEJBcWc0T2M5TVlTMVZYUTBVVlJXcEdPbk1zWW5aNDlCc0o3dmVUSWpyZUtJSVB5TDRrNGZCSGtEUXhXanNJMk12Sl94VXVZNnlsSXBPWkpiUGI2Y24tVXZSeGtCVG5nOVp1U0JUM2xQYVpKdkVySTNGWWZRNkhkcmx3Zlk3bVVQSVpjb2Q5QTBKbnpPWWxMQmF4WTFrdEdtVV9NcDhGYXQyeVdaRTdz0gHYAUFVX3lxTE00TnpNdlAxZnlDRTF3SmZ1S2x0X0R6X1RJUjhFay1sUzRCWXVycHE3OXJHRE0xcWpuOHBkMDg3VVJSZUJ2MUtlRGVTa2dTSDNOTEJnNUpHMUlDNG9JNmxvZnZVMGJ0ZW5DOGFJWHJnSFZodEU4bDVZMjFFRWR3UG1NNUNkUWlDekctazJoNlpRT1hyWE5yd2FCQURtVWVRUXFyc21FZUdzc194S1FZbUp6MEZVbjQ0bkhSQi1DNG1hcXhST25fUUZDbDQ0ZEJTZEtPYU5YeURJNQ?oc=5",
-"summary": "Keralam to establish organ transplant hospital in 30 months: CM Satheesan The Economic Times",
-"outlet": "The Economic Times",
-"published": "2026-10-03T12:03:10+00:00",
-"id": "03b4d08286f26042",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Response to: \"Data-Driven Clustering in Hemodialysis: Novel Phenotypes or Rediscovery of the Malnutrition–Inflammation Complex?\"",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033577?dgcid=rss_sd_all",
-"summary": "By Simon Aberger, Kathrin Eller",
-"outlet": "",
-"published": "2026-10-03T12:00:00+00:00",
-"id": "3c60a49400b10a19",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-04T14:19:27.260426+00:00"
-},
-{
-"title": "Nursing Home Utilization Among Maintenance Dialysis Patients",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003201?dgcid=rss_sd_all",
-"summary": "By Ankur D. Shah, Yanru Liao, Yoojin Lee, Vincent Mor, Christopher H. Schmid, Amal N. Trivedi",
-"outlet": "",
-"published": "2026-10-03T12:00:00+00:00",
-"id": "36551e961a34c3b3",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-04T14:19:27.260426+00:00"
-},
-{
-"title": "North Belfast man who donated kidney takes part in 'Grand Organ Donation Life Cycle' at Grand Central Station - Belfast Media Group",
-"link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQbE45VFpuOHRwejNYWDlfUTZzdDJXLUpHR2V4NXJUV1Z3QzZ3bFhzem90aXlJaFVJUTNHUG5MQkR2TTFIZU9GVkk0cWI5WDNZaS1FUWo3aHlhRkZYVXBud25OQlFBYWlQV09zcmJHRUN4RnY3dHZXVFJoZUE0ZVpFRjQzaTZLQ0pkUlpITHN2VVk3OFAtYzN5T1pBZnZpdGNOR3FEMUhVekUtZzFmdjdaYUZPekVaUkwwbW53eWZvbWp0RFpwa1FreFFkVFo?oc=5",
-"summary": "North Belfast man who donated kidney takes part in 'Grand Organ Donation Life Cycle' at Grand Central Station Belfast Media Group",
-"outlet": "Belfast Media Group",
-"published": "2026-10-03T08:34:54+00:00",
-"id": "869bfb2f74c9369c",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
