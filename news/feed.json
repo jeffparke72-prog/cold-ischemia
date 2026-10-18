@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-18T06:30:43.545380+00:00",
+"updated": "2026-10-18T11:37:19.228302+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -94,17 +94,17 @@
 "name": "Google News: transplant & organ donation policy",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": true,
-"count": 30,
-"error": null
+"ok": false,
+"count": 0,
+"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
 },
 {
 "name": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=dialysis+OR+%22kidney+disease%22+OR+%22kidney+failure%22+OR+ESRD+OR+%22kidney+transplant%22+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": true,
-"count": 30,
-"error": null
+"ok": false,
+"count": 0,
+"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
 },
 {
 "name": "KFF Health News",
