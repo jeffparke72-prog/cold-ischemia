@@ -1,21 +1,21 @@
 {
 "version": 3,
-"updated": "2026-10-19T12:54:52.540102+00:00",
+"updated": "2026-10-19T19:14:11.079283+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
 "category": "Research",
 "url": "https://pubmed.ncbi.nlm.nih.gov/",
-"ok": true,
-"count": 30,
-"error": null
+"ok": false,
+"count": 0,
+"error": "HTTPError: HTTP Error 500: Internal Server Error"
 },
 {
 "name": "PubMed: transplant policy & organ procurement",
 "category": "Policy",
 "url": "https://pubmed.ncbi.nlm.nih.gov/",
 "ok": true,
-"count": 30,
+"count": 0,
 "error": null
 },
 {
@@ -23,7 +23,7 @@
 "category": "Research",
 "url": "https://pubmed.ncbi.nlm.nih.gov/",
 "ok": true,
-"count": 30,
+"count": 0,
 "error": null
 },
 {
@@ -133,6 +133,149 @@
 ],
 "items": [
 {
+"title": "Misdiagnosed Failure in Home Dialysis Adoption: A Call for Clinical Accountability - Cureus",
+"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNcG9uMHY0bjBNR2c4R2RLN09uR2I5TGdtZmRxN1RLMjB3RTNIQnZxWEd1NmpzeU9sRmJwVzUwZk5NNVBXaEFxd3VFZU5zREZNdElNTThGRVNPMk9kN3ZzeGdjRklEQVZoRWF3S3RldC0wMVRtQ0ZjV1pSYl9JOWZVWEhMbXNXMUlWWU0zU2k5RXVGeHk2cENuV3VrWkR6QWM0d0ZwRWxaOUNhRjQ3X2V1NDRPOGNTUFpnZUJHRw?oc=5",
+"summary": "Misdiagnosed Failure in Home Dialysis Adoption: A Call for Clinical Accountability Cureus",
+"outlet": "Cureus",
+"published": "2026-10-19T18:46:33+00:00",
+"id": "4f692de22ffdbb5d",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "How do you set yourself up for ergonomic success?",
+"link": "https://www.healio.com/news/ophthalmology/20261019/how-do-you-set-yourself-up-for-ergonomic-success",
+"summary": "Click here to read the Healio Exclusive, “Practice good ergonomics early in career to avoid work-related injuries.” Now that I am in the middle of my career and approaching 51 years old, I feel like my body does not bounce back as well as it used to. I feel more tension in my back and sometimes in my shoulders. I used…",
+"outlet": "",
+"published": "2026-10-19T18:24:02+00:00",
+"id": "05c63aa35be38457",
+"source": "Healio Nephrology",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "34-year-old awaiting kidney transplant named honorary deputy - FOX 5 Atlanta",
+"link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5nSUc0Vk1fNlV2N0tXbWM2b195T1pmYzNxeE1Bd2xGa2EtR3A5d3ZZSi1BTU8wV0xLREJ2RURDM0pUVkt2aGFTVTJZM2FuV1ZqeTc5VnVxMkt4MWR5SGJmZERCbjXSAWpBVV95cUxOb3ZKSm1tOE50dkhrYURxSHNwLUpqY1FUVnBTNHM3ODRpb0VIQkNKZ21XRllZVHpXbWNILWJmRkItSVFreWg1SGRxU3VTb1RpXzJPLTNHY05VMTBOR1FoZkxicFFfMWZyUnd3?oc=5",
+"summary": "34-year-old awaiting kidney transplant named honorary deputy FOX 5 Atlanta",
+"outlet": "FOX 5 Atlanta",
+"published": "2026-10-19T18:07:19+00:00",
+"id": "4f3d91e25c9ad35d",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "Structured Training Program Boosts Competence in Organ Transplant Nurses, Study Finds - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQ3J0X245Z2JwbV9CX3NJTzlJNEhlSFRHaF9rSkp2WVdRdUE5NGwwRG54UzRONUtaajItMlU1Qk1ZcmExdWNseEVTSjF1SzNaand5ck9lb3ZLQVFQcnVLTUw3Z2NtNjVjYks1R1Fsb2d5aXNPb2tNYUZTODlQbm1IV1RnTU16cGdRekJLZGhxdFRGX2hRZFhjWHB0NEgyT2d5WVQtbHZXSE9RUjdkRmc?oc=5",
+"summary": "Structured Training Program Boosts Competence in Organ Transplant Nurses, Study Finds Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-10-19T16:16:45+00:00",
+"id": "ba5845dc580cd38b",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "Estuary Biotherapeutics Launches with $103M Toward Kidney Disease Gene Therapies - Contract Pharma",
+"link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYzJnTm11T21KaTVoNk5kdzEtT2RfY3FabzJES01qRlhVOHZMOVE5Nzl1QVcwUmE3Rk5EazAwQi11dExjUHpkZmpFT2VvN0xPSE96ckc0Qmxjb0xEZ2w5T3ZBNVp0T0F1OU90UV9iR0RvaEdLUlRNbElrRDZFbkU0YkxJcFFjWGI5M0VVZzFKaHEyazdUNzJnWXpudEt2Q1hHZElWYXFZeHNHWGZVNWxPUHh2aXBjMEQ5OG9ENnJVekJSekE?oc=5",
+"summary": "Estuary Biotherapeutics Launches with $103M Toward Kidney Disease Gene Therapies Contract Pharma",
+"outlet": "Contract Pharma",
+"published": "2026-10-19T15:57:05+00:00",
+"id": "8bac2b85dd916419",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "Grand Forks Clinic and affiliated dialysis companies file for bankruptcy - Valley News Live",
+"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSklrQm5kdjdXRTNwT0FFRzItNXNQMzY4UjgwZlZQcWZPSG5kWWxreVpKbVpFLV9Lb1BSUFZYc2pVY1FWT09mbFpJZXVpX2FSamNRMVBRMkxpZ3QtTTFNdWVXam5DV2xUVXQwdkRsZUdQZW80WWRfMGV4NU5ZbGVXRmktY0RJdU9fYk1VQlR5dXR5ZnFzRkxpQWxDQTdlSVl1M3R6SkVfSUVfd0U?oc=5",
+"summary": "Grand Forks Clinic and affiliated dialysis companies file for bankruptcy Valley News Live",
+"outlet": "Valley News Live",
+"published": "2026-10-19T15:44:00+00:00",
+"id": "726c04072677b39a",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "See your patient population more clearly with the UNOS SDOH Report - UNOS | United Network for Organ Sharing",
+"link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQNDZacTl5WENDamZHbWhZbUJsRnhIOEM4SUV4R0NTTVBUZWpwckQydG8xMDBFZmM4eTAtckZEMGhFR2ZIeUZoS3gyUEx3azdMSnFCeGY1U3dzOEFWRUYxTXZoalZ5ZFl5cjRERC1qLTkwMzZzOWtBQ19YV09tNmVnZVd6SHlmNXhGTEp1QldqM2o1azg?oc=5",
+"summary": "See your patient population more clearly with the UNOS SDOH Report UNOS | United Network for Organ Sharing",
+"outlet": "UNOS | United Network for Organ Sharing",
+"published": "2026-10-19T15:16:28+00:00",
+"id": "b3748ec77a07ba3f",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "Organ Transplant Immunosuppressant Drugs Market Forecast to 2035, Driven by Rising Kidney Transplant Demand - IndexBox",
+"link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOSFBPZjBJWU1SbEZUQkxYQkFBX1RYU19wR2Rua284VXU1b3lKSW5sNW9sSEVrajZaMWloYVhtMVlHdGFVQy1OM2JURENQZVRXNjVFcTFmMGlGdkppLWhpankydkdMRzdwTkdQaGdMY0FYcG5XcXB1STZPS2VQTUs3aW52YjIzZ3pTVkphZTNUMWc2TnFNaDZjTWJmX0FNQ0wyRzZtQjJBTXo0NW03aU1nT1JRa2pOeHZHYjBvekQtbDA2TGdBWHY4UWlDa1hSVXFueGc?oc=5",
+"summary": "Organ Transplant Immunosuppressant Drugs Market Forecast to 2035, Driven by Rising Kidney Transplant Demand IndexBox",
+"outlet": "IndexBox",
+"published": "2026-10-19T14:56:05+00:00",
+"id": "c0ebd073f2fc3be0",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "Amendments to the Law on Organ Donation and Transplantation: Proposed with many new policies. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPNFdZYTBTQ1U3ODdGcFNOUXl3S2N2QUhLT3Z3dmJuVUpEMC1kZDduV21DVDFKZ1JpOUI5NFJSZzMyQ3h6Y1cxb3lPSERTSGtlYXFfZ090dDNuRTJjR2dGTnBGTVNzTnJrVk40VXlleWplQ0pMeVBxYVBtRE90a3Nvc1QzLTdRanRuTVE?oc=5",
+"summary": "Amendments to the Law on Organ Donation and Transplantation: Proposed with many new policies. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-10-19T14:53:32+00:00",
+"id": "32ae141df24dd5be",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "Improving the effectiveness of organ donation and transplantation in Vietnam. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQSGp5TkNPVVhWVExiUk5TOV9TMnJIVzVxaURtRVNGMjQxOUdPZU44T0VSXzh3aW9XS2o3NnU5b3hOX1llMVItcGZFaEhlS1JQeVVpZllKR0E5c3hrQU5pT0VTYzlDTnY1Yi1vMWI2cmNlWmM4WEJfS2tIQVlhU2taMlZ2bHhLT0Fl?oc=5",
+"summary": "Improving the effectiveness of organ donation and transplantation in Vietnam. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-10-19T14:30:26+00:00",
+"id": "8547db063fab33c8",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "Practice good ergonomics early in career to avoid injuries",
+"link": "https://www.healio.com/news/ophthalmology/20261019/practice-good-ergonomics-early-in-career-to-avoid-workrelated-injuries",
+"summary": "Click here to read the At Issue to this Healio Exclusive, “Practice good ergonomics early in career to avoid work-related injuries.” For ophthalmologists, occupational pain can start early. For Cynthia Matossian, MD, FACS, discomfort arose fewer than 5 years into her career. She said surgeons often find themselves in…",
+"outlet": "",
+"published": "2026-10-19T14:06:46+00:00",
+"id": "9aebc7ded13e4139",
+"source": "Healio Nephrology",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "GLP-1 drugs linked to lower kidney failure risk in bipolar disorder | Newswise - Newswise",
+"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQQ2lWZmI3ZV9mSzFkd0cwSTBKSWRDNW1zVmlJWWVobUJBOGt1YnZ2NnVhUXNfOWp1dHZXaTM2ZDJab25mVHFYal9WQVk0ZnJrRmVxWnZGUUVTaWFjeHdobldXeUFlRW1YT0NhclNNdXQ2RlRUeGNvb3lkYjVVc3BkRDdCekN5NDhRRHZIXy00b3hkYmhaSlAyeFdnaFpUdGZCaDV4NHJqUU1mc2JBczYtdENEaTRmUklwNkQ4ZNIBvAFBVV95cUxQQ2lWZmI3ZV9mSzFkd0cwSTBKSWRDNW1zVmlJWWVobUJBOGt1YnZ2NnVhUXNfOWp1dHZXaTM2ZDJab25mVHFYal9WQVk0ZnJrRmVxWnZGUUVTaWFjeHdobldXeUFlRW1YT0NhclNNdXQ2RlRUeGNvb3lkYjVVc3BkRDdCekN5NDhRRHZIXy00b3hkYmhaSlAyeFdnaFpUdGZCaDV4NHJqUU1mc2JBczYtdENEaTRmUklwNkQ4ZA?oc=5",
+"summary": "GLP-1 drugs linked to lower kidney failure risk in bipolar disorder | Newswise Newswise",
+"outlet": "Newswise",
+"published": "2026-10-19T13:30:00+00:00",
+"id": "8f1f396e6aa7a06a",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
+"title": "'I want to zig when others are zagging': A Bay Area biotech startup targets a devastating kidney disease - The Business Journals",
+"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMUZiRHhGMXVvZnFqYTg3dk5HQ1NGYV9Mckg4M2x4Q0xDLXhnYTEwNy1CcnM2WkZudG1peFRjU1dIZ2FPTmNCU0tiVHN3RWdyMDRjQnVGLXdaN0duVWJuOThyQVQyNjRxdDBGYm5IZEx1SGZrOFZHUUV1ZEt5Qmp5UTQ1Q216djN1dlhteThSNFVhNnFwOTcxSXFBZU1ESmxIRTZnQVZkdFExdw?oc=5",
+"summary": "'I want to zig when others are zagging': A Bay Area biotech startup targets a devastating kidney disease The Business Journals",
+"outlet": "The Business Journals",
+"published": "2026-10-19T13:26:00+00:00",
+"id": "1ace8d4434b65e0d",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
+},
+{
 "title": "Novartis ends Fabhalta trial for lupus kidney disease - Investing.com",
 "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQLWo3TXpUWXB2aHZRSTZjLXhVT1gxUmhOclJXeGNnR2VfM1Nub2hoNFBYX3BJLWtjNWoybHRKMFptbzRkWUhaYmM5WUZsNHo3MXFFaHRxLW5OdGdEVEtiY2tUTklQb2JqejdDUldKSVNqekg1MG0ySVVfMGtNX0hZU2hsREp2bWhBaUtuS1gxVmxjbERURFZaWkJkcnBhUlJ5ZW1tQlBDOFRXSHdmYUM4?oc=5",
 "summary": "Novartis ends Fabhalta trial for lupus kidney disease Investing.com",
@@ -164,6 +307,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-19T12:54:52.540102+00:00"
+},
+{
+"title": "Metabolic Control and the Symptoms/Problems Domain of Kidney Disease-Specific Quality of Life in Patients Receiving Kidney Replacement Therapy",
+"link": "https://www.medrxiv.org/content/10.64898/2026.10.16.26365777v1?rss=1",
+"summary": "Abstract Background Health-related quality of life (HRQoL) is an important outcome in patients with chronic kidney disease (CKD) receiving kidney replacement therapy (KRT), but the relationship between comprehensive metabolic control and the Symptoms/Problems domain of kidney diseasespecific HRQoL remains uncertain.…",
+"outlet": "",
+"published": "2026-10-19T00:00:00+00:00",
+"id": "35d6cd2b19651ac8",
+"source": "medRxiv: Nephrology preprints",
+"category": "Research",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
 },
 {
 "title": "This Quebec woman’s liver is 111 years old. She hikes to raise awareness for organ donation - CTV News",
@@ -901,6 +1055,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-15T23:47:37.310134+00:00"
+},
+{
+"title": "HHS decertifies organ procurement organization serving Kentucky, RFK Jr. says - Z93 Country",
+"link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1NLUZKTW1tWDE2d3FZbEw0RjZzTnlPb2wyVVpYSkk3bEFNdnVvb2FFWDVJRC1KU05vbUpPeENJeHhfSWREMU5jY3BnNWlSMHdtQ0xZV09vS3BULVlmclBv?oc=5",
+"summary": "HHS decertifies organ procurement organization serving Kentucky, RFK Jr. says Z93 Country",
+"outlet": "Z93 Country",
+"published": "2026-10-15T22:10:27+00:00",
+"id": "97505e414209d39a",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-19T19:14:11.079283+00:00"
 },
 {
 "title": "This Plant-Forward Eating Style Could Help Older Adults With Kidney Disease Cut Down on Daily Prescriptions - Men's Journal",
@@ -5463,171 +5628,6 @@
 "outlet": "",
 "published": "2026-10-03T19:19:46.657233+00:00",
 "id": "992247bc52a11a48",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Clinical and Pathologic Characteristics of Patients With ANCA-Associated Vasculitis With Renal Arteritis",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032869?dgcid=rss_sd_all",
-"summary": "By Yan-Jie Li, Shu-Juan Zhao, Fan Zhang, Shu-Hong Bi, Zhi-Ying Li, Xiao-Juan Yu, Su-Xia Wang, Jin-Wei Wang, Xiao-Tao Ma, Jing Wang, Yi Li, Zu-Ying Xiong, Yue Wang, Rong-Guo Fu, Su-Fang Chen, Ming-Hui Zhao, Min Chen",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "92e917771e320877",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Leveraging Natural Language Processing to Identify Variation in Kidney Transplant Access",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032444?dgcid=rss_sd_all",
-"summary": "By Sri Lekha Tummalapalli, Matthew Manganel, Will Simmons, Jonathan Lin, Braja Gopal Patra, Prakash Adekkanattu, Nivedita Chang, Margaret M. Fabiszak, Daniel M. Levine, Yifan Peng, Evan Sholle, Jeffrey Silberzweig,…",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "f06358d057c80d4f",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Characterizing Within-Center Placement of Out-of-Sequence Deceased-Donor Kidney Transplants",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032833?dgcid=rss_sd_all",
-"summary": "By Emma G. Tucker, Miko E. Yu, Joel T. Adler, David C. Cron, Jesse D. Schold, Sumit Mohan, Syed Ali Husain",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "bd346bc66767a92d",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Systematic Review of Persistent Microscopic Hematuria and Kidney Outcomes in IgAN",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032705?dgcid=rss_sd_all",
-"summary": "By Gian Marco Berti, Daniele Vetrano, Edoardo Tringali, Francesco Tondolo, Chiara Cantarelli, Gisella Vischini, Elisa Gessaroli, Giorgia Comai, Gaetano La Manna, Federica Maritati",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "1207f3181349f48c",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Kidney Transcatheter Arterial Embolization Reduces Kidney Cyst Infection in Patients With ADPKD",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033000?dgcid=rss_sd_all",
-"summary": "By Yusuke Yoshimura, Tatsuya Suwabe, Akinari Sekine, Susumu Tsunoda, Hiroki Mizuno, Yuki Oba, Hisashi Kamido, Hikaru Tanimizu, Ayumi Kishioka, Masatoshi Yoshimoto, Noriko Inoue, Eiko Hasegawa, Masayuki Yamanouchi,…",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "f64256726674de5b",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Multimodal Profiling of Complement Expression and Association With Outcomes in ANCA-Associated Vasculitis With Glomerulonephritis",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032882?dgcid=rss_sd_all",
-"summary": "By Benoît Brilland, Victor Milon, Cyrille Vandenbussche, Nathalie Merillon, Eleonore Ourouda, Andrea Boizard-Moracchini, Maëva Roy, Odile Blanchet, Emeline Vinatier, Céline Beauvillain, Thomas Quéméneur, Assia Djema,…",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "d211f98e2b06e81d",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Genetic Variants With Small Discordant Effects on eGFR and Risk of CKD",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032432?dgcid=rss_sd_all",
-"summary": "By Archish Sadeesh, Pukhraj Gaheer, Nikhil Uppal, Matthew B. Lanktree",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "b0f0a691a7d7d8f2",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "De Novo Contactin-1-Associated Membranous Nephropathy in Kidney Allograft",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032912?dgcid=rss_sd_all",
-"summary": "By Dory Arevalo Salazar, Edward Walshe, Aarti Kalra, Jason D. Theis, Sanjeev Sethi",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "9a6faee564555678",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Lack of Short-Term Antiproteinuric Response to Dapagliflozin in a Patient With Dent Disease Type 2",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032717?dgcid=rss_sd_all",
-"summary": "By François Jouret",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "81c71b6812e9defa",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Response to the Letter to the Editor Entitled “From Molecular Signal to Clinical Action in Cardiovascular-Kidney-Metabolic Disease 2”",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032481?dgcid=rss_sd_all",
-"summary": "By William R. Marshall, Thomas McDonnell, Darren Green, Smeeta Sinha, Philip A. Kalra",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "874905ebc8ba8da7",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "From Molecular Signal to Clinical Action in Cardiovascular-Kidney-Metabolic Disease",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032493?dgcid=rss_sd_all",
-"summary": "By Kunsheng Wu, Gaohua Cao, Yulong Yu",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "6a71b4c289067ef6",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Response to the Letter “Clarifying Postpartum Renal Risk After Hemolysis, Elevated Liver Enzymes, and Low Platelet Count Syndrome”",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032985?dgcid=rss_sd_all",
-"summary": "By Jean-Michel Halimi, Grégory Lailler, Valentin Maisons, Bénédicte Sautenet, Laurent Faucher, Jean-Baptiste de Fréminville, Jacques Blacher, Valérie Olié",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "c5093b2e861b2056",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Clarifying Postpartum Renal Risk After HELLP Syndrome",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032997?dgcid=rss_sd_all",
-"summary": "By Lin Yi, Cheng Huang, Tong Liu, Yue Liu",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "0da64ff0f8a86ce4",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Readiness for Peritoneal Dialysis Implementation in Ethiopia: A National Survey of Nephrologists",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032973?dgcid=rss_sd_all",
-"summary": "By Wubshet Jote Tolossa, Ayantu Tesfaye Lemma, Helen Gebremedhin Gebreegziabhier, Talerngsak Kanjanabuch",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "8018decc3155ae55",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Pregnancy-Related AKI in South Asia: Etiology, Practice Patterns, Outcomes, and System Barriers",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033036?dgcid=rss_sd_all",
-"summary": "By Priti Meena, Rubina Naqvi, Krishna Kumar Agrawaal, Shubhathi Kar, Bimal Pandey, Mohammad Ahad Qayyum, Eranga Wijewickrama, Dilushi Wijayaratne, Sayful Hasan, Jagdish Lamsal, Vinant Bhargava",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "d0e5375378e0b24b",
 "source": "Kidney International Reports",
 "category": "Journals",
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
