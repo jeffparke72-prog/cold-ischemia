@@ -165,7 +165,7 @@ J={'pace':2.45,'gap':.0,'lead':0,'style':{'bar':110},
 'open':{'logo':'/_filmwork/founder/img/logo.png','w':820,'y':160,'from':0,'until':0},
 'bug':{'src':'/_filmwork/founder/img/logo-crop.png','x':88,'y':124,'w':230,'in':0},
 'overlay':{'src':'/_filmwork/founder/img/jeff-cut.png','right':1840,'y':136,'w':230,'in':1.4,'tag':'Jeff Parke','tag2':'Founder'},
-'end':{'logo':'/_filmwork/founder/img/logo.png','logoW':520,'logoY':90,'mark':'/_filmwork/policy/img/donate.png','markW':120,'markY':820,'headline':'You have choices','sub':'Cold Ischemia Foundation','lines':['coldischemia.foundation','Sources: CDC 2026; DaVita FY2025; DOJ via ABA 2024; KFF Health News; SRTR 2024; NEJM 2017; USRDS 2024; BMC Nephrology 2025; each organization\'s own website.','Allegations are allegations. Educational advocacy, not medical or legal advice.'],'strong':1,'hold':14},
+'end':{'logo':'/_filmwork/founder/img/logo.png','logoW':520,'logoY':90,'mark':'/_filmwork/policy/img/donate.png','markW':120,'markY':820,'headline':'You have choices','sub':'Cold Ischemia Foundation','lines':['coldischemia.foundation/founder-message.html','Sources and the full transcript are on that page.','Allegations are allegations. Educational advocacy, not medical or legal advice.'],'strong':1,'hold':14},
 'segments':segs}
 # reveal/groove/bug timing
 R=[s for s in segs if s['id']=='reveal'][0];Nm=[s for s in segs if s['id']=='name'][0];A=[s for s in segs if s['id']=='ask'][0]

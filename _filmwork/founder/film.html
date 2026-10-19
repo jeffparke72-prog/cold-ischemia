@@ -189,7 +189,7 @@ function endcard(t){
   if(END.mark&&IMGS[END.mark]){var mi=IMGS[END.mark],mw=END.markW||190,mh=mw*mi.naturalHeight/mi.naturalWidth;g.save();g.globalAlpha=a*.95;g.drawImage(mi,960-mw/2,END.markY||760,mw,mh);g.restore()}
   if(END.headline)T(String(END.headline).toUpperCase(),960,560,'400 '+fit(String(END.headline).toUpperCase(),'Anton',84,1700,5)+'px Anton',ST.accent,'center',a,5);
   if(END.sub)T(String(END.sub).toUpperCase(),960,625,'500 30px "IBM Plex Mono"',ST.ink,'center',a,10);
-  (END.lines||[]).forEach(function(l,i){T(l,960,715+i*52,'500 27px "IBM Plex Mono"',i<(END.strong||0)?ST.ink:ST.dim,'center',a*ss(.5+i*.15,1.2+i*.15,t-s0),1)});
+  (END.lines||[]).forEach(function(l,i){T(l,960,715+i*50,(i===0?'500 32px':'500 23px')+' "IBM Plex Mono"',i<(END.strong||0)?ST.ink:ST.dim,'center',a*ss(.5+i*.15,1.2+i*.15,t-s0),1)});
 }
 
 /* ---------- render ---------- */
