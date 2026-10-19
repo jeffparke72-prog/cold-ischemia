@@ -1,0 +1,1141 @@
+{
+ "pace": 2.45,
+ "gap": 0.45,
+ "lead": 2.2,
+ "style": {
+  "bar": 110
+ },
+ "music": {
+  "mood": "neutral",
+  "level": 0.92,
+  "piano": true,
+  "heartbeat": false,
+  "groove": [
+   [
+    0,
+    75.21,
+    104,
+    1.0
+   ],
+   [
+    394.01,
+    461,
+    104,
+    1.0
+   ]
+  ]
+ },
+ "open": {
+  "logo": "/_filmwork/founder/img/logo.png",
+  "w": 820,
+  "y": 160,
+  "from": 65.51,
+  "until": 75.21
+ },
+ "bug": {
+  "src": "/_filmwork/founder/img/logo-crop.png",
+  "x": 88,
+  "y": 124,
+  "w": 230,
+  "in": 74.41
+ },
+ "overlay": {
+  "src": "/_filmwork/founder/img/jeff-cut.png",
+  "right": 1840,
+  "y": 136,
+  "w": 230,
+  "in": 1.4,
+  "tag": "Jeff Parke",
+  "tag2": "Founder"
+ },
+ "end": {
+  "logo": "/_filmwork/founder/img/logo.png",
+  "logoW": 520,
+  "logoY": 90,
+  "mark": "/_filmwork/policy/img/donate.png",
+  "markW": 120,
+  "markY": 820,
+  "headline": "You have choices",
+  "sub": "Cold Ischemia Foundation",
+  "lines": [
+   "coldischemia.foundation",
+   "Sources: CDC 2026; DaVita FY2025; DOJ via ABA 2024; KFF Health News; SRTR 2024; NEJM 2017; USRDS 2024; BMC Nephrology 2025; each organization's own website.",
+   "Allegations are allegations. Educational advocacy, not medical or legal advice."
+  ],
+  "strong": 1,
+  "hold": 14
+ },
+ "segments": [
+  {
+   "id": "hello",
+   "type": "title",
+   "text": "Hi. I'm Jeff, the founder of the Cold Ischemia Foundation.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.52,
+    "blur": 6,
+    "pan": "left",
+    "zoom": 0.08
+   },
+   "intensity": 0.15,
+   "lines": [
+    {
+     "t": "HI. I'M JEFF.",
+     "c": "accent"
+    }
+   ],
+   "kicker": "Founder, Cold Ischemia Foundation"
+  },
+  {
+   "id": "watching",
+   "type": "list",
+   "text": "If you're watching this, kidney disease has probably walked into your life, or into the life of someone you love. Maybe you're on dialysis. Maybe you're waiting for a call that hasn't come. Maybe you're the care partner, the one driving, scheduling, filling the pill box, and holding the whole family together.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.62,
+    "blur": 8,
+    "pan": "right",
+    "zoom": 0.07
+   },
+   "intensity": 0.15,
+   "rows": [
+    {
+     "t": "Maybe you are on dialysis"
+    },
+    {
+     "t": "Maybe you are waiting for a call"
+    },
+    {
+     "t": "Maybe you are the care partner",
+     "s": "Holding the whole family together"
+    }
+   ]
+  },
+  {
+   "id": "iseeyou",
+   "type": "title",
+   "text": "I want to start with what nobody said to me: I see you.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.5,
+    "blur": 4,
+    "pan": "up",
+    "zoom": 0.1
+   },
+   "intensity": 0.2,
+   "lines": [
+    {
+     "t": "I SEE YOU.",
+     "c": "accent"
+    }
+   ]
+  },
+  {
+   "id": "patient",
+   "type": "title",
+   "text": "I'm a patient. I've lived this system from the inside. I know the chair. I know the waiting. I know what it feels like to be handed a pamphlet when what you needed was an answer.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.66,
+    "blur": 8,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.3,
+   "lines": [
+    {
+     "t": "I'M A PATIENT.",
+     "c": "ink"
+    },
+    {
+     "t": "I'VE LIVED THIS SYSTEM.",
+     "c": "accent"
+    }
+   ]
+  },
+  {
+   "id": "nobody",
+   "type": "title",
+   "text": "And I know the moment you realize that nobody is coming to explain it, and you have to figure it out yourself.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.68,
+    "blur": 8,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.3,
+   "lines": [
+    {
+     "t": "NOBODY IS COMING",
+     "c": "ink"
+    },
+    {
+     "t": "TO EXPLAIN IT.",
+     "c": "accent2"
+    }
+   ]
+  },
+  {
+   "id": "why1",
+   "type": "title",
+   "text": "That is why I started this foundation. And that is why I made this video.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.52,
+    "blur": 5,
+    "pan": "left",
+    "zoom": 0.09
+   },
+   "intensity": 0.25,
+   "lines": [
+    {
+     "t": "THAT IS WHY",
+     "c": "ink"
+    },
+    {
+     "t": "I STARTED THIS.",
+     "c": "accent"
+    }
+   ]
+  },
+  {
+   "id": "reveal",
+   "type": "blank",
+   "text": "So let me introduce us properly. This is the Cold Ischemia Foundation.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.6,
+    "blur": 10,
+    "pan": "up",
+    "zoom": 0.05
+   },
+   "intensity": 0.2,
+   "dur": 9.5,
+   "captions": true
+  },
+  {
+   "id": "name",
+   "type": "title",
+   "text": "In medicine, cold ischemia is the time an organ can survive once it's been cut off from what keeps it alive. We took that name for a reason.",
+   "bg": {
+    "src": "/research-banner.png",
+    "dim": 0.74,
+    "blur": 22,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.45,
+   "lines": [
+    {
+     "t": "COLD ISCHEMIA:",
+     "c": "accent2"
+    },
+    {
+     "t": "CUT OFF FROM WHAT",
+     "c": "ink"
+    },
+    {
+     "t": "KEEPS IT ALIVE.",
+     "c": "ink"
+    }
+   ],
+   "hits": [
+    0.05
+   ]
+  },
+  {
+   "id": "people",
+   "type": "list",
+   "text": "We have watched the same thing happen to people. Cut off from answers. Cut off from respect. Cut off from any real say in their own care. Slowly going cold.",
+   "bg": {
+    "src": "/stress.png",
+    "dim": 0.7,
+    "blur": 14,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.5,
+   "rows": [
+    {
+     "t": "Cut off from answers"
+    },
+    {
+     "t": "Cut off from respect"
+    },
+    {
+     "t": "Cut off from any real say in their own care"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "type": "title",
+   "text": "Our whole job is to end that cold interval.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.62,
+    "blur": 8,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.55,
+   "lines": [
+    {
+     "t": "END THE",
+     "c": "ink"
+    },
+    {
+     "t": "COLD INTERVAL.",
+     "c": "accent"
+    }
+   ],
+   "hits": [
+    0.3
+   ],
+   "dur": 4.2
+  },
+  {
+   "id": "tools",
+   "type": "list",
+   "text": "Here is what that looks like. We build free tools you can use tonight: a living donor assessment, a state-by-state directory of transplant centers with direct phone numbers, guides written for care partners.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.7,
+    "blur": 8,
+    "pan": "left",
+    "zoom": 0.07
+   },
+   "intensity": 0.5,
+   "rows": [
+    {
+     "t": "A living donor assessment"
+    },
+    {
+     "t": "Transplant centers, state by state",
+     "s": "With direct phone numbers"
+    },
+    {
+     "t": "Guides written for care partners"
+    }
+   ]
+  },
+  {
+   "id": "mentors",
+   "type": "title",
+   "text": "We build the guides and the mentors who have been where you are. And we build the confidence to understand your own body, your own numbers, and your own choices.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.62,
+    "blur": 6,
+    "pan": "right",
+    "zoom": 0.07
+   },
+   "intensity": 0.55,
+   "lines": [
+    {
+     "t": "YOUR OWN BODY.",
+     "c": "ink"
+    },
+    {
+     "t": "YOUR OWN NUMBERS.",
+     "c": "ink"
+    },
+    {
+     "t": "YOUR OWN CHOICES.",
+     "c": "accent"
+    }
+   ]
+  },
+  {
+   "id": "choices",
+   "type": "title",
+   "text": "Because you have choices. If you remember one sentence from this video, remember that one.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.52,
+    "blur": 4,
+    "pan": "left",
+    "zoom": 0.1
+   },
+   "intensity": 0.6,
+   "lines": [
+    {
+     "t": "YOU HAVE",
+     "c": "ink"
+    },
+    {
+     "t": "CHOICES.",
+     "c": "accent"
+    }
+   ],
+   "hits": [
+    0.12
+   ]
+  },
+  {
+   "id": "whynow",
+   "type": "title",
+   "text": "So why this video, and why now?",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.66,
+    "blur": 8,
+    "pan": "down",
+    "zoom": 0.06
+   },
+   "intensity": 0.45,
+   "lines": [
+    {
+     "t": "WHY THIS VIDEO?",
+     "c": "ink"
+    },
+    {
+     "t": "WHY NOW?",
+     "c": "accent"
+    }
+   ],
+   "dur": 3.6
+  },
+  {
+   "id": "search",
+   "type": "title",
+   "text": "Because every week, someone newly diagnosed types \"kidney disease\" into a search bar and lands on a page that feels caring and independent. And too often, that page is paid for by the companies that profit from what happens next.",
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.74,
+    "blur": 18,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.6,
+   "lines": [
+    {
+     "t": "A PAGE THAT FEELS",
+     "c": "ink"
+    },
+    {
+     "t": "CARING AND INDEPENDENT.",
+     "c": "ink"
+    },
+    {
+     "t": "PAID FOR BY THE COMPANIES",
+     "c": "alert"
+    },
+    {
+     "t": "THAT PROFIT FROM WHAT'S NEXT.",
+     "c": "alert"
+    }
+   ]
+  },
+  {
+   "id": "villain",
+   "type": "title",
+   "text": "I'm not calling anyone a villain. I'm telling you that you deserve to know who is paying for the voice that is talking to you. Nobody else is going to say it. So I will.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.68,
+    "blur": 8,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.65,
+   "lines": [
+    {
+     "t": "WHO IS PAYING FOR",
+     "c": "ink"
+    },
+    {
+     "t": "THE VOICE TALKING TO YOU?",
+     "c": "accent"
+    }
+   ],
+   "hits": [
+    0.9
+   ]
+  },
+  {
+   "id": "s37",
+   "type": "stat",
+   "text": "Start with the size of it. Thirty-seven million Americans have kidney disease,",
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.74,
+    "blur": 22,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.6,
+   "stat": {
+    "value": 37,
+    "suffix": " MILLION",
+    "label": "Americans with kidney disease",
+    "c": "accent2"
+   },
+   "src": "CDC chronic kidney disease fact sheet, March 2026"
+  },
+  {
+   "id": "s87",
+   "type": "stat",
+   "text": "and the CDC says eighty-seven percent of the adults who have it do not know. Most people find out when it is already a crisis.",
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.74,
+    "blur": 22,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.7,
+   "stat": {
+    "value": 87,
+    "suffix": "%",
+    "label": "of adults with kidney disease do not know it",
+    "sub": [
+     "Adults 20 and older"
+    ],
+    "c": "alert"
+   },
+   "src": "CDC chronic kidney disease fact sheet, March 2026"
+  },
+  {
+   "id": "duo",
+   "type": "stat",
+   "text": "And when it is a crisis, there are two companies. DaVita and Fresenius treat roughly three in four dialysis patients in this country.",
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.74,
+    "blur": 18,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.75,
+   "stat": {
+    "value": 75,
+    "prefix": "~",
+    "suffix": "%",
+    "label": "of dialysis patients: two companies",
+    "sub": [
+     "DaVita + Fresenius"
+    ],
+    "c": "alert"
+   },
+   "src": "DaVita 10-K FY2025; industry analyses (estimated 70 to 75 percent)"
+  },
+  {
+   "id": "rev",
+   "type": "stat",
+   "text": "DaVita alone brought in thirteen point six billion dollars last year.",
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.74,
+    "blur": 22,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "stat": {
+    "value": 13.6,
+    "prefix": "$",
+    "suffix": "B",
+    "label": "DaVita revenue, 2025",
+    "c": "accent"
+   },
+   "src": "DaVita 4th quarter 2025 results, Feb 2, 2026",
+   "dur": 4.8
+  },
+  {
+   "id": "settle",
+   "type": "stat",
+   "text": "In 2024 it paid more than thirty-four million to settle federal kickback allegations, without admitting liability. Those are allegations. The revenue is not.",
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.76,
+    "blur": 18,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.85,
+   "stat": {
+    "value": 34.5,
+    "prefix": "$",
+    "suffix": "M",
+    "label": "2024 settlement of federal kickback allegations",
+    "sub": [
+     "No admission of liability"
+    ],
+    "c": "alert"
+   },
+   "src": "U.S. Department of Justice, July 2024 (as reported by the ABA)"
+  },
+  {
+   "id": "home",
+   "type": "stat",
+   "text": "Meanwhile only about one patient in seven dialyzes at home.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.74,
+    "blur": 10,
+    "pan": "up",
+    "zoom": 0.06
+   },
+   "intensity": 0.7,
+   "stat": {
+    "value": 1,
+    "prefix": "1 IN ",
+    "suffix": "",
+    "label": "dialyze at home",
+    "c": "accent2",
+    "plain": true
+   },
+   "src": "USRDS 2024 Annual Data Report (14.5 percent, 2022)",
+   "dur": 4.8
+  },
+  {
+   "id": "refer",
+   "type": "stat",
+   "text": "And a 2025 analysis of seventy-two studies found that seeing a kidney specialist early cut catheter starts by more than half. Early. Before the crisis. That is what prevention looks like, and it does not bill by the treatment.",
+   "bg": {
+    "src": "/research-banner.png",
+    "dim": 0.76,
+    "blur": 22,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.7,
+   "stat": {
+    "value": 57,
+    "suffix": "%",
+    "label": "lower risk of a catheter start with early referral",
+    "sub": [
+     "72 studies, 2025 meta-analysis"
+    ],
+    "c": "accent2"
+   },
+   "src": "BMC Nephrology 2025 meta-analysis (relative risk 0.43)"
+  },
+  {
+   "id": "part",
+   "type": "title",
+   "text": "Now here is the part some people won't like.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.66,
+    "blur": 8,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.7,
+   "lines": [
+    {
+     "t": "NOW, THE PART SOME",
+     "c": "ink"
+    },
+    {
+     "t": "PEOPLE WON'T LIKE.",
+     "c": "accent"
+    }
+   ],
+   "dur": 3.8
+  },
+  {
+   "id": "nejm",
+   "type": "stat",
+   "text": "In 2017, researchers in the New England Journal of Medicine looked at the hundred and four largest patient advocacy organizations in America. Eighty-three percent took money from drug, device, or biotech companies. Only one of the hundred and four said plainly that it did not.",
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.76,
+    "blur": 20,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "stat": {
+    "value": 83,
+    "suffix": "%",
+    "label": "of the 104 largest patient advocacy groups took industry money",
+    "sub": [
+     "Only 1 of 104 said it did not"
+    ],
+    "c": "alert"
+   },
+   "src": "McCoy et al., New England Journal of Medicine, 2017"
+  },
+  {
+   "id": "akf",
+   "type": "stat",
+   "text": "Kidney care is no different. The American Kidney Fund has been reported to draw roughly eighty percent of its donor base from DaVita and Fresenius. It denies steering patients, and the Justice Department declined to join the whistleblower suit.",
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.76,
+    "blur": 22,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "stat": {
+    "value": 80,
+    "prefix": "~",
+    "suffix": "%",
+    "label": "American Kidney Fund donor base from DaVita and Fresenius",
+    "sub": [
+     "As reported. The fund denies steering patients."
+    ],
+    "c": "alert"
+   },
+   "src": "KFF Health News; American Prospect, 2019"
+  },
+  {
+   "id": "others",
+   "type": "list",
+   "text": "The National Kidney Foundation's corporate membership lists Boehringer Ingelheim, Novo Nordisk, and Vertex. The American Association of Kidney Patients lists DaVita, Fresenius, and Amgen. And Dialysis Patient Citizens was founded with an educational grant from DaVita.",
+   "bg": {
+    "src": "/research-banner.png",
+    "dim": 0.76,
+    "blur": 22,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.75,
+   "rows": [
+    {
+     "t": "National Kidney Foundation",
+     "s": "Corporate members include Boehringer Ingelheim, Novo Nordisk, Vertex"
+    },
+    {
+     "t": "American Association of Kidney Patients",
+     "s": "Corporate partners include DaVita, Fresenius, Amgen"
+    },
+    {
+     "t": "Dialysis Patient Citizens",
+     "s": "Founded with an educational grant from DaVita"
+    }
+   ],
+   "src": "Each organization's own website; Dialysis Patient Citizens funding fact sheet"
+  },
+  {
+   "id": "legal",
+   "type": "title",
+   "text": "None of that is illegal. Taking industry money is legal, and common, and some of these groups do real work. I'm not telling you what to think about any of them. I'm telling you to look at the table.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.66,
+    "blur": 8,
+    "pan": "down",
+    "zoom": 0.06
+   },
+   "intensity": 0.7,
+   "lines": [
+    {
+     "t": "NONE OF THAT IS ILLEGAL.",
+     "c": "ink"
+    },
+    {
+     "t": "LOOK AT THE TABLE.",
+     "c": "accent"
+    }
+   ],
+   "hits": [
+    0.88
+   ]
+  },
+  {
+   "id": "table",
+   "type": "table",
+   "text": "Now look at us. No donations. No funding, gifts, grants, or sponsorships from drugmakers, device makers, dialysis companies, insurers, hospital systems, or any advocacy group they fund. We charge fees only for services you ask for, at posted rates, and a fee never buys influence. No drugmaker, dialysis company, insurer, or hospital system has a seat on our board.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.78,
+    "blur": 10,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "table": {
+    "title": "Who funds the voices that speak for patients?",
+    "cols": [
+     {
+      "h": "Cold Ischemia Foundation"
+     },
+     {
+      "h": "American Kidney Fund"
+     },
+     {
+      "h": "National Kidney Foundation"
+     },
+     {
+      "h": "American Assoc. of Kidney Patients"
+     },
+     {
+      "h": "Dialysis Patient Citizens"
+     }
+    ],
+    "rows": [
+     {
+      "q": "Takes drugmaker money",
+      "cells": [
+       {
+        "t": "No",
+        "ok": true,
+        "s": "No donations or sponsors"
+       },
+       {
+        "t": "Yes",
+        "s": "2025 members: Novartis, Amgen, Novo Nordisk"
+       },
+       {
+        "t": "Yes",
+        "s": "2026 members: Boehringer, Novo Nordisk, Vertex"
+       },
+       {
+        "t": "Yes",
+        "s": "Partners: Amgen, AstraZeneca, Bayer"
+       },
+       {
+        "t": "Unverified",
+        "gray": true,
+        "s": "See its Form 990"
+       }
+      ]
+     },
+     {
+      "q": "Takes dialysis-company money",
+      "cells": [
+       {
+        "t": "No",
+        "ok": true,
+        "s": "None, of any kind"
+       },
+       {
+        "t": "Yes",
+        "s": "DaVita + Fresenius, ~80% of donors (reported)"
+       },
+       {
+        "t": "Yes",
+        "s": "Fresenius publicized its support"
+       },
+       {
+        "t": "Yes",
+        "s": "DaVita, Fresenius listed as partners"
+       },
+       {
+        "t": "Yes",
+        "s": "Founded with a DaVita grant; DaVita, Fresenius, U.S. Renal Care listed"
+       }
+      ]
+     },
+     {
+      "q": "Lists corporate sponsors on its site",
+      "cells": [
+       {
+        "t": "None to list",
+        "ok": true,
+        "s": "No sponsor to protect"
+       },
+       {
+        "t": "Yes",
+        "s": "Corporate members page"
+       },
+       {
+        "t": "Yes",
+        "s": "Corporate membership program"
+       },
+       {
+        "t": "Yes",
+        "s": "Corporate membership"
+       },
+       {
+        "t": "Yes",
+        "s": "Supporters page"
+       }
+      ]
+     }
+    ]
+   },
+   "captions": false,
+   "hits": [
+    0.08
+   ],
+   "src": "Each organization's own website; KFF Health News; Fresenius Medical Care press release; coldischemia.foundation/independence.html",
+   "dur": 26
+  },
+  {
+   "id": "five",
+   "type": "list",
+   "text": "Ask any organization five questions. Who pays you? Who governs you? Who shapes your message? What can't you say? And who do you answer to? Our answers are simple. Patients and care partners. That is all. And because we have no sponsor to protect, we can name every institution.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.76,
+    "blur": 10,
+    "pan": "right",
+    "zoom": 0.07
+   },
+   "intensity": 0.75,
+   "rows": [
+    {
+     "t": "Who pays you?",
+     "s": "No donations. No industry money."
+    },
+    {
+     "t": "Who governs you?",
+     "s": "No drugmaker, dialysis company, insurer or hospital system has a seat"
+    },
+    {
+     "t": "Who shapes your message?",
+     "s": "Patients, care partners, and the published evidence"
+    },
+    {
+     "t": "What can't you say?",
+     "s": "Nothing is off limits"
+    },
+    {
+     "t": "Who do you answer to?",
+     "s": "Only the patients and care partners we serve"
+    }
+   ]
+  },
+  {
+   "id": "structure",
+   "type": "title",
+   "text": "Independence is not a slogan. It is a structure, and structures build things.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.58,
+    "blur": 6,
+    "pan": "left",
+    "zoom": 0.08
+   },
+   "intensity": 0.7,
+   "lines": [
+    {
+     "t": "INDEPENDENCE IS",
+     "c": "ink"
+    },
+    {
+     "t": "A STRUCTURE.",
+     "c": "accent"
+    }
+   ],
+   "hits": [
+    0.5
+   ],
+   "dur": 5
+  },
+  {
+   "id": "builds",
+   "type": "list",
+   "text": "Free toolkits with no paywall. A weekly investigation called the Inside Files. A public scorecard of how Congress acts on transplant and kidney care. Formal demand letters to the agencies that run this system.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.72,
+    "blur": 8,
+    "pan": "right",
+    "zoom": 0.07
+   },
+   "intensity": 0.7,
+   "rows": [
+    {
+     "t": "Free toolkits, no paywall"
+    },
+    {
+     "t": "The Inside Files",
+     "s": "A weekly investigation"
+    },
+    {
+     "t": "A public congressional scorecard",
+     "s": "On transplant and kidney care"
+    },
+    {
+     "t": "Formal demand letters",
+     "s": "To the agencies that run this system"
+    }
+   ]
+  },
+  {
+   "id": "waste",
+   "type": "cards",
+   "text": "And a spotlight on what is really happening. In 2024, three thousand seven hundred and forty-three people were removed from the kidney waiting list because they died. Twenty-nine percent of the kidneys recovered that year were never transplanted.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 10,
+    "pan": "down",
+    "zoom": 0.06
+   },
+   "intensity": 0.9,
+   "cards": [
+    {
+     "big": "3,743",
+     "head": "Died on the waiting list",
+     "sub": "Removed in 2024",
+     "c": "alert"
+    },
+    {
+     "big": "29%",
+     "head": "Of recovered kidneys never transplanted",
+     "sub": "2024",
+     "c": "alert"
+    }
+   ],
+   "src": "SRTR 2024 Annual Data Report, kidney"
+  },
+  {
+   "id": "people2",
+   "type": "title",
+   "text": "Those are not numbers. Those are people. And we will keep saying so.",
+   "bg": {
+    "src": "/stress.png",
+    "dim": 0.7,
+    "blur": 14,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "lines": [
+    {
+     "t": "THOSE ARE",
+     "c": "ink"
+    },
+    {
+     "t": "PEOPLE.",
+     "c": "alert"
+    }
+   ],
+   "hits": [
+    0.4
+   ],
+   "dur": 4.4
+  },
+  {
+   "id": "ask",
+   "type": "title",
+   "text": "So here is what I'm asking.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.58,
+    "blur": 5,
+    "pan": "left",
+    "zoom": 0.08
+   },
+   "intensity": 0.5,
+   "lines": [
+    {
+     "t": "HERE IS WHAT",
+     "c": "ink"
+    },
+    {
+     "t": "I'M ASKING.",
+     "c": "accent"
+    }
+   ],
+   "dur": 3.2
+  },
+  {
+   "id": "check",
+   "type": "list",
+   "text": "Don't take my word for it. Not mine, not theirs. Read their Form 990. Find their sponsor page. Read the board list. Ask what they have ever said against the people who fund them. We built a free Advocacy Assessment that walks you through it.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.72,
+    "blur": 8,
+    "pan": "right",
+    "zoom": 0.07
+   },
+   "intensity": 0.5,
+   "rows": [
+    {
+     "t": "Read their Form 990"
+    },
+    {
+     "t": "Find their sponsor page"
+    },
+    {
+     "t": "Read the board list"
+    },
+    {
+     "t": "Ask what they have said against their funders",
+     "s": "Use our free Advocacy Assessment"
+    }
+   ]
+  },
+  {
+   "id": "come",
+   "type": "title",
+   "text": "Then come with us. Use the tools. Send this to a care partner who is exhausted tonight. Volunteer. Tell us where the system failed you, because your experience is evidence.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.58,
+    "blur": 5,
+    "pan": "left",
+    "zoom": 0.09
+   },
+   "intensity": 0.55,
+   "lines": [
+    {
+     "t": "USE THE TOOLS.",
+     "c": "ink"
+    },
+    {
+     "t": "SEND THIS TO A CARE PARTNER.",
+     "c": "ink"
+    },
+    {
+     "t": "VOLUNTEER.",
+     "c": "accent"
+    }
+   ]
+  },
+  {
+   "id": "build",
+   "type": "title",
+   "text": "We started this foundation because we were tired of waiting for somebody else to do it. We are not asking for permission. We are building it, in the open, with nobody to protect but you.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.54,
+    "blur": 4,
+    "pan": "right",
+    "zoom": 0.1
+   },
+   "intensity": 0.6,
+   "lines": [
+    {
+     "t": "WE ARE BUILDING IT,",
+     "c": "ink"
+    },
+    {
+     "t": "IN THE OPEN.",
+     "c": "accent"
+    }
+   ],
+   "hits": [
+    0.55
+   ]
+  },
+  {
+   "id": "final",
+   "type": "title",
+   "text": "You have choices. And you are not alone.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.5,
+    "blur": 3,
+    "pan": "left",
+    "zoom": 0.1
+   },
+   "intensity": 0.65,
+   "lines": [
+    {
+     "t": "YOU HAVE CHOICES.",
+     "c": "accent"
+    },
+    {
+     "t": "YOU ARE NOT ALONE.",
+     "c": "ink"
+    }
+   ],
+   "hits": [
+    0.1
+   ],
+   "dur": 5
+  }
+ ]
+}
