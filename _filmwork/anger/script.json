@@ -1,0 +1,846 @@
+{
+ "pace": 2.45,
+ "gap": 0.5,
+ "lead": 3.4,
+ "style": {
+  "bar": 110
+ },
+ "music": {
+  "mood": "ominous",
+  "level": 0.92,
+  "piano": true,
+  "heartbeat": false,
+  "liftAt": 222.73
+ },
+ "open": {
+  "logo": "/_filmwork/policy/img/logo.png",
+  "w": 900,
+  "y": 90,
+  "until": 3.5
+ },
+ "overlay": {
+  "src": "/_filmwork/policy/img/jeff-cut.png",
+  "right": 1840,
+  "y": 136,
+  "w": 230,
+  "in": 3.6,
+  "tag": "Jeff Parke",
+  "tag2": "Founder"
+ },
+ "end": {
+  "logo": "/_filmwork/policy/img/logo.png",
+  "logoW": 520,
+  "logoY": 90,
+  "headline": "You have choices",
+  "sub": "Cold Ischemia Foundation",
+  "lines": [
+   "coldischemia.foundation",
+   "Sources: CDC 2026; DaVita FY2025; DOJ via ABA 2024; KFF Health News; SRTR 2024; JAMA IM 2019; OPTN 2024.",
+   "Allegations are allegations. Educational advocacy, not medical or legal advice."
+  ],
+  "strong": 1,
+  "hold": 12
+ },
+ "segments": [
+  {
+   "id": "chair",
+   "type": "title",
+   "text": "I know the chair. I know the cold of it. The four hours that stop being yours.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.6,
+    "blur": 6,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.45,
+   "lines": [
+    {
+     "t": "I KNOW THE CHAIR.",
+     "c": "ink"
+    }
+   ],
+   "heartbeat": true,
+   "hits": [
+    0.05
+   ]
+  },
+  {
+   "id": "pamphlet",
+   "type": "title",
+   "text": "I know what it is to be handed a pamphlet when what you needed was an answer. And I know the look on a face when someone finally realizes that nobody is coming to explain.",
+   "bg": {
+    "src": "/stress.png",
+    "dim": 0.68,
+    "blur": 12,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.5,
+   "lines": [
+    {
+     "t": "A PAMPHLET.",
+     "c": "ink"
+    },
+    {
+     "t": "NOT AN ANSWER.",
+     "c": "alert"
+    }
+   ],
+   "heartbeat": true
+  },
+  {
+   "id": "market",
+   "type": "title",
+   "text": "They told you this was a disease you manage. They never told you it was a market you are inside.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.64,
+    "blur": 7,
+    "pan": "up",
+    "zoom": 0.06
+   },
+   "intensity": 0.6,
+   "lines": [
+    {
+     "t": "A DISEASE YOU MANAGE.",
+     "c": "ink"
+    },
+    {
+     "t": "A MARKET YOU ARE INSIDE.",
+     "c": "accent"
+    }
+   ],
+   "hits": [
+    0.55
+   ]
+  },
+  {
+   "id": "receipts",
+   "type": "title",
+   "text": "I am not here to comfort you. Comfort is what they sell. I am here to show you the receipts.",
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.7,
+    "blur": 18,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.7,
+   "lines": [
+    {
+     "t": "NOT HERE TO COMFORT YOU.",
+     "c": "ink"
+    },
+    {
+     "t": "HERE TO SHOW YOU",
+     "c": "ink"
+    },
+    {
+     "t": "THE RECEIPTS.",
+     "c": "accent"
+    }
+   ],
+   "hits": [
+    0.8
+   ]
+  },
+  {
+   "id": "y1972",
+   "type": "stat",
+   "text": "In 1972, Congress promised to pay for dialysis for anyone whose kidneys failed.",
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.72,
+    "blur": 20,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.6,
+   "stat": {
+    "value": 1972,
+    "plain": true,
+    "label": "Congress promises to pay for dialysis",
+    "sub": [
+     "for anyone whose kidneys fail"
+    ],
+    "c": "accent"
+   }
+  },
+  {
+   "id": "cdc37",
+   "type": "stat",
+   "text": "Fifty-four years later, thirty-seven million Americans have kidney disease,",
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.72,
+    "blur": 20,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.65,
+   "stat": {
+    "value": 37,
+    "suffix": " MILLION",
+    "label": "Americans with kidney disease",
+    "c": "accent2"
+   },
+   "src": "CDC chronic kidney disease fact sheet, March 2026",
+   "dur": 4.6
+  },
+  {
+   "id": "d87",
+   "type": "dots",
+   "text": "and the CDC says eighty-seven percent of adults who have it do not know. Eighty-seven percent. That is not a diagnosis gap. That is a business model with a waiting room.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.78,
+    "blur": 10,
+    "pan": "down",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "dots": {
+    "total": 100,
+    "lit": 87,
+    "cols": 16,
+    "c": "alert",
+    "stat": {
+     "big": "87%",
+     "label": "do not know they have it",
+     "c": "alert"
+    },
+    "notes": [
+     {
+      "t": "Adults 20+ with CKD, CDC",
+      "c": "accent"
+     }
+    ],
+    "x": 700
+   },
+   "src": "CDC chronic kidney disease fact sheet, March 2026"
+  },
+  {
+   "id": "duo",
+   "type": "stat",
+   "text": "Two companies, DaVita and Fresenius, treat roughly three in four dialysis patients in this country.",
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.74,
+    "blur": 18,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.75,
+   "stat": {
+    "value": 75,
+    "prefix": "~",
+    "suffix": "%",
+    "label": "of dialysis patients: two companies",
+    "sub": [
+     "DaVita + Fresenius"
+    ],
+    "c": "alert"
+   },
+   "src": "DaVita 10-K FY2025; industry analyses (est. 70 to 75 percent)"
+  },
+  {
+   "id": "rev",
+   "type": "stat",
+   "text": "DaVita alone booked thirteen point six billion dollars in 2025.",
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.74,
+    "blur": 20,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "stat": {
+    "value": 13.6,
+    "prefix": "$",
+    "suffix": "B",
+    "label": "DaVita revenue, 2025",
+    "c": "accent"
+   },
+   "src": "DaVita 4th quarter 2025 results, Feb 2, 2026",
+   "dur": 4.6
+  },
+  {
+   "id": "settle",
+   "type": "stat",
+   "text": "In 2024 it paid more than thirty-four million to settle federal kickback allegations, without admitting liability. Those are allegations. The revenue is not.",
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.76,
+    "blur": 18,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.85,
+   "stat": {
+    "value": 34.5,
+    "prefix": "$",
+    "suffix": "M",
+    "label": "2024 settlement of federal kickback allegations",
+    "sub": [
+     "no admission of liability"
+    ],
+    "c": "alert"
+   },
+   "src": "U.S. Department of Justice, July 2024 (as reported by the ABA)"
+  },
+  {
+   "id": "home",
+   "type": "dots",
+   "text": "Only about one patient in seven dialyzes at home.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.78,
+    "blur": 10,
+    "pan": "up",
+    "zoom": 0.06
+   },
+   "intensity": 0.7,
+   "dots": {
+    "total": 14,
+    "lit": 2,
+    "cols": 7,
+    "c": "accent2",
+    "stat": {
+     "big": "1 IN 7",
+     "label": "dialyze at home",
+     "c": "accent2"
+    },
+    "x": 900
+   },
+   "src": "USRDS 2024 Annual Data Report (14.5 percent, 2022)",
+   "dur": 4.6
+  },
+  {
+   "id": "refer",
+   "type": "stat",
+   "text": "A 2025 analysis of seventy-two studies found early specialist referral cut catheter starts by more than half. Most people still hear their options after the crisis, not before.",
+   "bg": {
+    "src": "/research-banner.png",
+    "dim": 0.76,
+    "blur": 22,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.7,
+   "stat": {
+    "value": 57,
+    "suffix": "%",
+    "label": "lower risk of a catheter start with early referral",
+    "sub": [
+     "72 studies, 2025 meta-analysis"
+    ],
+    "c": "accent2"
+   },
+   "src": "BMC Nephrology 2025 meta-analysis (relative risk 0.43)"
+  },
+  {
+   "id": "prev",
+   "type": "title",
+   "text": "Prevention does not bill by the treatment.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.66,
+    "blur": 8,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "lines": [
+    {
+     "t": "PREVENTION DOES NOT",
+     "c": "ink"
+    },
+    {
+     "t": "BILL BY THE TREATMENT.",
+     "c": "accent"
+    }
+   ],
+   "hits": [
+    0.6
+   ],
+   "dur": 3
+  },
+  {
+   "id": "faces",
+   "type": "title",
+   "text": "Now, the organizations that say they speak for you.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.72,
+    "blur": 14,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.6,
+   "lines": [
+    {
+     "t": "THE ORGANIZATIONS THAT",
+     "c": "ink"
+    },
+    {
+     "t": "SAY THEY SPEAK FOR YOU.",
+     "c": "accent2"
+    }
+   ]
+  },
+  {
+   "id": "akf",
+   "type": "stat",
+   "text": "KFF Health News reported that the American Kidney Fund drew eighty-two percent of its 2018 funding from just two companies, the two biggest dialysis chains. The fund denies steering patients, and the Justice Department declined to join the whistleblower suit.",
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.76,
+    "blur": 20,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "stat": {
+    "value": 82,
+    "suffix": "%",
+    "label": "American Kidney Fund funding from two companies, 2018",
+    "sub": [
+     "reported by KFF Health News",
+     "the fund denies steering patients"
+    ],
+    "c": "alert"
+   },
+   "src": "KFF Health News"
+  },
+  {
+   "id": "ask",
+   "type": "title",
+   "text": "But you are allowed to ask who pays for a charity's independence.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.68,
+    "blur": 9,
+    "pan": "down",
+    "zoom": 0.06
+   },
+   "intensity": 0.75,
+   "lines": [
+    {
+     "t": "YOU ARE ALLOWED TO ASK",
+     "c": "ink"
+    },
+    {
+     "t": "WHO PAYS FOR",
+     "c": "ink"
+    },
+    {
+     "t": "INDEPENDENCE.",
+     "c": "accent"
+    }
+   ],
+   "hits": [
+    0.7
+   ]
+  },
+  {
+   "id": "nkf",
+   "type": "cards",
+   "text": "The National Kidney Foundation lists drug makers on the top tier of its corporate membership, and its own policy says it must remain independent.",
+   "bg": {
+    "src": "/research-banner.png",
+    "dim": 0.76,
+    "blur": 22,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.7,
+   "cards": [
+    {
+     "big": "TOP TIER",
+     "head": "Corporate membership",
+     "sub": "Drug makers listed",
+     "c": "accent"
+    },
+    {
+     "big": "POLICY",
+     "head": "Must remain independent",
+     "sub": "NKF partnership policy",
+     "c": "accent2"
+    }
+   ],
+   "src": "kidney.org 2026 corporate membership; NKF Corporate Partnership Policy"
+  },
+  {
+   "id": "audit",
+   "type": "quote",
+   "text": "I am not claiming a sponsor writes the script. I am saying that when the people who profit from your treatment fund the voices that comfort you, independent needs an audit.",
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.78,
+    "blur": 22,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.85,
+   "quote": {
+    "text": "When the people who profit from your treatment fund the voices that comfort you, \"independent\" needs an audit.",
+    "size": 64
+   }
+  },
+  {
+   "id": "webinar",
+   "type": "title",
+   "text": "They all promise innovation. Tools. Equity. A new era. What you get is a webinar.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.66,
+    "blur": 8,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "lines": [
+    {
+     "t": "INNOVATION. TOOLS. EQUITY.",
+     "c": "ink"
+    },
+    {
+     "t": "A NEW ERA.",
+     "c": "ink"
+    },
+    {
+     "t": "WHAT YOU GET IS A WEBINAR.",
+     "c": "alert"
+    }
+   ],
+   "hits": [
+    0.7
+   ]
+  },
+  {
+   "id": "worse",
+   "type": "title",
+   "text": "Transplant is no better.",
+   "bg": {
+    "src": "/transplant-loopholes.png",
+    "dim": 0.74,
+    "blur": 22,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.7,
+   "lines": [
+    {
+     "t": "TRANSPLANT",
+     "c": "ink"
+    },
+    {
+     "t": "IS NO BETTER.",
+     "c": "alert"
+    }
+   ],
+   "hits": [
+    0.2
+   ],
+   "dur": 3
+  },
+  {
+   "id": "deaths",
+   "type": "cards",
+   "text": "In 2024, three thousand seven hundred and forty-three people were removed from the kidney waiting list because they died. Another four thousand nine hundred and one because they became too sick.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.78,
+    "blur": 10,
+    "pan": "down",
+    "zoom": 0.06
+   },
+   "intensity": 0.9,
+   "cards": [
+    {
+     "big": "3,743",
+     "head": "Died on the list",
+     "sub": "Removed 2024",
+     "c": "alert"
+    },
+    {
+     "big": "4,901",
+     "head": "Too sick to transplant",
+     "sub": "Removed 2024",
+     "c": "alert"
+    }
+   ],
+   "src": "SRTR 2024 Annual Data Report, kidney"
+  },
+  {
+   "id": "discard",
+   "type": "stat",
+   "text": "That same year, twenty-nine point three percent of recovered kidneys were never transplanted.",
+   "bg": {
+    "src": "/transplant-loopholes.png",
+    "dim": 0.76,
+    "blur": 22,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.9,
+   "stat": {
+    "value": 29.3,
+    "suffix": "%",
+    "label": "of recovered kidneys never transplanted, 2024",
+    "sub": [
+     "18.2% in 2013"
+    ],
+    "c": "alert"
+   },
+   "src": "SRTR 2024 Annual Data Report"
+  },
+  {
+   "id": "france",
+   "type": "cards",
+   "text": "In a decade-long comparison, France discarded nine percent when we discarded eighteen. We built a system that throws away what it begs for.",
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.78,
+    "blur": 10,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.9,
+   "cards": [
+    {
+     "big": "9%",
+     "head": "France",
+     "sub": "Discarded, 2004 to 2014",
+     "c": "accent2"
+    },
+    {
+     "big": "18%",
+     "head": "United States",
+     "sub": "Discarded, 2004 to 2014",
+     "c": "alert"
+    }
+   ],
+   "src": "Aubert et al., JAMA Internal Medicine, 2019"
+  },
+  {
+   "id": "race",
+   "type": "title",
+   "text": "For more than two decades, a race-based formula made Black patients look healthier than they were and pushed them back in line.",
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.76,
+    "blur": 20,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "lines": [
+    {
+     "t": "A RACE-BASED FORMULA",
+     "c": "ink"
+    },
+    {
+     "t": "MADE BLACK PATIENTS",
+     "c": "ink"
+    },
+    {
+     "t": "LOOK HEALTHIER.",
+     "c": "alert"
+    }
+   ],
+   "hits": [
+    0.8
+   ]
+  },
+  {
+   "id": "race2",
+   "type": "stat",
+   "text": "Fixing it took until 2023, and the first year alone needed more than fourteen thousand seven hundred waiting-time adjustments.",
+   "bg": {
+    "src": "/accountability-corridor.png",
+    "dim": 0.76,
+    "blur": 20,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "intensity": 0.8,
+   "stat": {
+    "value": 14701,
+    "suffix": "+",
+    "label": "waiting-time adjustments in the first year",
+    "sub": [
+     "median 1.7 years restored"
+    ],
+    "c": "accent"
+   },
+   "src": "OPTN, January 2024"
+  },
+  {
+   "id": "opo",
+   "type": "title",
+   "text": "In 2025, the government moved to decertify an organ procurement organization for the first time ever.",
+   "bg": {
+    "src": "/transplant-loopholes.png",
+    "dim": 0.74,
+    "blur": 22,
+    "pan": "down",
+    "zoom": 0.06
+   },
+   "intensity": 0.85,
+   "lines": [
+    {
+     "t": "FIRST TIME EVER:",
+     "c": "accent"
+    },
+    {
+     "t": "DECERTIFY AN ORGAN",
+     "c": "ink"
+    },
+    {
+     "t": "PROCUREMENT ORGANIZATION.",
+     "c": "ink"
+    }
+   ],
+   "src": "U.S. HHS, September 2025",
+   "hits": [
+    0.1
+   ]
+  },
+  {
+   "id": "why",
+   "type": "title",
+   "text": "That is why the Cold Ischemia Foundation exists.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.6,
+    "blur": 5,
+    "pan": "left",
+    "zoom": 0.09
+   },
+   "intensity": 0.75,
+   "lines": [
+    {
+     "t": "THAT IS WHY",
+     "c": "ink"
+    },
+    {
+     "t": "COLD ISCHEMIA",
+     "c": "accent2"
+    },
+    {
+     "t": "FOUNDATION EXISTS.",
+     "c": "ink"
+    }
+   ],
+   "hits": [
+    0.1
+   ]
+  },
+  {
+   "id": "nomoney",
+   "type": "cards",
+   "text": "We take no pharmaceutical money. No dialysis-industry money. We answer to patients and care partners, because they are the only ones who ever paid the full price.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.64,
+    "blur": 6,
+    "pan": "right",
+    "zoom": 0.08
+   },
+   "intensity": 0.85,
+   "cards": [
+    {
+     "big": "NONE",
+     "head": "Pharmaceutical money",
+     "c": "accent"
+    },
+    {
+     "big": "NONE",
+     "head": "Dialysis-industry money",
+     "c": "accent"
+    }
+   ]
+  },
+  {
+   "id": "build",
+   "type": "list",
+   "text": "We build the tools, the guides, and the mentors so you understand your own body, your own numbers, and your own choices before the system makes them for you.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.68,
+    "blur": 8,
+    "pan": "left",
+    "zoom": 0.07
+   },
+   "intensity": 0.9,
+   "rows": [
+    {
+     "t": "The tools"
+    },
+    {
+     "t": "The guides"
+    },
+    {
+     "t": "The mentors",
+     "s": "So you understand your own body, your own numbers, your own choices"
+    }
+   ]
+  },
+  {
+   "id": "choices",
+   "type": "title",
+   "text": "You have choices. No one who profits from your silence will tell you that.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.6,
+    "blur": 5,
+    "pan": "right",
+    "zoom": 0.09
+   },
+   "intensity": 0.95,
+   "lines": [
+    {
+     "t": "YOU HAVE CHOICES.",
+     "c": "accent"
+    },
+    {
+     "t": "NO ONE WHO PROFITS FROM",
+     "c": "ink"
+    },
+    {
+     "t": "YOUR SILENCE WILL TELL YOU.",
+     "c": "ink"
+    }
+   ],
+   "hits": [
+    0.1
+   ]
+  },
+  {
+   "id": "wewill",
+   "type": "title",
+   "text": "We will.",
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.55,
+    "blur": 4,
+    "pan": "left",
+    "zoom": 0.1
+   },
+   "intensity": 1.0,
+   "lines": [
+    {
+     "t": "WE WILL.",
+     "c": "accent"
+    }
+   ],
+   "hits": [
+    0.15
+   ],
+   "dur": 3
+  }
+ ]
+}
