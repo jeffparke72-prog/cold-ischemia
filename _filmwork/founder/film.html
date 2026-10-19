@@ -37,6 +37,7 @@ function build(j){
     s.t0=s.t0!=null?s.t0:t;s.t1=s.t0+d;
     s.sent=[];
     if(s.text){var m=s.text.match(/[^.?!]+[.?!]+|[^.?!]+$/g)||[s.text],acc=0;s.sent=m.map(function(x){x=x.trim();var n=x.split(/\s+/).length,a=s.t0+d*acc/s.words;acc+=n;return{text:x,t0:a,t1:s.t0+d*acc/s.words}});if(s.cues&&s.cues.length===s.sent.length)s.sent.forEach(function(q,k){q.t0=s.t0+s.cues[k][0];q.t1=s.t0+s.cues[k][1]})}
+    if(s.cc&&s.cc.length)s.sent=s.cc.map(function(c){return{text:c.t,t0:c.a,t1:c.b}});
     t=s.t1+GAP;
   });
   DUR=Math.ceil(t+(END.hold||7));
