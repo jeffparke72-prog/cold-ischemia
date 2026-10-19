@@ -55,7 +55,7 @@ CT={
 50:"In 2017, researchers in the New England Journal of Medicine looked at the hundred",
 51:"and four largest patient advocacy organizations in America. And 83% took money from drug, device, or biotech companies.",
 52:"Only, only one of the hundred and four",
-53:"said plainly that it did not. Chomp on that, please.",
+53:"said plainly that it did not. Chew on that, please.",
 54:"Kidney care is no different. The American Kidney Fund has been reported to draw roughly 80% of its donor base from DaVita and Fresenius.",
 55:"It denies steering patients, and the Justice Department declined to join the whistleblower suit.",
 56:"The National Kidney Foundation's corporate membership lists Boehringer Ingelheim, Novo Nordisk, and Vertex. The American Association of Kidney Patients",
