@@ -26,6 +26,7 @@ GROUPS = [
         ("accountability.html", "Accountability Atlas"),
     ]),
     ("Learn", [
+        ("test-your-knowledge.html", "Test Your Knowledge"),
         ("living-donor-guide.html", "Free Donor Guide (PDF)"),
         ("research-digest.html", "Research Digest"),
         ("inside-files.html", "The Inside Files"),
