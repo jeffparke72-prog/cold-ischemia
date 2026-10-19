@@ -1,21 +1,21 @@
 {
 "version": 3,
-"updated": "2026-10-19T19:14:11.079283+00:00",
+"updated": "2026-10-19T23:01:48.252115+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
 "category": "Research",
 "url": "https://pubmed.ncbi.nlm.nih.gov/",
-"ok": false,
-"count": 0,
-"error": "HTTPError: HTTP Error 500: Internal Server Error"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "PubMed: transplant policy & organ procurement",
 "category": "Policy",
 "url": "https://pubmed.ncbi.nlm.nih.gov/",
 "ok": true,
-"count": 0,
+"count": 30,
 "error": null
 },
 {
@@ -23,7 +23,7 @@
 "category": "Research",
 "url": "https://pubmed.ncbi.nlm.nih.gov/",
 "ok": true,
-"count": 0,
+"count": 30,
 "error": null
 },
 {
@@ -133,6 +133,72 @@
 ],
 "items": [
 {
+"title": "Clinical and Pathologic Characteristics of Patients With ANCA-Associated Vasculitis With Renal Arteritis",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032869?dgcid=rss_sd_all",
+"summary": "By Yan-Jie Li, Shu-Juan Zhao, Fan Zhang, Shu-Hong Bi, Zhi-Ying Li, Xiao-Juan Yu, Su-Xia Wang, Jin-Wei Wang, Xiao-Tao Ma, Jing Wang, Yi Li, Zu-Ying Xiong, Yue Wang, Rong-Guo Fu, Su-Fang Chen, Ming-Hui Zhao, Min Chen",
+"outlet": "",
+"published": "2026-10-19T23:00:54.189444+00:00",
+"id": "92e917771e320877",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-19T23:01:48.252115+00:00"
+},
+{
+"title": "Leveraging Natural Language Processing to Identify Variation in Kidney Transplant Access",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032444?dgcid=rss_sd_all",
+"summary": "By Sri Lekha Tummalapalli, Matthew Manganel, Will Simmons, Jonathan Lin, Braja Gopal Patra, Prakash Adekkanattu, Nivedita Chang, Margaret M. Fabiszak, Daniel M. Levine, Yifan Peng, Evan Sholle, Jeffrey Silberzweig,…",
+"outlet": "",
+"published": "2026-10-19T23:00:54.189410+00:00",
+"id": "f06358d057c80d4f",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-19T23:01:48.252115+00:00"
+},
+{
+"title": "Characterizing Within-Center Placement of Out-of-Sequence Deceased-Donor Kidney Transplants",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032833?dgcid=rss_sd_all",
+"summary": "By Emma G. Tucker, Miko E. Yu, Joel T. Adler, David C. Cron, Jesse D. Schold, Sumit Mohan, Syed Ali Husain",
+"outlet": "",
+"published": "2026-10-19T23:00:54.189376+00:00",
+"id": "bd346bc66767a92d",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-19T23:01:48.252115+00:00"
+},
+{
+"title": "Systematic Review of Persistent Microscopic Hematuria and Kidney Outcomes in IgAN",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032705?dgcid=rss_sd_all",
+"summary": "By Gian Marco Berti, Daniele Vetrano, Edoardo Tringali, Francesco Tondolo, Chiara Cantarelli, Gisella Vischini, Elisa Gessaroli, Giorgia Comai, Gaetano La Manna, Federica Maritati",
+"outlet": "",
+"published": "2026-10-19T23:00:54.189346+00:00",
+"id": "1207f3181349f48c",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-19T23:01:48.252115+00:00"
+},
+{
+"title": "Kidney Transcatheter Arterial Embolization Reduces Kidney Cyst Infection in Patients With ADPKD",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033000?dgcid=rss_sd_all",
+"summary": "By Yusuke Yoshimura, Tatsuya Suwabe, Akinari Sekine, Susumu Tsunoda, Hiroki Mizuno, Yuki Oba, Hisashi Kamido, Hikaru Tanimizu, Ayumi Kishioka, Masatoshi Yoshimoto, Noriko Inoue, Eiko Hasegawa, Masayuki Yamanouchi,…",
+"outlet": "",
+"published": "2026-10-19T23:00:54.189314+00:00",
+"id": "f64256726674de5b",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-19T23:01:48.252115+00:00"
+},
+{
+"title": "Multimodal Profiling of Complement Expression and Association With Outcomes in ANCA-Associated Vasculitis With Glomerulonephritis",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032882?dgcid=rss_sd_all",
+"summary": "By Benoît Brilland, Victor Milon, Cyrille Vandenbussche, Nathalie Merillon, Eleonore Ourouda, Andrea Boizard-Moracchini, Maëva Roy, Odile Blanchet, Emeline Vinatier, Céline Beauvillain, Thomas Quéméneur, Assia Djema,…",
+"outlet": "",
+"published": "2026-10-19T23:00:54.188911+00:00",
+"id": "d211f98e2b06e81d",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-19T23:01:48.252115+00:00"
+},
+{
 "title": "Misdiagnosed Failure in Home Dialysis Adoption: A Call for Clinical Accountability - Cureus",
 "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNcG9uMHY0bjBNR2c4R2RLN09uR2I5TGdtZmRxN1RLMjB3RTNIQnZxWEd1NmpzeU9sRmJwVzUwZk5NNVBXaEFxd3VFZU5zREZNdElNTThGRVNPMk9kN3ZzeGdjRklEQVZoRWF3S3RldC0wMVRtQ0ZjV1pSYl9JOWZVWEhMbXNXMUlWWU0zU2k5RXVGeHk2cENuV3VrWkR6QWM0d0ZwRWxaOUNhRjQ3X2V1NDRPOGNTUFpnZUJHRw?oc=5",
 "summary": "Misdiagnosed Failure in Home Dialysis Adoption: A Call for Clinical Accountability Cureus",
@@ -170,7 +236,7 @@
 "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQ3J0X245Z2JwbV9CX3NJTzlJNEhlSFRHaF9rSkp2WVdRdUE5NGwwRG54UzRONUtaajItMlU1Qk1ZcmExdWNseEVTSjF1SzNaand5ck9lb3ZLQVFQcnVLTUw3Z2NtNjVjYks1R1Fsb2d5aXNPb2tNYUZTODlQbm1IV1RnTU16cGdRekJLZGhxdFRGX2hRZFhjWHB0NEgyT2d5WVQtbHZXSE9RUjdkRmc?oc=5",
 "summary": "Structured Training Program Boosts Competence in Organ Transplant Nurses, Study Finds Bioengineer.org",
 "outlet": "Bioengineer.org",
-"published": "2026-10-19T16:16:45+00:00",
+"published": "2026-10-19T16:24:34+00:00",
 "id": "ba5845dc580cd38b",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
@@ -203,7 +269,7 @@
 "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQNDZacTl5WENDamZHbWhZbUJsRnhIOEM4SUV4R0NTTVBUZWpwckQydG8xMDBFZmM4eTAtckZEMGhFR2ZIeUZoS3gyUEx3azdMSnFCeGY1U3dzOEFWRUYxTXZoalZ5ZFl5cjRERC1qLTkwMzZzOWtBQ19YV09tNmVnZVd6SHlmNXhGTEp1QldqM2o1azg?oc=5",
 "summary": "See your patient population more clearly with the UNOS SDOH Report UNOS | United Network for Organ Sharing",
 "outlet": "UNOS | United Network for Organ Sharing",
-"published": "2026-10-19T15:16:28+00:00",
+"published": "2026-10-19T15:15:52+00:00",
 "id": "b3748ec77a07ba3f",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
@@ -276,23 +342,45 @@
 "first_seen": "2026-10-19T19:14:11.079283+00:00"
 },
 {
+"title": "Estuary secures $103m to advance kidney disease gene therapies - Pharmaceutical Technology",
+"link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNcmFxSHEyRlNpWjFBT3NYcU1YMzhZVzNaSlRCVmpBaHk2eXpkUWY2V3Vyc0tFRGJnbWZ5N2hnODdWNUtBMkF0U2hIZnVrNlRxUG4yeWpBbDZRTzJfZEJzX2Nlck9vdUZTQi0xVEsweXB3TGs4ejk0cngzWmpoNlpNOHJROUFROUEzNmZ3TzJOaXBBMFRE?oc=5",
+"summary": "Estuary secures $103m to advance kidney disease gene therapies Pharmaceutical Technology",
+"outlet": "Pharmaceutical Technology",
+"published": "2026-10-19T12:54:52.540102+00:00",
+"id": "7f9d7c890ea74bea",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-19T12:54:52.540102+00:00"
+},
+{
+"title": "Imaging Evaluation of the Transplant Liver.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42895783/",
+"summary": "Chahine R, Wasnik A, Azar S et al. Ultrasound quarterly",
+"outlet": "Ultrasound Q",
+"published": "2026-10-19T12:00:00+00:00",
+"id": "c4c97ab1299a4fe5",
+"source": "PubMed: transplant, donation & kidney failure research",
+"category": "Research",
+"first_seen": "2026-10-19T23:01:48.252115+00:00"
+},
+{
+"title": "Genetic evaluation in living liver donors: beyond individual risk to system responsibility.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42895308/",
+"summary": "Kasahara M, Sakamoto S. Current opinion in organ transplantation",
+"outlet": "Curr Opin Organ Transplant",
+"published": "2026-10-19T12:00:00+00:00",
+"id": "cebe9c4d5f6d1f65",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-10-19T23:01:48.252115+00:00"
+},
+{
 "title": "Novartis ends Fabhalta trial for lupus kidney disease - Investing.com",
 "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQLWo3TXpUWXB2aHZRSTZjLXhVT1gxUmhOclJXeGNnR2VfM1Nub2hoNFBYX3BJLWtjNWoybHRKMFptbzRkWUhaYmM5WUZsNHo3MXFFaHRxLW5OdGdEVEtiY2tUTklQb2JqejdDUldKSVNqekg1MG0ySVVfMGtNX0hZU2hsREp2bWhBaUtuS1gxVmxjbERURFZaWkJkcnBhUlJ5ZW1tQlBDOFRXSHdmYUM4?oc=5",
 "summary": "Novartis ends Fabhalta trial for lupus kidney disease Investing.com",
 "outlet": "Investing.com",
 "published": "2026-10-19T07:57:54+00:00",
 "id": "f774204a3a8dd3a5",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-19T12:54:52.540102+00:00"
-},
-{
-"title": "Estuary secures $103m to advance kidney disease gene therapies - Pharmaceutical Technology",
-"link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNcmFxSHEyRlNpWjFBT3NYcU1YMzhZVzNaSlRCVmpBaHk2eXpkUWY2V3Vyc0tFRGJnbWZ5N2hnODdWNUtBMkF0U2hIZnVrNlRxUG4yeWpBbDZRTzJfZEJzX2Nlck9vdUZTQi0xVEsweXB3TGs4ejk0cngzWmpoNlpNOHJROUFROUEzNmZ3TzJOaXBBMFRE?oc=5",
-"summary": "Estuary secures $103m to advance kidney disease gene therapies Pharmaceutical Technology",
-"outlet": "Pharmaceutical Technology",
-"published": "2026-10-19T07:37:20+00:00",
-"id": "7f9d7c890ea74bea",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-19T12:54:52.540102+00:00"
@@ -5540,94 +5628,6 @@
 "outlet": "",
 "published": "2026-10-03T19:19:46.657233+00:00",
 "id": "61b26d7d69f3b723",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Impact of mGFR Versus eGFR on the Pharmacokinetics of a Renally Excreted Model Drug in Older Medical Patients: A Proof-of-Concept Trial",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032523?dgcid=rss_sd_all",
-"summary": "By Ida K. Storgaard, Morten B. Houlind, Louise WS. Christensen, Rikke L. Nielsen, Aino L. Andersen, Olivia Bornæs, Helle G. Juul-Larsen, Johnny K.H. Dang, Baker N. Jawad, Izzet Altintas, Juliette Tavenier, Esteban…",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "d86a1337cde12761",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Systematic Review of Exercise Interventions and HRQOL in Predialysis CKD",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032687?dgcid=rss_sd_all",
-"summary": "By Redondo-Saenz Diego, Ratner Stephanie, Patel Lyla, Mendieta Miguel, Shirazian Shayan, Bronas Ulf G",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "25133855c1aaaf2a",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Data-Driven Clustering of Secretory Bone and Inflammatory Markers to Subphenotype Patients Undergoing Hemodialysis",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032511?dgcid=rss_sd_all",
-"summary": "By Simon Aberger, Ameen Abu-Hanna, Vianda Stel, Nicholas Chesnaye, Emanuel Zitt, Daniel Cejka, Thomas B. Dschietzig, Franz P. Armbruster, Hildegard Hafner-Gießauf, Maximilian Waller, Corinna Schabhüttl, Alexander H.…",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "72700ae5737a45bb",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Randomized Clinical Trials of Deutaleglitazar in Healthy Participants and in Patients with Diabetic Kidney Disease",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032699?dgcid=rss_sd_all",
-"summary": "By Vlado Perkovic, Sam L. Francis, Hong Zhang, Ying Gao, Jicheng Lv, Haiyan Li, Yumei Yan, Yuran Zhang, Cathy Liu, Huading Zhang, Jin Tian",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "d831a77613828f10",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Design and Baseline Characteristics of CONCORD, a Trial of Novel Therapies for Depression in CKD",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032663?dgcid=rss_sd_all",
-"summary": "By Meredith C. McAdams, L. Parker Gregg, Thomas Carmody, Joseph M. Trombello, Lynnel C. Goodman, Amelia Dubovsky, Rula Abdulrahman, Bethany Roehm, Shani Shastri, Katherine R. Tuttle, Madhukar H. Trivedi, Rajnish Mehrotra,…",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "a23581c61299af5e",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Kikuchi-Fujimoto-Like Renal Involvement in Autoimmune Disease",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032675?dgcid=rss_sd_all",
-"summary": "By Nicole K. Andeen, Tiffany Caza, Sadhika Sood, Anila Abraham Kurien, Jacob Dougherty, Vanderlene L. Kung, Jennifer Dunlap, Rupali S. Avasare, Atul Deodhar, Megan L. Troxell, L Nicolas Cossey, Christopher Larsen,…",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "c1b9674aab5b3dd3",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Systematic Review of Renal Infarction Clinical Presentation, Causes, and Outcomes",
-"link": "https://www.sciencedirect.com/science/article/pii/S246802492603281X?dgcid=rss_sd_all",
-"summary": "By Mariam Nour Eldine, Hala Kilan, Patrick Hallak, Karumathil Murali, Siba Kallab, Sola A. Bahous, Hicham Cheikh Hassan",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "63eecbc841c7c89b",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-03T19:19:46.657233+00:00"
-},
-{
-"title": "Early BK Polyomavirus–Specific Immunity and Viral Clearance",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032961?dgcid=rss_sd_all",
-"summary": "By Dominique Bertrand, Tristan De Nattes, Charlotte Laurent, Mathilde Lemoine, Ludivine Lebourg, Mélanie Hanoy, Frank Le Roy, Steven Grangé, Eleusis Mauger, Amandine Becquet, Marie Gueudin, Dominique Guerrot, Sophie Candon",
-"outlet": "",
-"published": "2026-10-03T19:19:46.657233+00:00",
-"id": "992247bc52a11a48",
 "source": "Kidney International Reports",
 "category": "Journals",
 "first_seen": "2026-10-03T19:19:46.657233+00:00"
