@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Thinned Prime | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="Every heart operation on a pump begins by diluting the patient&#x27;s own oxygen carrier on purpose, and the history of that decision is a quiet argument about how little hemoglobin a body can be trusted with">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,0.12);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nl img{height:32px;width:32px;object-fit:contain;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap;}
+.nm{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nm::-webkit-scrollbar{display:none;}
+.nm a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;white-space:nowrap;padding:4px 8px;border-radius:2px;transition:color .15s;}
+.nm a:hover{color:#d8cfc4;}
+.nr{flex-shrink:0;display:flex;gap:8px;}
+.nr a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;transition:all .15s;white-space:nowrap;}
+.nmy{color:rgba(216,207,196,0.45);border:1px solid rgba(100,140,200,0.15);}
+.nmy:hover{color:#c8902a;}
+.njn{background:#c8902a;color:#030509;}
+.njn:hover{background:#e8b84a;}
+@media(max-width:680px){.nm a:not(.nk){display:none;}.nb{display:none;}.nmy{display:none;}}
+footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px 40px 24px;}
+.fg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,.1);}
+@media(max-width:800px){.fg{grid-template-columns:1fr 1fr;gap:24px;}}
+.fli{height:26px;display:block;margin-bottom:10px;}
+.fb p{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.22);line-height:2.2;}
+.fb a{color:#c8902a;text-decoration:none;}
+.fct{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;}
+.fl{display:flex;flex-direction:column;gap:8px;}
+.fl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.38);text-decoration:none;transition:color .15s;}
+.fl a:hover{color:rgba(216,207,196,.85);}
+.fbot{max-width:1100px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fcp{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);}
+.fbl{display:flex;gap:14px;}
+.fbl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);text-decoration:none;}
+.fbl a:hover{color:#c8902a;}
+.fnr{color:#c8902a!important;border-color:rgba(200,144,42,.5)!important;}.nm{justify-content:flex-start;}.nm a.fnk{color:#c8902a;}.hero{padding-top:56px!important;}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}.hero{padding-top:56px!important}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="test-your-knowledge.html" role="menuitem">Test Your Knowledge</a><a href="living-donor-guide.html" role="menuitem">Free Donor Guide (PDF)</a><a href="research-digest.html" role="menuitem">Research Digest</a><a href="inside-files.html" role="menuitem">The Inside Files</a><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-hub.html" role="menuitem">Living Donor Hub</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="kidney-transplant-centers.html" role="menuitem">Kidney Transplant Centers by State</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="services.html" class="cn-t cn-s">Services We Offer</a><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="field-notes.html">Field Notes</a> &nbsp;/&nbsp; Post 26</div>
+<div class="eyebrow">Evidence &middot; October 19, 2026 &middot; 13 min read</div>
+<h1>The Thinned Prime</h1>
+<p class="dek">Every heart operation on a pump begins by diluting the patient's own oxygen carrier on purpose, and the history of that decision is a quiet argument about how little hemoglobin a body can be trusted with</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-26.docx" download>Download Word</a>
+<a class="cta" href="field-note-26.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-26.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p><em>Every heart operation on a pump begins by diluting the patient’s own oxygen carrier on purpose, and the history of that decision is a quiet argument about how little hemoglobin a body can be trusted with</em></p>
+<h2 id="the-bargain-made-at-the-circuit-door">The bargain made at the circuit door</h2>
+<p>Before a surgeon on a bypass pump touches the heart, someone has filled the machine with fluid. The tubing, the oxygenator, the reservoir and the pump head together hold a volume that is not trivial, and that volume has to be something. For the first years of the technique it was donor blood, a great deal of it, and the recipient of an operation on a few grams of malformed muscle might receive the blood of a dozen strangers before the chest was closed. Then a different idea took hold, almost sideways, and the machine began to be filled with clear fluid instead. The patient’s blood, on contact with the circuit, mixed into that fluid and became thinner. The hematocrit fell sharply, and the surgeons went on operating.</p>
+<p>That is the arrangement most cardiac patients still enter. It is rarely described to them, and for good reason: it sounds alarming, and mostly it works. Yet it carries a premise that deserves to be looked at squarely, because it is the only routine, planned, every-day case in modern medicine in which clinicians deliberately reduce the oxygen-carrying capacity of a living person and then compensate by other means. The compensation is considerable. The body is often cooled, which lowers its demand, the pump flow is set by the team, and the anesthetist watches the numbers that stand in for oxygen delivery. The bargain is that less carrier, moving faster in a quieter body, will do.</p>
+<p>This essay is about that bargain, not about the pump as an engineering marvel. The engineering story has been told many times. The less told story is the one inside the fluid: who first decided that the prime need not be blood, what that decision cost and saved, and why anyone who thinks about a hemoglobin-based oxygen carrier should care that surgeons have spent seventy years learning how far a patient’s own hemoglobin can be diluted before something fails.</p>
+<h2 id="what-the-first-machines-asked-of-the-blood">What the first machines asked of the blood</h2>
+<p>The pump-oxygenator’s early history is a record of attrition. John Gibbon had spent years chasing the idea after the seventeen-hour vigil in 1931 beside a woman dying of a pulmonary embolism. His success on May 6, 1953, with an eighteen-year-old named Cecelia Bavolek, is credited as the first successful open cardiac repair with a mechanical heart-lung machine. The accounts I found disagree on how long she was on the machine, with one saying twenty-six minutes of full support and another forty-five minutes on the device, so I will not choose between them. What the accounts agree on is the sobering part: she was the only survivor among the handful of patients he attempted, reported as four to six, and Gibbon stopped operating soon afterward.</p>
+<p>Two other lines of work grew up in the same few years. In Minnesota, C. Walton Lillehei took a different path and used a living parent as the oxygenator. Blood passed between a child and an adult, and the adult’s lungs did the work. The first success came on March 26, 1954. One account puts the number of such operations at forty-five, with twenty-eight patients surviving, and observes grimly that the technique risked two lives for every operation. At the Mayo Clinic, John Kirklin’s group had approval from its hospital board for eight operations on the understanding that the first seven patients might all die. They began in March 1955, and about half of the cases in that first series survived.</p>
+<p>Richard DeWall’s disposable oxygenator, built in 1955 for under a thousand dollars according to the history I read, changed the economics. Within two years, one source says, 350 open-heart operations had been done at the University of Minnesota, and the design stayed in use into the 1970s. Cheap and simple as it was, it created a new appetite. The device had to be filled before every case, and filling it with fresh, compatible blood meant that every operation demanded a collection drive. Every operation became, in part, a blood collection exercise.</p>
+<p>I want to dwell on that detail because it is the pressure that made the next move thinkable. The prime was a supply problem before it was a physiological one. Anything that reduced the volume of donor blood needed would make open-heart surgery cheaper, faster and available to more places, and nobody was asking at that stage what dilution did to the patient. They were asking whether the patient would survive the night.</p>
+<h2 id="sugar-water">Sugar water</h2>
+<p>The turn toward clear primes is usually credited to a handful of surgeons working around 1960, and the name that recurs for the idea is Nazih Zuhdi, who in Oklahoma described what he called total intentional hemodilution. A profile of him in a regional magazine relates the story as a question: what, he wondered, would happen if sugar water were used. In the account I read, the first human recipient was a seven-year-old boy named Terry Gene Nix, operated on in February 1960, who needed about a pint and a half of replacement blood rather than gallons. The same account says he died three years later of an unrelated illness. I could not find the operative details in a primary source, and the profile does not name the hospital, so I treat this as the origin legend rather than the verified record. But the legend has the right shape: a single bold substitution, a child, an outcome that did not collapse.</p>
+<p>The hard evidence appears a few years later. In 1965, a group led by Sariel Ablaza published in the <em>Archives of Surgery</em> a report on five hundred consecutive open-heart cases done with intentional hemodilution. The abstract frames the matter the way I have been describing it, saying that obtaining blood for priming the circuit had caused substantial difficulty in open-heart surgery and that hemodilution had developed out of earlier work. I could read only the opening of that paper, so I cannot report its outcomes, and I would rather say so than guess.</p>
+<p>What is important about this period is not any one number. It is that a cultural permission had been granted. Once surgeons had seen patients survive a hematocrit that would have prompted an urgent transfusion on a ward, the threshold moved, and it moved for the whole specialty. The prime changed from a blood product into a solution, usually balanced salts with some added colloid or sugar depending on the era and the institution, and the patient’s own red cells were the part that got watered down.</p>
+<h2 id="the-smallest-bodies">The smallest bodies</h2>
+<p>Dilution is a matter of proportion, and proportion is cruelest in the small. A circuit has a fixed minimum volume, and an infant’s whole circulation may be little larger than that volume, so the clear fluid can rival or exceed the patient’s own blood. If the technique had a stress test, it would be the operating room for newborns and infants, where the same tubing that is a modest dilution for an adult becomes a flood.</p>
+<p>A retrospective review in the Texas Heart Institute Journal in March 1985, by Carmichael, Cooley, Kuykendall and Walker, gives a sense of what experienced hands achieved there. It covered seventy-three consecutive children under two years old with lesions of the heart and great vessels, all managed without donor blood. Nine died, a mortality of 12.3 percent, and only three of the nine deaths involved blood loss and anemia. Among the fifteen children who needed full cardiopulmonary bypass there were no deaths, and a bloodless prime was used in all seventy-three. The authors concluded that surgery could be done in these children with acceptable mortality.</p>
+<p>Read carefully, the paper cuts two ways. It shows that very small circulations can survive a blood-free prime in a center with unusual experience. It also records that three of nine deaths involved blood loss and anemia, so for a minority the margin was real and was crossed. The paper does not report the hemoglobin levels tolerated, so it cannot say where the cliff edge sits, and it describes the survivors of a selection process as much as a technique. The broader lesson is that the average patient has more reserve than the average protocol assumes, and that no individual can be assumed average.</p>
+<h2 id="where-the-reserve-ends">Where the reserve ends</h2>
+<p>If you go looking for the point at which dilution stops being tolerable, you find that the answer depends heavily on which organ you ask. The brain, the heart and the kidney have different tolerances and, in a pump, different exposures. The kidney is the instructive case, because it is an organ that works at the edge of its oxygen supply even in health. Its medulla sits in a region of low oxygen tension by design, and it has very little to spare.</p>
+<p>A frequently cited study by Swaminathan and colleagues and published in the <em>Annals of Thoracic Surgery</em> in 2003, followed 1,404 patients who had primary elective coronary bypass surgery. They found that the lowest hematocrit reached during bypass was associated with the change in serum creatinine afterward, and that the relationship interacted with body weight, meaning the same dilution did different things to different-sized patients. Their own conclusion was that current guidelines accepting extreme hemodilution may contribute to injury to the kidney and other organs after surgery. I take that as a cautious signal, not a proof. It is an observational study; patients who reach a low hematocrit are not randomly chosen, they tend to be smaller, or to have larger circuits relative to their blood volume, or to have been operated on by teams with particular habits. Correlation of that kind is exactly what an honest reader should handle with tongs.</p>
+<p>The profession’s practical answer has been to stop treating hematocrit as the number to watch. If the problem is delivery of oxygen to tissue, then the relevant quantity is the product of flow and the oxygen content of the blood, and flow can be raised when content is low. This is the logic behind what perfusionists call goal-directed perfusion, in which the pump flow is adjusted continuously to keep an indexed oxygen delivery above a chosen floor. A multicenter randomized trial of that approach was registered under the name GIFT, but when I tried to open the registry record the page returned only site boilerplate, so I cannot tell you its size, its target or its status, and I will not repeat numbers I have only half remembered. What I can say is that the existence of such trials marks a change in vocabulary: the field no longer asks how little blood a patient can have, but how much oxygen the patient is getting per minute, and by what route.</p>
+<h2 id="the-other-way-to-save-the-blood">The other way to save the blood</h2>
+<p>The most elegant modern trick on the pump runs in the opposite direction from dilution. Instead of accepting a thinned patient, the team tries to shrink the prime so that less thinning happens. In retrograde autologous priming, the clear fluid in the arterial and venous lines is displaced by the patient’s own blood just before the machine takes over, so that the fluid is pushed out of the circuit rather than into the patient.</p>
+<p>A randomized trial in the <em>European Journal of Anaesthesiology</em> in 2009 tested this in small adults, those with a body surface area under 1.5 square meters, undergoing first-time, nonemergency cardiac surgery. The 120 patients were randomized to standard priming or the retrograde technique. The mean volume of prime replaced with the patient’s own blood was about 615 milliliters. Red cell transfusion while on the pump was needed in 83.3 percent of the standard group and 26.7 percent of the retrograde group. Transfusion over the whole hospital stay was 90 percent against 50 percent, though the abstract I read did not label each figure explicitly and I am inferring that the retrograde group had the lower rate. The drop in colloid osmotic pressure ten minutes after the aortic clamp was smaller in the retrograde group. Lung, kidney and liver outcomes, and the lengths of stay in intensive care and hospital, did not differ between the groups.</p>
+<p>That last result is worth holding up to the light: the technique cut transfusions sharply and left the softer endpoints unchanged, which may mean dilution in this range is not harmful enough to show in a trial of that size, or that the trial was powered for transfusion and not for organ injury. Both readings fit the data.</p>
+<h2 id="what-a-carrier-in-the-prime-would-mean-and-what-it-would-not">What a carrier in the prime would mean, and what it would not</h2>
+<p>Here the subject meets BHOC, the Biologic Hemoglobin Oxygen Carrier, and I want to be careful not to claim more than the evidence permits. BHOC is a research area. Nothing in this essay is a statement that a cell-free carrier improves outcomes in cardiac surgery, and I know of no result that would justify one. What I can do is point at the shape of the question the pump poses, because it is unusually clean.</p>
+<p>In nearly every other setting where a cell-free carrier is discussed, the clinical problem is chaotic: a hemorrhage with an unknown volume lost, a stroke with an unknown territory at risk, an accident with an unknown arrival time. The pump is the reverse. The circuit is known, its volume is known, the dilution is planned in advance, the patient is monitored with more instrumentation than in almost any other room in the hospital, and the moment of lowest oxygen content is predictable to within minutes. If a cell-free carrier were ever to be tested for a role, an operation in which the hemoglobin is lowered by design is one of the few places where the moment of need can be named before it arrives.</p>
+<p>That cleanliness has a catch. The competing remedies are many and good: smaller circuits, retrograde priming, cell salvage, flow targets set by delivery, and a unit of red cells as a last resort. A new agent would have to beat that field of cheap, well-understood tools in a population whose baseline outcomes are already good.</p>
+<h2 id="the-people-who-run-the-pump">The people who run the pump</h2>
+<p>Nearly every decision above is made by a person who rarely appears in the narrative. The perfusionist sits at the machine for the whole operation, adjusting flow, temperature, anticoagulation and fluid balance minute by minute, and the history of hemodilution is in practice a history of their habits. A cell-free pigment in the plasma could alter optical readings that were designed around red cells, including the venous saturation on which many flow decisions depend. I flag that as a general feature of the class, without a figure, because the interference would depend on the product and the device. An honest development plan would therefore begin in the perfusion lab, with bench circuits and sensor behavior, and the perfusionists would be co-investigators in the real sense.</p>
+<h2 id="what-the-history-actually-teaches">What the history actually teaches</h2>
+<p>Seventy years of this practice leave a few durable lessons, and none of them is the triumphant one. The first is that a tolerance, once granted, spreads beyond the context that justified it. Dilution was accepted to save donor blood and to spare small hospitals a recruitment campaign, and the same acceptance was later applied to patients for whom it was a bad idea. The observational evidence that low hematocrit tracks with kidney injury is a belated attempt to renegotiate a threshold that was set for logistical convenience.</p>
+<p>The second is that the extreme cases teach more than the average ones. The infants in the Texas series show what the technique can do when everything is optimized and what it costs when optimization falls short.</p>
+<p>The third is that the number a profession watches is a decision, not a fact. For decades it was the hematocrit, because a centrifuge produced it quickly, and the move toward delivery targets concedes that it was a proxy. Anyone proposing a new carrier will be asked which number they intend to move.</p>
+<p>The fourth, and the one I find most useful, is that clinicians have already accepted a premise that the oxygen-carrier field often treats as radical: that a patient’s carrier can be lowered, that the loss can be survived, and that the interesting question is the margin. The field began with a surgeon asking what would happen if sugar water were used. A reasonable successor question is what would happen if, in the carefully measured minutes when the hemoglobin is at its lowest, something else were carrying part of the load, and which of the many answers already in use it would have to outperform. I do not know the answer, and I distrust anyone who says they do. But the pump is where the question can be asked with the fewest unknowns, and that is a rarer luxury than it sounds.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>For the history, the American College of Cardiology’s article on the history of cardiopulmonary bypass and the Medical Design and Development piece on the chaotic beginnings of the heart-lung machine give accessible overviews, and the Wikipedia entry on Richard DeWall collects the dates of the disposable oxygenator. For hemodilution itself, the 1965 report by Ablaza and colleagues in the Archives of Surgery and the 1985 Texas Heart Institute Journal series on cardiac surgery in small children by Carmichael, Cooley, Kuykendall and Walker are the primary sources I drew on. For the question of how low is too low, see the 2003 Annals of Thoracic Surgery paper by Swaminathan and colleagues on lowest hematocrit and kidney injury. For the retrograde priming trial, search the European Journal of Anaesthesiology for 2009 and the title phrase about small adults. Where I could read only an abstract or an opening page, I have said so above.</p>
+
+</article>
+<div class="pn"><a href="field-note-25.html"><span>Previous</span>The Color Gives It Away</a></div>
+<p style="margin-top:28px"><a class="cta" href="field-notes.html">All posts</a></p>
+</main>
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" class="fli" onerror="this.style.display='none'">
+      <p>Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="https://coldischemia.foundation">coldischemia.foundation</a></p>
+    </div>
+    <div>
+      <span class="fct">Platform</span>
+      <div class="fl">
+        <a href="command-center.html">Command Center</a>
+        <a href="projects.html">Toolkit</a>
+        <a href="situation-room.html">Situation Room</a>
+        <a href="research.html">Research</a>
+        <a href="kidney-news.html">Kidney News</a>
+        <a href="cif-volunteer-page.html">Volunteer</a>
+        <a href="contact.html">Contact</a>
+        <a href="field-notes.html">BHOC Field Notes</a>
+        <a href="accountability.html">Atlas</a>
+        <a href="congress-scorecard.html">Scorecard</a>
+        <a href="test-your-knowledge.html">Test Your Knowledge</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Projects</span>
+      <div class="fl">
+        <a href="https://donorflow.coldischemia.foundation" target="_blank" rel="noopener">Project Donor-Flow</a>
+        <a href="https://collateral-damage.coldischemia.foundation" target="_blank" rel="noopener">Collateral Damage</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Foundation</span>
+      <div class="fl">
+        <a href="about.html">Our Story</a>
+        <a href="founder-message.html">Message From the Founder</a>        <a href="cif-amazon-library.html">Book &amp; Toolkit Library</a>
+        <a href="advocacy-news.html">Advocacy News</a>
+        <a href="care-partner-advocacy.html">Care Partner Advocacy</a>
+        <a href="transplant-line.html">The Transplant Line</a>
+    <a href="donor-flow.html">Project Donor-Flow</a>
+        <a href="free-guide.html">Free Guide</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Legal</span>
+      <div class="fl">
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="book-a-meeting.html">Book a Meeting</a>
+        <a href="contact.html">Contact</a>
+        
+        <a href="sales-letter.html">Our Case for You</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p class="fcp">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+    <div class="fbl">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Craft of Not Needing Blood | Field Notes | Cold Ischemia Foundation</title>
+<meta name="description" content="Bloodless surgery was built over decades by a few stubborn operating rooms for patients who said no, and a change announced on 18 September 2026 has altered who the oxygen carrier question is really about">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,600;1,9..144,300;1,9..144,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#030509;--void:#07101c;--surf:#0a1628;--raised:#0f1e38;--b:rgba(100,140,200,0.1);--b2:rgba(100,140,200,0.2);--ink:#d8cfc4;--ink80:rgba(216,207,196,0.8);--ink60:rgba(216,207,196,0.6);--ink40:rgba(216,207,196,0.4);--ink20:rgba(216,207,196,0.2);--gold:#c8902a;--gold-l:#e8b84a;--gold-d:rgba(200,144,42,0.15);--pulse:#2ac4c8;--mono:'IBM Plex Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{color:inherit;}
+.hero{padding:120px 24px 40px;border-bottom:1px solid var(--b);}
+.hero-inner,.wrap{max-width:760px;margin:0 auto;}
+.crumb{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink40);margin-bottom:22px;}
+.crumb a{color:var(--pulse);text-decoration:none;}
+.eyebrow{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--pulse);margin-bottom:18px;}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6vw,68px);line-height:1.02;color:var(--ink);margin-bottom:18px;}
+.dek{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:var(--ink60);}
+.wrap{padding:36px 24px 72px;}
+.savebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0;border-block:1px solid var(--b2);margin-bottom:32px;}
+.savebar .l{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink40);margin-right:auto;}
+.cta{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--b2);color:var(--ink80);text-decoration:none;}
+.cta:hover{border-color:var(--gold);color:var(--gold);}
+.cta.gold{background:var(--gold);border-color:var(--gold);color:var(--abyss);}
+.cta.gold:hover{background:var(--gold-l);color:var(--abyss);}
+.body h2{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.8vw,1.9rem);color:var(--ink);margin:2.4rem 0 .7rem;line-height:1.25;}
+.body p{font-size:1.16rem;line-height:1.85;color:var(--ink80);margin-bottom:1.15rem;}
+.pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:22px;border-top:1px solid var(--b2);}
+.pn a{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;max-width:22rem;}
+.pn a span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pulse);margin-bottom:6px;}
+.item{padding:28px 0;border-bottom:1px solid var(--b);}
+.item .m{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink40);margin-bottom:10px;}
+.item h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin-bottom:8px;}
+.item h2 a{text-decoration:none;color:var(--ink);}
+.item h2 a:hover{color:var(--gold-l);}
+.item p{color:var(--ink60);font-style:italic;margin-bottom:14px;font-size:1.08rem;line-height:1.6;}
+.item .row{display:flex;flex-wrap:wrap;gap:10px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(3,5,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(100,140,200,0.12);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nl img{height:32px;width:32px;object-fit:contain;}
+.nb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;white-space:nowrap;}
+.nm{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none;}
+.nm::-webkit-scrollbar{display:none;}
+.nm a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(216,207,196,0.45);text-decoration:none;white-space:nowrap;padding:4px 8px;border-radius:2px;transition:color .15s;}
+.nm a:hover{color:#d8cfc4;}
+.nr{flex-shrink:0;display:flex;gap:8px;}
+.nr a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:2px;transition:all .15s;white-space:nowrap;}
+.nmy{color:rgba(216,207,196,0.45);border:1px solid rgba(100,140,200,0.15);}
+.nmy:hover{color:#c8902a;}
+.njn{background:#c8902a;color:#030509;}
+.njn:hover{background:#e8b84a;}
+@media(max-width:680px){.nm a:not(.nk){display:none;}.nb{display:none;}.nmy{display:none;}}
+footer{background:#030509;border-top:1px solid rgba(100,140,200,.1);padding:44px 40px 24px;}
+.fg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(100,140,200,.1);}
+@media(max-width:800px){.fg{grid-template-columns:1fr 1fr;gap:24px;}}
+.fli{height:26px;display:block;margin-bottom:10px;}
+.fb p{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.22);line-height:2.2;}
+.fb a{color:#c8902a;text-decoration:none;}
+.fct{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c8902a;margin-bottom:12px;display:block;}
+.fl{display:flex;flex-direction:column;gap:8px;}
+.fl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.38);text-decoration:none;transition:color .15s;}
+.fl a:hover{color:rgba(216,207,196,.85);}
+.fbot{max-width:1100px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fcp{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);}
+.fbl{display:flex;gap:14px;}
+.fbl a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(216,207,196,.18);text-decoration:none;}
+.fbl a:hover{color:#c8902a;}
+.fnr{color:#c8902a!important;border-color:rgba(200,144,42,.5)!important;}.nm{justify-content:flex-start;}.nm a.fnk{color:#c8902a;}.hero{padding-top:56px!important;}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}.hero{padding-top:56px!important}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="test-your-knowledge.html" role="menuitem">Test Your Knowledge</a><a href="living-donor-guide.html" role="menuitem">Free Donor Guide (PDF)</a><a href="research-digest.html" role="menuitem">Research Digest</a><a href="inside-files.html" role="menuitem">The Inside Files</a><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-hub.html" role="menuitem">Living Donor Hub</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="kidney-transplant-centers.html" role="menuitem">Kidney Transplant Centers by State</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="services.html" class="cn-t cn-s">Services We Offer</a><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+<header class="hero"><div class="hero-inner">
+<div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="field-notes.html">Field Notes</a> &nbsp;/&nbsp; Post 24</div>
+<div class="eyebrow">Evidence &middot; October 10, 2026 &middot; 13 min read</div>
+<h1>The Craft of Not Needing Blood</h1>
+<p class="dek">Bloodless surgery was built over decades by a few stubborn operating rooms for patients who said no, and a change announced on 18 September 2026 has altered who the oxygen carrier question is really about</p>
+</div></header>
+<main class="wrap">
+<div class="savebar"><span class="l">Save this post</span>
+<a class="cta gold" href="field-note-24.docx" download>Download Word</a>
+<a class="cta" href="field-note-24.pdf" download>Download PDF</a>
+<a class="cta" href="field-note-24.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+<article class="body">
+<p><em>Bloodless surgery was built over decades by a few stubborn operating rooms for patients who said no, and a change announced on 18 September 2026 has altered who the oxygen carrier question is really about</em></p>
+<h2 id="a-date-that-moved-the-ground">A date that moved the ground</h2>
+<p>On Friday 18 September 2026 the Governing Body of Jehovah’s Witnesses announced, through a video statement and a press release issued from Warwick, New York, that accepting the four main components of donated blood, which are red cells, white cells, plasma and platelets, is now a matter of individual conscience. Each member also decides whether to donate blood for the making of components or fractions for other people. Transfusion of whole blood remains refused, and the release describes that refusal as unchanged, a core teaching resting on the command to abstain from blood. In March 2026 the same body had clarified that a member may decide whether to have his own blood drawn and stored ahead of a planned operation and given back later, a practice that the denomination had called contrary to God’s law as recently as a 2000 statement. Within about six months, the ground beneath the best known bloodless programs has been rearranged.</p>
+<p>I begin here because this series has leaned on that ground. An earlier essay described Witnesses as refusing whole blood, red cells, white cells, platelets and plasma, and treated that refusal as the clearest case in which a hemoglobin carrier presents a different moral profile from a trauma drug. As a description of the doctrine, that sentence is now out of date by the denomination’s own account. What has not changed is the person: a patient who bleeds, whose hemoglobin is falling toward a number that physiology does not forgive, and who may or may not accept what the blood bank can offer.</p>
+<h2 id="what-a-doctrine-from-1945-did-to-an-operating-room">What a doctrine from 1945 did to an operating room</h2>
+<p>The prohibition on blood transfusion among Witnesses dates to 1945, and it was extended over the following decade to cover whole blood from another person and, in time, the patient’s own stored blood. By 1961 a member who knowingly accepted a transfusion faced removal from the congregation, which is a heavy penalty in a community where nearly all of a person’s relationships may sit inside it. For a surgeon in the early 1960s, this created a stark choice. Open-heart surgery had just become possible, it was fed by the blood bank, and the operations that might save a child with a failing valve or a hole between the heart’s chambers were the very ones that consumed blood in quantity. Operating on a Witness meant either declining the case or doing something that the field had not yet done.</p>
+<p>The surgeon most associated with doing something is Denton Cooley, who founded the Texas Heart Institute in Houston on 3 August 1962. According to an account kept by the Texas Medical Center library, Cooley showed in the early 1960s that the heart-lung machine could be primed with a clear electrolyte and glucose solution in place of blood. The earlier custom had been to collect eight to ten units from the blood bank on the day of an operation simply to fill the circuit. Removing blood from the priming volume spared the donor supply and meant that a patient who would accept no blood at all could be placed on bypass without the machine itself demanding any. A film made in 1962 and held in that library’s collection records an operation in a Jehovah’s Witness to repair a leaking mitral valve, which documents that such operations were being done. I have not seen the film, and the library’s summary does not say whether the patient survived, so I cite it as evidence that the practice existed rather than as evidence of how it went.</p>
+<h2 id="five-hundred-and-forty-two-operations">Five hundred and forty-two operations</h2>
+<p>In 1977 Ott and Cooley published a report in the Journal of the American Medical Association with a title that left little room for interpretation: cardiovascular surgery in Jehovah’s Witnesses, 542 operations without blood transfusion. The series covered twenty consecutive years. Patients ranged in age from one day to eighty-nine years. Early mortality, meaning death within thirty days, was 9.4 percent overall. Among 362 patients who needed temporary cardiopulmonary bypass it was 10.7 percent, and among 126 who received one or two replacement valves it was 13.5 percent. The authors noted that deaths after replacement of the aortic valve or repair of a hole between the ventricles occurred only in patients who already had serious complications before the operation. By their count, anemia before or after the operation contributed to twelve deaths, and blood loss itself directly caused three. Their conclusion was that cardiovascular operations can be performed safely without blood transfusion.</p>
+<p>It is worth reading those numbers with suspicion, since foundations deserve inspection. The series comes from one center and one surgical team, with no comparison group. The patients were not a random draw, and some of the sickest may have been referred elsewhere or not at all. A mortality figure of nine to eleven percent in an era when valve surgery was young cannot be set beside a modern figure and judged. What the series establishes is narrower and more durable: careful operating, a diluted prime and attention to every milliliter lost could carry a large number of patients through major cardiac surgery without a transfused unit, and when they died, the cause was more often their disease than their anemia.</p>
+<h2 id="taking-the-craft-apart">Taking the craft apart</h2>
+<p>The craft reduces to a chain, each link removing one reason to lose oxygen-carrying capacity.</p>
+<p>The first link is the patient’s own marrow, before the operation. A hematology review published in late 2020 by DeLoughery, aimed at clinicians who care for people declining blood products, lays out the preoperative logic. Iron deficiency is looked for and treated, preferably by infusion when it is absolute. Erythropoiesis-stimulating drugs are given to push the marrow harder, with regimens in the review that run weekly for four doses when at least three weeks remain, and a compressed schedule begun the day before cardiac surgery when time is short. The same review notes the regulatory warning attached to these drugs about clotting and tumor progression, and it recommends avoiding formulations that contain albumin for patients whose conscience excludes it. These are dosed, timed interventions with defined windows, and they depend on one condition that matters later in this essay: time. A marrow answers over days to weeks, and the patient who is bleeding today has no such interval.</p>
+<p>The second link is the reduction of loss during the case. Here the toolkit is mechanical. The program at Englewood Hospital in New Jersey, one of the best known in the United States, lists minimally invasive operating and meticulous technique, a cell saver that collects shed blood and returns it, oximetry, the argon beam coagulator, hemostatic drug therapy, volume expanders with hemodilution, synthetic erythropoietin, the harmonic scalpel and ordinary electrocautery. Its web page does not give a founding date, and it describes the program’s age two different ways, as three decades in one place and a twenty-five year history in another, so I will not offer a year. The DeLoughery review adds tranexamic acid, which it says should be strongly considered when expected loss exceeds half a liter. None of these items is glamorous. Each shaves a few percent off the loss, and the total, achieved by a team that thinks about losses as a sum, is large.</p>
+<h2 id="the-floor-beneath-the-hemoglobin">The floor beneath the hemoglobin</h2>
+<p>A craft built around tolerating anemia depends on knowing how low is too low, and the answer came in an unusual way, from patients whose refusal made the experiment unavoidable. Carson and colleagues reviewed adults who declined red cell transfusion on religious grounds and who had operations between 1981 and 1994. Of 2,083 eligible patients, 300 had a postoperative hemoglobin of 8 grams per deciliter or lower and formed the analysis group. The primary outcome was death in hospital within thirty days. Among those with postoperative values between 7.1 and 8.0, no one died, although the statistics allow that the true rate could be as high as about 3.7 percent, and about 9.4 percent suffered illness short of death. At the other end, among patients whose lowest value fell between 4.1 and 5.0, 34.4 percent died, with a confidence interval running from roughly 19 to 53 percent. After adjustment for age, cardiovascular disease and an illness severity score, the odds of death rose by a factor of 2.5 for each one gram per deciliter fall in hemoglobin below 8. The DeLoughery review reports that the same group’s later work lowered that factor to about 1.84, which is consistent with the idea that improved care changes the slope, though I have not read that later paper myself.</p>
+<p>This is a map of a cliff, drawn from the only people for whom the edge was walked on purpose. It says that the body is remarkably forgiving down to the neighborhood of 7 or 8 and then becomes steeply unforgiving, with each lost gram costing a large increase in the odds of death. It also says something that matters for anyone designing an oxygen carrier. The place where a carrier could help most is not the comfortable range at the top, where blood or no blood the patient does well, but the steep part of the curve below 6, where survival depends on a few additional grams of carrying capacity, and where a patient who has declined everything may have nothing else to reach for. A stable patient at 7 to 8 will not benefit from transfusion, according to the same review, and a device that raises the number into that range gains no credit. The shape of the target is a narrow window of profound anemia in a patient who cannot wait for the marrow.</p>
+<h2 id="a-natural-experiment-with-a-surprising-answer">A natural experiment with a surprising answer</h2>
+<p>If the 1977 series could be criticized for lacking comparison, a 2012 paper in the <em>Archives of Internal Medicine</em> by Pattakos and colleagues supplied one, and its framing deserves attention for how unfashionable its implications are. The authors, working at the Cleveland Clinic’s heart and vascular institute, called it a natural experiment in severe blood conservation. They examined cardiac surgery between 1983 and 2011 in 322 Witnesses who refused transfusion and in 87,453 other patients, of whom 38,467 were not transfused and 48,986 were. Using propensity matching to compare Witnesses with similar transfused patients, they found that the Witnesses had fewer heart attacks after surgery, at 0.31 percent against 2.8 percent, fewer reoperations for bleeding, at 3.7 percent against 7.1 percent, and less prolonged ventilation, at 6 percent against 16 percent. Intensive care and hospital stays were shorter. One-year survival was 95 percent for Witnesses and 89 percent for matched transfused patients, and at twenty years the two groups converged, at 34 and 32 percent. The authors concluded that when comparisons were matched by transfusion status, Witnesses did not appear to carry a higher risk of complications or of long-term death.</p>
+<p>I have read only the abstract, in a mirror hosted by a hospital system, and parts of it were garbled, so I will not report the number of matched pairs or the exact statistical tests. The limitations are the usual ones for observational work. Propensity matching can only balance what has been measured, and the decision to transfuse is itself driven by how sick or how bleeding a patient is, so transfused patients differ in ways that matching may not capture. It would be a mistake to read the paper as proving that transfusion is harmful. What it does show is that an organization that treats blood as scarce and as a last resort can achieve results as good as the transfusing majority, in a population selected, if anything, by a willingness to accept risk. That is a statement about the quality of the alternative, and it should change how every trial of an oxygen carrier is designed.</p>
+<h2 id="what-a-carrier-is-competing-against">What a carrier is competing against</h2>
+<p>In earlier essays the comparison implicitly made was between a bovine hemoglobin solution and blood, or between the solution and nothing. The history above suggests a third comparator that is harder to beat: optimized bloodless care. If a program has already treated the iron deficiency, pushed the marrow, diluted the prime, salvaged what it shed, and kept the laboratory to pediatric tubes, then the patient who remains in the steep part of the curve below 6 is the residue that the craft could not solve. A carrier tested against an unprepared control group will look better than it deserves, because the control group has been deprived of a toolbox that exists. A carrier tested in the residue is a far smaller study, a far harder one to recruit, and a far more honest one.</p>
+<p>This changes the account of who needs a BHOC. For years the justification could be described in the shorthand of the community that refused blood. The craft has narrowed it from the other side, by shrinking the need through prevention. What remains are patients in whom prevention failed or was not possible: sudden catastrophic hemorrhage with no time for iron or erythropoietin, obstetric and trauma emergencies, patients whose anemia was severe on arrival, patients at a distance from any program. The patients on that list are mostly distinguished by circumstance, not belief, and many would accept blood if it were available in time and compatible. That is a different market and a different ethical frame from the one the early compassionate cases suggested.</p>
+<h2 id="the-unknown-that-september-created">The unknown that September created</h2>
+<p>The most honest statement I can make about the effect of the new guidance is that nobody yet knows. A clinical commentary on the revised guidance for children’s cancer and blood disorder services makes the point clearly: all the pediatric data it cites predate the change, no figures yet show how families will decide, and a major review in the field carries a publisher’s note saying it will be updated because the guidance shifted after the paper was accepted. The same commentary advises clinicians to ask about each component separately, to treat any advance directive or chart note dated before 18 September 2026 as possibly out of date, and to avoid inferring what a person will accept from their affiliation. That last point is the more important one. Conscience is not a lookup table, and a member who chooses to accept platelets but not red cells, or red cells but not plasma, produces a care plan that has no precedent in the literature.</p>
+<p>Several outcomes are possible, and I can only list them. Some members may accept components at once and look like any other patient. Some may continue to refuse out of settled conviction, which they are entitled to do. Some may take time. A report by Humanists UK quotes a former hospital liaison committee member who called the change life-saving but said it came too late for people who died after refusing transfusions, and it cites a 2016 medical review estimating roughly a thousand Witnesses dying each year after refusing transfusion, while noting that no reliable global figure exists. I treat that as an order of magnitude from a single source, not a count.</p>
+<p>For a BHOC developer, the implication is double edged. A share of the patients who once had no option other than a non-blood carrier will now have the blood bank available, and the moral urgency that attached to their case is reduced in the same proportion. Those who still refuse components, and those who refuse whole blood and nothing more, remain the clearest group for whom a bovine hemoglobin product would be a non-blood alternative. The point about a product whose appeal rests on a doctrine is uncomfortable but plain: the doctrine can change its mind in a single video statement, and a development program that depended on it would be exposed to the vicissitude of a decision made far from any laboratory.</p>
+<p>What the history of bloodless surgery contributes is a standard of evidence and a standard of seriousness. A new carrier should be compared against the best conservation practice, not against an absence of it, and outcomes should be reported at the steep part of the hemoglobin curve rather than the plateau. And the founders’ ledger sets the tone: count every milliliter, name every death in which anemia played a part, and say so when a series comes from a single center. A marrow still needs weeks to respond, a remote clinic still has no blood bank, and a hemorrhage can still outrun a donated unit, and none of that depends on theology. The honest answer is that a BHOC would matter at the margin, in a small number of patients whom nothing else reaches. That is a modest, defensible argument, and the people who made bloodless surgery possible, working with an iconoclast’s patience at the edge of a curve, would have recognized it.</p>
+<h2 id="what-i-could-not-establish">What I could not establish</h2>
+<p>Several things here rest on thin ground. The Cooley film is known only from a library catalogue, and I could not verify its outcome. The Englewood page gives no founding date. The Pattakos paper was read in abstract form only, and the later Carson figure of about 1.84 comes from a review, not the paper. I found no reliable count of patients treated in bloodless programs, and the phrase tens of thousands on one hospital’s page is a description, not a measurement. Above all, no data yet show how patients will behave after the September 2026 announcement.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>For the history, look for Ott and Cooley’s 1977 report in the Journal of the American Medical Association and the Texas Medical Center library’s account of Cooley’s work. For the floor beneath the hemoglobin, read the Carson group’s retrospective study of patients who declined red cell transfusion and the 2012 Pattakos paper in the Archives of Internal Medicine. For technique, see DeLoughery’s December 2020 review in Clinical Advances in Hematology and Oncology and the Englewood Hospital page on bloodless medicine. For the policy change, read the Jehovah’s Witnesses release of 18 September 2026, the Associated Press report of 20 March 2026, the Humanists UK report of 21 September 2026, and the Onco’Zine commentary on revised blood guidance in pediatric hematology and oncology. Check each against the original before relying on any figure quoted here.</p>
+
+</article>
+<div class="pn"><a href="field-note-23.html"><span>Previous</span>The Assay That Lies</a><a href="field-note-25.html"><span>Next</span>The Color Gives It Away</a></div>
+<p style="margin-top:28px"><a class="cta" href="field-notes.html">All posts</a></p>
+</main>
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" class="fli" onerror="this.style.display='none'">
+      <p>Grassroots Care Partner Advocacy<br>Ellenton, Florida · 16th Congressional District<br><a href="https://coldischemia.foundation">coldischemia.foundation</a></p>
+    </div>
+    <div>
+      <span class="fct">Platform</span>
+      <div class="fl">
+        <a href="command-center.html">Command Center</a>
+        <a href="projects.html">Toolkit</a>
+        <a href="situation-room.html">Situation Room</a>
+        <a href="research.html">Research</a>
+        <a href="kidney-news.html">Kidney News</a>
+        <a href="cif-volunteer-page.html">Volunteer</a>
+        <a href="contact.html">Contact</a>
+        <a href="field-notes.html">BHOC Field Notes</a>
+        <a href="accountability.html">Atlas</a>
+        <a href="congress-scorecard.html">Scorecard</a>
+        <a href="test-your-knowledge.html">Test Your Knowledge</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Projects</span>
+      <div class="fl">
+        <a href="https://donorflow.coldischemia.foundation" target="_blank" rel="noopener">Project Donor-Flow</a>
+        <a href="https://collateral-damage.coldischemia.foundation" target="_blank" rel="noopener">Collateral Damage</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Foundation</span>
+      <div class="fl">
+        <a href="about.html">Our Story</a>
+        <a href="founder-message.html">Message From the Founder</a>        <a href="cif-amazon-library.html">Book &amp; Toolkit Library</a>
+        <a href="advocacy-news.html">Advocacy News</a>
+        <a href="care-partner-advocacy.html">Care Partner Advocacy</a>
+        <a href="transplant-line.html">The Transplant Line</a>
+    <a href="donor-flow.html">Project Donor-Flow</a>
+        <a href="free-guide.html">Free Guide</a>
+      </div>
+    </div>
+    <div>
+      <span class="fct">Legal</span>
+      <div class="fl">
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="book-a-meeting.html">Book a Meeting</a>
+        <a href="contact.html">Contact</a>
+        
+        <a href="sales-letter.html">Our Case for You</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <p class="fcp">&copy; 2025&ndash;2026 Cold Ischemia Foundation &middot; Ellenton, Florida &middot; No pharmaceutical funding &middot; Not medical advice &middot; Not legal advice</p>
+    <div class="fbl">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var n=new Date(),t=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0");
+document.querySelectorAll("[data-release]").forEach(function(e){if(e.getAttribute("data-release")>t){e.style.display="none";}});})();
+</script>
+</body>
+</html>
