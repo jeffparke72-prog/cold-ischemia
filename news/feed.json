@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-20T21:31:21.209247+00:00",
+"updated": "2026-10-21T00:04:37.627227+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -95,7 +95,7 @@
 "category": "News",
 "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en",
 "ok": true,
-"count": 21,
+"count": 24,
 "error": null
 },
 {
@@ -118,9 +118,9 @@
 "name": "UNOS News",
 "category": "Policy",
 "url": "https://unos.org/feed/",
-"ok": false,
-"count": 0,
-"error": "ValueError: HTTPError: HTTP Error 404: Not Found"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "Healio Nephrology",
@@ -133,14 +133,58 @@
 ],
 "items": [
 {
+"title": "Eicosanoids as Biomarkers of Hyperfiltration-Mediated Injury in CKD",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032845?dgcid=rss_sd_all",
+"summary": "By Tarak Srivastava, Ginger L. Milne, Jianping Zhou, Mohammad H. Rezaiekhaligh, Derek K. Ng, Jennifer L. Roem, Bradley A. Warady, Susan L. Furth, Ram Sharma, Mukut Sharma, Kyle Deville, Anjali Nayak, Tom Blydt-Hansen,…",
+"outlet": "",
+"published": "2026-10-21T00:03:44.095375+00:00",
+"id": "991ca9538186234d",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-21T00:04:37.627227+00:00"
+},
+{
+"title": "New platform unites polycystic kidney disease data for near-real-time analysis - Medical Xpress",
+"link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOWDMzUGlXdzcxSF94V0xmX01ybk95NGtSVHRHNVhPZ3kwRlQ2TklNdGlWbDlESWlqbnd0VUdXSUg0SkFFaDZxWXZ2Qk40VE1xa3JUOVowZXU3V1dMNmRIemdnQXJPXzF2WjdYQUJMYjEzTEZldTFORW5XVTFBOWhoODJjQkkycXdUTFZZ?oc=5",
+"summary": "New platform unites polycystic kidney disease data for near-real-time analysis Medical Xpress",
+"outlet": "Medical Xpress",
+"published": "2026-10-20T23:40:07+00:00",
+"id": "8776bf72ef481d53",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-21T00:04:37.627227+00:00"
+},
+{
+"title": "Innovation in Kidney Transplant: The Benefits of Robotic Surgery - Froedtert & MCW",
+"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUHA4Yk53Z01qT2RvaEJud3o0eW5QQ1hpRFFmUmhBOC1hTzJrbjFFVVQzRl9uN2duVS1kWDc3LVFuYUg2ZlRidEt0ZFdxUmFlM0xRLUlGU25tZVNoWEZoWC1ZT1djMG9XejVVN3cwMjBDdHBjeHE0eEllMHJEMzRwLVdDNk1SNXZtRDg4S3FVeE4?oc=5",
+"summary": "Innovation in Kidney Transplant: The Benefits of Robotic Surgery Froedtert & MCW",
+"outlet": "Froedtert & MCW",
+"published": "2026-10-20T21:42:08+00:00",
+"id": "a25feba38a060a65",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-21T00:04:37.627227+00:00"
+},
+{
 "title": "Four Pillars in Type 2 Diabetes and Chronic Kidney Disease G4-G5: Mission Impossible—or Not Too Late to Start?",
 "link": "https://www.sciencedirect.com/science/article/pii/S2590059526002785?dgcid=rss_sd_all",
 "summary": "By Masayuki Yamanouchi, Naoki Sawa, Kengo Furuichi, Takashi Wada",
 "outlet": "",
-"published": "2026-10-20T21:30:27.528847+00:00",
+"published": "2026-10-20T21:31:21.209247+00:00",
 "id": "76643b623cf88114",
 "source": "Kidney Medicine",
 "category": "Journals",
+"first_seen": "2026-10-20T21:31:21.209247+00:00"
+},
+{
+"title": "How the US organ transplant system works and what to ask to improve your chances - The Batesville Daily Guard",
+"link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxObTZUWFNPd2Zod3loNzQwTUpkVUlIVGhTUmpXTkZ1VTlKZzJIeHZzSUpLbXJ0bk1MWG5VWWlyZjZoMmg2ZkxDOGVoMXh5cHdoNEtxcXk3SmRfUjZFd1lsQ0MxOUViMUM0WjVheklfdWlpR19QSVJoQ0ZRQ19NNGdaNnBra0FxNG1IdXhYMktJTUswTHNCM1MyQTB3TlFYOWt1QzVKVWVxREZhSjBJUy1HbVlSQW5LbTBlM3F5RDRmTmQwWmFjVEt4SnFqTktBVDBpb1M5dTFEZWNnb29fSEx0WmhPU0FZWWlpSmRiakhkY2pwME54aEMtV1F2cTdIc3NUbnc?oc=5",
+"summary": "How the US organ transplant system works and what to ask to improve your chances The Batesville Daily Guard",
+"outlet": "The Batesville Daily Guard",
+"published": "2026-10-20T21:31:21.209247+00:00",
+"id": "4f6870aae44a7d25",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
 "first_seen": "2026-10-20T21:31:21.209247+00:00"
 },
 {
@@ -153,6 +197,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-20T21:31:21.209247+00:00"
+},
+{
+"title": "How the US organ transplant system works and what to ask to improve your chances - Breitbart News",
+"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQTnJhejVQRGJiSW1rNTQxdEFJaU44YmJ2NVJ5QXgtYmV4UGY1T01DZjhGWlJuMUVXQzB0QklMMklXZmx5M1hTeU55d0ZNRXdjME02R01QaVZmTzU2d0lVNzQyeWVFMy0tOXZBQXFyaGJCSDlZMlgyZXR0WlFObk5wemZ0eS1INGpxZU9kaTlmQVZSNTVvdm9RS3VOQ0pScnk4R0llZ0RuNVRIdnlZNGoyQUVtcVhKOVHSAbcBQVVfeXFMUE5yYXo1UERiYkltazU0MXRBSWlOOGJidjVSeUF4LWJleFBmNU9NQ2Y4RlpSbjFFV0MwdEJJTDJJV2ZseTNYU3lOeXdGTUV3YzBNNkdNUGlWZk81NndJVTc0MnllRTMtLTl2QUFxcmhiQkg5WTJYMmV0dFpRTm5OcHpmdHktSDRqcWVPZGk5ZkFWUjU1b3ZvUUt1TkNKUnJ5OEdJZWdEbjVUSHZ5WTRqMkFFbXFYSjlR?oc=5",
+"summary": "How the US organ transplant system works and what to ask to improve your chances Breitbart News",
+"outlet": "Breitbart News",
+"published": "2026-10-20T20:54:08+00:00",
+"id": "7d8cb46e1dd919a7",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T00:04:37.627227+00:00"
 },
 {
 "title": "Elevated Apoptosis-Related Proteins May Predict Greater Kidney Benefit From Tirzepatide - DocWireNews",
@@ -175,6 +230,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-20T21:31:21.209247+00:00"
+},
+{
+"title": "How the US organ transplant system works and what to ask to improve your chances - The Verde Independent",
+"link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOOS1mVnRyY29NMmMwWGtIWGZPT1hHak1XOFR1eXd5RzhoMFRvTl9yaDNKeWpXakowQTRjbTBWNFdDazRJZkRDQ211UVlTSm5jdTg3dWtWOE5wa00zcklIbFpqREhEd2VyOHNzMkNfR3dFejRUeHBCVzRoMTVWS2ZESTYxVnFoNWgwU0ViNzlobUd5NTNSV2R4WjJ1T0ZHeFB2SkVQWDJDZ0xkUGdybzhLY3lnRmFsQWs3bEJQd2ZxSm14RDRuYTlHa2xnX1NicGxOa1BwOHhZLVU3YW1MdDBsZXJHVzBKbDJYZmtOSmExc2xKcWsxdnNjMDRuWmxaRFU?oc=5",
+"summary": "How the US organ transplant system works and what to ask to improve your chances The Verde Independent",
+"outlet": "The Verde Independent",
+"published": "2026-10-20T19:48:53+00:00",
+"id": "331c63c7f98052c6",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T00:04:37.627227+00:00"
 },
 {
 "title": "Study Identifies Transition to Maintenance Dialysis as High-Risk Period for Gout Flares - DocWireNews",
@@ -206,6 +272,17 @@
 "published": "2026-10-20T18:01:36+00:00",
 "id": "c8503e60a7c50d02",
 "source": "Healio Nephrology",
+"category": "News",
+"first_seen": "2026-10-20T21:31:21.209247+00:00"
+},
+{
+"title": "How the US organ transplant system works and what to ask to improve your chances - Ottumwa Courier",
+"link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQNGNSMGFuazNLM0NZdjA4NENhYm00aVVJWkhZc3VGcjRmODhyRkR0emc4bzM2ZkJocFVYRjQ3Ml9XWUZjSy04WlhQZzI0MHQ4VnhwM21hTzBCT2FfUnRyYm1TUkhnak1tdW1YZWRXY2YzR0t1QXlyOW9fZy1jS2ctS2N6WEUzYkc0em5SeC1wY2Z0Uk03S0RaLVJBNFRkS3FsR3UwRkJNNUJPWnNoTVJfcENsRDNWdlhkcEx4VVdkeWQwR2cwcEJDeE1wTWVSUkdPSkVrcTE3Y1JDc1U4QUhLcWttRTExMjlmMmxWM2F6WGRpMW9yanQtT0QtTkhXYkxGWENiX24xRC1HVXVZ?oc=5",
+"summary": "How the US organ transplant system works and what to ask to improve your chances Ottumwa Courier",
+"outlet": "Ottumwa Courier",
+"published": "2026-10-20T18:00:22+00:00",
+"id": "31754079877c9d67",
+"source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-20T21:31:21.209247+00:00"
 },
@@ -298,6 +375,17 @@
 "first_seen": "2026-10-20T17:54:47.068880+00:00"
 },
 {
+"title": "Uric Acid Testing in Veterans With Chronic Kidney Disease - DocWireNews",
+"link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBFbXZwbVFlcnlrRllkVXVTNjBMRVdSTDFJX1BCenc3RTJHWmgtenBMUWZmakltalY4ZDFnbldjV2l1cmFkci11eVlkOVdYdTJJa1gtdWtqb1p5Uk1zYlo5VHUtdnRqblduSC1fa2tmd2JYb2JPMUI0Wm5XOA?oc=5",
+"summary": "Uric Acid Testing in Veterans With Chronic Kidney Disease DocWireNews",
+"outlet": "DocWireNews",
+"published": "2026-10-20T17:54:47.068880+00:00",
+"id": "ba6d9a32bdf39282",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-20T17:54:47.068880+00:00"
+},
+{
 "title": "How the US organ transplant system works and what to ask to improve your chances - CT Insider",
 "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPNXBPOGgzRFREMGpLWkxoRm9TX3pvN29EeVZiSUdqeTg1WlNJRW9xSDA3NHVCdlN2Y19YVUJidXhXNnZmSFU1cUwycGwzZ0t3YmoyQmFBQjAxankteWRaSEhjZk45aXZyMWFEWlNSeUEtVmJrOHJRVi1OVmpEMzlmVzc5MG4zR3NpSllidDdwczlzSUlyX3lBeVpCQm5XYWtTcm9LX2YxUExDWDRQc2c?oc=5",
 "summary": "How the US organ transplant system works and what to ask to improve your chances CT Insider",
@@ -342,28 +430,6 @@
 "first_seen": "2026-10-20T21:31:21.209247+00:00"
 },
 {
-"title": "How the US organ transplant system works and what to ask to improve your chances - Ottumwa Courier",
-"link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQNGNSMGFuazNLM0NZdjA4NENhYm00aVVJWkhZc3VGcjRmODhyRkR0emc4bzM2ZkJocFVYRjQ3Ml9XWUZjSy04WlhQZzI0MHQ4VnhwM21hTzBCT2FfUnRyYm1TUkhnak1tdW1YZWRXY2YzR0t1QXlyOW9fZy1jS2ctS2N6WEUzYkc0em5SeC1wY2Z0Uk03S0RaLVJBNFRkS3FsR3UwRkJNNUJPWnNoTVJfcENsRDNWdlhkcEx4VVdkeWQwR2cwcEJDeE1wTWVSUkdPSkVrcTE3Y1JDc1U4QUhLcWttRTExMjlmMmxWM2F6WGRpMW9yanQtT0QtTkhXYkxGWENiX24xRC1HVXVZ?oc=5",
-"summary": "How the US organ transplant system works and what to ask to improve your chances Ottumwa Courier",
-"outlet": "Ottumwa Courier",
-"published": "2026-10-20T17:43:09+00:00",
-"id": "31754079877c9d67",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T21:31:21.209247+00:00"
-},
-{
-"title": "How the US organ transplant system works and what to ask to improve your chances - The Batesville Daily Guard",
-"link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxObTZUWFNPd2Zod3loNzQwTUpkVUlIVGhTUmpXTkZ1VTlKZzJIeHZzSUpLbXJ0bk1MWG5VWWlyZjZoMmg2ZkxDOGVoMXh5cHdoNEtxcXk3SmRfUjZFd1lsQ0MxOUViMUM0WjVheklfdWlpR19QSVJoQ0ZRQ19NNGdaNnBra0FxNG1IdXhYMktJTUswTHNCM1MyQTB3TlFYOWt1QzVKVWVxREZhSjBJUy1HbVlSQW5LbTBlM3F5RDRmTmQwWmFjVEt4SnFqTktBVDBpb1M5dTFEZWNnb29fSEx0WmhPU0FZWWlpSmRiakhkY2pwME54aEMtV1F2cTdIc3NUbnc?oc=5",
-"summary": "How the US organ transplant system works and what to ask to improve your chances The Batesville Daily Guard",
-"outlet": "The Batesville Daily Guard",
-"published": "2026-10-20T17:43:09+00:00",
-"id": "4f6870aae44a7d25",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T21:31:21.209247+00:00"
-},
-{
 "title": "How the US organ transplant system works and what to ask to improve your chances | Lifestyles | dailygazette.com - The Daily Gazette",
 "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOMmNuTTFpZDBMTUVTWWMzWkd3Q1dwX3ZMbkQ1aFJjUjZaai1xTHdRbk0zS2l1WnM3TllHNE1WWmpUaGZZSnFtdm5aOTRDbWVmUkdNYmZRZU82S25jR1RBOWN3c0h1QVdNejdGWVJycjJaQVZGR1RnU0RuVVdJVTcxWllhTUVHWTlUc3c1LThRVWxrS09ieUJneURZYWFUMjVRVmk0djRZbEpxYlBCc2N6LVhIWnVndV85d1RIWXFJTlAzQWVESkJJYnBLZGFYQ0pFVVhaaEZOT0ZiOWNLVjVUVHJBeEFWdVdIOUluSWJSd19UbWt0OElNRTlTSXgtTGF3N2c?oc=5",
 "summary": "How the US organ transplant system works and what to ask to improve your chances | Lifestyles | dailygazette.com The Daily Gazette",
@@ -384,6 +450,39 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-20T21:31:21.209247+00:00"
+},
+{
+"title": "How the US organ transplant system works and what to ask to improve your chances - Bozeman Daily Chronicle",
+"link": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNM3ZHOHk1VDRieUVhUHdRRElydHprTHI4YWViVlJEX2ZiOWROZzdBaW9DWjFqQ19VVlNlUmxYRjhUbnp0M21iVjFnUlRRUDVlUmVyZ3Rqd0pCd25GcXpRTzRWNGktc2lCM3ZPQmloUm1ndHc5VEpvN0doY2dBSGRrNEJIVlhpX1c3azlmaEhWcjU0U3h3bV92eGpEa1ItenZNSEItSFRKa2tyV2JsQWp5RWRwdFB4ekVtLXo4Njg3RmNGaG9FX0ppNjhpZlhoNFRwUVVnd25zVlR1M3NVWHRDRW4yWk9GWm5KZGVFNDhmNHFTTklLWV9jb1pOa2pLSnFnWF9CbGdsaFdHZw?oc=5",
+"summary": "How the US organ transplant system works and what to ask to improve your chances Bozeman Daily Chronicle",
+"outlet": "Bozeman Daily Chronicle",
+"published": "2026-10-20T17:43:09+00:00",
+"id": "c709a798ceb87f75",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T00:04:37.627227+00:00"
+},
+{
+"title": "How the US organ transplant system works and what to ask to improve your chances - Temple Daily Telegram",
+"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNZWRPWHRnWlBybkR0U3Z0XzViRnhxMnVvTms0RVZ5UC04WDlOMTV4RXVHd2NxYUdJcm52M0Z6SjE1Qy16dFZqdDYwUFpMTHFZeTR0YzlUc1g0a1BFOWNNV0Z1RHFKeUhtODJFeUpla3g2RFVnV3lKWTVyQ180WnJXVkdtQV93SGRlTFN2THZSWTk?oc=5",
+"summary": "How the US organ transplant system works and what to ask to improve your chances Temple Daily Telegram",
+"outlet": "Temple Daily Telegram",
+"published": "2026-10-20T17:43:09+00:00",
+"id": "8fc340d7a987b5ab",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T00:04:37.627227+00:00"
+},
+{
+"title": "How the US organ transplant system works and what to ask to improve your chances - The Daily Gazette",
+"link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNcEhHMU43UFRQUU9wS05aY1dfTGljeFI2bHctZ2M2cHVkNmwxSnQwOU9DU1pPSFN1NzdhSjZFRVRzVF9BTDBlR2tiRFBJZTRNSFh0NEZkY3Q2ckhxX3hqZ1BZZm1DU1hsRndhNGtkblhJa2k5a1pCVTlCQU1tY3VSc0xsV0xkM1ZoTG1JbGZ3TkJSRDFwNlgyMUMyUy15WlRqX3liYkxaaHBkRUpEcHFLSnE4R2M4QzVtLUwtX3gzMjJldnZuM29hTU5kc2ljUW82TlBGX1ZfQjFyUy1wblF2VnJ0OWFJT3lFanVBZkYwcV9uVGtwMGJjM3JnZkFHb1dnbzZMbHZyaEJpSlMwM2N2RE9HbXQ?oc=5",
+"summary": "How the US organ transplant system works and what to ask to improve your chances The Daily Gazette",
+"outlet": "The Daily Gazette",
+"published": "2026-10-20T17:43:09+00:00",
+"id": "7a283dc69fcb700d",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T00:04:37.627227+00:00"
 },
 {
 "title": "HHS Launches Landmark National Plan to Transform Kidney Care in America - HHS.gov",
@@ -419,17 +518,6 @@
 "first_seen": "2026-10-20T21:31:21.209247+00:00"
 },
 {
-"title": "Uric Acid Testing in Veterans With Chronic Kidney Disease - DocWireNews",
-"link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBFbXZwbVFlcnlrRllkVXVTNjBMRVdSTDFJX1BCenc3RTJHWmgtenBMUWZmakltalY4ZDFnbldjV2l1cmFkci11eVlkOVdYdTJJa1gtdWtqb1p5Uk1zYlo5VHUtdnRqblduSC1fa2tmd2JYb2JPMUI0Wm5XOA?oc=5",
-"summary": "Uric Acid Testing in Veterans With Chronic Kidney Disease DocWireNews",
-"outlet": "DocWireNews",
-"published": "2026-10-20T16:48:59+00:00",
-"id": "ba6d9a32bdf39282",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
 "title": "Kidney Care Partners Lobbies Dialysis Bills via Crossroads - Legis1",
 "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9tRTgxWmtXVUFhX1RGenFndnVBby1mcDFDWmMwOXpxWUdDS2RlazQzS25tUXl2QjVoTm9TRlFEQXBrZ3FiOU1QUk10M3N3cVZxQXpCUzVONzJhSTJ5S3JyeFVWVGNRTUU3WVFGcDNsM1dBQmwxMG1YMnpR?oc=5",
 "summary": "Kidney Care Partners Lobbies Dialysis Bills via Crossroads Legis1",
@@ -441,23 +529,23 @@
 "first_seen": "2026-10-20T17:54:47.068880+00:00"
 },
 {
+"title": "Exclusive: HHS releases new kidney care plan - Axios",
+"link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8tdXY0bkk2eG1KMjBmdVR2TGU3c0ZENDJVZXZyU21KN3liUlprbE1KZGU4T2JaYmpKUWU1X0dLZVZJR1lqdUlmMFpaUnpYbkYwLWVXQmR3TGdhQ1B1MEVucnhmelFCV19D?oc=5",
+"summary": "Exclusive: HHS releases new kidney care plan Axios",
+"outlet": "Axios",
+"published": "2026-10-20T16:18:04+00:00",
+"id": "8886712c647faa61",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-20T17:54:47.068880+00:00"
+},
+{
 "title": "Biogen rises as investors react to fresh kidney-disease data and pipeline optimism - Quiver Quantitative",
 "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRnV4UnZGbWN5cDRBdlFOWWYxSzR2dmc3cWp6VDVvcEVWZ3c3LVFXLUtZalEtOTZVWDlScUtRVmdEczJiY3lhdmgtU1pjejF2R1AzaUg5WDl5V1llbTNFb2t1RXg0d0ZtVHpCTWF2Nll4ZkxKZ3hUQjR6WWtFbWhwUm5vNTdqOVNodEs1dUtUS3dpdDlZSVJ5czJjTEZ5Mnk0YVY2MllpOExTTlJaNFFKOFdiR3lIZw?oc=5",
 "summary": "Biogen rises as investors react to fresh kidney-disease data and pipeline optimism Quiver Quantitative",
 "outlet": "Quiver Quantitative",
 "published": "2026-10-20T16:17:00+00:00",
 "id": "1991acd3343389ac",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Exclusive: HHS releases new kidney care plan - Axios",
-"link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8tdXY0bkk2eG1KMjBmdVR2TGU3c0ZENDJVZXZyU21KN3liUlprbE1KZGU4T2JaYmpKUWU1X0dLZVZJR1lqdUlmMFpaUnpYbkYwLWVXQmR3TGdhQ1B1MEVucnhmelFCV19D?oc=5",
-"summary": "Exclusive: HHS releases new kidney care plan Axios",
-"outlet": "Axios",
-"published": "2026-10-20T16:02:54+00:00",
-"id": "8886712c647faa61",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-20T17:54:47.068880+00:00"
@@ -494,6 +582,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-20T21:31:21.209247+00:00"
+},
+{
+"title": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity - Daily Democrat",
+"link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQZm1YcE9CcGhMeVJIall1NUhjZG1ZTk9kSG5wdmRqMnllRGVuN3h1bXZUb29QUXJNVUJPZkhpY0JseWszVTZoX25LMlRSSVI1ZDV5YXhTYmxHT0QzNHQ5TzhBcmFYR0lmRU9aZi0zWWhic09WckRPdGpHZUNSRU5BNGpsTmdhaS11Y1E?oc=5",
+"summary": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity Daily Democrat",
+"outlet": "Daily Democrat",
+"published": "2026-10-20T15:25:21+00:00",
+"id": "636a882dc957b58e",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T00:04:37.627227+00:00"
 },
 {
 "title": "Kidney health screening program meets ‘patients where they are’",
@@ -881,6 +980,17 @@
 "first_seen": "2026-10-20T12:55:15.866286+00:00"
 },
 {
+"title": "Robotic-assisted living-donor hysterectomy for uterus transplantation: a systematic review of surgical techniques, donor safety, and recipient outcomes.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42900394/",
+"summary": "Baradwan S, Latifah HM, Hafedh B et al. Journal of robotic surgery",
+"outlet": "J Robot Surg",
+"published": "2026-10-20T12:00:00+00:00",
+"id": "788abca48ff94b68",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-10-21T00:04:37.627227+00:00"
+},
+{
 "title": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity - Breitbart News",
 "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQXFIWE9fY002VlVRZHpQUlJWVFE1NGJ0OVJGdE9CTlJjbFQ1MW1PcnI0U3V3OTNSOFRzYkI2eVV3TlVlNUgxZWctcHJvaEszLTA3YVYxWjNueUpRcEdtbGhYUlRvaHNDQVZ1QUI5UW5ZYmdSVkxLdWlNdDdGMm1wUFBXN3pNX08yOEg4WmJkd19BMEpvS193Ty1KUGhBZ3hENHZqT0d0M3BneW9ycmpTMXpnSWd6a0NKOFRPYk9lZmY3OTM0RzY00gHHAUFVX3lxTE5BcUhYT19jTTZWVVFkelBSUlZUUTU0YnQ5UkZ0T0JOUmNsVDUxbU9ycjRTdXc5M1I4VHNiQjZ5VXdOVWU1SDFlZy1wcm9oSzMtMDdhVjFaM255SlFwR21saFhSVG9oc0NBVnVBQjlRblliZ1JWTEt1aU10N0YybXBQUFc3ek1fTzI4SDhaYmR3X0EwSm9LX3dPLUpQaEFneEQ0dmpPR3QzcGd5b3JyalMxemdJZ3prQ0o4VE9iT2VmZjc5MzRHNjQ?oc=5",
 "summary": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity Breitbart News",
@@ -1011,6 +1121,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-20T17:54:47.068880+00:00"
+},
+{
+"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - Marietta Daily Journal",
+"link": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQWmExeU80NGFUTGVnejRSOHJqWTBtVWpSSDd5elZNT1hoZUUzb2xrX0ZESXl4dmNacXZsVmFrZ1VMeThyaVM0U1pvbDRRdjZ0MFBUc3BJck1XYmdXNzd2ZUZCRlN5QUtDZjJJbk5ueGF3Y3VsaWxrYnp2NmQxQVQ2azhLRkFHck5aa1V6R0cyUHdLWVhlMVppalZkV2lSUkowbWduNmUzNllCa0lUd3ltdlFLd3NCMUhUZ2VMbTZMb2JLTTRjc1EyeUdSWEFPWVo3dHBPZzhRLWRDdHd2REdDRGcyWmc3WlZtSWFHYmZZT3hJNVh5dWlHTmF1SFJMRVVEYVgxRk5NY1hQeWJKQlZv?oc=5",
+"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity Marietta Daily Journal",
+"outlet": "Marietta Daily Journal",
+"published": "2026-10-20T10:00:17+00:00",
+"id": "8b3e062ceb07a99a",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T00:04:37.627227+00:00"
 },
 {
 "title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - AP News",
@@ -5510,127 +5631,6 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-07T14:27:12.654827+00:00"
-},
-{
-"title": "Amend the Law on Organ Donation and Transplantation: A clear distinction needs to be made between donating organs after death and donating body parts while alive. - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPM1VFbVJPM1drc29VQlFoV1RXMmdQNXBzRE9scDBrcWI3TkFrTWZ3Rm1CZmpEYnd6N08xWUNySTBpVmRZRHpxeG9zMGEtNy1xVVRkWW1mTkQyQU9UTHJKUFFfZVVaOWZXZng3Tng3U0RwMnNFMEdOY3UtdjYwYnRmWEZ6aEtXREx5ZHlZVkRPeXVPMTlWUTR3R0tIM09TWDcxRFo3aWpERFRMZVA1MWhrY0ZMVHJVY1BuSlJUdnRodzkwSExU?oc=5",
-"summary": "Amend the Law on Organ Donation and Transplantation: A clear distinction needs to be made between donating organs after death and donating body parts while alive. Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-10-07T07:33:14+00:00",
-"id": "9300bbffe96bf7f8",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-07T14:27:12.654827+00:00"
-},
-{
-"title": "NKF Innovation Fund backs Nephrogen's push to bring gene editing to the kidney - Dealroom",
-"link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOcGo3bXpCZ1RXbTFQLVRZYTduLXZUT0tGUHlfdWJIZVZpUE1CQmlueXRTRHVWUGFSaVBEeTUtZXA1UGRpQVpUQVlzWWdwb21xaWdKNnNpODB1YzZoa2VqSTBzNHVoNlZPaG5wS0VsX05hTk5BUE56MEp4d09yaTBWWExtY2U2bjlVMmNvMjVhSExtaWdnb0pyZTFHa0ctS1IxbldkRUxld0hZaUhPenptZDhR?oc=5",
-"summary": "NKF Innovation Fund backs Nephrogen's push to bring gene editing to the kidney Dealroom",
-"outlet": "Dealroom",
-"published": "2026-10-07T06:55:57+00:00",
-"id": "d320cb2f2b98f795",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-07T14:27:12.654827+00:00"
-},
-{
-"title": "Pregnancy complications may signal later heart and kidney disease risk, study of 1.4 million women finds - Bioengineer.org",
-"link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOSmpzVHhDUUFGVzBoVGlBcHhGQWIyamVZQUNUUlpjV0ZVU2dVX05zUjlTT3AzdUI5OVlrNFY3ek84T0ppYWx4QVVtYkFvczRRUklsZ0hmNUV3bVdocGREanR5aF9IaDQ1bXNKdWhZVC1fTVpGZ05sVk1GR0w2SG5OZmhoZm8zb2xXRWdXTjdyRmdNNzJ4OWtrNzdTczhLRXJGV2NtWTNYM3I0bGR6MkxBWWlMLU93MF9tUkUxa2VCYXNIc1o0dkpN?oc=5",
-"summary": "Pregnancy complications may signal later heart and kidney disease risk, study of 1.4 million women finds Bioengineer.org",
-"outlet": "Bioengineer.org",
-"published": "2026-10-07T06:30:30+00:00",
-"id": "acb2a143ec55732e",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-07T14:27:12.654827+00:00"
-},
-{
-"title": "Target Doses of ACE Inhibitors Reduce Risk of Death, Kidney Failure in Some HF Inpatients - U.S. Medicine",
-"link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQcWQ4dGpmdkRueUZoQnZ3b2Q3U1YyeHdiMS10VUZzZlBPYkVlOUM0amlIYXBYZzVRSFA2UC00aU9LUHRtVmJnWmJvVGJJWmpES3NWLXlNNFN2NXIxZm5VdHV5NUtLelVMaXpqT0dqYkQtbTh2RUc3Mk5jYnNIMTVtU0JfMW9HSGRaREplSnR3b0c1NE01SGw1bUZiMW9Fb3RsNmNMN29ISDlTV1QwVUp2bUdXQnVDRFdKa0s4TEk0Z1ZFY0hLMWkwVmcwRl84NDNzaEljMHVueVVoM3FGODRtaQ?oc=5",
-"summary": "Target Doses of ACE Inhibitors Reduce Risk of Death, Kidney Failure in Some HF Inpatients U.S. Medicine",
-"outlet": "U.S. Medicine",
-"published": "2026-10-07T05:17:09+00:00",
-"id": "2e736ea9913e809f",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-07T07:07:02.644431+00:00"
-},
-{
-"title": "DELHI LAUNCHES EXPANDED NEWBORN SCREENING, ORGAN TRANSPLANT INITIATIVES - Magzter",
-"link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOWWxXdnRmSDQyS1hCTGdBNzM1S0V2eVNScmphaHFIX2djWUJTTVgzRkQ0UktJNzh6SkhPLWtyeGUxR2VEY1NLMVh0a0N6akJXbzduZTRkbVRNNjlDTlFIZUVSbnpOTTZWRVhMWjZ0Q25QQnhELXJRSDQxa3U5VWRuaV9WSVJZYkhxbW1WVTNrUGF6WkxVOElXTEVIWk5ISUlaUVJrdE0tel9sQlJicDBJYkpya0R6YlBHZ19YOXY3a21ISy0yTXV4NHJObDZKWWs?oc=5",
-"summary": "DELHI LAUNCHES EXPANDED NEWBORN SCREENING, ORGAN TRANSPLANT INITIATIVES Magzter",
-"outlet": "Magzter",
-"published": "2026-10-07T04:14:32+00:00",
-"id": "e9cdf898b7a9b5b2",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-07T07:07:02.644431+00:00"
-},
-{
-"title": "Brothers celebrate 50 years after kidney transplant - KSN-TV",
-"link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYmhqT2lRWkVBQk4tdEc3QTFxcVVfS0lPM3VFVm5YSkZYNEdDTURab29KQzhWX1BRQWk2cWs0NU5iOWdhd3g3WllGT1htWHBZbjhOWFNwZzhQeUJJZGNaUFdadXd2VG8wSVBuQXdOa2wxN1pMc0FXUkIyNWlISGdRTjdSdWs3NUZOeWppQUNSYnBmUVNGbjB4VFdEZVotY3BPMjhudUJn?oc=5",
-"summary": "Brothers celebrate 50 years after kidney transplant KSN-TV",
-"outlet": "KSN-TV",
-"published": "2026-10-07T03:42:55+00:00",
-"id": "cfae926604585e3d",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-07T07:07:02.644431+00:00"
-},
-{
-"title": "Brothers celebrate 50 years after kidney transplant - KSN.com",
-"link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYmhqT2lRWkVBQk4tdEc3QTFxcVVfS0lPM3VFVm5YSkZYNEdDTURab29KQzhWX1BRQWk2cWs0NU5iOWdhd3g3WllGT1htWHBZbjhOWFNwZzhQeUJJZGNaUFdadXd2VG8wSVBuQXdOa2wxN1pMc0FXUkIyNWlISGdRTjdSdWs3NUZOeWppQUNSYnBmUVNGbjB4VFdEZVotY3BPMjhudUJn0gGrAUFVX3lxTE41RUxkZkh4QUVDTG1JcUt4c0tNZVM5R2ZZYnV0RnVWQkowYzBadW4wc0ZuM2VZYlY3T0tVWDJ2U1BsN1Y0UXJmYXFCU09CVVlndUNXX2s2SndLYU1mVmt4TVd4LU5OTk5FbFZDNGhCYnFic0ZGdS1uNXFJczVGeEphY2NwWEYyUmhKMUUyUm1VbTRkZkFpRXhxWGxuclVydG9nR3lTRUZQbDVJQQ?oc=5",
-"summary": "Brothers celebrate 50 years after kidney transplant KSN.com",
-"outlet": "KSN.com",
-"published": "2026-10-07T03:42:55+00:00",
-"id": "95bfaa3bf5497009",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-08T06:34:13.613841+00:00"
-},
-{
-"title": "Pregnancy complications linked to heart and kidney disease — News-Medical - UA.NEWS",
-"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOR1NOZkZ0d1NDUzZUcGpvMHJPLWtWaTh0UTlfbFZFdWpBSFhqVDY0NFdlb3J4c09nbzdVMmN6WlJRVVZERjlKaWV6b29Xb3AyTjR0OEZERlNKME1GWXNEdUxXYU16YU5TS1d2cGJGejQyYTJBbUU1empNRVR1WTdVblVmbTVYTFVaS2xQdTBNSXUyY0JVLUxINmQxbjQ4TGtnSGVZ?oc=5",
-"summary": "Pregnancy complications linked to heart and kidney disease — News-Medical UA.NEWS",
-"outlet": "UA.NEWS",
-"published": "2026-10-07T03:27:54+00:00",
-"id": "bba2611a34ef66b5",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-07T07:07:02.644431+00:00"
-},
-{
-"title": "Surgical and Clinical Outcomes of Kidney Transplantation in Obese Recipients: A Single‐Center Retrospective Study from Switzerland",
-"link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70709?af=R",
-"summary": "Clinical Transplantation, Volume 40, Issue 10, October 2026.",
-"outlet": "Wiley: Clinical Transplantation: Table of Contents",
-"published": "2026-10-07T03:10:52+00:00",
-"id": "767e28891b39b073",
-"source": "Clinical Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-07T14:27:12.654827+00:00"
-},
-{
-"title": "Vanishing Bronchus Syndrome After Lung Transplantation: Clinical Characteristics, Airway Colonization, and Stent Outcomes",
-"link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70707?af=R",
-"summary": "Clinical Transplantation, Volume 40, Issue 10, October 2026.",
-"outlet": "Wiley: Clinical Transplantation: Table of Contents",
-"published": "2026-10-07T03:10:02+00:00",
-"id": "4f1f4495cb3818b8",
-"source": "Clinical Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-07T14:27:12.654827+00:00"
-},
-{
-"title": "Study links pregnancy complications to future heart and kidney disease - News-Medical",
-"link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNbXEwcmQ5Q2VVWi1KMFAzQzRwc3p2d1UxYzZQYUV6eUh1REJyT2pMV1NyQXRwWlRKNEZ6OXNYYjRlbmdWYmxnV19PTW9aekRvUmd3TkE4THRqWUx6SVNtbndBQ2NhbUVSZTE5VXZYUFdEcHhycEdtOWFheXJ4OU9iUkh6cDBlanBxWlZsWnJYTDExVExSdGhZaUlSVXpwY1ZfdFFmN3g3LUJqWWVxS25VQ3R1YmZHTTBNX0E?oc=5",
-"summary": "Study links pregnancy complications to future heart and kidney disease News-Medical",
-"outlet": "News-Medical",
-"published": "2026-10-07T03:08:00+00:00",
-"id": "15717243833b6c5e",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-07T07:07:02.644431+00:00"
 }
 ]
 }
