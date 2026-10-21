@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-21T18:53:17.676441+00:00",
+"updated": "2026-10-21T22:14:53.632555+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -86,9 +86,9 @@
 "name": "Federal Register: organ transplant policy",
 "category": "Policy",
 "url": "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=transplant+%7C+dialysis+%7C+%22organ+procurement%22+%7C+%22end-stage+renal%22&order=newest",
-"ok": false,
-"count": 0,
-"error": "ValueError: HTTPError: HTTP Error 403: Forbidden"
+"ok": true,
+"count": 5,
+"error": null
 },
 {
 "name": "Google News: transplant & organ donation policy",
@@ -133,11 +133,55 @@
 ],
 "items": [
 {
+"title": "Chronic Kidney Disease and Vascular Disease Workshop coming to Tallahassee - WCTV",
+"link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdksyRjRtS0tZNDZSaFBMV1o0N28zRzNOSjd3a3VCRWdVZjMwcVprTmYyQl9oWFN1TGVVbExCR0dpNkZJUlNLNmM2TGUzVEUtTm9BVXdsQmJNVjZ1VzBadHlHQjBlLXJHdzU0ODUyVU5pcHYtcloxaHVnYlpiLVlTR1dub3ZFMDBjcGZjdjRZMmZYTktWQWkyTXdaRWcyb0RJ0gG0AUFVX3lxTE9YSVR6QTZUWVl2ZVVfZlJScHl3Nmo1WG1tSUhzYmhlNjJHMEJZX0VEX243dk1pRWR4WUtBb1BlUktwNmZMOTk5amgwOFhCRjRKR0gxbjQzLWNGZ1ZRSFRMN3JNQnhyaTQwWXM3WWJ5QlQwaXpiSEJOaVZZLV80eFZQbjZNS1dGeFNNdlh6eFBjLXBnS1NWR2dLMk1aSUMtcGk3eFNpaTJCX3hkTVhiYU5sanp5Vg?oc=5",
+"summary": "Chronic Kidney Disease and Vascular Disease Workshop coming to Tallahassee WCTV",
+"outlet": "WCTV",
+"published": "2026-10-21T21:33:00+00:00",
+"id": "cf1da5e8c5e65f68",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-21T22:14:53.632555+00:00"
+},
+{
+"title": "Reps pass organ donation, transplantation bill for second reading – FRCN HQ - FRCN HQ",
+"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPVGZlRlEwejFBY01fZHlqLWgwOXJUaXBQaXY2ZUNFMm9SSWdMOHJxRWFYaHk1MzBZSmV3TXg3X1piZlFuYzUwVm9BLVlTWlREdGktVUFuZ2sxV3Y4aFlPUmdPMWZBUTIxcXlCWEtyc3duNm9tZGtLZVowcFhuaUpwcGd3LUtiLUl4VUZCc3pLU2tWU3JRSGExQk9FZ3JZdHZmV25sSzN2TQ?oc=5",
+"summary": "Reps pass organ donation, transplantation bill for second reading – FRCN HQ FRCN HQ",
+"outlet": "FRCN HQ",
+"published": "2026-10-21T21:32:22+00:00",
+"id": "68cbe58e322a1619",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T22:14:53.632555+00:00"
+},
+{
+"title": "Reps advance bill to regulate organ donation, ban organ trafficking - Businessday NG",
+"link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPcFJtZ3FTZEVOdnRpcHp1YTJ1VFlvQ3hCaFB3bm9GRnhhRkxyb0JHX2ZvNlBmS3JoYy1oNmhhcGphaEdsdmRtZlpKeWExbTg0Vkh1YzloRlpHWkRLaThaSmk5TTd0cDg3RUwxcjM0VXBXZm56TjA1c1RQUWhxR1NlWnd1NlRtd3ZpdHRiQTU0dzdIOF9vRk1wdzc3ak5NbFpaZWVqMEFR0gGrAUFVX3lxTE03TW9TTV9WanlmcHNJQ3hGSnpmNy12eU9lREJ3ZE9HSktCWGo0RHZhYXhzUjJpczVJaHZadkx0S21EaHB6SUt5dXRfTjM1T0gwNkhpOVlRLVVkd0hPOFdvZkFwOXZCVEVjdnJOTWJuTFpuWVZ3TTNsQ0xqS1NjMVRjU1o4T1pTcWtybS1PZDZiLVNFRE12Z1ZlQm43MldKNXBHeFdGdlFsOXFYSQ?oc=5",
+"summary": "Reps advance bill to regulate organ donation, ban organ trafficking Businessday NG",
+"outlet": "Businessday NG",
+"published": "2026-10-21T20:47:57+00:00",
+"id": "074dc4fa881fa064",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T22:14:53.632555+00:00"
+},
+{
+"title": "Sturgis Harvest Cabaret to raise awareness of organ donation, support pediatric families - The Spec",
+"link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNOXlyWE9jeG1WZDFWWlBiU05QME9GQUpmc3k0OTF6bDQ5bjhUUzB4RXgwUk5QdzZsZVoydGlhTVV5UnhmTFlIbEFNRUJxNm1xcXRIVDRFR01pWFItbWdGdkVTNzV2cDdzeHdNNjZEaWJ3RHJlOWd3LWV5dWJ1bWJwXzMySE1ncEVqRUgzVWt1c1RtQ1Q4amVNeDMyNTdpVmNmdC1uT2JJTUkySHFYSC1pcmZkaU5WVnBuT0I1WlRHb1pRLW5ETVd2QzZGYUdEc1l1dWk0RWl0RkwxdTB1bGQ3aTBrUUx5QzhVRlBfSzN1bzNHVGNOcTVBWm9Ma0pKS2VfUFJN?oc=5",
+"summary": "Sturgis Harvest Cabaret to raise awareness of organ donation, support pediatric families The Spec",
+"outlet": "The Spec",
+"published": "2026-10-21T19:31:31+00:00",
+"id": "0b3e5334c3c5b389",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T22:14:53.632555+00:00"
+},
+{
 "title": "Predicting the Risk of Unplanned Hospital Encounters in Hemodialysis Patients: A Comparison Between Clinicians and a Machine Learning Prediction Algorithm",
 "link": "https://www.sciencedirect.com/science/article/pii/S2590059526002621?dgcid=rss_sd_all",
 "summary": "By Samiksha Singh, Lesley Donovan, Meggie Debnath, Maitreyee Sidhaye, David Dai, Yang Zhu, Mitchell Hughes, Sunghoon Minn, Sanja Neskovic, Jamie Beverley, Tony Antoniou, Ivana Prce, Sebnem Kuzulugil, Michael Fralick, Derek Beaton,…",
 "outlet": "",
-"published": "2026-10-21T18:52:25.663380+00:00",
+"published": "2026-10-21T18:53:17.676441+00:00",
 "id": "6f9b0ea57a847855",
 "source": "Kidney Medicine",
 "category": "Journals",
@@ -148,7 +192,7 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S2468024926032857?dgcid=rss_sd_all",
 "summary": "By Anastasia Hughes, Andrea Matus Gonzalez, Anita van Zwieten, Chandana Guha, Simon Carter, Germaine Wong, Dale Coghlan, Amanda Dominello, Jonathan C. Craig, Martin Howell, Siah Kim, Karine Manera, Colm O’Reilly, Javier…",
 "outlet": "",
-"published": "2026-10-21T18:52:24.966143+00:00",
+"published": "2026-10-21T18:53:17.676441+00:00",
 "id": "b55bf7830f868ed7",
 "source": "Kidney International Reports",
 "category": "Journals",
@@ -159,7 +203,7 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S2468024926033097?dgcid=rss_sd_all",
 "summary": "By Djalila Mekahli, Lisa M. Guay-Woodford, Melissa A. Cadnapaphornchai, Larry A. Greenbaum, Mieczyslaw Litwin, Tomas Seeman, Ann Dandurand, Zhen Zhang, Kimberly Sikes, Susan E. Shoaf, Franz Schaefer, Johan Vande Walle,…",
 "outlet": "",
-"published": "2026-10-21T18:52:24.966076+00:00",
+"published": "2026-10-21T18:53:17.676441+00:00",
 "id": "79d748f8ca5fab3a",
 "source": "Kidney International Reports",
 "category": "Journals",
@@ -188,8 +232,19 @@
 "first_seen": "2026-10-21T18:53:17.676441+00:00"
 },
 {
+"title": "Breakthrough T1D Funded Clinical Trial Testing Islet Cell Transplantation with Eledon's Tegoprubart Expands to Include People with Type 1 Diabetes and Kidney Disease - PR Newswire",
+"link": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxNaGp3X21XQ3VVam55UEVjRTVFa0tENkUxMHVXSVZjRHQ3akVXa0VIaGNtSm1DaTY2aVo0Z0N5VjNYc0pReFFOOGxLbmllcE0yVjh4M2VaSmdaNU5NQjdPeTZPOTRqczVldzdRZWRiUjc4dGgwd3RaQlBTR3lJaGNic3FLc3NOZ1FFTFdVQ3FwMDVDMUxDX1k3WVVwWEwzN3ZSbEVtbFFka1RnSUJnOW1DRkRqUFk3T0JxcVdnWllRMEhkNDAwRXVENGlXaHZTNmNmZlQ3YWVpTjNZcldJOE16MHhLTjJMUDZ6VVh0dFR4VFIyWm1PbTVLRjllY1g3blVDdERoVnUzUC1hcVQ1cjY5cmc3ME0zU3pWaWpkV2RnMVF3bU5pMFdxYnU5SFBQWUdTdFR1b19WcU5LblE4R1VvZTBR?oc=5",
+"summary": "Breakthrough T1D Funded Clinical Trial Testing Islet Cell Transplantation with Eledon's Tegoprubart Expands to Include People with Type 1 Diabetes and Kidney Disease PR Newswire",
+"outlet": "PR Newswire",
+"published": "2026-10-21T18:00:00+00:00",
+"id": "d802169bd54d7dc0",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-21T22:14:53.632555+00:00"
+},
+{
 "title": "Tacoma teen with kidney disease gets Seahawks VIP wish through Make-A-Wish - KOMO",
-"link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNOUM0b0pBMEhQR1k1cjAxVWpkWk5sbzltQUJhMjVyMWxEdVhQRlFmbEpOU0t6NnRDSmVEcWZobWYzRnBvV3pvNG41T2Z2Y1F6VlRDYVNOaWZFM3p5Z3YxYm9nMTVrY1pMQ0Z3SVcyYTFmMkFBR19fZV9heGU5RENYRmp1ZU5PX1Y5S21LNnpJdUhqQ0JHSjdsdjdFOFNZRDN5QjFJWjc4Y1FZdGl6dEoyT1Vn?oc=5",
+"link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxON2NZN1p6clBicWlGenpwT0gtcnRtWTJaVUJIVG5xMDlwMC1QZ2hQTnN6alZWd1JpakxZbXNiMFJUUVJodi01RHk2cllSX2hRLWUzV3RicXg0UXZydF9nN2lpM09DZjdHc1JOT1FHQVMxalYtOU10YnUxeHZza3g0ZmN4Qm1LcGptTENuNlFxaTZPUXlzZ0FfazEtX1NBVmxBeEpXMnhwS0VjZFp4LUoyamZ1eVp3Zkx6UE1idzZnSnNueTNnMHk4aFZ1WFZ4M3c?oc=5",
 "summary": "Tacoma teen with kidney disease gets Seahawks VIP wish through Make-A-Wish KOMO",
 "outlet": "KOMO",
 "published": "2026-10-21T17:28:18+00:00",
@@ -197,6 +252,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-21T18:53:17.676441+00:00"
+},
+{
+"title": "\"Unos minutos antes,\" a painting by José Gamarra - Harper's Magazine",
+"link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNOGgxNW5BMkpFNWdwd09VbC1Hd3VQaWhiUDYxRmFWcVowTEcyVVVMZGp2SmVDTVZYQlM1YnhxSDZRZDVBZVRvRXJBeTJ0N2JYSjBVRHZCUmFKYnJBTGdPVEtOMnMxNlZZZV9MYU9LZlNGUGRzVjV1cXF5azVsVjBPX1FURmVISE0?oc=5",
+"summary": "\"Unos minutos antes,\" a painting by José Gamarra Harper's Magazine",
+"outlet": "Harper's Magazine",
+"published": "2026-10-21T17:12:26+00:00",
+"id": "f858028a0364fe64",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T22:14:53.632555+00:00"
 },
 {
 "title": "Reps Okay Bill To Establish National Organ Donation, Transplant Authority - New Telegraph",
@@ -252,6 +318,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-21T18:53:17.676441+00:00"
+},
+{
+"title": "HOMETOWN HEALTH: Kidney care national plan launched this week - WDBJ7",
+"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTFNrcUpQTlBBOV9jdDBrWEZLMGdRMU9vQnMxZjVuQk9pSTA3cU1Hc2tOZ29ZVWJkcXJrTVdTTS1tYmRWcFRienhBa0JMM1plakVSZjM3dEtleDFjRmlJeHo0WFE5d2xKSURzX0JQamhXY19SYnpNZEtKaTBNOUQ3cFV3dWI5MDZ5Y3BlN1dPS1BIMnZjSllqLU50NzhELTc2M0pKVnl2eUXSAbwBQVVfeXFMT1FfT29ER1hnRDJjZ3NEYkhBLUxpYkFjemgwdE05Ym92R1ZGUkV5UUk4a1NvY01ZMnIwblVoWVZIN0U5WUVQc2J4N0Q0Sm5HTVZOZDBsbkRnc1FYRE5YTkZBTUhJRXQxaVZtYXZ1cmdVT1E0RGU0Q1JmT0lYaEQ3QXZuYUtqZnNlUnpRY3pGQUFFcGZXU1ZmQ1VtRDh3OVpQaFRpdUhBTi1IeV9wZ2EzRDNMS1IyNTlyYlRvYlE?oc=5",
+"summary": "HOMETOWN HEALTH: Kidney care national plan launched this week WDBJ7",
+"outlet": "WDBJ7",
+"published": "2026-10-21T14:56:00+00:00",
+"id": "689191ea6eca3908",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-21T22:14:53.632555+00:00"
 },
 {
 "title": "Renal Outcomes in Hereditary Fibrinogen A Alpha-Chain Amyloidosis",
@@ -661,17 +738,6 @@
 "first_seen": "2026-10-21T09:32:51.217916+00:00"
 },
 {
-"title": "Fallopian Tube Entrapment as a Cause of Catheter Dysfunction in Peritoneal Dialysis: An Unusual Case - The Cureus Journal of Medical Science",
-"link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQN29meG81WEpoaFVtMFdlOUZQV3VKRGJUV3phLXE3YWlNZkg4WFZTa3JvQVRZTzNKeXZ2ZXVvb3QzRmRPQnRyTXBsZE1tMzN3VUdlTkRfTmotUFdWczRudVRKOFRiUVRISTB5d0J2V3RGSGEtcU9lTlIxV21ZdEJMWkFaRXh6aktiWjcySGdJbzlyRjVCcXpsNW1yMnhLcmFCd1FFcXlrYXREenFFbk1vUkoybmpDUnJPU1R6TlZLY2NLeHozS3R0YzNFQ0ZicHVyenhYTw?oc=5",
-"summary": "Fallopian Tube Entrapment as a Cause of Catheter Dysfunction in Peritoneal Dialysis: An Unusual Case The Cureus Journal of Medical Science",
-"outlet": "The Cureus Journal of Medical Science",
-"published": "2026-10-21T09:32:51.217916+00:00",
-"id": "3acc1b3d3cf2d097",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-21T09:32:51.217916+00:00"
-},
-{
 "title": "Proposals to remove obstacles in organ donation, child protection, and medical examination and treatment. - Vietnam.vn",
 "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNRjlmcVZIZE4yazJaaTVtTnE1bmc5SlQ3NUNpVHZYbUVLM0h4Nkt3S0tKdFVObnZGNDNGdldxQ19GTF9ENWJ4dVc3OGVMT3dybkgtUXo4dVJXUmVKTGZzdDF3Z294b1I2MFotX2t1RWl6RGdRZC0td1I5LV9HcS1qQzB0cUJnYnE3dkxHc0Z6TmVQdWFMbVc2TWFXelp2UnZK?oc=5",
 "summary": "Proposals to remove obstacles in organ donation, child protection, and medical examination and treatment. Vietnam.vn",
@@ -681,6 +747,28 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-21T14:37:00.175654+00:00"
+},
+{
+"title": "It is proposed that all hospitals with intensive care units participate in the organ donation campaign. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNGk4OXl4OHVQSkRXb1dTRVlzYnJ3WkpDSFl4QU1uUERPaDQ1UVlua2syeTg5ZjNVWFVaVVlMbHRDajVWZlJUM3hFRHptblBKWmZqSlRuUXMtZFJzeDNLZU1vNnRndWx1OHZCODNqZC1JYTFmdzlUdW90ejNINFpubnV2S1FRRFk3Z1BMdllIekFYQnZrb3VyQ1F4ZzI2aHhnN3Qydw?oc=5",
+"summary": "It is proposed that all hospitals with intensive care units participate in the organ donation campaign. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-10-21T08:46:19+00:00",
+"id": "9605580c62c8efc3",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-21T22:14:53.632555+00:00"
+},
+{
+"title": "Fallopian Tube Entrapment as a Cause of Catheter Dysfunction in Peritoneal Dialysis: An Unusual Case - The Cureus Journal of Medical Science",
+"link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQQkk3d0s3eFhXZmk0eGk2YzBCN2Z4NFd4eGNVOHlBMm5XVk9IRW9GRnA3ZlFZeF9tR2tSel9MQjBqUUkxWGtqcEtfTUMyd1lMaFdlTlRpY3Uybm5xSnBOZXpBTlVZaFpIVVJfM0tqZnZDQW9hMlhPbi1vdGYzbWw1YXVvbDhsRFNWYVBoUW9KeUhOX1QySDA5OEJpa1dQNHB5aGJPM0U4VzF5aHRxS1ZaQzN4NWVLLU45WWtRNHpEbjJjWDgwa0NsdXJQM0lteS1mbXhnVmlSQXRQeU91ZkltRXZ5M2xYQlMwaHgzMGln?oc=5",
+"summary": "Fallopian Tube Entrapment as a Cause of Catheter Dysfunction in Peritoneal Dialysis: An Unusual Case The Cureus Journal of Medical Science",
+"outlet": "The Cureus Journal of Medical Science",
+"published": "2026-10-21T07:56:13+00:00",
+"id": "3acc1b3d3cf2d097",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-21T09:32:51.217916+00:00"
 },
 {
 "title": "Ensuring voluntariness and fairness in tissue and organ donation and transplantation. - Vietnam.vn",
@@ -5543,94 +5631,6 @@
 "source": "Kidney Medicine",
 "category": "Journals",
 "first_seen": "2026-10-10T09:42:36.861224+00:00"
-},
-{
-"title": "Insufficient Inhibition of Oxalate Production by Lumasiran in an Adult With Kidney Failure due to Primary Hyperoxaluria Type 1: A Case Report",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003316?dgcid=rss_sd_all",
-"summary": "By L.J. Deesker, L. Oubram, R. Olde Engberink, M.J.S. Oosterveld, J.W. Groothoff, S.F. Garrelfs",
-"outlet": "",
-"published": "2026-10-09T12:00:00+00:00",
-"id": "c056d430347ec860",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-10T09:42:36.861224+00:00"
-},
-{
-"title": "Outcomes of En Bloc Kidney Transplantation From Small Pediatric Donors to Adult Recipients: A Nationwide Multicenter Retrospective Study",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003286?dgcid=rss_sd_all",
-"summary": "By Haichen Yan, Judith Kal-van Gestel, Yitian Fang, Jacqueline van de Wetering, Luuk B. Hilbrands, Michiel C. Warlé, Jan-Stephan F. Sanders, Cyril Moers, Martinus H.L. Christiaans, Jan Willem H.C. Daemen, Hendrikus J.A.N. Kimenai, Ron…",
-"outlet": "",
-"published": "2026-10-09T12:00:00+00:00",
-"id": "7b23546ad8cff75a",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-10T09:42:36.861224+00:00"
-},
-{
-"title": "Donor-Derived Metastatic Urothelial Carcinoma",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003298?dgcid=rss_sd_all",
-"summary": "By Amit Ramrattan, Barry Wall, Manish Talwar, Aimen Liaqat, Vasanthi Balaraman, Priyanka Jethwani, L. Nicholas Cossey, Jon Wilson",
-"outlet": "",
-"published": "2026-10-09T12:00:00+00:00",
-"id": "45f81e537ecc6e92",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-10T09:42:36.861224+00:00"
-},
-{
-"title": "A Rare Case of Concurrent Anti-Glomerular Basement Membrane Disease and Membranous Nephropathy",
-"link": "https://www.sciencedirect.com/science/article/pii/S259005952600333X?dgcid=rss_sd_all",
-"summary": "By Vikas Agrawal, Jay Wish, Sharon Karp, Carrie L. Phillips, Kathleen Prag, Raj Jeevan, Kenneth Lim",
-"outlet": "",
-"published": "2026-10-09T12:00:00+00:00",
-"id": "f375d6d09969da61",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-10T09:42:36.861224+00:00"
-},
-{
-"title": "Incorporating Urea Clearance (KRU) as a Marker of Residual Kidney Function (Kt/V) to Guide Hemodialysis Weaning After Acute Kidney Injury in the Intensive Care Unit",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003304?dgcid=rss_sd_all",
-"summary": "By Amico David Cenci, Miguel Ángel Bayo Nevado, Chiara Gambetta, Eva Plaza Lara",
-"outlet": "",
-"published": "2026-10-09T12:00:00+00:00",
-"id": "44d634fb3c6d3c65",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-10T09:42:36.861224+00:00"
-},
-{
-"title": "Critical Role for Living-Donor Liver Transplantation in a Changing Organ Landscape: Insights on National Trends from the NALLDIG Consortium",
-"link": "https://www.sciencedirect.com/science/article/pii/S160061352602808X?dgcid=rss_sd_all",
-"summary": "By Michael McCabe, Abigail Loszko, Justin Weissberg, Matthew Byrne, Elizabeth Pomfret, Julie Heimbach, Christopher Sonnenday, Alyson Fox, Therese Bittermann, Koji Tomiyama, Juliet Emamaullee, Roberto…",
-"outlet": "",
-"published": "2026-10-09T12:00:00+00:00",
-"id": "3a74b86b4b137532",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-10T15:50:00.403053+00:00"
-},
-{
-"title": "Febrile renal pseudotumors revealing ANCA-associated vasculitis",
-"link": "https://www.sciencedirect.com/science/article/pii/S0085253826008288?dgcid=rss_sd_all",
-"summary": "By Oumaima HOURMATI, Jean-Michel CORREAS, Marie COUDRAY, Marion RABANT, Idris BOUDHABHAY, Michael PADDEN, Philippe L.E. MOAL, Aurélie HUMMEL, Marie-Sophie MEULEMAN",
-"outlet": "",
-"published": "2026-10-09T12:00:00+00:00",
-"id": "385983e20ae76eef",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-10-10T15:50:00.403053+00:00"
-},
-{
-"title": "Stress-Sensing Over TCR Recognition: γδ T-cell therapy for CMV infection after transplantation",
-"link": "https://www.sciencedirect.com/science/article/pii/S008525382600832X?dgcid=rss_sd_all",
-"summary": "By Julian J. Freen-van Heeren",
-"outlet": "",
-"published": "2026-10-09T12:00:00+00:00",
-"id": "2a094bae6e76add3",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-10-10T15:50:00.403053+00:00"
 }
 ]
 }
