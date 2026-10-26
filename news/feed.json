@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-26T01:34:11.508918+00:00",
+"updated": "2026-10-26T06:53:23.203134+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -94,17 +94,17 @@
 "name": "Google News: transplant & organ donation policy",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": false,
-"count": 0,
-"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=dialysis+OR+%22kidney+disease%22+OR+%22kidney+failure%22+OR+ESRD+OR+%22kidney+transplant%22+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": false,
-"count": 0,
-"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "KFF Health News",
@@ -133,6 +133,50 @@
 ],
 "items": [
 {
+"title": "UMass Chan postdocs earn fellowship awards for research on Down syndrome, polycystic kidney disease - UMass Chan Medical School",
+"link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNbEdYX3YtemlkSW9FZVhlajltS3dyczJLUm9UTFRXaHA3MmdiVFZ5N0Jwd3B3aEJ0NmRHN1Z1SHRJN0M1R3ZLN2hMQnFYOXcwdl9JRnRodS10T2tiYjRfRHFwWkdSM20zUU5zZVh0aFFrNjR4WWRRUF9obFBOYnZ3TDFTMXRSTEVxcTFoVnNKWDdLcXZKdVh2R1J2RDhoN1FxQ09WN0QzZm9VT2dLUEhVT09sN1pfMWRMSXE2TUUxMDFBTEI3U0VZT0lMSWRNejZZZGt3a3VpMUFJV0R2RFlF?oc=5",
+"summary": "UMass Chan postdocs earn fellowship awards for research on Down syndrome, polycystic kidney disease UMass Chan Medical School",
+"outlet": "UMass Chan Medical School",
+"published": "2026-10-26T04:14:29+00:00",
+"id": "7747ad3294e5d7a3",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-26T06:53:23.203134+00:00"
+},
+{
+"title": "Health Ministry Defends Child Organ Donation Bill But Stays Silent On Survey Asking Schoolchildren First Without Parents’ Informed Consent - The Vietnamese Magazine",
+"link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQWElWWmR6R2x5NGR5MFpfX2xSOXU1bEdKV1BINEZHY1pnR1YzQ0xrRUdwTmIzT3Q5bGVIbXlmSzI3YVJZX3dhVVlJdDFKbmdBTHMxNXNMZVAxN3pnOW1kZ3Q4dGtIYUtsMWI4QU00MW1ZbnhwYTlHZXdwVGxZUTN6WFJOdzZJem5oUlNjZXF3WG9IVmxzbU5fUkV5ZnpHSDhLaUNlUnFIVGlHNlZiRElCMFZDNDhXOFdaeTAyVnNfSi1mRU9LNlprLTU5eC1oTlp4Q3hMZ0c3VjQyNWZVUmhKcVcwLU9LampoZ2xOVlAzdW15b1JvZGIwVmRWRjRySk5DMGc?oc=5",
+"summary": "Health Ministry Defends Child Organ Donation Bill But Stays Silent On Survey Asking Schoolchildren First Without Parents’ Informed Consent The Vietnamese Magazine",
+"outlet": "The Vietnamese Magazine",
+"published": "2026-10-26T01:56:04+00:00",
+"id": "b44bc0ca9721bf48",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-26T06:53:23.203134+00:00"
+},
+{
+"title": "High-Dose Vitamin D of No Benefit in Dialysis - Medscape",
+"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQkIxVktVZXBEdlAzcmloa1hLbXFSRWxUQnQzaTBabEhneEgzdmJ4ZENubTRJVEV0OWZxM3hJX0MzQTg3REJVZU9UeDFpbXJYNWYxSlhENGZqNFB1Z1RheGpnX1c3R0hnZXBPeFFIQWRoNU9lYVRhRlVvQXVlSDhGdEZZSWlwRklPdnc5T1N2R1ZGZlFEcHNISUV6ank0bWR6b2dUQUYxMA?oc=5",
+"summary": "High-Dose Vitamin D of No Benefit in Dialysis Medscape",
+"outlet": "Medscape",
+"published": "2026-10-25T23:40:05+00:00",
+"id": "51751e6eaffd77a9",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-26T06:53:23.203134+00:00"
+},
+{
+"title": "APOL1 Genotypes and Kidney Failure Risk: Bessie A. Young, MD, MPH - The American Journal of Managed Care",
+"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNT1UyMkxpTnJBZHpzM0xSbmxSYVpIcnpXZzUyNHN0VUxjc2NDZUJ0XzUyakpueGZidkx4RjVJQ0VoUjdhb25sNlY1NVJmNU1oMldBUjl5YzItOEVZd3p1N0o0SHVQb2VCaEI1a1hzSkxXWXRISHdJR1loNUlMZEhxem9zS1RNSURNT1QxbmlqcG0?oc=5",
+"summary": "APOL1 Genotypes and Kidney Failure Risk: Bessie A. Young, MD, MPH The American Journal of Managed Care",
+"outlet": "The American Journal of Managed Care",
+"published": "2026-10-25T22:16:48+00:00",
+"id": "bb1168c15a8b094b",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-26T06:53:23.203134+00:00"
+},
+{
 "title": "Diabetic Kidney Disease: Can Self-Management Help? - Diabetes In Control",
 "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5fYlN4bnlZdnZjV0xtSjRJVGxrcnlZWjNJWE8zbmJMQmRLRnhCeW53Z0dCRkwyeDB1eVVRVWt0bTdudUJLd0VmRGNENGJOYXV4QlFKaW1VRHRmbk81WU1hd1dGSWhVdUJidmZFWHp2VlhfSnJydTZzV256QmNiY2s?oc=5",
 "summary": "Diabetic Kidney Disease: Can Self-Management Help? Diabetes In Control",
@@ -142,6 +186,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-25T20:44:03.406739+00:00"
+},
+{
+"title": "Can Better Self-Management Protect the Kidneys Before Damage Takes Hold? - Diabetes In Control",
+"link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5fYlN4bnlZdnZjV0xtSjRJVGxrcnlZWjNJWE8zbmJMQmRLRnhCeW53Z0dCRkwyeDB1eVVRVWt0bTdudUJLd0VmRGNENGJOYXV4QlFKaW1VRHRmbk81WU1hd1dGSWhVdUJidmZFWHp2VlhfSnJydTZzV256QmNiY2s?oc=5",
+"summary": "Can Better Self-Management Protect the Kidneys Before Damage Takes Hold? Diabetes In Control",
+"outlet": "Diabetes In Control",
+"published": "2026-10-25T19:04:03+00:00",
+"id": "0aca50a700c4b39f",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-26T06:53:23.203134+00:00"
 },
 {
 "title": "Response to the Letter to the Editor Entitled “From Molecular Signal to Clinical Action in Cardiovascular-Kidney-Metabolic Disease 2”",
@@ -230,6 +285,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-25T23:09:26.128444+00:00"
+},
+{
+"title": "Advanced age does not limit the benefits of sodium-glucose cotransporter 2 inhibitors in chronic kidney disease - Medical Xpress",
+"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNckFfZjhNZDhmcGk3V21kZTE3TXU5czdXSy1xeXR4ODVYS3RtX0plUFJyTnJodzVyaUJtR3RLZkhJTFRmZ0dCWm53MVZOWm54MVd0Y3lKQ1hZR2dvc2VwTHpldVNjUUx1Q0lvV2NCdUF6Ri14djZrZEM0cjBtcVhOQzlrWGU?oc=5",
+"summary": "Advanced age does not limit the benefits of sodium-glucose cotransporter 2 inhibitors in chronic kidney disease Medical Xpress",
+"outlet": "Medical Xpress",
+"published": "2026-10-24T22:30:01+00:00",
+"id": "24dda189923af149",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-26T06:53:23.203134+00:00"
 },
 {
 "title": "GLP-1s Tied to Weight Loss in Peritoneal Dialysis, With Steven Brunelli, MD - HCPLive",
@@ -483,6 +549,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-25T23:09:26.128444+00:00"
+},
+{
+"title": "Expanding organ donation rights for those under 18: Protecting children is paramount. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQbjJJSTNJS2pmSmpqLUNpQmFKTUVuaDhpVnVJT1hIb3dIN0M4YW43ZUw0bVNqTDB0S3pQbk9KVGZYLUJ1WHN5VG1obDYxRWVwUWllQ2hQb1pxaXZRSGN5X2c2SS1NS1VYS01tUnpNQWY2ZFBqTnNTdmcwRjRMUEpndi1GeVBzaG1qcXVjRDVva3NZLWdJbVNybXBDSkhNaV9GWEFIbzVIa1JDUQ?oc=5",
+"summary": "Expanding organ donation rights for those under 18: Protecting children is paramount. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-10-24T07:00:00+00:00",
+"id": "603c02f9e43c6b90",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-26T06:53:23.203134+00:00"
 },
 {
 "title": "Nephrologist shortages linked to higher kidney disease mortality along US-Mexico borde - News-Medical",
@@ -923,6 +1000,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-24T04:23:38.476247+00:00"
+},
+{
+"title": "Health Ministry Defends Child Organ Donation Bill Amid Parents’ Fear and Backlash Over Student Surveys - The Vietnamese Magazine",
+"link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPcFd6a2E2R0stSEMwenRpOFIwblB3UnVkR3liREp2QmNsSDg1bFhpTEQ2czdXaV9zQU1MemJZRVR2bWZFb1BKQ0Yzak1NaVpUZVhBS0VGOWZ4Skhsd2x1NW1SVF9SRHh1aWNnSy15Q1VWa1lEZWdhOXFpR3hZc0RTQkZDOU5IeUNFeHJWSWs0UWtfYXdIRExVX2ZodU00bzU0U21wMXRYa2JDcV9MazNQUlBlMTAzc2Q0SHJJU2lNQkpmZ1p6d1o5UFV2US11MXpWUVE?oc=5",
+"summary": "Health Ministry Defends Child Organ Donation Bill Amid Parents’ Fear and Backlash Over Student Surveys The Vietnamese Magazine",
+"outlet": "The Vietnamese Magazine",
+"published": "2026-10-23T11:51:15+00:00",
+"id": "9a4175ae25aa90dc",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-26T06:53:23.203134+00:00"
 },
 {
 "title": "Ministry of Health: Lowering the age for organ donation to expand the supply and increase the chance of saving lives. - Vietnam.vn",
@@ -5543,94 +5631,6 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-15T23:47:37.310134+00:00"
-},
-{
-"title": "Student leaders spread awareness for organ donation - Yahoo",
-"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNV2JpYWxMVUFOSmF5UE9Pa2FIajdHdGRabFpzVmV5ZlYyS1VMcGJkUTZaV1NiODVnZ0xNNVcyVHgzZnFrN1Z3WnRGNU8tSUpkQWtQME5lRlVYemEzRF9KOUxkTlo3THdkTmlpbThsb1J3WWk3ZkhtbXZrT0RCek96ZExPX2ZTRDlsaWxJRkxIblI?oc=5",
-"summary": "Student leaders spread awareness for organ donation Yahoo",
-"outlet": "Yahoo",
-"published": "2026-10-15T19:53:43+00:00",
-"id": "8510e721f4a90783",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-15T21:16:09.077985+00:00"
-},
-{
-"title": "Fresenius Kidney Care opens in Oak Ridge North - Community Impact",
-"link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOMmhjLVBuWERGaXI3QVJScDdmY05aSFpna092bzZINkVqbjFnOWFWODN6c0ZwZkJ3YkNyQkhBTzJCUU9kRmthb1Z0Ul91bGxBMGdEMHAwelpYbWZTeGRnZlpGNzRYVUJsZ1JRbTduRXY2QTloWFBRQ3BzZ1FNcHo0akVuWm9JLTljeUkzeF9sNHItRWhqRUtHSFpCSzR0NWxDajR5Nk81SDBaTUR4dWVRbHlCWHYxNWU0Z2oya2VNdGE?oc=5",
-"summary": "Fresenius Kidney Care opens in Oak Ridge North Community Impact",
-"outlet": "Community Impact",
-"published": "2026-10-15T19:41:57+00:00",
-"id": "56cc03785e4bd1fc",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-15T21:16:09.077985+00:00"
-},
-{
-"title": "The first organ donation in Gia Lai: A historic milestone for local healthcare. - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOb1J2M1l1WU9rQnRBU0tyZGN0dDJEZVQzUUo1bTRKRDd5S3dQaEVUMDBwQi1ocWlQSnhxZW05bVpRSmlqZFhCbzcyVnJSX1lnLVlKMGdOcHl6dEs1cW5Idm1JMjc1LWpHYkpPNC1sZXVLOEJUZVdEMFNPQjNkVkJNTUJELWhkMzNLTDZnMXVYZ0JCNFpnS0ZfdmlDQQ?oc=5",
-"summary": "The first organ donation in Gia Lai: A historic milestone for local healthcare. Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-10-15T18:45:57+00:00",
-"id": "96ebc32877dd0601",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-17T12:54:03.738887+00:00"
-},
-{
-"title": "Procurement and Waste in Hemodialysis: A Detailed Life Cycle Assessment to Reduce Environmental Impact",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002797?dgcid=rss_sd_all",
-"summary": "By James Larkin, Giulia Ligabue, Gaetano Alfano, Rodrigo M. Cadenas, Abass Fehintola, Ingeborg Steinbach, Aycan Yasar, Niccolo Morisi, Marta Arias-Guillen, Marialuisa Caiazzo, Gabriele Donati, Brett Duane",
-"outlet": "",
-"published": "2026-10-15T17:43:15.230016+00:00",
-"id": "6340c9a7bcc2897b",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-15T17:43:15.230016+00:00"
-},
-{
-"title": "A Case Report of Primary Hyperoxaluria Type 1 Diagnosed in a Geriatric Patient Receiving Dialysis: Unique Clinical Course With Lumasiran",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002657?dgcid=rss_sd_all",
-"summary": "By Matthew C. Breeggemann, Marshall L. Stoller, Stephen L. Gluck",
-"outlet": "",
-"published": "2026-10-15T17:43:15.230016+00:00",
-"id": "ce2e67de2d98a41c",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-15T17:43:15.230016+00:00"
-},
-{
-"title": "Intensive blood pressure control protects the heart—with no added kidney failure risk detected - Medical Xpress",
-"link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQUI2SU9HUVRrM3JreDdHTUVYaDkxdU1rdzZSd3VMMWE1Nkh4WnYtTzZ5b2EyUUxCa1IyOVVUQm5HMHhqY0EyeE9pSmhxNDc5dHNQN3NtUnpRX1dmT0JVZnZVRVpTRDM2Q1lsV2V1TFd3SVhJd2pSRFNJMlZhaG52eXE5VWg5b3c?oc=5",
-"summary": "Intensive blood pressure control protects the heart—with no added kidney failure risk detected Medical Xpress",
-"outlet": "Medical Xpress",
-"published": "2026-10-15T17:20:14+00:00",
-"id": "76bb8d5a015b11b9",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-15T17:43:15.230016+00:00"
-},
-{
-"title": "Gia Lai: First successful organ donation saves 4 patients' lives. - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbks3dnBPNFZpdHVMZ1FoV0pTYnh1bmtYU1FDa2lteUhVRmU2NVE5b21mN3ZkbUQyQkF1UlVRdFUtdVIxVW5mWDFlS3pjNWxscmFfV0IzQ3ZXYjNVZGxqVlpYMlZRSmt0dUs2QXAyM18tMjE4V2xCV0I4OWozcWh0U0FPUzVWRmJGX1ZteG1ITjZOd0FjeGdvcGxzcDg?oc=5",
-"summary": "Gia Lai: First successful organ donation saves 4 patients' lives. Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-10-15T15:22:19+00:00",
-"id": "cff0372dcd15f998",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-15T17:43:15.230016+00:00"
-},
-{
-"title": "Modus down 50% after serious adverse event pauses sevuparin kidney disease trial - The Pharma Letter",
-"link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZi1Za0Y2YUdDTzRVLTdlajVMN3JSb2N2TnNTNDlwZWxoUUF6WWRlX29JZVkzajRTRll2cE1uT3YybXBTcFozUWpGV2lWQmg1TEozVmZPUHliazAwc2xrQjBKaGFMWjVlSGF0cHRUZWdlMjhoUlVEOEtSS01aOG1vR2lIYmdlRzZxTDV0X0N6RVFJaXlkd3RRVjVWWUxBcVd1NjY2Q0hLaXB5QVBiSVN2N0poV2x3bzBoVmstdkJGUVQ?oc=5",
-"summary": "Modus down 50% after serious adverse event pauses sevuparin kidney disease trial The Pharma Letter",
-"outlet": "The Pharma Letter",
-"published": "2026-10-15T15:02:35+00:00",
-"id": "e9d04c81aeec7f6e",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-15T17:43:15.230016+00:00"
 }
 ]
 }
