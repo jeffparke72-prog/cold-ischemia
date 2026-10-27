@@ -43,7 +43,7 @@ A(seg('dir3','direction',2,2,'title',.9,lines=L(('DIRECTION HAS','ink'),('NO DEA
 A(seg('dm1','demands',0,0,'title',.9,kicker='Demand one',lines=L(('PATIENTS AND CARE PARTNERS','ink'),('ON THE BOARD. FULL VOTES.','accent')),bg=NIGHT))
 A(seg('dm2','demands',1,1,'title',.9,kicker='Demand two',lines=L(('A DATED TARGET','ink'),('FOR CUTTING DISCARDS.','accent')),bg=NIGHT))
 A(seg('dm3','demands',2,2,'title',.95,kicker='Demand three',lines=L(('REAL FUNDING FOR','ink'),('PERFUSION AND PRESERVATION.','accent')),bg=NIGHT))
-A(seg('dm4','demands',3,3,'title',1,kicker='Demand four',lines=L(('REPORT EVERY YEAR:','ink'),('LISTED PATIENTS WHO DIE','accent'),('OR ARE REMOVED AS TOO SICK.','accent')),bg=NIGHT))
+A(seg('dm4','demands',3,3,'title',1,lines=L(('REPORT EVERY YEAR:','ink'),('LISTED PATIENTS WHO DIE','accent'),('OR ARE REMOVED AS TOO SICK.','accent')),bg=NIGHT))
 A(seg('f1','final',0,0,'title',1,lines=L(('THIS IS NOT','ink'),('LEADERSHIP.','accent')),bg=NIGHT,hits=[.05]))
 A(seg('f2','final',1,1,'title',1,lines=L(('IT IS PUBLIC','ink'),('RELATIONS.','accent')),bg=NIGHT,hits=[.05]))
 A(seg('f3','final',2,2,'title',1,lines=L(('WE HAVE BURIED','ink'),('TOO MANY PEOPLE','ink'),('TO KEEP PRETENDING.','accent')),bg=NIGHT))
