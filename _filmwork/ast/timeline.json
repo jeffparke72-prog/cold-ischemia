@@ -1,0 +1,321 @@
+{
+ "end": 159.77566666666667,
+ "beats": [
+  {
+   "id": "wait",
+   "t0": 4.2,
+   "t1": 11.18,
+   "cc": [
+    {
+     "t": "Referral.",
+     "a": 4.2,
+     "b": 5.27
+    },
+    {
+     "t": "Evaluation.",
+     "a": 5.82,
+     "b": 7.16
+    },
+    {
+     "t": "Waiting.",
+     "a": 7.71,
+     "b": 8.62
+    },
+    {
+     "t": "A phone that may never ring.",
+     "a": 8.92,
+     "b": 11.18
+    }
+   ]
+  },
+  {
+   "id": "welcomes",
+   "t0": 11.73,
+   "t1": 22.22,
+   "cc": [
+    {
+     "t": "The American Society of Transplantation read a federal kidney plan, and said it welcomes it.",
+     "a": 11.73,
+     "b": 17.38
+    },
+    {
+     "t": "Welcomes.",
+     "a": 17.93,
+     "b": 18.93
+    },
+    {
+     "t": "Say that word to the person in the chair tonight.",
+     "a": 19.23,
+     "b": 22.22
+    }
+   ]
+  },
+  {
+   "id": "missing",
+   "t0": 22.72,
+   "t1": 33.09,
+   "cc": [
+    {
+     "t": "Read the statement.",
+     "a": 22.72,
+     "b": 24.47
+    },
+    {
+     "t": "No number.",
+     "a": 25.02,
+     "b": 26.1
+    },
+    {
+     "t": "No deadline.",
+     "a": 26.65,
+     "b": 27.98
+    },
+    {
+     "t": "No funded commitment.",
+     "a": 28.53,
+     "b": 30.72
+    },
+    {
+     "t": "No seat for the patient.",
+     "a": 31.02,
+     "b": 33.09
+    }
+   ]
+  },
+  {
+   "id": "listed",
+   "t0": 33.59,
+   "t1": 43.71,
+   "cc": [
+    {
+     "t": "In twenty twenty-four, one hundred forty-three thousand, nine hundred eighty-two adults were listed for a kidney.",
+     "a": 33.59,
+     "b": 39.93
+    },
+    {
+     "t": "About one in ten had waited five years or longer.",
+     "a": 40.23,
+     "b": 43.71
+    }
+   ]
+  },
+  {
+   "id": "toosick",
+   "t0": 44.11,
+   "t1": 58.61,
+   "cc": [
+    {
+     "t": "Four thousand, nine hundred and one were removed because they got too sick to transplant.",
+     "a": 44.11,
+     "b": 49.33
+    },
+    {
+     "t": "Three thousand, seven hundred forty-three died waiting.",
+     "a": 49.63,
+     "b": 53.2
+    },
+    {
+     "t": "Nearly five thousand people crossed off the list, and not one of them counted among the dead.",
+     "a": 53.49,
+     "b": 58.61
+    }
+   ]
+  },
+  {
+   "id": "discard",
+   "t0": 59.11,
+   "t1": 73.45,
+   "cc": [
+    {
+     "t": "Then the waste.",
+     "a": 59.11,
+     "b": 60.31
+    },
+    {
+     "t": "In one year, nine thousand, six hundred eighty of thirty-two thousand kidneys were thrown away.",
+     "a": 60.61,
+     "b": 66.22
+    },
+    {
+     "t": "Twenty-nine point seven percent.",
+     "a": 66.77,
+     "b": 69.46
+    },
+    {
+     "t": "Families gave those organs on the worst day of their lives.",
+     "a": 69.76,
+     "b": 73.45
+    }
+   ]
+  },
+  {
+   "id": "attempts",
+   "t0": 73.85,
+   "t1": 87.56,
+   "cc": [
+    {
+     "t": "More than twenty-six million attempts to place them. Still discarded.",
+     "a": 73.85,
+     "b": 78.14
+    },
+    {
+     "t": "Where is the demand for perfusion?",
+     "a": 78.44,
+     "b": 81.06
+    },
+    {
+     "t": "For faster placement?",
+     "a": 81.61,
+     "b": 83.68
+    },
+    {
+     "t": "For accountability when centers turn organs down?",
+     "a": 83.98,
+     "b": 87.56
+    }
+   ]
+  },
+  {
+   "id": "board",
+   "t0": 88.21,
+   "t1": 103.4,
+   "cc": [
+    {
+     "t": "Who decides?",
+     "a": 88.21,
+     "b": 89.43
+    },
+    {
+     "t": "Fourteen board members.",
+     "a": 89.98,
+     "b": 92.2
+    },
+    {
+     "t": "Physicians. Surgeons. Scientists. One transplant nurse.",
+     "a": 92.5,
+     "b": 96.38
+    },
+    {
+     "t": "No patient. No care partner.",
+     "a": 96.68,
+     "b": 99.05
+    },
+    {
+     "t": "And nominations go only to people already sitting in their meetings.",
+     "a": 99.35,
+     "b": 103.4
+    }
+   ]
+  },
+  {
+   "id": "industry",
+   "t0": 103.95,
+   "t1": 111.83,
+   "cc": [
+    {
+     "t": "Corporate partners meet with that board every year.",
+     "a": 103.95,
+     "b": 107.2
+    },
+    {
+     "t": "Patients get a caregiver toolkit, and a link to register as a donor.",
+     "a": 107.5,
+     "b": 111.83
+    }
+   ]
+  },
+  {
+   "id": "quote",
+   "t0": 112.43,
+   "t1": 125.09,
+   "cc": [
+    {
+     "t": "In twenty twenty, the AST wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.",
+     "a": 112.43,
+     "b": 121.6
+    },
+    {
+     "t": "Six years.",
+     "a": 122.15,
+     "b": 123.17
+    },
+    {
+     "t": "Where is the fix?",
+     "a": 123.72,
+     "b": 125.09
+    }
+   ]
+  },
+  {
+   "id": "direction",
+   "t0": 125.59,
+   "t1": 134.33,
+   "cc": [
+    {
+     "t": "The federal plan sets policy direction.",
+     "a": 125.59,
+     "b": 128.55
+    },
+    {
+     "t": "Direction costs nothing.",
+     "a": 129.1,
+     "b": 131.32
+    },
+    {
+     "t": "Direction has no deadline.",
+     "a": 131.87,
+     "b": 134.33
+    }
+   ]
+  },
+  {
+   "id": "demands",
+   "t0": 134.83,
+   "t1": 150.66,
+   "cc": [
+    {
+     "t": "Seat patients and care partners on the board, with full votes.",
+     "a": 134.83,
+     "b": 138.71
+    },
+    {
+     "t": "Publish a dated target for cutting discards.",
+     "a": 139.01,
+     "b": 142.23
+    },
+    {
+     "t": "Fund real perfusion and preservation.",
+     "a": 142.53,
+     "b": 145.5
+    },
+    {
+     "t": "Report every year how many listed patients die, or are removed as too sick.",
+     "a": 145.8,
+     "b": 150.66
+    }
+   ]
+  },
+  {
+   "id": "final",
+   "t0": 151.31,
+   "t1": 159.78,
+   "cc": [
+    {
+     "t": "This is not leadership.",
+     "a": 151.31,
+     "b": 153.1
+    },
+    {
+     "t": "It is public relations.",
+     "a": 153.65,
+     "b": 155.83
+    },
+    {
+     "t": "And we have buried too many people to keep pretending otherwise.",
+     "a": 156.13,
+     "b": 159.78
+    }
+   ]
+  }
+ ]
+}
