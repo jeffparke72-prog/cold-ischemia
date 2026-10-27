@@ -1,246 +1,258 @@
 {
- "end": 157.28266666666667,
+ "end": 161.32400000000007,
  "beats": [
   {
    "id": "open",
    "t0": 4.2,
-   "t1": 25.22,
+   "t1": 24.66,
    "cc": [
     {
      "t": "The American Society of Transplantation had one job when the government unveiled a kidney plan.",
      "a": 4.2,
-     "b": 10.69
+     "b": 10.54
     },
     {
      "t": "Speak for the people waiting.",
-     "a": 10.99,
-     "b": 13.05
+     "a": 10.84,
+     "b": 12.84
     },
     {
      "t": "Instead, it put out a statement.",
-     "a": 13.35,
-     "b": 15.66
+     "a": 13.14,
+     "b": 15.4
     },
     {
      "t": "No target. No deadline. No dollar amount. No role for patients.",
-     "a": 15.96,
-     "b": 20.33
+     "a": 15.7,
+     "b": 19.97
     },
     {
      "t": "Read the statement twice. Then look at who the AST is built for.",
-     "a": 20.63,
-     "b": 25.22
+     "a": 20.27,
+     "b": 24.66
     }
    ]
   },
   {
    "id": "dues",
-   "t0": 25.72,
-   "t1": 42.23,
+   "t0": 25.16,
+   "t1": 41.08,
    "cc": [
     {
      "t": "Start with the door.",
-     "a": 25.72,
-     "b": 27.25
+     "a": 25.16,
+     "b": 26.64
     },
     {
      "t": "To join, you pay.",
-     "a": 27.8,
-     "b": 29.7
+     "a": 27.19,
+     "b": 29.04
     },
     {
      "t": "Doctoral membership is listed at four hundred eighty-five dollars a year.",
-     "a": 30.0,
-     "b": 34.72
+     "a": 29.34,
+     "b": 33.76
     },
     {
      "t": "Membership is built around people who work in transplantation.",
-     "a": 35.02,
-     "b": 39.26
+     "a": 34.06,
+     "b": 38.22
     },
     {
      "t": "Being a patient is not on the list.",
-     "a": 39.56,
-     "b": 42.23
+     "a": 38.52,
+     "b": 41.08
     }
    ]
   },
   {
    "id": "industry",
-   "t0": 42.73,
-   "t1": 60.72,
+   "t0": 41.58,
+   "t1": 59.07,
    "cc": [
     {
      "t": "In twenty twenty-five, it opened an affiliate tier for people in industry with a business or strategic interest in transplantation.",
-     "a": 42.73,
-     "b": 50.84
+     "a": 41.58,
+     "b": 49.51
     },
     {
      "t": "Corporate partners are invited to meet with the board every year, to discuss strategy.",
-     "a": 51.14,
-     "b": 56.43
+     "a": 49.81,
+     "b": 54.91
     },
     {
      "t": "Patients get a toolkit, and a link to register as a donor.",
-     "a": 56.73,
-     "b": 60.72
+     "a": 55.21,
+     "b": 59.07
+    }
+   ]
+  },
+  {
+   "id": "circle",
+   "t0": 59.57,
+   "t1": 74.4,
+   "cc": [
+    {
+     "t": "The Living Donor Circle of Excellence is the society's showpiece for living donation.",
+     "a": 59.57,
+     "b": 64.69
+    },
+    {
+     "t": "Its members are companies. Its founding member is UnitedHealth Group, an insurer.",
+     "a": 64.99,
+     "b": 70.09
+    },
+    {
+     "t": "Patients are the subject of the program. They are never members of it.",
+     "a": 70.39,
+     "b": 74.4
     }
    ]
   },
   {
    "id": "board",
-   "t0": 61.32,
-   "t1": 86.43,
+   "t0": 75.0,
+   "t1": 99.18,
    "cc": [
     {
      "t": "Now the board.",
-     "a": 61.32,
-     "b": 62.6
+     "a": 75.0,
+     "b": 76.26
     },
     {
      "t": "To be nominated, the society's own criteria have asked for five years of membership in good standing, attendance at its meetings, a record of leadership inside it, and two letters of reference.",
-     "a": 62.9,
-     "b": 74.18
+     "a": 76.56,
+     "b": 87.38
     },
     {
      "t": "Five years of dues and meetings, just to be considered.",
-     "a": 74.48,
-     "b": 78.09
+     "a": 87.68,
+     "b": 91.18
     },
     {
      "t": "No patient. No care partner.",
-     "a": 78.39,
-     "b": 80.97
+     "a": 91.48,
+     "b": 93.84
     },
     {
      "t": "That is not a board patients can reach. It is a board that stays inside the club.",
-     "a": 81.27,
-     "b": 86.43
+     "a": 94.14,
+     "b": 99.18
     }
    ]
   },
   {
    "id": "network",
-   "t0": 86.93,
-   "t1": 100.61,
+   "t0": 99.68,
+   "t1": 106.59,
    "cc": [
     {
      "t": "Follow the structure.",
-     "a": 86.93,
-     "b": 88.66
+     "a": 99.68,
+     "b": 101.36
     },
     {
-     "t": "Dues in. Meetings. Industry at the table.",
-     "a": 88.96,
-     "b": 91.99
-    },
-    {
-     "t": "A network that charges to enter, and listens to the people already inside.",
-     "a": 92.29,
-     "b": 97.0
-    },
-    {
-     "t": "Patients stand at the edge of it, holding a toolkit.",
-     "a": 97.3,
-     "b": 100.61
+     "t": "Dues in. Meetings. Industry at the table. Patients at the edge, holding a toolkit.",
+     "a": 101.66,
+     "b": 106.59
     }
    ]
   },
   {
    "id": "quote",
-   "t0": 101.21,
-   "t1": 116.31,
+   "t0": 107.19,
+   "t1": 121.74,
    "cc": [
     {
      "t": "In twenty twenty, this society wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.",
-     "a": 101.21,
-     "b": 110.87
+     "a": 107.19,
+     "b": 116.54
     },
     {
      "t": "Those are its words.",
-     "a": 111.42,
-     "b": 113.07
+     "a": 117.09,
+     "b": 118.62
     },
     {
      "t": "Now apply that test to the AST.",
-     "a": 113.37,
-     "b": 116.31
+     "a": 118.92,
+     "b": 121.74
     }
    ]
   },
   {
    "id": "plan",
-   "t0": 116.81,
-   "t1": 128.12,
+   "t0": 122.24,
+   "t1": 133.06,
    "cc": [
     {
      "t": "The federal plan sets direction. It sets no rules, and no deadlines.",
-     "a": 116.81,
-     "b": 121.57
+     "a": 122.24,
+     "b": 126.78
     },
     {
      "t": "A society that put patients first would demand both.",
-     "a": 121.87,
-     "b": 125.54
+     "a": 127.08,
+     "b": 130.58
     },
     {
      "t": "This one issued a statement.",
-     "a": 125.84,
-     "b": 128.12
+     "a": 130.88,
+     "b": 133.06
     }
    ]
   },
   {
    "id": "demands",
-   "t0": 128.62,
-   "t1": 147.87,
+   "t0": 133.56,
+   "t1": 152.21,
    "cc": [
     {
      "t": "So here is what we demand.",
-     "a": 128.62,
-     "b": 130.97
+     "a": 133.56,
+     "b": 135.82
     },
     {
      "t": "Patients and care partners on the board, with full votes.",
-     "a": 131.27,
-     "b": 134.91
+     "a": 136.12,
+     "b": 139.66
     },
     {
      "t": "Nominations open to people outside the dues-paying club.",
-     "a": 135.21,
-     "b": 139.16
+     "a": 139.96,
+     "b": 143.76
     },
     {
      "t": "A public account of every dollar it takes from industry.",
-     "a": 139.46,
-     "b": 143.17
+     "a": 144.06,
+     "b": 147.64
     },
     {
      "t": "And dated, public targets for the outcomes it claims to care about.",
-     "a": 143.47,
-     "b": 147.87
+     "a": 147.94,
+     "b": 152.21
     }
    ]
   },
   {
    "id": "final",
-   "t0": 148.52,
-   "t1": 157.28,
+   "t0": 152.86,
+   "t1": 161.32,
    "cc": [
     {
      "t": "This is not leadership.",
-     "a": 148.52,
-     "b": 150.42
+     "a": 152.86,
+     "b": 154.65
     },
     {
      "t": "It is public relations.",
-     "a": 150.97,
-     "b": 153.23
+     "a": 155.2,
+     "b": 157.38
     },
     {
      "t": "And we have buried too many people to keep pretending otherwise.",
-     "a": 153.53,
-     "b": 157.28
+     "a": 157.68,
+     "b": 161.32
     }
    ]
   }

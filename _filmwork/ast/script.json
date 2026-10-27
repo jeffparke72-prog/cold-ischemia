@@ -27,14 +27,14 @@
   ],
   "groove": [
    [
-    27.72,
-    86.93,
+    27.16,
+    99.68,
     112,
     0.9
    ],
    [
-    116.31,
-    158.78,
+    121.74,
+    162.82,
     116,
     1.0
    ]
@@ -63,17 +63,17 @@
    "type": "title",
    "text": "The American Society of Transplantation had one job when the government unveiled a kidney plan. Speak for the people waiting.",
    "t0": 4.1,
-   "dur": 9.25,
+   "dur": 9.04,
    "cc": [
     {
      "t": "The American Society of Transplantation had one job when the government unveiled a kidney plan.",
      "a": 4.2,
-     "b": 10.69
+     "b": 10.54
     },
     {
      "t": "Speak for the people waiting.",
-     "a": 10.99,
-     "b": 13.05
+     "a": 10.84,
+     "b": 12.84
     }
    ],
    "intensity": 0.6,
@@ -97,13 +97,13 @@
    "id": "o2",
    "type": "title",
    "text": "Instead, it put out a statement.",
-   "t0": 13.25,
-   "dur": 2.71,
+   "t0": 13.04,
+   "dur": 2.66,
    "cc": [
     {
      "t": "Instead, it put out a statement.",
-     "a": 13.35,
-     "b": 15.66
+     "a": 13.14,
+     "b": 15.4
     }
    ],
    "intensity": 0.7,
@@ -128,13 +128,13 @@
    "id": "o3",
    "type": "list",
    "text": "No target. No deadline. No dollar amount. No role for patients.",
-   "t0": 15.86,
-   "dur": 4.77,
+   "t0": 15.6,
+   "dur": 4.67,
    "cc": [
     {
      "t": "No target. No deadline. No dollar amount. No role for patients.",
-     "a": 15.96,
-     "b": 20.33
+     "a": 15.7,
+     "b": 19.97
     }
    ],
    "intensity": 0.8,
@@ -165,13 +165,13 @@
    "id": "o4",
    "type": "title",
    "text": "Read the statement twice. Then look at who the AST is built for.",
-   "t0": 20.53,
-   "dur": 4.99,
+   "t0": 20.17,
+   "dur": 4.79,
    "cc": [
     {
      "t": "Read the statement twice. Then look at who the AST is built for.",
-     "a": 20.63,
-     "b": 25.22
+     "a": 20.27,
+     "b": 24.66
     }
    ],
    "intensity": 0.8,
@@ -197,18 +197,18 @@
    "id": "door",
    "type": "title",
    "text": "Start with the door. To join, you pay.",
-   "t0": 25.62,
-   "dur": 4.38,
+   "t0": 25.06,
+   "dur": 4.28,
    "cc": [
     {
      "t": "Start with the door.",
-     "a": 25.72,
-     "b": 27.25
+     "a": 25.16,
+     "b": 26.64
     },
     {
      "t": "To join, you pay.",
-     "a": 27.8,
-     "b": 29.7
+     "a": 27.19,
+     "b": 29.04
     }
    ],
    "intensity": 0.6,
@@ -231,13 +231,13 @@
    "id": "d485",
    "type": "stat",
    "text": "Doctoral membership is listed at four hundred eighty-five dollars a year.",
-   "t0": 29.9,
-   "dur": 5.12,
+   "t0": 29.24,
+   "dur": 4.82,
    "cc": [
     {
      "t": "Doctoral membership is listed at four hundred eighty-five dollars a year.",
-     "a": 30.0,
-     "b": 34.72
+     "a": 29.34,
+     "b": 33.76
     }
    ],
    "intensity": 0.85,
@@ -261,13 +261,13 @@
    "id": "work",
    "type": "title",
    "text": "Membership is built around people who work in transplantation.",
-   "t0": 34.92,
-   "dur": 4.64,
+   "t0": 33.96,
+   "dur": 4.56,
    "cc": [
     {
      "t": "Membership is built around people who work in transplantation.",
-     "a": 35.02,
-     "b": 39.26
+     "a": 34.06,
+     "b": 38.22
     }
    ],
    "intensity": 0.7,
@@ -298,13 +298,13 @@
    "id": "notlist",
    "type": "title",
    "text": "Being a patient is not on the list.",
-   "t0": 39.46,
-   "dur": 3.07,
+   "t0": 38.42,
+   "dur": 2.96,
    "cc": [
     {
      "t": "Being a patient is not on the list.",
-     "a": 39.56,
-     "b": 42.23
+     "a": 38.52,
+     "b": 41.08
     }
    ],
    "intensity": 0.85,
@@ -330,13 +330,13 @@
    "id": "aff",
    "type": "title",
    "text": "In twenty twenty-five, it opened an affiliate tier for people in industry with a business or strategic interest in transplantation.",
-   "t0": 42.63,
-   "dur": 8.51,
+   "t0": 41.48,
+   "dur": 8.33,
    "cc": [
     {
      "t": "In twenty twenty-five, it opened an affiliate tier for people in industry with a business or strategic interest in transplantation.",
-     "a": 42.73,
-     "b": 50.84
+     "a": 41.58,
+     "b": 49.51
     }
    ],
    "intensity": 0.7,
@@ -368,13 +368,13 @@
    "id": "corp",
    "type": "title",
    "text": "Corporate partners are invited to meet with the board every year, to discuss strategy.",
-   "t0": 51.04,
-   "dur": 5.69,
+   "t0": 49.71,
+   "dur": 5.5,
    "cc": [
     {
      "t": "Corporate partners are invited to meet with the board every year, to discuss strategy.",
-     "a": 51.14,
-     "b": 56.43
+     "a": 49.81,
+     "b": 54.91
     }
    ],
    "intensity": 0.6,
@@ -405,13 +405,13 @@
    "id": "pat",
    "type": "cards",
    "text": "Patients get a toolkit, and a link to register as a donor.",
-   "t0": 56.63,
-   "dur": 4.39,
+   "t0": 55.11,
+   "dur": 4.26,
    "cc": [
     {
      "t": "Patients get a toolkit, and a link to register as a donor.",
-     "a": 56.73,
-     "b": 60.72
+     "a": 55.21,
+     "b": 59.07
     }
    ],
    "intensity": 0.6,
@@ -436,16 +436,109 @@
    }
   },
   {
+   "id": "ce1",
+   "type": "title",
+   "text": "The Living Donor Circle of Excellence is the society's showpiece for living donation.",
+   "t0": 59.47,
+   "dur": 5.52,
+   "cc": [
+    {
+     "t": "The Living Donor Circle of Excellence is the society's showpiece for living donation.",
+     "a": 59.57,
+     "b": 64.69
+    }
+   ],
+   "intensity": 0.7,
+   "lines": [
+    {
+     "t": "THE LIVING DONOR",
+     "c": "ink"
+    },
+    {
+     "t": "CIRCLE OF EXCELLENCE.",
+     "c": "accent"
+    }
+   ],
+   "chairs": {
+    "lit": -1,
+    "n": 3
+   }
+  },
+  {
+   "id": "ce2",
+   "type": "list",
+   "text": "Its members are companies. Its founding member is UnitedHealth Group, an insurer.",
+   "t0": 64.89,
+   "dur": 5.5,
+   "cc": [
+    {
+     "t": "Its members are companies. Its founding member is UnitedHealth Group, an insurer.",
+     "a": 64.99,
+     "b": 70.09
+    }
+   ],
+   "intensity": 0.8,
+   "rows": [
+    {
+     "t": "MEMBERS: COMPANIES"
+    },
+    {
+     "t": "FOUNDING MEMBER",
+     "s": "UnitedHealth Group, an insurer"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.84,
+    "blur": 16,
+    "pan": "left",
+    "zoom": 0.05
+   },
+   "src": "AST announcement, Living Donor Circle of Excellence, October 2020, myast.org"
+  },
+  {
+   "id": "ce3",
+   "type": "title",
+   "text": "Patients are the subject of the program. They are never members of it.",
+   "t0": 70.29,
+   "dur": 4.41,
+   "cc": [
+    {
+     "t": "Patients are the subject of the program. They are never members of it.",
+     "a": 70.39,
+     "b": 74.4
+    }
+   ],
+   "intensity": 0.85,
+   "lines": [
+    {
+     "t": "THE PATIENT IS THE SUBJECT.",
+     "c": "ink"
+    },
+    {
+     "t": "NEVER A MEMBER.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.84,
+    "blur": 16,
+    "pan": "left",
+    "zoom": 0.05
+   }
+  },
+  {
    "id": "now",
    "type": "title",
    "text": "Now the board.",
-   "t0": 61.22,
-   "dur": 1.68,
+   "t0": 74.9,
+   "dur": 1.66,
    "cc": [
     {
      "t": "Now the board.",
-     "a": 61.32,
-     "b": 62.6
+     "a": 75.0,
+     "b": 76.26
     }
    ],
    "intensity": 0.55,
@@ -468,13 +561,13 @@
    "id": "crit",
    "type": "list",
    "text": "To be nominated, the society's own criteria have asked for five years of membership in good standing, attendance at its meetings, a record of leadership inside it, and two letters of reference.",
-   "t0": 62.8,
-   "dur": 11.68,
+   "t0": 76.46,
+   "dur": 11.22,
    "cc": [
     {
      "t": "To be nominated, the society's own criteria have asked for five years of membership in good standing, attendance at its meetings, a record of leadership inside it, and two letters of reference.",
-     "a": 62.9,
-     "b": 74.18
+     "a": 76.56,
+     "b": 87.38
     }
    ],
    "intensity": 0.8,
@@ -506,13 +599,13 @@
    "id": "five",
    "type": "stat",
    "text": "Five years of dues and meetings, just to be considered.",
-   "t0": 74.38,
-   "dur": 4.01,
+   "t0": 87.58,
+   "dur": 3.9,
    "cc": [
     {
      "t": "Five years of dues and meetings, just to be considered.",
-     "a": 74.48,
-     "b": 78.09
+     "a": 87.68,
+     "b": 91.18
     }
    ],
    "intensity": 0.8,
@@ -535,13 +628,13 @@
    "id": "zero",
    "type": "cards",
    "text": "No patient. No care partner.",
-   "t0": 78.29,
-   "dur": 2.98,
+   "t0": 91.38,
+   "dur": 2.76,
    "cc": [
     {
      "t": "No patient. No care partner.",
-     "a": 78.39,
-     "b": 80.97
+     "a": 91.48,
+     "b": 93.84
     }
    ],
    "intensity": 0.8,
@@ -572,13 +665,13 @@
    "id": "club",
    "type": "title",
    "text": "That is not a board patients can reach. It is a board that stays inside the club.",
-   "t0": 81.17,
-   "dur": 5.56,
+   "t0": 94.04,
+   "dur": 5.44,
    "cc": [
     {
      "t": "That is not a board patients can reach. It is a board that stays inside the club.",
-     "a": 81.27,
-     "b": 86.43
+     "a": 94.14,
+     "b": 99.18
     }
    ],
    "intensity": 0.85,
@@ -604,13 +697,13 @@
    "id": "fol",
    "type": "title",
    "text": "Follow the structure.",
-   "t0": 86.83,
-   "dur": 2.13,
+   "t0": 99.58,
+   "dur": 2.08,
    "cc": [
     {
      "t": "Follow the structure.",
-     "a": 86.93,
-     "b": 88.66
+     "a": 99.68,
+     "b": 101.36
     }
    ],
    "intensity": 0.6,
@@ -632,14 +725,14 @@
   {
    "id": "three",
    "type": "list",
-   "text": "Dues in. Meetings. Industry at the table.",
-   "t0": 88.86,
-   "dur": 3.43,
+   "text": "Dues in. Meetings. Industry at the table. Patients at the edge, holding a toolkit.",
+   "t0": 101.56,
+   "dur": 5.33,
    "cc": [
     {
-     "t": "Dues in. Meetings. Industry at the table.",
-     "a": 88.96,
-     "b": 91.99
+     "t": "Dues in. Meetings. Industry at the table. Patients at the edge, holding a toolkit.",
+     "a": 101.66,
+     "b": 106.59
     }
    ],
    "intensity": 0.8,
@@ -652,70 +745,10 @@
     },
     {
      "t": "INDUSTRY AT THE TABLE"
-    }
-   ],
-   "bg": {
-    "src": "/night-shift.png",
-    "dim": 0.84,
-    "blur": 16,
-    "pan": "left",
-    "zoom": 0.05
-   }
-  },
-  {
-   "id": "net",
-   "type": "title",
-   "text": "A network that charges to enter, and listens to the people already inside.",
-   "t0": 92.19,
-   "dur": 5.11,
-   "cc": [
-    {
-     "t": "A network that charges to enter, and listens to the people already inside.",
-     "a": 92.29,
-     "b": 97.0
-    }
-   ],
-   "intensity": 0.8,
-   "lines": [
-    {
-     "t": "A NETWORK THAT",
-     "c": "ink"
     },
     {
-     "t": "CHARGES TO ENTER.",
-     "c": "accent"
-    }
-   ],
-   "bg": {
-    "src": "/night-shift.png",
-    "dim": 0.84,
-    "blur": 16,
-    "pan": "left",
-    "zoom": 0.05
-   }
-  },
-  {
-   "id": "edge",
-   "type": "title",
-   "text": "Patients stand at the edge of it, holding a toolkit.",
-   "t0": 97.2,
-   "dur": 3.71,
-   "cc": [
-    {
-     "t": "Patients stand at the edge of it, holding a toolkit.",
-     "a": 97.3,
-     "b": 100.61
-    }
-   ],
-   "intensity": 0.85,
-   "lines": [
-    {
-     "t": "PATIENTS AT THE EDGE.",
-     "c": "accent"
-    },
-    {
-     "t": "HOLDING A TOOLKIT.",
-     "c": "ink"
+     "t": "PATIENTS AT THE EDGE",
+     "s": "Holding a toolkit"
     }
    ],
    "bg": {
@@ -730,13 +763,13 @@
    "id": "q2020",
    "type": "quote",
    "text": "In twenty twenty, this society wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.",
-   "t0": 101.11,
-   "dur": 10.06,
+   "t0": 107.09,
+   "dur": 9.75,
    "cc": [
     {
      "t": "In twenty twenty, this society wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.",
-     "a": 101.21,
-     "b": 110.87
+     "a": 107.19,
+     "b": 116.54
     }
    ],
    "intensity": 0.65,
@@ -758,13 +791,13 @@
    "id": "words",
    "type": "title",
    "text": "Those are its words.",
-   "t0": 111.32,
-   "dur": 2.05,
+   "t0": 116.99,
+   "dur": 1.93,
    "cc": [
     {
      "t": "Those are its words.",
-     "a": 111.42,
-     "b": 113.07
+     "a": 117.09,
+     "b": 118.62
     }
    ],
    "intensity": 0.7,
@@ -786,13 +819,13 @@
    "id": "test",
    "type": "title",
    "text": "Now apply that test to the AST.",
-   "t0": 113.27,
-   "dur": 3.34,
+   "t0": 118.82,
+   "dur": 3.22,
    "cc": [
     {
      "t": "Now apply that test to the AST.",
-     "a": 113.37,
-     "b": 116.31
+     "a": 118.92,
+     "b": 121.74
     }
    ],
    "intensity": 0.9,
@@ -818,13 +851,13 @@
    "id": "dir1",
    "type": "title",
    "text": "The federal plan sets direction. It sets no rules, and no deadlines.",
-   "t0": 116.71,
-   "dur": 5.16,
+   "t0": 122.14,
+   "dur": 4.94,
    "cc": [
     {
      "t": "The federal plan sets direction. It sets no rules, and no deadlines.",
-     "a": 116.81,
-     "b": 121.57
+     "a": 122.24,
+     "b": 126.78
     }
    ],
    "intensity": 0.8,
@@ -850,13 +883,13 @@
    "id": "dir2",
    "type": "title",
    "text": "A society that put patients first would demand both.",
-   "t0": 121.77,
-   "dur": 4.07,
+   "t0": 126.98,
+   "dur": 3.9,
    "cc": [
     {
      "t": "A society that put patients first would demand both.",
-     "a": 121.87,
-     "b": 125.54
+     "a": 127.08,
+     "b": 130.58
     }
    ],
    "intensity": 0.85,
@@ -886,13 +919,13 @@
    "id": "dir3",
    "type": "title",
    "text": "This one issued a statement.",
-   "t0": 125.74,
-   "dur": 2.68,
+   "t0": 130.78,
+   "dur": 2.58,
    "cc": [
     {
      "t": "This one issued a statement.",
-     "a": 125.84,
-     "b": 128.12
+     "a": 130.88,
+     "b": 133.06
     }
    ],
    "intensity": 0.95,
@@ -918,13 +951,13 @@
    "id": "dm0",
    "type": "title",
    "text": "So here is what we demand.",
-   "t0": 128.52,
-   "dur": 2.75,
+   "t0": 133.46,
+   "dur": 2.66,
    "cc": [
     {
      "t": "So here is what we demand.",
-     "a": 128.62,
-     "b": 130.97
+     "a": 133.56,
+     "b": 135.82
     }
    ],
    "intensity": 0.9,
@@ -950,13 +983,13 @@
    "id": "dm1",
    "type": "title",
    "text": "Patients and care partners on the board, with full votes.",
-   "t0": 131.17,
-   "dur": 4.04,
+   "t0": 136.02,
+   "dur": 3.94,
    "cc": [
     {
      "t": "Patients and care partners on the board, with full votes.",
-     "a": 131.27,
-     "b": 134.91
+     "a": 136.12,
+     "b": 139.66
     }
    ],
    "intensity": 0.9,
@@ -983,13 +1016,13 @@
    "id": "dm2",
    "type": "title",
    "text": "Nominations open to people outside the dues-paying club.",
-   "t0": 135.11,
-   "dur": 4.35,
+   "t0": 139.86,
+   "dur": 4.2,
    "cc": [
     {
      "t": "Nominations open to people outside the dues-paying club.",
-     "a": 135.21,
-     "b": 139.16
+     "a": 139.96,
+     "b": 143.76
     }
    ],
    "intensity": 0.9,
@@ -1016,13 +1049,13 @@
    "id": "dm3",
    "type": "title",
    "text": "A public account of every dollar it takes from industry.",
-   "t0": 139.36,
-   "dur": 4.11,
+   "t0": 143.96,
+   "dur": 3.98,
    "cc": [
     {
      "t": "A public account of every dollar it takes from industry.",
-     "a": 139.46,
-     "b": 143.17
+     "a": 144.06,
+     "b": 147.64
     }
    ],
    "intensity": 0.95,
@@ -1049,13 +1082,13 @@
    "id": "dm4",
    "type": "title",
    "text": "And dated, public targets for the outcomes it claims to care about.",
-   "t0": 143.37,
-   "dur": 4.8,
+   "t0": 147.84,
+   "dur": 4.67,
    "cc": [
     {
      "t": "And dated, public targets for the outcomes it claims to care about.",
-     "a": 143.47,
-     "b": 147.87
+     "a": 147.94,
+     "b": 152.21
     }
    ],
    "intensity": 1,
@@ -1086,13 +1119,13 @@
    "id": "f1",
    "type": "title",
    "text": "This is not leadership.",
-   "t0": 148.42,
-   "dur": 2.3,
+   "t0": 152.76,
+   "dur": 2.19,
    "cc": [
     {
      "t": "This is not leadership.",
-     "a": 148.52,
-     "b": 150.42
+     "a": 152.86,
+     "b": 154.65
     }
    ],
    "intensity": 1,
@@ -1121,13 +1154,13 @@
    "id": "f2",
    "type": "title",
    "text": "It is public relations.",
-   "t0": 150.87,
-   "dur": 2.66,
+   "t0": 155.1,
+   "dur": 2.58,
    "cc": [
     {
      "t": "It is public relations.",
-     "a": 150.97,
-     "b": 153.23
+     "a": 155.2,
+     "b": 157.38
     }
    ],
    "intensity": 1,
@@ -1156,13 +1189,13 @@
    "id": "f3",
    "type": "title",
    "text": "And we have buried too many people to keep pretending otherwise.",
-   "t0": 153.43,
-   "dur": 4.15,
+   "t0": 157.58,
+   "dur": 4.04,
    "cc": [
     {
      "t": "And we have buried too many people to keep pretending otherwise.",
-     "a": 153.53,
-     "b": 157.28
+     "a": 157.68,
+     "b": 161.32
     }
    ],
    "intensity": 1,
