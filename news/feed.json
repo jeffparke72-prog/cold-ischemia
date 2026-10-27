@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-27T20:35:48.954336+00:00",
+"updated": "2026-10-27T23:57:40.490818+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -118,9 +118,9 @@
 "name": "UNOS News",
 "category": "Policy",
 "url": "https://unos.org/feed/",
-"ok": true,
-"count": 30,
-"error": null
+"ok": false,
+"count": 0,
+"error": "ValueError: TimeoutError: The read operation timed out"
 },
 {
 "name": "Healio Nephrology",
@@ -132,6 +132,28 @@
 }
 ],
 "items": [
+{
+"title": "\"It was the biggest surprise of my life\"; father receives kidney transplant from daughter at Northwestern Medicine - Audacy",
+"link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNUVprbEpMS3FoOERJRFJicjltOGIyS00tNkp5UHRhYklFLVp2a3dsdlp3Y0RmeVBtcE1hZEJiRXNLM2RVSDF1dFFObmlfckYwdDlwY3dISkJLbWk2ZFdMZnBhNWZxNWZYWkFIYUhlUXA1Yk9sMGI2dVZ5WmFTRzFtMHhEeHVPeG5MZEY5VGdXSFJMZlZVQWJOTGFHaUxnRVF4WmdnQVpnSWU1d2Iyem9uYmVLcEY3bU1iS0NEVlNXcWlpblU2eWdJS0RzY0pOVUxCT1lDMHVVYzVEemtCTUUwUmU0SmF3SkNf?oc=5",
+"summary": "\"It was the biggest surprise of my life\"; father receives kidney transplant from daughter at Northwestern Medicine Audacy",
+"outlet": "Audacy",
+"published": "2026-10-27T21:05:01+00:00",
+"id": "4a1f061b9bd5d7e2",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T23:57:40.490818+00:00"
+},
+{
+"title": "Organ donation efforts earn Chatham-Kent Health Alliance provincial award - Chatham Daily News",
+"link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOb3Y0UzZuZ2R0Zk5Ga09rcnFacVB3M3ByeDVkazlDSzlFZk83N0ZiMlhYT2FXbFdINmItVExxM1pibWU2RENjX2NaTHVPX2hyRHAwaUZ3RUZ5N181TFRFMDU1WGVZVnRKY2hyejI3T3lmVlUxRmpJcFlNU2w4bmNIWEdMc19NV3ZCbEhiRklJRndLOXdaWVlxNnR1WElCSW5iWEpoOUxBMkxQMHNfQzFONg?oc=5",
+"summary": "Organ donation efforts earn Chatham-Kent Health Alliance provincial award Chatham Daily News",
+"outlet": "Chatham Daily News",
+"published": "2026-10-27T21:02:47+00:00",
+"id": "4b907eedee16e207",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-27T23:57:40.490818+00:00"
+},
 {
 "title": "Organ donation conversations are changing. Critics worry families may feel pressured - NPR",
 "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQR2J5SU9yUlVCX2cxaDdZbWdXLWVXbU5hU0syLVpiUTZUZXdxemZQdEM0eG1QQUZoTVBQb2NpUFlSZkxNM3lIdmFwaWRlbm5kTWNYcERqd2pRUHJ5NXFMNU4zRkN6SmR1Wm1HVmpweXJGUGxmMDVUcTk3SnNXek04YWw3akdDZVF2dUcySGJhQ1ZwZ2NDTHZpWnB2MTZ4d1FiYVhvc3VsVXViMjYwbEx4amZfeV9nVVRhckJfUGl6dE4ta3pKUXVB?oc=5",
@@ -159,7 +181,7 @@
 "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOR1hDRVE4dWcxSXBQaWpWU3B5dDZfRHljUzJ3NjBobU9tRzVzUmN5M1lkNTBXYzZmRndMSmtiQ19UZEFSbEI2Nkp0UDdrcDhkTFNjUkxfRWMyT1ZVakhBZEczelJoUjdMNmdrSG5OX3E4aDlHRmlveENraEZrZU9GNWxrRU5xU0hxdFZQVlRndWtUakQzNlN4MU4wR2xQVmZ1?oc=5",
 "summary": "Bioengineered Vessel for Dialysis Access Integrates With Patient Cells HCPLive",
 "outlet": "HCPLive",
-"published": "2026-10-27T18:29:47+00:00",
+"published": "2026-10-27T18:30:05+00:00",
 "id": "231b80146918ed50",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
@@ -188,6 +210,17 @@
 "first_seen": "2026-10-27T20:35:48.954336+00:00"
 },
 {
+"title": "UC Davis Health Performs First HIV-to-HIV Kidney Transplant - Mirage News",
+"link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZURJa2tXb0lRQm5DYlNyM1F6aXJFeGthYUsyQUFvZ1JxMkZBOFVOaVB3RkdLVzR4QUYwN0xIajhvMGxweU1vTTZUMkRZTHpVa2Z2NVBZLXpCWGtDMnl6Q3F1UVVrQmUtcTJtS3Vpb2prY1pjYUszdHZjSWJGOW45c0R0QQ?oc=5",
+"summary": "UC Davis Health Performs First HIV-to-HIV Kidney Transplant Mirage News",
+"outlet": "Mirage News",
+"published": "2026-10-27T16:10:00+00:00",
+"id": "1e08b01800de5223",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T23:57:40.490818+00:00"
+},
+{
 "title": "GLP-1 RAs Tied to Lower Kidney Failure Risk in Patients With Obesity, CKD - Pharmacy Times",
 "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPYWZUN0w0WmU1d3BrZWZsdXI0a3J2d0lVM3ZjUDRyN2NQWk1fM05OQllaYUU0bk1TbFR0dEFUMmY3S1RreEZ1N0pxTGluUFBOMERhTnBpOXlfZW9XeGN3dGJtQ0ZEVmNaZEZsenEyTkk3Q0JwM29IT2RaUVpwX0dhV1Q2c3FVSldkZEpjcWQ1YXg0c3REaVFFOUI3d1c4YV9fUFhJcDFIYWh3R2s?oc=5",
 "summary": "GLP-1 RAs Tied to Lower Kidney Failure Risk in Patients With Obesity, CKD Pharmacy Times",
@@ -206,6 +239,17 @@
 "published": "2026-10-27T16:08:32+00:00",
 "id": "8f2269e9cec0bda8",
 "source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
+},
+{
+"title": "Two New Organ Procurement Organization Performance Measures Earn National Endorsement - PR Newswire",
+"link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNR01WejJxY2dMQTZ2WEZWc0pqVjNXSVBVSHNwZGViVHJqMzJiQ0ZiQ2VucWpTNEZiTkR4VXF1Qmxmd01zbHM1aFM0RWNJSzlheHlEdjZ6MXlvT1J4ajhqWkNTQzlaVl9OWGRjdTVjdjNqTVdiN2JiV0xuMmpaLU1DTmMta3RBMkVUTnFWc2RjZmhJdzVjTTZnakx3eE01Wlh6Ykc1djlTbFAtWWVFTEdLUlBfdm5xVTRLUjhpYTIwUndFMnRLZGNmTUtrR1BTajdSVlNjV2JQS2I?oc=5",
+"summary": "Two New Organ Procurement Organization Performance Measures Earn National Endorsement PR Newswire",
+"outlet": "PR Newswire",
+"published": "2026-10-27T16:03:00+00:00",
+"id": "9bcdede3f96ac9e4",
+"source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-27T20:35:48.954336+00:00"
 },
@@ -254,15 +298,15 @@
 "first_seen": "2026-10-27T15:58:59.831204+00:00"
 },
 {
-"title": "Two New Organ Procurement Organization Performance Measures Earn National Endorsement - PR Newswire",
-"link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNR01WejJxY2dMQTZ2WEZWc0pqVjNXSVBVSHNwZGViVHJqMzJiQ0ZiQ2VucWpTNEZiTkR4VXF1Qmxmd01zbHM1aFM0RWNJSzlheHlEdjZ6MXlvT1J4ajhqWkNTQzlaVl9OWGRjdTVjdjNqTVdiN2JiV0xuMmpaLU1DTmMta3RBMkVUTnFWc2RjZmhJdzVjTTZnakx3eE01Wlh6Ykc1djlTbFAtWWVFTEdLUlBfdm5xVTRLUjhpYTIwUndFMnRLZGNmTUtrR1BTajdSVlNjV2JQS2I?oc=5",
-"summary": "Two New Organ Procurement Organization Performance Measures Earn National Endorsement PR Newswire",
-"outlet": "PR Newswire",
-"published": "2026-10-27T15:05:20+00:00",
-"id": "9bcdede3f96ac9e4",
+"title": "Ministry of Health: Organ donation is prohibited for those under 18 years of age. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOYXduMUpzTE1Ib0lqOTg0WE1jVGtJclU4SFoyc18zMnI0cmRCSGVjaEVoTk9NVjNhekt0WkpuOWNkaTFCU1prX3g5NnYwNVV3ZXhCbFBONHZ0QjJEOHQzVzdrajUzTzN3YU5NeXdJUGhMQWdMOHNhdklfZHdxQl9SMmxR?oc=5",
+"summary": "Ministry of Health: Organ donation is prohibited for those under 18 years of age. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-10-27T13:15:18+00:00",
+"id": "f2c0397d957e7b0e",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
-"first_seen": "2026-10-27T20:35:48.954336+00:00"
+"first_seen": "2026-10-27T23:57:40.490818+00:00"
 },
 {
 "title": "Dialysis clinic outreach can increase rescheduling",
@@ -5587,50 +5631,6 @@
 "source": "Kidney International Reports",
 "category": "Journals",
 "first_seen": "2026-10-19T23:01:48.252115+00:00"
-},
-{
-"title": "Multimodal Profiling of Complement Expression and Association With Outcomes in ANCA-Associated Vasculitis With Glomerulonephritis",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032882?dgcid=rss_sd_all",
-"summary": "By Benoît Brilland, Victor Milon, Cyrille Vandenbussche, Nathalie Merillon, Eleonore Ourouda, Andrea Boizard-Moracchini, Maëva Roy, Odile Blanchet, Emeline Vinatier, Céline Beauvillain, Thomas Quéméneur, Assia Djema,…",
-"outlet": "",
-"published": "2026-10-19T23:01:48.252115+00:00",
-"id": "d211f98e2b06e81d",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-19T23:01:48.252115+00:00"
-},
-{
-"title": "Building a modern, transparent, equitable, and sustainable national organ donation and transplantation system. - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPelpmMUlVZkFGUU9UMU1aVlE2RlIzM1hzLXg0aENWeGh0TEtSUWo1SGVXUTVjUlA3WXVqdFdpYmZ1V3FWcXhQV2QxeW1DVUlJckVqMmdNLWcxVG53TDBpeURHdGdtTXRQX2RCVF9EYXRxWmVmMzdKejZZc3Q5eTlmU3lWY3gyRzh3TWpSeUllaXVQYnJtUmxEZEFnYXFfX3A1SEJTdS1uNmV5T2JO?oc=5",
-"summary": "Building a modern, transparent, equitable, and sustainable national organ donation and transplantation system. Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-10-19T21:50:11+00:00",
-"id": "5810df1f67e3573c",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "GLP-1 drugs linked to lower kidney failure risk in bipolar disorder - Medical Xpress",
-"link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZDl0TllUeDEtWjBrdlRKbFdkQ1NlTVBranVwWVJsalFCd1lzYW9lNnVuTWgyanUwb0QyT3RMbXp6LXNITDJNRTFGWThNRkc2MzdjNnQwYjR2cVcxaFR1amtkSFI5aHJYSEF0dnIwaG03b0ZRajRDZk5vbENid0NFYQ?oc=5",
-"summary": "GLP-1 drugs linked to lower kidney failure risk in bipolar disorder Medical Xpress",
-"outlet": "Medical Xpress",
-"published": "2026-10-19T19:40:11+00:00",
-"id": "236267b54e17fe9e",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T21:31:21.209247+00:00"
-},
-{
-"title": "Grand Forks Clinic and affiliated dialysis companies file for bankruptcy - knoxradio",
-"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNOERDN3BHbExtRHBvLUJveHlLNUlDejhNN2ZvR2ktVTV0QnZKaEtOWmtNNjRxNVhxZXFWb0kyRTVOSWtZaXZpUWRDV0NmdzhDUTZ4VFNILVhEX2dpVWt4QzBZMXFZRG1LQU5xUHcyNWw5T251Q3BpRzBENjdZYk9YdDFJSVEzSGh4d0JsSkpjZHNwaEI1QXY2U3J6RHQ0dGg5M2ZYVEY4MkpzZw?oc=5",
-"summary": "Grand Forks Clinic and affiliated dialysis companies file for bankruptcy knoxradio",
-"outlet": "knoxradio",
-"published": "2026-10-19T19:36:35+00:00",
-"id": "7a121682d0355a07",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T01:41:26.784076+00:00"
 }
 ]
 }
