@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-27T04:49:04.597409+00:00",
+"updated": "2026-10-27T10:22:27.633524+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -87,7 +87,7 @@
 "category": "Policy",
 "url": "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=transplant+%7C+dialysis+%7C+%22organ+procurement%22+%7C+%22end-stage+renal%22&order=newest",
 "ok": true,
-"count": 4,
+"count": 5,
 "error": null
 },
 {
@@ -133,11 +133,55 @@
 ],
 "items": [
 {
+"title": "Fundamental Strategies and Technical Perspectives in Bile Duct Anastomosis for Living Donor Liver Transplantation: Growth From Novice to Maturity.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42934937/",
+"summary": "Kim SM, Kang WH, Hwang S et al. Annals of transplantation",
+"outlet": "Ann Transplant",
+"published": "2026-10-27T10:22:27.633524+00:00",
+"id": "fd95c8ea7c6a3e7b",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-10-27T10:22:27.633524+00:00"
+},
+{
+"title": "Poetic justice: A review of moral economics by Alvin E. Roth",
+"link": "https://www.sciencedirect.com/science/article/pii/S1600613526027607?dgcid=rss_sd_all",
+"summary": "By Michael A. Rees",
+"outlet": "",
+"published": "2026-10-27T10:21:33.081791+00:00",
+"id": "96947e74a67b7878",
+"source": "American Journal of Transplantation",
+"category": "Journals",
+"first_seen": "2026-10-27T10:22:27.633524+00:00"
+},
+{
+"title": "Reply to: Comment on “A comparative study of once-daily vs twice-daily tacrolimus in deceased donor kidney transplant recipients: a national cohort analysis”",
+"link": "https://www.sciencedirect.com/science/article/pii/S1600613526028509?dgcid=rss_sd_all",
+"summary": "By Ahmet B. Gungor, Gaurav Gupta, Bekir Tanriover",
+"outlet": "",
+"published": "2026-10-27T10:21:33.081640+00:00",
+"id": "58713f693b2d3e46",
+"source": "American Journal of Transplantation",
+"category": "Journals",
+"first_seen": "2026-10-27T10:22:27.633524+00:00"
+},
+{
+"title": "New Miami-area group breaks organ recovery record. How it plans to change transplantation - Miami Herald",
+"link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE4zVTkxUmczX20taWxQZlBBQmFNaEZtYWV2Zy00Y25uS09tRnU3Slo0OWRNN2VzUlhrbGVwYkdabHlDZWtJSWZtNzlyZzFMZVBkLWZvN2JHcUxMaWNFVkZhYno1aVgxUFRUOWw3TUdBVTc4VmpP0gF0QVVfeXFMUC1nUW1va3F4Y2w5a2tfTTNLUnl5cjN2SXZ2WDMyZmJQZ3AtNGpwaGE5a3l0TGN2UkZkYlFkX2hmOFF5aFdzUDJROFo3WGRneWlMM2JuTWwzUi1QLUJGdXlWZ2lJNTJtTkU3QkZFSEpIZnVPOVo?oc=5",
+"summary": "New Miami-area group breaks organ recovery record. How it plans to change transplantation Miami Herald",
+"outlet": "Miami Herald",
+"published": "2026-10-27T09:20:00+00:00",
+"id": "340a3516f1d8ea30",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-27T10:22:27.633524+00:00"
+},
+{
 "title": "Belimumab With Rituximab for the Treatment of Primary Membranous Nephropathy",
 "link": "https://www.sciencedirect.com/science/article/pii/S2468024926033073?dgcid=rss_sd_all",
 "summary": "By Sharon A. Chung, Lia Stelzig, Matthew A. Sherman, Wendy Gao, Patricia Tosta, Laura A. Cooney, Sharon Adler, Nabeel Aslam, Isabelle Ayoub, Andrew S. Bomback, Gaia Coppock, Vimal K. Derebail, Fahmeedah Kamal, Dana V.…",
 "outlet": "",
-"published": "2026-10-27T04:48:11.551116+00:00",
+"published": "2026-10-27T04:49:04.597409+00:00",
 "id": "0fb53a6cbb951b8b",
 "source": "Kidney International Reports",
 "category": "Journals",
@@ -148,11 +192,22 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S2468024926033152?dgcid=rss_sd_all",
 "summary": "By David Z.I. Cherney, Tae Won Yi, Hiddo J.L. Heerspink, Linong Ji, Janet B. McGill, Peter Rossing, Katherine R. Tuttle, Jesper N. Bech, Paolo Fiorina, Albert Power, Karoline Schousboe, Nicholas M. Selby, Emanuela Setola,…",
 "outlet": "",
-"published": "2026-10-27T04:48:11.551036+00:00",
+"published": "2026-10-27T04:49:04.597409+00:00",
 "id": "2a3951aeaacc6aa2",
 "source": "Kidney International Reports",
 "category": "Journals",
 "first_seen": "2026-10-27T04:49:04.597409+00:00"
+},
+{
+"title": "Agency Information Collection Activities: Submission to OMB for Review and Approval: Public Comment Request; Organ Procurement and Transplantation Network Board of Directors and Committee Member Applications and Forms",
+"link": "https://www.federalregister.gov/documents/2026/10/27/2026-21857/agency-information-collection-activities-submission-to-omb-for-review-and-approval-public-comment",
+"summary": "In compliance with the Paperwork Reduction Act of 1995, HRSA submitted an Information Collection Request (ICR) to the Office of Management and Budget (OMB) for review and approval. Comments submitted during the first public review of this ICR will be provided to OMB. OMB will accept further comments from the public…",
+"outlet": "",
+"published": "2026-10-27T04:00:00+00:00",
+"id": "be83a79d554c7d29",
+"source": "Federal Register: organ transplant policy",
+"category": "Policy",
+"first_seen": "2026-10-27T10:22:27.633524+00:00"
 },
 {
 "title": "Experts back child tissue and organ donation proposals, stress need for safeguards - vietnamnews.vn",
@@ -192,11 +247,44 @@
 "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcVBOYVN4T2tsa2s4eTlQUzA0T1hibkNyMGNhQUk3VTdJUm5HeXdmeFhCVDl4YVotU24xbm84ZkFlUlhaekc5RFFxWnljM0dsVDZJbnRzUUI0QWFjZ0hZSDZrV1FwalRpckpoOTZFVGdpSnNveFJfVHFoRXJiQTg2NmRwOVZoNURGZWhvdVJSX1g3N2pGbEVPZFo5OUJoTWJsVm4zYQ?oc=5",
 "summary": "Visakhapatnam Cab Driver’s Organ Donation Helps Save Five Lives in Hyderabad Hello Vizag",
 "outlet": "Hello Vizag",
-"published": "2026-10-27T02:12:09+00:00",
+"published": "2026-10-27T02:13:37+00:00",
 "id": "6249332944d1ba08",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-27T04:49:04.597409+00:00"
+},
+{
+"title": "How Joseph Murray’s First Kidney Transplant Redefined What Surgical Success Means - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNeWVwXzk1Z0pYZjE1UDQ5WW5KR04wYzMzbXBvVGQ5NWY1N1FXMUttWFZGd21Fb3dWZHQtOXFkeGtCYklURXpZNGVJQ012SzZQM1NLS0pNRzAyWE9fZnlINWRoZ1BOUDVlaUJVanRDVTd1R2Y0UDFIZXRSdl9vYVRpR0FpYWlyNXVJb1dNNWxxWW1ISXlGYzkxb19YVnpXWDJtaDRZd0hsTlg?oc=5",
+"summary": "How Joseph Murray’s First Kidney Transplant Redefined What Surgical Success Means Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-10-27T00:44:25+00:00",
+"id": "16f24867eccd04b4",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T10:22:27.633524+00:00"
+},
+{
+"title": "Kidney Disease Blunts Accuracy of Heart Risk Scores in Older Women - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNR0tkSFRmWW9mTWhzN0NfeUwzdlg0dDJCdFhrQW45N240M3lsLTI0Qll3MjlIUW9kVDRaY21HYVNsbmZFdzFSSEw2ZTNQblgyR0I3dzdtQ19QOElSYW5GYXhtRGszczdRYVRUckpmMGEwTHJqQ1BkaUl4TXN5OGRoYTVvUDlDTS0xa2QtZC1CZm80eUdvS2c?oc=5",
+"summary": "Kidney Disease Blunts Accuracy of Heart Risk Scores in Older Women Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-10-27T00:34:23+00:00",
+"id": "6755205ae94d9fbf",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T10:22:27.633524+00:00"
+},
+{
+"title": "Car crashes into Anchorage dialysis center, leaving building damaged - Your Alaska Link",
+"link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPeE5TYWpSWVcwelo1T2t3UXdScUZ4c1FGY2NWWmg5UV9YTzRMbmlxMEtWOGpOR1VmZHktMjlud2pzU25PcUxvXzRlMnZSRzhpWThILVNxVTlMUFNGSUpJNzE2RE9MRXJ5MjF2UF9IaExUTGdQY1dQSS1TaHg4ZnRSXzVBMEdhNGV5UXZsMFplOXd6ay0yMjJ4c0NMSzEta3hQbjFrZlAtUGQ3S3h6eE9ZcmRQcjQ5ekJHemdHcjZiMDRLcnBka3NVaGhXa0k5NjFESEFSRFBTUVg2S2JFbWl5V0p1bk5iTnRwdEVmOFFhcDM?oc=5",
+"summary": "Car crashes into Anchorage dialysis center, leaving building damaged Your Alaska Link",
+"outlet": "Your Alaska Link",
+"published": "2026-10-26T23:03:00+00:00",
+"id": "30de2a865bfc4e14",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T10:22:27.633524+00:00"
 },
 {
 "title": "VA Dialysis Tied to Lower Mortality, With Virginia Wang, PhD, MSPH - HCPLive",
@@ -340,6 +428,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-26T14:06:48.367810+00:00"
+},
+{
+"title": "Atom Therapeutics Announces First Patient Dosed in Phase 2 Clinical Trial of Lingdolinurad (ABP-671) for Chronic Kidney Disease with Hyperuricemia - BioSpace",
+"link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOaHVLMEM5NFI0ZllNVVJjYXp6YzM4RFNTRHlyS204Sm1tTXBmYUpwMlZfNjFsOHkwY0dET0x2WS1yQlVsQTdITzQxVDU4WjVVMVNTT3c0M3A5QVRJWEE5T1QwQk55S1lzZ1R2ZDBla2pwcWFjSnJaRjBuOVRlbGNLb3hIRE9VaHdDcnB6dGgtamNjWndPMlFXbjcxdFUyYklyMk1EVUo3bjVWcC1vVXZnbk5ZUDlZbEIzaUREaFlyV1FkWG1OMGE5ZnFFN0ZkVERJUGFHNHhHd0VqREwzVmd5N2JiZ3c2UmdndlB0RV92ZENLUFVMbGlmYjJ0dUdmYXN4RE5SMXRQY19EbEJSWHlNdGpn?oc=5",
+"summary": "Atom Therapeutics Announces First Patient Dosed in Phase 2 Clinical Trial of Lingdolinurad (ABP-671) for Chronic Kidney Disease with Hyperuricemia BioSpace",
+"outlet": "BioSpace",
+"published": "2026-10-26T12:52:04+00:00",
+"id": "61d600401e777049",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T10:22:27.633524+00:00"
 },
 {
 "title": "Purdue researchers to examine chronic kidney disease effects on balance, more - Purdue University",
@@ -505,6 +604,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-26T19:52:42.473877+00:00"
+},
+{
+"title": "Chronic kidney disease - Britannica",
+"link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFA3b0lINHR2ZUhrZVEwU2NzenZ2NWZBMXVFTWNQeG5RQXdQSU1LRkZVaHVLdVJVeEM4b0F6cDh4Zk9zZXA2OVFwQ1JWQ3A1TlNaY2pjaEZfOVVWdTNrTXQ1NlNtd2lhdUs5?oc=5",
+"summary": "Chronic kidney disease Britannica",
+"outlet": "Britannica",
+"published": "2026-10-26T05:00:00+00:00",
+"id": "faac9328ab4c5f12",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T10:22:27.633524+00:00"
 },
 {
 "title": "HighTide presents preclinical HTD1801 findings in polycystic kidney disease - BioSpectrum Asia",
@@ -2422,10 +2532,10 @@
 },
 {
 "title": "Scott Hetsko teaming with marathon runner to raise organ donation awareness - WUHF",
-"link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNcEZ6STJOMnBabkMxODhpdUxKa2JuQ2VvQ1FyMWRudEdhSDBpX2pWTVZkWUgtR05uSkRkUlpmc1M4UlRsd1VvcldUMXpGalppVXdwUjhjX3I1blluMDhjQ2xTMGd2Nm9HaGNaQUZxeFVLQ3Q3UEF2WXNCeXllcnFIRHc3RV9VMFV6am1DTVhRY0J4N000YXFYbHcyVmlfMVBlTmpHQ1FnQThtNFNaY29Rck9UYVpOaVZtRXpoakJ3R0pKNFpaYkJIcFZjSQ?oc=5",
+"link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOeklXNEhvZmhsS29kNGlzTXpxRXZYZ19Ld3pZd1Z6Q3haRWlQOTBuUzd6SkZ4YXh4ZGhuV21IY0xXS05JVkJkeXRuTHBmQUdRbHp4SzhHQ2dyZDJvLUFTcG9QbmhIdHNIX1NLSHVsX1lGdHJRNEE4QjZUR1VXazdzOUVIQTJkY1BadG9SeGxpTlZWTDRkZ2c0MENuWVdma3hxSGRuZmFzdlg0cGh0OWpvbTN0V0ZyNHNUQkJSemRZY2tHNndmSHBwTm1NNnVHdlJncDAzd01n?oc=5",
 "summary": "Scott Hetsko teaming with marathon runner to raise organ donation awareness WUHF",
 "outlet": "WUHF",
-"published": "2026-10-22T09:02:45+00:00",
+"published": "2026-10-22T09:03:35+00:00",
 "id": "5e750965d1055661",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
@@ -5521,116 +5631,6 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Organ Donation Team invests £35k to transform patient experience in Western Trust ICUs - Derry Now",
-"link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOWWZVcDZ4VVo0S0NPTmNqZlJnbS1BTEI4UHB2WWtHQzRHVTRXTXJtbzNJRlFMRmpFZ3VnV1B2ck1ZNDd3VXVtbzd0U1dLQVVoOXhUMEZlNjNMTG5xMThNMlM0Q0IxWEh2ZXAtMmg4Ni14V2lkS1lncVg2TWt0OEFGTWdNRmVZVkxhczFZVkoxZ3oyNnFDLS1SVThSZnVQWC0zOXFIWmc1M2I2MGthNlN2enI0VVViOEx5NVFKajQ4Rm50RjYxSnR6T1MxQU8?oc=5",
-"summary": "Organ Donation Team invests £35k to transform patient experience in Western Trust ICUs Derry Now",
-"outlet": "Derry Now",
-"published": "2026-10-18T09:30:00+00:00",
-"id": "28ce0a0b35f58e84",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-18T15:46:42.456298+00:00"
-},
-{
-"title": "The Chronic Kidney Disease Solution Reviews: Shelly Manning Releases Book Audit Independent Content Review, 89-Day Customer Support Analysis Published Together - USA Today",
-"link": "https://news.google.com/rss/articles/CBMiswJBVV95cUxNLTdJU1N5SFdDSzhvdk5zajNzQVE2LS1lSlFnX1hoeXdodkNIUmpydExDN2VXb3hfQlFjSVZvUTA1QnhreS1jQ1RPR21TTnhlYnowVGhrWHJ0RWNqLVltcW9ZNkZuZnJ6WHE1TzZNa0gyb0w5ZHIwZGcyQU8yQnBsejNFQy1NZ2twYV9sOHQ4eFZvUkVkbjZPZzZCOUhnSzBsaExGZkJObUw4YTYwMjZrelJwdmo1bEY4SmZzaW5TTHQ1NFBPSTRiNm45V3A4TlVpM0ppZHd6U2VMZnhQLThjczkxa1RnQ2sxbjBoNkNqWk1lWUFTYzZ1TG8ybDExSXJMMmFzYmdDYzh0V211TFNqdU5ZeDZQLXB2cnF1aUJjY05iQ0NYSHFOLUE3MTVmeUE1aGJN?oc=5",
-"summary": "The Chronic Kidney Disease Solution Reviews: Shelly Manning Releases Book Audit Independent Content Review, 89-Day Customer Support Analysis Published Together USA Today",
-"outlet": "USA Today",
-"published": "2026-10-18T07:40:39+00:00",
-"id": "1f61bbce0320a962",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-19T01:03:35.508875+00:00"
-},
-{
-"title": "Peritoneal Dialysis Equipment Market To 2035: Home Care Shift Fuels Growth - News and Statistics - IndexBox",
-"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOYmp2M1pISTZuTzFpNUlBVmNYZVFvRGVKUXFNUVptVHFWVnN6U0xUYTNfZHdad3ZwVjFSdms5czktUjZDUzVHc1RPQ0tIdGR5ZERUV0FsS1IyRlY2dDNFV2N0WmpWY2FySVljY2RSTVk0T093QmF0RkFHc3VyMk9sdl9qSzhyNXBQTDMyVW1OZm5mY0NSWFdBRmQ0bWZEczdsazBwLUw4WUZrQm9STzdWak16V3JVQQ?oc=5",
-"summary": "Peritoneal Dialysis Equipment Market To 2035: Home Care Shift Fuels Growth - News and Statistics IndexBox",
-"outlet": "IndexBox",
-"published": "2026-10-18T04:46:04+00:00",
-"id": "f7e3621575a9ba98",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-18T15:46:42.456298+00:00"
-},
-{
-"title": "Water Treatment For Dialysis Market To 2035: Home Therapy Shift Supports Growth - News and Statistics - IndexBox",
-"link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNWltcVNoLTluSTdjTXNwTjI1dkJvN21SYzNkZFZtbkhuQkpzenFoOWJXWEVTc1hWWGhKLXVSX2pkN24wQjByTmlrXzdCWTN1dFJkUHo4emx0OGU0YVFOLWZJZGNURG1jMk5Pb3BKUW5kM3N2TU5rMXZOaGlrMXdHdHY1TlByOGMzbk82dm9BemdrSEN0dkU1b2JyWUljb2JSeWFWelIxZUpTOF84N1JhTzFzbmZuclkzYi11U3JWUnFsLWdE?oc=5",
-"summary": "Water Treatment For Dialysis Market To 2035: Home Therapy Shift Supports Growth - News and Statistics IndexBox",
-"outlet": "IndexBox",
-"published": "2026-10-18T00:11:05+00:00",
-"id": "de165006a8559cb2",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-18T01:27:41.281588+00:00"
-},
-{
-"title": "Vietnam's organ transplant sector masters multi-organ, domino techniques - Vietnam+ (VietnamPlus)",
-"link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORElkV1I3OFN6X3lfa3l6cXQzR0NuV2xpbUhiZTRvVk9rd25xeGJVS2VueHZIZ2hWOUt4SXNfNEctMGFtcXRYbjZxalZLYm80Ml9lOFZndDVnY1JjUHJ2Y2FIWXkyd01rRDNzVU9oRXhlNk9YbnZ5blZQZEQ2MkNGdk55cHpNSTVpZEJfRTlYR3BlbjNTekRkbWM1SktBV3VLVXN3VkZNeHkxVmhOMmd4Mg?oc=5",
-"summary": "Vietnam's organ transplant sector masters multi-organ, domino techniques Vietnam+ (VietnamPlus)",
-"outlet": "Vietnam+ (VietnamPlus)",
-"published": "2026-10-17T20:20:28+00:00",
-"id": "df4c5bac5ef21ff3",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-17T23:20:48.585031+00:00"
-},
-{
-"title": "Back to Basics: Uncovering Biomarkers of Bone Disease Risk in Kidney Failure",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033437?dgcid=rss_sd_all",
-"summary": "By Orlando M. Gutiérrez",
-"outlet": "",
-"published": "2026-10-17T16:17:55.346774+00:00",
-"id": "3c67fd843ef81f66",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-17T16:17:55.346774+00:00"
-},
-{
-"title": "Nailfold Capillary Density and Kidney Injury in CKD",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032651?dgcid=rss_sd_all",
-"summary": "By Rakesh Malhotra, Armin Ahmadi, Masfiqur Rahaman, Amol Harsh, Jason Yang, Basma Ghanim, Subhasis Dasgupta, Robert N. Weinreb, Haiyan Zhang, Tauhidur Rahman, Alfons J.H.M. Houben, Joachim H. Ix",
-"outlet": "",
-"published": "2026-10-17T16:17:55.346774+00:00",
-"id": "ee39cde1132e7e5f",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-17T16:17:55.346774+00:00"
-},
-{
-"title": "Hemodialysis Machines Market To 2035: ESRD Burden Supports Forward Growth - News and Statistics - IndexBox",
-"link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQYWVoTFlaR0JXdWV6bHdNODVScnJzNjR2QmUyVzhJMHN6TUxEYjhBb3gyazFJWUJFZ2NQNl9WWWdFNlNDaHg0bmlpT3FPSmhqYXJnRkFnMWJWRnlDejVyaE5XdnBxZmNtYWdmLUNvRGhvRDFIXzB0M0tYT0ZfNnVub3hjWkRqd0JrNWI1aEJVWkZnVFdFNW1wWTFKSS02QzhFM2RqbTlKZEVybEhwaUdKM0p0Z1RYQ2x2ZWtfRk1Zek1aTUp0YXc?oc=5",
-"summary": "Hemodialysis Machines Market To 2035: ESRD Burden Supports Forward Growth - News and Statistics IndexBox",
-"outlet": "IndexBox",
-"published": "2026-10-17T14:21:05+00:00",
-"id": "f51787cc4e9be10e",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-17T18:45:51.720548+00:00"
-},
-{
-"title": "Organ donation efforts recognized at Sarnia hospital - Sarnia Observer",
-"link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQQjZsNmVxZ2VWNXlfVEUxUEZqNjlndkk2SllGWFZaTlR4eFdlSnE4ZTFCT2M2VWF2SzNDRXB1OUtKVEZwOUJRWFEtNGpKQjdSemFBQWJUYjd6aVF6eWtXZDhRS2pHUkQzUi1LR0ZwNUZWUHVnSF9Yd2djeDV1UU0zSk5iNFpiTm1RckEzc0dn?oc=5",
-"summary": "Organ donation efforts recognized at Sarnia hospital Sarnia Observer",
-"outlet": "Sarnia Observer",
-"published": "2026-10-17T14:09:39+00:00",
-"id": "9da380e625e9e46f",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-17T16:17:55.346774+00:00"
-},
-{
-"title": "Estuary Biotherapeutics Launches With $103 Million To Develop Gene Therapies For Kidney Disease - Pulse 2.0",
-"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNVU1vOGtsOFhJbnRoRXVOaVVEVUt2VDJ4UVZ1anFOZlV3WkhCWmlmazVSMHlKalRNYkY4aDBIM2VyZHM0Z2JienNNSmQ2SWN4T0xCMkZGQUlvWm9qaXZ4bHNhcExibmFMNVBFT0ZMbDluQloyajFER3dRVVYtOHY2Y2NuZno3dVE0djFpU1JLcW5QVE1zS2UzVkxmMEVRalVUYUNHTjVFYXE5enUtTWFSd2U2azg?oc=5",
-"summary": "Estuary Biotherapeutics Launches With $103 Million To Develop Gene Therapies For Kidney Disease Pulse 2.0",
-"outlet": "Pulse 2.0",
-"published": "2026-10-17T12:37:24+00:00",
-"id": "5d227c4dacf01894",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-17T16:17:55.346774+00:00"
 }
 ]
 }
