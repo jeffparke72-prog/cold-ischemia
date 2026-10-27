@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-27T15:58:59.831204+00:00",
+"updated": "2026-10-27T20:35:48.954336+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -133,11 +133,88 @@
 ],
 "items": [
 {
+"title": "Organ donation conversations are changing. Critics worry families may feel pressured - NPR",
+"link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQR2J5SU9yUlVCX2cxaDdZbWdXLWVXbU5hU0syLVpiUTZUZXdxemZQdEM0eG1QQUZoTVBQb2NpUFlSZkxNM3lIdmFwaWRlbm5kTWNYcERqd2pRUHJ5NXFMNU4zRkN6SmR1Wm1HVmpweXJGUGxmMDVUcTk3SnNXek04YWw3akdDZVF2dUcySGJhQ1ZwZ2NDTHZpWnB2MTZ4d1FiYVhvc3VsVXViMjYwbEx4amZfeV9nVVRhckJfUGl6dE4ta3pKUXVB?oc=5",
+"summary": "Organ donation conversations are changing. Critics worry families may feel pressured NPR",
+"outlet": "NPR",
+"published": "2026-10-27T20:15:07+00:00",
+"id": "fa2fdc5be6401094",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
+},
+{
+"title": "LifeLogics Names New CEO to Lead Innovation in Organ Donation & Transplantation Technology - PR Newswire",
+"link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPb2xhVXdYVlkxcnFzMkFsQjN6elo2eUtZWWc4MDZHMUdlSTM1WFgyNFJDOExVVnd0ZTU3QjdUYzRGRFhVdHdNZ09vejhUaXdfWUFuMHFRLUtva3BjV3lTUTFnOVJ2YTBiWXBEZ01CSmJHY1gzVk0xN1UxT29uOHR5Uk5UWkFoV3g2bVpGM2JUcUstSVF4cHppTGVYd2tUVHB3MlBYZC1tb05XZC1BZXB3aHlDdXE0dWtWLXJnZUFEY3piZmlvM3JGMVN6ZmpiS1NNWFdfTzVPWDFmMWxwNlE?oc=5",
+"summary": "LifeLogics Names New CEO to Lead Innovation in Organ Donation & Transplantation Technology PR Newswire",
+"outlet": "PR Newswire",
+"published": "2026-10-27T19:11:07+00:00",
+"id": "9a2a088955739c09",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
+},
+{
+"title": "Bioengineered Vessel for Dialysis Access Integrates With Patient Cells - HCPLive",
+"link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOR1hDRVE4dWcxSXBQaWpWU3B5dDZfRHljUzJ3NjBobU9tRzVzUmN5M1lkNTBXYzZmRndMSmtiQ19UZEFSbEI2Nkp0UDdrcDhkTFNjUkxfRWMyT1ZVakhBZEczelJoUjdMNmdrSG5OX3E4aDlHRmlveENraEZrZU9GNWxrRU5xU0hxdFZQVlRndWtUakQzNlN4MU4wR2xQVmZ1?oc=5",
+"summary": "Bioengineered Vessel for Dialysis Access Integrates With Patient Cells HCPLive",
+"outlet": "HCPLive",
+"published": "2026-10-27T18:29:47+00:00",
+"id": "231b80146918ed50",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
+},
+{
+"title": "Bioengineered Vessel Adds 91 Catheter-Free Days for Women on Dialysis - HCPLive",
+"link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPUnNnUHNxNnRPTHlSZVEyNGdfcjROekJaMG9sNFI5d0ZXOXQ4TF9DUmZsR2VXZTVrLUVyLThSeDJWaTRGM3JrSU9FNVNYVFUwLVE3UFVFVy1HZC02RzhjWjdKZUM1QW9pSFVJSVFvTkNDRUdlRUhTTXlrRUJ1RHFDelRVMWhYUktvX0QxZXB4N1Z5czY1di1kZEgyZWdMOEE?oc=5",
+"summary": "Bioengineered Vessel Adds 91 Catheter-Free Days for Women on Dialysis HCPLive",
+"outlet": "HCPLive",
+"published": "2026-10-27T18:08:24+00:00",
+"id": "4d068a144c529c81",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
+},
+{
+"title": "UC Davis Health performs first HIV-to-HIV kidney transplant - UC Davis Health",
+"link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdFVLRERTVTRicHc1a3dkOXNXaVlySzNVUjAwcXNTSlA1SC1WTHJwMnJXSTFtLW04SGY5M2xuYjUwOTN0S253TEt0UGY4UThWVm82aTMwOGFuUDE5OUtkMzYwdjlrbFFwaXNEMTBzYVh1R08wRVhBNllyQnVGT1IyTnk2cUFqaGk4cWNoN25EMVZSZ1czc210eklNanJseTR6NjJuMGF4aFY2cVphRGc?oc=5",
+"summary": "UC Davis Health performs first HIV-to-HIV kidney transplant UC Davis Health",
+"outlet": "UC Davis Health",
+"published": "2026-10-27T17:05:08+00:00",
+"id": "095cd95d2b6a2d7b",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
+},
+{
+"title": "GLP-1 RAs Tied to Lower Kidney Failure Risk in Patients With Obesity, CKD - Pharmacy Times",
+"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPYWZUN0w0WmU1d3BrZWZsdXI0a3J2d0lVM3ZjUDRyN2NQWk1fM05OQllaYUU0bk1TbFR0dEFUMmY3S1RreEZ1N0pxTGluUFBOMERhTnBpOXlfZW9XeGN3dGJtQ0ZEVmNaZEZsenEyTkk3Q0JwM29IT2RaUVpwX0dhV1Q2c3FVSldkZEpjcWQ1YXg0c3REaVFFOUI3d1c4YV9fUFhJcDFIYWh3R2s?oc=5",
+"summary": "GLP-1 RAs Tied to Lower Kidney Failure Risk in Patients With Obesity, CKD Pharmacy Times",
+"outlet": "Pharmacy Times",
+"published": "2026-10-27T16:08:32+00:00",
+"id": "288afbea249dc708",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
+},
+{
+"title": "IgG4-Related Kidney Disease: Why It’s Missed and How to Treat It - Pharmacy Times",
+"link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRnlNSV9OMTBlbjdHeXBrYUtJZ3JWVjV2M0U3SGNKcE53RW1mcUpwSkMtWklDWWl4bDR3Qm44Q1JGWEM0dVJMYlg0V3NPNjE1WG42VG5PdnZ6RTg1TTRQbGdnc2xiYy1Mb1RtLWxpZTh5RUtBYTVpeFhwdGhxdEZLOTBhSEEwUnVGVlpPZ203OGJ2WFRjVExRVExIZl9nMjQ?oc=5",
+"summary": "IgG4-Related Kidney Disease: Why It’s Missed and How to Treat It Pharmacy Times",
+"outlet": "Pharmacy Times",
+"published": "2026-10-27T16:08:32+00:00",
+"id": "8f2269e9cec0bda8",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
+},
+{
 "title": "Drug Rescue for Paxlovid-Induced Tacrolimus Toxicity: A Pooled Analysis of Case Reports",
 "link": "https://www.sciencedirect.com/science/article/pii/S2590059526003067?dgcid=rss_sd_all",
 "summary": "By Yafeng Huang, Hao Chen, Chen Ni, Xiaohua Liu, Yanggang Yuan, Huijuan Mao, Buyun Wu",
 "outlet": "",
-"published": "2026-10-27T15:58:08.399319+00:00",
+"published": "2026-10-27T15:58:59.831204+00:00",
 "id": "59b9a24031ec3072",
 "source": "Kidney Medicine",
 "category": "Journals",
@@ -148,7 +225,7 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S2590059526002906?dgcid=rss_sd_all",
 "summary": "By Xiaohua Sheng, Wei Lu, Zhiyong Guo, Shan Mou, Zhaohui Ni, Xiaoqiang Ding, Yueyi Deng, Guisen Li, Jun Liu, Pengli Luo, Shiren Sun, Huiming Wang, Jiali Wei, Xudong Xu, Xiangdong Yang, Zhenhua Yang, Wen Zhang, Jianrong Zhao, Xiaoling…",
 "outlet": "",
-"published": "2026-10-27T15:58:08.399288+00:00",
+"published": "2026-10-27T15:58:59.831204+00:00",
 "id": "dd5753e22ca79c1e",
 "source": "Kidney Medicine",
 "category": "Journals",
@@ -159,7 +236,7 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S2590059526002888?dgcid=rss_sd_all",
 "summary": "By Ila M. Harris, Ann M. Philbrick",
 "outlet": "",
-"published": "2026-10-27T15:58:08.399004+00:00",
+"published": "2026-10-27T15:58:59.831204+00:00",
 "id": "778a3cd1dcdaa104",
 "source": "Kidney Medicine",
 "category": "Journals",
@@ -170,11 +247,22 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S2468024926032651?dgcid=rss_sd_all",
 "summary": "By Rakesh Malhotra, Armin Ahmadi, Masfiqur Rahaman, Amol Harsh, Jason Yang, Basma Ghanim, Subhasis Dasgupta, Robert N. Weinreb, Haiyan Zhang, Tauhidur Rahman, Alfons J.H.M. Houben, Joachim H. Ix",
 "outlet": "",
-"published": "2026-10-27T15:58:07.810131+00:00",
+"published": "2026-10-27T15:58:59.831204+00:00",
 "id": "ee39cde1132e7e5f",
 "source": "Kidney International Reports",
 "category": "Journals",
 "first_seen": "2026-10-27T15:58:59.831204+00:00"
+},
+{
+"title": "Two New Organ Procurement Organization Performance Measures Earn National Endorsement - PR Newswire",
+"link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNR01WejJxY2dMQTZ2WEZWc0pqVjNXSVBVSHNwZGViVHJqMzJiQ0ZiQ2VucWpTNEZiTkR4VXF1Qmxmd01zbHM1aFM0RWNJSzlheHlEdjZ6MXlvT1J4ajhqWkNTQzlaVl9OWGRjdTVjdjNqTVdiN2JiV0xuMmpaLU1DTmMta3RBMkVUTnFWc2RjZmhJdzVjTTZnakx3eE01Wlh6Ykc1djlTbFAtWWVFTEdLUlBfdm5xVTRLUjhpYTIwUndFMnRLZGNmTUtrR1BTajdSVlNjV2JQS2I?oc=5",
+"summary": "Two New Organ Procurement Organization Performance Measures Earn National Endorsement PR Newswire",
+"outlet": "PR Newswire",
+"published": "2026-10-27T15:05:20+00:00",
+"id": "9bcdede3f96ac9e4",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
 },
 {
 "title": "Dialysis clinic outreach can increase rescheduling",
@@ -230,6 +318,17 @@
 "source": "PubMed: living organ donation",
 "category": "Research",
 "first_seen": "2026-10-27T15:58:59.831204+00:00"
+},
+{
+"title": "Burden of chronic kidney disease in China: trends, etiological shifts and key risk factors based on GBD 2023 data - EurekAlert!",
+"link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE95STRMX3VRNFg2b1Q0ZTN3bS1nNW5QLUZES3B3ZTktX0I1S3A4RFhhTUxpNWx3RFFXanY3NFozeGoxV1dDY1N0ei1ETlRoYUYzQjBuUWIwMzlvZlBp?oc=5",
+"summary": "Burden of chronic kidney disease in China: trends, etiological shifts and key risk factors based on GBD 2023 data EurekAlert!",
+"outlet": "EurekAlert!",
+"published": "2026-10-27T11:51:49+00:00",
+"id": "89bf1c6c888455f9",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
 },
 {
 "title": "Why organ donation is testing public trust in Vietnam - ucanews.com",
@@ -549,6 +648,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-26T23:44:40.863255+00:00"
+},
+{
+"title": "HHS decertifies organ procurement organization serving Kentucky, RFK Jr. says - Z93 Country",
+"link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1NLUZKTW1tWDE2d3FZbEw0RjZzTnlPb2wyVVpYSkk3bEFNdnVvb2FFWDVJRC1KU05vbUpPeENJeHhfSWREMU5jY3BnNWlSMHdtQ0xZV09vS3BULVlmclBv?oc=5",
+"summary": "HHS decertifies organ procurement organization serving Kentucky, RFK Jr. says Z93 Country",
+"outlet": "Z93 Country",
+"published": "2026-10-26T15:03:05+00:00",
+"id": "97505e414209d39a",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
 },
 {
 "title": "Procurement and Waste in Hemodialysis: A Detailed Life Cycle Assessment to Reduce Environmental Impact",
@@ -1058,10 +1168,10 @@
 },
 {
 "title": "PM Modi applauds Shivani’s family, links organ donation to India’s 'Brain Research Mission' - India Tribune - Chicago",
-"link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPeXlKbTh0a3R2VWttV3k1WVZ6V3QwOFlIUGpiaHl3TXlGQ3dSV242TFhNRnl6NlRHLUxfU0UxYzIxTFh5STRwRWV1SkhwbmlCeXQzY1dWTzZBX0hhNzZUaGs4SmVSOV9TWkJOWUVfSldmY2tuMkQ1amJoY1VwRmVmWU5hWFQ2MHlzU3R4dEF1N0tpOUhGRHFDTDdrTEJ0b2dmdTdBQ2FJLXdWVmdoVUNqOW5UWHhDSWNBYlV2MHR1dWVEWHpVUGgyM3ladUM?oc=5",
+"link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOR0hhcXhhbTVaOUZsSGFHUlZSSzBUY3ZaelNWUFFyVVRTRGlDRE9fS2pRZTVsLU5vYWxWelp1b05Pcy0yLTZnMDlIU0s2LTZkMjZ0cGZiX0MtNzMyQk9MU3gtOC05Q3p2dldCdGZOV2ZTc2dQU3JIRy1ocU85M0JCN2NfXzltSlNFUHVwQ3hkVjlKVm93RXA1eUJvMUszVXp6bjB3WENkaGExbkV0NndpYklXVlE1Ul82QXdSRXc5TQ?oc=5",
 "summary": "PM Modi applauds Shivani’s family, links organ donation to India’s 'Brain Research Mission' India Tribune - Chicago",
 "outlet": "India Tribune - Chicago",
-"published": "2026-10-25T14:34:09+00:00",
+"published": "2026-10-25T14:35:47+00:00",
 "id": "f344a490ca967237",
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
@@ -5521,116 +5631,6 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-20T01:41:26.784076+00:00"
-},
-{
-"title": "Misdiagnosed Failure in Home Dialysis Adoption: A Call for Clinical Accountability - Cureus",
-"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNcG9uMHY0bjBNR2c4R2RLN09uR2I5TGdtZmRxN1RLMjB3RTNIQnZxWEd1NmpzeU9sRmJwVzUwZk5NNVBXaEFxd3VFZU5zREZNdElNTThGRVNPMk9kN3ZzeGdjRklEQVZoRWF3S3RldC0wMVRtQ0ZjV1pSYl9JOWZVWEhMbXNXMUlWWU0zU2k5RXVGeHk2cENuV3VrWkR6QWM0d0ZwRWxaOUNhRjQ3X2V1NDRPOGNTUFpnZUJHRw?oc=5",
-"summary": "Misdiagnosed Failure in Home Dialysis Adoption: A Call for Clinical Accountability Cureus",
-"outlet": "Cureus",
-"published": "2026-10-19T18:46:33+00:00",
-"id": "4f692de22ffdbb5d",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-19T19:14:11.079283+00:00"
-},
-{
-"title": "How do you set yourself up for ergonomic success?",
-"link": "https://www.healio.com/news/ophthalmology/20261019/how-do-you-set-yourself-up-for-ergonomic-success",
-"summary": "Click here to read the Healio Exclusive, “Practice good ergonomics early in career to avoid work-related injuries.” Now that I am in the middle of my career and approaching 51 years old, I feel like my body does not bounce back as well as it used to. I feel more tension in my back and sometimes in my shoulders. I used…",
-"outlet": "",
-"published": "2026-10-19T18:24:02+00:00",
-"id": "05c63aa35be38457",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-10-19T19:14:11.079283+00:00"
-},
-{
-"title": "How do you set yourself up for ergonomic success?",
-"link": "https://www.healio.com/news/ophthalmology/20261022/how-do-you-set-yourself-up-for-ergonomic-success",
-"summary": "Click here to read the Healio Exclusive, “Practice good ergonomics early in career to avoid work-related injuries.” Now that I am in the middle of my career and approaching 51 years old, I feel like my body does not bounce back as well as it used to. I feel more tension in my back and sometimes in my shoulders. I used…",
-"outlet": "",
-"published": "2026-10-19T18:24:02+00:00",
-"id": "5521c708f1e77ce7",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-10-23T17:50:11.693436+00:00"
-},
-{
-"title": "34-year-old awaiting kidney transplant named honorary deputy - FOX 5 Atlanta",
-"link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5nSUc0Vk1fNlV2N0tXbWM2b195T1pmYzNxeE1Bd2xGa2EtR3A5d3ZZSi1BTU8wV0xLREJ2RURDM0pUVkt2aGFTVTJZM2FuV1ZqeTc5VnVxMkt4MWR5SGJmZERCbjXSAWpBVV95cUxOb3ZKSm1tOE50dkhrYURxSHNwLUpqY1FUVnBTNHM3ODRpb0VIQkNKZ21XRllZVHpXbWNILWJmRkItSVFreWg1SGRxU3VTb1RpXzJPLTNHY05VMTBOR1FoZkxicFFfMWZyUnd3?oc=5",
-"summary": "34-year-old awaiting kidney transplant named honorary deputy FOX 5 Atlanta",
-"outlet": "FOX 5 Atlanta",
-"published": "2026-10-19T18:07:19+00:00",
-"id": "4f3d91e25c9ad35d",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-19T19:14:11.079283+00:00"
-},
-{
-"title": "Structured Training Program Boosts Competence in Organ Transplant Nurses, Study Finds - Bioengineer.org",
-"link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQ3J0X245Z2JwbV9CX3NJTzlJNEhlSFRHaF9rSkp2WVdRdUE5NGwwRG54UzRONUtaajItMlU1Qk1ZcmExdWNseEVTSjF1SzNaand5ck9lb3ZLQVFQcnVLTUw3Z2NtNjVjYks1R1Fsb2d5aXNPb2tNYUZTODlQbm1IV1RnTU16cGdRekJLZGhxdFRGX2hRZFhjWHB0NEgyT2d5WVQtbHZXSE9RUjdkRmc?oc=5",
-"summary": "Structured Training Program Boosts Competence in Organ Transplant Nurses, Study Finds Bioengineer.org",
-"outlet": "Bioengineer.org",
-"published": "2026-10-19T16:24:34+00:00",
-"id": "ba5845dc580cd38b",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-19T19:14:11.079283+00:00"
-},
-{
-"title": "Estuary Biotherapeutics Launches with $103M Toward Kidney Disease Gene Therapies - Contract Pharma",
-"link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYzJnTm11T21KaTVoNk5kdzEtT2RfY3FabzJES01qRlhVOHZMOVE5Nzl1QVcwUmE3Rk5EazAwQi11dExjUHpkZmpFT2VvN0xPSE96ckc0Qmxjb0xEZ2w5T3ZBNVp0T0F1OU90UV9iR0RvaEdLUlRNbElrRDZFbkU0YkxJcFFjWGI5M0VVZzFKaHEyazdUNzJnWXpudEt2Q1hHZElWYXFZeHNHWGZVNWxPUHh2aXBjMEQ5OG9ENnJVekJSekE?oc=5",
-"summary": "Estuary Biotherapeutics Launches with $103M Toward Kidney Disease Gene Therapies Contract Pharma",
-"outlet": "Contract Pharma",
-"published": "2026-10-19T15:57:05+00:00",
-"id": "8bac2b85dd916419",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-19T19:14:11.079283+00:00"
-},
-{
-"title": "Grand Forks Clinic and affiliated dialysis companies file for bankruptcy - Valley News Live",
-"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSklrQm5kdjdXRTNwT0FFRzItNXNQMzY4UjgwZlZQcWZPSG5kWWxreVpKbVpFLV9Lb1BSUFZYc2pVY1FWT09mbFpJZXVpX2FSamNRMVBRMkxpZ3QtTTFNdWVXam5DV2xUVXQwdkRsZUdQZW80WWRfMGV4NU5ZbGVXRmktY0RJdU9fYk1VQlR5dXR5ZnFzRkxpQWxDQTdlSVl1M3R6SkVfSUVfd0U?oc=5",
-"summary": "Grand Forks Clinic and affiliated dialysis companies file for bankruptcy Valley News Live",
-"outlet": "Valley News Live",
-"published": "2026-10-19T15:44:00+00:00",
-"id": "726c04072677b39a",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-19T19:14:11.079283+00:00"
-},
-{
-"title": "See your patient population more clearly with the UNOS SDOH Report - UNOS | United Network for Organ Sharing",
-"link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQNDZacTl5WENDamZHbWhZbUJsRnhIOEM4SUV4R0NTTVBUZWpwckQydG8xMDBFZmM4eTAtckZEMGhFR2ZIeUZoS3gyUEx3azdMSnFCeGY1U3dzOEFWRUYxTXZoalZ5ZFl5cjRERC1qLTkwMzZzOWtBQ19YV09tNmVnZVd6SHlmNXhGTEp1QldqM2o1azg?oc=5",
-"summary": "See your patient population more clearly with the UNOS SDOH Report UNOS | United Network for Organ Sharing",
-"outlet": "UNOS | United Network for Organ Sharing",
-"published": "2026-10-19T15:15:52+00:00",
-"id": "b3748ec77a07ba3f",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-19T19:14:11.079283+00:00"
-},
-{
-"title": "See your patient population more clearly with the UNOS SDOH Report",
-"link": "https://unos.org/news/see-your-patient-population-more-clearly-with-the-unos-sdoh-report/",
-"summary": "The UNOS Social Determinants of Health Report helps transplant programs better understand the social and economic factors affecting their patient populations through center-specific data and regional, peer and national comparisons. These insights can help programs identify trends, support quality improvement and…",
-"outlet": "",
-"published": "2026-10-19T15:03:00+00:00",
-"id": "67bfe6d6ff144b4f",
-"source": "UNOS News",
-"category": "Policy",
-"first_seen": "2026-10-20T07:24:59.069249+00:00"
-},
-{
-"title": "Organ Transplant Immunosuppressant Drugs Market Forecast to 2035, Driven by Rising Kidney Transplant Demand - IndexBox",
-"link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOSFBPZjBJWU1SbEZUQkxYQkFBX1RYU19wR2Rua284VXU1b3lKSW5sNW9sSEVrajZaMWloYVhtMVlHdGFVQy1OM2JURENQZVRXNjVFcTFmMGlGdkppLWhpankydkdMRzdwTkdQaGdMY0FYcG5XcXB1STZPS2VQTUs3aW52YjIzZ3pTVkphZTNUMWc2TnFNaDZjTWJmX0FNQ0wyRzZtQjJBTXo0NW03aU1nT1JRa2pOeHZHYjBvekQtbDA2TGdBWHY4UWlDa1hSVXFueGc?oc=5",
-"summary": "Organ Transplant Immunosuppressant Drugs Market Forecast to 2035, Driven by Rising Kidney Transplant Demand IndexBox",
-"outlet": "IndexBox",
-"published": "2026-10-19T14:56:05+00:00",
-"id": "c0ebd073f2fc3be0",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-19T19:14:11.079283+00:00"
 }
 ]
 }
