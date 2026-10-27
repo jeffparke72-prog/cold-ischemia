@@ -34,7 +34,7 @@ A(seg('zero','board',3,3,'cards',.7,cards=[dict(big='0',head='Patient seats',c='
 A(seg('nom','board',4,4,'title',.55,lines=L(('NOMINATIONS:','dim'),('ONLY PEOPLE ALREADY','ink'),('IN THEIR MEETINGS','accent')),bg=NIGHT,src='AST nominations page, myast.org'))
 A(seg('corp','industry',0,0,'title',.5,lines=L(('CORPORATE PARTNERS','ink'),('MEET THE BOARD','ink'),('EVERY YEAR.','accent')),bg=NIGHT,src='AST Corporate Affiliates Program page, myast.org'))
 A(seg('pat','industry',1,1,'cards',.5,cards=[dict(big='TOOLKIT',head='A caregiver toolkit',c='ink'),dict(big='LINK',head='To register as a donor',c='ink')],bg=NIGHT))
-A(seg('q2020','quote',0,0,'quote',.6,quote=dict(text='"For-profit organizations inherently are incentivized to prolong dialysis over offering transplantation."',by='AST position statement on the BETTER Kidney Care Act, 2020',size=60),bg=NIGHT))
+A(seg('q2020','quote',0,0,'quote',.6,quote=dict(text='"For-profit organizations inherently are incentivized to prolong dialysis over offering transplantation."',by='AST position statement on the BETTER Kidney Care Act, 2020',size=60),captions=False,bg=NIGHT))
 A(seg('six','quote',1,1,'stat',.7,stat=dict(value=6,suffix=' YEARS',label='Since they wrote it',c='accent'),bg=NIGHT))
 A(seg('fix','quote',2,2,'title',.7,lines=L(('WHERE IS THE FIX?','accent')),**ch(-1,n=3)))
 A(seg('dir1','direction',0,0,'title',.8,lines=L(('POLICY DIRECTION.',None)),bg=NIGHT))
@@ -51,5 +51,5 @@ G=[[B['missing']['t0'],B['attempts']['t1']+.5,112,.85],[B['direction']['t0']-.5,
 J=dict(pace=2.6,gap=0,lead=0,style=dict(bar=110,ink='#ffffff',accent='#ff2a2a',accent2='#ffffff',alert='#ff2a2a',dim='rgba(255,255,255,.55)',tone=[-12,-18,-28]),
  music=dict(mood='ominous',dark=True,level=.95,piano=True,heartbeat=False,lift=False,booms=[1.25],groove=G),
  open=dict(logo='/_filmwork/ast/img/logo.png',w=820,y=160,**{'from':.9},until=4.2),
- end=dict(logo='/_filmwork/ast/img/logo.png',logoW=760,logoY=130,hold=6.3,sub='Cold Ischemia Foundation',lines=['coldischemia.foundation']),segments=S)
+ end=dict(logo='/_filmwork/ast/img/logo.png',logoW=700,logoY=50,hold=6.3,sub='Cold Ischemia Foundation',lines=['coldischemia.foundation']),segments=S)
 json.dump(J,open('script.json','w'),indent=1);print(len(S),'segments; last t1',S[-1]['t0']+S[-1]['dur'])

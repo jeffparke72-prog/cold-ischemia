@@ -49,8 +49,8 @@
  },
  "end": {
   "logo": "/_filmwork/ast/img/logo.png",
-  "logoW": 760,
-  "logoY": 130,
+  "logoW": 700,
+  "logoY": 50,
   "hold": 6.3,
   "sub": "Cold Ischemia Foundation",
   "lines": [
@@ -905,6 +905,7 @@
     "by": "AST position statement on the BETTER Kidney Care Act, 2020",
     "size": 60
    },
+   "captions": false,
    "bg": {
     "src": "/night-shift.png",
     "dim": 0.84,
