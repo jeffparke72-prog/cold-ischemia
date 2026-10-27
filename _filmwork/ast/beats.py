@@ -1,14 +1,13 @@
-# AST critique: narration beats. Each beat = list of sentences (each is its own voice clip).
+# AST critique: narration beats. Each sentence is its own voice clip.
 BEATS=[
- dict(id='wait',gap=0,s=["Referral.","Evaluation.","Waiting.","A phone that may never ring."]),
- dict(id='welcomes',gap=1.1,s=["The American Society of Transplantation read a federal kidney plan, and said it welcomes it.","Welcomes.","Say that word to the person in the chair tonight."]),
- dict(id='praised',gap=1.0,s=["It welcomed prevention.","It welcomed early detection.","It welcomed living donation.","It welcomed the Living Donor Circle of Excellence.","A lot of welcoming."]),
- dict(id='missing',gap=1.0,s=["So what did the statement leave out?","No number.","No deadline.","No funded commitment.","No role for patients. No role for care partners."]),
- dict(id='cost',gap=1.0,s=["In twenty twenty-four, four thousand, nine hundred and one people were removed from the kidney list because they got too sick to transplant.","Nearly one in three deceased donor kidneys were thrown away.","Where is the AST's push for perfusion?","For faster placement?","For accountability when centers turn organs down?"]),
- dict(id='board',gap=1.3,s=["Who runs the AST?","A board of fourteen.","Physicians. Surgeons. Scientists. One transplant nurse.","No patient. No care partner.","And only members who have attended AST meetings can even be nominated."]),
- dict(id='industry',gap=1.1,s=["Corporate partners are invited to meet with that board every year, to discuss strategy.","Patients get a caregiver toolkit, and a link to register as a donor."]),
- dict(id='quote',gap=1.2,s=["In twenty twenty, the AST wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.","Six years.","Where is the fix?"]),
- dict(id='direction',gap=1.0,s=["The federal plan sets policy direction.","Direction costs nothing.","Direction has no deadline.","And the AST applauded."]),
- dict(id='demands',gap=1.0,s=["Seat patients and care partners on the board, with full votes.","Publish a dated target for cutting discards.","Fund real perfusion and preservation.","Report every year how many listed patients die, or are removed as too sick."]),
+ dict(id='open',gap=0,s=["The American Society of Transplantation says it welcomes a national kidney plan.","We are not clapping.","A welcome is not a plan."]),
+ dict(id='statement',gap=1.0,s=["Read the statement closely.","It welcomes prevention.","It welcomes early detection.","It welcomes living donation.","It welcomes the Living Donor Circle of Excellence.","It puts a number on none of it."]),
+ dict(id='silence',gap=1.0,s=["No target.","No deadline.","No dollar amount.","And no role for the patients and care partners who live with every decision the plan will make."]),
+ dict(id='cost',gap=1.0,s=["That silence has a cost.","In twenty twenty-four, four thousand, nine hundred and one people were removed from the kidney waiting list because they became too sick to transplant.","In one recent year, nearly one in three deceased donor kidneys were discarded.","If a society that speaks for transplant will not put a number on those failures, who will?"]),
+ dict(id='board',gap=1.3,s=["So who speaks for this field?","Fourteen board members. Physicians, surgeons, scientists, and one transplant nurse.","Not one seat for a patient. Not one seat for a care partner.","And to be nominated, you must already be a member who has attended the society's meetings.","The door opens from the inside."]),
+ dict(id='industry',gap=1.1,s=["Companies that do business in transplant are invited to sit down with that board every year, to discuss strategy.","Patients are offered a caregiver toolkit, and a link to register as a donor.","One side gets a seat at the table. The other gets a handout."]),
+ dict(id='quote',gap=1.2,s=["This society understands what incentives do.","In twenty twenty, it wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.","Those are its words.","Six years later, where is the fix? Where is the number? Where is the deadline?"]),
+ dict(id='plan',gap=1.0,s=["The federal plan it applauded sets policy direction.","It sets no rules, and no deadlines.","Clapping for it costs the society nothing."]),
+ dict(id='demands',gap=1.0,s=["Here is what leadership would look like.","Patients and care partners on the board, with full votes.","A dated, public target for cutting discards.","Real funding for perfusion and preservation.","And every year, a count of how many listed patients die, or are removed for being too sick."]),
  dict(id='final',gap=1.3,s=["This is not leadership.","It is public relations.","And we have buried too many people to keep pretending otherwise."]),
 ]

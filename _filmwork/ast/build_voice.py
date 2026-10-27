@@ -10,7 +10,8 @@ for b in BEATS:
     for i,s in enumerate(b['s']):
         n=len(s.replace('.','').split())
         sp=SPEED*(0.92 if n<=4 else 1.0)
-        a,_=k.create(s,voice=VOICE,speed=sp,lang='en-us');a=np.asarray(a,dtype=np.float64)
+        sp_txt=s.replace('Transplantation','Trans-plan-tay-shun').replace('transplantation','trans-plan-tay-shun')
+        a,_=k.create(sp_txt,voice=VOICE,speed=sp,lang='en-us');a=np.asarray(a,dtype=np.float64)
         f=int(.02*SR);a[:f]*=np.linspace(0,1,f);a[-f:]*=np.linspace(1,0,f)
         if i>0:t+= .55 if n<=4 else .3
         out.append((t,a));sents.append(dict(t=s,a=round(t,2),b=round(t+len(a)/SR,2)));t+=len(a)/SR
