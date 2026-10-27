@@ -27,14 +27,14 @@
   ],
   "groove": [
    [
-    18.869999999999997,
-    66.81,
+    27.72,
+    86.93,
     112,
     0.9
    ],
    [
-    123.58,
-    164.69,
+    116.31,
+    158.78,
     116,
     1.0
    ]
@@ -61,55 +61,59 @@
   {
    "id": "o1",
    "type": "title",
-   "text": "The American Society of Transplantation says it welcomes a national kidney plan.",
+   "text": "The American Society of Transplantation had one job when the government unveiled a kidney plan. Speak for the people waiting.",
    "t0": 4.1,
-   "dur": 6.01,
+   "dur": 9.25,
    "cc": [
     {
-     "t": "The American Society of Transplantation says it welcomes a national kidney plan.",
+     "t": "The American Society of Transplantation had one job when the government unveiled a kidney plan.",
      "a": 4.2,
-     "b": 9.81
+     "b": 10.69
+    },
+    {
+     "t": "Speak for the people waiting.",
+     "a": 10.99,
+     "b": 13.05
     }
    ],
-   "intensity": 0.5,
+   "intensity": 0.6,
    "kicker": "American Society of Transplantation",
    "lines": [
     {
-     "t": "\"WELCOMES\"",
-     "c": "accent"
+     "t": "THE AST HAD",
+     "c": "ink"
     },
     {
-     "t": "A NATIONAL KIDNEY PLAN",
-     "c": "ink"
+     "t": "ONE JOB.",
+     "c": "accent"
     }
    ],
    "chairs": {
     "lit": -1,
     "n": 4
-   },
-   "src": "AST statement on the HHS Kidney Care National Plan"
+   }
   },
   {
    "id": "o2",
    "type": "title",
-   "text": "We are not clapping.",
-   "t0": 10.26,
-   "dur": 1.87,
+   "text": "Instead, it put out a statement.",
+   "t0": 13.25,
+   "dur": 2.71,
    "cc": [
     {
-     "t": "We are not clapping.",
-     "a": 10.36,
-     "b": 11.83
+     "t": "Instead, it put out a statement.",
+     "a": 13.35,
+     "b": 15.66
     }
    ],
    "intensity": 0.7,
    "lines": [
     {
-     "t": "WE ARE",
+     "t": "IT ISSUED",
      "c": "ink"
     },
     {
-     "t": "NOT CLAPPING.",
+     "t": "A STATEMENT.",
      "c": "accent"
     }
    ],
@@ -117,176 +121,20 @@
     "lit": 1,
     "n": 4,
     "push": 0.2
-   }
+   },
+   "src": "AST statement on the HHS Kidney Care National Plan"
   },
   {
    "id": "o3",
-   "type": "title",
-   "text": "A welcome is not a plan.",
-   "t0": 12.03,
-   "dur": 2.64,
-   "cc": [
-    {
-     "t": "A welcome is not a plan.",
-     "a": 12.13,
-     "b": 14.37
-    }
-   ],
-   "intensity": 0.7,
-   "lines": [
-    {
-     "t": "A WELCOME",
-     "c": "ink"
-    },
-    {
-     "t": "IS NOT A PLAN.",
-     "c": "accent"
-    }
-   ],
-   "chairs": {
-    "lit": -1,
-    "n": 4
-   }
-  },
-  {
-   "id": "read",
-   "type": "title",
-   "text": "Read the statement closely.",
-   "t0": 14.77,
-   "dur": 2.83,
-   "cc": [
-    {
-     "t": "Read the statement closely.",
-     "a": 14.87,
-     "b": 17.3
-    }
-   ],
-   "intensity": 0.55,
-   "lines": [
-    {
-     "t": "READ THE STATEMENT",
-     "c": "ink"
-    },
-    {
-     "t": "CLOSELY.",
-     "c": "accent"
-    }
-   ],
-   "bg": {
-    "src": "/night-shift.png",
-    "dim": 0.84,
-    "blur": 16,
-    "pan": "left",
-    "zoom": 0.05
-   },
-   "src": "AST statement on the HHS Kidney Care National Plan"
-  },
-  {
-   "id": "praised",
    "type": "list",
-   "text": "It welcomes prevention. It welcomes early detection. It welcomes living donation. It welcomes the Living Donor Circle of Excellence.",
-   "t0": 17.75,
-   "dur": 12.73,
+   "text": "No target. No deadline. No dollar amount. No role for patients.",
+   "t0": 15.86,
+   "dur": 4.77,
    "cc": [
     {
-     "t": "It welcomes prevention.",
-     "a": 17.85,
-     "b": 20.14
-    },
-    {
-     "t": "It welcomes early detection.",
-     "a": 20.69,
-     "b": 23.31
-    },
-    {
-     "t": "It welcomes living donation.",
-     "a": 23.86,
-     "b": 26.57
-    },
-    {
-     "t": "It welcomes the Living Donor Circle of Excellence.",
-     "a": 26.87,
-     "b": 30.18
-    }
-   ],
-   "intensity": 0.6,
-   "rows": [
-    {
-     "t": "PREVENTION"
-    },
-    {
-     "t": "EARLY DETECTION"
-    },
-    {
-     "t": "LIVING DONATION"
-    },
-    {
-     "t": "LIVING DONOR CIRCLE OF EXCELLENCE"
-    }
-   ],
-   "bg": {
-    "src": "/night-shift.png",
-    "dim": 0.84,
-    "blur": 16,
-    "pan": "left",
-    "zoom": 0.05
-   },
-   "src": "AST statement on the HHS Kidney Care National Plan"
-  },
-  {
-   "id": "nonum",
-   "type": "title",
-   "text": "It puts a number on none of it.",
-   "t0": 30.38,
-   "dur": 2.66,
-   "cc": [
-    {
-     "t": "It puts a number on none of it.",
-     "a": 30.48,
-     "b": 32.74
-    }
-   ],
-   "intensity": 0.8,
-   "lines": [
-    {
-     "t": "A NUMBER ON",
-     "c": "ink"
-    },
-    {
-     "t": "NONE OF IT.",
-     "c": "accent"
-    }
-   ],
-   "bg": {
-    "src": "/night-shift.png",
-    "dim": 0.84,
-    "blur": 16,
-    "pan": "left",
-    "zoom": 0.05
-   },
-   "src": "AST statement on the HHS Kidney Care National Plan"
-  },
-  {
-   "id": "none",
-   "type": "list",
-   "text": "No target. No deadline. No dollar amount.",
-   "t0": 33.14,
-   "dur": 5.7,
-   "cc": [
-    {
-     "t": "No target.",
-     "a": 33.24,
-     "b": 34.48
-    },
-    {
-     "t": "No deadline.",
-     "a": 35.03,
-     "b": 36.35
-    },
-    {
-     "t": "No dollar amount.",
-     "a": 36.9,
-     "b": 38.54
+     "t": "No target. No deadline. No dollar amount. No role for patients.",
+     "a": 15.96,
+     "b": 20.33
     }
    ],
    "intensity": 0.8,
@@ -299,6 +147,9 @@
     },
     {
      "t": "NO DOLLAR AMOUNT"
+    },
+    {
+     "t": "NO ROLE FOR PATIENTS"
     }
    ],
    "bg": {
@@ -311,160 +162,26 @@
    "src": "AST statement on the HHS Kidney Care National Plan"
   },
   {
-   "id": "norole",
+   "id": "o4",
    "type": "title",
-   "text": "And no role for the patients and care partners who live with every decision the plan will make.",
-   "t0": 38.74,
-   "dur": 5.93,
+   "text": "Read the statement twice. Then look at who the AST is built for.",
+   "t0": 20.53,
+   "dur": 4.99,
    "cc": [
     {
-     "t": "And no role for the patients and care partners who live with every decision the plan will make.",
-     "a": 38.84,
-     "b": 44.37
+     "t": "Read the statement twice. Then look at who the AST is built for.",
+     "a": 20.63,
+     "b": 25.22
     }
    ],
-   "intensity": 0.9,
+   "intensity": 0.8,
    "lines": [
     {
-     "t": "NO ROLE FOR",
+     "t": "WHO IS THE AST",
      "c": "ink"
     },
     {
-     "t": "PATIENTS.",
-     "c": "accent"
-    },
-    {
-     "t": "CARE PARTNERS.",
-     "c": "accent"
-    }
-   ],
-   "bg": {
-    "src": "/night-shift.png",
-    "dim": 0.84,
-    "blur": 16,
-    "pan": "left",
-    "zoom": 0.05
-   },
-   "src": "AST statement on the HHS Kidney Care National Plan"
-  },
-  {
-   "id": "cost",
-   "type": "title",
-   "text": "That silence has a cost.",
-   "t0": 44.77,
-   "dur": 2.44,
-   "cc": [
-    {
-     "t": "That silence has a cost.",
-     "a": 44.87,
-     "b": 46.91
-    }
-   ],
-   "intensity": 0.7,
-   "lines": [
-    {
-     "t": "THAT SILENCE",
-     "c": "ink"
-    },
-    {
-     "t": "HAS A COST.",
-     "c": "accent"
-    }
-   ],
-   "chairs": {
-    "lit": 0,
-    "n": 4,
-    "push": 0.2
-   }
-  },
-  {
-   "id": "t4901",
-   "type": "stat",
-   "text": "In twenty twenty-four, four thousand, nine hundred and one people were removed from the kidney waiting list because they became too sick to transplant.",
-   "t0": 47.11,
-   "dur": 8.66,
-   "cc": [
-    {
-     "t": "In twenty twenty-four, four thousand, nine hundred and one people were removed from the kidney waiting list because they became too sick to transplant.",
-     "a": 47.21,
-     "b": 55.47
-    }
-   ],
-   "intensity": 0.9,
-   "stat": {
-    "value": 4901,
-    "label": "Removed from the list: too sick to transplant",
-    "c": "accent",
-    "sub": [
-     "2024"
-    ]
-   },
-   "bg": {
-    "src": "/night-shift.png",
-    "dim": 0.84,
-    "blur": 16,
-    "pan": "left",
-    "zoom": 0.05
-   },
-   "src": "OPTN/SRTR 2024 Annual Data Report: Kidney"
-  },
-  {
-   "id": "d297",
-   "type": "stat",
-   "text": "In one recent year, nearly one in three deceased donor kidneys were discarded.",
-   "t0": 55.67,
-   "dur": 5.33,
-   "cc": [
-    {
-     "t": "In one recent year, nearly one in three deceased donor kidneys were discarded.",
-     "a": 55.77,
-     "b": 60.7
-    }
-   ],
-   "intensity": 0.95,
-   "stat": {
-    "value": 29.7,
-    "suffix": "%",
-    "label": "Deceased-donor kidneys discarded",
-    "c": "accent",
-    "sub": [
-     "April 2024 - April 2025"
-    ]
-   },
-   "bg": {
-    "src": "/night-shift.png",
-    "dim": 0.84,
-    "blur": 16,
-    "pan": "left",
-    "zoom": 0.05
-   },
-   "src": "Oki et al., WCN26 abstract, Kidney International Reports 2026"
-  },
-  {
-   "id": "whowill",
-   "type": "title",
-   "text": "If a society that speaks for transplant will not put a number on those failures, who will?",
-   "t0": 60.9,
-   "dur": 5.71,
-   "cc": [
-    {
-     "t": "If a society that speaks for transplant will not put a number on those failures, who will?",
-     "a": 61.0,
-     "b": 66.31
-    }
-   ],
-   "intensity": 0.9,
-   "lines": [
-    {
-     "t": "IF THEY WILL NOT",
-     "c": "ink"
-    },
-    {
-     "t": "PUT A NUMBER ON IT,",
-     "c": "ink"
-    },
-    {
-     "t": "WHO WILL?",
+     "t": "BUILT FOR?",
      "c": "accent"
     }
    ],
@@ -477,57 +194,59 @@
    }
   },
   {
-   "id": "who",
+   "id": "door",
    "type": "title",
-   "text": "So who speaks for this field?",
-   "t0": 66.86,
-   "dur": 2.51,
+   "text": "Start with the door. To join, you pay.",
+   "t0": 25.62,
+   "dur": 4.38,
    "cc": [
     {
-     "t": "So who speaks for this field?",
-     "a": 66.96,
-     "b": 69.07
+     "t": "Start with the door.",
+     "a": 25.72,
+     "b": 27.25
+    },
+    {
+     "t": "To join, you pay.",
+     "a": 27.8,
+     "b": 29.7
     }
    ],
-   "intensity": 0.5,
+   "intensity": 0.6,
    "lines": [
     {
-     "t": "WHO SPEAKS",
+     "t": "START WITH",
      "c": "ink"
     },
     {
-     "t": "FOR THIS FIELD?",
+     "t": "THE DOOR.",
      "c": "accent"
     }
    ],
    "chairs": {
     "lit": -1,
     "n": 3
-   },
-   "src": "AST board of directors page, myast.org"
+   }
   },
   {
-   "id": "b14",
+   "id": "d485",
    "type": "stat",
-   "text": "Fourteen board members. Physicians, surgeons, scientists, and one transplant nurse.",
-   "t0": 69.27,
-   "dur": 5.78,
+   "text": "Doctoral membership is listed at four hundred eighty-five dollars a year.",
+   "t0": 29.9,
+   "dur": 5.12,
    "cc": [
     {
-     "t": "Fourteen board members. Physicians, surgeons, scientists, and one transplant nurse.",
-     "a": 69.37,
-     "b": 74.75
+     "t": "Doctoral membership is listed at four hundred eighty-five dollars a year.",
+     "a": 30.0,
+     "b": 34.72
     }
    ],
-   "intensity": 0.55,
+   "intensity": 0.85,
    "stat": {
-    "value": 14,
-    "label": "AST board members",
-    "c": "ink",
-    "sub": [
-     "Physicians, surgeons, scientists",
-     "One transplant nurse"
-    ]
+    "prefix": "$",
+    "value": 485,
+    "suffix": " / YEAR",
+    "label": "Doctoral membership, as listed",
+    "c": "accent"
    },
    "bg": {
     "src": "/night-shift.png",
@@ -536,70 +255,33 @@
     "pan": "left",
     "zoom": 0.05
    },
-   "src": "AST board of directors page, myast.org"
+   "src": "AST membership categories page, myast.org"
   },
   {
-   "id": "zero",
-   "type": "cards",
-   "text": "Not one seat for a patient. Not one seat for a care partner.",
-   "t0": 74.95,
-   "dur": 4.41,
+   "id": "work",
+   "type": "title",
+   "text": "Membership is built around people who work in transplantation.",
+   "t0": 34.92,
+   "dur": 4.64,
    "cc": [
     {
-     "t": "Not one seat for a patient. Not one seat for a care partner.",
-     "a": 75.05,
-     "b": 79.06
+     "t": "Membership is built around people who work in transplantation.",
+     "a": 35.02,
+     "b": 39.26
     }
    ],
    "intensity": 0.7,
-   "cards": [
-    {
-     "big": "0",
-     "head": "Patient seats",
-     "c": "accent",
-     "sub": "Board of directors"
-    },
-    {
-     "big": "0",
-     "head": "Care partner seats",
-     "c": "accent",
-     "sub": "Board of directors"
-    }
-   ],
-   "bg": {
-    "src": "/night-shift.png",
-    "dim": 0.84,
-    "blur": 16,
-    "pan": "left",
-    "zoom": 0.05
-   },
-   "src": "AST board of directors page, myast.org"
-  },
-  {
-   "id": "nom",
-   "type": "title",
-   "text": "And to be nominated, you must already be a member who has attended the society's meetings.",
-   "t0": 79.26,
-   "dur": 5.56,
-   "cc": [
-    {
-     "t": "And to be nominated, you must already be a member who has attended the society's meetings.",
-     "a": 79.36,
-     "b": 84.52
-    }
-   ],
-   "intensity": 0.55,
    "lines": [
     {
-     "t": "NOMINATIONS:",
-     "c": "dim"
-    },
-    {
-     "t": "ONLY MEMBERS WHO HAVE",
+     "t": "MEMBERSHIP IS BUILT AROUND",
      "c": "ink"
     },
     {
-     "t": "ATTENDED AST MEETINGS",
+     "t": "PEOPLE WHO WORK",
+     "c": "ink"
+    },
+    {
+     "t": "IN TRANSPLANTATION.",
      "c": "accent"
     }
    ],
@@ -610,29 +292,29 @@
     "pan": "left",
     "zoom": 0.05
    },
-   "src": "AST nominations page, myast.org"
+   "src": "AST membership categories page and bylaws, myast.org"
   },
   {
-   "id": "door",
+   "id": "notlist",
    "type": "title",
-   "text": "The door opens from the inside.",
-   "t0": 84.72,
-   "dur": 2.88,
+   "text": "Being a patient is not on the list.",
+   "t0": 39.46,
+   "dur": 3.07,
    "cc": [
     {
-     "t": "The door opens from the inside.",
-     "a": 84.82,
-     "b": 87.3
+     "t": "Being a patient is not on the list.",
+     "a": 39.56,
+     "b": 42.23
     }
    ],
-   "intensity": 0.7,
+   "intensity": 0.85,
    "lines": [
     {
-     "t": "THE DOOR OPENS",
+     "t": "BEING A PATIENT",
      "c": "ink"
     },
     {
-     "t": "FROM THE INSIDE.",
+     "t": "IS NOT ON THE LIST.",
      "c": "accent"
     }
    ],
@@ -645,19 +327,57 @@
    }
   },
   {
-   "id": "corp",
+   "id": "aff",
    "type": "title",
-   "text": "Companies that do business in transplant are invited to sit down with that board every year, to discuss strategy.",
-   "t0": 87.75,
-   "dur": 7.16,
+   "text": "In twenty twenty-five, it opened an affiliate tier for people in industry with a business or strategic interest in transplantation.",
+   "t0": 42.63,
+   "dur": 8.51,
    "cc": [
     {
-     "t": "Companies that do business in transplant are invited to sit down with that board every year, to discuss strategy.",
-     "a": 87.85,
-     "b": 94.61
+     "t": "In twenty twenty-five, it opened an affiliate tier for people in industry with a business or strategic interest in transplantation.",
+     "a": 42.73,
+     "b": 50.84
     }
    ],
-   "intensity": 0.5,
+   "intensity": 0.7,
+   "kicker": "2025",
+   "lines": [
+    {
+     "t": "AN AFFILIATE TIER FOR",
+     "c": "ink"
+    },
+    {
+     "t": "INDUSTRY WITH A BUSINESS",
+     "c": "accent"
+    },
+    {
+     "t": "OR STRATEGIC INTEREST.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.84,
+    "blur": 16,
+    "pan": "left",
+    "zoom": 0.05
+   },
+   "src": "AST affiliate membership page, myast.org"
+  },
+  {
+   "id": "corp",
+   "type": "title",
+   "text": "Corporate partners are invited to meet with the board every year, to discuss strategy.",
+   "t0": 51.04,
+   "dur": 5.69,
+   "cc": [
+    {
+     "t": "Corporate partners are invited to meet with the board every year, to discuss strategy.",
+     "a": 51.14,
+     "b": 56.43
+    }
+   ],
+   "intensity": 0.6,
    "lines": [
     {
      "t": "CORPORATE PARTNERS",
@@ -684,21 +404,21 @@
   {
    "id": "pat",
    "type": "cards",
-   "text": "Patients are offered a caregiver toolkit, and a link to register as a donor.",
-   "t0": 94.81,
-   "dur": 5.03,
+   "text": "Patients get a toolkit, and a link to register as a donor.",
+   "t0": 56.63,
+   "dur": 4.39,
    "cc": [
     {
-     "t": "Patients are offered a caregiver toolkit, and a link to register as a donor.",
-     "a": 94.91,
-     "b": 99.54
+     "t": "Patients get a toolkit, and a link to register as a donor.",
+     "a": 56.73,
+     "b": 60.72
     }
    ],
-   "intensity": 0.5,
+   "intensity": 0.6,
    "cards": [
     {
      "big": "TOOLKIT",
-     "head": "A caregiver toolkit",
+     "head": "For patients",
      "c": "ink"
     },
     {
@@ -716,26 +436,159 @@
    }
   },
   {
-   "id": "seat",
+   "id": "now",
    "type": "title",
-   "text": "One side gets a seat at the table. The other gets a handout.",
-   "t0": 99.74,
-   "dur": 4.35,
+   "text": "Now the board.",
+   "t0": 61.22,
+   "dur": 1.68,
    "cc": [
     {
-     "t": "One side gets a seat at the table. The other gets a handout.",
-     "a": 99.84,
-     "b": 103.79
+     "t": "Now the board.",
+     "a": 61.32,
+     "b": 62.6
     }
    ],
-   "intensity": 0.7,
+   "intensity": 0.55,
    "lines": [
     {
-     "t": "ONE SIDE: A SEAT",
+     "t": "NOW",
      "c": "ink"
     },
     {
-     "t": "THE OTHER: A HANDOUT.",
+     "t": "THE BOARD.",
+     "c": "accent"
+    }
+   ],
+   "chairs": {
+    "lit": -1,
+    "n": 3
+   }
+  },
+  {
+   "id": "crit",
+   "type": "list",
+   "text": "To be nominated, the society's own criteria have asked for five years of membership in good standing, attendance at its meetings, a record of leadership inside it, and two letters of reference.",
+   "t0": 62.8,
+   "dur": 11.68,
+   "cc": [
+    {
+     "t": "To be nominated, the society's own criteria have asked for five years of membership in good standing, attendance at its meetings, a record of leadership inside it, and two letters of reference.",
+     "a": 62.9,
+     "b": 74.18
+    }
+   ],
+   "intensity": 0.8,
+   "rows": [
+    {
+     "t": "5 YEARS A MEMBER",
+     "s": "In good standing"
+    },
+    {
+     "t": "ATTENDED AST MEETINGS"
+    },
+    {
+     "t": "LEADERSHIP INSIDE THE AST"
+    },
+    {
+     "t": "TWO LETTERS OF REFERENCE"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.84,
+    "blur": 16,
+    "pan": "left",
+    "zoom": 0.05
+   },
+   "src": "AST board nominations criteria, myast.org"
+  },
+  {
+   "id": "five",
+   "type": "stat",
+   "text": "Five years of dues and meetings, just to be considered.",
+   "t0": 74.38,
+   "dur": 4.01,
+   "cc": [
+    {
+     "t": "Five years of dues and meetings, just to be considered.",
+     "a": 74.48,
+     "b": 78.09
+    }
+   ],
+   "intensity": 0.8,
+   "stat": {
+    "value": 5,
+    "suffix": " YEARS",
+    "label": "Of dues and meetings, just to be considered",
+    "c": "accent"
+   },
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.84,
+    "blur": 16,
+    "pan": "left",
+    "zoom": 0.05
+   },
+   "src": "AST board nominations criteria, myast.org"
+  },
+  {
+   "id": "zero",
+   "type": "cards",
+   "text": "No patient. No care partner.",
+   "t0": 78.29,
+   "dur": 2.98,
+   "cc": [
+    {
+     "t": "No patient. No care partner.",
+     "a": 78.39,
+     "b": 80.97
+    }
+   ],
+   "intensity": 0.8,
+   "cards": [
+    {
+     "big": "0",
+     "head": "Patient seats",
+     "c": "accent",
+     "sub": "Board of directors"
+    },
+    {
+     "big": "0",
+     "head": "Care partner seats",
+     "c": "accent",
+     "sub": "Board of directors"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.84,
+    "blur": 16,
+    "pan": "left",
+    "zoom": 0.05
+   },
+   "src": "AST board of directors page, myast.org"
+  },
+  {
+   "id": "club",
+   "type": "title",
+   "text": "That is not a board patients can reach. It is a board that stays inside the club.",
+   "t0": 81.17,
+   "dur": 5.56,
+   "cc": [
+    {
+     "t": "That is not a board patients can reach. It is a board that stays inside the club.",
+     "a": 81.27,
+     "b": 86.43
+    }
+   ],
+   "intensity": 0.85,
+   "lines": [
+    {
+     "t": "A BOARD THAT STAYS",
+     "c": "ink"
+    },
+    {
+     "t": "INSIDE THE CLUB.",
      "c": "accent"
     }
    ],
@@ -748,26 +601,26 @@
    }
   },
   {
-   "id": "inc",
+   "id": "fol",
    "type": "title",
-   "text": "This society understands what incentives do.",
-   "t0": 104.29,
-   "dur": 3.74,
+   "text": "Follow the structure.",
+   "t0": 86.83,
+   "dur": 2.13,
    "cc": [
     {
-     "t": "This society understands what incentives do.",
-     "a": 104.39,
-     "b": 107.73
+     "t": "Follow the structure.",
+     "a": 86.93,
+     "b": 88.66
     }
    ],
    "intensity": 0.6,
    "lines": [
     {
-     "t": "THE SOCIETY KNOWS",
+     "t": "FOLLOW",
      "c": "ink"
     },
     {
-     "t": "WHAT INCENTIVES DO.",
+     "t": "THE STRUCTURE.",
      "c": "accent"
     }
    ],
@@ -777,16 +630,113 @@
    }
   },
   {
-   "id": "q2020",
-   "type": "quote",
-   "text": "In twenty twenty, it wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.",
-   "t0": 107.93,
-   "dur": 9.09,
+   "id": "three",
+   "type": "list",
+   "text": "Dues in. Meetings. Industry at the table.",
+   "t0": 88.86,
+   "dur": 3.43,
    "cc": [
     {
-     "t": "In twenty twenty, it wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.",
-     "a": 108.03,
-     "b": 116.72
+     "t": "Dues in. Meetings. Industry at the table.",
+     "a": 88.96,
+     "b": 91.99
+    }
+   ],
+   "intensity": 0.8,
+   "rows": [
+    {
+     "t": "DUES IN"
+    },
+    {
+     "t": "MEETINGS"
+    },
+    {
+     "t": "INDUSTRY AT THE TABLE"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.84,
+    "blur": 16,
+    "pan": "left",
+    "zoom": 0.05
+   }
+  },
+  {
+   "id": "net",
+   "type": "title",
+   "text": "A network that charges to enter, and listens to the people already inside.",
+   "t0": 92.19,
+   "dur": 5.11,
+   "cc": [
+    {
+     "t": "A network that charges to enter, and listens to the people already inside.",
+     "a": 92.29,
+     "b": 97.0
+    }
+   ],
+   "intensity": 0.8,
+   "lines": [
+    {
+     "t": "A NETWORK THAT",
+     "c": "ink"
+    },
+    {
+     "t": "CHARGES TO ENTER.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.84,
+    "blur": 16,
+    "pan": "left",
+    "zoom": 0.05
+   }
+  },
+  {
+   "id": "edge",
+   "type": "title",
+   "text": "Patients stand at the edge of it, holding a toolkit.",
+   "t0": 97.2,
+   "dur": 3.71,
+   "cc": [
+    {
+     "t": "Patients stand at the edge of it, holding a toolkit.",
+     "a": 97.3,
+     "b": 100.61
+    }
+   ],
+   "intensity": 0.85,
+   "lines": [
+    {
+     "t": "PATIENTS AT THE EDGE.",
+     "c": "accent"
+    },
+    {
+     "t": "HOLDING A TOOLKIT.",
+     "c": "ink"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.84,
+    "blur": 16,
+    "pan": "left",
+    "zoom": 0.05
+   }
+  },
+  {
+   "id": "q2020",
+   "type": "quote",
+   "text": "In twenty twenty, this society wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.",
+   "t0": 101.11,
+   "dur": 10.06,
+   "cc": [
+    {
+     "t": "In twenty twenty, this society wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.",
+     "a": 101.21,
+     "b": 110.87
     }
    ],
    "intensity": 0.65,
@@ -808,13 +758,13 @@
    "id": "words",
    "type": "title",
    "text": "Those are its words.",
-   "t0": 117.17,
-   "dur": 1.95,
+   "t0": 111.32,
+   "dur": 2.05,
    "cc": [
     {
      "t": "Those are its words.",
-     "a": 117.27,
-     "b": 118.82
+     "a": 111.42,
+     "b": 113.07
     }
    ],
    "intensity": 0.7,
@@ -833,29 +783,27 @@
    }
   },
   {
-   "id": "six",
-   "type": "list",
-   "text": "Six years later, where is the fix? Where is the number? Where is the deadline?",
-   "t0": 119.02,
-   "dur": 4.86,
+   "id": "test",
+   "type": "title",
+   "text": "Now apply that test to the AST.",
+   "t0": 113.27,
+   "dur": 3.34,
    "cc": [
     {
-     "t": "Six years later, where is the fix? Where is the number? Where is the deadline?",
-     "a": 119.12,
-     "b": 123.58
+     "t": "Now apply that test to the AST.",
+     "a": 113.37,
+     "b": 116.31
     }
    ],
    "intensity": 0.9,
-   "rows": [
+   "lines": [
     {
-     "t": "WHERE IS THE FIX?",
-     "s": "Six years later"
+     "t": "NOW APPLY THAT TEST",
+     "c": "ink"
     },
     {
-     "t": "WHERE IS THE NUMBER?"
-    },
-    {
-     "t": "WHERE IS THE DEADLINE?"
+     "t": "TO THE AST.",
+     "c": "accent"
     }
    ],
    "bg": {
@@ -869,24 +817,24 @@
   {
    "id": "dir1",
    "type": "title",
-   "text": "The federal plan it applauded sets policy direction.",
-   "t0": 123.98,
-   "dur": 3.99,
+   "text": "The federal plan sets direction. It sets no rules, and no deadlines.",
+   "t0": 116.71,
+   "dur": 5.16,
    "cc": [
     {
-     "t": "The federal plan it applauded sets policy direction.",
-     "a": 124.08,
-     "b": 127.67
+     "t": "The federal plan sets direction. It sets no rules, and no deadlines.",
+     "a": 116.81,
+     "b": 121.57
     }
    ],
    "intensity": 0.8,
    "lines": [
     {
-     "t": "THE PLAN IT APPLAUDED",
+     "t": "THE FEDERAL PLAN:",
      "c": "ink"
     },
     {
-     "t": "SETS DIRECTION.",
+     "t": "NO RULES. NO DEADLINES.",
      "c": "accent"
     }
    ],
@@ -901,24 +849,28 @@
   {
    "id": "dir2",
    "type": "title",
-   "text": "It sets no rules, and no deadlines.",
-   "t0": 127.87,
-   "dur": 3.26,
+   "text": "A society that put patients first would demand both.",
+   "t0": 121.77,
+   "dur": 4.07,
    "cc": [
     {
-     "t": "It sets no rules, and no deadlines.",
-     "a": 127.97,
-     "b": 130.83
+     "t": "A society that put patients first would demand both.",
+     "a": 121.87,
+     "b": 125.54
     }
    ],
    "intensity": 0.85,
    "lines": [
     {
-     "t": "NO RULES.",
-     "c": "accent"
+     "t": "A SOCIETY THAT PUT",
+     "c": "ink"
     },
     {
-     "t": "NO DEADLINES.",
+     "t": "PATIENTS FIRST",
+     "c": "ink"
+    },
+    {
+     "t": "WOULD DEMAND BOTH.",
      "c": "accent"
     }
    ],
@@ -933,24 +885,24 @@
   {
    "id": "dir3",
    "type": "title",
-   "text": "Clapping for it costs the society nothing.",
-   "t0": 131.03,
-   "dur": 3.3,
+   "text": "This one issued a statement.",
+   "t0": 125.74,
+   "dur": 2.68,
    "cc": [
     {
-     "t": "Clapping for it costs the society nothing.",
-     "a": 131.13,
-     "b": 134.03
+     "t": "This one issued a statement.",
+     "a": 125.84,
+     "b": 128.12
     }
    ],
-   "intensity": 0.9,
+   "intensity": 0.95,
    "lines": [
     {
-     "t": "CLAPPING FOR IT",
+     "t": "THIS ONE ISSUED",
      "c": "ink"
     },
     {
-     "t": "COSTS THEM NOTHING.",
+     "t": "A STATEMENT.",
      "c": "accent"
     }
    ],
@@ -965,24 +917,24 @@
   {
    "id": "dm0",
    "type": "title",
-   "text": "Here is what leadership would look like.",
-   "t0": 134.43,
-   "dur": 3.04,
+   "text": "So here is what we demand.",
+   "t0": 128.52,
+   "dur": 2.75,
    "cc": [
     {
-     "t": "Here is what leadership would look like.",
-     "a": 134.53,
-     "b": 137.17
+     "t": "So here is what we demand.",
+     "a": 128.62,
+     "b": 130.97
     }
    ],
    "intensity": 0.9,
    "lines": [
     {
-     "t": "WHAT LEADERSHIP",
+     "t": "SO HERE IS",
      "c": "ink"
     },
     {
-     "t": "WOULD LOOK LIKE.",
+     "t": "WHAT WE DEMAND.",
      "c": "accent"
     }
    ],
@@ -998,13 +950,13 @@
    "id": "dm1",
    "type": "title",
    "text": "Patients and care partners on the board, with full votes.",
-   "t0": 137.37,
-   "dur": 3.94,
+   "t0": 131.17,
+   "dur": 4.04,
    "cc": [
     {
      "t": "Patients and care partners on the board, with full votes.",
-     "a": 137.47,
-     "b": 141.01
+     "a": 131.27,
+     "b": 134.91
     }
    ],
    "intensity": 0.9,
@@ -1030,25 +982,25 @@
   {
    "id": "dm2",
    "type": "title",
-   "text": "A dated, public target for cutting discards.",
-   "t0": 141.21,
-   "dur": 3.73,
+   "text": "Nominations open to people outside the dues-paying club.",
+   "t0": 135.11,
+   "dur": 4.35,
    "cc": [
     {
-     "t": "A dated, public target for cutting discards.",
-     "a": 141.31,
-     "b": 144.64
+     "t": "Nominations open to people outside the dues-paying club.",
+     "a": 135.21,
+     "b": 139.16
     }
    ],
    "intensity": 0.9,
    "kicker": "Demand two",
    "lines": [
     {
-     "t": "A DATED, PUBLIC TARGET",
+     "t": "NOMINATIONS OPEN TO PEOPLE",
      "c": "ink"
     },
     {
-     "t": "FOR CUTTING DISCARDS.",
+     "t": "OUTSIDE THE DUES-PAYING CLUB.",
      "c": "accent"
     }
    ],
@@ -1063,25 +1015,25 @@
   {
    "id": "dm3",
    "type": "title",
-   "text": "Real funding for perfusion and preservation.",
-   "t0": 144.84,
-   "dur": 3.69,
+   "text": "A public account of every dollar it takes from industry.",
+   "t0": 139.36,
+   "dur": 4.11,
    "cc": [
     {
-     "t": "Real funding for perfusion and preservation.",
-     "a": 144.94,
-     "b": 148.23
+     "t": "A public account of every dollar it takes from industry.",
+     "a": 139.46,
+     "b": 143.17
     }
    ],
    "intensity": 0.95,
    "kicker": "Demand three",
    "lines": [
     {
-     "t": "REAL FUNDING FOR",
+     "t": "A PUBLIC ACCOUNT OF",
      "c": "ink"
     },
     {
-     "t": "PERFUSION AND PRESERVATION.",
+     "t": "EVERY DOLLAR FROM INDUSTRY.",
      "c": "accent"
     }
    ],
@@ -1096,28 +1048,29 @@
   {
    "id": "dm4",
    "type": "title",
-   "text": "And every year, a count of how many listed patients die, or are removed for being too sick.",
-   "t0": 148.43,
-   "dur": 5.9,
+   "text": "And dated, public targets for the outcomes it claims to care about.",
+   "t0": 143.37,
+   "dur": 4.8,
    "cc": [
     {
-     "t": "And every year, a count of how many listed patients die, or are removed for being too sick.",
-     "a": 148.53,
-     "b": 154.03
+     "t": "And dated, public targets for the outcomes it claims to care about.",
+     "a": 143.47,
+     "b": 147.87
     }
    ],
    "intensity": 1,
+   "kicker": "Demand four",
    "lines": [
     {
-     "t": "EVERY YEAR, A COUNT:",
+     "t": "DATED, PUBLIC TARGETS",
      "c": "ink"
     },
     {
-     "t": "LISTED PATIENTS WHO DIE",
+     "t": "FOR THE OUTCOMES",
      "c": "accent"
     },
     {
-     "t": "OR ARE REMOVED AS TOO SICK.",
+     "t": "IT CLAIMS TO CARE ABOUT.",
      "c": "accent"
     }
    ],
@@ -1133,13 +1086,13 @@
    "id": "f1",
    "type": "title",
    "text": "This is not leadership.",
-   "t0": 154.58,
-   "dur": 2.21,
+   "t0": 148.42,
+   "dur": 2.3,
    "cc": [
     {
      "t": "This is not leadership.",
-     "a": 154.68,
-     "b": 156.49
+     "a": 148.52,
+     "b": 150.42
     }
    ],
    "intensity": 1,
@@ -1168,13 +1121,13 @@
    "id": "f2",
    "type": "title",
    "text": "It is public relations.",
-   "t0": 156.94,
-   "dur": 2.58,
+   "t0": 150.87,
+   "dur": 2.66,
    "cc": [
     {
      "t": "It is public relations.",
-     "a": 157.04,
-     "b": 159.22
+     "a": 150.97,
+     "b": 153.23
     }
    ],
    "intensity": 1,
@@ -1203,13 +1156,13 @@
    "id": "f3",
    "type": "title",
    "text": "And we have buried too many people to keep pretending otherwise.",
-   "t0": 159.42,
-   "dur": 4.07,
+   "t0": 153.43,
+   "dur": 4.15,
    "cc": [
     {
      "t": "And we have buried too many people to keep pretending otherwise.",
-     "a": 159.52,
-     "b": 163.19
+     "a": 153.53,
+     "b": 157.28
     }
    ],
    "intensity": 1,

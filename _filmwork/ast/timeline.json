@@ -1,273 +1,246 @@
 {
- "end": 163.19000000000003,
+ "end": 157.28266666666667,
  "beats": [
   {
    "id": "open",
    "t0": 4.2,
-   "t1": 14.37,
+   "t1": 25.22,
    "cc": [
     {
-     "t": "The American Society of Transplantation says it welcomes a national kidney plan.",
+     "t": "The American Society of Transplantation had one job when the government unveiled a kidney plan.",
      "a": 4.2,
-     "b": 9.81
+     "b": 10.69
     },
     {
-     "t": "We are not clapping.",
-     "a": 10.36,
-     "b": 11.83
+     "t": "Speak for the people waiting.",
+     "a": 10.99,
+     "b": 13.05
     },
     {
-     "t": "A welcome is not a plan.",
-     "a": 12.13,
-     "b": 14.37
+     "t": "Instead, it put out a statement.",
+     "a": 13.35,
+     "b": 15.66
+    },
+    {
+     "t": "No target. No deadline. No dollar amount. No role for patients.",
+     "a": 15.96,
+     "b": 20.33
+    },
+    {
+     "t": "Read the statement twice. Then look at who the AST is built for.",
+     "a": 20.63,
+     "b": 25.22
     }
    ]
   },
   {
-   "id": "statement",
-   "t0": 14.87,
-   "t1": 32.74,
+   "id": "dues",
+   "t0": 25.72,
+   "t1": 42.23,
    "cc": [
     {
-     "t": "Read the statement closely.",
-     "a": 14.87,
-     "b": 17.3
+     "t": "Start with the door.",
+     "a": 25.72,
+     "b": 27.25
     },
     {
-     "t": "It welcomes prevention.",
-     "a": 17.85,
-     "b": 20.14
+     "t": "To join, you pay.",
+     "a": 27.8,
+     "b": 29.7
     },
     {
-     "t": "It welcomes early detection.",
-     "a": 20.69,
-     "b": 23.31
+     "t": "Doctoral membership is listed at four hundred eighty-five dollars a year.",
+     "a": 30.0,
+     "b": 34.72
     },
     {
-     "t": "It welcomes living donation.",
-     "a": 23.86,
-     "b": 26.57
+     "t": "Membership is built around people who work in transplantation.",
+     "a": 35.02,
+     "b": 39.26
     },
     {
-     "t": "It welcomes the Living Donor Circle of Excellence.",
-     "a": 26.87,
-     "b": 30.18
-    },
-    {
-     "t": "It puts a number on none of it.",
-     "a": 30.48,
-     "b": 32.74
-    }
-   ]
-  },
-  {
-   "id": "silence",
-   "t0": 33.24,
-   "t1": 44.37,
-   "cc": [
-    {
-     "t": "No target.",
-     "a": 33.24,
-     "b": 34.48
-    },
-    {
-     "t": "No deadline.",
-     "a": 35.03,
-     "b": 36.35
-    },
-    {
-     "t": "No dollar amount.",
-     "a": 36.9,
-     "b": 38.54
-    },
-    {
-     "t": "And no role for the patients and care partners who live with every decision the plan will make.",
-     "a": 38.84,
-     "b": 44.37
-    }
-   ]
-  },
-  {
-   "id": "cost",
-   "t0": 44.87,
-   "t1": 66.31,
-   "cc": [
-    {
-     "t": "That silence has a cost.",
-     "a": 44.87,
-     "b": 46.91
-    },
-    {
-     "t": "In twenty twenty-four, four thousand, nine hundred and one people were removed from the kidney waiting list because they became too sick to transplant.",
-     "a": 47.21,
-     "b": 55.47
-    },
-    {
-     "t": "In one recent year, nearly one in three deceased donor kidneys were discarded.",
-     "a": 55.77,
-     "b": 60.7
-    },
-    {
-     "t": "If a society that speaks for transplant will not put a number on those failures, who will?",
-     "a": 61.0,
-     "b": 66.31
-    }
-   ]
-  },
-  {
-   "id": "board",
-   "t0": 66.96,
-   "t1": 87.3,
-   "cc": [
-    {
-     "t": "So who speaks for this field?",
-     "a": 66.96,
-     "b": 69.07
-    },
-    {
-     "t": "Fourteen board members. Physicians, surgeons, scientists, and one transplant nurse.",
-     "a": 69.37,
-     "b": 74.75
-    },
-    {
-     "t": "Not one seat for a patient. Not one seat for a care partner.",
-     "a": 75.05,
-     "b": 79.06
-    },
-    {
-     "t": "And to be nominated, you must already be a member who has attended the society's meetings.",
-     "a": 79.36,
-     "b": 84.52
-    },
-    {
-     "t": "The door opens from the inside.",
-     "a": 84.82,
-     "b": 87.3
+     "t": "Being a patient is not on the list.",
+     "a": 39.56,
+     "b": 42.23
     }
    ]
   },
   {
    "id": "industry",
-   "t0": 87.85,
-   "t1": 103.79,
+   "t0": 42.73,
+   "t1": 60.72,
    "cc": [
     {
-     "t": "Companies that do business in transplant are invited to sit down with that board every year, to discuss strategy.",
-     "a": 87.85,
-     "b": 94.61
+     "t": "In twenty twenty-five, it opened an affiliate tier for people in industry with a business or strategic interest in transplantation.",
+     "a": 42.73,
+     "b": 50.84
     },
     {
-     "t": "Patients are offered a caregiver toolkit, and a link to register as a donor.",
-     "a": 94.91,
-     "b": 99.54
+     "t": "Corporate partners are invited to meet with the board every year, to discuss strategy.",
+     "a": 51.14,
+     "b": 56.43
     },
     {
-     "t": "One side gets a seat at the table. The other gets a handout.",
-     "a": 99.84,
-     "b": 103.79
+     "t": "Patients get a toolkit, and a link to register as a donor.",
+     "a": 56.73,
+     "b": 60.72
+    }
+   ]
+  },
+  {
+   "id": "board",
+   "t0": 61.32,
+   "t1": 86.43,
+   "cc": [
+    {
+     "t": "Now the board.",
+     "a": 61.32,
+     "b": 62.6
+    },
+    {
+     "t": "To be nominated, the society's own criteria have asked for five years of membership in good standing, attendance at its meetings, a record of leadership inside it, and two letters of reference.",
+     "a": 62.9,
+     "b": 74.18
+    },
+    {
+     "t": "Five years of dues and meetings, just to be considered.",
+     "a": 74.48,
+     "b": 78.09
+    },
+    {
+     "t": "No patient. No care partner.",
+     "a": 78.39,
+     "b": 80.97
+    },
+    {
+     "t": "That is not a board patients can reach. It is a board that stays inside the club.",
+     "a": 81.27,
+     "b": 86.43
+    }
+   ]
+  },
+  {
+   "id": "network",
+   "t0": 86.93,
+   "t1": 100.61,
+   "cc": [
+    {
+     "t": "Follow the structure.",
+     "a": 86.93,
+     "b": 88.66
+    },
+    {
+     "t": "Dues in. Meetings. Industry at the table.",
+     "a": 88.96,
+     "b": 91.99
+    },
+    {
+     "t": "A network that charges to enter, and listens to the people already inside.",
+     "a": 92.29,
+     "b": 97.0
+    },
+    {
+     "t": "Patients stand at the edge of it, holding a toolkit.",
+     "a": 97.3,
+     "b": 100.61
     }
    ]
   },
   {
    "id": "quote",
-   "t0": 104.39,
-   "t1": 123.58,
+   "t0": 101.21,
+   "t1": 116.31,
    "cc": [
     {
-     "t": "This society understands what incentives do.",
-     "a": 104.39,
-     "b": 107.73
-    },
-    {
-     "t": "In twenty twenty, it wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.",
-     "a": 108.03,
-     "b": 116.72
+     "t": "In twenty twenty, this society wrote that for-profit organizations inherently are incentivized to prolong dialysis over offering transplantation.",
+     "a": 101.21,
+     "b": 110.87
     },
     {
      "t": "Those are its words.",
-     "a": 117.27,
-     "b": 118.82
+     "a": 111.42,
+     "b": 113.07
     },
     {
-     "t": "Six years later, where is the fix? Where is the number? Where is the deadline?",
-     "a": 119.12,
-     "b": 123.58
+     "t": "Now apply that test to the AST.",
+     "a": 113.37,
+     "b": 116.31
     }
    ]
   },
   {
    "id": "plan",
-   "t0": 124.08,
-   "t1": 134.03,
+   "t0": 116.81,
+   "t1": 128.12,
    "cc": [
     {
-     "t": "The federal plan it applauded sets policy direction.",
-     "a": 124.08,
-     "b": 127.67
+     "t": "The federal plan sets direction. It sets no rules, and no deadlines.",
+     "a": 116.81,
+     "b": 121.57
     },
     {
-     "t": "It sets no rules, and no deadlines.",
-     "a": 127.97,
-     "b": 130.83
+     "t": "A society that put patients first would demand both.",
+     "a": 121.87,
+     "b": 125.54
     },
     {
-     "t": "Clapping for it costs the society nothing.",
-     "a": 131.13,
-     "b": 134.03
+     "t": "This one issued a statement.",
+     "a": 125.84,
+     "b": 128.12
     }
    ]
   },
   {
    "id": "demands",
-   "t0": 134.53,
-   "t1": 154.03,
+   "t0": 128.62,
+   "t1": 147.87,
    "cc": [
     {
-     "t": "Here is what leadership would look like.",
-     "a": 134.53,
-     "b": 137.17
+     "t": "So here is what we demand.",
+     "a": 128.62,
+     "b": 130.97
     },
     {
      "t": "Patients and care partners on the board, with full votes.",
-     "a": 137.47,
-     "b": 141.01
+     "a": 131.27,
+     "b": 134.91
     },
     {
-     "t": "A dated, public target for cutting discards.",
-     "a": 141.31,
-     "b": 144.64
+     "t": "Nominations open to people outside the dues-paying club.",
+     "a": 135.21,
+     "b": 139.16
     },
     {
-     "t": "Real funding for perfusion and preservation.",
-     "a": 144.94,
-     "b": 148.23
+     "t": "A public account of every dollar it takes from industry.",
+     "a": 139.46,
+     "b": 143.17
     },
     {
-     "t": "And every year, a count of how many listed patients die, or are removed for being too sick.",
-     "a": 148.53,
-     "b": 154.03
+     "t": "And dated, public targets for the outcomes it claims to care about.",
+     "a": 143.47,
+     "b": 147.87
     }
    ]
   },
   {
    "id": "final",
-   "t0": 154.68,
-   "t1": 163.19,
+   "t0": 148.52,
+   "t1": 157.28,
    "cc": [
     {
      "t": "This is not leadership.",
-     "a": 154.68,
-     "b": 156.49
+     "a": 148.52,
+     "b": 150.42
     },
     {
      "t": "It is public relations.",
-     "a": 157.04,
-     "b": 159.22
+     "a": 150.97,
+     "b": 153.23
     },
     {
      "t": "And we have buried too many people to keep pretending otherwise.",
-     "a": 159.52,
-     "b": 163.19
+     "a": 153.53,
+     "b": 157.28
     }
    ]
   }
