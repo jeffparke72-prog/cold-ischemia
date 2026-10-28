@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-28T11:33:20.939584+00:00",
+"updated": "2026-10-28T17:19:29.307546+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -118,20 +118,262 @@
 "name": "UNOS News",
 "category": "Policy",
 "url": "https://unos.org/feed/",
-"ok": false,
-"count": 0,
-"error": "ValueError: TimeoutError: The read operation timed out"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "Healio Nephrology",
 "category": "News",
 "url": "https://www.healio.com/sws/feed/news/nephrology",
-"ok": false,
-"count": 0,
-"error": "ValueError: TimeoutError: The read operation timed out"
+"ok": true,
+"count": 20,
+"error": null
 }
 ],
 "items": [
+{
+"title": "When Transplant Tourism Returns to the United States: Clinical and Ethical Challenges",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002554?dgcid=rss_sd_all",
+"summary": "By Veena Ganesan, Jacob M. Appel, Dinushika Mohottige, Susan Lerner, Samira S. Farouk",
+"outlet": "",
+"published": "2026-10-28T17:18:36.735086+00:00",
+"id": "f3e619ed66fdc747",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Topiramate-Induced Fanconi Syndrome: A Case Report",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002840?dgcid=rss_sd_all",
+"summary": "By Daniela Berlinkova, Ria Rohatgi, Rajeev Rohatgi, Angela Z. Jiatu",
+"outlet": "",
+"published": "2026-10-28T17:18:36.734281+00:00",
+"id": "7eb2ade645169fb9",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Taurolidine-Induced Anaphylaxis—A Problem Occurring More Than Once",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002700?dgcid=rss_sd_all",
+"summary": "By Lisa Christina Horvath, Christine Bangert, Georg Gelbenegger, Bernd Jilma",
+"outlet": "",
+"published": "2026-10-28T17:18:36.734253+00:00",
+"id": "6d63022695bc7d3b",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Response to the Letter “Clarifying Postpartum Renal Risk After Hemolysis, Elevated Liver Enzymes, and Low Platelet Count Syndrome”",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032985?dgcid=rss_sd_all",
+"summary": "By Jean-Michel Halimi, Grégory Lailler, Valentin Maisons, Bénédicte Sautenet, Laurent Faucher, Jean-Baptiste de Fréminville, Jacques Blacher, Valérie Olié",
+"outlet": "",
+"published": "2026-10-28T17:18:36.104771+00:00",
+"id": "c5093b2e861b2056",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Clarifying Postpartum Renal Risk After HELLP Syndrome",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032997?dgcid=rss_sd_all",
+"summary": "By Lin Yi, Cheng Huang, Tong Liu, Yue Liu",
+"outlet": "",
+"published": "2026-10-28T17:18:36.104740+00:00",
+"id": "0da64ff0f8a86ce4",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Readiness for Peritoneal Dialysis Implementation in Ethiopia: A National Survey of Nephrologists",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032973?dgcid=rss_sd_all",
+"summary": "By Wubshet Jote Tolossa, Ayantu Tesfaye Lemma, Helen Gebremedhin Gebreegziabhier, Talerngsak Kanjanabuch",
+"outlet": "",
+"published": "2026-10-28T17:18:36.104716+00:00",
+"id": "8018decc3155ae55",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Pregnancy-Related AKI in South Asia: Etiology, Practice Patterns, Outcomes, and System Barriers",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033036?dgcid=rss_sd_all",
+"summary": "By Priti Meena, Rubina Naqvi, Krishna Kumar Agrawaal, Shubhathi Kar, Bimal Pandey, Mohammad Ahad Qayyum, Eranga Wijewickrama, Dilushi Wijayaratne, Sayful Hasan, Jagdish Lamsal, Vinant Bhargava",
+"outlet": "",
+"published": "2026-10-28T17:18:36.104690+00:00",
+"id": "d0e5375378e0b24b",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Inebilizumab Monotherapy in Relapsing IgG4-Related Tubulointerstitial Nephritis",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032870?dgcid=rss_sd_all",
+"summary": "By Niloufar Ebrahimi, Vince Ha, Richard J. Glassock, Anjay Rastogi, Sayna Norouzi",
+"outlet": "",
+"published": "2026-10-28T17:18:36.104661+00:00",
+"id": "cdbf8ed46fb03a70",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Buckeye brotherhood shines beyond the court with life-saving kidney donation - WSYX",
+"link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxPd3ZCTk1qWEFKalViVFluWWtja2dEVkhLbzJwM3dGUldxZ0N1d2dyNkV5YUtvTUQ0WmxsUFBqajB0LS1QMVpOVkkxbVhzOFgzQkdFMVV3VHFCMW9IaGxTRUZhcVdkRWhqaXJJdXhxU29Ldi1Wd05aQzdxV2NYWW9GTll6Z19HX25teC1yQURNLWpLLXNxa3hpMm03OVlzWlNJb0dRN1hBUWdXRy11cmpvYmVENVhYWFhWckFhV2NyRmFvbHZwUXhwTkFsNFFwSDNYRWkweFpZb0FRMWFzYnFjOGNFOFdCbk9fNHdzbHp0bC1GRXlFT2VIUE5zN0VhU3VqSGFtUkhXWjVRcDFkdUtSSDJrbHVZazVuUkE?oc=5",
+"summary": "Buckeye brotherhood shines beyond the court with life-saving kidney donation WSYX",
+"outlet": "WSYX",
+"published": "2026-10-28T16:58:20+00:00",
+"id": "a81dda5e0453292f",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Federal ADA settlement reached on behalf of deaf patient at dialysis center - Kentucky Today",
+"link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPSmtRWjdRWTVFZG93N1VzM0FwUnVsZXBvTmhVQm5pSWxUSE9CLUwzLVNJLU5vZHpWSnBtOWw3Ukc4Vm9kZGFwNWZ1WVVFQ0JYWFZNUHJqNG5ILXRBNDUtV0NVWWVxSU5EdzNWb1l2a0pzdWlVcjBmWVJiNGFVSVlybjFnSmFRYzBVVmRnN0FZU25fcnpyb2lsWTRCdTllTUQ2d3h0NXF5Tm54UmZZaVdfaTl4dTkzVlUyMHo2NVAzYkZ6b3RIaGFXdEVLdHpQV2VNSXZHN2NjNk0xMnl6dU9VTEd3d0h1b1ROVDNFWmlSVmZ2UQ?oc=5",
+"summary": "Federal ADA settlement reached on behalf of deaf patient at dialysis center Kentucky Today",
+"outlet": "Kentucky Today",
+"published": "2026-10-28T16:29:00+00:00",
+"id": "df2298e7995f31be",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "MUSC Health Lancaster kidney transplant program emerges as a regional success - The Medical University of South Carolina",
+"link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNXBzNjJXem9oTGt4WkNaM0l0RW1hQldFY2x1alZTSkxEam5lLXExU2VQbmFmbWVPV21ta3NoVmZxNzJuekVEQWdZLVZMX1l1MFltWjZEdjdVd2JfcWxYZWJ2MmJxb0pVWWUycnFYWXhGZTNwYXAwUTZkZm1IelZQenE2VlgwYUVzdjUtQmdMZjRSNmFwXzMteWpJQXRXQkVrZ0dhRjNKVS1VOXhJM1Z6ckNMSVpfNlZyclZ4OXQ0RXd0Y0d5?oc=5",
+"summary": "MUSC Health Lancaster kidney transplant program emerges as a regional success The Medical University of South Carolina",
+"outlet": "The Medical University of South Carolina",
+"published": "2026-10-28T15:08:31+00:00",
+"id": "af73457dac01d743",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "New jobs announced, strengthening home dialysis equipment production in Arkansas - KHBS - khbs",
+"link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPR3g1TkJVT0ZRV3FwY0t6X3VZUnE0OHlIMEFxRjRpZzRKYU9LaTUwV1JBWXdhOE1MVDVxN19vR0F2bFlhcTA0MG01TEowTEJGd2pCa0lEaF9tUkxDeUJ4X19xV3V5RUFHelpzLVotbFpKQXREWnpQTjF6Nno2ekw5bGsyY1F3NlZGRFpOdEx6cUg0Q3pZT0dHN0M1b0l3SDlsQWd3UkQtOWpDd3NkQjZjak5KalZhME5XQ0dB?oc=5",
+"summary": "New jobs announced, strengthening home dialysis equipment production in Arkansas - KHBS khbs",
+"outlet": "khbs",
+"published": "2026-10-28T14:13:00+00:00",
+"id": "7988ec4b18e5280c",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "PCSK9 Inhibition Lowers LDL-C in Patients With Kidney Disease - Pharmacy Times",
+"link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOV1BUMDlSZ2ljQlNDSVJVeTRvdnc2SGliaXM4bXNtYlZoZmR5UHg2NDBGUjRUOVlVYndJTVVva3UzZzlZcjhuVUVzdmdiLXRueHZxZW04eG5wRzhBU0FLOEtEYXAwc3RDdlIwaFlwdWxULWQ4dG9neFQ5b3FRM0dQaEZZTE40OHhUUUtuVUVFQzVfdFVsOHdJZENfNlE?oc=5",
+"summary": "PCSK9 Inhibition Lowers LDL-C in Patients With Kidney Disease Pharmacy Times",
+"outlet": "Pharmacy Times",
+"published": "2026-10-28T14:07:39+00:00",
+"id": "75c87c1f769b272e",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "SGLT2i Benefit Mortality, Cognition in Older CKD Patients - Medscape",
+"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRUpDeGdFS1JwVVpOQUxlaUFudWRmb0xHWlB0d05XYlF0TDYzeVdmNDRKeFh6MzlDQ3JwcDR2WmY0SXh0bWIzREZNY0diSi1jOUxwUzQ1MDZzSGF1U09Od2ROMXd2eTRZcExlX1QyVzJVNS02R19MVGJaZlVERmVBMjI3cnRiR255RHlkcE92eTd1SzRJS1hkSFR3WlA3S2gzdXh4Mlh3WVJZQmM?oc=5",
+"summary": "SGLT2i Benefit Mortality, Cognition in Older CKD Patients Medscape",
+"outlet": "Medscape",
+"published": "2026-10-28T13:10:37+00:00",
+"id": "3b32c3ce4d4fddd8",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Indore Organ Donation: 11-Year-Old Boys Family Donates Eyes & Skin; 56-Year-Old Businessmans Liver, Eyes And - Free Press Journal",
+"link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPbDJHYU92OWM5LXRJTWZqanNEM1ZYb3BGZU4yT3RkN01sRXFFSWhibWZkc0QzR3Y3MVQ1NHhfZDlwMGI5c01qaVpTNmlzN21xSlJKRzJpcWY1enRzQ2NSaGZtSkIzbF9RYi1XQUhFd25sRVZ4bVdsOURaNFZOVngzMk44OGZ1SmFfYllMNHkyMGpHdTd5b3p4TEVKWkRfR0Rud3p3ZzdMUjNDakxheF9nMDBMb0xZcm5CVVhrRE9pcENZRm9IRTc1N0hsbmhWNnFIQ0F4Z3NoSHJMU0VvSzFjME9FN0xvQnEtU2o40gHwAUFVX3lxTE1IQjcwQlJ1dEJGQzBrLXJMQ1hYRHItRk00aVhMODh2bDFSMmYwZDdOUllFWEYzWVQ5YktLeU9TQzkxWHJ2d0dFMjlwZWwtVUhYQlQ4VW5wUFdVdERoYXdnWHRMT05JVWZnUUNMcUUxNThXNHRLVTNVSHNpN3FOdjM2YmE1UWJTcDhnR0ZTZ0U4R1FQVXdoMnpEY2hlT3l0U1dYNW1PMV9TcWdoZ3BTU0kxdGJmdUN1V3pGX2xXc1dZbDJtR19qNW1ZTkFpSkVfdS1fMkdHaFI1MjJxRnNIalpKalE5M1l2QS1jLXZVNm5JLQ?oc=5",
+"summary": "Indore Organ Donation: 11-Year-Old Boys Family Donates Eyes & Skin; 56-Year-Old Businessmans Liver, Eyes And Free Press Journal",
+"outlet": "Free Press Journal",
+"published": "2026-10-28T12:51:29+00:00",
+"id": "ab333bb9fb68d152",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Vietnam Spotlight Podcast: WHO urges caution over organ donation by children under 18 in Vietnam, Hanoi proposes plan to redevelop Hoan Kiem Lake area - Tuoi Tre News | The News Gateway to Vietnam",
+"link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxQOXZaYV9pZzZiWWlKMnh5aTdjY1pZRnp3U18zRDd3cFBNLVhYZjMxc0FlT2UzZkpXcno2aFg1em1QZmJKTGdqQ1JFcEo5eldfX2R2SGwzdFBjVGdIMHZVVUg2X3JpNnZvUkxiZVNCUkVYYTZGdnYwY1hwbEJsNG9tRU05dldvZ0MxcGJFbUc2TzFOdnRuNjN2OE5jTDVUZWRJMmxELTVwckZsQTJMc2IyQ1RmRHV3UGI1aHhrN214eVVIQ0NpLUF6UFdoSl9IVUNPVmtNTk4ySzhSRk5VaFpRdGlEQnBqbS1pZ3ZiV0xEYldtdjN2NjlLUnhtbjZfV2IyWVJhTkFHeXNaOTFLeFJWMi13SXIyODdMUThvbGxKaGs?oc=5",
+"summary": "Vietnam Spotlight Podcast: WHO urges caution over organ donation by children under 18 in Vietnam, Hanoi proposes plan to redevelop Hoan Kiem Lake area Tuoi Tre News | The News Gateway to Vietnam",
+"outlet": "Tuoi Tre News | The News Gateway to Vietnam",
+"published": "2026-10-28T12:00:00+00:00",
+"id": "ddde7470ffea0dae",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Lab-Grown Blood Vessel Got Women on Dialysis Off Catheters Months Sooner Than Fistulas in Interim Phase 3 Data - Medical Daily",
+"link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUmtjaENjWDNaZDltNUR5TWRoYlQ5c01aMmVkNzdrNENnUWw4N0ZBQVowTEZiU19hRktjdlRFUXVqclNKc19LRE9kMlVqTFg3QS10OVR1VmZqdGNlWnp0TEN5TmtpcFVJX0hLbGpRTTBleTVWenVRRUFTVUkyRVdmMTV3d1lMU3c?oc=5",
+"summary": "Lab-Grown Blood Vessel Got Women on Dialysis Off Catheters Months Sooner Than Fistulas in Interim Phase 3 Data Medical Daily",
+"outlet": "Medical Daily",
+"published": "2026-10-28T11:42:24+00:00",
+"id": "ff7ac08d490fd508",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Organ donation from individuals under 18 years of age requires consultation with a medical board. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNX1dXWkQtM0JJTndESHdCSnZDLXgxUWxiRnN4dmFSQXpJOGowa09yQUtHQjBxWFNfQ1JNdjRrb3ZCRTBpM3RKbmk2eDQxUTk1ODkzVUVRZlZadXZ1V2VRU1pXVldJLVAwSHhhREZkaEhkR3ZwUk9PMmN6OWxNajkxTkNRX2JxQlQ4UUI4eTVQdGo1ODhV?oc=5",
+"summary": "Organ donation from individuals under 18 years of age requires consultation with a medical board. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-10-28T11:36:42+00:00",
+"id": "cc6fdc626ad3f81c",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Leveraging Natural Language Processing to Identify Variation in Kidney Transplant Access",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032444?dgcid=rss_sd_all",
+"summary": "By Sri Lekha Tummalapalli, Matthew Manganel, Will Simmons, Jonathan Lin, Braja Gopal Patra, Prakash Adekkanattu, Nivedita Chang, Margaret M. Fabiszak, Daniel M. Levine, Yifan Peng, Evan Sholle, Jeffrey Silberzweig,…",
+"outlet": "",
+"published": "2026-10-28T11:33:20.939584+00:00",
+"id": "f06358d057c80d4f",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-28T11:33:20.939584+00:00"
+},
+{
+"title": "Characterizing Within-Center Placement of Out-of-Sequence Deceased-Donor Kidney Transplants",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032833?dgcid=rss_sd_all",
+"summary": "By Emma G. Tucker, Miko E. Yu, Joel T. Adler, David C. Cron, Jesse D. Schold, Sumit Mohan, Syed Ali Husain",
+"outlet": "",
+"published": "2026-10-28T11:33:20.939584+00:00",
+"id": "bd346bc66767a92d",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-28T11:33:20.939584+00:00"
+},
+{
+"title": "Systematic Review of Persistent Microscopic Hematuria and Kidney Outcomes in IgAN",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032705?dgcid=rss_sd_all",
+"summary": "By Gian Marco Berti, Daniele Vetrano, Edoardo Tringali, Francesco Tondolo, Chiara Cantarelli, Gisella Vischini, Elisa Gessaroli, Giorgia Comai, Gaetano La Manna, Federica Maritati",
+"outlet": "",
+"published": "2026-10-28T11:33:20.939584+00:00",
+"id": "1207f3181349f48c",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-28T11:33:20.939584+00:00"
+},
+{
+"title": "Kidney Transcatheter Arterial Embolization Reduces Kidney Cyst Infection in Patients With ADPKD",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033000?dgcid=rss_sd_all",
+"summary": "By Yusuke Yoshimura, Tatsuya Suwabe, Akinari Sekine, Susumu Tsunoda, Hiroki Mizuno, Yuki Oba, Hisashi Kamido, Hikaru Tanimizu, Ayumi Kishioka, Masatoshi Yoshimoto, Noriko Inoue, Eiko Hasegawa, Masayuki Yamanouchi,…",
+"outlet": "",
+"published": "2026-10-28T11:33:20.939584+00:00",
+"id": "f64256726674de5b",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-28T11:33:20.939584+00:00"
+},
 {
 "title": "Design and Baseline Characteristics of CONCORD, a Trial of Novel Therapies for Depression in CKD",
 "link": "https://www.sciencedirect.com/science/article/pii/S2468024926032663?dgcid=rss_sd_all",
@@ -188,47 +430,25 @@
 "first_seen": "2026-10-28T11:33:20.939584+00:00"
 },
 {
-"title": "Leveraging Natural Language Processing to Identify Variation in Kidney Transplant Access",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032444?dgcid=rss_sd_all",
-"summary": "By Sri Lekha Tummalapalli, Matthew Manganel, Will Simmons, Jonathan Lin, Braja Gopal Patra, Prakash Adekkanattu, Nivedita Chang, Margaret M. Fabiszak, Daniel M. Levine, Yifan Peng, Evan Sholle, Jeffrey Silberzweig,…",
-"outlet": "",
-"published": "2026-10-28T11:32:27.929764+00:00",
-"id": "f06358d057c80d4f",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-28T11:33:20.939584+00:00"
+"title": "Lightware Releases Setup Guide For 100-Endpoint TPN/OPTN Systems - UK Broadcast News | 28/10/2026 - 4RFV",
+"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNendkVE9DaFdzUlMtV0Zqay00MHZCSnQ0b09QSHp6Wk8tMDFmck1hZ3BCSXBJamIzcHRpbXlmbEhfRW95YjBnYTJ1cHRpWXBXRzE0b19OYURwQ2JQejhZRTZKSFpSdGlqX1M2MDhiSzIzd2dPSUYxc2N3bEgwMEVEYjgyZlVTZTJXYkI3MWpzSTdGaXhiY0dvUEFTSkhwc2hvVm9qY2RSSWtlWmc?oc=5",
+"summary": "Lightware Releases Setup Guide For 100-Endpoint TPN/OPTN Systems - UK Broadcast News | 28/10/2026 4RFV",
+"outlet": "4RFV",
+"published": "2026-10-28T11:29:45+00:00",
+"id": "5e9afd62145705e8",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
 },
 {
-"title": "Characterizing Within-Center Placement of Out-of-Sequence Deceased-Donor Kidney Transplants",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032833?dgcid=rss_sd_all",
-"summary": "By Emma G. Tucker, Miko E. Yu, Joel T. Adler, David C. Cron, Jesse D. Schold, Sumit Mohan, Syed Ali Husain",
-"outlet": "",
-"published": "2026-10-28T11:32:27.929732+00:00",
-"id": "bd346bc66767a92d",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-28T11:33:20.939584+00:00"
-},
-{
-"title": "Systematic Review of Persistent Microscopic Hematuria and Kidney Outcomes in IgAN",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032705?dgcid=rss_sd_all",
-"summary": "By Gian Marco Berti, Daniele Vetrano, Edoardo Tringali, Francesco Tondolo, Chiara Cantarelli, Gisella Vischini, Elisa Gessaroli, Giorgia Comai, Gaetano La Manna, Federica Maritati",
-"outlet": "",
-"published": "2026-10-28T11:32:27.929696+00:00",
-"id": "1207f3181349f48c",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-28T11:33:20.939584+00:00"
-},
-{
-"title": "Kidney Transcatheter Arterial Embolization Reduces Kidney Cyst Infection in Patients With ADPKD",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033000?dgcid=rss_sd_all",
-"summary": "By Yusuke Yoshimura, Tatsuya Suwabe, Akinari Sekine, Susumu Tsunoda, Hiroki Mizuno, Yuki Oba, Hisashi Kamido, Hikaru Tanimizu, Ayumi Kishioka, Masatoshi Yoshimoto, Noriko Inoue, Eiko Hasegawa, Masayuki Yamanouchi,…",
-"outlet": "",
-"published": "2026-10-28T11:32:27.929667+00:00",
-"id": "f64256726674de5b",
-"source": "Kidney International Reports",
-"category": "Journals",
+"title": "RFK Jr. plan will stop KY organ donation from preying on us | Opinion - The Courier-Journal",
+"link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQMWlHbE5BaXB0eFBMdnJNNnJ0VG45TW84LTM4c1dTbnpGaVBVV1VBYUx4ek80dU41S3VxMzNtWkllRnRJeExzZEtUU3FrbXh1NDg5V0JUU293c2lrWGNMRUpBX2dNcFM4dUQ3NWh3LWlkVVlKRVlkS3hVb19yVnRSVWRRWTgwZ1FvOTNCbWotNEM3V1BYT0VhUVNiTWtaZGx6QVk5d1BZZkFRMkUxQTVIeDVDOFlWYU5lV1lvd0ZaMWVqM2psWXFaZzNjNTNCM3NGRjVZU0ZlMmJ4MnJMeTJPclpocVhSMWlyT3ZjNEYwbERqM09zcXNjX3pXNjlXQQ?oc=5",
+"summary": "RFK Jr. plan will stop KY organ donation from preying on us | Opinion The Courier-Journal",
+"outlet": "The Courier-Journal",
+"published": "2026-10-28T10:03:00+00:00",
+"id": "b990389eceff0cd3",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
 "first_seen": "2026-10-28T11:33:20.939584+00:00"
 },
 {
@@ -254,17 +474,6 @@
 "first_seen": "2026-10-28T11:33:20.939584+00:00"
 },
 {
-"title": "RFK Jr. plan will stop KY organ donation from preying on us | Opinion - The Courier-Journal",
-"link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQMWlHbE5BaXB0eFBMdnJNNnJ0VG45TW84LTM4c1dTbnpGaVBVV1VBYUx4ek80dU41S3VxMzNtWkllRnRJeExzZEtUU3FrbXh1NDg5V0JUU293c2lrWGNMRUpBX2dNcFM4dUQ3NWh3LWlkVVlKRVlkS3hVb19yVnRSVWRRWTgwZ1FvOTNCbWotNEM3V1BYT0VhUVNiTWtaZGx6QVk5d1BZZkFRMkUxQTVIeDVDOFlWYU5lV1lvd0ZaMWVqM2psWXFaZzNjNTNCM3NGRjVZU0ZlMmJ4MnJMeTJPclpocVhSMWlyT3ZjNEYwbERqM09zcXNjX3pXNjlXQQ?oc=5",
-"summary": "RFK Jr. plan will stop KY organ donation from preying on us | Opinion The Courier-Journal",
-"outlet": "The Courier-Journal",
-"published": "2026-10-28T09:22:37+00:00",
-"id": "b990389eceff0cd3",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-28T11:33:20.939584+00:00"
-},
-{
 "title": "Are you an organ donor? Here are some rule changes you may want to know - NPR",
 "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5iOHI4MGRZbjE5cW9SUW5FQ2FtRUFpalBLaGN2SnBfLVd0dGVrSElHeEJZRWZZMXhVc2R1WVY5eFY1WlRob2VKMG53eFl1R2RjMlU5amZ2THJrR25FTW1leTlXTlNaN092Y21MTTJlcjNWMzF5UW9j?oc=5",
 "summary": "Are you an organ donor? Here are some rule changes you may want to know NPR",
@@ -285,6 +494,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-28T11:33:20.939584+00:00"
+},
+{
+"title": "Deputy Minister of Health: Caution is needed when seeking opinions on tissue and organ donation from people under 18 years old. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQRnRWWjRCQmMxOENHNXRCbkliVVFaQWVvNFB6b3llM0ctWXNYTzBFaXhORG9OQUFaRHdGTmJJYi1aU3hFLVc1NlBOUDdfT0tpLVJYejRYbm9RSS1pM043Qm15OXlTOUx4cHZISHdKa3FOdWd5Y3NMYUdfUlB5ZmdiRmx6Tk9qSTJyUUc4ZXJiOVVmVTRrS3ZyLVh5Wlo2NHNESXVEUUVIZS1FcmpHTnExaA?oc=5",
+"summary": "Deputy Minister of Health: Caution is needed when seeking opinions on tissue and organ donation from people under 18 years old. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-10-28T06:50:47+00:00",
+"id": "01955afefc1918f7",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
 },
 {
 "title": "More people are registered as ‘having no objection to organ donation’ - Centraal Bureau voor de Statistiek | CBS",
@@ -320,6 +540,17 @@
 "first_seen": "2026-10-28T11:33:20.939584+00:00"
 },
 {
+"title": "Vietnam health minister says organ donation must remain voluntary - Báo VietNamNet",
+"link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNT1Z2eEpOTkZwbURwRlJ3OEkxcVVLQmhMem9vNWEwV09JZXg1T0hSNzFnZWl0RjJiZEVNNHFCSGlCMzdneFBXM0loUmNBanJmMWhiVGlnNFRTcmlqLVo0N3duQUdUT28yTXlZSnRHX2NDQ1U3ajFBZzBkOGdCaUZTeXFrV0FGbTlGd05xaGp4Z1Z6aGQwbE54N0NxQ2JzNl9ZTVExMkFR?oc=5",
+"summary": "Vietnam health minister says organ donation must remain voluntary Báo VietNamNet",
+"outlet": "Báo VietNamNet",
+"published": "2026-10-28T05:01:00+00:00",
+"id": "3bf80111b270913c",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
 "title": "GLP-1 Receptor Agonists Reduce Kidney Disease Risk: What Clinical Trials Show - News-Medical",
 "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPWmMxejhIYmZvTWZfdXJZUzYwSWp4MFpvSWRnSER6OElHQTJGZTNoNHJiREQwYnJmZTh1ZTNyUkdtWlFjaUxNdk9DaklFUThDU2NQd0hrVUVmUFBoM3ZLTGtLdl9PQXA4b194MGNDSU1mN25QR3lQdjZ2SHl2ZW0zUG1tbEl0clJTT05UUnI5MXI5T0MxVmNLTkN3blF3a2syZ0RSeWN5aWY5Z21CTVlCeS1qUGI2Q0FW?oc=5",
 "summary": "GLP-1 Receptor Agonists Reduce Kidney Disease Risk: What Clinical Trials Show News-Medical",
@@ -342,6 +573,17 @@
 "first_seen": "2026-10-28T05:24:03.777174+00:00"
 },
 {
+"title": "Madison County family raises awareness about safe organ procurement - WKYT",
+"link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNX0NrQnNERFh1T1VHeF9sZlF0Z3dNRUVST2hJQlp1SW5PZGFDaE1TUWhvdGVrSmo3OXRkV3U4MnJaZk5XYXU1S3MwVE44MEM2azdZbkhTaWFkUVFETW44dVVWNXhPbjhVd2F5ZzlnWjFCa2o4TEdRVUt5Tnd2VnYzS3RRMTU5anZFUHdZWjg3LUVFX1pzVExlRzBSZkVuYjJ2TnfSAbYBQVVfeXFMTTNsbkY5ZXlRbzZxUGpIVHVZVjRLWEZZODVHNlpraVFDN0pPbE1RLUpUQjlCSlg4R20wUzRBM0I1ajF4T29PQ2NmS3lkYjllQ2V2aVlnSEJDQTBkZWl5TExjNlRFZl92Q1RHc2JCY0kwRHhHa2Z3b0FEbWdyVVEzSnhUVFZZcXFZZlZjMWZaRnJBN3F5cDhIWFV2Mi1ubFB3SHVjVWpZZkFOSXhwOThoVlkwYlVuSGc?oc=5",
+"summary": "Madison County family raises awareness about safe organ procurement WKYT",
+"outlet": "WKYT",
+"published": "2026-10-28T02:49:00+00:00",
+"id": "3fecc89e24723d59",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-28T05:24:03.777174+00:00"
+},
+{
 "title": "Dialysis center to pay $175K after deaf Lexington patient denied interpreter - FOX 56 News",
 "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQbzVBcXNhc2YyUENDSG9GUGtCZ25TTjJuR3NoUG9tNVJMT2FFOHZyYUhoOElPdkNhMFJBbEFZeXVqV0pTaEEyYVN2QW9qbkpuX0xvTkdLbUNjaTA5WHYzcWEwWURXS1ZFY0tmcEpkRGxRajAwY2JMZUFZWmdVMVZOOFlGemdfS3ROZHVXQnlGelQtNEdxYXJVX1lRek5fbUpiLV9lVUxFTDBidmc3QTJtRGlyQU5NR290N1ZR0gHAAUFVX3lxTE4zd3ZQejJrYzU4T19qRFpiTW5FZ2FNR1VoZGpyTnBadl9HalUtN25GdTVzU0lLQl9sUzhscWs1R1dTQ2NxRjZ1M1RGbHBVZVlBSzZUUTVNVWlvc3R2LW5CUzNaR0JfX29oaEMwT1B6WWlhSnZOWGw0ZVFLOE5ENzdPTTFNQVl0bjlQSzdwN3NoN1psbnplSEVmQ1d1OS1FRTVTdmctNlpDYngwMTJlcDA1TWxQSHhiU3NuSUM5SUNLSw?oc=5",
 "summary": "Dialysis center to pay $175K after deaf Lexington patient denied interpreter FOX 56 News",
@@ -349,17 +591,6 @@
 "published": "2026-10-27T23:35:42+00:00",
 "id": "d6b8d8caadd7f298",
 "source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-28T05:24:03.777174+00:00"
-},
-{
-"title": "Madison County family raises awareness about safe organ procurement - WKYT",
-"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOcGZZNXNkUTdmWU5UUXRhb2xMOUpXbHZFcHRwMWZCdzVvMUVqZnQtQUNldTlJS0NjRjdtOEdsWnV6VkFSMzRKcnRZc1JHZFpDTUxWOVRFbFh4bF82Q3J4ejNjTjJIMkJ1bi16ZmYySGMxbmluOUhsZTQwNGhJOG1qNE5nTWF4WFFPTTFsbGJtTGpGT0VtRGR4Y0tvdzBMZmowYVJUS3lKc283dw?oc=5",
-"summary": "Madison County family raises awareness about safe organ procurement WKYT",
-"outlet": "WKYT",
-"published": "2026-10-27T23:28:36+00:00",
-"id": "3fecc89e24723d59",
-"source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-28T05:24:03.777174+00:00"
 },
@@ -406,6 +637,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-27T23:57:40.490818+00:00"
+},
+{
+"title": "HHS decertifies organ procurement organization serving Kentucky, RFK Jr. says - Z93 Country",
+"link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1NLUZKTW1tWDE2d3FZbEw0RjZzTnlPb2wyVVpYSkk3bEFNdnVvb2FFWDVJRC1KU05vbUpPeENJeHhfSWREMU5jY3BnNWlSMHdtQ0xZV09vS3BULVlmclBv?oc=5",
+"summary": "HHS decertifies organ procurement organization serving Kentucky, RFK Jr. says Z93 Country",
+"outlet": "Z93 Country",
+"published": "2026-10-27T20:35:48.954336+00:00",
+"id": "97505e414209d39a",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
 },
 {
 "title": "Organ donation conversations are changing. Critics worry families may feel pressured - NPR",
@@ -584,6 +826,28 @@
 "first_seen": "2026-10-27T15:58:59.831204+00:00"
 },
 {
+"title": "Minister Dao Hong Lan: Organ donation should be done without coercion. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQaC16Rm5MZG5aX1Naenc3TDBXYVJjTWpaNDAzTGFyM0d4eGlucnRLeUlpREFvNEdlWHdSYUY5ZUtMWmV1WjhKS0hwbDFoWHc4TmhvbmpWMDg5V0hRS1dJbFktX1dsZGgzMFp6clRTbU9tRFF4ZGpDcEppS1hCQ0FfSG5PMkhxbmM0TVhtZVotTDJCNFZhQkczYmV2ck5jc3ZYakxyQlRockc?oc=5",
+"summary": "Minister Dao Hong Lan: Organ donation should be done without coercion. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-10-27T13:48:37+00:00",
+"id": "c2376aececcddfd5",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Minister of Health: Improving regulations on tissue and organ donation and transplantation to expand opportunities for saving patients' lives. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZTM0eDE1UmFLb1dRZFNnQUZ2RDBkN040eTdRdUpLb0Z6YmxWYUYxdkJkSXpEUHhjcjRNQVRzZmZmbzRIWmtTcUVySXdRazBPZ2ZhVWNpZ2dOeUxVQURBTFhzdEUwTFFjUzgxNHFwZ3BvdEw2YmJlTWk0ejNSN2V3dFhreFZKdmpZSU1wTVBNcE5fSlMyeDMtU0N5TzUtQjdfZTJES2NzNjNkd1h3SmNUQkZ4aWNOR3ZRalN3?oc=5",
+"summary": "Minister of Health: Improving regulations on tissue and organ donation and transplantation to expand opportunities for saving patients' lives. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-10-27T13:26:41+00:00",
+"id": "4d9382ef79809e54",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
 "title": "Ministry of Health: Organ donation is prohibited for those under 18 years of age. - Vietnam.vn",
 "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOYXduMUpzTE1Ib0lqOTg0WE1jVGtJclU4SFoyc18zMnI0cmRCSGVjaEVoTk9NVjNhekt0WkpuOWNkaTFCU1prX3g5NnYwNVV3ZXhCbFBONHZ0QjJEOHQzVzdrajUzTzN3YU5NeXdJUGhMQWdMOHNhdklfZHdxQl9SMmxR?oc=5",
 "summary": "Ministry of Health: Organ donation is prohibited for those under 18 years of age. Vietnam.vn",
@@ -659,6 +923,28 @@
 "source": "PubMed: living organ donation",
 "category": "Research",
 "first_seen": "2026-10-28T05:24:03.777174+00:00"
+},
+{
+"title": "Comment on ‘A Remote Intervention to Improve Medication Nonadherence Guided by a Marker of Risk Derived from the Electronic Health Records of Adolescent Transplant Recipients’",
+"link": "https://www.sciencedirect.com/science/article/pii/S1600613526028492?dgcid=rss_sd_all",
+"summary": "By Jeffrey J. Gaynor, Gaetano Ciancio",
+"outlet": "",
+"published": "2026-10-27T12:00:00+00:00",
+"id": "4cc43f3e9f6ace8c",
+"source": "American Journal of Transplantation",
+"category": "Journals",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Dietary Behaviors of People Receiving Hemodialysis: Secondary Analyses From the KIDNEYTEXT Trial",
+"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011832?dgcid=rss_sd_all",
+"summary": "By Jessica Dawson, Brendan Smyth, Armando Teixeira-Pinto, Katrina L. Campbell, Allison Jaure, Jonathan C. Craig, Clara K. Chow, Meg Jardine, Vincent W. Lee",
+"outlet": "",
+"published": "2026-10-27T12:00:00+00:00",
+"id": "e4f339730c669f1d",
+"source": "American Journal of Kidney Diseases",
+"category": "Journals",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
 },
 {
 "title": "Burden of chronic kidney disease in China: trends, etiological shifts and key risk factors based on GBD 2023 data - EurekAlert!",
@@ -989,17 +1275,6 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-26T23:44:40.863255+00:00"
-},
-{
-"title": "HHS decertifies organ procurement organization serving Kentucky, RFK Jr. says - Z93 Country",
-"link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1NLUZKTW1tWDE2d3FZbEw0RjZzTnlPb2wyVVpYSkk3bEFNdnVvb2FFWDVJRC1KU05vbUpPeENJeHhfSWREMU5jY3BnNWlSMHdtQ0xZV09vS3BULVlmclBv?oc=5",
-"summary": "HHS decertifies organ procurement organization serving Kentucky, RFK Jr. says Z93 Country",
-"outlet": "Z93 Country",
-"published": "2026-10-26T15:03:05+00:00",
-"id": "97505e414209d39a",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-27T20:35:48.954336+00:00"
 },
 {
 "title": "Procurement and Waste in Hemodialysis: A Detailed Life Cycle Assessment to Reduce Environmental Impact",
@@ -4357,6 +4632,17 @@
 "first_seen": "2026-10-21T09:32:51.217916+00:00"
 },
 {
+"title": "See your patient population more clearly with the UNOS SDOH Report",
+"link": "https://unos.org/news/see-your-patient-population-more-clearly-with-the-unos-sdoh-report/",
+"summary": "The UNOS Social Determinants of Health Report helps transplant programs better understand the social and economic factors affecting their patient populations through center-specific data and regional, peer and national comparisons. These insights can help programs identify trends, support quality improvement and…",
+"outlet": "",
+"published": "2026-10-21T01:32:24+00:00",
+"id": "67bfe6d6ff144b4f",
+"source": "UNOS News",
+"category": "Policy",
+"first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
 "title": "Eicosanoids as Biomarkers of Hyperfiltration-Mediated Injury in CKD",
 "link": "https://www.sciencedirect.com/science/article/pii/S2468024926032845?dgcid=rss_sd_all",
 "summary": "By Tarak Srivastava, Ginger L. Milne, Jianping Zhou, Mohammad H. Rezaiekhaligh, Derek K. Ng, Jennifer L. Roem, Bradley A. Warady, Susan L. Furth, Ram Sharma, Mukut Sharma, Kyle Deville, Anjali Nayak, Tom Blydt-Hansen,…",
@@ -5343,292 +5629,6 @@
 "published": "2026-10-20T12:55:15.866286+00:00",
 "id": "4c5ac3dab8a4608c",
 "source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "For dialysis patients in Syria, accessing treatment closer to home changes everything - World Health Organization (WHO)",
-"link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQX016RDVLUUU3OTlQZ3BMbUJrektMOVlXaUR0aTl0Q2dhZzRCQXVuSjVnT2NPMTlXam5NOGo0MDJENHZrOU42RnB3ZUgwOHZENmhhYlVFcDh6S2RxT2tyR0lrRzlib2NLRlJDT0ZiRXU4UVIxa2RmbVhZaF9hbDJnRW41WE5ka2tTVHRfaXhFR3hOVUNBZ2l1aTdkMHdGZk5aUk9HVC1VZGJDT1FSWlFwVzlZZ1o0dENyUExaV3BOblo4aTg?oc=5",
-"summary": "For dialysis patients in Syria, accessing treatment closer to home changes everything World Health Organization (WHO)",
-"outlet": "World Health Organization (WHO)",
-"published": "2026-10-20T12:28:45+00:00",
-"id": "b636e731750003aa",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Dialysis Accessories Market To 2035: Home Dialysis Shift Supports Forward Growth - News and Statistics - IndexBox",
-"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPQ1RJdnVES19QclljUGZ6dWNfZElyYUVwZlZGTmNBYXk3N3ZHRExXOUVrQmFUbFFJM2N2Z0pmQ1pmWVJSdXZTTWVRLW5FOFZvNWh1akdYZEkxNnlORm9JRERJR0Y4cmpiZ3BDeHliU1J4dXlRTWhzeS03NUFhTElXS0ZiOE1KaGp0OG5kcjN3VzlHQmsxU1JSS2NCRGhoWHQwLVp4RzhEMkpEcmJPLUN2WXE1WEo?oc=5",
-"summary": "Dialysis Accessories Market To 2035: Home Dialysis Shift Supports Forward Growth - News and Statistics IndexBox",
-"outlet": "IndexBox",
-"published": "2026-10-20T12:16:04+00:00",
-"id": "b6b4fcaf8f0f2ac9",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Robotic-assisted living-donor hysterectomy for uterus transplantation: a systematic review of surgical techniques, donor safety, and recipient outcomes.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42900394/",
-"summary": "Baradwan S, Latifah HM, Hafedh B et al. Journal of robotic surgery",
-"outlet": "J Robot Surg",
-"published": "2026-10-20T12:00:00+00:00",
-"id": "788abca48ff94b68",
-"source": "PubMed: living organ donation",
-"category": "Research",
-"first_seen": "2026-10-21T00:04:37.627227+00:00"
-},
-{
-"title": "Clinicopathologic and Outcome Characteristics of Glomerulopathy With Striated Deposits: A Case Series",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011789?dgcid=rss_sd_all",
-"summary": "By Samih H. Nasr, Satoru Kudose, M. Barry Stokes, Surendra Dasari, Sibel Erdogan Damgard, Danni Holanda, Lihong Bu, Samar M. Said, Alessia Buglioni, Fouzia Ziad, Emad Maher, Monica P. Revelo, Kurt Tarwater, Mohammed…",
-"outlet": "",
-"published": "2026-10-20T12:00:00+00:00",
-"id": "83a1ef132d1817ca",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-21T14:37:00.175654+00:00"
-},
-{
-"title": "Reliability of Spot Urine Protein-to-Creatinine and Urine Albumin-to-Creatinine Ratios in Acute Kidney Injury: A Cohort Study",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011807?dgcid=rss_sd_all",
-"summary": "By Banpot Suwatronnakorn, Aschariya Wipattanakitcharoen, Thunyatorn Wuttiputhanun, Asada Leelahavanichkul, Natavudh Townamchai, Yingyos Avihingsanon, Suwasin Udomkarnjananun",
-"outlet": "",
-"published": "2026-10-20T12:00:00+00:00",
-"id": "ec4b2f332f0d9517",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-21T14:37:00.175654+00:00"
-},
-{
-"title": "Urinary Metabolites in Tryptophan-Kynurenine Pathway and Risk of CKD Progression in Patients With Type 2 Diabetes",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011790?dgcid=rss_sd_all",
-"summary": "By Jian-Jun Liu, Sylvia Liu, Huili Zheng, Resham L. Gurung, Janus Lee, Lye Siang Lee, Jianhong Ching, Keven Ang, Subrata Debnath, Nagarjunachary Ragi, Laura Pyle, Ye Ji Choi, Huijuan Wu, Petter Bjornstad, Kumar…",
-"outlet": "",
-"published": "2026-10-20T12:00:00+00:00",
-"id": "6ce80cff5a417497",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-21T14:37:00.175654+00:00"
-},
-{
-"title": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity - Breitbart News",
-"link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQXFIWE9fY002VlVRZHpQUlJWVFE1NGJ0OVJGdE9CTlJjbFQ1MW1PcnI0U3V3OTNSOFRzYkI2eVV3TlVlNUgxZWctcHJvaEszLTA3YVYxWjNueUpRcEdtbGhYUlRvaHNDQVZ1QUI5UW5ZYmdSVkxLdWlNdDdGMm1wUFBXN3pNX08yOEg4WmJkd19BMEpvS193Ty1KUGhBZ3hENHZqT0d0M3BneW9ycmpTMXpnSWd6a0NKOFRPYk9lZmY3OTM0RzY00gHHAUFVX3lxTE5BcUhYT19jTTZWVVFkelBSUlZUUTU0YnQ5UkZ0T0JOUmNsVDUxbU9ycjRTdXc5M1I4VHNiQjZ5VXdOVWU1SDFlZy1wcm9oSzMtMDdhVjFaM255SlFwR21saFhSVG9oc0NBVnVBQjlRblliZ1JWTEt1aU10N0YybXBQUFc3ek1fTzI4SDhaYmR3X0EwSm9LX3dPLUpQaEFneEQ0dmpPR3QzcGd5b3JyalMxemdJZ3prQ0o4VE9iT2VmZjc5MzRHNjQ?oc=5",
-"summary": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity Breitbart News",
-"outlet": "Breitbart News",
-"published": "2026-10-20T11:06:57+00:00",
-"id": "7afff37d133202c9",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Oman, Spain discuss organ donation services - Times of Oman",
-"link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQQ0M3ZWlXVmRVQnJNLW9fQnZPMEdJRmhsRDQzNVFXWTZnX2RXVjI1UjBrV0lOeWhldnRmRU5tMUNpelNZY2pqeDkzb3V3d09yVk1kcDZoSnFDUnpQYlRJSWJBM1hEMHA3ay1CUERKbjFqa2wyZzdjNUx0VW5ISzNjaXI2OXNxU2pu?oc=5",
-"summary": "Oman, Spain discuss organ donation services Times of Oman",
-"outlet": "Times of Oman",
-"published": "2026-10-20T11:04:00+00:00",
-"id": "0f3b43ab54d59cb5",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Woman's 3-year wait for an intestine shows the US organ transplant system's complexity - YouTube",
-"link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE12cmNRNkZHUnIyZkFVRldBM1pCQnliUUVIWmVtT0VURkFic1N5U2VEMEFKZXpSWEJmOU53TTV0V1VTTHVieEVsb0hXcUlybEtIb25ralVIZHN5dk84?oc=5",
-"summary": "Woman's 3-year wait for an intestine shows the US organ transplant system's complexity YouTube",
-"outlet": "YouTube",
-"published": "2026-10-20T11:00:05+00:00",
-"id": "11b1e26914a94761",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T04:32:33.905357+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - Stamford Advocate",
-"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQeGxwZk1HX2ZtTTFKMmVnTHgtMUM2NEoxcTJ3d3pTQ3puTnFIZkRqWnEzTFpsTlFtSkhIXzF4TEQ2Y20yVjRSOTF4cWxGSy05blpQYl9kRUl3TnJsOEZtbjR2R3JWTmpQYXpNb1dOOWktMjl1akZKdFFwN1M4M09DbGpWR3hSTHhTVFI0RjlOSmJQeFViZWpUMHJ1bTdmNGJZd25WanpGRHF5TXVV?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity Stamford Advocate",
-"outlet": "Stamford Advocate",
-"published": "2026-10-20T10:06:42+00:00",
-"id": "6070378483190e7c",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - CT Insider",
-"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOTzNwT0RxYmNhZVdpSGZkdTU1ZTVFTDZvSldITnplb1BzRy1BNjJSWDFrY3NJVWFONVVnSXJlUTZab0ttejlyeHp0WUpQT2F0RmNWWERQODN0QWx2UmlSYUdpNUZ5M0dlLUZZZVNIU29jRHpHOW0yM0E1Y0hJTC1fbnZIaGhQMjhneDhydnY4UU9Wa3Z0NzJNYW5sRnBSM1owY0ZQd0V0WQ?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity CT Insider",
-"outlet": "CT Insider",
-"published": "2026-10-20T10:04:02+00:00",
-"id": "28b88e52f342bf39",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - The Spec",
-"link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPYklCdjRBcDNQM0cwRmh3V2xyckpTMTlSWlZlVkRBZDVaRlRmbklnaEVXY0xXMmVlS1kzZkVPbnN0c0U0RXVKTFphQXN2Y0g4aXpHa1FGNm9qak1RWnY1cjhUXzVxeWxfU2g0LWRvWEFmbTRpbGFuNHBzaXVBc255SWMyclVTZmxiaGxWTDNVWFRreERPZmI5OGxDREV3Z3V5YTlxVDVpckd6SGNVTHlyd3pfSDZuUUhyLTM5Rm85R3dZNXBQVlNuM2x1TWhJMk1QRWp1TTRvcGdnU0Z0SXNhUjNJcmxEbTFvYkRkRTFkMDFNMUtMbG9YZFVleURyMnFrbmFWVzJCSTlvNm8zTGpHMC1EVlNnelhC?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity The Spec",
-"outlet": "The Spec",
-"published": "2026-10-20T10:02:02+00:00",
-"id": "e03f7136c20d2dce",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T21:31:21.209247+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - Daily Journal",
-"link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQWHVhbGtkcTQ0Y1R6cGRoSjFDNURTNEhUU1hzNExNYjBNV2VNTVcySnlMWkVJUFFVZDBmNl9SSkFIUlhjaDE1dGZ1OGtVOC1xbFlsZzJGMjZtV2tXVjUwUnBRSjNqMEFNV292QS0zazhFVTZlYTBqYURIRW9iaGQzMktWZlo4SWpCVXpHcFBVNFpOdU1IdHByd2F0a0UwLTFCaEJYc2JGLVJydTR5djEzRk9RSUptTFdjekZSUEhfY255RVcyVFlGbw?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity Daily Journal",
-"outlet": "Daily Journal",
-"published": "2026-10-20T10:00:17+00:00",
-"id": "4a12150322f9e3be",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - Eagle-Tribune",
-"link": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPcGFrbGJKOFQ0T3VpRk85b2xfXy1MYTBVTHE5TEgtRE1HOVFJa1p2REdORGFZZEhkQzRucVZSNGlJUnBLak9HcjZFR0g3T1IwZi1iTGkweFo2ZlJwRmx4dnNkQ1d6YV9rbVN2UVJqTUhBVFVwSjJGbGtkc0QzNS1HeXlzeDJDZHFXSTY0TXlTbVVNZEVWbVRHSzZSTER6ZXdWcWQwYU1tY1JveTNULVNKQWtLWHlUUVNZcVpwWml3Vm1sZ1J4cE9BRHhpVkZXTDdOZWxuQnVNZlJ1cmVrd20zbUdqNXNLNXBiWFBvOVpnME9nT01UaGVUYzk5UFZLeDc3eFhqNk1uVTN0UQ?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity Eagle-Tribune",
-"outlet": "Eagle-Tribune",
-"published": "2026-10-20T10:00:17+00:00",
-"id": "a8400b5846d43ed1",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - The Daily Gazette",
-"link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxOMXk5b2hfNWZ0RzZYM01EVmFNTXVpUTlGejBtbzlhSGJfeWVKcGxyRGJSOXlHTmpJdVVHMXNST0MtaXYwTk8taHJOSTExTGFUVHJOZ3ZKYlZDNWxQcl9mcV9WWUg0MFFxeUZKRTBvY0UxejZteW54a0Q4NUhSRWNOMjBzYTFLS1F6bFFmVk9KcHlNRHFIOUdYc3cxQllVb2paeFBGUkcxRjEwd0JOb0toVDJtT0xJd1JxaE1oSlpkc2VCbmYtYlpFZjlEWXpROV84c0o0NmJnUGhfMk5fbXpDelFSU3FBRTRLcUpOSVQ5eGRTcHNqTjNncDBEb1QwRS1ucWVZZGwtVzR2Q0R3UGhaVjBtNA?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity The Daily Gazette",
-"outlet": "The Daily Gazette",
-"published": "2026-10-20T10:00:17+00:00",
-"id": "3b8504847db228b5",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - Enidnews.com",
-"link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQYW80aDNTTjhqdEZDc1Y3VHVRV3V3SV9oMzRoNjQxRGlUT1REUzU0dFpXVjdzY3pmRVFQb0Y1ZXRZN1FSTm51WXhFU0kxaTAxQjlldzlWSkpPN2doSDZpRER6Rmg5QnBwT0NZNDVHU3lTQW5DdVVlSWF6T2tLMk1NUFcxWEVuQ2wtcW9RcXh4aHdFNzRLTFhWYmVlY1dFTkpjalMwMjJubVJ0b0I4cXBDQlB0amdjZG5MbWo0M1N3ajNpYlpJbHFVVHZCUndiYUZOdVNxdHlRWmJWVlQ5QVBtTTRRY3RxZHZNb3Y5SWJkSnRqX1piNzRwa3hUYmlqbk1VOWYwUw?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity Enidnews.com",
-"outlet": "Enidnews.com",
-"published": "2026-10-20T10:00:17+00:00",
-"id": "b54b22c66d857cc4",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - The Verde Independent",
-"link": "https://news.google.com/rss/articles/CBMijwJBVV95cUxORHlhT3UtMDJOV0g4ZDJFZEF0aWpuY1NOUmdyOFhHV2pINGJoX1Rna213V1JnOEdZUEwtekJETGlLSUp4QkZLY1dETHg0Nm54ZGJ0ZDVDQ291NWZUZTB1NTJ1aWx5M1l0R1dpQnZuTWlrdnRjMk5EQ2pDZDdqM3ZKWXBKa0hvRzdJYTlVVkEyeXVQdHdjVnVqbm16YmpyR3FXYkdFTWpPUzZHb2hoLXd0YXI2bXlISm14UTVKcFY5T0tVZ1k5aXlWTVpVdVlQZnNYNGZkSVUwczlCWl9iQVlrVzRGWlhMVW4yTDM2TDJkTXZkSHNoN3J5OFByZjBNWU5OcXRoTmtkd2hlbFBqb0l3?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity The Verde Independent",
-"outlet": "The Verde Independent",
-"published": "2026-10-20T10:00:17+00:00",
-"id": "079d56b7d0a30294",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - New Castle News",
-"link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNMXRfdzdEZVJsWnpBLVVnZjdobWl2TDk4ODB1aEdIejVzWGs0MUJST3ctbHVJZnFlOEpaUUFDZHQ0dkZvREpNeFowMl9TYlVlUWJfY19rUEN3NlhtS2hVb2Z0czZzVTFXS1QxLWNhZndYODFETDVhVldMNi1DeGd3bElwSk5tbFVGUzN4NkdQVlV2TjZZM2tmMWxRV28wamI1WEN5QnlCaUwwNy1tdXQwWWtPNEh4TDhLU3lYWkNSRzIzZl9OcC02NnZNUFZjSFdzR1VmOFlZV0I0VWotMmVRYkQteHlhQ1VKMGxVTzZMb2MwcEQ3bThDMExaZXVfbVhvcy15ZjAzMW5rbWJaNWdsWWowdw?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity New Castle News",
-"outlet": "New Castle News",
-"published": "2026-10-20T10:00:17+00:00",
-"id": "bfb43b6f352e1d56",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - couriernews.com",
-"link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPalRwajFsR1ZUT0c2WlQ3dVJaeUpidm4wYUViTW1Xa3N0QUFPcnp0ajNQSzQ3bDhfeHVid2pkcEhjNHBZdzNUaDVtNHJkZXdPZDV4NnhpSWctV1QxSTFUZFRxWUpielBucHBCMFBuRmU3cmswT250VkMyTGo1SjVHdWVxOV9FU1c1dHJfQ0NXeVBTTGh1a01Qei1wZUFXUGNfVi1XQTRUYjFUYVVhLU80T3ExTlZsRWlkZGRwWkV6UTBEQ00wNklZZHNSazRRV3dfOXQ5dGZNYms2WktRSUZHVWo2TVAzeHpWajNpc2VMeTN3TkpUWm5nVmV1NmxXamtIZVA3Nnp4dHhKTkt2SnZ6aUdR?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity couriernews.com",
-"outlet": "couriernews.com",
-"published": "2026-10-20T10:00:17+00:00",
-"id": "431e3e4738e67f38",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - Marietta Daily Journal",
-"link": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQWmExeU80NGFUTGVnejRSOHJqWTBtVWpSSDd5elZNT1hoZUUzb2xrX0ZESXl4dmNacXZsVmFrZ1VMeThyaVM0U1pvbDRRdjZ0MFBUc3BJck1XYmdXNzd2ZUZCRlN5QUtDZjJJbk5ueGF3Y3VsaWxrYnp2NmQxQVQ2azhLRkFHck5aa1V6R0cyUHdLWVhlMVppalZkV2lSUkowbWduNmUzNllCa0lUd3ltdlFLd3NCMUhUZ2VMbTZMb2JLTTRjc1EyeUdSWEFPWVo3dHBPZzhRLWRDdHd2REdDRGcyWmc3WlZtSWFHYmZZT3hJNVh5dWlHTmF1SFJMRVVEYVgxRk5NY1hQeWJKQlZv?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity Marietta Daily Journal",
-"outlet": "Marietta Daily Journal",
-"published": "2026-10-20T10:00:17+00:00",
-"id": "8b3e062ceb07a99a",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T00:04:37.627227+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - The Batesville Daily Guard",
-"link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOcHc3UFJEeDE0UFp5ZlNsbGgyM01hOEphdzVTQlBfM0ZIVGE2WVJuZFJoWW52NDBmcmJ0WnRrZlJ3VnhTRzR6YjhLSldOWUs0a0xnc2tsYWlTejNIQ1lDYlVKc1ZmSE45Ni1zbjBhZjRjb3VVLTV2Sy1pZ3YzTzY2MVFBTXB4MWR0X3VGTzVHT2Z1T2NqYlZlNEFCMGlTcUh0X2lNQ1E2T3ZZV0hORC15SF83NFRjV09lSHBBQ0pXdml2ZFZXcGN2UlplWEZCTGEtMUw0WHNTZzJCdmExM3hzZ19QVm41cFJGX2NlRGlpN21Bd2ZDazFObTZoWFlaeWdKLVYxMUJCcGxfc3F2UDdRaW5B?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity The Batesville Daily Guard",
-"outlet": "The Batesville Daily Guard",
-"published": "2026-10-20T10:00:17+00:00",
-"id": "f3c60d3c2497d728",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T04:32:33.905357+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - Audacy",
-"link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQVmdJekJaUkJ0cnFHampYaWg1NFVtQUxwanVvbHI4ZWNONHktcEdlRldiRG5lNFBxeVZDdE83MEtxenN0MGpVRzJkdjJrNlVaMTMxYWhwZ1FXRnZZR0tEU1d4WDcyMmd1UzdlWGRudWVMNEZiY0xONWtySWh4aWFNSjdwZDNHek5MckRYMUtqbURlMGd5dG5JQ0phVkpFTW9PdjZieGFwclNVUWN3UDl3?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity Audacy",
-"outlet": "Audacy",
-"published": "2026-10-20T10:00:00+00:00",
-"id": "2512741cd76d4cb5",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T04:32:33.905357+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity - Santa Fe New Mexican",
-"link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOcGp3dEw1NVUwWFVfZmFORFZOUmtuSmFkY2Zydm9zWmdfdmhlbXotNGVDUnBuS1loblcySmN0cldVR01iS0VweEU1OTY5WXM4VDFkcll3WG1GekFiSFJNWVd4cW02VDgtTFItaXlQcFhabVRZRVJndU5HcTZHaVktMzliaXZQZUZ5MGhvYkhndlNtTFFJY2tXRDREX2lxUEVTUTJPYjlXLTA3SUdVTVZpWUVLTERGMnltSmt0Y3hUMUhOTXVMMVZzczhEUFh2UlpZbnVhMm9ENktsb3diaEhfRjJPVWVGNVdRVGFSN284aC03LUZaYVdITF83UGJHMndKLVRfdC1adWRhM1VoTnc?oc=5",
-"summary": "Arizona woman's 3-year wait for an intestine shows the US organ transplant system's complexity Santa Fe New Mexican",
-"outlet": "Santa Fe New Mexican",
-"published": "2026-10-20T10:00:00+00:00",
-"id": "4fe89ae37b76e44f",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-23T12:49:21.446538+00:00"
-},
-{
-"title": "Oman and Spain cooperate to boost organ transplant service quality - Muscat Daily",
-"link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOT1oxSE40eEdlVWdlOGl0VndoclhDSHVqb3E4Sy01RVR2dWQtSE9SYlcwZ2NNNW9hUkRZYzZ5VGtrd3pjTDJnMGZfTElyelZmek9ZR2dobkIyOWtBOHpLTVhMZ3J5UjhzS3E3emlKbF9tekJXWDQxMF9ybENoWHFheURhTDFINU43SURkY1BEUHNnalA5YjhEQ0Z1YlljSkU?oc=5",
-"summary": "Oman and Spain cooperate to boost organ transplant service quality Muscat Daily",
-"outlet": "Muscat Daily",
-"published": "2026-10-20T09:46:40+00:00",
-"id": "41a40becb8f598b8",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "MEDA-PKD: a dynamic, real-time analytics platform for precision care in autosomal dominant polycystic kidney disease - Nature",
-"link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9HVDFaVEN4UnB2UFprOFktTGcwNU9nelRrVUU3bHp6cDJxSWFJbVZndXRnaDM1RHJGU244d0JGNHpQbmFuYXNLM2lpMmI5dmhTOXY4UldRVjVVUWxNYUpr?oc=5",
-"summary": "MEDA-PKD: a dynamic, real-time analytics platform for precision care in autosomal dominant polycystic kidney disease Nature",
-"outlet": "Nature",
-"published": "2026-10-20T09:35:21+00:00",
-"id": "87d4b22c1267d7cb",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Whatcom County’s Kidney Moonshot: A goal within reach - Salish Current",
-"link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQWU12Q0ItMGR2bDhIa2hMb3V3bzZ3T1RSTFQ1RzVubERyU2dYUHM5UjhQMDVlc1NHbjJZbENGRXIyVXQ2QV9BZ2oyLWpfTS1nOEpvbnpvV3hNN1A5a1ZyNmZDQWtRUGo4TEw3N2ZaSGZPUXhxWjlXOFpkdjlzdXBxVTFEaDJZY1hrcjFWWW5Fc2xBSHRS?oc=5",
-"summary": "Whatcom County’s Kidney Moonshot: A goal within reach Salish Current",
-"outlet": "Salish Current",
-"published": "2026-10-20T09:09:56+00:00",
-"id": "8947e9c23d3c28ab",
-"source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-20T12:55:15.866286+00:00"
 }
