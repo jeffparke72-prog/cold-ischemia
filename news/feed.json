@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-29T01:42:24.057619+00:00",
+"updated": "2026-10-29T08:21:00.575759+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -71,7 +71,7 @@
 "category": "Journals",
 "url": "https://onlinelibrary.wiley.com/feed/13990012/most-recent",
 "ok": true,
-"count": 30,
+"count": 1,
 "error": null
 },
 {
@@ -133,11 +133,231 @@
 ],
 "items": [
 {
+"title": "journal club",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826007246?dgcid=rss_sd_all",
+"summary": "",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441399+00:00",
+"id": "e208ac77403b772b",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Off-the-shelf CRISPR-engineered allogeneic human T-cell therapy for tolerance induction in transplantation",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826005491?dgcid=rss_sd_all",
+"summary": "By Tim Debyser, Maarten Naesens",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441385+00:00",
+"id": "42ba8116b4f14d59",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Role of erythroid fibroblast growth factor 23 in regulating erythropoiesis",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826005934?dgcid=rss_sd_all",
+"summary": "By Tilman B. Drüeke, Ziad A. Massy",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441372+00:00",
+"id": "7229f1685eef5a48",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Abnormal ER-Golgi vesicular trafficking leads to podocyte detachment",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826006393?dgcid=rss_sd_all",
+"summary": "By Yangyang Niu, John Cijiang He",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441358+00:00",
+"id": "b54059a4c6943557",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Gut-targeted interventions to complement PTH-lowering therapy",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826007106?dgcid=rss_sd_all",
+"summary": "By Norisuke Shimamura, Hirotaka Komaba",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441345+00:00",
+"id": "bd36b26f097354e1",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Are we ready for the widespread application of transcutaneous measurement of the glomerular filtration rate?",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826007052?dgcid=rss_sd_all",
+"summary": "By Tobias T. Pieters, Paul J. Besseling, Jaap A. Joles",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441332+00:00",
+"id": "cf6ef2ef834b9767",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Fingerprinting the polycystic kidney: radiomics of the noncystic parenchyma for earlier ADPKD detection",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826007040?dgcid=rss_sd_all",
+"summary": "By Timothy L. Kline",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441317+00:00",
+"id": "948dcef300f0edf3",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Microvascular inflammation in kidney transplants: finally an effective treatment?",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826007064?dgcid=rss_sd_all",
+"summary": "By Mark Haas, Jean Hou, Agnes B. Fogo",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441304+00:00",
+"id": "96e5c6e43e81efc5",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Estimating GFR: what it is, what it is not, and why prediction cannot settle the question",
+"link": "https://www.sciencedirect.com/science/article/pii/S008525382600640X?dgcid=rss_sd_all",
+"summary": "By Pierre Delanaye, Rajiv Agarwal",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441290+00:00",
+"id": "6b631190ea6a6246",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "The macrophage paradox in renal AL amyloidosis: lessons from histology and imaging",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826007180?dgcid=rss_sd_all",
+"summary": "By Giovanni Palladini, Loreto Gesualdo",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441277+00:00",
+"id": "b055bf6ac51b039c",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Fetal growth restriction and lifelong risk of acute kidney injury: advancing the developmental origins of kidney disease",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826006411?dgcid=rss_sd_all",
+"summary": "By Patience Obiagwu, Valerie A. Luyckx",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441263+00:00",
+"id": "0a713f90fc120957",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Hyponatremia treatment guidelines: a necessary course correction",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826005016?dgcid=rss_sd_all",
+"summary": "By Michael L. Moritz, Agustín Ciapponi, Chi-yuan Hsu, Sagar U. Nigwekar, Aneesh B. Singhal, Connie M. Rhee, Kamyar Kalantar-Zadeh, Sushrut Waikar, Csaba P. Kovesdy, Juan Carlos Ayus",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441249+00:00",
+"id": "3035fe08fea2c022",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Slow correction of severe, chronic hyponatremia prevents neurologic complications",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826005508?dgcid=rss_sd_all",
+"summary": "By Richard H. Sterns, Helbert Rondon-Berrios",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441232+00:00",
+"id": "08030e3d8e62569e",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Correcting hyponatremia: how slow should we go?",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826005090?dgcid=rss_sd_all",
+"summary": "By Tilman B. Drüeke",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441219+00:00",
+"id": "0f5b8e01e7649c62",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Outcomes from the International Society of Nephrology forum on complement therapeutics in C3 glomerulopathy and IgA nephropathy",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826007118?dgcid=rss_sd_all",
+"summary": "By David Kavanagh, Areefa Alladin-Karan, Suceena Alexander, Sophie Chauvet, Chee Kay Cheung, H. Terence Cook, Fadi Fakhouri, Véronique Frémeaux‑Bacchi, Daniel P. Gale, Peter Garred, Richard A. Lafayette, Alison L.T. Ma, Carla…",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441205+00:00",
+"id": "7e3db4ee6bcaea50",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "SEISMIC: a multistakeholder summit addressing access issues in diagnosis and treatment of C3G nephropathy and IC-MPGN",
+"link": "https://www.sciencedirect.com/science/article/pii/S008525382600712X?dgcid=rss_sd_all",
+"summary": "By Carla Nester, Joshua Tarnoff, Susan Brisendine, Laurel Damashek, Angel Morales, Lindsey Fuller, Marianne Silkjaer Nielsen, Giulia Bassanese, David Feldman, Daniel P. Gale, Tobias B. Huber, David Kavanagh, Antonia King, Doug…",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441176+00:00",
+"id": "5ecbfcb57cf00cbf",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Kidney Disease: Improving Global Outcomes (KDIGO) life cycle of guideline development series: part 3: evidence synthesis for guideline development: the KDIGO approach",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826004230?dgcid=rss_sd_all",
+"summary": "By Laia Oliveras, Benjamin Lazarus, Amara Sarwal, Elie A. Akl, Chris Carmona, Imuetinyan Edeki, Jitendra Meena, Joyce Popoola, Robin Vernooij, Gihad Nesrallah, Amy Earley, Reem A. Mustafa",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441154+00:00",
+"id": "9ee9bdf197d4420a",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Kidney Disease: Improving Global Outcomes (KDIGO) life cycle of guideline development series: part 4: translating evidence into KDIGO guideline statements",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826004242?dgcid=rss_sd_all",
+"summary": "By Laia Oliveras, Amara Sarwal, Benjamin Lazarus, Elie A. Akl, Chris Carmona, Imuetinyan Edeki, Jitendra Meena, Joyce Popoola, Robin Vernooij, Gihad Nesrallah, Amy Earley, Reem A. Mustafa",
+"outlet": "",
+"published": "2026-10-29T08:20:06.441136+00:00",
+"id": "1a38d8eab583e4d0",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Living Liver Donors With Obesity and Metabolic Risk: Review and Guidance on Donor Triage and Care",
+"link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70681?af=R",
+"summary": "Clinical Transplantation, Volume 40, Issue 11, November 2026.",
+"outlet": "Wiley: Clinical Transplantation: Table of Contents",
+"published": "2026-10-29T04:45:56+00:00",
+"id": "f5b64c8ca0a283a1",
+"source": "Clinical Transplantation",
+"category": "Journals",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "After two-year search, woman’s coworker turns out to be a match for kidney transplant - WGNO",
+"link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRFV1RnA4MHJyanZVUF9zeHB1eGRkc0hTQkMxUlllWHJTbmNvM0Q1NGtqUVpJM2toN29zWkw0YWF0TVVOTG1rNUJFZllYbFNHaTJtN0p3VlpVRVhxYWdqb1kwQ3pkZ2t5X0RxWGZSblpPblRpUjlRVWpoUlRjdHZGRS1CemlYN1Q4VUNpeUV3WjBROGRnTDRxNGZwazBQRUxEQTVhSnI5ZmcxZXB6a1lR0gG0AUFVX3lxTE1ibW9MNldfdWVNT2xnRTNRV3p2RTFvLW1JQWhxaWtPeDFHcVNEMjZXcmhON0ZhVWlTakJqc2ZfUlBqekJzQTNJTEpJdHBvejhRRXc3M3VaZ0VVQlRQbHJBd0lETVVOSEhlVnhZNlpmSVphWnpyVTdnQTFJRlVSdmdNd1gwMFg1aUo2YXI2RFNNMjVCamVvdzFZU0JvYlZXYVFZZmJBVy1JcDI4TE8ySXpwenJrbw?oc=5",
+"summary": "After two-year search, woman’s coworker turns out to be a match for kidney transplant WGNO",
+"outlet": "WGNO",
+"published": "2026-10-29T02:35:48+00:00",
+"id": "5ad3e52a97b19fad",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
 "title": "The teleologic basis of kidney potassium handling: a conceptual review",
 "link": "https://www.sciencedirect.com/science/article/pii/S0085253826006150?dgcid=rss_sd_all",
 "summary": "By Biff F. Palmer, Deborah J. Clegg",
 "outlet": "",
-"published": "2026-10-29T01:41:28.634807+00:00",
+"published": "2026-10-29T01:42:24.057619+00:00",
 "id": "d5914cea753725ca",
 "source": "Kidney International",
 "category": "Journals",
@@ -148,7 +368,7 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S008525382600606X?dgcid=rss_sd_all",
 "summary": "By Atsuhiro Imai, Kazunori Inoue, Xie Min-Jue, Natsune Tamai, Motoko Shimada, Takehito Harimoto, Hiroki Okushima, Ayumi Matsumoto, Jun Matsuda, Hideo Matsuzaki, Shuta Ishibe, Yoshitaka Isaka, Isao Matsui",
 "outlet": "",
-"published": "2026-10-29T01:41:28.634779+00:00",
+"published": "2026-10-29T01:42:24.057619+00:00",
 "id": "14abbd3126bf8a51",
 "source": "Kidney International",
 "category": "Journals",
@@ -159,7 +379,7 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S0085253826006976?dgcid=rss_sd_all",
 "summary": "By Matthew R. Allen, Corinne E. Metzger, Neal X. Chen, Shruthi Srinivasan, Kalisha O'Neill, Hannah E. Wilson, Karis L. Blacklock, Emily K. Matter, Daniel J. Stephen, Karisa M. Ecker, Ariana Moffitt, Annabel Biruete, Sharon M. Moe",
 "outlet": "",
-"published": "2026-10-29T01:41:28.634742+00:00",
+"published": "2026-10-29T01:42:24.057619+00:00",
 "id": "f971812fe430efa7",
 "source": "Kidney International",
 "category": "Journals",
@@ -170,7 +390,7 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S0085253826006964?dgcid=rss_sd_all",
 "summary": "By Nirmal P. Bhatt, Theresa T.H. Nguyen, Giulia Iacono, Gabriel R. Rodriguez, Connor R.B. Anderson, Andrew Perry, Christopher K. Barlow, Dovile Anderson, Gaetan Burgio, Benjamin J. Marsland, Simon H. Jiang, Aniruddh V. Deshpande,…",
 "outlet": "",
-"published": "2026-10-29T01:41:28.634696+00:00",
+"published": "2026-10-29T01:42:24.057619+00:00",
 "id": "a9f7e88f22fabb41",
 "source": "Kidney International",
 "category": "Journals",
@@ -181,7 +401,7 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S008525382600699X?dgcid=rss_sd_all",
 "summary": "By Tingting Xie, Hao Qi, Piaoyu Dai, Changhan Chen, Yiyan Wang, Zhenjiang Li, Weilun Huang, Wuping Liu, Mengzhi Wu, Yujin Zhang, Ziqing Gao, Haosen Xu, Lijun Zuo, Qingyang Liu, Benjamin C. Brown, Angelo D'Alessandro, Rodney E.…",
 "outlet": "",
-"published": "2026-10-29T01:41:28.634632+00:00",
+"published": "2026-10-29T01:42:24.057619+00:00",
 "id": "e9bf89de7b7edfed",
 "source": "Kidney International",
 "category": "Journals",
@@ -192,7 +412,7 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S0085253826006034?dgcid=rss_sd_all",
 "summary": "By Satoshi Shimada, Ranjan K. Dash, Allen W. Cowley",
 "outlet": "",
-"published": "2026-10-29T01:41:28.634592+00:00",
+"published": "2026-10-29T01:42:24.057619+00:00",
 "id": "9ab8303f14e19660",
 "source": "Kidney International",
 "category": "Journals",
@@ -203,10 +423,32 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S0085253826004771?dgcid=rss_sd_all",
 "summary": "By Linnea E. Kremer, Madison E. Kretzler, Christina J. MacAskill, Jacob B. Smothers, Chris A. Flask, Katherine M. Dell, Pottumarthi V. Prasad, Mihai C. Giurcanu, Feng Li, Samuel G. Armato, Arlene B. Chapman",
 "outlet": "",
-"published": "2026-10-29T01:41:28.634559+00:00",
+"published": "2026-10-29T01:42:24.057619+00:00",
 "id": "768e3785b2a2efb6",
 "source": "Kidney International",
 "category": "Journals",
+"first_seen": "2026-10-29T01:42:24.057619+00:00"
+},
+{
+"title": "13Investigates: Nearly 50% of Albany dialysis patients struggle for food - WNYT.com",
+"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNzFtOERVWVNVZ2c2OGt4ZnhEZ1kxMzU2SlFtdWg4OGt2X0lWSGNuNUtMdDlVaWQwY1FzYThTSnBzQ1R4bkZDZzFtV3ZkcHBhWC1qQUZmTVhmc3IwMTNYWTdMSUVjUTFKS1VQUHZON2t1eDBETmJZVWlxTmpkVEI2SWxXeGVZU3I2WG9EOVd6VmhDcHA0THlYaDNCVG5lV3cxaGUzOWZMb1ZyR19pamtXN0JUQXZybjA?oc=5",
+"summary": "13Investigates: Nearly 50% of Albany dialysis patients struggle for food WNYT.com",
+"outlet": "WNYT.com",
+"published": "2026-10-29T01:42:24.057619+00:00",
+"id": "a2006e61f19381ed",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-29T01:42:24.057619+00:00"
+},
+{
+"title": "Hairy Cell Leukemia With Kidney Failure: Targeted Therapy Opens the Door to Transplant - Cure Today",
+"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPXzJGZjYyNzhhd3Zma0RqOEhEUWdVdEtmZUlkQVVfQTdfZWc2dWk4NnN4RF9kUVl4ZDhGdFhYZUhHLW44S2traU5wWmZhdVpRUUZYWFh6Q0Q3NTVLd3B2QVp3anR0MFZQM2cwdXpLYmNQZGViTTByZjhvVHh1ZTh5NjRGT1B4cFV1TzFMQnRZQV9tWEtacDdQamhNZktmOHdFWkxpRlhVRjVGb3dwWmFLbFJYMHRRU1k?oc=5",
+"summary": "Hairy Cell Leukemia With Kidney Failure: Targeted Therapy Opens the Door to Transplant Cure Today",
+"outlet": "Cure Today",
+"published": "2026-10-29T00:32:19+00:00",
+"id": "a3ec70d652bde07b",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
 "first_seen": "2026-10-29T01:42:24.057619+00:00"
 },
 {
@@ -219,6 +461,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-29T01:42:24.057619+00:00"
+},
+{
+"title": "Former Ohio State teammates share bond through kidney donation - Buckeyes Wire",
+"link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQcDVFZkhqXzM5YTFEQ0hkRXk3R1JPX3RVQlM3UUxNalhxRUx3QXdSMDJOVkJQTEFJczlTUG1FT2hiMzE2TUkwMUZEclh0ZGFRa3B5MlQ1c0xWRlVfSTlMdjVzUXhWeUlOcFJ2eU94dXRncDh1c3lIQ2stY3QtbDJfTl8tUEFfeWxYa2FFQU80NEI1UDRRRVBXQmkwZ3ljVUVXUXAzWE1qbXZVTDFmbXVQcnprXzFNdGNiNVBocVBfSWhSWkJQV1hhd1NIOFJ0WXRpaUltMUY2dzVNbEMxZ3lneTlJYjBQNjlaMlZraU93U29sdTI0RHBXRm1BeWhYVmRm?oc=5",
+"summary": "Former Ohio State teammates share bond through kidney donation Buckeyes Wire",
+"outlet": "Buckeyes Wire",
+"published": "2026-10-29T00:00:00+00:00",
+"id": "6d51a49b23b72019",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
 },
 {
 "title": "Nj Family Sues Organ Donation Network - News12 | Long Island",
@@ -254,12 +507,12 @@
 "first_seen": "2026-10-29T01:42:24.057619+00:00"
 },
 {
-"title": "Hairy Cell Leukemia With Kidney Failure: Targeted Therapy Opens the Door to Transplant - Cure Today",
-"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPXzJGZjYyNzhhd3Zma0RqOEhEUWdVdEtmZUlkQVVfQTdfZWc2dWk4NnN4RF9kUVl4ZDhGdFhYZUhHLW44S2traU5wWmZhdVpRUUZYWFh6Q0Q3NTVLd3B2QVp3anR0MFZQM2cwdXpLYmNQZGViTTByZjhvVHh1ZTh5NjRGT1B4cFV1TzFMQnRZQV9tWEtacDdQamhNZktmOHdFWkxpRlhVRjVGb3dwWmFLbFJYMHRRU1k?oc=5",
-"summary": "Hairy Cell Leukemia With Kidney Failure: Targeted Therapy Opens the Door to Transplant Cure Today",
-"outlet": "Cure Today",
-"published": "2026-10-28T23:02:55+00:00",
-"id": "a3ec70d652bde07b",
+"title": "MUSC Health Lancaster kidney transplant program grows into regional model - The Times and Democrat",
+"link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZFNFZkc5MUdNbG1BTmZYd3EwRVNRa3I1TmRnWE1DQl8tX1lBR29UOXhVN3BFaVpVY0w5bVJPVmYtaDFUaGhYWTA0SGZqcElrN082RHZXM2hOWFZtZi1sWmZkLW9qWTE1MmFwUVFwcUl6T0RqUWRkQ0Z3Y3hLTlpBbm4zMndkLVBzejNVdkpR?oc=5",
+"summary": "MUSC Health Lancaster kidney transplant program grows into regional model The Times and Democrat",
+"outlet": "The Times and Democrat",
+"published": "2026-10-28T22:57:42+00:00",
+"id": "7fdb7ad7fe753fed",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-29T01:42:24.057619+00:00"
@@ -276,17 +529,6 @@
 "first_seen": "2026-10-29T01:42:24.057619+00:00"
 },
 {
-"title": "13Investigates: Nearly 50% of Albany dialysis patients struggle for food - WNYT.com",
-"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNzFtOERVWVNVZ2c2OGt4ZnhEZ1kxMzU2SlFtdWg4OGt2X0lWSGNuNUtMdDlVaWQwY1FzYThTSnBzQ1R4bkZDZzFtV3ZkcHBhWC1qQUZmTVhmc3IwMTNYWTdMSUVjUTFKS1VQUHZON2t1eDBETmJZVWlxTmpkVEI2SWxXeGVZU3I2WG9EOVd6VmhDcHA0THlYaDNCVG5lV3cxaGUzOWZMb1ZyR19pamtXN0JUQXZybjA?oc=5",
-"summary": "13Investigates: Nearly 50% of Albany dialysis patients struggle for food WNYT.com",
-"outlet": "WNYT.com",
-"published": "2026-10-28T22:13:35+00:00",
-"id": "a2006e61f19381ed",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-29T01:42:24.057619+00:00"
-},
-{
 "title": "New Jersey family sues organ procurement organization - CBS News",
 "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPQWFYZDZPUnhKUDJZTHVSR3owWXFsN2VIMUc5M0NDOEpkeDRCVFRQODhuMFcxYU1sUk90R3dNRkJidmxGWWxVWktHVk14YTdJWURCQ2Vod19oSDRuZWM0OEk4Z2VtUEpMRXJmdUlQcnd3QmFSU1pYSDg5OExiWmttbERUVnYteFFrVmJaYnhUbDVReS1EcjBF?oc=5",
 "summary": "New Jersey family sues organ procurement organization CBS News",
@@ -299,7 +541,7 @@
 },
 {
 "title": "HHS Raises Dialysis Reimbursements, Updates Quality Standards - Bloomberg Law News",
-"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOYTdiOUNZQmtBRzVjNTdNZWVMRjd3YVd1c0RYcWRhN2VVMzNCNll0a09KNE9ZWWRUVE9XVE9iWS01aEJMX2tPcWxQTi1RVXQ3UC1NT1ZiSWItOW0yR0FINzNBR2tIcWFuMTYzcnZNWGRKT0NWY1NHc0EwZzJ6RG9DYzF5ZFM5MUNqZDhzeGdBMlo2MzhJQS02OWQxbk4wZzdtd0x5M295R2hjZEtTOWNDTm0tZFJldw?oc=5",
+"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPb0hxZ2QwazNobUZEeUtnWUNROHFpcUlEOERvMm03Z1JXMkp4R3RSb2p0ZEVEdi1YaU1mZWF5ajVneENTRmZqLWJSemc3bERrVzhZbk01YkFzcDVaUXVqM0g1SWZjM2lRdGEweWR4NEc3VWwxbHF2Uzl1U21DTHUyMk5udjNTeWpub2RqSFp3UndOUFpvNGNIb1ZCakowazRPOUNjZ1NVQU5nQnByNzlzbjFpRVI?oc=5",
 "summary": "HHS Raises Dialysis Reimbursements, Updates Quality Standards Bloomberg Law News",
 "outlet": "Bloomberg Law News",
 "published": "2026-10-28T21:02:00+00:00",
@@ -313,7 +555,7 @@
 "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNeXV4cWRZRU1wVzhvSHpYbXpoZkt1UldaMjFPa3ZPNkJoZS0zN3FtblJDcmtGZUJjbjR2bnhUdWRQeVJGMlNrcTNRdFpnTmRMeXJyTHUzOVhEYU1CVWxWWjFsYzZLSndlckl2NFBlYmFlTjc5Y1ZXRm1qSEhTZU5IV2xWcERWcFA4bUh2MDlSbmgxdmZtVGxaRlpR?oc=5",
 "summary": "Challenging the Myth of Potassium Restriction in Kidney Disease HCPLive",
 "outlet": "HCPLive",
-"published": "2026-10-28T20:40:04+00:00",
+"published": "2026-10-28T20:43:32+00:00",
 "id": "2eaec4893b251a1f",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
@@ -562,6 +804,28 @@
 "first_seen": "2026-10-28T21:52:46.272451+00:00"
 },
 {
+"title": "Long-term patient and graft survival for children and young adults after kidney transplantation and re-transplantation - results from the ERA Registry.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42951115/",
+"summary": "Preka E, Bonthuis M, Marks SD et al. American journal of transplantation : official journal of the American Society of Transplantation and the American Society of Transplant Surgeons",
+"outlet": "Am J Transplant",
+"published": "2026-10-28T12:00:00+00:00",
+"id": "71de694b20806b9a",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Robotic Living Donor Hepatectomy After Previous Abdominal Surgery: Feasibility in a Carefully Selected Cohort.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42950833/",
+"summary": "Hallesy J, Park AM, Imai D et al. The American surgeon",
+"outlet": "Am Surg",
+"published": "2026-10-28T12:00:00+00:00",
+"id": "a9cee6ee43caa81e",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
 "title": "Lab-Grown Blood Vessel Got Women on Dialysis Off Catheters Months Sooner Than Fistulas in Interim Phase 3 Data - Medical Daily",
 "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUmtjaENjWDNaZDltNUR5TWRoYlQ5c01aMmVkNzdrNENnUWw4N0ZBQVowTEZiU19hRktjdlRFUXVqclNKc19LRE9kMlVqTFg3QS10OVR1VmZqdGNlWnp0TEN5TmtpcFVJX0hLbGpRTTBleTVWenVRRUFTVUkyRVdmMTV3d1lMU3c?oc=5",
 "summary": "Lab-Grown Blood Vessel Got Women on Dialysis Off Catheters Months Sooner Than Fistulas in Interim Phase 3 Data Medical Daily",
@@ -738,6 +1002,28 @@
 "first_seen": "2026-10-28T11:33:20.939584+00:00"
 },
 {
+"title": "Watchdog places dialysis unit in special measures - BBC",
+"link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1UbHFsams1S0VENmthNUN5VG15MXhldmRzSGdZRWhveExERE1CVmdUZGk5RjBZQkJ5Z0lueG1SbGVEY2ROWnNDV0JZQ3c1ZTdVVnVtZUQ5bV83Sk0?oc=5",
+"summary": "Watchdog places dialysis unit in special measures BBC",
+"outlet": "BBC",
+"published": "2026-10-28T08:25:50+00:00",
+"id": "145041cb96b1f2ec",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
+"title": "Cementos Molins prevé que las ventas de 2026 superen en unos 700 millones de euros las de 2025 - TradingView",
+"link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBQX0lyRDFhY0x5QnRfaVYwQ2RacVNISFhYUWdlTE9tdEl1V1FvT2FnWUJsT0h6T1dWX2hGTG5lYlo1M1o2YS0tTV94SXNVVmJoOUpWejk5Tk1nY2NMQW9fRzBUeUg1UURURGltZkE4YmFDS00tZW8tbg?oc=5",
+"summary": "Cementos Molins prevé que las ventas de 2026 superen en unos 700 millones de euros las de 2025 TradingView",
+"outlet": "TradingView",
+"published": "2026-10-28T07:48:24+00:00",
+"id": "b7b86a9448d2552f",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
+},
+{
 "title": "WHO calls for strict safeguards on organ donation by minors in Viet Nam - en.baochinhphu.vn",
 "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOYU9YOXhZNG1lR2stNVZmSkxDSGcyc1hTS0ZYc05OR2pvWGQwNVY1Z0hLZHQya1BSeTk0bWVTWmxMaW9QM2JHSWFKaUVPTTUtQnF3YTUyV191UWliUFUzUDdJbEVscXJ4OE10SVV6MEhLQk1RSlhsdEdIVzRwakMyRTY3Sm8wM1NNOEJ3dDROOEZVZk1vX09nUklsUUp6NnpoY2lzRFdxLTlra1BaVWx5U044bWM3UmdBcmN0Ng?oc=5",
 "summary": "WHO calls for strict safeguards on organ donation by minors in Viet Nam en.baochinhphu.vn",
@@ -758,6 +1044,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Korean study aims to uncover hidden heart risks in diabetic kidney disease - Korea Biomedical Review",
+"link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9YV2NVNFdwdTVJNEFBaXBCcmdMY2lHcG5sQzVZWW1nU3NpWndLbzJ3MGxsbzdWZy1ob2pNTk1ibDZYcWhwSF9lTjdLaDFrN3g3dWc4U2V1OTcyUEphQnp1bUZGUlJFMlZXM0lXZEln?oc=5",
+"summary": "Korean study aims to uncover hidden heart risks in diabetic kidney disease Korea Biomedical Review",
+"outlet": "Korea Biomedical Review",
+"published": "2026-10-28T05:36:11+00:00",
+"id": "b88092bd7a9daad5",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
 },
 {
 "title": "More people are registered as ‘having no objection to organ donation’ - Centraal Bureau voor de Statistiek | CBS",
@@ -804,17 +1101,6 @@
 "first_seen": "2026-10-28T17:19:29.307546+00:00"
 },
 {
-"title": "MUSC Health Lancaster kidney transplant program grows into regional model - The Times and Democrat",
-"link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZFNFZkc5MUdNbG1BTmZYd3EwRVNRa3I1TmRnWE1DQl8tX1lBR29UOXhVN3BFaVpVY0w5bVJPVmYtaDFUaGhYWTA0SGZqcElrN082RHZXM2hOWFZtZi1sWmZkLW9qWTE1MmFwUVFwcUl6T0RqUWRkQ0Z3Y3hLTlpBbm4zMndkLVBzejNVdkpR?oc=5",
-"summary": "MUSC Health Lancaster kidney transplant program grows into regional model The Times and Democrat",
-"outlet": "The Times and Democrat",
-"published": "2026-10-28T05:00:00+00:00",
-"id": "7fdb7ad7fe753fed",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-29T01:42:24.057619+00:00"
-},
-{
 "title": "WHO urges caution over organ donation by children under 18 in Vietnam - Tuoi Tre News | The News Gateway to Vietnam",
 "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNcTVaam1TMFp4VVU0dHdNR3FTVGQzM0VzclJEN1hTWDdLSHVUeXBVRW9BdGFBVG52SEh6Sk9LTVVzSm50enBzTU9KbkJFQkFzUHVncFl4YkdSS3BrcFN1elJ3VkFzdE8tX2Z6Y2FQVElKbGdnd2FwMHlnWXNOSGRVNzkxQ1dJOVppVU9BVElNdE1vaHZRS3h3WTNIaFU3ZjFkOFVUdU9kMTlUZzJJSkZNNVE2UVBBQWc?oc=5",
 "summary": "WHO urges caution over organ donation by children under 18 in Vietnam Tuoi Tre News | The News Gateway to Vietnam",
@@ -859,17 +1145,6 @@
 "first_seen": "2026-10-28T05:24:03.777174+00:00"
 },
 {
-"title": "Madison County family raises awareness about safe organ procurement - WKYT",
-"link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNX0NrQnNERFh1T1VHeF9sZlF0Z3dNRUVST2hJQlp1SW5PZGFDaE1TUWhvdGVrSmo3OXRkV3U4MnJaZk5XYXU1S3MwVE44MEM2azdZbkhTaWFkUVFETW44dVVWNXhPbjhVd2F5ZzlnWjFCa2o4TEdRVUt5Tnd2VnYzS3RRMTU5anZFUHdZWjg3LUVFX1pzVExlRzBSZkVuYjJ2TnfSAbYBQVVfeXFMTTNsbkY5ZXlRbzZxUGpIVHVZVjRLWEZZODVHNlpraVFDN0pPbE1RLUpUQjlCSlg4R20wUzRBM0I1ajF4T29PQ2NmS3lkYjllQ2V2aVlnSEJDQTBkZWl5TExjNlRFZl92Q1RHc2JCY0kwRHhHa2Z3b0FEbWdyVVEzSnhUVFZZcXFZZlZjMWZaRnJBN3F5cDhIWFV2Mi1ubFB3SHVjVWpZZkFOSXhwOThoVlkwYlVuSGc?oc=5",
-"summary": "Madison County family raises awareness about safe organ procurement WKYT",
-"outlet": "WKYT",
-"published": "2026-10-28T02:49:00+00:00",
-"id": "3fecc89e24723d59",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-28T05:24:03.777174+00:00"
-},
-{
 "title": "Dialysis center to pay $175K after deaf Lexington patient denied interpreter - FOX 56 News",
 "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQbzVBcXNhc2YyUENDSG9GUGtCZ25TTjJuR3NoUG9tNVJMT2FFOHZyYUhoOElPdkNhMFJBbEFZeXVqV0pTaEEyYVN2QW9qbkpuX0xvTkdLbUNjaTA5WHYzcWEwWURXS1ZFY0tmcEpkRGxRajAwY2JMZUFZWmdVMVZOOFlGemdfS3ROZHVXQnlGelQtNEdxYXJVX1lRek5fbUpiLV9lVUxFTDBidmc3QTJtRGlyQU5NR290N1ZR0gHAAUFVX3lxTE4zd3ZQejJrYzU4T19qRFpiTW5FZ2FNR1VoZGpyTnBadl9HalUtN25GdTVzU0lLQl9sUzhscWs1R1dTQ2NxRjZ1M1RGbHBVZVlBSzZUUTVNVWlvc3R2LW5CUzNaR0JfX29oaEMwT1B6WWlhSnZOWGw0ZVFLOE5ENzdPTTFNQVl0bjlQSzdwN3NoN1psbnplSEVmQ1d1OS1FRTVTdmctNlpDYngwMTJlcDA1TWxQSHhiU3NuSUM5SUNLSw?oc=5",
 "summary": "Dialysis center to pay $175K after deaf Lexington patient denied interpreter FOX 56 News",
@@ -877,6 +1152,17 @@
 "published": "2026-10-27T23:35:42+00:00",
 "id": "d6b8d8caadd7f298",
 "source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-28T05:24:03.777174+00:00"
+},
+{
+"title": "Madison County family raises awareness about safe organ procurement - WKYT",
+"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOcGZZNXNkUTdmWU5UUXRhb2xMOUpXbHZFcHRwMWZCdzVvMUVqZnQtQUNldTlJS0NjRjdtOEdsWnV6VkFSMzRKcnRZc1JHZFpDTUxWOVRFbFh4bF82Q3J4ejNjTjJIMkJ1bi16ZmYySGMxbmluOUhsZTQwNGhJOG1qNE5nTWF4WFFPTTFsbGJtTGpGT0VtRGR4Y0tvdzBMZmowYVJUS3lKc283dw?oc=5",
+"summary": "Madison County family raises awareness about safe organ procurement WKYT",
+"outlet": "WKYT",
+"published": "2026-10-27T23:28:36+00:00",
+"id": "3fecc89e24723d59",
+"source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-28T05:24:03.777174+00:00"
 },
@@ -923,6 +1209,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-27T23:57:40.490818+00:00"
+},
+{
+"title": "Fireside chat held in Montgomery on kidney disease care in Alabama - WSFA",
+"link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOVHhlZXhWSTAxWFZOVS1Fc2UtTlRIUnZsbm93azBRWXJ6VHYzMjdlLWxjLXVzSm1kWGIyVnFzVnNZNGtkVGNfSEduRE9MbUowRm53NnRHX193b0wyNmFWZXFiRlpnUWc5b2tBUVJkTlZZM2tXTlZQdDFIZlo0eGU3dC1KcC0zQXB5b0JQUEFNVkJXTDhoeE90bXk3eDk?oc=5",
+"summary": "Fireside chat held in Montgomery on kidney disease care in Alabama WSFA",
+"outlet": "WSFA",
+"published": "2026-10-27T21:00:00+00:00",
+"id": "d76d0a628f9fc505",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
 },
 {
 "title": "HHS decertifies organ procurement organization serving Kentucky, RFK Jr. says - Z93 Country",
@@ -1002,17 +1299,6 @@
 "first_seen": "2026-10-28T05:24:03.777174+00:00"
 },
 {
-"title": "UC Davis Health performs first HIV-to-HIV kidney transplant - UC Davis Health",
-"link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdFVLRERTVTRicHc1a3dkOXNXaVlySzNVUjAwcXNTSlA1SC1WTHJwMnJXSTFtLW04SGY5M2xuYjUwOTN0S253TEt0UGY4UThWVm82aTMwOGFuUDE5OUtkMzYwdjlrbFFwaXNEMTBzYVh1R08wRVhBNllyQnVGT1IyTnk2cUFqaGk4cWNoN25EMVZSZ1czc210eklNanJseTR6NjJuMGF4aFY2cVphRGc?oc=5",
-"summary": "UC Davis Health performs first HIV-to-HIV kidney transplant UC Davis Health",
-"outlet": "UC Davis Health",
-"published": "2026-10-27T17:05:08+00:00",
-"id": "095cd95d2b6a2d7b",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-27T20:35:48.954336+00:00"
-},
-{
 "title": "UC Davis Health Performs First HIV-to-HIV Kidney Transplant - Mirage News",
 "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZURJa2tXb0lRQm5DYlNyM1F6aXJFeGthYUsyQUFvZ1JxMkZBOFVOaVB3RkdLVzR4QUYwN0xIajhvMGxweU1vTTZUMkRZTHpVa2Z2NVBZLXpCWGtDMnl6Q3F1UVVrQmUtcTJtS3Vpb2prY1pjYUszdHZjSWJGOW45c0R0QQ?oc=5",
 "summary": "UC Davis Health Performs First HIV-to-HIV Kidney Transplant Mirage News",
@@ -1053,6 +1339,17 @@
 "published": "2026-10-27T16:03:00+00:00",
 "id": "9bcdede3f96ac9e4",
 "source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-27T20:35:48.954336+00:00"
+},
+{
+"title": "UC Davis Health performs first HIV-to-HIV kidney transplant - UC Davis Health",
+"link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdFVLRERTVTRicHc1a3dkOXNXaVlySzNVUjAwcXNTSlA1SC1WTHJwMnJXSTFtLW04SGY5M2xuYjUwOTN0S253TEt0UGY4UThWVm82aTMwOGFuUDE5OUtkMzYwdjlrbFFwaXNEMTBzYVh1R08wRVhBNllyQnVGT1IyTnk2cUFqaGk4cWNoN25EMVZSZ1czc210eklNanJseTR6NjJuMGF4aFY2cVphRGc?oc=5",
+"summary": "UC Davis Health performs first HIV-to-HIV kidney transplant UC Davis Health",
+"outlet": "UC Davis Health",
+"published": "2026-10-27T16:00:45+00:00",
+"id": "095cd95d2b6a2d7b",
+"source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-27T20:35:48.954336+00:00"
 },
@@ -1121,6 +1418,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-28T17:19:29.307546+00:00"
+},
+{
+"title": "Temporal trends in incidence, DALY rate and mortality rate of chronic kidney disease in China - EurekAlert!",
+"link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5LSTIwb2hhNEV4MHFBX2RyekVyckRXNzVWdkVKOF91aFNKUXBYdExuaWw3WHg1VEN4dnFqSEU5MGIzNVNmejAtbDUwaTNwRVJwSHBzaV9DMks?oc=5",
+"summary": "Temporal trends in incidence, DALY rate and mortality rate of chronic kidney disease in China EurekAlert!",
+"outlet": "EurekAlert!",
+"published": "2026-10-27T13:42:21+00:00",
+"id": "a12997f3c13e8bf7",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-29T08:21:00.575759+00:00"
 },
 {
 "title": "Minister of Health: Improving regulations on tissue and organ donation and transplantation to expand opportunities for saving patients' lives. - Vietnam.vn",
@@ -1288,6 +1596,17 @@
 "first_seen": "2026-10-27T15:58:59.831204+00:00"
 },
 {
+"title": "The Transplant Turning Point: How Ukraine Learned to Save Lives Through Organ Donation - uatv.ua",
+"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTWdSUWtnaFlqRkVCbEk3M1hVeFdvX3ZsdHlaY21iQ3pqS1A3TGZyRVRWWmZIc18xdU9FcXliMjVtLXBMSktDQkpvT2xQY3RWTTlaTWxzbmwzc0g4c0QwX3JxQks0MWxRS1BoVDI3UG4yV3dhYUk3ZTZ4WlpzVXJZMC1GMTVweUV3SWw5RWFEc25CbW9aTGdITHdGQy1JMW0tQkVLcmdkR3A?oc=5",
+"summary": "The Transplant Turning Point: How Ukraine Learned to Save Lives Through Organ Donation uatv.ua",
+"outlet": "uatv.ua",
+"published": "2026-10-27T11:00:12+00:00",
+"id": "eedcfa988c419519",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-27T15:58:59.831204+00:00"
+},
+{
 "title": "Fundamental Strategies and Technical Perspectives in Bile Duct Anastomosis for Living Donor Liver Transplantation: Growth From Novice to Maturity.",
 "link": "https://pubmed.ncbi.nlm.nih.gov/42934937/",
 "summary": "Kim SM, Kang WH, Hwang S et al. Annals of transplantation",
@@ -1319,17 +1638,6 @@
 "source": "American Journal of Transplantation",
 "category": "Journals",
 "first_seen": "2026-10-27T10:22:27.633524+00:00"
-},
-{
-"title": "The Transplant Turning Point: How Ukraine Learned to Save Lives Through Organ Donation - uatv.ua",
-"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTWdSUWtnaFlqRkVCbEk3M1hVeFdvX3ZsdHlaY21iQ3pqS1A3TGZyRVRWWmZIc18xdU9FcXliMjVtLXBMSktDQkpvT2xQY3RWTTlaTWxzbmwzc0g4c0QwX3JxQks0MWxRS1BoVDI3UG4yV3dhYUk3ZTZ4WlpzVXJZMC1GMTVweUV3SWw5RWFEc25CbW9aTGdITHdGQy1JMW0tQkVLcmdkR3A?oc=5",
-"summary": "The Transplant Turning Point: How Ukraine Learned to Save Lives Through Organ Donation uatv.ua",
-"outlet": "uatv.ua",
-"published": "2026-10-27T10:22:00+00:00",
-"id": "eedcfa988c419519",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
 },
 {
 "title": "New Miami-area group breaks organ recovery record. How it plans to change transplantation - Miami Herald",
@@ -1895,7 +2203,7 @@
 {
 "title": "Comparative efficacy and safety of targeted disease-modifying therapies in adults with primary IgA nephropathy: a systematic review and network meta-analysis",
 "link": "https://www.medrxiv.org/content/10.64898/2026.10.25.26366409v1?rss=1",
-"summary": "Background: Targeted disease-modifying therapies for adults with primary IgA nephropathy are increasing in number. However, head-to-head evidence is limited, and trial endpoints and follow-up durations vary. The relative effects of these therapies on short-term proteinuria control, long-term kidney outcomes, and…",
+"summary": "BackgroundTargeted disease-modifying therapies for adults with primary IgA nephropathy are increasing in number. However, head-to-head evidence is limited, and trial endpoints and follow-up durations vary. The relative effects of these therapies on short-term proteinuria control, long-term kidney outcomes, and safety…",
 "outlet": "",
 "published": "2026-10-26T00:00:00+00:00",
 "id": "4c515712ebc6dc0e",
@@ -5323,314 +5631,6 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "How the US organ transplant system works and what to ask to improve your chances - CT Insider",
-"link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPNXBPOGgzRFREMGpLWkxoRm9TX3pvN29EeVZiSUdqeTg1WlNJRW9xSDA3NHVCdlN2Y19YVUJidXhXNnZmSFU1cUwycGwzZ0t3YmoyQmFBQjAxankteWRaSEhjZk45aXZyMWFEWlNSeUEtVmJrOHJRVi1OVmpEMzlmVzc5MG4zR3NpSllidDdwczlzSUlyX3lBeVpCQm5XYWtTcm9LX2YxUExDWDRQc2c?oc=5",
-"summary": "How the US organ transplant system works and what to ask to improve your chances CT Insider",
-"outlet": "CT Insider",
-"published": "2026-10-20T17:52:53+00:00",
-"id": "34b1e11efb6bcf12",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T21:31:21.209247+00:00"
-},
-{
-"title": "How the US organ transplant system works and what to ask to improve your chances - WTOP News",
-"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTWZLMGRwYUZFREI1cE90cDVIaWZjQ3hxOVV2dUpGVUdJY3hKS1ZUZ19hbko5ZXcwUV9GM21Xb2VCOVdTYVBUR1ktZEU0SVBJdFRGamhzTzAxV1lpOGNNSldVLUNrSE9zRV9MVnByWUQ3aEpPMzB3QWpsZ1BNRDBZSDZMM19HQjdNVzZIVkdlXzRkSzlBVmw1SHRCQ0VOWVJPUnNiMWZPV1Jfa2dIeDFhVTNfMzRjZw?oc=5",
-"summary": "How the US organ transplant system works and what to ask to improve your chances WTOP News",
-"outlet": "WTOP News",
-"published": "2026-10-20T17:43:26+00:00",
-"id": "95e1ec1cb7edc5c6",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "How the US organ transplant system works and what to ask to improve your chances - The Spec",
-"link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNeVQxZWIzYndtRENUYVo1UUMwempCeEpMMTluTzhLbEFRXzlxRjFFNFdiVWNWdkowcjItV183OWV5U29ZSmdwVy1YLTBtR3ljOEpnX05mLTF4eVZ4OVZPUzJaNE9uZXJXTUkyNmx5UVhnc1pzS2pnck8xY09KYWZMWHNzQ00yS08tLWZjR3ZBc3kzUFY3U1laaUNDTnFZcjU0cHRTbHJMM0N6Wm1Wem1CN3NQNHF1SktWaHVXN1IxeDhScmhFSnZjZktHQkEwRXF0aVhkSXJzU3JVOFYtN3JnVnA0YUhwZGstM29KMWpSZW4xdndGQ1B4OGdVUUxaUHRVN2VSbTdn?oc=5",
-"summary": "How the US organ transplant system works and what to ask to improve your chances The Spec",
-"outlet": "The Spec",
-"published": "2026-10-20T17:43:19+00:00",
-"id": "cdf6db7f4826158a",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "How the US organ transplant system works and what to ask to improve your chances - Toronto Star",
-"link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOQ2k1S3lEU3lTRW9mRDM5R3dFSlQ4SXpDWThwclR4TlByWmJJaV9reHRrQWs0YmVzYTlKWnIzeTdnMk5aQ1dKeXMtbjhZemhjaXFxYzdCVWRxTW4xemo5anJ5WmFsVVNDQjh1WEw4TzBCRm5EOGoxSVhqdjZIOXd2S1Q2VUQ2THFEUTlCdXEyT0R2UnkzWFBIc3FDSWwtWExDUmIxV3dRZEJwS0tHMERaanlDQjdiTXdVQ3JtSkQ2UTRPN3dsRDJXdlMxZC1faFRfX0RwVjJ3TGxUa3h4MUJZQVlwbVJjSnIxbXk4N2R4U0g2bDROeTlkbQ?oc=5",
-"summary": "How the US organ transplant system works and what to ask to improve your chances Toronto Star",
-"outlet": "Toronto Star",
-"published": "2026-10-20T17:43:19+00:00",
-"id": "6f46c3a15ddbd2fc",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T14:37:00.175654+00:00"
-},
-{
-"title": "How the U.S. organ transplant system works and what to ask to improve your chances - Washington Times",
-"link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVmR1eWxqNVdDZW93cE14ZWFuZ3Rvck9ZUHZHckdIOW5JY1hTQ21UWG1OOXVvZF9iWjI1d1IwSUJFcFBiSFdaaFROOVJYd2VuR2YwZHlWWWpnOE5MS0dXbjZOZFJGQUFCRVc3Wmx3TkdNZDhFOC1NX2ZOdXR6bXgzNHg4MWp6Z1hmTzN3YWlYRXQ2WGt2U0M4ZGhyNFI0ZEo0Vml0Yw?oc=5",
-"summary": "How the U.S. organ transplant system works and what to ask to improve your chances Washington Times",
-"outlet": "Washington Times",
-"published": "2026-10-20T17:43:09+00:00",
-"id": "7d41c2b1b0490bdf",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T21:31:21.209247+00:00"
-},
-{
-"title": "How the US organ transplant system works and what to ask to improve your chances | Lifestyles | dailygazette.com - The Daily Gazette",
-"link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOMmNuTTFpZDBMTUVTWWMzWkd3Q1dwX3ZMbkQ1aFJjUjZaai1xTHdRbk0zS2l1WnM3TllHNE1WWmpUaGZZSnFtdm5aOTRDbWVmUkdNYmZRZU82S25jR1RBOWN3c0h1QVdNejdGWVJycjJaQVZGR1RnU0RuVVdJVTcxWllhTUVHWTlUc3c1LThRVWxrS09ieUJneURZYWFUMjVRVmk0djRZbEpxYlBCc2N6LVhIWnVndV85d1RIWXFJTlAzQWVESkJJYnBLZGFYQ0pFVVhaaEZOT0ZiOWNLVjVUVHJBeEFWdVdIOUluSWJSd19UbWt0OElNRTlTSXgtTGF3N2c?oc=5",
-"summary": "How the US organ transplant system works and what to ask to improve your chances | Lifestyles | dailygazette.com The Daily Gazette",
-"outlet": "The Daily Gazette",
-"published": "2026-10-20T17:43:09+00:00",
-"id": "b3a648ff0aee312c",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T21:31:21.209247+00:00"
-},
-{
-"title": "How the US organ transplant system works and what to ask to improve your chances - Bozeman Daily Chronicle",
-"link": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNM3ZHOHk1VDRieUVhUHdRRElydHprTHI4YWViVlJEX2ZiOWROZzdBaW9DWjFqQ19VVlNlUmxYRjhUbnp0M21iVjFnUlRRUDVlUmVyZ3Rqd0pCd25GcXpRTzRWNGktc2lCM3ZPQmloUm1ndHc5VEpvN0doY2dBSGRrNEJIVlhpX1c3azlmaEhWcjU0U3h3bV92eGpEa1ItenZNSEItSFRKa2tyV2JsQWp5RWRwdFB4ekVtLXo4Njg3RmNGaG9FX0ppNjhpZlhoNFRwUVVnd25zVlR1M3NVWHRDRW4yWk9GWm5KZGVFNDhmNHFTTklLWV9jb1pOa2pLSnFnWF9CbGdsaFdHZw?oc=5",
-"summary": "How the US organ transplant system works and what to ask to improve your chances Bozeman Daily Chronicle",
-"outlet": "Bozeman Daily Chronicle",
-"published": "2026-10-20T17:43:09+00:00",
-"id": "c709a798ceb87f75",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T00:04:37.627227+00:00"
-},
-{
-"title": "How the US organ transplant system works and what to ask to improve your chances - Temple Daily Telegram",
-"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNZWRPWHRnWlBybkR0U3Z0XzViRnhxMnVvTms0RVZ5UC04WDlOMTV4RXVHd2NxYUdJcm52M0Z6SjE1Qy16dFZqdDYwUFpMTHFZeTR0YzlUc1g0a1BFOWNNV0Z1RHFKeUhtODJFeUpla3g2RFVnV3lKWTVyQ180WnJXVkdtQV93SGRlTFN2THZSWTk?oc=5",
-"summary": "How the US organ transplant system works and what to ask to improve your chances Temple Daily Telegram",
-"outlet": "Temple Daily Telegram",
-"published": "2026-10-20T17:43:09+00:00",
-"id": "8fc340d7a987b5ab",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T00:04:37.627227+00:00"
-},
-{
-"title": "How the US organ transplant system works and what to ask to improve your chances - The Daily Gazette",
-"link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQT2xsc1RnNXoxbGtFRVprblE5Rk1wS0lwa2k0ZENVcDlLaHc4WnJRMlRGT0ZGUG9xR2Q3TXJxQVU0NGFwMHVENjVVTnhDeDREX29KODZqMWtVNEtNTXJuSzZIVVNDQVg0S0NXVlRGN2xXQkNxVjdmb010cEtTd0ZPRVlWY0Zwcjl1dDZ1NnJfTUR3dXFJVGxNMTNCTWpKYnB4NW5scF9zR1NqeW5SWFNWQ2xHWVlWYllFREo0bmFsOHJOd0llZ0xETjVIZnZGWUEwVGNlWFA4UWNKYWJLVE45cWlMcWNJZ2E2M2ZkcTRKa1d5bE9lS1RodFdrOVNFT3NhZzFYd0hnLUtTTzQwQlMzcW1McmRGQQ?oc=5",
-"summary": "How the US organ transplant system works and what to ask to improve your chances The Daily Gazette",
-"outlet": "The Daily Gazette",
-"published": "2026-10-20T17:43:09+00:00",
-"id": "7a283dc69fcb700d",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T00:04:37.627227+00:00"
-},
-{
-"title": "HHS Launches Landmark National Plan to Transform Kidney Care in America - HHS.gov",
-"link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB1VGc3U2tDYUFPY3BtVTUxcUt3MElPbVdEODFoczZQbkVtWHk5X2dfOE1kLVZfd0h5cmowZEN3YlBGWDRXRzctaXp2ai1tVjl1Rk1Ld0xTRFRhYWkxMFh0NVRaaWJ1aTBNeHpJOHRMMjUwODVtaDF6MVhZREVEZTA?oc=5",
-"summary": "HHS Launches Landmark National Plan to Transform Kidney Care in America HHS.gov",
-"outlet": "HHS.gov",
-"published": "2026-10-20T17:41:59+00:00",
-"id": "bb98308cc93a9d4a",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T21:31:21.209247+00:00"
-},
-{
-"title": "DaVita, Fresenius drop as RFK Jr. is said to plan dialysis market reforms - TradingView",
-"link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQdW81ZWZlaUtENE13cms1WGE1MElLcDNNcWlKUy01N0lGM0tkb3d5N3JUcTBDcFQzUzRtYXNxVFlYeHE1OXFHNFl1S2FxNXlJeVNYWlZHTWVEazNaNkdtX2NORzBLUGltb0NEcTExUXpIODgxMm5kWnJnY204ZEtoZGdWN3RSMFFlUG15d21JUGpkdEdHV1AxZC1NUm5WMjZjMkZRRVdka1ltZFJ5WnNkTmVseWdTcjZ0Z1NIZjZoVk9IbE5pYnNuQ0dSUVZlUzQ?oc=5",
-"summary": "DaVita, Fresenius drop as RFK Jr. is said to plan dialysis market reforms TradingView",
-"outlet": "TradingView",
-"published": "2026-10-20T16:57:32+00:00",
-"id": "16f6ff66dfc51e16",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "DaVita, Fresenius drop as HHS seeks dialysis market reforms (DVA:NYSE) - Seeking Alpha",
-"link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxORTdfTEthTV93dFpRM2RGb2Y0RURUd3VDbm9xcUlwdVhILVk1RzAzaHV2UzFmVFhiUjZ0SkZ4UTVrX2NQaXlWOWxNdWV5T0g5eFVGcW5oaU5NSDJIM3dMX0RVNTBuN0psWUpVMTdMbFlWdXFaQVRoTldIc3hzTkdDTl9ZdjFPemVHaW5aNWhIcnd2bnc?oc=5",
-"summary": "DaVita, Fresenius drop as HHS seeks dialysis market reforms (DVA:NYSE) Seeking Alpha",
-"outlet": "Seeking Alpha",
-"published": "2026-10-20T16:57:32+00:00",
-"id": "288508a4a55227c8",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T21:31:21.209247+00:00"
-},
-{
-"title": "Kidney Care Partners Lobbies Dialysis Bills via Crossroads - Legis1",
-"link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9tRTgxWmtXVUFhX1RGenFndnVBby1mcDFDWmMwOXpxWUdDS2RlazQzS25tUXl2QjVoTm9TRlFEQXBrZ3FiOU1QUk10M3N3cVZxQXpCUzVONzJhSTJ5S3JyeFVWVGNRTUU3WVFGcDNsM1dBQmwxMG1YMnpR?oc=5",
-"summary": "Kidney Care Partners Lobbies Dialysis Bills via Crossroads Legis1",
-"outlet": "Legis1",
-"published": "2026-10-20T16:31:11+00:00",
-"id": "0eec3b87f7c9c5c8",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Biogen rises as investors react to fresh kidney-disease data and pipeline optimism - Quiver Quantitative",
-"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRnV4UnZGbWN5cDRBdlFOWWYxSzR2dmc3cWp6VDVvcEVWZ3c3LVFXLUtZalEtOTZVWDlScUtRVmdEczJiY3lhdmgtU1pjejF2R1AzaUg5WDl5V1llbTNFb2t1RXg0d0ZtVHpCTWF2Nll4ZkxKZ3hUQjR6WWtFbWhwUm5vNTdqOVNodEs1dUtUS3dpdDlZSVJ5czJjTEZ5Mnk0YVY2MllpOExTTlJaNFFKOFdiR3lIZw?oc=5",
-"summary": "Biogen rises as investors react to fresh kidney-disease data and pipeline optimism Quiver Quantitative",
-"outlet": "Quiver Quantitative",
-"published": "2026-10-20T16:17:00+00:00",
-"id": "1991acd3343389ac",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Exclusive: HHS releases new kidney care plan - Axios",
-"link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8tdXY0bkk2eG1KMjBmdVR2TGU3c0ZENDJVZXZyU21KN3liUlprbE1KZGU4T2JaYmpKUWU1X0dLZVZJR1lqdUlmMFpaUnpYbkYwLWVXQmR3TGdhQ1B1MEVucnhmelFCV19D?oc=5",
-"summary": "Exclusive: HHS releases new kidney care plan Axios",
-"outlet": "Axios",
-"published": "2026-10-20T16:03:33+00:00",
-"id": "8886712c647faa61",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "The Role and Mechanism of SGLT2 Inhibitors in Chronic Kidney Disease - Dove Medical Press",
-"link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOSTVnbjBJREVsMTVjZmw2ZEkyNlZKcWNaSXBYOGtJckpnaFlTVHQyX0hla3JrcWlLY2JBYktvb2l2T2lISzljcUxBdVcwZnpnZG5NMkhnRHk2OXQwcDlQVWVQbmgzdHRJeXg1WHpsbDNrd1RMTFAybk81SmljTjBYZGpFd0NtZ1ZqdzBiY18ycUs4VUlidV9sejM3Si1aS0ZLSENva3d1dlRKeEpLa29hSURWajYwRXdhS1ctUEZDVUltQUtQNXdWS2pn?oc=5",
-"summary": "The Role and Mechanism of SGLT2 Inhibitors in Chronic Kidney Disease Dove Medical Press",
-"outlet": "Dove Medical Press",
-"published": "2026-10-20T15:34:05+00:00",
-"id": "952d4571a282cc52",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Experts chart path to stronger organ donation system - Oman Observer",
-"link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4ySVdRVm9VUXdjTldtaTdnZnM1akZiLVNEaWhXUVl0QmJTNjVsV0xJNThfa1E4TTNmTm1JdFBmWk5nUjV6M25DNElCZWFJa1ZYcW9JMVA0YnNpUdIBWkFVX3lxTE4ySVdRVm9VUXdjTldtaTdnZnM1akZiLVNEaWhXUVl0QmJTNjVsV0xJNThfa1E4TTNmTm1JdFBmWk5nUjV6M25DNElCZWFJa1ZYcW9JMVA0YnNpUQ?oc=5",
-"summary": "Experts chart path to stronger organ donation system Oman Observer",
-"outlet": "Oman Observer",
-"published": "2026-10-20T15:30:43+00:00",
-"id": "6f75fd4cedf7ffe9",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity - Daily Camera",
-"link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOXZfOEJXRl9oM3RfTGEydlNFUTBTUHN4V201dy1ESzNab1NOTXQxOHFhXzh5Nk1DZ0NDWHpZVEpOQnVjMWxaeEsxQ0I5WUtMM1hkanNyTzExRkczTmw0Vzd5TGtpRkJOM1MyOFZMOW8zcEE5b2lvb2dud3NDdHJDWkVzTmR0aFE?oc=5",
-"summary": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity Daily Camera",
-"outlet": "Daily Camera",
-"published": "2026-10-20T15:26:23+00:00",
-"id": "f752c804070a09c1",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T04:32:33.905357+00:00"
-},
-{
-"title": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity - Morning Journal",
-"link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQS2tmN2syYVZxQW14c2FyRXFDUGJaMldWaG5CWGtlaFNEWWVldUdGUjBsdmxCN2VSSng4RmNOZFpfUVp2T0VqSFdJaUVYLWtDUmt3NlhlSDJuc0hOT2RVWFVkSGF2Vlo0M0NpS1RoNGNVdVBxa0JmSGpXOVFjYmo1LVJGT0FIbTVBdkpV?oc=5",
-"summary": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity Morning Journal",
-"outlet": "Morning Journal",
-"published": "2026-10-20T15:26:13+00:00",
-"id": "afa666bc7773b482",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T04:32:33.905357+00:00"
-},
-{
-"title": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity - Sentinel and Enterprise",
-"link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQaGJoa2dNZk5GR1o4SU9kTjlacGJRVzd5LTA4cHJRdGVBaWYtSXBRQzFDTDFZbWJxSlNDZFpZY0t6RzZHZ1dxMkM5M0l3ZllNaFRIMmVuZGpEM0tBU20tdHdjWEhFMmZ4akhHM1VQYzZaSnRHMUlWMkxnNTR0RkRXOGdsSXNGQk8xSEdCenhrLUdoZFdu?oc=5",
-"summary": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity Sentinel and Enterprise",
-"outlet": "Sentinel and Enterprise",
-"published": "2026-10-20T15:25:43+00:00",
-"id": "76dc8571ea6d7a04",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-20T21:31:21.209247+00:00"
-},
-{
-"title": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity - Daily Democrat",
-"link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQZm1YcE9CcGhMeVJIall1NUhjZG1ZTk9kSG5wdmRqMnllRGVuN3h1bXZUb29QUXJNVUJPZkhpY0JseWszVTZoX25LMlRSSVI1ZDV5YXhTYmxHT0QzNHQ5TzhBcmFYR0lmRU9aZi0zWWhic09WckRPdGpHZUNSRU5BNGpsTmdhaS11Y1E?oc=5",
-"summary": "Arizona woman’s 3-year wait for an intestine shows the US organ transplant system’s complexity Daily Democrat",
-"outlet": "Daily Democrat",
-"published": "2026-10-20T15:25:21+00:00",
-"id": "636a882dc957b58e",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T00:04:37.627227+00:00"
-},
-{
-"title": "Kidney health screening program meets ‘patients where they are’",
-"link": "https://www.healio.com/news/nephrology/20261020/kidney-health-screening-program-meets-patients-where-they-are",
-"summary": "Now in its fifth year, the DaVita Community Health Experience offers free health screenings to educate community members and help connect them to primary care, according to Jeffrey Giullian, MD, MBA, chief medical officer at DaVita. “I think there was a point in time in my career when I didn’t really understand the…",
-"outlet": "",
-"published": "2026-10-20T14:04:09+00:00",
-"id": "b4ca16b2d4b556a2",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Kidney Transplant Outcomes Worsen with High Tacrolimus Variability - EMJ",
-"link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUDRFdTIzSUVELTFaNk0tb2pYVW9VR0RCdXg0MkNnTFlBREdHQmk2ZHdNZTVWUFhwd3c2MlJONWw1ck94YlJxSVJHMU1oTGE1STJ5VUFxLV84ZXdzY1lHei0yZmVacG9kcDBLR3pjcXNWMVlZQ0VOMzd6UlZJZDVYZndmb0tZMjVEc0VKQzc1MGE0TDhiVVZXc0ZqNjUyX0Zmc2NHXzB3SWNpUmhrQ1RR?oc=5",
-"summary": "Kidney Transplant Outcomes Worsen with High Tacrolimus Variability EMJ",
-"outlet": "EMJ",
-"published": "2026-10-20T14:01:37+00:00",
-"id": "bcff9488056f7eb4",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-20T17:54:47.068880+00:00"
-},
-{
-"title": "Editorial Board",
-"link": "https://www.sciencedirect.com/science/article/pii/S008525382600743X?dgcid=rss_sd_all",
-"summary": "",
-"outlet": "",
-"published": "2026-10-20T12:55:15.866286+00:00",
-"id": "0176bd2bc22abffd",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Subscription Information",
-"link": "https://www.sciencedirect.com/science/article/pii/S0085253826007441?dgcid=rss_sd_all",
-"summary": "",
-"outlet": "",
-"published": "2026-10-20T12:55:15.866286+00:00",
-"id": "cae3968be0f48555",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Table of Contents",
-"link": "https://www.sciencedirect.com/science/article/pii/S0085253826007453?dgcid=rss_sd_all",
-"summary": "",
-"outlet": "",
-"published": "2026-10-20T12:55:15.866286+00:00",
-"id": "6375b37592b4fccc",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "in this issue",
-"link": "https://www.sciencedirect.com/science/article/pii/S0085253826007258?dgcid=rss_sd_all",
-"summary": "",
-"outlet": "",
-"published": "2026-10-20T12:55:15.866286+00:00",
-"id": "81a5e593c926f235",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
-},
-{
-"title": "Kidney stone disease: to drink or not to drink—that is the question",
-"link": "https://www.sciencedirect.com/science/article/pii/S0085253826007131?dgcid=rss_sd_all",
-"summary": "By Emmanuel Letavernier, Tilman B. Drüeke",
-"outlet": "",
-"published": "2026-10-20T12:55:15.866286+00:00",
-"id": "c46c0b9e7ae4804e",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-10-20T12:55:15.866286+00:00"
 }
 ]
 }
