@@ -1,0 +1,1104 @@
+{
+ "pace": 2.6,
+ "gap": 0,
+ "lead": 0,
+ "style": {
+  "bar": 110,
+  "ink": "#ffffff",
+  "accent": "#ff2a2a",
+  "accent2": "#ffffff",
+  "alert": "#ff2a2a",
+  "dim": "rgba(255,255,255,.55)",
+  "tone": [
+   -12,
+   -18,
+   -28
+  ]
+ },
+ "music": {
+  "mood": "ominous",
+  "dark": true,
+  "level": 0.95,
+  "piano": true,
+  "heartbeat": false,
+  "lift": false,
+  "booms": [
+   1.25
+  ],
+  "groove": [
+   [
+    44.82,
+    107.53,
+    108,
+    0.9
+   ],
+   [
+    107.13,
+    134.06,
+    114,
+    1.0
+   ]
+  ]
+ },
+ "open": {
+  "logo": "/_filmwork/legacy/img/logo.png",
+  "w": 820,
+  "y": 160,
+  "from": 0.9,
+  "until": 4.2
+ },
+ "bug": {
+  "src": "/_filmwork/legacy/img/logo-crop.png",
+  "x": 88,
+  "y": 124,
+  "w": 200,
+  "in": 5
+ },
+ "end": {
+  "logo": "/_filmwork/legacy/img/logo.png",
+  "logoW": 700,
+  "logoY": 50,
+  "hold": 6.3,
+  "sub": "Cold Ischemia Foundation",
+  "lines": [
+   "coldischemia.foundation",
+   "Dramatized narration: a composite, not a real patient. AI-generated voice."
+  ],
+  "strong": 1
+ },
+ "segments": [
+  {
+   "id": "o1",
+   "type": "title",
+   "text": "I'm twenty-nine years old. Eight months ago, I received a kidney.",
+   "t0": 4.1,
+   "dur": 5.5,
+   "cc": [
+    {
+     "t": "I'm twenty-nine years old.",
+     "a": 4.2,
+     "b": 6.57
+    },
+    {
+     "t": "Eight months ago, I received a kidney.",
+     "a": 6.87,
+     "b": 9.3
+    }
+   ],
+   "intensity": 0.5,
+   "kicker": "Dramatized narration / composite patient / AI voice",
+   "lines": [
+    {
+     "t": "29 YEARS OLD.",
+     "c": "ink"
+    },
+    {
+     "t": "8 MONTHS AFTER A KIDNEY.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/stress.png",
+    "dim": 0.62,
+    "blur": 5,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "o2",
+   "type": "title",
+   "text": "Now there is an infection, and that kidney is failing.",
+   "t0": 9.5,
+   "dur": 3.51,
+   "cc": [
+    {
+     "t": "Now there is an infection, and that kidney is failing.",
+     "a": 9.6,
+     "b": 12.71
+    }
+   ],
+   "intensity": 0.7,
+   "lines": [
+    {
+     "t": "AN INFECTION.",
+     "c": "accent"
+    },
+    {
+     "t": "THE KIDNEY IS FAILING.",
+     "c": "ink"
+    }
+   ],
+   "bg": {
+    "src": "/stress.png",
+    "dim": 0.62,
+    "blur": 5,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "o3",
+   "type": "title",
+   "text": "I'm telling you this because nobody explained how this system works, until it was too late for me to use it.",
+   "t0": 12.91,
+   "dur": 6.46,
+   "cc": [
+    {
+     "t": "I'm telling you this because nobody explained how this system works, until it was too late for me to use it.",
+     "a": 13.01,
+     "b": 19.07
+    }
+   ],
+   "intensity": 0.7,
+   "lines": [
+    {
+     "t": "NOBODY EXPLAINED",
+     "c": "ink"
+    },
+    {
+     "t": "HOW THE SYSTEM WORKS.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "s1",
+   "type": "list",
+   "text": "I was handed pamphlets. Consent forms. A list of phone numbers.",
+   "t0": 19.52,
+   "dur": 4.61,
+   "cc": [
+    {
+     "t": "I was handed pamphlets. Consent forms. A list of phone numbers.",
+     "a": 19.62,
+     "b": 23.83
+    }
+   ],
+   "intensity": 0.55,
+   "rows": [
+    {
+     "t": "PAMPHLETS"
+    },
+    {
+     "t": "CONSENT FORMS"
+    },
+    {
+     "t": "A LIST OF PHONE NUMBERS"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "s2",
+   "type": "title",
+   "text": "Nobody told me I had rights.",
+   "t0": 24.03,
+   "dur": 2.61,
+   "cc": [
+    {
+     "t": "Nobody told me I had rights.",
+     "a": 24.13,
+     "b": 26.34
+    }
+   ],
+   "intensity": 0.7,
+   "lines": [
+    {
+     "t": "NOBODY TOLD ME",
+     "c": "ink"
+    },
+    {
+     "t": "I HAD RIGHTS.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "s3",
+   "type": "title",
+   "text": "Nobody taught me what to ask.",
+   "t0": 26.54,
+   "dur": 2.54,
+   "cc": [
+    {
+     "t": "Nobody taught me what to ask.",
+     "a": 26.64,
+     "b": 28.78
+    }
+   ],
+   "intensity": 0.7,
+   "lines": [
+    {
+     "t": "NOBODY TAUGHT ME",
+     "c": "ink"
+    },
+    {
+     "t": "WHAT TO ASK.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "s4",
+   "type": "title",
+   "text": "Nobody told me what the system does with a patient who stays quiet.",
+   "t0": 28.98,
+   "dur": 4.45,
+   "cc": [
+    {
+     "t": "Nobody told me what the system does with a patient who stays quiet.",
+     "a": 29.08,
+     "b": 33.13
+    }
+   ],
+   "intensity": 0.8,
+   "lines": [
+    {
+     "t": "WHAT DOES THE SYSTEM DO",
+     "c": "ink"
+    },
+    {
+     "t": "WITH A PATIENT",
+     "c": "ink"
+    },
+    {
+     "t": "WHO STAYS QUIET?",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "f1",
+   "type": "title",
+   "text": "Then I found the Cold Ischemia Foundation.",
+   "t0": 33.58,
+   "dur": 3.15,
+   "cc": [
+    {
+     "t": "Then I found the Cold Ischemia Foundation.",
+     "a": 33.68,
+     "b": 36.43
+    }
+   ],
+   "intensity": 0.7,
+   "kicker": "Then",
+   "lines": [
+    {
+     "t": "COLD ISCHEMIA",
+     "c": "ink"
+    },
+    {
+     "t": "FOUNDATION.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/hero-banner.jpg",
+    "dim": 0.62,
+    "blur": 3,
+    "pan": "right",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "f2",
+   "type": "cards",
+   "text": "It was built by a patient who has had three kidney transplants, and by Marie, his wife, the care partner who stood beside him through all three.",
+   "t0": 36.63,
+   "dur": 8.49,
+   "cc": [
+    {
+     "t": "It was built by a patient who has had three kidney transplants, and by Marie, his wife, the care partner who stood beside him through all three.",
+     "a": 36.73,
+     "b": 44.82
+    }
+   ],
+   "intensity": 0.7,
+   "cards": [
+    {
+     "big": "3",
+     "head": "Kidney transplants",
+     "c": "accent",
+     "sub": "Jeff Parke, patient"
+    },
+    {
+     "big": "ALL 3",
+     "head": "Beside him: Marie",
+     "c": "ink",
+     "sub": "His wife, his care partner"
+    }
+   ],
+   "bg": {
+    "src": "/hero-banner.jpg",
+    "dim": 0.62,
+    "blur": 3,
+    "pan": "right",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "t0",
+   "type": "title",
+   "text": "Its tools, guides and research are free.",
+   "t0": 45.22,
+   "dur": 3.0,
+   "cc": [
+    {
+     "t": "Its tools, guides and research are free.",
+     "a": 45.32,
+     "b": 47.92
+    }
+   ],
+   "intensity": 0.75,
+   "lines": [
+    {
+     "t": "TOOLS. GUIDES.",
+     "c": "ink"
+    },
+    {
+     "t": "RESEARCH. FREE.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/cif-resource-bundle.png",
+    "dim": 0.66,
+    "blur": 4,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "src": "Command Center and terms, coldischemia.foundation"
+  },
+  {
+   "id": "t1",
+   "type": "title",
+   "text": "A two-week course on the history and the money behind your own treatment.",
+   "t0": 48.12,
+   "dur": 4.39,
+   "cc": [
+    {
+     "t": "A two-week course on the history and the money behind your own treatment.",
+     "a": 48.22,
+     "b": 52.21
+    }
+   ],
+   "intensity": 0.8,
+   "kicker": "14 daily lessons / 100 scenarios",
+   "lines": [
+    {
+     "t": "THE UNSPOKEN",
+     "c": "ink"
+    },
+    {
+     "t": "CURRICULUM.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/research-banner.png",
+    "dim": 0.66,
+    "blur": 4,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "src": "test-your-knowledge.html"
+  },
+  {
+   "id": "t2",
+   "type": "title",
+   "text": "A guide for the first twenty-four hours after a dialysis discharge notice, down to the word-for-word script.",
+   "t0": 52.41,
+   "dur": 7.1,
+   "cc": [
+    {
+     "t": "A guide for the first twenty-four hours after a dialysis discharge notice, down to the word-for-word script.",
+     "a": 52.51,
+     "b": 59.21
+    }
+   ],
+   "intensity": 0.85,
+   "kicker": "Free guide",
+   "lines": [
+    {
+     "t": "THE FIRST",
+     "c": "ink"
+    },
+    {
+     "t": "24 HOURS.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "src": "free-guide.html"
+  },
+  {
+   "id": "t3",
+   "type": "title",
+   "text": "A situation room that tells you who to call, in what order, and writes the letter.",
+   "t0": 59.41,
+   "dur": 4.88,
+   "cc": [
+    {
+     "t": "A situation room that tells you who to call, in what order, and writes the letter.",
+     "a": 59.51,
+     "b": 63.99
+    }
+   ],
+   "intensity": 0.85,
+   "lines": [
+    {
+     "t": "THE",
+     "c": "ink"
+    },
+    {
+     "t": "SITUATION ROOM.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/the-situation-room.png",
+    "dim": 0.6,
+    "blur": 2,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "src": "situation-room.html"
+  },
+  {
+   "id": "t4",
+   "type": "title",
+   "text": "A handbook for talking to your care team, with the chapter I wish I had read first: the authority you already have.",
+   "t0": 64.19,
+   "dur": 6.93,
+   "cc": [
+    {
+     "t": "A handbook for talking to your care team, with the chapter I wish I had read first: the authority you already have.",
+     "a": 64.29,
+     "b": 70.82
+    }
+   ],
+   "intensity": 0.85,
+   "kicker": "Communications handbook",
+   "lines": [
+    {
+     "t": "THE AUTHORITY",
+     "c": "ink"
+    },
+    {
+     "t": "YOU ALREADY HAVE.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/research-banner.png",
+    "dim": 0.66,
+    "blur": 4,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "src": "Communications Handbook, Research Library"
+  },
+  {
+   "id": "t5",
+   "type": "stat",
+   "text": "And a one-hundred-nine-page field guide for anyone thinking about giving a kidney.",
+   "t0": 71.02,
+   "dur": 5.35,
+   "cc": [
+    {
+     "t": "And a one-hundred-nine-page field guide for anyone thinking about giving a kidney.",
+     "a": 71.12,
+     "b": 76.07
+    }
+   ],
+   "intensity": 0.9,
+   "stat": {
+    "value": 109,
+    "suffix": " PAGES",
+    "label": "Not a Spare: the living kidney donor field guide",
+    "c": "accent"
+   },
+   "bg": {
+    "src": "/cif-resource-bundle.png",
+    "dim": 0.66,
+    "blur": 4,
+    "pan": "right",
+    "zoom": 0.06
+   },
+   "src": "living-donor-guide-full.html"
+  },
+  {
+   "id": "d0",
+   "type": "title",
+   "text": "Here is what makes it different.",
+   "t0": 76.57,
+   "dur": 2.44,
+   "cc": [
+    {
+     "t": "Here is what makes it different.",
+     "a": 76.67,
+     "b": 78.71
+    }
+   ],
+   "intensity": 0.8,
+   "lines": [
+    {
+     "t": "WHAT MAKES IT",
+     "c": "ink"
+    },
+    {
+     "t": "DIFFERENT.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "d1",
+   "type": "list",
+   "text": "The Foundation says it takes no donations, and no funding or sponsorships from drug companies, device makers, dialysis companies, insurers, or hospital systems.",
+   "t0": 78.91,
+   "dur": 10.77,
+   "cc": [
+    {
+     "t": "The Foundation says it takes no donations, and no funding or sponsorships from drug companies, device makers, dialysis companies, insurers, or hospital systems.",
+     "a": 79.01,
+     "b": 89.38
+    }
+   ],
+   "intensity": 0.85,
+   "rows": [
+    {
+     "t": "NO DONATIONS"
+    },
+    {
+     "t": "NO DRUG OR DEVICE MAKER MONEY"
+    },
+    {
+     "t": "NO DIALYSIS COMPANY MONEY"
+    },
+    {
+     "t": "NO INSURER OR HOSPITAL MONEY"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "src": "Cold Ischemia Foundation independence pledge, independence.html"
+  },
+  {
+   "id": "d2",
+   "type": "title",
+   "text": "Its fees are only for services you request, at posted rates.",
+   "t0": 89.58,
+   "dur": 4.35,
+   "cc": [
+    {
+     "t": "Its fees are only for services you request, at posted rates.",
+     "a": 89.68,
+     "b": 93.63
+    }
+   ],
+   "intensity": 0.8,
+   "lines": [
+    {
+     "t": "FEES ONLY FOR SERVICES",
+     "c": "ink"
+    },
+    {
+     "t": "YOU REQUEST.",
+     "c": "accent"
+    },
+    {
+     "t": "AT POSTED RATES.",
+     "c": "ink"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "src": "services.html"
+  },
+  {
+   "id": "d3",
+   "type": "title",
+   "text": "Don't take its word for it.",
+   "t0": 93.83,
+   "dur": 2.34,
+   "cc": [
+    {
+     "t": "Don't take its word for it.",
+     "a": 93.93,
+     "b": 95.87
+    }
+   ],
+   "intensity": 0.9,
+   "lines": [
+    {
+     "t": "DON'T TAKE",
+     "c": "ink"
+    },
+    {
+     "t": "ITS WORD FOR IT.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "d4",
+   "type": "list",
+   "text": "Ask any organization five questions. Who pays you? Who governs you? Who shapes your message? What can't you say? And who do you answer to?",
+   "t0": 96.07,
+   "dur": 8.23,
+   "cc": [
+    {
+     "t": "Ask any organization five questions. Who pays you? Who governs you? Who shapes your message? What can't you say? And who do you answer to?",
+     "a": 96.17,
+     "b": 104.0
+    }
+   ],
+   "intensity": 0.95,
+   "rows": [
+    {
+     "t": "WHO PAYS YOU?"
+    },
+    {
+     "t": "WHO GOVERNS YOU?"
+    },
+    {
+     "t": "WHO SHAPES YOUR MESSAGE?"
+    },
+    {
+     "t": "WHAT CAN'T YOU SAY?"
+    },
+    {
+     "t": "WHO DO YOU ANSWER TO?"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "src": "Cold Ischemia Foundation independence pledge, independence.html"
+  },
+  {
+   "id": "d5",
+   "type": "title",
+   "text": "Then ask this foundation the same five.",
+   "t0": 104.2,
+   "dur": 3.13,
+   "cc": [
+    {
+     "t": "Then ask this foundation the same five.",
+     "a": 104.3,
+     "b": 107.03
+    }
+   ],
+   "intensity": 0.95,
+   "lines": [
+    {
+     "t": "THEN ASK US",
+     "c": "ink"
+    },
+    {
+     "t": "THE SAME FIVE.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "l0",
+   "type": "title",
+   "text": "The Foundation is looking for leaders.",
+   "t0": 107.53,
+   "dur": 2.9,
+   "cc": [
+    {
+     "t": "The Foundation is looking for leaders.",
+     "a": 107.63,
+     "b": 110.13
+    }
+   ],
+   "intensity": 0.85,
+   "lines": [
+    {
+     "t": "WE ARE LOOKING",
+     "c": "ink"
+    },
+    {
+     "t": "FOR LEADERS.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.62,
+    "blur": 4,
+    "pan": "up",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "l1",
+   "type": "title",
+   "text": "Patients who have been quiet for too long. Care partners who are tired of being invisible.",
+   "t0": 110.33,
+   "dur": 5.6,
+   "cc": [
+    {
+     "t": "Patients who have been quiet for too long. Care partners who are tired of being invisible.",
+     "a": 110.43,
+     "b": 115.63
+    }
+   ],
+   "intensity": 0.9,
+   "lines": [
+    {
+     "t": "PATIENTS QUIET TOO LONG.",
+     "c": "ink"
+    },
+    {
+     "t": "CARE PARTNERS",
+     "c": "ink"
+    },
+    {
+     "t": "TIRED OF BEING INVISIBLE.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.62,
+    "blur": 4,
+    "pan": "up",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "l2",
+   "type": "title",
+   "text": "People who want to learn to speak up, and to help the next patient do the same.",
+   "t0": 115.83,
+   "dur": 4.58,
+   "cc": [
+    {
+     "t": "People who want to learn to speak up, and to help the next patient do the same.",
+     "a": 115.93,
+     "b": 120.11
+    }
+   ],
+   "intensity": 0.9,
+   "lines": [
+    {
+     "t": "LEARN TO SPEAK UP.",
+     "c": "ink"
+    },
+    {
+     "t": "HELP THE NEXT PATIENT.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.62,
+    "blur": 4,
+    "pan": "up",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "l3",
+   "type": "list",
+   "text": "It starts with free training. Ten modules. And a real person reads your application.",
+   "t0": 120.31,
+   "dur": 5.69,
+   "cc": [
+    {
+     "t": "It starts with free training. Ten modules. And a real person reads your application.",
+     "a": 120.41,
+     "b": 125.7
+    }
+   ],
+   "intensity": 0.9,
+   "rows": [
+    {
+     "t": "FREE TRAINING",
+     "s": "Ten modules"
+    },
+    {
+     "t": "A REAL PERSON",
+     "s": "Reads your application"
+    }
+   ],
+   "bg": {
+    "src": "/march-for-care.jpg",
+    "dim": 0.62,
+    "blur": 4,
+    "pan": "up",
+    "zoom": 0.06
+   },
+   "src": "cif-volunteer-page.html, volunteer-training.html"
+  },
+  {
+   "id": "c0",
+   "type": "title",
+   "text": "I may not get my kidney back.",
+   "t0": 126.25,
+   "dur": 2.41,
+   "cc": [
+    {
+     "t": "I may not get my kidney back.",
+     "a": 126.35,
+     "b": 128.36
+    }
+   ],
+   "intensity": 0.5,
+   "lines": [
+    {
+     "t": "I MAY NOT GET",
+     "c": "ink"
+    },
+    {
+     "t": "MY KIDNEY BACK.",
+     "c": "accent"
+    }
+   ],
+   "chairs": {
+    "lit": 0,
+    "n": 4,
+    "push": 0.2
+   }
+  },
+  {
+   "id": "c1",
+   "type": "title",
+   "text": "But I can tell you what I wish someone had told me.",
+   "t0": 128.56,
+   "dur": 3.32,
+   "cc": [
+    {
+     "t": "But I can tell you what I wish someone had told me.",
+     "a": 128.66,
+     "b": 131.58
+    }
+   ],
+   "intensity": 0.6,
+   "lines": [
+    {
+     "t": "WHAT I WISH",
+     "c": "ink"
+    },
+    {
+     "t": "SOMEONE HAD TOLD ME.",
+     "c": "accent"
+    }
+   ],
+   "chairs": {
+    "lit": -1,
+    "n": 4
+   }
+  },
+  {
+   "id": "c2",
+   "type": "title",
+   "text": "Learn your rights before you need them.",
+   "t0": 131.78,
+   "dur": 2.58,
+   "cc": [
+    {
+     "t": "Learn your rights before you need them.",
+     "a": 131.88,
+     "b": 134.06
+    }
+   ],
+   "intensity": 0.8,
+   "lines": [
+    {
+     "t": "LEARN YOUR RIGHTS",
+     "c": "ink"
+    },
+    {
+     "t": "BEFORE YOU NEED THEM.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "c3",
+   "type": "title",
+   "text": "Ask who pays.",
+   "t0": 134.51,
+   "dur": 2.06,
+   "cc": [
+    {
+     "t": "Ask who pays.",
+     "a": 134.61,
+     "b": 136.27
+    }
+   ],
+   "intensity": 0.85,
+   "lines": [
+    {
+     "t": "ASK",
+     "c": "ink"
+    },
+    {
+     "t": "WHO PAYS.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   }
+  },
+  {
+   "id": "c4",
+   "type": "title",
+   "text": "And find the people who will stand beside you.",
+   "t0": 136.47,
+   "dur": 2.98,
+   "cc": [
+    {
+     "t": "And find the people who will stand beside you.",
+     "a": 136.57,
+     "b": 139.15
+    }
+   ],
+   "intensity": 0.9,
+   "lines": [
+    {
+     "t": "FIND THE PEOPLE",
+     "c": "ink"
+    },
+    {
+     "t": "WHO WILL STAND BESIDE YOU.",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "hits": [
+    0.05
+   ]
+  },
+  {
+   "id": "c5",
+   "type": "title",
+   "text": "coldischemia.foundation.",
+   "t0": 139.6,
+   "dur": 3.26,
+   "cc": [
+    {
+     "t": "coldischemia.foundation.",
+     "a": 139.7,
+     "b": 142.56
+    }
+   ],
+   "intensity": 1,
+   "lines": [
+    {
+     "t": "COLDISCHEMIA.FOUNDATION",
+     "c": "accent"
+    }
+   ],
+   "bg": {
+    "src": "/night-shift.png",
+    "dim": 0.8,
+    "blur": 12,
+    "pan": "left",
+    "zoom": 0.06
+   },
+   "hits": [
+    0.05
+   ]
+  }
+ ]
+}

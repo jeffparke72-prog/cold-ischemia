@@ -1,0 +1,214 @@
+{
+ "end": 142.56199999999995,
+ "beats": [
+  {
+   "id": "open",
+   "t0": 4.2,
+   "t1": 19.07,
+   "cc": [
+    {
+     "t": "I'm twenty-nine years old.",
+     "a": 4.2,
+     "b": 6.57
+    },
+    {
+     "t": "Eight months ago, I received a kidney.",
+     "a": 6.87,
+     "b": 9.3
+    },
+    {
+     "t": "Now there is an infection, and that kidney is failing.",
+     "a": 9.6,
+     "b": 12.71
+    },
+    {
+     "t": "I'm telling you this because nobody explained how this system works, until it was too late for me to use it.",
+     "a": 13.01,
+     "b": 19.07
+    }
+   ]
+  },
+  {
+   "id": "system",
+   "t0": 19.62,
+   "t1": 33.13,
+   "cc": [
+    {
+     "t": "I was handed pamphlets. Consent forms. A list of phone numbers.",
+     "a": 19.62,
+     "b": 23.83
+    },
+    {
+     "t": "Nobody told me I had rights.",
+     "a": 24.13,
+     "b": 26.34
+    },
+    {
+     "t": "Nobody taught me what to ask.",
+     "a": 26.64,
+     "b": 28.78
+    },
+    {
+     "t": "Nobody told me what the system does with a patient who stays quiet.",
+     "a": 29.08,
+     "b": 33.13
+    }
+   ]
+  },
+  {
+   "id": "found",
+   "t0": 33.68,
+   "t1": 44.82,
+   "cc": [
+    {
+     "t": "Then I found the Cold Ischemia Foundation.",
+     "a": 33.68,
+     "b": 36.43
+    },
+    {
+     "t": "It was built by a patient who has had three kidney transplants, and by Marie, his wife, the care partner who stood beside him through all three.",
+     "a": 36.73,
+     "b": 44.82
+    }
+   ]
+  },
+  {
+   "id": "tools",
+   "t0": 45.32,
+   "t1": 76.07,
+   "cc": [
+    {
+     "t": "Its tools, guides and research are free.",
+     "a": 45.32,
+     "b": 47.92
+    },
+    {
+     "t": "A two-week course on the history and the money behind your own treatment.",
+     "a": 48.22,
+     "b": 52.21
+    },
+    {
+     "t": "A guide for the first twenty-four hours after a dialysis discharge notice, down to the word-for-word script.",
+     "a": 52.51,
+     "b": 59.21
+    },
+    {
+     "t": "A situation room that tells you who to call, in what order, and writes the letter.",
+     "a": 59.51,
+     "b": 63.99
+    },
+    {
+     "t": "A handbook for talking to your care team, with the chapter I wish I had read first: the authority you already have.",
+     "a": 64.29,
+     "b": 70.82
+    },
+    {
+     "t": "And a one-hundred-nine-page field guide for anyone thinking about giving a kidney.",
+     "a": 71.12,
+     "b": 76.07
+    }
+   ]
+  },
+  {
+   "id": "diff",
+   "t0": 76.67,
+   "t1": 107.03,
+   "cc": [
+    {
+     "t": "Here is what makes it different.",
+     "a": 76.67,
+     "b": 78.71
+    },
+    {
+     "t": "The Foundation says it takes no donations, and no funding or sponsorships from drug companies, device makers, dialysis companies, insurers, or hospital systems.",
+     "a": 79.01,
+     "b": 89.38
+    },
+    {
+     "t": "Its fees are only for services you request, at posted rates.",
+     "a": 89.68,
+     "b": 93.63
+    },
+    {
+     "t": "Don't take its word for it.",
+     "a": 93.93,
+     "b": 95.87
+    },
+    {
+     "t": "Ask any organization five questions. Who pays you? Who governs you? Who shapes your message? What can't you say? And who do you answer to?",
+     "a": 96.17,
+     "b": 104.0
+    },
+    {
+     "t": "Then ask this foundation the same five.",
+     "a": 104.3,
+     "b": 107.03
+    }
+   ]
+  },
+  {
+   "id": "leaders",
+   "t0": 107.63,
+   "t1": 125.7,
+   "cc": [
+    {
+     "t": "The Foundation is looking for leaders.",
+     "a": 107.63,
+     "b": 110.13
+    },
+    {
+     "t": "Patients who have been quiet for too long. Care partners who are tired of being invisible.",
+     "a": 110.43,
+     "b": 115.63
+    },
+    {
+     "t": "People who want to learn to speak up, and to help the next patient do the same.",
+     "a": 115.93,
+     "b": 120.11
+    },
+    {
+     "t": "It starts with free training. Ten modules. And a real person reads your application.",
+     "a": 120.41,
+     "b": 125.7
+    }
+   ]
+  },
+  {
+   "id": "close",
+   "t0": 126.35,
+   "t1": 142.56,
+   "cc": [
+    {
+     "t": "I may not get my kidney back.",
+     "a": 126.35,
+     "b": 128.36
+    },
+    {
+     "t": "But I can tell you what I wish someone had told me.",
+     "a": 128.66,
+     "b": 131.58
+    },
+    {
+     "t": "Learn your rights before you need them.",
+     "a": 131.88,
+     "b": 134.06
+    },
+    {
+     "t": "Ask who pays.",
+     "a": 134.61,
+     "b": 136.27
+    },
+    {
+     "t": "And find the people who will stand beside you.",
+     "a": 136.57,
+     "b": 139.15
+    },
+    {
+     "t": "coldischemia.foundation.",
+     "a": 139.7,
+     "b": 142.56
+    }
+   ]
+  }
+ ]
+}
