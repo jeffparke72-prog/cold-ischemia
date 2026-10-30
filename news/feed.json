@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-10-30T06:19:59.659647+00:00",
+"updated": "2026-10-30T13:25:51.838740+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -87,7 +87,7 @@
 "category": "Policy",
 "url": "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=transplant+%7C+dialysis+%7C+%22organ+procurement%22+%7C+%22end-stage+renal%22&order=newest",
 "ok": true,
-"count": 3,
+"count": 4,
 "error": null
 },
 {
@@ -111,7 +111,7 @@
 "category": "News",
 "url": "https://kffhealthnews.org/feed/",
 "ok": true,
-"count": 0,
+"count": 1,
 "error": null
 },
 {
@@ -133,6 +133,127 @@
 ],
 "items": [
 {
+"title": "ICD-Coded Versus Undiagnosed Acute Kidney Injury in the Atherosclerosis Risk in Communities (ARIC) Study",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002542?dgcid=rss_sd_all",
+"summary": "By Grace G. von Oiste, Aditya Surapaneni, Carina M. Flaherty, Insa M. Schmidt, Kunihiro Matsushita, Josef Coresh, Wan-Jin Yeo, Morgan E. Grams",
+"outlet": "",
+"published": "2026-10-30T13:25:00.381882+00:00",
+"id": "15fd086862e31918",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
+"title": "Circulating Nephrin Antibodies and Post-Transplant Recurrence of Diffuse Podocytopathies: A Systematic Review",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002839?dgcid=rss_sd_all",
+"summary": "By Noppawit Aiumtrakul, Charat Thongprayoon, Jing Miao, Wisit Cheungpasitporn",
+"outlet": "",
+"published": "2026-10-30T13:25:00.381573+00:00",
+"id": "0697b5d59d98cf7e",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
+"title": "Finerenone Use in Coenzyme Q8B–Related Focal Segmental Glomerulosclerosis",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002645?dgcid=rss_sd_all",
+"summary": "By Manaf Aljishi, Mohamed Khogali, Turki Alhussain, Tofol Alnashmi",
+"outlet": "",
+"published": "2026-10-30T13:25:00.381479+00:00",
+"id": "714eceda4056b308",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
+"title": "Early EULAR Target Achievement and Kidney Outcomes in Lupus Nephritis",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033115?dgcid=rss_sd_all",
+"summary": "By Ryosuke Umeda, Shun Minatoguchi, Hidekazu Ikeuchi, Keiju Hiromura, Naotake Tsuboi, Yukio Yuzawa, Yutaka Kawahito, Takahiro Seno, Kazuro Kamada, Michihito Kono, Akiho Iwashita, Akira Onishi, Kentaro Minowa, Naoto…",
+"outlet": "",
+"published": "2026-10-30T13:24:59.718156+00:00",
+"id": "488ee08820d4d9f1",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
+"title": "High-dose vitamin D does not improve survival on dialysis",
+"link": "https://www.healio.com/news/nephrology/20261030/highdose-vitamin-d-does-not-improve-survival-on-dialysis",
+"summary": "DENVER — High-dose cholecalciferol was not associated with improved survival vs. standard care for patients on dialysis, according to study data presented at ASN Kidney Week. Vitamin D deficiencies are common among patients on dialysis and may lead to increased risks for death, CVD, infection, fractures and…",
+"outlet": "",
+"published": "2026-10-30T12:41:21+00:00",
+"id": "ccbabd7d9de5be20",
+"source": "Healio Nephrology",
+"category": "News",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
+"title": "Uterus Transplant Living Donor Evaluation and Selection: An Approach to Optimizing Donor and Recipient Outcomes.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42957616/",
+"summary": "Jacques A, Fischbach C, Warren AM et al. Transplantation",
+"outlet": "Transplantation",
+"published": "2026-10-30T12:00:00+00:00",
+"id": "7d24d2a30d489c3a",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
+"title": "Simple steps to improve environmental sustainability in the clinic",
+"link": "https://www.healio.com/news/dermatology/20261029/simple-steps-to-improve-environmental-sustainability-in-the-clinic",
+"summary": "Dermatology clinics contribute to climate change, but targeting supply chain practices can decrease their environmental impact, according to a study published in the International Journal of Dermatology. “A substantial amount of evidence indicates that climate change and pollution broadly harm health and specifically…",
+"outlet": "",
+"published": "2026-10-30T12:00:00+00:00",
+"id": "4acaa7b091da1c88",
+"source": "Healio Nephrology",
+"category": "News",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
+"title": "Dialysis at a Turning Point: What Comes Next? - Medscape",
+"link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVlBaS3JEbTc3VjdPckpleE9aVVpfN2hxd1pYczBOandTcWRLakNNQVA1S0Y0T3dKOTZBS0UyaXlYaFpYT2NQczh2Ty1hU0xyZWtvNFN5VXJRMENGUUtyVDc0VEpuX0phOTlNeWdKMkJHdzg4cEVhWURQLUwySlBCWUZ4UkZGTTkwWjhOeWpab3hSQQ?oc=5",
+"summary": "Dialysis at a Turning Point: What Comes Next? Medscape",
+"outlet": "Medscape",
+"published": "2026-10-30T11:38:35+00:00",
+"id": "9f011a4c7fd25ebf",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
+"title": "A Kidney Drug Looked Like a Metal Foreign Body on Scans—It Was Actually an Unchewed Pill - Medical Daily",
+"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNR0ZCM2hQVm5xZHpnc01xY19mOWpNUTczWUU4dml0NEtxYmhWb2d2dmpKX2loZUtCUnJBQkliellxVHp1cXRwZ1oyNXlQbmtBcmNFZmswTDVhT2lQcEhpQzE4SGROeUZhLTMtcDJrTHZSdWtBUXVrSDdPLWgzNkpaSFRFanA?oc=5",
+"summary": "A Kidney Drug Looked Like a Metal Foreign Body on Scans—It Was Actually an Unchewed Pill Medical Daily",
+"outlet": "Medical Daily",
+"published": "2026-10-30T09:10:06+00:00",
+"id": "5a279f0d37d4829b",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
+"title": "Your Phone Knows You’re at the Doctor, and Data Brokers Do, Too — Then Profit From It",
+"link": "https://kffhealthnews.org/health-industry/data-brokers-phone-location-tracking-sensitive-medical-data-targeted-ads/",
+"summary": "The Federal Trade Commission told a data company it could no longer sell data it collected from hundreds of millions of Americans’ mobile devices when people visited hospitals, dialysis clinics, or abortion clinics. But little is stopping other companies from doing so. In the absence of federal protections, some…",
+"outlet": "",
+"published": "2026-10-30T09:00:00+00:00",
+"id": "12fcc9813ab7700b",
+"source": "KFF Health News",
+"category": "News",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
+"title": "Twelve-Month Albuminuria Response to Finerenone in Patients With Chronic Kidney Disease and Type 2 Diabetes Mellitus: A Real-World Study - Cureus",
+"link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQOXJ3Q1RabUl1TnU4eXduazE1bGFyY2hqVjBEUlRlTE85bm10MVJBUmxnblY0S1hoNF9EY3dUUXNmOEhCN3FINDdKUTc0ZjFhQzE0b1E1bTBpWWxrMjFhT1JmVmFxdWpwajJNZUdRSE9wWTZFSWJoYzQ5bEo4NWZ1NkZoc1JXeGZOUlByckZJdVV2UGNLdW1hZXhjUEFmYUN5ZE1nWnptbENzU19qYjJtUk5VN1hRS1FCVV90VzRKUXNId2FlcDQ1VHJYWFNpNnhNVWRrYW5Na1kxMXR1TndDZFVkZjdHRXJTWGtya3JtQUJoWV8taUhYZFRpUWdZY2RIYm1OTw?oc=5",
+"summary": "Twelve-Month Albuminuria Response to Finerenone in Patients With Chronic Kidney Disease and Type 2 Diabetes Mellitus: A Real-World Study Cureus",
+"outlet": "Cureus",
+"published": "2026-10-30T06:46:55+00:00",
+"id": "dd01cabf2a898c06",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
 "title": "NJ family's fight over organ donation raises questions: 'This was one body that they couldn't get' - 6abc Philadelphia",
 "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQZmhFTm5GQU9GbXUxbzZoelBMd241ajJkX1I3MWV4WEh1N1k3UWdHUFNVaklPdTBTbnYtbWowS1hJbW1UMVB0MW11MnJrd3NFQjJLSVpkUk56cVJoN05PanVjamx5bDE1eGF4ZFlYc2FZdmlGdnJidE1UYlI5Qkx0c3VzbVdfYlBhTzBLeEpRMEptY2RNNnBDWXNKbW1SNDhSc2840gGoAUFVX3lxTFB2NzhoSFM1OS1GTnZtalB5UGpNVWkxYXI2N290VTJBSnh3ZlkxOHYtOThERXZuVXRLRUFWVjFRdUxzVFNsRERYa0lLN0NLb3dZZERyVW9yYkJNVEh0dmpJYW5IUE9pdlVlYU84Tl9KZGRBS3djaGJMX1ZERElUQUZoQlBYNVZ1VlZPNDdOcndJWUdPVFRMMnZmei1DLTZPX21nQnBaak1laA?oc=5",
 "summary": "NJ family's fight over organ donation raises questions: 'This was one body that they couldn't get' 6abc Philadelphia",
@@ -142,6 +263,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-30T06:19:59.659647+00:00"
+},
+{
+"title": "Medicare Program; CY 2027 Changes to the End-Stage Renal Disease (ESRD) Prospective Payment System, Acute Kidney Injury (AKI) Dialysis Payment, and ESRD Quality Incentive Program",
+"link": "https://www.federalregister.gov/documents/2026/10/30/2026-22194/medicare-program-cy-2027-changes-to-the-end-stage-renal-disease-esrd-prospective-payment-system",
+"summary": "This final rule updates and revises the End-Stage Renal Disease (ESRD) Prospective Payment System for calendar year 2027. This rule also includes updates to the payment rate for renal dialysis services furnished by an ESRD facility to individuals with acute kidney injury. In addition, this rule updates the…",
+"outlet": "",
+"published": "2026-10-30T04:00:00+00:00",
+"id": "03635577cb162815",
+"source": "Federal Register: organ transplant policy",
+"category": "Policy",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
 },
 {
 "title": "Built Environment, Metabolic Risk Factors, and Self-Reported Kidney Disease in Missouri: A Population-Level Descriptive Study Using Public Health Behavioral Risk Factor Surveillance System (BRFSS) Data - Cureus",
@@ -263,6 +395,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-30T06:19:59.659647+00:00"
+},
+{
+"title": "Smith County inmate who escaped custody at dialysis clinic identified - KLTV.com",
+"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNME5HMXc5eHNOSmhmd3paWjFHa1l2OWppdjJBaVZqdGdSV3VjU1k3TXd3cHF1TDhHMU9RQTlTaGJ2QzdGSzdmVDhlZU4wbEYxVDFtUkRwcGp3bVJTcXIyMEtmNXBKTlNPcXBMSkRQLVpoZy1uQk1rWEpXVmNuUURzUDNmZkFROVJ3VTVnR2NSS1ZIVHBJT3RRSlJzVVp6eGRFbG8xN0swVWk?oc=5",
+"summary": "Smith County inmate who escaped custody at dialysis clinic identified KLTV.com",
+"outlet": "KLTV.com",
+"published": "2026-10-29T20:30:28+00:00",
+"id": "35afbb5fa9e04598",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-30T00:12:25.085175+00:00"
 },
 {
 "title": "Unraveling the Hemodialysis Patient Network: Results from the Social Network and Renal Education (SNARE) Transplant Intervention Clinical Trial",
@@ -406,17 +549,6 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-29T20:30:09.656486+00:00"
-},
-{
-"title": "Smith County inmate who escaped custody at dialysis clinic identified - KLTV.com",
-"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNME5HMXc5eHNOSmhmd3paWjFHa1l2OWppdjJBaVZqdGdSV3VjU1k3TXd3cHF1TDhHMU9RQTlTaGJ2QzdGSzdmVDhlZU4wbEYxVDFtUkRwcGp3bVJTcXIyMEtmNXBKTlNPcXBMSkRQLVpoZy1uQk1rWEpXVmNuUURzUDNmZkFROVJ3VTVnR2NSS1ZIVHBJT3RRSlJzVVp6eGRFbG8xN0swVWk?oc=5",
-"summary": "Smith County inmate who escaped custody at dialysis clinic identified KLTV.com",
-"outlet": "KLTV.com",
-"published": "2026-10-29T15:35:56+00:00",
-"id": "35afbb5fa9e04598",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-30T00:12:25.085175+00:00"
 },
 {
 "title": "Cytomegalovirus: Updated Approach to Management for Kidney Transplant Recipients",
@@ -626,6 +758,17 @@
 "source": "PubMed: living organ donation",
 "category": "Research",
 "first_seen": "2026-10-29T20:30:09.656486+00:00"
+},
+{
+"title": "The Crossroads Between the Kidney and Gastrointestinal Disorders: Core Curriculum 2026",
+"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011261?dgcid=rss_sd_all",
+"summary": "By Trevor Stevens, Megha Salani",
+"outlet": "",
+"published": "2026-10-29T12:00:00+00:00",
+"id": "bb991720e5c9fffd",
+"source": "American Journal of Kidney Diseases",
+"category": "Journals",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
 },
 {
 "title": "Discharge Planning Quality Linked to Better Quality of Life in Dialysis Patients - Bioengineer.org",
@@ -857,6 +1000,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-29T20:30:09.656486+00:00"
+},
+{
+"title": "Kidney transplant recipients showed strong self-management during the pandemic, study finds - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZ2dRekxvemFhenRGaG5ZTEhJeXFXdnoyZVRmdXNPSlpSQmk4bUtVSnoxWjN6czlVajR2TGtDYVowSk15dzFQb1RWUUJ6dUdLcFloYlVPUmFGbnJxYnFEc1IzSWJaSThGV09JMmsyWnJmblZqQ1pPTFZiak5MTHJCTFYwdE5ZVWRMcDRudEVKWU5zbVdYX3R1aThfZGltNjJsamxlSEE4ZnhYNVV3MzhaMEJnMjhLQQ?oc=5",
+"summary": "Kidney transplant recipients showed strong self-management during the pandemic, study finds Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-10-29T05:22:48+00:00",
+"id": "8de8d1a48ff362e3",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-10-30T13:25:51.838740+00:00"
 },
 {
 "title": "Living Liver Donors With Obesity and Metabolic Risk: Review and Guidance on Donor Triage and Care",
@@ -5477,160 +5631,6 @@
 "source": "American Journal of Kidney Diseases",
 "category": "Journals",
 "first_seen": "2026-10-21T14:37:00.175654+00:00"
-},
-{
-"title": "Complement in Kidney Disease: Core Curriculum 2026",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626010498?dgcid=rss_sd_all",
-"summary": "By Joshua M. Thurman, Felix Poppelaars",
-"outlet": "",
-"published": "2026-10-21T14:37:00.175654+00:00",
-"id": "339683c7bc4a9482",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-21T14:37:00.175654+00:00"
-},
-{
-"title": "Metabolic Acidosis and Progression of CKD: Current Guidelines and Considerations",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626009789?dgcid=rss_sd_all",
-"summary": "By Beverley Beynon-Cobb, Wesley Visser, Ewout J. Hoorn, Andrew Morris",
-"outlet": "",
-"published": "2026-10-21T14:37:00.175654+00:00",
-"id": "041d3a09a3ad00ad",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-21T14:37:00.175654+00:00"
-},
-{
-"title": "Approach to Hyperkalemia: The Role of Diet and Pharmacological Therapies",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626009893?dgcid=rss_sd_all",
-"summary": "By Annabel Biruete, Linda F. Fried",
-"outlet": "",
-"published": "2026-10-21T14:37:00.175654+00:00",
-"id": "002ce044dac85a28",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-21T14:37:00.175654+00:00"
-},
-{
-"title": "Beyond Genotype: Proteomic Risk Stratification for APOL1-Mediated Kidney Disease",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626010929?dgcid=rss_sd_all",
-"summary": "By Seung Seok Han, Eugene P. Rhee",
-"outlet": "",
-"published": "2026-10-21T14:37:00.175654+00:00",
-"id": "c0c678f49475350d",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-21T14:37:00.175654+00:00"
-},
-{
-"title": "Twelve-Year Follow-up of a Family With CKD Caused by an mtDNA Variant",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626010619?dgcid=rss_sd_all",
-"summary": "By Lanping Jiang, Zhanmei Zhou, Shaozhen Feng, Liutao Huang, Xinjin Zhou, Shicong Yang, Yaqiong Wang, Yaoling Huang, Xu Miao, Qinghua Liu, Yi Zhou, Haiping Mao, Xiao Yang, Qiongqiong Yang, Fengxian Huang, Huafeng…",
-"outlet": "",
-"published": "2026-10-21T14:37:00.175654+00:00",
-"id": "f86ebac635be1581",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-21T14:37:00.175654+00:00"
-},
-{
-"title": "How US Organ Transplant System Works and What to Ask to Improve Your Chances - The Well News",
-"link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFB6ZU9YOEdpbXlsOUpuZ3pwS2w1NTZKYVl1S1NCZjhaMDUyWk9NVFFYd2ZwVHhQMmlNM0Z3c29tU0NKR3MxdXJBcms1MmFjY2lBT0h4VDFuVTJxdFBwejdQZlVB?oc=5",
-"summary": "How US Organ Transplant System Works and What to Ask to Improve Your Chances The Well News",
-"outlet": "The Well News",
-"published": "2026-10-21T14:22:04+00:00",
-"id": "f954aa720d2922a2",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-21T18:53:17.676441+00:00"
-},
-{
-"title": "Why Black and Latino people in the U.S. are more likely to develop kidney disease - WTNH.com",
-"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNUTVWWEFDZ2h1bWJkVkU2M2ktdDljODFmR2U4N2JwT09fZjJQQ1Ixcm0wdXJCOGgtTC1jcFBXZzBCVW0yU01RNkFCTW9USUNPZGpSelVoYkdBYUliU1hRWWY1TlY4MWpUZi1la01ab29LVzZaTmNHaWdWT2dVbW13ZmoxSUxOS01INlVEZmZ1VFRSMDF0NWlnQ3NqU2ZvTERmenlOM0NPMUY2TlFPbUxXeVNZcUTSAboBQVVfeXFMTmU1UW1iTndYQTl2LVcxWVA5WmttaHdpZHY1VnlRYmZfUm9jcTkyRFg5X3MxMkRWeFhzMmNmWlBUa20ycUtReWhqZDFicnVvdWMzS01TblQtYlk4bm5SdkZmUy1FRjItWVVqc3Jid3g2bHhMMThwYUR5YjBCekZIc1lKakUxblVBWlAxeWQ4UUIzaTk2dHdSNm9Kbl9CYUt1TkZGbUlxTkxYWkN5Tm1pNWk3V2Q0M3ZOeHV3?oc=5",
-"summary": "Why Black and Latino people in the U.S. are more likely to develop kidney disease WTNH.com",
-"outlet": "WTNH.com",
-"published": "2026-10-21T14:01:07+00:00",
-"id": "58ff234d8c922b7b",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-22T11:38:21.909984+00:00"
-},
-{
-"title": "Beholden to the Party: CCP Control in the Transplant Sector - The Jamestown Foundation",
-"link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNZVQ2QXZrcmM0ZS0yTEtmZ29wS2d6UzE3Qno3YWJ4QTg4STRQYVJaNzdOcGF2NDl4YnktWjJmXzdYY29PT2tzWGVJa0VjYUFxejB5R0FEb2NScEp4ckJ6Nk1RX3R2bVdQYi1OOTFDUmRHSVJYSjR4SGJhWXJZWThPdFFGOTZ5ZEtI?oc=5",
-"summary": "Beholden to the Party: CCP Control in the Transplant Sector The Jamestown Foundation",
-"outlet": "The Jamestown Foundation",
-"published": "2026-10-21T12:56:08+00:00",
-"id": "e948035f6efbb068",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-23T07:21:26.300214+00:00"
-},
-{
-"title": "HHS is pushing to open up the U.S. dialysis market with a new kidney care plan - Quartz",
-"link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5qVDdtUTVKeTh4Nkh3S01XMkdscERoeXRFU2dBV29mMjk3eFB5X0pKdzVWQU1LVjVvbF9PNHBpRDdvdk1hNDZrcmxqLWh1bWw0SWplUjZiNEt1TW5neVppVnRjQjdKRF94TWczSE5HZGVJeE5QcldTb2dB?oc=5",
-"summary": "HHS is pushing to open up the U.S. dialysis market with a new kidney care plan Quartz",
-"outlet": "Quartz",
-"published": "2026-10-21T12:47:31+00:00",
-"id": "059cd44eae0911bb",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-21T14:37:00.175654+00:00"
-},
-{
-"title": "Equity in Kidney Allocation: An Examination of Out of Sequence Kidney Transplant Recipients at a Single Center",
-"link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70718?af=R",
-"summary": "Clinical Transplantation, Volume 40, Issue 10, October 2026.",
-"outlet": "Wiley: Clinical Transplantation: Table of Contents",
-"published": "2026-10-21T12:31:05+00:00",
-"id": "de3bdec427dad70c",
-"source": "Clinical Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-21T18:53:17.676441+00:00"
-},
-{
-"title": "Equity Gaps in Sex, Racial, and Ethnic Inclusion in United States Heart Transplant Trials",
-"link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70726?af=R",
-"summary": "Clinical Transplantation, Volume 40, Issue 10, October 2026.",
-"outlet": "Wiley: Clinical Transplantation: Table of Contents",
-"published": "2026-10-21T12:28:42+00:00",
-"id": "05fb0082b51f0ac9",
-"source": "Clinical Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-21T18:53:17.676441+00:00"
-},
-{
-"title": "Associations Between Transportation and Kidney Transplantation in Adults With Kidney Failure: A Retrospective Observational Study",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003493?dgcid=rss_sd_all",
-"summary": "By Na’amah Razon, Yi Zhang, Bethney Bonilla-Herrera, Lorien S. Dalrymple, Amanda K. Stennett, Laura M. Gottlieb, Baback Roshanravan, Daniel J. Tancredi, Joshua J. Fenton",
-"outlet": "",
-"published": "2026-10-21T12:00:00+00:00",
-"id": "a2dab201eb188eac",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-22T11:38:21.909984+00:00"
-},
-{
-"title": "Non-GFR Factors Influencing Serum Cystatin C Levels: A Systematic Review",
-"link": "https://www.sciencedirect.com/science/article/pii/S259005952600350X?dgcid=rss_sd_all",
-"summary": "By Ogechi M. Adingwupu, Ernesto Rodolpho Barbosa, Kshitij Prabhune, Sharanya Ramesh, Andrew S. Levey, Lesley A. Inker",
-"outlet": "",
-"published": "2026-10-21T12:00:00+00:00",
-"id": "4a3ae0ae4a5474fc",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-22T11:38:21.909984+00:00"
-},
-{
-"title": "Initiation of Apixaban Versus Warfarin in Patients With Kidney Failure on Hemodialysis With Newly Diagnosed Atrial Fibrillation: A Target Trial Emulation",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011777?dgcid=rss_sd_all",
-"summary": "By Wolfgang C. Winkelmayer, Maria E. Montez-Rath, Mingyue He, Kevin F. Erickson, L. Parker Gregg, Pascale Khairallah, Glenn M. Chertow, Tara I. Chang, Jingbo Niu",
-"outlet": "",
-"published": "2026-10-21T12:00:00+00:00",
-"id": "ebc41bab3ce96171",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-22T17:03:14.844318+00:00"
 }
 ]
 }
