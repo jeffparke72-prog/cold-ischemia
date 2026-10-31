@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Gatekeeper Files | Cold Ischemia Foundation</title>
+<meta name="description" content="52 Thursdays. 52 problems people with kidney disease run into, the hidden rule behind each one, and the fix.">
+<meta property="og:title" content="The Gatekeeper Files">
+<meta property="og:description" content="Every Thursday: one kidney care problem, the rule behind it, and the fix.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: a 52-tile Thursday calendar; each tile opens one large card that flips from the problem (front) to the hidden rule and the fix (back). Clinical navy and paper, one red "seal" for the gate. */
+:root{
+  --bg:#f1f3f5; --surface:#ffffff; --ink:#111c27; --muted:#5a6876; --line:#d6dde3;
+  --steel:#2c5f86; --steel-soft:#e3ecf3; --seal:#a3261b; --seal-soft:#f6e4e1; --shade:rgba(10,18,26,.62);
+  --d-pay:#2c5f86; --d-chair:#1f7a6a; --d-list:#8a4b14; --d-organ:#6b3fa0; --d-donor:#9a6b00; --d-rights:#a3261b; --d-prev:#3d7a2b; --d-eq:#a03a6a;
+  --cond:"Barlow Condensed","Arial Narrow",Impact,sans-serif; --serif:"Source Serif 4",Georgia,serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0c131a; --surface:#141f29; --ink:#e3eaf0; --muted:#97a6b4; --line:#26343f;
+  --steel:#7fb1d6; --steel-soft:#1a2c3a; --seal:#ef7d6f; --seal-soft:#3a1d1a; --shade:rgba(0,0,0,.72);
+  --d-pay:#7fb1d6; --d-chair:#5cc2ad; --d-list:#e0a067; --d-organ:#b596e0; --d-donor:#d9b44a; --d-rights:#ef7d6f; --d-prev:#86c46f; --d-eq:#e384b0; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c131a; --surface:#141f29; --ink:#e3eaf0; --muted:#97a6b4; --line:#26343f;
+  --steel:#7fb1d6; --steel-soft:#1a2c3a; --seal:#ef7d6f; --seal-soft:#3a1d1a; --shade:rgba(0,0,0,.72);
+  --d-pay:#7fb1d6; --d-chair:#5cc2ad; --d-list:#e0a067; --d-organ:#b596e0; --d-donor:#d9b44a; --d-rights:#ef7d6f; --d-prev:#86c46f; --d-eq:#e384b0; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.55;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.wrap{max-width:1140px;margin:0 auto;padding-block:28px 64px;display:grid;gap:34px}
+.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{margin:0;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--steel);outline-offset:2px}
+
+.mast{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;border-bottom:3px solid var(--ink);padding-bottom:18px}
+.mast h1{font-family:var(--cond);font-weight:800;font-size:clamp(52px,9vw,104px);line-height:.88;text-transform:uppercase;letter-spacing:.005em}
+.mast p{margin:12px 0 0;max-width:62ch;color:var(--muted);font-size:17px}
+.side{display:grid;gap:8px;justify-items:end;text-align:right}
+.count{font-family:var(--cond);font-weight:700;font-size:34px;line-height:1;font-variant-numeric:tabular-nums}
+.modes{display:flex;gap:6px}
+.tog{border:1px solid var(--line);background:var(--surface);border-radius:4px;padding:6px 10px;font-family:var(--mono);font-size:11.5px}
+.tog[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (max-width:680px){.mast{grid-template-columns:1fr}.side{justify-items:start;text-align:left}}
+
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.how div{background:var(--surface);padding:14px 16px;display:grid;gap:4px}
+.how b{font-family:var(--cond);font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+.how span{font-size:14.5px;color:var(--muted)}
+@media (max-width:680px){.how{grid-template-columns:1fr}}
+
+.bar{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap}
+.bar h2{font-family:var(--cond);font-weight:800;font-size:34px;text-transform:uppercase;line-height:1}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 11px;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;gap:6px;align-items:center}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.cal{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:6px;text-align:left;padding:0;display:grid;grid-template-rows:auto 1fr;overflow:hidden;transition:border-color .15s, transform .15s}
+.tile:hover{border-color:var(--ink);transform:translateY(-2px)}
+.thead{display:flex;justify-content:space-between;align-items:center;padding:7px 12px;background:var(--c);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+:root[data-theme="dark"] .thead{color:#0c131a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .thead{color:#0c131a}}
+.tbody{padding:12px 12px 14px;display:grid;gap:6px;align-content:start}
+.tnum{font-family:var(--cond);font-weight:800;font-size:40px;line-height:.9;font-variant-numeric:tabular-nums}
+.tprob{font-size:15px;line-height:1.35}
+.tgate{font-family:var(--mono);font-size:10.5px;color:var(--seal);letter-spacing:.03em}
+.tile.locked .tprob{color:var(--muted);font-style:italic}
+
+/* Card overlay */
+.ov{position:fixed;inset:0;background:var(--shade);z-index:500;display:grid;place-items:start center;overflow-y:auto;
+  padding:calc(24px + env(safe-area-inset-top,0px)) max(16px, env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px))}
+.stage{width:min(760px,100%);perspective:1800px}
+.flipper{display:grid;transform-style:preserve-3d;transition:transform .85s cubic-bezier(.3,.7,.2,1)}
+.stage.on .flipper{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border-radius:8px;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);display:flex;flex-direction:column;min-width:0}
+.back{transform:rotateY(180deg)}
+.fhead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px solid var(--line)}
+.x{border:1px solid var(--line);background:transparent;border-radius:4px;padding:4px 10px;font-family:var(--mono);font-size:12px}
+.fbody{padding:26px 28px 28px;display:grid;gap:18px;flex:1;align-content:start}
+.front .fbody{align-content:center;min-height:420px}
+.wk{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.wk b{font-family:var(--cond);font-weight:800;font-size:84px;line-height:.8;font-variant-numeric:tabular-nums}
+.wk span{font-family:var(--cond);font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+.problem{font-size:clamp(24px,3.6vw,32px);line-height:1.22;font-weight:600}
+.seal{justify-self:start;display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--seal);color:var(--seal);background:var(--seal-soft);padding:6px 12px;border-radius:3px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;transform:rotate(-1.5deg)}
+.flipbtn{justify-self:start;border:0;background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:4px;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.sec{display:grid;gap:6px}
+.sec h3{font-family:var(--cond);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.04em;color:var(--steel)}
+.sec p{margin:0}
+.moves{display:grid;gap:10px}
+.mv{display:grid;grid-template-columns:118px minmax(0,1fr);gap:12px;border-top:1px solid var(--line);padding-top:10px}
+.mv .lbl{padding-top:3px;color:var(--ink)}
+@media (max-width:520px){.mv{grid-template-columns:1fr;gap:2px}.fbody{padding:20px 18px 22px}.wk b{font-size:64px}}
+.src{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+.src a{color:var(--steel)}
+.cardnav{display:flex;justify-content:space-between;gap:8px;padding:0 20px 18px}
+.nb{border:1px solid var(--line);background:transparent;border-radius:4px;padding:8px 12px;font-family:var(--mono);font-size:12px}
+.nb:disabled{opacity:.35;cursor:default}
+.sealed{display:grid;gap:10px}
+footer{border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.flipper,.tile{transition:none}}
+</style>
+<link rel="icon" href="cold-ischemia-logo.png">
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a></div></div><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="gatekeeper-files.html" class="on" role="menuitem">The Gatekeeper Files</a><a href="test-your-knowledge.html" role="menuitem">Test Your Knowledge</a><a href="living-donor-guide.html" role="menuitem">Free Donor Guide (PDF)</a><a href="research-digest.html" role="menuitem">Research Digest</a><a href="inside-files.html" role="menuitem">The Inside Files</a><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-hub.html" role="menuitem">Living Donor Hub</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="kidney-transplant-centers.html" role="menuitem">Kidney Transplant Centers by State</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="services.html" class="cn-t cn-s">Services We Offer</a><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <div class="lbl">Cold Ischemia Foundation · Every Thursday</div>
+      <h1>The Gatekeeper Files</h1>
+      <p>Fifty-two problems people with kidney disease run into, and the payment rule, policy line, or unwritten practice actually causing each one. Pick a week. Read the problem. Flip the card for the rule behind it and the fix.</p>
+    </div>
+    <div class="side">
+      <span class="lbl" id="cLbl">Next file opens in</span>
+      <span class="count" id="count">--</span>
+      <span class="lbl" id="cDate"></span>
+      <div class="modes" id="modes" hidden><button class="tog" id="mPrev" aria-pressed="true">Founder preview</button><button class="tog" id="mPub" aria-pressed="false">Public view</button></div>
+    </div>
+  </header>
+
+  <section class="how" aria-label="How each card works">
+    <div><b>Front: the problem</b><span>Something patients and families live through, in plain words.</span></div>
+    <div><b>The gate</b><span>The specific rule, payment code, or policy that produces it.</span></div>
+    <div><b>Back: the fix</b><span>What the patient can do now, what the care team can change, and what policy must change.</span></div>
+  </section>
+
+  <section aria-label="52-week calendar">
+    <div class="bar">
+      <div><span class="lbl">Thursday, Nov 5, 2026 – Thursday, Oct 28, 2027</span><h2>The calendar</h2></div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="cal" id="cal" style="margin-top:16px"></div>
+  </section>
+
+  <footer>The Gatekeeper Files is a Cold Ischemia Foundation series. Each card is built from regulations, payment rules, policy documents, and peer-reviewed research cited on its back. Nothing here is individual medical or legal advice; take it to your care team.</footer>
+</div>
+
+<div class="ov" id="ov" hidden>
+  <div class="stage" id="stage" role="dialog" aria-modal="true" aria-labelledby="pProb">
+    <div class="flipper">
+      <article class="face front">
+        <div class="fhead"><span class="lbl" id="fDom"></span><button class="x" data-close>Close</button></div>
+        <div class="fbody">
+          <div class="wk"><b id="fNum"></b><span id="fDate"></span></div>
+          <p class="problem" id="pProb"></p>
+          <span class="seal" id="fGate"></span>
+          <button class="flipbtn" id="flip">Flip the card</button>
+        </div>
+        <div class="cardnav"><button class="nb" id="prev1">← Week</button><button class="nb" id="next1">Week →</button></div>
+      </article>
+      <article class="face back" aria-hidden="true">
+        <div class="fhead"><span class="lbl" id="bHead"></span><button class="x" data-close>Close</button></div>
+        <div class="fbody" id="bBody"></div>
+        <div class="cardnav"><button class="nb" id="unflip">← Problem</button><button class="nb" id="next2">Next week →</button></div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<script>
+const D={pay:["Payment & Coverage","--d-pay"],chair:["The Treatment Chair","--d-chair"],list:["The Waitlist","--d-list"],organ:["The Organ Pathway","--d-organ"],donor:["Donors & Recipients","--d-donor"],rights:["Rights & Records","--d-rights"],prev:["Before Kidney Failure","--d-prev"],eq:["Who Gets Left Out","--d-eq"]};
+const C=[
+{d:"pay",p:"Your phosphate binder changed, or vanished from the pharmacy shelf, and nobody explained why.",g:"ESRD PPS · oral-only drugs in the bundle since Jan 1, 2025",
+ w:"Since January 1, 2025, Medicare pays for phosphate binders through the dialysis clinic’s bundled payment instead of Part D at the pharmacy. For 2025 and 2026, clinics received a temporary add-on (TDAPA) for them. For 2027, CMS proposed folding about $15.96 per treatment into the base rate for every patient, whether or not that patient takes a binder. Once binder money is a flat amount, every dollar not spent on binders stays with the clinic, and the cheapest binder becomes the house binder.",
+ y:"Ask for your clinic’s binder list in writing and the reason for any switch. If pill burden, stomach side effects, or your phosphorus get worse after a switch, ask that it be written into your plan of care.",
+ t:"Switch binders only for a documented clinical reason. Track phosphorus, calcium, and pill count for 90 days before and after any formulary change.",
+ x:"Require clinics to report binder switches and phosphorus outcomes once the add-on ends, so a flat payment cannot quietly become a formulary squeeze.",
+ s:[["CMS: CY 2027 ESRD PPS proposed rule fact sheet","https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2027-end-stage-renal-disease-esrd-prospective-payment-system-proposed-rule"],["Home Dialysis Central: what CMS is proposing for 2027","https://homedialysis.org/news-and-research/blog/706-what-cms-is-proposing-for-dialysis-in-2027-and-why-your-comments-matter"]]},
+{d:"prev",p:"Your eGFR says you are fine. Or it says you are much worse than you feel.",g:"Lab ordering habit · creatinine-only eGFR",
+ w:"Creatinine-based eGFR depends on muscle mass. Bodybuilders, amputees, older adults, people with very low or very high muscle, and people on certain medicines can be misclassified in either direction. KDIGO’s 2024 guideline recommends adding cystatin C to confirm kidney function when creatinine may mislead. Most clinics never order it, so staging, drug dosing, and referral timing ride on a number that may be wrong.",
+ y:"Ask whether a cystatin C test would change your stage, your drug doses, or your referral timing.",
+ t:"Build a cystatin C prompt into lab orders when eGFR is near a decision threshold (60, 30, 20) or when body build is atypical.",
+ x:"Make cystatin C confirmation a covered standard at decision points, and report the share of CKD patients who ever receive it.",
+ s:[["KDIGO 2024 CKD Guideline","https://kdigo.org/guidelines/"]]},
+{d:"chair",p:"You heard there is a better form of dialysis used across Europe. Nobody at your clinic brings it up.",g:"Same bundled rate · single-company rollout",
+ w:"The CONVINCE trial (NEJM 2023) found high-volume hemodiafiltration lowered all-cause death 23% compared with standard high-flux hemodialysis. The machine received FDA clearance and its maker began offering it in its own U.S. clinics in waves. Medicare pays the same bundled rate whether you get hemodiafiltration or standard treatment, so other operators have no payment reason to buy new machines and patients at most clinics will never be offered it.",
+ y:"Ask whether your clinic plans to offer hemodiafiltration, and whether you can transfer to a clinic that does.",
+ t:"Start an eligibility list now and track who is offered the therapy by age, race, and insurance.",
+ x:"An add-on or quality measure tied to convective volume that is open to every operator, plus public data on who receives it.",
+ s:[["Healio: hemodiafiltration in the U.S.","https://www.healio.com/news/nephrology/20250903/hemodiafiltration-poised-to-set-new-standard-of-care-for-us-dialysis"],["Fresenius: FDA clearance and U.S. rollout (2025)","https://freseniusmedicalcare.com/en/media/newsroom/Fresenius-Medical-Care-Begins-Broader-US-Commercialization-of-5008X-CAREsystem-Achieves-Key-Milestones-in-Efforts-to-Introduce-High-Volume-Hemodiafiltration-Dialysis-Therapy-to-Individuals-with-Kidney-Disease-in-the-US/"]]},
+{d:"list",p:"Years on the list, no offers, while other people get calls.",g:"OPTN · separate consent for KDPI > 85% kidneys",
+ w:"Kidneys with a Kidney Donor Profile Index above 85% can only be offered to candidates who signed a separate consent. If you never signed it, those kidneys are never offered to you. For many older candidates and people with long expected waits, one of these kidneys can mean more years of life than waiting for a ‘better’ one that may never come.",
+ y:"Ask your center: have I signed the high-KDPI consent, and what would it mean for my odds and my wait?",
+ t:"Discuss high-KDPI consent at listing and at every annual review, with data specific to the patient’s age and wait time.",
+ x:"Require documented discussion of high-KDPI consent, and report each center’s consent rate.",
+ s:[["OPTN Policies (Kidney Allocation)","https://optn.transplant.hrsa.gov/policies-bylaws/policies/"]]},
+{d:"pay",p:"Your employer health plan suddenly treats every dialysis clinic as out-of-network.",g:"Marietta Memorial Hospital v. DaVita (2022)",
+ w:"Federal Medicare Secondary Payer law makes a group health plan pay first for the first 30 months of kidney failure. In 2022 the Supreme Court ruled a plan can still limit dialysis coverage, including treating all dialysis as out-of-network, as long as the limit applies to everyone in the plan. That reading lets plans push dialysis patients onto Medicare early and stick them with out-of-network bills in the meantime.",
+ y:"Before open enrollment, read your plan’s Summary Plan Description for dialysis terms and ask HR in writing how dialysis is covered.",
+ t:"Social workers screen every patient with employer coverage for this language at intake and each enrollment season.",
+ x:"Pass the Restore Protections for Dialysis Patients Act (S. 1173 in the 119th Congress).",
+ s:[["American Kidney Fund: Restore Protections Act explained","https://kidneyfund.org/article/restore-protections-dialysis-patients-act-explained"],["AAHD letter on S. 1173","https://aahd.us/wp-content/uploads/2025/05/DialysisPatientsRestoreMedicareProtections-05122025-toSenate-S-1173.pdf"]]},
+{d:"list",p:"Your center never even saw some of the kidneys that matched you.",g:"OPTN offer filters · national since January 2022",
+ w:"Since January 2022, transplant programs can set filters that automatically skip offers from donors they say they would not accept. Filters work at the program level, not the patient level. A filter that makes sense for one patient can screen out a kidney another patient on the same list would gladly take. Patients are not told what their program filters out.",
+ y:"Ask your center what offer filters it uses and whether they fit your age, health, and wait.",
+ t:"Review filters against the program’s actual list, and set patient-level exceptions where the rules allow.",
+ x:"Require programs to disclose their filters to waitlisted patients in plain language.",
+ s:[["OPTN: Optimizing Usage of Kidney Offer Filters","https://hrsa.unos.org/policies-bylaws/public-comment/optimizing-usage-of-kidney-offer-filters/"]]},
+{d:"pay",p:"Your evaluation is stuck on a dental clearance you cannot afford.",g:"Medicare Physician Fee Schedule · 2023 and 2025",
+ w:"Since 2023, Medicare pays for dental exams and necessary treatment as part of the workup before any organ transplant. Since 2025, it also pays for a dental exam and treatment to clear oral infection before or at the start of Medicare-covered dialysis. The catch: payment only works when the medical and dental teams coordinate, and most dentists and many centers do not know the rule exists.",
+ y:"Ask the center for a dentist who works with them under this rule, and bring the KFF summary to your dentist.",
+ t:"Build a written dental referral pathway that documents the medical link so claims are paid.",
+ x:"CMS outreach and simple billing guidance for dentists, and tracking of how many patients actually use it.",
+ s:[["KFF: Medicare coverage of dental services, 2023 and 2024 rules","https://www.kff.org/medicare/issue-brief/recent-changes-to-medicare-coverage-of-dental-services-from-the-2023-and-2024-medicare-physician-fee-schedule-final-rules/"]]},
+{d:"rights",p:"No one at your clinic ever talks about getting a transplant.",g:"42 CFR 494.80 and 494.90 · assessment and plan of care",
+ w:"Federal Conditions for Coverage require every dialysis clinic’s comprehensive assessment to include an evaluation of suitability for transplant referral, and the plan of care must address transplant status. These documents exist for every patient. Most patients never see them, never sign them, and never learn what was written about their eligibility.",
+ y:"Ask for your most recent comprehensive assessment and plan of care. Read the transplant section, and ask to attend your care plan meeting.",
+ t:"Review transplant status at every plan-of-care update and record the referral date and outcome.",
+ x:"Publish each clinic’s referral rate and require that patients receive a copy of their plan of care.",
+ s:[["42 CFR Part 494 (eCFR)","https://www.ecfr.gov/current/title-42/part-494"]]},
+{d:"chair",p:"You leave every treatment wiped out, cramping, and dizzy.",g:"No federal limit on fluid-removal rate",
+ w:"When too much fluid is pulled too fast, the heart and organs take the hit. Research has tied ultrafiltration rates above about 13 mL per kg per hour to higher risk of death (Flythe, Kidney International, 2011). There is no federal cap, and short chair times push rates higher.",
+ y:"Ask for your fluid-removal rate in mL/kg/hour each session, not just the total liters.",
+ t:"Set a rate ceiling and extend time or add a session instead of pulling harder.",
+ x:"Require public reporting of ultrafiltration rates by facility.",
+ s:[["Flythe JE et al., Kidney Int 2011;79:250–257","https://pubmed.ncbi.nlm.nih.gov/?term=Flythe+ultrafiltration+rate+mortality+2011"]]},
+{d:"list",p:"You were referred for transplant late and think you lost your place in line.",g:"Kidney Allocation System (2014) · Form CMS-2728",
+ w:"Since the 2014 kidney allocation system, adult waiting time is backdated to the date dialysis started, or to the date of listing with eGFR at or below 20, whichever came first. Your dialysis start date comes from the CMS-2728 form filed when you began treatment. A late referral does not erase that time, but an error on the form can.",
+ y:"Request a copy of your CMS-2728 and confirm the first-dialysis date. If you were told it is too late to bother, get evaluated anyway.",
+ t:"Verify the 2728 start date at listing and correct errors in writing.",
+ x:"Let patients view and dispute their 2728 data directly.",
+ s:[["OPTN Policy 8: Allocation of Kidneys","https://optn.transplant.hrsa.gov/policies-bylaws/policies/"]]},
+{d:"eq",p:"You can only get treatment once you are sick enough for the emergency room.",g:"State Medicaid ‘emergency’ definition",
+ w:"In many states, undocumented people with kidney failure get dialysis only through emergency Medicaid, which means waiting until dangerously ill. Research comparing emergency-only and scheduled dialysis has found much higher death rates with emergency-only care. Colorado changed its Medicaid policy in 2019 so kidney failure qualifies for scheduled dialysis. Other states can do the same through their own definitions.",
+ y:"Ask the hospital social worker whether your state counts kidney failure as qualifying for scheduled care.",
+ t:"Hospitals document the cost and harm of emergency-only dialysis for state Medicaid agencies.",
+ x:"States adopt the Colorado approach through Medicaid rule or guidance.",
+ s:[["Cervantes L et al., JAMA Intern Med 2018","https://pubmed.ncbi.nlm.nih.gov/?term=Cervantes+emergency-only+hemodialysis+undocumented+2018"]]},
+{d:"organ",p:"A kidney was thrown away because it came in on a weekend.",g:"Staffing and timing at procurement",
+ w:"Researchers found that kidneys procured on weekends were more likely to be discarded, even after accounting for organ quality (Mohan et al., Kidney International, 2016). That points to staffing, biopsy availability, and operating-room time, not biology.",
+ y:"Ask your center how it staffs offer review on nights and weekends.",
+ t:"Dedicated offer-review coverage on weekends, with the same decision standards as weekdays.",
+ x:"Publish discard rates by day of week for every organ procurement organization and transplant program.",
+ s:[["Mohan S et al., Kidney Int 2016","https://pubmed.ncbi.nlm.nih.gov/?term=Mohan+weekend+effect+deceased+donor+kidney+discard"]]},
+{d:"chair",p:"Palpitations, cramps, or a crash late in treatment, especially after the weekend.",g:"Protocol default dialysate baths",
+ w:"Most patients run on a standard dialysate potassium and calcium bath chosen by protocol. Low-potassium baths (2.0 mEq/L or lower) have been linked to higher risk of sudden cardiac arrest in dialysis clinics (Pun et al., Kidney International, 2011). The bath is rarely revisited once set.",
+ y:"Ask what potassium and calcium bath you are on and when it was last reviewed against your blood work.",
+ t:"Individualize the bath monthly using pre-dialysis potassium, and avoid very low potassium baths where possible.",
+ x:"Add bath individualization to plan-of-care documentation.",
+ s:[["Pun PH et al., Kidney Int 2011","https://pubmed.ncbi.nlm.nih.gov/?term=Pun+dialysate+potassium+sudden+cardiac+arrest"]]},
+{d:"list",p:"You have been ‘on the list’ for years without a single call.",g:"Inactive status · IOTA Model, Performance Year 2",
+ w:"Patients can sit in inactive status, still accruing time but receiving no offers. Under the IOTA Model update that began July 1, 2026, participating transplant hospitals must notify Medicare patients within 10 days when they become ineligible for organ offers, including the reason and how to reactivate, and must tell the patient’s dialysis facility and nephrologist. Patients at non-participating hospitals, and those not on Medicare, are not covered.",
+ y:"Ask for your status in writing, today and every three months.",
+ t:"Run a monthly audit of every inactive patient and the step that would reactivate them.",
+ x:"Extend the 10-day notice to every patient at every center.",
+ s:[["CMS: IOTA Performance Year 2 quick reference","https://www.cms.gov/priorities/innovation/increasing-organ-transplant-access-performance-year-2-model-update-quick-reference"]]},
+{d:"pay",p:"You are under 65, on Medicare, and cannot find coverage for the 20% Medicare does not pay.",g:"State Medigap law",
+ w:"Federal law guarantees a Medigap policy only at 65. Whether people under 65 with kidney failure can buy one, and at what price, depends on state law. In Original Medicare, the 20% coinsurance has no yearly cap, and dialysis runs year-round.",
+ y:"Call your state’s SHIP counselors and ask specifically about under-65 Medigap rules for kidney failure.",
+ t:"Social workers keep a current state-by-state sheet and walk every new patient through it.",
+ x:"Federal guaranteed issue of Medigap for people under 65 with kidney failure.",
+ s:[["Medicare.gov: Medigap","https://www.medicare.gov/health-drug-plans/medigap"]]},
+{d:"organ",p:"A kidney was discarded because of a biopsy read in the middle of the night.",g:"Procurement biopsy practice",
+ w:"Procurement biopsies are often frozen sections read quickly by on-call pathologists who may not specialize in kidneys. Studies have found these reads predict outcomes poorly, yet they drive a large share of discard decisions.",
+ y:"Ask your center whether a biopsy alone has ever caused it to decline an offer for you.",
+ t:"Send digital slides to kidney pathologists for a second read before a biopsy-based decline.",
+ x:"Fund a national remote renal pathology network available around the clock.",
+ s:[["Research on procurement biopsy reliability (PubMed)","https://pubmed.ncbi.nlm.nih.gov/?term=deceased+donor+kidney+procurement+biopsy+discard+reproducibility"]]},
+{d:"donor",p:"Your relative wants to donate now, but you will not need a kidney for years.",g:"Family voucher programs",
+ w:"Some paired exchange programs let a living donor give now and earn a voucher for a named person later. The gift is not lost to timing, and the kidney helps someone today. Few patients or families hear about it.",
+ y:"Ask your center whether it works with a paired exchange program that offers vouchers.",
+ t:"Include voucher options in every living donor education session.",
+ x:"Count voucher donations in center metrics so programs have reason to offer them.",
+ s:[["National Kidney Registry: Family Voucher","https://www.kidneyregistry.org/"]]},
+{d:"pay",p:"You were told Medicare will not start until your fourth month of treatment.",g:"Medicare ESRD entitlement timing",
+ w:"For in-center dialysis, Medicare usually starts the first day of the fourth month. But if you start a home training program before then, Medicare can start in the first month. Uninsured and underinsured patients starting treatment are rarely told.",
+ y:"In your first weeks, ask whether home training would let Medicare start right away for you.",
+ t:"Put Medicare start-date options in the first social work visit.",
+ x:"CMS prints this option on enrollment materials for every new patient.",
+ s:[["Medicare.gov: Medicare coverage of kidney dialysis and transplant services","https://www.medicare.gov/publications/10128-medicare-coverage-esrd.pdf"]]},
+{d:"chair",p:"Your chair time keeps getting shorter.",g:"Payment per treatment, not per hour",
+ w:"The bundle pays per treatment regardless of how long it lasts. Every extra minute is cost without revenue, and three-shift schedules depend on tight turnover. International comparisons (DOPPS) have shown U.S. in-center sessions running shorter than in many other countries.",
+ y:"Ask for your prescribed versus delivered minutes each week.",
+ t:"Set time floors for patients with high fluid gains and track minutes lost to late starts.",
+ x:"Report prescribed versus delivered time publicly by clinic.",
+ s:[["DOPPS Program","https://www.dopps.org/"]]},
+{d:"list",p:"Your blood type is B and the wait seems endless.",g:"OPTN · A2/A2B donors to blood type B candidates",
+ w:"Since 2014, kidneys from A2 and A2B donors can be offered to blood type B candidates who meet antibody titer requirements. Type B is more common among Black and Asian patients, who wait longer. Participation is optional, and many programs do not screen for it.",
+ y:"Ask whether your program participates and whether your anti-A titers have been tested.",
+ t:"Opt in and test eligible type B candidates routinely.",
+ x:"Make participation the default for every kidney program.",
+ s:[["OPTN Policy 8","https://optn.transplant.hrsa.gov/policies-bylaws/policies/"]]},
+{d:"rights",p:"You have never seen your own treatment numbers.",g:"HIPAA right of access · 45 CFR 164.524",
+ w:"You have a legal right to your designated record set, including treatment flowsheets, lab results, and machine data in your record, generally within 30 days. Clinics may not refuse because you are disputing care.",
+ y:"Make a written request for your treatment records. Keep a dated copy of the request.",
+ t:"Offer a monthly treatment summary without being asked.",
+ x:"Make treatment flowsheets available in patient portals.",
+ s:[["HHS: Individuals’ right to access health information","https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/access/index.html"]]},
+{d:"organ",p:"You were next in line, and the kidney went somewhere else.",g:"Out-of-sequence placement",
+ w:"Organ procurement organizations can place kidneys outside the match-run order to avoid discard. Peer-reviewed analyses have documented sharp growth in this practice in recent years and found it concentrated among certain centers. Patients who are skipped are not told.",
+ y:"Ask your center whether it accepts out-of-sequence offers and how often.",
+ t:"Record every out-of-sequence acceptance and the reason.",
+ x:"Publish a public log of every out-of-sequence placement with the reason and decision-maker.",
+ s:[["OPTN policies","https://optn.transplant.hrsa.gov/policies-bylaws/policies/"]]},
+{d:"prev",p:"By the time you need an access for treatment, your arm veins are gone.",g:"Hospital IV and line practice",
+ w:"PICC lines and repeated draws in the non-dominant arm damage the veins needed later. KDOQI’s 2019 vascular access guideline urges protecting veins in advanced kidney disease, but most hospitals do not flag kidney patients before placing lines.",
+ y:"Tell every nurse and phlebotomist: protect this arm. Ask for a vein-protection band.",
+ t:"Add a kidney vein-preservation alert to the EHR for anyone with eGFR under 30.",
+ x:"Make vein preservation a hospital quality measure for patients with advanced kidney disease.",
+ s:[["KDOQI 2019 Vascular Access Guideline","https://pubmed.ncbi.nlm.nih.gov/?term=KDOQI+clinical+practice+guideline+vascular+access+2019+update"]]},
+{d:"list",p:"You were told you are too heavy for a transplant.",g:"Center-specific criteria",
+ w:"There is no national BMI cutoff. Each program sets its own limit, and limits vary widely. Patients turned down at one center may be accepted at another, but are rarely told so.",
+ y:"Ask for the center’s written criteria, and ask for a referral to a second center.",
+ t:"Refer patients to centers with different criteria instead of closing the file.",
+ x:"Require centers to publish candidacy criteria and denial counts.",
+ s:[["SRTR program reports","https://www.srtr.org/"]]},
+{d:"chair",p:"A new medicine that helped you is suddenly no longer offered at your clinic.",g:"TDAPA · 42 CFR 413.234",
+ w:"New kidney drugs enter Medicare dialysis payment through a temporary add-on, usually for two years. When it ends, the drug’s cost is folded into the bundle at an average amount or not separately paid at all. The clinic then decides whether the drug is worth its margin. Patients are rarely told the reason a drug disappeared was a payment calendar.",
+ y:"Ask: was this change clinical or financial? Ask your nephrologist to document medical need.",
+ t:"Keep a list of drugs whose add-on ends in the next 12 months and a plan for every patient on them.",
+ x:"Require patient notice and a continuity plan before any add-on drug is withdrawn.",
+ s:[["42 CFR 413.234 (eCFR)","https://www.ecfr.gov/current/title-42/section-413.234"]]},
+{d:"list",p:"You are highly sensitized and have accepted you will never be matched.",g:"Center-entered unacceptable antigens",
+ w:"Your program decides which HLA antibodies to list as unacceptable. Every listed antigen shrinks your donor pool. Listing low-level antibodies can push calculated PRA toward 100%. Different labs and programs make different calls on the same blood.",
+ y:"Ask how many unacceptable antigens are listed for you and when your antibodies were last tested.",
+ t:"Review the list against current antibody strength at set intervals.",
+ x:"National standards for listing thresholds.",
+ s:[["OPTN policies","https://optn.transplant.hrsa.gov/policies-bylaws/policies/"]]},
+{d:"organ",p:"Your kidney spent many hours on ice before it reached you.",g:"Static cold storage versus machine perfusion",
+ w:"Hypothermic machine perfusion has been linked to less delayed graft function than static cold storage (Moers et al., NEJM 2009). Use varies widely by organ procurement organization and region.",
+ y:"Ask your center how often its kidneys arrive on a pump.",
+ t:"Pump kidneys expected to have long cold times.",
+ x:"Standardize perfusion criteria and publish use rates by OPO.",
+ s:[["Moers C et al., N Engl J Med 2009","https://pubmed.ncbi.nlm.nih.gov/?term=Moers+machine+perfusion+deceased+donor+kidney+2009"]]},
+{d:"pay",p:"Your Medicare Advantage plan does not include the transplant center you want.",g:"21st Century Cures Act · MA open since 2021",
+ w:"Since 2021, people with kidney failure can join Medicare Advantage. Many plans route transplants to a short list of contracted centers. Centers differ widely in whom they list and how fast they transplant. Choosing a plan can quietly choose your transplant center.",
+ y:"Before picking a plan, ask for its transplant network in writing and compare those centers on SRTR.",
+ t:"Counsel at open enrollment with transplant goals in mind.",
+ x:"Require MA plans to publish transplant network outcomes and cover evaluation at nearby centers outside the network.",
+ s:[["SRTR program reports","https://www.srtr.org/"]]},
+{d:"donor",p:"Your donor worries about bills if something goes wrong.",g:"Medicare living donor coverage",
+ w:"When the recipient has Medicare, Medicare pays the living donor’s evaluation, surgery, and care for related complications, with no deductible or coinsurance for the donor.",
+ y:"Tell your donor this before they say no.",
+ t:"Put it in writing in donor education materials.",
+ x:"Extend the same protection to life and disability insurance underwriting.",
+ s:[["Medicare.gov: kidney transplant coverage","https://www.medicare.gov/coverage/kidney-transplants"]]},
+{d:"rights",p:"Your clinic only talks about the treatments it offers.",g:"42 CFR 494.70(a)(7)",
+ w:"Federal rules say dialysis patients have the right to be informed about all treatment modalities and settings, including those the clinic does not offer. That includes home options and transplant.",
+ y:"Ask for information on every option, including ones your clinic does not provide.",
+ t:"Use a standard options sheet that lists every modality.",
+ x:"Surveyors check that every patient got it.",
+ s:[["42 CFR 494.70","https://www.ecfr.gov/current/title-42/section-494.70"]]},
+{d:"list",p:"Your local center has a long wait and you feel stuck.",g:"OPTN multiple listing and time transfer",
+ w:"You can be listed at more than one program in different areas, and you can transfer accumulated waiting time if you switch programs. Few patients are told, and the people who use it tend to have money and flexibility.",
+ y:"Ask about multiple listing and waiting time transfer.",
+ t:"Tell every candidate it is allowed.",
+ x:"Travel and lodging support so it is not only for the wealthy.",
+ s:[["OPTN policies","https://optn.transplant.hrsa.gov/policies-bylaws/policies/"]]},
+{d:"prev",p:"You were denied a heart scan or procedure because of your kidneys.",g:"Contrast caution",
+ w:"Fear of contrast injury has kept people with kidney disease from indicated imaging and procedures. A 2020 ACR–NKF consensus statement concluded IV contrast risk is lower than once believed.",
+ y:"Ask whether the decision is based on current contrast guidance.",
+ t:"Use the ACR–NKF consensus to guide decisions.",
+ x:"Measure procedure access for patients with CKD versus without.",
+ s:[["ACR–NKF consensus on IV contrast (Radiology 2020)","https://pubmed.ncbi.nlm.nih.gov/?term=ACR+National+Kidney+Foundation+consensus+intravenous+iodinated+contrast+2020"]]},
+{d:"organ",p:"A potential donor’s family was never asked.",g:"42 CFR 482.45 · hospital referral rule",
+ w:"Hospitals must notify the organ procurement organization in a timely manner about deaths and imminent deaths. Compliance varies widely, and missed or late referrals end donation before it begins.",
+ y:"Know your hospital’s referral policy.",
+ t:"Automate referral alerts in the EHR.",
+ x:"Audit referral timeliness by hospital and publish it.",
+ s:[["42 CFR 482.45","https://www.ecfr.gov/current/title-42/section-482.45"]]},
+{d:"list",p:"Every year you are sent for another heart test, and every result restarts the clock.",g:"Pre-listing testing protocols",
+ w:"Programs order cardiac stress testing for many candidates and repeat it while they wait. Guidelines acknowledge weak evidence that routine screening helps people without symptoms. Each test can leave patients inactive.",
+ y:"Ask why a repeat test is needed and whether your status changes while it is pending.",
+ t:"Use risk-based testing.",
+ x:"Track time patients spend inactive waiting on tests.",
+ s:[["KDIGO transplant candidate guideline","https://kdigo.org/guidelines/"]]},
+{d:"pay",p:"Your ambulance ride to treatment gets denied.",g:"Medicare RSNAT prior authorization",
+ w:"Medicare requires prior authorization for repetitive scheduled non-emergent ambulance trips, such as to dialysis. Approvals cover a limited number of trips and must be renewed, and lapses mean surprise bills or missed treatments.",
+ y:"Ask the ambulance company when your approval expires.",
+ t:"Track renewal dates for every patient.",
+ x:"Longer approvals for stable, documented need.",
+ s:[["CMS: RSNAT prior authorization model","https://cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/prior-authorization-and-pre-claim-review-initiatives/prior-authorization-repetitive-scheduled-non-emergent-ambulance-transport-rsnat"]]},
+{d:"donor",p:"Your anti-rejection levels jumped and nobody changed your dose.",g:"Pharmacy generic substitution · FDA rating change, Sept 2023",
+ w:"Pharmacies can switch between generic tacrolimus makers from one fill to the next without telling your transplant team. Tacrolimus has a narrow window between too little (rejection) and too much (toxicity). In September 2023, FDA changed one manufacturer’s generic tacrolimus capsules from an AB rating to BX, meaning they are no longer recommended for automatic substitution, because peak blood levels may run higher than the brand.",
+ y:"Read the manufacturer name on every bottle. Ask the pharmacy to dispense the same maker each fill, and tell your team the day it changes.",
+ t:"Check a trough level within one to two weeks of any manufacturer change, and record the maker in the chart.",
+ x:"Require pharmacies to notify the prescriber before switching makers of narrow-range transplant drugs.",
+ s:[["FDA: therapeutic equivalence rating change for Accord generic tacrolimus","https://www.fda.gov/drugs/drug-safety-and-availability/fda-changing-therapeutic-equivalence-rating-accord-healthcare-incs-generics-prograf-tacrolimus-oral"]]},
+{d:"rights",p:"Your complaint to the clinic and the ESRD Network went nowhere.",g:"State survey agency · 42 CFR Part 488",
+ w:"ESRD Networks handle grievances under contract with CMS, but they are not the enforcement arm. Every state has a survey agency that inspects dialysis facilities on CMS’s behalf and investigates complaints, including with unannounced on-site visits that can lead to cited deficiencies. Many patients file only with the clinic and the Network and never learn the survey agency exists.",
+ y:"File with the state survey agency in writing, with dates, names, and what happened. Keep a copy and ask for the complaint number.",
+ t:"Post the state survey agency’s phone number right beside the Network’s, as the rules intend.",
+ x:"Publish complaint survey findings for each clinic in plain language on Care Compare.",
+ s:[["42 CFR Part 488: survey, certification, and enforcement","https://www.ecfr.gov/current/title-42/part-488"]]},
+{d:"organ",p:"Your kidney flew across the country and sat longer on ice.",g:"250-nautical-mile circles · March 2021",
+ w:"In March 2021, kidney allocation replaced local donation service areas with a 250-nautical-mile circle around the donor hospital. More kidneys now travel farther, with more handoffs and longer cold ischemia time. The next system, continuous distribution, is designed to weigh distance, medical need, and other factors together instead of drawing a line on a map. Until it arrives, distance quietly shapes kidney quality at the moment of transplant.",
+ y:"Ask your program how far its kidneys typically travel and what its average cold time is.",
+ t:"Track cold time by distance and decline reasons tied to logistics, and share them at program review.",
+ x:"Finish continuous distribution with cold time as an explicit, published factor.",
+ s:[["OPTN Policy 8: Allocation of Kidneys","https://optn.transplant.hrsa.gov/policies-bylaws/policies/"]]},
+{d:"list",p:"You were refused because you do not have a caregiver.",g:"Program-specific psychosocial criteria",
+ w:"Many programs require a named caregiver who can stay with you for weeks after surgery. The requirement is not national, it differs program to program, and the evidence tying it to outcomes is thin. It screens out people who live alone, older adults whose spouses are ill, and people whose families live far away.",
+ y:"Ask what support is actually required, for how long, and whether paid help, a rotating group, or community volunteers count.",
+ t:"Accept a written support plan built from several people or paid services instead of one named person.",
+ x:"Fund post-transplant support services, and require programs to publish psychosocial criteria and denial counts.",
+ s:[["SRTR program-specific reports","https://www.srtr.org/"]]},
+{d:"donor",p:"Your tacrolimus level is different depending on which lab ran it.",g:"Lab assay method",
+ w:"Tacrolimus blood levels are measured by different methods. Some immunoassays report higher values than LC-MS/MS on the same sample, partly because they also detect drug breakdown products. If your blood goes to a different lab, your number can change while your body has not. Doses get adjusted to a moving ruler.",
+ y:"Ask which method your lab uses, and keep your levels at the same lab whenever you can.",
+ t:"Print the assay method beside every result and interpret trends only within one method.",
+ x:"Standardize method reporting on tacrolimus results nationwide.",
+ s:[["Research on tacrolimus immunoassay vs LC-MS/MS (PubMed)","https://pubmed.ncbi.nlm.nih.gov/?term=tacrolimus+immunoassay+LC-MS%2FMS+comparison"]]},
+{d:"organ",p:"Donation after circulatory death is growing, and the rules change from hospital to hospital.",g:"Hospital ethics policy · normothermic regional perfusion",
+ w:"In normothermic regional perfusion, blood flow is restored to organs after circulatory death is declared, with steps taken to block flow to the brain. It can improve organ quality. Ethicists and professional societies disagree about it, each hospital sets its own rules, and there is no national standard. Donor families may not be told which method will be used.",
+ y:"If your family is facing a donation decision, ask the organ agency which recovery method the hospital uses.",
+ t:"Disclose the recovery method to families in plain language as part of authorization.",
+ x:"A national ethical and procedural standard, with public reporting of which methods are used where.",
+ s:[["Research on normothermic regional perfusion ethics (PubMed)","https://pubmed.ncbi.nlm.nih.gov/?term=normothermic+regional+perfusion+ethics"]]},
+{d:"list",p:"You do not know how many times you have been passed over.",g:"No duty to notify · SRTR offer acceptance ratio",
+ w:"Programs decline organ offers on patients’ behalf routinely. Research by Husain and colleagues (JAMA Network Open, 2019) found that many patients who died waiting had received kidney offers that were declined for them. SRTR publishes each program’s offer acceptance ratio, but patients rarely see it when they choose where to list.",
+ y:"Compare offer acceptance ratios on srtr.org before you list, and ask for your offer history in writing.",
+ t:"Review declined offers with patients at each visit.",
+ x:"Require notice to the patient after every decline.",
+ s:[["Husain SA et al., JAMA Netw Open 2019 (PubMed)","https://pubmed.ncbi.nlm.nih.gov/?term=Husain+kidney+offers+declined+waitlist+death+2019"],["SRTR","https://www.srtr.org/"]]},
+{d:"organ",p:"Donor care happens in ICUs that are already stretched thin.",g:"OPO operating model · donor care units",
+ w:"Some organ procurement organizations move donors out of hospital ICUs into dedicated donor care units staffed for organ management. Published work summarized in JAMA Network Open (2024) reported donor care units increased organ yield by about 27.5% in one study and cut recovery costs sharply in another. Most regions still rely on whatever ICU the donor happens to be in.",
+ y:"Ask whether your region’s organ procurement organization runs a donor care unit.",
+ t:"Share donor management protocols between units and community hospitals.",
+ x:"Fund donor care units in regions with high donor volume and track organs per donor.",
+ s:[["Lehr & McCurry, JAMA Netw Open 2024","https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2820310"]]},
+{d:"pay",p:"Three years after your transplant, your Medicare ends.",g:"36-month rule · Part B-ID since 2023",
+ w:"If your Medicare is based only on kidney failure, it ends 36 months after a successful transplant. Since 2023, the Part B immunosuppressive drug benefit (Part B-ID) can keep covering anti-rejection drugs for life, but only those drugs, not doctor visits or labs, and only if you had Medicare Part A at the time of your transplant and lack certain other coverage.",
+ y:"Make sure Part A is active before transplant. Ask about Part B-ID before month 36.",
+ t:"Set a month-30 coverage check for every recipient.",
+ x:"Auto-enroll eligible recipients and extend full coverage beyond 36 months.",
+ s:[["CMS: Part B immunosuppressive drug coverage","https://www.cms.gov/files/document/part-b-immunosuppressive-drug-coverage.pdf"]]},
+{d:"chair",p:"Inflammation, fatigue, and anemia that never quite improve.",g:"ANSI/AAMI/ISO 23500 · standard grade allowed",
+ w:"A standard sets water and dialysate quality. It defines ultrapure dialysate, with far lower bacteria and endotoxin limits, but U.S. rules accept the standard grade. Ultrapure is widely used in Europe and Japan and is required for high-volume hemodiafiltration. Studies have linked it to lower inflammatory markers and better anemia response.",
+ y:"Ask for your clinic’s latest water and dialysate culture and endotoxin results.",
+ t:"Adopt ultrapure targets voluntarily and post monthly results.",
+ x:"Require ultrapure dialysate in the Conditions for Coverage.",
+ s:[["Research on ultrapure dialysate (PubMed)","https://pubmed.ncbi.nlm.nih.gov/?term=ultrapure+dialysate+inflammation+anemia"]]},
+{d:"eq",p:"Your child turns 19 or 26 and loses the coverage that paid for their drugs.",g:"Coverage age cliffs",
+ w:"Young people with kidney failure often rely on Medicaid, CHIP, or a parent’s plan. Child-category Medicaid and CHIP eligibility ends at 19, and dependent coverage on a parent’s plan ends at 26. These cliffs land right when young adults move from pediatric to adult care, a period research ties to more rejection and graft loss.",
+ y:"Map every coverage end date a full year ahead and plan the replacement.",
+ t:"Pair transition clinics with benefits counseling.",
+ x:"Continuous coverage for young recipients through age 26.",
+ s:[["Research on transition and graft loss (PubMed)","https://pubmed.ncbi.nlm.nih.gov/?term=kidney+transplant+adolescent+transition+graft+loss"]]},
+{d:"list",p:"Your kidney matched, but rejection came years later anyway.",g:"Antigen-level HLA matching",
+ w:"Allocation counts HLA mismatches at the broad antigen level. Research on eplet mismatch, the small surface patches that antibodies actually recognize, shows it better predicts who develops donor-specific antibodies and chronic rejection. It is not used in national allocation.",
+ y:"Ask whether your program considers eplet mismatch when it can choose between offers.",
+ t:"Use eplet data in living donor selection and when comparing offers.",
+ x:"Pilot eplet-informed matching in allocation.",
+ s:[["Research on eplet mismatch and DSA (PubMed)","https://pubmed.ncbi.nlm.nih.gov/?term=eplet+mismatch+de+novo+donor+specific+antibody+kidney"]]},
+{d:"chair",p:"A storm closes your clinic and you end up somewhere that has never seen you.",g:"42 CFR 494.62 · emergency preparedness",
+ w:"Since 2016, CMS emergency preparedness rules require dialysis facilities to keep emergency plans, train patients, and coordinate with local emergency systems. The Kidney Community Emergency Response program coordinates during disasters. Even so, many patients have never seen their clinic’s plan or a printed copy of their own prescription, and evacuees arrive at unfamiliar clinics with nothing.",
+ y:"Ask for your clinic’s emergency plan and keep a printed copy of your prescription, access type, dry weight, and last labs.",
+ t:"Pre-assign a backup clinic and hand every patient a wallet card before each storm season.",
+ x:"Portable digital treatment summaries that any clinic can open.",
+ s:[["42 CFR 494.62 (eCFR)","https://www.ecfr.gov/current/title-42/section-494.62"],["Kidney Community Emergency Response","https://www.kcercoalition.com/"]]},
+{d:"prev",p:"Your pharmacy fills a drug at a dose meant for healthy kidneys.",g:"No lab values on prescriptions",
+ w:"Prescriptions sent to a pharmacy usually carry no lab values. Many common drugs, including some antibiotics, diabetes medicines, and blood thinners, need lower doses as kidney function falls. The pharmacist is the last checkpoint and usually cannot see your eGFR.",
+ y:"Tell every pharmacist your latest eGFR and ask them to note it on your profile.",
+ t:"Include eGFR in e-prescriptions for anyone below 60.",
+ x:"A standard eGFR field in e-prescribing.",
+ s:[["Research on drug dosing errors in CKD (PubMed)","https://pubmed.ncbi.nlm.nih.gov/?term=inappropriate+drug+dosing+chronic+kidney+disease+outpatient"]]},
+{d:"list",p:"You were offered a hepatitis C positive kidney and the insurer stalled on the cure.",g:"Payer prior authorization",
+ w:"Programs now transplant kidneys from donors with hepatitis C into recipients without it, then give antiviral drugs that cure nearly all infections. These kidneys are often high quality and can shorten waits. Insurance delays and denials of the antivirals have been documented, and some programs avoid these kidneys for that reason.",
+ y:"Ask whether your program accepts these kidneys and how it gets the antivirals approved.",
+ t:"Secure payer pre-approval at listing.",
+ x:"Require payers to cover the antivirals without delay.",
+ s:[["Research on HCV-positive donor kidneys (PubMed)","https://pubmed.ncbi.nlm.nih.gov/?term=HCV+viremic+donor+kidney+transplant+direct-acting+antiviral+insurance"]]},
+{d:"organ",p:"Your kidney was delayed or lost in transit.",g:"Commercial transport logistics",
+ w:"Kidneys often travel as cargo on commercial flights or with couriers. Delays, missed connections, and misrouting have caused organs to be damaged or lost. There is no single national requirement for real-time location and temperature tracking on every shipment.",
+ y:"Ask how your program tracks organs in transit.",
+ t:"Use GPS and temperature tracking on every shipment.",
+ x:"Require chain-of-custody tracking for all organs.",
+ s:[["Research on organ transport failures (PubMed)","https://pubmed.ncbi.nlm.nih.gov/?term=organ+transport+delay+kidney+discard"]]},
+{d:"rights",p:"Every fix in this calendar depends on paperwork someone else is holding.",g:"No patient-held kidney record",
+ w:"Your CMS-2728, plan of care, waitlist status, offer history, dialysate bath, fluid-removal rate, binder list, unacceptable antigen list, and coverage dates each live in a different system controlled by a different gatekeeper. No one is required to put them in one place for you.",
+ y:"Start a kidney file and request each of these documents in writing.",
+ t:"Give patients a one-page summary of these items every quarter.",
+ x:"A CMS-required patient-held kidney record that holds all of it.",
+ s:[["HHS: right of access","https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/access/index.html"]]}
+];
+const START=new Date(2026,10,5,9,0,0);
+const SH=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const cards=C.map((c,i)=>({...c,n:i+1,date:new Date(2026,10,5+7*i,9,0,0)}));
+const $=id=>document.getElementById(id), pad=n=>String(n).padStart(2,"0");
+const fmt=d=>`Thu ${SH[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+let preview=/[?&]preview\b/.test(location.search), filter="all", cur=1;
+const open=c=>preview||new Date()>=c.date;
+
+function chips(){const el=$("chips");el.innerHTML="";[["all","All",""],...Object.entries(D).map(([k,v])=>[k,v[0],v[1]])].forEach(([k,l,v])=>{const b=document.createElement("button");b.className="chip";b.setAttribute("aria-pressed",filter===k);b.innerHTML=(v?`<i style="--c:var(${v})"></i>`:"")+l;b.onclick=()=>{filter=k;chips();grid()};el.appendChild(b)})}
+function grid(){const g=$("cal");g.innerHTML="";cards.filter(c=>filter==="all"||c.d===filter).forEach(c=>{const [dn,dv]=D[c.d],o=open(c);const b=document.createElement("button");b.className="tile"+(o?"":" locked");b.style.setProperty("--c",`var(${dv})`);b.innerHTML=`<div class="thead"><span>${dn}</span><span>${SH[c.date.getMonth()]} ${c.date.getDate()}</span></div><div class="tbody"><span class="tnum">${pad(c.n)}</span><span class="tprob">${o?c.p:"Sealed until "+fmt(c.date)}</span>${o?`<span class="tgate">${c.g}</span>`:""}</div>`;b.onclick=()=>show(c.n);g.appendChild(b)})}
+function show(n){
+  cur=n;const c=cards[n-1],[dn]=D[c.d],o=open(c);
+  $("stage").classList.remove("on");$("ov").hidden=false;document.body.style.overflow="hidden";
+  $("fDom").textContent=`${dn} · Week ${pad(c.n)} of 52`;$("fNum").textContent=pad(c.n);$("fDate").textContent=fmt(c.date);
+  $("pProb").textContent=o?c.p:"This file is sealed.";$("fGate").textContent=o?"THE GATE · "+c.g:"Opens "+fmt(c.date)+", 9 AM ET";
+  $("flip").hidden=!o;
+  $("bHead").textContent=`Week ${pad(c.n)} · ${c.g}`;
+  $("bBody").innerHTML=o?`<div class="sec"><h3>What is really going on</h3><p>${c.w}</p></div>
+  <div class="sec"><h3>The fix</h3><div class="moves"><div class="mv"><span class="lbl">You, this week</span><p>${c.y}</p></div><div class="mv"><span class="lbl">Care team</span><p>${c.t}</p></div><div class="mv"><span class="lbl">Policy</span><p>${c.x}</p></div></div></div>
+  <div class="src"><span class="lbl">Sources</span><br>${c.s.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join("<br>")}</div>`:"";
+  $("prev1").disabled=n===1;$("next1").disabled=n===52;$("next2").disabled=n===52;
+  try{history.replaceState(null,"","#week-"+n)}catch(e){}
+  $("flip").focus();
+}
+function close(){$("ov").hidden=true;document.body.style.overflow="";try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}}
+$("flip").onclick=()=>$("stage").classList.add("on");
+$("unflip").onclick=()=>$("stage").classList.remove("on");
+$("prev1").onclick=()=>show(cur-1);$("next1").onclick=()=>show(cur+1);$("next2").onclick=()=>show(cur+1);
+document.querySelectorAll("[data-close]").forEach(b=>b.onclick=close);
+$("ov").addEventListener("click",e=>{if(e.target===$("ov"))close()});
+document.addEventListener("keydown",e=>{if($("ov").hidden)return;if(e.key==="Escape")close();if(e.key===" "&&e.target.tagName!=="BUTTON"){e.preventDefault();$("stage").classList.toggle("on")}});
+function mode(p){preview=p;$("mPrev").setAttribute("aria-pressed",p);$("mPub").setAttribute("aria-pressed",!p);grid()}
+$("mPrev").onclick=()=>mode(true);$("mPub").onclick=()=>mode(false);
+function tick(){const now=new Date(),nx=cards.find(c=>c.date>now);if(!nx){$("cLbl").textContent="All 52 files open";$("count").textContent="52/52";$("cDate").textContent="";return}let s=Math.floor((nx.date-now)/1000);const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600),m=Math.floor(s%3600/60);$("count").textContent=`${d}d ${pad(h)}h ${pad(m)}m`;$("cDate").textContent=`Week ${pad(nx.n)} · ${fmt(nx.date)}, 9 AM ET`}
+if(preview)$("modes").hidden=false;
+chips();grid();tick();setInterval(tick,30000);
+const m=/^#week-(\d+)$/.exec(location.hash);if(m)show(Math.min(52,Math.max(1,+m[1])));
+</script>
+</body>
+</html>
