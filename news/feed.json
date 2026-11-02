@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-02T05:47:44.467708+00:00",
+"updated": "2026-11-02T15:34:12.364936+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -71,7 +71,7 @@
 "category": "Journals",
 "url": "https://onlinelibrary.wiley.com/feed/13990012/most-recent",
 "ok": true,
-"count": 1,
+"count": 2,
 "error": null
 },
 {
@@ -132,6 +132,17 @@
 }
 ],
 "items": [
+{
+"title": "Evaluation of a Standardized Treatment Regimen for Antibody Mediated Rejection Following Lung Transplantation",
+"link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70737?af=R",
+"summary": "Clinical Transplantation, Volume 40, Issue 11, November 2026.",
+"outlet": "Wiley: Clinical Transplantation: Table of Contents",
+"published": "2026-11-01T18:08:22+00:00",
+"id": "f4811df04a6f2a6e",
+"source": "Clinical Transplantation",
+"category": "Journals",
+"first_seen": "2026-11-02T15:34:12.364936+00:00"
+},
 {
 "title": "Association of Demographic, Economic, and Geographic Factors With Guideline-Concordant Infection Prophylaxis in Patients With Antineutrophil Cytoplasmic Antibody-Associated Vasculitis",
 "link": "https://www.sciencedirect.com/science/article/pii/S2590059526003006?dgcid=rss_sd_all",
@@ -3358,7 +3369,7 @@
 {
 "title": "Effect of home blood pressure monitoring on major adverse cardiovascular events and all-cause mortality: results from the VA HOMESTEAD study",
 "link": "https://www.medrxiv.org/content/10.64898/2026.10.27.26366626v1?rss=1",
-"summary": "Importance: Home blood pressure monitoring (HBPM) has been shown to lower blood pressure (BP) in randomized trials, however its real-world effect on clinical outcomes is not known. Objective: To determine the association between HBPM and clinical outcomes including cardiovascular events and mortality. Design: Target…",
+"summary": "ImportanceHome blood pressure monitoring (HBPM) has been shown to lower blood pressure (BP) in randomized trials, however its real-world effect on clinical outcomes is not known. ObjectiveTo determine the association between HBPM and clinical outcomes including cardiovascular events and mortality. DesignTarget trial…",
 "outlet": "",
 "published": "2026-10-29T00:00:00+00:00",
 "id": "b5a3255076153abf",
@@ -3380,7 +3391,7 @@
 {
 "title": "Co-designing CKD Talk Topics, a structured agenda-setting intervention for people with chronic kidney disease: \"Keep It Simple, Stupid\"",
 "link": "https://www.medrxiv.org/content/10.64898/2026.10.28.26366231v1?rss=1",
-"summary": "Rationale & Objective: People with advanced chronic kidney disease (CKD) often face barriers to communication and self-advocacy, which may be mitigated by the practice of collaborative agenda-setting. We developed Chronic Kidney Disease Talk Topics (CKD Talk Topics), a structured agenda-setting intervention designed…",
+"summary": "Rationale & ObjectivePeople with advanced chronic kidney disease (CKD) often face barriers to communication and self-advocacy, which may be mitigated by the practice of collaborative agenda-setting. We developed Chronic Kidney Disease Talk Topics (CKD Talk Topics), a structured agenda-setting intervention designed to…",
 "outlet": "",
 "published": "2026-10-29T00:00:00+00:00",
 "id": "e79ce38ac4abae45",
@@ -3391,7 +3402,7 @@
 {
 "title": "Prevalence and Management of Chronic Kidney Disease in Irish Primary Care Network",
 "link": "https://www.medrxiv.org/content/10.64898/2026.10.27.26366639v1?rss=1",
-"summary": "Background: Chronic kidney disease (CKD) imposes a substantial burden on health systems and society. Although early detection and guideline-recommended management can improve outcomes, opportunities remain to enhance management in primary care. Aim: To evaluate CKD prevalence, guideline-directed medical therapy…",
+"summary": "BackgroundChronic kidney disease (CKD) imposes a substantial burden on health systems and society. Although early detection and guideline-recommended management can improve outcomes, opportunities remain to enhance management in primary care. AimTo evaluate CKD prevalence, guideline-directed medical therapy (GDMT),…",
 "outlet": "",
 "published": "2026-10-29T00:00:00+00:00",
 "id": "9794437c8f97d776",
@@ -5617,17 +5628,6 @@
 "outlet": "",
 "published": "2026-10-24T16:50:56+00:00",
 "id": "f9a64e1e32fe7e7f",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-10-24T16:52:56.133449+00:00"
-},
-{
-"title": "‘Doing work that matters’: An interview with Katherine Tuttle, MD",
-"link": "https://www.healio.com/news/nephrology/20261024/doing-work-that-matters-an-interview-with-katherine-r-tuttle-md",
-"summary": "When Katherine R. Tuttle, MD, FASN, FACP, FNKF, began working on some of the earliest treatment trials for kidney disease — often as the only woman among the investigators — making a difference for patients was her mission. “I was the person who understood the science, but I also understood the patients,” Tuttle, who…",
-"outlet": "",
-"published": "2026-10-24T16:29:26+00:00",
-"id": "2737fa9f4a43dada",
 "source": "Healio Nephrology",
 "category": "News",
 "first_seen": "2026-10-24T16:52:56.133449+00:00"
