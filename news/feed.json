@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-02T15:34:12.364936+00:00",
+"updated": "2026-11-02T23:12:07.461403+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -94,17 +94,17 @@
 "name": "Google News: transplant & organ donation policy",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": false,
-"count": 0,
-"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=dialysis+OR+%22kidney+disease%22+OR+%22kidney+failure%22+OR+ESRD+OR+%22kidney+transplant%22+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": false,
-"count": 0,
-"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "KFF Health News",
@@ -132,6 +132,303 @@
 }
 ],
 "items": [
+{
+"title": "Establishing Mycophenolate Therapeutic Drug Monitoring Targets in Childhood Nephrotic Syndrome",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033632?dgcid=rss_sd_all",
+"summary": "By Magdalena Riedl Khursigara, Cal H. Robinson, Erin Chung, Winnie Seto, Diana Hamdan, Junhee Hong, Valentina Bruno, Nowrin Aman, Tonny H.M. Banh, Judy Truong, Josefina Brooke, Vaneet Dhillon, Mackenzie Garner, Christoph…",
+"outlet": "",
+"published": "2026-11-02T23:11:15.337470+00:00",
+"id": "0ff25ae03e40aa63",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Cardiovascular Outcomes of Triglyceride-Targeting Lipid-Lowering Therapies in Patients with CKD",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033486?dgcid=rss_sd_all",
+"summary": "By Mohammad Abdullah Al Zubair Naim, Fridtjof Thomas, Elani Streja, Robert Lowell Davis, Kamyar Kalantar-Zadeh, Keiichi Sumida, Csaba P. Kovesdy",
+"outlet": "",
+"published": "2026-11-02T23:11:15.337438+00:00",
+"id": "2a9a0e641da7c04f",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Evaluating the Long-Term Risk of Kidney Failure in IgAN Using a Real-World Population-Level Cohort From Canada",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033644?dgcid=rss_sd_all",
+"summary": "By Sinead Stoneman, Jialin Han, Jonathan Barratt, Richard Lafayette, Mohammad Atiquzzaman, Fei Tan Liu, Maziar Riazy, Sean J. Barbour",
+"outlet": "",
+"published": "2026-11-02T23:11:15.337412+00:00",
+"id": "acafd4b3b082fe07",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Pa. Turnpike worker survives rare disease with a kidney transplant from a stranger - Pittsburgh Post-Gazette",
+"link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPT3ZTX0dQQ09oRDRyd0ZCajdBWUUtaGF1XzY1ZVNmUDZzQ1NWQnh2Um44cUcxcExjVEwzZmRQbzRQN3p0UUFzSjJTd0E5RHNMZTlsUi0zb1VUaTlWZUotaXdwTUE1dnR0cHZuYkFDSVZqR1I3UWFpYlQyX3ZLNXNUVlZia3VEUGtlRXU1TDA3OHlqS18yMHZrR3BsUlB3cHVfUlZTQUhTS0NzbTJuSGJoUHQzZHlVeEljMTVIWmJrV1p1M1NTN2ZCQkFCZw?oc=5",
+"summary": "Pa. Turnpike worker survives rare disease with a kidney transplant from a stranger Pittsburgh Post-Gazette",
+"outlet": "Pittsburgh Post-Gazette",
+"published": "2026-11-02T22:35:01+00:00",
+"id": "e455a568e5fe66ad",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "CMS issues final rule on oversight of organ procurement organizations - American Hospital Association",
+"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQTkdyRE43bG8tcTAzM0RGWWNGU2MycTlzdjlCWFJYM1JTRUpwQ19URVgtVkZjWHNuRUFSMUlVeFI5d3R5QWF4bk56QWU3NENpSGQtQXZlTVRLaWlkUVRQU05EeHBVbDlUUnIzT1RrcUE5RFBmS1BpMnBGQ2RheG9IX2JuX1VwdTVuZ2V2bHI3T19vSGM3dERvaHh1OFJIS1ZxX3paYTNabmpWVmtm?oc=5",
+"summary": "CMS issues final rule on oversight of organ procurement organizations American Hospital Association",
+"outlet": "American Hospital Association",
+"published": "2026-11-02T21:09:24+00:00",
+"id": "69692489465a31fc",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Primary cilium-mediated mechanisms of cyst formation in polycystic kidney disease - Nature",
+"link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBVVFBtd0pSV0NrX1pHSm9jWUJ0NnpRcDRYMm1SUk9QTUtfX3RPV0ZFc1pOZnlaNDhqcDFTcXA4R21ZaW83RmZ1ekd4X0NobzJ6TFo2T1BHbmhfVTRjNmRN?oc=5",
+"summary": "Primary cilium-mediated mechanisms of cyst formation in polycystic kidney disease Nature",
+"outlet": "Nature",
+"published": "2026-11-02T20:10:23+00:00",
+"id": "c8860a71a534b35e",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "ASN: Fruits and vegetables improve outcomes in stage 3 chronic kidney disease - Medical Xpress",
+"link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQVnM4RHdFcTlRZ0xRZExXRkRRV09feEN4Sm5iTUFiS0I0NGRxT0pGZ1pPMjdIaGNkV1FMX0h3N3NoeU9oU056cUtRbWZPSl9tOF9aZjY0S2RRdXdQb1lWcWVwd2RfMzJLWFl3ODZsSU5yNVNCQmhDa2RvRFhrVnF5cTAwai1WMVE?oc=5",
+"summary": "ASN: Fruits and vegetables improve outcomes in stage 3 chronic kidney disease Medical Xpress",
+"outlet": "Medical Xpress",
+"published": "2026-11-02T20:00:24+00:00",
+"id": "e4af3e29c76c1f5b",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "NJ Family Sues Organ Donation Network, Alleging Missing Body Parts and More - WDHA FM",
+"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQa18tRnhRYXVnQVhUNENIRmNTYlRQUGVvTkdYc1k0LTBHeHQxT2s4anpxaGowQ2xqZHVNejRNem1PVVlsYzFBRS16MDlzb3o2R3hfa1hVeE9lRFM0S1FMbE1OU0xLSjlDSEhXaWFXWXVZa1pNRHlubVVvT0t0dTRmYnotc3p2X2J4bzZ6eHdtR2NWcHQxQkw4OHdTMkM1S3BaNFlKVG0xeng?oc=5",
+"summary": "NJ Family Sues Organ Donation Network, Alleging Missing Body Parts and More WDHA FM",
+"outlet": "WDHA FM",
+"published": "2026-11-02T19:15:16+00:00",
+"id": "e566fbe534682ce3",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Very Low Protein Intake Tied to Higher Kidney Failure Risk in CKD - Pharmacy Times",
+"link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQaWNFQmRsb3BoTlgzM2lEejdHY0FvMlo5SV9QRTNKd1lXWUxpMjFCUDUyNlR4NVVTX0J6T09YZk1LQS1QSmYxeExWeTBRTm9vV3poN2JvUXRwV3IxMTZaVHlGS2ljTGJheXAxZXNGLWJGSWs5bWZITm1RUkYzOG9HUzRiOFNCTktkSWZJdWN1X2RPUE5QVl9adnBXaDlyZURmdVE?oc=5",
+"summary": "Very Low Protein Intake Tied to Higher Kidney Failure Risk in CKD Pharmacy Times",
+"outlet": "Pharmacy Times",
+"published": "2026-11-02T17:05:17+00:00",
+"id": "29d7eaf8d4d13067",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "A Whey Protein Shortage Is Sparking a Startup Gold Rush. Medicare Part B Can Cover Three Hours of Nutrition Counseling at $0 for Eligible Retirees With Diabetes or Kidney Disease - 24/7 Wall St.",
+"link": "https://news.google.com/rss/articles/CBMiywJBVV95cUxPbGp6bDZoUnFzelppLWx4NG8yNUlJS3FYWnFOWG0yNGVjQ3VsMThtVmMtaEZ6UVdmRGpaZ1NtaXpoOU9GcjlUV1JKanNNMjdZMnJXVEZHNlFoYlFxU0ZEMkpEVy0xQm5idHlUNEtXRzlMMElPczVZSHZySXhIZDFOSjdWLXJRRnFvQWFTZG5veE5iMk9LQmZvVFFfVS11Mm1tdk1rVzhiN3hacUhjVF9KYXpZUUVKQm5NY1huakJ2Wk5fN0xjeEs4SW5JUHVLZ3Y5LWpBR19nZ0xtaXo3aFJFUkkzTzhlbVlKNHhNajZfRENvZzZyOTM3NHZ3MlpXT3VNN0s3eHNDM1ViWE9HX1R2ZG9CdURiMmFnU1F4Zm5SeG0xU29uOFA3OWtGMkM5ZXlZd3pXdlBrQ08xbEs4dDJ0Z1ktWi1MZkh0TVU4?oc=5",
+"summary": "A Whey Protein Shortage Is Sparking a Startup Gold Rush. Medicare Part B Can Cover Three Hours of Nutrition Counseling at $0 for Eligible Retirees With Diabetes or Kidney Disease 24/7 Wall St.",
+"outlet": "24/7 Wall St.",
+"published": "2026-11-02T17:04:00+00:00",
+"id": "5eb872128b161230",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Could a new kidney model reveal answers for kidney transplant rejection? - Kidney Research UK",
+"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNRDFOTWxxX3pVOUVMancyX3FrUVFMeUw5OGprM2t6UUpTYUVmTGZWOG5tSkVCZG9VMjh5YjM5QllKcTZzWkdZdEhnd0hCemJQOENnRGdpREE5VGRsTU1fdW1MbXdwN2E3ZzlkcW1Ic1lUcXFCVlhJT1F2WUdIWVJia2c2R0xLVGF6NmpocGppZTBJQUsxQTFRRXpaSFhaeGFyakNJOHE5SWxJWEVPU2E0LWFsdDJoXzA?oc=5",
+"summary": "Could a new kidney model reveal answers for kidney transplant rejection? Kidney Research UK",
+"outlet": "Kidney Research UK",
+"published": "2026-11-02T14:59:40+00:00",
+"id": "0158539d6717bb39",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Vietnam removes teen organ donation provision from bill - UA.NEWS",
+"link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVjh1UVRuR2pMMDE5dzRMNGJoU3NlRWtNdFlOS0JkYmdtVHItR1UwalR1MHJ1M1BiaFhFdVhhakl3enpxMzJzWE5wWFNiQjJoWGg4LWZOem8tNFBBbXBiUURvczZLZnhTeXVwQWxBTEZ0OTVPZXItTVd0bmR2bjBkUmxhZFhKb0Nmd2lMNmZSdTVmRVdJOWU3SVFlbGt0ZUIwaWxlNTZqQjZUdE9nMzAw?oc=5",
+"summary": "Vietnam removes teen organ donation provision from bill UA.NEWS",
+"outlet": "UA.NEWS",
+"published": "2026-11-02T14:05:06+00:00",
+"id": "c7303034cafc8aa8",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "CMS Finalizes 2027 Medicare Dialysis Payment Increases, Expands Home Dialysis Support - Telehealth.org",
+"link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPbTRCNFNUcUtNM2x3eU5EeVo3X0ZSa2tXWXkwcDg3bWxiazlfV25tWDNDRlh0SEFBdmkxaWNlT2M2SWRDUnpRU2Q2dEpSQk9hdW5CdlVES2tacFlLcXMydHJIaFhFSXZxOE9UQ2hKMmp2RVpKWGxjeE42Z3owb2tkTTduZnktQW9LamJCeU5adWFKaXM5OC03WFZVYmdlU3RDSGdzZ0FOaVlnbXJwb2NqM1I4Yw?oc=5",
+"summary": "CMS Finalizes 2027 Medicare Dialysis Payment Increases, Expands Home Dialysis Support Telehealth.org",
+"outlet": "Telehealth.org",
+"published": "2026-11-02T13:23:00+00:00",
+"id": "6c2a1c1a8466281d",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Lawmakers push to tie investment incentives to outcomes, tighten minors' organ donation - VOV World",
+"link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNeDZPYUQ2WDlUcjBFU3pWVEFOdlN3NUlZY1NvU2dwMU9kWVpSU3dWd044UjFvRTVOdjlJWGZ1dWwwU1NpU2VjbWtNZnFKdi1JSGFRTmNEWHo0cHZ4VjNyZGdESWFpUmFmbU9Eck1oYWtiTDZIMFJEeElCdm90TXNzdXFoRVM3ajNMdDN0NWN5V1FpQS1vUk5aZ0tuZGxMYkt1SFZKbUtYOV9DVlhxZGdGNlRUTEFwT2FYbkpnc1oxelo?oc=5",
+"summary": "Lawmakers push to tie investment incentives to outcomes, tighten minors' organ donation VOV World",
+"outlet": "VOV World",
+"published": "2026-11-02T12:12:00+00:00",
+"id": "0015c251bde5a6cf",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Configurational patterns associated with relatively higher recent home-based exercise behavior among lung transplant recipients: a fuzzy-set qualitative comparative analysis.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42969928/",
+"summary": "Zhu Q, Tang L, Lin P et al. Annals of medicine",
+"outlet": "Ann Med",
+"published": "2026-11-02T12:00:00+00:00",
+"id": "ee93649b7e42d525",
+"source": "PubMed: transplant, donation & kidney failure research",
+"category": "Research",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Kidney Walk Raises Awareness About Kidney Disease - The Chicago Crusader",
+"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbk15SE1NTEZLYWQwRldpb2ZsNXJXekdqQ09VRkpObTYwS1NQUXRaLXN1YU1kX1hTVXVQc0l6R0ptWG1fUHQyVkl3X1B0QVVNcFNabWV5b3FKTnBrMWNNXy0tRmFDaWtmUWh0UzgwcnE1bHdPbW5sLTE3cXpIc0pMdm5Dbkg?oc=5",
+"summary": "Kidney Walk Raises Awareness About Kidney Disease The Chicago Crusader",
+"outlet": "The Chicago Crusader",
+"published": "2026-11-02T11:09:34+00:00",
+"id": "1329a1e3119d131b",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Associate Professor Nguyen Lan Hieu proposed stricter regulations on organ donation and transplantation. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPaG9weVV4ZDIwREFESzJvb0F6VkFKMXkwaTI0aGR2Zm1ReXkybHEwbnZvRmdPaU85cHlDYThWTW5FMFZYbk9kbXdYUGVHOVpwdTV3eWR0c1otLUYtUVYtX255RmRlaU9XcFhrVnJuQVVOYTdRVTdzRGhTZVQ3SXU5R3FrdDVhUndFeG81cjJpN2F6ZS1SU1E?oc=5",
+"summary": "Associate Professor Nguyen Lan Hieu proposed stricter regulations on organ donation and transplantation. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-11-02T09:08:15+00:00",
+"id": "8634156632edf15a",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Minister of Health: Expanding opportunities for organ donation, extending the lives of patients. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTzBqYnVEMnJzUHg2Yk5BbnBBM3A5Z2RyeDdSNTNaYkI0TDR5Vlp6WmNBdXFYejQyTkRWclhyWmFfZ1BuUm4wOVpZTHNpVjd2bm81WGVpR0E1aExDTDRkaU96b0JlWkU5ZE5JLUIybHRXUDdQM1FHaEZiMGkxaWlZLS1CX00wa3lvdUd5M1dFNjhsUlFaOGZFRFcxM2k5NXdk?oc=5",
+"summary": "Minister of Health: Expanding opportunities for organ donation, extending the lives of patients. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-11-02T08:19:45+00:00",
+"id": "996a163f05450eae",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Review and refine regulations on tissue and organ donation and transplantation. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQb0VKb3M2dk9SVnBPOW1LSlFCdUlUVUlKaWZSOFN1RW5sTWlmdHFRRUhJcU92TXhaM1dOZmY0d2I0a2FIT0hocVdqRFNTVmlZVF80M0RKaUVSbnBNY1lQYVR3WDFleUc4djFuOXFucll5V014Y0VrcjdtZVl3RlRZLQ?oc=5",
+"summary": "Review and refine regulations on tissue and organ donation and transplantation. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-11-02T08:15:14+00:00",
+"id": "f91e53e87b28c8a2",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Vietnam draft law tightens organ transplant rules for foreign nationals - SGGP English Edition",
+"link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNd09MOXRBbkY4U3RxM1NNcGxtSnBWYVhSR2tSNDVqYzV6eEhhbkdQTlItNF8yQzZTWmE1d0tseklHeFEtekc2RkdvMTNzM25hYWY0aXhvNnpXa3hMSTRjenVPX0NpZE9OaURsU1ZGZ3EtNlByT1BhSnRCZTN2clAyN1c2UmZseFdGN0wtMm0yWmtCX0M1dTdfWHVLNFo0bjVWSzlTMFN6YmpBLVcxTEpz?oc=5",
+"summary": "Vietnam draft law tightens organ transplant rules for foreign nationals SGGP English Edition",
+"outlet": "SGGP English Edition",
+"published": "2026-11-02T08:07:37+00:00",
+"id": "517dd1221e7af9d9",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "V-P calls for dispelling myths around organ donation - The Hitavada",
+"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQYUdlcmlndTdUNktDQUZvc29sOHlidlgwdmxjSXY5eXVRdDhCaFI0eFNHMzgxR3BXSjNIdVRIMzJiWWdhOXhfTU5OTjEtZ2p5M05nd21IVXo0a0ZTdHRERTdyYzVSMDRWNzVzeUpTQWVTQ19KalMxdFVPWWlfajBRdV9Db2hUeW4tZFBYdTFjWGpjMHBmaGJWaldTXzU1eEpOTktB?oc=5",
+"summary": "V-P calls for dispelling myths around organ donation The Hitavada",
+"outlet": "The Hitavada",
+"published": "2026-11-02T06:22:13+00:00",
+"id": "f178a0f9a5cd2099",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Role of Transurethral Resection of the Prostate (TURP) in Chronic Kidney Disease Patients With Obstructive Uropathy - Cureus",
+"link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNNmJXT2R0V3V0ZkpOWXJUbFgxZ0M3eTA3dXFSNTN3eGtHV0I4YmowNDRFdDB5YzBvOWtnRHBwcnhhOXQ2TnlmZnNLN3VIN3M4UWNmYklwNWpiZUU3VUVBUUxXVVlCUkFfOEJnNko4X0xPQjNGenZ0MGhZR0FqZVY0OThpRXJOVm9TSUNYbXBVVk81cjVTTnQxZnlyYS1jWEhKQ293RHlneFBZUTZWVFVQOE9ibTBJa2Y3MTBFVUJwbW4wRmtXUFNMQ3pmQTdGOEkzTnQ2dU1UdzB1WVVhVVZkejBjQl9QUUE?oc=5",
+"summary": "Role of Transurethral Resection of the Prostate (TURP) in Chronic Kidney Disease Patients With Obstructive Uropathy Cureus",
+"outlet": "Cureus",
+"published": "2026-11-02T06:19:59+00:00",
+"id": "139d26b53ce28c54",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "National Organ Transplant Games 2026: VP Promotes Organ Donation - Utkarsh Classes",
+"link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNaGo1VW1fTlZpR3JzeWhHQkhJRWdmeTQzaUEwQ25CRWlBcFY1dmlrX19KS3RlNzlodUlFaEpBMUlRMXp5NmtUaGtTRTV2SHZOS01Bb1pMenFORVQ5QUtSVHNFcHFkdmdYb0xwc2d6akd2emVFUlMycTRJampDZ1JGZG1KbEY0MGJzZDB4LXg2cEhGclBDeE9RckpqdGlHdWxIdXZPVm85MHNIcFRaRXZpUF9tbm1MZGViUVdzeVRn?oc=5",
+"summary": "National Organ Transplant Games 2026: VP Promotes Organ Donation Utkarsh Classes",
+"outlet": "Utkarsh Classes",
+"published": "2026-11-02T06:18:01+00:00",
+"id": "6597df5b64f9f13b",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Vietnam's Health Ministry explains revised organ donation rules for minors - Báo VietNamNet",
+"link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQMDl6UXpnVEthaG5objFVZThuZ1hTX3FTZXY4dWRpQ0I4LU91N0J5c1loWWlrM1MtdXJHcjBTemp2aDlCUDRFYVBWclpjTXY2WTNLTy1vZjRFS1VQeU5DMUVWWTY3TVo2dWZVZ1FvOGtHUVpPM0pGYXVJZGJHLXlWV2pFSlktWXlKaGxjSXRGbHV6dnBEWmRRdW5UMjhHNEJWLW9XVzB0S3dSNy1BWnNqS25R?oc=5",
+"summary": "Vietnam's Health Ministry explains revised organ donation rules for minors Báo VietNamNet",
+"outlet": "Báo VietNamNet",
+"published": "2026-11-02T05:05:00+00:00",
+"id": "60387a84226ad500",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "How the US organ transplant system works and what to ask to improve your chances - yoursun.com",
+"link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOZmd5eXV4R1d2eUVISTg3OENjdVpNajJ6SzRldlhJdi14VkRlWVNnMk1GanVhb1FmZ2p2SzhOQm0xUnNWRUZEcGpMLUg3QmhGLWktYjFMS2RyaGZwdzBTWG9jS1BkdDZpamxpVG03T0pkNlBqMnREbEE3enpOQnIzTk9tMGNPelZCeEV4V1RkbWpXWF8xa1ZEc1Z1SGdqM3JjN3N4WS1OMWI3MEJDMUZmOHlYNnB4YzZzVC1XQjYzMnpBR0dfbGRpTWVUblEydWs0YkhjZllkVVExYWg1X3p1SjFkekV6Ql9IeEE?oc=5",
+"summary": "How the US organ transplant system works and what to ask to improve your chances yoursun.com",
+"outlet": "yoursun.com",
+"published": "2026-11-02T00:15:00+00:00",
+"id": "4a21eabfc16dd263",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Socioeconomic Inequities in Early Kidney Care Concentrate at Late Initial Clinical Detection Rather Than Planned Care: A Population-Based Study",
+"link": "https://www.medrxiv.org/content/10.64898/2026.10.30.26366923v1?rss=1",
+"summary": "Introduction Socioeconomic inequities in chronic kidney disease (CKD) outcomes are recognised and greater at early stages, but where exactly inequities arise within early care remains unclear. This distinction is critical: if disparities occur before clinical recognition, strategies focused on management after…",
+"outlet": "",
+"published": "2026-11-02T00:00:00+00:00",
+"id": "3702153bbf846a76",
+"source": "medRxiv: Nephrology preprints",
+"category": "Research",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Tegoprubart Eases Symptom Burden vs Tacrolimus After Kidney Transplant - The American Journal of Managed Care",
+"link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOYmVhQ0htNS1fR3JWTlhha2F5QTFqLVE5bUE3UUVYMldoUVdhb2xkM3NiczR5VVFkaFdrakxoazJUb0E4Z0VFRm43NGYtUkRpeW1YZlNkU0R3NHEtcHVPZmJOYmgxTnRHMXdrNmdRSUdPOHJhWFVCWFpVUnFqX3VnS21fQjZWc2xoc1FsRnh2OWx1UmVpa2ZHazlfTy0?oc=5",
+"summary": "Tegoprubart Eases Symptom Burden vs Tacrolimus After Kidney Transplant The American Journal of Managed Care",
+"outlet": "The American Journal of Managed Care",
+"published": "2026-11-01T22:05:27+00:00",
+"id": "2637f4152e7cf54c",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
 {
 "title": "Evaluation of a Standardized Treatment Regimen for Antibody Mediated Rejection Following Lung Transplantation",
 "link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70737?af=R",
@@ -1277,6 +1574,17 @@
 "first_seen": "2026-10-31T15:15:27.375294+00:00"
 },
 {
+"title": "Kentucky organ donation group concerned after federal decertification of procurement organization - Z93 Country",
+"link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBZM3NlS19uMHMtU2tGWVp0LUx5ZVlyV0hnWS1RQkR1UEMzSVdadFBnRjZxb3VQdG0wSTNMdTMtemhOUS13YW1nbDBWZGpwQlhWR2lPOXY2TS1sU1BnbUtF?oc=5",
+"summary": "Kentucky organ donation group concerned after federal decertification of procurement organization Z93 Country",
+"outlet": "Z93 Country",
+"published": "2026-10-31T15:15:27.375294+00:00",
+"id": "3e4d884bd2bfbd16",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-10-31T15:15:27.375294+00:00"
+},
+{
 "title": "Red Flags of China’s Organ Transplant Abuse - Newsweek",
 "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxObzc4cXppSEpXVDhOdWhlYjNlMlVXZGlMU25LYWRoMGQySVNNUWJQVWhIYXZDVGYxUGFyZmwydU9BaGI4Z0U0aG0tUUx4a1RQeThWVGphdDRUOGNmOW52UDRvWEtUSUlnbWw2VkZqVm5Ob3BHSi03SGhrdkk2V2lLZTNR?oc=5",
 "summary": "Red Flags of China’s Organ Transplant Abuse Newsweek",
@@ -1506,17 +1814,6 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-31T08:46:28.908305+00:00"
-},
-{
-"title": "Kentucky organ donation group concerned after federal decertification of procurement organization - Z93 Country",
-"link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBZM3NlS19uMHMtU2tGWVp0LUx5ZVlyV0hnWS1RQkR1UEMzSVdadFBnRjZxb3VQdG0wSTNMdTMtemhOUS13YW1nbDBWZGpwQlhWR2lPOXY2TS1sU1BnbUtF?oc=5",
-"summary": "Kentucky organ donation group concerned after federal decertification of procurement organization Z93 Country",
-"outlet": "Z93 Country",
-"published": "2026-10-31T05:19:39+00:00",
-"id": "3e4d884bd2bfbd16",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-31T15:15:27.375294+00:00"
 },
 {
 "title": "Renal Outcomes in Hereditary Fibrinogen A Alpha-Chain Amyloidosis",
@@ -2232,6 +2529,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-30T13:25:51.838740+00:00"
+},
+{
+"title": "Hiding in Plain Sight: A Chance to Change Kidney Care - RealClearHealth",
+"link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQWl0VDk3M2tqZ1MyOURpTGlFcDRNUWwxcUxOeURrNWJNalZEMzlCYXNvMDBlczdzU1pweEdQTGk3d09sbGE2QXp1N3JDOVVoWVJicy1Gelp0TVBCS3RxS0hqdzFacmZfS3MyNlFZM2xKQjZkcXFRUzF5SkxGRnh1MWYzMk1mdFNLd2pmV2Nuc21EdE1rM1lYci00RTRtTkFVN3daX2ZCSHlLdWdWMG1uSElIRDVtMHhZ?oc=5",
+"summary": "Hiding in Plain Sight: A Chance to Change Kidney Care RealClearHealth",
+"outlet": "RealClearHealth",
+"published": "2026-10-30T10:03:21+00:00",
+"id": "a6aa22e9316dc562",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-02T23:12:07.461403+00:00"
 },
 {
 "title": "A Kidney Drug Looked Like a Metal Foreign Body on Scans—It Was Actually an Unchewed Pill - Medical Daily",
@@ -5323,314 +5631,6 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-26T06:53:23.203134+00:00"
-},
-{
-"title": "Response to the Letter to the Editor Entitled “From Molecular Signal to Clinical Action in Cardiovascular-Kidney-Metabolic Disease 2”",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032481?dgcid=rss_sd_all",
-"summary": "By William R. Marshall, Thomas McDonnell, Darren Green, Smeeta Sinha, Philip A. Kalra",
-"outlet": "",
-"published": "2026-10-25T17:47:03.976420+00:00",
-"id": "874905ebc8ba8da7",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-25T17:47:03.976420+00:00"
-},
-{
-"title": "From Molecular Signal to Clinical Action in Cardiovascular-Kidney-Metabolic Disease",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032493?dgcid=rss_sd_all",
-"summary": "By Kunsheng Wu, Gaohua Cao, Yulong Yu",
-"outlet": "",
-"published": "2026-10-25T17:47:03.976420+00:00",
-"id": "6a71b4c289067ef6",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-25T17:47:03.976420+00:00"
-},
-{
-"title": "Organ donation for people under 18: What are the global regulations? - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQaHRGRDM3Zkt0RTdVUExnYWRfV2JOZ0RFQng5OEtwUkE3cGpMYUV6bkdmVDJLRnNZMVRWMlEtV0NFcDRSVEJrOXpaQzZfb2dmbEtHM2lHMElzX3luNjNJMDBZcEhrcXd5LWtRelhFRjJVbUxOQVBsa1dLQWtzZkRzelFpdTk0b2JFcnVnNHZYUQ?oc=5",
-"summary": "Organ donation for people under 18: What are the global regulations? Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-10-25T17:06:34+00:00",
-"id": "2ab32cba054507fe",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-25T20:44:03.406739+00:00"
-},
-{
-"title": "Ger Rebbe hospitalized for dialysis treatment - Israel National News",
-"link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE12Ty1JbkRmYmJlakJDaWtXNC1aMllQOVpyUTFhbUlJamt1LUFjeVJtMHMtQW40VHRwR2ZyTDJhNE1QTmRkeWdLWmdSb1k3S1pLZEJXUGxkenVFQQ?oc=5",
-"summary": "Ger Rebbe hospitalized for dialysis treatment Israel National News",
-"outlet": "Israel National News",
-"published": "2026-10-25T17:04:16+00:00",
-"id": "8dce7960ef6fc92f",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-26T14:06:48.367810+00:00"
-},
-{
-"title": "Tegoprubart Improves Quality of Life vs Tacrolimus After Kidney Transplant - HCPLive",
-"link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQOEU4RVV1bHphSlBhS2doX1NXTXB2ZjltRDFyME42VVdRdlVzb3FjWUNJMU5seWsyOG5NSmh6UWlTM21TWjZ1VFNnU0J4Yko0dDFGeGNURktYRzE5SXdPMlUyZTNsV0RZVVZsWkhWTGNMQXFib2ZKd2lZNWd2Rm13UlEtaXR5TXJHQ3htdDVpQmt4UzRIdFdrM0FuZktkaXJRUFhFMC1n?oc=5",
-"summary": "Tegoprubart Improves Quality of Life vs Tacrolimus After Kidney Transplant HCPLive",
-"outlet": "HCPLive",
-"published": "2026-10-25T16:03:41+00:00",
-"id": "88c25316cb02f51a",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-25T17:47:03.976420+00:00"
-},
-{
-"title": "Arizona woman's 3-year wait shows the U.S. organ transplant system's complexity - KJZZ",
-"link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNa3NCOTVhNUxCVVhLeE9keTJMekFoNEpNdHFQS0ZPbl9GbHBuSkk5dHJhS1dpd2JGWE45TEdwUG53aFJpcHo0d05mYXFBTDBqYkpQQWhub0h0QVhFQzdmYVdNSzBPaU02UHhhQUZWYWhMZ09jUV9nU2VaQ3g0Q2t5bjlTTDh1MTdNcnNYZkVGeVVqV2tYeklWQ3dsLVF1X25LMG1ZWHhMcjhZS09tRHp1ZGQ4ak1kWnBBWEE?oc=5",
-"summary": "Arizona woman's 3-year wait shows the U.S. organ transplant system's complexity KJZZ",
-"outlet": "KJZZ",
-"published": "2026-10-25T14:53:00+00:00",
-"id": "5c6ede7d42880823",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-26T23:44:40.863255+00:00"
-},
-{
-"title": "PM Modi applauds Shivani’s family, links organ donation to India’s 'Brain Research Mission' - India Tribune - Chicago",
-"link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOR0hhcXhhbTVaOUZsSGFHUlZSSzBUY3ZaelNWUFFyVVRTRGlDRE9fS2pRZTVsLU5vYWxWelp1b05Pcy0yLTZnMDlIU0s2LTZkMjZ0cGZiX0MtNzMyQk9MU3gtOC05Q3p2dldCdGZOV2ZTc2dQU3JIRy1ocU85M0JCN2NfXzltSlNFUHVwQ3hkVjlKVm93RXA1eUJvMUszVXp6bjB3WENkaGExbkV0NndpYklXVlE1Ul82QXdSRXc5TQ?oc=5",
-"summary": "PM Modi applauds Shivani’s family, links organ donation to India’s 'Brain Research Mission' India Tribune - Chicago",
-"outlet": "India Tribune - Chicago",
-"published": "2026-10-25T14:35:47+00:00",
-"id": "f344a490ca967237",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-25T17:47:03.976420+00:00"
-},
-{
-"title": "The Role of Genetic Testing in Tolvaptan Decision Making: A Case of Atypical Cystic Kidney Disease Associated With CYP24A1",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002967?dgcid=rss_sd_all",
-"summary": "By Mohamed M. Ellabbad, Usama Qamar, Zeeshan Imtiaz, Fouad T. Chebib, Christian Hanna, Navin R. Gupta",
-"outlet": "",
-"published": "2026-10-25T14:18:06.857512+00:00",
-"id": "096461c8558de02b",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-25T14:18:06.857512+00:00"
-},
-{
-"title": "Clinical Profiles and Early Outcomes of Living Kidney Donors With Pre-Existing Type 2 Diabetes.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42927437/",
-"summary": "Lonze BE, Husain SA, Newsome JB et al. Clinical transplantation",
-"outlet": "Clin Transplant",
-"published": "2026-10-25T12:00:00+00:00",
-"id": "87cef9aa41017d53",
-"source": "PubMed: transplant policy & organ procurement",
-"category": "Policy",
-"first_seen": "2026-10-25T17:47:03.976420+00:00"
-},
-{
-"title": "Spatial transcriptomic profiling of indeterminate antibody-mediated rejection in liver allografts: A pilot study.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42925675/",
-"summary": "Khurram NA, Stanton K, Signore AP et al. Pathology, research and practice",
-"outlet": "Pathol Res Pract",
-"published": "2026-10-25T12:00:00+00:00",
-"id": "7ef320743c5915f0",
-"source": "PubMed: transplant, donation & kidney failure research",
-"category": "Research",
-"first_seen": "2026-11-01T09:06:45.362874+00:00"
-},
-{
-"title": "FBI Unos agentes avistan un UAP triangular negro y silencioso, según revelan unos documentos recién publicados - Fox News",
-"link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZkE1X2t5cko0eFNueXpEUnp1QlNCZFktV2FrYTVIM3o1TThNZHNmVHJMVnZzaERmREp5QlBJLXRpRElManY2OTlLY05JMnJnNG5ZNDd1dXBjLWFtYUtuMFc1T3VpSmRoeVBsbFRvbk9rbDJVdHo2R25oN3JWM1A2akpRaWJUVTlXRjd5dXlHc1VfZmg4c1plRkRKX0RGblFseHc3RTBJQjJuVlpWZ1pvZ0ZBYTdYUmpYQnpBUURB?oc=5",
-"summary": "FBI Unos agentes avistan un UAP triangular negro y silencioso, según revelan unos documentos recién publicados Fox News",
-"outlet": "Fox News",
-"published": "2026-10-25T10:00:43+00:00",
-"id": "cfb9bdb1aa9e699f",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-26T14:06:48.367810+00:00"
-},
-{
-"title": "Clinical Profiles and Early Outcomes of Living Kidney Donors With Pre‐Existing Type 2 Diabetes",
-"link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70732?af=R",
-"summary": "Clinical Transplantation, Volume 40, Issue 10, October 2026.",
-"outlet": "Wiley: Clinical Transplantation: Table of Contents",
-"published": "2026-10-25T09:43:20+00:00",
-"id": "78d93f1a1ed91802",
-"source": "Clinical Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-26T14:06:48.367810+00:00"
-},
-{
-"title": "Distribution of Donor Types and Time to Allogeneic Hematopoietic Stem Cell Transplantation for Acute Myeloid Leukemia Across Ethnic Groups: A Retrospective Study",
-"link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70728?af=R",
-"summary": "Clinical Transplantation, Volume 40, Issue 10, October 2026.",
-"outlet": "Wiley: Clinical Transplantation: Table of Contents",
-"published": "2026-10-25T09:41:26+00:00",
-"id": "7b3b3620b824f9d3",
-"source": "Clinical Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-26T14:06:48.367810+00:00"
-},
-{
-"title": "Case Links Persistent Kidney Failure to Infection-Related Glomerular Inflammation - Bioengineer.org",
-"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNTDF6T0ZlQ3hBempScFFDR05WaTlsVm44cnMwYmRQMUpFUHBvUDBFbU1OQXdIdjFIUGVpVUU1VjAtZ1NWLXZkZzZmYnp0SXZJblVYcjdkdEZIMlVDd0lrVTFCSHV5SFFJLUEyNTBzS3R3dXlQU2FmVlVYNjNjT2tjUzVUc1JqVWZwTXhWajgtcDM5eFpFYW9jXzlwOU5pbHRWV0FkaFNYbkVSQQ?oc=5",
-"summary": "Case Links Persistent Kidney Failure to Infection-Related Glomerular Inflammation Bioengineer.org",
-"outlet": "Bioengineer.org",
-"published": "2026-10-25T06:28:41+00:00",
-"id": "ef722b9f9d227d14",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-26T14:06:48.367810+00:00"
-},
-{
-"title": "What do 7-year-olds understand about organ donation? - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9iNVdJS1lRVDFEcmJMNVNncG9YT0h3aXRBcF9odndub21hczNyMDZzdzJ1aVZJb1VPaHgyS2o0alhDZGhMUDUzS3FrVjlwcXRHbmkzanh3VlhJcmNLTEZsVzh6b3F5RWkz?oc=5",
-"summary": "What do 7-year-olds understand about organ donation? Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-10-25T03:55:46+00:00",
-"id": "bfb18be7143810a9",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-25T23:09:26.128444+00:00"
-},
-{
-"title": "Advanced age does not limit the benefits of sodium-glucose cotransporter 2 inhibitors in chronic kidney disease - Medical Xpress",
-"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNckFfZjhNZDhmcGk3V21kZTE3TXU5czdXSy1xeXR4ODVYS3RtX0plUFJyTnJodzVyaUJtR3RLZkhJTFRmZ0dCWm53MVZOWm54MVd0Y3lKQ1hZR2dvc2VwTHpldVNjUUx1Q0lvV2NCdUF6Ri14djZrZEM0cjBtcVhOQzlrWGU?oc=5",
-"summary": "Advanced age does not limit the benefits of sodium-glucose cotransporter 2 inhibitors in chronic kidney disease Medical Xpress",
-"outlet": "Medical Xpress",
-"published": "2026-10-24T22:30:01+00:00",
-"id": "24dda189923af149",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-26T06:53:23.203134+00:00"
-},
-{
-"title": "GLP-1s Tied to Weight Loss in Peritoneal Dialysis, With Steven Brunelli, MD - HCPLive",
-"link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQcElXSmRabThja1hOaFBIWk5ZOU5CdUN4VXM1aGpjaXhtLU9fYktaQUhZRHgxd1NrREtGVWJBVzVEcUFyZ2Z6cW5LUFM0Nmo2ZlZZblpmTWozNkpzMWdZajlCUGxTNHpKZThLU1dkcnpsOVRYQ0dNUFYxYXc4eXBlR2dZSndnTVA5dzJldXhnVHBTb0hDZ2NnZXZrNURkOEhhbEsxRw?oc=5",
-"summary": "GLP-1s Tied to Weight Loss in Peritoneal Dialysis, With Steven Brunelli, MD HCPLive",
-"outlet": "HCPLive",
-"published": "2026-10-24T22:13:40+00:00",
-"id": "d84951ec59af3af5",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-25T00:12:41.206145+00:00"
-},
-{
-"title": "To Up Your Chances of an Organ Transplant, Know the System - Newser",
-"link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRkEyMEdMWTdDUGZOdlBERFc3VHhyVU9ENDNoTXZ5a3BDRXk0akJlTWRsS21zeUhPb0Y0b0NCell5ZXY0ZHc3aDZPa1RLandqd0Ryb2RPak5ZaXJNeENtVTRyS2tvV2pWQXV3eUoxVnJDYnRYRENVX0NCWXgzckFUbjdwa2FSam5yNGh0NmtDb05XZXg0V3pNRm5hS0tvbWM?oc=5",
-"summary": "To Up Your Chances of an Organ Transplant, Know the System Newser",
-"outlet": "Newser",
-"published": "2026-10-24T21:35:00+00:00",
-"id": "6e10abb1e66b6f97",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-24T21:49:41.330871+00:00"
-},
-{
-"title": "New Survey Tool Measures How University Students Think About Organ Donation - Bioengineer.org",
-"link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQREQ1SENrSDlLRnBMRk9tZWZnclRYUlIzNWRhTHM0bWJnM2VjYjZMYnNlbTNEZ3NzbGRreVZhYnZSNVhhZ0huWHlrd3huVVBOeTNMektqZTB3Rm1YV09wM1AtTlRMRGNlUGtQUVhpMzRlR24tYjU1WTlBZWFjVVgzUWRWT09oVkhTeTdsNnJyU0ttcGw4YWt1Rkd1M2ZHaTlDX0E?oc=5",
-"summary": "New Survey Tool Measures How University Students Think About Organ Donation Bioengineer.org",
-"outlet": "Bioengineer.org",
-"published": "2026-10-24T20:13:41+00:00",
-"id": "c261a0984f7e3f03",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-24T21:49:41.330871+00:00"
-},
-{
-"title": "The Obesity Paradox in Chronic Kidney Disease: Cardiorespiratory Fitness Is Associated With Mortality Independent of Body Mass Index",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002335?dgcid=rss_sd_all",
-"summary": "By Swathi Balantrapu, Peter Kokkinos, Immanuel B.H. Samuel, Andreas Pittaras, Charles Faselis, Jonathan Myers",
-"outlet": "",
-"published": "2026-10-24T19:23:46.211985+00:00",
-"id": "82d287895650c497",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-24T19:23:46.211985+00:00"
-},
-{
-"title": "Organ donation turns loss into hope, say PGI experts - The Times of India",
-"link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdFE1UW5HNF9sQmZ2NjVPN3M2NzJDWHBUSDVjNWpINmJMM1lzYWFBeXpYX1k4UlBla0Z6ZVktQlV4Vy14eTd1cXRoU3pzWnF2MlZxbkRIQUQ4cURkYjhGZW51Sml3RDVzTnpiajQ3eXBYTEFaTGtfcU1lNVZfWU45c21KRXhnZ3NBWEdxQ0ZFblVKX3dnUDl5cnNhdjgyTC1jSlBnY1MxR3YzTjRlYkc3cTl2V2Y0RFNLWmNFamhGUTdsMTE0SDFhRNIBzgFBVV95cUxQVmZ1M2lrbmZnRDBseGZKTW9uNTVPaGYzRTdDNlV4a2JYd1Q1N0RCdGVNSFpZZFpzYXFXWW02ckxhS1MxWXpkM1Q5OUQ0Y3dsSGxuWW5wMGo0X1lWSFNKYjJiRkRJcldTT2FNRUlQZVdOT2pxNjk5MHRVQ3VGdzRpcFlyRXFqSmJQaVhWS0JYbnlUQ0wzVzJDeHFBN1phVGpsVkZSRGdEUmNmRU1mMENpWlktdEw2dEVKVlI3MlgwT0J5dUxTLTdvc2tLNUhZZw?oc=5",
-"summary": "Organ donation turns loss into hope, say PGI experts The Times of India",
-"outlet": "The Times of India",
-"published": "2026-10-24T18:51:00+00:00",
-"id": "5b7c7d894ed82208",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-24T19:23:46.211985+00:00"
-},
-{
-"title": "Matching CKD Education to Patient Readiness for Home Dialysis, With Christopher Chan, MD - HCPLive",
-"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOV0E3MTcwNXlGUGUtSXhpNVFMU3JHYnk3d1hQQzRmN3VkNl9MaFJLRWNQNlVEVHlTXzdpRFB4LUgzNGhZaWY4d05MamdFS2VRN1ZOYmFJUjNmRHdHVVpQQWw4N01ZcG13ZU9QU3djTHFQcXg4RUtUQVE2UTduaE0tOUNfM1dhU09fN1hmZUtQVTdadXFFTF95bW9aaU5uSXJVenhlWTA4eEQ4cDJnbzFkbjVfbU8yUQ?oc=5",
-"summary": "Matching CKD Education to Patient Readiness for Home Dialysis, With Christopher Chan, MD HCPLive",
-"outlet": "HCPLive",
-"published": "2026-10-24T18:03:40+00:00",
-"id": "b44f91ed765a95a1",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-24T19:23:46.211985+00:00"
-},
-{
-"title": "Sports nephrology a growing field ‘all nephrologists should know’",
-"link": "https://www.healio.com/news/nephrology/20261024/sports-nephrology-an-emerging-field-that-all-nephrologists-should-know",
-"summary": "DENVER — At ASN Kidney Week, Komal Safdar, MD, nephrologist at Cleveland Clinic, discussed what it is like to run a sports nephrology clinic and the type of athletes she and her team work with. Athletes who developed kidney complications while playing their sports, athletes with preexisting kidney disease who want to…",
-"outlet": "",
-"published": "2026-10-24T17:26:47+00:00",
-"id": "d9fd4749a49e2471",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-10-24T19:23:46.211985+00:00"
-},
-{
-"title": "Long-term pregnancy outcomes in kidney transplant recipients",
-"link": "https://www.healio.com/news/nephrology/20261024/longterm-pregnancy-outcomes-assessed-in-kidney-transplant-recipients",
-"summary": "DENVER — Children born to kidney transplant recipients had normal growth and development, but careful planning is needed for transplant recipients who want to become pregnant, according to data presented at ASN Kidney Week. The Transplant Pregnancy Registry International (TPRI), originally named the National…",
-"outlet": "",
-"published": "2026-10-24T17:14:45+00:00",
-"id": "10edd086a419641e",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-10-24T19:23:46.211985+00:00"
-},
-{
-"title": "Penile Necrosis in a Patient With End-Stage Kidney Disease: Suspected Uremic Calciphylaxis in the Setting of Severe Peripheral Arterial Disease - Cureus",
-"link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQNnU5Zmk5RWY0NTAwVFlUOWZuNzVxY0p2ZWdKRzk4ak9wNi0tZFpHSDRrRm1wSzJvdFdCQnNxQ1hUd0UtdExyRXgteFdUWkdSQ0dXV3BNWmpjWWUxdEhXT1NwbmVPYWpJMzZKSllxU21vZUh5NXZxRHQxVk5NUzlsSU92VHJzdzVQWjlKdnJac0w0VWFlNTJHWTkzdjlBTjZsZTM5RWd6bV9WdXgxazFRYVFwcW1GN1d2WVRMUXdlWHRwTGJUN0tIOXhIRFMtLUhKcThzZVc1STM1b2w4Z0tsbUZ5RHcyZDNpVkwwQzNXNjd3Q0NuRWowaVZSdElDZzlqWU5udWUyRm1aTTFETHc?oc=5",
-"summary": "Penile Necrosis in a Patient With End-Stage Kidney Disease: Suspected Uremic Calciphylaxis in the Setting of Severe Peripheral Arterial Disease Cureus",
-"outlet": "Cureus",
-"published": "2026-10-24T17:13:09+00:00",
-"id": "b3c058da9446253b",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-24T19:23:46.211985+00:00"
-},
-{
-"title": "Renal failure deaths with substance use disorder rose 14-fold",
-"link": "https://www.healio.com/news/nephrology/20261024/renal-failure-deaths-with-substance-use-disorder-rose-14fold-since-1999",
-"summary": "DENVER — The annual number of U.S. deaths attributed to renal failure with substance use disorder listed as contributing cause rose 14-fold between 1999 and 2024, peaking in 2022, according to data presented at ASN Kidney Week. “This growing overlap warrants greater attention to substance-use disorders within kidney…",
-"outlet": "",
-"published": "2026-10-24T17:09:42+00:00",
-"id": "1dc8099f826a48f5",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-10-24T19:23:46.211985+00:00"
-},
-{
-"title": "Depression tied to mortality risk among kidney stone formers",
-"link": "https://www.healio.com/news/nephrology/20261024/depression-tied-to-mortality-risk-among-kidney-stone-formers",
-"summary": "DENVER — Moderate to severe depression was linked to greater mortality risks for kidney stone formers, according to study data presented at ASN Kidney Week. Individuals who develop kidney stones may face greater psychosocial burden, including depression, according to Jie Tang, MD, MPH, associate professor of medicine…",
-"outlet": "",
-"published": "2026-10-24T17:05:06+00:00",
-"id": "38eba0e61d904d7f",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-10-24T19:23:46.211985+00:00"
-},
-{
-"title": "Dental referrals low in nephrology",
-"link": "https://www.healio.com/news/nephrology/20261024/dental-referrals-low-in-nephrology-but-appetite-is-real-for-integration-in-practice",
-"summary": "DENVER — Patients with chronic kidney disease or end-stage kidney disease are not routinely referred to a dentist, according to data presented at ASN Kidney Week. Despite low referral rates, more than two-thirds of nephrologists were interested in a pilot program to improve interdisciplinary care with dentists, the…",
-"outlet": "",
-"published": "2026-10-24T16:50:56+00:00",
-"id": "f9a64e1e32fe7e7f",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-10-24T16:52:56.133449+00:00"
 }
 ]
 }
