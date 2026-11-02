@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-01T23:49:36.038040+00:00",
+"updated": "2026-11-02T05:47:44.467708+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -94,17 +94,17 @@
 "name": "Google News: transplant & organ donation policy",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": true,
-"count": 30,
-"error": null
+"ok": false,
+"count": 0,
+"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
 },
 {
 "name": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=dialysis+OR+%22kidney+disease%22+OR+%22kidney+failure%22+OR+ESRD+OR+%22kidney+transplant%22+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": true,
-"count": 30,
-"error": null
+"ok": false,
+"count": 0,
+"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
 },
 {
 "name": "KFF Health News",
@@ -692,6 +692,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-11-01T02:05:19.933165+00:00"
+},
+{
+"title": "Disease-Targeted Therapies and eGFR Slope over 2 Years in IgA Nephropathy: A Systematic Review and Network Meta-Analysis",
+"link": "https://www.medrxiv.org/content/10.64898/2026.10.29.26366792v1?rss=1",
+"summary": "Background: Several disease-targeted therapies for IgA nephropathy have reported effects on eGFR slope over 2 years or longer in phase 3 trials, but they have not been compared directly. We compared their effects on the annualized total eGFR slope. Methods: We searched PubMed, Embase, the Cochrane Central Register of…",
+"outlet": "",
+"published": "2026-11-01T00:00:00+00:00",
+"id": "ca958f0825a33ad4",
+"source": "medRxiv: Nephrology preprints",
+"category": "Research",
+"first_seen": "2026-11-02T05:47:44.467708+00:00"
 },
 {
 "title": "Epimeric Vitamin D is Not Associated With Arterial Stiffness or Cardiovascular Outcomes in Patients With Advanced CKD",
@@ -5618,17 +5629,6 @@
 "published": "2026-10-24T16:29:26+00:00",
 "id": "2737fa9f4a43dada",
 "source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-10-24T16:52:56.133449+00:00"
-},
-{
-"title": "One-Size Dialysis Volume Goals Fall Short in CKD: Jennifer Flythe, MD - The American Journal of Managed Care",
-"link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNSkREbWU1SGdMVEhpY1IwSzZIT014X3QxWFVNSUNNZ29hMUh2UzBDZDdjY3d1MHBCdEEzT055Y3FKLXBlYlk3WTFWU2NFVFJNd2ZxTlMtd2hfUlR5TUZ1bTFjMFJvYWlVMUNaNDJZcG9aaG9abkh6YnBlb1RhM21HRWZmU0ZwemlfY3RBSUpuUUsyOHMzX2JwdQ?oc=5",
-"summary": "One-Size Dialysis Volume Goals Fall Short in CKD: Jennifer Flythe, MD The American Journal of Managed Care",
-"outlet": "The American Journal of Managed Care",
-"published": "2026-10-24T16:14:55+00:00",
-"id": "34bb4d1ca0b91d22",
-"source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-24T16:52:56.133449+00:00"
 }
