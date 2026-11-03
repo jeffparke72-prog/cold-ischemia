@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-03T03:59:48.539596+00:00",
+"updated": "2026-11-03T11:49:48.783017+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -87,7 +87,7 @@
 "category": "Policy",
 "url": "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=transplant+%7C+dialysis+%7C+%22organ+procurement%22+%7C+%22end-stage+renal%22&order=newest",
 "ok": true,
-"count": 4,
+"count": 5,
 "error": null
 },
 {
@@ -132,6 +132,50 @@
 }
 ],
 "items": [
+{
+"title": "CMS can now more clearly move to shut down organ procurement organizations deemed an immediate threat to patient safety - Medical Daily",
+"link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdEpYQ1ZIVUNiT1RUWmlxREZvcEZjeDZUeFh0OWVnd2NyY3oxQUxYQi15TlBCczZlQ2pMWTd1cVFSeWMzMGtQNm1Bc0ZqbFh3UllITDk1anRiTlJWdW1hem4xeGtWM3ZuSnBUcEpOMmNjOEJRSkpvYkt1OFJJckg0bmthbDNhRWZma1dB?oc=5",
+"summary": "CMS can now more clearly move to shut down organ procurement organizations deemed an immediate threat to patient safety Medical Daily",
+"outlet": "Medical Daily",
+"published": "2026-11-03T10:36:37+00:00",
+"id": "137611941434ee8b",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-03T11:49:48.783017+00:00"
+},
+{
+"title": "Why Do Kidney Disease and Heart Failure Go Together? - Medscape",
+"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeFpKb2xqRUxYMlRmQnU0TktidmRqRWo5SFh0ZzFoLUVKMlkyeTVrQnN1UFRhdXpXQ3pfWXI3LVhHX3V3VnFHNTBIYWxlZXh1OVFfRkJtRl9pUHZHQjM1elExdkZpU0dpOXktWG9ORms2VUZ2S3VTQ1Y4SXdkN3JRLWZnY3BEbDVIY0ZQSFhvUGdqYV81bkdaS0V1bEtvYUY2ZHAw?oc=5",
+"summary": "Why Do Kidney Disease and Heart Failure Go Together? Medscape",
+"outlet": "Medscape",
+"published": "2026-11-03T07:57:42+00:00",
+"id": "02993866eb9ea40a",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-03T11:49:48.783017+00:00"
+},
+{
+"title": "‘Essentially a stranger’: Donate Life Northwest spotlights organ donation’s impact - KOIN.com",
+"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOYm4zUXNfUTlBYkhHa1N3aEdHN1BvZ2o3dlVHazY5dENCOFZ6X1BTSlNtSTdhYlNGWF9tc0k5amJQUklaUzA3TFkxSmJoUmdpU1FHWHp4ZldjdTYzdDFJSmhnYjFOc2pxMEhpU0kwVFpxS2JheHhLZjlmS09rY2lmR1FONlBtTjZ3Smw1alZ4VG1wb3NVLVVfRVdsUnlDV2htd1VJejRvLWI0RUhKYkc3c0FuS1Y4UQ?oc=5",
+"summary": "‘Essentially a stranger’: Donate Life Northwest spotlights organ donation’s impact KOIN.com",
+"outlet": "KOIN.com",
+"published": "2026-11-03T06:17:06+00:00",
+"id": "ff239951d6e2cd4b",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-03T11:49:48.783017+00:00"
+},
+{
+"title": "Medicare and Medicaid Programs; Organ Procurement Organizations Conditions for Coverage: Revisions to the Conditions for Coverage",
+"link": "https://www.federalregister.gov/documents/2026/11/03/2026-22381/medicare-and-medicaid-programs-organ-procurement-organizations-conditions-for-coverage-revisions-to",
+"summary": "This final rule revises the Conditions for Coverage for Organ Procurement Organizations (OPOs) to clarify outstanding procedural questions and provide additional operational flexibility for OPOs to achieve high performance resulting in the successful procurement, distribution, and transplantation of more life-saving…",
+"outlet": "",
+"published": "2026-11-03T05:00:00+00:00",
+"id": "e1af1b2b5d2a0082",
+"source": "Federal Register: organ transplant policy",
+"category": "Policy",
+"first_seen": "2026-11-03T11:49:48.783017+00:00"
+},
 {
 "title": "Vietnamese lawmakers discuss amendments to law organ donation law - Asia News Network",
 "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQT2NvU3puT0djWE04U0RzR1JmMVZaV0NyREdJb1hwYWZmOEZ4YzdsN05UZW1UYlNBVW0zVVUwZUdJU0JnYXJqQk9zcmpMWU9VYWlqMHkxMlhFandWRTNiakU3T2VYUkduekFsWDNYTUZJRU84SzE1cnhQSml3NG1kQkxNY0dPaEFtelljQlVpTkVsc3FGd2c?oc=5",
@@ -384,6 +428,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-11-03T03:59:48.539596+00:00"
+},
+{
+"title": "Tighten regulations on tissue and organ donation and transplantation, and protect the rights of donors. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVDhqZ05xazNGYV9RcFF0LVJnMGRTX2R6QmZSZ1lZZEU1eVhSd0xPSWNoQ3JxQmZNelB4ZUg4UWdUa01PbThDYlhDRGJvUDZPajBPaHEyRW1ReEt4elByeWdOZ3g4QVpGZGc4aWZlR1M5aWpLczJkWk84Sk5LUzItTlRfYlNuRWFLR0xZWThPZzBRLVFD?oc=5",
+"summary": "Tighten regulations on tissue and organ donation and transplantation, and protect the rights of donors. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-11-02T09:40:59+00:00",
+"id": "7f864b72f304e3e5",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-03T11:49:48.783017+00:00"
 },
 {
 "title": "Ensuring organ transplant opportunities for impoverished patients, with transparent organ recipient priority. - Vietnam.vn",
@@ -2564,6 +2619,17 @@
 "first_seen": "2026-10-30T18:47:23.958711+00:00"
 },
 {
+"title": "How to Recognize the Subtle Warning Signs of Chronic Kidney Disease - Yahoo",
+"link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNNGwyeGZTV0w5YXdUVjJEOGotaE4xWWh4NWIxU3Y2QW5Jc0w3enBlWkpRdGxoODEwRXFvMnBsYXkxSU1uaTRiSWM0a3lNSGxERE1vTDBaczFfOFQ2X3IyN1FTdWFaUXNOcGZJTmdtcGtVRi1acTNDdGpQenRQVzR6SGtFNzJKdFNzWDVGTGhncV9LTXRvckl1VlJR?oc=5",
+"summary": "How to Recognize the Subtle Warning Signs of Chronic Kidney Disease Yahoo",
+"outlet": "Yahoo",
+"published": "2026-10-30T13:39:09+00:00",
+"id": "deaf8412d8f5a86b",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-03T11:49:48.783017+00:00"
+},
+{
 "title": "Life With Chronic Kidney Disease: How Much Water Do You Really Need? - Yahoo Lifestyle Singapore",
 "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9HdUYyLW11NXNQdUU0MV9zQkFaQmFuVjgxNE5oSGViaHlBLTY4OWJRelZGa2M4MmZoVVpmbl9wc1l6anpjX2ppcHdscVF2VnJNN2hFaUhZX0NCejUwbWxReWRQMDFNcWlMb2IzemZyWW1NcWl0YUs3UUVka0lxOVk?oc=5",
 "summary": "Life With Chronic Kidney Disease: How Much Water Do You Really Need? Yahoo Lifestyle Singapore",
@@ -2773,6 +2839,17 @@
 "first_seen": "2026-10-30T13:25:51.838740+00:00"
 },
 {
+"title": "High-dose vitamin D does not improve survival on dialysis - Healio",
+"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONmY4enU3SkJ3YjdtX0NadExRWDRZanVYUE9GbHhscHlQaF9hZTQybkd5NEVCSzlfU241ZUkzN01fTmZZd29DemxJZlFTY1RNVk9oMjlHNEtiMzRLN2VCd2pvMkpfSzRVdXRUTER3OTljTGM1anN4M25TV0k5eUJNWEVXSzFPS1hJN3JORl9fMmgtWE9HaG9xVWNDY3YzX29fcWFSdmM5MA?oc=5",
+"summary": "High-dose vitamin D does not improve survival on dialysis Healio",
+"outlet": "Healio",
+"published": "2026-10-30T07:00:00+00:00",
+"id": "bbe34b14bdd21413",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-03T11:49:48.783017+00:00"
+},
+{
 "title": "Twelve-Month Albuminuria Response to Finerenone in Patients With Chronic Kidney Disease and Type 2 Diabetes Mellitus: A Real-World Study - Cureus",
 "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQOXJ3Q1RabUl1TnU4eXduazE1bGFyY2hqVjBEUlRlTE85bm10MVJBUmxnblY0S1hoNF9EY3dUUXNmOEhCN3FINDdKUTc0ZjFhQzE0b1E1bTBpWWxrMjFhT1JmVmFxdWpwajJNZUdRSE9wWTZFSWJoYzQ5bEo4NWZ1NkZoc1JXeGZOUlByckZJdVV2UGNLdW1hZXhjUEFmYUN5ZE1nWnptbENzU19qYjJtUk5VN1hRS1FCVV90VzRKUXNId2FlcDQ1VHJYWFNpNnhNVWRrYW5Na1kxMXR1TndDZFVkZjdHRXJTWGtya3JtQUJoWV8taUhYZFRpUWdZY2RIYm1OTw?oc=5",
 "summary": "Twelve-Month Albuminuria Response to Finerenone in Patients With Chronic Kidney Disease and Type 2 Diabetes Mellitus: A Real-World Study Cureus",
@@ -2907,7 +2984,7 @@
 {
 "title": "The frameshifted VNTR length determines the kidney survival in ADTKD-MUC1",
 "link": "https://www.medrxiv.org/content/10.64898/2026.10.28.26365901v1?rss=1",
-"summary": "Introduction: Autosomal dominant tubulointerstitial kidney disease due to MUC1 variants (ADTKD-MUC1) is caused by pathogenic variants leading to a frameshift in the MUC1 gene, most often because of the duplication of a cytosine in a 7-cytosine stretch within the coding variable number tandem repeat (VNTR). It has been…",
+"summary": "IntroductionAutosomal dominant tubulointerstitial kidney disease due to MUC1 variants (ADTKD-MUC1) is caused by pathogenic variants leading to a frameshift in the MUC1 gene, most often because of the duplication of a cytosine in a 7-cytosine stretch within the coding variable number tandem repeat (VNTR). It has been…",
 "outlet": "",
 "published": "2026-10-30T00:00:00+00:00",
 "id": "65a2feb0a3cfdee5",
@@ -5554,83 +5631,6 @@
 "source": "PubMed: transplant, donation & kidney failure research",
 "category": "Research",
 "first_seen": "2026-10-27T04:49:04.597409+00:00"
-},
-{
-"title": "Vascular Anatomic Variations in Living Donor Kidney Transplantation: A Single Centre Experience.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42934076/",
-"summary": "Rózsa B, Pőcze B, Kovács J et al. Transplantation proceedings",
-"outlet": "Transplant Proc",
-"published": "2026-10-26T12:00:00+00:00",
-"id": "e2eecf8f94d0ca62",
-"source": "PubMed: living organ donation",
-"category": "Research",
-"first_seen": "2026-10-27T04:49:04.597409+00:00"
-},
-{
-"title": "Duplicated Inferior Vena Cava in Living Kidney Donor: Lessons From Two Cases With Contrasting Outcomes.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42934075/",
-"summary": "Xiong Y, Su Y, Wang X. Transplantation proceedings",
-"outlet": "Transplant Proc",
-"published": "2026-10-26T12:00:00+00:00",
-"id": "5a968d90d3a65cea",
-"source": "PubMed: living organ donation",
-"category": "Research",
-"first_seen": "2026-10-27T04:49:04.597409+00:00"
-},
-{
-"title": "Membranoproliferative Glomerulonephritis Susceptibility Loci: A Genome-Wide Association Study",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011844?dgcid=rss_sd_all",
-"summary": "By Jiong Liu, Ai-hui Li, Xiao-juan Yu, Ji-cheng Lv, Hong Zhang, Li Yang, Xu-jie Zhou",
-"outlet": "",
-"published": "2026-10-26T12:00:00+00:00",
-"id": "93fada34fb7cbfe1",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "Association of Estimated GFR at the Time of Peritoneal Dialysis Catheter Insertion With Dialysis-Related Complications",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011856?dgcid=rss_sd_all",
-"summary": "By Arti Dhoot, Robert R. Quinn, Alix Clarke, Sean Armstrong, Rachel Burdick, Arsh K. Jain, Sarbjit Vanita Jassal, Peter T. Kennealey, Scott Liebman, Brendan B. McCormick, Bogdan Momciu, Robert P. Pauly, Jeffrey Perl,…",
-"outlet": "",
-"published": "2026-10-26T12:00:00+00:00",
-"id": "ca7b925fba1cedc8",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "A Simple Diet Change Could Transform Kidney Disease Treatment, 10-Year Study Finds - SciTechDaily",
-"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNclZIT1Bza2lvb1V2OXE3d1c3ejVaN1lzVGUwRms2VEVyV2ZoZ1Z4blRuSWI1Y21aOE5PMXRUd3dWTk1KdUo0M1VrNnJ0RTlGcVdna2o0bkxscVdoWlNfYzRYYlFlTG4wZDdGcVExN3paOUhIYlFTTDNRYWhYVHRWYzFiQlpQanc5Vm9uQlFTRjRUWm9BYU5XUGFvZXFoMk5fZXRxdkoyOVJRcUk?oc=5",
-"summary": "A Simple Diet Change Could Transform Kidney Disease Treatment, 10-Year Study Finds SciTechDaily",
-"outlet": "SciTechDaily",
-"published": "2026-10-26T10:40:50+00:00",
-"id": "57d91dca3078e6f0",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-26T14:06:48.367810+00:00"
-},
-{
-"title": "MP alleges doctors profit from referring patients to foreign organ transplant clinics - AKIpress News Agency",
-"link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQV1IzSTk1cUQ1NWZlSFk1Y1NTR3U4MXMtUVA1QVRpVEVwVnhoR0EyMWhIbG5XYU9zWXNGZXYzOC1YeUpVak91TU9IR01WekFoYlJod2R1QnBvSHFLTTZqbTVXVHJEWG5RaUIxbUVjNWhxSXFDTG9YbHZEa3NUdWloamdRb19xUW9CRUl5MXUzaU9wMlpmZGdJT1VZYU9lS2xSVDhvT05DVkQ1TTZSMDVEYzEyV2JLa3JwOFc0?oc=5",
-"summary": "MP alleges doctors profit from referring patients to foreign organ transplant clinics AKIpress News Agency",
-"outlet": "AKIpress News Agency",
-"published": "2026-10-26T09:31:00+00:00",
-"id": "ea29a640ba9a666d",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-26T14:06:48.367810+00:00"
-},
-{
-"title": "What can a seven-year-old really understand about organ donation? - Báo VietNamNet",
-"link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQcWRaRUltOXVXQ0VOWlBnV2dGN29IT2NfZFlSbEF4cXlweXdfbjJ1Y0xCYjR2ZmhxTVBnclRKcUU5dnRGbkRzdndWZ0k5MWtBUW9SRmhDNnl1RjVsa2RDMzRTRS1BTlJSRG9hY1ZSdTNOdk5GR0pSRTJUY0JNZmJuN0U3enBSY2ZUUHUta1g5M1BwdkF3RjVKN2pqQVhkaWk2RTVCMA?oc=5",
-"summary": "What can a seven-year-old really understand about organ donation? Báo VietNamNet",
-"outlet": "Báo VietNamNet",
-"published": "2026-10-26T09:05:00+00:00",
-"id": "5ea6778fcc042a40",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-26T14:06:48.367810+00:00"
 }
 ]
 }
