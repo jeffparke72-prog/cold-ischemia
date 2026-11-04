@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-04T06:55:24.660257+00:00",
+"updated": "2026-11-04T15:20:19.839732+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -71,7 +71,7 @@
 "category": "Journals",
 "url": "https://onlinelibrary.wiley.com/feed/13990012/most-recent",
 "ok": true,
-"count": 2,
+"count": 3,
 "error": null
 },
 {
@@ -118,9 +118,9 @@
 "name": "UNOS News",
 "category": "Policy",
 "url": "https://unos.org/feed/",
-"ok": true,
-"count": 30,
-"error": null
+"ok": false,
+"count": 0,
+"error": "ValueError: TimeoutError: The read operation timed out"
 },
 {
 "name": "Healio Nephrology",
@@ -133,6 +133,182 @@
 ],
 "items": [
 {
+"title": "Outcomes of a Low-Dose Regional Citrate Anticoagulation Strategy in Continuous Kidney Replacement Therapy",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002980?dgcid=rss_sd_all",
+"summary": "By Naga Sumanth R. Gopireddy, Imran Khawaja, Sahil Grover, Gwyndolyn M. Radford, Mony Fraer, Jonathan M. Nizar, Lisa M. Antes, Benjamin R. Griffin",
+"outlet": "",
+"published": "2026-11-04T15:19:26.528870+00:00",
+"id": "d7fa95fd7be3891c",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Distinct Hemoglobin Trajectories and Their Prognostic Implications in Chronic Kidney Disease: Findings From the KNOW-CKD Cohort",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002943?dgcid=rss_sd_all",
+"summary": "By Semin Cho, Wookyung Chung, Young Youl Hyun, Jung Soon Kim, Yeong Hoon Kim, Sue Kyung Park, Kook-Hwan Oh, Ji Yong Jung",
+"outlet": "",
+"published": "2026-11-04T15:19:26.528809+00:00",
+"id": "cf80f5b0aaa820f7",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Hypoxia-Inducible Factor Prolyl Hydroxylase Inhibitors: Mechanisms, Therapeutic Applications, and Developmental Progress",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002347?dgcid=rss_sd_all",
+"summary": "By Fangyu Yuan, Shuangquan Kong",
+"outlet": "",
+"published": "2026-11-04T15:19:26.528720+00:00",
+"id": "7a7fff5d8c5a5ea1",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Machine Learning for Predicting Onset and Progression of Chronic Kidney Disease: A Scoping Review",
+"link": "https://www.sciencedirect.com/science/article/pii/S259005952600275X?dgcid=rss_sd_all",
+"summary": "By Charumathi Sabanayagam, Barry Moses Quan Ren Koh, Pavitra Thyagarajan, Angela Yee-Moon Wang, Cynthia Ciwei Lim, Navdeep Tangri, Jason Chon Jun Choo",
+"outlet": "",
+"published": "2026-11-04T15:19:26.528695+00:00",
+"id": "189f1e92371afbf5",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Blood Pressure Level and Risk of Cardiovascular Disease Mortality in Patients With Kidney Failure Receiving Maintenance Peritoneal Dialysis: A Subanalysis",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002852?dgcid=rss_sd_all",
+"summary": "By Viangkaeo Lee, Haleh Siami, Vanessa-Giselle Peschard, Emily Huang, Mohsen Malekinejad, Chi-yuan Hsu",
+"outlet": "",
+"published": "2026-11-04T15:19:26.528620+00:00",
+"id": "ff620408a0475e5a",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Association of the ANCA Kidney Risk Score With Kidney Failure in Anti-Glomerular Basement Membrane Disease",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033620?dgcid=rss_sd_all",
+"summary": "By Pauline Caillard, Cécile Vigneau, Jean-Michel Halimi, Marc Hazzan, Eric Thervet, Morgane Heitz, Laurent Juillard, Vincent Audard, Marion Rabant, Alexandre Hertig, Benoit Brilland, Vincent Vuiblet, Dominique Guerrot,…",
+"outlet": "",
+"published": "2026-11-04T15:19:25.870405+00:00",
+"id": "4427d05567f0fce6",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Health-related quality of life and its domains as independent predictors of all-cause mortality in maintenance hemodialysis: a prospective multicenter cohort study.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42978550/",
+"summary": "Navab F, Keyhanpour S, Rouhani MH. Renal failure",
+"outlet": "Ren Fail",
+"published": "2026-11-04T12:00:00+00:00",
+"id": "637eea126a106006",
+"source": "PubMed: transplant, donation & kidney failure research",
+"category": "Research",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Macrophages in T cell-mediated rejection of renal allografts: pathological mechanisms and CAR-macrophage immunotherapy.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42978529/",
+"summary": "He G, Qing J, Chen G et al. Renal failure",
+"outlet": "Ren Fail",
+"published": "2026-11-04T12:00:00+00:00",
+"id": "e530011a73b4352d",
+"source": "PubMed: transplant, donation & kidney failure research",
+"category": "Research",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Preemptive Kidney Transplantation in a Pediatric Patient With Factor XI Deficiency: A Case Report.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42978046/",
+"summary": "Sadek G, Khoury C, Ghobar F et al. Pediatric transplantation",
+"outlet": "Pediatr Transplant",
+"published": "2026-11-04T12:00:00+00:00",
+"id": "67c4d498586d4ee3",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Implementation of a Novel Multi-Center Pediatric Liver Transplant Collaborative Network.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/42978031/",
+"summary": "Soltys KA, Gonzalez-Peralta R, Teaster R et al. Pediatric transplantation",
+"outlet": "Pediatr Transplant",
+"published": "2026-11-04T12:00:00+00:00",
+"id": "3375dd490c16c030",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Vantive goes all-in on home dialysis with $125M hemodialysis sale - Crain's Chicago Business",
+"link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxON09Ed2E5QXY4Wm40QV9pSHBHMVQybzU0VWtmazZxT2d4X1o3ZWp5WDRRWndLVDY0Zmg5NXByV09mM2M3WmVFYk55UnJCSHdPc1o3eDl5WXNkdlBVUTFVVDllb3pnMUVScUM3NnNZMFQtTEpVZElKU0RUSjA0WmRTakFPeF9YRnc?oc=5",
+"summary": "Vantive goes all-in on home dialysis with $125M hemodialysis sale Crain's Chicago Business",
+"outlet": "Crain's Chicago Business",
+"published": "2026-11-04T11:18:03+00:00",
+"id": "cfb0383e6c1368e5",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Kidney transplant recipients hold on to RSV immunity despite immunosuppression - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOWXNPTURaU3dDeHpMbUdhaUwxRk0zeEk2eFlFUGdkNUxwTDlydnBUbEk5YmxFdlBBMW5NMVVuakFLX0hRUGczS3M1LU9NR3E3ZkNBdFJsRlpyVXlweGNmSDlHZy14ZGhvZzc5NUFyaHV1NVlIV0NoR2x4aFk3N3ZtYTZIRVdRS19Xb290RkxBX0prM1l5NWtvcXVrNUtfVXItdlJiaTFR?oc=5",
+"summary": "Kidney transplant recipients hold on to RSV immunity despite immunosuppression Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-11-04T07:22:08+00:00",
+"id": "b5d12fee842d191f",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "ASN: Fruits and Vegetables Improve Outcomes in Stage 3 Chronic Kidney Disease - Infectious Disease Advisor",
+"link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVTdhanZTNkNxOEdXTHpUeE5lNElGWWxJUWp2ZFVaMVlEZ1d1UkttWlZ2YUE4cGZROExjaDR0V3h6d1lHQVNfdS1MZkV0dG5Ta1B4bG9SUjdPclhCeHNGV1g3ak5PVGptd0pLR243R1d3dHhhVzROd1BDLTUya08wMkRSM2hWTUVpTWJXSEtzY0tQWWdadWZEcWt1WUcwekdieWJpVTVZM2tLeTctQ3lLVUlUNm9fQkpUbVV5blFuNE8?oc=5",
+"summary": "ASN: Fruits and Vegetables Improve Outcomes in Stage 3 Chronic Kidney Disease Infectious Disease Advisor",
+"outlet": "Infectious Disease Advisor",
+"published": "2026-11-04T05:00:00+00:00",
+"id": "8f0a270a6603eeb1",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Transplantation of Hepatitis B Surface Antigen Positive or Viremic Kidneys: A Systematic Review and Meta‐Analysis",
+"link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70733?af=R",
+"summary": "Clinical Transplantation, Volume 40, Issue 11, November 2026.",
+"outlet": "Wiley: Clinical Transplantation: Table of Contents",
+"published": "2026-11-04T03:41:32+00:00",
+"id": "c1fccfcaebdc92cf",
+"source": "Clinical Transplantation",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Organ donation: Building trust through understanding is essential. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBsYlhmSGl2ZC0ySGd1NktPRWtTVkNXSHpDbEViZ0pJQnppRS1PclVsWkJidlNRbmtHMWZha2FIbTVUR1FBLUZyNmd4cWcwTEdVdVdOanpqOFBIdE81TEY5Rjkxczh1N2xWWXlMWFR6U0NOSFZPVmFWRDJZVUhtdw?oc=5",
+"summary": "Organ donation: Building trust through understanding is essential. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-11-04T03:35:27+00:00",
+"id": "ea1daf958777557f",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "The Danger of Dialysis Catheters(1) - HCPLive",
+"link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA1VmhINU90cF9YVElHckNWaC1LX09VTHFuZTNOQkU5U1Jiek1sUWk5cTJIc1FvV2pDS00wOGJMMTZMS1ZpYnFZUUpwWHg1VXg4dFFSczZ5XzMzYnBrV1RHTGZVcF8?oc=5",
+"summary": "The Danger of Dialysis Catheters(1) HCPLive",
+"outlet": "HCPLive",
+"published": "2026-11-04T03:14:07+00:00",
+"id": "cbc742c9092520e4",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
 "title": "Kidney-transplant evaluation clinic opens in Montana - UW Medicine | Newsroom",
 "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQYkNPT2FIcmJITVFQUF9kdnY5TmNKa291RmZLOFllWWt4S04zMHgxYzRIQXNrbVpsUHFWc3hsMmRqcjlSTDZndzRQSkFoZExsWTRfTGdJRXBDd0FVWmh3Um5vLVE3RUh5enNVRTktNldGWEpQdVZMU1FmOUVycHN6ZkdEU1RYcG5i?oc=5",
 "summary": "Kidney-transplant evaluation clinic opens in Montana UW Medicine | Newsroom",
@@ -142,6 +318,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-04T06:55:24.660257+00:00"
+},
+{
+"title": "Validating the Usefulness of Predicting Chronic Kidney Disease Risk Using Data Collected via AI and Wearables - 스포츠조선",
+"link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOeXJZNlBkREdQa0NHdUhjUDF1OWo3WGpWNGFhYkpxMGladFBudEJhelBvd2I2N1FPcFJJRHB6T1YxVTQ1bnptQjRKakZpU3RnMC12VHc2X05YTTVmQktNWk03eGE2VGJ3QlFRMmdHWkE2UE5LQnJsbHdIWjBrVk9mLQ?oc=5",
+"summary": "Validating the Usefulness of Predicting Chronic Kidney Disease Risk Using Data Collected via AI and Wearables 스포츠조선",
+"outlet": "스포츠조선",
+"published": "2026-11-04T00:29:25+00:00",
+"id": "00c8baedf1bffe11",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
 },
 {
 "title": "DHR Health Expands Kidney Transplant Program with Transplant Nephrologist, Dr. Victor E. Prado - MyRGV.com",
@@ -170,7 +357,7 @@
 "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPSmhMd3lKX1JrdGlLdF9nYkpPQXJzd2dpVWJXRi0wRG43UVZKY0VyVGZWckowYjlKWWp3WUJFcmVSRVhWNGpoOGxmWi1Kbl9KUDJKU0xlVlpOZE52YVlZNHZIbDhQcTQ1dlBJNnh6MkhkclFzZlViVzR0Snh2a3hCZFRJbkNtSHAxS2UyaEUyWHlqZktMZ1hjOUU1aDItVDNEVzdna1ViSlpXQUo5NVZVaHFkWU5IbG9rQUE4TmpZVkdQQQ?oc=5",
 "summary": "DHR Health Expands Kidney Transplant Program with Transplant Nephrologist, Dr. Victor E. Prado Texas Border Business",
 "outlet": "Texas Border Business",
-"published": "2026-11-03T21:07:13+00:00",
+"published": "2026-11-03T21:12:45+00:00",
 "id": "d6a3cac6abe8bf93",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
@@ -331,6 +518,61 @@
 "first_seen": "2026-11-04T06:55:24.660257+00:00"
 },
 {
+"title": "Single-Port Robotic Extraperitoneal Donor Nephrectomy: Technique and Initial Case Series",
+"link": "https://www.sciencedirect.com/science/article/pii/S1600613526028595?dgcid=rss_sd_all",
+"summary": "By Woo Jin Choi, Alvin C. Wee, Dylan Isaacson, Yi-Chia Lin, Mohamed Eltemamy",
+"outlet": "",
+"published": "2026-11-03T12:00:00+00:00",
+"id": "8cb1c37b57898752",
+"source": "American Journal of Transplantation",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "B-Cell Maturation Antigen T-Cell Engager Therapy in a Patient With Refractory Plasma Cell Clonal Cryoglobulinemia Unmasked by RNA-Based Immunoglobulin Sequencing",
+"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011972?dgcid=rss_sd_all",
+"summary": "By Bénédicte Piron, Jérôme Han Yee Yu, Hélène Caillon, Virginie Pascal, Benoit Tessoulin, Cyrille Touzeau, Yannick Le Bris, Karine Renaudin, Nicolas Blin, Simon Ville",
+"outlet": "",
+"published": "2026-11-03T12:00:00+00:00",
+"id": "d8a37865ac118b85",
+"source": "American Journal of Kidney Diseases",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Biopsy-Proven Minimal Change Disease During Maintenance Intravenous Immunoglobulin Therapy for Chronic Inflammatory Demyelinating Polyneuropathy: A Case Report and Focused Literature Review",
+"link": "https://www.sciencedirect.com/science/article/pii/S259005952600364X?dgcid=rss_sd_all",
+"summary": "By Hiroki Nishimura, Savneek Chugh",
+"outlet": "",
+"published": "2026-11-03T12:00:00+00:00",
+"id": "1fcb0c0615204363",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "An Unusual Cause of Progressive Post-Transplant Anemia: Mycophenolate Mofetil–Associated Pure Red Cell Aplasia: A Case Report and Literature Review",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003638?dgcid=rss_sd_all",
+"summary": "By Hiromitsu Akamatsu, Akihiko Koshino, Norihiko Sakai, Anri Mori, Ryo Okino, Soichiro Kagitani, Rio Ueda, Momoka Sato, Shunsuke Endo, Hiroyuki Kawahara, Takaki Kaji, Yoshitada Toyota, Misaki Yoshida, Taku Kobayashi, Akari Takeji,…",
+"outlet": "",
+"published": "2026-11-03T12:00:00+00:00",
+"id": "4ed5ff7507c5864c",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Association of Health-Related Quality of Life With Infection-Related Outcomes in Patients Undergoing Hemodialysis: A Multicenter Longitudinal Cohort Study",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003651?dgcid=rss_sd_all",
+"summary": "By Yuki Nagata, Tetsuo Shoji, Shinya Nakatani, Kurajoh Masafumi, Hisako Fujii, Yasuo Imanishi, Masanori Emoto, Tomoaki Morioka",
+"outlet": "",
+"published": "2026-11-03T12:00:00+00:00",
+"id": "93c21abc473219de",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
 "title": "Vantive Announces Agreement to Divest Majority of Hemodialysis Assets and Associated Operations to Rockwell Medical - TradingView",
 "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOV0NWeXpidHJhRGI4QzFTY2hiZW05RkdwYzdETWZCTUJPc29jVkJ4QkZkYnpYY3d4ekVRZVZ1OXp1eDdlWXpUbC1aQ3NPY2p4MFA1UndpRjd3djZSc0JtYjAxUFZESlBJNGRNUVkzUV90NUxWcmpMTVBnWXZWbzJlZFdUeEkxNHhqV2YzUjBwVWt6XzlVRGMzcW9sTkJ5LXJWcks0UWpWX0dpc3Q3UldxN3dWTFl4SDg2eXN3ZDNZc0dvVDQ3M0pOWHoySmV3clhKYTNhcjVJcG1obkpIWUtZRHpTZjlzMTk5dzRRTmtibC11S290cWtLTmpmYWF6cWlfbjZXMHIyTQ?oc=5",
 "summary": "Vantive Announces Agreement to Divest Majority of Hemodialysis Assets and Associated Operations to Rockwell Medical TradingView",
@@ -417,6 +659,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-11-03T19:26:55.562176+00:00"
+},
+{
+"title": "MP: Road accident victim's organ donation to save at least 4 lives; two green corridors set up in Jabalpur for quick transport - ANI News",
+"link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQby0teF9RZmFfSzR1RjRYSUgzbHZsLWJ0S3lpNWpDZWVISWxST1E5bmQ0bkpnUWlxMEt6QjEtV0tRd25WdENzb0F4b293VzhZVDdrRUdSMW9pNERESDFMbDUybEJMeEVEOF9HUkhXYV9fakh4WVlJa1psanM2TkE3X2VyeWs0UU9QSU9PT1pKTElIQi1vODFVQ3VicVh5bmRrSUI0SjlxdE5SMmVSTHBFanN6alltWWZ1dUlmNXhSd3BrWllKZ19GZjNIaTU0eXFteV9Yam9vSW5IelFqNm1XcHNZSS1UU2h6NkEtanRORnozT0hMQzB5aW9KOXFtaFl2ZnVSNk9vd3M1dVphWEpQQkc3c1piQQ?oc=5",
+"summary": "MP: Road accident victim's organ donation to save at least 4 lives; two green corridors set up in Jabalpur for quick transport ANI News",
+"outlet": "ANI News",
+"published": "2026-11-03T07:38:00+00:00",
+"id": "1b7b5027daf53eaf",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
 },
 {
 "title": "Amend the Law on Donation, Procurement, and Transplantation of Human Tissues, Organs, and Bodies, and Donation and Procurement of Cadavers: Prevent legal loopholes from affecting organ donation and transplantation activities. - Vietnam.vn",
@@ -749,6 +1002,17 @@
 "first_seen": "2026-11-03T19:26:55.562176+00:00"
 },
 {
+"title": "Vietnam Spotlight Podcast: Draft organ transplant law tightens restrictions on foreign recipients; fines for failing to register foreign guests - Tuoi Tre News | The News Gateway to Vietnam",
+"link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOOUtMbzZ6LUVpZldtX2FCYnhxTmtHS3dhYl9YNmVtLURBY05TSE9BcVRsV21QWXhaeUg1dlFPdW96WlU3WkNsaHYwS21wbE9pcVdnblhNY005ZUdUZWZvRlZ0OHc1RE9hWHlqRFRKdm1BdlpoNlNKNWpGQkFxdnBhZXYwYzRZeTY1Y3g2d1VHSWZWTTUyTERtUGltejZqMHU3LUdOYnFudnItN0MyUnBIbWdfd284UnBWOERkcFNGLUJXQWRUZS1iZTZROURlakttR211WXlRLURwTjgxODg3bmhLWXcwS1VpakRKc1FxWV8xNHlNdmUzWWg1d3Q1aWNJRXl4d1M5ZWxLMGRPZ1JxOTBKM0RwajQ?oc=5",
+"summary": "Vietnam Spotlight Podcast: Draft organ transplant law tightens restrictions on foreign recipients; fines for failing to register foreign guests Tuoi Tre News | The News Gateway to Vietnam",
+"outlet": "Tuoi Tre News | The News Gateway to Vietnam",
+"published": "2026-11-02T12:00:00+00:00",
+"id": "f03ee82b2b42c0c0",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
 "title": "Kidney Walk Raises Awareness About Kidney Disease - The Chicago Crusader",
 "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbk15SE1NTEZLYWQwRldpb2ZsNXJXekdqQ09VRkpObTYwS1NQUXRaLXN1YU1kX1hTVXVQc0l6R0ptWG1fUHQyVkl3X1B0QVVNcFNabWV5b3FKTnBrMWNNXy0tRmFDaWtmUWh0UzgwcnE1bHdPbW5sLTE3cXpIc0pMdm5Dbkg?oc=5",
 "summary": "Kidney Walk Raises Awareness About Kidney Disease The Chicago Crusader",
@@ -846,6 +1110,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Vietnam’s draft organ transplant law tightens restrictions on foreign recipients - Tuoi Tre News | The News Gateway to Vietnam",
+"link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNaHE4eE1PaUFXZ3EyTVdIT291ZlE0b3R2NXBSUVBsWXVET1JKLUtJNWtxMVZ5YS1UMFdUVDFSMWNheVpxa0JMLWViVWkxLS1HNnVhTXN0dVZXVm5GNDAzTG93X1FMM1B3dTlxOVA5NkQ5bzVaUV81UnA4eUFZeW41RS1TdGlKOU93Z0gxR3pxa3BtaUFuMVk1MkFKUEFMYjUwRUNWdFdiVFZDaks0cXJuWUFEUzdRTDJCR3o4LUFPTnJUVGM?oc=5",
+"summary": "Vietnam’s draft organ transplant law tightens restrictions on foreign recipients Tuoi Tre News | The News Gateway to Vietnam",
+"outlet": "Tuoi Tre News | The News Gateway to Vietnam",
+"published": "2026-11-02T08:39:00+00:00",
+"id": "22f5c8315e1562fa",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-04T15:20:19.839732+00:00"
 },
 {
 "title": "The Minister of Health clarifies regulations on organ donation for individuals under 18 years of age. - Vietnam.vn",
@@ -5356,281 +5631,6 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-10-28T05:24:03.777174+00:00"
-},
-{
-"title": "UC Davis Health Performs First HIV-to-HIV Kidney Transplant - Mirage News",
-"link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZURJa2tXb0lRQm5DYlNyM1F6aXJFeGthYUsyQUFvZ1JxMkZBOFVOaVB3RkdLVzR4QUYwN0xIajhvMGxweU1vTTZUMkRZTHpVa2Z2NVBZLXpCWGtDMnl6Q3F1UVVrQmUtcTJtS3Vpb2prY1pjYUszdHZjSWJGOW45c0R0QQ?oc=5",
-"summary": "UC Davis Health Performs First HIV-to-HIV Kidney Transplant Mirage News",
-"outlet": "Mirage News",
-"published": "2026-10-27T16:10:00+00:00",
-"id": "1e08b01800de5223",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-27T23:57:40.490818+00:00"
-},
-{
-"title": "GLP-1 RAs Tied to Lower Kidney Failure Risk in Patients With Obesity, CKD - Pharmacy Times",
-"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPYWZUN0w0WmU1d3BrZWZsdXI0a3J2d0lVM3ZjUDRyN2NQWk1fM05OQllaYUU0bk1TbFR0dEFUMmY3S1RreEZ1N0pxTGluUFBOMERhTnBpOXlfZW9XeGN3dGJtQ0ZEVmNaZEZsenEyTkk3Q0JwM29IT2RaUVpwX0dhV1Q2c3FVSldkZEpjcWQ1YXg0c3REaVFFOUI3d1c4YV9fUFhJcDFIYWh3R2s?oc=5",
-"summary": "GLP-1 RAs Tied to Lower Kidney Failure Risk in Patients With Obesity, CKD Pharmacy Times",
-"outlet": "Pharmacy Times",
-"published": "2026-10-27T16:08:32+00:00",
-"id": "288afbea249dc708",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-27T20:35:48.954336+00:00"
-},
-{
-"title": "IgG4-Related Kidney Disease: Why It’s Missed and How to Treat It - Pharmacy Times",
-"link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRnlNSV9OMTBlbjdHeXBrYUtJZ3JWVjV2M0U3SGNKcE53RW1mcUpwSkMtWklDWWl4bDR3Qm44Q1JGWEM0dVJMYlg0V3NPNjE1WG42VG5PdnZ6RTg1TTRQbGdnc2xiYy1Mb1RtLWxpZTh5RUtBYTVpeFhwdGhxdEZLOTBhSEEwUnVGVlpPZ203OGJ2WFRjVExRVExIZl9nMjQ?oc=5",
-"summary": "IgG4-Related Kidney Disease: Why It’s Missed and How to Treat It Pharmacy Times",
-"outlet": "Pharmacy Times",
-"published": "2026-10-27T16:08:32+00:00",
-"id": "8f2269e9cec0bda8",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-27T20:35:48.954336+00:00"
-},
-{
-"title": "Two New Organ Procurement Organization Performance Measures Earn National Endorsement - PR Newswire",
-"link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNR01WejJxY2dMQTZ2WEZWc0pqVjNXSVBVSHNwZGViVHJqMzJiQ0ZiQ2VucWpTNEZiTkR4VXF1Qmxmd01zbHM1aFM0RWNJSzlheHlEdjZ6MXlvT1J4ajhqWkNTQzlaVl9OWGRjdTVjdjNqTVdiN2JiV0xuMmpaLU1DTmMta3RBMkVUTnFWc2RjZmhJdzVjTTZnakx3eE01Wlh6Ykc1djlTbFAtWWVFTEdLUlBfdm5xVTRLUjhpYTIwUndFMnRLZGNmTUtrR1BTajdSVlNjV2JQS2I?oc=5",
-"summary": "Two New Organ Procurement Organization Performance Measures Earn National Endorsement PR Newswire",
-"outlet": "PR Newswire",
-"published": "2026-10-27T16:03:00+00:00",
-"id": "9bcdede3f96ac9e4",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-27T20:35:48.954336+00:00"
-},
-{
-"title": "UC Davis Health performs first HIV-to-HIV kidney transplant - UC Davis Health",
-"link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdFVLRERTVTRicHc1a3dkOXNXaVlySzNVUjAwcXNTSlA1SC1WTHJwMnJXSTFtLW04SGY5M2xuYjUwOTN0S253TEt0UGY4UThWVm82aTMwOGFuUDE5OUtkMzYwdjlrbFFwaXNEMTBzYVh1R08wRVhBNllyQnVGT1IyTnk2cUFqaGk4cWNoN25EMVZSZ1czc210eklNanJseTR6NjJuMGF4aFY2cVphRGc?oc=5",
-"summary": "UC Davis Health performs first HIV-to-HIV kidney transplant UC Davis Health",
-"outlet": "UC Davis Health",
-"published": "2026-10-27T16:00:45+00:00",
-"id": "095cd95d2b6a2d7b",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-27T20:35:48.954336+00:00"
-},
-{
-"title": "Drug Rescue for Paxlovid-Induced Tacrolimus Toxicity: A Pooled Analysis of Case Reports",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003067?dgcid=rss_sd_all",
-"summary": "By Yafeng Huang, Hao Chen, Chen Ni, Xiaohua Liu, Yanggang Yuan, Huijuan Mao, Buyun Wu",
-"outlet": "",
-"published": "2026-10-27T15:58:59.831204+00:00",
-"id": "59b9a24031ec3072",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "Clinical Application of Hemadsorption in Maintenance Hemodialysis Patients: An Adapted English Republication of the Chinese HA-MHD Consensus",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002906?dgcid=rss_sd_all",
-"summary": "By Xiaohua Sheng, Wei Lu, Zhiyong Guo, Shan Mou, Zhaohui Ni, Xiaoqiang Ding, Yueyi Deng, Guisen Li, Jun Liu, Pengli Luo, Shiren Sun, Huiming Wang, Jiali Wei, Xudong Xu, Xiangdong Yang, Zhenhua Yang, Wen Zhang, Jianrong Zhao, Xiaoling…",
-"outlet": "",
-"published": "2026-10-27T15:58:59.831204+00:00",
-"id": "dd5753e22ca79c1e",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "Drug Dosing in Chronic Kidney Disease: Comparison of Standardized eGFR and eGFR Adjusted for Body Surface Area",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002888?dgcid=rss_sd_all",
-"summary": "By Ila M. Harris, Ann M. Philbrick",
-"outlet": "",
-"published": "2026-10-27T15:58:59.831204+00:00",
-"id": "778a3cd1dcdaa104",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "Nailfold Capillary Density and Kidney Injury in CKD",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032651?dgcid=rss_sd_all",
-"summary": "By Rakesh Malhotra, Armin Ahmadi, Masfiqur Rahaman, Amol Harsh, Jason Yang, Basma Ghanim, Subhasis Dasgupta, Robert N. Weinreb, Haiyan Zhang, Tauhidur Rahman, Alfons J.H.M. Houben, Joachim H. Ix",
-"outlet": "",
-"published": "2026-10-27T15:58:59.831204+00:00",
-"id": "ee39cde1132e7e5f",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "Australia’s largest dialysis trial puts patient symptoms at the centre of care - The University of Sydney",
-"link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNMllqMGxNaHI2Z0ZjbWFwOVU4VzA5OEpiRXJqcHlSZGNDbzJMcmlIMno0cTJyRG51Q2RQM0k5RUJsNWlKazRNVUlvLVhTaUt3dmh1ZlRWRlViU3NuZVlZT3FvWURWc3hUQzBjOFlRMjVJU1RXOW9NN0Noc1VyUlJSSjBNcmZVMVk2WXVRY2l0b3Y4dlZ6emZsaUZ6dFJHcUNncXprZ005T2ZReVY3TmhrNjR6V1BnN3RKamM3RnpqOWZBYmx5cEFxMGVYdDhvblRkQUtN?oc=5",
-"summary": "Australia’s largest dialysis trial puts patient symptoms at the centre of care The University of Sydney",
-"outlet": "The University of Sydney",
-"published": "2026-10-27T15:58:59.831204+00:00",
-"id": "020b8639c5938dbb",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "Calls for more dialysis research following results of landmark UK trial - Cambridge University Hospitals",
-"link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQRGdyeW9QVER6N1ZCLWh3OTllS2RYcGtyY2dYQlp6RnYxU3BGX0pJWWE3cHhiX0I1Q2V5RjdydGJBd1lOUFRPNUJSeV9nOHRIQ1VUWTdvOURZd2JoV28wejJwbVBYcXhMZWcwbnkyMEV1SnlwRXFmYi10WUk5MUJEaFBObzNRRkhwQVZwUERUNHNSdw?oc=5",
-"summary": "Calls for more dialysis research following results of landmark UK trial Cambridge University Hospitals",
-"outlet": "Cambridge University Hospitals",
-"published": "2026-10-27T15:58:59.831204+00:00",
-"id": "0f75e39c76043670",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "Minister Dao Hong Lan: Organ donation should be done without coercion. - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQaC16Rm5MZG5aX1Naenc3TDBXYVJjTWpaNDAzTGFyM0d4eGlucnRLeUlpREFvNEdlWHdSYUY5ZUtMWmV1WjhKS0hwbDFoWHc4TmhvbmpWMDg5V0hRS1dJbFktX1dsZGgzMFp6clRTbU9tRFF4ZGpDcEppS1hCQ0FfSG5PMkhxbmM0TVhtZVotTDJCNFZhQkczYmV2ck5jc3ZYakxyQlRockc?oc=5",
-"summary": "Minister Dao Hong Lan: Organ donation should be done without coercion. Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-10-27T13:48:37+00:00",
-"id": "c2376aececcddfd5",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-28T17:19:29.307546+00:00"
-},
-{
-"title": "Temporal trends in incidence, DALY rate and mortality rate of chronic kidney disease in China - EurekAlert!",
-"link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5LSTIwb2hhNEV4MHFBX2RyekVyckRXNzVWdkVKOF91aFNKUXBYdExuaWw3WHg1VEN4dnFqSEU5MGIzNVNmejAtbDUwaTNwRVJwSHBzaV9DMks?oc=5",
-"summary": "Temporal trends in incidence, DALY rate and mortality rate of chronic kidney disease in China EurekAlert!",
-"outlet": "EurekAlert!",
-"published": "2026-10-27T13:42:21+00:00",
-"id": "a12997f3c13e8bf7",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-29T08:21:00.575759+00:00"
-},
-{
-"title": "Minister of Health: Improving regulations on tissue and organ donation and transplantation to expand opportunities for saving patients' lives. - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZTM0eDE1UmFLb1dRZFNnQUZ2RDBkN040eTdRdUpLb0Z6YmxWYUYxdkJkSXpEUHhjcjRNQVRzZmZmbzRIWmtTcUVySXdRazBPZ2ZhVWNpZ2dOeUxVQURBTFhzdEUwTFFjUzgxNHFwZ3BvdEw2YmJlTWk0ejNSN2V3dFhreFZKdmpZSU1wTVBNcE5fSlMyeDMtU0N5TzUtQjdfZTJES2NzNjNkd1h3SmNUQkZ4aWNOR3ZRalN3?oc=5",
-"summary": "Minister of Health: Improving regulations on tissue and organ donation and transplantation to expand opportunities for saving patients' lives. Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-10-27T13:26:41+00:00",
-"id": "4d9382ef79809e54",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-28T17:19:29.307546+00:00"
-},
-{
-"title": "Ministry of Health: Organ donation is prohibited for those under 18 years of age. - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOYXduMUpzTE1Ib0lqOTg0WE1jVGtJclU4SFoyc18zMnI0cmRCSGVjaEVoTk9NVjNhekt0WkpuOWNkaTFCU1prX3g5NnYwNVV3ZXhCbFBONHZ0QjJEOHQzVzdrajUzTzN3YU5NeXdJUGhMQWdMOHNhdklfZHdxQl9SMmxR?oc=5",
-"summary": "Ministry of Health: Organ donation is prohibited for those under 18 years of age. Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-10-27T13:15:18+00:00",
-"id": "f2c0397d957e7b0e",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-27T23:57:40.490818+00:00"
-},
-{
-"title": "Dialysis clinic outreach can increase rescheduling",
-"link": "https://www.healio.com/news/nephrology/20261027/dialysis-clinic-outreach-can-increase-rescheduling-missed-treatments",
-"summary": "DENVER — Nearly half of missed dialysis treatments can be attributed to health issues that arise the day of treatment, and rescheduling is more likely when clinic staff actively follow-up, according study data presented at ASN Kidney Week. Missing scheduled dialysis treatments can lead to hospitalization and other…",
-"outlet": "",
-"published": "2026-10-27T13:15:10+00:00",
-"id": "606d1b9a10b5e3fc",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "State laws not closing kidney transplant gap for patients with developmental disabilities, Ohio State study s - Cleveland.com",
-"link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNNDV6VUdqZW4td1JMU2I4cjNhbHBNV0lRR0lWS3FqZGtOOXcweTNuMzVUS18tcVR5SzVsMkxSUGtjX0gxNXFIT0pkeWg4Z1hKUVNfRnJnNXdSTFhfZXhHblZlYkhSY2s4M2JHR2stc0JTU0ExaEpSTG9TeThSM0M0bDA0ZUh4MkhRdlBvMGlhMVkzMDd4bWE1dkhBODliam4zQXUweTRudC1lV0FBamgtc2x2ak9TczhMdkRkU00zRnpFNjctWDJWWDQ2VGxGTDcxV3BRQ0ZyN0RyY2QzUmFkQkQxYWh0VWQtRjAzT1V2QkvSAYQCQVVfeXFMTWVCa1hoN0ktSENhcUM0Vlo5eC1mSnc1dDF4WGQ5bmlJODZLQVhjQ01tWTcxdFJPMjU3ZG9xbzlVX0VmX3ctemxUMldJSkQxWUU5VWNpcmRTaVZCNnA2LXVFalpPeVNUano1NGw4emNWamFrcmhOVzFlRVRHbWtoQlpvRzZ3RnNVdTdXMk5sMnZaMTA5eVV4ajh5dThDenAxaDdJeVhSUG1JUnlvaGdYeVhuc1lQcEFBamxLUVl0bkUyZWlDaXFkcHhtMUhwenVqNFFka0xpLTZsdjBob2l1QWtXQWdEd0RVSV80U3B2ZlR1N3JoTVIwLUFaZ3NESDU1MHdfdEc?oc=5",
-"summary": "State laws not closing kidney transplant gap for patients with developmental disabilities, Ohio State study s Cleveland.com",
-"outlet": "Cleveland.com",
-"published": "2026-10-27T13:15:00+00:00",
-"id": "4976f7bf32d17539",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "Impact of Hepatic Artery Diameter on Immediate Postoperative Graft Function and Hemodynamic Profiles in Living-Donor Liver Transplantation: A Retrospective Cohort Study.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42942537/",
-"summary": "Ahn IY, Jung IH, Suh SW et al. Medicina (Kaunas, Lithuania)",
-"outlet": "Medicina (Kaunas)",
-"published": "2026-10-27T12:00:00+00:00",
-"id": "2ab4cf2243a2a7aa",
-"source": "PubMed: living organ donation",
-"category": "Research",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "Postpartum Triple Allograft Injury with Atypical Hemolytic Uremic Syndrome, Recurrent IgA Nephropathy, and Antibody-Mediated Rejection in a Kidney Retransplant Recipient: A Case Report.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42941491/",
-"summary": "Chen X, Wang D, Yang L et al. Journal of clinical medicine",
-"outlet": "J Clin Med",
-"published": "2026-10-27T12:00:00+00:00",
-"id": "881b220d56a962f5",
-"source": "PubMed: living organ donation",
-"category": "Research",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "Clinical Outcomes, Risk Communication, and Follow-Up After Living Kidney Donation: A Retrospective Observational Cohort Study.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42941455/",
-"summary": "Tarabeih M, Qaddumi J, Sawalmeh O et al. Journal of clinical medicine",
-"outlet": "J Clin Med",
-"published": "2026-10-27T12:00:00+00:00",
-"id": "4313ff9c8c234a29",
-"source": "PubMed: living organ donation",
-"category": "Research",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
-},
-{
-"title": "Advances in Pediatric Liver Transplantation.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42946522/",
-"summary": "Barclay AIS, Rolfes PS, Zavaletta V et al. Clinics in liver disease",
-"outlet": "Clin Liver Dis",
-"published": "2026-10-27T12:00:00+00:00",
-"id": "b027021a18e2a4c9",
-"source": "PubMed: living organ donation",
-"category": "Research",
-"first_seen": "2026-10-28T05:24:03.777174+00:00"
-},
-{
-"title": "Comment on ‘A Remote Intervention to Improve Medication Nonadherence Guided by a Marker of Risk Derived from the Electronic Health Records of Adolescent Transplant Recipients’",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526028492?dgcid=rss_sd_all",
-"summary": "By Jeffrey J. Gaynor, Gaetano Ciancio",
-"outlet": "",
-"published": "2026-10-27T12:00:00+00:00",
-"id": "4cc43f3e9f6ace8c",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-10-28T17:19:29.307546+00:00"
-},
-{
-"title": "Dietary Behaviors of People Receiving Hemodialysis: Secondary Analyses From the KIDNEYTEXT Trial",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011832?dgcid=rss_sd_all",
-"summary": "By Jessica Dawson, Brendan Smyth, Armando Teixeira-Pinto, Katrina L. Campbell, Allison Jaure, Jonathan C. Craig, Clara K. Chow, Meg Jardine, Vincent W. Lee",
-"outlet": "",
-"published": "2026-10-27T12:00:00+00:00",
-"id": "e4f339730c669f1d",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-10-28T17:19:29.307546+00:00"
-},
-{
-"title": "Burden of chronic kidney disease in China: trends, etiological shifts and key risk factors based on GBD 2023 data - EurekAlert!",
-"link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE95STRMX3VRNFg2b1Q0ZTN3bS1nNW5QLUZES3B3ZTktX0I1S3A4RFhhTUxpNWx3RFFXanY3NFozeGoxV1dDY1N0ei1ETlRoYUYzQjBuUWIwMzlvZlBp?oc=5",
-"summary": "Burden of chronic kidney disease in China: trends, etiological shifts and key risk factors based on GBD 2023 data EurekAlert!",
-"outlet": "EurekAlert!",
-"published": "2026-10-27T11:51:49+00:00",
-"id": "89bf1c6c888455f9",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-27T20:35:48.954336+00:00"
-},
-{
-"title": "Why organ donation is testing public trust in Vietnam - ucanews.com",
-"link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOeC1wdFh3TThLcmxQeWFfbC1MSWZrQlh3aTBUMnFSbk4zWk9kcjFKNlVLdjVpbk8xeGM5TU1TcXdKZDNqbXJ2Rml5Q2FxWEoxeUJyMks2NUxmVE5Ic1R5cW5KUzN1S1NGNi05QlFyVzJfcUZyaTJGcXlhYjdYd1J5X05NN0MyMEVEQ1lUUzBCODVoQdIBkgFBVV95cUxOeC1wdFh3TThLcmxQeWFfbC1MSWZrQlh3aTBUMnFSbk4zWk9kcjFKNlVLdjVpbk8xeGM5TU1TcXdKZDNqbXJ2Rml5Q2FxWEoxeUJyMks2NUxmVE5Ic1R5cW5KUzN1S1NGNi05QlFyVzJfcUZyaTJGcXlhYjdYd1J5X05NN0MyMEVEQ1lUUzBCODVoQQ?oc=5",
-"summary": "Why organ donation is testing public trust in Vietnam ucanews.com",
-"outlet": "ucanews.com",
-"published": "2026-10-27T11:47:00+00:00",
-"id": "743fab98dc17da72",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-27T15:58:59.831204+00:00"
 }
 ]
 }
