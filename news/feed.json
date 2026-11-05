@@ -1,30 +1,30 @@
 {
 "version": 3,
-"updated": "2026-11-05T01:43:40.610497+00:00",
+"updated": "2026-11-05T09:21:22.008840+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
 "category": "Research",
 "url": "https://pubmed.ncbi.nlm.nih.gov/",
-"ok": true,
-"count": 30,
-"error": null
+"ok": false,
+"count": 0,
+"error": "HTTPError: HTTP Error 500: Internal Server Error"
 },
 {
 "name": "PubMed: transplant policy & organ procurement",
 "category": "Policy",
 "url": "https://pubmed.ncbi.nlm.nih.gov/",
-"ok": true,
-"count": 30,
-"error": null
+"ok": false,
+"count": 0,
+"error": "HTTPError: HTTP Error 500: Internal Server Error"
 },
 {
 "name": "PubMed: living organ donation",
 "category": "Research",
 "url": "https://pubmed.ncbi.nlm.nih.gov/",
-"ok": true,
-"count": 30,
-"error": null
+"ok": false,
+"count": 0,
+"error": "HTTPError: HTTP Error 500: Internal Server Error"
 },
 {
 "name": "American Journal of Transplantation",
@@ -133,6 +133,39 @@
 ],
 "items": [
 {
+"title": "Coexisting Reninoma and Aldosterone-Producing Nodule: A Case of Mixed Hyperaldosteronism",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002876?dgcid=rss_sd_all",
+"summary": "By Jingna Luo, Xiao Li, Zonghua Wen, Wanjing Liu, Yong Li, Hongyan Pan, Qiang Li, Ang Li, Jicheng Lv, Qian Li",
+"outlet": "",
+"published": "2026-11-05T09:20:26.138703+00:00",
+"id": "2d08b39844fe16ec",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-05T09:21:22.008840+00:00"
+},
+{
+"title": "Countries have strict regulations regarding organ donation from children. - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOdDlseXR3akIxbmI3M0dfNFBiSUVsbW55MXRSNEJQNFAyUy0wbmxCdlBUemloT21wdGU3LV9xNDY1NWFzRGw1djI3MjdvRTBVaXAxUElWVXNCYm5XM1VCOXdmb0VZYkZKZlF1Z0ZYNE0taWQwRzFNRmFOTkE3aXp3WDV3emtsQQ?oc=5",
+"summary": "Countries have strict regulations regarding organ donation from children. Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-11-05T03:57:57+00:00",
+"id": "a7865b97fdcce21b",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-05T09:21:22.008840+00:00"
+},
+{
+"title": "Dialysis may not be the default treatment for older kidney patients - News-Medical",
+"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQU1dLM3BCbjVPLWpaOV9sU0EwdUszRlc5RjVjUVBmRzBraTJWbjRzeHhxdkdpcElWTUx2OVB0RjI0NC1fLU45YWpKUXl6QVpNdVBMSms2MUZFQUNzNFBNWTFfYlZDYV9HaF8yZHVQazBzbDFFSEhnbzIwcFZieU5Jck5FN1pqWVhheGwwZnJHaXB0OUEtbFBKVzVMVVIzZmZ3RHBJUzk5NUNpd080d3pRWjNUalRqQQ?oc=5",
+"summary": "Dialysis may not be the default treatment for older kidney patients News-Medical",
+"outlet": "News-Medical",
+"published": "2026-11-05T02:29:00+00:00",
+"id": "8a95963b93ce6864",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-05T09:21:22.008840+00:00"
+},
+{
 "title": "A study of 27,000 adults links bean products and soy compounds to lower kidney disease odds - News-Medical",
 "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOQVZiRXRtQk5NeDN0NzVTSUFpSVZCOW5XQ2g2RlR5eWt0R1IxbTZnUE84d0FfamNHWUh4M1hjemlaTk9QamJLUjJuTkJueGRZeXJNY0RPRkJLRzBKTm92SXFjV2RZYWk3eW9uTEZUSlhWNTVDZ0Zwc0YwenBlaEFGcUZabXJVYlRGb1RTME40TU9XSkpFR2tWNDJzQThUSzdYdmtycHBMV3kwNm03UXNKTmt3cTA1YnhsMnN6VjkwOG1BeHA0VnF3eXdTUmdPTlFFLUd5ag?oc=5",
 "summary": "A study of 27,000 adults links bean products and soy compounds to lower kidney disease odds News-Medical",
@@ -210,6 +243,17 @@
 "first_seen": "2026-11-04T21:27:18.911052+00:00"
 },
 {
+"title": "University of Washington opens kidney-transplant evaluation clinic in Missoula - Nonstop Local News Montana",
+"link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOZVMzejFQSHBQbXl1THhRazZucE4wcWxUek5obzNMOTRnZmRzaWNmWVV1SGs4MFBhcUZaUVVaVGo3T3BLS0taUTJBZXpGMGhOdUV2SkpRay1rdUZoaWRPcHR3eElCWHE1Y01fanhON21TekRFYUtKVl9ZTmRLV3JjRDAwdzBtek5CRU51QjQySXZONHhHc0xqZVdLR05rejBKMjlOWWFORllpMUU0MnBGSXZERmEzNWxyZEZIcWxUalZSbGxTM1g0eWVZc1VCXzljNmt5QWlNQ1pkUjVUXzAzS1p4Nklib3Y4OUZEdWJlWTN4SjJ0a2I3Q3kxSnpCQQ?oc=5",
+"summary": "University of Washington opens kidney-transplant evaluation clinic in Missoula Nonstop Local News Montana",
+"outlet": "Nonstop Local News Montana",
+"published": "2026-11-04T19:03:00+00:00",
+"id": "4de3a922d9d56465",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-05T09:21:22.008840+00:00"
+},
+{
 "title": "Tampa General Hospital Advanced Kidney Care Welcomes Nephrologist Dr. Alexander Lanes - Florida Hospital News and Healthcare Report",
 "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOdFUtWFg2R3hNbi1MS2xFNTZEbDNMRkxtUXUyTWxsX3F1cFJPSkFRVEVPdlpYWnlhdUxzcnhVMW81NzMwWEZ3OHZ0by1iT3NwV2RheTFnVV9YcmE3N1RYdnBYX0h6Nm1mSEloY2FrVGU5YnV3X2owTk9UVUZhZVZrZUZOV3Q4dy1nZGswMV9rQjFVd1dGUjFGUm5Gbll2NTJIUzZWNGJ3LV9QWHI0MDN5UkY4bmY4M2VMMEgtWlFKRlhpYkZzRFQzZW1BZWxCdw?oc=5",
 "summary": "Tampa General Hospital Advanced Kidney Care Welcomes Nephrologist Dr. Alexander Lanes Florida Hospital News and Healthcare Report",
@@ -222,10 +266,10 @@
 },
 {
 "title": "Early Blood Test Patterns May Predict Kidney Transplant Outcomes Three Years Later - Clinical Lab Products",
-"link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNMkE5aTJlZnREa3M2YkVzeGR5YjVYRWt5dUFpbUliNktvMDh1dGJHQy1CcDQyVWN5bGxFRFd3Z1NDaFVwYTEyejN3czhWcmFGN09PU0o4bUdIOGR4WVM1VF9LN2pheEdSLVFNaGhrM25GWW14YUdKSWo0SjhjTjU4YzhfX0o5b1lyWFdDb01vOFcwNnZ0WjhUVlpNRE5jLXFveFJkWFRORHZ6Z2RCbVNKUnhyZWlTTUY4cUZkVWF6VkxPa3pLSzFUWXZ3MUpRVGJQU0lRTjFVeXhXeXFScGo1X1ln?oc=5",
+"link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPWENsbFpOaU8zMEhSTTJtanM2bUloUjQyelM3c2gwaG9TdGxYd0VKTlRHdmtIWmg0U1dfNzk0ZVVsdjBrNUtEUm9VcXNVZThYSUo2dm90VEZ6ZjVLbFhzS1ZuemlaNk42TWJsenU5V3BFTDZ4MVd0OVRTeV9KeGIydnBBZjg3Y1QyeFRUa2hsVkhHZWtPUVNSWkpBaEdBZHZGanpfVHdvWGNvbkc3LWpqa0xZZEhQazV0T1pHbVVzU1Q2N3ZrVG1JTXNWMGJTWExVUUhPZzduR1NpVFUweXFpa3Qxd2g5d0NJRWU0Q0huVlRzVVFYNnZxVnZtdERwNVBfY2NqMkVGbXQ0Z1NJ?oc=5",
 "summary": "Early Blood Test Patterns May Predict Kidney Transplant Outcomes Three Years Later Clinical Lab Products",
 "outlet": "Clinical Lab Products",
-"published": "2026-11-04T17:05:14+00:00",
+"published": "2026-11-04T17:10:09+00:00",
 "id": "88cb5ea2613eb80c",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
@@ -362,6 +406,28 @@
 "source": "PubMed: living organ donation",
 "category": "Research",
 "first_seen": "2026-11-04T15:20:19.839732+00:00"
+},
+{
+"title": "Hemolytic Uremic Syndrome and IgA Nephropathy Complicating Postpartum Acute Kidney Injury: A Case Report",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003663?dgcid=rss_sd_all",
+"summary": "By Peter W. Santos, Cynthia Carrizoza, Reza Salehi-Rad",
+"outlet": "",
+"published": "2026-11-04T12:00:00+00:00",
+"id": "ebb4c781accefaf0",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-05T09:21:22.008840+00:00"
+},
+{
+"title": "Rivaroxaban for Pulmonary Embolism in a Hemodialysis Patient With Transiently Reduced Antithrombin Activity: A Case Report",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003675?dgcid=rss_sd_all",
+"summary": "By Fan Yang, Chaoyuan Li, Yaru Ren, Weixiu Wang, Sha Chen, Manyu Zhang, Xin Feng, Dingwei Yang",
+"outlet": "",
+"published": "2026-11-04T12:00:00+00:00",
+"id": "4f5a4efcca5873fe",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-05T09:21:22.008840+00:00"
 },
 {
 "title": "Voices of Life – Truth, Equity & Testimony in Organ Donation - St Pete Catalyst",
@@ -738,6 +804,17 @@
 "first_seen": "2026-11-04T00:10:44.227649+00:00"
 },
 {
+"title": "Vantive Announces Agreement to Divest Majority of Hemodialysis Assets and Associated Operations to Rockwell Medical - PR Newswire Canada",
+"link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOdUdtS3VVdW1mRUZQSUk0TXB5MzFDN3Ezb09LV0JFQmt5Njc0b3ZpVUMxQWd5T2ZINFJVREQxUDFfVEpaWFFWVXV5ZXFhQ0M0NUR3ZGxQZVhLTjJWMHJVYmlINnFrUTFvY3hfRnAzUG51cTdxcHROVWNIckxmY0N3SjFMMjdMQThiMWJxakhCWFRsVF9uXzd4ZkpJUGdpeDQzVVV0ZmVGTmNzdk05TW1OMVQ5VkF6UmJiQ25RWF8zUmhLMjVWMDdxRTRaNEZwS3Y1NUJHNDUtYkhmUUk1OVF5Tk9hdUIzRHRhUnRUb21Ua3BVeHpPSExIYnRSMjg?oc=5",
+"summary": "Vantive Announces Agreement to Divest Majority of Hemodialysis Assets and Associated Operations to Rockwell Medical PR Newswire Canada",
+"outlet": "PR Newswire Canada",
+"published": "2026-11-03T11:01:00+00:00",
+"id": "c4d8236a95926b9a",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-05T09:21:22.008840+00:00"
+},
+{
 "title": "Rutgers scientists changed one gene in tiny worms to test a human kidney disease clue; the altered nerve p - The Economic Times",
 "link": "https://news.google.com/rss/articles/CBMizwJBVV95cUxOSUFCMlBFUDZWbko5OWI0RkRicHUyVmtsakpaYnc4bl9JQzlTUFBrTmJ2MFAtZkwxc2ZLT2p1dGZMYmd2NEszeTIyZ1lkZ0haMXBQX0RrZ1k5UVp0TnBFM3J6NWZtTVdmWnRBN21TSHdXLWcxS0FtVWpoczJLTGJ1RTZXLVpaYmppbXZISkZYN1VFOWZCWVNoWFZ4bWl5SGtJX0hneC1VNEdRREdQS2J1aWJnNVcwT3E0U3doTGR1eVREcWRVSVQ0cVNRLVl3YXRpY0VZV1pkN3hPckZjeDlLdWIwQUZIRkRXM1hlTXJRNVBGZ0lMUTkxUl96b0ZnekVBR2hZQkM0Nkl5WUNsVDctZENWckNKaDFmcDJ6NDlUZUR4U2xWNUNCRDJCVVpLZG82TTRzSDR5Wk9QOEtYMURQbTdXcDVxR3Boc2RIU1VsNNIB1AJBVV95cUxQckxuNG10aE90dllHazRpaEFlTHZGbzlDWUpINHE1bzY0Um5KUE5TRVpLREUzYkJmRlZqdDNFdXBQZFhUVkNMZVA5cHkwX0FlbHNMTkRYR3FscGxCVm5uMXktbXpyT0hIUmJFX0Z3cUR3anRBeFBOOUdYT1A0SmRjQ1J4cWpTNGswS0VqYlBqZ3FYUlEtUnlSRXhXM29LUEY1RUFQRmxocjFNcGxzNUtIRW1BVWpXOTI5RGJvOWlIMEVwS2ZUcDNTMVhNRnBES0pYTmFjWHBIV1FTeS1kdlNmbkdFX2V1MnJlMkFYeC1Ebm41V1AtQUpUMVBRNlJiYmpSODlGb0FSLXM3UzFXN3VpTHdfQy1aWk5SYk5wbE1Fckc2MkFrWGk5eEZTTmZDOVY3M3ZfWHZUOHlQQm1xZlBoTmdvZS1EdVU3dnlXaVk4Q1NRV0x6?oc=5",
 "summary": "Rutgers scientists changed one gene in tiny worms to test a human kidney disease clue; the altered nerve p The Economic Times",
@@ -791,6 +868,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-11-04T00:10:44.227649+00:00"
+},
+{
+"title": "Drone strikes cut power and halt dialysis at Sudan hospital, staff member says - Citizen Portal AI",
+"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQOUdCSjA1MmtIYTB4cGxPU2YzRU9jcWRqbENjTFNhVGpDQnduTFhqbUFwU2xDdjhxUVIza2VweGNsQkUyUUVGN0luR1Z0V2k3V1lfSFRfSVpTSk1TNEVHYXdGTllBcGVoSmlqSVdFdl9ZMmpKNXltaE5XUDZsZUFxQnVNeHMxODEtT3dUdjF6LUFra3B0R0RkS1dGN3MxU1pZUW4yc0taRW9yRDNIaUdBend4TDlYS21jMW5tWQ?oc=5",
+"summary": "Drone strikes cut power and halt dialysis at Sudan hospital, staff member says Citizen Portal AI",
+"outlet": "Citizen Portal AI",
+"published": "2026-11-03T08:00:00+00:00",
+"id": "db1786a29339c46a",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-05T09:21:22.008840+00:00"
 },
 {
 "title": "Why Do Kidney Disease and Heart Failure Go Together? - Medscape",
@@ -978,6 +1066,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-11-02T23:12:07.461403+00:00"
+},
+{
+"title": "Organ donation tableau steals the show at Rajyotsava parade - The Times of India",
+"link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQQXdKb0NyVDlQc1d0cHhCQnJLaFhaMzJYQllrZGEzTFN3X01hUUZpMDZyTEgzbkdBbHo5SWthaXZEdVNwWDlHMjBsSTlQVkdnSThhNzlFckNkdk9EaFlzWmduVUVJR3FNeTJjRFFBUXUyVUZoV29ZUnNCRHhvTjN2ZnRlalhhREJKcTVJSEVSZlF1YjFPVDVXazdvM0NsMDBEbndNMGxDaDkzOFpWOTRXalRvWVhVUG9fc3NmUExBOVJyQmY2TGIzeDBfTWZJMUJP0gHWAUFVX3lxTE1FaEd2WEhLanNYeXBiU2U2enNjdFNqRVdoZlQ4TEpOZk5nY1lIZFV6V093NlRfSzc0OGpwRGgyZXg1SUdtcFllZU5xV2Ewa1JJTGFnR2tET2tUZ3hiTDlGZ3F0eGpLN3BqVHdzWkJtbjlJcjVnSUtWYVRILUhGWWtNU3hxR2ZfakJrZlpyQVFKaUwxR2VNakc0UGgzTUxROEJ5NTk5aWdwdWNTTy1Qc3R6UlJLQkE5T3RZLS1oSE1PbXVWNkxrOV9NRlNkc29PUGkwTmJYTGc?oc=5",
+"summary": "Organ donation tableau steals the show at Rajyotsava parade The Times of India",
+"outlet": "The Times of India",
+"published": "2026-11-02T17:33:00+00:00",
+"id": "21b17b180b230ea3",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-05T09:21:22.008840+00:00"
 },
 {
 "title": "Very Low Protein Intake Tied to Higher Kidney Failure Risk in CKD - Pharmacy Times",
@@ -5532,105 +5631,6 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-10-28T11:33:20.939584+00:00"
-},
-{
-"title": "Deputy Minister of Health: Caution is needed when seeking opinions on tissue and organ donation from people under 18 years old. - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQRnRWWjRCQmMxOENHNXRCbkliVVFaQWVvNFB6b3llM0ctWXNYTzBFaXhORG9OQUFaRHdGTmJJYi1aU3hFLVc1NlBOUDdfT0tpLVJYejRYbm9RSS1pM043Qm15OXlTOUx4cHZISHdKa3FOdWd5Y3NMYUdfUlB5ZmdiRmx6Tk9qSTJyUUc4ZXJiOVVmVTRrS3ZyLVh5Wlo2NHNESXVEUUVIZS1FcmpHTnExaA?oc=5",
-"summary": "Deputy Minister of Health: Caution is needed when seeking opinions on tissue and organ donation from people under 18 years old. Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-10-28T06:50:47+00:00",
-"id": "01955afefc1918f7",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-28T17:19:29.307546+00:00"
-},
-{
-"title": "Korean study aims to uncover hidden heart risks in diabetic kidney disease - Korea Biomedical Review",
-"link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9YV2NVNFdwdTVJNEFBaXBCcmdMY2lHcG5sQzVZWW1nU3NpWndLbzJ3MGxsbzdWZy1ob2pNTk1ibDZYcWhwSF9lTjdLaDFrN3g3dWc4U2V1OTcyUEphQnp1bUZGUlJFMlZXM0lXZEln?oc=5",
-"summary": "Korean study aims to uncover hidden heart risks in diabetic kidney disease Korea Biomedical Review",
-"outlet": "Korea Biomedical Review",
-"published": "2026-10-28T05:36:11+00:00",
-"id": "b88092bd7a9daad5",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-29T08:21:00.575759+00:00"
-},
-{
-"title": "More people are registered as ‘having no objection to organ donation’ - Centraal Bureau voor de Statistiek | CBS",
-"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQN0pMWDQ1TGsyU3FUWi16UlV3eTgzcmlQWVNQd054djZzT0Q3a29FM2hFNnItRmoxN2pCeEpiRHdtLU40RjZTYXlMQU9pT1oxa3JGNVRTWGNWZmFrdWN6RlBjcldSakF1WUlZakhMNWV5cExEZGJkMmdYakpOMTJBa21wekdlVV9wUlE2Nmhqc2MzZl9QaE5lQTNCaFM5SkE1dU5oZE9rTW42UQ?oc=5",
-"summary": "More people are registered as ‘having no objection to organ donation’ Centraal Bureau voor de Statistiek | CBS",
-"outlet": "Centraal Bureau voor de Statistiek | CBS",
-"published": "2026-10-28T05:30:00+00:00",
-"id": "2a81ab7e31d3be26",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-28T11:33:20.939584+00:00"
-},
-{
-"title": "Multimodal Profiling of Complement Expression and Association With Outcomes in ANCA-Associated Vasculitis With Glomerulonephritis",
-"link": "https://www.sciencedirect.com/science/article/pii/S2468024926032882?dgcid=rss_sd_all",
-"summary": "By Benoît Brilland, Victor Milon, Cyrille Vandenbussche, Nathalie Merillon, Eleonore Ourouda, Andrea Boizard-Moracchini, Maëva Roy, Odile Blanchet, Emeline Vinatier, Céline Beauvillain, Thomas Quéméneur, Assia Djema,…",
-"outlet": "",
-"published": "2026-10-28T05:24:03.777174+00:00",
-"id": "d211f98e2b06e81d",
-"source": "Kidney International Reports",
-"category": "Journals",
-"first_seen": "2026-10-28T05:24:03.777174+00:00"
-},
-{
-"title": "Ministry of Health clarifies draft organ donation law amendments - Vietnam Investment Review - VIR",
-"link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdnY5M1lzWUZEU2xFaEgyYTdKN25SZXlZTDlJQ2dWX1hJa1Y5VXBxaTBHLU00eklmei1OMEdYTGpIRzBMYjlkR0hBYlVoZ1ZjRjd3U0lnV2Q2REZMNTJnUjNBUjJWU0hib0FiXzNpZEFVWnZwdHFtTzVETldkUWptSm5PNThraTlsN2w3TEpZUTVQUXdMSFB5NWlybw?oc=5",
-"summary": "Ministry of Health clarifies draft organ donation law amendments Vietnam Investment Review - VIR",
-"outlet": "Vietnam Investment Review - VIR",
-"published": "2026-10-28T05:22:25+00:00",
-"id": "6cd2ccbe989cc4f4",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-28T11:33:20.939584+00:00"
-},
-{
-"title": "Vietnam health minister says organ donation must remain voluntary - Báo VietNamNet",
-"link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNT1Z2eEpOTkZwbURwRlJ3OEkxcVVLQmhMem9vNWEwV09JZXg1T0hSNzFnZWl0RjJiZEVNNHFCSGlCMzdneFBXM0loUmNBanJmMWhiVGlnNFRTcmlqLVo0N3duQUdUT28yTXlZSnRHX2NDQ1U3ajFBZzBkOGdCaUZTeXFrV0FGbTlGd05xaGp4Z1Z6aGQwbE54N0NxQ2JzNl9ZTVExMkFR?oc=5",
-"summary": "Vietnam health minister says organ donation must remain voluntary Báo VietNamNet",
-"outlet": "Báo VietNamNet",
-"published": "2026-10-28T05:01:00+00:00",
-"id": "3bf80111b270913c",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-28T17:19:29.307546+00:00"
-},
-{
-"title": "WHO urges caution over organ donation by children under 18 in Vietnam - Tuoi Tre News | The News Gateway to Vietnam",
-"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNcTVaam1TMFp4VVU0dHdNR3FTVGQzM0VzclJEN1hTWDdLSHVUeXBVRW9BdGFBVG52SEh6Sk9LTVVzSm50enBzTU9KbkJFQkFzUHVncFl4YkdSS3BrcFN1elJ3VkFzdE8tX2Z6Y2FQVElKbGdnd2FwMHlnWXNOSGRVNzkxQ1dJOVppVU9BVElNdE1vaHZRS3h3WTNIaFU3ZjFkOFVUdU9kMTlUZzJJSkZNNVE2UVBBQWc?oc=5",
-"summary": "WHO urges caution over organ donation by children under 18 in Vietnam Tuoi Tre News | The News Gateway to Vietnam",
-"outlet": "Tuoi Tre News | The News Gateway to Vietnam",
-"published": "2026-10-28T04:50:00+00:00",
-"id": "95ee1ff56ef6376d",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-29T01:42:24.057619+00:00"
-},
-{
-"title": "Organ donation in children under 18: Kidney and liver harvesting while the child is still alive is prohibited. - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOeWF2blpnaHdsZDd1T2I2YXBoSWxITVdILW9mM0VFT2twXzlRWHNPYW1ON2MwZzNRSEJDNngzWlFYbWc2akdMSF9Yd3dwR2NlRzh3bk9yZGhXYVZGbkc5UkQ1WXZnWGJyREtRdndFNVhFV1Fmb2xmdmlfNXc4LUVqSE0ta0JBMi16TlJqWA?oc=5",
-"summary": "Organ donation in children under 18: Kidney and liver harvesting while the child is still alive is prohibited. Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-10-28T04:18:41+00:00",
-"id": "8d3c0a2c4018d45a",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-10-28T21:52:46.272451+00:00"
-},
-{
-"title": "GLP-1 Receptor Agonists Reduce Kidney Disease Risk: What Clinical Trials Show - News-Medical",
-"link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPWmMxejhIYmZvTWZfdXJZUzYwSWp4MFpvSWRnSER6OElHQTJGZTNoNHJiREQwYnJmZTh1ZTNyUkdtWlFjaUxNdk9DaklFUThDU2NQd0hrVUVmUFBoM3ZLTGtLdl9PQXA4b194MGNDSU1mN25QR3lQdjZ2SHl2ZW0zUG1tbEl0clJTT05UUnI5MXI5T0MxVmNLTkN3blF3a2syZ0RSeWN5aWY5Z21CTVlCeS1qUGI2Q0FW?oc=5",
-"summary": "GLP-1 Receptor Agonists Reduce Kidney Disease Risk: What Clinical Trials Show News-Medical",
-"outlet": "News-Medical",
-"published": "2026-10-28T03:49:49+00:00",
-"id": "285ea1ce732c3146",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-28T05:24:03.777174+00:00"
 }
 ]
 }
