@@ -645,7 +645,7 @@ calcOut();init();
 
 /* Background music: starts on entry where the browser allows sound, otherwise on the visitor's first tap, click or key. Remembers a mute choice. */
 (function(){
-  var SRC='watch-list-theme.mp3?v=2',VOL=0.32,btn=$('snd'),lab=$('sndL'),ctx=null,gain=null,src=null,buf=null,on=false,loading=null;
+  var SRC='watch-list-theme.mp3?v=3',VOL=0.32,btn=$('snd'),lab=$('sndL'),ctx=null,gain=null,src=null,buf=null,on=false,loading=null;
   var muted=store.get('muted')===true;
   function ui(){btn.setAttribute('aria-pressed',on?'true':'false');lab.textContent=on?'Music on':'Music off';btn.setAttribute('aria-label',on?'Turn background music off':'Turn background music on')}
   function getBuf(){if(buf)return Promise.resolve(buf);if(loading)return loading;loading=fetch(SRC).then(function(r){return r.arrayBuffer()}).then(function(a){return new Promise(function(res,rej){ctx.decodeAudioData(a,res,rej)})}).then(function(b){buf=b;return b});return loading}
