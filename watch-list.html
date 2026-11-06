@@ -1,294 +1,428 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>The Watch List | Cold Ischemia Foundation</title>
-<meta name="description" content="Fifty companies that profit from kidney disease, scored every Monday on public complaints, enforcement actions, lawsuits and recalls. Every item sourced.">
+<meta name="description" content="A weekly public accountability ledger of 50 companies that profit from kidney disease. Every complaint, enforcement action, lawsuit and recall is sourced, scored and published each Monday.">
 <meta property="og:title" content="The Watch List | Cold Ischemia Foundation">
-<meta property="og:description" content="One public ledger of complaints against 50 kidney care companies. A new week unseals every Monday.">
+<meta property="og:description" content="A weekly public ledger of 50 kidney care companies. A new edition goes to press every Monday at 9 AM Eastern.">
 <meta property="og:image" content="https://coldischemia.foundation/cold-ischemia-logo.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <style>
-/* The Watch List: a weekly sealed ledger. Navy ground, gold for rank and score, blood red for enforcement, teal for context. */
+/* The Watch List — set as a broadsheet. Newsprint paper, black ink, hairline column rules, one red for enforcement. */
 :root{
-  --bg:#f3f1ec; --surface:#ffffff; --raise:#faf8f4; --ink:#141b26; --muted:#5d6674; --line:#dcd7cc;
-  --navy:#1B2A4A; --gold:#9c7a22; --gold-soft:#f4ecd6; --teal:#2E7D74; --teal-soft:#dfefec; --blood:#B23A3A; --blood-soft:#f6e2e0; --amber:#b86c14; --amber-soft:#f8ead7;
-  --gA:#2E7D74; --gB:#4a6fb0; --gC:#b86c14; --gD:#8a4fa8; --gE:#B23A3A;
-  --shade:rgba(10,14,22,.66);
-  --cond:"Barlow Condensed","Arial Narrow",Impact,sans-serif; --serif:"Source Serif 4",Georgia,serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --paper:#f6f3ea; --sheet:#fbf9f3; --ink:#17140f; --ink2:#3b362d; --muted:#6c665a; --rule:#cfc8b8; --heavy:#17140f;
+  --red:#a32a22; --red-soft:#f3e1dc; --amber:#9a5b0c; --amber-soft:#f4e8d3; --navy:#1B2A4A; --gold:#8a6a17;
+  --gA:#24665e; --gB:#2f4f8a; --gC:#9a5b0c; --gD:#6b3f86; --gE:#a32a22;
+  --shade:rgba(20,17,12,.55);
+  --name:"Playfair Display",Georgia,"Times New Roman",serif; --serif:"Source Serif 4",Georgia,serif; --sans:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0d1420; --surface:#141e2e; --raise:#192538; --ink:#e7e9ee; --muted:#9aa5b6; --line:#27344a;
-  --gold:#C9A84C; --gold-soft:#2c2817; --teal:#5cb8ac; --teal-soft:#142c2b; --blood:#e07a72; --blood-soft:#341b1d; --amber:#e9a556; --amber-soft:#33261a;
-  --gA:#5cb8ac; --gB:#86a6e0; --gC:#e9a556; --gD:#c39be0; --gE:#e07a72; --shade:rgba(0,0,0,.74); color-scheme:dark}}
+  --paper:#141310; --sheet:#1b1915; --ink:#ece7db; --ink2:#cfc8b8; --muted:#9b9485; --rule:#3a362e; --heavy:#ece7db;
+  --red:#e27a6e; --red-soft:#3a1f1b; --amber:#e3a656; --amber-soft:#35281a; --navy:#9fb4dc; --gold:#d5b35e;
+  --gA:#6cc0b3; --gB:#94afe6; --gC:#e3a656; --gD:#c49be0; --gE:#e27a6e; --shade:rgba(0,0,0,.7); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0d1420; --surface:#141e2e; --raise:#192538; --ink:#e7e9ee; --muted:#9aa5b6; --line:#27344a;
-  --gold:#C9A84C; --gold-soft:#2c2817; --teal:#5cb8ac; --teal-soft:#142c2b; --blood:#e07a72; --blood-soft:#341b1d; --amber:#e9a556; --amber-soft:#33261a;
-  --gA:#5cb8ac; --gB:#86a6e0; --gC:#e9a556; --gD:#c39be0; --gE:#e07a72; --shade:rgba(0,0,0,.74); color-scheme:dark}
+  --paper:#141310; --sheet:#1b1915; --ink:#ece7db; --ink2:#cfc8b8; --muted:#9b9485; --rule:#3a362e; --heavy:#ece7db;
+  --red:#e27a6e; --red-soft:#3a1f1b; --amber:#e3a656; --amber-soft:#35281a; --navy:#9fb4dc; --gold:#d5b35e;
+  --gA:#6cc0b3; --gB:#94afe6; --gC:#e3a656; --gD:#c49be0; --gE:#e27a6e; --shade:rgba(0,0,0,.7); color-scheme:dark}
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.55;overflow-x:hidden}
-.wrap{max-width:1120px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-right,0px)) 72px max(16px,env(safe-area-inset-left,0px));display:grid;gap:44px}
-.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-h1,h2,h3{margin:0;text-wrap:balance}
-h2{font-family:var(--cond);font-weight:800;font-size:clamp(30px,5vw,40px);text-transform:uppercase;line-height:1;letter-spacing:.01em}
-.sub{margin:6px 0 0;color:var(--muted);max-width:64ch}
-button{font:inherit;color:inherit;cursor:pointer}
-button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-a{color:var(--teal)}
-.num{font-variant-numeric:tabular-nums}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.paper{max-width:1180px;margin:0 auto;padding:22px max(16px,env(safe-area-inset-right,0px)) 80px max(16px,env(safe-area-inset-left,0px))}
+h1,h2,h3,h4{margin:0;text-wrap:balance;font-family:var(--name);font-weight:800;line-height:1.08}
+p{margin:0 0 .9em}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.kick{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.small{font-family:var(--sans);font-size:12px;letter-spacing:.04em;color:var(--muted)}
+.hide{display:none!important}
 
-/* Masthead */
-.mast{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:28px;align-items:end;border-bottom:3px solid var(--ink);padding-bottom:20px}
-.mast h1{font-family:var(--cond);font-weight:800;font-size:clamp(56px,10vw,112px);line-height:.86;text-transform:uppercase}
-.mast h1 span{color:var(--gold)}
-.mast p{margin:14px 0 0;max-width:60ch;font-size:17.5px;color:var(--muted)}
-.clock{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:4px}
-.clock .t{font-family:var(--cond);font-weight:700;font-size:clamp(28px,3.4vw,38px);line-height:1;white-space:nowrap}
-.clock .d{font-size:14px;color:var(--muted)}
-@media (max-width:760px){.mast{grid-template-columns:1fr}}
+/* Nameplate */
+.ear{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-bottom:10px;border-bottom:1px solid var(--rule)}
+.plate{text-align:center;padding:18px 0 14px}
+.plate h1{font-family:var(--name);font-weight:900;font-size:clamp(54px,11vw,128px);letter-spacing:-.01em;line-height:.92}
+.plate .motto{font-family:var(--serif);font-style:italic;font-size:clamp(15px,2vw,18px);color:var(--ink2);margin-top:10px}
+.folio{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;border-top:3px double var(--heavy);border-bottom:1px solid var(--heavy);padding:8px 0;font-family:var(--sans);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.folio .c{text-align:center;font-weight:700}
+.folio .r{text-align:right}
+.folio .cd{font-variant-numeric:tabular-nums;font-weight:700;color:var(--red)}
+@media (max-width:720px){.folio{grid-template-columns:1fr;text-align:center}.folio .r{text-align:center}}
 
-/* Week rail */
-.rail{display:grid;gap:10px}
-.track{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;scroll-snap-type:x proximity;scrollbar-width:thin}
-.wk{flex:0 0 auto;scroll-snap-align:start;min-width:112px;border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:9px 12px;text-align:left;display:grid;gap:2px;transition:border-color .15s,transform .15s}
-.wk b{font-family:var(--cond);font-size:22px;line-height:1}
-.wk span{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
-.wk:hover{border-color:var(--ink)}
-.wk[aria-current="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.wk[aria-current="true"] span{color:inherit;opacity:.75}
-.wk.sealed{border-style:dashed;cursor:not-allowed;opacity:.8}
-.wk.sealed b{color:var(--muted)}
+/* Edition archive */
+.archive{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.archive .lab{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;flex:0 0 auto}
+.track{display:flex;gap:0;overflow-x:auto;scrollbar-width:thin;flex:1}
+.wk{flex:0 0 auto;padding:4px 14px;border-left:1px solid var(--rule);text-align:left;font-family:var(--sans);font-size:12.5px;line-height:1.3;color:var(--ink2)}
+.wk:first-child{border-left:0;padding-left:0}
+.wk b{display:block;font-family:var(--name);font-size:17px;color:var(--ink)}
+.wk[aria-current="true"] b{color:var(--red);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.wk.sealed{color:var(--muted);cursor:not-allowed}
+.wk.sealed b{color:var(--muted);font-style:italic}
+.share{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--heavy);padding:7px 12px;flex:0 0 auto}
+.share:hover{background:var(--ink);color:var(--paper)}
+@media (max-width:560px){.archive{flex-wrap:wrap}.track{order:3;flex-basis:100%}.share{margin-left:auto}}
 
-/* Seal / prediction */
-.seal{position:relative;border:1px solid var(--line);border-radius:10px;background:
-  radial-gradient(120% 140% at 0% 0%,var(--gold-soft),transparent 60%),var(--surface);padding:28px clamp(18px,4vw,40px);display:grid;gap:18px;overflow:hidden}
-.seal h3{font-family:var(--cond);font-size:clamp(28px,4.4vw,40px);text-transform:uppercase;line-height:1}
-.seal p{margin:0;color:var(--muted);max-width:60ch}
-.picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.pick{border:1px solid var(--line);background:var(--raise);border-radius:8px;padding:12px 14px;text-align:left;display:grid;gap:3px;transition:transform .15s,border-color .15s}
-.pick:hover{transform:translateY(-2px);border-color:var(--gold)}
-.pick b{font-size:16px}
-.pick span{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
-.pick.right{border-color:var(--teal);background:var(--teal-soft)}
-.pick.wrong{border-color:var(--blood);background:var(--blood-soft)}
-.seal-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.ghost{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 16px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
-.ghost:hover{border-color:var(--ink)}
-.solid{border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:999px;padding:9px 18px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
-.wax{position:absolute;right:-28px;top:-28px;width:150px;height:150px;border-radius:50%;background:var(--blood);opacity:.12;pointer-events:none}
-.verdict{font-family:var(--cond);font-size:26px;text-transform:uppercase}
-.streak{font-family:var(--mono);font-size:12px;color:var(--muted)}
+/* Front page grid */
+.front{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:0;border-bottom:3px double var(--heavy);margin-bottom:8px}
+.front>.lead{padding:26px 28px 28px 0;border-right:1px solid var(--rule)}
+.front>.rail{padding:26px 0 28px 28px;display:grid;gap:22px;align-content:start}
+@media (max-width:860px){.front{grid-template-columns:1fr}.front>.lead{padding-right:0;border-right:0;border-bottom:1px solid var(--rule)}.front>.rail{padding-left:0}}
+.lead h2{font-size:clamp(32px,4.6vw,52px);margin:8px 0 12px}
+.deck{font-family:var(--serif);font-size:19px;line-height:1.45;color:var(--ink2);margin-bottom:18px}
+.byline{font-family:var(--sans);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:7px 0;margin-bottom:18px}
+.picks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--heavy)}
+.pick{text-align:left;padding:13px 14px 13px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;align-items:baseline;transition:background .15s}
+.pick:nth-child(odd){border-right:1px solid var(--rule)}
+.pick:nth-child(even){padding-left:14px}
+.pick:hover{background:var(--sheet)}
+.pick i{font-style:normal;font-family:var(--name);font-weight:800;font-size:20px;color:var(--muted)}
+.pick b{font-family:var(--name);font-size:19px;font-weight:700;line-height:1.2}
+.pick span{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.pick.right{background:color-mix(in srgb,var(--gA) 14%,transparent)}
+.pick.wrong{background:var(--red-soft)}
+@media (max-width:560px){.picks{grid-template-columns:1fr}.pick:nth-child(odd){border-right:0}.pick:nth-child(even){padding-left:0}}
+.leadfoot{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:14px;font-family:var(--sans);font-size:13px;color:var(--muted)}
+.linkbtn{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:1px;color:var(--ink)}
+.verdict{font-family:var(--name);font-style:italic;font-size:26px;color:var(--red)}
 
-/* Stats strip */
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.stats div{background:var(--surface);padding:14px 16px;display:grid;gap:2px}
-.stats b{font-family:var(--cond);font-size:40px;line-height:1;font-weight:700}
-.stats span{font-size:13.5px;color:var(--muted)}
-@media (max-width:700px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.box h3{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-top:3px solid var(--heavy);border-bottom:1px solid var(--rule);padding:7px 0;margin-bottom:10px}
+.glance{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
+.glance div{padding:8px 0 10px;border-bottom:1px solid var(--rule)}
+.glance div:nth-child(odd){border-right:1px solid var(--rule);padding-right:12px}
+.glance div:nth-child(even){padding-left:12px}
+.glance b{display:block;font-family:var(--name);font-weight:800;font-size:38px;line-height:1}
+.glance span{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.index{list-style:none;margin:0;padding:0}
+.index li{border-bottom:1px dotted var(--rule)}
+.index a{display:flex;justify-content:space-between;gap:10px;padding:7px 0;text-decoration:none;font-size:15.5px}
+.index a span:last-child{font-family:var(--sans);font-size:11.5px;color:var(--muted);letter-spacing:.06em}
+.index a:hover span:first-child{text-decoration:underline}
+.note{font-size:14.5px;color:var(--ink2)}
 
-/* Controls */
-.ctl{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
-.chips{display:flex;gap:6px;flex-wrap:wrap}
-.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;gap:7px;align-items:center}
-.chip i{width:8px;height:8px;border-radius:50%;background:var(--c,var(--muted))}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.seg button{border:0;background:var(--surface);padding:6px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase}
-.seg button[aria-pressed="true"]{background:var(--gold);color:#141b26}
-.search{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:14px;min-width:0;width:220px;max-width:100%}
+/* Section headings */
+.sec{padding-top:34px}
+.sh{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:end;border-top:3px solid var(--heavy);padding-top:10px;margin-bottom:6px}
+.sh .tag{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:4px 8px;align-self:center}
+.sh h2{font-size:clamp(30px,4.4vw,44px)}
+.sdeck{font-size:16.5px;color:var(--ink2);max-width:72ch;margin:8px 0 16px}
 
-/* Leaderboard */
-.board{display:grid;gap:6px}
-.row{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 14px;text-align:left;width:100%;transition:border-color .15s,transform .15s;opacity:0;transform:translateY(8px);animation:in .45s forwards}
-.row:hover{border-color:var(--gold)}
-@keyframes in{to{opacity:1;transform:none}}
-.rk{font-family:var(--cond);font-weight:800;font-size:30px;line-height:1;color:var(--muted);text-align:center}
-.row.top .rk{color:var(--gold)}
-.nm{display:grid;gap:5px;min-width:0}
-.nm b{font-size:16.5px;line-height:1.25;overflow-wrap:anywhere}
-.meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.tag{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;border-radius:3px;padding:2px 6px;border:1px solid var(--line);color:var(--muted)}
-.tag.g{color:var(--c);border-color:var(--c)}
-.tag.cons{background:var(--blood);border-color:var(--blood);color:#fff}
-.barw{height:6px;background:var(--raise);border-radius:3px;overflow:hidden}
-.bar{display:block;height:100%;width:0;background:var(--c,var(--gold));border-radius:3px;transition:width .9s cubic-bezier(.2,.7,.2,1)}
-.sc{text-align:right;display:grid;gap:2px;justify-items:end}
-.sc b{font-family:var(--cond);font-weight:700;font-size:28px;line-height:1}
-.dl{font-family:var(--mono);font-size:11px}
-.up{color:var(--blood)} .down{color:var(--teal)} .flat{color:var(--muted)}
-.more{justify-self:center}
-.empty{border:1px dashed var(--line);border-radius:8px;padding:22px;color:var(--muted);text-align:center}
+/* Ledger table */
+.tools{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:9px 0;margin-bottom:2px}
+.chips{display:flex;gap:4px;flex-wrap:wrap}
+.chip{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border:1px solid transparent;color:var(--ink2);display:inline-flex;gap:6px;align-items:center}
+.chip i{width:7px;height:7px;background:var(--c,var(--muted))}
+.chip:hover{border-color:var(--rule)}
+.chip[aria-pressed="true"]{border-color:var(--heavy);color:var(--ink)}
+.seg{display:inline-flex;border:1px solid var(--heavy)}
+.seg button{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.search{font:inherit;font-family:var(--sans);font-size:13.5px;color:var(--ink);background:var(--sheet);border:1px solid var(--rule);padding:6px 10px;width:200px;max-width:100%}
+.thead,.row{display:grid;grid-template-columns:46px minmax(0,1fr) minmax(0,170px) 90px 86px;gap:14px;align-items:center}
+.thead{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:8px 0;border-bottom:1px solid var(--heavy)}
+.thead span:nth-child(n+4){text-align:right}
+.row{width:100%;text-align:left;padding:11px 0;border-bottom:1px solid var(--rule);opacity:0;animation:in .4s forwards}
+.row:hover{background:var(--sheet)}
+@keyframes in{to{opacity:1}}
+.rk{font-family:var(--name);font-weight:800;font-size:26px;line-height:1;text-align:center;color:var(--muted)}
+.row.top .rk{color:var(--red)}
+.cn b{font-family:var(--name);font-weight:700;font-size:18.5px;line-height:1.2;overflow-wrap:anywhere}
+.cn .meta{margin-top:3px}
+.sector{font-family:var(--sans);font-size:12px;color:var(--ink2);display:flex;align-items:center;gap:7px}
+.sector i{width:8px;height:8px;background:var(--c);flex:0 0 auto}
+.score{text-align:right;display:grid;gap:4px;justify-items:end}
+.score b{font-family:var(--name);font-weight:800;font-size:24px;line-height:1}
+.barw{width:80px;height:3px;background:var(--rule)}
+.bar{display:block;height:100%;width:0;background:var(--c,var(--ink));transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.chg{text-align:right;font-family:var(--sans);font-size:12.5px;font-weight:600}
+.up{color:var(--red)} .down{color:var(--gA)} .flat{color:var(--muted);font-weight:400}
+.flag{font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);padding:1px 5px;margin-right:6px}
+.issue{font-family:var(--sans);font-size:11.5px;color:var(--muted)}
+@media (max-width:760px){
+  .thead{display:none}
+  .row{grid-template-columns:38px minmax(0,1fr) auto;row-gap:4px}
+  .row .sector{grid-column:2;grid-row:2}
+  .row .score{grid-column:3;grid-row:1}
+  .row .chg{grid-column:3;grid-row:2}
+}
+.more{display:block;margin:14px auto 0}
+.empty{padding:22px 0;color:var(--muted);font-style:italic;text-align:center;border-bottom:1px solid var(--rule)}
 
-/* New items */
-.feed{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
-.item{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--tc,var(--muted));border-radius:8px;padding:14px 16px;display:grid;gap:8px;align-content:start}
-.item h4{margin:0;font-size:16px;line-height:1.3}
-.item p{margin:0;font-size:14.5px;color:var(--muted)}
-.item .co{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
-.item a{font-family:var(--mono);font-size:11.5px}
-.st{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:2px 6px;border-radius:3px}
-.st.final{background:var(--blood-soft);color:var(--blood)}
+/* News briefs */
+.briefs{columns:3 280px;column-gap:28px;column-rule:1px solid var(--rule)}
+.brief{break-inside:avoid;padding:0 0 16px;margin:0 0 16px;border-bottom:1px solid var(--rule)}
+.brief .k{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tc,var(--muted))}
+.brief h4{font-size:21px;margin:5px 0 6px;line-height:1.15}
+.brief p{font-size:15.5px;margin-bottom:8px;color:var(--ink2)}
+.brief .co{font-family:var(--sans);font-size:12px;font-weight:700;color:var(--ink)}
+.brief .dl{font-family:var(--sans);font-size:11.5px;color:var(--muted)}
+.brief a.src{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.st{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;margin-right:6px;display:inline-block}
+.st.final{background:var(--red-soft);color:var(--red)}
 .st.pending{background:var(--amber-soft);color:var(--amber)}
-.st.alleged{background:var(--raise);color:var(--muted);border:1px solid var(--line)}
+.st.alleged{border:1px solid var(--rule);color:var(--muted)}
 
 /* Patterns */
-.pats{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
-.pat{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;text-align:left;display:grid;gap:8px;transition:border-color .15s}
-.pat:hover,.pat[aria-pressed="true"]{border-color:var(--gold)}
-.pat[aria-pressed="true"]{background:var(--gold-soft)}
-.pat b{font-family:var(--cond);font-size:22px;text-transform:uppercase;line-height:1.05}
+.pats{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));border-top:1px solid var(--heavy)}
+.pat{text-align:left;padding:14px 16px 16px 0;border-bottom:1px solid var(--rule);display:grid;gap:6px}
+.pat:hover h4,.pat[aria-pressed="true"] h4{color:var(--red)}
+.pat[aria-pressed="true"]{background:var(--sheet)}
+.pat h4{font-size:22px}
 .dots{display:flex;gap:3px;flex-wrap:wrap}
-.dots i{width:10px;height:10px;border-radius:2px;background:var(--c)}
-.pat span{font-size:13px;color:var(--muted)}
+.dots i{width:9px;height:9px;background:var(--c)}
+.pat span{font-family:var(--sans);font-size:12px;color:var(--muted)}
+
+/* About section */
+.about{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:0}
+.about>.col{padding:6px 28px 0 0;border-right:1px solid var(--rule)}
+.about>.col2{padding:6px 0 0 28px}
+@media (max-width:860px){.about{grid-template-columns:1fr}.about>.col{padding-right:0;border-right:0}.about>.col2{padding-left:0}}
+.essay p{font-size:17.5px;line-height:1.68}
+.drop::first-letter{font-family:var(--name);font-weight:900;float:left;font-size:4.4em;line-height:.82;padding:6px 10px 0 0;color:var(--ink)}
+.pull{font-family:var(--name);font-style:italic;font-weight:700;font-size:clamp(22px,2.8vw,28px);line-height:1.28;border-top:3px solid var(--heavy);border-bottom:1px solid var(--heavy);padding:14px 0;margin:22px 0}
+h3.sub{font-family:var(--name);font-size:25px;margin:26px 0 10px}
+.steps{list-style:none;counter-reset:s;margin:0;padding:0;border-top:1px solid var(--heavy)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:16px}
+.steps li::before{content:counter(s);font-family:var(--name);font-weight:900;font-size:30px;line-height:1;color:var(--red)}
+.steps b{font-family:var(--name);font-size:18px;display:block;margin-bottom:2px}
+.defs{margin:0;border-top:1px solid var(--heavy)}
+.defs div{padding:10px 0;border-bottom:1px solid var(--rule)}
+.defs dt{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.defs dd{margin:3px 0 0;font-size:15.5px;color:var(--ink2)}
+.tiers{width:100%;border-collapse:collapse;font-size:15px}
+.tiers th{font-family:var(--sans);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;text-align:left;color:var(--muted);border-bottom:1px solid var(--heavy);padding:6px 6px 6px 0}
+.tiers td{border-bottom:1px solid var(--rule);padding:8px 6px 8px 0;vertical-align:top}
+.tiers td:last-child{text-align:right;font-family:var(--name);font-weight:800;font-size:18px}.tiers th:last-child{text-align:right}
 
 /* Calculator */
-.calc{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
-.calc fieldset{border:0;padding:0;margin:0 0 14px;display:grid;gap:8px}
-.calc legend{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.opts{display:flex;gap:6px;flex-wrap:wrap}
-.opt{border:1px solid var(--line);background:var(--raise);border-radius:6px;padding:7px 10px;font-size:13.5px;text-align:left}
-.opt[aria-pressed="true"]{border-color:var(--gold);background:var(--gold-soft)}
-.out{display:grid;align-content:center;justify-items:center;text-align:center;gap:6px;border-left:1px solid var(--line);padding-left:18px}
-.out b{font-family:var(--cond);font-weight:800;font-size:84px;line-height:.9;color:var(--gold)}
-.out span{font-family:var(--mono);font-size:12px;color:var(--muted)}
-@media (max-width:760px){.calc{grid-template-columns:1fr}.out{border-left:0;border-top:1px solid var(--line);padding:16px 0 0}}
+.calc{border-top:3px solid var(--heavy);border-bottom:1px solid var(--heavy);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);margin-top:6px}
+.calc .in{padding:14px 22px 14px 0;border-right:1px solid var(--rule)}
+.calc fieldset{border:0;padding:0;margin:0 0 12px}
+.calc legend{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.opts{display:flex;gap:5px;flex-wrap:wrap}
+.opt{font-family:var(--sans);font-size:12.5px;padding:6px 9px;border:1px solid var(--rule);background:var(--sheet)}
+.opt[aria-pressed="true"]{border-color:var(--heavy);background:var(--ink);color:var(--paper)}
+.calc .out{display:grid;place-content:center;justify-items:center;text-align:center;padding:16px}
+.calc .out b{font-family:var(--name);font-weight:900;font-size:88px;line-height:.9;color:var(--red)}
+@media (max-width:720px){.calc{grid-template-columns:1fr}.calc .in{padding-right:0;border-right:0;border-bottom:1px solid var(--rule)}}
 
-/* Fine print */
-.fine{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.fine div{background:var(--surface);padding:16px 18px;display:grid;gap:6px;align-content:start}
-.fine b{font-family:var(--cond);font-size:21px;text-transform:uppercase}
-.fine p{margin:0;font-size:14.5px;color:var(--muted)}
-@media (max-width:760px){.fine{grid-template-columns:1fr}}
+/* FAQ */
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{cursor:pointer;list-style:none;padding:12px 28px 12px 0;font-family:var(--name);font-weight:700;font-size:19px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:2px;top:9px;font-family:var(--sans);font-size:22px;color:var(--red)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{font-size:16px;color:var(--ink2);padding-bottom:4px}
+.faq{border-top:1px solid var(--heavy)}
 
-/* Drawer */
+.colophon{margin-top:40px;border-top:3px double var(--heavy);padding-top:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:12px;color:var(--muted)}
+
+/* Company file (drawer) */
 .ov{position:fixed;inset:0;background:var(--shade);z-index:5000;display:none;justify-content:flex-end}
 .ov.open{display:flex}
-.drawer{width:min(560px,100%);height:100%;overflow-y:auto;background:var(--bg);border-left:1px solid var(--line);padding:22px max(18px,env(safe-area-inset-right,0px)) calc(28px + env(safe-area-inset-bottom,0px)) 22px;display:grid;gap:18px;align-content:start;animation:slide .3s cubic-bezier(.2,.7,.2,1)}
-@keyframes slide{from{transform:translateX(40px);opacity:0}}
-.dh{display:flex;justify-content:space-between;gap:12px;align-items:start}
-.dh h3{font-family:var(--cond);font-size:34px;text-transform:uppercase;line-height:.95}
-.x{border:1px solid var(--line);background:var(--surface);border-radius:50%;width:38px;height:38px;flex:0 0 auto;font-size:18px}
-.dstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.dstats div{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:10px 12px}
-.dstats b{display:block;font-family:var(--cond);font-size:28px;line-height:1}
-.dstats span{font-size:12.5px;color:var(--muted)}
-.spark{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px}
-.spark svg{display:block;width:100%;height:70px}
-.ilist{display:grid;gap:10px}
-.toast{z-index:5001;position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-family:var(--mono);font-size:12px;z-index:700;opacity:0;transition:opacity .2s;pointer-events:none}
+.drawer{width:min(600px,100%);height:100%;overflow-y:auto;background:var(--paper);border-left:3px double var(--heavy);padding:22px max(20px,env(safe-area-inset-right,0px)) calc(30px + env(safe-area-inset-bottom,0px)) 24px;animation:slide .3s cubic-bezier(.2,.7,.2,1)}
+@keyframes slide{from{transform:translateX(36px);opacity:0}}
+.dh{display:flex;justify-content:space-between;gap:12px;align-items:start;border-bottom:3px double var(--heavy);padding-bottom:12px;margin-bottom:14px}
+.dh h3{font-size:clamp(30px,6vw,40px)}
+.x{width:38px;height:38px;border:1px solid var(--heavy);font-size:20px;flex:0 0 auto}
+.x:hover{background:var(--ink);color:var(--paper)}
+.dstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--rule);margin-bottom:12px}
+.dstats div{padding:6px 10px 10px 0}
+.dstats div+div{border-left:1px solid var(--rule);padding-left:12px}
+.dstats b{display:block;font-family:var(--name);font-weight:800;font-size:32px;line-height:1.05}
+.dstats span{font-family:var(--sans);font-size:11.5px;color:var(--muted)}
+.dmeta{font-family:var(--sans);font-size:12.5px;color:var(--ink2);margin-bottom:12px}
+.spark{border-top:1px solid var(--heavy);border-bottom:1px solid var(--rule);padding:8px 0 10px;margin-bottom:16px}
+.spark svg{display:block;width:100%;height:70px;color:var(--muted)}
+.ditems .brief{border-bottom:1px solid var(--rule)}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;font-family:var(--sans);font-size:13px;z-index:5001;opacity:0;transition:opacity .2s;pointer-events:none}
 .toast.on{opacity:1}
-.hide{display:none!important}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.row{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.row{opacity:1}}
 </style>
 </head>
 <body>
 <!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a><a href="watch-list.html" class="on" role="menuitem">The Watch List</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="gatekeeper-files.html" role="menuitem">The Gatekeeper Files</a><a href="test-your-knowledge.html" role="menuitem">Test Your Knowledge</a><a href="living-donor-guide.html" role="menuitem">Free Donor Guide (PDF)</a><a href="research-digest.html" role="menuitem">Research Digest</a><a href="inside-files.html" role="menuitem">The Inside Files</a><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-hub.html" role="menuitem">Living Donor Hub</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="kidney-transplant-centers.html" role="menuitem">Kidney Transplant Centers by State</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="services.html" class="cn-t cn-s">Services We Offer</a><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
-<main class="wrap">
+<div class="paper">
 
-  <header class="mast">
-    <div>
-      <div class="lbl">Cold Ischemia Foundation · Public Accountability Ledger</div>
-      <h1>The Watch <span>List</span></h1>
-      <p>Fifty companies that earn their living from kidney disease. Every week we pull the public record on each one, from federal settlements and state inspections to recalls, lawsuits and patient reports, and score it. One week unseals every Monday. You can look back at any week, but nobody gets to peek ahead.</p>
+  <header>
+    <div class="ear"><span>Cold Ischemia Foundation</span><span id="todayStr"></span><span>Free to read · No sign-up</span></div>
+    <div class="plate">
+      <h1>The Watch List</h1>
+      <div class="motto">A public accountability ledger of the companies that profit from kidney disease</div>
     </div>
-    <div class="clock" aria-live="polite">
-      <span class="lbl" id="clkLbl">Next week unseals in</span>
-      <span class="t num" id="clk">--</span>
-      <span class="d" id="clkDate"></span>
+    <div class="folio">
+      <span id="volStr">Vol. I</span>
+      <span class="c" id="edStr">Edition</span>
+      <span class="r">Next edition in <span class="cd" id="clk">--</span></span>
     </div>
   </header>
 
-  <section class="rail" aria-label="Weeks">
-    <div class="ctl"><span class="lbl">Pick a week</span><button class="ghost" id="share" type="button">Share this week</button></div>
+  <nav class="archive" aria-label="Edition archive">
+    <span class="lab">Editions</span>
     <div class="track" id="track"></div>
-  </section>
+    <button class="share" id="share" type="button">Share</button>
+  </nav>
 
-  <section id="sealBox" class="seal hide" aria-live="polite">
-    <div class="wax"></div>
-    <div class="lbl" id="sealLbl">This week is sealed</div>
-    <h3 id="sealH">Make your call first</h3>
-    <p id="sealP">Which company do you think lands at number one this week? Pick one to break the seal and see how the ledger fell.</p>
-    <div class="picks" id="picks"></div>
-    <div class="seal-row"><button class="ghost" id="skip" type="button">Skip and show me</button><span class="streak" id="streak"></span></div>
-  </section>
-
-  <div id="weekBody" class="hide" style="display:grid;gap:44px">
-    <section class="stats" aria-label="This week at a glance">
-      <div><b class="num" id="sItems">0</b><span>documented items this week</span></div>
-      <div><b class="num" id="sNew">0</b><span>new since last week</span></div>
-      <div><b class="num" id="sFed">0</b><span>federal or state actions</span></div>
-      <div><b class="num" id="sCons">0</b><span>companies flagged Consistent</span></div>
-    </section>
-
-    <section aria-labelledby="hBoard" style="display:grid;gap:14px">
-      <div>
-        <h2 id="hBoard">The Ledger</h2>
-        <p class="sub">Tap any company to open its full file: every item, its source, and how its score has moved week to week.</p>
+  <!-- FRONT PAGE -->
+  <section class="front">
+    <article class="lead" id="lead" aria-live="polite">
+      <div class="kick" id="leadKick">This week's edition</div>
+      <h2 id="leadH">Before you read the ledger, make your call</h2>
+      <p class="deck" id="leadDeck">Fifty companies were checked this week against federal and state records, court filings, recalls, investigative reporting and patient reports. One of them comes out on top. Which one do you think it is?</p>
+      <div class="byline" id="leadBy">By the Cold Ischemia Foundation research desk</div>
+      <div id="sealArea">
+        <div class="picks" id="picks"></div>
+        <div class="leadfoot"><button class="linkbtn" id="skip" type="button">Skip the guess and open the ledger</button><span id="streak"></span></div>
       </div>
-      <div class="ctl">
+      <div id="leadOpen" class="hide"></div>
+    </article>
+    <aside class="rail">
+      <div class="box">
+        <h3>This edition at a glance</h3>
+        <div class="glance">
+          <div><b class="num" id="sItems">—</b><span>documented items</span></div>
+          <div><b class="num" id="sNew">—</b><span>new since last edition</span></div>
+          <div><b class="num" id="sFed">—</b><span>federal or state actions</span></div>
+          <div><b class="num" id="sCons">—</b><span>companies flagged Consistent</span></div>
+        </div>
+      </div>
+      <div class="box">
+        <h3>Inside this edition</h3>
+        <ul class="index">
+          <li><a href="#secA"><span>The Ledger: all 50 companies ranked</span><span>A</span></a></li>
+          <li><a href="#secB"><span>New this week, in brief</span><span>B</span></a></li>
+          <li><a href="#secC"><span>Patterns across the industry</span><span>C</span></a></li>
+          <li><a href="#secD"><span>About this ledger and how to use it</span><span>D</span></a></li>
+          <li><a href="#secE"><span>Questions and answers</span><span>E</span></a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>How this page works</h3>
+        <p class="note">A new edition goes to press every Monday at 9:00 AM Eastern. Every past edition stays open in the archive above. Future editions cannot be opened early by anyone, because they do not exist on this site until release.</p>
+      </div>
+    </aside>
+  </section>
+
+  <div id="edBody">
+    <!-- A: Ledger -->
+    <section class="sec" id="secA">
+      <div class="sh"><span class="tag">Section A</span><h2>The Ledger</h2></div>
+      <p class="sdeck">All fifty companies, ranked by their Company Complaint Index for this edition. Select any company to open its full file, with every item, its source and how its score has moved from edition to edition.</p>
+      <div class="tools">
         <div class="chips" id="groups"></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
           <div class="seg" role="group" aria-label="Score view"><button type="button" aria-pressed="true" data-v="cci">Total score</button><button type="button" aria-pressed="false" data-v="per">Per 100 clinics</button></div>
           <input class="search" id="q" type="search" placeholder="Find a company" aria-label="Find a company">
         </div>
       </div>
-      <div class="board" id="board"></div>
-      <button class="ghost more hide" id="more" type="button">Show all 50</button>
+      <div class="thead" aria-hidden="true"><span>Rank</span><span>Company</span><span>Sector</span><span>Score</span><span>Change</span></div>
+      <div id="board"></div>
+      <button class="linkbtn more hide" id="more" type="button">Show all 50</button>
     </section>
 
-    <section aria-labelledby="hNew" style="display:grid;gap:14px">
-      <div>
-        <h2 id="hNew">New This Week</h2>
-        <p class="sub">Items that first showed up in this week's sweep. Red means a final finding, settlement or citation. Amber is pending. Gray is an allegation not yet backed by a filing or regulator.</p>
-      </div>
-      <div class="chips" id="tiers"></div>
-      <div class="feed" id="feed"></div>
+    <!-- B: Briefs -->
+    <section class="sec" id="secB">
+      <div class="sh"><span class="tag">Section B</span><h2>New This Week, In Brief</h2></div>
+      <p class="sdeck">Every item that first appeared in this edition's sweep. A red label marks a final finding, settlement, recall or regulator citation. Amber marks a pending case or open investigation. An outlined label marks an allegation that has not yet been backed by a court or regulator.</p>
+      <div class="chips" id="tiers" style="margin-bottom:16px"></div>
+      <div class="briefs" id="feed"></div>
     </section>
 
-    <section aria-labelledby="hPat" style="display:grid;gap:14px">
-      <div>
-        <h2 id="hPat">Patterns</h2>
-        <p class="sub">The same kind of problem turning up at more than one company. Tap a pattern to filter the ledger down to the companies involved.</p>
-      </div>
+    <!-- C: Patterns -->
+    <section class="sec" id="secC">
+      <div class="sh"><span class="tag">Section C</span><h2>Patterns Across the Industry</h2></div>
+      <p class="sdeck">When the same kind of problem shows up at several companies at once, it usually points to something in how the business works, not a single bad actor. Select a pattern to narrow the ledger to the companies involved.</p>
       <div class="pats" id="pats"></div>
     </section>
   </div>
 
-  <section id="preLaunch" class="empty hide"></section>
+  <!-- D: About -->
+  <section class="sec" id="secD">
+    <div class="sh"><span class="tag">Section D</span><h2>About This Ledger</h2></div>
+    <div class="about">
+      <div class="col essay">
+        <div class="kick" style="margin:10px 0 8px">Why it was built</div>
+        <p class="drop">People living with kidney disease depend on a small number of companies for nearly every part of their care: the clinics they visit, the machines and supplies used on them, the drugs they are prescribed, the labs that read their blood, and the funds and groups that speak for them in Washington. Those companies are among the most heavily regulated in American health care, and yet the record of what goes wrong inside them is scattered across dozens of places that almost no patient ever sees.</p>
+        <p>A federal settlement is announced on a Justice Department press page. A failed state inspection sits in a PDF on a health department server. A recall is posted to an FDA database. A wrongful death suit is filed in a county courthouse. A pattern of complaints lives in patient forums. Each piece is public. Together they are close to invisible, and that is how a labyrinthine system stays comfortable for the people who profit from it.</p>
+        <p>The Watch List pulls those pieces into one place, scores them the same way every week, and publishes the result where anyone can read it. It is not built to sell anything or to tell anyone where to receive care. It exists so that patients, families, care partners, clinicians, reporters and lawmakers can see the public record for themselves and ask better questions of the companies that shape their lives.</p>
+        <div class="pull">The record was always public. It just was never in one place, and it was never written for the people it affects most.</div>
+        <p>Each edition is researched from scratch. Every company is searched on its own, across eight kinds of sources, from federal enforcement down to repeated patient reports. Nothing reaches the page without a public link that a reader can open and check. Proven findings carry more weight than open cases, and open cases carry more weight than allegations. Older problems fade over time so a company is judged on its recent record, while the Consistent flag makes sure a long history of trouble is never forgotten.</p>
 
-  <section aria-labelledby="hCalc" style="display:grid;gap:14px">
-    <div>
-      <h2 id="hCalc">How a Score Is Built</h2>
-      <p class="sub">Every item earns points from three things: who found the problem, how recent it is, and how settled it is. Try it.</p>
+        <h3 class="sub">How to read an edition</h3>
+        <ol class="steps">
+          <li><div><b>Make your call</b>On release day the front page asks which company you think tops the ledger. Pick one to break the seal, or skip straight to the results. Your record of calls is kept only on your own device.</div></li>
+          <li><div><b>Scan the ledger</b>Section A ranks all fifty companies. The change column shows whether a score rose or fell since the last edition. A red Consistent label means problems were documented in at least three of the last five years.</div></li>
+          <li><div><b>Compare fairly</b>The largest chains run thousands of clinics and will naturally collect more records. Switch to Per 100 clinics to compare kidney care providers of every size on equal footing.</div></li>
+          <li><div><b>Open a company file</b>Select any company to see every item behind its score, each with its source, date, type and status, plus a chart of its score across editions.</div></li>
+          <li><div><b>Read the briefs and patterns</b>Section B lists what is new this week. Section C shows problems shared across companies. Select a pattern to filter the ledger.</div></li>
+          <li><div><b>Go back, not ahead</b>Use the edition archive under the nameplate to revisit any past week. The next edition stays sealed until Monday at 9:00 AM Eastern.</div></li>
+        </ol>
+      </div>
+      <div class="col2">
+        <div class="kick" style="margin:10px 0 8px">The tools on this page</div>
+        <dl class="defs">
+          <div><dt>The seal</dt><dd>A short prediction on the front page that opens each new edition. It asks you to think about the companies before you see the numbers.</dd></div>
+          <div><dt>The ledger</dt><dd>The ranked table of all fifty companies, with filters by sector, a search box and two ways to view the score.</dd></div>
+          <div><dt>Company file</dt><dd>The full record for one company: every scored item, its status and source, and a week by week score chart.</dd></div>
+          <div><dt>Briefs</dt><dd>Short summaries of each new item, written in plain language, with the source one tap away.</dd></div>
+          <div><dt>Patterns</dt><dd>Issue types that recur across several companies, such as billing problems, infection control or staffing.</dd></div>
+          <div><dt>Edition archive</dt><dd>Every past edition, kept open permanently so changes can be tracked over time.</dd></div>
+          <div><dt>Score builder</dt><dd>An interactive calculator, below, that shows exactly how a single item is scored.</dd></div>
+        </dl>
+
+        <h3 class="sub">Where the record comes from</h3>
+        <table class="tiers">
+          <thead><tr><th>Source</th><th>Weight</th></tr></thead>
+          <tbody id="tierRows"></tbody>
+        </table>
+        <p class="small" style="margin-top:8px">Patient reports count only when the same problem appears in at least three separate accounts. Private individuals are never named.</p>
+      </div>
     </div>
+
+    <h3 class="sub" style="margin-top:34px">Build a score yourself</h3>
+    <p class="sdeck" style="margin-top:0">Every item earns points from three things: where it was found, how recent it is, and how settled it is. Choose each one to see the result.</p>
     <div class="calc">
-      <div>
-        <fieldset><legend>Where it came from</legend><div class="opts" id="cT"></div></fieldset>
+      <div class="in">
+        <fieldset><legend>Where it was found</legend><div class="opts" id="cT"></div></fieldset>
         <fieldset><legend>How recent</legend><div class="opts" id="cR"></div></fieldset>
         <fieldset><legend>How settled</legend><div class="opts" id="cS"></div></fieldset>
-        <p class="sub" style="font-size:14px">A company that racks up the same kind of problem three or more times gets its total multiplied by 1.25. Companies with documented problems in at least three of the last five years carry the Consistent flag.</p>
+        <p class="note" style="margin:0">A company's items are added together to form its Company Complaint Index. When the same kind of problem appears three or more times at one company, its total is multiplied by 1.25.</p>
       </div>
-      <div class="out"><span>points for this one item</span><b class="num" id="cOut">0</b><span id="cMath"></span></div>
+      <div class="out"><span class="small">Points for this one item</span><b class="num" id="cOut">0</b><span class="small" id="cMath"></span></div>
     </div>
   </section>
 
-  <section class="fine" aria-label="Ground rules">
-    <div><b>Every item is sourced</b><p>If we cannot link to a public record, a filing, a regulator page or a published report, it does not go on the list.</p></div>
-    <div><b>Allegations stay allegations</b><p>Pending lawsuits and open investigations are scored lower and labeled as unproven. A claim is never treated as a finding until a court or regulator says so.</p></div>
-    <div><b>Spot an error?</b><p>Companies and readers can send corrections through our <a href="contact.html">contact page</a>. Verified corrections are made in the next weekly update.</p></div>
+  <!-- E: FAQ -->
+  <section class="sec" id="secE">
+    <div class="sh"><span class="tag">Section E</span><h2>Questions and Answers</h2></div>
+    <div class="faq">
+      <details><summary>Is this a list of bad companies?</summary><p>No. It is a record of documented public complaints and actions. A higher score means more items that are recent, serious and well documented. It is not a verdict on any company, and it does not judge the quality of care at any single location.</p></details>
+      <details><summary>Why can't I open next week's edition?</summary><p>Each edition is researched over the weekend and published Monday at 9:00 AM Eastern, so everyone sees it at the same moment. Until then the data is not on this website at all, so there is nothing to open early. Every past edition stays available in the archive.</p></details>
+      <details><summary>Why do the largest companies score higher?</summary><p>Companies with thousands of locations are inspected and sued more often simply because of their size. That is why kidney care providers can also be compared per 100 clinics, which puts a 50-clinic chain and a 2,500-clinic chain on the same scale.</p></details>
+      <details><summary>What is the difference between final, pending and alleged?</summary><p>Final means a court, regulator or company settlement has resolved the matter, or a recall or citation was issued. Pending means a lawsuit or investigation is open and unresolved. Alleged means a claim has been reported but is not yet backed by a filing or regulator. Pending and alleged items are always labeled as unproven and carry less weight.</p></details>
+      <details><summary>Do old problems count forever?</summary><p>No. Points shrink as an item ages: full weight and a half for the last 90 days, full weight up to a year, half weight from one to five years, and a small amount after that. The Consistent flag separately marks companies with documented problems in at least three of the last five years.</p></details>
+      <details><summary>Can a company respond or correct the record?</summary><p>Yes. Companies and readers can send corrections through the <a href="contact.html">contact page</a> with a link to supporting records. Verified corrections are made in the next edition, and past editions are only changed to fix a verified error.</p></details>
+      <details><summary>Is my guess stored anywhere?</summary><p>Your predictions and your record of calls are saved only in your own browser on your own device. Nothing about your visit is sent to the Cold Ischemia Foundation.</p></details>
+      <details><summary>Who decides what is included?</summary><p>The same written method is applied to every company every week. The weights, rules and sources are published on this page so anyone can check the work. Companies cannot pay, sponsor or ask their way off the list.</p></details>
+    </div>
   </section>
 
-</main>
+  <footer class="colophon">
+    <span>The Watch List is published by the Cold Ischemia Foundation, Ellenton, Florida.</span>
+    <span>Every item links to its public source. Corrections: <a href="contact.html">contact page</a>.</span>
+  </footer>
+</div>
 
 <div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="dName">
-  <div class="drawer" id="drawer">
-    <div class="dh"><div><div class="lbl" id="dGroup"></div><h3 id="dName"></h3></div><button class="x" id="dClose" type="button" aria-label="Close">×</button></div>
-    <div class="dstats"><div><b class="num" id="dCci"></b><span>score this week</span></div><div><b class="num" id="dDelta"></b><span>change vs last week</span></div><div><b class="num" id="dCount"></b><span>items on file</span></div></div>
-    <div class="meta" id="dTags"></div>
-    <div class="spark"><div class="lbl" style="margin-bottom:6px">Score by week</div><svg id="dSpark" viewBox="0 0 300 70" preserveAspectRatio="none" aria-hidden="true"></svg></div>
-    <div class="ilist" id="dItems"></div>
+  <div class="drawer">
+    <div class="dh"><div><div class="kick" id="dGroup"></div><h3 id="dName"></h3></div><button class="x" id="dClose" type="button" aria-label="Close">×</button></div>
+    <div class="dstats"><div><b class="num" id="dCci"></b><span>score this edition</span></div><div><b class="num" id="dDelta"></b><span>change since last</span></div><div><b class="num" id="dCount"></b><span>items on file</span></div></div>
+    <div class="dmeta" id="dTags"></div>
+    <div class="spark"><div class="small" style="margin-bottom:6px;text-transform:uppercase;letter-spacing:.1em">Score by edition</div><svg id="dSpark" viewBox="0 0 300 70" preserveAspectRatio="none" aria-hidden="true"></svg></div>
+    <div class="ditems" id="dItems"></div>
   </div>
 </div>
 <div class="toast" id="toast" role="status"></div>
@@ -297,269 +431,204 @@ a{color:var(--teal)}
 (function(){
 'use strict';
 var DATA='watch-list/';
-var GROUPS={A:['Kidney care providers','--gA'],B:['Value-based care firms','--gB'],C:['Devices & supplies','--gC'],D:['Drug makers','--gD'],E:['Labs, funders & lobby groups','--gE']};
-var TIERS={T1:['Federal enforcement',10],T2:['State regulators',7],T3:['FDA & product safety',6],T4:['Lawsuits',6],T5:['SEC & financial',5],T6:['Investigative news',5],T7:['Consumer complaints',3],T8:['Patient reports',1]};
-var TIERC={T1:'--blood',T2:'--blood',T3:'--amber',T4:'--amber',T5:'--gB',T6:'--gD',T7:'--teal',T8:'--muted'};
+var GROUPS={A:['Kidney care providers','--gA'],B:['Value-based care firms','--gB'],C:['Devices and supplies','--gC'],D:['Drug makers','--gD'],E:['Labs, funders and lobby groups','--gE']};
+var TIERS={T1:['Federal enforcement',10,'Justice Department settlements, Inspector General reports, Medicare terminations, FTC actions'],T2:['State regulators',7,'State inspection failures, attorney general actions, license actions, one and two star ratings'],T3:['FDA and product safety',6,'Recalls, warning letters, adverse event clusters'],T4:['Lawsuits',6,'Class actions, patient harm and wrongful death suits, whistleblower and antitrust cases'],T5:['SEC and financial filings',5,'SEC enforcement, newly disclosed investigations, shareholder suits'],T6:['Investigative reporting',5,'Major national and local investigative outlets'],T7:['Consumer complaints',3,'Better Business Bureau complaints, staff reports on safety and staffing'],T8:['Patient reports',1,'Repeated accounts in public forums and social media']};
+var TIERC={T1:'--red',T2:'--red',T3:'--amber',T4:'--amber',T5:'--gB',T6:'--gD',T7:'--gA',T8:'--muted'};
 var REC=[['Last 90 days',1.5],['3 to 12 months',1],['1 to 5 years',.5],['Over 5 years',.2]];
-var STAT={final:['Final finding or settlement',1],pending:['Pending case or open probe',.6],alleged:['Unproven allegation',.3]};
-var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var STAT={final:['Final',1,'Final finding or settlement'],pending:['Pending',.6,'Pending case or open probe'],alleged:['Alleged',.3,'Unproven allegation']};
+var MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var MS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
 var $=function(id){return document.getElementById(id)};
-var weeks=[], cache={}, cur=null, view='cci', grp='all', pat=null, tier='all', showAll=false, nextRelease=null;
+var weeks=[],cache={},cur=null,view='cci',grp='all',pat=null,tier='all',showAll=false,nextRelease=null;
 var store={get:function(k){try{return JSON.parse(localStorage.getItem('cifwl_'+k))}catch(e){return null}},set:function(k,v){try{localStorage.setItem('cifwl_'+k,JSON.stringify(v))}catch(e){}}};
-
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function safeUrl(u){return /^https?:\/\//i.test(u||'')?u:null}
-function fdate(iso){var d=/^\d{4}-\d{2}-\d{2}$/.test(iso||'')?new Date(iso+'T12:00:00'):new Date(iso);return isNaN(d)?'':MON[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear()}
-function wlabel(w){var d=new Date(w.release);return MON[d.getMonth()]+' '+d.getDate()}
+function pd(iso){return /^\d{4}-\d{2}-\d{2}$/.test(iso||'')?new Date(iso+'T12:00:00'):new Date(iso)}
+function fdate(iso){var d=pd(iso);return isNaN(d)?'':MS[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear()}
+function longDate(d){return DAYS[d.getDay()]+', '+MON[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear()}
 function fmt(n){return (Math.round(n*10)/10).toLocaleString(undefined,{maximumFractionDigits:1})}
-function toast(t){var e=$('toast');e.textContent=t;e.classList.add('on');setTimeout(function(){e.classList.remove('on')},1800)}
+function toast(t){var e=$('toast');e.textContent=t;e.classList.add('on');setTimeout(function(){e.classList.remove('on')},2000)}
+function rel(w){return new Date(w.release)}
 
-/* Next Monday 9:00 AM Eastern, used when the manifest does not say */
 function nextMonday9ET(after){
   var d=new Date(after.getTime());
   for(var i=0;i<9;i++){
-    var parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(d);
-    var o={};parts.forEach(function(p){o[p.type]=p.value});
-    if(o.weekday==='Mon'){
-      var guess=new Date(o.year+'-'+o.month+'-'+o.day+'T14:00:00Z');
-      var h=+new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',hour:'numeric',hour12:false}).format(guess);
-      guess=new Date(guess.getTime()+(9-h)*3600e3);
-      if(guess>after) return guess;
-    }
+    var o={};new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(d).forEach(function(p){o[p.type]=p.value});
+    if(o.weekday==='Mon'){var g=new Date(o.year+'-'+o.month+'-'+o.day+'T14:00:00Z');var h=+new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',hour:'numeric',hour12:false}).format(g);g=new Date(g.getTime()+(9-h)*3600e3);if(g>after)return g}
     d=new Date(d.getTime()+864e5);
-  }
-  return null;
+  }return null;
 }
-
+function nextAt(){var n=new Date();return (nextRelease&&nextRelease>n)?nextRelease:nextMonday9ET(n)}
 function tick(){
-  var now=new Date(), t=nextRelease;
-  if(!t||t<=now){t=nextMonday9ET(now)}
-  var s=Math.max(0,Math.floor((t-now)/1000)),dd=Math.floor(s/86400);s%=86400;
-  var h=Math.floor(s/3600),m=Math.floor(s%3600/60),sec=s%60;
-  $('clk').textContent=dd+'d '+String(h).padStart(2,'0')+'h '+String(m).padStart(2,'0')+'m '+String(sec).padStart(2,'0')+'s';
-  $('clkDate').textContent='Monday, '+MON[t.getMonth()]+' '+t.getDate()+' at 9:00 AM Eastern';
-  if(t-now<1000) setTimeout(function(){location.reload()},1500);
+  var now=new Date(),t=nextAt(),s=Math.max(0,Math.floor((t-now)/1000)),d=Math.floor(s/86400);s%=86400;
+  $('clk').textContent=d+'d '+String(Math.floor(s/3600)).padStart(2,'0')+'h '+String(Math.floor(s%3600/60)).padStart(2,'0')+'m '+String(s%60).padStart(2,'0')+'s';
+  if(t-now<1000)setTimeout(function(){location.reload()},1500);
 }
-
-function load(file){
-  if(cache[file]) return Promise.resolve(cache[file]);
-  return fetch(DATA+file,{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){cache[file]=j;return j});
-}
+function load(f){if(cache[f])return Promise.resolve(cache[f]);return fetch(DATA+f,{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){cache[f]=j;return j})}
 
 function init(){
+  $('todayStr').textContent=longDate(new Date());
   fetch(DATA+'manifest.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():{weeks:[]}}).catch(function(){return{weeks:[]}}).then(function(m){
-    var now=new Date();
-    var all=(m.weeks||[]).slice().sort(function(a,b){return new Date(a.release)-new Date(b.release)});
-    weeks=all.filter(function(w){return new Date(w.release)<=now});
-    var future=all.filter(function(w){return new Date(w.release)>now})[0];
-    nextRelease=future?new Date(future.release):(m.next_release?new Date(m.next_release):null);
-    if(nextRelease&&nextRelease<=now) nextRelease=null;
-    tick(); setInterval(tick,1000);
-    rail();
+    var now=new Date(),all=(m.weeks||[]).slice().sort(function(a,b){return rel(a)-rel(b)});
+    weeks=all.filter(function(w){return rel(w)<=now});
+    var fut=all.filter(function(w){return rel(w)>now})[0];
+    nextRelease=fut?rel(fut):(m.next_release?new Date(m.next_release):null);
+    tick();setInterval(tick,1000);rail();
     if(!weeks.length){prelaunch();return}
-    var want=(location.hash.match(/week=([\d-]+)/)||[])[1];
+    var want=(location.hash.match(/edition=([\d-]+)/)||[])[1];
     var w=weeks.filter(function(x){return x.id===want})[0]||weeks[weeks.length-1];
     open(w.id);
   });
 }
-
 function rail(){
   var t=$('track');t.innerHTML='';
-  weeks.forEach(function(w,i){
-    var b=document.createElement('button');b.type='button';b.className='wk';b.dataset.id=w.id;
-    b.innerHTML='<span>Week '+(i+1)+'</span><b>'+esc(wlabel(w))+'</b>';
-    b.onclick=function(){open(w.id)};t.appendChild(b);
-  });
-  var s=document.createElement('button');s.type='button';s.className='wk sealed';s.setAttribute('aria-disabled','true');
-  var nr=nextRelease||nextMonday9ET(new Date());
-  s.innerHTML='<span>Week '+(weeks.length+1)+' · sealed</span><b>'+MON[nr.getMonth()]+' '+nr.getDate()+'</b>';
-  s.onclick=function(){toast('No peeking. This week opens Monday at 9 AM Eastern.')};
-  t.appendChild(s);
+  weeks.forEach(function(w,i){var d=rel(w),b=document.createElement('button');b.type='button';b.className='wk';b.dataset.id=w.id;b.innerHTML='No. '+(i+1)+'<b>'+MS[d.getMonth()]+' '+d.getDate()+'</b>';b.onclick=function(){open(w.id)};t.appendChild(b)});
+  var nr=nextAt(),s=document.createElement('button');s.type='button';s.className='wk sealed';s.setAttribute('aria-disabled','true');
+  s.innerHTML='No. '+(weeks.length+1)+' · sealed<b>'+MS[nr.getMonth()]+' '+nr.getDate()+'</b>';
+  s.onclick=function(){toast('Edition No. '+(weeks.length+1)+' goes to press Monday at 9:00 AM Eastern.')};t.appendChild(s);
 }
+function setEd(n,d){$('volStr').textContent='Vol. I · No. '+n;$('edStr').textContent='Edition of '+longDate(d)}
 
 function prelaunch(){
-  $('preLaunch').classList.remove('hide');
-  var nr=nextRelease||nextMonday9ET(new Date());
-  $('preLaunch').innerHTML='<div class="lbl">First edition</div><h2 style="margin:8px 0">The first ledger unseals '+MON[nr.getMonth()]+' '+nr.getDate()+'</h2><p class="sub" style="margin:0 auto">Fifty companies are being checked right now. Come back Monday at 9 AM Eastern to make your call and break the seal.</p>';
+  var nr=nextAt();setEd(1,nr);
+  $('edBody').classList.add('hide');$('sealArea').classList.add('hide');
+  $('leadKick').textContent='First edition';
+  $('leadH').textContent='The first edition goes to press '+DAYS[nr.getDay()]+', '+MON[nr.getMonth()]+' '+nr.getDate();
+  $('leadDeck').textContent='Fifty companies are being researched now, one at a time, across eight kinds of public records. At 9:00 AM Eastern the first ledger opens to everyone at the same moment. Until then, read below how the ledger works and why it was built.';
+  $('leadBy').textContent='By the Cold Ischemia Foundation research desk';
+  var lo=$('leadOpen');lo.classList.remove('hide');lo.innerHTML='<a class="linkbtn" href="#secD">Read about this ledger</a>';
 }
 
 function open(id){
   var w=weeks.filter(function(x){return x.id===id})[0];if(!w)return;
-  [].forEach.call(document.querySelectorAll('.wk'),function(b){b.setAttribute('aria-current',b.dataset.id===id?'true':'false');if(b.dataset.id===id)b.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'})});
-  history.replaceState(null,'','#week='+id);
+  [].forEach.call(document.querySelectorAll('.wk'),function(b){var on=b.dataset.id===id;b.setAttribute('aria-current',on?'true':'false');if(on)b.scrollIntoView({block:'nearest',inline:'center'})});
+  history.replaceState(null,'','#edition='+id);
   load(w.file).then(function(d){
-    cur={w:w,d:d,idx:weeks.indexOf(w)};
-    pat=null;grp='all';showAll=false;$('q').value='';
-    if(store.get('called_'+id)) reveal(); else seal();
-  }).catch(function(){toast('That week could not load. Try again in a minute.')});
+    cur={w:w,d:d,idx:weeks.indexOf(w)};pat=null;grp='all';tier='all';showAll=false;$('q').value='';
+    setEd(cur.idx+1,rel(w));
+    if(store.get('called_'+id))reveal(false);else seal();
+  }).catch(function(){toast('This edition could not load. Please try again shortly.')});
 }
 
-/* The seal: guess the week's number one before seeing the ledger */
+function ranked(cs,v){return cs.slice().filter(function(c){return v!=='per'||(c.group==='A'&&c.clinics>0)}).map(function(c){c._v=v==='per'?c.cci/c.clinics*100:c.cci;return c}).sort(function(a,b){return b._v-a._v||a.name.localeCompare(b.name)})}
+
 function seal(){
-  $('weekBody').classList.add('hide');$('sealBox').classList.remove('hide');
-  var cs=ranked(cur.d.companies,'cci');
-  var top=cs.slice(0,3), rest=cs.slice(3).sort(function(){return Math.random()-.5}).slice(0,3);
-  var opts=top.concat(rest).sort(function(){return Math.random()-.5});
-  var first=cur.idx===weeks.length-1;
-  $('sealLbl').textContent=(first?'This week':'Week '+(cur.idx+1))+' · '+wlabel(cur.w)+' · sealed';
-  $('sealH').textContent='Make your call first';
-  $('sealP').textContent='Which company do you think lands at number one? Pick one to break the seal.';
+  $('edBody').classList.add('hide');$('sealArea').classList.remove('hide');$('leadOpen').classList.add('hide');
+  var cs=ranked(cur.d.companies,'cci'),opts=cs.slice(0,3).concat(cs.slice(3).sort(function(){return Math.random()-.5}).slice(0,3)).sort(function(){return Math.random()-.5});
+  var latest=cur.idx===weeks.length-1;
+  $('leadKick').textContent=latest?'This week’s edition':'From the archive · No. '+(cur.idx+1);
+  $('leadH').textContent='Before you read the ledger, make your call';
+  $('leadDeck').textContent='Fifty companies were checked against federal and state records, court filings, recalls, investigative reporting and patient reports. Which one do you think tops this edition?';
+  $('leadBy').textContent='Edition No. '+(cur.idx+1)+' · Released '+longDate(rel(cur.w))+' at 9:00 AM Eastern';
   var p=$('picks');p.innerHTML='';
-  opts.forEach(function(c){
-    var b=document.createElement('button');b.type='button';b.className='pick';
-    b.innerHTML='<b>'+esc(c.name)+'</b><span>'+esc(GROUPS[c.group]?GROUPS[c.group][0]:'')+'</span>';
-    b.onclick=function(){call(c,b,cs[0])};p.appendChild(b);
-  });
-  streak();
-  $('skip').onclick=function(){store.set('called_'+cur.w.id,{skip:1});reveal()};
+  opts.forEach(function(c,i){var b=document.createElement('button');b.type='button';b.className='pick';b.innerHTML='<i>'+String.fromCharCode(65+i)+'</i><div><b>'+esc(c.name)+'</b><span>'+esc((GROUPS[c.group]||[''])[0])+'</span></div>';b.onclick=function(){call(c,b,cs[0])};p.appendChild(b)});
+  streak();$('skip').onclick=function(){store.set('called_'+cur.w.id,{skip:1});reveal(true)};
+  ['sItems','sNew','sFed','sCons'].forEach(function(k){$(k).textContent='—'});
 }
-function call(c,btn,winner){
-  var ok=c.id===winner.id, rec=store.get('record')||{r:0,n:0};
-  rec.n++;if(ok)rec.r++;store.set('record',rec);store.set('called_'+cur.w.id,{pick:c.id,ok:ok});
-  [].forEach.call($('picks').children,function(b){b.disabled=true});
-  btn.classList.add(ok?'right':'wrong');
-  $('sealH').innerHTML='<span class="verdict">'+(ok?'You called it.':'Not this week.')+'</span>';
-  $('sealP').textContent=winner.name+' tops the ledger with a score of '+fmt(winner.cci)+'. Opening the full ledger now.';
-  streak();
-  setTimeout(reveal,1700);
+function call(c,btn,win){
+  var ok=c.id===win.id,r=store.get('record')||{r:0,n:0};r.n++;if(ok)r.r++;store.set('record',r);store.set('called_'+cur.w.id,{pick:c.id,ok:ok});
+  [].forEach.call($('picks').children,function(b){b.disabled=true});btn.classList.add(ok?'right':'wrong');
+  $('leadH').innerHTML='<span class="verdict">'+(ok?'You called it.':'Not this time.')+'</span>';
+  $('leadDeck').textContent=win.name+' tops this edition with a Company Complaint Index of '+fmt(win.cci)+'. The full ledger is opening below.';
+  streak();setTimeout(function(){reveal(true)},1900);
 }
-function streak(){var r=store.get('record');$('streak').textContent=r&&r.n?'Your calls so far: '+r.r+' right out of '+r.n:''}
+function streak(){var r=store.get('record');$('streak').textContent=r&&r.n?'Your calls so far: '+r.r+' of '+r.n+' correct':''}
 
-function ranked(cs,v){
-  return cs.slice().filter(function(c){return v!=='per'||(c.group==='A'&&c.clinics>0)})
-    .map(function(c){c._v=v==='per'?c.cci/c.clinics*100:c.cci;return c})
-    .sort(function(a,b){return b._v-a._v||a.name.localeCompare(b.name)});
-}
-
-function reveal(){
-  $('sealBox').classList.add('hide');$('weekBody').classList.remove('hide');
-  var d=cur.d, items=[];d.companies.forEach(function(c){(c.items||[]).forEach(function(i){items.push(i)})});
-  count($('sItems'),items.length);
-  count($('sNew'),items.filter(function(i){return i.is_new}).length);
-  count($('sFed'),items.filter(function(i){return i.tier==='T1'||i.tier==='T2'}).length);
-  count($('sCons'),d.companies.filter(function(c){return c.consistent}).length);
+function reveal(scroll){
+  var d=cur.d,cs=ranked(d.companies,'cci'),top=cs[0],items=[];d.companies.forEach(function(c){(c.items||[]).forEach(function(i){items.push(i)})});
+  $('sealArea').classList.add('hide');$('edBody').classList.remove('hide');
+  var nn=items.filter(function(i){return i.is_new}).length,fed=items.filter(function(i){return i.tier==='T1'||i.tier==='T2'}).length;
+  $('leadKick').textContent=cur.idx===weeks.length-1?'This week’s edition':'From the archive · No. '+(cur.idx+1);
+  if(top){
+    $('leadH').textContent=top.name+' leads Edition No. '+(cur.idx+1)+' of The Watch List';
+    var t2=cs[1],t3=cs[2];
+    $('leadDeck').textContent='With a Company Complaint Index of '+fmt(top.cci)+(top.prev!=null?(top.cci>top.prev?', up '+fmt(top.cci-top.prev)+' from the last edition':top.cci<top.prev?', down '+fmt(top.prev-top.cci)+' from the last edition':', unchanged from the last edition'):'')+', '+top.name+' sits at the top of this week’s ledger'+(t2&&t3?', followed by '+t2.name+' and '+t3.name:'')+'. This edition records '+items.length+' documented items, '+nn+' of them new.';
+  }
+  var cal=store.get('called_'+cur.w.id);
+  $('leadBy').textContent='Edition No. '+(cur.idx+1)+' · Released '+longDate(rel(cur.w))+(cal&&cal.pick?' · Your call: '+(cal.ok?'correct':'missed'):'');
+  var lo=$('leadOpen');lo.classList.remove('hide');lo.innerHTML='<a class="linkbtn" href="#secA">Read the full ledger</a>';
+  count($('sItems'),items.length);count($('sNew'),nn);count($('sFed'),fed);count($('sCons'),d.companies.filter(function(c){return c.consistent}).length);
   groupChips();tierChips();board();feed();patterns();
+  if(scroll)setTimeout(function(){$('secA').scrollIntoView({behavior:'smooth'})},300);
 }
-
-function count(el,to){var s=performance.now(),from=0;function f(t){var p=Math.min(1,(t-s)/700);el.textContent=Math.round(from+(to-from)*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+function count(el,to){var s=performance.now();(function f(t){var p=Math.min(1,(t-s)/700);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s)}
 
 function groupChips(){
   var g=$('groups');g.innerHTML='';
-  [['all','All 50',null]].concat(Object.keys(GROUPS).map(function(k){return[k,GROUPS[k][0],GROUPS[k][1]]})).forEach(function(x){
-    var b=document.createElement('button');b.type='button';b.className='chip';b.setAttribute('aria-pressed',grp===x[0]?'true':'false');
-    if(x[2])b.style.setProperty('--c','var('+x[2]+')');
-    b.innerHTML=(x[2]?'<i></i>':'')+esc(x[1]);
-    b.onclick=function(){grp=x[0];pat=null;showAll=false;groupChips();patterns();board()};g.appendChild(b);
-  });
+  [['all','All sectors',null]].concat(Object.keys(GROUPS).map(function(k){return[k,GROUPS[k][0],GROUPS[k][1]]})).forEach(function(x){
+    var b=document.createElement('button');b.type='button';b.className='chip';b.setAttribute('aria-pressed',grp===x[0]?'true':'false');if(x[2])b.style.setProperty('--c','var('+x[2]+')');
+    b.innerHTML=(x[2]?'<i></i>':'')+esc(x[1]);b.onclick=function(){grp=x[0];pat=null;showAll=false;groupChips();patterns();board()};g.appendChild(b)});
 }
-
 function board(){
-  var q=$('q').value.trim().toLowerCase();
-  var cs=ranked(cur.d.companies,view);
-  var rankOf={};cs.forEach(function(c,i){rankOf[c.id]=i+1});
-  var list=cs.filter(function(c){
-    if(grp!=='all'&&c.group!==grp)return false;
-    if(pat&&pat.companies.indexOf(c.id)<0)return false;
-    if(q&&c.name.toLowerCase().indexOf(q)<0)return false;return true});
-  var filtered=grp!=='all'||pat||q;
-  var shown=(showAll||filtered)?list:list.slice(0,10);
-  var max=cs.length?cs[0]._v:1;
-  var b=$('board');b.innerHTML='';
-  if(!shown.length){b.innerHTML='<div class="empty">'+(view==='per'?'Per-clinic scores apply to kidney care providers only.':'No companies match.')+'</div>'}
+  var q=$('q').value.trim().toLowerCase(),cs=ranked(cur.d.companies,view),rk={};cs.forEach(function(c,i){rk[c.id]=i+1});
+  var list=cs.filter(function(c){if(grp!=='all'&&c.group!==grp)return false;if(pat&&pat.companies.indexOf(c.id)<0)return false;if(q&&c.name.toLowerCase().indexOf(q)<0)return false;return true});
+  var filt=grp!=='all'||pat||q,shown=(showAll||filt)?list:list.slice(0,10),max=cs.length?cs[0]._v:1,b=$('board');b.innerHTML='';
+  if(!shown.length)b.innerHTML='<div class="empty">'+(view==='per'?'Per-clinic scores apply to kidney care providers only.':'No companies match this filter.')+'</div>';
   shown.forEach(function(c,i){
-    var r=document.createElement('button');r.type='button';var rk=rankOf[c.id];
-    r.className='row'+(rk<=3?' top':'');r.style.animationDelay=(i*35)+'ms';
-    var gc=GROUPS[c.group]?GROUPS[c.group][1]:'--muted';r.style.setProperty('--c','var('+gc+')');
-    var dlt=c.prev==null?null:c.cci-c.prev;
-    var dtxt=dlt==null?'<span class="dl flat">new</span>':dlt>0?'<span class="dl up">▲ '+fmt(dlt)+'</span>':dlt<0?'<span class="dl down">▼ '+fmt(-dlt)+'</span>':'<span class="dl flat">no change</span>';
-    r.innerHTML='<span class="rk num">'+rk+'</span><span class="nm"><b>'+esc(c.name)+'</b><span class="meta"><span class="tag g">'+esc(GROUPS[c.group]?GROUPS[c.group][0]:'')+'</span>'+(c.consistent?'<span class="tag cons">Consistent</span>':'')+(c.top_issue?'<span class="tag">'+esc(c.top_issue)+'</span>':'')+'</span><span class="barw"><span class="bar"></span></span></span><span class="sc"><b class="num">'+fmt(c._v)+'</b>'+(view==='cci'?dtxt:'<span class="dl flat">per 100 clinics</span>')+'</span>';
+    var r=document.createElement('button'),n=rk[c.id],gc=(GROUPS[c.group]||[0,'--muted'])[1],dl=c.prev==null?null:c.cci-c.prev;
+    r.type='button';r.className='row'+(n<=3?' top':'');r.style.animationDelay=(i*30)+'ms';r.style.setProperty('--c','var('+gc+')');
+    var chg=view==='per'?'<span class="flat">per 100</span>':dl==null?'<span class="flat">First entry</span>':dl>0?'<span class="up">▲ '+fmt(dl)+'</span>':dl<0?'<span class="down">▼ '+fmt(-dl)+'</span>':'<span class="flat">No change</span>';
+    r.innerHTML='<span class="rk num">'+n+'</span><span class="cn"><b>'+esc(c.name)+'</b><div class="meta">'+(c.consistent?'<span class="flag">Consistent</span>':'')+(c.top_issue?'<span class="issue">'+esc(c.top_issue)+'</span>':'')+'</div></span><span class="sector"><i></i>'+esc((GROUPS[c.group]||[''])[0])+'</span><span class="score"><b class="num">'+fmt(c._v)+'</b><span class="barw"><span class="bar"></span></span></span><span class="chg">'+chg+'</span>';
     r.onclick=function(){drawer(c)};b.appendChild(r);
-    var bar=r.querySelector('.bar');requestAnimationFrame(function(){requestAnimationFrame(function(){bar.style.width=(max?Math.max(2,c._v/max*100):0)+'%'})});
+    var bar=r.querySelector('.bar');requestAnimationFrame(function(){requestAnimationFrame(function(){bar.style.width=(max?Math.max(3,c._v/max*100):0)+'%'})});
   });
-  var m=$('more');m.classList.toggle('hide',filtered||list.length<=10);m.textContent=showAll?'Show top 10':'Show all '+list.length;
+  var m=$('more');m.classList.toggle('hide',!!filt||list.length<=10);m.textContent=showAll?'Show the top 10':'Show all '+list.length+' companies';
 }
-
-function itemCard(i,co){
+function brief(i,co){
   var s=STAT[i.status]?i.status:'alleged',u=safeUrl(i.url),t=TIERS[i.tier]?i.tier:'T8';
-  return '<article class="item" style="--tc:var('+TIERC[t]+')">'+(co?'<span class="co">'+esc(co)+'</span>':'')+'<h4>'+esc(i.title)+'</h4><p>'+esc(i.summary)+'</p><div class="meta"><span class="st '+s+'">'+esc(STAT[s][0])+'</span><span class="tag">'+esc(TIERS[t][0])+'</span>'+(i.date?'<span class="tag">'+esc(fdate(i.date))+'</span>':'')+(i.is_new?'<span class="tag" style="color:var(--gold);border-color:var(--gold)">New</span>':'')+'</div>'+(u?'<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">Read the source ↗</a>':'')+'</article>';
+  return '<article class="brief" style="--tc:var('+TIERC[t]+')"><div class="k">'+esc(TIERS[t][0])+(i.is_new?' · New':'')+'</div><h4>'+esc(i.title)+'</h4>'+(co?'<div class="co">'+esc(co)+'</div>':'')+'<p>'+esc(i.summary)+'</p><div><span class="st '+s+'">'+esc(STAT[s][0])+'</span><span class="dl">'+esc(fdate(i.date))+(i.issue?' · '+esc(i.issue):'')+'</span></div>'+(u?'<div style="margin-top:6px"><a class="src" href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">Read the source ↗</a></div>':'')+'</article>';
 }
-
 function tierChips(){
   var used={};cur.d.companies.forEach(function(c){(c.items||[]).forEach(function(i){if(i.is_new)used[i.tier]=1})});
   var g=$('tiers');g.innerHTML='';
-  ['all'].concat(Object.keys(TIERS).filter(function(k){return used[k]})).forEach(function(k){
-    var b=document.createElement('button');b.type='button';b.className='chip';b.setAttribute('aria-pressed',tier===k?'true':'false');
-    if(k!=='all')b.style.setProperty('--c','var('+TIERC[k]+')');
-    b.innerHTML=(k!=='all'?'<i></i>':'')+esc(k==='all'?'Everything new':TIERS[k][0]);
-    b.onclick=function(){tier=k;tierChips();feed()};g.appendChild(b);
-  });
+  ['all'].concat(Object.keys(TIERS).filter(function(k){return used[k]})).forEach(function(k){var b=document.createElement('button');b.type='button';b.className='chip';b.setAttribute('aria-pressed',tier===k?'true':'false');if(k!=='all')b.style.setProperty('--c','var('+TIERC[k]+')');b.innerHTML=(k!=='all'?'<i></i>':'')+esc(k==='all'?'All sources':TIERS[k][0]);b.onclick=function(){tier=k;tierChips();feed()};g.appendChild(b)});
 }
 function feed(){
-  var out=[];cur.d.companies.forEach(function(c){(c.items||[]).forEach(function(i){if(i.is_new&&(tier==='all'||i.tier===tier))out.push([i,c.name])})});
-  out.sort(function(a,b){return (TIERS[b[0].tier]||[0,0])[1]-(TIERS[a[0].tier]||[0,0])[1]});
-  $('feed').innerHTML=out.length?out.map(function(x){return itemCard(x[0],x[1])}).join(''):'<div class="empty">Nothing new turned up in this sweep. Older items still count toward each score.</div>';
+  var o=[];cur.d.companies.forEach(function(c){(c.items||[]).forEach(function(i){if(i.is_new&&(tier==='all'||i.tier===tier))o.push([i,c.name])})});
+  o.sort(function(a,b){return ((TIERS[b[0].tier]||[0,0])[1]-(TIERS[a[0].tier]||[0,0])[1])||((b[0].points||0)-(a[0].points||0))});
+  $('feed').innerHTML=o.length?o.map(function(x){return brief(x[0],x[1])}).join(''):'<div class="empty">Nothing new appeared in this week’s sweep. Earlier items still count toward each score.</div>';
 }
-
 function patterns(){
-  var ps=cur.d.patterns||[],box=$('pats');box.innerHTML='';
-  if(!ps.length){box.innerHTML='<div class="empty">No cross-company patterns this week.</div>';return}
-  var byId={};cur.d.companies.forEach(function(c){byId[c.id]=c});
-  ps.forEach(function(p){
-    var b=document.createElement('button');b.type='button';b.className='pat';b.setAttribute('aria-pressed',pat===p?'true':'false');
-    b.innerHTML='<b>'+esc(p.issue)+'</b><span class="dots">'+p.companies.map(function(id){var c=byId[id];return c?'<i title="'+esc(c.name)+'" style="--c:var('+(GROUPS[c.group]||[0,'--muted'])[1]+')"></i>':''}).join('')+'</span><span>'+p.companies.length+' companies · '+(p.count||p.companies.length)+' items</span>';
-    b.onclick=function(){pat=pat===p?null:p;grp='all';groupChips();patterns();board();document.getElementById('hBoard').scrollIntoView({behavior:'smooth'})};
-    box.appendChild(b);
-  });
+  var ps=cur.d.patterns||[],box=$('pats'),by={};box.innerHTML='';cur.d.companies.forEach(function(c){by[c.id]=c});
+  if(!ps.length){box.innerHTML='<div class="empty">No cross-company patterns in this edition.</div>';return}
+  ps.forEach(function(p){var b=document.createElement('button');b.type='button';b.className='pat';b.setAttribute('aria-pressed',pat===p?'true':'false');
+    b.innerHTML='<h4>'+esc(p.issue)+'</h4><span class="dots">'+p.companies.map(function(id){var c=by[id];return c?'<i title="'+esc(c.name)+'" style="--c:var('+(GROUPS[c.group]||[0,'--muted'])[1]+')"></i>':''}).join('')+'</span><span>'+p.companies.length+' companies · '+(p.count||p.companies.length)+' items</span>';
+    b.onclick=function(){pat=pat===p?null:p;grp='all';groupChips();patterns();board();$('secA').scrollIntoView({behavior:'smooth'})};box.appendChild(b)});
 }
-
 function drawer(c){
-  $('dGroup').textContent=GROUPS[c.group]?GROUPS[c.group][0]:'';
-  $('dName').textContent=c.name;$('dCci').textContent=fmt(c.cci);
-  $('dDelta').textContent=c.prev==null?'—':(c.cci-c.prev>0?'+':'')+fmt(c.cci-c.prev);
-  $('dCount').textContent=(c.items||[]).length;
-  $('dTags').innerHTML=(c.consistent?'<span class="tag cons">Consistent</span>':'')+(c.top_issue?'<span class="tag">Top issue: '+esc(c.top_issue)+'</span>':'')+(c.group==='A'&&c.clinics?'<span class="tag">'+esc(c.clinics.toLocaleString())+' US clinics</span>':'')+(c.note?'<span class="tag">'+esc(c.note)+'</span>':'');
+  $('dGroup').textContent=(GROUPS[c.group]||[''])[0];$('dName').textContent=c.name;$('dCci').textContent=fmt(c.cci);
+  $('dDelta').textContent=c.prev==null?'—':(c.cci-c.prev>0?'+':'')+fmt(c.cci-c.prev);$('dCount').textContent=(c.items||[]).length;
+  var m=[];if(c.consistent)m.push('<span class="flag">Consistent</span>');if(c.top_issue)m.push('Most frequent issue: '+esc(c.top_issue));if(c.group==='A'&&c.clinics)m.push(esc(c.clinics.toLocaleString())+' US clinics');if(c.note)m.push(esc(c.note));
+  $('dTags').innerHTML=m.join(' &nbsp;·&nbsp; ');
   var its=(c.items||[]).slice().sort(function(a,b){return (b.points||0)-(a.points||0)});
-  $('dItems').innerHTML=its.length?its.map(function(i){return itemCard(i)}).join(''):'<div class="empty">No documented items this week.</div>';
-  $('dSpark').innerHTML='';
-  $('ov').classList.add('open');document.body.style.overflow='hidden';$('dClose').focus();
-  var upto=weeks.slice(0,cur.idx+1);
-  Promise.all(upto.map(function(w){return load(w.file).catch(function(){return null})})).then(function(ds){
-    var pts=ds.map(function(d){if(!d)return null;var x=d.companies.filter(function(y){return y.id===c.id})[0];return x?x.cci:null});
-    spark(pts);
-  });
+  $('dItems').innerHTML=its.length?its.map(function(i){return brief(i)}).join(''):'<div class="empty">No documented items in this edition.</div>';
+  $('dSpark').innerHTML='';$('ov').classList.add('open');document.body.style.overflow='hidden';$('dClose').focus();
+  Promise.all(weeks.slice(0,cur.idx+1).map(function(w){return load(w.file).catch(function(){return null})})).then(function(ds){spark(ds.map(function(d){if(!d)return null;var x=d.companies.filter(function(y){return y.id===c.id})[0];return x?x.cci:null}))});
 }
 function spark(pts){
   var svg=$('dSpark'),v=pts.filter(function(p){return p!=null});
-  if(v.length<2){svg.innerHTML='<text x="150" y="40" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="currentColor" opacity=".6">Trend appears after two weeks</text>';return}
-  var mx=Math.max.apply(null,v)||1,n=pts.length,step=n>1?290/(n-1):0,d='',dots='';
-  pts.forEach(function(p,i){if(p==null)return;var x=5+i*step,y=64-p/mx*56;d+=(d?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);dots+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="3" fill="var(--gold)"/>'});
-  svg.innerHTML='<path d="'+d+'" fill="none" stroke="var(--gold)" stroke-width="2" vector-effect="non-scaling-stroke"/>'+dots;
+  if(v.length<2){svg.innerHTML='<text x="150" y="40" text-anchor="middle" font-family="Libre Franklin,Arial,sans-serif" font-size="11" fill="currentColor">The trend line appears after two editions</text>';return}
+  var mx=Math.max.apply(null,v)||1,st=pts.length>1?290/(pts.length-1):0,d='',dots='';
+  pts.forEach(function(p,i){if(p==null)return;var x=5+i*st,y=64-p/mx*56;d+=(d?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);dots+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="3" fill="var(--red)"/>'});
+  svg.innerHTML='<path d="'+d+'" fill="none" stroke="var(--ink)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>'+dots;
 }
 function closeD(){$('ov').classList.remove('open');document.body.style.overflow=''}
 $('dClose').onclick=closeD;$('ov').onclick=function(e){if(e.target===$('ov'))closeD()};
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeD()});
-
-/* Controls */
 [].forEach.call(document.querySelectorAll('.seg button'),function(b){b.onclick=function(){view=b.dataset.v;[].forEach.call(document.querySelectorAll('.seg button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});board()}});
-$('q').oninput=board;
-$('more').onclick=function(){showAll=!showAll;board()};
-$('share').onclick=function(){
-  var url=location.href,title='The Watch List · Cold Ischemia Foundation';
-  if(navigator.share){navigator.share({title:title,url:url}).catch(function(){})}
-  else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')})}
-};
+$('q').oninput=board;$('more').onclick=function(){showAll=!showAll;board()};
+$('share').onclick=function(){var u=location.href,t='The Watch List · Cold Ischemia Foundation';if(navigator.share)navigator.share({title:t,url:u}).catch(function(){});else if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){toast('Link copied')})};
 
-/* Score calculator */
+$('tierRows').innerHTML=Object.keys(TIERS).map(function(k){return '<tr><td><b style="font-family:var(--sans);font-size:13px">'+esc(TIERS[k][0])+'</b><br><span style="color:var(--muted);font-size:13.5px">'+esc(TIERS[k][2])+'</span></td><td>'+TIERS[k][1]+'</td></tr>'}).join('');
 var calc={t:'T1',r:0,s:'final'};
 function opts(id,list,key){var box=$(id);box.innerHTML='';list.forEach(function(o){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=o[1];b.setAttribute('aria-pressed',calc[key]===o[0]?'true':'false');b.onclick=function(){calc[key]=o[0];opts(id,list,key);calcOut()};box.appendChild(b)})}
-function calcOut(){var w=TIERS[calc.t][1],r=REC[calc.r][1],s=STAT[calc.s][1],p=w*r*s;var el=$('cOut'),from=parseFloat(el.textContent)||0,st=performance.now();(function f(t){var k=Math.min(1,(t-st)/400);el.textContent=fmt(from+(p-from)*k);if(k<1)requestAnimationFrame(f)})(st);$('cMath').textContent=w+' × '+r+' × '+s}
+function calcOut(){var w=TIERS[calc.t][1],r=REC[calc.r][1],s=STAT[calc.s][1],p=w*r*s,el=$('cOut'),from=parseFloat(el.textContent)||0,st=performance.now();(function f(t){var k=Math.min(1,(t-st)/400);el.textContent=fmt(from+(p-from)*k);if(k<1)requestAnimationFrame(f)})(st);$('cMath').textContent=w+' weight × '+r+' recency × '+s+' status'}
 opts('cT',Object.keys(TIERS).map(function(k){return[k,TIERS[k][0]+' · '+TIERS[k][1]]}),'t');
 opts('cR',REC.map(function(x,i){return[i,x[0]+' · ×'+x[1]]}),'r');
-opts('cS',Object.keys(STAT).map(function(k){return[k,STAT[k][0]+' · ×'+STAT[k][1]]}),'s');
-calcOut();
-
-init();
+opts('cS',Object.keys(STAT).map(function(k){return[k,STAT[k][2]+' · ×'+STAT[k][1]]}),'s');
+calcOut();init();
 })();
 </script>
 </body>
