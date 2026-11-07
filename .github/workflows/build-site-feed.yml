@@ -1,0 +1,49 @@
+# Rebuilds the site-wide release feed (feed.xml), the calendar data (feed.json) and the
+# calendar subscription (cif-week.ics) from each series' own data.
+# Runs on every push that touches a series, and every hour, so a release that opens at
+# 9:00 AM Eastern reaches the feed within the hour. No accounts, keys or sign-ups.
+name: Build site feed
+
+on:
+  schedule:
+    - cron: "3 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "watch-list/**"
+      - "serial/installments.json"
+      - "gatekeeper-files.html"
+      - "field-notes.html"
+      - "research-digest-feed.json"
+      - "_tools/build-site-feed.js"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-feed
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Build feed, calendar data and calendar subscription
+        run: node _tools/build-site-feed.js
+      - name: Check the feed is valid XML
+        run: python3 -c "import xml.dom.minidom as m; m.parse('feed.xml'); print('feed.xml is valid')"
+      - name: Save if anything changed
+        run: |
+          git config user.name "cif-feed-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add feed.xml feed.json cif-week.ics
+          if git diff --cached --quiet; then echo "No new releases."; exit 0; fi
+          git commit -m "Site feed: update $(date -u +'%Y-%m-%d %H:%M') UTC"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0; sleep 5; done
+          exit 1

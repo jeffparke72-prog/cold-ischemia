@@ -24,6 +24,7 @@ GROUPS = [
         ("demand-letters.html", "Demand Letters"),
         ("congress-scorecard.html", "Congress Scorecard"),
         ("accountability.html", "Accountability Atlas"),
+        ("watch-list.html", "The Watch List"),
     ]),
     ("Learn", [
         ("gatekeeper-files.html", "The Gatekeeper Files"),
@@ -49,6 +50,8 @@ GROUPS = [
 ]
 TOOLKIT = ("projects.html", "Toolkit")
 SERVICES = ("services.html", "Services We Offer")
+WEEK = ("this-week.html", "This Week")
+FEED = "https://coldischemia.foundation/feed.xml"
 
 OLD_BLOCK = re.compile(r'<style id="cifnav-css">(.*?)</style>\s*<nav(?: id="nav")? class="cifnav".*?</nav>', re.S)
 NEW_BLOCK = re.compile(r'<!--CIFNAV-->(.*?)<!--/CIFNAV-->', re.S)
@@ -65,6 +68,7 @@ def render(page, tail, nav_id=False):
             '<div class="cn-dd" role="menu">%s</div></div>' % (' on' if active else '', label, links))
     return (
         '<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css">'
+        '<link rel="alternate" type="application/rss+xml" title="Cold Ischemia Foundation · This Week" href="%s">'
         '<style id="cifnav-pos">%s</style>'
         '<nav%s class="cifnav" aria-label="Main">'
         '<a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" '
@@ -72,9 +76,10 @@ def render(page, tail, nav_id=False):
         '<button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu">'
         '<span></span><span></span><span></span></button>'
         '<div class="cn-menu" id="cn-menu"><div class="cn-m">%s</div>'
-        '<div class="cn-r"><a href="%s" class="cn-t cn-s"%s>%s</a><a href="%s" class="cn-t"%s>%s</a></div></div>'
-        '</nav><script src="cif-nav.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->'
-    ) % (tail, ' id="nav"' if nav_id else '', ''.join(groups),
+        '<div class="cn-r"><a href="%s" class="cn-t cn-wk"%s>%s</a><a href="%s" class="cn-t cn-s"%s>%s</a><a href="%s" class="cn-t"%s>%s</a></div></div>'
+        '</nav><script src="cif-nav.js" defer></script><script src="cif-week.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->'
+    ) % (FEED, tail, ' id="nav"' if nav_id else '', ''.join(groups),
+         WEEK[0], ' aria-current="page"' if page == WEEK[0] else '', WEEK[1],
          SERVICES[0], ' aria-current="page"' if page == SERVICES[0] else '', SERVICES[1],
          TOOLKIT[0], ' aria-current="page"' if page == TOOLKIT[0] else '', TOOLKIT[1])
 

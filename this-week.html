@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>This Week | Cold Ischemia Foundation</title>
+<meta name="description" content="One calendar for every Cold Ischemia Foundation release: The Inside Files on Sundays, The Watch List on Mondays, The Gatekeeper Files on Thursdays. Get each one the moment it opens.">
+<meta property="og:title" content="This Week | Cold Ischemia Foundation">
+<meta property="og:description" content="Sundays: The Inside Files. Mondays: The Watch List. Thursdays: The Gatekeeper Files. One calendar, live countdowns, and alerts the moment each opens.">
+<meta property="og:image" content="https://coldischemia.foundation/cold-ischemia-logo.png">
+<link rel="alternate" type="application/rss+xml" title="Cold Ischemia Foundation · This Week" href="https://coldischemia.foundation/feed.xml">
+<style>
+/* This Week: the foundation's release calendar. Night-desk palette: ink black, newsprint text, one gold for time,
+   and one color per series (Inside Files teal, Watch List red, Gatekeeper Files gold). */
+@font-face{font-family:"PF";src:url(fonts/playfairdisplay-900-normal.woff2) format("woff2");font-weight:900;font-display:swap}
+@font-face{font-family:"PFi";src:url(fonts/playfairdisplay-400-italic.woff2) format("woff2");font-style:italic;font-display:swap}
+@font-face{font-family:"CP";src:url(fonts/crimsonpro-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"CP";src:url(fonts/crimsonpro-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Plex";src:url(fonts/ibmplexmono-500-normal.woff2) format("woff2");font-display:swap}
+:root{--ink:#06080d;--sheet:#0b111b;--raise:#101826;--line:#1f2a3b;--line2:#2c3a51;--txt:#ece6d9;--mut:#949db0;--gold:#C9A84C;--gold2:#e4c66d;
+  --inside:#4fb3a6;--watch:#e0574f;--gate:#C9A84C;--notes:#d98a2b;--digest:#8fa8d8;
+  --serif:"CP",Georgia,serif;--head:"PF",Georgia,serif;--mono:"Plex",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--ink);color:var(--txt);font-family:var(--serif);font-size:18px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-right,0px)) 90px max(18px,env(safe-area-inset-left,0px))}
+.k{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.mut{color:var(--mut)}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3{margin:0;font-family:var(--head);font-weight:900;line-height:1.04;text-wrap:balance}
+.hide{display:none!important}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:stretch;padding:46px 0 34px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(56px,9vw,112px);letter-spacing:-.02em;margin:14px 0 16px}
+.hero h1 em{font-family:"PFi",Georgia,serif;font-style:italic;font-weight:400;color:var(--gold)}
+.dek{font-size:20px;color:#cfc8b9;max-width:34em;margin:0 0 22px}
+.rhythm{display:flex;gap:8px;flex-wrap:wrap}
+.rh{text-decoration:none;color:inherit;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line2);padding:7px 11px}
+.rh i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.rh b{color:var(--txt);font-weight:500}
+.rh span{color:var(--mut)}
+
+.nextcard{position:relative;overflow:hidden;border:1px solid var(--line2);background:radial-gradient(130% 120% at 100% 0%,color-mix(in srgb,var(--c,var(--gold)) 22%,transparent),transparent 60%),var(--sheet);padding:24px 24px 22px;display:flex;flex-direction:column;gap:14px;justify-content:space-between}
+.nextcard::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:var(--c,var(--gold))}
+.nc-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.nc-series{font-family:var(--head);font-size:clamp(26px,3.2vw,34px);line-height:1.05}
+.nc-when{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--mut)}
+.nc-teaser{font-size:17px;color:#cfc8b9;margin:0}
+.clock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.cell{background:var(--ink);border:1px solid var(--line2);padding:10px 4px 8px;text-align:center;position:relative;overflow:hidden}
+.cell b{display:block;font-family:var(--head);font-size:clamp(34px,4.6vw,54px);line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.cell span{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.cell b.tick{animation:drop .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes drop{from{transform:translateY(-35%);opacity:.2}to{transform:none;opacity:1}}
+.nc-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;border:1px solid var(--line2);text-decoration:none;transition:border-color .15s,background .15s,color .15s}
+.btn:hover{border-color:var(--gold);color:var(--gold2)}
+.btn.solid{background:var(--gold);border-color:var(--gold);color:#14110a}
+.btn.solid:hover{background:var(--gold2);color:#14110a}
+.btn svg{width:14px;height:14px}
+.live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.live i{width:7px;height:7px;border-radius:50%;background:#4fdc8f;box-shadow:0 0 0 0 rgba(79,220,143,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(79,220,143,0)}100%{box-shadow:0 0 0 0 rgba(79,220,143,0)}}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+
+/* just released */
+.just{color:inherit;display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:22px 0 0;border:1px solid color-mix(in srgb,var(--c) 60%,transparent);background:color-mix(in srgb,var(--c) 10%,var(--sheet));padding:12px 16px;text-decoration:none}
+.just .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:var(--c);padding:4px 8px;flex:0 0 auto}
+.just b{font-family:var(--head);font-size:20px;line-height:1.2}
+.just span.go{margin-left:auto;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+
+/* section heads */
+.sec{padding-top:54px}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:18px}
+.sh h2{font-size:clamp(32px,4.6vw,48px)}
+.sh p{margin:6px 0 0;color:var(--mut);font-size:17px;max-width:42em}
+
+/* week board */
+.wnav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.wnav button{border:1px solid var(--line2);width:40px;height:40px;display:grid;place-items:center;font-size:18px}
+.wnav button:hover:not(:disabled){border-color:var(--gold);color:var(--gold)}
+.wnav button:disabled{opacity:.3;cursor:default}
+.wnav .wl{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;min-width:14ch;text-align:center}
+.wnav .back{width:auto;padding:0 12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.board{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;position:relative}
+.day{min-width:0;background:var(--sheet);border:1px solid var(--line);min-height:300px;display:flex;flex-direction:column;position:relative;transition:border-color .2s}
+.day.today{border-color:var(--gold);box-shadow:inset 0 0 0 1px rgba(201,168,76,.35)}
+.day.past{background:#090d15}
+.dh{padding:10px 11px 9px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:6px}
+.dh .dn{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.dh .dd{font-family:var(--head);font-size:26px;line-height:1}
+.day.today .dn{color:var(--gold)}
+.day.past .dd{color:#6f788a}
+.todaytag{position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:#14110a;padding:3px 8px;white-space:nowrap}
+.nowline{position:absolute;left:0;right:0;height:2px;background:var(--gold);z-index:2;pointer-events:none}
+.nowline::before{content:"";position:absolute;left:-5px;top:-4px;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.dbody{padding:8px;display:flex;flex-direction:column;gap:8px;flex:1;position:relative}
+.quiet{margin:auto;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#4f596b;text-align:center}
+.rel{position:relative;border:1px solid color-mix(in srgb,var(--c) 45%,var(--line));background:linear-gradient(180deg,color-mix(in srgb,var(--c) 13%,var(--raise)),var(--raise));padding:11px 11px 12px;display:flex;flex-direction:column;gap:7px;text-align:left;width:100%;transition:transform .18s,border-color .18s,box-shadow .18s}
+.rel:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10px 26px -14px var(--c)}
+.rel::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--c)}
+.rel .s{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+.rel .t{font-family:var(--head);font-size:17px;line-height:1.15;overflow-wrap:anywhere}
+.rel .m{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--mut)}
+.chip{white-space:nowrap;align-self:flex-start;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--line2)}
+.chip.out{background:var(--c);border-color:var(--c);color:#0a0a0a}
+.chip.sealed{color:var(--txt)}
+.chip.verify{border-style:dashed;color:var(--mut)}
+.chip.read{border-color:#4fdc8f;color:#4fdc8f}
+.rel.sealed{background:repeating-linear-gradient(135deg,var(--raise) 0 9px,#0d1420 9px 18px)}
+.rel.sealed .t{color:#cfc8b9}
+.rel.verify{border-style:dashed;background:var(--raise)}
+.rel .cd{font-family:var(--mono);font-size:12px;color:#fff;font-variant-numeric:tabular-nums}
+.rel.fresh{animation:glow 2.4s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 1px var(--c),0 0 26px -6px var(--c)}}
+@media (max-width:980px){
+  .board{grid-template-columns:1fr;gap:6px}
+  .day{min-height:0;flex-direction:row}
+  .dh{flex-direction:column;justify-content:flex-start;align-items:flex-start;border-bottom:0;border-right:1px solid var(--line);width:78px;flex:0 0 78px}
+  .dbody{padding:8px}
+  .todaytag{top:auto;bottom:-1px;left:0;transform:none;font-size:8.5px;padding:2px 6px}
+  .nowline{display:none}
+  .quiet{margin:0;align-self:center;text-align:left}
+}
+
+/* detail panel */
+.ov{position:fixed;inset:0;z-index:5000;background:rgba(3,5,9,.72);display:none;align-items:center;justify-content:center;padding:18px}
+.ov.open{display:flex}
+.panel{width:min(560px,100%);max-height:calc(100vh - 36px);overflow:auto;background:var(--sheet);border:1px solid var(--line2);border-top:4px solid var(--c);padding:22px 22px 20px;animation:rise .25s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{transform:translateY(14px);opacity:0}}
+.panel .s{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--c)}
+.panel h3{font-size:clamp(26px,4vw,34px);margin:8px 0 10px}
+.panel p{margin:0 0 14px;color:#d6cfc1}
+.panel .meta{font-family:var(--mono);font-size:11.5px;color:var(--mut);letter-spacing:.06em;margin-bottom:14px}
+.panel .x{float:right;border:1px solid var(--line2);width:36px;height:36px;font-size:18px;margin:-6px -6px 0 10px}
+.panel .bigcd{font-family:var(--head);font-size:40px;line-height:1;margin:0 0 16px;font-variant-numeric:tabular-nums}
+
+/* your week */
+.yours{display:grid;grid-template-columns:auto minmax(0,1fr);gap:26px;align-items:center;border:1px solid var(--line);background:var(--sheet);padding:22px}
+.ring{width:132px;height:132px;position:relative}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .v{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.ring .v b{font-family:var(--head);font-size:40px;line-height:1}
+.ring .v span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.yours h3{font-size:28px;margin-bottom:6px}
+.yours p{margin:0 0 10px;color:#cfc8b9}
+.ticks{display:flex;gap:8px;flex-wrap:wrap}
+.tk{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line2);padding:6px 9px;color:var(--mut);text-decoration:none}
+.tk i{width:14px;height:14px;border:1.5px solid var(--c);border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:9px;color:#0a0a0a}
+.tk.done{color:var(--txt);border-color:color-mix(in srgb,var(--c) 60%,transparent)}
+.tk.done i{background:var(--c)}
+@media (max-width:620px){.yours{grid-template-columns:1fr;justify-items:start}}
+
+/* latest */
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.f{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line2);padding:6px 10px;color:var(--mut)}
+.f i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.f[aria-pressed="true"]{color:var(--txt);border-color:var(--gold);background:rgba(201,168,76,.08)}
+.list{border-top:1px solid var(--line)}
+.li{color:inherit;display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:16px;align-items:start;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:background .15s}
+.li:hover{background:rgba(255,255,255,.02)}
+.li .when{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--mut);padding-top:4px}
+.li .s{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--c)}
+.li h4{margin:4px 0 4px;font-family:var(--head);font-size:21px;line-height:1.2;font-weight:900}
+.li p{margin:0;color:#b9b2a4;font-size:16.5px}
+.li .go{font-family:var(--mono);font-size:18px;color:var(--c);padding-top:18px}
+@media (max-width:640px){.li{grid-template-columns:1fr;gap:4px}.li .go{display:none}}
+.more{margin:16px auto 0;display:block}
+
+/* alerts */
+.ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.way{min-width:0;border:1px solid var(--line);background:var(--sheet);padding:20px;display:flex;flex-direction:column;gap:12px}
+.way .n{font-family:var(--head);font-size:44px;line-height:1;color:var(--gold)}
+.way h3{font-size:24px}
+.way p{margin:0;color:#cfc8b9;font-size:16.5px}
+.way ol{margin:0;padding-left:18px;color:#cfc8b9;font-size:16px}
+.way ol li{margin-bottom:4px}
+.way .btns{display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.way .btn{justify-content:center}
+.copy{display:flex;border:1px solid var(--line2)}
+.copy code{flex:1;min-width:0;font-family:var(--mono);font-size:12.5px;padding:10px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#fff;background:var(--ink)}
+.copy button{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:0 12px;border-left:1px solid var(--line2);color:var(--gold)}
+.copy button:hover{background:rgba(201,168,76,.1)}
+.apps{font-family:var(--mono);font-size:11.5px;color:var(--mut);letter-spacing:.04em}
+.apps a{color:var(--txt)}
+@media (max-width:900px){.ways{grid-template-columns:1fr}}
+
+/* schedule + faq */
+.sched{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.sc{color:inherit;background:var(--sheet);padding:18px;display:flex;flex-direction:column;gap:6px;text-decoration:none;position:relative}
+.sc::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--c)}
+.sc .d{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--c)}
+.sc h3{font-size:24px}
+.sc p{margin:0;color:#b9b2a4;font-size:16px}
+.sc .p{font-family:var(--mono);font-size:11px;color:var(--mut);letter-spacing:.06em;margin-top:auto}
+.sc:hover h3{color:var(--c)}
+@media (max-width:800px){.sched{grid-template-columns:1fr}}
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:14px 30px 14px 0;font-family:var(--head);font-size:20px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:12px;font-family:var(--mono);font-size:20px;color:var(--gold)}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:0 0 14px;color:#cfc8b9;font-size:17px}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(10px);background:var(--gold);color:#14110a;font-family:var(--mono);font-size:12px;letter-spacing:.08em;padding:10px 16px;z-index:5001;opacity:0;transition:.2s;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><link rel="alternate" type="application/rss+xml" title="Cold Ischemia Foundation · This Week" href="https://coldischemia.foundation/feed.xml"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a><a href="watch-list.html" role="menuitem">The Watch List</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="gatekeeper-files.html" role="menuitem">The Gatekeeper Files</a><a href="test-your-knowledge.html" role="menuitem">Test Your Knowledge</a><a href="living-donor-guide.html" role="menuitem">Free Donor Guide (PDF)</a><a href="research-digest.html" role="menuitem">Research Digest</a><a href="inside-files.html" role="menuitem">The Inside Files</a><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-hub.html" role="menuitem">Living Donor Hub</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="kidney-transplant-centers.html" role="menuitem">Kidney Transplant Centers by State</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="this-week.html" class="cn-t cn-wk" aria-current="page">This Week</a><a href="services.html" class="cn-t cn-s">Services We Offer</a><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-week.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+<main class="wrap">
+
+  <section class="hero">
+    <div>
+      <div class="k">Cold Ischemia Foundation · Release calendar</div>
+      <h1>This <em>Week</em></h1>
+      <p class="dek">Three investigations, three days, one rhythm. Every release opens at a set time, for everyone at once. This calendar shows what is out, what is sealed, and exactly how long until it opens.</p>
+      <div class="rhythm">
+        <a class="rh" href="inside-files.html" style="--c:var(--inside)"><i></i><b>Sunday</b><span>The Inside Files</span></a>
+        <a class="rh" href="watch-list.html" style="--c:var(--watch)"><i></i><b>Monday</b><span>The Watch List</span></a>
+        <a class="rh" href="gatekeeper-files.html" style="--c:var(--gate)"><i></i><b>Thursday</b><span>The Gatekeeper Files</span></a>
+      </div>
+      <a class="just hide" id="just"></a>
+    </div>
+    <aside class="nextcard" id="nextcard" aria-live="polite">
+      <div class="nc-top"><span class="k" id="ncK">Next to open</span><span class="live"><i></i>Live</span></div>
+      <div>
+        <div class="nc-series" id="ncS">Loading the calendar</div>
+        <div class="nc-when" id="ncW"></div>
+      </div>
+      <p class="nc-teaser" id="ncT"></p>
+      <div class="clock" id="clock">
+        <div class="cell"><b id="cD">--</b><span>Days</span></div>
+        <div class="cell"><b id="cH">--</b><span>Hours</span></div>
+        <div class="cell"><b id="cM">--</b><span>Minutes</span></div>
+        <div class="cell"><b id="cS">--</b><span>Seconds</span></div>
+      </div>
+      <div class="nc-actions">
+        <button class="btn solid" id="ncRemind" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Remind me</button>
+        <a class="btn" href="#alerts">Get every release</a>
+      </div>
+    </aside>
+  </section>
+
+  <section class="sec" id="cal" aria-labelledby="hCal">
+    <div class="sh">
+      <div><h2 id="hCal">The week</h2><p>Gold marks today and the moment you are in. Tap any release to read it, or to set a reminder for one that is still sealed. You can look back at any week; the weeks ahead stay sealed.</p></div>
+      <div class="wnav"><button type="button" id="wPrev" aria-label="Previous week">‹</button><span class="wl" id="wLbl"></span><button type="button" id="wNext" aria-label="Next week">›</button><button type="button" class="back hide" id="wNow">Back to this week</button></div>
+    </div>
+    <div class="board" id="board"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="hYou">
+    <div class="yours">
+      <div class="ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="#1f2a3b" stroke-width="10"/><circle id="ringArc" cx="60" cy="60" r="52" fill="none" stroke="#C9A84C" stroke-width="10" stroke-linecap="butt" stroke-dasharray="326.7" stroke-dashoffset="326.7" style="transition:stroke-dashoffset 1s cubic-bezier(.2,.8,.2,1)"/></svg><div class="v"><b class="num" id="ringN">0</b><span id="ringL">of 0 read</span></div></div>
+      <div>
+        <div class="k">Your week</div>
+        <h3 id="hYou">Keep up with every release</h3>
+        <p id="youP">Open a release from this calendar and it is checked off here. Your progress is saved only in this browser, on this device.</p>
+        <div class="ticks" id="ticks"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="latest" aria-labelledby="hLat">
+    <div class="sh"><div><h2 id="hLat">Latest releases</h2><p>Everything the foundation has published, newest first. This list is the same one that goes out through the feed.</p></div></div>
+    <div class="filters" id="filters"></div>
+    <div class="list" id="list"></div>
+    <button class="btn more hide" id="more" type="button">Show more</button>
+  </section>
+
+  <section class="sec" id="alerts" aria-labelledby="hAl">
+    <div class="sh"><div><h2 id="hAl">Get each release the moment it opens</h2><p>Three ways, all free, none of which ask you to create an account with us. Pick the one that fits how you already get your news.</p></div></div>
+    <div class="ways">
+      <div class="way">
+        <div class="n">1</div>
+        <h3>On your calendar</h3>
+        <p>Subscribe once and every release appears on your phone or computer calendar, with an alert at the minute it opens. New releases are added automatically.</p>
+        <div class="btns">
+          <a class="btn solid" id="calApple" href="webcal://coldischemia.foundation/cif-week.ics">iPhone, iPad or Mac</a>
+          <a class="btn" id="calGoogle" href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fcoldischemia.foundation%2Fcif-week.ics" target="_blank" rel="noopener">Google Calendar</a>
+          <a class="btn" href="cif-week.ics" download="cold-ischemia-releases.ics">Outlook or other (download)</a>
+        </div>
+      </div>
+      <div class="way">
+        <div class="n">2</div>
+        <h3>In a news or feed app</h3>
+        <p>Copy the address below and add it to any feed reader. Each release arrives as its own story with a link straight to it.</p>
+        <div class="copy"><code id="feedUrl">https://coldischemia.foundation/feed.xml</code><button type="button" id="copyFeed">Copy</button></div>
+        <ol><li>Copy the address.</li><li>In your reader, choose Add or Follow, then paste it.</li></ol>
+        <div class="apps">Works with <a href="https://feedly.com" target="_blank" rel="noopener">Feedly</a>, <a href="https://www.inoreader.com" target="_blank" rel="noopener">Inoreader</a>, <a href="https://netnewswire.com" target="_blank" rel="noopener">NetNewsWire</a>, Outlook and most news apps.</div>
+        <div class="btns"><a class="btn" href="feed.xml" target="_blank" rel="noopener">Preview the feed</a></div>
+      </div>
+      <div class="way">
+        <div class="n">3</div>
+        <h3>In your email</h3>
+        <p>A free feed-to-email service watches the feed for you and sends each new release to your inbox.</p>
+        <ol><li>Copy the feed address from option 2.</li><li>Open <a href="https://blogtrottr.com" target="_blank" rel="noopener">Blogtrottr</a> and paste it.</li><li>Enter your email and choose how often you want it.</li></ol>
+        <div class="btns"><button class="btn" type="button" id="copyFeed2">Copy the feed address</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="hSch">
+    <div class="sh"><div><h2 id="hSch">The schedule</h2><p>Times are Eastern. Each series opens for everyone at the same moment, and every past release stays open.</p></div></div>
+    <div class="sched">
+      <a class="sc" href="inside-files.html" style="--c:var(--inside)"><span class="d">Sundays · Morning</span><h3>The Inside Files</h3><p>A serial investigation built from what insiders put on the public record, graded claim by claim against primary documents.</p><span class="p" id="pInside"></span></a>
+      <a class="sc" href="watch-list.html" style="--c:var(--watch)"><span class="d">Mondays · 9:00 AM</span><h3>The Watch List</h3><p>Fifty companies scored every week on enforcement actions, inspections, recalls, lawsuits and complaints, with every item sourced.</p><span class="p" id="pWatch"></span></a>
+      <a class="sc" href="gatekeeper-files.html" style="--c:var(--gate)"><span class="d">Thursdays · 9:00 AM</span><h3>The Gatekeeper Files</h3><p>Fifty-two weeks, fifty-two problems people with kidney disease run into, the hidden rule behind each one, and the fix.</p><span class="p" id="pGate"></span></a>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="hFaq">
+    <div class="sh"><div><h2 id="hFaq">Questions</h2></div></div>
+    <div class="faq">
+      <details><summary>How fast does a new release reach the feed and my calendar?</summary><p>This calendar updates the second a release opens. The feed is rebuilt automatically every hour and whenever new material is published, so feed readers and email services receive it within the hour. Calendar subscriptions show every scheduled release in advance, with an alert at opening time.</p></details>
+      <details><summary>Why can't I open a release early?</summary><p>Each release opens at a set time so that everyone, including patients, families, reporters and the companies named, sees it at the same moment. Past releases never close.</p></details>
+      <details><summary>What does "In verification" mean?</summary><p>An installment of The Inside Files is published only after the editor has checked its claims against the primary documents. When that takes longer than a week, the calendar says so plainly instead of counting down to a date we cannot promise.</p></details>
+      <details><summary>Do you collect my email or track me?</summary><p>No. The calendar subscription, the feed and the email service all work without giving us anything. Your "read" checkmarks live only in your own browser.</p></details>
+      <details><summary>Can I share a release?</summary><p>Yes. Every release has its own permanent link. Open it from this calendar and share the address from your browser.</p></details>
+    </div>
+  </section>
+</main>
+
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="pT"><div class="panel" id="panel"></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+'use strict';
+var $=function(id){return document.getElementById(id)};
+var view=null,filter='all',shown=10,W=null,lastClock={};
+var store={get:function(k){try{return JSON.parse(localStorage.getItem('cifwk_'+k))}catch(e){return null}},set:function(k,v){try{localStorage.setItem('cifwk_'+k,JSON.stringify(v))}catch(e){}}};
+function toast(t){var e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(function(){e.classList.remove('on')},2200)}
+function C(s){return W.SERIES[s]?W.SERIES[s].color:'#C9A84C'}
+function relKey(r){return r.series+':'+W.dayKey(r.date)}
+function isRead(r){return !!(store.get('read')||{})[relKey(r)]}
+function markRead(r){var m=store.get('read')||{};m[relKey(r)]=Date.now();store.set('read',m)}
+function ago(d){var s=(Date.now()-d)/1000;if(s<3600)return Math.max(1,Math.round(s/60))+' min ago';if(s<86400)return Math.round(s/3600)+' hr ago';var n=Math.round(s/86400);return n===1?'yesterday':n<14?n+' days ago':W.MON[W.parts(d).month-1]+' '+W.parts(d).day+', '+W.parts(d).year}
+function wsKey(ws){return ws.y*10000+ws.m*100+ws.d}
+var FIRST={y:2026,m:9,d:27};
+
+/* per-release reminder: a one-event calendar file made in the browser */
+function ics(r){
+  var z=function(d){return d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')};
+  var url='https://coldischemia.foundation/'+(r.url||'this-week.html').replace(/^https:\/\/coldischemia\.foundation\//,'');
+  var name=W.SERIES[r.series].name;
+  var body=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Cold Ischemia Foundation//This Week//EN','BEGIN:VEVENT','UID:'+relKey(r).replace(/\W/g,'-')+'@coldischemia.foundation','DTSTAMP:'+z(new Date()),'DTSTART:'+z(r.date),'DTEND:'+z(new Date(r.date.getTime()+18e5)),'SUMMARY:'+name+' opens: '+r.title.replace(/[,;]/g,' '),'DESCRIPTION:'+url,'URL:'+url,'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+name+' is out now','TRIGGER:PT0M','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([body],{type:'text/calendar'}));a.download=r.series+'-'+W.dayKey(r.date)+'.ics';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);
+  toast('Reminder file ready. Open it to add to your calendar.');
+}
+
+/* hero: next release */
+function hero(){
+  var now=new Date(),nx=W.next(now),card=$('nextcard');
+  if(!nx){$('ncK').textContent='This week';$('ncS').textContent='Every release this week is out';$('ncW').textContent='';$('ncT').textContent='Catch up below, or subscribe so the next one finds you.';$('clock').classList.add('hide');$('ncRemind').classList.add('hide');return}
+  card.style.setProperty('--c',C(nx.series));
+  $('ncS').textContent=W.SERIES[nx.series].name;
+  $('ncW').textContent=nx.title+' · '+W.nameTime(nx.date);
+  $('ncT').textContent=nx.summary||'';
+  $('ncRemind').onclick=function(){ics(nx)};
+  hero.nx=nx;
+}
+function clock(){
+  var nx=hero.nx;if(!nx)return;
+  var ms=nx.date-Date.now();if(ms<=0){render();return}
+  var c=W.countdown(ms),v={cD:String(c.d).padStart(2,'0'),cH:String(c.h).padStart(2,'0'),cM:String(c.m).padStart(2,'0'),cS:String(c.s).padStart(2,'0')};
+  Object.keys(v).forEach(function(k){var e=$(k);if(lastClock[k]!==v[k]){e.textContent=v[k];e.classList.remove('tick');void e.offsetWidth;e.classList.add('tick');lastClock[k]=v[k]}});
+}
+
+function just(){
+  var r=W.recent(new Date(),48)[0],el=$('just');
+  if(!r){el.classList.add('hide');return}
+  var d=r.d||r.date;el.classList.remove('hide');el.style.setProperty('--c',C(r.series));el.href=r.url;
+  el.innerHTML='<span class="tag">Just released</span><div><div class="k" style="color:'+C(r.series)+'">'+W.esc(W.SERIES[r.series].name)+' · '+ago(d)+'</div><b>'+W.esc(r.title)+'</b></div><span class="go">Read it now →</span>';
+}
+
+/* the week board */
+function board(){
+  var now=new Date(),cur=W.weekStart(now),rel=W.week(view,now),todayK=W.dayKey(now),b=$('board'),p=W.parts(now);
+  var a=W.dayOf(view,0),z=W.dayOf(view,6);
+  $('wLbl').textContent=W.MON[a.m-1]+' '+a.d+' – '+(z.m!==a.m?W.MON[z.m-1]+' ':'')+z.d;
+  var isCur=wsKey(view)===wsKey(cur);
+  $('wNow').classList.toggle('hide',isCur);
+  $('wPrev').disabled=wsKey(view)<=wsKey(FIRST);
+  $('wNext').disabled=wsKey(view)>=wsKey(W.shiftWeek(cur,4));
+  b.innerHTML='';
+  var wts=[];for(var q=0;q<7;q++){var qd=W.dayOf(view,q),qk=qd.y*10000+qd.m*100+qd.d;wts.push(rel.some(function(r){return W.dayKey(r.date)===qk})?'minmax(0,1.9fr)':'minmax(0,1fr)')}
+  b.style.gridTemplateColumns=matchMedia('(max-width:980px)').matches?'':wts.join(' ');
+  for(var k=0;k<7;k++){
+    var dd=W.dayOf(view,k),key=dd.y*10000+dd.m*100+dd.d,evs=rel.filter(function(r){return W.dayKey(r.date)===key});
+    var day=document.createElement('div');day.className='day'+(key===todayK?' today':key<todayK?' past':'');
+    day.innerHTML=(key===todayK?'<span class="todaytag">Today</span>':'')+'<div class="dh"><span class="dn">'+W.DAYS[k].slice(0,3)+'</span><span class="dd">'+dd.d+'</span></div><div class="dbody"></div>';
+    var body=day.querySelector('.dbody');
+    if(key===todayK){var nl=document.createElement('div');nl.className='nowline';nl.style.top=(8+(p.hour+p.minute/60)/24*86).toFixed(1)+'%';day.appendChild(nl)}
+    if(!evs.length)body.innerHTML='<span class="quiet">'+(key<todayK?'—':'No release')+'</span>';
+    evs.forEach(function(r){
+      var el=document.createElement('button');el.type='button';
+      var read=r.state==='out'&&isRead(r),fresh=r.state==='out'&&now-r.date<36*3600e3;
+      el.className='rel '+r.state+(fresh?' fresh':'');el.style.setProperty('--c',C(r.series));
+      var chip=r.state==='out'?(read?'<span class="chip read">✓ Read</span>':'<span class="chip out">Out now</span>'):r.state==='verify'?'<span class="chip verify">In verification</span>':'<span class="chip sealed">Sealed</span>';
+      var when=r.state==='verify'?'Date to be confirmed':W.nameTime(r.date).replace(/^\w+ /,'');
+      el.innerHTML='<span class="s">'+W.esc(W.SERIES[r.series].name)+'</span><span class="t">'+W.esc(r.title)+'</span>'+chip+(r.state==='sealed'?'<span class="cd" data-t="'+r.date.getTime()+'">'+W.countdown(r.date-now).text+'</span>':'<span class="m">'+W.esc(when)+'</span>');
+      el.onclick=function(){detail(r)};
+      body.appendChild(el);
+    });
+    b.appendChild(day);
+  }
+}
+function detail(r){
+  var now=new Date(),p=$('panel'),c=C(r.series);p.style.setProperty('--c',c);
+  var h='<button class="x" type="button" data-x aria-label="Close">×</button><div class="s">'+W.esc(W.SERIES[r.series].name)+'</div><h3 id="pT">'+W.esc(r.title)+'</h3>';
+  if(r.state==='out'){
+    h+='<div class="meta">Released '+W.esc(W.nameTime(r.date))+' · '+ago(r.date)+'</div><p>'+W.esc(r.summary||'')+'</p><div class="nc-actions"><a class="btn solid" id="pGo" href="'+W.esc(r.url)+'">Read it now</a><button class="btn" type="button" id="pShare">Copy the link</button></div>';
+  }else if(r.state==='sealed'){
+    h+='<div class="meta">Opens '+W.esc(W.nameTime(r.date))+'</div><div class="bigcd cd" data-t="'+r.date.getTime()+'">'+W.countdown(r.date-now).text+'</div><p>'+W.esc(r.summary||'This release is sealed until it opens for everyone.')+'</p><div class="nc-actions"><button class="btn solid" type="button" id="pRem">Remind me when it opens</button><a class="btn" href="#alerts" data-x>Get every release</a></div>';
+  }else{
+    h+='<div class="meta">In verification · date to be confirmed</div><p>'+W.esc(r.summary||'')+'</p><p class="mut" style="font-size:16px">Each installment is published only after its claims are checked against primary documents. Subscribe and it will reach you the moment it is released.</p><div class="nc-actions"><a class="btn solid" href="#alerts" data-x>Get it when it is out</a><a class="btn" href="inside-files.html">Read earlier installments</a></div>';
+  }
+  p.innerHTML=h;$('ov').classList.add('open');document.body.style.overflow='hidden';
+  var go=$('pGo');if(go)go.onclick=function(){markRead(r);};
+  var sh=$('pShare');if(sh)sh.onclick=function(){copy(new URL(r.url,location.href).href,'Link copied')};
+  var rm=$('pRem');if(rm)rm.onclick=function(){ics(r)};
+  [].forEach.call(p.querySelectorAll('[data-x]'),function(x){x.addEventListener('click',close)});
+  p.querySelector('.x').focus();
+}
+function close(){$('ov').classList.remove('open');document.body.style.overflow='';board();you()}
+$('ov').addEventListener('click',function(e){if(e.target===$('ov'))close()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&$('ov').classList.contains('open'))close()});
+
+/* your week */
+function you(){
+  var now=new Date(),rel=W.week(W.weekStart(now),now).filter(function(r){return r.state==='out'&&(r.series==='watch'||r.series==='gate'||r.series==='inside')});
+  var done=rel.filter(isRead).length,tot=rel.length;
+  $('ringN').textContent=done;$('ringL').textContent='of '+tot+' read';
+  $('ringArc').style.strokeDashoffset=(326.7*(1-(tot?done/tot:0))).toFixed(1);
+  $('hYou').textContent=!tot?'The week is just getting started':done===tot?'You are caught up on this week':'You have '+(tot-done)+' release'+(tot-done===1?'':'s')+' left this week';
+  $('ticks').innerHTML=rel.map(function(r){return '<a class="tk'+(isRead(r)?' done':'')+'" style="--c:'+C(r.series)+'" href="'+W.esc(r.url)+'" data-k="'+relKey(r)+'"><i>'+(isRead(r)?'✓':'')+'</i>'+W.esc(W.SERIES[r.series].short)+'</a>'}).join('')||'<span class="mut" style="font-size:16px">Nothing has opened yet this week. The countdown above shows the next one.</span>';
+  [].forEach.call($('ticks').querySelectorAll('a'),function(a,i){a.onclick=function(){markRead(rel[i])}});
+}
+
+/* latest */
+function filters(){
+  var used={};W.model().items.forEach(function(i){used[i.series]=1});
+  var keys=['all'].concat(['watch','gate','inside','notes','digest'].filter(function(k){return used[k]}));
+  $('filters').innerHTML=keys.map(function(k){return '<button type="button" class="f" aria-pressed="'+(filter===k)+'" data-k="'+k+'"'+(k!=='all'?' style="--c:'+C(k)+'"':'')+'>'+(k!=='all'?'<i></i>':'')+(k==='all'?'Everything':W.esc(W.SERIES[k].name))+'</button>'}).join('');
+  [].forEach.call($('filters').children,function(b){b.onclick=function(){filter=b.dataset.k;shown=10;filters();list()}});
+}
+function list(){
+  var its=W.model().items.filter(function(i){return filter==='all'||i.series===filter});
+  $('list').innerHTML=its.length?its.slice(0,shown).map(function(i){var p=W.parts(i.d);return '<a class="li" href="'+W.esc(i.url)+'" style="--c:'+C(i.series)+'"><span class="when">'+W.MON[p.month-1]+' '+p.day+', '+p.year+(Date.now()-i.d<14*864e5?'<br>'+ago(i.d):'')+'</span><div><div class="s">'+W.esc(W.SERIES[i.series].name)+'</div><h4>'+W.esc(i.title)+'</h4><p>'+W.esc(i.summary)+'</p></div><span class="go">→</span></a>'}).join(''):'<p class="mut">Nothing here yet.</p>';
+  $('more').classList.toggle('hide',its.length<=shown);
+}
+$('more').onclick=function(){shown+=10;list()};
+
+function sched(){
+  var st=W.model().status||{},g=st.gate||{},w=st.watch||{},i=st.inside||{};
+  $('pGate').textContent=(g.count||0)+' of '+(g.total||52)+' files open';
+  $('pWatch').textContent=w.count?w.count+' edition'+(w.count===1?'':'s')+' published':'First edition: Monday, November 9';
+  $('pInside').textContent=(i.count||0)+' of '+(i.total||12)+' installments'+(i.state==='in-verification'?' · next in verification':'');
+}
+
+function copy(t,msg){(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){toast(msg||'Copied')}).catch(function(){var r=document.createRange();r.selectNodeContents($('feedUrl'));var s=getSelection();s.removeAllRanges();s.addRange(r);toast('Press and hold to copy')})}
+$('copyFeed').onclick=function(){copy($('feedUrl').textContent,'Feed address copied')};
+$('copyFeed2').onclick=function(){copy($('feedUrl').textContent,'Feed address copied. Now open Blogtrottr and paste it.')};
+
+$('wPrev').onclick=function(){view=W.shiftWeek(view,-1);board()};
+$('wNext').onclick=function(){view=W.shiftWeek(view,1);board()};
+$('wNow').onclick=function(){view=W.weekStart(new Date());board()};
+window.addEventListener('resize',function(){clearTimeout(window.__rz);window.__rz=setTimeout(board,150)});
+
+function tick(){
+  clock();
+  var now=Date.now();
+  [].forEach.call(document.querySelectorAll('#board .cd[data-t], #panel .cd[data-t]'),function(e){var t=+e.dataset.t;if(t<=now){render();return}e.textContent=W.countdown(t-now).text});
+}
+function render(){hero();just();board();you();sched();lastClock={};clock()}
+
+function boot(){
+  if(!window.CIFWeek){setTimeout(boot,40);return}
+  W=window.CIFWeek;
+  W.load().then(function(){view=W.weekStart(new Date());render();filters();list();setInterval(tick,1000)});
+}
+boot();
+})();
+</script>
+<script src="cif-week.js" defer></script>
+</body>
+</html>

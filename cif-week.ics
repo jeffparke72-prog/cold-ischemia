@@ -1,0 +1,62 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Cold Ischemia Foundation//This Week//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cold Ischemia Foundation · Releases
+X-WR-TIMEZONE:America/New_York
+X-WR-CALDESC:Release times for The Watch List\, The Gatekeeper Files and The Inside Files.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:watch-list-weekly@coldischemia.foundation
+DTSTAMP:20261107T000000Z
+DTSTART;TZID=America/New_York:20261109T090000
+DTEND;TZID=America/New_York:20261109T093000
+RRULE:FREQ=WEEKLY;BYDAY=MO
+SUMMARY:The Watch List: new edition
+DESCRIPTION:A new edition of the weekly public accountability ledger of 50
+  companies opens now.\nhttps://coldischemia.foundation/watch-list.html
+URL:https://coldischemia.foundation/watch-list.html
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:The Watch List: new edition is out now
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gatekeeper-files-weekly@coldischemia.foundation
+DTSTAMP:20261107T000000Z
+DTSTART;TZID=America/New_York:20261105T090000
+DTEND;TZID=America/New_York:20261105T093000
+RRULE:FREQ=WEEKLY;BYDAY=TH;COUNT=52
+SUMMARY:The Gatekeeper Files: new week
+DESCRIPTION:A new kidney care problem\, the hidden rule behind it\, and th
+ e fix.\nhttps://coldischemia.foundation/gatekeeper-files.html
+URL:https://coldischemia.foundation/gatekeeper-files.html
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:The Gatekeeper Files: new week is out now
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
