@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-08T13:13:23.241163+00:00",
+"updated": "2026-11-08T18:27:52.228062+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -87,7 +87,7 @@
 "category": "Policy",
 "url": "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=transplant+%7C+dialysis+%7C+%22organ+procurement%22+%7C+%22end-stage+renal%22&order=newest",
 "ok": true,
-"count": 5,
+"count": 6,
 "error": null
 },
 {
@@ -133,11 +133,22 @@
 ],
 "items": [
 {
+"title": "Agency Information Collection Activities: Submission to OMB for Review and Approval: Public Comment Request; Organ Procurement and Transplantation Network Board of Directors and Committee Member Applications and Forms",
+"link": "https://www.federalregister.gov/documents/2026/11/09/C1-2026-21857/agency-information-collection-activities-submission-to-omb-for-review-and-approval-public-comment",
+"summary": "",
+"outlet": "",
+"published": "2026-11-08T18:27:02.971859+00:00",
+"id": "07ee05f671fbc4e9",
+"source": "Federal Register: organ transplant policy",
+"category": "Policy",
+"first_seen": "2026-11-08T18:27:52.228062+00:00"
+},
+{
 "title": "Kidney Disease Decision Toolkit Demonstrates Strong Patient and Clinician Acceptability - Bioengineer.org",
 "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcnpmUFg4Y0pIQmk4cEhtdk1QbEp5Z2lsWjZkWTlEUlJDcTNKdW5LV1pzLWhKZWtTa0QwckhaekE3YUdwVWw2dXYzeHR1Tk1leHZEMXlzOGZhNnl6dnM3ZUJndnFSQy01azh4RFZkcVlNVlp0dUxTM2VPQ25KM0tfWVhIZjVuTHY5czUza2p0N0txSENyNVliYm9hc1U0MEYzeUw2SmdKME5FX09zY2p1UGlR?oc=5",
 "summary": "Kidney Disease Decision Toolkit Demonstrates Strong Patient and Clinician Acceptability Bioengineer.org",
 "outlet": "Bioengineer.org",
-"published": "2026-11-08T13:07:47+00:00",
+"published": "2026-11-08T13:07:40+00:00",
 "id": "4e052e9b24169d38",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
@@ -164,6 +175,17 @@
 "source": "PubMed: transplant policy & organ procurement",
 "category": "Policy",
 "first_seen": "2026-11-08T13:13:23.241163+00:00"
+},
+{
+"title": "Alexander Al parecer, los hermanos pagaron a unos periodistas para que les dieran una cobertura favorable - Fox News",
+"link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOODhUZG13ZGVwU0lCZEZ2eThqcWRudUhjeUt3ZjVQRUJ6Z3gtU1ZGWGJ2a2ZCbWQ4QktMREdiaHN4eUtIcWg5Z1pBcll4aEtycTVnVnJyTkVrYzNSUmNCbVVVbWZKX1pyYS11THZMeWNEeHg5cnpuQUNyRjlXNS1OaFJQNHNsMFc1YTd3SG9HRHBwNlhVbUdubDk1YWE4LTUxZ0RPT3ZacEpLNHFuSjJKcjFjR2FyN29FUUpxelFuYS1LVnh5YTltaw?oc=5",
+"summary": "Alexander Al parecer, los hermanos pagaron a unos periodistas para que les dieran una cobertura favorable Fox News",
+"outlet": "Fox News",
+"published": "2026-11-08T11:00:33+00:00",
+"id": "795998520cdc9516",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-08T18:27:52.228062+00:00"
 },
 {
 "title": "Qatar Charity Donates 12 Dialysis Machines to Mogadishu’s Darussalam Hospital - Dawan Africa",
@@ -273,6 +295,17 @@
 "id": "178318e9c87ddf79",
 "source": "Kidney International Reports",
 "category": "Journals",
+"first_seen": "2026-11-07T20:26:42.183763+00:00"
+},
+{
+"title": "Dialysis centres at kidney hospital in Dhaka, Ctg Medical face closure; 500 patients uncertain over treatment - The Business Standard",
+"link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNcGc0Q21SeWhrNkZZRFBhY3F6dklycWJfNWZQcktDYWxVTnV0Rlpkamxsd3NSWDFuTWxwTElSOGtNdUxMZGlDVXRYU0t4Q2xhTElZTm5FOVpNbnplWmo5NG9uZEN2REdibnV1dTJsSG5HRTZxZkdYX0NEVWF3WDM3djhsaXVHbk81V3AwWU9JR0NOU1Y1ZU1rdVJHQ1RYSlAxbjB5MzgwRXJFMmd1Uy1fQnFDZ214b3lUN3c?oc=5",
+"summary": "Dialysis centres at kidney hospital in Dhaka, Ctg Medical face closure; 500 patients uncertain over treatment The Business Standard",
+"outlet": "The Business Standard",
+"published": "2026-11-07T20:26:42.183763+00:00",
+"id": "a7dc5985ac2380a0",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
 "first_seen": "2026-11-07T20:26:42.183763+00:00"
 },
 {
@@ -562,17 +595,6 @@
 "first_seen": "2026-11-07T16:18:03.167230+00:00"
 },
 {
-"title": "Dialysis centres at kidney hospital in Dhaka, Ctg Medical face closure; 500 patients uncertain over treatment - The Business Standard",
-"link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNcGc0Q21SeWhrNkZZRFBhY3F6dklycWJfNWZQcktDYWxVTnV0Rlpkamxsd3NSWDFuTWxwTElSOGtNdUxMZGlDVXRYU0t4Q2xhTElZTm5FOVpNbnplWmo5NG9uZEN2REdibnV1dTJsSG5HRTZxZkdYX0NEVWF3WDM3djhsaXVHbk81V3AwWU9JR0NOU1Y1ZU1rdVJHQ1RYSlAxbjB5MzgwRXJFMmd1Uy1fQnFDZ214b3lUN3c?oc=5",
-"summary": "Dialysis centres at kidney hospital in Dhaka, Ctg Medical face closure; 500 patients uncertain over treatment The Business Standard",
-"outlet": "The Business Standard",
-"published": "2026-11-07T08:48:59+00:00",
-"id": "a7dc5985ac2380a0",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-07T20:26:42.183763+00:00"
-},
-{
 "title": "‘It was a chance to put a middle finger up to the disease’: Belfast man eyeing World Transplant Games joy after brother donated him a kidney - Belfast Telegraph",
 "link": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxPMGhhYzgxUF9ESy1KeUROS2paUk5LSEJuZWxGdmswUUxiZGxpTHdNcmdrX1I5OWNrUmtxV1JLeU9HdW8za1pjZWFrd1RweE1aTHVST293RkxBN0cwdWRWaWotN3ZIYVF4TTh5Q015aUxrUF9jN2FVd3JZMDlhYkh6amRZYjNXYk5SM2w2VHg2NHRZZGUyeE9BVEN5bkQ2VUZaNFFDZlBGU2hTSGpuaDMtLW8yaWNXalNsZkdDUHFQOW5UdWc3MDRKQWs5Q1FOVmtpanJhM2o1T0tkY1FtTlU1WjhFRWFBWmdJaUt5UC1JXzctc1daejZaTEtDVzdfRmRhSDFUYjBrc2ZvbGkyZGd6MDc5ZGhIMXJOMWktcHR1cFN1cWNsMk5lOQ?oc=5",
 "summary": "‘It was a chance to put a middle finger up to the disease’: Belfast man eyeing World Transplant Games joy after brother donated him a kidney Belfast Telegraph",
@@ -610,7 +632,7 @@
 "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPUE55MGZIM3R2cGFfc0tjdUZMR0dBd3F5MzJtS1pUNkFIb2FUNDZXOXIyeHZjQ1BtQS1maENqNjh0elZCVnJTRHZkSWU0eG94akNOZUt5OU9Ca3hqNngzemhxd2gzbXRzMWU4WkpNMEZ6ZV9RTWZ1ZzhCVWVGYndjZFF1TjhoajJtN19abGgzM3pOMzZzbDBzTjVn?oc=5",
 "summary": "‘It’s really miraculous’: man celebrates 50 years since kidney transplant Yahoo",
 "outlet": "Yahoo",
-"published": "2026-11-07T00:18:58+00:00",
+"published": "2026-11-07T00:18:00+00:00",
 "id": "246b7014e9cb3abc",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
@@ -747,6 +769,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-06T23:26:48.818271+00:00"
+},
+{
+"title": "Minister inaugurates dialysis centre - The Hindu",
+"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQjhEZEhhbC1PWl9iV2lwXzlhT3JtTUtrWVY1bi16R3h4dTlzdjRXXzZoaG9LT1dLU05TbUZvOWdabzV2Zm11amxSUHh1VGFWRzNieHJtYy1icFpVUU5wYm1MTVZJVG1TT3k1SWJoMi1hWlRsWW1BTkFfTG1xREVxVTJXQ2Ezc0RnQm9JcHVMMDJqcm5mbjJlRmFVTlNXNXJFR2RR0gGqAUFVX3lxTE9oeTNQbnlJaGVsUXhIVWZzY0NsVXp2QmZwSnZORVlXUFppYzZRb3ExOUFaZkVQYkRtU1B6ZWxoSThQUnBXd1NBcDRBRnJZU2M1cmwxWDZlWnRpS1RkQTl2dTl5a3F2VU9VYmFDemJPUHR5OXBKNE5DX0lBdFBuX2IzNVBMOTM1dDdfSmt6MVlKNzNPUzhtV0pzRDhMVDZTNG9sUEZ1bGprMHd3?oc=5",
+"summary": "Minister inaugurates dialysis centre The Hindu",
+"outlet": "The Hindu",
+"published": "2026-11-06T19:05:18+00:00",
+"id": "96a81dd7c3fa36f1",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-08T18:27:52.228062+00:00"
 },
 {
 "title": "Keralite Nurse in the UK Turns Personal Tragedy into a Mission to Raise Organ Donation Awareness - ukmalayalee",
@@ -1343,6 +1376,17 @@
 "first_seen": "2026-11-06T11:25:19.199246+00:00"
 },
 {
+"title": "Home and In-Centre Dialysis Show Comparable Outcomes - Medscape",
+"link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQaVB6d2dGYW5GLW1VbUl6ckwxN0FJSjNERkhwOGs3QWFnMmYtZzVUUkIwNExBOTQ0Um1TZ0h6MFFyQnRCVElCV2JDM29CT2I3OFpxTWpTWGE2VHM2MGhva1pKc2tENHZGRVZZNW5tTnZuSThIN1doZlcxNXhOM0R0NlAwSXRaOS1CZGhLQkNmV2pyTnliZDZmNklYMzJtUkx4?oc=5",
+"summary": "Home and In-Centre Dialysis Show Comparable Outcomes Medscape",
+"outlet": "Medscape",
+"published": "2026-11-05T17:36:11.782051+00:00",
+"id": "37ae410ce265b67c",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-05T17:36:11.782051+00:00"
+},
+{
 "title": "Merit Medical reports positive real-world data for dialysis device By Investing.com - Investing.com Canada",
 "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQWmdBMEtJc0RUWHVUOEFLRG1MQkQ2MVZOOXU4am5CMVJfajlsMU9IN2FZd0VsallrMm8tTjdqSzlfRmM0S2REcG1TamJpSXQxRlpxLU9iTHAzYnMtU3Fpd2plb3I5NTk4d0Y1aERWMm4wdjBPQXp0UWhGSGxLM2ZZeW1hNXF1X1VHMlItbHRfRUM0RFEzb040bldnZ0s1RmdxWEtmYS00UkVYaWFOSVRXMURhQmlKTDlLVHpDUXItaXYwalJM?oc=5",
 "summary": "Merit Medical reports positive real-world data for dialysis device By Investing.com Investing.com Canada",
@@ -1404,17 +1448,6 @@
 "outlet": "Fierce Biotech",
 "published": "2026-11-05T13:28:55+00:00",
 "id": "c00ecc4de02532c1",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-05T17:36:11.782051+00:00"
-},
-{
-"title": "Home and In-Centre Dialysis Show Comparable Outcomes - Medscape",
-"link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQaVB6d2dGYW5GLW1VbUl6ckwxN0FJSjNERkhwOGs3QWFnMmYtZzVUUkIwNExBOTQ0Um1TZ0h6MFFyQnRCVElCV2JDM29CT2I3OFpxTWpTWGE2VHM2MGhva1pKc2tENHZGRVZZNW5tTnZuSThIN1doZlcxNXhOM0R0NlAwSXRaOS1CZGhLQkNmV2pyTnliZDZmNklYMzJtUkx4?oc=5",
-"summary": "Home and In-Centre Dialysis Show Comparable Outcomes Medscape",
-"outlet": "Medscape",
-"published": "2026-11-05T12:02:49+00:00",
-"id": "37ae410ce265b67c",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-05T17:36:11.782051+00:00"
@@ -5598,39 +5631,6 @@
 "source": "KFF Health News",
 "category": "News",
 "first_seen": "2026-10-30T13:25:51.838740+00:00"
-},
-{
-"title": "High-dose vitamin D does not improve survival on dialysis - Healio",
-"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONmY4enU3SkJ3YjdtX0NadExRWDRZanVYUE9GbHhscHlQaF9hZTQybkd5NEVCSzlfU241ZUkzN01fTmZZd29DemxJZlFTY1RNVk9oMjlHNEtiMzRLN2VCd2pvMkpfSzRVdXRUTER3OTljTGM1anN4M25TV0k5eUJNWEVXSzFPS1hJN3JORl9fMmgtWE9HaG9xVWNDY3YzX29fcWFSdmM5MA?oc=5",
-"summary": "High-dose vitamin D does not improve survival on dialysis Healio",
-"outlet": "Healio",
-"published": "2026-10-30T07:00:00+00:00",
-"id": "bbe34b14bdd21413",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-03T11:49:48.783017+00:00"
-},
-{
-"title": "Twelve-Month Albuminuria Response to Finerenone in Patients With Chronic Kidney Disease and Type 2 Diabetes Mellitus: A Real-World Study - Cureus",
-"link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQOXJ3Q1RabUl1TnU4eXduazE1bGFyY2hqVjBEUlRlTE85bm10MVJBUmxnblY0S1hoNF9EY3dUUXNmOEhCN3FINDdKUTc0ZjFhQzE0b1E1bTBpWWxrMjFhT1JmVmFxdWpwajJNZUdRSE9wWTZFSWJoYzQ5bEo4NWZ1NkZoc1JXeGZOUlByckZJdVV2UGNLdW1hZXhjUEFmYUN5ZE1nWnptbENzU19qYjJtUk5VN1hRS1FCVV90VzRKUXNId2FlcDQ1VHJYWFNpNnhNVWRrYW5Na1kxMXR1TndDZFVkZjdHRXJTWGtya3JtQUJoWV8taUhYZFRpUWdZY2RIYm1OTw?oc=5",
-"summary": "Twelve-Month Albuminuria Response to Finerenone in Patients With Chronic Kidney Disease and Type 2 Diabetes Mellitus: A Real-World Study Cureus",
-"outlet": "Cureus",
-"published": "2026-10-30T06:46:55+00:00",
-"id": "dd01cabf2a898c06",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-10-30T13:25:51.838740+00:00"
-},
-{
-"title": "Systemic Inflammation Tied to Higher Death Risk in Heart and Kidney Disease Patients - Bioengineer.org",
-"link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTWUzQWVSeDBqTmpTaVZ2SmpweGtVYnFjVU52Tnd3OGR1SmpUWDdrZWVwZkNQcTFpVHpFQjlzeG5DSnJtX25INGpIRm5JVVhLbmlmTjkzdFh2eV9DUlI2dG9LYjF5UTF3V0VYNm5GNGY2R01rRV9rci1KSTFyMHpqRFVMaFR5dUNOTTlzUmhjdlJTM2RCVVplb0xyaDJLQVpKdXh4TEYzTWd6bTVnWVE?oc=5",
-"summary": "Systemic Inflammation Tied to Higher Death Risk in Heart and Kidney Disease Patients Bioengineer.org",
-"outlet": "Bioengineer.org",
-"published": "2026-10-30T04:42:36+00:00",
-"id": "379a943a0848feee",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-01T23:49:36.038040+00:00"
 }
 ]
 }
