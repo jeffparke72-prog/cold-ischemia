@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-11T21:14:34.489853+00:00",
+"updated": "2026-11-12T02:27:54.798826+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -118,9 +118,9 @@
 "name": "UNOS News",
 "category": "Policy",
 "url": "https://unos.org/feed/",
-"ok": false,
-"count": 0,
-"error": "ValueError: TimeoutError: The read operation timed out"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "Healio Nephrology",
@@ -132,6 +132,28 @@
 }
 ],
 "items": [
+{
+"title": "Washington sues dialysis giants over non-compete agreements: What to know - Yahoo",
+"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNZjRwbEJLWTZnQ0lkdXc2enc4RC1URENkYUw2VGFORGhoTkVFdkFRSG56N3dwV0lpVkVMdkRrd2lZSzljanV3dUFCR2JRZzFRY3k0TU9hRXo5YTVqTFQ5RVlrTjBjcUJ1N24zMHJ2ZlhpaFFpcTUzVUczQW4xN2pTUUlEVUxaaDVCM2k3Y3JLSGs?oc=5",
+"summary": "Washington sues dialysis giants over non-compete agreements: What to know Yahoo",
+"outlet": "Yahoo",
+"published": "2026-11-11T22:26:58+00:00",
+"id": "325fdbd20465f164",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-12T02:27:54.798826+00:00"
+},
+{
+"title": "Inhibiting GLS1 Attenuates Kidney Disease Induced Cardiac Hypertrophy in Male Mice - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOU2FmeU9nTnZ3UVpUMEcwUUZGa2Z3cUdnZExZLWpBQ1RZaGFGN0l2Vm9Fd0J4Ynk1b3BRTU9qa3ZfcW1mTnY4RTVTcjlqWS12U2piRjUzMl9lcm90ckxpQWtEUDF2R1pjRlFJVllfUDZBcjE3ZDNHcU54VmpsNHN0RmxnV3pSOFhwTGZZUzVMLTJISG5rWWxkcWI3NC1WVlFtdDI3OTFGX1lBTTA?oc=5",
+"summary": "Inhibiting GLS1 Attenuates Kidney Disease Induced Cardiac Hypertrophy in Male Mice Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-11-11T21:07:54+00:00",
+"id": "bab8a6aba4185945",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-12T02:27:54.798826+00:00"
+},
 {
 "title": "Splicing Changes Drive Kidney Disease in Zebrafish Model - Bioengineer.org",
 "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNOHVLSjJCYlpjbDFHN3JxY1lCZ2ZkYnh0bVNWOV85aFA3RHM5R1RabjFHeUcxZXFRdkRTYTRtbE1mT0huLXF2RmRPaU9aR1lOcF9mU3NfQzV3N0dwb0Fick1NYW9hNGNJWFQyRUV0RXEtb1I5RmtlRXhXa0FtcW5JRElQcUpsR2la?oc=5",
@@ -153,6 +175,39 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-11-11T21:14:34.489853+00:00"
+},
+{
+"title": "Organ Donation in Mysuru Moves Through Zero-Traffic Corridor - Urban Acres",
+"link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPakh5eDU5bThheXYyV3kwcDUzV1JsaVl3akdoVEJidElrUlFtLTdCQUVfWjR6cUk2WElrVFBTV21jRXBidlNiNk5IT1dncUZpbWRaSkZYSmtxV1VSNWRNTE80YUczMnl3NGZybkpfU0NJbWloT3VTdVVHNDcxOG1MOGNGdnVCZTJkNVc3RnNQY2tINFE?oc=5",
+"summary": "Organ Donation in Mysuru Moves Through Zero-Traffic Corridor Urban Acres",
+"outlet": "Urban Acres",
+"published": "2026-11-11T20:43:16+00:00",
+"id": "b9a72a4bda7bf4f2",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-12T02:27:54.798826+00:00"
+},
+{
+"title": "South Georgia man receives kidney from cousin after family’s months-long search for donor - WALB.com",
+"link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPYlVlZUxHOTRONTNtUnM4YXVXYldyVENqQjV0VUk0Z28zbnphcDl3Tjg4SlNPS0FldEtFYUFQREtGMFM3MWc5NXNfQmNYSFVfQzBXWUg0TzBvX2NOeEF2ck1mUEMyYm9sODZ4TGNRWU9NSmZ5aXNIaUo5eWs1LXdqd0RFYU1oRDZPbGRNMkMzYnBTMEFwdDhEYXh1dWZ4cUhXck5yc0R1bHNHcTRxOFo5V2ZB0gHGAUFVX3lxTE9vVWVxNUVUblk2bk05aEU4V3FsQV9YNUo3YmVNckhDUWFWQUpWY1phcnp1UkFSUERHcTU3am9hQjRFTFo0elhvVWYtdlZVbUxKMWUtNGVkelZSRDBXNDR2ZlI4dWt6d1pKR0hyR3QwS3BOTmNsUjZVczVBbVM1VFlobHV3WTExamhhb0ZGYk1pWlNhMFJzV00tZ09ZNWdKVGFrYVFYREs2NW5wUk5jeFJqRjF4dXdMUVRsR3F4QnBRTHhDT3M4dw?oc=5",
+"summary": "South Georgia man receives kidney from cousin after family’s months-long search for donor WALB.com",
+"outlet": "WALB.com",
+"published": "2026-11-11T20:18:00+00:00",
+"id": "6713f7d850ed8327",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-12T02:27:54.798826+00:00"
+},
+{
+"title": "Army veteran’s organ donation brings hope to recipients after fatal crash - The Register-Herald",
+"link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNV2RtUnM2WWlsNFdEWjQwa1JnUjBSV2FidVY4MGQycXk5Z3h1c3h4bVBZYzUtdEFoN3VHSEI0RXF1dXlFamw4cVlHUU1ob0dHN2JkRVdEa3JUd1NFWkpNcEpjWk9scWhvU3RRdzNtUkFDSGhsZy1MZV9BYk9ld3hRc3ZDV1V3Wk1FTEY1Y0VMMVBhQlExbTE0UFI1eHBBUTZ4am9tM3BpdmR1cWtidGNTOWRmZHQ1RmR0OWdyWGg0WDhxVGRDTzZRWldmLWV2bUUyc205U0hnVGhTbmJmNFpncmZwd0YwYXREOTFnN0Rwc1JzamhGdGZRTmJrWFRnY3lsQklB?oc=5",
+"summary": "Army veteran’s organ donation brings hope to recipients after fatal crash The Register-Herald",
+"outlet": "The Register-Herald",
+"published": "2026-11-11T18:15:00+00:00",
+"id": "4889184109cbd580",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-12T02:27:54.798826+00:00"
 },
 {
 "title": "CYP11B2 Variant Linked to Chronic Kidney Disease Risk - Bioengineer.org",
@@ -177,6 +232,17 @@
 "first_seen": "2026-11-11T21:14:34.489853+00:00"
 },
 {
+"title": "A Life in Full Color: Peter’s Kidney Transplant Journey | Livingston, New Jersey - RWJBarnabas Health",
+"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQLTRiMlVMMktDb24xWWJVYTNsZzB0T1RfdF9Na3dadk9wUlIzZDJ6UGxIR3pjdXhKYlkyOTR1RnBTVGhTV3hTLUF2MnV4N1hUTExwNjhhb3BvTG95bnNzekM0MUxnM0hJQnVzSXFQVWo2ZTZrSFBuWDlwdThka0FGdFZmQndYS2dzYWVSRmk5RDE?oc=5",
+"summary": "A Life in Full Color: Peter’s Kidney Transplant Journey | Livingston, New Jersey RWJBarnabas Health",
+"outlet": "RWJBarnabas Health",
+"published": "2026-11-11T16:49:57+00:00",
+"id": "d4089737dea8d72d",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-12T02:27:54.798826+00:00"
+},
+{
 "title": "Q&A: Creating evidence-based lifestyle medicine interventions",
 "link": "https://www.healio.com/news/primary-care/20261111/qa-creating-evidencebased-lifestyle-medicine-interventions-for-patients",
 "summary": "ORLANDO — Data showing the benefits of lifestyle medicine can empower patients to focus on healthy aging, according to a speaker here. Kerry W. Reding, PhD, MPH, RN, FAHA, a professor of biobehavioral nursing and health informatics at the University of Washington, offered a presentation on what decades of research…",
@@ -189,10 +255,10 @@
 },
 {
 "title": "SIMPLIFIED Trial: Vitamin D and Mortality in Dialysis | Nephrology Times - DocWireNews",
-"link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbUlZR3VuRlgxVjdURkhjVjE2QjR1V0MwVjBVVkpiWGN5c00zWXBwV05SMkl4VXF2M1FMa3BrLXM2ZDFJNXdHMlNTUnlJVzdLNXZ0Wjd2V2l6NDVFTDVyalJzYW4tUUNXWnJRRlV1SHNFR25WR29haDVSYi1rbDA5d1kxbDhzQjBuU01wZ3l5Z19xT2cyRXlnajMxc04?oc=5",
+"link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPQm5nMHhseVYzNUdsLUM2TVlvdjlvTC05bXlMMFNfS25ZZ3VCaHhWZk93cVB5Z2kwWW9LcklBVi1zbDA2Y004andTVTNlMklFX0daRFNXc1Vvc0dJQXY5eTdoVTFKVTB1Mm1La2Mydkg3SVlFaUFyVHY0SHZ3VzZjbXBBS2MyaHBJcUFXV1NSejJpbTZnem5Z?oc=5",
 "summary": "SIMPLIFIED Trial: Vitamin D and Mortality in Dialysis | Nephrology Times DocWireNews",
 "outlet": "DocWireNews",
-"published": "2026-11-11T16:00:36+00:00",
+"published": "2026-11-11T16:01:35+00:00",
 "id": "9ecb7e652e449a46",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
@@ -340,6 +406,17 @@
 "source": "American Journal of Transplantation",
 "category": "Journals",
 "first_seen": "2026-11-11T21:14:34.489853+00:00"
+},
+{
+"title": "Nutritional risk, inflammation, and hospitalization after hemodialysis initiation.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/43012867/",
+"summary": "Uematsu H, Toida T, Tanaka Y et al. Renal failure",
+"outlet": "Ren Fail",
+"published": "2026-11-11T12:00:00+00:00",
+"id": "f675174ed06ae795",
+"source": "PubMed: transplant, donation & kidney failure research",
+"category": "Research",
+"first_seen": "2026-11-12T02:27:54.798826+00:00"
 },
 {
 "title": "Organ Donation and the Law of Unintended Consequences - BreakPoint.org",
@@ -494,6 +571,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-11T05:55:30.482171+00:00"
+},
+{
+"title": "Dialysis and desist: The Tipline for 10 November 2026 - Global Competition Review",
+"link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNbUlRcEp6OGNUQno5MFJVay1JdVdSUGNVY3p6T3UwYS1jYlpnWEdCbmp6Z1BuN1BVdTBkZWlXQWxZaTFkVy03dGptODUwbmVNNldMYmcxLUxSZk9pMVUtb2FtSjQ4ZU5DZ2kyWGNRRVA5VExxeVlnbzBQTWlONVVFNUxGeEFoUnRMOGFwQVdZcU1ZNjVaNlJHYUU4Wk9WcG1OQ3c?oc=5",
+"summary": "Dialysis and desist: The Tipline for 10 November 2026 Global Competition Review",
+"outlet": "Global Competition Review",
+"published": "2026-11-11T00:19:34+00:00",
+"id": "d7467351055d6dfc",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-12T02:27:54.798826+00:00"
 },
 {
 "title": "Semaglutide Linked to Weight Reductions in Dialysis Patients Across Small Studies - Bioengineer.org",
@@ -5543,94 +5631,6 @@
 "source": "Kidney International",
 "category": "Journals",
 "first_seen": "2026-11-06T23:26:48.818271+00:00"
-},
-{
-"title": "Generation of a novel Slc7a9 G105R mutant mouse identifies new biomarkers for cystinuria",
-"link": "https://www.sciencedirect.com/science/article/pii/S0085253826006964?dgcid=rss_sd_all",
-"summary": "By Nirmal P. Bhatt, Theresa T.H. Nguyen, Giulia Iacono, Gabriel R. Rodriguez, Connor R.B. Anderson, Andrew Perry, Christopher K. Barlow, Dovile Anderson, Gaetan Burgio, Benjamin J. Marsland, Simon H. Jiang, Aniruddh V. Deshpande,…",
-"outlet": "",
-"published": "2026-11-01T12:00:00+00:00",
-"id": "a9f7e88f22fabb41",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-11-06T23:26:48.818271+00:00"
-},
-{
-"title": "Combining dietary fiber inulin with parathyroid hormone–lowering therapy improves bone remodeling and mechanics in a rat model of Chronic Kidney Disease–Mineral Bone Disorder",
-"link": "https://www.sciencedirect.com/science/article/pii/S0085253826006976?dgcid=rss_sd_all",
-"summary": "By Matthew R. Allen, Corinne E. Metzger, Neal X. Chen, Shruthi Srinivasan, Kalisha O'Neill, Hannah E. Wilson, Karis L. Blacklock, Emily K. Matter, Daniel J. Stephen, Karisa M. Ecker, Ariana Moffitt, Annabel Biruete, Sharon M. Moe",
-"outlet": "",
-"published": "2026-11-01T12:00:00+00:00",
-"id": "f971812fe430efa7",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-11-06T23:26:48.818271+00:00"
-},
-{
-"title": "A vesicular trafficking pathway mediated by N -ethylmaleimide-sensitive factor governs integrin maturation and podocyte integrity",
-"link": "https://www.sciencedirect.com/science/article/pii/S008525382600606X?dgcid=rss_sd_all",
-"summary": "By Atsuhiro Imai, Kazunori Inoue, Xie Min-Jue, Natsune Tamai, Motoko Shimada, Takehito Harimoto, Hiroki Okushima, Ayumi Matsumoto, Jun Matsuda, Hideo Matsuzaki, Shuta Ishibe, Yoshitaka Isaka, Isao Matsui",
-"outlet": "",
-"published": "2026-11-01T12:00:00+00:00",
-"id": "14abbd3126bf8a51",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-11-07T03:07:16.479906+00:00"
-},
-{
-"title": "The teleologic basis of kidney potassium handling: a conceptual review",
-"link": "https://www.sciencedirect.com/science/article/pii/S0085253826006150?dgcid=rss_sd_all",
-"summary": "By Biff F. Palmer, Deborah J. Clegg",
-"outlet": "",
-"published": "2026-11-01T12:00:00+00:00",
-"id": "d5914cea753725ca",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-11-07T03:07:16.479906+00:00"
-},
-{
-"title": "Kidney Disease: Improving Global Outcomes (KDIGO) life cycle of guideline development series: part 4: translating evidence into KDIGO guideline statements",
-"link": "https://www.sciencedirect.com/science/article/pii/S0085253826004242?dgcid=rss_sd_all",
-"summary": "By Laia Oliveras, Amara Sarwal, Benjamin Lazarus, Elie A. Akl, Chris Carmona, Imuetinyan Edeki, Jitendra Meena, Joyce Popoola, Robin Vernooij, Gihad Nesrallah, Amy Earley, Reem A. Mustafa",
-"outlet": "",
-"published": "2026-11-01T12:00:00+00:00",
-"id": "1a38d8eab583e4d0",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-11-07T03:07:16.479906+00:00"
-},
-{
-"title": "Kidney Disease: Improving Global Outcomes (KDIGO) life cycle of guideline development series: part 3: evidence synthesis for guideline development: the KDIGO approach",
-"link": "https://www.sciencedirect.com/science/article/pii/S0085253826004230?dgcid=rss_sd_all",
-"summary": "By Laia Oliveras, Benjamin Lazarus, Amara Sarwal, Elie A. Akl, Chris Carmona, Imuetinyan Edeki, Jitendra Meena, Joyce Popoola, Robin Vernooij, Gihad Nesrallah, Amy Earley, Reem A. Mustafa",
-"outlet": "",
-"published": "2026-11-01T12:00:00+00:00",
-"id": "9ee9bdf197d4420a",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-11-07T03:07:16.479906+00:00"
-},
-{
-"title": "SEISMIC: a multistakeholder summit addressing access issues in diagnosis and treatment of C3G nephropathy and IC-MPGN",
-"link": "https://www.sciencedirect.com/science/article/pii/S008525382600712X?dgcid=rss_sd_all",
-"summary": "By Carla Nester, Joshua Tarnoff, Susan Brisendine, Laurel Damashek, Angel Morales, Lindsey Fuller, Marianne Silkjaer Nielsen, Giulia Bassanese, David Feldman, Daniel P. Gale, Tobias B. Huber, David Kavanagh, Antonia King, Doug…",
-"outlet": "",
-"published": "2026-11-01T12:00:00+00:00",
-"id": "5ecbfcb57cf00cbf",
-"source": "Kidney International",
-"category": "Journals",
-"first_seen": "2026-11-07T03:07:16.479906+00:00"
-},
-{
-"title": "Kidney Pathology of Megalin Deficiency in Adulthood",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002955?dgcid=rss_sd_all",
-"summary": "By Alexis Cassard, Magali Colombat, Thomas Perier, Joost Schanstra, Stanislas Faguer",
-"outlet": "",
-"published": "2026-11-01T12:00:00+00:00",
-"id": "3cdad7e7d491391f",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-11-07T23:52:22.751661+00:00"
 }
 ]
 }
