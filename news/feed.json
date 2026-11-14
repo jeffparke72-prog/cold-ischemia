@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-14T15:43:17.772898+00:00",
+"updated": "2026-11-14T20:35:53.911861+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -95,7 +95,7 @@
 "category": "News",
 "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en",
 "ok": true,
-"count": 27,
+"count": 26,
 "error": null
 },
 {
@@ -133,6 +133,61 @@
 ],
 "items": [
 {
+"title": "Establishing Mycophenolate Therapeutic Drug Monitoring Targets in Childhood Nephrotic Syndrome",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033632?dgcid=rss_sd_all",
+"summary": "By Magdalena Riedl Khursigara, Cal H. Robinson, Erin Chung, Winnie Seto, Diana Hamdan, Junhee Hong, Valentina Bruno, Nowrin Aman, Tonny H.M. Banh, Judy Truong, Josefina Brooke, Vaneet Dhillon, Mackenzie Garner, Christoph…",
+"outlet": "",
+"published": "2026-11-14T20:35:00.932985+00:00",
+"id": "0ff25ae03e40aa63",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-11-14T20:35:53.911861+00:00"
+},
+{
+"title": "Cardiovascular Outcomes of Triglyceride-Targeting Lipid-Lowering Therapies in Patients with CKD",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033486?dgcid=rss_sd_all",
+"summary": "By Mohammad Abdullah Al Zubair Naim, Fridtjof Thomas, Elani Streja, Robert Lowell Davis, Kamyar Kalantar-Zadeh, Keiichi Sumida, Csaba P. Kovesdy",
+"outlet": "",
+"published": "2026-11-14T20:35:00.932958+00:00",
+"id": "2a9a0e641da7c04f",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-11-14T20:35:53.911861+00:00"
+},
+{
+"title": "Evaluating the Long-Term Risk of Kidney Failure in IgAN Using a Real-World Population-Level Cohort From Canada",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033644?dgcid=rss_sd_all",
+"summary": "By Sinead Stoneman, Jialin Han, Jonathan Barratt, Richard Lafayette, Mohammad Atiquzzaman, Fei Tan Liu, Maziar Riazy, Sean J. Barbour",
+"outlet": "",
+"published": "2026-11-14T20:35:00.932936+00:00",
+"id": "acafd4b3b082fe07",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-11-14T20:35:53.911861+00:00"
+},
+{
+"title": "Over Forty Percent of Burkina Faso Dialysis Patients Lacked Pre-Dialysis Care - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWWZDM0RyWHhfYUIwWHZuS1lSZWpDTXE4Q3NDS281alB4V091cmpESHdWam9iTUc0SXk3U1VyZUVfazhOaklScVhTd2p2ZVRnUHFLNzUyYUYtcXl3bmpJWFplVVFNdE5fRTJlQjlWYVZLYms1bHBmR0R1S3o1RkRSNW1DdDdXSHlXM0hPenpjbXBqaGhValFMOFg1NnlZN2pad1A4cg?oc=5",
+"summary": "Over Forty Percent of Burkina Faso Dialysis Patients Lacked Pre-Dialysis Care Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-11-14T17:55:10+00:00",
+"id": "e65ce0c6d5d37356",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-14T20:35:53.911861+00:00"
+},
+{
+"title": "Mice With Diabetic Kidney Disease Display Altered Renal Metabolism During Fasting - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVHdxa1hSREs4V00tcy1GalVjQ0EtMkdYYm12MnZ6bkVRazBkeDhqaVZsSUFOMkF3ZWYxaHpYanNMZnlJaWc2YjZCMUhzbVB1WVRtOEphQk9XV2h4YjAxOTY3TUdaeXJzdDFVbWdKaXp5R0k3cFhLblFJUmNveEE5TmhYc2JBdHRlNWIyT2hCNzJSX25NMWF5Z2F3cUw4M2ptNTFtT1R0bURvdw?oc=5",
+"summary": "Mice With Diabetic Kidney Disease Display Altered Renal Metabolism During Fasting Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-11-14T16:09:02+00:00",
+"id": "a0b7e2fb7820e757",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-14T20:35:53.911861+00:00"
+},
+{
 "title": "Evaluating Pre- and Posttransplantation Experiences Through the Lens of Roy's Adaptation Model: A Qualitative Study of Kidney Transplant Recipients.",
 "link": "https://pubmed.ncbi.nlm.nih.gov/43031404/",
 "summary": "Akarsu K, Kiliçaslan BA, Özçelik Ü. Nursing & health sciences",
@@ -153,6 +208,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-11-14T15:43:17.772898+00:00"
+},
+{
+"title": "A new policy could help solve the U.S. organ shortage. Critics say it's unethical - NPR",
+"link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSFhrM1hSQlkzSm1XRVVvUzcwRmIwRTZVeHJVVmREX0ZtTkNKRk1tcE5PUW11ZUZKaUQ4RVlWdXVIaWtBeDBVN1lxRkFUUnZnbFpseDh5U09vWUZfRDhhZmgtSkFVQmxla2xvZUVDUEJqOTdJRE1fYzlLeHluaDFjaDd2UURBdw?oc=5",
+"summary": "A new policy could help solve the U.S. organ shortage. Critics say it's unethical NPR",
+"outlet": "NPR",
+"published": "2026-11-14T10:00:00+00:00",
+"id": "ebc7fd8c4786fbc5",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-14T20:35:53.911861+00:00"
 },
 {
 "title": "Organ Donation Day 2026 Promotes Life-Saving Awareness and Encourages Community Participation - 巴士的報",
@@ -263,6 +329,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-14T08:52:27.113522+00:00"
+},
+{
+"title": "[Health Talk] Extreme protein restriction raises kidney failure and death risk in Korean CKD patients - DongA Science",
+"link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9FdEthZUgtdTdmcGpLbzJsSkVSSWtyRTlsc1RuWFNETXFONG1pZ25hXzdwZXRfcDl3dnFvcENwZmhBMkRickVjdllkUnFtOUU1LTh1Tg?oc=5",
+"summary": "[Health Talk] Extreme protein restriction raises kidney failure and death risk in Korean CKD patients DongA Science",
+"outlet": "DongA Science",
+"published": "2026-11-13T23:00:00+00:00",
+"id": "2ffc1e9a33910dfa",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-14T20:35:53.911861+00:00"
 },
 {
 "title": "Retired Ada County K9 Astrid dies after kidney failure - KIVI-TV",
@@ -2716,6 +2793,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-11-10T02:38:52.491147+00:00"
+},
+{
+"title": "Organ Procurement Organizations Submit Three New Performance Measures for National Endorsement - Morningstar",
+"link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQelpRUHotTjQxbEY0NEFiS25UYVBIQ3lXZFZvWmhHWVBQdkY4TjdoX0RCMGJ4SEQyM3ViLXVLdUVNejFyWEVDWlQ5VEJuTWdLcFF5N3dmelB4b1lUTThrUjk5eTFlSHctZVpoN1N2MEZZOHVHMDFZUndXVUtmS2JvV191eGVlNXpoNXRwcVlsODk1VW9MUUhyVXNjRF9Ob1hOSWVacVpZRDY2enV5aVltbVpwbm1rWm9jY1BXTHRRMHU3YzVGT0ZMaWJzQkZkUzBncjF1R2hqZ21yTTdEVTNJU2xKSjY1SkVDaWRj?oc=5",
+"summary": "Organ Procurement Organizations Submit Three New Performance Measures for National Endorsement Morningstar",
+"outlet": "Morningstar",
+"published": "2026-11-09T15:53:00+00:00",
+"id": "4d1ef848661da491",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-14T20:35:53.911861+00:00"
 },
 {
 "title": "K-SOTTO workshop focuses on strengthening deceased organ donation network - The Hindu",
@@ -5543,94 +5631,6 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-11-04T00:10:44.227649+00:00"
-},
-{
-"title": "Drone strikes cut power and halt dialysis at Sudan hospital, staff member says - Citizen Portal AI",
-"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQOUdCSjA1MmtIYTB4cGxPU2YzRU9jcWRqbENjTFNhVGpDQnduTFhqbUFwU2xDdjhxUVIza2VweGNsQkUyUUVGN0luR1Z0V2k3V1lfSFRfSVpTSk1TNEVHYXdGTllBcGVoSmlqSVdFdl9ZMmpKNXltaE5XUDZsZUFxQnVNeHMxODEtT3dUdjF6LUFra3B0R0RkS1dGN3MxU1pZUW4yc0taRW9yRDNIaUdBend4TDlYS21jMW5tWQ?oc=5",
-"summary": "Drone strikes cut power and halt dialysis at Sudan hospital, staff member says Citizen Portal AI",
-"outlet": "Citizen Portal AI",
-"published": "2026-11-03T08:00:00+00:00",
-"id": "db1786a29339c46a",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-05T09:21:22.008840+00:00"
-},
-{
-"title": "INDIAN ORGAN DONATION DAY HELD - DIPR Nagaland",
-"link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE14bGotOV9fdE8tUWNpNzRMYk1xQVAzdUtIYkYxTjR5bmZoT3JnMGczUGxuOXdBcnFKdDMtVy1wc1ZTV1BzakZsX0ltajRrWTd0UXhjbmlJMDd2bmhSOWJoZm83SExmVHEwTVE?oc=5",
-"summary": "INDIAN ORGAN DONATION DAY HELD DIPR Nagaland",
-"outlet": "DIPR Nagaland",
-"published": "2026-11-03T08:00:00+00:00",
-"id": "3d5c54a1cc2e17b7",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-11-05T17:36:11.782051+00:00"
-},
-{
-"title": "PAU Hospitals Call for Organ Donation: The Greatest Legacy Is One Left for Future Generations, Not the Grave - PAU HABER",
-"link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNTVJXcm56VGZCSEpWQTZvNE11V2VmY0ZpRHBBeGg0UkdJUHNBOE5KX1lZY2ZaaloxenAzcTRDVzJpaVI5YkJDR0hUN0YyeDhSYlVCOVBYX1JQX3hNS1N6TDB4SEpQcnZBM3lyUjdkSGlPcVd3N0M1azJFYUxOekc2VkRpVEhQV18yZFUzMmFaT0ZTNXJrc0RMMnVPTkprdVhzNUxBN212VWFfeXlpWXhhZldQcWY4Y3JFOEJOX1pXNmlKTnhGTXVGeWw2cjlHLTNGUzdV?oc=5",
-"summary": "PAU Hospitals Call for Organ Donation: The Greatest Legacy Is One Left for Future Generations, Not the Grave PAU HABER",
-"outlet": "PAU HABER",
-"published": "2026-11-03T08:00:00+00:00",
-"id": "ba3b742842540a1c",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-11-10T02:38:52.491147+00:00"
-},
-{
-"title": "Why Do Kidney Disease and Heart Failure Go Together? - Medscape",
-"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeFpKb2xqRUxYMlRmQnU0TktidmRqRWo5SFh0ZzFoLUVKMlkyeTVrQnN1UFRhdXpXQ3pfWXI3LVhHX3V3VnFHNTBIYWxlZXh1OVFfRkJtRl9pUHZHQjM1elExdkZpU0dpOXktWG9ORms2VUZ2S3VTQ1Y4SXdkN3JRLWZnY3BEbDVIY0ZQSFhvUGdqYV81bkdaS0V1bEtvYUY2ZHAw?oc=5",
-"summary": "Why Do Kidney Disease and Heart Failure Go Together? Medscape",
-"outlet": "Medscape",
-"published": "2026-11-03T07:58:03+00:00",
-"id": "02993866eb9ea40a",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-03T11:49:48.783017+00:00"
-},
-{
-"title": "My Sister's Keeper: Who protects the child born for organ donation? - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNM3Q0a0x6ZzJyOTdjX0xfQVVzbHkydUZIMWZ0OHhndlJ6UEVKN0dtbUhtdVFpaG1vVHNER2xOY1R4ZEplM1YxTEpDNEdvbE9uOUZiZ3g2bkJOOUR2LXh1MFc2d1JnVG13Z3BXbS1uZnVWN1FkdDZ4YzR2ZEtsSHN2N05FWmM1eVE1UEIw?oc=5",
-"summary": "My Sister's Keeper: Who protects the child born for organ donation? Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-11-03T07:38:36+00:00",
-"id": "5ab6a246e26f557b",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-11-03T19:26:55.562176+00:00"
-},
-{
-"title": "MP: Road accident victim's organ donation to save at least 4 lives; two green corridors set up in Jabalpur for quick transport - ANI News",
-"link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQby0teF9RZmFfSzR1RjRYSUgzbHZsLWJ0S3lpNWpDZWVISWxST1E5bmQ0bkpnUWlxMEt6QjEtV0tRd25WdENzb0F4b293VzhZVDdrRUdSMW9pNERESDFMbDUybEJMeEVEOF9HUkhXYV9fakh4WVlJa1psanM2TkE3X2VyeWs0UU9QSU9PT1pKTElIQi1vODFVQ3VicVh5bmRrSUI0SjlxdE5SMmVSTHBFanN6alltWWZ1dUlmNXhSd3BrWllKZ19GZjNIaTU0eXFteV9Yam9vSW5IelFqNm1XcHNZSS1UU2h6NkEtanRORnozT0hMQzB5aW9KOXFtaFl2ZnVSNk9vd3M1dVphWEpQQkc3c1piQQ?oc=5",
-"summary": "MP: Road accident victim's organ donation to save at least 4 lives; two green corridors set up in Jabalpur for quick transport ANI News",
-"outlet": "ANI News",
-"published": "2026-11-03T07:38:00+00:00",
-"id": "1b7b5027daf53eaf",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-11-04T15:20:19.839732+00:00"
-},
-{
-"title": "‘Essentially a stranger’: Donate Life Northwest spotlights organ donation’s impact - KOIN.com",
-"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPU09CNUwwWlBlV3dGVVZSblNwelh6YUtXQ0Ezb3J6QlktU0lobG9EWmFrZVprZlZjQkdIVTB2a01sSTdjQl9wQUhYeWtPWmt6UzE3ZllhdFZ2Z0ZKcEstRDBwTU4xeVZNdEF2RnNBTldQSzE5MDVuRmJFSzZTc0Z1dGVZRlp2VXJwRnJoN2tsazVhM1p2WlNqUXNVRkFab2twNnNFd3B3U2pGS2NBdDZvbm5EUEnSAboBQVVfeXFMTWhCMF9TWTJGdV9WZWZkT2VXcnVIdjhlcklqR0xsU0VnZ1VoZmRIQmdYaXZkWGVFc2lPZHhUOUhZYVY0V3Q4Q0RkUUJwOVMxcnlhSWNxOHlrNlhRYUN0WHdveHluWFA4Um9aY2d4NGJJNnNvQjRXSTdISWE0ZUJLUnJkNENvVkxMdWxoY1BMVkR0eklNTmxmM0MwOE93Zlo5Z1JhNzZSQ3F6bzRZa3FsMmJlT1BwR0xxRkVB?oc=5",
-"summary": "‘Essentially a stranger’: Donate Life Northwest spotlights organ donation’s impact KOIN.com",
-"outlet": "KOIN.com",
-"published": "2026-11-03T06:20:35+00:00",
-"id": "ff239951d6e2cd4b",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-11-03T11:49:48.783017+00:00"
-},
-{
-"title": "Amend the Law on Donation, Procurement, and Transplantation of Human Tissues, Organs, and Bodies, and Donation and Procurement of Cadavers: Prevent legal loopholes from affecting organ donation and transplantation activities. - Vietnam.vn",
-"link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPWUNqSnlPRzB3RWlsVmpITHBrTVUwUFF1MVB0eGhIZmZpcUFLb3pnOVEwYnRlaV8wUl9tYmFETDU1TDR4S1VmLTNNWGJlY0cyVldsNVNqX2FoTjNIdzhnT3dNSjNFWXJtVDVKamh1anhMbThhdGlSY29pUkVFd1NXSVdPVDFkU2RZU3JldF9qNndwV1N3VklfYzJ5SjdKZVRfM0QwRnU4dkwtRkFwN1JFVm1KUE1wdDN1bXJmMm1pRUdSbGQ5Q1FIVGtkSlpvVXk3Q3ktMTg0WTRQbVU5ZkZZaDlKMmtuRkhnZFFJckxfTHF3Zw?oc=5",
-"summary": "Amend the Law on Donation, Procurement, and Transplantation of Human Tissues, Organs, and Bodies, and Donation and Procurement of Cadavers: Prevent legal loopholes from affecting organ donation and transplantation activities. Vietnam.vn",
-"outlet": "Vietnam.vn",
-"published": "2026-11-03T06:18:40+00:00",
-"id": "b3f314d675345a4d",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-11-03T19:26:55.562176+00:00"
 }
 ]
 }
