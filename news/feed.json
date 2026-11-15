@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-15T07:04:16.278636+00:00",
+"updated": "2026-11-15T14:40:48.425476+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -71,7 +71,7 @@
 "category": "Journals",
 "url": "https://onlinelibrary.wiley.com/feed/13990012/most-recent",
 "ok": true,
-"count": 15,
+"count": 16,
 "error": null
 },
 {
@@ -95,7 +95,7 @@
 "category": "News",
 "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en",
 "ok": true,
-"count": 21,
+"count": 26,
 "error": null
 },
 {
@@ -132,6 +132,94 @@
 }
 ],
 "items": [
+{
+"title": "Proliferative Glomerulonephritis With Monoclonal Immunoglobulin Deposition Presents as Rapidly Progressive Glomerulonephritis and Responds Favorably to Low-Dose Daratumumab: A Case Report",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003055?dgcid=rss_sd_all",
+"summary": "By Xintian Shi, Siyu Li, Lingfeng Zheng, Luxia Tu, Ping Wu, Zhihong He, Xin Wei",
+"outlet": "",
+"published": "2026-11-15T14:39:56.010579+00:00",
+"id": "e74af7ed1d7a558d",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
+},
+{
+"title": "Functional Identification of Multiple Aberrant Splicing Events Linked to an Intronic PKD1 Variant",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003110?dgcid=rss_sd_all",
+"summary": "By Aurélien Caux, Jessica Kachmar, Joana Bengoa, Hassan Saei, Manon Mautret-Godefroy, Pauline Planté-Bordeneuve, Vincent Morinière, Laurence Heidet, Guillaume Dorval",
+"outlet": "",
+"published": "2026-11-15T14:39:56.010546+00:00",
+"id": "20949ba414f716c6",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
+},
+{
+"title": "Physician Characteristics and the Use of Telemedicine in In-Center Hemodialysis Early in the COVID-19 Pandemic",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003213?dgcid=rss_sd_all",
+"summary": "By Teresa M. Lyons, Jingbo Niu, Susie Q. Lew, Wolfgang C. Winkelmayer, Glenn M. Chertow, Kevin F. Erickson",
+"outlet": "",
+"published": "2026-11-15T14:39:56.010486+00:00",
+"id": "3b12b64e22b05741",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
+},
+{
+"title": "Physician Workforce at Risk: Diminishing Interest in Pediatric Nephrology Fellowship Training",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003134?dgcid=rss_sd_all",
+"summary": "By Jason Silvestre, Robert J. Ferdon, Charles A. Reitman, Katherine E. Twombley",
+"outlet": "",
+"published": "2026-11-15T14:39:56.010432+00:00",
+"id": "909419f5b6ed78a0",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
+},
+{
+"title": "Early renal adaptation after living kidney donation assessed by multiparametric MRI.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/43034174/",
+"summary": "Carlsson E, Liss P, Weis J et al. BMC nephrology",
+"outlet": "BMC Nephrol",
+"published": "2026-11-15T12:00:00+00:00",
+"id": "94fc1142f374bdc0",
+"source": "PubMed: living organ donation",
+"category": "Research",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
+},
+{
+"title": "Insurers must cover organ donation and transplantation costs, says UAE Central Bank - Gulf Today",
+"link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNREZwN0pxRk04UDV4Y1ZsNS1HZ09FcW1laXhSMnNoSDJKN0Y0WVJLQ2xhVWZFMW42Q1dTeVJpd1NvLTZMNDZVUUdKcmNsQTAxVzZjS1p4QWpXSGxqelNwLTM3eVRxUWdQNUlNQ1M3eUlyQ3FQOEtDRFE2YVFvYjB4LXpyRjhGNjVjd05EXzRWZXZTbmNpbjZTTVYtRkFta3AyZ2hlWXVqRFhUMlduWkFpSE1ROE9qOUdvQ0tTWjVhWFY?oc=5",
+"summary": "Insurers must cover organ donation and transplantation costs, says UAE Central Bank Gulf Today",
+"outlet": "Gulf Today",
+"published": "2026-11-15T11:05:22+00:00",
+"id": "b22aba2d2f5dd2b4",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
+},
+{
+"title": "Promising Young Football Player Becomes Stars in Heaven, Saves Lives Through Organ Donation - SBS 뉴스",
+"link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE83THJvNVR1dm9aYUcxUXQxYzd3ZDRyX0JCQlhnWjl2THFwUnFvLUZQLVd0NUpOOW9RTm9GREZLSDZNckk4Mk56UkpYV19sYlVpdl9zcFQ3Y1FrRWVlT1VUclBMR3B2d2xyVjBwT0xn0gFmQVVfeXFMT0xMZmh3cFY1NVpfZnBUUjJRMktlRjNHWWdLMUhTWGVoaUVaSUtBT054aDduV0RGb2VvZ1NYMkMtVHZmYldEbFpMblFqTUhlZGZnNHg3alFVV3BJUjI5VzNXckxmMlV3?oc=5",
+"summary": "Promising Young Football Player Becomes Stars in Heaven, Saves Lives Through Organ Donation SBS 뉴스",
+"outlet": "SBS 뉴스",
+"published": "2026-11-15T08:42:00+00:00",
+"id": "010b4dd5193f970b",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
+},
+{
+"title": "Could Your Kidneys Be Revealing Hidden Risks to Your Heart? - Boehringer Ingelheim",
+"link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQemhSM3BDYTltd05VaUtBbENGbmIzVEhjUjNSVVVlY2V5aHg2LVl6MjhMeldKUVo1dWlBWUY2OThZQkFGUERVaEdlYUJBZFhBUzRjOEJ2clBsb2NYMXNJRkxWZ3ItelBhbHpxSkNEZXRra0tveVhhQlI1TGYtVjJJVk5oQ0ozVk5fSW9nRnNUX2Jzc2k0Z3E0MHBMeWlnRkNaTlRubWxrS3gxdEtVRDdrS1lpVzZqNGxRX0lnQUFtVWVYU3dFeWRIcURNdw?oc=5",
+"summary": "Could Your Kidneys Be Revealing Hidden Risks to Your Heart? Boehringer Ingelheim",
+"outlet": "Boehringer Ingelheim",
+"published": "2026-11-15T07:10:58+00:00",
+"id": "6ba334cf2b793f35",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
+},
 {
 "title": "Insights Into Abdominal Wall Vascularized Composite Allotransplantation: An Individual Patient Data Analysis.",
 "link": "https://pubmed.ncbi.nlm.nih.gov/43032950/",
@@ -175,6 +263,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-15T07:04:16.278636+00:00"
+},
+{
+"title": "Composite Metabolic and Inflammation Index Associates With Diabetic Kidney Disease Risk - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUHhSRWRuczJ2Uy1LTVlCVWROcGMtRGFpM3hMRHRlSTRYSTZPdnYzT3lEZFRtM2kzcUNKV3pMRXZrdlRpaXFScXpWQW1LcWtWTXVlSVJKQnN2WnhzZDFpLUJlMGUxTm5ncndMdWp2VDlTQVdpaGpuc1hSV0hfV0dDMzNqR0dYVXprSHFJcGIxQlljRldQazVrbHk4WDAwTlgzdy1jdFVaTHg3WlZxQTZ6OE1n?oc=5",
+"summary": "Composite Metabolic and Inflammation Index Associates With Diabetic Kidney Disease Risk Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-11-14T21:05:11+00:00",
+"id": "ee5f103d91320144",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
 },
 {
 "title": "Establishing Mycophenolate Therapeutic Drug Monitoring Targets in Childhood Nephrotic Syndrome",
@@ -232,6 +331,17 @@
 "first_seen": "2026-11-14T20:35:53.911861+00:00"
 },
 {
+"title": "Absolute Donor‐Recipient Serum Sodium Difference Predicts Early Allograft Dysfunction After Liver Transplantation: A Retrospective Cohort Study",
+"link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70628?af=R",
+"summary": "Clinical Transplantation, Volume 40, Issue 11, November 2026.",
+"outlet": "Wiley: Clinical Transplantation: Table of Contents",
+"published": "2026-11-14T15:55:41+00:00",
+"id": "eaa7481453dd137b",
+"source": "Clinical Transplantation",
+"category": "Journals",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
+},
+{
 "title": "Evaluating Pre- and Posttransplantation Experiences Through the Lens of Roy's Adaptation Model: A Qualitative Study of Kidney Transplant Recipients.",
 "link": "https://pubmed.ncbi.nlm.nih.gov/43031404/",
 "summary": "Akarsu K, Kiliçaslan BA, Özçelik Ü. Nursing & health sciences",
@@ -241,6 +351,28 @@
 "source": "PubMed: living organ donation",
 "category": "Research",
 "first_seen": "2026-11-14T15:43:17.772898+00:00"
+},
+{
+"title": "Papillary Necrosis Masquerading as a Stone",
+"link": "https://www.sciencedirect.com/science/article/pii/S0085253826009348?dgcid=rss_sd_all",
+"summary": "By Parthiban Palanivel, Deepak Dubey, Mahesha Vankalakunti",
+"outlet": "",
+"published": "2026-11-14T12:00:00+00:00",
+"id": "2e02cd7303605bc7",
+"source": "Kidney International",
+"category": "Journals",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
+},
+{
+"title": "How New York’s first-of-its-kind organ donation program helped a family stay afloat - Press-Republican",
+"link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQanMzdFNBeFg4R1hVRGcyU3VhZDg5WjFmNjhQQy1hRERGUnI4S1BKbllNQWhYaTllbTJXRUlsOEJadDRZNWZBWnJMY0RKWG1wOTBnTVdKSC1Lb3J0N0JscTd3REdzTUFoZUpQamdHTWVaZjdnU19aWm1QdGhBQ1Fob04wNHNRN1VsU3NlX3BpR3RlY3g1VjFucEVMT19pb3ZZSWprTzk3YkFWMDJkNFFrMVJJNDNZQWF1WTIxTWt3MHdLYmhMWWpURklKU2NzODk3aVNQY1VpTlBlSENhQWFzVGptXzVUOWNvMkhqWUJhNHItMHNXZWc?oc=5",
+"summary": "How New York’s first-of-its-kind organ donation program helped a family stay afloat Press-Republican",
+"outlet": "Press-Republican",
+"published": "2026-11-14T12:00:00+00:00",
+"id": "22f14e5bcb9b1bf8",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
 },
 {
 "title": "An organ transplant controversy tests 'the dead donor rule' - NPR",
@@ -296,6 +428,17 @@
 "source": "PubMed: transplant, donation & kidney failure research",
 "category": "Research",
 "first_seen": "2026-11-14T08:52:27.113522+00:00"
+},
+{
+"title": "Merpati Health teams up with national transplant centre to turn GPs into organ donation champions - Malay Mail",
+"link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNdURpRWktVTVRZlBldFpjTU1KZ1FMclR5bDVjYTFVNEhhcEhFdXB1cVRhX2dmTDlyZ3NFRlpKc25WVTUwbmtmOC1KdmFkbm02SW1hanl1OUNzY1haRGZpODZtSGdIVWFPYzlPLWU3MzA5QWlqeFNkdm45LTkxbG1faTNRX0pOUks5czRfdzg4TlZzVUQ5NVlKVkVyZjBkVXM1U3RjaTJtTXVQaktGblNQdzQtQlpWd2U4N0QxR0ZzSjB1NlZGMS13YWMzc0NVTzJicDkzS3NVQ2xxTVdrbmcyREd0a0Jnd9IB6wFBVV95cUxNc3ZQZ1dQRWhSRG5PZEpKWWNOQlppZ2NXSmJGdElHSERvbkE0MXNiWko5MGpzVjZ4WnA5X1RsQ1VvbDQ3YlBxZS1ScDJiM0tWRjRsbGhGaVEzcWdUUVFFdjdnY1dWRTh4eEt6RzZUQTh5TE1lcEhMN1loa0dEMTVHYkl3a2NjUG9heDZfNjl1ZENweE1KYlROUUxZMDdNQlRYeE5XQ0NCM2lqdkZwUkZfTU1ZQWprSjhWZHljNHJ6clEyQlI1RTd4b3VUS2dNLWNzazdsZVB3TndIajVsTG1TcWhrU3lkV2NRRHpV?oc=5",
+"summary": "Merpati Health teams up with national transplant centre to turn GPs into organ donation champions Malay Mail",
+"outlet": "Malay Mail",
+"published": "2026-11-14T08:48:56+00:00",
+"id": "250312cb1b3dc605",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-15T14:40:48.425476+00:00"
 },
 {
 "title": "Merpati Health teams up with national transplant centre to turn GPs into organ donation champions - Yahoo",
@@ -1025,7 +1168,7 @@
 },
 {
 "title": "Aspiring for DM Organ Transplant Anaesthesia and Critical Care? Know the Feeder Qualification - Medical Dialogues",
-"link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNdnQxQmZfX1hvM3Z5cTRNdFlMSGJONFE5X3VXRmI4N1hQYjI2d3ZpblVrU2ktTjc4cTY0UklQX080Z0ttSFVBaFh2azdSSzJCZnh0M1haOEM3N2hndHd4Wl8xc01QNHhKU0ZOOVNHcFRNODBmbzl2WjR6TmhxVktIemN0R2I3c0xZWE5Ya2Q5Z3p5MVM2b0EtT2RySjk2cHRnRkdYZlRvVXB5b3AwUU1MUGNtT2Y4N0dtMUg0V1Y5Q3pYa3JsVGkxVHRCSV9RMVpWWWpJZVk5bHhxbjFwRVgtOERRSjhoVWZYV3ZEd1VZNWRjdXZ6anFhVtIB-AFBVV95cUxNdnQxQmZfX1hvM3Z5cTRNdFlMSGJONFE5X3VXRmI4N1hQYjI2d3ZpblVrU2ktTjc4cTY0UklQX080Z0ttSFVBaFh2azdSSzJCZnh0M1haOEM3N2hndHd4Wl8xc01QNHhKU0ZOOVNHcFRNODBmbzl2WjR6TmhxVktIemN0R2I3c0xZWE5Ya2Q5Z3p5MVM2b0EtT2RySjk2cHRnRkdYZlRvVXB5b3AwUU1MUGNtT2Y4N0dtMUg0V1Y5Q3pYa3JsVGkxVHRCSV9RMVpWWWpJZVk5bHhxbjFwRVgtOERRSjhoVWZYV3ZEd1VZNWRjdXZ6anFhVg?oc=5",
+"link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxORGVrdEp3UmM4MGJrSjdwelliUVk4MUtpWDVNZ1o5a2JEMnlVdlVGMmFjbV9oRm5Nc0dMWVJ2MTZzZk9jcVpmZVRKN1FrVk11YjljVHNyNUt1TERmdTRyR0pHUmlyNVRTZjhxMm1Tb2IyU3Z6ZmFOc0Zfa1lVNkF0NmtzOGpIekJBUG9jUXpPNkVvcmZaeVA3bDA4aGxObDB2TkcxeDNYbDdXNDRkVWxGYm9jRDBxeVF0eXV0WVdVVjhLSkhUSkFqUnkzZ2REdnJVZlJfWmFpc09OTVVNbThqcjR5RjhGME4wNExPVFJUUWlhblnSAfgBQVVfeXFMTXZ0MUJmX19YbzN2eXE0TXRZTEhiTjRROV91V0ZiODdYUGIyNnd2aW5Va1NpLU43OHE2NFJJUF9PNGdLbUhVQWhYdms3UksyQmZ4dDNYWjhDNzdoZ3R3eFpfMXNNUDR4SlNGTjlTR3BUTTgwZm85dlo0ek5ocVZLSHpjdEdiN3NMWVhOWGtkOWd6eTFTNm9BLU9kcko5NnB0Z0ZHWGZUb1VweW9wMFFNTFBjbU9mODdHbTFINFdWOUN6WGtybFRpMVR0QklfUTFaVllqSWVZOWx4cW4xcEVYLThEUUo4aFVmWFd2RHdVWTVkY3V2empxYVY?oc=5",
 "summary": "Aspiring for DM Organ Transplant Anaesthesia and Critical Care? Know the Feeder Qualification Medical Dialogues",
 "outlet": "Medical Dialogues",
 "published": "2026-11-13T03:30:31+00:00",
@@ -5488,149 +5631,6 @@
 "source": "Kidney Medicine",
 "category": "Journals",
 "first_seen": "2026-11-03T19:26:55.562176+00:00"
-},
-{
-"title": "Impact of Self-Reported Race and Ethnicity in Hospitalized Patients With Acute Kidney Injury and Cirrhosis: Results from the HRS-HARMONY Consortium",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003043?dgcid=rss_sd_all",
-"summary": "By J. Pedro Teixeira, Paige McLean Diaz, Tianqi Ouyang, Shelsea A. St. Hillien, Jevon E. Robinson, Sumeet K. Asrani, Raymond T. Chung, Giuseppe Cullaro, Andres Duarte-Rojo, Xing Li, Eric S. Orman, Eric M. Przybyszewski, Kevin R.…",
-"outlet": "",
-"published": "2026-11-03T19:26:55.562176+00:00",
-"id": "b82afc2fd87946da",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-11-03T19:26:55.562176+00:00"
-},
-{
-"title": "Age- and Sex-Specific Prevalence of Cardiovascular-Kidney-Metabolic Syndrome in a Contemporary Japanese Population",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002566?dgcid=rss_sd_all",
-"summary": "By Kenta Fujimoto, Koichi Asahi, Shouichi Fujimoto",
-"outlet": "",
-"published": "2026-11-03T19:26:55.562176+00:00",
-"id": "d9828ca2bddf5767",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-11-03T19:26:55.562176+00:00"
-},
-{
-"title": "Vice President CP Radhakrishnan inaugurates National Organ Transplant Games 2026 - AIR News",
-"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOYll5RnBPdC1fM2p6X0RJRUt4d2sycnczZ3l0SWVweUxMUVlpckJLMWQwaTUxMkd4WHBZMTNXaWhTOXRBWEFnTk51RjRNQWh3TzdnZTFMU0ZGaXd1MmV2VjM2UUp4OUtRaDh3RTc4UHkyZlZWNTd6Y2tRQ0l5aks5di1ucThzcVRkLUp3SzRnRXAzYldPX19Zb0RqaGRkZHF4cmd1ejB2Rk5BUQ?oc=5",
-"summary": "Vice President CP Radhakrishnan inaugurates National Organ Transplant Games 2026 AIR News",
-"outlet": "AIR News",
-"published": "2026-11-03T19:05:03+00:00",
-"id": "2c9871c188bf961e",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-11-05T17:36:11.782051+00:00"
-},
-{
-"title": "Remnant Cholesterol Flags CKD Severity, CV Death Risk on Dialysis - Pharmacy Times",
-"link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeV9tdmRNRTRhRmJDYnp5dlhnUklMUFkzMExVeGVjTlhvWVU0WUVzVUZkQ2h0cnFkZlQwb0w3NTRwMW1QaTAxWVpRS1VQdGtGUV90TlViRVdTa0lJZU9GX0p2S3J6NE9wWlNRNjhEMFVEdW54OUVFUEVacmNrMF9zNG02Ny1PWElMODM5MFZ6cFQ3TG9SdUNIcXlGNXVldE5t?oc=5",
-"summary": "Remnant Cholesterol Flags CKD Severity, CV Death Risk on Dialysis Pharmacy Times",
-"outlet": "Pharmacy Times",
-"published": "2026-11-03T17:05:54+00:00",
-"id": "258376beb294caa6",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-03T19:26:55.562176+00:00"
-},
-{
-"title": "Telitacicept stabilizes eGFR vs. placebo in IgA nephropathy",
-"link": "https://www.healio.com/news/nephrology/20261103/telitacicept-lowers-proteinuria-stabilizes-egfr-for-adults-with-iga-nephropathy-at-year-2",
-"summary": "DENVER — Telitacicept was associated with reduced proteinuria and stabilized kidney function at 2 years vs. placebo for adults with immunoglobulin A nephropathy, according to study data presented at ASN Kidney Week. Telitacicept (Tai’ai; Yantai Rongchang Pharmaceuticals, RemeGen) is a dual B-cell activating factor…",
-"outlet": "",
-"published": "2026-11-03T15:24:14+00:00",
-"id": "8c3ca8670f59e10d",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-11-03T19:26:55.562176+00:00"
-},
-{
-"title": "‘Pay attention and look deeper’: How clinicians can identify, help sex trafficking victims",
-"link": "https://www.healio.com/news/primary-care/20261103/pay-attention-and-look-deeper-how-clinicians-can-identify-help-sex-trafficking-victims",
-"summary": "LAS VEGAS — Healthcare visits may be one of the few opportunities to identify a sex trafficking victim, so it is important for clinicians to be aware of the warning signs, a speaker at OMED said. In 2025, 21,457 individuals in the United States were victims of sex trafficking, according to the National Human…",
-"outlet": "",
-"published": "2026-11-03T14:18:19+00:00",
-"id": "be29d627d41f2b06",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-11-03T19:26:55.562176+00:00"
-},
-{
-"title": "Retinal AI Shows Promise for Detecting Diabetic Kidney Disease - EMJ",
-"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMnQ5dUQxRnQ0ck91N0pLTkUtdUZ1cEFSVDhWNjMyZm9TS1RwaHJXcXEwaUFWWEJkbFY4Y1VVd2xVZTgxVDFBZlhwOEJNSzhYOVNOckZtM01jME5Oc0VQb20xTWg5U0J3NTY5SmpnaTZ0bjZOUFh0VkNZd3JuN2RlcGk3anI2ZUxtbTFWVkpnQld0Z2tucW9KbzVLcEl4Q3hETExPR3hPcw?oc=5",
-"summary": "Retinal AI Shows Promise for Detecting Diabetic Kidney Disease EMJ",
-"outlet": "EMJ",
-"published": "2026-11-03T14:05:34+00:00",
-"id": "3d463310c93cf48b",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-03T19:26:55.562176+00:00"
-},
-{
-"title": "Raleigh pharma seeks FDA approval for dialysis drug - The Business Journals",
-"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQOFZiQVhtTWk0WHVMWXd6cU1LLWdjckNHVVc0M3BUa0hPUWhmbHJ2YWtocy0yMHhPNEpDNW1BbTNPSDZOclRfRHBNZ3FfdzF3WUpfZV8yS3Zmbjh2a0NURC1uOFptWmZRdHoyQWEwQjQxaXNERnR0bE5idGxyblZTcjBCR2NiRUNRYU9seXVuZ3hIZkdlaDNzVWtMei1yTE5MTS1zel8wRmVkLWM?oc=5",
-"summary": "Raleigh pharma seeks FDA approval for dialysis drug The Business Journals",
-"outlet": "The Business Journals",
-"published": "2026-11-03T12:01:00+00:00",
-"id": "812165628ccacf92",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-03T19:26:55.562176+00:00"
-},
-{
-"title": "Risk factors for cognitive impairment in patients undergoing hemodialysis: an umbrella review and meta-analysis.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42974671/",
-"summary": "Liu J, Wan JF, Chen J et al. Renal failure",
-"outlet": "Ren Fail",
-"published": "2026-11-03T12:00:00+00:00",
-"id": "8aec0ce77bb87dd4",
-"source": "PubMed: transplant, donation & kidney failure research",
-"category": "Research",
-"first_seen": "2026-11-03T19:26:55.562176+00:00"
-},
-{
-"title": "Single-Port Robotic Extraperitoneal Donor Nephrectomy: Technique and Initial Case Series.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42977162/",
-"summary": "Choi WJ, Wee AC, Isaacson D et al. American journal of transplantation : official journal of the American Society of Transplantation and the American Society of Transplant Surgeons",
-"outlet": "Am J Transplant",
-"published": "2026-11-03T12:00:00+00:00",
-"id": "a398832328142b1b",
-"source": "PubMed: living organ donation",
-"category": "Research",
-"first_seen": "2026-11-04T06:55:24.660257+00:00"
-},
-{
-"title": "Single-Port Robotic Extraperitoneal Donor Nephrectomy: Technique and Initial Case Series",
-"link": "https://www.sciencedirect.com/science/article/pii/S1600613526028595?dgcid=rss_sd_all",
-"summary": "By Woo Jin Choi, Alvin C. Wee, Dylan Isaacson, Yi-Chia Lin, Mohamed Eltemamy",
-"outlet": "",
-"published": "2026-11-03T12:00:00+00:00",
-"id": "8cb1c37b57898752",
-"source": "American Journal of Transplantation",
-"category": "Journals",
-"first_seen": "2026-11-04T15:20:19.839732+00:00"
-},
-{
-"title": "B-Cell Maturation Antigen T-Cell Engager Therapy in a Patient With Refractory Plasma Cell Clonal Cryoglobulinemia Unmasked by RNA-Based Immunoglobulin Sequencing",
-"link": "https://www.sciencedirect.com/science/article/pii/S0272638626011972?dgcid=rss_sd_all",
-"summary": "By Bénédicte Piron, Jérôme Han Yee Yu, Hélène Caillon, Virginie Pascal, Benoit Tessoulin, Cyrille Touzeau, Yannick Le Bris, Karine Renaudin, Nicolas Blin, Simon Ville",
-"outlet": "",
-"published": "2026-11-03T12:00:00+00:00",
-"id": "d8a37865ac118b85",
-"source": "American Journal of Kidney Diseases",
-"category": "Journals",
-"first_seen": "2026-11-04T15:20:19.839732+00:00"
-},
-{
-"title": "Biopsy-Proven Minimal Change Disease During Maintenance Intravenous Immunoglobulin Therapy for Chronic Inflammatory Demyelinating Polyneuropathy: A Case Report and Focused Literature Review",
-"link": "https://www.sciencedirect.com/science/article/pii/S259005952600364X?dgcid=rss_sd_all",
-"summary": "By Hiroki Nishimura, Savneek Chugh",
-"outlet": "",
-"published": "2026-11-03T12:00:00+00:00",
-"id": "1fcb0c0615204363",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-11-04T15:20:19.839732+00:00"
 }
 ]
 }
