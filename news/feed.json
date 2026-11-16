@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-15T20:17:36.999611+00:00",
+"updated": "2026-11-16T00:17:19.727743+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -95,7 +95,7 @@
 "category": "News",
 "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en",
 "ok": true,
-"count": 22,
+"count": 19,
 "error": null
 },
 {
@@ -133,11 +133,66 @@
 ],
 "items": [
 {
+"title": "A National Survey of Provider Practice Patterns for Evaluation and Management of Patients With Urinary Stone Disease",
+"link": "https://www.sciencedirect.com/science/article/pii/S2590059526002827?dgcid=rss_sd_all",
+"summary": "By Yunseo Jo, Calyani Ganesan, Lindsey Keo, Glenn M. Chertow, Simon John Christoph Soerensen, Maria Montez-Rath, John T. Leppert, Alan C. Pao",
+"outlet": "",
+"published": "2026-11-16T00:16:27.529847+00:00",
+"id": "7b77e988e6dc4536",
+"source": "Kidney Medicine",
+"category": "Journals",
+"first_seen": "2026-11-16T00:17:19.727743+00:00"
+},
+{
+"title": "Urine proteins could flag early kidney disease in cats - Vet Practice Magazine",
+"link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMm0zVG5uNUYtNHJlT3EzbFhpckVjbVNWZjN0UGlUWVhpSG1xcGtsZ3k3dUJxd0Y3VENqcVpIdnUyZms0cnZmNy10Vm9vSEZqUjBoOHgyTnViRmFVNXVKMlJnb01pa1JBTW9XRzItQXViRjRyLTRlS0dfbDUtdFp1aFdPaHNpY1pGQjZqakVvTXVEa2M?oc=5",
+"summary": "Urine proteins could flag early kidney disease in cats Vet Practice Magazine",
+"outlet": "Vet Practice Magazine",
+"published": "2026-11-15T23:29:57+00:00",
+"id": "eda342696ae9f565",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-16T00:17:19.727743+00:00"
+},
+{
+"title": "'I cried and panicked when I was diagnosed with end-stage renal disease at age 29.' - Vietnam.vn",
+"link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOVVlfOUpISzhrcnlKY3VqVEFYYzJlMEV2UjV0UXMwejk0WlVQT0JyYXhFc3pDd29SOFNaaXU2NzRaNzRTY2hlQ0QwbUV2R0Q1SzJpWTRLM0lCaFpDRFEwdGtCSjhiNG5pYUx5WGctZ28yWXoxV2JHaVQtM1REWGh6NEJTY1FXczJpbkJrOFduWQ?oc=5",
+"summary": "'I cried and panicked when I was diagnosed with end-stage renal disease at age 29.' Vietnam.vn",
+"outlet": "Vietnam.vn",
+"published": "2026-11-15T23:23:32+00:00",
+"id": "9096f433d76aa15c",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-16T00:17:19.727743+00:00"
+},
+{
+"title": "The surgeons helping Rwanda expand kidney transplant care| The New Times - The New Times",
+"link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPTTVPOFVvQzVTZUJHZXpOR3k3bDNYNFlBY2ptVElUN0xXWDRKYzd6LWtlbXJYN1hCZDNqajBwNUZCVXdHdG1oQ3pWQjNLQmdjaklWekN3SXBtcmJ1Y2hoMWdJeHFhU2ZWNUtrVnJtUW9MNlV3N0xrLXJRVndKZzF1cHI3ck8yd18teEgzSGNqc2NScXg3aEkwR0NmMzlEWlF2dkVQNDYxZWdwWWlQRkw40gG0AUFVX3lxTE5uUmlnTTYzb2hXRlNFTlB1cUkyeFlwckVfZjdseGxIY3NLQXJoT3JhZmw0bHNHNnYwdEtTMEx3RVNmdV8yTmZpWm9KRk9BQVZCZmh5Tm5vZDVnSnM5aEFfWmVKRkVsX1FCOU83UlNMSjBRRGRZdnFrRGNQMlZwWnFGLVM5LVp0VFRMOFFEcDdaV3ZUbnV6TkY0dm11ZWxfbjEyMzFncVdXcGRLSXp6SHNWYTQxQw?oc=5",
+"summary": "The surgeons helping Rwanda expand kidney transplant care| The New Times The New Times",
+"outlet": "The New Times",
+"published": "2026-11-15T22:00:23+00:00",
+"id": "7cf100195b4e3de3",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-16T00:17:19.727743+00:00"
+},
+{
+"title": "Short Fragmented Sleep Linked to Increased Chronic Kidney Disease Risk in China - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMVdzTmdrNDFla2RiTXpuQnBzS2QyWUVHSlBTWnU2SjRCUjVCTUZnd1hwMHl4V3l0bmNTRzRQVWJaZEh5TDJSTWV4TVJUQnpVLTBfMjl0MVp4aV9FUGpCcHdWa0JTZ25hQ3N1UkZENjJGY2haY1VVN245cnhDMDhsakhBTTg4UmZnaFE4WmtaWldoa2F4TU1GVE0zSUhubW9CQmtCREk4NA?oc=5",
+"summary": "Short Fragmented Sleep Linked to Increased Chronic Kidney Disease Risk in China Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-11-15T21:35:51+00:00",
+"id": "28412da13c09d6f8",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-16T00:17:19.727743+00:00"
+},
+{
 "title": "Impact of Self-Reported Race and Ethnicity in Hospitalized Patients With Acute Kidney Injury and Cirrhosis: Results from the HRS-HARMONY Consortium",
 "link": "https://www.sciencedirect.com/science/article/pii/S2590059526003043?dgcid=rss_sd_all",
 "summary": "By J. Pedro Teixeira, Paige McLean Diaz, Tianqi Ouyang, Shelsea A. St. Hillien, Jevon E. Robinson, Sumeet K. Asrani, Raymond T. Chung, Giuseppe Cullaro, Andres Duarte-Rojo, Xing Li, Eric S. Orman, Eric M. Przybyszewski, Kevin R.…",
 "outlet": "",
-"published": "2026-11-15T20:16:43.403390+00:00",
+"published": "2026-11-15T20:17:36.999611+00:00",
 "id": "b82afc2fd87946da",
 "source": "Kidney Medicine",
 "category": "Journals",
@@ -148,7 +203,7 @@
 "link": "https://www.sciencedirect.com/science/article/pii/S2590059526002566?dgcid=rss_sd_all",
 "summary": "By Kenta Fujimoto, Koichi Asahi, Shouichi Fujimoto",
 "outlet": "",
-"published": "2026-11-15T20:16:43.403200+00:00",
+"published": "2026-11-15T20:17:36.999611+00:00",
 "id": "d9828ca2bddf5767",
 "source": "Kidney Medicine",
 "category": "Journals",
@@ -159,7 +214,7 @@
 "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQcGxyQXpDOGV1cFBRT2EzTmlwdDduekZWN1gtWC1pWWdOejE5azNZa202Zk1iblU3S2RkZUFzZEhrRVdoZU43elRUR0dxMWNJVGdETzZwWG83SmlWdlphTmdvdlBiaEFRak9SeWtNSE9iMWhhSmtUcDJ2WFhOdjUwZVhTOXk0d0F6UUdZamRScW8wSU10RlpaOElqd2ljVTk3UDROTQ?oc=5",
 "summary": "Recessive Ciliopathy Variants Identified in Adult Iraqi Kidney Disease Cohort Bioengineer.org",
 "outlet": "Bioengineer.org",
-"published": "2026-11-15T18:56:15+00:00",
+"published": "2026-11-15T18:57:18+00:00",
 "id": "a2781e55a86ee93c",
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
@@ -1176,6 +1231,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-13T21:22:46.478494+00:00"
+},
+{
+"title": "Yuhan wins South Korea approval to start phase 1 trial of CKD drug YH34180 - Chosunbiz",
+"link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPcy1ob1pwOWdfWTdhNFIzaEc1aGVPbUlFQXpJRElwZThNN0FwWmM2VTduLUROZGhtaU96MURoMXJhWml2X1dOUy1EeFdzc2wwTnZBUDVxZVRCS1gyWDRuMWlLZFRNYnFVUTlLRzBqdHpqUEV6OVF4MzVDMGwzSzAtSdIBlAFBVV95cUxNVlNIaThCWWxYTG9TRkExWVFUNGpVNjdzamNkRmJ3Rm1lSGc3QjZaOVBQNWdRcDI4TENGRFY1c2tGZU4ybDdXQk03b1lfcENjRzNaT09hZzQ5UVc2d1dvckZkLUotcHFKOU8xSjdqYmFkb2lIYy1zaWpQTGtOcko4U2JFb3dPWEJaa3Rrb2xMdzlENHZ5?oc=5",
+"summary": "Yuhan wins South Korea approval to start phase 1 trial of CKD drug YH34180 Chosunbiz",
+"outlet": "Chosunbiz",
+"published": "2026-11-13T08:54:00+00:00",
+"id": "ea34160f2ab2b8a2",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-16T00:17:19.727743+00:00"
 },
 {
 "title": "Acciona Energía mantiene su objetivo de ebitda para 2026 en unos 1.200 millones de euros - TradingView",
@@ -5565,72 +5631,6 @@
 "source": "PubMed: living organ donation",
 "category": "Research",
 "first_seen": "2026-11-04T15:20:19.839732+00:00"
-},
-{
-"title": "Implementation of a Novel Multi-Center Pediatric Liver Transplant Collaborative Network.",
-"link": "https://pubmed.ncbi.nlm.nih.gov/42978031/",
-"summary": "Soltys KA, Gonzalez-Peralta R, Teaster R et al. Pediatric transplantation",
-"outlet": "Pediatr Transplant",
-"published": "2026-11-04T12:00:00+00:00",
-"id": "3375dd490c16c030",
-"source": "PubMed: living organ donation",
-"category": "Research",
-"first_seen": "2026-11-04T15:20:19.839732+00:00"
-},
-{
-"title": "Hemolytic Uremic Syndrome and IgA Nephropathy Complicating Postpartum Acute Kidney Injury: A Case Report",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003663?dgcid=rss_sd_all",
-"summary": "By Peter W. Santos, Cynthia Carrizoza, Reza Salehi-Rad",
-"outlet": "",
-"published": "2026-11-04T12:00:00+00:00",
-"id": "ebb4c781accefaf0",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-11-05T09:21:22.008840+00:00"
-},
-{
-"title": "Rivaroxaban for Pulmonary Embolism in a Hemodialysis Patient With Transiently Reduced Antithrombin Activity: A Case Report",
-"link": "https://www.sciencedirect.com/science/article/pii/S2590059526003675?dgcid=rss_sd_all",
-"summary": "By Fan Yang, Chaoyuan Li, Yaru Ren, Weixiu Wang, Sha Chen, Manyu Zhang, Xin Feng, Dingwei Yang",
-"outlet": "",
-"published": "2026-11-04T12:00:00+00:00",
-"id": "4f5a4efcca5873fe",
-"source": "Kidney Medicine",
-"category": "Journals",
-"first_seen": "2026-11-05T09:21:22.008840+00:00"
-},
-{
-"title": "REQA turns discarded dialysis bags into designer handbags - Green Prophet",
-"link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNTUwyeFl4OVhKY3JQNnlNQXJuOVh6SEcycXRqYkRFS05odFBGbVozZTRCOGctYlJCZW5wRjVVY1Yzb3dHeEozYmFTaHoyT29MVnV5NTJPY2FQaFFEUktpQUlqRG1UWVBWdTc4UGh0bGZLSnRWWHZLMTBqSHNvR3V0bURwc1hKVFVpM0tzZ3lJZ0YwQ01PRG4wNlZMZw?oc=5",
-"summary": "REQA turns discarded dialysis bags into designer handbags Green Prophet",
-"outlet": "Green Prophet",
-"published": "2026-11-04T11:17:30+00:00",
-"id": "0e1fbc9972a5bd22",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-06T03:21:34.719992+00:00"
-},
-{
-"title": "Voices of Life – Truth, Equity & Testimony in Organ Donation - St Pete Catalyst",
-"link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQWEc5NlJCdk9VR19LbVZLNl9aYjVFbUNtSEdtUHlvR2hqM243VUVLeGRkU0hreHNFdWJjSjgwdDBGSHBsN3pYaDRpdjFxWEZDWGxhazA5WUxmYmMyNGVkU2VVeWg3aE04ZFZTSnhtRHVzTmh1MndUVGx3MEZrUE5qWjRuNnVtV0VlMUdKNU9MN1MzY1Ax?oc=5",
-"summary": "Voices of Life – Truth, Equity & Testimony in Organ Donation St Pete Catalyst",
-"outlet": "St Pete Catalyst",
-"published": "2026-11-04T11:00:06+00:00",
-"id": "854842e877b4b105",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-11-05T01:43:40.610497+00:00"
-},
-{
-"title": "DKK 10 million for research into osteoporosis in patients with kidney disease - Det Sundhedsvidenskabelige Fakultet - Aarhus Universitet",
-"link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZTFFa1U5dlBULThjTjFva3hVOVBvZ2ZsTmpMQVJkZ1FjMnAzbGZNclppbUtKV0RWclVzdEVzUVRUR2ROakM5WFlEWjRHSlJQalhBaF9fNUp1RmRoNlBrT2Q3anpNYUIwOXFGSjR6dEtjb2RIWkRneUZDNmVSZUdRWXJMb293ZU1TOTFURHVnTEpNblF1VDBFVjR3TnZMdWE5c1JJTl9jYjRqWEkyLS1YUFozLUhUU2VB?oc=5",
-"summary": "DKK 10 million for research into osteoporosis in patients with kidney disease Det Sundhedsvidenskabelige Fakultet - Aarhus Universitet",
-"outlet": "Det Sundhedsvidenskabelige Fakultet - Aarhus Universitet",
-"published": "2026-11-04T08:00:00+00:00",
-"id": "86a78cc299477e17",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-05T17:36:11.782051+00:00"
 }
 ]
 }
