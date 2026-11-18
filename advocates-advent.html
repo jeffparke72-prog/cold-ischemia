@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Advocate's Advent | Cold Ischemia Foundation</title>
+<meta name="description" content="Twenty-four doors, December 1 to 24. One tradition from somewhere in the world, and one lesson about what true patient and care partner advocacy really is, behind each.">
+<meta property="og:title" content="The Advocate's Advent · Cold Ischemia Foundation">
+<meta property="og:description" content="24 doors. 24 traditions. What true patient advocacy looks like when nobody is paying for it. Open one a day, then pass it on.">
+<meta property="og:url" content="https://coldischemia.foundation/advocates-advent.html">
+<meta property="og:image" content="https://coldischemia.foundation/cold-ischemia-logo.png">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* The Advocate's Advent: a winter-night calendar of 24 gilded doors. Each opens to a card that turns over:
+   front = the tradition, back = the advocacy lesson, a practice, and the right in focus. CIF palette. */
+:root{
+  --night:#0b1424; --navy:#1B2A4A; --navy2:#22345a; --gold:#C9A84C; --gold2:#e6cf8a; --teal:#2E7D74; --blood:#B23A3A; --amber:#D98A2B;
+  --paper:#f6efe0; --ink:#1a2233; --ink2:#4a5468; --snow:#e9eef6; --muted:#9fb0c8; --line:rgba(201,168,76,.28);
+  --disp:"Fraunces",Georgia,serif; --serif:"Source Serif 4",Georgia,serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:radial-gradient(1200px 700px at 50% -10%,#1d3157 0%,var(--night) 60%) fixed,var(--night);color:var(--snow);
+  font-family:var(--serif);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;min-height:100vh}
+#snow{position:fixed;inset:0;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:30px max(18px,env(safe-area-inset-left)) 80px}
+.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:600;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+a{color:var(--gold2)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px;border-radius:6px}
+
+/* Hero */
+.hero{text-align:center;padding:38px 0 10px}
+.hero .lbl{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(11,20,36,.5)}
+.hero h1{font-size:clamp(44px,8.4vw,96px);line-height:.98;margin:22px 0 14px;letter-spacing:-.01em;font-weight:800}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--gold)}
+.hero .dek{font-size:clamp(18px,2.2vw,22px);color:#cfd8e6;max-width:720px;margin:0 auto;font-style:italic}
+.count{margin:26px auto 0;display:inline-flex;gap:10px;align-items:center;font-family:var(--mono);font-size:13px;color:var(--muted);
+  padding:10px 16px;border-radius:12px;background:rgba(27,42,74,.55);border:1px solid var(--line)}
+.count b{color:var(--gold2);font-weight:500}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(46,125,116,.25)}
+
+/* Letter */
+.letter{position:relative;margin:46px auto 10px;max-width:780px;background:var(--paper);color:var(--ink);border-radius:6px;
+  padding:clamp(28px,5vw,58px) clamp(22px,5vw,64px) clamp(30px,5vw,52px);box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 1px rgba(201,168,76,.35) inset}
+.letter:before{content:"";position:absolute;inset:10px;border:1px solid rgba(201,168,76,.55);border-radius:3px;pointer-events:none}
+.seal{position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:62px;height:62px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#d24d4d,var(--blood) 60%,#7d2020);display:grid;place-items:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.4);color:#f6dcdc;font-family:var(--disp);font-weight:800;font-size:18px;letter-spacing:.02em}
+.letter .lbl{color:#8a6d1f;display:block;text-align:center;margin-bottom:10px}
+.letter h2{font-size:clamp(28px,4vw,40px);text-align:center;margin-bottom:22px;color:var(--navy)}
+.letter p{margin:0 0 1.05em}
+.letter p:first-of-type:first-letter{font-family:var(--disp);float:left;font-size:4.1em;line-height:.85;padding:6px 10px 0 0;color:var(--blood);font-weight:800}
+.letter .sig{font-family:var(--disp);font-style:italic;font-size:22px;color:var(--navy);margin-top:26px}
+.letter .sig small{display:block;font-family:var(--mono);font-style:normal;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-top:4px}
+
+/* Legend strip */
+.strip{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;margin:54px 0 18px;color:var(--muted);font-size:14.5px;text-align:center}
+.strip span{font-family:var(--mono);font-size:12px;letter-spacing:.08em}
+.strip i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.sec-h{text-align:center;margin:60px 0 8px}
+.sec-h h2{font-size:clamp(30px,4.4vw,46px)}
+.sec-h p{color:var(--muted);margin:8px auto 0;max-width:640px}
+
+/* Calendar grid */
+.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:28px;perspective:1400px}
+@media (max-width:980px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:620px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}}
+.door{position:relative;aspect-ratio:3/4;border-radius:14px;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.door .face{position:absolute;inset:0;border-radius:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:12px 8px 12px;text-align:center}
+.door .front{background:linear-gradient(160deg,var(--navy2),var(--navy) 55%,#16223d);border:1px solid var(--line);
+  box-shadow:0 14px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.06)}
+.door .front:after{content:"";position:absolute;inset:6px;border:1px dashed rgba(201,168,76,.22);border-radius:10px;pointer-events:none}
+.door .num{font-family:var(--disp);font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1;color:var(--gold)}
+.door .sym{width:58%;max-width:84px;color:var(--gold2);filter:drop-shadow(0 0 10px rgba(230,207,138,.18))}
+.door .sym svg{width:100%;height:auto;display:block}
+.door .trad{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.3;min-height:2.6em;display:flex;align-items:center}
+.door .back{transform:rotateY(180deg);background:linear-gradient(160deg,#c9a84c,#a5852f);color:var(--navy);border:1px solid #e6cf8a;justify-content:center;gap:8px}
+.door .back b{font-family:var(--disp);font-size:clamp(14px,1.6vw,17px);line-height:1.2}
+.door .back span{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.door button.hit{position:absolute;inset:0;z-index:3;border-radius:14px}
+.door.open .front{border-color:rgba(46,125,116,.7)}
+.door.open .front .num:after{content:"✓";font-size:.42em;vertical-align:super;color:#6fc3b6;margin-left:3px}
+.door.today .front{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 0 34px rgba(201,168,76,.35),0 14px 30px rgba(0,0,0,.35)}
+.door.today .front:before{content:"Today";position:absolute;top:8px;right:8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--blood);color:#fff;padding:2px 6px;border-radius:4px;z-index:2}
+.door.locked .front{filter:saturate(.4) brightness(.72)}
+.door.locked .sym{opacity:.45}
+.door.locked .trad{font-size:10px}
+.door.flipping{transform:rotateY(180deg)}
+@media (hover:hover){.door:not(.locked):hover{transform:translateY(-4px) rotateX(4deg)}}
+.lock{position:absolute;top:10px;right:10px;width:16px;height:16px;color:var(--muted);opacity:.85}
+
+/* Modal + big flip card */
+.modal{position:fixed;inset:0;z-index:10050;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(5,10,20,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.modal.on{display:flex}
+.stage{width:min(640px,100%);perspective:1800px}
+.card{position:relative;width:100%;min-height:min(78vh,720px);transform-style:preserve-3d;transition:transform 1s cubic-bezier(.3,.1,.15,1);animation:arrive .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes arrive{from{transform:translateY(30px) scale(.92) rotateX(10deg);opacity:0}to{opacity:1}}
+.card.turned{transform:rotateY(180deg)}
+.side{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;overflow:auto;-webkit-overflow-scrolling:touch}
+.side.f{background:linear-gradient(165deg,#24375f,var(--navy) 50%,#121d35);border:1px solid var(--gold);color:var(--snow);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 30px 34px;box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.side.f:before{content:"";position:absolute;inset:12px;border:1px solid rgba(201,168,76,.35);border-radius:12px;pointer-events:none}
+.side.f .big{width:150px;color:var(--gold2);margin:14px 0 18px;filter:drop-shadow(0 0 22px rgba(230,207,138,.3))}
+.side.f .d{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.side.f h3{font-size:clamp(28px,5vw,40px);margin:6px 0 4px}
+.side.f .where{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.side.f p{max-width:460px;margin:18px auto 26px;color:#d5deeb;font-size:17.5px}
+.turn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:var(--gold);color:var(--navy);font-weight:600;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 24px rgba(201,168,76,.35)}
+.turn svg{width:16px;height:16px}
+.side.b{transform:rotateY(180deg);background:var(--paper);color:var(--ink);padding:38px clamp(22px,5vw,44px) 26px;box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.side.b:before{content:"";position:absolute;inset:10px;border:1px solid rgba(201,168,76,.55);border-radius:12px;pointer-events:none}
+.side.b .top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.side.b .mini{width:46px;flex:none;color:#8a6d1f}
+.side.b .d{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#8a6d1f}
+.side.b h3{font-size:clamp(26px,4.2vw,34px);color:var(--navy);line-height:1.08;margin:2px 0 0}
+.side.b h3:focus{outline:none}
+.side.b .msg p{margin:0 0 .9em;font-size:17.5px}
+.box{border-left:3px solid var(--teal);background:rgba(46,125,116,.08);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0 10px}
+.box.r{border-color:var(--blood);background:rgba(178,58,58,.07)}
+.box .lbl{display:block;color:var(--teal);margin-bottom:4px;font-size:11px}
+.box.r .lbl{color:var(--blood)}
+.box div{font-size:16px;line-height:1.5}
+.acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid #e1d6bd}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--navy);color:var(--navy);background:transparent;text-decoration:none}
+.btn.p{background:var(--navy);color:var(--paper)}
+.btn svg{width:15px;height:15px}
+.btn[disabled]{opacity:.35;cursor:default}
+.x{position:fixed;top:14px;right:16px;z-index:10060;width:46px;height:46px;border-radius:50%;background:rgba(11,20,36,.85);border:1px solid var(--line);color:var(--gold2);font-size:24px;line-height:1;display:none}
+.modal.on ~ .x{display:block}
+
+/* Share + traditions + footer */
+.share{margin:70px auto 0;max-width:780px;text-align:center;padding:38px clamp(20px,4vw,46px);border-radius:18px;background:linear-gradient(160deg,rgba(46,125,116,.22),rgba(27,42,74,.6));border:1px solid rgba(46,125,116,.5)}
+.share h2{font-size:clamp(28px,4vw,38px);margin-bottom:10px}
+.share p{color:#cfd8e6;margin:0 auto 20px;max-width:600px}
+.share .row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.share .btn{border-color:var(--gold);color:var(--gold2)}
+.share .btn.p{background:var(--gold);color:var(--navy)}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:60px}
+@media (max-width:820px){.why{grid-template-columns:1fr}}
+.why div{padding:22px 22px 18px;border-radius:14px;background:rgba(27,42,74,.5);border:1px solid var(--line)}
+.why h3{font-size:21px;color:var(--gold2);margin-bottom:8px}
+.why p{margin:0;color:#cad4e3;font-size:16px}
+.foot{margin-top:56px;text-align:center;color:var(--muted);font-size:14px}
+.foot p{max-width:700px;margin:0 auto 8px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;z-index:10080;background:var(--gold);color:var(--navy);padding:12px 18px;border-radius:10px;font-family:var(--mono);font-size:13px;transition:.3s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.card,.door{transition:none!important;animation:none!important}}
+@media print{#snow,.modal,.x,nav.cifnav{display:none!important}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><link rel="alternate" type="application/rss+xml" title="Cold Ischemia Foundation · This Week" href="https://coldischemia.foundation/feed.xml"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a><a href="watch-list.html" role="menuitem">The Watch List</a></div></div><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="advocates-advent.html" class="on" role="menuitem">The Advocate's Advent</a><a href="gatekeeper-files.html" role="menuitem">The Gatekeeper Files</a><a href="test-your-knowledge.html" role="menuitem">Test Your Knowledge</a><a href="living-donor-guide.html" role="menuitem">Free Donor Guide (PDF)</a><a href="research-digest.html" role="menuitem">Research Digest</a><a href="inside-files.html" role="menuitem">The Inside Files</a><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-hub.html" role="menuitem">Living Donor Hub</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="kidney-transplant-centers.html" role="menuitem">Kidney Transplant Centers by State</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="this-week.html" class="cn-t cn-wk">This Week</a><a href="services.html" class="cn-t cn-s">Services We Offer</a><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-week.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<main class="wrap">
+  <header class="hero">
+    <span class="lbl">Cold Ischemia Foundation · December 1–24, 2026</span>
+    <h1>The Advocate's <em>Advent</em></h1>
+    <p class="dek">Twenty-four doors. Twenty-four traditions from around the world. One honest question behind every one of them: what does it actually mean to stand up for a patient when nobody is paying you to?</p>
+    <div class="count" id="count"><span class="dot"></span><span id="countTxt">Loading the calendar…</span></div>
+  </header>
+
+  <article class="letter" aria-labelledby="lt">
+    <div class="seal" aria-hidden="true">CIF</div>
+    <span class="lbl">Before you open the first door</span>
+    <h2 id="lt">A letter about the word "advocate"</h2>
+    <p>Every December the mailbox fills with glossy holiday cards from companies that bill patients all year. They wish you peace and joy in a font that cost more than your copay, and they sign it from "your care team." This calendar is not that card.</p>
+    <p>Somewhere along the way, "patient advocate" became a title you could buy. Industry-funded groups hand out lanyards. Paid "ambassadors" smile in commercials. Survivors are flown to Capitol Hill carrying talking points drafted by the same people who profit from the illness. Some of them mean well. They are still on someone's payroll, and a payroll always has an opinion.</p>
+    <p>A true advocate is the person who picks up the phone when there is no grant attached to the call. Who reads the forty-page form so you do not sign it blind. Who walks into a room full of executives and says the thing that gets them uninvited next year, then shows up again anyway. We do this work for free, funded only by people who choose to give and by the work we produce ourselves, and we would not trade that independence for any sponsor's check.</p>
+    <p>For twenty-four days, one door opens each morning. Behind each one is a tradition from somewhere on this planet: Christian, Jewish, Muslim, Buddhist, Sikh, Hindu, Persian, Filipino, Mexican, Lakota, Chinese, Scandinavian, African and African American, Norse, Roman, and more. Every one of them understood something about courage, dignity, and showing up for the vulnerable long before anyone printed a brochure about "patient engagement." We chose them deliberately. Kidney disease does not check anyone's faith, language, or zip code before it moves into a home, and neither do we. Every belief and every perspective that brings someone to the bedside of another person is welcome at this table.</p>
+    <p>Open one a day. Turn the card over. Then do the part that matters most: send it to someone. A care partner running on fumes. A nurse who still remembers why she started. A neighbor three years into the wait. These cards were made to be passed hand to hand, and then passed again.</p>
+    <div class="sig">Jeff A. Parke<small>Founder &amp; Executive Director · Cold Ischemia Foundation</small></div>
+  </article>
+
+  <div class="sec-h">
+    <span class="lbl">The calendar</span>
+    <h2>Twenty-four doors</h2>
+    <p>One door unlocks each morning, Eastern time. Tap a door, read the tradition, then turn the card to see what it teaches about advocacy.</p>
+  </div>
+  <div class="strip" aria-hidden="true">
+    <span><i style="background:var(--gold)"></i>Today's door</span>
+    <span><i style="background:var(--teal)"></i>Opened</span>
+    <span><i style="background:#3a4761"></i>Still locked</span>
+  </div>
+  <section class="grid" id="grid" aria-label="Advent calendar, December 1 to 24"></section>
+
+  <section class="why" aria-label="Why this calendar">
+    <div><h3>Why many traditions</h3><p>Advocacy that only speaks one cultural language leaves people behind. A patient who prays five times a day, a family who keeps Shabbat, and a grandmother who lights a candle to the Virgin all deserve care that respects them. Honoring their traditions is where respect starts.</p></div>
+    <div><h3>Why rights on every card</h3><p>Inspiration without a tool is just a nice feeling. Each card ends with something you can do this week and a right you already hold, so the lesson does not evaporate when the holiday ends.</p></div>
+    <div><h3>Why share it</h3><p>Nobody learns their rights from the companies that benefit when they don't. They learn them from each other. Every share puts this information in front of someone the system would rather keep uninformed.</p></div>
+  </section>
+
+  <section class="share" aria-labelledby="sh">
+    <h2 id="sh">Pass it on. Then pass it on again.</h2>
+    <p>This calendar was built to travel. Send it to your family group chat, your support group, your church, mosque, temple, or gurdwara, the nurses' station, or the one person you know who is carrying more than anyone realizes.</p>
+    <div class="row">
+      <button class="btn p" id="shareAll" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13"/></svg>Share the calendar</button>
+      <button class="btn" id="copyAll" type="button">Copy link</button>
+      <a class="btn" id="fbAll" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn" id="xAll" target="_blank" rel="noopener">X</a>
+      <a class="btn" id="liAll" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" id="mailAll">Email</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>Observance dates reflect 2026. Some traditions follow lunar or regional calendars, and communities may mark them on different days. If we have described your tradition imperfectly, tell us through the <a href="contact.html">contact page</a> and we will correct it.</p>
+    <p>The Cold Ischemia Foundation is an independent 501(c)(3). We accept no industry sponsorship. <a href="independence.html">What independence means to us</a>.</p>
+  </footer>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="stage"><div class="card" id="card">
+    <div class="side f" id="sf"></div>
+    <div class="side b" id="sb"></div>
+  </div></div>
+</div>
+<button class="x" id="close" type="button" aria-label="Close card">×</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+'use strict';
+var SITE='https://coldischemia.foundation/advocates-advent.html';
+var S='<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+var ICON={
+ribbon:S+'<path d="M32 8c-6 0-10 4.5-10 10 0 5.5 4 11 10 18 6-7 10-12.5 10-18 0-5.5-4-10-10-10z"/><path d="M27 31 15 56l7-2 3 7 11-24M37 31l12 25-7-2-3 7-6-13"/></svg>',
+wreath:S+'<ellipse cx="32" cy="46" rx="24" ry="8"/><path d="M12 44c4-3 8 1 12-2s8 2 12-1 9 2 14-1"/><path d="M15 42V26M25 44V22M39 44V22M49 42V26"/><path d="M15 21c-2 2-1 4 0 5 1-1 2-3 0-5zM25 17c-2 2-1 4 0 5 1-1 2-3 0-5zM39 17c-2 2-1 4 0 5 1-1 2-3 0-5zM49 21c-2 2-1 4 0 5 1-1 2-3 0-5z"/><circle cx="32" cy="34" r="2"/></svg>',
+rings:S+'<circle cx="24" cy="26" r="11"/><circle cx="40" cy="26" r="11"/><circle cx="32" cy="40" r="11"/><path d="M32 52v6M26 58h12"/></svg>',
+branch:S+'<path d="M22 58h20l-3-18H25z"/><path d="M32 40C32 30 30 22 24 12M31 30c4-4 9-6 14-6M28 22c-4-1-8 0-11 3"/><circle cx="24" cy="11" r="3"/><circle cx="46" cy="23" r="3"/><circle cx="16" cy="25" r="3"/><circle cx="38" cy="15" r="2.5"/><path d="M33 22c2-3 4-5 5-7"/></svg>',
+menorah:S+'<path d="M32 18v32M20 58h24M26 50h12"/><path d="M8 26c0 14 10 22 24 22s24-8 24-22M14 26c0 11 8 17 18 17s18-6 18-17M20 26c0 7 5 12 12 12s12-5 12-12M26 26c0 4 3 6 6 6s6-2 6-6"/><path d="M32 9c-2 2-1 5 0 6 1-1 2-4 0-6zM8 20v0M14 20v0M20 20v0M26 20v0M38 20v0M44 20v0M50 20v0M56 20v0" stroke-width="3.4"/></svg>',
+shoe:S+'<path d="M20 10h14v26c6 2 14 4 18 8 2 3 1 8-3 8H14c-3 0-4-2-4-5v-9c4 0 10-2 10-8z"/><path d="M10 46h44"/><path d="M46 12l1.8 3.7 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z"/></svg>',
+hands:S+'<path d="M8 32c0 13 10 20 24 20s24-7 24-20H8z"/><path d="M32 32v20M8 32c-2-4 0-8 4-8M56 32c2-4 0-8-4-8"/><path d="M32 24c-6-5-10-8-10-12a5 5 0 0 1 10-1 5 5 0 0 1 10 1c0 4-4 7-10 12z"/></svg>',
+leaf:S+'<path d="M32 60c0-6-2-8-8-14C10 33 12 10 32 18 52 10 54 33 40 46c-6 6-8 8-8 14z"/><path d="M32 18v38M32 30l-9-6M32 30l9-6M32 40l-11-7M32 40l11-7"/></svg>',
+bowl:S+'<path d="M8 32h48c0 12-10 20-24 20S8 44 8 32z"/><path d="M22 52l-2 6h24l-2-6"/><path d="M24 24c-3-3 3-6 0-10M32 24c-3-3 3-6 0-10M40 24c-3-3 3-6 0-10"/></svg>',
+dove:S+'<path d="M8 38c8-1 15-1 21 2 2-10 9-18 25-22-4 7-7 13-9 20-3 9-14 14-27 10l-6 4 2-7c-3-2-5-4-6-7z"/><circle cx="18" cy="36" r=".6" stroke-width="2"/><path d="M50 26c4 2 6 6 6 10M52 32l4-1M54 37l3 1"/></svg>',
+spiral:S+'<path d="M14 10c6 3 10 1 18 1s12 2 18-1c-2 6 2 10 2 18s-4 14 0 22c-6-2-10 2-20 2s-14-4-20-2c4-8 0-14 0-22s4-12 2-18z"/><path d="M32 32c0-2 3-2 3 0 0 4-6 4-6 0 0-6 9-6 9 0 0 8-12 8-12 0 0-10 15-10 15 0"/></svg>',
+roses:S+'<circle cx="32" cy="20" r="10"/><path d="M32 14c4 0 5 4 2 6s-6 0-5-3M27 22c2 3 8 3 10-1"/><circle cx="16" cy="30" r="7"/><circle cx="48" cy="30" r="7"/><path d="M32 30v28M16 37c4 8 10 12 16 14M48 37c-4 8-10 12-16 14M32 44c-6-1-9-4-10-8 5 0 8 3 10 8zM32 48c6-1 9-4 10-8-5 0-8 3-10 8z"/></svg>',
+crown:S+'<ellipse cx="32" cy="46" rx="22" ry="7"/><path d="M14 42c5 2 10-2 14 1s8-2 12 1 7-1 10-2"/><path d="M14 44V30M22 47V26M32 48V24M42 47V26M50 44V30"/><path d="M14 25c-2 2-1 4 0 5 1-1 2-3 0-5zM22 21c-2 2-1 4 0 5 1-1 2-3 0-5zM32 19c-2 2-1 4 0 5 1-1 2-3 0-5zM42 21c-2 2-1 4 0 5 1-1 2-3 0-5zM50 25c-2 2-1 4 0 5 1-1 2-3 0-5z"/></svg>',
+circle:S+'<circle cx="32" cy="32" r="22"/><circle cx="32" cy="14" r="4"/><circle cx="50" cy="32" r="4"/><circle cx="32" cy="50" r="4"/><circle cx="14" cy="32" r="4"/><path d="M28 18c-6 2-10 6-11 11M36 18c6 2 10 6 11 11M47 36c-1 5-5 9-11 11M17 36c1 5 5 9 11 11"/><circle cx="32" cy="32" r="5"/></svg>',
+scroll:S+'<path d="M16 10h30a6 6 0 0 1 0 12H46V50a6 6 0 0 1-6 6H14a6 6 0 0 1 0-12h4V16a6 6 0 0 0-2-6z"/><path d="M14 56a6 6 0 0 0 6-6v-6M24 22h14M24 29h14M24 36h10M46 22a6 6 0 0 1-6-6"/></svg>',
+parol:S+'<circle cx="32" cy="27" r="19"/><path d="M32 10l4.9 10.6 11.6 1.3-8.6 7.9 2.4 11.4L32 35.4l-10.3 5.8 2.4-11.4-8.6-7.9 11.6-1.3z"/><path d="M24 45l-4 15M32 46v14M40 45l4 15"/></svg>',
+lantern:S+'<path d="M18 22h28l3 36H15z"/><path d="M18 22l3-6h22l3 6M21 16l2-5M43 16l-2-5"/><path d="M32 34c-3 3-3 7 0 9 3-2 3-6 0-9z"/><path d="M28 46h8v6h-8z"/></svg>',
+laurel:S+'<path d="M32 58C16 52 10 38 14 18M32 58c16-6 22-20 18-40"/><path d="M14 24c-5-2-6-7-4-10 4 2 5 6 4 10zM15 34c-6-1-8-5-7-9 4 1 7 5 7 9zM19 44c-6 0-9-4-9-8 5 0 8 4 9 8zM26 51c-6 1-10-2-11-6 5-1 9 2 11 6zM50 24c5-2 6-7 4-10-4 2-5 6-4 10zM49 34c6-1 8-5 7-9-4 1-7 5-7 9zM45 44c6 0 9-4 9-8-5 0-8 4-9 8zM38 51c6 1 10-2 11-6-5-1-9 2-11 6z"/></svg>',
+log:S+'<path d="M10 40l38-10M14 52l38-10"/><ellipse cx="12" cy="46" rx="4" ry="6"/><path d="M48 30a4 6 0 0 1 4 12"/><path d="M12 43c1 1 1 4 0 5"/><path d="M28 32c-5-6 2-10 0-18 6 4 10 10 7 16M36 30c-2-4 2-7 2-11 4 4 4 8 2 11"/><circle cx="50" cy="16" r="2.5"/><circle cx="55" cy="20" r="2.5"/><path d="M44 18c2-4 6-4 6-4M44 18c3 2 3 6 3 6"/></svg>',
+pome:S+'<path d="M32 16c-13 0-22 9-22 21s9 21 22 21 22-9 22-21-9-21-22-21z"/><path d="M26 17l-2-8 5 4 3-6 3 6 5-4-2 8"/><circle cx="26" cy="34" r="2"/><circle cx="34" cy="30" r="2"/><circle cx="40" cy="38" r="2"/><circle cx="30" cy="42" r="2"/><circle cx="22" cy="44" r="2"/><circle cx="38" cy="47" r="2"/></svg>',
+diya:S+'<path d="M8 38c0 8 10 14 24 14s24-6 24-14c-8 3-16 4-24 4S16 41 8 38z"/><path d="M56 38c2-2 4-2 6-1-2 2-4 3-6 3M24 56h16"/><path d="M32 12c-6 7-6 14 0 18 6-4 6-11 0-18z"/><path d="M32 22c-2 3-2 5 0 7 2-2 2-4 0-7z"/></svg>',
+tang:S+'<path d="M8 34h48c0 12-10 20-24 20S8 46 8 34z"/><path d="M22 54l-2 5h24l-2-5"/><circle cx="22" cy="28" r="6"/><circle cx="34" cy="26" r="6"/><circle cx="44" cy="30" r="5"/><path d="M48 8 34 22M54 12 38 25"/></svg>',
+kinara:S+'<path d="M6 44h52M10 44c0 6 10 10 22 10s22-4 22-10M24 58h16"/><path d="M10 44V30M17 44V28M24 44V26M32 44V22M40 44V26M47 44V28M54 44V30"/><path d="M10 25c-2 2-1 3 0 4 1-1 2-2 0-4zM17 23c-2 2-1 3 0 4 1-1 2-2 0-4zM24 21c-2 2-1 3 0 4 1-1 2-2 0-4zM32 17c-2 2-1 3 0 4 1-1 2-2 0-4zM40 21c-2 2-1 3 0 4 1-1 2-2 0-4zM47 23c-2 2-1 3 0 4 1-1 2-2 0-4zM54 25c-2 2-1 3 0 4 1-1 2-2 0-4z"/></svg>',
+star:S+'<path d="M32 4l4 16 14-8-8 14 16 4-16 4 8 14-14-8-4 16-4-16-14 8 8-14-16-4 16-4-8-14 14 8z"/><path d="M32 40v20M4 58c8-6 16-8 28-8s20 2 28 8"/></svg>'
+};
+var LOCK='<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+
+var DAYS=[
+{i:'ribbon',t:'World AIDS Day',w:'Global · Since 1988',
+ f:'Every December 1 the world remembers the millions lost to HIV and stands with the people living with it today.',
+ h:'The patients who rewrote the rules',
+ m:['In the late 1980s, people dying of AIDS taught themselves pharmacology at kitchen tables, then marched on the FDA and corrected the experts in their own language. Their protests and their homework helped force faster access to experimental drugs and put patients on the panels that decide how research is run.',
+    'They were not invited. They were not paid. They were right. Every honest patient movement since stands on their shoulders, including ours. Advocacy was never meant to be a seat somebody hands you. It is a seat you earn by knowing your own condition better than the person who bills for it.'],
+ p:'Learn one number on your own lab report well enough to explain it to someone else.',
+ r:'The right to be an informed participant in your care, not a passive recipient of it.'},
+{i:'wreath',t:'Advent',w:'Christian · The four weeks before Christmas',
+ f:'Churches mark the weeks before Christmas by lighting one more candle on the wreath each Sunday.',
+ h:'One candle at a time',
+ m:['Nobody lights all four candles on the first Sunday. The wreath is a lesson in patience with a purpose: you add light steadily, and you do not skip a week just because the room still looks dark.',
+    'Real advocacy works the same way. One appeal letter. One records request. One phone call to a state surveyor that finally gets returned. The paid version of advocacy wants a viral moment and a press release. The honest version is a candle a week for years, until one day someone walks into the room and can finally see.'],
+ p:'Pick one unresolved problem and write down the single next step, with a date beside it.',
+ r:'The right to keep following up until you receive an answer in writing.'},
+{i:'rings',t:'Intl. Day of Persons with Disabilities',w:'United Nations · Since 1992',
+ f:'December 3 is set aside worldwide for the rights, dignity, and full participation of people with disabilities.',
+ h:'Nothing about us without us',
+ m:['The disability rights movement handed every patient a sentence worth memorizing: nothing about us without us. No policy, quality score, or "patient experience" survey should be designed without the people who live it at the table, holding a vote and not just a microphone.',
+    'Since 2008, federal law has recognized kidney function as a major bodily function, which means many people with kidney disease are protected under the Americans with Disabilities Act. Few clinics will ever mention it. That protection covers reasonable accommodations at work, schedule changes that save a job, and the right not to be punished for being sick.'],
+ p:'If your care schedule collides with your job, request an accommodation in writing and keep a copy.',
+ r:'The right to reasonable accommodation under the ADA.'},
+{i:'branch',t:'St. Barbara’s Day',w:'Germany · Austria · Central Europe',
+ f:'On December 4, families cut a bare cherry branch and set it in water, hoping it will bloom by Christmas.',
+ h:'Cut the branch in the cold',
+ m:['The branch looks dead when you cut it. That is the point. You bring it inside, give it water and warmth, and three weeks later it flowers on a winter table.',
+    'Care partners know this story better than anyone. You show up for someone at their lowest, when there is nothing yet to show for it, and you keep changing the water. Nobody writes a press release about a care partner on day nineteen without real sleep. This calendar counts you anyway. The bloom is real, even when it arrives late.'],
+ p:'Ask the care partner in your life which one task you can take off their plate this week, then do it without being reminded.',
+ r:'The right of care partners to be recognized as part of the care team.'},
+{i:'menorah',t:'Hanukkah',w:'Jewish · December 4–12, 2026',
+ f:'Hanukkah remembers a small band who reclaimed the Temple in Jerusalem and found one day’s oil that burned for eight.',
+ h:'The oil that should have run out',
+ m:['The miracle everyone remembers is the oil. The part people forget is that a small, outnumbered group refused to accept that something sacred was permanently lost to people more powerful than they were. Then they relit it with what little they had.',
+    'Patient advocates live inside that story. The resources are always thin, the opposition always better funded, and the supply never looks like it will last. It lasts longer than anyone predicts when the people tending it refuse to leave. And the tradition is clear about one more thing: you do not hide the light. You put it in the window.'],
+ p:'Put your story somewhere public this week: a comment to a federal agency, a letter to the editor, a post with your real name on it.',
+ r:'The right to speak publicly about your care without retaliation.'},
+{i:'shoe',t:'St. Nicholas Day',w:'Europe and beyond · December 6',
+ f:'Children set out their shoes for St. Nicholas, the bishop remembered for giving in secret.',
+ h:'The gift left in the dark',
+ m:['The oldest story about Nicholas is that he tossed gold through a struggling family’s window at night so the daughters would be spared, and he made sure nobody saw him do it.',
+    'Hold that up against the modern advocacy industry, where every donation comes with a logo, every patient summit has a sponsor banner, and every kindness gets filmed for a quarterly report. A true advocate does a great deal of work no one will ever see: the denied claim quietly overturned, the ride arranged, the call made on someone’s behalf. If it only happens when the camera is on, it was marketing.'],
+ p:'Do one genuinely useful thing for a patient this week and tell no one.',
+ r:'The right to help that comes without strings or sales pitches.'},
+{i:'hands',t:'Sadaqah',w:'Muslim · Every day of the year',
+ f:'Sadaqah is voluntary giving beyond what is required. The Prophet Muhammad taught that even a smile, or showing a lost person the way, is charity.',
+ h:'Showing someone the way',
+ m:['Sadaqah does not wait for a holiday or a tax deadline. It can be money, but tradition counts far more than money: clearing an obstacle from someone’s path, a kind word, guiding a stranger who is lost.',
+    'That last one is the whole job. Most people newly facing kidney disease are not short on brochures. They are short on someone who has already walked the hallway and will tell them which door to knock on and which to avoid. Showing someone the way costs nothing but time, and the people who need it most are the least able to pay for it.'],
+ p:'Write down the three things you wish someone had told you in your first month, and give the list to someone in theirs.',
+ r:'The right to information in a language you understand, including a free interpreter.'},
+{i:'leaf',t:'Bodhi Day',w:'Buddhist · December 8',
+ f:'Many Buddhists mark the day Siddhartha Gautama, sitting beneath the Bodhi tree, reached enlightenment.',
+ h:'Sit until you see clearly',
+ m:['The story goes that he sat down and refused to rise until he understood the cause of suffering. Not to feel better about it. To understand it.',
+    'That is a different posture than most of the health system wants from patients. You are encouraged to cope, to stay positive, to be compliant. You are rarely encouraged to ask why the clinic schedule is built around the business rather than your body, or who profits when your options quietly narrow. Calm is not the same as quiet. You can keep your equanimity and still demand the truth.'],
+ p:'Before your next appointment, write down the one question you have been afraid to ask. Ask it first.',
+ r:'The right to have every treatment option explained, including the ones that earn the clinic less.'},
+{i:'bowl',t:'Langar',w:'Sikh · Every gurdwara, every day',
+ f:'Every gurdwara runs langar, a free community kitchen where anyone of any faith or status is fed.',
+ h:'Everyone sits on the same floor',
+ m:['The Sikh Gurus built langar around a rule that was radical in its time and still is: everyone sits together on the floor, in the same row, and eats the same meal. No head table. No VIP section.',
+    'Health care built the opposite. The well-insured see the specialist this week, while others get a referral that dies in a fax machine. The patient who knows somebody gets the call back. Honest advocacy drags the system back down to the floor, so the quality of your care does not depend on your zip code, your accent, or who you happen to know.'],
+ p:'If you ever got something because you knew someone, use that same connection to open the door for a stranger.',
+ r:'The right to care free from discrimination.'},
+{i:'dove',t:'Human Rights Day',w:'United Nations · Since 1948',
+ f:'December 10 marks the day the United Nations adopted the Universal Declaration of Human Rights.',
+ h:'Article 25',
+ m:['Article 25 of that declaration says everyone has the right to a standard of living adequate for health, including medical care, and to security in sickness and disability. It was written by people who had just watched what happens when governments decide some lives are worth less.',
+    'Seventy-eight years later, a patient can still be pushed out of a clinic for being "difficult," and the people who complain loudest are often the easiest to label. Read the article. It is short. Then notice how often your rights are handed to you as if they were favors.'],
+ p:'Find your clinic’s grievance policy and your state health department’s complaint line. Save both in your phone today.',
+ r:'The right to file a grievance without fear of being discharged for it.'},
+{i:'spiral',t:'Winter Count',w:'Lakota and Plains Nations',
+ f:'Plains Nations kept winter counts, histories where each year is remembered by a single painted image of its defining event.',
+ h:'Whoever keeps the record',
+ m:['A keeper chose one event to name each winter, painted it, and could recite generations of history from the sequence. That is documentation as an act of memory, and of power. Whoever keeps the record decides what happened.',
+    'In medicine, the institution keeps the record, and your version of events often lives only in your head, where it is easy to dismiss. Keep your own count: dates, names, what was said, what was promised. A notebook beats a memory every time someone in a white coat says, "That’s not what happened."'],
+ p:'Start a one-line-a-day care log tonight: the date, who you saw, and what they said.',
+ r:'The right to see and get a copy of your own medical records under HIPAA.'},
+{i:'roses',t:'Our Lady of Guadalupe',w:'Mexico and the Americas · December 12',
+ f:'Millions honor the Virgin of Guadalupe, who by tradition appeared to Juan Diego near Mexico City in 1531.',
+ h:'Bring the roses',
+ m:['The bishop did not believe Juan Diego. A poor Indigenous man’s word was not considered enough, so he was sent back for a sign. He returned with roses, in December, gathered in his cloak. When he opened it, the image was there.',
+    'Patients are sent back for proof constantly. Your pain needs a scan. Your exhaustion needs a lab. Your complaint needs a witness. It is draining and often unjust. But the lesson of the roses is to bring them anyway: the dated photo, the saved voicemail, the printed portal message. Open the cloak in front of the person who doubted you.'],
+ p:'Screenshot every important patient-portal message. Portals change. Screenshots don’t.',
+ r:'The right to have your complaint investigated and answered.'},
+{i:'crown',t:'St. Lucia Day',w:'Sweden and Scandinavia · December 13',
+ f:'A girl in white wears a crown of candles and leads a singing procession through the dark winter morning.',
+ h:'Carry the light into the dark room',
+ m:['Lucia arrives in the darkest stretch of the northern year. The procession walks into rooms where people are still asleep, bringing light, song, and food. The tradition does not wait for the dark to lift.',
+    'Many patients spend winter mornings in a treatment room before sunrise, and many care partners drive home after dark. The people who bring light into those hours are rarely executives. They are the tech who remembers your name, the neighbor with soup, the stranger online who answers your question before the clinic opens. Be one of them.'],
+ p:'Send one message this week to someone going through a hard stretch. No advice. Just presence.',
+ r:'The right to be treated with dignity and respect at every visit.'},
+{i:'circle',t:'Ubuntu',w:'Southern Africa',
+ f:'Ubuntu is a Southern African philosophy holding that a person becomes a person through other people: I am because we are.',
+ h:'Illness happens to a household',
+ m:['Archbishop Desmond Tutu described ubuntu as the opposite of "I think, therefore I am." Closer to: I belong, therefore I am.',
+    'A health system built on ubuntu would never send a frightened person home with a stack of papers and a phone number that works only during business hours. It would understand that a patient’s outcome is tied to the care partner’s rest, the employer’s flexibility, and the neighbor’s car. Advocacy that only talks to the patient misses the whole village. We advocate for the household, because illness never happens to just one person.'],
+ p:'List everyone holding up one patient you love. Thank one of them by name.',
+ r:'The right to choose who is involved in your care decisions.'},
+{i:'scroll',t:'Bill of Rights Day',w:'United States · Ratified 1791',
+ f:'December 15 marks the ratification of the first ten amendments to the U.S. Constitution.',
+ h:'Rights only work when you use them',
+ m:['The First Amendment protects your right to speak and to petition the government for a redress of grievances. That second part is easy to skim past. It means you can write your representatives, file a complaint with a federal agency, and comment on a proposed rule, and your government has to let you.',
+    'Most patients never use it, because no one tells them the public comment process exists or that one well-documented letter from a constituent actually gets read. The industry uses it every single week, through paid lobbyists. Your letter costs a stamp.'],
+ p:'Find your U.S. representative’s district office number and call once this month about one specific problem.',
+ r:'The right to petition your government.'},
+{i:'parol',t:'Simbang Gabi',w:'Philippines · December 16–24',
+ f:'Filipino families attend nine dawn masses in a row and hang the parol, a glowing star lantern, outside their homes.',
+ h:'The ninth morning',
+ m:['Tradition says that if you complete all nine dawns, your wish will be granted. What makes it hard is not any single morning. It is the ninth one, when you are exhausted and nobody would blame you for staying in bed.',
+    'Systems count on that fatigue. The appeal deadline lapses. The callback never comes, so you stop calling. The investigation drags past the point where most people give up. Assiduous persistence is not glamorous, but it is the one advantage patients have that cannot be bought. Show up on the ninth morning.'],
+ p:'Write down every deadline in your current fight and set a reminder three days before each one.',
+ r:'The right to appeal a denial of coverage.'},
+{i:'lantern',t:'Las Posadas',w:'Mexico and the U.S. Southwest · December 16–24',
+ f:'Neighbors reenact Mary and Joseph’s search for shelter, going door to door with candles and song.',
+ h:'Knocking at the door',
+ m:['The pilgrims sing at a door asking for lodging, and the people inside sing back a refusal. They move on and are turned away again, until finally one door opens and everyone is welcomed in.',
+    'Anyone who has been told "that’s not our department," dropped by a practice, or parked on a waiting list with no explanation knows that song. The lesson is not that refusal is acceptable. It is that the pilgrims kept knocking, together, and that the whole community remembers every year that someone was turned away. Ask for every refusal in writing. A written no can be challenged.'],
+ p:'When you are denied anything this month, ask: "Can you give me that decision and the reason in writing?"',
+ r:'The right to a written explanation of any denial.'},
+{i:'laurel',t:'Saturnalia',w:'Ancient Rome · From December 17',
+ f:'For a few days each winter, Roman social rules flipped and masters sometimes served their own households at the table.',
+ h:'When the servants sat down',
+ m:['For a few days, Rome let the people with the least power speak freely and be served. It was temporary, and that was revealing: a holiday that quietly admitted the normal order was not natural, just enforced.',
+    'Health care has its own order. The administrator talks; the patient listens. The company funds the "patient advisory board," then decides what the patients advise. A true advocate does not wait for a festival to flip it. Patients and care partners should be setting the agenda all year, not invited in once a year to applaud.'],
+ p:'If you sit on any advisory board, ask who sets the agenda and who pays for the meeting. Write down the answers.',
+ r:'The right to know who funds the groups that claim to speak for you.'},
+{i:'log',t:'Yule',w:'Norse and Germanic · Midwinter',
+ f:'In old northern Europe, a great log was brought indoors at midwinter and kept burning through the longest nights.',
+ h:'Feed the fire before it fails',
+ m:['The idea was practical: a fire that dies in midwinter is hard to restart, so you feed it before it fails, not after.',
+    'Care partners are that fire for a great many households, and almost nobody is feeding them. They miss work, lose income, skip their own checkups, and are expected to be grateful for a pamphlet about self-care. Real advocacy fights for care partner pay, respite, and legal recognition. Not as charity, but because the entire household goes cold without them.'],
+ p:'Look up whether your state offers paid family leave or a caregiver support program, and tell one care partner what you find.',
+ r:'The right of care partners to job-protected leave under the FMLA.'},
+{i:'pome',t:'Yalda Night',w:'Iran and the Persian world · Longest night',
+ f:'Families gather on the longest night of the year, share pomegranates and watermelon, and read the poetry of Hafez until dawn.',
+ h:'Nobody faces the longest night alone',
+ m:['Yalda is a night of keeping one another company until the dark breaks. No one is sent to bed alone. The old belief was that the longest night is the most dangerous, so you face it in a crowd, with stories, fruit, and poetry that tells the truth sideways.',
+    'Isolation is one of the least discussed harms of chronic illness. Friends drift, invitations stop, and the calendar fills with appointments instead of people. An advocate who never asks, "Who sits with you on the hard nights?" is missing half of the job.'],
+ p:'Invite someone living with a chronic illness to something this week, and make it easy to say yes or no without guilt.',
+ r:'The right to social work and mental health support as part of your care.'},
+{i:'diya',t:'Pancha Ganapati',w:'Hindu · December 21–25',
+ f:'A modern Hindu festival honoring Lord Ganesha, remover of obstacles, with five days devoted to mending relationships.',
+ h:'Clearing the path',
+ m:['Each of the five days has its own focus, beginning with harmony at home and widening outward to friends, neighbors, and the larger community. It is a festival about removing obstacles by repairing relationships, which is a very practical kind of wisdom.',
+    'Much of what breaks during serious illness is not only the body. It is the trust between patient and clinic, between siblings who disagree about care, between a care partner and the person they are worn out from caring for. Advocacy is not only confrontation. Sometimes the bravest move is the apology, or the hard conversation that finally clears the path.'],
+ p:'Have the conversation you have been postponing with one family member about care wishes, and write down what you agree on.',
+ r:'The right to make advance directives and have them honored.'},
+{i:'tang',t:'Dongzhi Festival',w:'China and East Asia · December 22, 2026',
+ f:'Families mark the winter solstice by sharing tangyuan, round rice balls that stand for reunion and wholeness.',
+ h:'The light comes back by minutes',
+ m:['After the solstice, the days begin, slowly, to lengthen. An old saying holds that you are a year older once you have eaten the Dongzhi meal. It is a festival about turning a corner without pretending the cold is already over.',
+    'That is the honest posture for this work. We will not promise anyone the system fixes itself next year. We promise that the light is coming back a few minutes at a time, because people keep pushing it back. Count the minutes. They add up.'],
+ p:'Write down one thing that is better this year than last because someone pushed. Share it with someone who is discouraged.',
+ r:'The right to help write your own plan of care.'},
+{i:'kinara',t:'Kwanzaa',w:'African American · December 26 – January 1',
+ f:'Kwanzaa honors African heritage through seven principles, the Nguzo Saba, one lit each night on the kinara.',
+ h:'Ujima: your problem is our problem',
+ m:['The third principle, Ujima, means collective work and responsibility: treating a neighbor’s problem as a shared problem and solving it together.',
+    'Black Americans are more than three times as likely as white Americans to reach kidney failure. Part of that gap was written into the math itself. For years, a race-based formula made Black patients’ kidneys look healthier on paper than they were, which could delay diagnosis, referrals, and care. Medicine retired that formula in 2021, but not before it cost people time they did not have. Ujima says that was never only their problem.'],
+ p:'Ask your care team whether your kidney function was ever calculated with the old race-based formula, and whether your records were corrected.',
+ r:'The right to care free from racial bias.'},
+{i:'star',t:'Christmas Eve',w:'Christian · December 24',
+ f:'Christians around the world remember the birth of Jesus, announced first, the story says, to shepherds working through the night.',
+ h:'The ones who kept watch',
+ m:['Notice who heard the news first. Not kings. Not officials. Not the temple authorities. Shepherds: low-status workers out in the cold, doing a job nobody else wanted, keeping watch over something that was not even theirs.',
+    'That has always felt like the truest picture of this work. Real advocates rarely hold titles. They are the ones keeping watch when no one is paying them to: the care partner, the patient who answers messages from strangers, the nurse who files the report anyway. All twenty-four doors are open now. Pass them on. Then keep watch for someone else.'],
+ p:'Share this calendar with one person who needs it and one person who could help.',
+ r:'Every right on this calendar already belongs to you. Use them, and teach them.'}
+];
+
+var grid=document.getElementById('grid'),modal=document.getElementById('modal'),card=document.getElementById('card'),
+    sf=document.getElementById('sf'),sb=document.getElementById('sb'),closeBtn=document.getElementById('close'),toastEl=document.getElementById('toast');
+var params=new URLSearchParams(location.search);
+var PREVIEW=params.get('preview')==='all';
+function et(){var p={};new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(function(x){p[x.type]=+x.value});return p}
+var now=et();
+function unlocked(n){if(PREVIEW)return true;if(now.year>2026)return true;return now.year===2026&&now.month===12&&now.day>=n}
+var today=(now.year===2026&&now.month===12&&now.day<=24)?now.day:0;
+var opened={};try{opened=JSON.parse(localStorage.getItem('cifAdvent')||'{}')}catch(e){}
+function mark(n){opened[n]=1;try{localStorage.setItem('cifAdvent',JSON.stringify(opened))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+// countdown line
+(function(){var t=document.getElementById('countTxt'),open=DAYS.filter(function(_,k){return unlocked(k+1)}).length;
+ if(PREVIEW)t.innerHTML='<b>Preview mode.</b> All 24 doors are unlocked.';
+ else if(open===0){var start=Date.UTC(2026,11,1),d=Date.UTC(now.year,now.month-1,now.day),n=Math.round((start-d)/864e5);
+   t.innerHTML='The first door opens <b>December 1</b>, in <b>'+n+' day'+(n===1?'':'s')+'</b>. Share the calendar now so others are ready.'}
+ else if(open<24)t.innerHTML='<b>'+open+' of 24</b> doors are open. Today is door <b>'+today+'</b>.';
+ else t.innerHTML='<b>All 24 doors are open.</b> Read them in any order, and keep passing them on.';})();
+
+DAYS.forEach(function(d,k){
+  var n=k+1,u=unlocked(n),el=document.createElement('div');
+  el.className='door'+(u?'':' locked')+(opened[n]?' open':'')+(n===today&&!PREVIEW?' today':'');
+  el.id='door-'+n;
+  el.innerHTML='<div class="face front"><span class="num">'+n+'</span><span class="sym">'+ICON[d.i]+'</span><span class="trad">'+(u?esc(d.t):'Opens Dec '+n)+'</span>'+(u?'':LOCK)+'</div>'+
+    '<div class="face back"><span>December '+n+'</span><b>'+esc(d.t)+'</b></div>'+
+    '<button class="hit" type="button" aria-label="'+(u?'Open door '+n+': '+esc(d.t):'Door '+n+' is locked until December '+n)+'"></button>';
+  el.querySelector('.hit').addEventListener('click',function(){
+    if(!unlocked(n)){toast('Door '+n+' opens December '+n+'. Patience is part of the practice.');return}
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){openCard(n);return}
+    el.classList.add('flipping');setTimeout(function(){openCard(n);setTimeout(function(){el.classList.remove('flipping')},300)},480);
+  });
+  grid.appendChild(el);
+});
+
+var TURN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg>';
+var SH='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13"/></svg>';
+var cur=0,lastFocus=null;
+function openCard(n){
+  var d=DAYS[n-1];cur=n;mark(n);
+  var door=document.getElementById('door-'+n);if(door)door.classList.add('open');
+  sf.innerHTML='<span class="d">Door '+n+' · December '+n+'</span><span class="big">'+ICON[d.i]+'</span><h3 id="mTitle">'+esc(d.t)+'</h3><span class="where">'+esc(d.w)+'</span><p>'+esc(d.f)+'</p><button class="turn" type="button" id="turnBtn">'+TURN+'Turn the card</button>';
+  var prev=n>1&&unlocked(n-1),next=n<24&&unlocked(n+1);
+  sb.innerHTML='<div class="top"><span class="mini">'+ICON[d.i]+'</span><div><span class="d">December '+n+' · '+esc(d.t)+'</span><h3>'+esc(d.h)+'</h3></div></div>'+
+    '<div class="msg">'+d.m.map(function(p){return '<p>'+esc(p)+'</p>'}).join('')+'</div>'+
+    '<div class="box"><span class="lbl">This week, do this</span><div>'+esc(d.p)+'</div></div>'+
+    '<div class="box r"><span class="lbl">The right in focus</span><div>'+esc(d.r)+'</div></div>'+
+    '<div class="acts"><div style="display:flex;gap:8px"><button class="btn" type="button" id="pv"'+(prev?'':' disabled')+' aria-label="Previous door">‹ '+(n-1||'')+'</button><button class="btn" type="button" id="nx"'+(next?'':' disabled')+' aria-label="Next door">'+(n<24?n+1:'')+' ›</button></div>'+
+    '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" type="button" id="fl">'+TURN+'Front</button><button class="btn p" type="button" id="sc">'+SH+'Share this card</button></div></div>';
+  card.classList.remove('turned');card.style.animation='none';void card.offsetWidth;card.style.animation='';
+  sb.scrollTop=0;
+  lastFocus=lastFocus||document.activeElement;
+  modal.classList.add('on');document.body.style.overflow='hidden';
+  document.getElementById('turnBtn').addEventListener('click',turn);
+  sf.addEventListener('click',function(e){if(e.target===sf)turn()},{once:true});
+  document.getElementById('fl').addEventListener('click',function(){card.classList.remove('turned');setTimeout(function(){document.getElementById('turnBtn').focus()},500)});
+  document.getElementById('sc').addEventListener('click',function(){shareCard(n)});
+  if(prev)document.getElementById('pv').addEventListener('click',function(){openCard(n-1);setTimeout(turn,60)});
+  if(next)document.getElementById('nx').addEventListener('click',function(){openCard(n+1);setTimeout(turn,60)});
+  history.replaceState(null,'','#day-'+n+(PREVIEW?'':''));
+  setTimeout(function(){document.getElementById('turnBtn').focus()},50);
+}
+function turn(){card.classList.add('turned');setTimeout(function(){var h=sb.querySelector('h3');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}},500)}
+function closeCard(){modal.classList.remove('on');document.body.style.overflow='';history.replaceState(null,'',location.pathname+location.search);
+  var d=document.querySelector('#door-'+cur+' .hit');if(d)d.focus();lastFocus=null}
+closeBtn.addEventListener('click',closeCard);
+modal.addEventListener('click',function(e){if(e.target===modal||e.target.classList.contains('stage'))closeCard()});
+document.addEventListener('keydown',function(e){if(!modal.classList.contains('on'))return;
+  if(e.key==='Escape')closeCard();
+  else if(e.key==='ArrowRight'&&cur<24&&unlocked(cur+1)){openCard(cur+1);setTimeout(turn,60)}
+  else if(e.key==='ArrowLeft'&&cur>1&&unlocked(cur-1)){openCard(cur-1);setTimeout(turn,60)}});
+
+function toast(m){toastEl.textContent=m;toastEl.classList.add('on');clearTimeout(toast._t);toast._t=setTimeout(function(){toastEl.classList.remove('on')},2800)}
+function copy(t){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t).then(function(){toast('Link copied. Pass it on.')},function(){prompt('Copy this link:',t)});prompt('Copy this link:',t)}
+function share(title,text,url){if(navigator.share){navigator.share({title:title,text:text,url:url}).catch(function(){})}else copy(url)}
+function shareCard(n){var d=DAYS[n-1];share('The Advocate’s Advent · Door '+n,'December '+n+', '+d.t+': "'+d.h+'." What true patient advocacy looks like, from the Cold Ischemia Foundation.',SITE+'#day-'+n)}
+var allText='The Advocate’s Advent: 24 doors, 24 traditions, and what true patient and care partner advocacy really looks like. One opens each day, December 1 to 24.';
+document.getElementById('shareAll').addEventListener('click',function(){share('The Advocate’s Advent',allText,SITE)});
+document.getElementById('copyAll').addEventListener('click',function(){copy(SITE)});
+var eu=encodeURIComponent(SITE),et_=encodeURIComponent(allText);
+document.getElementById('fbAll').href='https://www.facebook.com/sharer/sharer.php?u='+eu;
+document.getElementById('xAll').href='https://twitter.com/intent/tweet?text='+et_+'&url='+eu;
+document.getElementById('liAll').href='https://www.linkedin.com/sharing/share-offsite/?url='+eu;
+document.getElementById('mailAll').href='mailto:?subject='+encodeURIComponent('A calendar worth opening this December')+'&body='+encodeURIComponent(allText+'\n\n'+SITE);
+
+// deep link
+var m=location.hash.match(/^#day-(\d{1,2})$/);
+if(m){var n=+m[1];if(n>=1&&n<=24){if(unlocked(n))setTimeout(function(){openCard(n)},350);else setTimeout(function(){toast('Door '+n+' opens December '+n+'. Come back then.');var el=document.getElementById('door-'+n);if(el)el.scrollIntoView({block:'center'})},400)}}
+
+// snow
+(function(){var c=document.getElementById('snow');if(!c.getContext||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ var x=c.getContext('2d'),W,H,f=[],N=innerWidth<700?45:90;
+ function rs(){W=c.width=innerWidth*devicePixelRatio;H=c.height=innerHeight*devicePixelRatio;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px'}
+ rs();addEventListener('resize',rs);
+ for(var i=0;i<N;i++)f.push({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.5,s:Math.random()*.0009+.0003,w:Math.random()*6.28});
+ (function loop(){x.clearRect(0,0,W,H);x.fillStyle='rgba(233,238,246,.55)';
+  f.forEach(function(p){p.y+=p.s;p.w+=.01;p.x+=Math.sin(p.w)*.0003;if(p.y>1){p.y=-.02;p.x=Math.random()}
+   x.beginPath();x.arc(p.x*W,p.y*H,p.r*devicePixelRatio,0,6.283);x.fill()});
+  if(!document.hidden)requestAnimationFrame(loop);else setTimeout(function(){requestAnimationFrame(loop)},500)})();})();
+})();
+</script>
+</body>
+</html>
