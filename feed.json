@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-12T14:00:00Z",
+ "updated": "2026-11-19T14:00:00Z",
  "feed_url": "https://coldischemia.foundation/feed.xml",
  "calendar_url": "https://coldischemia.foundation/cif-week.ics",
  "series": {
@@ -22,10 +22,10 @@
    "day": "Thursday",
    "time": "9:00 AM ET",
    "next": {
-    "date": "2026-11-19T14:00:00Z",
-    "label": "Week 3 of 52"
+    "date": "2026-11-26T14:00:00Z",
+    "label": "Week 4 of 52"
    },
-   "count": 2,
+   "count": 3,
    "total": 52,
    "state": "scheduled"
   },
@@ -57,6 +57,14 @@
   }
  },
  "items": [
+  {
+   "id": "gatekeeper-week-3",
+   "series": "gate",
+   "title": "Week 3: Same bundled rate · single-company rollout",
+   "summary": "You heard there is a better form of dialysis used across Europe. Nobody at your clinic brings it up. Flip the card for the hidden rule behind it and the fix.",
+   "url": "https://coldischemia.foundation/gatekeeper-files.html#week-3",
+   "date": "2026-11-19T14:00:00Z"
+  },
   {
    "id": "gatekeeper-week-2",
    "series": "gate",
