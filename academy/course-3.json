@@ -3,7 +3,7 @@
  "n": 3,
  "title": "The Advocate",
  "subtitle": "How to change a system that was not built for you: independence, rights in writing, the escalation ladder, evidence, rulemaking, and building power with care partners",
- "minutes": 45,
+ "minutes": 35,
  "color": "#4fb3a6",
  "outcomes": [
   "Tell independent advocacy from industry-funded messaging, and check any group's funding yourself",
@@ -15,14 +15,14 @@
  "modules": [
   {
    "id": "c3m1",
-   "title": "What a True Advocate Is",
+   "title": "Independence and Your Rights",
    "scenes": [
     {
      "text": "Welcome to the last course. You've seen the machine and the gates. Now we turn to you. An advocate is not someone who is angry, and not someone who is nice. An advocate is someone who changes outcomes, for one person or for many, with facts, persistence, and independence.",
      "v": {
       "k": "title",
       "kicker": "Course 3 · Module 1",
-      "h": "What a True Advocate Is",
+      "h": "Independence and Your Rights",
       "sub": "Independence is the whole job"
      }
     },
@@ -65,6 +65,37 @@
        "Lobbying Disclosure Act filings: who lobbies, for whom, on what",
        "CMS Open Payments: industry payments to physicians and teaching hospitals"
       ]
+     }
+    },
+    {
+     "text": "Let me show you how to read a nonprofit's tax form in five minutes, because it will change how you hear every press release. Search the organization on ProPublica's Nonprofit Explorer. Open the most recent Form 990. Page one, Part One, shows total revenue and expenses. Part Seven lists what the top officers and highest-paid employees earn. Schedule I shows grants the organization gave away. The names of most individual donors are not public, but the organization's own website or annual report often lists corporate sponsors. Put those pieces together and you know who it answers to.",
+     "v": {
+      "k": "flow",
+      "title": "A Form 990 in five minutes",
+      "steps": [
+       "ProPublica Nonprofit Explorer",
+       "Part I: revenue and expenses",
+       "Part VII: officer and staff pay",
+       "Schedule I: grants given",
+       "Annual report: corporate sponsors"
+      ],
+      "broken": [],
+      "note": "Who funds a voice tells you which fights it will avoid.",
+      "src": "IRS Form 990; ProPublica Nonprofit Explorer"
+     }
+    },
+    {
+     "text": "Open Payments works the same way for doctors. Go to the federal Open Payments search, type in your nephrologist's or surgeon's name, and you will see payments and transfers of value reported by drug and device makers: meals, travel, consulting fees, research money. A payment is not proof of wrongdoing. Many excellent physicians consult. But if your doctor is recommending a specific product, it is fair, and calm, to ask whether they have a relationship with the company that makes it.",
+     "v": {
+      "k": "callout",
+      "text": "A reported payment is not proof of wrongdoing. It is a reason to ask a calm, direct question about a recommendation."
+     }
+    },
+    {
+     "text": "Independence also matters inside your own care. Every dialysis facility has a medical director, usually a nephrologist, who is paid by the facility for that role. Physicians can also hold ownership stakes in clinics or access centers through joint ventures, which is lawful when structured within the rules, and which you saw at the center of the enforcement cases in Course 1. None of that makes a recommendation wrong. It does make it fair to ask, politely: do you have a financial relationship with this facility or this company? A good doctor will answer plainly.",
+     "v": {
+      "k": "callout",
+      "text": "\"Do you have a financial relationship with this facility or company?\" It is a fair question, and a good doctor answers it plainly."
      }
     },
     {
@@ -124,75 +155,12 @@
        ]
       }
      }
-    }
-   ],
-   "quiz": [
-    {
-     "q": "According to its own funding page, what was Dialysis Patient Citizens originally called?",
-     "o": [
-      "Kidney Voices",
-      "DaVita Patient Citizens",
-      "The Dialysis Fund",
-      "Patients First"
-     ],
-     "a": 1,
-     "why": "It began in 2004 as DaVita Patient Citizens with a corporate sponsor and was renamed in 2009."
     },
-    {
-     "q": "Which public document shows a nonprofit's revenue and executive pay?",
-     "o": [
-      "Form 990",
-      "A press release",
-      "A W-2",
-      "A brochure"
-     ],
-     "a": 0,
-     "why": "IRS Form 990, searchable through tools like ProPublica's Nonprofit Explorer."
-    },
-    {
-     "q": "Which database shows industry payments to physicians?",
-     "o": [
-      "Care Compare",
-      "CMS Open Payments",
-      "Federal Register",
-      "PACER"
-     ],
-     "a": 1,
-     "why": "Open Payments discloses payments from drug and device makers."
-    }
-   ],
-   "sources": [
-    {
-     "t": "Dialysis Patient Citizens: Funding fact sheet",
-     "u": "https://www.dialysispatients.org/wp-content/uploads/2020/02/DPC-Funding-Fact-Sheet.pdf"
-    },
-    {
-     "t": "Undark: Kidney Dialysis Is a Booming Business (2020)",
-     "u": "https://undark.org/2020/12/14/ckd-part-1/"
-    },
-    {
-     "t": "ProPublica Nonprofit Explorer",
-     "u": "https://projects.propublica.org/nonprofits/"
-    },
-    {
-     "t": "CMS Open Payments",
-     "u": "https://openpaymentsdata.cms.gov/"
-    },
-    {
-     "t": "Senate Lobbying Disclosure",
-     "u": "https://lda.senate.gov/"
-    }
-   ]
-  },
-  {
-   "id": "c3m2",
-   "title": "Your Rights in Writing",
-   "scenes": [
     {
      "text": "Every dialysis facility that takes Medicare must follow a federal regulation called the Conditions for Coverage, found in Title forty-two of the Code of Federal Regulations, part four ninety-four. It is the single most important document most patients have never read. It turns 'please' into 'you must'.",
      "v": {
       "k": "title",
-      "kicker": "Course 3 · Module 2",
+      "kicker": "Module 1 · continued",
       "h": "Your Rights in Writing",
       "sub": "42 CFR Part 494: the rules every Medicare dialysis facility must follow"
      }
@@ -210,6 +178,69 @@
        "Receive the services in your plan of care"
       ],
       "src": "42 CFR 494.70(a)(5), (a)(7), (a)(12), (a)(16), (b)(1)"
+     }
+    },
+    {
+     "text": "Two more rights you can use tomorrow. First, the rights must be visible. The regulation requires every dialysis facility to prominently display a copy of the patient's rights, including the mailing addresses and complaint telephone numbers of the state survey agency and the ESRD Network, where patients can easily see and read them. If you cannot find it, ask where it is. Second, your records. Under federal privacy law, you have the right to a copy of your medical records, and the provider generally must respond within thirty days, with one possible thirty-day extension.",
+     "v": {
+      "k": "list",
+      "title": "Rights you can use tomorrow",
+      "items": [
+       "Patient rights posted where patients can read them",
+       "Posting includes state agency and ESRD Network phone numbers",
+       "Right to a copy of your medical records (HIPAA)",
+       "Response within 30 days, one 30-day extension possible"
+      ],
+      "src": "42 CFR 494.70(d); HHS: Individuals' right to access health information"
+     }
+    },
+    {
+     "text": "Now a chapter of my manual I wish every patient could read: labeled. A word written in your chart can follow you from unit to unit for years. In a study of more than four hundred medical students and residents, people who read a note with judgmental language about a patient planned to treat his pain less aggressively than people who read the same facts in neutral words. In dialysis, the heavy words are familiar: non-compliant, refused, difficult, disruptive. Each can describe a real event. Each can also hide the reason behind it, like a missed ride, a binder you could not afford, or a treatment you stopped because of cramps.",
+     "v": {
+      "k": "flow",
+      "title": "How a label travels",
+      "steps": [
+       "A barrier nobody writes down",
+       "A label in the chart",
+       "An expectation at the next unit",
+       "A decision about care"
+      ],
+      "broken": [
+       1,
+       2
+      ],
+      "note": "Each step is a point where the record can be corrected.",
+      "src": "Goddu et al., J Gen Intern Med 2018; Inside the Machine, ch. 3.26"
+     }
+    },
+    {
+     "text": "The rights section reaches further than most people realize. It includes the right to be informed about advance directives and the facility's policy on them, and the right to be informed about the facility's own policies on patient care. It protects respect, dignity, privacy, and the confidentiality of your records. And it says you may file a grievance personally, anonymously, or through a representative. When something feels wrong at a clinic, start by asking a simple question: which of my written rights does this touch? Very often, the answer is more than one.",
+     "v": {
+      "k": "list",
+      "title": "More rights in 42 CFR 494.70",
+      "items": [
+       "Respect, dignity and recognition of individuality and personal needs: (a)(1)",
+       "Privacy and confidentiality in treatment and records: (a)(3), (a)(4)",
+       "Advance directives and the facility's policy: (a)(6)",
+       "Facility policies on patient care: (a)(8)",
+       "File grievances personally, anonymously or through a representative: (a)(17)"
+      ],
+      "src": "42 CFR 494.70(a)"
+     }
+    },
+    {
+     "text": "And you can correct the record. Under federal privacy law, you can ask a provider to amend information you believe is inaccurate or incomplete. The provider must generally act within sixty days. If it refuses, it must explain why in writing and let you file a statement of disagreement that becomes part of your record. Name the entry, the date, and what is missing. For example: the note of March third says I refused treatment. I stopped after two hours because of cramps and a low blood pressure, which I reported. Please add this context.",
+     "v": {
+      "k": "case",
+      "h": "Your right to amend your record",
+      "sub": "45 CFR 164.526",
+      "items": [
+       "Ask in writing to amend an inaccurate or incomplete entry",
+       "Provider generally must act within 60 days",
+       "A refusal must be explained in writing",
+       "You may file a statement of disagreement"
+      ],
+      "src": "45 CFR 164.526; Inside the Machine, ch. 3.26"
      }
     },
     {
@@ -283,9 +314,56 @@
       ],
       "src": "CMS QSO-26-09-ESRD"
      }
+    },
+    {
+     "text": "When you put a problem in writing, use a structure the reader cannot ignore. One: what happened, with dates and names. Two: the rule it conflicts with, by citation, if you know it. Three: the harm, or the risk of harm. Four: the specific fix you are asking for. Five: a reasonable deadline for a written answer. Keep it to one page. Keep a copy. Send it in a way you can prove, such as email or the facility's grievance form with a dated receipt. Calm, specific, documented. That is the voice that gets results.",
+     "v": {
+      "k": "list",
+      "title": "A one-page grievance",
+      "items": [
+       "1. What happened: dates, names, facts",
+       "2. The rule it conflicts with, by citation",
+       "3. The harm, or the risk of harm",
+       "4. The specific fix you want",
+       "5. A deadline for a written answer"
+      ]
+     }
     }
    ],
    "quiz": [
+    {
+     "q": "According to its own funding page, what was Dialysis Patient Citizens originally called?",
+     "o": [
+      "Kidney Voices",
+      "DaVita Patient Citizens",
+      "The Dialysis Fund",
+      "Patients First"
+     ],
+     "a": 1,
+     "why": "It began in 2004 as DaVita Patient Citizens with a corporate sponsor and was renamed in 2009."
+    },
+    {
+     "q": "Which public document shows a nonprofit's revenue and executive pay?",
+     "o": [
+      "Form 990",
+      "A press release",
+      "A W-2",
+      "A brochure"
+     ],
+     "a": 0,
+     "why": "IRS Form 990, searchable through tools like ProPublica's Nonprofit Explorer."
+    },
+    {
+     "q": "If you ask a provider to amend an inaccurate chart entry, what must happen?",
+     "o": [
+      "Nothing",
+      "The provider must generally act within 60 days and explain any refusal in writing",
+      "The entry is deleted automatically",
+      "You must hire a lawyer"
+     ],
+     "a": 1,
+     "why": "45 CFR 164.526; you may also file a statement of disagreement (Inside the Machine, ch. 3.26)."
+    },
     {
      "q": "Which of these is a permitted reason for involuntary discharge under 42 CFR 494.180(f)?",
      "o": [
@@ -329,9 +407,62 @@
      ],
      "a": 1,
      "why": "42 CFR 494.70(a)(16): the right to file internal or external grievances, or both, without reprisal."
+    },
+    {
+     "q": "Under 42 CFR 494.70(d), what must a dialysis facility display?",
+     "o": [
+      "Its profit margin",
+      "Patient rights, with state agency and ESRD Network complaint numbers",
+      "Staff salaries",
+      "Nothing"
+     ],
+     "a": 1,
+     "why": "Rights must be prominently posted, including complaint contact information."
+    },
+    {
+     "q": "Under HIPAA, how long does a provider generally have to respond to a request for your records?",
+     "o": [
+      "One year",
+      "30 days, with one possible 30-day extension",
+      "It can refuse indefinitely",
+      "24 hours"
+     ],
+     "a": 1,
+     "why": "HHS: generally 30 days, with one 30-day extension in some cases."
+    },
+    {
+     "q": "Which part of the Form 990 lists pay for top officers and highest-paid employees?",
+     "o": [
+      "Part I",
+      "Part VII",
+      "Schedule B",
+      "The cover letter"
+     ],
+     "a": 1,
+     "why": "Part VII reports compensation of officers, directors and key employees."
     }
    ],
    "sources": [
+    {
+     "t": "Dialysis Patient Citizens: Funding fact sheet",
+     "u": "https://www.dialysispatients.org/wp-content/uploads/2020/02/DPC-Funding-Fact-Sheet.pdf"
+    },
+    {
+     "t": "Undark: Kidney Dialysis Is a Booming Business (2020)",
+     "u": "https://undark.org/2020/12/14/ckd-part-1/"
+    },
+    {
+     "t": "ProPublica Nonprofit Explorer",
+     "u": "https://projects.propublica.org/nonprofits/"
+    },
+    {
+     "t": "CMS Open Payments",
+     "u": "https://openpaymentsdata.cms.gov/"
+    },
+    {
+     "t": "Senate Lobbying Disclosure",
+     "u": "https://lda.senate.gov/"
+    },
     {
      "t": "eCFR: 42 CFR 494.180 (governance; involuntary discharge)",
      "u": "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-494/subpart-D/section-494.180"
@@ -347,19 +478,35 @@
     {
      "t": "Code of Federal Regulations: 42 CFR Part 494 (govinfo, 2024 edition)",
      "u": "https://www.govinfo.gov/content/pkg/CFR-2024-title42-vol5/pdf/CFR-2024-title42-vol5-part494.pdf"
+    },
+    {
+     "t": "HHS: Individuals' right to access health information",
+     "u": "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/access/index.html"
+    },
+    {
+     "t": "Goddu et al., Stigmatizing language in the medical record (J Gen Intern Med 2018)",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/?term=Goddu+2018+stigmatizing+language+medical+record"
+    },
+    {
+     "t": "eCFR: 45 CFR 164.526 (amendment of health information)",
+     "u": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.526"
+    },
+    {
+     "t": "Parke, J. A. (2026). Inside the Machine: What Hemodialysis Really Does to Your Body (field manual)",
+     "u": "https://payhip.com/coldischemia"
     }
    ]
   },
   {
-   "id": "c3m3",
-   "title": "The Escalation Ladder",
+   "id": "c3m2",
+   "title": "Climb, Prove, Change the Rule",
    "scenes": [
     {
      "text": "When something goes wrong, the instinct is to go big right away: the news, a lawyer, social media. Sometimes that's right. Usually it isn't the first step. Problems get solved fastest when you climb a ladder in order, and each rung is documented, so that if you have to climb higher, you arrive with a record.",
      "v": {
       "k": "title",
-      "kicker": "Course 3 · Module 3",
-      "h": "The Escalation Ladder",
+      "kicker": "Course 3 · Module 2",
+      "h": "Climb, Prove, Change the Rule",
       "sub": "Climb in order. Document every rung."
      }
     },
@@ -407,6 +554,21 @@
      }
     },
     {
+     "text": "A few practical details about the ESRD Network, because people hesitate when they do not know what to expect. You can call or write. You can ask that your name not be shared with the facility, though anonymity can limit what the Network can investigate. Ask for a case or reference number and the name of the person handling it. The Network can work with the facility on a resolution and can refer serious problems to the state survey agency. Write down every call, just as you would at the clinic.",
+     "v": {
+      "k": "flow",
+      "title": "Calling the ESRD Network",
+      "steps": [
+       "Call or write",
+       "Say whether your name may be shared",
+       "Get a case number and contact name",
+       "Network works with the facility",
+       "Serious issues: referral to the state agency"
+      ],
+      "broken": []
+     }
+    },
+    {
      "text": "Rung five surprises people. Every member of Congress has caseworkers whose job is to help constituents with federal agencies, including Medicare. A short, factual letter from a congressional office to an agency tends to get a response. And if you suspect fraud, billing for services not provided, or kickbacks, the HHS Office of Inspector General runs a hotline, and federal law protects whistleblowers who report it.",
      "v": {
       "k": "callout",
@@ -447,78 +609,12 @@
        "fb": "An unanswered grievance is evidence. Use it on the next rung."
       }
      ]
-    }
-   ],
-   "quiz": [
-    {
-     "q": "What is the first rung of the escalation ladder?",
-     "o": [
-      "Call a reporter",
-      "Document: dates, names, what was said and promised",
-      "Sue",
-      "Change clinics"
-     ],
-     "a": 1,
-     "why": "Documentation makes every later rung stronger."
     },
     {
-     "q": "What is an ESRD Network?",
-     "o": [
-      "A dialysis company",
-      "A regional Medicare contractor that handles patient grievances and monitors discharges",
-      "A social network",
-      "A type of insurance"
-     ],
-     "a": 1,
-     "why": "Networks are Medicare contractors with a formal grievance role."
-    },
-    {
-     "q": "Who can inspect and cite a dialysis facility for violating federal rules?",
-     "o": [
-      "The state survey agency",
-      "The facility's own manager",
-      "A patient group",
-      "The insurer"
-     ],
-     "a": 0,
-     "why": "State survey agencies inspect on behalf of Medicare."
-    },
-    {
-     "q": "Who should receive suspected billing fraud reports?",
-     "o": [
-      "The HHS Office of Inspector General hotline",
-      "The clinic's front desk only",
-      "A patient forum",
-      "No one"
-     ],
-     "a": 0,
-     "why": "OIG investigates fraud; whistleblowers have legal protections."
-    }
-   ],
-   "sources": [
-    {
-     "t": "eCFR: 42 CFR Part 494",
-     "u": "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-494"
-    },
-    {
-     "t": "HHS-OIG: Report fraud",
-     "u": "https://oig.hhs.gov/fraud/report-fraud/"
-    },
-    {
-     "t": "Example ESRD Network involuntary discharge guidance (Quality Insights)",
-     "u": "https://www.qualityinsights.org/esrd/providers/ivd"
-    }
-   ]
-  },
-  {
-   "id": "c3m4",
-   "title": "Evidence That Moves People",
-   "scenes": [
-    {
-     "text": "Stories open doors. Evidence keeps them open. The most effective advocates pair a person's story with numbers that show it isn't one person. In this module you'll learn where the numbers live, and how to use them without getting tripped up.",
+     "text": "Stories open doors. Evidence keeps them open. The most effective advocates pair a person's story with numbers that show it isn't one person. In this part of the module you'll learn where the numbers live, and how to use them without getting tripped up.",
      "v": {
       "k": "title",
-      "kicker": "Course 3 · Module 4",
+      "kicker": "Module 2 · continued",
       "h": "Evidence That Moves People",
       "sub": "Public data, and the statistics traps to avoid"
      }
@@ -609,6 +705,24 @@
      }
     },
     {
+     "text": "Let me show you the five whys with a real-world pattern. Patients at a clinic keep missing their transplant evaluation appointments. Why? They have no ride. Why? The medical transportation benefit only covers dialysis trips. Why does that matter? The evaluation is at a hospital ninety minutes away, on a different day. Why is nobody solving it? No one is assigned to schedule rides for evaluations. And why not? Because referral is tracked, but completion of the evaluation is not. Now you have a fix to propose: assign an owner and track completion, not just referral.",
+     "v": {
+      "k": "flow",
+      "title": "Five whys: missed evaluations",
+      "steps": [
+       "Patients miss evaluations",
+       "Why? No ride",
+       "Why? Benefit covers dialysis trips only",
+       "Why unsolved? No one owns scheduling",
+       "Root cause: completion is not tracked"
+      ],
+      "broken": [
+       4
+      ],
+      "note": "Fix: assign an owner and track completion, not just referral."
+     }
+    },
+    {
      "text": "A Pareto chart is the other tool worth knowing. List every complaint you've collected, group them by type, and sort from most to least. Usually a few causes produce most of the harm. Bring decision-makers the top two, with numbers, and one fix for each. That is far harder to dismiss than a list of thirty grievances.",
      "v": {
       "k": "bars",
@@ -647,78 +761,12 @@
       "k": "callout",
       "text": "Say what the source says, with its date, and no more. Precision is power."
      }
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Clinic A: 40 complaints, 800 patients. Clinic B: 10 complaints, 100 patients. Which has the higher rate?",
-     "o": [
-      "A",
-      "B",
-      "Same",
-      "Can't tell"
-     ],
-     "a": 1,
-     "why": "B: 10 per 100; A: 5 per 100."
     },
-    {
-     "q": "Which source reports transplant program performance, including organ offer acceptance?",
-     "o": [
-      "SRTR program reports",
-      "A hospital billboard",
-      "Form 990",
-      "Care Compare for nursing homes"
-     ],
-     "a": 0,
-     "why": "The Scientific Registry of Transplant Recipients publishes program-specific reports."
-    },
-    {
-     "q": "What does a Pareto analysis show?",
-     "o": [
-      "That all problems are equal",
-      "That a few causes usually produce most of the harm",
-      "Only costs",
-      "Weather patterns"
-     ],
-     "a": 1,
-     "why": "Sorting problems by frequency points you to the few that matter most."
-    },
-    {
-     "q": "What is the 'D' in DMAIC?",
-     "o": [
-      "Delay",
-      "Define",
-      "Document",
-      "Deny"
-     ],
-     "a": 1,
-     "why": "Define, Measure, Analyze, Improve, Control."
-    }
-   ],
-   "sources": [
-    {
-     "t": "Medicare Care Compare (dialysis facilities)",
-     "u": "https://www.medicare.gov/care-compare/"
-    },
-    {
-     "t": "SRTR: Program-specific reports",
-     "u": "https://www.srtr.org/"
-    },
-    {
-     "t": "USRDS Annual Data Report",
-     "u": "https://usrds-adr.niddk.nih.gov/"
-    }
-   ]
-  },
-  {
-   "id": "c3m5",
-   "title": "Moving Policy",
-   "scenes": [
     {
      "text": "Most of the rules you've learned about were written by federal agencies, not Congress. And federal agencies are legally required to ask the public before they finalize most rules. That is the most underused power patients have.",
      "v": {
       "k": "title",
-      "kicker": "Course 3 · Module 5",
+      "kicker": "Module 2 · continued",
       "h": "Moving Policy",
       "sub": "How rules are made, and how to be heard in the room"
      }
@@ -777,6 +825,28 @@
      }
     },
     {
+     "text": "The national transplant network has its own public comment process, separate from Medicare's. It opens comment periods, usually twice a year, on proposed changes to allocation, notification, living donation and more. Patients and families can read the proposals and comment directly on the network's website, and the committees read them. The 2025 proposal to notify patients about active and inactive status changes is one example: patient comments are part of its record.",
+     "v": {
+      "k": "timeline",
+      "title": "Two places to comment",
+      "items": [
+       {
+        "y": "Federal Register",
+        "t": "Medicare and other agency rules, via regulations.gov"
+       },
+       {
+        "y": "OPTN",
+        "t": "Transplant network policies, usually two comment cycles a year"
+       },
+       {
+        "y": "Your input",
+        "t": "Specific section, evidence, consequence, one clear ask"
+       }
+      ],
+      "src": "OPTN: Public comment; Regulations.gov"
+     }
+    },
+    {
      "type": "choice",
      "prompt": "Which sentence would make the strongest opening for a comment on a transplant rule?",
      "options": [
@@ -817,9 +887,111 @@
        "An enforcement action in your state"
       ]
      }
+    },
+    {
+     "text": "When you write to an elected official, write for a busy staff member who will spend ninety seconds on it. Subject line: your town, the issue, and your ask. First sentence: who you are and that you are a constituent. Second: the problem, with one number and one human detail. Third: the specific action you want, such as cosponsoring a named bill, sending a letter to an agency, or asking a question at a hearing. Then one paragraph of evidence, your contact information, and thanks. Short letters get read. Specific asks get answered.",
+     "v": {
+      "k": "list",
+      "title": "The ninety-second letter",
+      "items": [
+       "Subject: town, issue, ask",
+       "Who you are: a constituent",
+       "The problem: one number, one human detail",
+       "The ask: one specific action",
+       "Evidence paragraph, contact, thank you"
+      ]
+     }
     }
    ],
    "quiz": [
+    {
+     "q": "What is the first rung of the escalation ladder?",
+     "o": [
+      "Call a reporter",
+      "Document: dates, names, what was said and promised",
+      "Sue",
+      "Change clinics"
+     ],
+     "a": 1,
+     "why": "Documentation makes every later rung stronger."
+    },
+    {
+     "q": "What is an ESRD Network?",
+     "o": [
+      "A dialysis company",
+      "A regional Medicare contractor that handles patient grievances and monitors discharges",
+      "A social network",
+      "A type of insurance"
+     ],
+     "a": 1,
+     "why": "Networks are Medicare contractors with a formal grievance role."
+    },
+    {
+     "q": "Who can inspect and cite a dialysis facility for violating federal rules?",
+     "o": [
+      "The state survey agency",
+      "The facility's own manager",
+      "A patient group",
+      "The insurer"
+     ],
+     "a": 0,
+     "why": "State survey agencies inspect on behalf of Medicare."
+    },
+    {
+     "q": "Who should receive suspected billing fraud reports?",
+     "o": [
+      "The HHS Office of Inspector General hotline",
+      "The clinic's front desk only",
+      "A patient forum",
+      "No one"
+     ],
+     "a": 0,
+     "why": "OIG investigates fraud; whistleblowers have legal protections."
+    },
+    {
+     "q": "Clinic A: 40 complaints, 800 patients. Clinic B: 10 complaints, 100 patients. Which has the higher rate?",
+     "o": [
+      "A",
+      "B",
+      "Same",
+      "Can't tell"
+     ],
+     "a": 1,
+     "why": "B: 10 per 100; A: 5 per 100."
+    },
+    {
+     "q": "Which source reports transplant program performance, including organ offer acceptance?",
+     "o": [
+      "SRTR program reports",
+      "A hospital billboard",
+      "Form 990",
+      "Care Compare for nursing homes"
+     ],
+     "a": 0,
+     "why": "The Scientific Registry of Transplant Recipients publishes program-specific reports."
+    },
+    {
+     "q": "What does a Pareto analysis show?",
+     "o": [
+      "That all problems are equal",
+      "That a few causes usually produce most of the harm",
+      "Only costs",
+      "Weather patterns"
+     ],
+     "a": 1,
+     "why": "Sorting problems by frequency points you to the few that matter most."
+    },
+    {
+     "q": "What is the 'D' in DMAIC?",
+     "o": [
+      "Delay",
+      "Define",
+      "Document",
+      "Deny"
+     ],
+     "a": 1,
+     "why": "Define, Measure, Analyze, Improve, Control."
+    },
     {
      "q": "Where are proposed federal rules published?",
      "o": [
@@ -841,31 +1013,33 @@
      ],
      "a": 1,
      "why": "Substance matters more than volume."
-    },
-    {
-     "q": "Which element is NOT part of an effective comment, as taught here?",
-     "o": [
-      "Names the section",
-      "Brings evidence",
-      "Asks for one specific change",
-      "Uses as much anger as possible"
-     ],
-     "a": 3,
-     "why": "Specificity and evidence persuade; anger alone gives the agency nothing to act on."
-    },
-    {
-     "q": "How often does Medicare propose changes to the dialysis payment system?",
-     "o": [
-      "Once a decade",
-      "Every year",
-      "Never",
-      "Only after elections"
-     ],
-     "a": 1,
-     "why": "The ESRD payment rule is updated annually."
     }
    ],
    "sources": [
+    {
+     "t": "eCFR: 42 CFR Part 494",
+     "u": "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-494"
+    },
+    {
+     "t": "HHS-OIG: Report fraud",
+     "u": "https://oig.hhs.gov/fraud/report-fraud/"
+    },
+    {
+     "t": "Example ESRD Network involuntary discharge guidance (Quality Insights)",
+     "u": "https://www.qualityinsights.org/esrd/providers/ivd"
+    },
+    {
+     "t": "Medicare Care Compare (dialysis facilities)",
+     "u": "https://www.medicare.gov/care-compare/"
+    },
+    {
+     "t": "SRTR: Program-specific reports",
+     "u": "https://www.srtr.org/"
+    },
+    {
+     "t": "USRDS Annual Data Report",
+     "u": "https://usrds-adr.niddk.nih.gov/"
+    },
     {
      "t": "Regulations.gov: How to comment",
      "u": "https://www.regulations.gov/"
@@ -885,15 +1059,15 @@
    ]
   },
   {
-   "id": "c3m7",
-   "title": "One Case, Start to Finish",
+   "id": "c3m3",
+   "title": "One Case and the Power of Care Partners",
    "scenes": [
     {
      "text": "Let's put everything together with one case, start to finish. Meet Marcus. He's fifty-eight, on in-center hemodialysis for two years. His wife, Dana, is his care partner. Nothing about Marcus is unusual. That's the point. Everything that happens to him happens to people every week.",
      "v": {
       "k": "title",
-      "kicker": "Course 3 · Module 6",
-      "h": "One Case, Start to Finish",
+      "kicker": "Course 3 · Module 3",
+      "h": "One Case and the Power of Care Partners",
       "sub": "Applying every tool in this course to one family"
      }
     },
@@ -1019,6 +1193,19 @@
      }
     },
     {
+     "text": "Dana's notebook deserves its own lesson, because it won the case. Use one notebook, paper or digital, for everything. Each entry gets the date and time, who was there, what was said, what was promised and by when. Clip every letter and printout in date order behind it. Keep a one-line index at the front of every serious issue and its status. When you need to escalate, you will not be remembering. You will be reading from a record, and everyone in the room will know the difference.",
+     "v": {
+      "k": "list",
+      "title": "The care notebook",
+      "items": [
+       "One notebook for everything",
+       "Each entry: date, time, who, what was said, what was promised",
+       "Letters and printouts in date order",
+       "Front page: index of open issues and status"
+      ]
+     }
+    },
+    {
      "text": "Notice what won. Not volume, not anger. Dana won with a notebook, three written requests, one regulation, and the order of the ladder. You now have every one of those tools.",
      "v": {
       "k": "list",
@@ -1031,63 +1218,36 @@
        "Follow-through that turned one case into evidence"
       ]
      }
-    }
-   ],
-   "quiz": [
-    {
-     "q": "In Marcus's case, what was Dana's most important first action?",
-     "o": [
-      "Arguing at the front desk",
-      "Documenting what was said and asking in writing for the cramping to be treated",
-      "Leaving the clinic",
-      "Posting online"
-     ],
-     "a": 1,
-     "why": "Documentation plus a written clinical request reframed 'noncompliance' as a medical problem."
     },
     {
-     "q": "Which defect in the discharge letter violates 42 CFR 494.180(f)?",
-     "o": [
-      "It was printed on letterhead",
-      "Only 10 days' notice and only an administrator's signature",
-      "It mentioned behavior",
-      "It was mailed"
-     ],
-     "a": 1,
-     "why": "The rule requires 30 days' notice and an order signed by both the medical director and attending physician, plus documented efforts."
+     "text": "When should you go to the press? Usually after you have climbed the ladder and documented the response, because a reporter's first question will be, what did they say when you complained? Get the patient's clear permission for anything about their health. Privacy laws bind providers, not patients, so a patient can share their own story, but they should decide exactly what to share. Keep to what you can prove, label allegations, and bring the documents. A story backed by records lasts. A story built on anger fades by the weekend.",
+     "v": {
+      "k": "compare",
+      "a": {
+       "h": "Ready for the press",
+       "tag": "Ladder climbed, records in hand",
+       "items": [
+        "Dated documentation",
+        "Written responses, or the lack of them",
+        "Patient consent to share"
+       ]
+      },
+      "b": {
+       "h": "Not yet",
+       "tag": "Anger without records",
+       "items": [
+        "No written complaint filed",
+        "Facts you cannot prove",
+        "Someone else's private details"
+       ]
+      }
+     }
     },
     {
-     "q": "Why did Dana also contact a transplant center directly?",
-     "o": [
-      "To complain about the clinic",
-      "To open the referral from the transplant side while pressing the facility to send it",
-      "To get a second dialysis chair",
-      "To buy a kidney"
-     ],
-     "a": 1,
-     "why": "Working both sides of a stalled hand-off is faster than waiting on one."
-    }
-   ],
-   "sources": [
-    {
-     "t": "eCFR: 42 CFR 494.180(f)",
-     "u": "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-494/subpart-D/section-494.180"
-    },
-    {
-     "t": "Example ESRD Network involuntary discharge guidance (Quality Insights)",
-     "u": "https://www.qualityinsights.org/esrd/providers/ivd"
-    }
-   ]
-  },
-  {
-   "id": "c3m6",
-   "title": "Care Partners and Building Power",
-   "scenes": [
-    {
-     "text": "The last module is about the people this system leans on the most and listens to the least. Care partners. The spouse who drives to treatment three times a week. The daughter who manages forty medications. The friend who learns to run a home dialysis machine.",
+     "text": "The last part of this course is about the people this system leans on the most and listens to the least. Care partners. The spouse who drives to treatment three times a week. The daughter who manages forty medications. The friend who learns to run a home dialysis machine.",
      "v": {
       "k": "title",
-      "kicker": "Course 3 · Module 7",
+      "kicker": "Module 3 · continued",
       "h": "Care Partners and Building Power",
       "sub": "The unpaid workforce, and how to turn individuals into a force"
      }
@@ -1114,6 +1274,42 @@
        "Check eligibility for job protections such as FMLA",
        "Keep your own notes and copies"
       ]
+     }
+    },
+    {
+     "text": "If you are a care partner, this is for you, and it is in my manual because nobody else says it. You are not the patient on the record, but in almost every way that matters you are part of this treatment, and your wellbeing is part of the patient's safety. Ask yourself one question every month: on a scale of one to ten, how sustainable is my situation right now? If the answer is below five, something needs to change, and it is worth telling the social worker, your own doctor, or someone you trust, this week. Book your own medical visit, and tell your clinician you are a dialysis care partner.",
+     "v": {
+      "k": "callout",
+      "text": "Once a month: \"On a scale of 1 to 10, how sustainable is my situation right now?\" Below 5 means something has to change.",
+      "src": "Inside the Machine, ch. 3.24"
+     }
+    },
+    {
+     "text": "Care partners need protection too, and there is some. The federal Family and Medical Leave Act lets eligible employees take up to twelve weeks of unpaid, job-protected leave a year to care for a spouse, child or parent with a serious health condition. It can be taken in blocks, or intermittently, such as a few hours for appointments. Not every worker qualifies; it depends on the size of the employer and how long you have worked there. Ask your employer's human resources office in writing, and some states add paid leave on top of it.",
+     "v": {
+      "k": "stats",
+      "items": [
+       {
+        "value": 12,
+        "label": "weeks of unpaid, job-protected leave"
+       },
+       {
+        "value": 12,
+        "label": "month period the weeks are counted in"
+       },
+       {
+        "value": 3,
+        "label": "relationships covered: spouse, child, parent"
+       }
+      ],
+      "src": "U.S. Department of Labor: Family and Medical Leave Act"
+     }
+    },
+    {
+     "text": "And every care partner needs a backup. The system quietly builds itself around one dependable person, and when that person gets sick, burns out, or simply has to work, the whole plan wobbles. Name a second person. Put them on the care map. Ask the patient to authorize the care team to speak with them too. Share the binder. It is not a sign of weakness. It is the same thing a hospital does for every critical role: it never relies on one person alone.",
+     "v": {
+      "k": "callout",
+      "text": "The system leans on one dependable person. Name a second. A plan with one point of failure is not a plan."
      }
     },
     {
@@ -1180,16 +1376,70 @@
      }
     },
     {
+     "text": "Your story is your most powerful piece of evidence, so tell it with a shape. Sixty seconds is enough. Start with a moment, one specific scene. Then the problem behind the moment, in one sentence. Then one number that shows it is not only you. Then the change you want, and who can make it. Practice it out loud until it fits in a minute. You will use it with a reporter, a legislator, a hospital board, and a family in a waiting room who needs to hear that someone else made it through.",
+     "v": {
+      "k": "flow",
+      "title": "A sixty-second story",
+      "steps": [
+       "One specific moment",
+       "The problem behind it",
+       "One number: it is not just you",
+       "The change, and who can make it"
+      ],
+      "broken": []
+     }
+    },
+    {
+     "text": "When you finish this module and its knowledge check, you will have completed every lesson in this course. Take the final assessment when you are ready. Score seventy percent or better and you will earn a certificate with your own number. But the certificate is not the point. The point is the next phone call you make, the next letter you send, the next family you help find their footing. That is how this foundation measures success: not in what we know, but in what you do with it.",
+     "v": {
+      "k": "callout",
+      "text": "The certificate is not the point. The next call, the next letter, the next family you help: that is the point."
+     }
+    },
+    {
      "text": "So here is what I'll leave you with. You now know how the machine is paid, who owns it, where its gates are, which rules bind it, how to climb the ladder, how to use evidence, and how rules are made. Most people dealing with kidney disease will never learn any of this. You have. Use it for the person in front of you, and for everyone after them.",
      "v": {
       "k": "title",
-      "kicker": "End of Course 3",
+      "kicker": "Module 3 · continued",
       "h": "Now you know how the machine works",
       "sub": "Use it for the person in front of you, and for everyone after them"
      }
     }
    ],
    "quiz": [
+    {
+     "q": "In Marcus's case, what was Dana's most important first action?",
+     "o": [
+      "Arguing at the front desk",
+      "Documenting what was said and asking in writing for the cramping to be treated",
+      "Leaving the clinic",
+      "Posting online"
+     ],
+     "a": 1,
+     "why": "Documentation plus a written clinical request reframed 'noncompliance' as a medical problem."
+    },
+    {
+     "q": "Which defect in the discharge letter violates 42 CFR 494.180(f)?",
+     "o": [
+      "It was printed on letterhead",
+      "Only 10 days' notice and only an administrator's signature",
+      "It mentioned behavior",
+      "It was mailed"
+     ],
+     "a": 1,
+     "why": "The rule requires 30 days' notice and an order signed by both the medical director and attending physician, plus documented efforts."
+    },
+    {
+     "q": "Why did Dana also contact a transplant center directly?",
+     "o": [
+      "To complain about the clinic",
+      "To open the referral from the transplant side while pressing the facility to send it",
+      "To get a second dialysis chair",
+      "To buy a kidney"
+     ],
+     "a": 1,
+     "why": "Working both sides of a stalled hand-off is faster than waiting on one."
+    },
     {
      "q": "About how many Americans were family caregivers in 2025, per AARP and NAC?",
      "o": [
@@ -1222,9 +1472,61 @@
      ],
      "a": 1,
      "why": "A written authorization lets the care team share information with the care partner."
+    },
+    {
+     "q": "How much job-protected leave can an eligible employee take under the FMLA to care for a spouse, child or parent?",
+     "o": [
+      "2 weeks paid",
+      "Up to 12 weeks unpaid per year",
+      "6 months paid",
+      "None"
+     ],
+     "a": 1,
+     "why": "U.S. Department of Labor: up to 12 workweeks of unpaid, job-protected leave in a 12-month period."
+    },
+    {
+     "q": "What is the first element of a strong sixty-second story?",
+     "o": [
+      "A statistic",
+      "One specific moment",
+      "A demand",
+      "The organization's mission"
+     ],
+     "a": 1,
+     "why": "Start with a moment, then the problem, one number, and the change you want."
+    },
+    {
+     "q": "When is it usually right to go to the press?",
+     "o": [
+      "Before telling the facility anything",
+      "After climbing the ladder, with documentation and the patient's consent",
+      "Only anonymously",
+      "Never"
+     ],
+     "a": 1,
+     "why": "A reporter will ask what happened when you complained. Bring records and consent."
+    },
+    {
+     "q": "Why should every care partner name a backup?",
+     "o": [
+      "It's required by law",
+      "So the plan doesn't fail when one person can't be there",
+      "To share the cost",
+      "It isn't necessary"
+     ],
+     "a": 1,
+     "why": "A plan with one point of failure is not a plan."
     }
    ],
    "sources": [
+    {
+     "t": "eCFR: 42 CFR 494.180(f)",
+     "u": "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-494/subpart-D/section-494.180"
+    },
+    {
+     "t": "Example ESRD Network involuntary discharge guidance (Quality Insights)",
+     "u": "https://www.qualityinsights.org/esrd/providers/ivd"
+    },
     {
      "t": "AARP: New report reveals crisis point for America's 63 million family caregivers (2025)",
      "u": "https://www.aarp.org/press/releases/2025-07-24-new-report-reveals-crisis-point-for-americas-63-million-family-caregivers.html"
@@ -1232,6 +1534,10 @@
     {
      "t": "U.S. Department of Labor: Family and Medical Leave Act",
      "u": "https://www.dol.gov/agencies/whd/fmla"
+    },
+    {
+     "t": "Parke, J. A. (2026). Inside the Machine: What Hemodialysis Really Does to Your Body (field manual)",
+     "u": "https://payhip.com/coldischemia"
     }
    ]
   }

@@ -3,7 +3,7 @@
  "n": 1,
  "title": "The Machine",
  "subtitle": "How American kidney care actually works: the 1972 promise, the money, the consolidation, and the gaps people fall through",
- "minutes": 45,
+ "minutes": 35,
  "color": "#e0574f",
  "outcomes": [
   "Explain why kidney failure is the only disease with its own Medicare entitlement, and what that payment design rewards",
@@ -15,15 +15,15 @@
  "modules": [
   {
    "id": "c1m1",
-   "title": "The 1972 Promise",
+   "title": "The Promise and the Late Arrival",
    "scenes": [
     {
-     "text": "Welcome. I'm Avery, and for the next forty-five minutes I'm going to take you inside a machine most people only ever see from the chair. Not the dialysis machine. The system around it. How it is paid for, who owns it, who decides, and why so many people are carried along by it instead of being served by it.",
+     "text": "Welcome. I'm Jeff Parke, founder of the Cold Ischemia Foundation. Over three modules, about eleven minutes each, I'm going to take you inside a machine most people only ever see from the chair. Not the dialysis machine. The system around it. How it is paid for, who owns it, who decides, and why so many people are carried along by it instead of being served by it.",
      "v": {
       "k": "title",
       "kicker": "Course 1 · Module 1",
-      "h": "The 1972 Promise",
-      "sub": "Why kidney failure has its own Medicare program, and what that design rewards"
+      "h": "The Promise and the Late Arrival",
+      "sub": "How kidney failure got its own Medicare program, and why so many people reach it too late"
      }
     },
     {
@@ -32,10 +32,10 @@
       "k": "list",
       "title": "How this course works",
       "items": [
-       "Self-paced: pause, rewind, read the captions",
+       "Three modules, about 11 minutes each",
+       "A 10-question knowledge check after each module",
        "Every figure is sourced: open the Sources panel any time",
-       "Allegations are labeled as allegations",
-       "Short checks after each module; a final assessment at the end"
+       "Allegations are labeled as allegations"
       ]
      }
     },
@@ -131,70 +131,32 @@
      }
     },
     {
-     "text": "In the next module we'll follow one person through the years before dialysis, and find the exact points where the system could have caught them, and didn't.",
+     "text": "Here is a document almost nobody asks to see. When a person starts dialysis, Medicare requires a form called the CMS 2728, the End Stage Renal Disease Medical Evidence Report. It records when dialysis began and the diagnosis behind it. It also asks whether the patient was informed of their kidney transplant options, and if not, why not. That one box is a record of whether anyone had the conversation. You can ask the facility for a copy. It is part of your record, and it tells you what was written about you on day one.",
      "v": {
-      "k": "title",
-      "kicker": "Up next",
-      "h": "Arriving Too Late",
-      "sub": "The prevention gap, measured"
+      "k": "case",
+      "h": "CMS-2728: the form filed when dialysis begins",
+      "sub": "End Stage Renal Disease Medical Evidence Report",
+      "items": [
+       "Date dialysis began and primary diagnosis",
+       "Whether the patient was informed of transplant options",
+       "If not informed, the reason recorded",
+       "Part of the patient's record: you can ask for a copy"
+      ],
+      "src": "CMS Form 2728"
      }
-    }
-   ],
-   "quiz": [
-    {
-     "q": "What made the 1972 Social Security Amendments unique in Medicare's history?",
-     "o": [
-      "They created Medicare Advantage",
-      "They extended Medicare to people because of one specific diagnosis, kidney failure, regardless of age",
-      "They required dialysis companies to be nonprofit",
-      "They created the organ transplant waiting list"
-     ],
-     "a": 1,
-     "why": "Kidney failure remains the only diagnosis that opens Medicare to people of any age. Coverage began in July 1973."
     },
     {
-     "q": "About what share of U.S. adults with chronic kidney disease are unaware they have it?",
-     "o": [
-      "About 20%",
-      "About 50%",
-      "About 87%",
-      "Almost none"
-     ],
-     "a": 2,
-     "why": "CDC estimates about 87% of adults with CKD do not know it (NHANES 2021–2023)."
+     "text": "Hold that number, eighty-seven percent, and let's put a face on it. Follow one person through the years before kidney failure, and watch for the exact points where the system could have caught her, and didn't.",
+     "v": {
+      "k": "callout",
+      "text": "Next: one person, and every point where the system could have caught her."
+     }
     },
-    {
-     "q": "What did the original payment design reliably reward?",
-     "o": [
-      "Early detection",
-      "Treatment after the kidneys had already failed",
-      "Preemptive transplant",
-      "Diet and lifestyle programs"
-     ],
-     "a": 1,
-     "why": "The entitlement paid for end-stage treatment, not for finding and slowing the disease earlier."
-    }
-   ],
-   "sources": [
-    {
-     "t": "CDC: Chronic Kidney Disease in the United States, 2023",
-     "u": "https://www.cdc.gov/kidney-disease/php/data-research/index.html"
-    },
-    {
-     "t": "NIDDK: Kidney Disease Statistics for the United States (USRDS 2023)",
-     "u": "https://www.niddk.nih.gov/health-information/health-statistics/kidney-disease"
-    }
-   ]
-  },
-  {
-   "id": "c1m2",
-   "title": "Arriving Too Late",
-   "scenes": [
     {
      "text": "Imagine a woman in her fifties. Type 2 diabetes, high blood pressure, a busy job. She sees her primary care doctor once a year. Her kidneys have been losing function for a decade. Nobody has told her, because nobody ordered the two simple tests that would have shown it: a blood test for filtration, and a urine test for protein.",
      "v": {
       "k": "title",
-      "kicker": "Course 1 · Module 2",
+      "kicker": "Module 1 · continued",
       "h": "Arriving Too Late",
       "sub": "The prevention gap, measured"
      }
@@ -220,6 +182,37 @@
        }
       ],
       "src": "CDC, NHANES 2021–2023"
+     }
+    },
+    {
+     "text": "Let me make the two kidney tests plain, because they are the language of every decision that follows. The blood test gives an estimated glomerular filtration rate, or eGFR, a rough percentage of normal filtering. Below sixty for three months or more is chronic kidney disease. Fifteen to twenty-nine is stage four. Below fifteen is kidney failure. The urine test is the albumin-to-creatinine ratio. Thirty or above means protein is leaking through, a sign of damage that can show up years before the blood number falls. One test without the other tells half the story.",
+     "v": {
+      "k": "tiers",
+      "title": "Reading the two kidney tests",
+      "items": [
+       {
+        "h": "eGFR 60+",
+        "t": "Normal filtering, unless the urine test shows damage"
+       },
+       {
+        "h": "eGFR below 60",
+        "t": "Chronic kidney disease, if it lasts three months or more"
+       },
+       {
+        "h": "eGFR 15 to 29",
+        "t": "Stage 4: time to plan dialysis access, education and transplant"
+       },
+       {
+        "h": "eGFR below 15",
+        "t": "Kidney failure",
+        "c": "alert"
+       },
+       {
+        "h": "Urine ACR 30+",
+        "t": "Protein leaking: damage, even when eGFR looks fine"
+       }
+      ],
+      "src": "KDIGO definitions; CDC"
      }
     },
     {
@@ -320,6 +313,31 @@
      }
     },
     {
+     "text": "I wrote a whole chapter about this in my field manual, Inside the Machine, because your access is your lifeline. A fistula is your own artery joined to your vein. A graft is a soft tube under the skin. A catheter is a tube into a large vein in your neck or chest, and it is meant to be temporary. In a large review of studies, people dialyzing with a catheter had about a fifty-three percent higher risk of death and roughly twice the risk of a fatal infection compared with people using a fistula. If you have a catheter, ask one question at every care-plan meeting: how long have I had this, and what is the written plan for a permanent access?",
+     "v": {
+      "k": "compare",
+      "a": {
+       "h": "Fistula or graft",
+       "tag": "Planned, permanent",
+       "items": [
+        "Check the buzz and whoosh every day",
+        "No blood pressure, IVs or blood draws in that arm",
+        "Report swelling, redness or a cold hand"
+       ]
+      },
+      "b": {
+       "h": "Catheter",
+       "tag": "Meant to be temporary",
+       "items": [
+        "About 53% higher risk of death vs fistula",
+        "About twice the risk of fatal infection",
+        "Ask: how long, and what is the plan?"
+       ]
+      },
+      "src": "Ravani et al., J Am Soc Nephrol 2013; Inside the Machine, ch. 3.15"
+     }
+    },
+    {
      "type": "choice",
      "prompt": "You're helping our patient at her annual visit. Her filtration rate has been falling for three years. Which request does the most to change her future?",
      "options": [
@@ -348,6 +366,61 @@
      }
     },
     {
+     "text": "The first ninety days on dialysis carry the highest risk of the whole dialysis career, and they are also when the biggest decisions are easiest to make: the access plan, the transplant referral, the living donor conversation, home dialysis, and your own goals. Two more things from the evidence. A major trial found that starting dialysis earlier, at a higher filtration rate, did not help people live longer, so the start should be guided by symptoms, not a lab number alone. And if you still make urine, that remaining kidney function is precious. Ask your team how they are protecting it.",
+     "v": {
+      "k": "list",
+      "title": "Your first 90 days",
+      "items": [
+       "Access plan, written down",
+       "Transplant referral sent, with the date",
+       "Living donor conversation started",
+       "Home dialysis options explained",
+       "Remaining kidney function measured and protected"
+      ],
+      "src": "Cooper et al. (IDEAL), NEJM 2010; Inside the Machine, ch. 1.14"
+     }
+    },
+    {
+     "text": "Now a benefit most people have never heard of. Since 2010, Medicare has covered kidney disease education for people with stage four disease: up to six sessions, on a doctor's referral, about the choices ahead, including home dialysis and transplant. After the Part B deductible, the patient pays the usual twenty percent. One national study of people who started dialysis between 2010 and 2014 found that fewer than one in a hundred had used it before their first treatment. Three thousand four hundred sixty-nine people, out of almost three hundred seventy thousand. A benefit nobody offers is a benefit that does not exist.",
+     "v": {
+      "k": "stats",
+      "items": [
+       {
+        "value": 6,
+        "label": "education sessions Medicare covers at stage 4"
+       },
+       {
+        "value": 0.9,
+        "suffix": "%",
+        "label": "of new dialysis patients had used it, 2010 to 2014"
+       },
+       {
+        "value": 3469,
+        "label": "people who used it"
+       },
+       {
+        "value": 369968,
+        "label": "people eligible"
+       }
+      ],
+      "src": "Medicare.gov; Shukla et al., Peritoneal Dialysis International"
+     }
+    },
+    {
+     "text": "So here is what a strong visit sounds like, word for word, from a patient or a care partner. My filtration rate is falling. Please order a urine albumin test if I have not had one this year. Please refer me to a nephrologist, and tell me when. Am I eligible for Medicare's kidney disease education sessions? And at what point will you refer me for a transplant evaluation? Write the answers down, with the date and the name of the person who gave them. You are not being difficult. You are being the part of the system that remembers.",
+     "v": {
+      "k": "list",
+      "title": "A strong visit, in five sentences",
+      "items": [
+       "\"My filtration rate is falling.\"",
+       "\"Please order a urine albumin test this year.\"",
+       "\"Please refer me to a nephrologist. When?\"",
+       "\"Am I eligible for kidney disease education?\"",
+       "\"When will you refer me for transplant evaluation?\""
+      ]
+     }
+    },
+    {
      "text": "So here is your first advocate's tool. When kidney function is falling, ask three questions, in writing if you have to. Have you tested my urine for protein? When will I see a nephrologist? And when can I be referred for a transplant evaluation? Those three questions close most of the gap you just saw.",
      "v": {
       "k": "list",
@@ -361,6 +434,39 @@
     }
    ],
    "quiz": [
+    {
+     "q": "What made the 1972 Social Security Amendments unique in Medicare's history?",
+     "o": [
+      "They created Medicare Advantage",
+      "They extended Medicare to people because of one specific diagnosis, kidney failure, regardless of age",
+      "They required dialysis companies to be nonprofit",
+      "They created the organ transplant waiting list"
+     ],
+     "a": 1,
+     "why": "Kidney failure remains the only diagnosis that opens Medicare to people of any age. Coverage began in July 1973."
+    },
+    {
+     "q": "About what share of U.S. adults with chronic kidney disease are unaware they have it?",
+     "o": [
+      "About 20%",
+      "About 50%",
+      "About 87%",
+      "Almost none"
+     ],
+     "a": 2,
+     "why": "CDC estimates about 87% of adults with CKD do not know it (NHANES 2021–2023)."
+    },
+    {
+     "q": "What did the original payment design reliably reward?",
+     "o": [
+      "Early detection",
+      "Treatment after the kidneys had already failed",
+      "Preemptive transplant",
+      "Diet and lifestyle programs"
+     ],
+     "a": 1,
+     "why": "The entitlement paid for end-stage treatment, not for finding and slowing the disease earlier."
+    },
     {
      "q": "In the national data cited, about what share of people started hemodialysis through a catheter?",
      "o": [
@@ -384,15 +490,15 @@
      "why": "93% with no prior nephrology care, versus 52% with more than a year of it."
     },
     {
-     "q": "When can a person begin accruing waiting time for a deceased-donor kidney?",
+     "q": "Compared with a fistula, a dialysis catheter carries about:",
      "o": [
-      "Only after a year on dialysis",
-      "When filtration rate is 20 or below, or once dialysis starts",
-      "Only after age 65",
-      "Only after a transplant center visit"
+      "The same risk",
+      "A 53% higher risk of death and about twice the risk of fatal infection",
+      "Lower infection risk",
+      "Half the risk of death"
      ],
      "a": 1,
-     "why": "Waiting time can begin at an eGFR of 20 or below, even before dialysis, which is why early referral matters."
+     "why": "Ravani et al. (2013), cited in Inside the Machine, ch. 3.15. A catheter is meant to be temporary."
     },
     {
      "q": "Which test catches kidney damage that a filtration blood test can miss?",
@@ -404,12 +510,49 @@
      ],
      "a": 0,
      "why": "Urine albumin shows kidney damage even when filtration still looks acceptable."
+    },
+    {
+     "q": "What does the CMS-2728 form record about transplant?",
+     "o": [
+      "Nothing about transplant",
+      "Whether the patient was informed of transplant options, and if not, why",
+      "The patient's place on the waiting list",
+      "Which transplant center accepted the patient"
+     ],
+     "a": 1,
+     "why": "The Medical Evidence Report filed when dialysis begins asks whether the patient was informed of kidney transplant options."
+    },
+    {
+     "q": "Medicare's kidney disease education benefit covers up to how many sessions for people with stage 4 CKD?",
+     "o": [
+      "One",
+      "Six",
+      "Twelve",
+      "Unlimited"
+     ],
+     "a": 1,
+     "why": "Up to six sessions, on referral, for stage 4 chronic kidney disease (Medicare.gov)."
+    },
+    {
+     "q": "A urine albumin-to-creatinine ratio of 30 or above usually means:",
+     "o": [
+      "Normal kidneys",
+      "Protein is leaking through, a sign of kidney damage",
+      "Dehydration only",
+      "The blood test was wrong"
+     ],
+     "a": 1,
+     "why": "A urine ACR of 30 or above signals kidney damage, sometimes years before eGFR falls."
     }
    ],
    "sources": [
     {
-     "t": "CDC: Chronic Kidney Disease in the United States",
+     "t": "CDC: Chronic Kidney Disease in the United States, 2023",
      "u": "https://www.cdc.gov/kidney-disease/php/data-research/index.html"
+    },
+    {
+     "t": "NIDDK: Kidney Disease Statistics for the United States (USRDS 2023)",
+     "u": "https://www.niddk.nih.gov/health-information/health-statistics/kidney-disease"
     },
     {
      "t": "Han & Saran, Global Dialysis Perspective: United States, Kidney360 (2020)",
@@ -418,18 +561,42 @@
     {
      "t": "OPTN: Kidney waiting time policy",
      "u": "https://optn.transplant.hrsa.gov/policies-bylaws/policies/"
+    },
+    {
+     "t": "CMS Form 2728: ESRD Medical Evidence Report",
+     "u": "https://www.cms.gov/medicare/cms-forms/cms-forms/downloads/cms2728.pdf"
+    },
+    {
+     "t": "Medicare.gov: Kidney disease education",
+     "u": "https://www.medicare.gov/coverage/kidney-disease-education"
+    },
+    {
+     "t": "Shukla et al.: Utilization of CMS pre-ESRD Kidney Disease Education services (PMC)",
+     "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10038064/"
+    },
+    {
+     "t": "Ravani et al., Vascular access and mortality: systematic review (J Am Soc Nephrol 2013)",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/?term=Ravani+2013+vascular+access+mortality+systematic+review"
+    },
+    {
+     "t": "Cooper et al., IDEAL trial (NEJM 2010)",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/?term=Cooper+2010+randomized+trial+early+versus+late+initiation+of+dialysis"
+    },
+    {
+     "t": "Parke, J. A. (2026). Inside the Machine: What Hemodialysis Really Does to Your Body (field manual)",
+     "u": "https://payhip.com/coldischemia"
     }
    ]
   },
   {
-   "id": "c1m3",
+   "id": "c1m2",
    "title": "Follow the Money",
    "scenes": [
     {
      "text": "If you want to understand any system, follow the money. In dialysis, the money moves in a pattern that explains decisions patients often find baffling, from why they're pushed toward certain insurance to why a clinic opens in one neighborhood and not another.",
      "v": {
       "k": "title",
-      "kicker": "Course 1 · Module 3",
+      "kicker": "Course 1 · Module 2",
       "h": "Follow the Money",
       "sub": "Why one patient can be worth four times another"
      }
@@ -510,6 +677,28 @@
      }
     },
     {
+     "text": "Here is a payment change most patients never heard about. Starting January first, 2025, Medicare moved oral-only dialysis drugs, mainly phosphate binders, into the dialysis payment bundle. For many patients, binders now come through the dialysis facility instead of the pharmacy. If your binder supply has changed, been interrupted, or switched to a different product, ask the clinic who is responsible for it now, and tell them if a gap has left you without it. A change on a payment form can become a missed dose at your kitchen table.",
+     "v": {
+      "k": "timeline",
+      "title": "The 2025 binder change",
+      "items": [
+       {
+        "y": "Before 2025",
+        "t": "Phosphate binders usually dispensed through Part D pharmacies"
+       },
+       {
+        "y": "Jan 1, 2025",
+        "t": "Oral-only dialysis drugs move into the Medicare dialysis bundle"
+       },
+       {
+        "y": "Now",
+        "t": "Many patients get binders through the facility: ask who owns the supply"
+       }
+      ],
+      "src": "CMS ESRD PPS; Inside the Machine, ch. 1.11"
+     }
+    },
+    {
      "text": "Now add one rule. When someone with job-based insurance develops kidney failure, that private plan must stay the primary payer for a thirty-month coordination period before Medicare takes over. Those thirty months are, financially, the most valuable months of a patient's treatment. Everything about how patients are counseled on insurance should be read with that in mind.",
      "v": {
       "k": "timeline",
@@ -528,6 +717,45 @@
         "t": "Medicare becomes primary at the bundled rate"
        }
       ]
+     }
+    },
+    {
+     "text": "You saw how valuable private insurance is to a dialysis business. That is why the source of insurance advice matters. Before you change plans, drop employer coverage, or accept premium help, get counseling from someone who has no stake in the answer. Every state has a State Health Insurance Assistance Program, called SHIP, funded by the federal government to give free, unbiased Medicare counseling. Ask the counselor to walk through what each choice means for the thirty-month period, for your drugs, and for transplant. Then decide.",
+     "v": {
+      "k": "compare",
+      "a": {
+       "h": "Advice from the clinic",
+       "tag": "Well meant, but not neutral",
+       "items": [
+        "The business earns far more from some plans",
+        "May be framed around keeping coverage",
+        "Ask: who benefits from this choice?"
+       ]
+      },
+      "b": {
+       "h": "Advice from SHIP",
+       "tag": "Free, federally funded, unbiased",
+       "items": [
+        "No stake in which plan you pick",
+        "Explains Medigap, Advantage and timing",
+        "Find it at shiphelp.org"
+       ]
+      },
+      "src": "Administration for Community Living: SHIP"
+     }
+    },
+    {
+     "text": "Cost does not stay in your wallet. When it forces you to skip a pill or a ride, it enters your bloodstream. Original Medicare generally leaves patients responsible for twenty percent of approved costs unless they have secondary coverage. Add three round trips a week, medicines, food and lost work. If premium help is keeping you on a private plan, ask one question before you choose or keep it: what happens to my coverage, and to the cost of anti-rejection drugs, if I get a transplant? And if you are skipping anything because of cost, say so, and ask that your chart record the cost barrier, not the word non-adherence.",
+     "v": {
+      "k": "list",
+      "title": "Financial toxicity: what to ask",
+      "items": [
+       "What do I really pay each month: rides, medicines, premiums, food?",
+       "Who funds my premium help?",
+       "What happens to coverage and drug costs after a transplant?",
+       "Record the cost barrier in my chart, not \"non-adherence\""
+      ],
+      "src": "Inside the Machine, ch. 3.19"
      }
     },
     {
@@ -596,77 +824,7 @@
       "k": "callout",
       "text": "Before you weigh a recommendation, ask: under the payment rules, who gains if I say yes?"
      }
-    }
-   ],
-   "quiz": [
-    {
-     "q": "In the 2017 data cited, about how much did commercial insurance pay the largest provider per treatment, compared with government insurance?",
-     "o": [
-      "About the same",
-      "About twice as much",
-      "About four times as much ($1,041 vs $248)",
-      "Less than Medicare"
-     ],
-     "a": 2,
-     "why": "Commercial paid an average of $1,041 per treatment versus $248 for government insurance (JAMA Internal Medicine, 2019)."
     },
-    {
-     "q": "What did the Supreme Court decide in Marietta Memorial Hospital v. DaVita (2022)?",
-     "o": [
-      "Dialysis must be free",
-      "The plan's uniform limits on dialysis did not violate the Medicare Secondary Payer law (7–2)",
-      "Medicare must pay commercial rates",
-      "Charities may not pay premiums"
-     ],
-     "a": 1,
-     "why": "The Court ruled 7–2 for the health plan because its terms applied equally to all members."
-    },
-    {
-     "q": "For how long must an employer plan remain primary payer after a member develops kidney failure?",
-     "o": [
-      "3 months",
-      "12 months",
-      "30 months",
-      "Forever"
-     ],
-     "a": 2,
-     "why": "The Medicare Secondary Payer coordination period is 30 months."
-    },
-    {
-     "q": "What happened to California's AB 290 in December 2019?",
-     "o": [
-      "It took full effect",
-      "A federal judge blocked it with a preliminary injunction",
-      "Congress repealed it",
-      "It was expanded nationwide"
-     ],
-     "a": 1,
-     "why": "A federal judge granted a preliminary injunction two days before it was to take effect."
-    }
-   ],
-   "sources": [
-    {
-     "t": "MedPAC: March 2026 Report to the Congress, Ch. 5 (Outpatient dialysis)",
-     "u": "https://www.medpac.gov/wp-content/uploads/2026/03/Mar26_Ch5_MedPAC_Report_To_Congress_SEC.pdf"
-    },
-    {
-     "t": "Undark: Kidney Dialysis Is a Booming Business (2020)",
-     "u": "https://undark.org/2020/12/14/ckd-part-1/"
-    },
-    {
-     "t": "CRS: Supreme Court Allows Health Plans to Limit Dialysis Benefits (LSB10819)",
-     "u": "https://www.everycrsreport.com/reports/LSB10819.html"
-    },
-    {
-     "t": "Supreme Court opinion, Marietta Memorial Hospital v. DaVita",
-     "u": "https://www.supremecourt.gov/opinions/21pdf/20-1641_3314.pdf"
-    }
-   ]
-  },
-  {
-   "id": "c1m4",
-   "title": "Two Companies, Three Quarters",
-   "scenes": [
     {
      "text": "There were seven thousand six hundred and five dialysis facilities in the United States in 2024. According to the Medicare Payment Advisory Commission, the two largest dialysis organizations, Fresenius Medical Care and DaVita, operated about three quarters of them, and about three quarters of Medicare's fee-for-service treatments.",
      "v": {
@@ -682,6 +840,22 @@
      "v": {
       "k": "callout",
       "text": "Choice of clinic is the basic tool patients are told they have. In a market this concentrated, it is often a choice between two locations of the same company."
+     }
+    },
+    {
+     "text": "You can check who owns your clinic in about two minutes. Medicare's Care Compare website lists every dialysis facility, its star rating, and its quality measures, and the underlying data shows the chain organization each facility belongs to. Look up your clinic, then the next two closest. You may find that every realistic option within driving distance belongs to the same company. That is worth knowing before you decide how hard to push, and where you might transfer if you need to.",
+     "v": {
+      "k": "flow",
+      "title": "Check your clinic in two minutes",
+      "steps": [
+       "Open Care Compare: dialysis facilities",
+       "Enter your ZIP code",
+       "Find your clinic and its rating",
+       "Check the owner of the next two closest",
+       "Write it on your care map"
+      ],
+      "broken": [],
+      "note": "Knowing your real alternatives changes how you negotiate."
      }
     },
     {
@@ -735,6 +909,20 @@
      }
     },
     {
+     "text": "When you read about these cases, the words matter, so let me translate them. Resolve allegations means the company paid to end the case without a court deciding the facts. No admission of liability means the company does not concede it broke the law, and you should not say it did. A corporate integrity agreement is a contract with the Inspector General, usually for five years, that puts the company under outside review and reporting. A recall is a regulatory action on a product. Precise words protect your credibility, and they are still powerful. A four hundred and fifty million dollar payment speaks for itself.",
+     "v": {
+      "k": "list",
+      "title": "Reading an enforcement record",
+      "items": [
+       "\"Resolve allegations\": paid to end the case; no court finding",
+       "\"No admission of liability\": do not say they broke the law",
+       "\"Corporate integrity agreement\": years of outside oversight",
+       "\"Recall\": a regulatory action on a product",
+       "The amounts are facts. Quote them exactly."
+      ]
+     }
+    },
+    {
      "text": "Market power also shows up at the ballot box. California voters were asked three times, in 2018, 2020 and 2022, to tighten rules on dialysis clinics, from capping profits to requiring a doctor or nurse practitioner on site and public infection reporting. The measures were sponsored by a health care workers union. All three failed. Reporting found the industry spent upwards of a hundred and ten million dollars in 2018 alone. For 2022, both sides together raised at least ninety-four million, about eighty-five percent of it from DaVita and Fresenius.",
      "v": {
       "k": "bars",
@@ -780,9 +968,60 @@
        "fb": "Escalation has an order. Start with a clear written request; you'll learn the full ladder in Course 3."
       }
      ]
+    },
+    {
+     "text": "Step back and look at the whole picture from this module. A payment system that roughly covers costs on Medicare patients. A business model that makes its margin on a minority of privately insured patients. A charity channel that helps keep people on that coverage. Two companies with three quarters of the market, a long public enforcement record, and the resources to outspend reform at the ballot box. None of it is secret. It is simply scattered. Your advantage, from today, is that you have seen it assembled in one place, and you know where to check it yourself.",
+     "v": {
+      "k": "callout",
+      "text": "Nothing in this module is secret. It is scattered. Assembled, it explains decisions that patients are told are simply \"how it works.\""
+     }
     }
    ],
    "quiz": [
+    {
+     "q": "In the 2017 data cited, about how much did commercial insurance pay the largest provider per treatment, compared with government insurance?",
+     "o": [
+      "About the same",
+      "About twice as much",
+      "About four times as much ($1,041 vs $248)",
+      "Less than Medicare"
+     ],
+     "a": 2,
+     "why": "Commercial paid an average of $1,041 per treatment versus $248 for government insurance (JAMA Internal Medicine, 2019)."
+    },
+    {
+     "q": "What did the Supreme Court decide in Marietta Memorial Hospital v. DaVita (2022)?",
+     "o": [
+      "Dialysis must be free",
+      "The plan's uniform limits on dialysis did not violate the Medicare Secondary Payer law (7–2)",
+      "Medicare must pay commercial rates",
+      "Charities may not pay premiums"
+     ],
+     "a": 1,
+     "why": "The Court ruled 7–2 for the health plan because its terms applied equally to all members."
+    },
+    {
+     "q": "For how long must an employer plan remain primary payer after a member develops kidney failure?",
+     "o": [
+      "3 months",
+      "12 months",
+      "30 months",
+      "Forever"
+     ],
+     "a": 2,
+     "why": "The Medicare Secondary Payer coordination period is 30 months."
+    },
+    {
+     "q": "What happened to California's AB 290 in December 2019?",
+     "o": [
+      "It took full effect",
+      "A federal judge blocked it with a preliminary injunction",
+      "Congress repealed it",
+      "It was expanded nationwide"
+     ],
+     "a": 1,
+     "why": "A federal judge granted a preliminary injunction two days before it was to take effect."
+    },
     {
      "q": "According to MedPAC, about what share of U.S. dialysis facilities did the two largest organizations operate in 2024?",
      "o": [
@@ -826,12 +1065,46 @@
      ],
      "a": 1,
      "why": "All three failed after record-setting campaigns funded largely by the industry."
+    },
+    {
+     "q": "Where can a patient get free, unbiased Medicare insurance counseling?",
+     "o": [
+      "The dialysis clinic's billing office",
+      "Their State Health Insurance Assistance Program (SHIP)",
+      "The insurance company selling the plan",
+      "Nowhere; it does not exist"
+     ],
+     "a": 1,
+     "why": "Every state has a federally funded SHIP offering free, unbiased Medicare counseling."
+    },
+    {
+     "q": "What does 'no admission of liability' in a settlement mean for how you describe it?",
+     "o": [
+      "Say the company broke the law",
+      "Do not say the company broke the law; describe it as resolving allegations",
+      "The case was dismissed",
+      "The company was found innocent"
+     ],
+     "a": 1,
+     "why": "The company did not concede wrongdoing. Precise wording protects your credibility."
     }
    ],
    "sources": [
     {
-     "t": "MedPAC: March 2026 Report, Ch. 5",
+     "t": "MedPAC: March 2026 Report to the Congress, Ch. 5 (Outpatient dialysis)",
      "u": "https://www.medpac.gov/wp-content/uploads/2026/03/Mar26_Ch5_MedPAC_Report_To_Congress_SEC.pdf"
+    },
+    {
+     "t": "Undark: Kidney Dialysis Is a Booming Business (2020)",
+     "u": "https://undark.org/2020/12/14/ckd-part-1/"
+    },
+    {
+     "t": "CRS: Supreme Court Allows Health Plans to Limit Dialysis Benefits (LSB10819)",
+     "u": "https://www.everycrsreport.com/reports/LSB10819.html"
+    },
+    {
+     "t": "Supreme Court opinion, Marietta Memorial Hospital v. DaVita",
+     "u": "https://www.supremecourt.gov/opinions/21pdf/20-1641_3314.pdf"
     },
     {
      "t": "DOJ: DaVita to pay $350 million (2014)",
@@ -852,18 +1125,34 @@
     {
      "t": "KFF Health News: California patients fear fallout from third dialysis ballot measure",
      "u": "https://kffhealthnews.org/news/article/california-patients-fears-third-dialysis-ballot-measure/"
+    },
+    {
+     "t": "SHIP: State Health Insurance Assistance Programs",
+     "u": "https://www.shiphelp.org/"
+    },
+    {
+     "t": "Medicare Care Compare: dialysis facilities",
+     "u": "https://www.medicare.gov/care-compare/"
+    },
+    {
+     "t": "CMS: ESRD Prospective Payment System (oral-only drugs in the bundle, 2025)",
+     "u": "https://www.cms.gov/medicare/payment/prospective-payment-systems/end-stage-renal-disease-esrd"
+    },
+    {
+     "t": "Parke, J. A. (2026). Inside the Machine: What Hemodialysis Really Does to Your Body (field manual)",
+     "u": "https://payhip.com/coldischemia"
     }
    ]
   },
   {
-   "id": "c1m5",
+   "id": "c1m3",
    "title": "Nobody Owns the Whole Patient",
    "scenes": [
     {
      "text": "Ask a simple question. Who is responsible for a person with kidney failure? The honest answer is: many people, each for a slice, and no one for the whole. That is fragmentation, and it is where most of the harm in this system happens. Not in one dramatic failure, but in the gaps between hand-offs.",
      "v": {
       "k": "title",
-      "kicker": "Course 1 · Module 5",
+      "kicker": "Course 1 · Module 3",
       "h": "Nobody Owns the Whole Patient",
       "sub": "Fragmentation, and the hand-offs where people fall"
      }
@@ -965,7 +1254,7 @@
      "fb": "In practice, transplant referral and fistula planning overlap. The point is that both should happen before the first dialysis treatment, not after."
     },
     {
-     "text": "Medicare has tried to pay its way out of fragmentation with a series of experiments. The Kidney Care Choices model began in 2022, paying nephrology practices and kidney care organizations to manage total cost and outcomes. The ESRD Treatment Choices model adjusted payments to encourage home dialysis and transplant waitlisting. And in July 2025, a mandatory six-year model called IOTA began paying selected transplant hospitals based on their transplant performance.",
+     "text": "Medicare has tried to pay its way out of fragmentation with a series of experiments. The Kidney Care Choices model began in 2022, paying nephrology practices and kidney care organizations to manage total cost and outcomes. The ESRD Treatment Choices model adjusted payments to encourage home dialysis and transplant waitlisting, until Medicare ended it early at the close of 2025. And in July 2025, a mandatory six-year model called IOTA began paying selected transplant hospitals based on their transplant performance.",
      "v": {
       "k": "timeline",
       "title": "Medicare's experiments with paying for the whole patient",
@@ -995,6 +1284,40 @@
      }
     },
     {
+     "text": "Fragmentation has one federal counterweight you should know by name. Every Medicare dialysis facility must assess each patient and build a written plan of care through an interdisciplinary team. The regulation lists who is on that team: at a minimum, the patient or the patient's designee if the patient chooses, a registered nurse, a physician treating the patient, a social worker, and a dietitian. Read that again. The patient is on the team. Ask when your next care plan meeting is, ask to attend, and ask for a copy of the plan. It is the closest thing this system has to one place where the whole patient is discussed.",
+     "v": {
+      "k": "web",
+      "title": "The care-plan team, by regulation",
+      "center": "Interdisciplinary team",
+      "items": [
+       "The patient, or the patient's designee",
+       "Registered nurse",
+       "Treating physician",
+       "Social worker",
+       "Dietitian"
+      ],
+      "src": "42 CFR 494.80 (patient assessment) and 494.90 (plan of care)"
+     }
+    },
+    {
+     "text": "One hand-off fails more than almost any other: leaving the hospital. A person on dialysis is admitted, their medicines change, their dry weight changes, and then they go back to the clinic on Monday with none of it written down where the clinic can see it. Before any hospital discharge, ask for the discharge summary and the updated medication list to be sent to the dialysis unit and the nephrologist, and carry a copy yourself. At the next treatment, ask the nurse to compare the lists line by line. Readmissions often start in that gap.",
+     "v": {
+      "k": "flow",
+      "title": "The hospital-to-clinic hand-off",
+      "steps": [
+       "Hospital stay: medicines and weight change",
+       "Ask: send discharge summary to clinic and nephrologist",
+       "Carry your own copy",
+       "Next treatment: compare medication lists line by line"
+      ],
+      "broken": [
+       1
+      ],
+      "note": "About one in five hospital stays is followed by a readmission within 30 days.",
+      "src": "MedPAC, March 2026"
+     }
+    },
+    {
      "text": "These models matter, and you should know their names, because you can comment on them and ask your own providers whether they participate. But no payment model makes a hand-off happen on its own. Someone still has to make the call, send the records, and follow up. Very often, that someone ends up being the care partner.",
      "v": {
       "k": "callout",
@@ -1013,82 +1336,12 @@
        "Your insurer and plan type (traditional Medicare or Medicare Advantage)"
       ]
      }
-    }
-   ],
-   "quiz": [
-    {
-     "q": "In the Georgia study (JAMA 2015), what was the median share of patients referred for transplant evaluation within a year of starting dialysis?",
-     "o": [
-      "About 5%",
-      "About 24%",
-      "About 60%",
-      "About 90%"
-     ],
-     "a": 1,
-     "why": "24.4%, with individual facilities ranging from 0% to 75%."
     },
-    {
-     "q": "What did the Georgia study find was the strongest pattern behind low referral?",
-     "o": [
-      "Patients refused",
-      "Which facility a patient dialyzed in, with low-referral facilities more often in high-poverty areas",
-      "Lack of donated kidneys",
-      "Patient age alone"
-     ],
-     "a": 1,
-     "why": "Facility-level variation was enormous; low-referral facilities were more likely to serve high-poverty neighborhoods and had more patients per social worker."
-    },
-    {
-     "q": "By December 2024, about what share of Medicare beneficiaries on dialysis were in Medicare Advantage?",
-     "o": [
-      "10%",
-      "25%",
-      "55%",
-      "90%"
-     ],
-     "a": 2,
-     "why": "55% (MedPAC, March 2026)."
-    },
-    {
-     "q": "What is IOTA?",
-     "o": [
-      "A dialysis company",
-      "A mandatory six-year Medicare model paying selected transplant hospitals based on transplant performance",
-      "A patient charity",
-      "A state law"
-     ],
-     "a": 1,
-     "why": "IOTA (Increasing Organ Transplant Access) began July 1, 2025."
-    }
-   ],
-   "sources": [
-    {
-     "t": "Emory: Too few Georgia dialysis patients referred for transplant (JAMA 2015)",
-     "u": "https://med.emory.edu/departments/surgery/news-and-events/news-highlights/2015/patzer-georgia-dialysis-referral-transplant-low-2015.html"
-    },
-    {
-     "t": "MedPAC: March 2026 Report, Ch. 5",
-     "u": "https://www.medpac.gov/wp-content/uploads/2026/03/Mar26_Ch5_MedPAC_Report_To_Congress_SEC.pdf"
-    },
-    {
-     "t": "AHA: CMS finalizes changes to IOTA model (May 2026)",
-     "u": "https://www.aha.org/news/headline/2026-05-29-cms-finalizes-changes-increasing-organ-transplant-access-model"
-    },
-    {
-     "t": "Stout: New entrants and payment models in kidney care",
-     "u": "https://www.stout.com/en/insights/article/new-entrants-payment-models-transforming-kidney-care-landscape"
-    }
-   ]
-  },
-  {
-   "id": "c1m6",
-   "title": "What the System Produces",
-   "scenes": [
     {
      "text": "There's a saying in quality improvement: every system is perfectly designed to get the results it gets. So let's look at the results, honestly, and then connect each one back to a design choice you've already seen.",
      "v": {
       "k": "title",
-      "kicker": "Course 1 · Module 6",
+      "kicker": "Module 3 · continued",
       "h": "What the System Produces",
       "sub": "Every system is perfectly designed to get the results it gets"
      }
@@ -1133,6 +1386,14 @@
      }
     },
     {
+     "text": "One pattern in those deaths is not random, and it is in my manual because it can be acted on. If you dialyze Monday, Wednesday and Friday, or Tuesday, Thursday and Saturday, one gap each week is a full day longer. In a study of more than thirty-two thousand U.S. patients, deaths, cardiac arrests and admissions for heart rhythm problems were all higher on the day after that long gap. Potassium builds up over the weekend and is then pulled down fast. So ask: what is my potassium before the first treatment of the week, what potassium is in my dialysis fluid, and could a longer or extra session help me?",
+     "v": {
+      "k": "callout",
+      "text": "The most dangerous day of the dialysis week follows the longest gap. Ask what your potassium is, and what is in your bath.",
+      "src": "Foley et al., NEJM 2011; Inside the Machine, ch. 3.5"
+     }
+    },
+    {
      "text": "Home dialysis gives people more control over their time and often their health. It has grown. About eighteen percent of traditional Medicare dialysis patients dialyzed at home in 2024. But that still means more than eight in ten travel to a center, usually three times a week, for hours at a time, on a schedule set by someone else.",
      "v": {
       "k": "dots",
@@ -1143,7 +1404,7 @@
      }
     },
     {
-     "text": "Why hasn't home dialysis grown faster? Training requires nurses, and the largest provider has cited a challenging labor market as its main obstacle. Patients need space, supplies, and usually a trained partner at home. And for decades, the payment system and the clinic business model were built around in-center chairs. Medicare's ESRD Treatment Choices model, started in 2021, was designed to push the other way. The results so far are a slow climb, not a revolution.",
+     "text": "Why hasn't home dialysis grown faster? Training requires nurses, and the largest provider has cited a challenging labor market as its main obstacle. Patients need space, supplies, and usually a trained partner at home. And for decades, the payment system and the clinic business model were built around in-center chairs. Medicare's ESRD Treatment Choices model, started in 2021, was designed to push the other way. It produced a slow climb, not a revolution, and Medicare ended it early, at the close of 2025.",
      "v": {
       "k": "list",
       "title": "Why home dialysis grows slowly",
@@ -1154,6 +1415,56 @@
        "Incentive models only since 2021"
       ],
       "src": "Stout (2025), citing Fresenius disclosures; CMS"
+     }
+    },
+    {
+     "text": "Home dialysis is right for many people, not all, and you have a right to be told about it. National registry data show that in 2022, fourteen and a half percent of people starting dialysis began at home, up from eight and a half percent ten years earlier. In the same year, almost fifty-eight percent of clinics were either not certified for home dialysis or had no home patients. Where you dialyze shapes what you are offered. And Medicare's main payment experiment to encourage home dialysis and transplant, the ESRD Treatment Choices model, was ended early, at the close of 2025. So ask directly: am I a candidate for peritoneal dialysis or home hemodialysis, where is the nearest training program, and what would have to change for home to work for me?",
+     "v": {
+      "k": "stats",
+      "items": [
+       {
+        "value": 14.5,
+        "suffix": "%",
+        "label": "of new patients started at home, 2022"
+       },
+       {
+        "value": 8.5,
+        "suffix": "%",
+        "label": "in 2012"
+       },
+       {
+        "value": 57.9,
+        "suffix": "%",
+        "label": "of clinics not home-certified or with no home patients"
+       }
+      ],
+      "src": "USRDS 2024 Annual Data Report via Home Dialysis Central; CMS (ETC ended Dec 31, 2025); Inside the Machine, ch. 3.22"
+     }
+    },
+    {
+     "text": "In July 2019, the federal government set three goals for kidney care, in an executive order called Advancing American Kidney Health. Reduce the number of Americans developing kidney failure by twenty-five percent by 2030. Have eighty percent of new kidney failure patients in 2025 either dialyzing at home or receiving a transplant. And double the number of kidneys available for transplant by 2030. 2025 has come and gone. With about eighteen percent of traditional Medicare dialysis patients at home in 2024, you can measure that promise against the results yourself.",
+     "v": {
+      "k": "timeline",
+      "title": "Advancing American Kidney Health, July 2019",
+      "items": [
+       {
+        "y": "Goal 1",
+        "t": "25% fewer Americans developing kidney failure by 2030"
+       },
+       {
+        "y": "Goal 2",
+        "t": "80% of new patients in 2025 at home or transplanted"
+       },
+       {
+        "y": "Goal 3",
+        "t": "Twice as many kidneys available for transplant by 2030"
+       },
+       {
+        "y": "2024",
+        "t": "About 18% of traditional Medicare dialysis patients at home"
+       }
+      ],
+      "src": "HHS/ASPE: Advancing American Kidney Health (2019); MedPAC March 2026"
      }
     },
     {
@@ -1219,15 +1530,15 @@
       },
       {
        "f": "80% start hemodialysis on a catheter",
-       "b": "Late or missing nephrology referral (Module 2)"
+       "b": "Late or missing nephrology referral (Module 1)"
       },
       {
        "f": "Commercial patients worth ~4x Medicare",
-       "b": "Negotiated private rates plus the 30-month coordination period (Module 3)"
+       "b": "Negotiated private rates plus the 30-month coordination period (Module 2)"
       },
       {
        "f": "Referral depends on the building",
-       "b": "No one owns the hand-off (Module 5)"
+       "b": "No one owns the hand-off (Module 3)"
       }
      ]
     },
@@ -1235,13 +1546,57 @@
      "text": "That is the machine. A promise made in 1972 that pays reliably at the end. A business model built on that promise, concentrated in two companies. A care system split into slices. And outcomes that fall hardest on the people with the least power to push back. In Course 2, we walk through the door that leads out of dialysis, transplant, and meet the gatekeepers who decide who gets through it.",
      "v": {
       "k": "title",
-      "kicker": "End of Course 1",
+      "kicker": "Module 3 · continued",
       "h": "The machine, assembled",
       "sub": "Next: Course 2, The Gatekeepers"
      }
     }
    ],
    "quiz": [
+    {
+     "q": "In the Georgia study (JAMA 2015), what was the median share of patients referred for transplant evaluation within a year of starting dialysis?",
+     "o": [
+      "About 5%",
+      "About 24%",
+      "About 60%",
+      "About 90%"
+     ],
+     "a": 1,
+     "why": "24.4%, with individual facilities ranging from 0% to 75%."
+    },
+    {
+     "q": "What did the Georgia study find was the strongest pattern behind low referral?",
+     "o": [
+      "Patients refused",
+      "Which facility a patient dialyzed in, with low-referral facilities more often in high-poverty areas",
+      "Lack of donated kidneys",
+      "Patient age alone"
+     ],
+     "a": 1,
+     "why": "Facility-level variation was enormous; low-referral facilities were more likely to serve high-poverty neighborhoods and had more patients per social worker."
+    },
+    {
+     "q": "By December 2024, about what share of Medicare beneficiaries on dialysis were in Medicare Advantage?",
+     "o": [
+      "10%",
+      "25%",
+      "55%",
+      "90%"
+     ],
+     "a": 2,
+     "why": "55% (MedPAC, March 2026)."
+    },
+    {
+     "q": "What is IOTA?",
+     "o": [
+      "A dialysis company",
+      "A mandatory six-year Medicare model paying selected transplant hospitals based on transplant performance",
+      "A patient charity",
+      "A state law"
+     ],
+     "a": 1,
+     "why": "IOTA (Increasing Organ Transplant Access) began July 1, 2025."
+    },
     {
      "q": "Among traditional Medicare dialysis beneficiaries, about what share died per month from 2021 to 2024?",
      "o": [
@@ -1274,12 +1629,57 @@
      ],
      "a": 0,
      "why": "13.0% (OPTN/SRTR 2024 Annual Data Report)."
+    },
+    {
+     "q": "Under 42 CFR 494.80, who is part of the dialysis interdisciplinary team?",
+     "o": [
+      "Only physicians",
+      "The patient (or designee), a nurse, a physician, a social worker and a dietitian",
+      "The facility's owners",
+      "Only the medical director"
+     ],
+     "a": 1,
+     "why": "The regulation names the patient or the patient's designee, if the patient chooses, as a team member."
+    },
+    {
+     "q": "Advancing American Kidney Health (2019) set which goal for 2025?",
+     "o": [
+      "Close all in-center clinics",
+      "80% of new kidney failure patients at home or transplanted",
+      "Double dialysis payments",
+      "End the waiting list"
+     ],
+     "a": 1,
+     "why": "The goal: 80% of new patients in 2025 receiving home dialysis or a transplant."
+    },
+    {
+     "q": "Which day of the dialysis week carries the highest risk of death and cardiac arrest?",
+     "o": [
+      "Any day equally",
+      "The day after the longest gap between treatments",
+      "The middle treatment of the week",
+      "Sunday"
+     ],
+     "a": 1,
+     "why": "Foley et al., NEJM 2011, in more than 32,000 patients (Inside the Machine, ch. 3.5)."
     }
    ],
    "sources": [
     {
+     "t": "Emory: Too few Georgia dialysis patients referred for transplant (JAMA 2015)",
+     "u": "https://med.emory.edu/departments/surgery/news-and-events/news-highlights/2015/patzer-georgia-dialysis-referral-transplant-low-2015.html"
+    },
+    {
      "t": "MedPAC: March 2026 Report, Ch. 5",
      "u": "https://www.medpac.gov/wp-content/uploads/2026/03/Mar26_Ch5_MedPAC_Report_To_Congress_SEC.pdf"
+    },
+    {
+     "t": "AHA: CMS finalizes changes to IOTA model (May 2026)",
+     "u": "https://www.aha.org/news/headline/2026-05-29-cms-finalizes-changes-increasing-organ-transplant-access-model"
+    },
+    {
+     "t": "Stout: New entrants and payment models in kidney care",
+     "u": "https://www.stout.com/en/insights/article/new-entrants-payment-models-transforming-kidney-care-landscape"
     },
     {
      "t": "NIDDK: Kidney Disease Statistics (USRDS 2023)",
@@ -1288,6 +1688,30 @@
     {
      "t": "OPTN/SRTR 2024 Annual Data Report: Kidney",
      "u": "https://srtr.hrsa.gov/adr/2024/Kidney/"
+    },
+    {
+     "t": "HHS/ASPE: Advancing American Kidney Health (2019)",
+     "u": "https://aspe.hhs.gov/sites/default/files/private/aspe-files/262056/advancingamericankidneyhealth.pdf"
+    },
+    {
+     "t": "Code of Federal Regulations: 42 CFR Part 494 (govinfo, 2024 edition)",
+     "u": "https://www.govinfo.gov/content/pkg/CFR-2024-title42-vol5/pdf/CFR-2024-title42-vol5-part494.pdf"
+    },
+    {
+     "t": "Home Dialysis Central: Home dialysis updates from the 2024 USRDS Annual Data Report",
+     "u": "https://homedialysis.org/news-and-research/blog/628-home-dialysis-updates-from-the-2024-usrds-annual-data-report"
+    },
+    {
+     "t": "STAT: CMS dialysis payment experiment ends two years early (Dec 2025)",
+     "u": "https://www.statnews.com/2025/12/01/cms-dialysis-payment-experiment-ends-two-years-early/"
+    },
+    {
+     "t": "Foley et al., Long interdialytic interval and mortality (NEJM 2011)",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/?term=Foley+2011+long+interdialytic+interval+mortality"
+    },
+    {
+     "t": "Parke, J. A. (2026). Inside the Machine: What Hemodialysis Really Does to Your Body (field manual)",
+     "u": "https://payhip.com/coldischemia"
     }
    ]
   }
