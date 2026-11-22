@@ -8,6 +8,9 @@
 //   • The Contact page
 //   • Living Donor Journey: anonymous assessment results (tab "Donor Assessments") and contact ratings (tab "Contact Ratings"),
 //     with a read-only summary at  <web app URL>?ratings=1  that the page can show once 3+ people report on a program
+//   • The Advocate's Academy (academy.html): learner progress in a tab named "Course Progress" (one row per
+//     learner per course, updated live), every event in "Academy Log", an email to you when someone starts or
+//     finishes a course, and a congratulations email with the certificate number to anyone who passes
 // Every submission is emailed to OWNER_EMAIL and logged as a row in a Google
 // Sheet named "CIF Website Submissions" in your Google Drive (created automatically).
 // The person who wrote in gets an automatic, personal thank-you reply.
@@ -73,6 +76,7 @@ function doPost(e) {
   try {
     var d = parse_(e);
     var type = d.formType || (d.fname || d.qMotivation ? "application" : (d.category ? "contact" : "question"));
+    if (type === "course") return json_(course_(d));
     if (type === "donor-assessment" || type === "contact-rating") {   // anonymous, no email sent, tab per type
       tab_(type === "donor-assessment" ? "Donor Assessments" : "Contact Ratings", type === "donor-assessment" ?
         ["Received", "Organ", "State", "Score", "Band", "Medical", "Lifestyle", "Emotional", "Logistics", "Knowledge", "Themes", "Paired", "Non-directed"] :
@@ -141,6 +145,7 @@ function tab_(name, header, row) {
 // Only contacts with 3+ reports are returned. Direct lines are NOT published automatically: copy a number
 // you have checked into contact-ratings.json yourself.
 function doGet(e) {
+  if (e && e.parameter && e.parameter.course) return json_({ status: "ok", course: true });
   if (e && e.parameter && e.parameter.ratings) {
     var out = {};
     try {
@@ -186,19 +191,67 @@ function verdict_(s) {
   return m ? m[1].trim() : "results attached";
 }
 
-function log_(type, who, email, d) {
-  try {
-    var props = PropertiesService.getScriptProperties();
-    var id = props.getProperty("SHEET_ID"), ss;
-    if (id) { try { ss = SpreadsheetApp.openById(id); } catch (x) { ss = null; } }
-    if (!ss) {
-      ss = SpreadsheetApp.create(SHEET_NAME);
-      ss.getSheets()[0].appendRow(["Received", "Type", "Name", "Email", "Details"]);
-      ss.getSheets()[0].setFrozenRows(1);
-      props.setProperty("SHEET_ID", ss.getId());
+// The one Google Sheet every form writes to (created automatically the first time).
+function book_() {
+  var props = PropertiesService.getScriptProperties();
+  var id = props.getProperty("SHEET_ID"), ss;
+  if (id) { try { ss = SpreadsheetApp.openById(id); } catch (x) { ss = null; } }
+  if (!ss) {
+    ss = SpreadsheetApp.create(SHEET_NAME);
+    ss.getSheets()[0].appendRow(["Received", "Type", "Name", "Email", "Details"]);
+    ss.getSheets()[0].setFrozenRows(1);
+    props.setProperty("SHEET_ID", ss.getId());
+  }
+  return ss;
+}
+function safe_(v) { v = (v instanceof Date) ? v : String(v == null ? "" : v).slice(0, 300); return (typeof v === "string" && /^[=+\-@]/.test(v)) ? "'" + v : v; }
+
+// ---------------- The Advocate's Academy ----------------
+// Events from academy.html: "start" (first time a learner opens a course), "module" (a module's knowledge check
+// is finished) and "complete" (the final assessment is submitted). One row per learner per course in
+// "Course Progress", updated in place; every event appended to "Academy Log".
+var COURSE_HEADER = ["Learner ID", "Name", "Email", "Role", "Course", "Started", "Last activity", "Progress %",
+  "Modules done", "Module scores", "Final score", "Passed", "Certificate", "Completed", "Final attempts"];
+function course_(d) {
+  var ss = book_(), now = new Date();
+  var sh = ss.getSheetByName("Course Progress");
+  if (!sh) { sh = ss.insertSheet("Course Progress"); sh.appendRow(COURSE_HEADER); sh.setFrozenRows(1); }
+  var log = ss.getSheetByName("Academy Log");
+  if (!log) { log = ss.insertSheet("Academy Log"); log.appendRow(["Received", "Event", "Name", "Email", "Role", "Course", "Progress %", "Module", "Module score", "Final score", "Passed"]); log.setFrozenRows(1); }
+  log.appendRow([now, d.event, d.name, d.learnerEmail, d.role, d.courseTitle, d.progress, d.module || "", d.moduleScore || "", d.finalScore || "", d.passed || ""].map(safe_));
+
+  var rows = sh.getDataRange().getValues(), at = -1;
+  for (var i = 1; i < rows.length; i++) if (rows[i][0] === d.learnerId && rows[i][4] === d.courseTitle) { at = i + 1; break; }
+  var old = at > 0 ? rows[at - 1] : null;
+  var firstPass = d.passed === "yes" && !(old && old[11] === "yes");
+  var row = [d.learnerId, d.name, d.learnerEmail, d.role, d.courseTitle, old ? old[5] : now, now, d.progress,
+    d.modulesDone, d.moduleScores, d.finalScore || (old ? old[10] : ""), d.passed || (old ? old[11] : ""),
+    d.certificate || (old ? old[12] : ""), firstPass ? now : (old ? old[13] : ""), d.event === "complete" ? (d.attempt || "") : (old ? old[14] : "")].map(safe_);
+  if (at > 0) sh.getRange(at, 1, 1, row.length).setValues([row]); else sh.appendRow(row);
+
+  var who = d.name + " <" + d.learnerEmail + ">", link = ss.getUrl();
+  if (d.event === "start" && !old) {
+    MailApp.sendEmail({ to: OWNER_EMAIL, replyTo: d.learnerEmail, subject: "[CIF Academy] Started: " + d.name + " · " + d.courseTitle,
+      body: who + " (" + d.role + ") just started " + d.courseTitle + ".\n\nLive progress for every learner: " + link + " (tab \"Course Progress\")\n\nReply to this email to write to them directly." });
+  }
+  if (d.event === "complete") {
+    MailApp.sendEmail({ to: OWNER_EMAIL, replyTo: d.learnerEmail,
+      subject: "[CIF Academy] " + (d.passed === "yes" ? "PASSED" : "Not yet passed") + ": " + d.name + " · " + d.courseTitle + " · final " + (d.thisAttemptScore || d.finalScore),
+      body: who + " (" + d.role + ") submitted the final assessment for " + d.courseTitle + ".\n\nThis attempt: " + (d.thisAttemptScore || "") +
+        "\nBest result: " + d.finalScore + (d.passed === "yes" ? " (passed)" : "") + "\nModule checks: " + d.moduleScores + " (" + d.modulesDone + " done)" +
+        "\nCourse progress: " + d.progress + "%" + (d.certificate ? "\nCertificate: " + d.certificate : "") + "\n\nAll learners: " + link });
+    if (firstPass && String(d.learnerEmail).indexOf("@") > 0) {
+      MailApp.sendEmail({ to: d.learnerEmail, replyTo: OWNER_EMAIL, subject: "You completed " + d.courseTitle + " · Cold Ischemia Foundation",
+        body: "Dear " + d.name + ",\n\nCongratulations on completing " + d.courseTitle + " in The Advocate's Academy, with a final score of " + d.finalScore + ".\n\n" +
+          "Your certificate number is " + d.certificate + ". You can view and print your certificate any time at coldischemia.foundation/academy.html on the device you used.\n\n" +
+          "What you learned is rare. Most people dealing with kidney disease never see how the system works from the inside. Please use it, for yourself and for the next person. If you ever want help with a specific problem, reply to this email." + SIGNATURE + FOLLOW_UP.split("For your records")[0] });
     }
-    ss.getSheets()[0].appendRow([new Date(), type, who, email, format_(d)]);
-  } catch (x) {}
+  }
+  return { status: "ok" };
+}
+
+function log_(type, who, email, d) {
+  try { book_().getSheets()[0].appendRow([new Date(), type, who, email, format_(d)]); } catch (x) {}
 }
 
 function json_(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }

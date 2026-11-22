@@ -27,6 +27,7 @@ GROUPS = [
         ("watch-list.html", "The Watch List"),
     ]),
     ("Learn", [
+        ("academy.html", "The Advocate's Academy"),
         ("advocates-advent.html", "The Advocate's Advent"),
         ("gatekeeper-files.html", "The Gatekeeper Files"),
         ("test-your-knowledge.html", "Test Your Knowledge"),
