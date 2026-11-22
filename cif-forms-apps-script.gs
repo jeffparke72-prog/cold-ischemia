@@ -10,7 +10,8 @@
 //     with a read-only summary at  <web app URL>?ratings=1  that the page can show once 3+ people report on a program
 //   • The Advocate's Academy (academy.html): learner progress in a tab named "Course Progress" (one row per
 //     learner per course, updated live), every event in "Academy Log", an email to you when someone starts or
-//     finishes a course, and a congratulations email with the certificate number to anyone who passes
+//     finishes a course; learners get a welcome email when they start, a congratulations email with the certificate
+//     number when they pass, and an encouragement email with next steps when they do not pass yet
 // Every submission is emailed to OWNER_EMAIL and logged as a row in a Google
 // Sheet named "CIF Website Submissions" in your Google Drive (created automatically).
 // The person who wrote in gets an automatic, personal thank-you reply.
@@ -38,6 +39,9 @@ var FOLLOW_UP = "\n\n---\nHOW TO KEEP IN TOUCH\n" +
   "• Free toolkits and guides: coldischemia.foundation/projects.html\n\n" +
   "In an emergency, call 911. In emotional crisis, call or text 988 (Suicide & Crisis Lifeline), 24/7.\n\n" +
   "For your records, here is what you sent us:\n";
+// Closes every automatic reply the foundation sends, so no one who writes in ever gets a cold, empty answer.
+var PASSION = "\n\nOne more thing before you go. Reaching out took more than a few keystrokes. It took a decision to stop waiting for a system that was never designed to wait for you, and that decision matters more than you may realize. Every change this foundation has forced into the open began with one person who refused to stay quiet about what they saw. Today that person is you.\n\n" +
+  "So keep asking the hard questions. Keep writing everything down. Keep showing up, even on the days when the paperwork is louder than the people. You are not a case number, a chair time or a line in someone's quarterly report. You are the reason this work exists, and you are not doing it alone. We are right here beside you.";
 var SIGNATURE = "\n\n— Jeff A. Parke\nFounder & Executive Director\nCold Ischemia Foundation\ncoldischemia.foundation";
 
 var LABELS = {
@@ -119,7 +123,7 @@ function doPost(e) {
     if (email.indexOf("@") > 0) {
       var yours = String(d.message || d.summary || "").trim();
       MailApp.sendEmail({ to: email, subject: "Thank you — Cold Ischemia Foundation" + (d.subject ? ": " + d.subject : ""),
-        body: reply + SIGNATURE + FOLLOW_UP + (yours ? "\n" + yours.replace(/^/gm, "> ") : "\n(your application or form details)") , replyTo: OWNER_EMAIL });
+        body: reply + PASSION + SIGNATURE + FOLLOW_UP + (yours ? "\n" + yours.replace(/^/gm, "> ") : "\n(your application or form details)") , replyTo: OWNER_EMAIL });
     }
 
     log_(type, who, email, d);
@@ -233,6 +237,13 @@ function course_(d) {
   if (d.event === "start" && !old) {
     MailApp.sendEmail({ to: OWNER_EMAIL, replyTo: d.learnerEmail, subject: "[CIF Academy] Started: " + d.name + " · " + d.courseTitle,
       body: who + " (" + d.role + ") just started " + d.courseTitle + ".\n\nLive progress for every learner: " + link + " (tab \"Course Progress\")\n\nReply to this email to write to them directly." });
+    if (String(d.learnerEmail).indexOf("@") > 0) {
+      MailApp.sendEmail({ to: d.learnerEmail, replyTo: OWNER_EMAIL, subject: "Welcome to " + d.courseTitle + " · The Advocate's Academy",
+        body: "Dear " + d.name + ",\n\nYou just did something most people never do. You decided to learn how the system really works, instead of letting it keep working on you.\n\n" +
+          "The people who wrote these rules counted on patients and families being too tired, too frightened or too busy to read them. Over the next 45 minutes you are going to prove them wrong. Every fact in this course is real, sourced and checked, and every one of them is something you can put in writing, say out loud in a care meeting and use the next time someone tells you \"that's just how it is.\"\n\n" +
+          "How it works: the course is self-paced, and your progress saves on the device you are using, so you can stop and come back any time at coldischemia.foundation/academy.html. Each module ends with a short knowledge check. Score 70 percent or better on the final assessment and you earn a certificate with your own number.\n\n" +
+          "I am genuinely proud you are here. Go learn it. Then go use it." + SIGNATURE + FOLLOW_UP.split("For your records")[0] });
+    }
   }
   if (d.event === "complete") {
     MailApp.sendEmail({ to: OWNER_EMAIL, replyTo: d.learnerEmail,
@@ -244,7 +255,15 @@ function course_(d) {
       MailApp.sendEmail({ to: d.learnerEmail, replyTo: OWNER_EMAIL, subject: "You completed " + d.courseTitle + " · Cold Ischemia Foundation",
         body: "Dear " + d.name + ",\n\nCongratulations on completing " + d.courseTitle + " in The Advocate's Academy, with a final score of " + d.finalScore + ".\n\n" +
           "Your certificate number is " + d.certificate + ". You can view and print your certificate any time at coldischemia.foundation/academy.html on the device you used.\n\n" +
-          "What you learned is rare. Most people dealing with kidney disease never see how the system works from the inside. Please use it, for yourself and for the next person. If you ever want help with a specific problem, reply to this email." + SIGNATURE + FOLLOW_UP.split("For your records")[0] });
+          "Read that again, because you earned it. What you now understand is rare. Most people living with kidney disease go years without ever seeing how the machinery works from the inside: who decides, who profits, which rules protect you and which ones were written to protect somebody else. You have seen it now, and you cannot unsee it.\n\n" +
+          "That knowledge is a responsibility as much as a reward. Use it in the next care meeting. Use it in the next letter. Use it when a family in the waiting room looks as lost as you once did, and tell them what you know. Systems this large do not change because of one perfect speech. They change because ordinary people get informed, get organized and refuse to go away. You just became one of those people.\n\n" +
+          "Thank you for finishing what you started. If you ever want help with a specific problem, reply to this email. It comes straight to me." + SIGNATURE + FOLLOW_UP.split("For your records")[0] });
+    } else if (d.passed !== "yes" && String(d.learnerEmail).indexOf("@") > 0) {
+      MailApp.sendEmail({ to: d.learnerEmail, replyTo: OWNER_EMAIL, subject: "Not yet, and that is fine · " + d.courseTitle,
+        body: "Dear " + d.name + ",\n\nYou made it all the way to the final assessment for " + d.courseTitle + " and scored " + (d.thisAttemptScore || d.finalScore) + ". The certificate takes 70 percent, so not this time. Hear me clearly, though: this is not a failure. It is a first draft.\n\n" +
+          "This material is hard on purpose. It was never meant to be easy for the public to understand, and the fact that you stayed with it to the very end tells me exactly what kind of advocate you are going to be. The system counts on people getting worn down and walking away. You did not walk away.\n\n" +
+          "Here is the move: open the course again at coldischemia.foundation/academy.html, read the explanations for the questions you missed, revisit the modules where your knowledge-check scores were lowest, and take the final again whenever you are ready. There is no limit and no penalty. Your best score is the one that counts.\n\n" +
+          "I am in your corner. Go get it." + SIGNATURE + FOLLOW_UP.split("For your records")[0] });
     }
   }
   return { status: "ok" };
