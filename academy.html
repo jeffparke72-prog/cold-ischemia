@@ -6,7 +6,7 @@
 <title>The Advocate's Academy | Cold Ischemia Foundation</title>
 <meta name="description" content="Three free, self-paced courses on how American kidney care really works: the money, the gatekeepers, and how to change it. Presented, sourced, and certified.">
 <meta property="og:title" content="The Advocate's Academy | Cold Ischemia Foundation">
-<meta property="og:description" content="The Machine. The Gatekeepers. The Advocate. Three self-paced courses, about 45 minutes each, every fact sourced. Free, with a certificate.">
+<meta property="og:description" content="The Machine. The Gatekeepers. The Advocate. Three self-paced courses, three modules each, every module followed by a 10-question check, every fact sourced. Free, with a certificate.">
 <meta property="og:image" content="https://coldischemia.foundation/cold-ischemia-logo.png">
 <style>
 /* The Advocate's Academy. Night-desk palette shared with This Week: ink black, newsprint text, gold for progress.
@@ -46,7 +46,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--head);font-weight:900;line-height:1.05;te
 .fact{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line2);padding:7px 10px;color:var(--mut)}
 .fact b{color:var(--txt);font-weight:500}
 .hostcard{position:relative;border:1px solid var(--line2);background:radial-gradient(120% 100% at 80% 0%,rgba(201,168,76,.18),transparent 60%),var(--sheet);padding:22px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
-.hostcard .av{width:min(300px,70vw)}
+.hostcard .av{width:min(300px,70vw)}.hostcard .av canvas{width:100%;height:auto;display:block;border:1px solid var(--line2)}
 .hostcard .say{font-family:"PFi",Georgia,serif;font-style:italic;font-size:21px;line-height:1.35;max-width:22em}
 .hostcard .nm{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
 @media (max-width:900px){.hero{grid-template-columns:1fr}}
@@ -106,7 +106,7 @@ body.playing #player{display:block}
 .stage{position:relative;aspect-ratio:16/9;background:radial-gradient(130% 110% at 10% 0%,color-mix(in srgb,var(--ac) 14%,transparent),transparent 55%),var(--sheet);border:1px solid var(--line2);overflow:hidden}
 .vis{position:absolute;left:0;top:0;bottom:0;right:28%;padding:4.2% 3.6% 4.2% 4.4%;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
 .cam{position:absolute;right:2.4%;bottom:4%;width:24%;aspect-ratio:3/3.6;border:1px solid var(--line2);background:radial-gradient(100% 90% at 50% 20%,color-mix(in srgb,var(--ac) 30%,#1a2436),#0a0f18 75%);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
-.cam svg{position:absolute;inset:0;width:100%;height:100%}
+.cam canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .cam .plate{position:relative;z-index:2;background:linear-gradient(0deg,rgba(6,8,13,.92),rgba(6,8,13,.55));padding:7px 9px;display:flex;justify-content:space-between;align-items:center;gap:6px}
 .cam .plate b{font-family:var(--mono);font-weight:500;font-size:clamp(9px,.9vw,11px);letter-spacing:.14em;text-transform:uppercase}
 .cam .plate span{font-family:var(--mono);font-size:clamp(8px,.8vw,10px);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
@@ -128,7 +128,7 @@ body.playing .cifq-b,body.playing .cifq-p{display:none!important}
   .cam{order:-1}
   .poster{top:118px}
   .cam{position:relative;right:auto;bottom:auto;width:100%;aspect-ratio:auto;height:118px;flex-direction:row;align-items:stretch;justify-content:flex-start;border:0;border-bottom:1px solid var(--line2)}
-  .cam svg{position:relative;width:118px;height:118px;flex:0 0 118px}
+  .cam canvas{position:relative;width:98px;height:118px;flex:0 0 98px;object-fit:cover}
   .cam .plate{background:none;flex-direction:column;align-items:flex-start;justify-content:center;padding:10px 14px}
   .cam .plate b{font-size:12px}.cam .plate span{font-size:10.5px}
   .vis,.ix{position:relative;right:auto;inset:auto;padding:18px 16px 20px;min-height:330px}
@@ -316,9 +316,9 @@ body.playing .cifq-b,body.playing .cifq-p{display:none!important}
     <div>
       <div class="k" style="--ac:var(--gold)">Cold Ischemia Foundation · Free · Self-paced</div>
       <h1>The Advocate's <em>Academy</em></h1>
-      <p class="dek">Three courses on how American kidney care really works, who decides, and how to change it. Presented by your guide, Avery. Every fact is sourced, every claim is checked, and none of it is paid for by the industry it examines.</p>
+      <p class="dek">Three courses on how American kidney care really works, who decides, and how to change it. Presented by the foundation's founder, Jeff A. Parke. Every fact is sourced, every claim is checked, and none of it is paid for by the industry it examines.</p>
       <div class="facts">
-        <span class="fact"><b>3</b> courses</span><span class="fact"><b>~45</b> min each</span><span class="fact"><b>20</b> modules</span><span class="fact"><b>100+</b> knowledge checks</span><span class="fact"><b>Certificate</b> on completion</span>
+        <span class="fact"><b>3</b> courses</span><span class="fact"><b>3</b> modules each</span><span class="fact"><b>10–12</b> min per module</span><span class="fact"><b>10</b> questions per module</span><span class="fact"><b>Certificate</b> on completion</span>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <button class="btn solid" type="button" id="heroStart" style="--ac:var(--gold)">Start Course 1</button>
@@ -329,7 +329,7 @@ body.playing .cifq-b,body.playing .cifq-p{display:none!important}
     <div class="hostcard">
       <div class="av" id="heroAv"></div>
       <div class="say">“I'll take you inside the system most people only ever see from the chair.”</div>
-      <div class="nm">Avery · Your guide</div>
+      <div class="nm">Jeff A. Parke · Founder, Cold Ischemia Foundation</div>
     </div>
   </section>
 
@@ -338,7 +338,7 @@ body.playing .cifq-b,body.playing .cifq-p{display:none!important}
 
   <div class="sh"><div><h2>How it works</h2><p>No instructor, no schedule, no cost. Built for patients, care partners, clinicians, students, reporters and anyone who wants to understand the system well enough to change it.</p></div></div>
   <div class="how">
-    <div><b>Watch and listen</b><p>Avery presents every scene, with captions on by default. Pause, rewind, or change the speed any time.</p></div>
+    <div><b>Watch and listen</b><p>Jeff presents every scene, with captions on by default. Pause, rewind, or change the speed any time.</p></div>
     <div><b>Do, don't just watch</b><p>Estimate the real numbers, make the call in real scenarios, put steps in order, and flip cards for the tools.</p></div>
     <div><b>Check every fact</b><p>Every module lists its sources, from CDC and MedPAC to court opinions and federal rules. Open them yourself.</p></div>
     <div><b>Earn a certificate</b><p>Pass each course's final assessment at 70% or better to print your certificate of completion.</p></div>
@@ -356,7 +356,7 @@ body.playing .cifq-b,body.playing .cifq-p{display:none!important}
       <div class="stage" id="stage">
         <div class="vis" id="vis"></div>
         <div class="ix hide" id="ix"></div>
-        <div class="cam" id="cam"><div class="plate"><b>Avery</b><span id="camS"><span class="eq" id="eq"><i></i><i></i><i></i><i></i></span></span></div></div>
+        <div class="cam" id="cam"><div class="plate"><b>Jeff A. Parke</b><span id="camS"><span class="eq" id="eq"><i></i><i></i><i></i><i></i></span></span></div></div>
         <div class="bubble" id="bubble"></div>
         <button class="poster hide" id="poster" type="button" aria-label="Play"><span class="ps" id="posterK"></span><span class="pb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4v16l14-8z"/></svg></span><span class="pt" id="posterT"></span></button>
       </div>
@@ -419,48 +419,28 @@ S=load();S.c=S.c||{};S.q=S.q||[];
 try{speed=+localStorage.getItem('cifacad_speed')||1;auto=localStorage.getItem('cifacad_auto')!=='0'}catch(e){}
 function cs(id){return S.c[id]||(S.c[id]={seen:{},quiz:{},pos:{m:0,s:0}})}
 
-/* ---------------- presenter (original illustrated host) ---------------- */
-function avatarSVG(id){return '<svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avery, an illustrated course presenter" id="'+id+'">'+
- '<defs><linearGradient id="'+id+'sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a26a45"/><stop offset="1" stop-color="#8a5636"/></linearGradient>'+
- '<linearGradient id="'+id+'bz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22355c"/><stop offset="1" stop-color="#16243f"/></linearGradient></defs>'+
- '<g class="body"><path d="M18 240 C22 192 52 172 100 170 C148 172 178 192 182 240Z" fill="url(#'+id+'bz)"/>'+
- '<path d="M78 172 L100 214 L122 172 L112 168 L100 190 L88 168Z" fill="#f2ede4"/>'+
- '<path d="M70 174 L100 232 L86 176Z" fill="#1a2b4c"/><path d="M130 174 L100 232 L114 176Z" fill="#1a2b4c"/>'+
- '<circle cx="138" cy="198" r="4.5" fill="#C9A84C"/><circle cx="138" cy="198" r="2" fill="#f4e3a6"/></g>'+
- '<g class="head"><rect x="86" y="140" width="28" height="34" rx="10" fill="#7f4e30"/>'+
- '<ellipse cx="57" cy="104" rx="9" ry="13" fill="#93603d"/><ellipse cx="143" cy="104" rx="9" ry="13" fill="#93603d"/>'+
- '<circle cx="57" cy="117" r="2.6" fill="#C9A84C"/><circle cx="143" cy="117" r="2.6" fill="#C9A84C"/>'+
- '<path d="M60 92 C60 60 78 44 100 44 C122 44 140 60 140 92 L140 112 C140 140 122 158 100 158 C78 158 60 140 60 112Z" fill="url(#'+id+'sk)"/>'+
- '<g fill="#1b1410"><circle cx="70" cy="62" r="17"/><circle cx="88" cy="48" r="19"/><circle cx="110" cy="46" r="19"/><circle cx="130" cy="60" r="17"/><circle cx="142" cy="80" r="12"/><circle cx="58" cy="80" r="12"/><circle cx="100" cy="38" r="15"/><circle cx="78" cy="38" r="11"/><circle cx="122" cy="36" r="11"/></g>'+
- '<path d="M66 82 C76 68 90 64 100 66 C112 64 126 70 134 82 C126 76 112 73 100 74 C88 73 76 76 66 82Z" fill="#1b1410"/>'+
- '<g class="brows" fill="none" stroke="#1b1410" stroke-width="3.2" stroke-linecap="round"><path d="M72 88 Q81 83 90 87"/><path d="M110 87 Q119 83 128 88"/></g>'+
- '<g class="eyes"><ellipse cx="81" cy="100" rx="7.2" ry="5.2" fill="#fbf8f2"/><ellipse cx="119" cy="100" rx="7.2" ry="5.2" fill="#fbf8f2"/>'+
- '<circle class="pup" cx="81" cy="100.5" r="3.6" fill="#2a1a10"/><circle class="pup" cx="119" cy="100.5" r="3.6" fill="#2a1a10"/>'+
- '<circle cx="82.3" cy="99.2" r="1.1" fill="#fff"/><circle cx="120.3" cy="99.2" r="1.1" fill="#fff"/></g>'+
- '<g class="lids" fill="#93603d"><rect class="lid" x="72" y="93" width="18" height="0" /><rect class="lid" x="110" y="93" width="18" height="0"/></g>'+
- '<g fill="none" stroke="#C9A84C" stroke-width="1.6" opacity=".95"><rect x="70" y="92" width="22" height="16" rx="6"/><rect x="108" y="92" width="22" height="16" rx="6"/><path d="M92 99 Q100 95 108 99"/></g>'+
- '<path d="M100 104 Q96 118 98 121 Q100 123 104 121" fill="none" stroke="#6e4128" stroke-width="2" stroke-linecap="round"/>'+
- '<ellipse cx="74" cy="120" rx="7" ry="4" fill="#c27a5c" opacity=".35"/><ellipse cx="126" cy="120" rx="7" ry="4" fill="#c27a5c" opacity=".35"/>'+
- '<g class="mouth"><path class="lipo" d="M86 132 Q100 136 114 132 Q100 136 86 132Z" fill="#5a2a1f"/><path class="teeth" d="M90 133 Q100 135 110 133 L110 134 Q100 136 90 134Z" fill="#fbf8f2" opacity="0"/>'+
- '<path class="lipu" d="M86 132 Q93 129 100 130.5 Q107 129 114 132" fill="none" stroke="#7a3a2c" stroke-width="3" stroke-linecap="round"/>'+
- '<path class="lipl" d="M86 132 Q100 138 114 132" fill="none" stroke="#7a3a2c" stroke-width="3" stroke-linecap="round"/></g></g></svg>'}
+/* ---------------- presenter: illustrated portrait of Jeff A. Parke, with lip sync and blinking ---------------- */
+var PIMG=new Image(),PJAW=new Image();PIMG.src='academy/jeff-presenter.webp';PJAW.src='academy/jeff-jaw.png';
+var LIP=[[203,407],[228,405],[250,403],[275,402],[300,400],[325,394],[350,387]];
 var AV=[];
-function mountAvatar(host,id){host.insertAdjacentHTML('afterbegin',avatarSVG(id));var s=$(id);var a={s:s,head:s.querySelector('.head'),lids:s.querySelectorAll('.lid'),brows:s.querySelector('.brows'),lipo:s.querySelector('.lipo'),lipl:s.querySelector('.lipl'),lipu:s.querySelector('.lipu'),teeth:s.querySelector('.teeth'),pups:s.querySelectorAll('.pup'),open:0,blink:0,nextBlink:performance.now()+2500,brow:0};AV.push(a);return a}
-function animAvatar(a,now,talk,lookX){
-  a.open+=(talk-a.open)*0.45;
-  var o=a.open,w=14-o*2.5,h=2+o*11;
-  a.lipo.setAttribute('d','M'+(100-w)+' 132 Q100 '+(131+h*.2)+' '+(100+w)+' 132 Q100 '+(132+h*1.1)+' '+(100-w)+' 132Z');
-  a.lipl.setAttribute('d','M'+(100-w)+' 132 Q100 '+(134+h*1.05)+' '+(100+w)+' 132');
-  a.lipu.setAttribute('d','M'+(100-w)+' 132 Q93 '+(129-o*1.5)+' 100 '+(130.5-o*1.2)+' Q107 '+(129-o*1.5)+' '+(100+w)+' 132');
-  a.teeth.setAttribute('opacity',o>.35?Math.min(1,(o-.35)*2.2):0);
-  if(now>a.nextBlink){a.blink=now;a.nextBlink=now+2200+Math.random()*3800}
-  var bt=(now-a.blink)/150,lid=bt<1?Math.sin(bt*Math.PI)*12:0;
-  a.lids.forEach(function(l){l.setAttribute('height',lid.toFixed(1))});
-  if(talk>.85&&Math.random()<.02)a.brow=now;var bb=(now-a.brow)/600,br=bb<1?Math.sin(bb*Math.PI)*3:0;
-  a.brows.setAttribute('transform','translate(0,'+(-br).toFixed(2)+')');
-  var t=now/1000,tilt=Math.sin(t*.6)*1.6+(talk>.05?Math.sin(t*2.1)*.8:0),bob=Math.sin(t*1.1)*1.2;
-  a.head.setAttribute('transform','rotate('+tilt.toFixed(2)+' 100 150) translate(0 '+bob.toFixed(2)+')');
-  var px=lookX||Math.sin(t*.35)*1.2;a.pups.forEach(function(p,i){p.setAttribute('cx',(i?119:81)+px)});
+function mountAvatar(host,id){var c=document.createElement('canvas');c.width=600;c.height=720;c.id=id;c.className='pres';c.setAttribute('role','img');c.setAttribute('aria-label','Jeff A. Parke, founder of the Cold Ischemia Foundation, presenting');host.insertBefore(c,host.firstChild);var a={c:c,x:c.getContext('2d'),open:0,blink:0,nextBlink:performance.now()+2600,last:-1};AV.push(a);return a}
+function lipPath(x,d,shape){x.beginPath();var n=LIP.length;x.moveTo(LIP[0][0],LIP[0][1]);for(var i=1;i<n;i++)x.lineTo(LIP[i][0],LIP[i][1]);for(i=n-1;i>=0;i--){var f=Math.sin(Math.PI*i/(n-1));f=Math.pow(f,shape?1.1:1.8);x.lineTo(LIP[i][0],LIP[i][1]+d*f)}x.closePath()}
+function lid(x,cx,cy,rx,ry,b,col){x.save();x.beginPath();x.moveTo(cx-rx,cy);x.quadraticCurveTo(cx,cy-ry*2.1,cx+rx,cy);x.quadraticCurveTo(cx,cy+ry*1.7,cx-rx,cy);x.clip();var h=ry*2.2*b,top=cy-ry*1.1,g=x.createLinearGradient(0,top,0,top+h);g.addColorStop(0,col);g.addColorStop(1,'#7a4530');x.fillStyle=g;x.fillRect(cx-rx,top-1,rx*2,h+1);x.strokeStyle='rgba(40,20,12,.8)';x.lineWidth=2.2;x.beginPath();x.moveTo(cx-rx,top+h-.4);x.quadraticCurveTo(cx,top+h+2*b,cx+rx,top+h-.4);x.stroke();x.restore()}
+function animAvatar(a,now,talk){
+  if(!PIMG.naturalWidth)return;
+  a.open+=(talk-a.open)*0.42;var o=Math.max(0,Math.min(1,a.open)),d=o*12,t=now/1000,x=a.x;
+  if(now>a.nextBlink){a.blink=now;a.nextBlink=now+2300+Math.random()*3800}
+  var bt=(now-a.blink)/170,bl=bt<1?Math.sin(bt*Math.PI):0;
+  var tilt=(Math.sin(t*.55)*.45+(talk>.05?Math.sin(t*2.3)*.4:0))*Math.PI/180,bob=Math.sin(t*1.05)*1.6-(talk>.05?o*1.4:0),sc=1.04+Math.sin(t*.8)*.004;
+  x.setTransform(1,0,0,1,0,0);x.fillStyle='#0b111b';x.fillRect(0,0,600,720);
+  x.translate(300,660);x.rotate(tilt);x.scale(sc,sc);x.translate(-300,-660+bob);
+  x.drawImage(PIMG,0,0);
+  if(d>.5){
+    lipPath(x,d,1);var g=x.createLinearGradient(0,385,0,420);g.addColorStop(0,'#1c0807');g.addColorStop(1,'#4a1a14');x.fillStyle=g;x.fill();
+    x.save();lipPath(x,d,1);x.clip();lipPath(x,Math.min(d*.3,3.4),0);x.fillStyle='rgba(214,198,176,'+Math.min(.7,o*1.1).toFixed(2)+')';x.fill();x.restore();
+    if(PJAW.naturalWidth)x.drawImage(PJAW,170,380+d);
+  }
+  if(bl>.02){lid(x,187,265,26,10,bl,'#a2634a');lid(x,324,246,27,10,bl,'#ad6c50')}
 }
 
 /* ---------------- data ---------------- */
@@ -474,7 +454,7 @@ function courseMin(c){var t=0;c.modules.forEach(function(m){m.scenes.forEach(fun
 function renderCatalog(){
   $('cards').innerHTML=COURSES.map(function(id){var c=DATA[id];if(!c)return '';var p=progress(id),st=cs(id);
     var state=st.final&&st.final.pass?'Completed · '+st.final.score+'/'+st.final.total:p?p+'% complete':'Not started';
-    return '<article class="course" style="--ac:'+ACC[id]+'"><div class="in"><div class="no">'+c.n+'</div><div class="k">Course '+c.n+'</div><h3>'+esc(c.title)+'</h3><p>'+esc(c.subtitle)+'</p><ul>'+c.outcomes.slice(0,3).map(function(o){return '<li>'+esc(o)+'</li>'}).join('')+'</ul><div class="meta"><span>'+c.modules.length+' modules</span><span>~'+(c.minutes)+' min</span><span>'+(c.modules.reduce(function(a,m){return a+m.quiz.length},0)+c.final.length)+' questions</span></div><div class="bar"><b style="width:'+p+'%"></b></div></div><div class="act"><span class="st">'+state+'</span><button class="btn solid" type="button" data-go="'+id+'">'+(st.final&&st.final.pass?'Review':p?'Resume':'Start')+'</button></div></article>'}).join('');
+    return '<article class="course" style="--ac:'+ACC[id]+'"><div class="in"><div class="no">'+c.n+'</div><div class="k">Course '+c.n+'</div><h3>'+esc(c.title)+'</h3><p>'+esc(c.subtitle)+'</p><ul>'+c.outcomes.slice(0,3).map(function(o){return '<li>'+esc(o)+'</li>'}).join('')+'</ul><div class="meta"><span>'+c.modules.length+' modules</span><span>'+c.modules.length+' lessons · 10–12 min each</span><span>'+(c.modules.reduce(function(a,m){return a+m.quiz.length},0)+c.final.length)+' questions</span></div><div class="bar"><b style="width:'+p+'%"></b></div></div><div class="act"><span class="st">'+state+'</span><button class="btn solid" type="button" data-go="'+id+'">'+(st.final&&st.final.pass?'Review':p?'Resume':'Start')+'</button></div></article>'}).join('');
   [].forEach.call(document.querySelectorAll('[data-go]'),function(b){b.onclick=function(){begin(b.dataset.go)}});
   var me=$('me');
   if(S.learner){me.classList.remove('hide');me.innerHTML='<span>Learning as <b>'+esc(S.learner.name)+'</b></span><button type="button" class="lk" id="out">Not you? Switch learner</button>';$('out').onclick=function(){if(confirm('Switch learner? Progress on this device will be cleared.')){S={c:{},q:[]};save();renderCatalog()}}}

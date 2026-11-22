@@ -3,7 +3,7 @@
  "n": 2,
  "title": "The Gatekeepers",
  "subtitle": "Transplant access from the inside: referral, evaluation, the waiting list, organ procurement, discarded kidneys, and the innovation left waiting at the door",
- "minutes": 45,
+ "minutes": 35,
  "color": "#C9A84C",
  "outcomes": [
   "Identify each gate between kidney failure and a transplant, and who controls it",
@@ -15,14 +15,14 @@
  "modules": [
   {
    "id": "c2m1",
-   "title": "The Door Nobody Opens",
+   "title": "Referral and Evaluation",
    "scenes": [
     {
      "text": "Welcome back. In Course 1 you saw the machine. In this course, we look at the way out of it. For most people with kidney failure, a transplant means a longer life and a better one than dialysis. But between a patient and a new kidney stand a series of gates. Each has a keeper. Most patients never learn who they are.",
      "v": {
       "k": "title",
       "kicker": "Course 2 · Module 1",
-      "h": "The Door Nobody Opens",
+      "h": "Referral and Evaluation",
       "sub": "Referral: the first gate, and the most often locked"
      }
     },
@@ -119,6 +119,220 @@
        "Ask transplant centers about self-referral directly"
       ]
      }
+    },
+    {
+     "text": "Getting referred is not getting listed. The second gate is the transplant evaluation, and it is run entirely by the transplant center. Each center sets much of its own selection criteria. Two centers in the same city can look at the same patient and reach different answers.",
+     "v": {
+      "k": "title",
+      "kicker": "Module 1 · continued",
+      "h": "The Evaluation Obstacle Course",
+      "sub": "Where medical judgment and quiet gatekeeping meet"
+     }
+    },
+    {
+     "text": "A typical evaluation includes heart testing, cancer screening, dental clearance, blood work, imaging, meetings with a surgeon, a nephrologist, a social worker, a financial counselor, and often a dietitian and a pharmacist. Each one is a separate appointment, often on a separate day, often far from home.",
+     "v": {
+      "k": "list",
+      "title": "A typical evaluation",
+      "items": [
+       "Cardiac testing",
+       "Cancer screenings",
+       "Dental clearance",
+       "Labs and imaging",
+       "Surgeon, nephrologist, social worker",
+       "Financial counseling",
+       "Dietitian, pharmacist"
+      ]
+     }
+    },
+    {
+     "text": "Evaluations stall on paperwork more often than on medicine. So build an evaluation binder before the first visit. A current medication list. Recent lab results and your dialysis records. Proof of up-to-date cancer screenings for your age. A dental clearance letter, because many centers require one. Your vaccination record. The name and phone number of your support person, and their written commitment. And a one-page summary of your history in your own words. Ask the coordinator whether tests can be grouped onto one day. A complete binder can save months.",
+     "v": {
+      "k": "list",
+      "title": "The evaluation binder",
+      "items": [
+       "Medication list and recent labs",
+       "Dialysis records and your CMS-2728",
+       "Cancer screenings and dental clearance",
+       "Vaccination record",
+       "Support person: name, phone, written commitment",
+       "One-page history in your own words"
+      ]
+     }
+    },
+    {
+     "text": "Some requirements are clearly medical. Others are not. Many programs require a named support person, a care partner who commits to transportation and help after surgery. Many require proof that the patient can afford anti-rejection medications. Some use body-weight cutoffs. These rules can be reasonable. They also fall hardest on people without money, a car, or family nearby.",
+     "v": {
+      "k": "compare",
+      "a": {
+       "h": "Medical criteria",
+       "tag": "about the body",
+       "items": [
+        "Heart and cancer screening",
+        "Infection risk",
+        "Surgical fitness"
+       ]
+      },
+      "b": {
+       "h": "Social and financial criteria",
+       "tag": "about circumstances",
+       "items": [
+        "Required support person",
+        "Proof of medication coverage",
+        "Transportation",
+        "Some center-specific cutoffs"
+       ]
+      }
+     }
+    },
+    {
+     "text": "Many programs require a named support person, and many patients do not have one obvious person to name. Do not let that quietly end your evaluation. Ask the center exactly what the support person must do, and for how long. Ask whether the role can be shared by two or three people on a written schedule. Ask the transplant social worker what community and transportation resources they have used for other patients. Centers vary, and a team of neighbors with a calendar has carried many people through recovery.",
+     "v": {
+      "k": "list",
+      "title": "If you have no single support person",
+      "items": [
+       "Ask exactly what the role requires, and for how long",
+       "Ask whether two or three people can share it",
+       "Ask the social worker about community and ride resources",
+       "Put the plan in writing for the team"
+      ]
+     }
+    },
+    {
+     "text": "In 2022, the National Academies of Sciences, Engineering, and Medicine called the U.S. transplant system demonstrably inequitable. They found that people of color and people with disabilities are disadvantaged in access, referral and waiting time. Among their recommendations: more transparency, and better communication between transplant teams and the people waiting.",
+     "v": {
+      "k": "quote",
+      "text": "The U.S. organ transplant system is demonstrably inequitable.",
+      "by": "National Academies of Sciences, Engineering, and Medicine, Realizing the Promise of Equity in the Organ Transplantation System, 2022"
+     }
+    },
+    {
+     "text": "Some of that is starting to change. In May 2026, Medicare finalized changes to the IOTA transplant model that require participating hospitals to notify patients when their waiting list status changes. A proposed requirement to tell patients about organ offers the center declined on their behalf was not finalized. That second piece is worth pushing for.",
+     "v": {
+      "k": "case",
+      "h": "IOTA model update",
+      "sub": "Finalized May 28, 2026 · effective July 1, 2026",
+      "items": [
+       "Adopted: notify patients when waitlist status changes",
+       "Not finalized: notifying patients of organ offers declined on their behalf",
+       "Medicare Advantage patients now included in performance payments"
+      ],
+      "src": "American Hospital Association, May 29, 2026"
+     }
+    },
+    {
+     "text": "The financial counselor will ask how you will pay for anti-rejection drugs, because a transplant without them fails. Here is a fact that changed in 2023. People whose Medicare was based only on kidney failure used to lose it thirty-six months after a successful transplant, and with it, their drug coverage. Since January 2023, a Medicare benefit called Part B immunosuppressive drug coverage lets eligible people keep coverage for those drugs after that point, if they have no other qualifying coverage. Patients and counselors still miss it. Say its name.",
+     "v": {
+      "k": "timeline",
+      "title": "Paying for anti-rejection drugs",
+      "items": [
+       {
+        "y": "Before 2023",
+        "t": "Kidney-only Medicare ended 36 months after transplant, with drug coverage"
+       },
+       {
+        "y": "Oct 2022",
+        "t": "Enrollment opens for a new Part B immunosuppressive drug benefit"
+       },
+       {
+        "y": "Jan 2023",
+        "t": "Coverage begins: drugs only, for people without other qualifying coverage"
+       },
+       {
+        "y": "Today",
+        "t": "Ask the financial counselor about \"Part B-ID\" by name"
+       }
+      ],
+      "src": "CMS: Medicare Part B Immunosuppressive Drug Benefit"
+     }
+    },
+    {
+     "text": "You also have a right to know where you stand. National transplant network policy requires programs to notify patients when they are added to the waiting list, when an evaluation is finished but they are not listed, and when they are removed for any reason other than transplant or death. A proposal to require notice when a patient moves between active and inactive status went out for public comment in 2025. And as you heard, the Medicare IOTA model now requires participating hospitals to notify patients when their list status changes. Ask for every one of these notices in writing.",
+     "v": {
+      "k": "list",
+      "title": "Notices you are owed",
+      "items": [
+       "When you are added to the waiting list",
+       "When evaluation ends without listing",
+       "When you are removed (other than transplant or death)",
+       "IOTA hospitals: when your list status changes",
+       "Proposed nationally (2025): active / inactive changes"
+      ],
+      "src": "OPTN: Require Patient Notification for Waitlist Status Changes; AHA on IOTA (May 2026)"
+     }
+    },
+    {
+     "type": "reveal",
+     "prompt": "Tap each card for a question to ask at the first evaluation visit.",
+     "cards": [
+      {
+       "f": "Criteria",
+       "b": "Please give me your selection criteria in writing, including any weight, age, or support-person rules."
+      },
+      {
+       "f": "Timeline",
+       "b": "What is your typical time from referral to listing? What would speed mine up?"
+      },
+      {
+       "f": "If I'm declined",
+       "b": "If you don't list me, will you give me the reason in writing, and can I be evaluated elsewhere?"
+      },
+      {
+       "f": "Offers",
+       "b": "Will you tell me when you decline an organ offer for me, and why?"
+      },
+      {
+       "f": "Multiple listing",
+       "b": "Can I be evaluated and listed at more than one center?"
+      }
+     ]
+    },
+    {
+     "text": "If a center declines you, use a four-step response. First, get the reason in writing. Second, ask which parts of the reason can change: weight, dental work, a missing test, a support person, a financial question. Third, ask for a date to be reconsidered once those are addressed, and put that date on your calendar. Fourth, ask for your records and seek a second opinion at another program, because criteria really do differ. A no with a reason and a date is a plan. A no without either is a door someone closed and hoped you would not try again.",
+     "v": {
+      "k": "flow",
+      "title": "When a center says no",
+      "steps": [
+       "Get the reason in writing",
+       "Ask what can change",
+       "Set a date to be reconsidered",
+       "Get records; seek a second program"
+      ],
+      "broken": [],
+      "note": "A decline with a reason and a date is a plan."
+     }
+    },
+    {
+     "text": "A center's answer is not the only answer. National policy allows a kidney candidate to register at more than one transplant program, often called multiple listing. It can widen the pool of offers, especially when the second program is in a different region. It has real costs: a second evaluation, travel, and the question of whether your insurance will pay for it. Some centers have their own rules about it. But patients with the means and the information do it routinely. You deserve to know it exists, and to ask both centers how they handle it.",
+     "v": {
+      "k": "compare",
+      "a": {
+       "h": "One listing",
+       "tag": "Most patients",
+       "items": [
+        "One center's criteria",
+        "Offers through one local system",
+        "One evaluation to complete"
+       ]
+      },
+      "b": {
+       "h": "Multiple listing",
+       "tag": "Allowed by national policy",
+       "items": [
+        "Evaluated at a second program",
+        "Can widen access to offers",
+        "Check insurance and travel first"
+       ]
+      },
+      "src": "OPTN policy; SRTR"
+     }
+    },
+    {
+     "text": "Remember that a center saying no is not the end. Patients can seek evaluation at another program, and in some cases be listed at more than one. A written reason for a decline is the single most valuable document an advocate can hold. It turns a closed door into a problem that can be solved, or challenged.",
+     "v": {
+      "k": "callout",
+      "text": "A decline without a written reason is a wall. A decline with a written reason is a to-do list."
+     }
     }
    ],
    "quiz": [
@@ -165,138 +379,7 @@
      ],
      "a": 1,
      "why": "This is why waiting time can be credited back to the dialysis start, but delayed evaluation still costs time."
-    }
-   ],
-   "sources": [
-    {
-     "t": "OPTN/SRTR 2024 Annual Data Report: Kidney",
-     "u": "https://srtr.hrsa.gov/adr/2024/Kidney/"
     },
-    {
-     "t": "Emory: Georgia referral study (JAMA 2015)",
-     "u": "https://med.emory.edu/departments/surgery/news-and-events/news-highlights/2015/patzer-georgia-dialysis-referral-transplant-low-2015.html"
-    },
-    {
-     "t": "OPTN Policies (Policy 8: kidney allocation and waiting time)",
-     "u": "https://optn.transplant.hrsa.gov/policies-bylaws/policies/"
-    },
-    {
-     "t": "Code of Federal Regulations: 42 CFR Part 494 (govinfo, 2024 edition)",
-     "u": "https://www.govinfo.gov/content/pkg/CFR-2024-title42-vol5/pdf/CFR-2024-title42-vol5-part494.pdf"
-    }
-   ]
-  },
-  {
-   "id": "c2m2",
-   "title": "The Evaluation Obstacle Course",
-   "scenes": [
-    {
-     "text": "Getting referred is not getting listed. The second gate is the transplant evaluation, and it is run entirely by the transplant center. Each center sets much of its own selection criteria. Two centers in the same city can look at the same patient and reach different answers.",
-     "v": {
-      "k": "title",
-      "kicker": "Course 2 · Module 2",
-      "h": "The Evaluation Obstacle Course",
-      "sub": "Where medical judgment and quiet gatekeeping meet"
-     }
-    },
-    {
-     "text": "A typical evaluation includes heart testing, cancer screening, dental clearance, blood work, imaging, meetings with a surgeon, a nephrologist, a social worker, a financial counselor, and often a dietitian and a pharmacist. Each one is a separate appointment, often on a separate day, often far from home.",
-     "v": {
-      "k": "list",
-      "title": "A typical evaluation",
-      "items": [
-       "Cardiac testing",
-       "Cancer screenings",
-       "Dental clearance",
-       "Labs and imaging",
-       "Surgeon, nephrologist, social worker",
-       "Financial counseling",
-       "Dietitian, pharmacist"
-      ]
-     }
-    },
-    {
-     "text": "Some requirements are clearly medical. Others are not. Many programs require a named support person, a care partner who commits to transportation and help after surgery. Many require proof that the patient can afford anti-rejection medications. Some use body-weight cutoffs. These rules can be reasonable. They also fall hardest on people without money, a car, or family nearby.",
-     "v": {
-      "k": "compare",
-      "a": {
-       "h": "Medical criteria",
-       "tag": "about the body",
-       "items": [
-        "Heart and cancer screening",
-        "Infection risk",
-        "Surgical fitness"
-       ]
-      },
-      "b": {
-       "h": "Social and financial criteria",
-       "tag": "about circumstances",
-       "items": [
-        "Required support person",
-        "Proof of medication coverage",
-        "Transportation",
-        "Some center-specific cutoffs"
-       ]
-      }
-     }
-    },
-    {
-     "text": "In 2022, the National Academies of Sciences, Engineering, and Medicine called the U.S. transplant system demonstrably inequitable. They found that people of color and people with disabilities are disadvantaged in access, referral and waiting time. Among their recommendations: more transparency, and better communication between transplant teams and the people waiting.",
-     "v": {
-      "k": "quote",
-      "text": "The U.S. organ transplant system is demonstrably inequitable.",
-      "by": "National Academies of Sciences, Engineering, and Medicine, Realizing the Promise of Equity in the Organ Transplantation System, 2022"
-     }
-    },
-    {
-     "text": "Some of that is starting to change. In May 2026, Medicare finalized changes to the IOTA transplant model that require participating hospitals to notify patients when their waiting list status changes. A proposed requirement to tell patients about organ offers the center declined on their behalf was not finalized. That second piece is worth pushing for.",
-     "v": {
-      "k": "case",
-      "h": "IOTA model update",
-      "sub": "Finalized May 28, 2026 · effective July 1, 2026",
-      "items": [
-       "Adopted: notify patients when waitlist status changes",
-       "Not finalized: notifying patients of organ offers declined on their behalf",
-       "Medicare Advantage patients now included in performance payments"
-      ],
-      "src": "American Hospital Association, May 29, 2026"
-     }
-    },
-    {
-     "type": "reveal",
-     "prompt": "Tap each card for a question to ask at the first evaluation visit.",
-     "cards": [
-      {
-       "f": "Criteria",
-       "b": "Please give me your selection criteria in writing, including any weight, age, or support-person rules."
-      },
-      {
-       "f": "Timeline",
-       "b": "What is your typical time from referral to listing? What would speed mine up?"
-      },
-      {
-       "f": "If I'm declined",
-       "b": "If you don't list me, will you give me the reason in writing, and can I be evaluated elsewhere?"
-      },
-      {
-       "f": "Offers",
-       "b": "Will you tell me when you decline an organ offer for me, and why?"
-      },
-      {
-       "f": "Multiple listing",
-       "b": "Can I be evaluated and listed at more than one center?"
-      }
-     ]
-    },
-    {
-     "text": "Remember that a center saying no is not the end. Patients can seek evaluation at another program, and in some cases be listed at more than one. A written reason for a decline is the single most valuable document an advocate can hold. It turns a closed door into a problem that can be solved, or challenged.",
-     "v": {
-      "k": "callout",
-      "text": "A decline without a written reason is a wall. A decline with a written reason is a to-do list."
-     }
-    }
-   ],
-   "quiz": [
     {
      "q": "Who runs the transplant evaluation and sets much of its selection criteria?",
      "o": [
@@ -340,9 +423,47 @@
      ],
      "a": 1,
      "why": "A written reason lets you address the issue or seek evaluation elsewhere."
+    },
+    {
+     "q": "Since January 2023, what helps eligible kidney recipients keep coverage for anti-rejection drugs after kidney-only Medicare ends?",
+     "o": [
+      "Nothing",
+      "Medicare Part B immunosuppressive drug coverage (Part B-ID)",
+      "A one-time grant",
+      "Medicaid for everyone"
+     ],
+     "a": 1,
+     "why": "Part B-ID covers immunosuppressive drugs for eligible people without other qualifying coverage (CMS)."
+    },
+    {
+     "q": "A center declines a patient. What is the strongest first step?",
+     "o": [
+      "Accept it",
+      "Get the reason in writing",
+      "Post about it online",
+      "Stop dialysis"
+     ],
+     "a": 1,
+     "why": "A written reason turns a closed door into a problem that can be solved or challenged."
     }
    ],
    "sources": [
+    {
+     "t": "OPTN/SRTR 2024 Annual Data Report: Kidney",
+     "u": "https://srtr.hrsa.gov/adr/2024/Kidney/"
+    },
+    {
+     "t": "Emory: Georgia referral study (JAMA 2015)",
+     "u": "https://med.emory.edu/departments/surgery/news-and-events/news-highlights/2015/patzer-georgia-dialysis-referral-transplant-low-2015.html"
+    },
+    {
+     "t": "OPTN Policies (Policy 8: kidney allocation and waiting time)",
+     "u": "https://optn.transplant.hrsa.gov/policies-bylaws/policies/"
+    },
+    {
+     "t": "Code of Federal Regulations: 42 CFR Part 494 (govinfo, 2024 edition)",
+     "u": "https://www.govinfo.gov/content/pkg/CFR-2024-title42-vol5/pdf/CFR-2024-title42-vol5-part494.pdf"
+    },
     {
      "t": "National Academies: Realizing the Promise of Equity in the Organ Transplantation System (2022)",
      "u": "https://www.nationalacademies.org/news/new-report-recommends-changes-to-u-s-organ-transplant-system-to-improve-fairness-and-equity-reduce-nonuse-of-donated-organs-and-improve-the-systems-overall-performance"
@@ -350,13 +471,30 @@
     {
      "t": "AHA: CMS finalizes changes to IOTA model (May 2026)",
      "u": "https://www.aha.org/news/headline/2026-05-29-cms-finalizes-changes-increasing-organ-transplant-access-model"
+    },
+    {
+     "t": "CMS: Medicare Part B Immunosuppressive Drug Benefit",
+     "u": "https://www.cms.gov/medicare/original-medicare-part-and-b-eligibility-and-enrollment/medicare-part-b-immunosuppressive-drug-benefit"
+    },
+    {
+     "t": "OPTN: Require Patient Notification for Waitlist Status Changes (2025)",
+     "u": "https://www.hrsa.gov/es/node/30245"
     }
    ]
   },
   {
-   "id": "c2m3",
-   "title": "The List: Time, Race, and the Rules",
+   "id": "c2m2",
+   "title": "The List and the Lost Kidneys",
    "scenes": [
+    {
+     "text": "Welcome to the second module. You have been referred, evaluated and accepted. Now you are on the list, and the list is where many people assume the hard part is over. It is not. In this module we look at how the list really works, how many people leave it without a kidney, how many donated kidneys are never used, and the procurement system that sits upstream of all of it.",
+     "v": {
+      "k": "title",
+      "kicker": "Course 2 · Module 2",
+      "h": "The List and the Lost Kidneys",
+      "sub": "Waiting time, inactive status, unused kidneys, and the organizations that recover organs"
+     }
+    },
     {
      "text": "Now the list itself. In 2024, about one hundred and forty-four thousand adults were on the kidney waiting list at some point during the year. A record forty-nine thousand two hundred and forty-nine were newly added. About one in ten had been waiting five years or more.",
      "v": {
@@ -412,6 +550,28 @@
        }
       ],
       "src": "OPTN/SRTR 2024 Annual Data Report: Kidney"
+     }
+    },
+    {
+     "text": "Now the most important fact about the list that patients are rarely told. Being on the list is not the same as being able to receive a kidney. A candidate can be listed as inactive, sometimes called on hold, because a test expired, a weight changed, an insurance form is missing, or the team is waiting on something. Inactive candidates generally keep accruing waiting time, but they receive no organ offers. In 2024, forty-two percent of kidney candidates were inactive at the end of the year or when they left the list. Four in ten. Many of them did not know.",
+     "v": {
+      "k": "dots",
+      "total": 100,
+      "lit": 42,
+      "label": "42 of every 100 kidney candidates were inactive at year-end or removal, 2024",
+      "src": "OPTN/SRTR 2024 Annual Data Report: Kidney"
+     }
+    },
+    {
+     "text": "So ask three questions, every few months, in writing. Am I active or inactive on the list right now? If inactive, what exactly is needed to make me active, and who is responsible for each piece? And have any kidneys been offered for me and declined, and if so, why? The first two can be fixed with phone calls and paperwork. The third tells you how your center behaves. A patient who asks these questions regularly is a patient whose file stays on top of the pile.",
+     "v": {
+      "k": "list",
+      "title": "Three questions, every few months",
+      "items": [
+       "\"Am I active or inactive right now?\"",
+       "\"If inactive: what is needed, and who owns each piece?\"",
+       "\"Were any kidneys offered for me and declined? Why?\""
+      ]
      }
     },
     {
@@ -484,67 +644,12 @@
        "fb": "Lists are kept by people and software. Errors and policy changes happen. Verify."
       }
      ]
-    }
-   ],
-   "quiz": [
-    {
-     "q": "In 2024, about how many adults were removed from the kidney list as too sick to transplant?",
-     "o": [
-      "About 490",
-      "About 4,900",
-      "About 49,000",
-      "None"
-     ],
-     "a": 1,
-     "why": "4,901 as too sick, plus 3,743 removed due to death (SRTR 2024)."
     },
     {
-     "q": "Why did race-inclusive kidney function formulas harm Black candidates?",
-     "o": [
-      "They lowered their priority directly",
-      "They made kidney function look higher, delaying when waiting time could begin",
-      "They banned listing",
-      "They raised costs"
-     ],
-     "a": 1,
-     "why": "The multiplier inflated estimated function, delaying the eGFR-of-20 threshold."
-    },
-    {
-     "q": "What was the median waiting time restored in early monitoring of the 2023 policy?",
-     "o": [
-      "2 weeks",
-      "6 months",
-      "1.7 years",
-      "10 years"
-     ],
-     "a": 2,
-     "why": "Median 1.7 years among the first 6,103 modifications (HRSA/OPTN)."
-    }
-   ],
-   "sources": [
-    {
-     "t": "OPTN/SRTR 2024 Annual Data Report: Kidney",
-     "u": "https://srtr.hrsa.gov/adr/2024/Kidney/"
-    },
-    {
-     "t": "HRSA/OPTN: Early monitoring of waiting time modifications",
-     "u": "https://www.hrsa.gov/optn/news-events/news/early-monitoring-report-shows-black-kidney-candidates-are-receiving-waiting-time-modifications-after-implementation-of-new-policies/"
-    },
-    {
-     "t": "OPTN: Waiting time modifications (a closer look)",
-     "u": "https://optn.transplant.hrsa.gov/policies-bylaws/a-closer-look/waiting-time-modifications-for-candidates-affected-by-race-inclusive-egfr-calculations"
-    }
-   ]
-  },
-  {
-   "id": "c2m4",
-   "title": "Recovered, Then Discarded",
-   "scenes": [
-    {
-     "text": "This module is about the most painful number in the transplant system. A family says yes to donation. Surgeons recover the kidneys. And then a large share of them are never transplanted into anyone.",
+     "text": "This part of the module is about the most painful number in the transplant system. A family says yes to donation. Surgeons recover the kidneys. And then a large share of them are never transplanted into anyone.",
      "v": {
       "k": "title",
-      "kicker": "Course 2 · Module 4",
+      "kicker": "Module 2 · continued",
       "h": "Recovered, Then Discarded",
       "sub": "Organ nonuse, and why it keeps rising"
      }
@@ -596,6 +701,31 @@
        }
       ],
       "src": "OPTN/SRTR 2024 Annual Data Report: Kidney"
+     }
+    },
+    {
+     "text": "One more choice belongs to you. Kidneys are scored by the kidney donor profile index, or KDPI. A higher score predicts a shorter working life for the kidney. Before a center can accept a kidney with a score above eighty-five for you, national policy requires your consent in advance. For some patients, especially older ones, saying yes can mean years less on dialysis. For others, waiting makes sense. Either way, it should be a decision you made with your team, not a box nobody explained.",
+     "v": {
+      "k": "compare",
+      "a": {
+       "h": "Say yes to KDPI over 85",
+       "tag": "Often considered for older candidates",
+       "items": [
+        "More offers, often sooner",
+        "Kidney may not last as long",
+        "Can mean years less on dialysis"
+       ]
+      },
+      "b": {
+       "h": "Decline those offers",
+       "tag": "Often considered for younger candidates",
+       "items": [
+        "Wait for a longer-lasting kidney",
+        "Longer time on dialysis",
+        "Revisit the choice as things change"
+       ]
+      },
+      "src": "OPTN kidney allocation policy"
      }
     },
     {
@@ -675,82 +805,12 @@
        "Do you accept kidneys other centers have declined, for patients who want them?"
       ]
      }
-    }
-   ],
-   "quiz": [
-    {
-     "q": "What was the deceased-donor kidney nonuse rate in 2024?",
-     "o": [
-      "About 5%",
-      "About 18%",
-      "About 29%",
-      "About 60%"
-     ],
-     "a": 2,
-     "why": "29.3%, up from 18.2% in 2013 (SRTR 2024)."
     },
-    {
-     "q": "What goal did the National Academies set for kidney nonuse?",
-     "o": [
-      "5% or less",
-      "15%",
-      "25%",
-      "No goal"
-     ],
-     "a": 0,
-     "why": "5% or less, plus 50,000 organs transplanted annually by 2026."
-    },
-    {
-     "q": "In the 2009 NEJM trial, how did machine perfusion affect delayed graft function?",
-     "o": [
-      "Increased it",
-      "No effect",
-      "Reduced it from about 26.5% to about 20.8%",
-      "Eliminated it"
-     ],
-     "a": 2,
-     "why": "Adjusted odds ratio 0.57; one-year graft survival 94% vs 90%."
-    },
-    {
-     "q": "What is cold ischemia?",
-     "o": [
-      "A type of dialysis",
-      "Damage that accumulates while an organ is cold and without blood flow",
-      "A billing code",
-      "A waiting list category"
-     ],
-     "a": 1,
-     "why": "Every hour on ice adds injury; reducing it is central to using more kidneys."
-    }
-   ],
-   "sources": [
-    {
-     "t": "OPTN/SRTR 2024 Annual Data Report: Kidney",
-     "u": "https://srtr.hrsa.gov/adr/2024/Kidney/"
-    },
-    {
-     "t": "Moers et al., Machine Perfusion or Cold Storage in Deceased-Donor Kidney Transplantation, NEJM 2009",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa0802289"
-    },
-    {
-     "t": "National Academies report news release (2022)",
-     "u": "https://www.nationalacademies.org/news/new-report-recommends-changes-to-u-s-organ-transplant-system-to-improve-fairness-and-equity-reduce-nonuse-of-donated-organs-and-improve-the-systems-overall-performance"
-    },
-    {
-     "t": "CMS: OPO final rule press release (Oct 30, 2026)",
-     "u": "https://www.cms.gov/newsroom/press-releases/cms-finalizes-rule-help-more-organs-reach-patients-strengthen-accountability-organ-procurement"
-    }
-   ]
-  },
-  {
-   "id": "c2m5",
-   "title": "The Procurement System on Trial",
-   "scenes": [
     {
      "text": "Every donated organ in this country passes through one of fifty-some organ procurement organizations, called OPOs. Each holds a federal monopoly over its area. For decades they largely graded themselves. That has been changing, and in the last three years it has changed fast.",
      "v": {
       "k": "title",
-      "kicker": "Course 2 · Module 5",
+      "kicker": "Module 2 · continued",
       "h": "The Procurement System on Trial",
       "sub": "OPOs, federal oversight, and trust"
      }
@@ -871,6 +931,72 @@
    ],
    "quiz": [
     {
+     "q": "Why did race-inclusive kidney function formulas harm Black candidates?",
+     "o": [
+      "They lowered their priority directly",
+      "They made kidney function look higher, delaying when waiting time could begin",
+      "They banned listing",
+      "They raised costs"
+     ],
+     "a": 1,
+     "why": "The multiplier inflated estimated function, delaying the eGFR-of-20 threshold."
+    },
+    {
+     "q": "What was the median waiting time restored in early monitoring of the 2023 policy?",
+     "o": [
+      "2 weeks",
+      "6 months",
+      "1.7 years",
+      "10 years"
+     ],
+     "a": 2,
+     "why": "Median 1.7 years among the first 6,103 modifications (HRSA/OPTN)."
+    },
+    {
+     "q": "What was the deceased-donor kidney nonuse rate in 2024?",
+     "o": [
+      "About 5%",
+      "About 18%",
+      "About 29%",
+      "About 60%"
+     ],
+     "a": 2,
+     "why": "29.3%, up from 18.2% in 2013 (SRTR 2024)."
+    },
+    {
+     "q": "What goal did the National Academies set for kidney nonuse?",
+     "o": [
+      "5% or less",
+      "15%",
+      "25%",
+      "No goal"
+     ],
+     "a": 0,
+     "why": "5% or less, plus 50,000 organs transplanted annually by 2026."
+    },
+    {
+     "q": "In the 2009 NEJM trial, how did machine perfusion affect delayed graft function?",
+     "o": [
+      "Increased it",
+      "No effect",
+      "Reduced it from about 26.5% to about 20.8%",
+      "Eliminated it"
+     ],
+     "a": 2,
+     "why": "Adjusted odds ratio 0.57; one-year graft survival 94% vs 90%."
+    },
+    {
+     "q": "What is cold ischemia?",
+     "o": [
+      "A type of dialysis",
+      "Damage that accumulates while an organ is cold and without blood flow",
+      "A billing code",
+      "A waiting list category"
+     ],
+     "a": 1,
+     "why": "Every hour on ice adds injury; reducing it is central to using more kidneys."
+    },
+    {
      "q": "Under the 2020 rule, what happens to an OPO in Tier 3?",
      "o": [
       "It receives a bonus",
@@ -902,9 +1028,44 @@
      ],
      "a": 1,
      "why": "It also tightened adverse-event rules, research-organ tracking, and transitions between OPOs."
+    },
+    {
+     "q": "In 2024, about what share of kidney candidates were inactive at year-end or removal?",
+     "o": [
+      "About 5%",
+      "About 20%",
+      "About 42%",
+      "About 80%"
+     ],
+     "a": 2,
+     "why": "42.0% (OPTN/SRTR 2024 Annual Data Report). Inactive candidates receive no offers."
     }
    ],
    "sources": [
+    {
+     "t": "OPTN/SRTR 2024 Annual Data Report: Kidney",
+     "u": "https://srtr.hrsa.gov/adr/2024/Kidney/"
+    },
+    {
+     "t": "HRSA/OPTN: Early monitoring of waiting time modifications",
+     "u": "https://www.hrsa.gov/optn/news-events/news/early-monitoring-report-shows-black-kidney-candidates-are-receiving-waiting-time-modifications-after-implementation-of-new-policies/"
+    },
+    {
+     "t": "OPTN: Waiting time modifications (a closer look)",
+     "u": "https://optn.transplant.hrsa.gov/policies-bylaws/a-closer-look/waiting-time-modifications-for-candidates-affected-by-race-inclusive-egfr-calculations"
+    },
+    {
+     "t": "Moers et al., Machine Perfusion or Cold Storage in Deceased-Donor Kidney Transplantation, NEJM 2009",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa0802289"
+    },
+    {
+     "t": "National Academies report news release (2022)",
+     "u": "https://www.nationalacademies.org/news/new-report-recommends-changes-to-u-s-organ-transplant-system-to-improve-fairness-and-equity-reduce-nonuse-of-donated-organs-and-improve-the-systems-overall-performance"
+    },
+    {
+     "t": "CMS: OPO final rule press release (Oct 30, 2026)",
+     "u": "https://www.cms.gov/newsroom/press-releases/cms-finalizes-rule-help-more-organs-reach-patients-strengthen-accountability-organ-procurement"
+    },
     {
      "t": "CMS: OPO Conditions for Coverage final rule fact sheet (2020)",
      "u": "https://cms.gov/newsroom/fact-sheets/organ-procurement-organization-opo-conditions-coverage-final-rule-revisions-outcome-measures-opos"
@@ -912,23 +1073,19 @@
     {
      "t": "HHS: HRSA to reform organ transplant system (July 21, 2025)",
      "u": "https://www.hhs.gov/press-room/hrsa-to-reform-organ-transplant-system.html"
-    },
-    {
-     "t": "CMS: Final rule strengthening OPO accountability (Oct 30, 2026)",
-     "u": "https://www.cms.gov/newsroom/press-releases/cms-finalizes-rule-help-more-organs-reach-patients-strengthen-accountability-organ-procurement"
     }
    ]
   },
   {
-   "id": "c2m7",
-   "title": "The Living Donor Gap",
+   "id": "c2m3",
+   "title": "Living Donors and the Locked Door",
    "scenes": [
     {
      "text": "Before we look at innovation, one more gate, and it's the most important. The best transplant most patients can get is a kidney from a living donor. Living-donor kidneys tend to last longer, the surgery can be scheduled, and many recipients never need dialysis at all. Yet this is the gate where the gap between who needs a kidney and who gets one is widest.",
      "v": {
       "k": "title",
-      "kicker": "Course 2 · Module 6",
-      "h": "The Living Donor Gap",
+      "kicker": "Course 2 · Module 3",
+      "h": "Living Donors and the Locked Door",
       "sub": "The best option most patients have, and the hardest to reach"
      }
     },
@@ -991,6 +1148,20 @@
      }
     },
     {
+     "text": "Living donors have protections of their own, and you should know them before anyone asks. National policy requires every living donor program to give the donor an independent living donor advocate, a person whose job is the donor's interests alone, separate from the recipient's team. Donors are evaluated on their own medical and psychological health, and they can withdraw at any point, for any reason, while the program protects the confidentiality of their information. That last protection matters. It means no one has to say yes out of pressure.",
+     "v": {
+      "k": "list",
+      "title": "Protections every living donor has",
+      "items": [
+       "An independent living donor advocate, separate from the recipient's team",
+       "Their own medical and psychosocial evaluation",
+       "The right to withdraw at any time",
+       "Confidentiality of their information"
+      ],
+      "src": "OPTN living donation policy"
+     }
+    },
+    {
      "text": "Compatibility is no longer the wall it once was. If a willing donor doesn't match their intended recipient, paired exchange programs can swap donors between pairs, sometimes in long chains, so that every recipient gets a compatible kidney. A mismatch is a reason to ask about paired exchange, not a reason to give up.",
      "v": {
       "k": "flow",
@@ -1048,6 +1219,21 @@
      ]
     },
     {
+     "text": "Some protections are still being fought for. Today, a living donor can face discrimination when buying life, disability or long-term care insurance. The Living Donor Protection Act would prohibit that, and would make clear that donors can use the Family and Medical Leave Act to recover. Versions have been introduced in Congress for years. In February 2026, the Senate committee on health, education, labor and pensions approved it. Check its current status before you cite it, and if it has not become law, it is exactly the kind of bill a constituent call can move.",
+     "v": {
+      "k": "case",
+      "h": "Living Donor Protection Act (S. 1552)",
+      "sub": "119th Congress · approved by the Senate HELP Committee, Feb. 2026",
+      "items": [
+       "Bars insurance discrimination against living donors",
+       "Clarifies FMLA leave for donation recovery",
+       "Introduced repeatedly over many years",
+       "Check status at congress.gov before citing"
+      ],
+      "src": "ASTS; govinfo S. 1552 (reported)"
+     }
+    },
+    {
      "text": "Your checklist for this gate: ask the transplant center whether it supports living donor champions, whether it participates in paired exchange, who its living donor coordinator is, and how it helps donors apply for financial assistance. A program that has crisp answers to all four is a program that is trying.",
      "v": {
       "k": "list",
@@ -1059,78 +1245,12 @@
        "How do you help donors apply for financial assistance?"
       ]
      }
-    }
-   ],
-   "quiz": [
-    {
-     "q": "How many living-donor kidney transplants were performed in the U.S. in 2024?",
-     "o": [
-      "About 640",
-      "About 6,400",
-      "About 64,000",
-      "About 27,000"
-     ],
-     "a": 1,
-     "why": "6,419, below the 2019 peak of 6,867 (SRTR 2024)."
     },
-    {
-     "q": "In 2024, Black patients were 30.5% of the adult waiting list. What share of living-donor recipients were Black?",
-     "o": [
-      "13.0%",
-      "30.5%",
-      "45%",
-      "60%"
-     ],
-     "a": 0,
-     "why": "13.0%, while White patients were 59.9% of living-donor recipients."
-    },
-    {
-     "q": "A willing donor isn't compatible with their intended recipient. What should they ask about?",
-     "o": [
-      "Nothing can be done",
-      "Paired exchange",
-      "Paying a stranger",
-      "Waiting five years"
-     ],
-     "a": 1,
-     "why": "Paired exchange swaps donors between pairs so each recipient gets a compatible kidney."
-    },
-    {
-     "q": "Under the current NLDAC guidelines, whose income determines eligibility?",
-     "o": [
-      "The recipient's",
-      "The living donor's",
-      "The transplant center's",
-      "No one's"
-     ],
-     "a": 1,
-     "why": "Since the September 2026 change, the donor's own income determines eligibility."
-    }
-   ],
-   "sources": [
-    {
-     "t": "OPTN/SRTR 2024 Annual Data Report: Kidney",
-     "u": "https://srtr.hrsa.gov/adr/2024/Kidney/"
-    },
-    {
-     "t": "National Living Donor Assistance Center: Eligibility",
-     "u": "https://www.livingdonorassistance.org/How-to-Apply/Eligibility-Guidelines"
-    },
-    {
-     "t": "Federal Register: Removing Financial Disincentives to Living Organ Donation (2020)",
-     "u": "https://regulations.justia.com/regulations/fedreg/2020/09/22/2020-20804.html"
-    }
-   ]
-  },
-  {
-   "id": "c2m6",
-   "title": "Innovation Held at the Door",
-   "scenes": [
     {
      "text": "The last gate is the one nobody admits exists: the gate that keeps new ideas out. Kidney care in America has changed remarkably little in fifty years. The dialysis chair of 1975 would be familiar to a patient today. That is not because no one has better ideas. It is because the system pays for what already exists.",
      "v": {
       "k": "title",
-      "kicker": "Course 2 · Module 7",
+      "kicker": "Module 3 · continued",
       "h": "Innovation Held at the Door",
       "sub": "Perfusion, oxygen carriers, xenotransplant, and living donation"
      }
@@ -1157,6 +1277,46 @@
         "Warm versions allow assessment"
        ]
       }
+     }
+    },
+    {
+     "text": "Here is how fast innovation can move when the rules allow it. Warm, or normothermic, machine perfusion keeps an organ near body temperature with oxygenated fluid, so teams can watch it work before transplant. For livers, the FDA approved two such devices in 2021, and they are now used in transplant programs around the country. For kidneys in the United States, it remains in research. The science is not the only bottleneck. Approval pathways, payment, and a center's willingness to change routine all decide how long a better tool waits at the door.",
+     "v": {
+      "k": "timeline",
+      "title": "Warm perfusion: one organ ahead of another",
+      "items": [
+       {
+        "y": "2009",
+        "t": "Cold machine perfusion trial for kidneys (NEJM)"
+       },
+       {
+        "y": "2021",
+        "t": "FDA approves warm perfusion devices for donor livers"
+       },
+       {
+        "y": "Today",
+        "t": "Warm perfusion for kidneys still in U.S. research"
+       }
+      ],
+      "src": "FDA device approvals (2021); Moers et al., NEJM 2009"
+     }
+    },
+    {
+     "text": "And here is how the payment system shapes what reaches a patient. Medicare pays for dialysis through one bundled rate per treatment. When a genuinely new dialysis drug arrives, Medicare pays a temporary add-on for it, and for some drugs a smaller add-on for a few more years. There is a similar temporary add-on for qualifying new equipment. When the add-ons end, the cost has to fit inside the bundled payment. Ask yourself what that does to a clinic's appetite for anything new. Then ask your representatives the same question.",
+     "v": {
+      "k": "flow",
+      "title": "How a new dialysis drug gets paid",
+      "steps": [
+       "Bundled rate per treatment",
+       "New drug: temporary add-on payments",
+       "Add-ons end",
+       "Cost must fit inside the bundle"
+      ],
+      "broken": [
+       3
+      ],
+      "note": "When the add-ons end, a new therapy competes with everything else for the same fixed dollars.",
+      "src": "CMS ESRD Prospective Payment System (TDAPA and TPNIES)"
      }
     },
     {
@@ -1207,16 +1367,74 @@
      }
     },
     {
+     "text": "So what does an advocate ask for? Ask your transplant center whether it uses machine perfusion, and how often. Ask whether it participates in trials of new preservation methods. Ask your representatives to fund research into organ preservation and oxygen delivery, including oxygen carriers, and to fix the payment rules that make new tools a loss for the people who would use them. And ask every claim for its evidence, including claims you hope are true.",
+     "v": {
+      "k": "list",
+      "title": "The innovation ask",
+      "items": [
+       "Centers: \"Do you use machine perfusion? How often?\"",
+       "Centers: \"Do you join preservation trials?\"",
+       "Congress: fund organ preservation and oxygen-delivery research",
+       "Congress: fix payment rules that penalize new tools",
+       "Everyone: show the evidence"
+      ]
+     }
+    },
+    {
      "text": "That's the gate system. Referral, evaluation, the list, procurement, nonuse, living donation, and innovation. Each one has a keeper, and each one can be pushed. In Course 3, we stop describing the system and start changing it. You'll learn your rights in writing, the escalation ladder, how to use evidence, and how rules actually get made.",
      "v": {
       "k": "title",
-      "kicker": "End of Course 2",
+      "kicker": "Module 3 · continued",
       "h": "Every gate has a keeper",
       "sub": "Next: Course 3, The Advocate"
      }
     }
    ],
    "quiz": [
+    {
+     "q": "How many living-donor kidney transplants were performed in the U.S. in 2024?",
+     "o": [
+      "About 640",
+      "About 6,400",
+      "About 64,000",
+      "About 27,000"
+     ],
+     "a": 1,
+     "why": "6,419, below the 2019 peak of 6,867 (SRTR 2024)."
+    },
+    {
+     "q": "In 2024, Black patients were 30.5% of the adult waiting list. What share of living-donor recipients were Black?",
+     "o": [
+      "13.0%",
+      "30.5%",
+      "45%",
+      "60%"
+     ],
+     "a": 0,
+     "why": "13.0%, while White patients were 59.9% of living-donor recipients."
+    },
+    {
+     "q": "A willing donor isn't compatible with their intended recipient. What should they ask about?",
+     "o": [
+      "Nothing can be done",
+      "Paired exchange",
+      "Paying a stranger",
+      "Waiting five years"
+     ],
+     "a": 1,
+     "why": "Paired exchange swaps donors between pairs so each recipient gets a compatible kidney."
+    },
+    {
+     "q": "Under the current NLDAC guidelines, whose income determines eligibility?",
+     "o": [
+      "The recipient's",
+      "The living donor's",
+      "The transplant center's",
+      "No one's"
+     ],
+     "a": 1,
+     "why": "Since the September 2026 change, the donor's own income determines eligibility."
+    },
     {
      "q": "How should an advocate describe BHOC accurately?",
      "o": [
@@ -1238,9 +1456,65 @@
      ],
      "a": 1,
      "why": "The first formal xenotransplant kidney trial."
+    },
+    {
+     "q": "What must every living donor program provide the donor?",
+     "o": [
+      "A cash payment",
+      "An independent living donor advocate",
+      "A guaranteed recipient",
+      "Free insurance for life"
+     ],
+     "a": 1,
+     "why": "National policy requires an independent advocate focused only on the donor's interests."
+    },
+    {
+     "q": "What would the Living Donor Protection Act do?",
+     "o": [
+      "Pay donors for organs",
+      "Bar insurance discrimination against living donors and clarify FMLA leave",
+      "Ban living donation",
+      "Require all citizens to register as donors"
+     ],
+     "a": 1,
+     "why": "It targets life, disability and long-term care insurance discrimination and clarifies FMLA leave."
+    },
+    {
+     "q": "For which organ did the FDA approve warm (normothermic) perfusion devices in 2021?",
+     "o": [
+      "Kidney",
+      "Liver",
+      "Heart only",
+      "Lung only"
+     ],
+     "a": 1,
+     "why": "Two warm perfusion devices for donor livers were approved in 2021. For kidneys it remains in U.S. research."
+    },
+    {
+     "q": "What happens when a new dialysis drug's temporary add-on payments end?",
+     "o": [
+      "They last forever",
+      "The cost has to fit inside the bundled payment",
+      "The patient pays it",
+      "They double each year"
+     ],
+     "a": 1,
+     "why": "Add-ons are temporary. Afterward the drug is paid within the bundled rate."
     }
    ],
    "sources": [
+    {
+     "t": "OPTN/SRTR 2024 Annual Data Report: Kidney",
+     "u": "https://srtr.hrsa.gov/adr/2024/Kidney/"
+    },
+    {
+     "t": "National Living Donor Assistance Center: Eligibility",
+     "u": "https://www.livingdonorassistance.org/How-to-Apply/Eligibility-Guidelines"
+    },
+    {
+     "t": "Federal Register: Removing Financial Disincentives to Living Organ Donation (2020)",
+     "u": "https://regulations.justia.com/regulations/fedreg/2020/09/22/2020-20804.html"
+    },
     {
      "t": "Moers et al., NEJM 2009 (machine perfusion)",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa0802289"
@@ -1256,6 +1530,14 @@
     {
      "t": "STAT: FDA clears pig kidney xenotransplant trial (Feb 2025)",
      "u": "https://www.statnews.com/2025/02/03/united-therapeutics-xenotransplantation-clinical-trial/"
+    },
+    {
+     "t": "ASTS: Senate HELP Committee passes Living Donor Protection Act (Feb 2026)",
+     "u": "https://www.asts.org/connect/news/2026/02/26/asts-applauds-senate-for-passage-of-living-donor-protection-act"
+    },
+    {
+     "t": "S. 1552, Living Donor Protection Act (govinfo)",
+     "u": "https://www.govinfo.gov/app/details/BILLS-119s1552rs"
     }
    ]
   }
