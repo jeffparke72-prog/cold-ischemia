@@ -313,6 +313,31 @@
      }
     },
     {
+     "text": "I wrote a whole chapter about this in my field manual, Inside the Machine, because your access is your lifeline. A fistula is your own artery joined to your vein. A graft is a soft tube under the skin. A catheter is a tube into a large vein in your neck or chest, and it is meant to be temporary. In a large review of studies, people dialyzing with a catheter had about a fifty-three percent higher risk of death and roughly twice the risk of a fatal infection compared with people using a fistula. If you have a catheter, ask one question at every care-plan meeting: how long have I had this, and what is the written plan for a permanent access?",
+     "v": {
+      "k": "compare",
+      "a": {
+       "h": "Fistula or graft",
+       "tag": "Planned, permanent",
+       "items": [
+        "Check the buzz and whoosh every day",
+        "No blood pressure, IVs or blood draws in that arm",
+        "Report swelling, redness or a cold hand"
+       ]
+      },
+      "b": {
+       "h": "Catheter",
+       "tag": "Meant to be temporary",
+       "items": [
+        "About 53% higher risk of death vs fistula",
+        "About twice the risk of fatal infection",
+        "Ask: how long, and what is the plan?"
+       ]
+      },
+      "src": "Ravani et al., J Am Soc Nephrol 2013; Inside the Machine, ch. 3.15"
+     }
+    },
+    {
      "type": "choice",
      "prompt": "You're helping our patient at her annual visit. Her filtration rate has been falling for three years. Which request does the most to change her future?",
      "options": [
@@ -338,6 +363,21 @@
      "v": {
       "k": "callout",
       "text": "Waiting time for a deceased-donor kidney can start at a filtration rate of 20 or below, before dialysis. A late referral can cost a patient years on the list."
+     }
+    },
+    {
+     "text": "The first ninety days on dialysis carry the highest risk of the whole dialysis career, and they are also when the biggest decisions are easiest to make: the access plan, the transplant referral, the living donor conversation, home dialysis, and your own goals. Two more things from the evidence. A major trial found that starting dialysis earlier, at a higher filtration rate, did not help people live longer, so the start should be guided by symptoms, not a lab number alone. And if you still make urine, that remaining kidney function is precious. Ask your team how they are protecting it.",
+     "v": {
+      "k": "list",
+      "title": "Your first 90 days",
+      "items": [
+       "Access plan, written down",
+       "Transplant referral sent, with the date",
+       "Living donor conversation started",
+       "Home dialysis options explained",
+       "Remaining kidney function measured and protected"
+      ],
+      "src": "Cooper et al. (IDEAL), NEJM 2010; Inside the Machine, ch. 1.14"
      }
     },
     {
@@ -450,15 +490,15 @@
      "why": "93% with no prior nephrology care, versus 52% with more than a year of it."
     },
     {
-     "q": "When can a person begin accruing waiting time for a deceased-donor kidney?",
+     "q": "Compared with a fistula, a dialysis catheter carries about:",
      "o": [
-      "Only after a year on dialysis",
-      "When filtration rate is 20 or below, or once dialysis starts",
-      "Only after age 65",
-      "Only after a transplant center visit"
+      "The same risk",
+      "A 53% higher risk of death and about twice the risk of fatal infection",
+      "Lower infection risk",
+      "Half the risk of death"
      ],
      "a": 1,
-     "why": "Waiting time can begin at an eGFR of 20 or below, even before dialysis, which is why early referral matters."
+     "why": "Ravani et al. (2013), cited in Inside the Machine, ch. 3.15. A catheter is meant to be temporary."
     },
     {
      "q": "Which test catches kidney damage that a filtration blood test can miss?",
@@ -533,6 +573,18 @@
     {
      "t": "Shukla et al.: Utilization of CMS pre-ESRD Kidney Disease Education services (PMC)",
      "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10038064/"
+    },
+    {
+     "t": "Ravani et al., Vascular access and mortality: systematic review (J Am Soc Nephrol 2013)",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/?term=Ravani+2013+vascular+access+mortality+systematic+review"
+    },
+    {
+     "t": "Cooper et al., IDEAL trial (NEJM 2010)",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/?term=Cooper+2010+randomized+trial+early+versus+late+initiation+of+dialysis"
+    },
+    {
+     "t": "Parke, J. A. (2026). Inside the Machine: What Hemodialysis Really Does to Your Body (field manual)",
+     "u": "https://payhip.com/coldischemia"
     }
    ]
   },
@@ -625,6 +677,28 @@
      }
     },
     {
+     "text": "Here is a payment change most patients never heard about. Starting January first, 2025, Medicare moved oral-only dialysis drugs, mainly phosphate binders, into the dialysis payment bundle. For many patients, binders now come through the dialysis facility instead of the pharmacy. If your binder supply has changed, been interrupted, or switched to a different product, ask the clinic who is responsible for it now, and tell them if a gap has left you without it. A change on a payment form can become a missed dose at your kitchen table.",
+     "v": {
+      "k": "timeline",
+      "title": "The 2025 binder change",
+      "items": [
+       {
+        "y": "Before 2025",
+        "t": "Phosphate binders usually dispensed through Part D pharmacies"
+       },
+       {
+        "y": "Jan 1, 2025",
+        "t": "Oral-only dialysis drugs move into the Medicare dialysis bundle"
+       },
+       {
+        "y": "Now",
+        "t": "Many patients get binders through the facility: ask who owns the supply"
+       }
+      ],
+      "src": "CMS ESRD PPS; Inside the Machine, ch. 1.11"
+     }
+    },
+    {
      "text": "Now add one rule. When someone with job-based insurance develops kidney failure, that private plan must stay the primary payer for a thirty-month coordination period before Medicare takes over. Those thirty months are, financially, the most valuable months of a patient's treatment. Everything about how patients are counseled on insurance should be read with that in mind.",
      "v": {
       "k": "timeline",
@@ -668,6 +742,20 @@
        ]
       },
       "src": "Administration for Community Living: SHIP"
+     }
+    },
+    {
+     "text": "Cost does not stay in your wallet. When it forces you to skip a pill or a ride, it enters your bloodstream. Original Medicare generally leaves patients responsible for twenty percent of approved costs unless they have secondary coverage. Add three round trips a week, medicines, food and lost work. If premium help is keeping you on a private plan, ask one question before you choose or keep it: what happens to my coverage, and to the cost of anti-rejection drugs, if I get a transplant? And if you are skipping anything because of cost, say so, and ask that your chart record the cost barrier, not the word non-adherence.",
+     "v": {
+      "k": "list",
+      "title": "Financial toxicity: what to ask",
+      "items": [
+       "What do I really pay each month: rides, medicines, premiums, food?",
+       "Who funds my premium help?",
+       "What happens to coverage and drug costs after a transplant?",
+       "Record the cost barrier in my chart, not \"non-adherence\""
+      ],
+      "src": "Inside the Machine, ch. 3.19"
      }
     },
     {
@@ -1045,6 +1133,14 @@
     {
      "t": "Medicare Care Compare: dialysis facilities",
      "u": "https://www.medicare.gov/care-compare/"
+    },
+    {
+     "t": "CMS: ESRD Prospective Payment System (oral-only drugs in the bundle, 2025)",
+     "u": "https://www.cms.gov/medicare/payment/prospective-payment-systems/end-stage-renal-disease-esrd"
+    },
+    {
+     "t": "Parke, J. A. (2026). Inside the Machine: What Hemodialysis Really Does to Your Body (field manual)",
+     "u": "https://payhip.com/coldischemia"
     }
    ]
   },
@@ -1158,7 +1254,7 @@
      "fb": "In practice, transplant referral and fistula planning overlap. The point is that both should happen before the first dialysis treatment, not after."
     },
     {
-     "text": "Medicare has tried to pay its way out of fragmentation with a series of experiments. The Kidney Care Choices model began in 2022, paying nephrology practices and kidney care organizations to manage total cost and outcomes. The ESRD Treatment Choices model adjusted payments to encourage home dialysis and transplant waitlisting. And in July 2025, a mandatory six-year model called IOTA began paying selected transplant hospitals based on their transplant performance.",
+     "text": "Medicare has tried to pay its way out of fragmentation with a series of experiments. The Kidney Care Choices model began in 2022, paying nephrology practices and kidney care organizations to manage total cost and outcomes. The ESRD Treatment Choices model adjusted payments to encourage home dialysis and transplant waitlisting, until Medicare ended it early at the close of 2025. And in July 2025, a mandatory six-year model called IOTA began paying selected transplant hospitals based on their transplant performance.",
      "v": {
       "k": "timeline",
       "title": "Medicare's experiments with paying for the whole patient",
@@ -1290,6 +1386,14 @@
      }
     },
     {
+     "text": "One pattern in those deaths is not random, and it is in my manual because it can be acted on. If you dialyze Monday, Wednesday and Friday, or Tuesday, Thursday and Saturday, one gap each week is a full day longer. In a study of more than thirty-two thousand U.S. patients, deaths, cardiac arrests and admissions for heart rhythm problems were all higher on the day after that long gap. Potassium builds up over the weekend and is then pulled down fast. So ask: what is my potassium before the first treatment of the week, what potassium is in my dialysis fluid, and could a longer or extra session help me?",
+     "v": {
+      "k": "callout",
+      "text": "The most dangerous day of the dialysis week follows the longest gap. Ask what your potassium is, and what is in your bath.",
+      "src": "Foley et al., NEJM 2011; Inside the Machine, ch. 3.5"
+     }
+    },
+    {
      "text": "Home dialysis gives people more control over their time and often their health. It has grown. About eighteen percent of traditional Medicare dialysis patients dialyzed at home in 2024. But that still means more than eight in ten travel to a center, usually three times a week, for hours at a time, on a schedule set by someone else.",
      "v": {
       "k": "dots",
@@ -1300,7 +1404,7 @@
      }
     },
     {
-     "text": "Why hasn't home dialysis grown faster? Training requires nurses, and the largest provider has cited a challenging labor market as its main obstacle. Patients need space, supplies, and usually a trained partner at home. And for decades, the payment system and the clinic business model were built around in-center chairs. Medicare's ESRD Treatment Choices model, started in 2021, was designed to push the other way. The results so far are a slow climb, not a revolution.",
+     "text": "Why hasn't home dialysis grown faster? Training requires nurses, and the largest provider has cited a challenging labor market as its main obstacle. Patients need space, supplies, and usually a trained partner at home. And for decades, the payment system and the clinic business model were built around in-center chairs. Medicare's ESRD Treatment Choices model, started in 2021, was designed to push the other way. It produced a slow climb, not a revolution, and Medicare ended it early, at the close of 2025.",
      "v": {
       "k": "list",
       "title": "Why home dialysis grows slowly",
@@ -1314,16 +1418,27 @@
      }
     },
     {
-     "text": "If home dialysis might fit your life, the questions decide whether it ever gets offered. Ask which home options exist where you live: peritoneal dialysis, done with fluid through the belly, often overnight, and home hemodialysis. Ask where the nearest home training program is, and whether you can visit it before deciding. Ask whether a partner is required, and what support exists if you live alone. And ask, directly, why home dialysis has or has not been discussed with you. The answer to that last question tells you a great deal about the clinic.",
+     "text": "Home dialysis is right for many people, not all, and you have a right to be told about it. National registry data show that in 2022, fourteen and a half percent of people starting dialysis began at home, up from eight and a half percent ten years earlier. In the same year, almost fifty-eight percent of clinics were either not certified for home dialysis or had no home patients. Where you dialyze shapes what you are offered. And Medicare's main payment experiment to encourage home dialysis and transplant, the ESRD Treatment Choices model, was ended early, at the close of 2025. So ask directly: am I a candidate for peritoneal dialysis or home hemodialysis, where is the nearest training program, and what would have to change for home to work for me?",
      "v": {
-      "k": "list",
-      "title": "Questions that open the door to home",
+      "k": "stats",
       "items": [
-       "Which home options exist here: PD, home hemodialysis?",
-       "Where is the nearest home training program? Can I visit?",
-       "Is a partner required? What if I live alone?",
-       "Why has home dialysis (not) been discussed with me?"
-      ]
+       {
+        "value": 14.5,
+        "suffix": "%",
+        "label": "of new patients started at home, 2022"
+       },
+       {
+        "value": 8.5,
+        "suffix": "%",
+        "label": "in 2012"
+       },
+       {
+        "value": 57.9,
+        "suffix": "%",
+        "label": "of clinics not home-certified or with no home patients"
+       }
+      ],
+      "src": "USRDS 2024 Annual Data Report via Home Dialysis Central; CMS (ETC ended Dec 31, 2025); Inside the Machine, ch. 3.22"
      }
     },
     {
@@ -1538,15 +1653,15 @@
      "why": "The goal: 80% of new patients in 2025 receiving home dialysis or a transplant."
     },
     {
-     "q": "What is the most useful tool for spotting a dropped hand-off?",
+     "q": "Which day of the dialysis week carries the highest risk of death and cardiac arrest?",
      "o": [
-      "A social media post",
-      "A one-page care map with names, numbers and the last promise made",
-      "Waiting for the next annual visit",
-      "A new insurance plan"
+      "Any day equally",
+      "The day after the longest gap between treatments",
+      "The middle treatment of the week",
+      "Sunday"
      ],
      "a": 1,
-     "why": "The care map shows exactly where a hand-off failed and who to call."
+     "why": "Foley et al., NEJM 2011, in more than 32,000 patients (Inside the Machine, ch. 3.5)."
     }
    ],
    "sources": [
@@ -1581,6 +1696,22 @@
     {
      "t": "Code of Federal Regulations: 42 CFR Part 494 (govinfo, 2024 edition)",
      "u": "https://www.govinfo.gov/content/pkg/CFR-2024-title42-vol5/pdf/CFR-2024-title42-vol5-part494.pdf"
+    },
+    {
+     "t": "Home Dialysis Central: Home dialysis updates from the 2024 USRDS Annual Data Report",
+     "u": "https://homedialysis.org/news-and-research/blog/628-home-dialysis-updates-from-the-2024-usrds-annual-data-report"
+    },
+    {
+     "t": "STAT: CMS dialysis payment experiment ends two years early (Dec 2025)",
+     "u": "https://www.statnews.com/2025/12/01/cms-dialysis-payment-experiment-ends-two-years-early/"
+    },
+    {
+     "t": "Foley et al., Long interdialytic interval and mortality (NEJM 2011)",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/?term=Foley+2011+long+interdialytic+interval+mortality"
+    },
+    {
+     "t": "Parke, J. A. (2026). Inside the Machine: What Hemodialysis Really Does to Your Body (field manual)",
+     "u": "https://payhip.com/coldischemia"
     }
    ]
   }

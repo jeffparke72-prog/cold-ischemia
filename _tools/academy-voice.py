@@ -33,7 +33,7 @@ SAY = [
     (r'\bDMAIC\b', 'D MAIC'), (r'\bIOTA\b', 'Iota'), (r'\bAARP\b', 'A A R P'), (r'\bFMLA\b', 'F M L A'),
     (r'\bDOJ\b', 'D O J'), (r'\bOIG\b', 'O I G'), (r'\bNEJM\b', 'New England Journal of Medicine'),
     (r'\bKDPI\b', 'K D P I'), (r'\bHIPAA\b', 'hippa'), (r'\bCMS 2728\b', 'C M S twenty-seven twenty-eight'), (r'\bSchedule I\b', 'Schedule one'),
-    (r'\bSHIP\b', 'ship'), (r'\bNLDAC\b', 'N L D A C'),
+    (r'\bSHIP\b', 'ship'), (r'Kt/V', 'K T over V'), (r'ClinicalTrials\.gov', 'clinical trials dot gov'), (r'\bNLDAC\b', 'N L D A C'),
     (r'\bvs\.', 'versus'), (r'\bDr\.', 'Doctor'),
 ]
 def spoken(t):
@@ -72,7 +72,15 @@ def main():
     else: jobs_s = jobs
     todo = [(key, t) for key, t in jobs_s if man.get(key, {}).get('h') != hashlib.sha1((VOICE + t).encode()).hexdigest()[:12]
             or not os.path.exists(os.path.join(OUT, key + '.mp3'))]
-    print(f'{len(jobs)} scenes, {len(todo)} to render', flush=True)
+    # Reuse a clip already rendered for the same text under another key (scenes that only moved position).
+    byhash = {v.get('h'): k for k, v in man.items() if os.path.exists(os.path.join(OUT, k + '.mp3'))}
+    want = {key: hashlib.sha1((VOICE + t).encode()).hexdigest()[:12] for key, t in todo}
+    blobs = {h: (open(os.path.join(OUT, byhash[h] + '.mp3'), 'rb').read(), dict(man[byhash[h]])) for h in set(want.values()) if h in byhash}
+    for key, h in want.items():
+        if h in blobs:
+            open(os.path.join(OUT, key + '.mp3'), 'wb').write(blobs[h][0]); man[key] = dict(blobs[h][1])
+    todo = [(key, t) for key, t in todo if want[key] not in blobs]
+    print(f'{len(jobs)} scenes, {len(todo)} to render ({len(want) - len(todo)} reused)', flush=True)
     for j, (key, t) in enumerate(todo):
         a, sr = k.create(spoken(t), voice=VOICE, speed=SPEED, lang='en-us')
         a = np.asarray(a, dtype=np.float64)
