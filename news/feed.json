@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-21T23:45:11.454694+00:00",
+"updated": "2026-11-22T06:29:31.266614+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -94,17 +94,17 @@
 "name": "Google News: transplant & organ donation policy",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=%22organ+transplant%22+OR+%22organ+donation%22+OR+%22organ+procurement%22+OR+OPTN+OR+UNOS+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": false,
-"count": 0,
-"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "url": "https://news.google.com/rss/search?q=dialysis+OR+%22kidney+disease%22+OR+%22kidney+failure%22+OR+ESRD+OR+%22kidney+transplant%22+when:7d&hl=en-US&gl=US&ceid=US:en",
-"ok": false,
-"count": 0,
-"error": "ValueError: HTTPError: HTTP Error 503: Service Unavailable"
+"ok": true,
+"count": 30,
+"error": null
 },
 {
 "name": "KFF Health News",
@@ -132,6 +132,61 @@
 }
 ],
 "items": [
+{
+"title": "Medical ethics expert weighs in on Dallas organ donation dispute - CBS News",
+"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQUWxMM3JhTFV0b2lCN054aHNZU0VhdmtNS3l3SzdXTnZHYzVhQThWU3JXZEFMY2xlT3BSd0hZdU1ZLS0tY1kyUTF1Yzg5dWtSSEMtUGhIOW5hMG5ueXRKbzNvQnJZZWxxNS15WE1UaEUyOUluMWdUNWtpMXJuZFc2NTFxN00zT0VjUnh4UndzQUM2WFZ6RHVoVWFJMWhFT0p5MTBr?oc=5",
+"summary": "Medical ethics expert weighs in on Dallas organ donation dispute CBS News",
+"outlet": "CBS News",
+"published": "2026-11-22T05:40:00+00:00",
+"id": "0f067416247b6aaf",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-22T06:29:31.266614+00:00"
+},
+{
+"title": "Organ donation must be based on trust, not presumed consent - South China Morning Post",
+"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPNjFtYi1WQVUtUXBIZUp4MzFIZVcxTGZBN1Z2YWR1eWZ3VGhlb29mV1VhUVk0YkdwdGpibWNabXdiT0trTDBic3VOTkJzMFBOcGZfYmJJWTlRRTI2SnNRU3A1TzVGckxrSDR0UkZaZl9FODFXTzZkcjY5VEM0aVFJOEdjdDUxR08yR1hta0VHUnJvekxNMVlHLXpfRW5KYlp0NjJURmZaV2tFTi1C0gGsAUFVX3lxTE41NWdaMmoza2hQZlRnMndNVVBNcmtkbkdSN0J0anBpNHNYU2l5UTVjRG9CRWRVVVBUNHZUX3I5NlBTQmZ1ZGlLV20xT2M0dDc4T2x5OUx1UENLbDlZS3BoajQ0cWpqRHE5ZUEwVzZ4TDF6UzZqMFNqY195bG1kaEVMVGZlMVJUTks2N2JMdkZsbHB5V2FuTFJDYnEwejVuSjJFTmhTRkN4YVZKZkQ?oc=5",
+"summary": "Organ donation must be based on trust, not presumed consent South China Morning Post",
+"outlet": "South China Morning Post",
+"published": "2026-11-22T03:30:06+00:00",
+"id": "de8a428c947688f7",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-22T06:29:31.266614+00:00"
+},
+{
+"title": "SGLT2 Inhibitor Initiation Linked to Lower Kidney Disease Risk in Gout - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQNS13ZkZWSVhEcnJpTTIwaDVtYVVDYnM5NnRFS1VtRVZobzVCRmZjcGJxdlBOTTRvOEhnTUlnYUx1UjRIOWNKTnBld21tcG1WUjhNd3U0dGVPUnVsRmRDODdZMXR4eVFmbmpVVVZtbTBKQWxmSWJtRUpqaDNKdGVCcnJ0OUFUVHk5U0NlUmhpbktJVWo3MTNMLVBUdw?oc=5",
+"summary": "SGLT2 Inhibitor Initiation Linked to Lower Kidney Disease Risk in Gout Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-11-21T22:08:58+00:00",
+"id": "e7675a915f4b1718",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-22T06:29:31.266614+00:00"
+},
+{
+"title": "Simulations Show Zwitterion Pair Enhances Dialysis Membrane Blood Compatibility - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNREtEcTJ1TEtnQ0FUbnZUWU52QW5BOE5vQVptTktWcXpOV2xobWVBSmZFRE56WFZRd3J5YW1VREZIaVMteFIyNDlSVHdOeEF2dkdDd2EyenlhRkdXeHF0RlJha2Q5Z0sxYzZYUEx2U0pLMFZLV1dPOUJpUEZ1RjRUcm1qMUNFd3A0OU1Na05qNUFBdjVIMi1XQ1g0ci1KcFExdWNCSkVFSQ?oc=5",
+"summary": "Simulations Show Zwitterion Pair Enhances Dialysis Membrane Blood Compatibility Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-11-21T21:23:36+00:00",
+"id": "6355a4d56875b004",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-22T06:29:31.266614+00:00"
+},
+{
+"title": "Review Evaluates How Gut Microbial Metabolites Drive Chronic Kidney Disease Progression - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQN0tRd2d0OWFETFhlMFl4c09BWU5Yd0YxYUFWYkQ2MjM3d0U2clJ2QVZzOWZxaXJIWUJ5blB2T2U1Z0o5VjRHYy1fWHZKdlF3bWFldWxzN0dhZDhCSUctdUZpaUJIT0ZpWTVvYjJwbnU0OUhIbXB3U2NpVUk3YmpPOEp5bWFsd2pINHVCTUdRQTZTME56RGxyUmdCUkdkLW95M1ZDVXNsQVJhajlLQnpQbEVn?oc=5",
+"summary": "Review Evaluates How Gut Microbial Metabolites Drive Chronic Kidney Disease Progression Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-11-21T21:18:33+00:00",
+"id": "9f6515339832fefa",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-22T06:29:31.266614+00:00"
+},
 {
 "title": "Adding regulations on organ donation after circulatory death. - Vietnam.vn",
 "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxObURDRmU5b1ZMaUp2aGloU0FXZ0xoVFFfTGxkc2J6UjNYYktrX28zQnhOaENHREIzdXBkTlRZMXRuNGtnTk00X2x3WURFVld3Y2hGLUdELXRVTURpcUcxSXRtazRHdU40Yi1DUVZkcnYwQ1R3WUszcUJOZFVsSUxWbndkSm02WjhWYnJnVTFFUVZSUQ?oc=5",
@@ -166,6 +221,17 @@
 "first_seen": "2026-11-21T19:03:47.787933+00:00"
 },
 {
+"title": "Vietnam's revised organ donation law bans commercialization, tightens donor safeguards - Tuoi Tre News | The News Gateway to Vietnam",
+"link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNdlNTNTlDWUVEeGxzR0lxd1g0VGpESV9wOHU1OFdteFFVWUtIN0VheHNKcHZHbTc2VWNqX1BtV1M5ZENzNFZXVDNkME02SW0takdXN3liM3JNVnYtbW9qOUs1S0xaNDBWYzA5cFB3enUyTWVCblhGTDR1ZGRfcW40SS1ycGktUmdkNllFcGFVY2FFeE5oZUFXbFhiRGVfSS1GTXNCQnlwdEtHN2NWTFlkZ1dfOXZDNzd4TEQ5NFRFejNWTXEzTEVqbk5KVQ?oc=5",
+"summary": "Vietnam's revised organ donation law bans commercialization, tightens donor safeguards Tuoi Tre News | The News Gateway to Vietnam",
+"outlet": "Tuoi Tre News | The News Gateway to Vietnam",
+"published": "2026-11-21T12:15:00+00:00",
+"id": "9bcc4270f191280e",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-22T06:29:31.266614+00:00"
+},
+{
 "title": "Simple Logistic Model Matches Machine Learning for Early Diabetic Kidney Disease - Bioengineer.org",
 "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNOFFDV0Z3ME9YaFN6TWdUSmxrNzlBZGt2QVdvaXlWcElLaGJpSDJOQ211cWV5cjFacUxuaVpHZklSVWUtSlUza1NQQ3ZiaWpIVGZFYzdyMXJsa1FmaUNJd0pTX0VRQWFmcEF6emxhN1RoRGpvSkI0aW02Ry15eXUzR0NMcWJ6WEU3Wl9OajJiaXFqR2hFV0tXcXBUODRfUlZUUkE1TmVpTVQ?oc=5",
 "summary": "Simple Logistic Model Matches Machine Learning for Early Diabetic Kidney Disease Bioengineer.org",
@@ -175,6 +241,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-21T19:03:47.787933+00:00"
+},
+{
+"title": "Increased risk of arteriovenous fistula thrombosis in haemodialysis patients with ANCA-associated vasculitis: a retrospective comparative study.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/43066946/",
+"summary": "Erpek E, Durak Ediboğlu E, Kocaayan H et al. Annals of medicine",
+"outlet": "Ann Med",
+"published": "2026-11-21T12:00:00+00:00",
+"id": "bc50cd74ad799aa9",
+"source": "PubMed: transplant, donation & kidney failure research",
+"category": "Research",
+"first_seen": "2026-11-22T06:29:31.266614+00:00"
 },
 {
 "title": "Very High-Risk Characteristics Associated With Glomerular Inflammation Warranting Prompt Treatment in IgA Nephropathy",
@@ -551,17 +628,6 @@
 "first_seen": "2026-11-20T22:36:14.081829+00:00"
 },
 {
-"title": "What Happens to Your Kidneys When You Drink Coconut Water - Verywell Health",
-"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOLWFuUW5HV01xS1JFWW9mOU1oMG8zeXpqZG9DT3pkM1k5UmxwemJQRDdSN1BrNFZ0U2tyWkl0TEhqY053cl83R3I5LUFJdVkxendpUWRybWVvMkljQ0g0M0RlME0zTGViWXMxRDA1T0otS2p3VndJY3NXZkJhNEM4dkJrb0k?oc=5",
-"summary": "What Happens to Your Kidneys When You Drink Coconut Water Verywell Health",
-"outlet": "Verywell Health",
-"published": "2026-11-20T16:07:27+00:00",
-"id": "9507a83bafc00294",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-20T22:36:14.081829+00:00"
-},
-{
 "title": "Suspected Immune Checkpoint Inhibitor-Associated Ureteritis and Cystitis With Biopsy-Proven Acute Interstitial Nephritis",
 "link": "https://www.sciencedirect.com/science/article/pii/S2468024926033668?dgcid=rss_sd_all",
 "summary": "By Chen Wang, Xin Zhang, Ying Tan, Xiao-Yan Liu, Xu-Jie Zhou",
@@ -626,6 +692,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-20T22:36:14.081829+00:00"
+},
+{
+"title": "American Kidney Fund to Convene Fourth Annual Patient Access Initiative Summit - GlobeNewswire",
+"link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOUHRiaURnaDVoaExwSjNKQmxGckJLZVhxM2JEN0RIMUxCVmxtamtfSHVYYVlKU0NjbnFxbEt2M0hQVUtGMHl4ckdvNTlGbU9JbHItY3A0SHJWd1dCdXNNNERfQ2VXbGRqMkVwZFR6SUtuMHpzMEU5X1h5alFCZGF3dmpyNGR1NDdOMXZfM1FvODZDLVdCdFFORzlucUxaVjhvNGFwczZldnZSYURqTmh1S0JOa0pIaVExNXI2UGk0NWxvRmZoVlJQcU5EcUd4UmlVaV9uVmo3cjlsdTdvOVdWUEFKSVM?oc=5",
+"summary": "American Kidney Fund to Convene Fourth Annual Patient Access Initiative Summit GlobeNewswire",
+"outlet": "GlobeNewswire",
+"published": "2026-11-20T14:57:05+00:00",
+"id": "1bd4acf0e2c5b3d9",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-22T06:29:31.266614+00:00"
 },
 {
 "title": "iMDx enrolls first patients in GALACTIC kidney transplant registry - StreetInsider",
@@ -793,6 +870,17 @@
 "first_seen": "2026-11-21T11:39:48.752758+00:00"
 },
 {
+"title": "Malaysian man, 23, saves lives through organ donation after fatal road accident - The Online Citizen",
+"link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNTktfVmNrSFQ5eVdCX2ZEX0hpZXVkdE5teUZXYVlaZU01N3E1ekV0Zk1ZdVZQa1h6WG82cnZjM3JZTHJtNHRBWm5Ndlk5aHR6eV9aRkpfQkVxckl3LU5fR1ZfbWU0YWtsU1FLTmx3cGxDRVgzY1lTS05Wbk9wcndoUnBwOFVoNkJEWENhWGRkcV9lNXFWSVR5MENYVS1Hd0xMbnEtQkJDZ3JEdVZZYUVVQUw3VTU4WmtKNFhnSFJ3RQ?oc=5",
+"summary": "Malaysian man, 23, saves lives through organ donation after fatal road accident The Online Citizen",
+"outlet": "The Online Citizen",
+"published": "2026-11-20T11:49:33+00:00",
+"id": "eb42b9dd9a637f45",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-22T06:29:31.266614+00:00"
+},
+{
 "title": "Victor’s hope for a kidney transplant and his mother’s plea outside Brixton station - Black Current News | Nadine White",
 "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFByaVNYSHp6c1ZTTzBodFpRUG5QRjVySGlqbUZkZnNUREV1dDBWOFpLdVZEOFJ2Z0YxN21oQ1RrWVhoV3c5c1lJcUJ6aFhuYnJJV0tkWFRRY20wR2lQczU3Ql9fc0VsckYwZDN5NlMxcmQyOVpvd29YR0h0NA?oc=5",
 "summary": "Victor’s hope for a kidney transplant and his mother’s plea outside Brixton station Black Current News | Nadine White",
@@ -813,6 +901,17 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-20T16:01:35.014634+00:00"
+},
+{
+"title": "What Happens to Your Kidneys When You Drink Coconut Water - Verywell Health",
+"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOLWFuUW5HV01xS1JFWW9mOU1oMG8zeXpqZG9DT3pkM1k5UmxwemJQRDdSN1BrNFZ0U2tyWkl0TEhqY053cl83R3I5LUFJdVkxendpUWRybWVvMkljQ0g0M0RlME0zTGViWXMxRDA1T0otS2p3VndJY3NXZkJhNEM4dkJrb0k?oc=5",
+"summary": "What Happens to Your Kidneys When You Drink Coconut Water Verywell Health",
+"outlet": "Verywell Health",
+"published": "2026-11-20T08:00:00+00:00",
+"id": "9507a83bafc00294",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-20T22:36:14.081829+00:00"
 },
 {
 "title": "What Does Humacyte's (NASDAQ:HUMA) sBLA Submission Mean for Dialysis Access Patients? - Kalkine",
@@ -5532,105 +5631,6 @@
 "source": "Clinical Transplantation",
 "category": "Journals",
 "first_seen": "2026-11-13T14:51:18.724335+00:00"
-},
-{
-"title": "A Fair Share? Early Changes in Pediatric Lung Transplantation in the Composite Allocation Score Era",
-"link": "https://onlinelibrary.wiley.com/doi/10.1111/ctr.70747?af=R",
-"summary": "Clinical Transplantation, Volume 40, Issue 11, November 2026.",
-"outlet": "Wiley: Clinical Transplantation: Table of Contents",
-"published": "2026-11-12T17:05:15+00:00",
-"id": "35b4aeee8cc02e4b",
-"source": "Clinical Transplantation",
-"category": "Journals",
-"first_seen": "2026-11-13T14:51:18.724335+00:00"
-},
-{
-"title": "Capitola Beach E. coli O157 Outbreak: Nine Children Sick, Two Hospitalized, One With Acute Kidney Failure, and a Creek That Has Failed Water-Quality Tests for Thirty Years. Marler Clark Has Been Retained by One Family. What We Are Doing and What Fa - Marler Blog",
-"link": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxNcmxMRHZPUHdkZXZJRm03WlNfZ1RBcXUzT0t0c3l4cHV0LTRzSmxId1piUlZsc1YtWVRGcTBkVHVQRDZjS2xkdlN3Q1dXaXVwX2dJRnZCNWVoTS1lZElDZVVMaUVGa1JENjA4azVHNHhyanMyZU9TY09TeUtvRXhiRnU0Skoyd19rdGJ6Qmk4S2dhZHhENTJlbTZnc21LX2YzbGFzUkQwZjJZLTEzeDgwVC1XczZmSWZrVUdQOWNSaTFvbFN2c1dkTlBVTU5qN2VyZDdPOU9sMHJIdnprbGtWU0YxeHNjTVdZLVFqQTQ5dEd5QjcyUTRmTHhMY1AyeVIxRTdGX0cyVC1yQWZOY2xQTmNtLTVQaGVOajNqSF9XaXJQWm5zcFJRcU44d2dlaWpTQmRnWGRRZ1BPLU1xNWY4Tk5hVQ?oc=5",
-"summary": "Capitola Beach E. coli O157 Outbreak: Nine Children Sick, Two Hospitalized, One With Acute Kidney Failure, and a Creek That Has Failed Water-Quality Tests for Thirty Years. Marler Clark Has Been Retained by One Family. What We Are Doing and What Fa Marler Blog",
-"outlet": "Marler Blog",
-"published": "2026-11-12T16:52:31+00:00",
-"id": "f4a018a5e4ce87fc",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-12T18:33:05.796161+00:00"
-},
-{
-"title": "Albany officer receives kidney transplant after community-wide search for donor - WALB.com",
-"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdmtJSGtHb2VacFJlUi16WWFtRUt0LVY3Nm1jVnJNTFNCbWdZTjVlN3hIZ016Q0RqNlIzUlFXX2NwZU9RcThMS3RwUWtrQ0VlNkRYZk04N05fdjhEV3dkUkdIMklsQXRURFlnUUJvLWdtVnYtVVEyOG5zUmxzMXhib3BackpNRDY4b29ueDUyQUhkMTlwZUVSRzZyNzRVQ1g0dDFVNGRHSTIxUnJv?oc=5",
-"summary": "Albany officer receives kidney transplant after community-wide search for donor WALB.com",
-"outlet": "WALB.com",
-"published": "2026-11-12T16:16:00+00:00",
-"id": "cc6b5abba3df7078",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-12T18:33:05.796161+00:00"
-},
-{
-"title": "Deep Learning Model Accurately Rates Polycystic Kidney Disease Severity on CT Scans - Bioengineer.org",
-"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPa3hqT182NHFhVGRvNHJ0eXZoZjNJaF95VkNXRmZJa1M3US1TYmQzUmFmdzRHZ0ZFZkxjT0Z2NWFlMnZ5d0FPNFQtVm9ONXNhWnVIaXlkRnZGM2hkdy1KN3F0QzZ4RmRWZXA3QXBOd1UxYzJlUzVLU2ZBX3B1S2xXNWxieHBnNWFtVG1mZnZBaU9rZkpudTM1YlNybkZ2NnNJczRrNmZNaW1GcmV6?oc=5",
-"summary": "Deep Learning Model Accurately Rates Polycystic Kidney Disease Severity on CT Scans Bioengineer.org",
-"outlet": "Bioengineer.org",
-"published": "2026-11-12T15:59:35+00:00",
-"id": "6cdb946f27a9aad1",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-13T06:24:24.799731+00:00"
-},
-{
-"title": "Crews respond to hazmat emergency at Largo dialysis clinic - wtsp.com",
-"link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMG1Yek1IUlRieEF3NGZCRzB0LTVYRTd4WFZibVNhZEFFMkVvNUlrZlVRcWtkTldwbzBlRnM3OUVOUFZZLU91TE9BYU4yUFBZOG1sOGQxRTVReWNzVFdZZ19aSFRRLXRmdXdwVVcta3ozYklYYlJqb1lkLVZBYUIwaXhfc2hrbmdkeXlyY3ROZVF2dzg0MG1XLUhVd3p2QkVnUjhlZzNDWFhiOV9hWjRSdTh0SkhMWFhHcFZWYnJvZE5TLVVhSVdRY25Fcm5EcjVVMU56ckl3NjZNZTdHOEE?oc=5",
-"summary": "Crews respond to hazmat emergency at Largo dialysis clinic wtsp.com",
-"outlet": "wtsp.com",
-"published": "2026-11-12T15:58:00+00:00",
-"id": "647d8ca100f91cff",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-12T18:33:05.796161+00:00"
-},
-{
-"title": "Largo dialysis clinic evacuated after hazmat incident reported - wtsp.com",
-"link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMG1Yek1IUlRieEF3NGZCRzB0LTVYRTd4WFZibVNhZEFFMkVvNUlrZlVRcWtkTldwbzBlRnM3OUVOUFZZLU91TE9BYU4yUFBZOG1sOGQxRTVReWNzVFdZZ19aSFRRLXRmdXdwVVcta3ozYklYYlJqb1lkLVZBYUIwaXhfc2hrbmdkeXlyY3ROZVF2dzg0MG1XLUhVd3p2QkVnUjhlZzNDWFhiOV9hWjRSdTh0SkhMWFhHcFZWYnJvZE5TLVVhSVdRY25Fcm5EcjVVMU56ckl3NjZNZTdHOEE?oc=5",
-"summary": "Largo dialysis clinic evacuated after hazmat incident reported wtsp.com",
-"outlet": "wtsp.com",
-"published": "2026-11-12T15:58:00+00:00",
-"id": "2abd1751a7c743f2",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-12T23:50:04.798982+00:00"
-},
-{
-"title": "Finerenone Reduces Kidney and Cardiovascular Risks in Diabetic Kidney Disease - Bioengineer.org",
-"link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZkluMFBXYWhjOGFVV3YydnlLdlRQaEtwUm9oWHlOeXhpZDdJd0RVT3JSRjJOU1Q4aUp2NTRkNmxQaWlvaXJYa2ZwejBKbl83d042dDdnSm9nVGlHLXh4T0ZRakllR29OSDU4MndxUXFmZXNQOXVGeVVFbklncEVRSXh2anAxUElDODF3M2h4OTItVHNDb1lpcWtIeklDZ3BNZmY1MA?oc=5",
-"summary": "Finerenone Reduces Kidney and Cardiovascular Risks in Diabetic Kidney Disease Bioengineer.org",
-"outlet": "Bioengineer.org",
-"published": "2026-11-12T15:49:33+00:00",
-"id": "7100403e1a856889",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-15T20:17:36.999611+00:00"
-},
-{
-"title": "Albany Police Officer Receives Life-Saving Kidney Transplant After Community Answers Call for Help - Phoebe Putney Health System",
-"link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQWW5zeC1XN3czQW9Qb2dha0YzdWlmR3dhRklmQ1NxZ0IzR1ZMakFzakdlTjNITmxORHhPVUhqcXh2THluT3BYMzhvc0RqdnhTTlo2Y3RoTzZVcnI5NmZocERLM0s3ZEpnSlpsaFlLMkp2LU81VlAtY1JWOTIxVkxkNFY2cVh0cWpsNDVHWmlnV1gzZ29rUk01ckFnOHppYURTYTRJRkJQM3ZIZU0zczRUQjFGbUFtbVNBdzc5NE9kV2FfdzV0S1hwQWhPek1tTERWSk84?oc=5",
-"summary": "Albany Police Officer Receives Life-Saving Kidney Transplant After Community Answers Call for Help Phoebe Putney Health System",
-"outlet": "Phoebe Putney Health System",
-"published": "2026-11-12T14:55:46+00:00",
-"id": "38f41ddb0ba8923d",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-12T18:33:05.796161+00:00"
-},
-{
-"title": "‘Constant fear’: lung patient’s long wait for transplant highlights urgent need - South China Morning Post",
-"link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNSGRmRW90X1Nab3JiSDBjR1B6SGNHRnJva2liVEVXeElaMlNtWm1VQnhvUEp1NTJVOU5HVVJMVnBhVWh1Vkg0aXpHd0ZJZmlwcU9ZVndRbU5jNjh6czY0czB1c0NFZ0Uta2dncjRLTE5SemFPalM3R2RpdW5PSjVHRzh3UVZsbmtFVWJDbUdGME9XbVBBRDhhcG95eXJvVUc2SFpzQVVQRVFKQUU5MlBFcUhjcEhTT1BEZm9tdDNDbVVwdnZEeGlQQUZmZkVEYlI1N090SmhhaDl1UdIB2gFBVV95cUxNbVViRlJab21KWk9PaEVnVDFBY0NhaVRlMFktS245WjBSVHVRMUwxWjBPbDhaVmRFbTBBRFN0dTByWUg2QjdHV0tENlQzWUpUYzRteWRpb09fRjFtZHJ5M1dXM2JOZWRuVDVzTHd3SjBrMldtc2JCU2Z1UEt0OXJFQjZhd2JQUTl1UEpNenRqTEMyd0NhbG1fZEtKb1dreVdERlhEMjA0cWVBRW1DLS1fTHc0RWVLVm0telVvdnR4MDE0YlBBMkRRZ0htTTZWWV9mR2NmNHJDQ25KZw?oc=5",
-"summary": "‘Constant fear’: lung patient’s long wait for transplant highlights urgent need South China Morning Post",
-"outlet": "South China Morning Post",
-"published": "2026-11-12T14:18:39+00:00",
-"id": "48180a1abf7d4141",
-"source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-11-12T18:33:05.796161+00:00"
 }
 ]
 }
