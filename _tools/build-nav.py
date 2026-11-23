@@ -47,6 +47,7 @@ GROUPS = [
     ("Holidays", [
         ("advocates-advent.html", "The Advocate's Advent Calendar"),
         ("holiday-night-watch.html", "The Night Watch"),
+        ("holiday-long-table.html", "The Long Table"),
         ("holiday-north-star.html", "Find Your North Star"),
     ]),
     ("BHOC", [
