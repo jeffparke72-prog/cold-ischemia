@@ -28,7 +28,6 @@ GROUPS = [
     ]),
     ("Learn", [
         ("academy.html", "The Advocate's Academy"),
-        ("advocates-advent.html", "The Advocate's Advent"),
         ("gatekeeper-files.html", "The Gatekeeper Files"),
         ("test-your-knowledge.html", "Test Your Knowledge"),
         ("living-donor-guide.html", "Free Donor Guide (PDF)"),
@@ -44,6 +43,9 @@ GROUPS = [
         ("living-donor-journey.html", "Living Donor Journey"),
         ("kidney-transplant-centers.html", "Kidney Transplant Centers by State"),
         ("opo-directory.html", "U.S. OPO Directory"),
+    ]),
+    ("Holidays", [
+        ("advocates-advent.html", "The Advocate's Advent Calendar"),
     ]),
     ("BHOC", [
         ("bhoc.html", "About BHOC"),
