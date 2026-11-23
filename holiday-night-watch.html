@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Night Watch | Cold Ischemia Foundation</title>
+<meta name="description" content="An illustrated, branching story you play as a care partner from Christmas Eve to New Year's Day, the week the health system thins out. Eight nights, real choices, a watch log that fills as you go, and a printable Holiday Week Watch Plan.">
+<meta property="og:title" content="The Night Watch · Cold Ischemia Foundation">
+<meta property="og:description" content="Eight nights from Christmas Eve to New Year's Day. You are the care partner. Every choice teaches something the system never hands you. Play it, then print your own Holiday Week Watch Plan.">
+<meta property="og:url" content="https://coldischemia.foundation/holiday-night-watch.html">
+<meta property="og:image" content="https://coldischemia.foundation/cold-ischemia-logo.png">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Caveat:wght@500;700&display=swap">
+<style>
+/* The Night Watch: a candlelit, branching story across eight holiday nights.
+   Same family as the Advent calendar (Fraunces / Source Serif / Plex Mono, CIF palette), but warmer:
+   amber candlelight against a blue-black night, a paper notebook that fills as you play. */
+:root{
+  --night:#060c17; --night2:#0c1628; --navy:#1B2A4A; --navy2:#22345a; --gold:#C9A84C; --gold2:#e6cf8a; --teal:#2E7D74; --teal2:#6fc3b6;
+  --blood:#B23A3A; --amber:#D98A2B; --amber2:#f2b866; --paper:#f4ecda; --paper2:#ebe0c6; --ink:#1a2233; --ink2:#4a5468; --pen:#1d3266;
+  --snow:#e9eef6; --muted:#a3b2c9; --line:rgba(217,138,43,.32);
+  --disp:"Fraunces",Georgia,serif; --serif:"Source Serif 4",Georgia,serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace; --hand:"Caveat","Segoe Print","Bradley Hand",cursive;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:radial-gradient(900px 600px at 70% 0%,rgba(217,138,43,.10),transparent 60%),radial-gradient(1200px 800px at 20% 110%,#13203a 0%,transparent 60%),var(--night);background-attachment:fixed;
+  color:var(--snow);font-family:var(--serif);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;min-height:100vh}
+#play{scroll-margin-top:66px}
+#end{scroll-margin-top:66px}
+#snow{position:fixed;inset:0;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:26px 16px 90px}
+@media (min-width:700px){.wrap{padding:30px 28px 90px}}
+.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber2)}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:600;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+a{color:var(--gold2)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;padding:34px 0 8px}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:22px}}
+.hero h1{font-size:clamp(50px,8.6vw,108px);line-height:.94;margin:16px 0 18px;letter-spacing:-.015em;font-weight:800}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--amber2)}
+.hero .dek{font-size:clamp(18px,2.1vw,21px);color:#d3dbe8;max-width:620px;margin:0 0 14px}
+.hero .dek2{color:var(--muted);max-width:600px;margin:0 0 24px;font-size:16.5px}
+.go{display:inline-flex;align-items:center;gap:12px;padding:15px 24px;border-radius:999px;background:var(--amber);color:#1a1206;font-family:var(--mono);font-weight:500;font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;
+  box-shadow:0 0 0 6px rgba(217,138,43,.16),0 14px 40px rgba(217,138,43,.3);transition:transform .2s}
+.go:hover{transform:translateY(-2px)}
+.go svg{width:18px;height:18px}
+.hero-note{display:block;margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.03em}
+.cast ul{list-style:none;margin:0;padding:0}
+.cast{margin:0;padding:22px 22px 8px;border-radius:18px;background:linear-gradient(170deg,rgba(34,52,90,.55),rgba(12,22,40,.7));border:1px solid var(--line)}
+.cast .lbl{display:block;margin-bottom:12px}
+.cast li{display:grid;grid-template-columns:42px 1fr;gap:12px;padding:0 0 14px;align-items:start}
+.cast .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-weight:800;font-size:16px;color:#1a1206;background:var(--amber2)}
+.cast li:nth-child(3) .av{background:var(--gold)}.cast li:nth-child(4) .av{background:#9fc9c2}.cast li:nth-child(5) .av{background:#e4a3a3}.cast li:nth-child(6) .av{background:#c9d3e6}.cast li:nth-child(7) .av{background:#b9b0d9}
+.cast b{font-family:var(--disp);font-weight:600;font-size:17px;color:var(--snow)}
+.cast span{display:block;font-size:14.5px;line-height:1.45;color:#c2cddd}
+
+/* Night strip: a row of eight windows that light as you finish each night */
+.strip{margin:46px 0 16px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.strip h2{font-size:clamp(26px,3.6vw,36px)}
+.strip p{margin:4px 0 0;color:var(--muted);font-size:15px;max-width:560px}
+.wins{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin:0 0 20px;padding:12px;border-radius:16px;background:rgba(5,10,20,.55);border:1px solid rgba(255,255,255,.06)}
+.nw{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:4px 0 2px;border-radius:10px}
+.nw .pane{width:100%;max-width:58px;aspect-ratio:4/5;border-radius:5px 5px 3px 3px;background:#18233a;border:2px solid #2a3753;position:relative;transition:background .5s,box-shadow .5s,border-color .5s}
+.nw .pane:before,.nw .pane:after{content:"";position:absolute;background:#2a3753;transition:background .5s}
+.nw .pane:before{left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%)}
+.nw .pane:after{top:50%;left:0;right:0;height:2px;transform:translateY(-50%)}
+.nw .d{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase;line-height:1.2;text-align:center}
+.nw.done .pane{background:radial-gradient(circle at 50% 70%,#ffd28a,#d98a2b 70%);border-color:#7a4e17;box-shadow:0 0 18px rgba(242,184,102,.45)}
+.nw.done .pane:before,.nw.done .pane:after{background:#7a4e17}
+.nw.cur .pane{border-color:var(--gold2);box-shadow:0 0 0 2px rgba(230,207,138,.35)}
+.nw.cur .d{color:var(--gold2)}
+.nw[disabled]{cursor:default;opacity:.55}
+@media (max-width:520px){.wins{gap:4px;padding:10px 8px}.nw .d{font-size:9px;letter-spacing:0}}
+
+/* Game layout */
+.game{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:26px;align-items:start}
+@media (max-width:940px){.game{grid-template-columns:1fr}}
+.scene{border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#0d1830,#0a1324);border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.art{position:relative;background:#081224;line-height:0}
+.art svg.pic{width:100%;height:auto;display:block}
+.when{position:absolute;left:14px;top:14px;display:flex;align-items:center;gap:12px;line-height:1.2;padding:8px 14px 8px 8px;border-radius:999px;background:rgba(5,10,20,.72);border:1px solid rgba(230,207,138,.25);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.clock{width:46px;height:46px;flex:none}
+.clock .hh,.clock .mh{transform-origin:50px 50px;transition:transform 1.6s cubic-bezier(.45,.05,.2,1)}
+.when b{display:block;font-family:var(--disp);font-size:16px;font-weight:600;color:var(--snow)}
+.when span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber2)}
+@media (max-width:520px){.when{left:8px;top:auto;bottom:8px;padding:5px 10px 5px 5px;gap:8px}.clock{width:36px;height:36px}.when b{font-size:13.5px}.when span{font-size:9.5px}}
+.body{padding:26px clamp(18px,4vw,40px) 30px}
+.body .no{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.body h3{font-size:clamp(28px,3.8vw,40px);line-height:1.06;margin:6px 0 14px;color:#fff}
+.body h3:focus{outline:none}
+.setup p{margin:0 0 .9em;color:#dbe2ee}
+.setup p:first-child:first-letter{font-family:var(--disp);font-weight:800;color:var(--amber2);font-size:1.25em}
+.q{margin:18px 0 12px;font-family:var(--disp);font-style:italic;font-size:20px;color:var(--gold2)}
+.choices{display:grid;gap:10px}
+.ch{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;padding:14px 16px;border-radius:14px;background:rgba(27,42,74,.55);border:1px solid rgba(201,168,76,.22);color:var(--snow);font-size:16.5px;line-height:1.45;transition:transform .15s,border-color .2s,background .2s,opacity .3s}
+.ch .k{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-weight:800;color:var(--amber2);border:1px solid rgba(217,138,43,.5);font-size:15px}
+@media (hover:hover){.ch:not([disabled]):hover{transform:translateX(4px);border-color:var(--amber);background:rgba(34,52,90,.8)}}
+.ch[disabled]{cursor:default}
+.ch.pick{border-color:var(--amber);background:rgba(217,138,43,.16)}
+.ch.pick .k{background:var(--amber);color:#1a1206;border-color:var(--amber)}
+.ch.dim{opacity:.42}
+.out{margin-top:22px;animation:rise .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.what{border-left:3px solid var(--amber);padding:4px 0 4px 18px;margin-bottom:20px}
+.what .lbl{display:block;margin-bottom:6px}
+.what p{margin:0;color:#e4e9f2}
+.know{position:relative;background:var(--paper);color:var(--ink);border-radius:12px;padding:22px clamp(18px,3vw,28px) 18px;box-shadow:0 18px 50px rgba(0,0,0,.4)}
+.know:before{content:"";position:absolute;inset:7px;border:1px solid rgba(201,168,76,.55);border-radius:8px;pointer-events:none}
+.know .lbl{color:var(--teal);display:block;margin-bottom:4px}
+.know h4{margin:0 0 8px;font-family:var(--disp);font-weight:600;font-size:22px;line-height:1.15;color:var(--navy)}
+.know p{margin:0;font-size:16px;line-height:1.55}
+.know .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:rgba(46,125,116,.14);color:#1f5e57;border:1px solid rgba(46,125,116,.35)}
+.tag.off{background:transparent;color:var(--ink2);border-style:dashed;border-color:#b9ad92}
+.nav2{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;border:1px solid rgba(230,207,138,.55);color:var(--gold2);background:transparent;text-decoration:none;line-height:1.2}
+.btn.p{background:var(--amber);border-color:var(--amber);color:#1a1206}
+.btn svg{width:15px;height:15px;flex:none}
+.hint{display:none;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+@media (max-width:940px){.hint{display:block}}
+
+/* Watch log: a paper care notebook */
+.logwrap{position:sticky;top:84px}
+@media (max-width:940px){.logwrap{position:static}}
+.log{position:relative;background:var(--paper);color:var(--pen);border-radius:4px 14px 14px 4px;box-shadow:0 26px 60px rgba(0,0,0,.5),inset 10px 0 0 #d9cba8;padding:20px 18px 18px 34px;
+  background-image:linear-gradient(90deg,transparent 26px,rgba(178,58,58,.45) 26px,rgba(178,58,58,.45) 27.5px,transparent 27.5px),repeating-linear-gradient(180deg,transparent 0 29px,rgba(29,50,102,.14) 29px 30px);
+  background-color:var(--paper);max-height:calc(100vh - 110px);overflow:auto}
+@media (max-width:940px){.log{max-height:none}}
+.log h3{font-family:var(--disp);font-size:22px;color:var(--navy);line-height:1.1}
+.log .sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin:4px 0 12px}
+.log ol{list-style:none;margin:0;padding:0}
+.log li{font-family:var(--hand);font-size:21px;line-height:1.22;padding:4px 0 10px;border-bottom:1px dashed rgba(29,50,102,.15)}
+.log li .ts{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:#7a6a45;text-transform:uppercase;margin-bottom:2px}
+.log li.new{animation:ink .9s ease-out}
+@keyframes ink{from{opacity:0;clip-path:inset(0 100% 0 0)}to{opacity:1;clip-path:inset(0 0 0 0)}}
+.log li.teddy{font-family:var(--hand);font-weight:700;color:#7a2b2b;transform:rotate(-1.2deg)}
+.log .empty{font-family:var(--hand);font-size:21px;color:#8a7d5c;line-height:1.25}
+.log .pin{position:absolute;top:-9px;right:22px;width:56px;height:20px;background:rgba(201,168,76,.55);transform:rotate(4deg)}
+
+/* Ending */
+.end{display:none;margin-top:60px}
+.end.on{display:block;animation:rise .7s ease-out}
+.dawn{text-align:center;padding:46px clamp(18px,5vw,60px) 40px;border-radius:24px;background:linear-gradient(180deg,#1b2a4a 0%,#3a3a5a 45%,#8a5a3a 85%,#d98a2b 130%);border:1px solid var(--line);position:relative;overflow:hidden}
+.dawn h2{font-size:clamp(34px,5.4vw,60px);line-height:1.02;margin:10px 0 14px}
+.dawn p{max-width:640px;margin:0 auto 12px;color:#f1e9dc;font-size:18px}
+.dawn .lbl{color:#ffe0ae}
+.score{font-family:var(--mono);font-size:13px!important;letter-spacing:.06em;color:#fff3dd;margin-top:10px}
+.sec{margin-top:52px}
+.sec>h2{font-size:clamp(28px,4vw,40px);margin-bottom:6px}
+.sec>p.lead{color:var(--muted);max-width:680px;margin:0 0 20px}
+.strengths{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.st{padding:16px 16px 14px;border-radius:14px;background:rgba(27,42,74,.45);border:1px dashed rgba(163,178,201,.35)}
+.st.on{background:linear-gradient(160deg,rgba(46,125,116,.32),rgba(27,42,74,.6));border:1px solid rgba(111,195,182,.6)}
+.st .ic{width:30px;height:30px;color:var(--muted);margin-bottom:8px}
+.st.on .ic{color:var(--teal2)}
+.st b{display:block;font-family:var(--disp);font-size:18px;font-weight:600;line-height:1.2;margin-bottom:4px}
+.st span{display:block;font-size:14.5px;line-height:1.45;color:#c6d0df}
+.st em{display:block;font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-top:8px;color:var(--teal2)}
+.st:not(.on) em{color:var(--amber2)}
+.reflect{background:rgba(12,22,40,.7);border:1px solid var(--line);border-radius:18px;padding:26px clamp(18px,4vw,36px)}
+.reflect p{margin:0 0 1em;color:#dfe5ef}
+.reflect ul{margin:0 0 1em;padding-left:20px;color:#dfe5ef}
+.reflect li{margin-bottom:.5em}
+.one{margin-top:16px;padding:16px 18px;border-radius:12px;background:rgba(217,138,43,.14);border:1px solid rgba(217,138,43,.5)}
+.one .lbl{display:block;margin-bottom:4px}
+.one div{font-size:18px;color:#fff}
+.replay{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+
+/* Printable plan */
+.plan{background:#fffdf7;color:var(--ink);border-radius:10px;padding:clamp(20px,4vw,38px);box-shadow:0 30px 80px rgba(0,0,0,.5);position:relative}
+.plan:before{content:"";position:absolute;inset:8px;border:1px solid rgba(201,168,76,.6);border-radius:6px;pointer-events:none}
+.plan header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:2px solid var(--navy);padding-bottom:10px;margin-bottom:14px}
+.plan header h3{font-family:var(--disp);font-size:clamp(24px,3.4vw,32px);color:var(--navy);line-height:1.05}
+.plan header small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8a6d1f;margin-top:6px}
+.plan header img{width:46px;height:46px;object-fit:contain}
+.pcols{display:grid;grid-template-columns:1fr 1fr;gap:16px 26px}
+@media (max-width:720px){.pcols{grid-template-columns:1fr}}
+.plan h4{margin:0 0 6px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.plan .blk{break-inside:avoid}
+.field{display:grid;grid-template-columns:minmax(110px,42%) 1fr;gap:8px;align-items:end;margin:0 0 7px;font-size:14.5px;line-height:1.3}
+.field label{color:var(--ink2)}
+.field input{width:100%;font:inherit;font-family:var(--hand);font-size:20px;line-height:1.1;color:var(--pen);border:0;border-bottom:1px solid #b9ad92;background:transparent;padding:2px 2px 1px;min-width:0}
+.field input:focus{outline:none;border-bottom:2px solid var(--amber)}
+.plan ol,.plan ul{margin:0;padding-left:18px;font-size:14.5px;line-height:1.42}
+.plan li{margin-bottom:5px}
+.plan .fix{font-size:14px;color:var(--ink2);margin:6px 0 0}
+.plan .wide{grid-column:1/-1}
+.plan .write{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+@media (max-width:620px){.plan .write{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.plan .write span{border:1px solid #d7ccb2;border-radius:6px;padding:7px 6px;text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);background:#faf5e8}
+.plan footer{margin-top:14px;padding-top:10px;border-top:1px solid #d7ccb2;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--ink2);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pact{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+
+/* Sources + footer */
+.src{margin-top:60px;padding:24px clamp(18px,3vw,30px);border-radius:16px;background:rgba(12,22,40,.6);border:1px solid rgba(255,255,255,.07);font-size:14.5px;color:#c3cddb}
+.src h2{font-size:22px;margin-bottom:8px;color:var(--snow)}
+.src ol{margin:0;padding-left:20px}
+.src li{margin-bottom:6px}
+.more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:40px}
+@media (max-width:760px){.more{grid-template-columns:1fr}}
+.more a{display:block;padding:18px 18px 16px;border-radius:14px;background:rgba(27,42,74,.5);border:1px solid rgba(201,168,76,.28);text-decoration:none;color:var(--snow)}
+.more a b{display:block;font-family:var(--disp);font-size:19px;color:var(--gold2);margin-bottom:4px}
+.more a span{font-size:15px;color:#c2cddd}
+.foot{margin-top:46px;text-align:center;color:var(--muted);font-size:14px}
+.foot p{max-width:720px;margin:0 auto 8px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;z-index:10080;background:var(--amber);color:#1a1206;padding:12px 18px;border-radius:10px;font-family:var(--mono);font-size:13px;transition:.3s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* Scene art */
+.flame{transform-origin:50% 100%;transform-box:fill-box;animation:flick 2.6s ease-in-out infinite}
+@keyframes flick{0%,100%{transform:scale(1,1) rotate(0)}22%{transform:scale(.94,1.06) rotate(-2deg)}48%{transform:scale(1.04,.95) rotate(1.5deg)}73%{transform:scale(.97,1.04) rotate(-1deg)}}
+.glow{animation:breathe 3.4s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.75}50%{opacity:1}}
+.vig{transition:opacity .5s}
+#moon{transition:transform 1.6s cubic-bezier(.45,.05,.2,1)}
+.hlit{transition:fill .6s}
+
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+}
+@media print{
+  #snow,.toast,.cifq-b,.cifq-p,html body nav.cifnav{display:none!important}
+  body{background:#fff!important;color:#000}
+  html.pp .wrap>*:not(.end){display:none!important}
+  html.pp .end>*:not(#planSec){display:none!important}
+  html.pp #planSec>*:not(.plan){display:none!important}
+  html.pp .end{display:block!important;margin:0}
+  html.pp #planSec{margin:0}
+  html.pp .wrap{padding:0;max-width:none}
+  html.pp .plan{box-shadow:none;padding:10px 4px;font-size:12px}
+  html.pp .plan:before{display:none}
+  html.pp .field input{font-size:16px}
+  html.pp .plan ol,html.pp .plan ul,html.pp .field{font-size:12px}
+  @page{size:letter;margin:.45in}
+}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><link rel="alternate" type="application/rss+xml" title="Cold Ischemia Foundation · This Week" href="https://coldischemia.foundation/feed.xml"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a><a href="watch-list.html" role="menuitem">The Watch List</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="academy.html" role="menuitem">The Advocate's Academy</a><a href="gatekeeper-files.html" role="menuitem">The Gatekeeper Files</a><a href="test-your-knowledge.html" role="menuitem">Test Your Knowledge</a><a href="living-donor-guide.html" role="menuitem">Free Donor Guide (PDF)</a><a href="research-digest.html" role="menuitem">Research Digest</a><a href="inside-files.html" role="menuitem">The Inside Files</a><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-hub.html" role="menuitem">Living Donor Hub</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="kidney-transplant-centers.html" role="menuitem">Kidney Transplant Centers by State</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">Holidays</button><div class="cn-dd" role="menu"><a href="advocates-advent.html" role="menuitem">The Advocate's Advent Calendar</a><a href="holiday-night-watch.html" class="on" role="menuitem">The Night Watch</a><a href="holiday-north-star.html" role="menuitem">Find Your North Star</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="this-week.html" class="cn-t cn-wk">This Week</a><a href="services.html" class="cn-t cn-s">Services We Offer</a><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-week.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<main class="wrap">
+  <header class="hero">
+    <div>
+      <span class="lbl">Cold Ischemia Foundation · December 24 – January 1</span>
+      <h1>The Night <em>Watch</em></h1>
+      <p class="dek">An illustrated story you play as a care partner, across the eight nights from Christmas Eve to New Year's Day.</p>
+      <p class="dek2">Holiday weeks are when the system thins out. Offices close, schedules shift, a doctor who has never met your person is on call, the pharmacy shelf comes up short, and somebody at the dinner table tells you you're making a fuss. Each night brings one real decision. Wrong turns teach rather than end the game, and you can replay any night. Your watch log fills as you go, and at the end you print a plan for your own holiday week.</p>
+      <button class="go" type="button" id="begin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3c-2 3-2 5 0 7 2-2 2-4 0-7z"/><path d="M9 21h6M10 10h4v11h-4z"/></svg><span id="beginTxt">Light the first candle</span></button>
+      <span class="hero-note">About 10 minutes. Eight nights. Nothing you type leaves your device.</span>
+    </div>
+    <div class="cast"><span class="lbl" id="castH">Who is in the house</span><ul aria-labelledby="castH">
+      <li><span class="av" aria-hidden="true">T</span><div><b>Teddy Reyes, 63</b><span>Retired city bus mechanic. Can diagnose a snowblower by ear. Lives with kidney failure and apologizes to nurses for being a bother.</span></div></li>
+      <li><span class="av" aria-hidden="true">Y</span><div><b>You</b><span>Married to Teddy for twenty-six years. You carry the calendar, the pill organizer and most of the worry.</span></div></li>
+      <li><span class="av" aria-hidden="true">D</span><div><b>Danny, 34</b><span>Your son, two hours north. Texts "need anything?" every night and means it.</span></div></li>
+      <li><span class="av" aria-hidden="true">M</span><div><b>Marisol</b><span>Charge nurse at Teddy's treatment unit for twelve years. Knows his laugh from the parking lot.</span></div></li>
+      <li><span class="av" aria-hidden="true">B</span><div><b>Aunt Bev</b><span>Teddy's older sister. Loves him loudly. Believes most illness is attitude.</span></div></li>
+    </ul></div>
+  </header>
+
+  <section id="play" aria-labelledby="playH">
+    <div class="strip">
+      <div><h2 id="playH">Eight nights</h2><p>A window lights each time you finish a night. Tap any lit window to go back and play it differently.</p></div>
+      <button class="btn" type="button" id="restart">Start the week over</button>
+    </div>
+    <nav class="wins" id="wins" aria-label="Choose a night"></nav>
+
+    <div class="game">
+      <article class="scene" id="scene" aria-live="off">
+        <div class="art">
+          <svg class="pic" id="pic" viewBox="0 0 800 380" role="img" aria-labelledby="picT"><title id="picT">A lit window on a winter night</title>
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050a16"/><stop offset=".7" stop-color="#14223f"/><stop offset="1" stop-color="#1e2d4c"/></linearGradient>
+              <radialGradient id="room" cx=".5" cy=".7" r=".8"><stop offset="0" stop-color="#ffd08a"/><stop offset=".55" stop-color="#d98a2b"/><stop offset="1" stop-color="#6b3c12"/></radialGradient>
+              <radialGradient id="cold" cx=".5" cy=".6" r=".8"><stop offset="0" stop-color="#d9efe9"/><stop offset=".6" stop-color="#7fb3ab"/><stop offset="1" stop-color="#2d5a58"/></radialGradient>
+              <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f2b866" stop-opacity=".55"/><stop offset="1" stop-color="#f2b866" stop-opacity="0"/></radialGradient>
+              <radialGradient id="cand" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff3c8" stop-opacity=".95"/><stop offset=".4" stop-color="#ffc56b" stop-opacity=".5"/><stop offset="1" stop-color="#ffc56b" stop-opacity="0"/></radialGradient>
+              <clipPath id="winClip"><rect x="262" y="66" width="276" height="220" rx="6"/></clipPath>
+            </defs>
+            <rect width="800" height="380" fill="url(#sky)" id="skyR"/>
+            <g fill="#e9eef6" opacity=".7"><circle cx="60" cy="40" r="1.2"/><circle cx="140" cy="90" r="1"/><circle cx="210" cy="30" r="1.4"/><circle cx="330" cy="22" r="1"/><circle cx="470" cy="34" r="1.2"/><circle cx="600" cy="20" r="1"/><circle cx="700" cy="70" r="1.3"/><circle cx="760" cy="30" r="1"/><circle cx="660" cy="120" r=".9"/><circle cx="100" cy="150" r=".9"/></g>
+            <g id="moon" transform="translate(120 70)"><circle r="20" fill="#f4ecda"/><circle cx="8" cy="-5" r="18" fill="#0a1426"/></g>
+            <!-- far houses -->
+            <g id="far">
+              <path d="M0 300 L0 238 L40 214 L80 238 L80 300 Z M70 300 L70 250 L118 222 L166 250 L166 300 Z M150 300 L150 246 L190 226 L230 246 L230 300Z" fill="#0b1527"/>
+              <path d="M570 300 L570 244 L612 220 L654 244 L654 300 Z M640 300 L640 232 L690 206 L740 232 L740 300 Z M728 300 L728 248 L764 228 L800 248 L800 300Z" fill="#0b1527"/>
+              <g class="hw"><rect class="hlit" x="22" y="252" width="12" height="14"/><rect class="hlit" x="104" y="262" width="12" height="14"/><rect class="hlit" x="182" y="258" width="12" height="14"/><rect class="hlit" x="208" y="258" width="12" height="14"/><rect class="hlit" x="590" y="256" width="12" height="14"/><rect class="hlit" x="664" y="250" width="12" height="14"/><rect class="hlit" x="700" y="250" width="12" height="14"/><rect class="hlit" x="752" y="262" width="12" height="14"/></g>
+            </g>
+            <!-- the house wall -->
+            <rect x="214" y="30" width="372" height="290" fill="#101b30"/>
+            <path d="M200 40 L400 -6 L600 40 Z" fill="#0c1526"/>
+            <ellipse cx="400" cy="180" rx="240" ry="170" fill="url(#halo)" class="glow"/>
+            <!-- window -->
+            <rect x="250" y="54" width="300" height="244" rx="10" fill="#2b1d10" stroke="#5a3a18" stroke-width="4"/>
+            <rect x="262" y="66" width="276" height="220" rx="6" fill="url(#room)" id="roomR"/>
+            <g clip-path="url(#winClip)"><g id="vig" class="vig"></g></g>
+            <g id="frame" stroke="#3a2610" stroke-width="7" fill="none"><path d="M400 66 V286 M262 176 H538"/></g>
+            <!-- sill, snow, candle -->
+            <rect x="236" y="296" width="328" height="14" rx="3" fill="#3a2610"/>
+            <path d="M236 298 q20 -10 44 -3 q28 -9 52 -1 q30 -8 60 0 q26 -9 56 -1 q30 -8 60 -1 q22 -6 56 2 v6 h-328z" fill="#e9eef6"/>
+            <circle cx="400" cy="262" r="46" fill="url(#cand)" class="glow"/>
+            <rect x="392" y="262" width="16" height="34" rx="2" fill="#f4ecda"/>
+            <path class="flame" d="M400 236 c-7 10 -8 18 0 26 c8 -8 7 -16 0 -26z" fill="#ffd27a"/>
+            <path class="flame" d="M400 246 c-3 5 -3 9 0 13 c3 -4 3 -8 0 -13z" fill="#fff6d8"/>
+            <!-- ground -->
+            <path d="M0 312 Q200 296 400 312 T800 308 V380 H0Z" fill="#cfd9e8"/>
+            <path d="M0 330 Q220 318 420 334 T800 326 V380 H0Z" fill="#e9eef6"/>
+            <text id="plaque" x="400" y="356" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="2" fill="#4a5468"></text>
+          </svg>
+          <div class="when" aria-hidden="true">
+            <svg class="clock" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#f4ecda" stroke="#C9A84C" stroke-width="4"/>
+              <g stroke="#1B2A4A" stroke-width="3" stroke-linecap="round"><path d="M50 10v8M50 82v8M10 50h8M82 50h8"/></g>
+              <g stroke="#1B2A4A" stroke-width="1.6" opacity=".6"><path d="M70 15.4l-2 3.5M84.6 30l-3.5 2M84.6 70l-3.5-2M70 84.6l-2-3.5M30 84.6l2-3.5M15.4 70l3.5-2M15.4 30l3.5 2M30 15.4l2 3.5"/></g>
+              <line class="hh" id="hh" x1="50" y1="50" x2="50" y2="27" stroke="#1B2A4A" stroke-width="5.5" stroke-linecap="round"/>
+              <line class="mh" id="mh" x1="50" y1="50" x2="50" y2="15" stroke="#B23A3A" stroke-width="3.2" stroke-linecap="round"/>
+              <circle cx="50" cy="50" r="4" fill="#1B2A4A"/></svg>
+            <div><span id="wDay">Christmas Eve</span><b id="wTime">8:40 p.m.</b></div>
+          </div>
+        </div>
+        <div class="body" id="body"></div>
+      </article>
+
+      <aside class="logwrap" aria-labelledby="logH">
+        <div class="log" id="log">
+          <span class="pin" aria-hidden="true"></span>
+          <h3 id="logH">Watch log</h3>
+          <div class="sub">Teddy · the holiday week · kept by you</div>
+          <ol id="logList" aria-live="polite"></ol>
+          <p class="empty" id="logEmpty">Nothing written yet. Every choice you make this week leaves a line here, the way a real care notebook does.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="end" id="end" aria-labelledby="endH">
+    <div class="dawn">
+      <span class="lbl">Friday, January 1 · 11:58 p.m.</span>
+      <h2 id="endH" tabindex="-1">The week is over. The light is coming back.</h2>
+      <p>Teddy is home, asleep in his own bed with the antibiotic on the nightstand. The candle in the window has burned down to a stub. Before you blow it out, he shuffles into the kitchen, takes the pen from the cup by the phone, and writes the last line in the log himself.</p>
+      <p class="score" id="score"></p>
+    </div>
+
+    <div class="sec">
+      <h2>The strengths you used</h2>
+      <p class="lead">Seven things a true advocate does, the ones nobody hands you a pamphlet about. Lit cards are the ones you reached for this week.</p>
+      <div class="strengths" id="strengths"></div>
+    </div>
+
+    <div class="sec">
+      <h2>An honest reflection</h2>
+      <div class="reflect" id="reflect"></div>
+    </div>
+
+    <div class="sec" id="planSec">
+      <h2>Your Holiday Week Watch Plan</h2>
+      <p class="lead">One page. Fill in what you can right now; the blanks are your to-do list. Then print it, tape it inside a cupboard door, and give a copy to your backup person. What you type stays in this browser only.</p>
+      <div class="plan" id="plan">
+        <header>
+          <div><h3>Holiday Week Watch Plan</h3><small>December 24 – January 2 · kept for <span id="pFor">the person I care for</span></small></div>
+          <img src="cold-ischemia-logo.png" alt="" onerror="this.style.display='none'">
+        </header>
+        <div class="pcols">
+          <div class="blk">
+            <h4>Numbers to have before the 24th</h4>
+            <div class="field"><label for="f_for">I am keeping watch for</label><input id="f_for" data-k="for" autocomplete="off"></div>
+            <div class="field"><label for="f_unit">Clinic or treatment unit, after hours</label><input id="f_unit" data-k="unit" inputmode="tel" autocomplete="off"></div>
+            <div class="field"><label for="f_doc">Doctor's office, and who is covering</label><input id="f_doc" data-k="doc" autocomplete="off"></div>
+            <div class="field"><label for="f_oncall">On-call or answering service</label><input id="f_oncall" data-k="oncall" inputmode="tel" autocomplete="off"></div>
+            <div class="field"><label for="f_pharm">Pharmacy open on holidays</label><input id="f_pharm" data-k="pharm" autocomplete="off"></div>
+            <div class="field"><label for="f_comp">Complaint numbers on the posted rights</label><input id="f_comp" data-k="comp" autocomplete="off"></div>
+            <p class="fix"><b>Emergency: 911.</b> Suicide &amp; Crisis Lifeline: call or text <b>988</b>, any hour.</p>
+          </div>
+          <div class="blk">
+            <h4>My backup person</h4>
+            <div class="field"><label for="f_bname">Name</label><input id="f_bname" data-k="bname" autocomplete="off"></div>
+            <div class="field"><label for="f_bphone">Phone</label><input id="f_bphone" data-k="bphone" inputmode="tel" autocomplete="off"></div>
+            <ul>
+              <li>Has a copy of the one-page summary and this plan</li>
+              <li>Knows where the medications and the log are kept</li>
+              <li>Has agreed to take one real shift, so I can sleep</li>
+            </ul>
+            <h4 style="margin-top:14px">The one-page summary (coat pocket)</h4>
+            <ul>
+              <li>Diagnoses, in plain words</li>
+              <li>Every medication, and allergies</li>
+              <li>Any line, port or device</li>
+              <li>Doctors and their numbers</li>
+              <li>Standing instructions ("fever means call")</li>
+              <li>Wishes, and who may speak for them</li>
+            </ul>
+          </div>
+          <div class="blk wide">
+            <h4>Ask before the holiday schedule starts</h4>
+            <ol>
+              <li>"What is the exact day and time of every appointment or treatment between December 24 and January 2, and can I have that in writing?"</li>
+              <li>"Who is covering for our doctor that week, and how do we reach them after hours?"</li>
+              <li>"Which symptoms mean call tonight, and which mean go to the emergency room?"</li>
+              <li>"Will any prescription run short before normal pharmacy hours return? Can we fill it now?"</li>
+              <li>"If there is a discharge on a holiday, who is the person we call afterward, and when is the follow-up?"</li>
+            </ol>
+          </div>
+          <div class="blk wide">
+            <h4>Write down, every time</h4>
+            <div class="write"><span>Date</span><span>Time</span><span>Name &amp; role</span><span>What was said</span><span>What was promised</span><span>Next step, by when</span></div>
+            <p class="fix">If something goes wrong, climb in order: the person, their supervisor or charge nurse, a written grievance, then the outside agency. Keep a copy of every step.</p>
+          </div>
+          <div class="blk wide">
+            <h4>For me, the care partner</h4>
+            <div class="field"><label for="f_me">One thing that is only for me this week</label><input id="f_me" data-k="me" autocomplete="off"></div>
+          </div>
+        </div>
+        <footer><span>The Night Watch · Cold Ischemia Foundation</span><span>coldischemia.foundation/holiday-night-watch.html</span></footer>
+      </div>
+      <div class="pact">
+        <button class="btn p" type="button" id="printPlan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2M6 14h12v7H6z"/></svg>Print the plan</button>
+        <button class="btn" type="button" id="copyPlan">Copy the plan as text</button>
+        <button class="btn" type="button" id="copyLog">Copy my watch log</button>
+        <button class="btn" type="button" id="sharePage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13"/></svg>Send this to a care partner</button>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h2>Play a night again</h2>
+      <p class="lead">Every night can go another way. Try the choice you didn't make and see what it teaches.</p>
+      <div class="replay" id="replay"></div>
+    </div>
+  </section>
+
+  <nav class="more" aria-label="Keep going">
+    <a href="advocates-advent.html"><b>The Advocate's Advent</b><span>Twenty-four doors, twenty-four traditions, and a right you already hold behind each one.</span></a>
+    <a href="academy.html"><b>The Advocate's Academy</b><span>Short, plain lessons on records, grievances, appeals and the rules behind them.</span></a>
+    <a href="projects.html"><b>The Toolkit</b><span>Free guides and worksheets for patients and care partners, ready to print.</span></a>
+  </nav>
+
+  <section class="src" aria-labelledby="srcH">
+    <h2 id="srcH">Sources</h2>
+    <ol>
+      <li>Patient rights at U.S. dialysis facilities, including the right to file a grievance without reprisal, anonymously or through a representative, and the posting of state agency and ESRD Network complaint numbers: <a href="https://www.ecfr.gov/current/title-42/section-494.70" target="_blank" rel="noopener">42 CFR 494.70</a>, paragraphs (a)(16), (a)(17) and (d).</li>
+      <li>Right to request amendment of your medical record; the provider generally acts within 60 days, and a denial must be in writing with the right to submit a statement of disagreement: <a href="https://www.ecfr.gov/current/title-45/section-164.526" target="_blank" rel="noopener">45 CFR 164.526</a>.</li>
+      <li>HIPAA right of access to your own health records, generally within 30 days: <a href="https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/access/index.html" target="_blank" rel="noopener">U.S. Department of Health and Human Services</a>.</li>
+      <li>Family and Medical Leave Act, up to 12 weeks of unpaid, job-protected leave for eligible employees to care for a spouse, child or parent with a serious health condition: <a href="https://www.dol.gov/agencies/whd/fmla" target="_blank" rel="noopener">U.S. Department of Labor</a>.</li>
+      <li>988 Suicide &amp; Crisis Lifeline, call or text 988: <a href="https://988lifeline.org/" target="_blank" rel="noopener">988lifeline.org</a>.</li>
+    </ol>
+    <p style="margin:12px 0 0">Teddy, his family and everyone they meet are fictional. Their week is a composite of things care partners describe every holiday season. Nothing here is medical advice; for any question about a specific person's care, ask their care team, and in an emergency call 911.</p>
+  </section>
+
+  <footer class="foot">
+    <p>The Cold Ischemia Foundation is an independent 501(c)(3). We accept no industry sponsorship. <a href="independence.html">What independence means to us</a>.</p>
+  </footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+'use strict';
+var SITE='https://coldischemia.foundation/holiday-night-watch.html';
+var KEY='cifNightWatch';
+
+/* ---------- Strengths ---------- */
+var STR={
+ doc:{n:'Wrote it down',d:'Date, time, name, and what was actually said.',a:'Tape a sheet of paper inside a cupboard door tonight and write today’s date at the top. That is your log. Every call this week gets one line.',ic:'<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h5"/>'},
+ ask:{n:'Asked the specific question',d:'The question with a day, a time or a number in its answer.',a:'Call the clinic before the 24th and ask: “What is the exact day and time of every appointment between December 24 and January 2, and can I have it in writing?”',ic:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/>'},
+ right:{n:'Knew the written right',d:'Not a favor. A rule, with a citation.',a:'At the next visit, photograph the patient rights poster, including the complaint phone numbers at the bottom. Keep it in your phone.',ic:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>'},
+ esc:{n:'Climbed in order',d:'The person, the supervisor, the written step, the outside agency.',a:'Write your ladder on the back of the plan: the person, the charge nurse or manager, a written grievance, then the outside agency, with a number for each.',ic:'<path d="M7 21V3M17 21V3M7 7h10M7 12h10M7 17h10"/>'},
+ voice:{n:'Protected dignity and voice',d:'Made room for the patient to speak, instead of speaking over him.',a:'Ask your person tonight how they want you to step in when a room talks over them, and agree on a word you will use.',ic:'<path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8"/>'},
+ backup:{n:'Named a backup',d:'A relief for the watch, chosen before the hard night.',a:'Text one person today: “Will you be my backup for the holidays?” Then send them this plan and the one-page summary.',ic:'<circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9.5" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 1.8 6 5"/>'},
+ self:{n:'Cared for the care partner',d:'Treated your own rest as part of the care plan.',a:'Put one thing on the calendar this week that is only for you, and ask your backup person to hold you to it.',ic:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>'}
+};
+var ORDER=['doc','ask','right','esc','voice','backup','self'];
+
+/* ---------- The eight nights ---------- */
+var N=[
+{day:'Thursday, December 24',short:'Thu 12/24',tab:'Dec 24',sub:'Christmas Eve',time:'8:40 p.m.',h:20,m:40,scene:'kitchen',plaque:'',
+ title:'The note in the coat pocket',
+ setup:['The ham is resting for tomorrow and the whole kitchen smells like cloves. Hanging up Teddy’s coat, you feel paper in the pocket: a half sheet folded into quarters, soft at the creases from days of his thumb. HOLIDAY SCHEDULE CHANGE, it says in bold, and below that, under a grease smudge from the shop rag he still carries, you can make out “Friday patients” and “Saturday” and nothing else.',
+   'His treatments are Monday, Wednesday and Friday. Tomorrow is Friday. Tomorrow is Christmas. From the couch, not looking up from the game: “Marisol told me. Saturday, I think. Early? Don’t make a thing of it. They know what they’re doing.”'],
+ q:'The unit’s office is closed until Monday. There is an after-hours number on the back of his patient handbook. What do you do?',
+ c:[
+  {l:'Let it go tonight. He says Saturday; you’ll just get there early to be safe.',s:0,str:[],t:'9:05 p.m.',
+   o:'Saturday, 5:50 a.m. The lot is black ice and empty, and the doors don’t open until 6:30. His chair isn’t until 11:15; the early slot was for a different shift. He sits in the truck with the heater running, then insists on waiting inside on a plastic chair for four hours. By the time he’s on the machine he’s gray and silent, and neither of you could say who told him what, or when. Nobody did anything wrong on purpose. The note just never became a fact.',
+   log:'Found schedule note in T’s coat. Can’t read it. He thinks Saturday, early.'},
+  {l:'Call the after-hours line now, ask one exact question, and write down the answer with a name beside it.',s:2,str:['doc','ask'],t:'8:51 p.m.',
+   o:'A recording, then a callback eleven minutes later. It’s Marisol, on her own Christmas Eve, a small child audibly losing a battle with bedtime somewhere behind her. You ask: “What day and what time is Teddy’s next treatment, and is that written anywhere I can see it?” Saturday, 11:15 a.m. She’ll leave a printed copy at the front desk. You write it on the sheet taped inside the cupboard door: the date, the time of the call, her name, the answer. Four minutes. You will be glad of those four minutes in a way you can’t imagine yet.',
+   log:'Called after-hours line. Marisol (charge RN) called back: next treatment Sat 12/26, 11:15 a.m. Printed copy at front desk.'},
+  {l:'Send a message through the patient portal asking for the holiday schedule.',s:1,str:[],t:'8:47 p.m.',
+   o:'The message goes out at 8:47 p.m. and a cheerful auto-reply comes back: messages are answered within two business days. Two business days from Christmas Eve is Tuesday. Saturday morning you call the front desk instead and a voice tells you 11:15. It works out. But the portal now holds a record of your question and nobody’s answer, and you spent Christmas Day not quite sure.',
+   log:'Portal message sent re: holiday schedule. Auto-reply says 2 business days.'}],
+ k:{h:'Write down the date, the time and the name.',p:'Memory is the first thing a holiday week takes. A schedule change that lives on a crumpled note, or in a tired man’s recollection, is a rumor. The same change written as “Dec 24, 8:51 p.m., Marisol, Sat 11:15” is a fact you can stand on later, in rooms you haven’t walked into yet. Ask one exact question, get one exact answer, and write it where you’ll find it at five in the morning.'}},
+
+{day:'Friday, December 25',short:'Fri 12/25',tab:'Dec 25',sub:'Christmas Day',time:'7:15 p.m.',h:19,m:15,scene:'dinner',plaque:'',
+ title:'“You’re making a fuss”',
+ setup:['Eleven people around a table built for eight, elbows touching, the good plates out. Aunt Bev brought her caldo, the one their mother made, and she is ladling Teddy a second bowl before he can lift a hand. His care team has been plain with you both for years about how much fluid and salt his body can carry between treatments, and a second bowl of Bev’s soup is most of a day’s worth.',
+   'You say, gently, “Bev, maybe just half.” She doesn’t look up. “Oh, let the man eat. It’s Christmas. You’re making a fuss.” A cousin laughs. Teddy looks at his spoon. For a table of eleven, it goes very quiet.'],
+ q:'Everyone is watching you, and Teddy isn’t looking at anyone. What do you do?',
+ c:[
+  {l:'Explain to the whole table exactly why he can’t have it.',s:1,str:[],t:'7:20 p.m.',
+   o:'You give them all of it: the limits, the swelling, the breathlessness on the stairs, the night last March. Every word is true. Bev goes red, the cousins study their rice, and Teddy says “Thank you, nurse” in a voice that is meant to be a joke and isn’t. Later, drying dishes, he tells you he felt like a chart being read out loud at his own Christmas. You were right about the soup and wrong about the room.',
+   log:'Bev’s soup. I explained his fluid limits to everyone. T embarrassed. Talk to him.'},
+  {l:'Let it go. It’s one bowl, and it’s Christmas.',s:0,str:[],t:'7:20 p.m.',
+   o:'You swallow the sentence, and he swallows both bowls. Nothing dramatic happens tonight. By morning his ankles are puffy and the stairs take him longer, which you’ll mention at Saturday’s treatment. The real cost is quieter than that: you both just learned that one line from Bev can switch you off at your own table, and next time it will be easier for her to say it.',
+   log:'Bev said I was making a fuss. Said nothing. T had 2 bowls.'},
+  {l:'Turn to Teddy, not to Bev: “Your call, Ted.” Then, later, ask him how he wants you to handle moments like this.',s:2,str:['voice'],t:'7:20 p.m.',
+   o:'He looks up, surprised to be asked. “Half,” he says. “Bev. Half. I’ll be swimming by Saturday.” She laughs, pours half, and the table starts breathing again. After everyone leaves, the two of you work it out on the back step in your coats, breath fogging: next time, you’ll just say “Ted?” and he’ll decide out loud. He wants to be the one who says no. You had half forgotten that he could.',
+   log:'Asked T, not Bev. He chose half. Agreed: I say “Ted?” and he decides out loud.'}],
+ k:{h:'Protect his dignity, and his own voice.',p:'A care partner’s job is not to speak for the patient. It is to make sure the patient still gets to speak. Medical details belong to the person they describe; announcing them at a dinner table, even to protect him, is still announcing them. And “you’re making a fuss” is how a room asks you to be quiet. You don’t have to win the room. Hand the decision back to the person it belongs to, and agree in private on how you’ll do that next time.'}},
+
+{day:'Saturday, December 26',short:'Sat 12/26',tab:'Dec 26',sub:'After treatment',time:'4:30 p.m.',h:16,m:30,scene:'truck',plaque:'',
+ title:'The tech on the holiday shift',
+ setup:['The unit ran on a thin holiday crew today. On the drive home, the heater finally catching up, Teddy tells you about a fill-in tech he’d never met: rough getting him started on the machine, and when Teddy said that hurt, a snap: “Do you want to get treated today or not?”',
+   'He laughs it off. Then, pulling into the driveway, the engine ticking, he says the true thing. “Don’t report it. I’ve seen what happens to the ones who complain. They get called difficult. I need that chair.”'],
+ q:'He is frightened, and he is not wrong that it happens. What do you do?',
+ c:[
+  {l:'Respect his wish and drop it completely.',s:0,str:[],t:'4:35 p.m.',
+   o:'You drop it. Monday the same tech is on the schedule again, and Teddy goes in with his shoulders up around his ears and doesn’t ask a single question all session. Nothing gets better, because nothing got said. Honoring his fear is not the same as letting it make every decision. There were safer ways to speak up than either of you knew.',
+   log:'T says fill-in tech was rough and snapped at him. He asked me not to report it. Dropped it.'},
+  {l:'Call the unit tonight and tell whoever answers exactly what you think of that tech.',s:1,str:[],t:'5:10 p.m.',
+   o:'The night line takes your message, and your message is mostly heat. Monday the manager calls back, polite and vague, and wonders whether Teddy might have misunderstood. Without a time, a name or the exact words, it becomes your temper against their staffing shortage. You were right to speak. You skipped the steps that would have made it stick, and Teddy now worries he is the patient whose spouse yelled.',
+   log:'Called unit, left angry message about the tech. Manager called back, said T may have misunderstood.'},
+  {l:'Sit with him in the truck and read him the patient rights he is owed, from the photo of the poster on your phone. Then decide the next step together.',s:2,str:['right','esc','doc'],t:'4:42 p.m.',
+   o:'You photographed the rights poster in the unit lobby months ago. Under the dome light you read it to him: he has the right to file a grievance without reprisal. He can file it anonymously, or through a representative, which can be you. The poster lists the state agency and the ESRD Network complaint numbers. He’s quiet for a long minute. Then: “Write down what he said. Exactly. Monday you talk to Marisol first. If that doesn’t fix it, we go up.” You write it while it’s fresh, word for word.',
+   log:'T: fill-in tech rough at start (~11:30 a.m.), said “Do you want to get treated today or not?” Plan: Marisol Mon → written grievance → Network/state if needed.'}],
+ k:{h:'Know the written right, and climb in order.',p:'U.S. dialysis facilities must honor a written list of patient rights (42 CFR 494.70). It includes the right to file a grievance without reprisal, the right to file it anonymously or through a representative, and posted phone numbers for the state agency and the ESRD Network. Climb in order: the person, the charge nurse, the facility’s written grievance, then the Network or the state. Put each step on paper. Fear of being labeled is reasonable. The rule exists because of it.'}},
+
+{day:'Sunday, December 27',short:'Sun 12/27',tab:'Dec 27',sub:'Sunday night',time:'11:20 p.m.',h:23,m:20,scene:'bedroom',plaque:'',
+ title:'The covering doctor',
+ setup:['Teddy wakes up shaking, the sheets damp, and the thermometer on the nightstand reads a fever. His own kidney doctor, Dr. Anand, has told you both more than once: with the line in his chest that he uses for treatment, a fever is a call-tonight sign, never a sleep-it-off sign.',
+   'But Dr. Anand is away until January 4. The answering service patches you through to Dr. Whitcomb, who is covering four practices this week, has never met Teddy, and is clearly reading his name off a screen. “Sounds like the bug that’s going around. Plenty of fluids, rest, something for the fever. Call the office Monday.”'],
+ q:'He is kind, tired and about to hang up. What do you say?',
+ c:[
+  {l:'Thank him and hang up. He’s the doctor.',s:0,str:[],t:'11:26 p.m.',
+   o:'You try to do what he said, though “plenty of fluids” sits wrong with a man who lives on a fluid limit, and Dr. Whitcomb had no way of knowing that. By two in the morning Teddy is worse and muddled about what day it is, and you’re dialing 911, hunting for his pill bottles in the dark while the paramedics ask questions you can’t answer fast enough. He’s admitted, and he’s going to be all right. But you’ll replay the hour between that phone call and the ambulance for a long time.',
+   log:'Fever. Covering Dr. Whitcomb said virus, fluids, rest. 2 a.m. worse, called 911. Admitted.'},
+  {l:'Read him the one-page summary, then ask the exact question: “Knowing that, should he be seen tonight, and where?”',s:2,str:['ask','esc'],t:'11:24 p.m.',
+   o:'The summary is taped inside the cupboard door, where you put it in October after a nurse suggested it: his conditions, his medications, his allergies, the line in his chest, Dr. Anand’s standing instruction about fevers. You read it in under a minute. Then you ask the question. The pause on the line changes shape. “Yes. Emergency department, tonight. I’ll call ahead so they’re expecting him.” He’s admitted for observation and treatment. On your way out the door you grab the summary and the overnight bag you never quite unpacked from last time.',
+   log:'Fever. Read summary to covering Dr. Whitcomb, asked if he should be seen tonight. Yes, ED; he called ahead. Admitted.'},
+  {l:'Say “I’m not comfortable with that,” hang up, and drive him to the emergency room.',s:1,str:[],t:'11:30 p.m.',
+   o:'You trust your gut, and your gut is right: he’s admitted for observation and treatment. But at triage nobody has his medication list, you blank on the name of one of his pills, and the intake nurse spends twenty minutes hunting for records the hospital can’t reach on a Sunday night. Going in was the right call. Going in empty-handed made everyone slower, including the people trying to help him.',
+   log:'Fever. Didn’t agree with covering doc. Drove T to ED. No med list with us. Admitted.'}],
+ k:{h:'Hand the stranger the whole patient, on one page.',p:'Holiday weeks are covered by people who don’t know your person. They aren’t careless; they are missing the history you carry in your head. Keep one page where you can grab it: diagnoses, medications, allergies, any line or device, his doctors and their numbers, standing instructions. Read it out, then ask the question that forces a decision: “Knowing that, should he be seen tonight, and where?” And if it ever feels like an emergency, call 911. That is never a fuss.'}},
+
+{day:'Monday, December 28',short:'Mon 12/28',tab:'Dec 28',sub:'Fourth floor',time:'10:10 p.m.',h:22,m:10,scene:'hospital',plaque:'4TH FLOOR · ROOM 412',
+ title:'One word in the chart',
+ setup:['Teddy is asleep at last, the monitor drawing its small green hills. On your phone, in the patient portal, his admission note has posted. Most of it is careful and fair. One line isn’t: “History of non-adherence; missed scheduled dialysis 12/25.”',
+   'He didn’t miss anything. The unit moved him. But that word, non-adherence, will now follow him into every chart a stranger reads, and this week, strangers are the ones deciding things.'],
+ q:'The night nurse is kind, but she says she can’t change a doctor’s note. What do you do?',
+ c:[
+  {l:'Let it go. Everyone is stretched thin, and it’s one line.',s:0,str:[],t:'10:15 p.m.',
+   o:'It is one line until the next covering doctor reads it and decides Teddy is a man who doesn’t follow instructions. Labels in a chart rarely announce themselves. They show up later as a shorter conversation, a tone, a question nobody bothers to ask him. You didn’t write the record, but you are allowed to correct it, and so is he.',
+   log:'Chart says T is “non-adherent,” missed 12/25. Not true. Let it go for now.'},
+  {l:'Press the night nurse until she pages someone who can fix it tonight.',s:1,str:[],t:'10:20 p.m.',
+   o:'She pages the hospitalist, who is carrying a full floor and tells you, accurately, that this is not something to sort out at ten at night. The note stays. The nurse is a little warier of you now. Your anger was earned. It was aimed at the one person in the building with no power to change the record, and it spent your credibility on the wrong night.',
+   log:'Chart error (“non-adherent”). Pushed night RN, she paged hospitalist. Told to raise it in daytime.'},
+  {l:'Request a copy of the record and write a formal request to amend the line, with your own log as evidence.',s:2,str:['right','doc','esc'],t:'10:40 p.m.',
+   o:function(st){
+     if(st[0]===1) return 'You open your log. There it is: “Dec 24, 8:51 p.m., Marisol, next treatment Sat 12/26, 11:15 a.m.” You draft a short, calm request on your phone: the date of the note, the exact line, why it is wrong, and your evidence. In the morning you’ll take it to the hospital’s medical records office and keep a copy. Under federal privacy rules they generally have 60 days to act; if they refuse, they must say why in writing, and Teddy can add his own statement of disagreement to the record. Those four minutes on Christmas Eve just paid for themselves.';
+     if(st[0]===2) return 'You don’t have a name or a confirmed time, but you do have the portal: your Christmas Eve message, timestamped 8:47 p.m., asking about the holiday schedule. You draft a short, calm request: the line, why it’s wrong, the portal message, and a note that you’ll ask the unit for its printed holiday schedule. Under federal privacy rules the hospital generally has 60 days to act; a refusal must come in writing, and Teddy can add a statement of disagreement. It holds, though a name and a time would have made it airtight.';
+     return 'You flip back through your log and wish you had written down more on Christmas Eve. You don’t have a name or a time, so you draft the request anyway: the line, why it’s wrong, and a note that you’ll ask the unit for its printed holiday schedule as proof. Under federal privacy rules the hospital generally has 60 days to act; a refusal must come in writing, and Teddy can add his own statement of disagreement. It will hold. It will just take an extra phone call that a single logged line would have saved.';
+   },
+   log:'Chart: “non-adherent, missed 12/25” — wrong, unit moved him. Drafted amendment request + records copy request. Deliver to Medical Records a.m., keep copy.'}],
+ k:{h:'The record is yours to correct.',p:'You have a right to a copy of the medical record (the HIPAA right of access, generally within 30 days) and a right to ask that something inaccurate be amended (45 CFR 164.526). The provider generally acts within 60 days, and a denial must come in writing, with the right to file a statement of disagreement. Words like “non-adherent” and “difficult” travel from chart to chart. Correct them in writing, calmly, with evidence, and in the right office.'}},
+
+{day:'Tuesday, December 29',short:'Tue 12/29',tab:'Dec 29',sub:'The recliner',time:'11:45 p.m.',h:23,m:45,scene:'recliner',plaque:'4TH FLOOR · ROOM 412',
+ title:'“Fine”',
+ setup:['Your second night in the vinyl recliner that doesn’t quite recline. Dinner was two packets of crackers and a cup of something the vending machine called soup. You’ve missed two days of work and haven’t told your supervisor why. Your own blood pressure pills are at home in the bathroom cabinet.',
+   'Your phone lights up on your knee. Danny, again: “Need anything? I can drive down tomorrow. Seriously.” You start typing the word you’ve typed every night this week. Your thumb hovers over send.'],
+ q:'What do you send?',
+ c:[
+  {l:'“Fine. Don’t worry about us.”',s:0,str:[],t:'11:46 p.m.',
+   o:'He doesn’t worry, because you asked him not to. Wednesday afternoon a nurse asks you about one of Teddy’s medications and you blank on a name you’ve known for three years. Exhaustion doesn’t announce itself either. It shows up as the one mistake you’d never normally make, on the day it matters. “Fine” kept Danny out of the one week he could actually have helped.',
+   log:'Danny offered to come. Told him we’re fine.'},
+  {l:'“Not fine. Yes. Come Wednesday and sit with him so I can sleep at home. I’ll send you his summary.”',s:2,str:['backup','self'],t:'11:48 p.m.',
+   o:'Three dots, then: “Leaving at 7.” You send him a photo of the one-page summary, the log and the after-hours numbers. He arrives with real coffee, a phone charger and a son’s loud certainty, and Teddy is so glad to see him he forgets to be embarrassed. You sleep nine hours in your own bed and take your own pills. In the morning you call your supervisor and ask about family leave; caring for a seriously ill spouse is exactly what the Family and Medical Leave Act was written for, if you and your employer qualify.',
+   log:'Told Danny the truth. He’s coming Wed 7 a.m. Sent him summary + numbers. Me: sleep at home, my pills, call work re: FMLA.'},
+  {l:'Send nothing tonight. Decide in the morning.',s:1,str:[],t:'11:50 p.m.',
+   o:'Morning arrives with rounds, a social worker and a parking ticket, and the decision gets made by default. Danny asks again at noon; you say maybe Thursday. That is the thing about hard nights: they are the worst time to choose a backup, because they are when you have the least left to choose with. The time to name one is before.',
+   log:'Danny offered to come. Didn’t answer. Tired.'}],
+ k:{h:'Name the backup. Feed the fire.',p:'Every watch needs a relief. Name one backup person before the holiday, give them the one-page summary and the numbers, and let them take a real shift. Caring for yourself is not a break from advocacy: a care partner who hasn’t slept makes the very mistakes the system later blames on the family. If your job is at risk, the FMLA may give eligible workers up to 12 weeks of unpaid, job-protected leave to care for a spouse, child or parent. And if the weight ever feels like too much to carry, you can call or text 988, at any hour.'}},
+
+{day:'Thursday, December 31',short:'Thu 12/31',tab:'Dec 31',sub:'New Year’s Eve',time:'5:40 p.m.',h:17,m:40,scene:'discharge',plaque:'4TH FLOOR · ROOM 412',
+ title:'Discharged on New Year’s Eve',
+ setup:['The discharge nurse, Kayla, has three discharges before seven and apologizes for it twice. Teddy is going home tonight with a new antibiotic, a change to one of his old medications, and a stack of papers that says “follow up with nephrology in 3–5 days.” Dr. Anand’s office reopens January 4, which is four days and one holiday away.',
+   'Somebody down the street has started the fireworks early. Teddy is already dressed, coat zipped to the chin, desperate for his own bed.'],
+ q:'Kayla holds out the pen. What do you do before he signs?',
+ c:[
+  {l:'Sign and go. You’ll sort out the papers at home.',s:0,str:[],t:'5:42 p.m.',
+   o:'At the kitchen table, the papers disagree with themselves: one page lists his old dose, another the new one. It’s New Year’s Eve and the floor’s number rings to a recording. At ten you’re on the covering line, asking a question that would have taken Kayla thirty seconds at the bedside, while the neighbors count down without you.',
+   log:'Discharged 5:45 p.m. Papers don’t match on one med. Called covering line at 10 p.m.'},
+  {l:'Ask four specific questions, and write the answers on the papers in your own hand.',s:2,str:['ask','doc'],t:'5:58 p.m.',
+   o:'“Before he signs, four quick things. Which of his medications changed, and which stopped? Who do we call tonight or tomorrow, and is it a person? When exactly is his follow-up, and can it be booked before we leave? And does his treatment unit know he’s coming back Saturday?” Kayla blinks, then sits down. She calls the unit, which hadn’t been told, and books the follow-up for the morning of January 4. She highlights the change in yellow, writes the floor’s direct line across the top page and her own name under it. Twelve minutes. Teddy grumbles through all twelve and then thanks her on the way out.',
+   log:'Discharge w/ Kayla RN. New: antibiotic. Changed: 1 med (highlighted). Questions → floor direct line on top page. Unit notified for Sat. Follow-up booked Jan 4.'},
+  {l:'Ask Kayla to go over everything again, slowly.',s:1,str:[],t:'5:50 p.m.',
+   o:'She does, kindly and quickly, in nearly the same words as the first time. You nod at all of it. Later, at home, you realize you never asked who to call, and nobody told the unit he was coming back Saturday. Asking for “everything” usually gets you the script again. A specific question gets you an answer.',
+   log:'Discharged. Kayla went over papers twice. Not sure who to call with questions.'}],
+ k:{h:'Ask the specific question before the door closes.',p:'A discharge on a holiday is a handoff with nobody on the other end. Before signing: what changed, what stopped, who do we call (a person, a number), when is the follow-up, and does the next place of care know he is coming. Write the answers on the papers in your own hand, with the name of whoever told you. Specific questions get specific answers. General ones get the script.'}},
+
+{day:'Friday, January 1',short:'Fri 1/1',tab:'Jan 1',sub:'New Year’s Day',time:'8:30 p.m.',h:20,m:30,scene:'pharmacy',plaque:'OPEN 24 HOURS',
+ title:'The shelf is short',
+ setup:['The only pharmacy open on New Year’s Day is the 24-hour one across town, its sign buzzing pink over a salted lot. Gene, the pharmacist, is alone behind the counter with a line of nine and a phone that won’t stop.',
+   'He has six days of Teddy’s new antibiotic. The rest won’t arrive until the next delivery, “Monday, maybe Tuesday, with the holiday.” The prescription is for ten days, and the discharge papers say, underlined, that he needs to finish it.'],
+ q:'Nine people behind you. What do you do?',
+ c:[
+  {l:'Take the six days, and plan to space them out so they last until the rest arrives.',s:0,str:[],t:'8:36 p.m.',
+   o:'Gene catches it as you turn away: “Don’t space them out. Don’t cut them. Exactly as written, and call me Tuesday.” He’s right, and you feel the heat of almost having done it. Changing how a medicine is taken, even to make it last, is a decision for the prescriber, never for a tired person in a pharmacy line at nine at night. Tuesday you come back, and it’s in.',
+   log:'Pharmacy short. Got 6 of 10 days. Gene: take exactly as written, call Tues.'},
+  {l:'Ask three specific questions: How many days does this cover? Is the balance recorded? Does another location have it in stock today?',s:2,str:['ask','doc'],t:'8:42 p.m.',
+   o:'Gene checks. Six days carries Teddy through Wednesday. He records the balance owed on the prescription. Then he looks up the store eleven miles east, which has it, and moves the remainder there for pickup tomorrow after ten. You write it down at the counter: date, time, Gene, partial fill, where the rest is. He thanks you for making it easy. You both know you just made his night a little shorter.',
+   log:'Pharmacy: Gene RPh. Partial fill 6 days (thru Wed). Balance recorded, moved to east store, ready Sat after 10 a.m.'},
+  {l:'Take what he has and worry about the rest on Monday.',s:1,str:[],t:'8:38 p.m.',
+   o:'You go home with six days and a vague promise. Monday the delivery comes, but Teddy’s order isn’t on it, and you spend Tuesday on the phone with two pharmacies and the covering doctor while the bottle goes from three days to two. It resolves. It just didn’t have to become a cliff.',
+   log:'Pharmacy short. 6 of 10 days. Rest “after the holiday.”'}],
+ k:{h:'Get the answer that has a number in it.',p:'“It’ll come in after the holiday” is not a plan. Ask how many days you are holding, whether the balance is recorded, and whether another location has it in stock today, and write down who told you. Never stretch, skip or split a medicine to make it last unless the prescriber says to. In a holiday week the pharmacist is often the most reachable clinician you have. Use that well, and be kind to the one working alone.'}}
+];
+
+/* ---------- State ---------- */
+var st={ch:{},cur:0,plan:{}};
+try{var raw=localStorage.getItem(KEY);if(raw){var p=JSON.parse(raw);if(p&&typeof p==='object'){st.ch=p.ch||{};st.cur=+p.cur||0;st.plan=p.plan||{}}}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function chosen(i){return Object.prototype.hasOwnProperty.call(st.ch,i)?st.ch[i]:-1}
+function doneCount(){var c=0;for(var i=0;i<N.length;i++)if(chosen(i)>-1)c++;return c}
+function maxOpen(){for(var i=0;i<N.length;i++)if(chosen(i)<0)return i;return N.length-1}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+var $=function(id){return document.getElementById(id)};
+var body=$('body'),wins=$('wins'),logList=$('logList'),vig=$('vig');
+
+/* ---------- Scene art: what is inside the window each night ---------- */
+var SIL='#2a1606';
+var V={
+kitchen:'<rect x="262" y="66" width="276" height="220" fill="url(#room)"/>'+
+  '<rect x="276" y="80" width="96" height="92" rx="3" fill="#a8641f" opacity=".55"/><rect x="284" y="90" width="40" height="52" fill="#f4ecda" opacity=".85" transform="rotate(-2 304 116)"/><path d="M290 102h28M290 110h24M290 118h26M290 126h18" stroke="#6b3c12" stroke-width="1.6"/>'+
+  '<circle cx="470" cy="94" r="5" fill="'+SIL+'"/><path d="M470 98 c-30 6 -40 30 -42 70 l-6 90 h96 l-6 -90 c-2 -40 -12 -64 -42 -70z" fill="'+SIL+'"/><path d="M440 200 h30 v24 h-30z" fill="#1a0d03"/><path d="M446 196 l16 -6 l6 12 z" fill="#f4ecda"/>'+
+  '<rect x="276" y="236" width="110" height="50" fill="#6b3c12" opacity=".7"/><rect x="290" y="246" width="82" height="30" rx="3" fill="#ffb14a" opacity=".85"/>',
+dinner:'<rect x="262" y="66" width="276" height="220" fill="url(#room)"/>'+
+  '<g fill="'+SIL+'" opacity=".9"><circle cx="300" cy="150" r="14"/><path d="M278 220 q22 -50 44 0z"/><circle cx="350" cy="140" r="15"/><path d="M326 220 q24 -56 48 0z"/><circle cx="452" cy="140" r="15"/><path d="M428 220 q24 -56 48 0z"/><circle cx="502" cy="150" r="14"/><path d="M480 220 q22 -50 44 0z"/></g>'+
+  '<circle cx="402" cy="128" r="17" fill="'+SIL+'"/><path d="M372 222 q30 -70 60 0z" fill="'+SIL+'"/><path d="M430 176 l26 -18 l4 6 l-24 18z" fill="'+SIL+'"/>'+
+  '<rect x="262" y="214" width="276" height="72" fill="#f4ecda" opacity=".92"/><path d="M262 214 h276" stroke="#c9a84c" stroke-width="2"/>'+
+  '<g fill="#e7dcc3" stroke="#b9a37a" stroke-width="1.5"><ellipse cx="306" cy="236" rx="22" ry="7"/><ellipse cx="402" cy="240" rx="24" ry="8"/><ellipse cx="498" cy="236" rx="22" ry="7"/></g>'+
+  '<g><rect x="346" y="190" width="7" height="30" fill="#f4ecda"/><rect x="452" y="190" width="7" height="30" fill="#f4ecda"/><path class="flame" d="M349.5 178 c-4 6 -4 9 0 12 c4 -3 4 -6 0 -12z" fill="#fff2c2"/><path class="flame" d="M455.5 178 c-4 6 -4 9 0 12 c4 -3 4 -6 0 -12z" fill="#fff2c2"/></g>',
+truck:'<rect x="262" y="66" width="276" height="220" fill="#1a2238"/>'+
+  '<circle cx="400" cy="74" r="80" fill="url(#cand)" opacity=".8"/><rect x="386" y="68" width="28" height="9" rx="3" fill="#fff3c8"/>'+
+  '<path d="M262 92 q138 -26 276 0" stroke="#0c1222" stroke-width="10" fill="none"/>'+
+  '<g fill="#0b0f1c"><circle cx="328" cy="150" r="22"/><path d="M290 260 q38 -96 76 0z"/><circle cx="474" cy="146" r="23"/><path d="M434 260 q40 -100 80 0z"/></g>'+
+  '<g fill="#ffd9a0" opacity=".25"><circle cx="328" cy="150" r="22"/><circle cx="474" cy="146" r="23"/></g>'+
+  '<path d="M262 238 h276 v48 h-276z" fill="#090d18"/><ellipse cx="330" cy="246" rx="44" ry="14" fill="none" stroke="#2a3450" stroke-width="8"/><rect x="420" y="244" width="60" height="10" rx="3" fill="#2e7d74" opacity=".7"/>',
+bedroom:'<rect x="262" y="66" width="276" height="220" fill="#3b2a1e"/>'+
+  '<circle cx="320" cy="170" r="90" fill="url(#cand)" opacity=".9"/><path d="M296 128 h48 l10 34 h-68z" fill="#f2c27a"/><rect x="317" y="162" width="6" height="40" fill="#2a1606"/>'+
+  '<rect x="282" y="202" width="96" height="84" fill="#24160b"/><rect x="300" y="190" width="40" height="12" rx="2" fill="#c9d3e6"/><rect x="346" y="186" width="5" height="20" rx="2" fill="#e9eef6"/><text x="320" y="199" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#B23A3A">11:20</text>'+
+  '<path d="M390 190 q70 -14 150 -6 v102 h-150z" fill="#e9e0cc" opacity=".85"/><path d="M400 176 q30 -16 64 -4 v16 h-64z" fill="#f4ecda"/><circle cx="440" cy="168" r="14" fill="'+SIL+'" opacity=".8"/><path d="M420 196 q60 -10 118 0" stroke="#b9a37a" stroke-width="3" fill="none"/>'+
+  '<rect x="352" y="236" width="18" height="30" rx="3" fill="#0b0f1c"/><rect x="354" y="239" width="14" height="22" rx="1" fill="#9fd0ff" opacity=".85"/>',
+hospital:'<rect x="262" y="66" width="276" height="220" fill="url(#cold)"/>'+
+  '<g stroke="#ffffff" stroke-opacity=".35" stroke-width="3"><path d="M262 76h276M262 88h276M262 100h276M262 112h276"/></g>'+
+  '<rect x="440" y="96" width="72" height="50" rx="4" fill="#0e1a22"/><path d="M446 124 h12 l5 -12 l6 22 l5 -10 h10 l4 -6 l4 6 h14" stroke="#7CFFB0" stroke-width="2" fill="none"/>'+
+  '<path d="M306 96 v170 M296 266 h20" stroke="#0e1a22" stroke-width="4"/><path d="M298 104 h16 v26 q-8 8 -16 0z" fill="#e9eef6" opacity=".9" stroke="#0e1a22" stroke-width="2"/>'+
+  '<path d="M330 200 h196 v20 h-196z" fill="#e9eef6"/><path d="M340 186 q40 -18 80 0 v14 h-80z" fill="#f4f7fb"/><circle cx="360" cy="180" r="13" fill="#21323a"/><path d="M330 220 v50 M526 220 v50" stroke="#0e1a22" stroke-width="5"/><path d="M330 214 h196" stroke="#0e1a22" stroke-width="3"/>',
+recliner:'<rect x="262" y="66" width="276" height="220" fill="#16262e"/>'+
+  '<rect x="456" y="92" width="70" height="194" rx="4" fill="#0d1820"/><rect x="464" y="100" width="54" height="120" fill="#9fe3ff" opacity=".55"/><g fill="#0d1820" opacity=".6"><rect x="470" y="110" width="12" height="16"/><rect x="488" y="110" width="12" height="16"/><rect x="470" y="136" width="12" height="16"/><rect x="488" y="136" width="12" height="16"/><rect x="470" y="162" width="12" height="16"/><rect x="488" y="162" width="12" height="16"/></g>'+
+  '<path d="M286 286 v-70 q0 -36 36 -40 h40 q30 4 32 36 v20 h40 v54z" fill="#3a2a40"/><circle cx="344" cy="166" r="16" fill="#0a1218"/><path d="M318 236 q26 -54 54 0z" fill="#0a1218"/>'+
+  '<rect x="356" y="214" width="16" height="24" rx="2" fill="#0b0f1c"/><rect x="358" y="216" width="12" height="18" fill="#9fd0ff"/><circle cx="364" cy="226" r="40" fill="#9fd0ff" opacity=".12"/>',
+discharge:'<rect x="262" y="66" width="276" height="220" fill="url(#cold)"/>'+
+  '<rect x="262" y="66" width="276" height="88" fill="#0f1d33"/><g stroke-width="2" fill="none"><g stroke="#f2b866"><path d="M330 104 l-10 -10 M330 104 l12 -8 M330 104 l-2 -14 M330 104 l14 4 M330 104 l-14 4"/></g><g stroke="#e4a3a3"><path d="M480 96 l-9 -9 M480 96 l10 -7 M480 96 l0 -13 M480 96 l12 4 M480 96 l-12 4"/></g></g>'+
+  '<path d="M262 154 h276" stroke="#e9eef6" stroke-width="5"/>'+
+  '<circle cx="356" cy="182" r="16" fill="#1e2b33"/><path d="M326 286 q30 -90 60 0z" fill="#1B2A4A"/><path d="M356 198 v30" stroke="#C9A84C" stroke-width="2"/>'+
+  '<circle cx="452" cy="184" r="15" fill="#1e2b33"/><path d="M424 286 q28 -86 56 0z" fill="#2E7D74"/><path d="M398 226 l40 -6 l6 36 l-40 6z" fill="#fffdf7"/><path d="M404 234 l28 -4 M405 242 l28 -4 M406 250 l20 -3" stroke="#B23A3A" stroke-width="1.5"/><path d="M405 238 l28 -4" stroke="#f2e14a" stroke-width="4" opacity=".7"/>',
+pharmacy:'<rect x="262" y="66" width="276" height="220" fill="#e8f1f4"/>'+
+  '<g fill="#c9d3e6"><rect x="262" y="96" width="276" height="6"/><rect x="262" y="146" width="276" height="6"/><rect x="262" y="196" width="276" height="6"/></g>'+
+  '<g><rect x="270" y="74" width="14" height="22" fill="#2E7D74"/><rect x="288" y="80" width="18" height="16" fill="#C9A84C"/><rect x="310" y="76" width="12" height="20" fill="#B23A3A"/><rect x="326" y="78" width="16" height="18" fill="#1B2A4A"/><rect x="452" y="76" width="14" height="20" fill="#D98A2B"/><rect x="470" y="80" width="18" height="16" fill="#2E7D74"/><rect x="492" y="74" width="12" height="22" fill="#1B2A4A"/><rect x="508" y="78" width="20" height="18" fill="#C9A84C"/>'+
+  '<rect x="270" y="126" width="16" height="20" fill="#1B2A4A"/><rect x="290" y="130" width="12" height="16" fill="#D98A2B"/><rect x="306" y="128" width="18" height="18" fill="#2E7D74"/><rect x="480" y="126" width="14" height="20" fill="#B23A3A"/><rect x="498" y="130" width="22" height="16" fill="#1B2A4A"/>'+
+  '<rect x="276" y="180" width="14" height="16" fill="#C9A84C"/><rect x="510" y="178" width="16" height="18" fill="#2E7D74"/></g>'+
+  '<circle cx="400" cy="160" r="17" fill="#22303f"/><path d="M366 236 q34 -80 68 0z" fill="#f4f7fb" stroke="#c9d3e6" stroke-width="2"/>'+
+  '<rect x="262" y="226" width="276" height="60" fill="#1B2A4A"/><rect x="262" y="222" width="276" height="6" fill="#C9A84C"/>'+
+  '<rect x="436" y="108" width="96" height="30" rx="5" fill="#1a0f22"/><text x="484" y="129" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="500" fill="#ff8fc0" letter-spacing="2">24 HRS</text>',
+dawn:'<rect x="262" y="66" width="276" height="220" fill="url(#room)"/>'+
+  '<rect x="262" y="214" width="276" height="72" fill="#f4ecda" opacity=".9"/><g fill="#fffdf7" stroke="#b9a37a" stroke-width="2"><path d="M350 196 h28 v22 q-14 8 -28 0z"/><path d="M422 196 h28 v22 q-14 8 -28 0z"/></g><path d="M378 202 q8 2 0 10 M450 202 q8 2 0 10" stroke="#b9a37a" stroke-width="2" fill="none"/>'+
+  '<rect x="380" y="226" width="56" height="40" rx="2" fill="#fffdf7" stroke="#c9a84c" stroke-width="1.5" transform="rotate(-4 408 246)"/><path d="M386 236h40M386 244h36M386 252h30" stroke="#1d3266" stroke-width="1.4" transform="rotate(-4 408 246)"/>'
+};
+var MOONX=[120,150,175,640,670,700,730,756],MOONY=[118,104,92,70,64,60,62,66];
+
+/* ---------- Clock: hands always move forward through the week ---------- */
+var hA=null,mA=null;
+function setClock(h,m,forward){
+  var th=((h%12)*30+m*.5),tm=m*6;
+  function nextA(prev,target,minSpin,fw){
+    if(prev===null)return target;
+    var a=target;
+    if(fw){while(a<prev+minSpin)a+=360}else{while(a>prev-minSpin)a-=360}
+    return a;
+  }
+  hA=nextA(hA,th,360,forward);mA=nextA(mA,tm,720,forward);
+  $('hh').style.transform='rotate('+hA+'deg)';$('mh').style.transform='rotate('+mA+'deg)';
+}
+
+/* ---------- Render ---------- */
+var shown=-1;
+function renderWins(){
+  var mo=maxOpen(),html='';
+  N.forEach(function(n,i){
+    var d=chosen(i)>-1,can=d||i<=mo,cur=i===st.cur&&!endShown;
+    html+='<button type="button" class="nw'+(d?' done':'')+(cur?' cur':'')+'" data-i="'+i+'"'+(can?'':' disabled')+' aria-label="Night '+(i+1)+', '+esc(n.day)+(d?', finished':can?'':', not yet')+'"'+(cur?' aria-current="step"':'')+'><span class="pane" aria-hidden="true"></span><span class="d">'+n.tab+'</span></button>';
+  });
+  wins.innerHTML=html;
+  Array.prototype.forEach.call(wins.querySelectorAll('.nw'),function(b){b.addEventListener('click',function(){if(b.disabled)return;go(+b.getAttribute('data-i'),true)})});
+  // houses across the street light up as nights are kept
+  var dc=doneCount();
+  Array.prototype.forEach.call(document.querySelectorAll('.hlit'),function(r,k){r.setAttribute('fill',k<dc?'#f2b866':'#1a2742')});
+}
+function renderLog(newIdx){
+  var html='',any=false;
+  N.forEach(function(n,i){var c=chosen(i);if(c<0)return;any=true;var ch=n.c[c];
+    html+='<li'+(i===newIdx?' class="new"':'')+'><span class="ts">'+n.short+' · '+ch.t+'</span>'+esc(ch.log)+'</li>'});
+  if(doneCount()===N.length)html+='<li class="teddy'+(newIdx===-2?' new':'')+'"><span class="ts">Fri 1/1 · 11:58 p.m. · in his writing</span>Home. Thank you for keeping watch. My turn to take a shift. —T.</li>';
+  logList.innerHTML=html;$('logEmpty').style.display=any?'none':'';
+  if(newIdx!==undefined&&newIdx!==null){var lg=$('log');lg.scrollTop=lg.scrollHeight}
+}
+function outcomeText(n,c){var o=n.c[c].o;return typeof o==='function'?o(st.ch):o}
+
+function renderNight(i,focusHead){
+  var n=N[i],c=chosen(i),forward=shown<0||i>=shown;
+  shown=i;
+  $('wDay').textContent=n.sub+' · '+n.tab;$('wTime').textContent=n.time;setClock(n.h,n.m,forward);
+  vig.innerHTML=V[n.scene];
+  $('plaque').textContent=n.plaque||'';
+  $('moon').setAttribute('transform','translate('+MOONX[i]+' '+MOONY[i]+')');
+  $('picT').textContent='Night '+(i+1)+': '+n.title+'. A lit window on a winter night, with a candle on the sill.';
+  var h='<span class="no">Night '+(i+1)+' of 8 · '+esc(n.day)+'</span><h3 id="nTitle" tabindex="-1">'+esc(n.title)+'</h3><div class="setup">'+n.setup.map(function(p){return '<p>'+esc(p)+'</p>'}).join('')+'</div>'+
+    '<p class="q">'+esc(n.q)+'</p><div class="choices" role="group" aria-label="Your choices">';
+  n.c.forEach(function(ch,k){
+    h+='<button type="button" class="ch'+(c===k?' pick':c>-1?' dim':'')+'" data-k="'+k+'"'+(c>-1?' disabled aria-pressed="'+(c===k)+'"':'')+'><span class="k" aria-hidden="true">'+'ABC'[k]+'</span><span>'+esc(ch.l)+'</span></button>';
+  });
+  h+='</div><div id="outBox" aria-live="polite"></div>';
+  body.innerHTML=h;
+  Array.prototype.forEach.call(body.querySelectorAll('.ch'),function(b){b.addEventListener('click',function(){pick(i,+b.getAttribute('data-k'))})});
+  if(c>-1)renderOutcome(i,false);
+  if(focusHead){var t=$('nTitle');if(t)t.focus({preventScroll:true})}
+}
+function renderOutcome(i,animate){
+  var n=N[i],c=chosen(i),ch=n.c[c],last=i===N.length-1;
+  var tags=ORDER.filter(function(k){return n.c.some(function(x){return x.str.indexOf(k)>-1})}).map(function(k){var used=ch.str.indexOf(k)>-1;return '<span class="tag'+(used?'':' off')+'">'+(used?'Used: ':'Tonight’s lesson: ')+esc(STR[k].n)+'</span>'}).join('');
+  var lead=ch.s===2?'What happened':ch.s===1?'What happened (partly there)':'What happened (a wrong turn that teaches)';
+  var h='<div class="out"><div class="what"><span class="lbl">'+lead+'</span><p>'+esc(outcomeText(n,c))+'</p></div>'+
+    '<div class="know"><span class="lbl">What a true advocate knows</span><h4>'+esc(n.k.h)+'</h4><p>'+esc(n.k.p)+'</p><div class="tags">'+tags+'</div></div>'+
+    '<div class="nav2"><button class="btn" type="button" id="again"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg>Replay this night</button>'+
+    '<button class="btn p" type="button" id="next">'+(last?'See the morning':'Next night: '+esc(N[i+1].tab)+' ›')+'</button></div>'+
+    '<p class="hint">A new line was added to your watch log, below.</p></div>';
+  var box=$('outBox');box.innerHTML=h;
+  if(!animate)box.firstChild.style.animation='none';
+  $('again').addEventListener('click',function(){delete st.ch[i];save();renderAll();renderNight(i,true);var t=$('nTitle');if(t)t.scrollIntoView({block:'start',behavior:smooth()})});
+  $('next').addEventListener('click',function(){if(last)showEnd();else go(i+1,true)});
+}
+function smooth(){return matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}
+function pick(i,k){
+  if(chosen(i)>-1)return;
+  st.ch[i]=k;st.cur=i;save();
+  Array.prototype.forEach.call(body.querySelectorAll('.ch'),function(b,j){b.disabled=true;b.classList.add(j===k?'pick':'dim');b.setAttribute('aria-pressed',String(j===k))});
+  renderOutcome(i,true);renderWins();renderLog(i);
+  var o=body.querySelector('.out');if(o)o.scrollIntoView({block:'nearest',behavior:smooth()});
+  var w=body.querySelector('.what p');if(w){w.setAttribute('tabindex','-1');w.focus({preventScroll:true})}
+}
+var endShown=false;
+function go(i,scroll){
+  st.cur=i;save();endShown=false;$('end').classList.remove('on');
+  renderWins();renderNight(i,true);
+  if(scroll)$('play').scrollIntoView({block:'start',behavior:smooth()});
+}
+function renderAll(){renderWins();renderLog()}
+
+/* ---------- Ending ---------- */
+function showEnd(){
+  if(doneCount()<N.length){go(maxOpen(),true);return}
+  endShown=true;
+  vig.innerHTML=V.dawn;$('plaque').textContent='';$('wDay').textContent='New Year’s Day · Jan 1';$('wTime').textContent='11:58 p.m.';setClock(23,58,true);
+  renderWins();renderLog(-2);
+  var used={},strong=0,weak=[];
+  N.forEach(function(n,i){var ch=n.c[chosen(i)];if(ch.s===2)strong++;else weak.push(i);ch.str.forEach(function(k){(used[k]=used[k]||[]).push(i+1)})});
+  var nu=Object.keys(used).length;$('score').textContent=strong?('Strong choices on '+strong+' of 8 nights · '+nu+' of 7 strengths used'):'A hard week, played honestly. Every night is waiting below to be played again.';
+  $('strengths').innerHTML=ORDER.map(function(k){var s=STR[k],u=used[k];
+    return '<div class="st'+(u?' on':'')+'"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+s.ic+'</svg><b>'+esc(s.n)+'</b><span>'+esc(s.d)+'</span><em>'+(u?'Used on night'+(u.length>1?'s ':' ')+u.join(', '):'Not used this week')+'</em></div>'}).join('');
+  var missing=ORDER.filter(function(k){return !used[k]});
+  var r='';
+  if(strong===8){
+    r+='<p>You kept a clean watch: every night, you reached for the move that holds up later. That is rarer than it should be, and it isn’t luck. It is a handful of habits, the same ones care partners usually learn the hard way, one bad holiday at a time.</p>'+
+      '<p>The honest part is that real weeks are messier than eight decisions. You’ll be more tired than you were playing this, the phone will ring while you’re driving, and somebody you love will tell you that you’re overreacting. The habits that slip first under exhaustion are usually the quiet ones: writing it down and letting someone else take a shift. Guard those two.</p>';
+  }else if(strong>=5){
+    r+='<p>You did what most good care partners do. You were strong when the problem was clear, and you got pulled off course in a few places. Here is where:</p>';
+  }else{
+    r+='<p>You played this the way a lot of loving, exhausted people actually live it, and that is exactly why it’s worth playing. None of the wrong turns here is a character flaw. Every one of them is something the system counts on: that you won’t write it down, won’t know the rule, won’t ask the second question, won’t ask for help. Here is where the week bent:</p>';
+  }
+  if(weak.length){r+='<ul>'+weak.map(function(i){return '<li><b>'+esc(N[i].tab)+', '+esc(N[i].title.replace(/[“”]/g,''))+':</b> '+esc(N[i].k.h)+'</li>'}).join('')+'</ul>';
+    r+='<p>Replay any of those nights below and try the other road. Teddy will forgive you; that’s rather the point of practicing on him.</p>'}
+  var pickK=missing.length?missing[0]:null;
+  var act=pickK?STR[pickK].a:'Give this plan to the person who would take over if you couldn’t, and walk them through it once, out loud, before December 24.';
+  r+='<div class="one"><span class="lbl">Your one thing to do this week</span><div>'+esc(act)+'</div></div>';
+  $('reflect').innerHTML=r;
+  $('replay').innerHTML=N.map(function(n,i){return '<button class="btn" type="button" data-i="'+i+'">'+esc(n.tab)+' · '+esc(n.title.replace(/[“”]/g,''))+'</button>'}).join('');
+  Array.prototype.forEach.call($('replay').querySelectorAll('button'),function(b){b.addEventListener('click',function(){var i=+b.getAttribute('data-i');delete st.ch[i];save();renderAll();go(i,true)})});
+  var e=$('end');e.classList.add('on');
+  e.scrollIntoView({block:'start',behavior:smooth()});
+  setTimeout(function(){$('endH').focus({preventScroll:true})},50);
+}
+
+/* ---------- Plan fields ---------- */
+Array.prototype.forEach.call(document.querySelectorAll('#plan input'),function(inp){
+  var k=inp.getAttribute('data-k');if(st.plan[k])inp.value=st.plan[k];
+  inp.addEventListener('input',function(){st.plan[k]=inp.value.slice(0,200);if(k==='for')$('pFor').textContent=inp.value||'the person I care for';save()});
+});
+if(st.plan['for'])$('pFor').textContent=st.plan['for'];
+function v(k){return (st.plan[k]||'').trim()||'________________'}
+function planText(){
+  return 'HOLIDAY WEEK WATCH PLAN (Dec 24 – Jan 2)\nKeeping watch for: '+v('for')+'\n\n'+
+  'NUMBERS TO HAVE\n- Clinic or treatment unit, after hours: '+v('unit')+'\n- Doctor’s office, and who is covering: '+v('doc')+'\n- On-call or answering service: '+v('oncall')+'\n- Pharmacy open on holidays: '+v('pharm')+'\n- Complaint numbers on the posted rights: '+v('comp')+'\n- Emergency: 911. Suicide & Crisis Lifeline: call or text 988.\n\n'+
+  'MY BACKUP PERSON\n- '+v('bname')+', '+v('bphone')+'\n- Has the one-page summary and this plan; knows where the meds and log are; will take one real shift.\n\n'+
+  'ASK BEFORE THE HOLIDAY SCHEDULE STARTS\n1. What is the exact day and time of every appointment or treatment between Dec 24 and Jan 2, and can I have that in writing?\n2. Who is covering for our doctor that week, and how do we reach them after hours?\n3. Which symptoms mean call tonight, and which mean go to the emergency room?\n4. Will any prescription run short before normal pharmacy hours return? Can we fill it now?\n5. If there is a discharge on a holiday, who is the person we call afterward, and when is the follow-up?\n\n'+
+  'WRITE DOWN, EVERY TIME\nDate · Time · Name & role · What was said · What was promised · Next step, by when\nIf something goes wrong, climb in order: the person, their supervisor or charge nurse, a written grievance, then the outside agency.\n\n'+
+  'ONE-PAGE SUMMARY (coat pocket): diagnoses; every medication and allergies; any line, port or device; doctors and numbers; standing instructions; wishes and who may speak for them.\n\n'+
+  'FOR ME: '+v('me')+'\n\nThe Night Watch · Cold Ischemia Foundation · '+SITE;
+}
+function logText(){
+  var t='WATCH LOG · The Night Watch\n';
+  N.forEach(function(n,i){var c=chosen(i);if(c>-1)t+=n.short+', '+n.c[c].t+': '+n.c[c].log+'\n'});
+  return t+'\n'+SITE;
+}
+
+/* ---------- Copy, share, print ---------- */
+var toastEl=$('toast');
+function toast(m){toastEl.textContent=m;toastEl.classList.add('on');clearTimeout(toast._t);toast._t=setTimeout(function(){toastEl.classList.remove('on')},2800)}
+function fallbackCopy(t,msg){var ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='-1000px';document.body.appendChild(ta);ta.select();
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}document.body.removeChild(ta);if(ok)toast(msg);else window.prompt('Copy this:',t)}
+function copy(t,msg){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(function(){toast(msg)},function(){fallbackCopy(t,msg)})}else fallbackCopy(t,msg)}
+$('copyPlan').addEventListener('click',function(){copy(planText(),'Plan copied. Paste it anywhere, or send it to your backup person.')});
+$('copyLog').addEventListener('click',function(){copy(logText(),'Watch log copied.')});
+var shareText='The Night Watch: eight nights from Christmas Eve to New Year’s Day, played as a care partner. Real choices, and a printable holiday plan at the end. From the Cold Ischemia Foundation.';
+$('sharePage').addEventListener('click',function(){if(navigator.share){navigator.share({title:'The Night Watch',text:shareText,url:SITE}).catch(function(){})}else copy(SITE,'Link copied. Send it to someone carrying more than anyone knows.')});
+$('printPlan').addEventListener('click',function(){document.documentElement.classList.add('pp');setTimeout(function(){window.print()},30)});
+addEventListener('afterprint',function(){document.documentElement.classList.remove('pp')});
+addEventListener('beforeprint',function(){if(endShown)document.documentElement.classList.add('pp')});
+
+$('begin').addEventListener('click',function(){go(Math.min(maxOpen(),N.length-1),true)});
+$('restart').addEventListener('click',function(){if(doneCount()&&!window.confirm('Start the week over? Your choices and watch log will be cleared. Your plan entries stay.'))return;st.ch={};st.cur=0;save();hA=null;mA=null;shown=-1;renderAll();go(0,true)});
+if(doneCount()>0){$('beginTxt').textContent=doneCount()===N.length?'Read the week again':'Pick up where you left off'}
+
+/* ---------- Zoom the art in on phones ---------- */
+var mq=matchMedia('(max-width:520px)');
+function fitArt(){$('pic').setAttribute('viewBox',mq.matches?'170 8 460 372':'0 0 800 380')}
+fitArt();if(mq.addEventListener)mq.addEventListener('change',fitArt);else if(mq.addListener)mq.addListener(fitArt);
+
+/* ---------- Init ---------- */
+var start=Math.min(st.cur,maxOpen());
+renderAll();renderNight(start,false);
+if(doneCount()===N.length&&location.hash==='#plan'){showEnd()}
+
+/* ---------- Snow ---------- */
+(function(){var c=$('snow');if(!c.getContext||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ var x=c.getContext('2d'),W,H,f=[],Nn=innerWidth<700?40:80,dpr=Math.min(devicePixelRatio||1,2);
+ function rs(){W=c.width=innerWidth*dpr;H=c.height=innerHeight*dpr;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px'}
+ rs();addEventListener('resize',rs);
+ for(var i=0;i<Nn;i++)f.push({x:Math.random(),y:Math.random(),r:Math.random()*1.7+.4,s:Math.random()*.0007+.00025,w:Math.random()*6.28});
+ (function loop(){x.clearRect(0,0,W,H);x.fillStyle='rgba(233,238,246,.5)';
+  f.forEach(function(p){p.y+=p.s;p.w+=.008;p.x+=Math.sin(p.w)*.00025;if(p.y>1){p.y=-.02;p.x=Math.random()}
+   x.beginPath();x.arc(p.x*W,p.y*H,p.r*dpr,0,6.283);x.fill()});
+  if(!document.hidden)requestAnimationFrame(loop);else setTimeout(function(){requestAnimationFrame(loop)},500)})();})();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Find Your North Star | Cold Ischemia Foundation</title>
+<meta name="description" content="A winter night sky to explore and build. Light eleven real moments when patients, families and advocates changed kidney care and patient rights, then add a star of your own and take it with you.">
+<meta property="og:title" content="Find Your North Star · Cold Ischemia Foundation">
+<meta property="og:description" content="Every right patients have today exists because someone, often a tired family member, refused to be quiet. Light the stars that were already there. Then add yours.">
+<meta property="og:url" content="https://coldischemia.foundation/holiday-north-star.html">
+<meta property="og:image" content="https://coldischemia.foundation/cold-ischemia-logo.png">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Find Your North Star: a living winter sky. Ambient canvas (Milky Way, aurora, drift) sits behind the page;
+   the stage canvas holds eleven historical stars and the visitor's own constellation. CIF palette. */
+:root{
+  --night:#060b17; --night2:#0c1730; --navy:#1B2A4A; --gold:#C9A84C; --gold2:#e6cf8a; --teal:#2E7D74; --teal2:#5fc2b2; --blood:#B23A3A; --amber:#D98A2B;
+  --snow:#eef2f8; --muted:#a9b8cf; --line:rgba(201,168,76,.3); --glass:rgba(9,16,32,.72); --glass2:rgba(14,24,46,.82);
+  --disp:"Fraunces",Georgia,serif; --serif:"Source Serif 4",Georgia,serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--night);color:var(--snow);font-family:var(--serif);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+#sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;display:block}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-left)) 80px}
+.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:600;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+a{color:var(--gold2)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px;border-radius:6px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Hero */
+.hero{text-align:center;padding:56px 0 18px;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.hero .lbl{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(6,11,23,.6)}
+.hero h1{font-size:clamp(46px,9vw,108px);line-height:.95;margin:22px 0 16px;letter-spacing:-.015em;font-weight:800}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--gold2);display:inline-block}
+.hero .dek{font-size:clamp(18px,2.2vw,22px);color:#dbe3ef;max-width:740px;margin:0 auto;font-style:italic}
+.steps3{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;margin:30px auto 0;max-width:860px;padding:0;list-style:none}
+.steps3 li{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);background:rgba(9,16,32,.6);border:1px solid rgba(169,184,207,.2);border-radius:999px;padding:8px 14px}
+.steps3 b{color:var(--gold2);font-weight:500;margin-right:6px}
+
+/* Section headers */
+.sec-h{margin:60px 0 18px;max-width:780px}
+.sec-h.c{text-align:center;margin-left:auto;margin-right:auto}
+.sec-h h2{font-size:clamp(30px,4.6vw,50px);line-height:1.05;margin:8px 0 10px;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+.sec-h p{color:#cdd7e5;margin:0;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+
+/* Observatory: stage + reading panel */
+.obs{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:18px;align-items:stretch}
+@media (max-width:900px){.obs{grid-template-columns:1fr}}
+.stage{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:16/13;min-height:420px;
+  background:radial-gradient(120% 90% at 50% 110%,rgba(46,125,116,.16),transparent 60%),rgba(4,8,18,.35);
+  border:1px solid rgba(201,168,76,.22);box-shadow:inset 0 0 120px rgba(0,0,0,.55),0 30px 80px rgba(0,0,0,.4)}
+@media (max-width:900px){.stage{aspect-ratio:auto;height:min(640px,128vw);min-height:500px}}
+#stageCv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.star{position:absolute;width:46px;height:46px;transform:translate(-50%,-50%);border-radius:50%;z-index:3;-webkit-tap-highlight-color:transparent}
+.star .yr{position:absolute;left:50%;top:38px;transform:translateX(-50%);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--muted);opacity:.55;white-space:nowrap;pointer-events:none;transition:opacity .4s,color .4s}
+.star[aria-pressed="true"] .yr{opacity:1;color:var(--gold2)}
+.star.sel .yr{color:#fff}
+.star:focus-visible{outline:2px solid var(--gold2);outline-offset:0}
+.clabel{position:absolute;z-index:2;transform:translate(-50%,-50%);font-family:var(--disp);font-style:italic;font-size:clamp(15px,1.8vw,20px);
+  color:var(--gold2);white-space:nowrap;pointer-events:none;opacity:0;transition:opacity 1.2s;text-shadow:0 0 14px rgba(0,0,0,.9)}
+.clabel.on{opacity:.95}
+.clabel small{display:block;text-align:center;font-family:var(--mono);font-style:normal;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.yourslot{position:absolute;z-index:2;left:50%;transform:translate(-50%,0);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(230,207,138,.55);pointer-events:none;white-space:nowrap;transition:opacity .8s}
+.yourname{position:absolute;z-index:2;left:50%;transform:translate(-50%,0);text-align:center;font-family:var(--disp);font-weight:600;font-size:clamp(16px,2vw,22px);color:#fff;
+  text-shadow:0 0 18px rgba(217,138,43,.7),0 2px 10px rgba(0,0,0,.9);pointer-events:none;opacity:0;transition:opacity 1.4s;max-width:46%;line-height:1.15}
+.yourname.on{opacity:1}
+.stage-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px;flex-wrap:wrap}
+.meter{font-family:var(--mono);font-size:12px;color:var(--muted);background:rgba(6,11,23,.72);border:1px solid rgba(169,184,207,.22);padding:7px 12px;border-radius:999px;pointer-events:auto}
+.meter b{color:var(--gold2);font-weight:500}
+.lnk{pointer-events:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:rgba(6,11,23,.72);border:1px solid rgba(169,184,207,.22);padding:7px 12px;border-radius:999px}
+.lnk:hover{color:var(--gold2)}
+
+.panel{position:relative;border-radius:22px;background:linear-gradient(170deg,var(--glass2),var(--glass));border:1px solid var(--line);
+  padding:26px 26px 22px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;min-height:420px}
+@media (max-width:900px){.panel{min-height:0}}
+.panel .lbl{display:flex;align-items:center;gap:8px}
+.panel .lbl i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.panel .when{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:14px;letter-spacing:.04em}
+.panel h3{font-size:clamp(25px,3vw,32px);line-height:1.1;margin:6px 0 14px}
+.panel h3:focus{outline:none}
+.panel p{margin:0 0 .85em;color:#dce4ef;font-size:16.5px}
+.teach{margin:6px 0 14px;padding:12px 15px;border-left:3px solid var(--gold);background:rgba(201,168,76,.09);border-radius:0 10px 10px 0;font-size:16px;color:#f1e8cf}
+.teach b{display:block;font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.src{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.6}
+.src a{color:var(--teal2)}
+.pnav{display:flex;justify-content:space-between;gap:8px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(169,184,207,.16)}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;
+  border:1px solid rgba(201,168,76,.5);color:var(--gold2);background:rgba(6,11,23,.4);text-decoration:none;line-height:1.2}
+.chip:hover{background:rgba(201,168,76,.12)}
+.chip.p{background:var(--gold);color:#1B2A4A;border-color:var(--gold);font-weight:500}
+.chip.p:hover{background:var(--gold2)}
+.chip.t{border-color:rgba(95,194,178,.55);color:#bfe9e1}
+.chip[disabled]{opacity:.35;cursor:default}
+.intro-p{color:#dce4ef}
+.intro-p ol{padding-left:20px;margin:10px 0 0}
+.intro-p li{margin-bottom:6px}
+
+.themes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}
+@media (max-width:900px){.themes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.theme{display:flex;flex-direction:column;justify-content:flex-start;text-align:left;padding:14px 16px;border-radius:14px;background:rgba(9,16,32,.66);border:1px solid rgba(169,184,207,.18);transition:border-color .3s,background .3s}
+.theme:hover{border-color:rgba(201,168,76,.5)}
+.theme .tn{font-family:var(--disp);font-size:19px;font-weight:600;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.theme .tn span{font-family:var(--mono);font-size:11.5px;font-weight:400;color:var(--muted)}
+.theme p{margin:4px 0 0;font-size:14.5px;color:#c3cfe0;line-height:1.45}
+.theme.done{border-color:rgba(201,168,76,.7);background:linear-gradient(160deg,rgba(201,168,76,.16),rgba(9,16,32,.7))}
+.theme.done .tn span{color:var(--gold2)}
+.bar{height:3px;border-radius:3px;background:rgba(169,184,207,.15);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .6s}
+
+/* What the stars share */
+.share6{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:10px}
+@media (max-width:820px){.share6{grid-template-columns:1fr}}
+.share6 div{padding:18px 20px;border-radius:14px;background:rgba(9,16,32,.7);border:1px solid rgba(46,125,116,.4)}
+.share6 h3{font-size:19px;color:#bfe9e1;margin-bottom:4px}
+.share6 p{margin:0;font-size:15.5px;color:#cdd7e5;line-height:1.5}
+
+/* Part two: builder */
+.builder{position:relative;max-width:820px;margin:0 auto;border-radius:24px;padding:clamp(24px,4vw,40px);
+  background:linear-gradient(165deg,rgba(27,42,74,.92),rgba(8,14,28,.9));border:1px solid var(--gold);box-shadow:0 40px 100px rgba(0,0,0,.5)}
+.builder:before{content:"";position:absolute;inset:10px;border:1px solid rgba(201,168,76,.22);border-radius:16px;pointer-events:none}
+.dots{display:flex;gap:8px;justify-content:center;margin-bottom:22px}
+.dots i{width:30px;height:4px;border-radius:4px;background:rgba(169,184,207,.25);transition:background .4s}
+.dots i.on{background:var(--gold)}
+.q{display:none}
+.q.on{display:block;animation:rise .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.q .lbl{display:block;text-align:center}
+.q h3{font-size:clamp(26px,4vw,38px);text-align:center;margin:8px 0 10px;line-height:1.1}
+.q h3:focus{outline:none}
+.q .hint{text-align:center;color:#c9d4e4;max-width:600px;margin:0 auto 18px;font-size:16px}
+.q textarea,.q input{width:100%;font:inherit;font-size:19px;line-height:1.45;color:var(--snow);background:rgba(4,8,18,.7);border:1px solid rgba(201,168,76,.45);border-radius:14px;padding:14px 16px;resize:none}
+.q textarea::placeholder,.q input::placeholder{color:#7f8ea6;font-style:italic}
+.q textarea:focus,.q input:focus{outline:none;border-color:var(--gold2);box-shadow:0 0 0 3px rgba(201,168,76,.22)}
+.count{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right;margin-top:4px}
+.ex{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;justify-content:center}
+.ex button{font-size:14.5px;padding:7px 13px;border-radius:999px;border:1px dashed rgba(169,184,207,.4);color:#d4dceb;background:rgba(4,8,18,.4);font-style:italic}
+.ex button:hover{border-color:var(--gold2);color:#fff}
+.ex .exl{width:100%;text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:10px}
+.care{margin:16px auto 0;max-width:600px;text-align:center;font-size:14px;color:#aebbd0}
+.care a{color:#bfe9e1}
+
+/* Result */
+.result{display:none;margin-top:30px}
+.result.on{display:block;animation:rise .6s cubic-bezier(.2,.8,.2,1)}
+.res-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:22px;align-items:start}
+@media (max-width:860px){.res-grid{grid-template-columns:1fr}}
+.preview{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5);background:#060b17}
+.preview img{display:block;width:100%;height:auto}
+.res-side{display:flex;flex-direction:column;gap:16px}
+.box{border-radius:16px;padding:18px 20px;background:rgba(9,16,32,.82);border:1px solid rgba(169,184,207,.2)}
+.box h3{font-size:20px;margin-bottom:8px}
+.box .lbl{display:block;margin-bottom:6px}
+.namein{width:100%;font-family:var(--disp);font-size:24px;font-weight:600;color:#fff;background:rgba(4,8,18,.7);border:1px solid rgba(201,168,76,.45);border-radius:12px;padding:10px 14px}
+@media (max-width:520px){.namein{font-size:19px}}
+.namein:focus{outline:none;border-color:var(--gold2);box-shadow:0 0 0 3px rgba(201,168,76,.22)}
+.sugs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.sugs button{font-size:14px;padding:5px 11px;border-radius:999px;border:1px solid rgba(169,184,207,.3);color:#d4dceb;font-family:var(--disp);font-style:italic}
+.sugs button:hover{border-color:var(--gold2)}
+.msg{width:100%;min-height:190px;font:inherit;font-size:15.5px;line-height:1.55;color:var(--snow);background:rgba(4,8,18,.6);border:1px solid rgba(169,184,207,.25);border-radius:12px;padding:12px 14px;resize:vertical}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.week{border-color:rgba(217,138,43,.6);background:linear-gradient(160deg,rgba(217,138,43,.16),rgba(9,16,32,.85))}
+.week .lbl{color:var(--amber)}
+.week p{margin:0 0 .6em;font-size:16.5px}
+.week p:last-child{margin:0}
+.more{display:flex;flex-wrap:wrap;gap:8px}
+
+/* Sources + foot */
+.sources{margin:70px auto 0;max-width:900px;padding:24px 26px;border-radius:16px;background:rgba(6,11,23,.82);border:1px solid rgba(169,184,207,.16)}
+.sources h2{font-size:24px;margin-bottom:10px}
+.sources ol{margin:0;padding-left:20px;font-size:14.5px;color:#c3cfe0}
+.sources li{margin-bottom:6px}
+.sources a{color:var(--teal2);word-break:break-word}
+.foot{margin-top:40px;text-align:center;color:var(--muted);font-size:14px;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.foot p{max-width:720px;margin:0 auto 8px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;z-index:10080;background:var(--gold);color:var(--navy);padding:12px 18px;border-radius:10px;font-family:var(--mono);font-size:13px;transition:.3s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{#sky,nav.cifnav,.toast{display:none!important}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><link rel="alternate" type="application/rss+xml" title="Cold Ischemia Foundation · This Week" href="https://coldischemia.foundation/feed.xml"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a><a href="watch-list.html" role="menuitem">The Watch List</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="academy.html" role="menuitem">The Advocate's Academy</a><a href="gatekeeper-files.html" role="menuitem">The Gatekeeper Files</a><a href="test-your-knowledge.html" role="menuitem">Test Your Knowledge</a><a href="living-donor-guide.html" role="menuitem">Free Donor Guide (PDF)</a><a href="research-digest.html" role="menuitem">Research Digest</a><a href="inside-files.html" role="menuitem">The Inside Files</a><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-hub.html" role="menuitem">Living Donor Hub</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="kidney-transplant-centers.html" role="menuitem">Kidney Transplant Centers by State</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">Holidays</button><div class="cn-dd" role="menu"><a href="advocates-advent.html" role="menuitem">The Advocate's Advent Calendar</a><a href="holiday-night-watch.html" role="menuitem">The Night Watch</a><a href="holiday-north-star.html" class="on" role="menuitem">Find Your North Star</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="this-week.html" class="cn-t cn-wk">This Week</a><a href="services.html" class="cn-t cn-s">Services We Offer</a><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-week.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<main class="wrap">
+  <header class="hero">
+    <span class="lbl">Cold Ischemia Foundation · A winter sky, December 2026</span>
+    <h1>Find Your <em>North Star</em></h1>
+    <p class="dek">Every right patients have today exists because someone, very often a tired family member, refused to be quiet. Those people are still up there. Light them one by one. Then add a star of your own.</p>
+    <ol class="steps3">
+      <li><b>1</b>Touch a faint star to light it</li>
+      <li><b>2</b>Finish a constellation to name it</li>
+      <li><b>3</b>Answer four questions and draw yours</li>
+    </ol>
+  </header>
+
+  <section aria-labelledby="p1">
+    <div class="sec-h">
+      <span class="lbl">Part one</span>
+      <h2 id="p1">The sky that was already there</h2>
+      <p>Eleven stars, eleven real moments. None of these people were paid to show up. Most of them were sick, or exhausted from caring for someone who was. Each one is sourced, so you can check it and quote it.</p>
+    </div>
+
+    <div class="obs">
+      <div class="stage" id="stage">
+        <canvas id="stageCv" aria-hidden="true"></canvas>
+        <div id="starBtns" role="group" aria-label="Stars in the sky. Each one is a moment in patient rights history."></div>
+        <div class="yourslot" id="yourSlot">Your star goes here</div>
+        <div class="yourname" id="yourName" aria-live="polite"></div>
+      </div>
+
+      <article class="panel" id="panel" aria-live="polite">
+        <div id="panelBody" class="intro-p">
+          <span class="lbl">How to read this sky</span>
+          <h3 style="margin-top:12px">Start anywhere. Every star is a person who would not stay quiet.</h3>
+          <ol>
+            <li>Touch or tab to a faint star. Its story opens here.</li>
+            <li>Light every star in a group and the lines draw themselves: <em>Speaking up</em>, <em>Organizing</em>, <em>Writing it down</em>, <em>Changing the rule</em>.</li>
+            <li>The empty space in the middle is saved for you. Part two, below, fills it.</li>
+          </ol>
+        </div>
+        <div class="pnav">
+          <button type="button" class="chip" id="prevS" disabled>&larr; Earlier</button>
+          <button type="button" class="chip p" id="nextS">Light the first star &rarr;</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="stage-bar">
+      <span class="meter" id="meter"><b>0</b> of 11 stars lit</span>
+      <button type="button" class="lnk" id="lightAll">Light them all</button>
+    </div>
+    <div class="themes" id="themes"></div>
+  </section>
+
+  <section aria-labelledby="common">
+    <div class="sec-h c">
+      <span class="lbl">What every star had in common</span>
+      <h2 id="common">Not a title. A set of habits.</h2>
+      <p>Nobody in this sky was handed the word "advocate." They earned it by doing a few unglamorous things over and over, usually for free, usually while tired.</p>
+    </div>
+    <div class="share6">
+      <div><h3>They wrote it down</h3><p>Dates, names, exact words, lab values. The waiting time that came back in 2023 came back because records proved it.</p></div>
+      <div><h3>They asked the specific question</h3><p>Not "why is this happening to us," but "which policy are you following, and may I see it?"</p></div>
+      <div><h3>They knew the written rule</h3><p>A grievance right you can quote by its number is very hard to brush aside.</p></div>
+      <div><h3>They kept the patient's voice in the room</h3><p>Shep Glazer did not send a summary. He came himself, connected to the machine.</p></div>
+      <div><h3>They organized</h3><p>The 504 sit-in lasted 26 days because neighbors, churches and a union kept bringing food.</p></div>
+      <div><h3>Nobody was paying them</h3><p>Independence is why they could say the uncomfortable thing and come back the next day to say it again.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="p2">
+    <div class="sec-h c">
+      <span class="lbl">Part two</span>
+      <h2 id="p2">Your own star</h2>
+      <p>Four short questions. Your answers become a constellation in the middle of the sky above, with a name taken from your own words, an image you can keep, and a message you can send.</p>
+    </div>
+
+    <div class="builder" id="builder">
+      <div class="dots" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <form id="qform" autocomplete="off" novalidate>
+        <div class="q" data-k="carry">
+          <span class="lbl">Question 1 of 5</span>
+          <h3 tabindex="-1">Who are you carrying this season?</h3>
+          <p class="hint">A person, a whole family, or yourself. Say it the way you would say it out loud.</p>
+          <label class="sr" for="a-carry">Who are you carrying this season?</label>
+          <textarea id="a-carry" rows="2" maxlength="90" placeholder="My mother, who starts treatment in January"></textarea>
+          <div class="count" data-for="a-carry"></div>
+          <div class="ex"><span class="exl">Or start from one of these</span>
+            <button type="button">My husband, three mornings a week</button><button type="button">My mother, who still won't ask for help</button><button type="button">Myself, for once</button></div>
+          <p class="care">If this season is heavier than you can hold, you can call or text <a href="tel:988">988</a>, the Suicide &amp; Crisis Lifeline, at any hour.</p>
+        </div>
+        <div class="q" data-k="doc">
+          <span class="lbl">Question 2 of 5</span>
+          <h3 tabindex="-1">One thing you have learned to write down</h3>
+          <p class="hint">Documenting is the quiet skill under every star above. What do you now record that you used to trust to memory?</p>
+          <label class="sr" for="a-doc">One thing you have learned to write down</label>
+          <textarea id="a-doc" rows="2" maxlength="90" placeholder="Every lab result, with the date and who read it to me"></textarea>
+          <div class="count" data-for="a-doc"></div>
+          <div class="ex"><span class="exl">Or start from one of these</span>
+            <button type="button">Every lab result, with the date</button><button type="button">Who said what on every phone call</button><button type="button">The name of every person who told us no</button></div>
+        </div>
+        <div class="q" data-k="ask">
+          <span class="lbl">Question 3 of 5</span>
+          <h3 tabindex="-1">The one question you will ask in January</h3>
+          <p class="hint">Specific questions get specific answers. Make it one you can ask in a single breath, and plan to ask for the answer in writing.</p>
+          <label class="sr" for="a-ask">The one question you will ask in January</label>
+          <textarea id="a-ask" rows="2" maxlength="90" placeholder="Can I see the written policy you are following?"></textarea>
+          <div class="count" data-for="a-ask"></div>
+          <div class="ex"><span class="exl">Or start from one of these</span>
+            <button type="button">Can I see that policy in writing?</button><button type="button">Am I active or inactive on the list, and why?</button><button type="button">Who decides this, and how do I appeal?</button></div>
+        </div>
+        <div class="q" data-k="with">
+          <span class="lbl">Question 4 of 5</span>
+          <h3 tabindex="-1">Who will you invite to stand with you?</h3>
+          <p class="hint">Every star up there had company. Name one person you will actually ask this week.</p>
+          <label class="sr" for="a-with">Who will you invite to stand with you?</label>
+          <textarea id="a-with" rows="2" maxlength="70" placeholder="My brother Ray"></textarea>
+          <div class="count" data-for="a-with"></div>
+          <div class="ex"><span class="exl">Or start from one of these</span>
+            <button type="button">My sister</button><button type="button">A friend from church</button><button type="button">Another care partner from the waiting room</button></div>
+        </div>
+        <div class="q" data-k="me">
+          <span class="lbl">Question 5 of 5 · optional</span>
+          <h3 tabindex="-1">How should your star be signed?</h3>
+          <p class="hint">A first name, initials, or leave it blank. Nothing you type here leaves your device unless you choose to share it.</p>
+          <label class="sr" for="a-me">Your first name or initials (optional)</label>
+          <input id="a-me" type="text" maxlength="30" placeholder="First name or initials">
+        </div>
+        <div class="qnav">
+          <button type="button" class="chip" id="qBack">&larr; Back</button>
+          <button type="submit" class="chip p" id="qNext">Next &rarr;</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="result" id="result" aria-labelledby="resH">
+      <div class="sec-h c" style="margin-top:20px">
+        <span class="lbl">Your constellation is in the sky</span>
+        <h2 id="resH" tabindex="-1">Keep it. Send it. Then do the first thing.</h2>
+      </div>
+      <div class="res-grid">
+        <div class="preview"><img id="cardImg" alt="Your North Star card"></div>
+        <div class="res-side">
+          <div class="box">
+            <label class="lbl" for="nameIn">Your constellation's name</label>
+            <input class="namein" id="nameIn" maxlength="44">
+            <div class="sugs" id="sugs" aria-label="Other names made from your words"></div>
+            <div class="row">
+              <button type="button" class="chip p" id="dl">Download image</button>
+              <button type="button" class="chip" id="shImg" hidden>Share image</button>
+              <button type="button" class="chip" id="showSky">See it in the sky</button>
+            </div>
+          </div>
+          <div class="box week">
+            <span class="lbl">One thing to do this week</span>
+            <div id="weekTxt"></div>
+          </div>
+          <div class="box">
+            <label class="lbl" for="msg">A message you can copy and send</label>
+            <textarea class="msg" id="msg"></textarea>
+            <div class="row">
+              <button type="button" class="chip p" id="cpy">Copy message</button>
+              <button type="button" class="chip" id="shTxt">Share</button>
+              <a class="chip" id="mailT">Email</a>
+              <button type="button" class="chip t" id="again">Start over</button>
+            </div>
+          </div>
+          <div class="box">
+            <span class="lbl">Keep going</span>
+            <div class="more">
+              <a class="chip t" href="academy.html">The Advocate's Academy</a>
+              <a class="chip t" href="projects.html">The Toolkit</a>
+              <a class="chip t" href="advocates-advent.html">The Advocate's Advent</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sources" aria-labelledby="srcH">
+    <h2 id="srcH">Sources</h2>
+    <ol id="srcList"></ol>
+  </section>
+
+  <footer class="foot">
+    <p>Your answers stay in this browser. Nothing is sent to us or anyone else unless you download, copy or share it yourself.</p>
+    <p>If we have described any of these moments imperfectly, tell us through the <a href="contact.html">contact page</a> and we will correct it.</p>
+    <p>The Cold Ischemia Foundation is an independent 501(c)(3). We accept no industry sponsorship. <a href="independence.html">What independence means to us</a>.</p>
+  </footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+'use strict';
+var SITE='https://coldischemia.foundation/holiday-north-star.html';
+var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var KEY='cif-northstar-v1';
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(ST))}catch(e){}}
+var ST=load();ST.lit=Array.isArray(ST.lit)?ST.lit:[];ST.a=ST.a||{};
+
+var G={
+ speak:{n:'Speaking up',c:'#e6cf8a',d:'They said it out loud, in the room where it counted.',lx:.19,ly:.06},
+ org:{n:'Organizing',c:'#5fc2b2',d:'Nobody in this group did it alone.',lx:.21,ly:.92},
+ write:{n:'Writing it down',c:'#e9a65a',d:'If it is not written down, it can be denied.',lx:.82,ly:.92},
+ rule:{n:'Changing the rule',c:'#f0f3fa',d:'And then the rule itself moved.',lx:.74,ly:.035}
+};
+var SRC={
+ glazer:[['NBC News / ProPublica, "Dialysis payment program is costly in too many ways" (2010)','https://www.nbcnews.com/id/40842821/ns/health-health_care/']],
+ fiske:[['University of Minnesota, "Living history: organ transplantation"','https://twin-cities.umn.edu/news-events/living-history-organ-transplantation-0'],['University of Minnesota Medical School, "Remembering the legacy of Jaime Fiske"','https://scope.umn.edu/remembering-legacy-jaime-fiske']],
+ opo:[['Federal Register, CMS-3380-F, OPO Conditions for Coverage, Dec. 2, 2020','https://www.govinfo.gov/content/pkg/FR-2020-12-02/html/2020-26329.htm']],
+ s504:[['National Park Service, "The 504 Protest: Disability Community and Civil Rights"','https://home.nps.gov/articles/000/504-protest-disability-community-and-civil-rights.htm']],
+ actup:[['ACT UP Oral History Project, "Seize Control of the FDA"','https://www.actuporalhistory.org/actions/seize-control-of-the-fda'],['HISTORY, "How ACT UP changed AIDS patient rights"','https://www.history.com/news/act-up-aids-patient-rights']],
+ crawl:[['HISTORY, "The Capitol Crawl and the Americans with Disabilities Act"','https://www.history.com/articles/americans-with-disabilities-act-1990-capitol-crawl']],
+ ssa:[['Social Security Administration, "Social Security Amendments of 1972: Summary"','https://ssa.gov/history/1972amend.html'],['Baker Institute, "Fifty Years of a National Program for the Treatment of Kidney Failure"','https://bakerinstitute.org/research/fifty-years-national-program-treatment-kidney-failure']],
+ nota:[['Reagan Library, Statement on Signing the National Organ Transplant Act, Oct. 19, 1984','https://www.reaganlibrary.gov/research/speeches/101984f'],['42 U.S.C. 274e, Prohibition of organ purchases','https://www.govinfo.gov/content/pkg/USCODE-2010-title42/html/USCODE-2010-title42-chap6A-subchapII-partH-sec274e.htm']],
+ immuno:[['American Society of Transplantation, "Immuno Bill Passes After 20 Years"','https://www.myast.org/blog/immuno-bill-passes-after-20-years'],['CMS fact sheet on Part B immunosuppressive drug coverage (Consolidated Appropriations Act, 2021, sec. 402)','https://www.cms.gov/newsroom/fact-sheets/implementing-certain-provisions-consolidated-appropriations-act-2021-and-other-revisions-medicare-2']],
+ cfc:[['Federal Register, Conditions for Coverage for ESRD Facilities, April 15, 2008','https://www.federalregister.gov/documents/2008/04/15/08-1102/medicare-and-medicaid-programs-conditions-for-coverage-for-end-stage-renal-disease-facilities'],['eCFR, 42 CFR Part 494 (patient rights at 494.70)','https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-494'],['CMS press release, April 3, 2008','https://cms.gov/newsroom/press-releases/cms-releases-regulation-modernizing-dialysis-centers']],
+ egfr:[['OPTN/HRSA, Waiting time modifications for candidates affected by race-inclusive eGFR calculations','https://www.hrsa.gov/optn/policies-bylaws/policy-issues/waiting-time-modifications-race-inclusive-egfr-calculations'],['UNOS, "Change addressing disparity for Black kidney patients takes effect"','https://unos.org/?p=295046'],['Scripps News, "2,470 Black transplant patients get new kidney after medical redress"','https://scrippsnews.com/stories/2-470-black-transplant-patients-get-new-kidney-after-medical-redress/']]
+};
+var S=[
+{id:'glazer',g:'speak',x:.10,y:.17,yr:'1971',when:'November 4, 1971 · Washington, D.C.',h:'A man on a machine, in front of Congress',
+ m:['Shep Glazer had kidney failure. Instead of sending a letter, he came to a hearing of the House Ways and Means Committee and spoke while connected to a dialysis machine, so the people who write the nation’s health law could watch his blood being cleaned in front of them.',
+    'He told them plainly that patients who could not pay for treatment were being pushed toward a choice between dying and going broke. Less than a year later, Congress passed the law that put kidney failure under Medicare.'],
+ t:'Bring the bedside into the room. A rule written far away from the patient changes when the patient is impossible to ignore.'},
+{id:'fiske',g:'speak',x:.25,y:.30,yr:'1982',when:'1982 · New York and Minneapolis',h:'A father at a doctors’ meeting',
+ m:['Before 1984 there was no national network for matching a donated organ with the patient who needed it. Charles Fiske’s baby daughter, Jamie, had biliary atresia and needed a new liver. He talked his way into addressing a meeting of pediatricians in New York and asked them, one father to a room of doctors, to watch for a donor. He told them her favorite song was “You Are My Sunshine.”',
+    'Jamie received her transplant at the University of Minnesota on November 5, 1982, at eleven months old. Her case became part of the public pressure that led to congressional hearings and, two years later, the National Organ Transplant Act.'],
+ t:'Ask the room directly. A tired parent with one clear request has moved more policy than any glossy campaign.'},
+{id:'opo',g:'speak',x:.12,y:.43,yr:'2020',when:'December 2, 2020 · Federal Register',h:'The families who wrote in',
+ m:['When Medicare proposed new ways to grade the organizations that recover donated organs, many of the public comments came from ordinary people and from donor families, asking that poorly performing organizations finally be held accountable.',
+    'The final rule replaced the old measures with outcomes counted from death certificate data reported to the CDC. In the agency’s own words: “Part of ensuring reliability is moving away from self-reported data as much as is feasible.”'],
+ t:'A public comment is a microphone most people never pick up. These families did, and it is on the record.'},
+{id:'s504',g:'org',x:.08,y:.67,yr:'1977',when:'April 5, 1977 · San Francisco',h:'Twenty-six days in a federal building',
+ m:['Federal law already said programs receiving federal money could not shut out people with disabilities, but the regulations that would enforce it sat unsigned. On April 5, 1977, disabled activists launched protests in ten cities.',
+    'In San Francisco, about a hundred people with many kinds of disabilities, including Judy Heumann and Kitty Cone, occupied the federal offices at 50 UN Plaza and stayed 26 days. Churches, a union, the local Black Panther Party and neighbors kept them fed. Secretary Joseph Califano signed the Section 504 regulations before they went home.'],
+ t:'Nobody holds a building for 26 days alone. Organizing means somebody is bringing dinner.'},
+{id:'actup',g:'org',x:.22,y:.81,yr:'1988',when:'October 11, 1988 · Rockville, Maryland',h:'Patients who did the homework',
+ m:['About 1,500 activists from across the country surrounded the headquarters of the Food and Drug Administration, demanding that the agency speed up research and approval of AIDS drugs. Many of them were sick, and they came carrying their own reading of the science.',
+    'Within a year, the FDA and the National Institutes of Health accepted a “parallel track” that let patients who had run out of options reach experimental treatment early.'],
+ t:'Know your condition well enough to argue it with the people who bill for it.'},
+{id:'crawl',g:'org',x:.34,y:.70,yr:'1990',when:'March 12, 1990 · U.S. Capitol',h:'The steps',
+ m:['The Americans with Disabilities Act was stalled. About sixty activists left their wheelchairs and crutches at the bottom of the Capitol steps and climbed, many pulling themselves up by their arms. The youngest, Jennifer Keelan, was eight years old.',
+    'President George H. W. Bush signed the ADA on July 26, 1990.'],
+ t:'Make the barrier visible. Then make them watch you climb it.'},
+{id:'ssa',g:'rule',x:.60,y:.13,yr:'1972',when:'October 30, 1972 · Public Law 92-603',h:'The law that followed',
+ m:['President Nixon signed the Social Security Amendments of 1972. Beginning July 1, 1973, Medicare covered people under 65 who needed dialysis or a transplant for chronic kidney failure, if they were insured under Social Security, along with their spouses and dependent children.',
+    'Look at the gap between this star and Shep Glazer’s. Less than a year.'],
+ t:'Rules are written by people, and people can be reached. That is the whole reason to speak up.'},
+{id:'nota',g:'rule',x:.75,y:.24,yr:'1984',when:'October 19, 1984 · Public Law 98-507',h:'One national list, and organs that cannot be bought',
+ m:['President Reagan signed the National Organ Transplant Act. It created the Organ Procurement and Transplantation Network to keep a national registry matching donated organs with the people who need them, set up a task force to study transplantation, including the cost of anti-rejection drugs, and made buying or selling human organs a federal crime.',
+    'No parent should have to plead with a room of strangers again. Whether the list works fairly is a question patients are still asking.'],
+ t:'There is a written system now. Learn exactly how your place in it is decided.'},
+{id:'immuno',g:'rule',x:.89,y:.12,yr:'2020',when:'December 2020 · Coverage from January 1, 2023',h:'Twenty years for the pills',
+ m:['Kidney transplant recipients under 65 who were not disabled used to lose Medicare coverage of their anti-rejection drugs 36 months after transplant, even though they need those drugs for as long as the kidney lasts. For about twenty years, patients, recipients, living donors and families walked the halls of Congress alongside clinicians.',
+    'In December 2020 the fix finally became law. Since January 1, 2023, Medicare Part B-ID covers these drugs for people who lack other coverage.'],
+ t:'Some wins take twenty years. Show up for the twenty-first.'},
+{id:'cfc',g:'write',x:.75,y:.67,yr:'2008',when:'April 15, 2008 · 42 CFR Part 494',h:'Rights you can point to',
+ m:['Medicare published new Conditions for Coverage for dialysis facilities, replacing requirements first issued in 1976. Section 494.70 put patient rights in plain regulation: to file a grievance without reprisal, to file it anonymously or through a representative, and to see those rights posted with the phone numbers of the state survey agency and the ESRD Network.',
+    'The rule also requires 30 days’ written notice before an involuntary discharge, and a plan of care built with the patient, not handed to them.'],
+ t:'A right you cannot quote is a right someone else gets to interpret for you.'},
+{id:'egfr',g:'write',x:.90,y:.80,yr:'2023',when:'January 5, 2023 · OPTN policy',h:'The paperwork that gave back years',
+ m:['For years, a common kidney function formula included a race adjustment that made Black patients’ kidneys look healthier than they were, which could delay the day their transplant waiting time began to count. In December 2022 the OPTN board voted unanimously to fix it. Every kidney program had to find affected Black candidates and modify their waiting time, with documentation due by January 3, 2024. Patients could help by supplying their own old lab records.',
+    'By UNOS’s count, 14,701 people received waiting time credit, a median of 1.7 years, and 2,470 of them have since received a kidney.'],
+ t:'Keep your old labs. Somebody’s records proved those years were real.'}
+];
+var IDX={};S.forEach(function(s,i){IDX[s.id]=i});
+var EDGES=[['glazer','fiske'],['fiske','opo'],['s504','actup'],['actup','crawl'],['ssa','nota'],['nota','immuno'],['cfc','egfr']];
+var lit={};ST.lit.forEach(function(id){if(id in IDX)lit[id]=1});
+var edgeT={};EDGES.forEach(function(e){if(lit[e[0]]&&lit[e[1]])edgeT[e.join()]=1});
+var litT={};S.forEach(function(s){litT[s.id]=lit[s.id]?1:0});
+var sel=-1;
+
+// ---------- DOM refs ----------
+var $=function(id){return document.getElementById(id)};
+var stage=$('stage'),cv=$('stageCv'),btnWrap=$('starBtns'),panelBody=$('panelBody'),prevS=$('prevS'),nextS=$('nextS'),meter=$('meter'),themesEl=$('themes');
+var toastEl=$('toast');
+function toast(m){toastEl.textContent=m;toastEl.classList.add('on');clearTimeout(toast._t);toast._t=setTimeout(function(){toastEl.classList.remove('on')},2600)}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+
+// sources list
+(function(){var ol=$('srcList'),h='';S.forEach(function(s){SRC[s.id].forEach(function(r){h+='<li><b>'+esc(s.yr)+'</b> · <a href="'+r[1]+'" target="_blank" rel="noopener">'+esc(r[0])+'</a></li>'})});
+ h+='<li><b>Question 3 hint</b> · OPTN/SRTR 2024 Annual Data Report: 42% of kidney candidates were inactive at year-end or at removal. <a href="https://srtr.transplant.hrsa.gov" target="_blank" rel="noopener">srtr.transplant.hrsa.gov</a></li>';
+ ol.innerHTML=h})();
+
+// star buttons + labels
+S.forEach(function(s,i){var b=document.createElement('button');b.type='button';b.className='star';b.id='st-'+s.id;
+ b.style.left=(s.x*100)+'%';b.style.top=(s.y*100)+'%';b.innerHTML='<span class="yr" aria-hidden="true">'+s.yr+'</span>';
+ b.setAttribute('aria-label',s.yr+', '+G[s.g].n+': '+s.h);b.setAttribute('aria-pressed',lit[s.id]?'true':'false');
+ b.addEventListener('click',function(){select(i,true)});btnWrap.appendChild(b)});
+var labels={};Object.keys(G).forEach(function(k){var d=document.createElement('div');d.className='clabel';d.style.left=(G[k].lx*100)+'%';d.style.top=(G[k].ly*100)+'%';
+ d.innerHTML=esc(G[k].n)+'<small>'+(k==='speak'?'3 stars':k==='org'?'3 stars':k==='rule'?'3 stars':'2 stars')+'</small>';d.setAttribute('aria-hidden','true');stage.appendChild(d);labels[k]=d});
+// theme cards
+var themeEls={};Object.keys(G).forEach(function(k){var b=document.createElement('button');b.type='button';b.className='theme';
+ b.innerHTML='<div class="tn">'+esc(G[k].n)+'<span></span></div><p>'+esc(G[k].d)+'</p><div class="bar"><i></i></div>';
+ b.addEventListener('click',function(){var first=-1,any=-1;S.forEach(function(s,i){if(s.g===k){if(any<0)any=i;if(!lit[s.id]&&first<0)first=i}});select(first>=0?first:any,true);stage.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'})});
+ themesEl.appendChild(b);themeEls[k]=b});
+
+function groupCount(k){var n=0,t=0;S.forEach(function(s){if(s.g===k){t++;if(lit[s.id])n++}});return [n,t]}
+function refresh(){var n=Object.keys(lit).length;meter.innerHTML='<b>'+n+'</b> of 11 stars lit';
+ Object.keys(G).forEach(function(k){var c=groupCount(k);themeEls[k].querySelector('.tn span').textContent=c[0]+' / '+c[1];
+  themeEls[k].querySelector('.bar i').style.width=(c[0]/c[1]*100)+'%';var done=c[0]===c[1];themeEls[k].classList.toggle('done',done);labels[k].classList.toggle('on',done)});
+ $('lightAll').hidden=n===11;
+ S.forEach(function(s,i){var b=$('st-'+s.id);b.setAttribute('aria-pressed',lit[s.id]?'true':'false');b.classList.toggle('sel',i===sel)});
+ nextS.textContent=sel<0?'Light the first star →':(sel<S.length-1?'Next star →':'Make your own star ↓');
+ prevS.disabled=sel<=0}
+
+function select(i,focusPanel){if(i<0)return;sel=i;var s=S[i],wasLit=lit[s.id];lit[s.id]=1;
+ if(!wasLit){EDGES.forEach(function(e){if(lit[e[0]]&&lit[e[1]]&&!(e.join() in edgeT))edgeT[e.join()]=RM?1:0});
+  if(RM)litT[s.id]=1;
+  var c=groupCount(s.g);if(c[0]===c[1])setTimeout(function(){toast('Constellation named: '+G[s.g].n)},RM?0:700);
+  if(Object.keys(lit).length===11)setTimeout(function(){toast('The whole sky is lit. The middle is waiting for you.')},RM?0:2600)}
+ ST.lit=Object.keys(lit);save();
+ var src=SRC[s.id].map(function(r){return '<a href="'+r[1]+'" target="_blank" rel="noopener">'+esc(r[0])+'</a>'}).join('<br>');
+ panelBody.className='';
+ panelBody.innerHTML='<span class="lbl"><i style="background:'+G[s.g].c+'"></i>'+esc(G[s.g].n)+' · star '+(i+1)+' of 11</span>'+
+  '<div class="when">'+esc(s.when)+'</div><h3 tabindex="-1">'+esc(s.h)+'</h3>'+s.m.map(function(p){return '<p>'+esc(p)+'</p>'}).join('')+
+  '<div class="teach"><b>What it teaches</b>'+esc(s.t)+'</div><div class="src">Source: '+src+'</div>';
+ refresh();kick();
+ if(focusPanel&&innerWidth<=900){$('panel').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})}}
+prevS.addEventListener('click',function(){if(sel>0){select(sel-1);panelBody.querySelector('h3').focus({preventScroll:true})}});
+nextS.addEventListener('click',function(){if(sel<S.length-1){select(sel+1);var h=panelBody.querySelector('h3');if(h)h.focus({preventScroll:true})}else{$('p2').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})}});
+$('lightAll').addEventListener('click',function(){var i0=sel;S.forEach(function(s,i){if(!lit[s.id])select(i)});if(i0>=0)select(i0);toast('Every star is lit. Read them in any order.')});
+
+// ---------- Stage canvas ----------
+var cx=cv.getContext('2d'),W=0,H=0,DPR=1;
+var dust=[];
+function sizeStage(){var r=stage.getBoundingClientRect();DPR=Math.min(2,window.devicePixelRatio||1);W=r.width;H=r.height;cv.width=Math.round(W*DPR);cv.height=Math.round(H*DPR);
+ dust=[];var n=Math.round(W*H/2600);var rnd=mulberry(7);for(var i=0;i<n;i++)dust.push({x:rnd(),y:rnd(),r:rnd()*1.1+.25,a:rnd()*.5+.15,p:rnd()*6.28});
+ placeYou();kick()}
+function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+var YOU={on:!!ST.built,t:ST.built?1:0,name:ST.name||''};
+function youPts(){var c={x:.5*W,y:.47*H},R=Math.min(W,H)*.14;var ry=R*(H>W?1.15:1);
+ return [c,{x:c.x,y:c.y-ry},{x:c.x+R,y:c.y},{x:c.x,y:c.y+ry},{x:c.x-R,y:c.y}]}
+function placeYou(){var p=youPts();$('yourSlot').style.top=(p[3].y+18)+'px';$('yourName').style.top=(p[3].y+22)+'px';
+ $('yourSlot').style.opacity=YOU.on?0:1;$('yourName').textContent=YOU.on?YOU.name:'';$('yourName').classList.toggle('on',YOU.on)}
+
+function glow(x,y,r,col,a){var g=cx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,hexA(col,a));g.addColorStop(.35,hexA(col,a*.35));g.addColorStop(1,hexA(col,0));cx.fillStyle=g;cx.beginPath();cx.arc(x,y,r,0,6.2832);cx.fill()}
+function hexA(h,a){var n=parseInt(h.slice(1),16);return 'rgba('+(n>>16&255)+','+(n>>8&255)+','+(n&255)+','+Math.max(0,Math.min(1,a)).toFixed(3)+')'}
+function spikes(x,y,len,col,a){cx.strokeStyle=hexA(col,a);cx.lineWidth=1;cx.beginPath();cx.moveTo(x-len,y);cx.lineTo(x+len,y);cx.moveTo(x,y-len);cx.lineTo(x,y+len);cx.stroke();
+ cx.strokeStyle=hexA(col,a*.4);cx.beginPath();var d=len*.45;cx.moveTo(x-d,y-d);cx.lineTo(x+d,y+d);cx.moveTo(x+d,y-d);cx.lineTo(x-d,y+d);cx.stroke()}
+function P(s){return {x:s.x*W,y:s.y*H}}
+var running=false,lastT=0;
+function kick(){if(RM){draw(performance.now());return}if(!running){running=true;lastT=performance.now();requestAnimationFrame(loop)}}
+function loop(t){var dt=Math.min(.05,(t-lastT)/1000);lastT=t;var busy=false;
+ S.forEach(function(s){if(lit[s.id]&&litT[s.id]<1){litT[s.id]=Math.min(1,litT[s.id]+dt*1.6);busy=true}});
+ Object.keys(edgeT).forEach(function(k){var e=k.split(',');if(edgeT[k]<1&&litT[e[0]]>=1&&litT[e[1]]>=1){edgeT[k]=Math.min(1,edgeT[k]+dt*.9);busy=true}});
+ if(YOU.on&&YOU.t<1){YOU.t=Math.min(1,YOU.t+dt*.45)}
+ draw(t);
+ if(!document.hidden)requestAnimationFrame(loop);else{running=false}}
+document.addEventListener('visibilitychange',function(){if(!document.hidden)kick()});
+
+function draw(t){cx.setTransform(DPR,0,0,DPR,0,0);cx.clearRect(0,0,W,H);var tw=t/1000;
+ // fine dust
+ dust.forEach(function(d){var a=d.a*(RM?1:(.65+.35*Math.sin(tw*1.3+d.p)));cx.fillStyle='rgba(225,232,245,'+a.toFixed(3)+')';cx.beginPath();cx.arc(d.x*W,d.y*H,d.r,0,6.2832);cx.fill()});
+ // guide lines (faint)
+ cx.setLineDash([2,6]);cx.lineWidth=1;
+ EDGES.forEach(function(e){var a=P(S[IDX[e[0]]]),b=P(S[IDX[e[1]]]);cx.strokeStyle='rgba(169,184,207,.10)';cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()});
+ cx.setLineDash([]);
+ // lit lines
+ EDGES.forEach(function(e){var k=e.join();if(!(k in edgeT))return;var p=edgeT[k];if(p<=0)return;var A=S[IDX[e[0]]],a=P(A),b=P(S[IDX[e[1]]]);
+  var ex=a.x+(b.x-a.x)*p,ey=a.y+(b.y-a.y)*p;cx.strokeStyle=hexA(G[A.g].c,.6);cx.lineWidth=1.4;cx.shadowColor=hexA(G[A.g].c,.8);cx.shadowBlur=8;
+  cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(ex,ey);cx.stroke();cx.shadowBlur=0});
+ // bridge: Glazer to the 1972 law
+ if(lit.glazer&&lit.ssa){var a=P(S[IDX.glazer]),b=P(S[IDX.ssa]);cx.setLineDash([3,5]);cx.strokeStyle='rgba(95,194,178,.42)';cx.lineWidth=1;cx.beginPath();cx.moveTo(a.x,a.y);
+  var mx=(a.x+b.x)/2,my=Math.max(a.y,b.y)+H*.08;cx.quadraticCurveTo(mx,my,b.x,b.y);cx.stroke();cx.setLineDash([]);
+  cx.font='500 '+(W<500?9.5:11)+'px "IBM Plex Mono",monospace';cx.fillStyle='rgba(191,233,225,.85)';cx.textAlign='center';cx.fillText('less than a year later',(a.x+2*mx+b.x)/4,(a.y+2*my+b.y)/4+15)}
+ // stars
+ S.forEach(function(s,i){var p=P(s),l=litT[s.id],col=G[s.g].c,tws=RM?1:(.75+.25*Math.sin(tw*2.1+i*1.7));
+  if(l<1){var pr=RM?.5:(.5+.5*Math.sin(tw*1.6+i));cx.strokeStyle='rgba(230,207,138,'+(0.10+0.16*pr)*(1-l)+')';cx.lineWidth=1;cx.beginPath();cx.arc(p.x,p.y,10+pr*5,0,6.2832);cx.stroke();
+   cx.fillStyle='rgba(235,240,250,'+(.55*tws*(1-l))+')';cx.beginPath();cx.arc(p.x,p.y,2.1,0,6.2832);cx.fill()}
+  if(l>0){var e=easeOut(l);glow(p.x,p.y,34*e*tws,col,.55*e);spikes(p.x,p.y,16*e*tws,'#fff6dc',.55*e);
+   cx.fillStyle='rgba(255,252,240,'+e+')';cx.beginPath();cx.arc(p.x,p.y,3.4*e+.5,0,6.2832);cx.fill();
+   if(l<1){cx.strokeStyle=hexA(col,(1-l)*.7);cx.lineWidth=1.5;cx.beginPath();cx.arc(p.x,p.y,8+l*40,0,6.2832);cx.stroke()}}
+  if(i===sel){cx.strokeStyle='rgba(255,255,255,.75)';cx.lineWidth=1.2;cx.beginPath();cx.arc(p.x,p.y,15,0,6.2832);cx.stroke()}});
+ // your constellation
+ var Y=youPts();
+ if(!YOU.on){var pr2=RM?.5:(.5+.5*Math.sin(tw*1.2));cx.setLineDash([2,7]);cx.strokeStyle='rgba(230,207,138,'+(0.12+0.12*pr2)+')';cx.lineWidth=1;
+  cx.beginPath();cx.arc(Y[0].x,Y[0].y,Math.min(W,H)*.14,0,6.2832);cx.stroke();cx.setLineDash([]);
+  cx.fillStyle='rgba(230,207,138,'+(0.35+0.3*pr2)+')';cx.beginPath();cx.arc(Y[0].x,Y[0].y,2.4,0,6.2832);cx.fill()}
+ else{var yt=easeOut(YOU.t);
+  for(var k=1;k<5;k++){var q=Math.max(0,Math.min(1,yt*1.6-(k-1)*.15));if(q<=0)continue;var a2=Y[0],b2=Y[k];
+   cx.strokeStyle='rgba(240,190,110,.7)';cx.lineWidth=1.5;cx.shadowColor='rgba(217,138,43,.9)';cx.shadowBlur=10;cx.beginPath();cx.moveTo(a2.x,a2.y);cx.lineTo(a2.x+(b2.x-a2.x)*q,a2.y+(b2.y-a2.y)*q);cx.stroke();cx.shadowBlur=0}
+  var ring=Math.max(0,yt*1.4-.4);if(ring>0){cx.strokeStyle='rgba(240,190,110,'+(.35*ring)+')';cx.lineWidth=1;cx.beginPath();for(var j=1;j<=5;j++){var pt=Y[j===5?1:j];if(j===1)cx.moveTo(pt.x,pt.y);else cx.lineTo(pt.x,pt.y)}cx.stroke()}
+  for(var k2=1;k2<5;k2++){var q2=Math.max(0,Math.min(1,yt*1.6-(k2-1)*.15-.2));if(q2>0){glow(Y[k2].x,Y[k2].y,26*q2,'#D98A2B',.6*q2);cx.fillStyle='rgba(255,240,210,'+q2+')';cx.beginPath();cx.arc(Y[k2].x,Y[k2].y,3*q2,0,6.2832);cx.fill()}}
+  var tw2=RM?1:(.85+.15*Math.sin(tw*1.4));glow(Y[0].x,Y[0].y,70*yt*tw2,'#e6cf8a',.65*yt);spikes(Y[0].x,Y[0].y,30*yt*tw2,'#fff6dc',.8*yt);
+  cx.fillStyle='rgba(255,255,250,'+yt+')';cx.beginPath();cx.arc(Y[0].x,Y[0].y,5*yt,0,6.2832);cx.fill()}}
+function easeOut(x){return 1-Math.pow(1-x,3)}
+addEventListener('resize',function(){clearTimeout(sizeStage._t);sizeStage._t=setTimeout(sizeStage,120)});
+
+// ---------- Ambient sky ----------
+(function(){var c=$('sky'),x=c.getContext('2d'),w,h,dpr,stars=[],base=document.createElement('canvas'),bx=base.getContext('2d'),aur=document.createElement('canvas'),ax=aur.getContext('2d'),shoot=null,nextShoot=4;
+ function build(){dpr=Math.min(1.75,window.devicePixelRatio||1);w=innerWidth;h=innerHeight;c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);
+  base.width=c.width;base.height=c.height;var b=bx;b.setTransform(dpr,0,0,dpr,0,0);
+  var g=b.createLinearGradient(0,0,0,h);g.addColorStop(0,'#040812');g.addColorStop(.45,'#0a1428');g.addColorStop(1,'#0f1f3a');b.fillStyle=g;b.fillRect(0,0,w,h);
+  var hz=b.createRadialGradient(w*.5,h*1.15,0,w*.5,h*1.15,h*.9);hz.addColorStop(0,'rgba(46,125,116,.22)');hz.addColorStop(1,'rgba(46,125,116,0)');b.fillStyle=hz;b.fillRect(0,0,w,h);
+  // Milky Way band: diagonal, soft clouds, grain and dark lanes
+  var rnd=mulberry(42),ang=-0.52,L=Math.hypot(w,h),cxm=w*.52,cym=h*.48,ca=Math.cos(ang),sa=Math.sin(ang),bw=Math.min(w,h)*.20;
+  b.globalCompositeOperation='lighter';
+  for(var i=0;i<70;i++){var u=(rnd()-.5)*L,v=gauss(rnd)*bw*.5,px=cxm+u*ca-v*sa,py=cym+u*sa+v*ca,r=bw*(.35+rnd()*.7);
+   var cg=b.createRadialGradient(px,py,0,px,py,r);var tint=rnd()<.25?'201,168,76':(rnd()<.3?'95,194,178':'170,190,230');cg.addColorStop(0,'rgba('+tint+','+(.035+rnd()*.03)+')');cg.addColorStop(1,'rgba('+tint+',0)');b.fillStyle=cg;b.beginPath();b.arc(px,py,r,0,6.2832);b.fill()}
+  var grain=Math.round(w*h/90);for(var j=0;j<grain;j++){var u2=(rnd()-.5)*L,v2=gauss(rnd)*bw*.45,qx=cxm+u2*ca-v2*sa,qy=cym+u2*sa+v2*ca;b.fillStyle='rgba(225,232,250,'+(rnd()*.32).toFixed(3)+')';b.fillRect(qx,qy,rnd()<.92?.7:1.3,rnd()<.92?.7:1.3)}
+  b.globalCompositeOperation='source-over';
+  for(var d=0;d<26;d++){var u3=(rnd()-.5)*L*.8,v3=gauss(rnd)*bw*.12,dx=cxm+u3*ca-v3*sa,dy=cym+u3*sa+v3*ca,dr=bw*(.12+rnd()*.22);var dg=b.createRadialGradient(dx,dy,0,dx,dy,dr);dg.addColorStop(0,'rgba(4,8,18,.35)');dg.addColorStop(1,'rgba(4,8,18,0)');b.fillStyle=dg;b.beginPath();b.arc(dx,dy,dr,0,6.2832);b.fill()}
+  // star field
+  stars=[];var N=Math.round(w*h/(w<700?2400:2000));for(var s=0;s<N;s++){var z=rnd();stars.push({x:rnd()*w,y:rnd()*h,z:z,r:z<.85?(.35+rnd()*.7):(1+rnd()*1.3),p:rnd()*6.28,sp:.6+rnd()*2.2,
+   col:rnd()<.12?'255,226,170':(rnd()<.15?'190,220,255':'240,244,252')})}
+  aur.width=Math.max(2,Math.round(w/5));aur.height=Math.max(2,Math.round(h/5));
+  frame(performance.now())}
+ function gauss(r){return (r()+r()+r()+r()-2)/2}
+ function drawAurora(t){var aw=aur.width,ah=aur.height;ax.clearRect(0,0,aw,ah);ax.globalCompositeOperation='lighter';
+  var curtains=[{y:.10,amp:.05,f:1.6,s:.05,c:'95,194,178',a:.30,hgt:.28},{y:.16,amp:.04,f:2.4,s:-.035,c:'46,160,130',a:.22,hgt:.22},{y:.07,amp:.03,f:3.1,s:.025,c:'201,168,76',a:.10,hgt:.16}];
+  curtains.forEach(function(k){for(var i=0;i<=aw;i+=1){var u=i/aw,yy=(k.y+k.amp*Math.sin(u*k.f*6.28+t*k.s)+.02*Math.sin(u*13+t*k.s*3))*ah,hh=k.hgt*ah*(.6+.4*Math.sin(u*7+t*k.s*2));
+    var g=ax.createLinearGradient(0,yy,0,yy+hh);var al=k.a*(.55+.45*Math.sin(u*9.0+t*.2+k.f));g.addColorStop(0,'rgba('+k.c+',0)');g.addColorStop(.18,'rgba('+k.c+','+al.toFixed(3)+')');g.addColorStop(1,'rgba('+k.c+',0)');
+    ax.fillStyle=g;ax.fillRect(i,yy,1.2,hh)}});ax.globalCompositeOperation='source-over'}
+ var lastA=0;
+ function frame(now){var t=now/1000;x.setTransform(1,0,0,1,0,0);x.drawImage(base,0,0);x.setTransform(dpr,0,0,dpr,0,0);
+  if(RM||now-lastA>120){drawAurora(RM?40:t);lastA=now}
+  x.globalAlpha=.9;x.imageSmoothingEnabled=true;x.drawImage(aur,0,0,w,h*.9);x.globalAlpha=1;
+  var sc=window.scrollY||0,drift=RM?0:t*1.2;
+  for(var i=0;i<stars.length;i++){var s=stars[i],px=((s.x+drift*(.15+s.z))%w+w)%w,py=((s.y-sc*(.02+s.z*.06))%h+h)%h,a=RM?.75:(.5+.5*Math.sin(t*s.sp+s.p));
+   a=(.25+.75*a)*(s.z<.85?.7:1);x.fillStyle='rgba('+s.col+','+a.toFixed(3)+')';
+   if(s.r>1){x.beginPath();x.arc(px,py,s.r,0,6.2832);x.fill();if(a>.75){x.fillStyle='rgba('+s.col+','+((a-.75)*.5).toFixed(3)+')';x.beginPath();x.arc(px,py,s.r*3.2,0,6.2832);x.fill()}}
+   else x.fillRect(px,py,s.r*1.4,s.r*1.4)}
+  if(!RM){if(!shoot&&t>nextShoot){shoot={x:Math.random()*w*.7+w*.15,y:Math.random()*h*.35,vx:-(260+Math.random()*200),vy:120+Math.random()*90,life:0};nextShoot=t+9+Math.random()*14}
+   if(shoot){shoot.life+=1/60;var sx=shoot.x+shoot.vx*shoot.life,sy=shoot.y+shoot.vy*shoot.life,al=Math.sin(Math.min(1,shoot.life/.9)*3.14);
+    var lg=x.createLinearGradient(sx,sy,sx-shoot.vx*.18,sy-shoot.vy*.18);lg.addColorStop(0,'rgba(255,248,225,'+(.85*al).toFixed(3)+')');lg.addColorStop(1,'rgba(255,248,225,0)');x.strokeStyle=lg;x.lineWidth=1.4;x.beginPath();x.moveTo(sx,sy);x.lineTo(sx-shoot.vx*.18,sy-shoot.vy*.18);x.stroke();if(shoot.life>.9)shoot=null}}}
+ function loop(now){frame(now);if(!document.hidden)requestAnimationFrame(loop)}
+ build();var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(build,150)});
+ if(RM){addEventListener('scroll',function(){},{passive:true})}else{requestAnimationFrame(loop);document.addEventListener('visibilitychange',function(){if(!document.hidden)requestAnimationFrame(loop)})}
+})();
+
+// ---------- Part two ----------
+var form=$('qform'),qs=[].slice.call(form.querySelectorAll('.q')),dots=[].slice.call($('dots').children),step=0,qBack=$('qBack'),qNext=$('qNext');
+var keys=['carry','doc','ask','with','me'];
+keys.forEach(function(k){var el=$('a-'+k);if(ST.a[k])el.value=ST.a[k];el.addEventListener('input',function(){ST.a[k]=el.value;save();upd()});
+ if(el.tagName==='TEXTAREA')el.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();go(1)}})});
+qs.forEach(function(q){[].forEach.call(q.querySelectorAll('.ex button'),function(b){b.addEventListener('click',function(){var ta=q.querySelector('textarea');ta.value=b.textContent;ta.dispatchEvent(new Event('input'));ta.focus()})})});
+function upd(){qs.forEach(function(q,i){q.classList.toggle('on',i===step)});dots.forEach(function(d,i){d.classList.toggle('on',i<=step)});
+ qBack.style.visibility=step===0?'hidden':'visible';var k=keys[step],v=$('a-'+k).value.trim();
+ qNext.innerHTML=step===4?'Draw my constellation':'Next →';qNext.disabled=(step<4&&!v);
+ [].forEach.call(document.querySelectorAll('.count'),function(c){var el=$(c.getAttribute('data-for'));c.textContent=el.value.length+' / '+el.maxLength})}
+function go(d){if(d>0&&step<4&&!$('a-'+keys[step]).value.trim())return;if(d>0&&step===4){build();return}step=Math.max(0,Math.min(4,step+d));upd();var h=qs[step].querySelector('h3');h.focus({preventScroll:true});
+ var r=$('builder').getBoundingClientRect();if(r.top<0||r.top>innerHeight*.5)$('builder').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})}
+form.addEventListener('submit',function(e){e.preventDefault();go(1)});qBack.addEventListener('click',function(){go(-1)});
+upd();
+
+var COMMON=/^(my|the|a|an|our|every|each|all|any|who|what|which|when|where|how|can|am|is|are|do|does|will|would|could|should|someone|somebody|another|myself|his|her|their|both|one|two|three|that|this|whoever|anyone)\b/i;
+function lcFirst(s){return COMMON.test(s)?s.charAt(0).toLowerCase()+s.slice(1):s}
+function clean(s){return s.replace(/\s+/g,' ').trim().replace(/[.!;,:\s]+$/,'')}
+function short(s){var c=clean(s).split(/[,;:.(—–-]| who | that | because | when | with | from | for /i)[0].trim();var w=c.split(' ');if(w.length>4)w=w.slice(0,4);return w.join(' ')}
+function titleCase(s){var small=/^(a|an|the|of|and|or|for|to|in|on|at|from|with)$/i;return s.split(' ').map(function(w,i){if(i>0&&small.test(w))return w.toLowerCase();return w.charAt(0).toUpperCase()+w.slice(1)}).join(' ')}
+function poss(s){return /s$/i.test(s)?s+'’':s+'’s'}
+function names(a){var c=titleCase(short(a.carry)),wv=titleCase(short(a.with)),d=titleCase(short(a.doc));
+ if(/^myself$|^me$/i.test(c))c='My Own';
+ var out=[c==='My Own'?'My Own Lantern':poss(c)+' Lantern','The '+(wv.replace(/^(My|A|An|The)\s/i,'')||'Two')+' Light','The January Question','The Keeper of '+d.replace(/^(Every|The|All|Each)\s/i,'')];
+ return out.filter(function(n,i){return n.length<=44&&out.indexOf(n)===i})}
+function asQ(s){s=clean(s);if(!/[?]$/.test(s))s+='?';return s.charAt(0).toUpperCase()+s.slice(1)}
+
+var cardCv=document.createElement('canvas');cardCv.width=1080;cardCv.height=1350;var logo=new Image();logo.src='cold-ischemia-logo.png';
+function build(){var a={};keys.forEach(function(k){a[k]=$('a-'+k).value.trim()});ST.a=a;
+ var ns=names(a);if(!ST.name||!ST.built)ST.name=ns[0];ST.built=1;save();
+ $('nameIn').value=ST.name;var sg=$('sugs');sg.innerHTML='';ns.forEach(function(n){var b=document.createElement('button');b.type='button';b.textContent=n;b.addEventListener('click',function(){$('nameIn').value=n;rename()});sg.appendChild(b)});
+ compose();$('result').classList.add('on');
+ YOU.on=true;YOU.t=RM?1:0;YOU.name=ST.name;placeYou();kick();
+ setTimeout(function(){$('resH').focus({preventScroll:true});$('result').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})},60);
+ toast('Your constellation is in the sky.')}
+function rename(){var v=$('nameIn').value.trim()||names(ST.a)[0];ST.name=v;save();YOU.name=v;placeYou();compose()}
+$('nameIn').addEventListener('input',function(){clearTimeout(rename._t);rename._t=setTimeout(rename,250)});
+function message(){var a=ST.a;var t='This season I’m carrying '+lcFirst(clean(a.carry))+'. I’ve learned to write down '+lcFirst(clean(a.doc))+'. In January I’m going to ask: “'+asQ(a.ask)+'” And I’m asking '+lcFirst(clean(a.with))+' to stand with me.\n\n'+
+ 'Every right patients have today exists because someone, often a tired family member, refused to be quiet. I added my star to that sky and called it “'+ST.name+'.”'+(a.me?'\n\n'+a.me:'')+'\n\nFind yours: '+SITE;return t}
+function compose(){var a=ST.a;$('msg').value=message();
+ $('weekTxt').innerHTML='<p><b>Start a one-page log tonight.</b> Write down '+esc(lcFirst(clean(a.doc)))+', every time, with the date, the time and the name of the person involved.</p>'+
+  '<p><b>Then tell '+esc(lcFirst(clean(a.with)))+' what you are doing,</b> and ask them to be in the room, or on the phone, in January when you ask: “'+esc(asQ(a.ask))+'” Ask for the answer in writing.</p>';
+ $('mailT').href='mailto:?subject='+encodeURIComponent('I added my star')+'&body='+encodeURIComponent(message());
+ var draw=function(){drawCard(cardCv.getContext('2d'));try{$('cardImg').src=cardCv.toDataURL('image/png')}catch(e){}};
+ if(document.fonts&&document.fonts.load){Promise.all([document.fonts.load('600 80px Fraunces'),document.fonts.load('italic 400 34px Fraunces'),document.fonts.load('400 30px "Source Serif 4"'),document.fonts.load('500 20px "IBM Plex Mono"')]).then(draw,draw)}else draw()}
+
+function wrap(c,text,maxW){var words=text.split(' '),lines=[],cur='';words.forEach(function(w){var t=cur?cur+' '+w:w;if(c.measureText(t).width>maxW&&cur){lines.push(cur);cur=w}else cur=t});if(cur)lines.push(cur);return lines}
+function drawCard(c){var w=1080,h=1350,rnd=mulberry(11);c.setTransform(1,0,0,1,0,0);
+ var g=c.createLinearGradient(0,0,0,h);g.addColorStop(0,'#040812');g.addColorStop(.5,'#0b1630');g.addColorStop(1,'#13264a');c.fillStyle=g;c.fillRect(0,0,w,h);
+ // aurora
+ c.globalCompositeOperation='lighter';for(var i=0;i<w;i+=3){var u=i/w,y=120+60*Math.sin(u*9)+30*Math.sin(u*23),hh=260+80*Math.sin(u*5);var ag=c.createLinearGradient(0,y,0,y+hh);var al=.10+.08*Math.sin(u*14);
+  ag.addColorStop(0,'rgba(95,194,178,0)');ag.addColorStop(.2,'rgba(95,194,178,'+al+')');ag.addColorStop(1,'rgba(95,194,178,0)');c.fillStyle=ag;c.fillRect(i,y,3,hh)}
+ // milky way
+ for(var k=0;k<60;k++){var t=rnd(),px=t*w*1.2-w*.1,py=h*.75-t*h*.55+(rnd()-.5)*180,r=90+rnd()*160;var mg=c.createRadialGradient(px,py,0,px,py,r);mg.addColorStop(0,'rgba(170,190,235,.05)');mg.addColorStop(1,'rgba(170,190,235,0)');c.fillStyle=mg;c.beginPath();c.arc(px,py,r,0,6.2832);c.fill()}
+ c.globalCompositeOperation='source-over';
+ for(var s=0;s<900;s++){var sx=rnd()*w,sy=rnd()*h,sr=rnd()<.93?rnd()*1.1+.3:rnd()*1.8+1;c.fillStyle='rgba(240,244,252,'+(rnd()*.7+.15).toFixed(2)+')';c.beginPath();c.arc(sx,sy,sr,0,6.2832);c.fill()}
+ // historical constellations, faint, in the top region
+ var top=128,ht=440,M=function(st){return {x:60+st.x*960,y:top+st.y*ht}};
+ c.lineWidth=2;EDGES.forEach(function(e){var A=S[IDX[e[0]]],p=M(A),q=M(S[IDX[e[1]]]);c.strokeStyle=hexA(G[A.g].c,.38);c.beginPath();c.moveTo(p.x,p.y);c.lineTo(q.x,q.y);c.stroke()});
+ S.forEach(function(st){var p=M(st);var gg=c.createRadialGradient(p.x,p.y,0,p.x,p.y,26);gg.addColorStop(0,hexA(G[st.g].c,.6));gg.addColorStop(1,hexA(G[st.g].c,0));c.fillStyle=gg;c.beginPath();c.arc(p.x,p.y,26,0,6.2832);c.fill();
+  c.fillStyle='#fffbef';c.beginPath();c.arc(p.x,p.y,4,0,6.2832);c.fill();c.font='500 17px "IBM Plex Mono",monospace';c.fillStyle='rgba(200,212,230,.75)';c.textAlign='center';c.fillText(st.yr,p.x,p.y+30)});
+ // the visitor's constellation
+ var C={x:540,y:top+.47*ht},R=104,pts=[C,{x:C.x,y:C.y-R},{x:C.x+R*1.15,y:C.y},{x:C.x,y:C.y+R},{x:C.x-R*1.15,y:C.y}];
+ c.strokeStyle='rgba(240,190,110,.5)';c.lineWidth=2;c.beginPath();[1,2,3,4,1].forEach(function(j,ix){if(ix)c.lineTo(pts[j].x,pts[j].y);else c.moveTo(pts[j].x,pts[j].y)});c.stroke();
+ c.shadowColor='rgba(217,138,43,.9)';c.shadowBlur=14;c.strokeStyle='rgba(250,205,130,.9)';c.lineWidth=2.6;for(var m=1;m<5;m++){c.beginPath();c.moveTo(C.x,C.y);c.lineTo(pts[m].x,pts[m].y);c.stroke()}c.shadowBlur=0;
+ var tags=['carrying','writing down','asking','with me'];
+ for(var n=1;n<5;n++){var p2=pts[n],g2=c.createRadialGradient(p2.x,p2.y,0,p2.x,p2.y,40);g2.addColorStop(0,'rgba(217,138,43,.7)');g2.addColorStop(1,'rgba(217,138,43,0)');c.fillStyle=g2;c.beginPath();c.arc(p2.x,p2.y,40,0,6.2832);c.fill();
+  c.fillStyle='#fff3dc';c.beginPath();c.arc(p2.x,p2.y,6,0,6.2832);c.fill();c.font='500 16px "IBM Plex Mono",monospace';c.fillStyle='rgba(240,210,160,.95)';c.textAlign=n===2?'left':n===4?'right':'center';
+  var ox=n===2?18:n===4?-18:0,oy=n===1?-22:n===3?34:6;c.fillText(tags[n-1].toUpperCase(),p2.x+ox,p2.y+oy)}
+ var cg=c.createRadialGradient(C.x,C.y,0,C.x,C.y,110);cg.addColorStop(0,'rgba(255,240,200,.9)');cg.addColorStop(.25,'rgba(230,207,138,.35)');cg.addColorStop(1,'rgba(230,207,138,0)');c.fillStyle=cg;c.beginPath();c.arc(C.x,C.y,110,0,6.2832);c.fill();
+ c.strokeStyle='rgba(255,246,220,.85)';c.lineWidth=2;c.beginPath();c.moveTo(C.x-54,C.y);c.lineTo(C.x+54,C.y);c.moveTo(C.x,C.y-54);c.lineTo(C.x,C.y+54);c.stroke();
+ c.fillStyle='#fff';c.beginPath();c.arc(C.x,C.y,8,0,6.2832);c.fill();
+ // header
+ c.textAlign='center';c.font='500 19px "IBM Plex Mono",monospace';c.fillStyle='#C9A84C';c.fillText('FIND YOUR NORTH STAR  ·  COLD ISCHEMIA FOUNDATION',540,78);
+ // text panel
+ var py0=618,ph=h-py0-150;c.fillStyle='rgba(6,11,23,.8)';rr(c,60,py0,960,ph,28);c.fill();c.strokeStyle='rgba(201,168,76,.55)';c.lineWidth=1.5;rr(c,60,py0,960,ph,28);c.stroke();
+ var fs=68;c.font='600 '+fs+'px Fraunces, Georgia, serif';while(c.measureText(ST.name).width>880&&fs>40){fs-=2;c.font='600 '+fs+'px Fraunces, Georgia, serif'}
+ c.fillStyle='#f3e3b0';c.textAlign='center';var nl=wrap(c,ST.name,880);var y=py0+62+fs*.25;nl.slice(0,2).forEach(function(l){c.fillText(l,540,y);y+=fs*1.02});
+ if(ST.a.me){c.font='italic 400 26px Fraunces, Georgia, serif';c.fillStyle='rgba(220,228,240,.85)';c.fillText('a constellation by '+ST.a.me,540,y-fs*.35+18);y+=22}
+ y+=8;c.textAlign='left';var a=ST.a,rows=[['CARRYING',clean(a.carry)],['WRITING DOWN',clean(a.doc)],['IN JANUARY I WILL ASK',asQ(a.ask)],['STANDING WITH ME',clean(a.with)]];
+ var bodyTxt=function(r){return r[0]==='IN JANUARY I WILL ASK'?'“'+r[1]+'”':r[1]},bfs=28,need;
+ do{c.font='400 '+bfs+'px "Source Serif 4", Georgia, serif';need=0;rows.forEach(function(r){need+=bfs+5+12+Math.min(2,wrap(c,bodyTxt(r),860).length)*(bfs*1.25)});if(y+need<=py0+ph-14)break;bfs-=1}while(bfs>20);
+ rows.forEach(function(r){c.font='500 16px "IBM Plex Mono",monospace';c.fillStyle='#5fc2b2';c.fillText(r[0],110,y);y+=bfs+5;c.font='400 '+bfs+'px "Source Serif 4", Georgia, serif';c.fillStyle='#eef2f8';
+  wrap(c,bodyTxt(r),860).slice(0,2).forEach(function(l){c.fillText(l,110,y);y+=bfs*1.25});y+=12});
+ // footer
+ c.textAlign='center';c.font='italic 400 25px Fraunces, Georgia, serif';c.fillStyle='rgba(230,207,138,.95)';
+ wrap(c,'Every right patients have today exists because someone refused to be quiet.',900).forEach(function(l,i){c.fillText(l,540,h-92+i*32)});
+ c.font='500 16px "IBM Plex Mono",monospace';c.fillStyle='rgba(190,204,224,.85)';c.fillText('coldischemia.foundation/holiday-north-star.html',540,h-44);
+ if(logo.complete&&logo.naturalWidth){try{c.globalAlpha=.9;c.drawImage(logo,56,34,64,64*logo.naturalHeight/logo.naturalWidth);c.globalAlpha=1}catch(e){}}}
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath()}
+logo.onload=function(){if(ST.built&&$('result').classList.contains('on'))compose()};
+
+function fname(){return (ST.name||'my-north-star').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')+'.png'}
+$('dl').addEventListener('click',function(){cardCv.toBlob(function(b){if(!b)return;var u=URL.createObjectURL(b),l=document.createElement('a');l.href=u;l.download=fname();document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);toast('Image saved. Put it somewhere you will see it in January.')},'image/png')});
+(function(){try{var f=new File([new Blob(['x'])],'a.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]}))$('shImg').hidden=false}catch(e){}})();
+$('shImg').addEventListener('click',function(){cardCv.toBlob(function(b){var f=new File([b],fname(),{type:'image/png'});navigator.share({files:[f],title:'Find Your North Star',text:'I added my star. Find yours: '+SITE}).catch(function(){})},'image/png')});
+function copyText(t,ok){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(function(){toast(ok)},function(){fallback(t,ok)})}else fallback(t,ok)}
+function fallback(t,ok){var ta=$('msg');ta.focus();ta.select();try{document.execCommand('copy');toast(ok)}catch(e){toast('Select the message and copy it.')}}
+$('cpy').addEventListener('click',function(){copyText($('msg').value,'Message copied. Send it to one person tonight.')});
+$('shTxt').addEventListener('click',function(){var t=$('msg').value;if(navigator.share)navigator.share({title:'Find Your North Star',text:t}).catch(function(){});else copyText(t,'Message copied.')});
+$('showSky').addEventListener('click',function(){stage.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'})});
+$('again').addEventListener('click',function(){keys.forEach(function(k){$('a-'+k).value=''});ST.a={};ST.built=0;ST.name='';save();YOU.on=false;YOU.t=0;YOU.name='';placeYou();kick();
+ $('result').classList.remove('on');step=0;upd();$('builder').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'});setTimeout(function(){$('a-carry').focus({preventScroll:true})},300)});
+
+// init
+sizeStage();refresh();
+if(ST.built&&ST.a&&ST.a.carry){$('nameIn').value=ST.name;var ns0=names(ST.a);var sg0=$('sugs');ns0.forEach(function(n){var b=document.createElement('button');b.type='button';b.textContent=n;b.addEventListener('click',function(){$('nameIn').value=n;rename()});sg0.appendChild(b)});
+ $('result').classList.add('on');compose();step=4;upd()}
+})();
+</script>
+</body>
+</html>
