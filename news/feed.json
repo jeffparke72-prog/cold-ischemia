@@ -1,6 +1,6 @@
 {
 "version": 3,
-"updated": "2026-11-27T04:04:09.032143+00:00",
+"updated": "2026-11-27T13:43:47.433180+00:00",
 "sources": [
 {
 "name": "PubMed: transplant, donation & kidney failure research",
@@ -87,7 +87,7 @@
 "category": "Policy",
 "url": "https://www.federalregister.gov/api/v1/documents.rss?conditions%5Bterm%5D=transplant+%7C+dialysis+%7C+%22organ+procurement%22+%7C+%22end-stage+renal%22&order=newest",
 "ok": true,
-"count": 4,
+"count": 3,
 "error": null
 },
 {
@@ -133,6 +133,149 @@
 ],
 "items": [
 {
+"title": "Influence of Occupational Exposures on Cytokine Profiles in Patients with Membranous Nephropathy",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033267?dgcid=rss_sd_all",
+"summary": "By Maxime Teisseyre, Mounir El Mai, Marion Cremoni, Barbara Seitz-Polski, Maxime Teisseyre, Kévin Zorzi, Céline Fernandez, Marion Cremoni, Vesna Brglez, Noémie Jourde-Chiche, Bertrand Knebelmann, Thomas Crepin, Emilie…",
+"outlet": "",
+"published": "2026-11-27T13:42:54.367541+00:00",
+"id": "f0a8fabfea7bacd3",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "Proteinuria Severity in Alport Spectrum Subtypes",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033541?dgcid=rss_sd_all",
+"summary": "By Melissa Pilco-Teran, Diego Toso, Marc Pybus, Miriam Aza-Carmona, Vitoria Paes de Faria, Pedro Lisboa-Gonçalves, Catarina Almeida, Erasmia Sampani, Javier Arias Alcalá, Leonor Fayos de Arizón, Elizabeth Viera, Elena…",
+"outlet": "",
+"published": "2026-11-27T13:42:54.367430+00:00",
+"id": "8f6049c22c1423d2",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "External Validation and Transportability of the Equitable Donor Assessment Model in a National UK Kidney Transplant Cohort",
+"link": "https://www.sciencedirect.com/science/article/pii/S2468024926033590?dgcid=rss_sd_all",
+"summary": "By Hatem Ali, Omar Ahmed, Samar Abd ElHafeez, Mariana Murea, Tibor Fülöp",
+"outlet": "",
+"published": "2026-11-27T13:42:54.367389+00:00",
+"id": "7cb976f05b77230a",
+"source": "Kidney International Reports",
+"category": "Journals",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "Kidney Transplant Patients Mount RSV Vaccine Responses Despite Belatacept Immunosuppression - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPc1NtUmliX0xRS2lWUEFBUFRLN0lvRVgxNENvQjg3bVRuX1dUamJkQ2MwUV9Pb0hxQk5HY1hLLU9EaXAxSGZON093ckpGdEhGMGVVRzk5M3E0U3lndFN2c1AxRUZWa0hQVDNZaFF6eHJwNzBHaEVvRmlsMEh4T1VYUWJCOEd1RDRBa0Jwa3FSVFBwc2V4TEpEUVdYY2ZQLXBIM1VNZGRhNnNxcnpsUWh1Q0hNWFlQOGM?oc=5",
+"summary": "Kidney Transplant Patients Mount RSV Vaccine Responses Despite Belatacept Immunosuppression Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-11-27T12:56:15+00:00",
+"id": "cffc337addc7455d",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "Surgical Transplantation Education Beyond the Classroom: Insights From a Student-Led Interest Group in Brazil.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/43098981/",
+"summary": "Daniel Faleiro M, Soares de Assis L, Ogawa TM et al. The clinical teacher",
+"outlet": "Clin Teach",
+"published": "2026-11-27T12:00:00+00:00",
+"id": "24999d877a27e02f",
+"source": "PubMed: transplant, donation & kidney failure research",
+"category": "Research",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "Outcomes After Pediatric En Bloc Kidney Transplantation.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/43099995/",
+"summary": "Chatziisaak D, Christou CD, Papatheodorou P et al. Pediatric transplantation",
+"outlet": "Pediatr Transplant",
+"published": "2026-11-27T12:00:00+00:00",
+"id": "ba5db66580687d14",
+"source": "PubMed: transplant, donation & kidney failure research",
+"category": "Research",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "Alemtuzumab Attenuates Lung Function Decline in Lung Transplant Recipients With Chronic Lung Allograft Dysfunction.",
+"link": "https://pubmed.ncbi.nlm.nih.gov/43098983/",
+"summary": "Shabanowitz S, Rikard R, Lobo LJ et al. Pharmacotherapy",
+"outlet": "Pharmacotherapy",
+"published": "2026-11-27T12:00:00+00:00",
+"id": "3c013b26d1ba2a04",
+"source": "PubMed: transplant, donation & kidney failure research",
+"category": "Research",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "The association of air pollution with death and deterioration on the United States transplant waiting list",
+"link": "https://www.sciencedirect.com/science/article/pii/S1600613526029126?dgcid=rss_sd_all",
+"summary": "By Peter M. Graffy, Molly White, Daniel J. Ahn, M. Omar Nawaz, Daniel E. Horton, William F. Parker",
+"outlet": "",
+"published": "2026-11-27T12:00:00+00:00",
+"id": "56da67dc3debf231",
+"source": "American Journal of Transplantation",
+"category": "Journals",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "Michael’s Gift of Life Remembered in Special Organ Donation Tribute at South West Acute Hospital - Western Health & Social Care Trust",
+"link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPM0N1YzhjYjluS1Q3UGZQWHRsZWVpU25DWFFEUlZyZGVsdjlQZGM0Mzg1MWpXTDdrLVc3a2Z4VXA4MF9DcGlpRmlOZzlMcmZROUs0Mi1CVjhhWldqVVFWa0xHUDVXUDNwakdxVUYtSW51QVNuRnVaMXdLV1NLZ01iZVMtSm9JTjZmTVJ5bkd5c2tPTmFkQ2NzeWJQQllxemlIbkRLUE5GajVKcmlVX3c3ZXRwc29RT1djU0JabTBrenJROEYwcGc?oc=5",
+"summary": "Michael’s Gift of Life Remembered in Special Organ Donation Tribute at South West Acute Hospital Western Health & Social Care Trust",
+"outlet": "Western Health & Social Care Trust",
+"published": "2026-11-27T10:02:40+00:00",
+"id": "9cb94176a94841de",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "Woman eats pizza after year without food following rare four-organ transplant - Nine.com.au",
+"link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQOHB5NHY4S2pKeTFCXzBBM3ZETXNveDZFWWljcDRScXNRenZBVlRVVW1BdjBESy1TLVg1NVo0bEd3Y180SVd0OVBIbXNXenhIZmRnOVctdlpsY2pxeTFRYzR3ZWZvVjZFakVFdnhNZFhNRnEzN01HWHhpY3hIaWJQeTdmWXBJMnl4WHNxMlpySzhzczZTd0Y5a19NRkh1LXduV3pFcmV6WjIwSXBXWXhUSmtveXhVTlUtd1M4d2paek5wT3NRWXVFRlhhYXViZ1lvenhGbw?oc=5",
+"summary": "Woman eats pizza after year without food following rare four-organ transplant Nine.com.au",
+"outlet": "Nine.com.au",
+"published": "2026-11-27T09:35:57+00:00",
+"id": "2274ba85c7f3b07b",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "Gujarat CM felicitates three govt hospitals for national organ donation awards - DD News",
+"link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOUUtRUkN3Z0lRaFNteFJpU05vQkNDa1pwNm9WeG91VTJRTXhSQlRnMVFIbDcwY285cjMzYWd5WkQyM3AxcTduNHFyUGROZVNDMDRxME5uTDl3UXNHT2IxSkg1MUMwWkJlNnk1MWNUXzRtTFhFWnFnNExZSmZCU1FyME55MmJvU2EyRXotQ1E5X19jZkdUVGZnVURTaS13eHNGSW9uY3psWQ?oc=5",
+"summary": "Gujarat CM felicitates three govt hospitals for national organ donation awards DD News",
+"outlet": "DD News",
+"published": "2026-11-27T06:52:48+00:00",
+"id": "46e535f9c2532b56",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "US Mortality Involving Coexisting Lung Cancer and Kidney Disease Rose Through 2024 - Bioengineer.org",
+"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMDktX29aLTZzajU4cXB4YmNRQmZPZVdoWHNndHdTUUc5aV9nY3pTSHBSNm1fUk1Xd2p3UHY4NWM4ZlkxdHRGTzYxdE55QVFDQWxPazNmUUlSbng5VGpndjMxQXVNY2hibGtuMm5lRFBJbU9VWng0bDdCeWNITUw2TVhQYUY3Qm9jaXJyOHlZVDh3d1JxWlBmOHByZUJ4RWdFVFEyZXppZUtkMEE?oc=5",
+"summary": "US Mortality Involving Coexisting Lung Cancer and Kidney Disease Rose Through 2024 Bioengineer.org",
+"outlet": "Bioengineer.org",
+"published": "2026-11-27T04:05:29+00:00",
+"id": "a94cefddfad1ca17",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
+"title": "Stroke in End-Stage Kidney Disease: Causes, Challenges, and Management - Cureus",
+"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNR29oVzdvZWZGN2ZrWkUzX3NzTXlSZ0ZERU1MRWhlM0NGcVdOU3I3VDRpWU5RRHNNQmhUUGdjSGdkYmJRRE11VnYtWDBwQWxBU0hQOHotMGJWelpZd3dkSnNJdXA2dlFlalprT09CbGtrUHZaTThfWHZuZVFKUEhfblE0NkUwX1BwTjFvS1JKZXBLQzBhTnlOMzNnb2FySy1HT21BWllVMGFNUQ?oc=5",
+"summary": "Stroke in End-Stage Kidney Disease: Causes, Challenges, and Management Cureus",
+"outlet": "Cureus",
+"published": "2026-11-27T04:04:09.032143+00:00",
+"id": "e1b0852e6ccf3386",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-27T04:04:09.032143+00:00"
+},
+{
 "title": "National Organ Donation Day: Life Beyond Life - The Kashmir Horizon",
 "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPM1RsbF9ISTR1QW1OZEVIQWlhMXJMdXJWaVFxNHNXZVhyVHducWFCWS1NR2ZSdDBhdC00eXo1VUItME15eUQwTld1UEdOTkRlaEs3RUlBTWtHUFk5NWhnbHpSbnJqcVV1T0p4elFkclczdzhCSUpQeS1RQ25QOVlCcWZXOTY5TGpCZmdDWFJNVQ?oc=5",
 "summary": "National Organ Donation Day: Life Beyond Life The Kashmir Horizon",
@@ -140,17 +283,6 @@
 "published": "2026-11-27T03:49:29+00:00",
 "id": "85ab270467a2ace4",
 "source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-11-27T04:04:09.032143+00:00"
-},
-{
-"title": "Stroke in End-Stage Kidney Disease: Causes, Challenges, and Management - Cureus",
-"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNR29oVzdvZWZGN2ZrWkUzX3NzTXlSZ0ZERU1MRWhlM0NGcVdOU3I3VDRpWU5RRHNNQmhUUGdjSGdkYmJRRE11VnYtWDBwQWxBU0hQOHotMGJWelpZd3dkSnNJdXA2dlFlalprT09CbGtrUHZaTThfWHZuZVFKUEhfblE0NkUwX1BwTjFvS1JKZXBLQzBhTnlOMzNnb2FySy1HT21BWllVMGFNUQ?oc=5",
-"summary": "Stroke in End-Stage Kidney Disease: Causes, Challenges, and Management Cureus",
-"outlet": "Cureus",
-"published": "2026-11-27T02:22:32+00:00",
-"id": "e1b0852e6ccf3386",
-"source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-27T04:04:09.032143+00:00"
 },
@@ -175,6 +307,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-11-27T04:04:09.032143+00:00"
+},
+{
+"title": "Arkansas nonprofit organ donation group sues attorney general’s office over its demand for records - The Arkansas Democrat-Gazette",
+"link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSGlqM2k0cnlGOEdlbmhiZWREREotVUpxMXlhZHJEdkVmMzZkaUZ5bG9rUi1uNjdYeUJsZnp1RU1Db3lOaUFVOEZYSVgydlhSSEEwVkFVWTBFcEM5SjJmRTMyTUZEVEdqQmk1dnF1Z0FoX3BqM3RGTmZOSVNid1AzMVFFcGU5MjZqVUNCMDctX3dEVE5iNzlUVWxDWENPZlUtaUE?oc=5",
+"summary": "Arkansas nonprofit organ donation group sues attorney general’s office over its demand for records The Arkansas Democrat-Gazette",
+"outlet": "The Arkansas Democrat-Gazette",
+"published": "2026-11-27T01:30:00+00:00",
+"id": "6c618c7e841bac78",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
 },
 {
 "title": "CAR T-Cell Therapy Successfully Treats Multiple Myeloma in Kidney Transplant Recipient - Bioengineer.org",
@@ -243,6 +386,17 @@
 "first_seen": "2026-11-26T21:51:26.191964+00:00"
 },
 {
+"title": "Quick cases in chronic kidney disease - Pulse Today",
+"link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOamtBakI3YWE4WmNmYWw3dTZBTmJVUlkwVUlhSzV5dEhaMm5Kdy1sMGZYeUhFcGdtTzR2aXNkMTJ2X3F1S0NtT1l2QUwzTEdONzdLMHdGN0VkeTk5Z2hkUXJzUS1EWm4zQ0M3RElYN1l3enZqOExGajVIT1A2ZExpSXRfWE0yX1JROUE?oc=5",
+"summary": "Quick cases in chronic kidney disease Pulse Today",
+"outlet": "Pulse Today",
+"published": "2026-11-26T21:51:26.191964+00:00",
+"id": "8a92432fade28cca",
+"source": "Google News: kidney disease, dialysis & ESRD",
+"category": "News",
+"first_seen": "2026-11-26T21:51:26.191964+00:00"
+},
+{
 "title": "New fund targets housing barrier for transplant patients - KDVR",
 "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQa3hNZWhIX2I5NERMOUd6ZW03TEtQMWVrNTNobGxuQlZfTDdrVy1SRnliTUxOZHR0WHdES0R1aTQ1UEx5NE56cnpMTXduNWVCX1gwUU9rUzNRNlZlUDlYc0s0LXZGMEU4SHc0aWVacVNfWG5kbEhBRXpmanY2YXBVUC1oOUxNRW11b3VpS0ln0gGTAUFVX3lxTE95dUZockc2Q3JMaHE2bExfcGlBUjJMOWZlRE55blg4blBGaXdIeHo1dVZSeXlQX3VZMWVuM3BSTklBVThGVzJDZTFWQThJV25vM194WldTYk5DZXd6RWVTT1FZbldwQUgxWHZXZ0V1OEVKVGJVVDRwOThEYXhpNmZKbHJuX2R1M205Z1J3YnZTaW5sRQ?oc=5",
 "summary": "New fund targets housing barrier for transplant patients KDVR",
@@ -283,17 +437,6 @@
 "published": "2026-11-26T18:49:53+00:00",
 "id": "43ee15f880961e0a",
 "source": "Google News: transplant & organ donation policy",
-"category": "News",
-"first_seen": "2026-11-26T21:51:26.191964+00:00"
-},
-{
-"title": "Quick cases in chronic kidney disease - Pulse Today",
-"link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOamtBakI3YWE4WmNmYWw3dTZBTmJVUlkwVUlhSzV5dEhaMm5Kdy1sMGZYeUhFcGdtTzR2aXNkMTJ2X3F1S0NtT1l2QUwzTEdONzdLMHdGN0VkeTk5Z2hkUXJzUS1EWm4zQ0M3RElYN1l3enZqOExGajVIT1A2ZExpSXRfWE0yX1JROUE?oc=5",
-"summary": "Quick cases in chronic kidney disease Pulse Today",
-"outlet": "Pulse Today",
-"published": "2026-11-26T18:09:34+00:00",
-"id": "8a92432fade28cca",
-"source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-26T21:51:26.191964+00:00"
 },
@@ -637,6 +780,17 @@
 "source": "Google News: transplant & organ donation policy",
 "category": "News",
 "first_seen": "2026-11-26T12:12:45.972295+00:00"
+},
+{
+"title": "Development and Pilot Implementation of a Classification for Hemodialysis Cannulation Infiltrations: A Single-Center Quality Improvement Study",
+"link": "https://www.medrxiv.org/content/10.64898/2026.11.26.26368860v1?rss=1",
+"summary": "Background: Cannulation-related complications, including infiltrations, are inconsistently defined and documented, making it difficult to establish reliable baselines and compare cannulation techniques and technologies, and assess improvements in care. Further, existing classifications do not systematically capture…",
+"outlet": "",
+"published": "2026-11-26T00:00:00+00:00",
+"id": "3faf852a3cab05ad",
+"source": "medRxiv: Nephrology preprints",
+"category": "Research",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
 },
 {
 "title": "Pig kidney transplant patient marks 1 year without dialysis in medical breakthrough - CBC",
@@ -2102,6 +2256,17 @@
 "first_seen": "2026-11-24T17:28:27.584953+00:00"
 },
 {
+"title": "Judge orders Texas hospital to keep patient on ventilator support while dispute over organ donation - NewsBreak: Local News & Alerts",
+"link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNeklLUEJGbEZzV245TFc2TXAwR1NVMGVtWWw3dDhrMTNHSnRMSjNJMlNuR3NGWFJxcU9KNUFEZmVfVUx0N05sT2pZeUwtTmNRYWZaeUthcGFiOGhUUjdPNEVvWU1NYUw0S2w2R2ZHZ1h6dWJVVncxRjhrb053anVMZzVqWmF6OTlSWW5kcnl5UUVId3NkLWNTZHB5NVowMGlvSmtDUHhiY1JkTEQ5bGNtTWRvVFNPMFpNRndueUVOdGxHZ0hLQmFCWGVQZGpERC0tek51S21tQkVIbmt4SzhRNFpKZVgtQQ?oc=5",
+"summary": "Judge orders Texas hospital to keep patient on ventilator support while dispute over organ donation NewsBreak: Local News & Alerts",
+"outlet": "NewsBreak: Local News & Alerts",
+"published": "2026-11-24T07:08:11+00:00",
+"id": "e28652c79c539d4c",
+"source": "Google News: transplant & organ donation policy",
+"category": "News",
+"first_seen": "2026-11-27T13:43:47.433180+00:00"
+},
+{
 "title": "Prevent all forms of profiteering from organ donation and transplantation. - Vietnam.vn",
 "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQb01zNFZTUDA0bl9iZExfNzlwQkdDNTBNSzdGbVV1S1hCNElrQ0NuLXpRYWVQRkplbTJ0dmhURGMxWmN6a1JJY0N0RTByX3lpZlNiNmIzR2VpRnhnNWgyWXAyZ1NsXzlaRGN4SzlSM0VlSjUtSFRnTVFMN3I1alR4TjZBcWpYdw?oc=5",
 "summary": "Prevent all forms of profiteering from organ donation and transplantation. Vietnam.vn",
@@ -2313,7 +2478,7 @@
 {
 "title": "Spatial transcriptomics of juxtaglomerular renin cells under angiotensin re-ceptor blockade in human IgA nephropathy",
 "link": "https://www.medrxiv.org/content/10.64898/2026.11.22.26368708v1?rss=1",
-"summary": "Background: Renin-angiotensin system (RAS) blockade is the foundation of treatment in IgA nephropathy, yet the response of the renin cells, the macula densa and the arterioles of the human kidney to this treatment has hardly been described. Methods: Single-cell-level spatial transcriptomics was obtained from archival…",
+"summary": "BackgroundRenin-angiotensin system (RAS) blockade is the foundation of treatment in IgA nephropathy, yet the response of the renin cells, the macula densa and the arterioles of the human kidney to this treatment has hardly been described. MethodsSingle-cell-level spatial transcriptomics was obtained from archival…",
 "outlet": "",
 "published": "2026-11-24T00:00:00+00:00",
 "id": "3c947a944962756d",
@@ -2324,7 +2489,7 @@
 {
 "title": "Distinct tissue correlates of proteinuria and hematuria in IgA nephropathy",
 "link": "https://www.medrxiv.org/content/10.64898/2026.11.22.26368706v1?rss=1",
-"summary": "Background: Proteinuria, estimated glomerular filtration rate (eGFR) and hematuria guide the care of IgA nephropathy, but hematuria has been less consistently associated with outcome than proteinuria, and whether these measurements reflect the same tissue process is unclear. Methods: Single-cell-level spatial…",
+"summary": "BackgroundProteinuria, estimated glomerular filtration rate (eGFR) and hematuria guide the care of IgA nephropathy, but hematuria has been less consistently associated with outcome than proteinuria, and whether these measurements reflect the same tissue process is unclear. MethodsSingle-cell-level spatial…",
 "outlet": "",
 "published": "2026-11-24T00:00:00+00:00",
 "id": "286d0659bfcaee49",
@@ -5466,171 +5631,6 @@
 "source": "Google News: kidney disease, dialysis & ESRD",
 "category": "News",
 "first_seen": "2026-11-19T07:49:47.816685+00:00"
-},
-{
-"title": "Starting Peritoneal Dialysis Instead of In-Centre Care Saves British Healthcare Millions - Bioengineer.org",
-"link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSnV2X1FCRkg3ZGdncUIyVHdTYnlQalBOSmNSSmJLUzlKaE43Mmw0XzdNWlc5RTFMSHNTaEtpQXJ3aGlRLXJmWGVPaExPTFVTcDk0TVdPUFZOTnhFLVR2ZVpxcUViMm4yMzUxcEtIdHZFb2FnTURkTVU0NmVvdGZ6eW9uRmItU1diMG5OX3hHa2tpYVhzenNqbnp3c0pnY2dXc01OWndKV0podm1Jakx5ZjQxZw?oc=5",
-"summary": "Starting Peritoneal Dialysis Instead of In-Centre Care Saves British Healthcare Millions Bioengineer.org",
-"outlet": "Bioengineer.org",
-"published": "2026-11-19T05:32:26+00:00",
-"id": "e80efbf63a18a636",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T07:49:47.816685+00:00"
-},
-{
-"title": "Why should thousands of Americans die every year waiting for a kidney transplant? There’s an easy fix to this morbid reality - Genetic Literacy Project",
-"link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOTU4wOExzdjhjeEUzWFlreldWN2VEWU1KLVFPN3NycXRxNnNzZDh2NTZ6aUxFbTFubTZVdW51UHVRcklOS19HN3hQRHUwUkdyUU1Cak1yWEMwMHVLMXpoQTNFVUpZRXZZRFdsWjVNcXZfcWJDT3BUYVpmdVY3TGlGUHdYaXhZYWFZRWxOMjRXdENFTlV4UERLQ2xsOVJQOVBNM3c4TFRGaGI5aUFLM3ktS2NneTVMenJKUnhRclllMFZTaDREQzRja0d1STg2QkhlUHhLRXBKa0l4X1hHcWdkencxWGJ1VVNjeWk1dU9tZElsVkNUODJfNXpWNE1QQQ?oc=5",
-"summary": "Why should thousands of Americans die every year waiting for a kidney transplant? There’s an easy fix to this morbid reality Genetic Literacy Project",
-"outlet": "Genetic Literacy Project",
-"published": "2026-11-19T05:12:32+00:00",
-"id": "1dbc4e0a4fcb9477",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T07:49:47.816685+00:00"
-},
-{
-"title": "VitusCare raises $3.21M Series B to expand dialysis network - Dealroom",
-"link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQaVBEaVg5ZlEzTGx6RWF1SVJYM1IxQjVEeWNSUVlDVnQ0djZQcFZaQjlEMFNwRXBEaGVhS2h5U251c3A1QmZTRlhhNmYzdno1WWpGV0JrbE5qajlqeEpVcmVBSFN5czJUaDZhRk9pUmowQi1GcVhVczF1X2hUNmJqeVo0cmRxSHVNUDAwNFcwYV9neWxibDY4?oc=5",
-"summary": "VitusCare raises $3.21M Series B to expand dialysis network Dealroom",
-"outlet": "Dealroom",
-"published": "2026-11-19T05:10:31+00:00",
-"id": "c8901a2277bee5b4",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T07:49:47.816685+00:00"
-},
-{
-"title": "SSY Group Wins China NMPA Approval for Four Peritoneal Dialysis Solutions, Bicarbonate Dual-Chamber Bag Line Takes Shape - finance.biggo.com",
-"link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1panlpMDNtRWM0bEdkTG5RYnZ1dWNMaF9rUkpUUmQ3bk5kc0JIRGxZbllrcWFzQjZvOTRRWVp3MTZwajNOek1RQUcteWRiSXNDaDNVYkVPVFBFS1M0WW8zY2VVcjNBa3FFY1hMQ2cwSmw0WUFiV1E?oc=5",
-"summary": "SSY Group Wins China NMPA Approval for Four Peritoneal Dialysis Solutions, Bicarbonate Dual-Chamber Bag Line Takes Shape finance.biggo.com",
-"outlet": "finance.biggo.com",
-"published": "2026-11-19T05:05:00+00:00",
-"id": "c890efd5d3295cf8",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T07:49:47.816685+00:00"
-},
-{
-"title": "RNA Splicing Networks Shift Progressively During Chronic Kidney Disease Development - Bioengineer.org",
-"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMXdqZU1IUXNsc0R1c2dJcHh6Uk5CeThUUXljQ1U1Z00zRE9CczA4VXcyTnVfVUlDVGdyY1h3VWc5TWRXc01fdTc0Y3BhdERXTUpOaXVlV1BlQ3J3TThucTBodF81Z0RzNWJPNVdDZzYtdUVWcDY3b2ljSjl2MlhTdHBtSUhaM0tQUWtEVFVBZE95U0xMRFlTTEplTUQ2ZUo4Y1RrWjRFeWZPLUhF?oc=5",
-"summary": "RNA Splicing Networks Shift Progressively During Chronic Kidney Disease Development Bioengineer.org",
-"outlet": "Bioengineer.org",
-"published": "2026-11-19T02:41:32+00:00",
-"id": "f0f3cf2bfb3147b0",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T07:49:47.816685+00:00"
-},
-{
-"title": "Hollister youth receives long-awaited kidney transplant - BenitoLink",
-"link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNUmtkbnRfX0JEQzZCU3F4VFZJR2ZXWUJkUjhrWjlEWGlFelJpRHBuVDhtNVlkeW53Ykg0XzRwd3ljVlRjeTQ0LUpmcGNBSE0tYklZem8xQ0tQS0FqODZ4Q3ZSWmxLY05ZTGNBUkt0LTl2WjZ4a0ZnYWd5T1JZdkpOUWw2QllVdw?oc=5",
-"summary": "Hollister youth receives long-awaited kidney transplant BenitoLink",
-"outlet": "BenitoLink",
-"published": "2026-11-19T01:00:00+00:00",
-"id": "68098cc099dd3af8",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T07:49:47.816685+00:00"
-},
-{
-"title": "'Adopt a Patient' effort seeks to help dialysis patients get rides to treatment - WSFA",
-"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQUnRWUFlFUVMtZVlJVGU2bEJ1WWM5UG8waUo4TW9nWlI3WGltUHEybUFPaUg2RjVhTXZTNzE5WF9BWk5fS0VoY1lLRmlGNVFlellSLVh1QzZkZ2NKVENtXzNnODd4MGV4QVdaeXlwLWZNWHZSRmN1Wktqei0wcU5fV1JfZ2xnUFRkV1VPMVFCSWFYSFBPQ0dBM2FtRWxoTHVxeW40RVRCVkZiMjNM?oc=5",
-"summary": "'Adopt a Patient' effort seeks to help dialysis patients get rides to treatment WSFA",
-"outlet": "WSFA",
-"published": "2026-11-19T00:09:23+00:00",
-"id": "99636e930dc4168a",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T23:45:01.140452+00:00"
-},
-{
-"title": "A New Approach May Help Patients Feel Better Between Dialysis Treatments | Brandfuse | U.S. News - U.S. News & World Report",
-"link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQQ3lWYWpCTHFUQWhpT2hDTWN3UFBINU9aWTJ4cGpfdUlGeGphU2FIaGM1RjZPamtJTUNNYmRHUWN6MmJETWdZOXZWaW5iZDdFQWwydmM3bGROSEdhYUxzbWRSeHJNZlY4enhXNE9pMmMzalJaX1FtRGxsOG5WMVdCekZDQnBiZDRwVVRQN2Z1Mk9LVUl3b01xZWY5cVpjRV8zT0VhOG5NXzVlRHAxQ1RnbExFUFpIRHdXb21nOU5n?oc=5",
-"summary": "A New Approach May Help Patients Feel Better Between Dialysis Treatments | Brandfuse | U.S. News U.S. News & World Report",
-"outlet": "U.S. News & World Report",
-"published": "2026-11-19T00:04:15+00:00",
-"id": "d5281aa4d2564d77",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T00:12:56.194667+00:00"
-},
-{
-"title": "ANALYSIS OF QUALITY OF LIFE IN PATIENTS WITH CHRONIC KIDNEY DISEASE ON HEMODIALYSIS IN THE SOUTH OF SANTA CATARINA",
-"link": "https://www.medrxiv.org/content/10.64898/2026.11.17.26368318v1?rss=1",
-"summary": "IntroductionChronic Kidney Disease (CKD) is a clinical condition influenced by several socioeconomic, demographic and anthropometric factors, especially if patients are on hemodialysis (HD). ObjectiveAnalyze the QoL in patients with chronic kidney disease on hemodialysis. MethodologyThe study was developed with 52…",
-"outlet": "",
-"published": "2026-11-19T00:00:00+00:00",
-"id": "f09c40d5bb84f6f1",
-"source": "medRxiv: Nephrology preprints",
-"category": "Research",
-"first_seen": "2026-11-20T06:58:31.250967+00:00"
-},
-{
-"title": "Virtual spatial transcriptomics links kidney histopathology to disease-associated molecular programs",
-"link": "https://www.medrxiv.org/content/10.64898/2026.11.17.26368273v1?rss=1",
-"summary": "IntroductionSpatial transcriptomics can resolve compartment-specific molecular programs in kidney disease, but its cost and technical requirements limit its use in clinical diagnostics and in large biopsy archives. Predicting spatial gene expression from routine histology with artificial intelligence could extend…",
-"outlet": "",
-"published": "2026-11-19T00:00:00+00:00",
-"id": "6b125b94724b62cc",
-"source": "medRxiv: Nephrology preprints",
-"category": "Research",
-"first_seen": "2026-11-20T06:58:31.250967+00:00"
-},
-{
-"title": "FGF21 and β-Klotho Pathway Markers Correlate With Chronic Kidney Disease Comorbidities - Bioengineer.org",
-"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxORlFoTDl1dlNTUG8zbVBQQUp3S205d1NVODAySklCUm9qSjFMUVJlUHpmZl8xdWJPLVpKdkVRMmZlNURqOEhfaVp6S1lJMUVNMU9SbS0tbXhZQ09xUG4wT0txcHFUdW1sM0V0TGpQMFdPc3hLdjl5WWJoVExkUXRiOGlFSUJCSDRmcXMtLUhhZzF2OXNxaXpUSVpqNDhkVjdjUDN3MHAyblZKb2lJUEF2Vk5wVFQ5aEE?oc=5",
-"summary": "FGF21 and β-Klotho Pathway Markers Correlate With Chronic Kidney Disease Comorbidities Bioengineer.org",
-"outlet": "Bioengineer.org",
-"published": "2026-11-18T21:31:27+00:00",
-"id": "6622e2b080c8d51e",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T00:12:56.194667+00:00"
-},
-{
-"title": "Eloxx publishes phase 2a exaluren data in kidney disease study By Investing.com - Investing.com UK",
-"link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWkI5a2VmZFEwMWxUSzZwbXhYdmJNLVllT016NmhHWTg2WFFOTjBuMmRXbVRRUUxvRzVyZktIdDZOWUxENTA1bVZHT0w4bUhIRjdhenlqUWM5eVRyUVlKRFZZQTZQaEpUd0hnTmxrMW9SUDNJTmdVa2RTMDZKancxQTA5aEw1QXBqSzRFczZldHdtclZRd1N1WllJYTg5aUFfY2s3X0pFUGMtM2E0enhlbGZQWE9IUGdzcTNlaUpvclk?oc=5",
-"summary": "Eloxx publishes phase 2a exaluren data in kidney disease study By Investing.com Investing.com UK",
-"outlet": "Investing.com UK",
-"published": "2026-11-18T21:14:00+00:00",
-"id": "3501d4ff713e5890",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T00:12:56.194667+00:00"
-},
-{
-"title": "Maze Therapeutics CEO Jason Coloma: MZE829 Could Be the First Real Drug for a Kidney Disease That Hits 1 Million Americans Under 50 - BigGo Finance",
-"link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1vT0ZYQ3I4c05FRWllUDBWdHVhTlI3ZWxXYy14bGIyTUVMemVoeUdfQTVUNENjQktodkRibFdOY0NzekRBV0h6M1NoTzVZUk9iXzFFSmhqcTZtY28?oc=5",
-"summary": "Maze Therapeutics CEO Jason Coloma: MZE829 Could Be the First Real Drug for a Kidney Disease That Hits 1 Million Americans Under 50 BigGo Finance",
-"outlet": "BigGo Finance",
-"published": "2026-11-18T21:08:00+00:00",
-"id": "524ebbba97c62a32",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T07:49:47.816685+00:00"
-},
-{
-"title": "Pembrolizumab and Enfortumab Vedotin Linked to Kidney Failure in Case Report - Bioengineer.org",
-"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZms4MFNKTHN2QTVkZXpYTHhGYVdjNkZFMXdjT3Bhczl5TFFMcGlvNjRjcjJBS09Mdnp2Y0dIQTFZNThsQVZaN1daOTZRazdCSVpPN3RxcVJOUy1XLVhvcFQ2VVdhY185WDJTNmxsN0ZYYUUzUlktX1JzcVdma0h4bXlOMjZaQUJpVlpGajNXZ0ZQMHk3Z3A4Tkpmb2E2RDRndmlR?oc=5",
-"summary": "Pembrolizumab and Enfortumab Vedotin Linked to Kidney Failure in Case Report Bioengineer.org",
-"outlet": "Bioengineer.org",
-"published": "2026-11-18T19:36:26+00:00",
-"id": "00ee7fac84829676",
-"source": "Google News: kidney disease, dialysis & ESRD",
-"category": "News",
-"first_seen": "2026-11-19T00:12:56.194667+00:00"
-},
-{
-"title": "Effective treatments in IgA nephropathy prompt new questions",
-"link": "https://www.healio.com/news/nephrology/20261117/effective-treatments-in-iga-nephropathy-prompt-new-questions",
-"summary": "In this video, Mark Haas, MD, PhD, reviews current updates and issues in immunoglobulin A nephropathy care that were discussed at ASN Kidney Week. In response to the increase of effective treatments for IgA nephropathy, new questions about treatment duration and use of sequential or multiple drug therapies have…",
-"outlet": "",
-"published": "2026-11-18T19:02:06+00:00",
-"id": "88cc660180644433",
-"source": "Healio Nephrology",
-"category": "News",
-"first_seen": "2026-11-19T00:12:56.194667+00:00"
 }
 ]
 }
