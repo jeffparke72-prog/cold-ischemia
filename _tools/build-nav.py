@@ -28,6 +28,7 @@ GROUPS = [
     ]),
     ("Learn", [
         ("academy.html", "The Advocate's Academy"),
+        ("webinar.html", "Free Self-Paced Webinar"),
         ("gatekeeper-files.html", "The Gatekeeper Files"),
         ("test-your-knowledge.html", "Test Your Knowledge"),
         ("living-donor-guide.html", "Free Donor Guide (PDF)"),

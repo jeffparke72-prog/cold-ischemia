@@ -1,0 +1,763 @@
+{
+ "title": "From One Voice to a Movement",
+ "subtitle": "A self-paced webinar from the Cold Ischemia Foundation",
+ "voice": "af_heart",
+ "chapters": [
+  {
+   "id": "c0",
+   "title": "Welcome",
+   "scenes": [
+    {
+     "id": "c0s1",
+     "kicker": "Before we begin",
+     "title": "This webinar runs on your schedule",
+     "points": [
+      "About 30 minutes, in seven chapters",
+      "Pause, rewind, or skip ahead any time",
+      "Your place is saved on this device"
+     ],
+     "say": "Welcome. I'm your guide for the next half hour, and this session runs entirely on your schedule. You can pause me, send me back a few seconds, or jump to any chapter from the list. If you leave, your place is saved on this device, so you can pick up right where you stopped. Along the way, you'll see Navigator Tips appear beside me. Those are practical, specific moves for getting through hospitals, insurers, and agencies with less friction. At the end of most chapters, there's a short question. Nobody is grading you. The questions exist so the important parts stick."
+    },
+    {
+     "id": "c0s2",
+     "kicker": "What this is about",
+     "title": "Not another awareness talk",
+     "points": [
+      "The system you're already inside",
+      "The rights you can use this week",
+      "How one person becomes a movement"
+     ],
+     "say": "Here is the promise. This is not a talk about what kidney disease is. You already know that, or you're living it. This is about the machinery around it. Who makes the rules, who profits from the delays, and which rights you can actually put to work this week. Then we'll turn to the part most organizations skip entirely: how one frustrated person becomes ten, how ten become a local force, and how a local force ends up in the federal record where it can't be ignored. By the end, you'll have a plan, not just a feeling.",
+     "tip": {
+      "h": "Keep a pen nearby",
+      "t": "Several tips name exact regulations and deadlines. Write down the two that apply to your situation right now. Those are the ones you'll use first."
+     }
+    }
+   ]
+  },
+  {
+   "id": "c1",
+   "title": "Why the Foundation exists",
+   "scenes": [
+    {
+     "id": "c1s1",
+     "kicker": "The name",
+     "title": "Living inside the window",
+     "points": [
+      "Cold ischemia: the stretch of time an organ waits without blood flow",
+      "The moment of greatest vulnerability",
+      "Care partners live inside that window every day"
+     ],
+     "say": "Cold ischemia is the medical term for the time an organ spends outside the body, cut off from blood flow, waiting to be restored. It's the stretch where everything can be lost. Jeff and Marie Parke chose that name on purpose. Care partners live inside a window just like it. They do skilled, round-the-clock work for which the system offers no training, no pay, no protection, and no way back to the life they had before. The Foundation was built inside that window, by two people who lived it from both sides of the same kitchen table."
+    },
+    {
+     "id": "c1s2",
+     "kicker": "The scale",
+     "title": "A structural failure, not bad luck",
+     "points": [
+      "53 million Americans give unpaid care to family",
+      "About $600 billion a year in unpaid labor",
+      "Zero dollars set aside for care partner training or pay"
+     ],
+     "say": "This isn't one family's hard luck. AARP and the National Alliance for Caregiving count about fifty-three million Americans giving unpaid care to a family member. AARP's Public Policy Institute puts the value of that labor at roughly six hundred billion dollars a year. And here's the part that stings. Transplant programs require a designated care partner before a patient can be listed. No care partner, no listing. So the system treats that person as a medical requirement while providing no standard training, no compensation, and no seat at the tables where the rules are written."
+    },
+    {
+     "id": "c1s3",
+     "kicker": "The difference",
+     "title": "Independence is the product",
+     "points": [
+      "No pharmaceutical, dialysis, insurer, or hospital money",
+      "No donations accepted",
+      "Fees only for services you request, at posted rates"
+     ],
+     "say": "Most patient advocacy groups in this country take money from the same industries they're supposed to hold accountable. When your sponsor is a dialysis chain or a drug company, there are sentences you simply never say out loud. The Cold Ischemia Foundation took the opposite road. It takes no money from drug, device, or dialysis companies, hospital systems, insurers, or any advocacy group they fund. It doesn't even accept donations. The basics are free, and fees apply only to services you ask for, at posted rates. That independence is what lets the Foundation name institutions, cite the law, and say what others won't.",
+     "tip": {
+      "h": "Check who funds the voice",
+      "t": "Before you trust any patient group's advice, look up its annual Form 990 on ProPublica's Nonprofit Explorer and read its corporate sponsor list. Funding shapes what an organization is willing to say."
+     }
+    },
+    {
+     "id": "c1s5",
+     "kicker": "On the record",
+     "title": "What the Foundation has already done",
+     "points": [
+      "Six formal demand letters to Congress, CMS, HHS, NIH, the Florida Legislature, and the OPTN Board",
+      "A documented audit of 40 federal violations",
+      "A Lean Six Sigma reform paper sent to the OPTN Board, HRSA, and CMS"
+     ],
+     "say": "Independence would be an empty word without action behind it, so here's some of the record. The Foundation has sent six formal demand letters, to Congress, CMS, the Department of Health and Human Services, the National Institutes of Health, the Florida Legislature, and the OPTN Board, each one stating exactly what was demanded and of whom. It has published an audit documenting forty federal violations. And it submitted a Lean Six Sigma analysis of the transplant system to the OPTN Board, HRSA, and CMS. That's the same method used to cut defects in manufacturing and hospitals, applied to a system that produces far too many of them.",
+     "link": {
+      "label": "Read the demand letters",
+      "href": "demand-letters.html"
+     }
+    },
+    {
+     "id": "c1s4",
+     "kicker": "Knowledge check",
+     "title": "Quick question",
+     "points": [],
+     "say": "Let's lock that in with a quick question. Take your time. The answer and the reasoning appear as soon as you choose.",
+     "q": {
+      "p": "What makes the Cold Ischemia Foundation different from most patient advocacy groups?",
+      "o": [
+       "It's funded by the largest dialysis providers",
+       "It accepts no industry money and no donations",
+       "It's run by a federal agency",
+       "It only serves patients, never care partners"
+      ],
+      "a": 1,
+      "why": "The Foundation refuses all money from drug, device, and dialysis companies, hospitals, insurers, and the groups they fund, and it doesn't accept donations either. That's what allows it to name names."
+     }
+    }
+   ]
+  },
+  {
+   "id": "c2",
+   "title": "A tour of your toolkit",
+   "scenes": [
+    {
+     "id": "c2s1",
+     "kicker": "The Command Center",
+     "title": "One place for every lever",
+     "points": [
+      "Guided tools, live federal feeds, complaint builders",
+      "No membership, no paywall",
+      "Built because care partners needed them"
+     ],
+     "say": "Everything the Foundation has built lives in one place called the Command Center. Think of it as a workshop instead of a library. These aren't links to other people's brochures. They're working tools that produce letters, records, and plans you can use the same day. Every one exists because a patient or care partner needed it and couldn't find it anywhere else. And all of it is free. No account, no membership, no credit card. Over the next few minutes, I'll walk you through the tools you're most likely to need, and when each one earns its keep.",
+     "link": {
+      "label": "Open the Command Center",
+      "href": "command-center.html"
+     }
+    },
+    {
+     "id": "c2s2",
+     "kicker": "When something goes wrong",
+     "title": "The Situation Room and The Translator",
+     "points": [
+      "Describe a crisis, get the rule broken and the agency to call",
+      "Paste a denial letter, get your rights in plain English",
+      "Both produce paperwork, not pep talks"
+     ],
+     "say": "Two tools are built for the worst days. In the Situation Room, you describe what's happening in your own words. It identifies the federal rule that may have been broken, the agency responsible, and drafts a complaint letter ready for your signature. The Translator handles the paperwork that's designed to confuse. Paste in a denial letter, a discharge notice, or a facility policy, and it explains what the document really says, what your rights are, and what the institution is required to do next. Neither one offers a wellness score. Both hand you something you can file.",
+     "link": {
+      "label": "Enter the Situation Room",
+      "href": "situation-room.html"
+     },
+     "tip": {
+      "h": "Name the rule, get a response",
+      "t": "Vague complaints get filed away. A complaint that cites the exact regulation, the date, and the people involved starts a clock the institution has to answer. Always include all three."
+     }
+    },
+    {
+     "id": "c2s3",
+     "kicker": "Who to call, and who voted how",
+     "title": "The Accountability Atlas and Congress Scorecard",
+     "points": [
+      "Direct contacts for CMS, HHS, OIG, HRSA, DOJ, and the OPTN",
+      "All 18 ESRD Networks and every state survey agency",
+      "Letter grades for every member of Congress"
+     ],
+     "say": "Knowing your rights means nothing if you can't find the right door. The Accountability Atlas lists direct contacts for the federal agencies that oversee your care, along with all eighteen ESRD Networks and every state survey agency. The Congress Scorecard grades every senator and House member on actual votes affecting chronic illness, care partner pay, and patient rights. Before you call your representative's office, look up their grade. It changes the conversation. You're no longer asking for sympathy. You're asking them to explain a record.",
+     "link": {
+      "label": "See the Congress Scorecard",
+      "href": "congress-scorecard.html"
+     }
+    },
+    {
+     "id": "c2s4",
+     "kicker": "For the long haul",
+     "title": "Tools for planning, documenting, and deciding",
+     "points": [
+      "Insurance Appeal Builder and Records Request Generator",
+      "Treatment Continuity Planner and Incident Workflow",
+      "The Substitute, for backup care"
+     ],
+     "say": "Some tools are built for quieter days, so the loud ones go better. The Insurance Appeal Builder drafts appeal letters organized by the type of denial. The Records Request Generator writes requests that cite your federal right of access. The Treatment Continuity Planner helps you map backup options before a provider relationship falls apart. The Incident Workflow keeps a dated timeline of problems and escalations. And The Substitute is a backup care plan, because every care partner eventually gets sick, gets called away, or simply hits a wall. Planning for that moment is not pessimism. It's protection.",
+     "link": {
+      "label": "Browse the full toolkit",
+      "href": "care-partner-advocacy.html"
+     }
+    },
+    {
+     "id": "c2s4b",
+     "kicker": "For the hardest moments at home",
+     "title": "The Survival Guide tools",
+     "points": [
+      "The Field Station: methods for high-tension moments",
+      "Exact phrases, matched to the situation",
+      "No login, works on your phone"
+     ],
+     "say": "Not every crisis happens at a hospital. Some happen at home, when fear, exhaustion, and illness collide and the air in the room changes. The Survival Guide tools were built for those moments. The Field Station lets you pick the situation you're in and surfaces a method drawn from mentalization research, trauma-informed practice, and conflict mediation, along with exact phrases you can use. It works on your phone, without an account. Bookmark it now, while things are calm. Nobody thinks clearly enough to search for help in the middle of a hard moment.",
+     "link": {
+      "label": "Open the Survival Guide hub",
+      "href": "tool-survival-guide-hub.html"
+     },
+     "tip": {
+      "h": "Check your own state first",
+      "t": "Before responding to a tense exchange, notice your own breathing and pulse. Answering from a calmer state almost always changes what happens next, more than finding the perfect words."
+     }
+    },
+    {
+     "id": "c2s5",
+     "kicker": "Learning that goes deeper",
+     "title": "Read, watch, and study",
+     "points": [
+      "The Gatekeeper Files: a new fix every Thursday",
+      "Field Notes on BHOC organ preservation research",
+      "The Advocate's Academy and free guides"
+     ],
+     "say": "The Foundation also publishes work that goes well past the usual talking points. The Gatekeeper Files opens a new card every Thursday, naming a problem people with kidney disease run into, the payment rule or policy line actually causing it, and a fix. The BHOC Field Notes follow research on Biological Hemoglobin Oxygen Carriers and whether controlled oxygen could protect an organ while it waits. The Advocate's Academy offers self-paced courses with quizzes. And free guides like The First 24 Hours give you a crisis plan you can download and keep.",
+     "link": {
+      "label": "Open The Gatekeeper Files",
+      "href": "gatekeeper-files.html"
+     },
+     "tip": {
+      "h": "Make Thursday a habit",
+      "t": "Set a weekly reminder for Thursday and read the new Gatekeeper card. Each one takes about five minutes and hands you one policy fact most clinicians have never heard."
+     }
+    },
+    {
+     "id": "c2s6",
+     "kicker": "Knowledge check",
+     "title": "Quick question",
+     "points": [],
+     "say": "Here's a scenario to test the tour.",
+     "q": {
+      "p": "An insurer sends a denial letter full of jargon. Which tool should you open first?",
+      "o": [
+       "The Congress Scorecard",
+       "The Translator",
+       "The Gatekeeper Files",
+       "The Substitute"
+      ],
+      "a": 1,
+      "why": "The Translator is built for exactly this. Paste the letter in and it explains what it says, your rights, and what the insurer must do next. From there, the Insurance Appeal Builder can draft your response."
+     }
+    }
+   ]
+  },
+  {
+   "id": "c3",
+   "title": "Rights you can use this week",
+   "scenes": [
+    {
+     "id": "c3s1",
+     "kicker": "The paper trail",
+     "title": "Your records belong to you",
+     "points": [
+      "HIPAA gives you the right to your own records",
+      "Providers generally have 30 days to respond",
+      "Ask in writing, keep a copy, note the date"
+     ],
+     "say": "Let's get practical. Your first right is the right to your own records. Under HIPAA, you can request your medical records, and the provider generally has thirty days to respond, with one thirty-day extension if they explain the delay in writing. That includes lab results, notes, evaluation documents, and treatment records. Always ask in writing, keep a copy, and write down the date you sent it. If they miss the deadline, that becomes its own complaint. Records are leverage. You can't challenge a decision you can't see.",
+     "link": {
+      "label": "Generate a records request",
+      "href": "tool-records-request.html"
+     },
+     "tip": {
+      "h": "Ask for the format you need",
+      "t": "You can request records electronically if the provider keeps them that way. Ask for PDF by email or a patient portal download, and specify whether you want physician notes included."
+     }
+    },
+    {
+     "id": "c3s1b",
+     "kicker": "Your most underrated tool",
+     "title": "The contact log",
+     "points": [
+      "Date, time, name, title, what was said",
+      "Send a short follow-up email after every call",
+      "Store it where your care partner can find it"
+     ],
+     "say": "Before any of these rights help you, you need one habit: the contact log. Every time you talk to a coordinator, an insurer, a billing office, or a social worker, write down the date, the time, the person's full name and title, and what they told you. After an important call, send a two-line email summarizing it. Something like, thank you for confirming today that my appeal was received and will be decided by the fifteenth. Now a verbal promise has a paper trail. Keep the log somewhere your care partner can reach it, because they may be the one who needs it.",
+     "tip": {
+      "h": "Always get a reference number",
+      "t": "Insurers and agencies assign call reference numbers. Ask for one at the start of every call and write it in your log. It's the fastest way to prove the conversation happened."
+     }
+    },
+    {
+     "id": "c3s2",
+     "kicker": "Inside the transplant program",
+     "title": "Ask for the rulebook",
+     "points": [
+      "Programs must use written selection criteria",
+      "They must give you a copy when you ask",
+      "Written notice within 10 business days of key list decisions"
+     ],
+     "say": "Transplant programs often feel like a black box. Here are two ways in. First, federal rules require every transplant program to use written patient selection criteria, and to give a copy to any patient who asks. Ask for it. Read it. If you're turned down, compare the decision against the criteria. Second, under OPTN policy, the program must notify you in writing within ten business days when you're added to the waiting list, when your evaluation finishes but you're not listed, or when you're removed for any reason other than transplant. No letter means a policy was missed.",
+     "tip": {
+      "h": "Use the exact citation",
+      "t": "When asking for selection criteria, cite 42 CFR 482.90. A request that names the regulation tends to get answered faster than a general question to a coordinator."
+     }
+    },
+    {
+     "id": "c3s3",
+     "kicker": "More than one door",
+     "title": "You may list at more than one program",
+     "points": [
+      "Multiple listing is allowed",
+      "Waiting times differ widely between programs",
+      "Check insurance and travel before you commit"
+     ],
+     "say": "Something many patients never hear: you may be evaluated and listed at more than one transplant program. Waiting times and acceptance practices vary a great deal from program to program, even within the same region. Multiple listing isn't the right move for everyone. It depends on your insurance, your ability to travel on short notice, and the extra testing involved. But it's your decision to make, not something that should be quietly left out of the conversation. Ask each program directly what its policy is on patients who are listed elsewhere, and get the answer in writing.",
+     "link": {
+      "label": "Compare transplant centers",
+      "href": "kidney-transplant-centers.html"
+     }
+    },
+    {
+     "id": "c3s4",
+     "kicker": "When the insurer says no",
+     "title": "Denials are often a first offer",
+     "points": [
+      "Most plans: 180 days to file an internal appeal",
+      "External review by an independent party is available",
+      "Medicare: 120 days to request a redetermination"
+     ],
+     "say": "A denial is often the opening move, not the final word. For most private and marketplace plans, you have one hundred eighty days from the denial notice to file an internal appeal, and if that fails, you can request an external review by an independent reviewer the insurer doesn't control. Medicare gives you one hundred twenty days to ask for a redetermination. A strong appeal includes the exact plan language, a letter of medical necessity from your doctor, and a clear timeline. Deadlines are strict, so put the date on your calendar the day the letter arrives.",
+     "link": {
+      "label": "Build an insurance appeal",
+      "href": "tool-insurance-appeal.html"
+     },
+     "tip": {
+      "h": "Request the claim file",
+      "t": "You're entitled to the documents the insurer used to deny you, free of charge. Request the full claim file before you write your appeal, so you're answering their actual reasoning."
+     }
+    },
+    {
+     "id": "c3s4b",
+     "kicker": "Leaving the hospital too soon",
+     "title": "Medicare discharge appeals",
+     "points": [
+      "Look for 'An Important Message from Medicare'",
+      "Ask the BFCC-QIO for a fast, independent review",
+      "Request it before you leave the hospital"
+     ],
+     "say": "Here's a right that matters in the hospital itself. If you're a Medicare inpatient and you believe you're being discharged before it's safe, you have the right to a fast, independent review. The hospital is required to give you a notice called An Important Message from Medicare About Your Rights. It lists the phone number for your Beneficiary and Family Centered Care Quality Improvement Organization, usually shortened to BFCC-QIO. Call them before you leave the hospital, ideally no later than your planned discharge day. While the review is underway, you generally won't be charged for the extra hospital days.",
+     "tip": {
+      "h": "Ask for the notice by name",
+      "t": "If nobody has handed you An Important Message from Medicare, ask the nurse or case manager for it by name. The phone number you need for the appeal is printed on it."
+     }
+    },
+    {
+     "id": "c3s5",
+     "kicker": "Escalation",
+     "title": "Climb the ladder in order",
+     "points": [
+      "1. Written grievance to the facility",
+      "2. Your ESRD Network or the transplant program's oversight",
+      "3. State survey agency, then CMS"
+     ],
+     "say": "When something goes wrong at a facility, escalate in order, and in writing. Start with a written grievance to the facility itself. Facilities are required to have a grievance process, and a written complaint creates a record. If that stalls, go to your regional ESRD Network, one of eighteen across the country. Next comes your state survey agency, which inspects facilities on behalf of CMS. Federal agencies come after that, and the OPTN for transplant matters. Skipping rungs often gets your complaint sent back to the start. Climbing them in order builds a file nobody can claim they never saw.",
+     "link": {
+      "label": "Find your Network and state agency",
+      "href": "accountability.html"
+     },
+     "tip": {
+      "h": "Protection against retaliation",
+      "t": "Federal rules for dialysis facilities protect patients from retaliation for filing grievances, and an involuntary discharge generally requires thirty days' written notice. If you're threatened with discharge after complaining, document it immediately."
+     }
+    },
+    {
+     "id": "c3s6",
+     "kicker": "Knowledge check",
+     "title": "Quick question",
+     "points": [],
+     "say": "Two questions this time, because these rights matter. Here's the first.",
+     "q": {
+      "p": "You asked a transplant program for its patient selection criteria. What are they required to do?",
+      "o": [
+       "Nothing; criteria are confidential",
+       "Give you a copy on request",
+       "Only share them with your doctor",
+       "Charge a records fee first"
+      ],
+      "a": 1,
+      "why": "Under 42 CFR 482.90, transplant programs must use written selection criteria and give a copy to a patient who asks."
+     }
+    },
+    {
+     "id": "c3s7",
+     "kicker": "Knowledge check",
+     "title": "One more",
+     "points": [],
+     "say": "And the second.",
+     "q": {
+      "p": "A facility ignores your verbal complaint. What's the strongest next step?",
+      "o": [
+       "Post about it online first",
+       "File a written grievance with the facility",
+       "Go straight to your senator",
+       "Switch facilities without saying anything"
+      ],
+      "a": 1,
+      "why": "A written grievance creates a dated record and starts the formal process. If it stalls, you climb to the ESRD Network, the state survey agency, then CMS, and each rung can see the trail."
+     }
+    }
+   ]
+  },
+  {
+   "id": "c4",
+   "title": "Care partners and living donors",
+   "scenes": [
+    {
+     "id": "c4s1",
+     "kicker": "The unseen half",
+     "title": "Required, but unprotected",
+     "points": [
+      "A listing prerequisite with no training standard",
+      "No federal pay, no job protection built for the role",
+      "Burnout is predictable, so plan for it"
+     ],
+     "say": "Let's talk about the person standing beside the patient. The care partner manages medications, appointments, transportation, insurance calls, and the emotional weight of all of it, often while holding a job. The system depends on that labor and does almost nothing to support it. If you're a care partner, know this: your exhaustion isn't a character flaw. It's what happens when a system builds itself on work it won't name. The Foundation's tools exist to lighten that load, and its advocacy exists to make sure the load is eventually recognized, measured, and paid for."
+    },
+    {
+     "id": "c4s2",
+     "kicker": "Protections that do exist",
+     "title": "Use what's already on the books",
+     "points": [
+      "FMLA: up to 12 weeks of job-protected unpaid leave",
+      "Some states add paid family leave",
+      "Ask your employer's HR for the policy in writing"
+     ],
+     "say": "Some protections already exist, and too few people use them. The Family and Medical Leave Act lets eligible workers take up to twelve weeks of unpaid, job-protected leave a year to care for a spouse, child, or parent with a serious health condition. It can be taken in pieces, a day here or a few hours there, for appointments and recovery. A growing number of states also offer paid family leave on top of that. Ask your employer's human resources office for its policy in writing, and ask which forms your doctor needs to complete.",
+     "tip": {
+      "h": "Intermittent leave",
+      "t": "FMLA leave doesn't have to be taken all at once. Request intermittent leave for appointments and flare-ups, so you protect your job without burning through all twelve weeks in one stretch."
+     }
+    },
+    {
+     "id": "c4s3",
+     "kicker": "Living donors",
+     "title": "The donor deserves an advocate too",
+     "points": [
+      "Programs must provide an independent living donor advocate",
+      "Help with travel costs may be available through NLDAC",
+      "Donors can withdraw at any time"
+     ],
+     "say": "If you're considering becoming a living donor, you deserve someone in your corner whose only job is you. Federal rules require transplant programs to provide an independent living donor advocate, separate from the recipient's team. Use that person. Ask them hard questions. The National Living Donor Assistance Center may help with travel and lodging costs for donors who qualify. And remember, you can decline or withdraw at any point. The Foundation's guide for living donors, Not a Spare, walks through readiness, risk, and the questions programs don't always volunteer answers to.",
+     "link": {
+      "label": "Visit the Living Donor Hub",
+      "href": "living-donor-hub.html"
+     }
+    },
+    {
+     "id": "c4s3b",
+     "kicker": "Plan for the day you can't",
+     "title": "Backup care and your own limits",
+     "points": [
+      "Name a backup person and write down the routine",
+      "Keep a one-page medical summary current",
+      "Your health is part of the care plan"
+     ],
+     "say": "Every care partner eventually faces a day they can't show up. Illness, a family emergency, or plain exhaustion. Plan for it now. Name a backup person, and write down the routine: medications, appointments, phone numbers, insurance details, and the small things only you know. Keep a one-page medical summary current, so anyone stepping in can be useful within minutes. The Foundation's tool called The Substitute walks you through building that backup plan. And one more thing. Your own health appointments belong on the calendar too. A care plan that burns out its care partner isn't a plan.",
+     "link": {
+      "label": "Plan for continuity",
+      "href": "tool-continuity-planner.html"
+     }
+    },
+    {
+     "id": "c4s4",
+     "kicker": "Knowledge check",
+     "title": "Quick question",
+     "points": [],
+     "say": "A quick check on care partner and donor protections.",
+     "q": {
+      "p": "Who is a living donor's independent advocate supposed to represent?",
+      "o": [
+       "The recipient",
+       "The transplant program's finances",
+       "The donor, and only the donor",
+       "The insurance company"
+      ],
+      "a": 2,
+      "why": "The independent living donor advocate exists to protect the donor's interests, separately from the recipient's care team."
+     }
+    }
+   ]
+  },
+  {
+   "id": "c5",
+   "title": "From one voice to a record",
+   "scenes": [
+    {
+     "id": "c5s1",
+     "kicker": "Why paperwork wins",
+     "title": "Institutions answer to records, not feelings",
+     "points": [
+      "Every filed complaint becomes a federal record",
+      "Every record starts a compliance clock",
+      "Ignored clocks become evidence of a pattern"
+     ],
+     "say": "Here's the strategy at the center of everything the Foundation does. Institutions change when there's a documented public record they can't erase. A phone call vanishes. A filed complaint stays. Each filing starts a compliance clock. Each clock the institution ignores adds to a record of non-compliance. One complaint is a problem for a facility. A hundred complaints, filed the same way and citing the same rule, become a pattern that congressional staff, investigators, and journalists can actually use. Your story matters most when it's written down in a form the system is required to answer."
+    },
+    {
+     "id": "c5s2",
+     "kicker": "Your story, structured",
+     "title": "Turn experience into testimony",
+     "points": [
+      "MERIDIAN turns one story into three documents",
+      "Dates, names, rules, outcomes",
+      "Share only with consent, always"
+     ],
+     "say": "Most people tell their story in the order they lived it, and that's natural. But decision-makers read differently. They want dates, names, the rule involved, and the outcome you're asking for. The Foundation's MERIDIAN tool turns your experience into three documents: a private record for yourself, a picture of where your story fits in the national pattern, and a formal statement aimed at a specific decision-maker. It runs in your browser, with no account, and nothing is stored. One rule never bends: no one's story gets shared without that person's clear permission.",
+     "link": {
+      "label": "Open MERIDIAN",
+      "href": "tool-meridian.html"
+     },
+     "tip": {
+      "h": "The one-page rule",
+      "t": "Keep a one-page version of your story: three dates, two rules broken, one specific request. Staffers often read a single page. Attach the long version behind it."
+     }
+    },
+    {
+     "id": "c5s2b",
+     "kicker": "The Foundation's method",
+     "title": "Lean Six Sigma for advocates",
+     "points": [
+      "Define the problem in one sentence",
+      "Measure it: dates, counts, delays",
+      "Analyze, Improve, Control: fix the cause, then lock it in"
+     ],
+     "say": "The Foundation approaches advocacy the way an engineer approaches a broken process, using a Lean Six Sigma method called DMAIC. Define the problem in one sentence. Measure it, with dates, counts, and delays rather than adjectives. Analyze it, to find the rule or step that's actually causing the failure. Improve it, by proposing a specific fix. Control it, by tracking whether the fix holds. You don't need a certification to use this. Next time something goes wrong, write those five words down the side of a page and fill them in. Your complaint will read like an audit, and audits get answers."
+    },
+    {
+     "id": "c5s3",
+     "kicker": "Join the tribe",
+     "title": "Seven ways to put your time to work",
+     "points": [
+      "Patient and care partner support",
+      "Policy outreach, content, data and Lean Six Sigma",
+      "Digital, events, and operations"
+     ],
+     "say": "This is where you come in. The Foundation runs volunteer tracks across seven areas: direct support for patients and care partners, policy and legislative outreach, writing and fact-checking toolkits, data and Lean Six Sigma analysis, digital and social media, community events, and the operations that keep a small, busy organization running. You don't need credentials. You need honest self-awareness, reliability, and a willingness to learn. Before applying, you'll take a self-paced readiness training, because the people being served deserve volunteers who know what they're stepping into.",
+     "link": {
+      "label": "Explore volunteering",
+      "href": "cif-volunteer-page.html"
+     }
+    },
+    {
+     "id": "c5s3b",
+     "kicker": "What contributing looks like",
+     "title": "An hour can matter",
+     "points": [
+      "Fact-check a guide",
+      "Research one legislator's record",
+      "Help one family find the right tool"
+     ],
+     "say": "People often think volunteering means giving up every weekend. It doesn't have to. An hour can fact-check a section of a guide against its sources. An hour can pull one legislator's voting record together before a district office visit. An hour can walk one overwhelmed family through the Translator so they understand their denial letter for the first time. The Foundation matches new volunteers with ready-made starter tasks, so your first contribution is real and finished in your first week. Consistency matters far more than size. A few dependable hours a month beat a burst of enthusiasm that fades."
+    },
+    {
+     "id": "c5s4",
+     "kicker": "The ground rules",
+     "title": "What every volunteer protects",
+     "points": [
+      "Know where advocacy ends and medical or legal advice begins",
+      "Confidentiality by default",
+      "Represent positions exactly as documented"
+     ],
+     "say": "Every volunteer holds the same standards, whatever track they choose. Know where advocacy ends and medical or legal practice begins, and send those questions to a qualified professional. Treat what people tell you as confidential by default. Represent the Foundation's positions exactly as they're documented, not stronger and not softer. Show up for what you promise, or say early that you can't. And advocate for every person with the same rigor, no matter their diagnosis or how sympathetic their story sounds. The system already sorts people by how much noise they can make. We don't repeat that."
+    },
+    {
+     "id": "c5s5",
+     "kicker": "Knowledge check",
+     "title": "Quick question",
+     "points": [],
+     "say": "Let's check the core idea of this chapter.",
+     "q": {
+      "p": "Why does the Foundation push people to file written complaints instead of just calling?",
+      "o": [
+       "Written complaints are faster to ignore",
+       "Filed complaints create records and start compliance clocks",
+       "Phone calls are against the rules",
+       "It makes the paperwork look longer"
+      ],
+      "a": 1,
+      "why": "A filed complaint becomes part of the record and triggers obligations to respond. Many filed complaints citing the same rule reveal a pattern that investigators, legislators, and reporters can act on."
+     }
+    }
+   ]
+  },
+  {
+   "id": "c6",
+   "title": "Building a movement where you live",
+   "scenes": [
+    {
+     "id": "c6s1",
+     "kicker": "Start small, on purpose",
+     "title": "The kitchen-table briefing",
+     "points": [
+      "Six to ten people, ninety minutes",
+      "One problem, one rule, one ask",
+      "Leave with names, roles, and a date"
+     ],
+     "say": "Movements rarely start with a rally. They start at a table. Invite six to ten people: patients, care partners, a nurse who's frustrated, a neighbor who's simply curious. Keep it to ninety minutes. Pick one problem, the rule behind it, and one specific request you'll make together. Show a Gatekeeper card or a Scorecard grade to anchor the conversation in facts. Before anyone leaves, write down names, who's taking which task, and the date you'll meet again. A group that leaves with assignments comes back. A group that leaves with only good feelings usually doesn't.",
+     "tip": {
+      "h": "Rotate the host",
+      "t": "Ask a different person to host each meeting. Shared hosting spreads ownership, so the group doesn't collapse when one organizer gets sick or busy."
+     }
+    },
+    {
+     "id": "c6s2",
+     "kicker": "Go where people already gather",
+     "title": "Libraries, faith communities, and clubs",
+     "points": [
+      "Free rooms with built-in audiences",
+      "Offer a 30-minute talk using this webinar",
+      "Bring printed First 24 Hours guides"
+     ],
+     "say": "You don't have to build an audience from nothing. Public libraries, faith communities, senior centers, civic clubs, and support groups already gather people and often lend rooms for free. Offer a thirty-minute session. You can even play chapters of this webinar and lead a discussion afterward. Bring printed copies of The First 24 Hours guide so every person leaves holding something useful. The Foundation also offers a free thirty-minute webinar for patient groups, and live workshops for those who want to go further. Ask the host to add your next meeting to their community calendar.",
+     "link": {
+      "label": "Download The First 24 Hours",
+      "href": "first-24-hours.html"
+     }
+    },
+    {
+     "id": "c6s2b",
+     "kicker": "Care that holds",
+     "title": "Start a support circle",
+     "points": [
+      "A small group that meets on a regular schedule",
+      "Shared tasks: rides, meals, paperwork, phone calls",
+      "Clear agreements on privacy"
+     ],
+     "say": "Not every group needs to be about policy. Some of the strongest local movements begin as support circles, small groups of patients and care partners who meet on a regular schedule and actually carry part of each other's load. One member drives to appointments. Another helps with appeal paperwork. Another simply makes the phone calls that someone is too tired to make. Agree on privacy from the first meeting: what's said in the circle stays there. Over time, a circle that trusts each other becomes the group that shows up at the district office together.",
+     "tip": {
+      "h": "Write the agreements down",
+      "t": "Put the circle's privacy rules, meeting schedule, and how decisions are made on a single page. Hand it to every new member. Clear agreements prevent most of the conflicts that break groups apart."
+     }
+    },
+    {
+     "id": "c6s3",
+     "kicker": "Make it official",
+     "title": "Proclamations and the press",
+     "points": [
+      "Ask your city or county for a proclamation",
+      "November: National Family Caregivers Month",
+      "March: National Kidney Month"
+     ],
+     "say": "Local officials hand out proclamations all the time, and they're easier to get than most people expect. Contact your mayor's or county commission's office and ask them to recognize care partners during National Family Caregivers Month in November, or kidney patients during National Kidney Month in March. A proclamation gives you a reason to fill the room, a photo, and a news hook. Pair it with a short letter to the editor of your local paper, under two hundred fifty words, with one fact and one request. Local coverage is how a group of ten starts to look like a hundred.",
+     "tip": {
+      "h": "Write the draft for them",
+      "t": "City staff are busy. Send a ready-to-sign draft proclamation with your request. Offices often adopt the language they're handed, which lets you choose the facts."
+     }
+    },
+    {
+     "id": "c6s4",
+     "kicker": "Talk to power, prepared",
+     "title": "District offices and public comment",
+     "points": [
+      "Meet staff at the local district office",
+      "Bring the Scorecard grade and a one-page ask",
+      "Comment on federal rules at regulations.gov"
+     ],
+     "say": "Members of Congress keep offices back home, and the staff there meet with constituents regularly, especially during recess. Request a meeting. Bring two or three people, a one-page ask, and the member's Scorecard grade. Be polite, specific, and brief, then follow up in writing within a week. Then there's the door most people don't know exists. When agencies like CMS propose new rules, anyone can submit a public comment at regulations.gov, and the agency must consider it. The OPTN also opens its policy proposals to public comment. A dozen well-sourced comments from one community get noticed.",
+     "link": {
+      "label": "Read the Foundation's demand letters",
+      "href": "demand-letters.html"
+     },
+     "tip": {
+      "h": "Comment with evidence",
+      "t": "Agencies weigh substance, not volume. A comment that cites data, describes a real impact, and proposes specific wording carries more weight than a hundred identical form letters."
+     }
+    },
+    {
+     "id": "c6s5",
+     "kicker": "Online, with discipline",
+     "title": "Share facts, not just outrage",
+     "points": [
+      "One fact, one source, one action per post",
+      "Share Foundation pages so people land on tools",
+      "Never post someone's story without consent"
+     ],
+     "say": "Social media can spread a movement or drown it in noise. Keep every post simple: one fact, its source, and one action people can take. Link to the Foundation's pages so readers land on working tools instead of just reading a headline. Tag your local officials when you share a Scorecard grade. Celebrate small wins, like a records request answered or an appeal overturned, because wins recruit people faster than outrage. And protect the people you're fighting for. Never post anyone's health details or story without their clear, informed permission."
+    },
+    {
+     "id": "c6s5b",
+     "kicker": "Choose partners carefully",
+     "title": "Vet every coalition",
+     "points": [
+      "Check who funds a potential partner",
+      "Ask what they've been willing to criticize",
+      "Agree on the ask before you share a stage"
+     ],
+     "say": "As your group grows, other organizations will want to partner with you. Some will make you stronger. Others will quietly soften your message to protect their sponsors. Before you join a coalition, check who funds it, using its Form 990 and its public sponsor list. Ask what it has been willing to criticize in the past. And agree on the specific request before you share a stage, a press release, or a letterhead. A partnership that can't name the problem out loud will eventually ask you not to either. Independence protects your credibility, and credibility is the only currency a grassroots group truly has."
+    },
+    {
+     "id": "c6s6",
+     "kicker": "Your first 90 days",
+     "title": "A simple plan",
+     "points": [
+      "Days 1–30: two people, one briefing, one records request each",
+      "Days 31–60: a library talk and a proclamation request",
+      "Days 61–90: a district office meeting and a public comment"
+     ],
+     "say": "Let's put it together into ninety days. In the first month, recruit two people, hold one kitchen-table briefing, and have each person send one records request or appeal of their own. That builds confidence. In the second month, host a talk at a library or community space and ask your city for a proclamation. In the third month, meet with a district office and submit a group of public comments on an open rule. By day ninety, you'll have a small team, a public record, and relationships with officials who now know your names. That's a movement.",
+     "tip": {
+      "h": "Track it like a project",
+      "t": "Use a simple log: date, action, person, result. After 90 days, that log is your proof of impact and the story you'll tell to recruit the next ten people."
+     }
+    },
+    {
+     "id": "c6s7",
+     "kicker": "Knowledge check",
+     "title": "Quick question",
+     "points": [],
+     "say": "One last check before we wrap up.",
+     "q": {
+      "p": "Your group wants local attention in November. Which move fits best?",
+      "o": [
+       "Ask the city for a National Family Caregivers Month proclamation",
+       "Wait until a crisis makes the news",
+       "Post anonymous complaints online",
+       "Hold a rally with no specific ask"
+      ],
+      "a": 0,
+      "why": "November is National Family Caregivers Month. A proclamation gives you an event, a photo, and a news hook, and it puts care partners on the official record."
+     }
+    }
+   ]
+  },
+  {
+   "id": "c7",
+   "title": "Your next step",
+   "scenes": [
+    {
+     "id": "c7s1",
+     "kicker": "What you now have",
+     "title": "A toolkit, a set of rights, and a plan",
+     "points": [
+      "Know the tools and when to use them",
+      "Use your rights in writing, on deadline",
+      "Build a group of ten, then a public record"
+     ],
+     "say": "Let's look at what you're leaving with. You know where the Foundation's tools are and which one to open when trouble starts. You know rights most patients never hear about: your records in thirty days, a transplant program's selection criteria on request, written notice of list decisions, appeal deadlines, and the escalation ladder. And you have a ninety-day plan for turning one voice into a local force that ends up in the federal record. None of this asks you to be fearless. It asks you to be organized, persistent, and connected to people doing the same work."
+    },
+    {
+     "id": "c7s2",
+     "kicker": "Join us",
+     "title": "Stop doing this alone",
+     "points": [
+      "Volunteer with the Foundation",
+      "Share this webinar with one person this week",
+      "Come back any time; your place is saved"
+     ],
+     "say": "So here's the ask. First, join the Cold Ischemia Foundation tribe. Explore the volunteer tracks and start the readiness training. Second, share this webinar with one person this week, someone who's tired of fighting the system alone. Third, open one tool today, even if it's just requesting your own records. Small actions, taken on purpose, are how every lasting change in this system has started. Thank you for spending this time with me. The buttons on the screen will take you wherever you'd like to go next.",
+     "link": {
+      "label": "Explore volunteering",
+      "href": "cif-volunteer-page.html"
+     },
+     "offer": true
+    }
+   ]
+  }
+ ],
+ "offer": {
+  "enabled": false,
+  "kicker": "For those ready to go further",
+  "title": "Product name goes here",
+  "text": "One or two sentences on what the product does and why it's worth having.",
+  "cta": "Get it",
+  "href": "https://payhip.com/coldischemia"
+ }
+}

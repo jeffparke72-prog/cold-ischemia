@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From One Voice to a Movement · Self-Paced Webinar | Cold Ischemia Foundation</title>
+<meta name="description" content="A free, self-paced 30-minute webinar from the Cold Ischemia Foundation: the tools, the rights you can use this week, and how to build a movement where you live.">
+<meta property="og:title" content="From One Voice to a Movement · Cold Ischemia Foundation">
+<meta property="og:description" content="A free, self-paced 30-minute webinar. Watch any time, at your own pace.">
+<meta property="og:image" content="https://coldischemia.foundation/hero-banner.jpg">
+<link rel="icon" href="cold-ischemia-logo.png">
+<style>
+@font-face{font-family:"PF";src:url(fonts/playfairdisplay-900-normal.woff2) format("woff2");font-weight:900;font-display:swap}
+@font-face{font-family:"PFi";src:url(fonts/playfairdisplay-400-italic.woff2) format("woff2");font-style:italic;font-display:swap}
+@font-face{font-family:"CP";src:url(fonts/crimsonpro-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"CP";src:url(fonts/crimsonpro-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Plex";src:url(fonts/ibmplexmono-500-normal.woff2) format("woff2");font-display:swap}
+:root{--navy:#1B2A4A;--ink:#0f1a30;--ink2:#15233f;--gold:#C9A84C;--teal:#2E7D74;--blood:#B23A3A;--txt:#eef1f6;--mut:#a9b3c6;--line:rgba(255,255,255,.12);--line2:rgba(255,255,255,.22);
+--head:"PF",Georgia,serif;--serif:"CP",Georgia,serif;--mono:"Plex",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--txt);font-family:var(--serif);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--gold)}
+button{font:inherit;color:inherit}
+.k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 18px;border:1px solid var(--line2);background:transparent;text-decoration:none;color:var(--txt);cursor:pointer;min-height:44px;transition:.15s}
+.btn:hover{border-color:var(--gold);color:var(--gold)}
+.btn.pri{background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:600}
+.btn.pri:hover{background:#d8b95e;color:var(--navy)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+/* intro */
+.hero{padding:56px 0 30px;border-bottom:1px solid var(--line)}
+.hero h1{font-family:var(--head);font-weight:900;font-size:clamp(36px,6vw,68px);line-height:1.02;margin:12px 0 14px;text-wrap:balance}
+.hero h1 em{font-family:"PFi",Georgia,serif;font-weight:400;color:var(--gold)}
+.hero p.lede{font-size:21px;color:var(--mut);max-width:40em;margin:0 0 22px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.fact{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line2);padding:7px 10px;color:var(--mut)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;padding:30px 0 60px}
+.toc button{text-align:left;background:var(--ink2);border:1px solid var(--line);padding:16px;cursor:pointer;display:flex;gap:14px;align-items:flex-start;transition:.15s}
+.toc button:hover{border-color:var(--gold)}
+.toc .n{font-family:var(--head);font-size:34px;line-height:.9;color:var(--gold);min-width:30px}
+.toc b{display:block;font-family:var(--head);font-size:18px;line-height:1.2}
+.toc small{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.toc .done{color:var(--teal)}
+/* player */
+#player{display:none;padding:18px 20px 40px}
+body.playing #intro{display:none}
+body.playing #player{display:block}
+.stage{position:relative;display:grid;grid-template-columns:1fr 300px;gap:0;background:linear-gradient(160deg,#1d2e52 0%,#132039 60%,#0f1a30 100%);border:1px solid var(--line2);min-height:470px;overflow:hidden}
+.slide{padding:38px 40px 90px;position:relative}
+.slide .ch{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:18px}
+.slide h2{font-family:var(--head);font-weight:900;font-size:clamp(28px,3.6vw,44px);line-height:1.06;margin:8px 0 22px;text-wrap:balance}
+.slide ul{list-style:none;padding:0;margin:0;display:grid;gap:12px;max-width:34em}
+.slide li{padding:12px 14px 12px 18px;border-left:3px solid var(--gold);background:rgba(255,255,255,.04);font-size:20px;line-height:1.35;opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s}
+.slide li.in{opacity:1;transform:none}
+.slide .go{margin-top:22px}
+.side{border-left:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:26px 18px;background:rgba(0,0,0,.12)}
+.avatar{width:220px;height:250px}
+.gname{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-top:6px;text-align:center}
+.gsub{font-size:14px;color:var(--mut);text-align:center}
+.tip{margin-top:16px;width:100%;background:#f4efe2;color:#1B2A4A;padding:14px 14px 14px 16px;border-left:5px solid var(--teal);box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;transform:translateX(30px);transition:.45s;pointer-events:none}
+.tip.in{opacity:1;transform:none;pointer-events:auto}
+.tip .tk{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:600}
+.tip b{display:block;font-family:var(--head);font-size:18px;line-height:1.15;margin:4px 0 6px}
+.tip p{margin:0;font-size:16px;line-height:1.4}
+.cap{position:absolute;left:0;right:300px;bottom:0;padding:14px 40px;background:linear-gradient(0deg,rgba(5,10,20,.92),rgba(5,10,20,.6));font-size:19px;line-height:1.4;min-height:62px}
+.cap.off{display:none}
+/* quiz */
+.quiz{max-width:36em}
+.quiz .qp{font-family:var(--head);font-size:clamp(22px,2.6vw,30px);line-height:1.2;margin:0 0 18px}
+.quiz .opts{display:grid;gap:10px}
+.quiz .opts button{text-align:left;background:rgba(255,255,255,.05);border:1px solid var(--line2);padding:13px 16px;cursor:pointer;font-size:19px;transition:.15s}
+.quiz .opts button:hover:not(:disabled){border-color:var(--gold)}
+.quiz .opts button.right{border-color:var(--teal);background:rgba(46,125,116,.28)}
+.quiz .opts button.wrong{border-color:var(--blood);background:rgba(178,58,58,.22)}
+.quiz .why{margin-top:14px;padding:14px 16px;border-left:3px solid var(--teal);background:rgba(46,125,116,.12);display:none}
+.quiz .why.in{display:block}
+/* controls */
+.bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}
+.bar .btn{padding:10px 12px;min-width:44px}
+.prog{flex:1;min-width:140px;height:8px;background:rgba(255,255,255,.1);position:relative;cursor:pointer}
+.prog i{position:absolute;left:0;top:0;bottom:0;background:var(--gold);width:0}
+.time{font-family:var(--mono);font-size:12px;color:var(--mut);min-width:96px;text-align:right}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.chips button{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:7px 9px;border:1px solid var(--line);background:none;cursor:pointer;color:var(--mut)}
+.chips button.on{border-color:var(--gold);color:var(--gold)}
+.chips button.seen{color:var(--txt)}
+/* notes + end */
+.drawer{margin-top:22px;border:1px solid var(--line);padding:18px 20px;background:var(--ink2);display:none}
+.drawer.in{display:block}
+.drawer h3{font-family:var(--head);margin:0 0 10px}
+.drawer .nt{padding:10px 0;border-top:1px solid var(--line)}
+.drawer .nt b{font-family:var(--head)}
+.end{padding:40px;display:none}
+.end.in{display:block}
+.end h2{font-family:var(--head);font-size:clamp(30px,4vw,48px);line-height:1.05;margin:10px 0 14px}
+.offer{margin-top:24px;border:1px solid var(--gold);padding:20px;background:rgba(201,168,76,.08);max-width:40em}
+.offer h3{font-family:var(--head);font-size:24px;margin:6px 0 8px}
+.foot{border-top:1px solid var(--line);padding:24px 0;color:var(--mut);font-size:14px;margin-top:30px}
+/* avatar animation */
+.av-blink{animation:blink 5.2s infinite}
+@keyframes blink{0%,95%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.av-head{transform-origin:110px 150px;transition:transform .3s}
+@media (max-width:860px){
+ .stage{grid-template-columns:1fr}
+ .side{border-left:0;border-bottom:1px solid var(--line);flex-direction:row;flex-wrap:wrap;gap:12px;padding:14px;order:-1;justify-content:center}
+ .avatar{width:110px;height:125px}
+ .gwrap{text-align:left}
+ .tip{margin-top:0}.tip:not(.in){display:none}.stage{min-height:0}
+ .cap{right:0;padding:12px 18px;font-size:17px}
+ .slide{padding:22px 18px 100px}
+ .slide li{font-size:18px}
+ .end{padding:24px 18px}
+ .prog{flex-basis:100%;order:-1;margin-bottom:4px;height:10px}
+ .time{min-width:0;flex:1;text-align:left}
+ #player{padding:10px 10px 90px}
+}
+@media print{body{background:#fff;color:#000}.cifnav,#intro,.stage,.bar,.chips,.foot,.drawer button{display:none!important}#player{display:block!important}.drawer{display:block!important;background:#fff;border:0;color:#000}}
+</style>
+</head>
+<body>
+<!--CIFNAV--><link rel="stylesheet" href="cif-nav.css"><link rel="alternate" type="application/rss+xml" title="Cold Ischemia Foundation · This Week" href="https://coldischemia.foundation/feed.xml"><style id="cifnav-pos">nav.cifnav{--cn-pos:sticky}</style><nav class="cifnav" aria-label="Main"><a href="index.html" class="cn-l"><img src="cold-ischemia-logo.png" alt="Cold Ischemia Foundation" onerror="this.style.display='none'"><span class="cn-b">Cold Ischemia</span></a><button type="button" class="cn-burger" aria-label="Open menu" aria-expanded="false" aria-controls="cn-menu"><span></span><span></span><span></span></button><div class="cn-menu" id="cn-menu"><div class="cn-m"><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">About</button><div class="cn-dd" role="menu"><a href="about.html" role="menuitem">Our Story</a><a href="independence.html" role="menuitem">What Independence Means</a><a href="cif-volunteer-page.html" role="menuitem">Volunteer</a><a href="volunteer-training.html" role="menuitem">Volunteer Training</a><a href="contact.html" role="menuitem">Contact</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Advocacy</button><div class="cn-dd" role="menu"><a href="command-center.html" role="menuitem">Command Center</a><a href="situation-room.html" role="menuitem">The Situation Room</a><a href="demand-letters.html" role="menuitem">Demand Letters</a><a href="congress-scorecard.html" role="menuitem">Congress Scorecard</a><a href="accountability.html" role="menuitem">Accountability Atlas</a><a href="watch-list.html" role="menuitem">The Watch List</a></div></div><div class="cn-g"><button type="button" class="cn-gb on" aria-haspopup="true" aria-expanded="false">Learn</button><div class="cn-dd" role="menu"><a href="academy.html" role="menuitem">The Advocate's Academy</a><a href="webinar.html" class="on" role="menuitem">Free Self-Paced Webinar</a><a href="gatekeeper-files.html" role="menuitem">The Gatekeeper Files</a><a href="test-your-knowledge.html" role="menuitem">Test Your Knowledge</a><a href="living-donor-guide.html" role="menuitem">Free Donor Guide (PDF)</a><a href="research-digest.html" role="menuitem">Research Digest</a><a href="inside-files.html" role="menuitem">The Inside Files</a><a href="research.html" role="menuitem">Research</a><a href="kidney-news.html" role="menuitem">Kidney News</a><a href="transplant-news-feed.html" role="menuitem">Transplant & Kidney Wire</a><a href="transplant-realities.html" role="menuitem">What Nobody Tells You</a><a href="transplant-line.html" role="menuitem">The Transplant Line</a><a href="donor-flow.html" role="menuitem">Project Donor-Flow</a><a href="living-donor-hub.html" role="menuitem">Living Donor Hub</a><a href="living-donor-journey.html" role="menuitem">Living Donor Journey</a><a href="kidney-transplant-centers.html" role="menuitem">Kidney Transplant Centers by State</a><a href="opo-directory.html" role="menuitem">U.S. OPO Directory</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">Holidays</button><div class="cn-dd" role="menu"><a href="advocates-advent.html" role="menuitem">The Advocate's Advent Calendar</a><a href="holiday-night-watch.html" role="menuitem">The Night Watch</a><a href="holiday-long-table.html" role="menuitem">The Long Table</a><a href="holiday-north-star.html" role="menuitem">Find Your North Star</a></div></div><div class="cn-g"><button type="button" class="cn-gb" aria-haspopup="true" aria-expanded="false">BHOC</button><div class="cn-dd" role="menu"><a href="bhoc.html" role="menuitem">About BHOC</a><a href="field-notes.html" role="menuitem">BHOC Field Notes</a></div></div></div><div class="cn-r"><a href="this-week.html" class="cn-t cn-wk">This Week</a><a href="services.html" class="cn-t cn-s">Services We Offer</a><a href="projects.html" class="cn-t">Toolkit</a></div></div></nav><script src="cif-nav.js" defer></script><script src="cif-week.js" defer></script><script src="cif-help.js" defer></script><!--/CIFNAV-->
+
+<section id="intro">
+ <div class="wrap hero">
+  <div class="k">Free · Self-paced webinar · Cold Ischemia Foundation</div>
+  <h1>From one voice <em>to a movement.</em></h1>
+  <p class="lede">A guided, 30-minute session on the tools the Foundation built, the rights you can put to work this week, and how to turn your frustration into an organized force where you live. Watch on your own time. Your place is saved on this device.</p>
+  <div class="facts"><span class="fact">≈ 30 minutes</span><span class="fact">8 chapters</span><span class="fact">Knowledge checks</span><span class="fact">Navigator Tips</span><span class="fact">Captions</span><span class="fact">No sign-up</span></div>
+  <div class="cta"><button class="btn pri" id="startBtn">▶ Start the webinar</button><button class="btn" id="resumeBtn" hidden>Resume where I left off</button></div>
+ </div>
+ <div class="wrap"><div class="toc" id="toc"></div></div>
+</section>
+
+<section id="player" class="wrap" aria-label="Webinar player">
+ <div class="stage" id="stage">
+  <div class="slide" id="slide" aria-live="polite"></div>
+  <div class="end" id="end"></div>
+  <aside class="side">
+   <svg class="avatar" viewBox="0 0 220 250" aria-hidden="true">
+    <defs><linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E7D74" stop-opacity=".35"/><stop offset="1" stop-color="#1B2A4A" stop-opacity="0"/></linearGradient></defs>
+    <circle cx="110" cy="112" r="100" fill="url(#bg1)"/>
+    <path d="M30 250 C34 196 70 178 110 178 C150 178 186 196 190 250Z" fill="#1B2A4A" stroke="#C9A84C" stroke-width="1.5"/>
+    <path d="M92 180 L110 214 L128 180" fill="#f4efe2"/>
+    <path d="M110 214 L104 250 M110 214 L116 250" stroke="#C9A84C" stroke-width="1.2" opacity=".6"/>
+    <circle cx="150" cy="206" r="5" fill="#C9A84C"/>
+    <rect x="98" y="152" width="24" height="30" rx="8" fill="#c98f6d"/>
+    <g class="av-head" id="avHead">
+     <path d="M56 104 C54 52 84 32 112 32 C146 32 168 56 166 104 C166 136 170 160 174 184 C160 190 146 186 140 178 L80 178 C74 186 60 190 46 184 C50 160 56 136 56 104Z" fill="#2b1d18"/>
+     <ellipse cx="110" cy="106" rx="42" ry="50" fill="#d9a07c"/>
+     <path d="M66 92 C70 58 96 46 116 48 C140 50 156 66 156 90 C138 78 120 70 98 72 C84 74 72 82 66 92Z" fill="#2b1d18"/>
+     <ellipse cx="68" cy="110" rx="6" ry="10" fill="#c98f6d"/><ellipse cx="152" cy="110" rx="6" ry="10" fill="#c98f6d"/>
+     <circle cx="68" cy="122" r="2.6" fill="#C9A84C"/><circle cx="152" cy="122" r="2.6" fill="#C9A84C"/>
+     <path d="M84 94 Q93 89 102 93" stroke="#2b1d18" stroke-width="3" fill="none" stroke-linecap="round"/>
+     <path d="M118 93 Q127 89 136 94" stroke="#2b1d18" stroke-width="3" fill="none" stroke-linecap="round"/>
+     <g class="av-blink" style="transform-origin:110px 106px"><ellipse cx="93" cy="106" rx="5" ry="5.5" fill="#1d1410"/><ellipse cx="127" cy="106" rx="5" ry="5.5" fill="#1d1410"/>
+     <circle cx="94.6" cy="104.4" r="1.4" fill="#fff"/><circle cx="128.6" cy="104.4" r="1.4" fill="#fff"/></g>
+     <path d="M110 110 Q106 124 111 127" stroke="#b87c5c" stroke-width="2" fill="none" stroke-linecap="round"/>
+     <ellipse cx="86" cy="126" rx="7" ry="4" fill="#e08f80" opacity=".35"/><ellipse cx="134" cy="126" rx="7" ry="4" fill="#e08f80" opacity=".35"/>
+     <g id="mouth"><path d="M98 138 Q110 144 122 138" stroke="#8c3b36" stroke-width="2.6" fill="none" stroke-linecap="round" id="mClosed"/>
+     <ellipse cx="110" cy="140" rx="9" ry="0" fill="#6e2a27" id="mOpen"/></g>
+    </g>
+   </svg>
+   <div class="gwrap"><div class="gname">Your guide</div><div class="gsub">Cold Ischemia Foundation</div></div>
+   <div class="tip" id="tip" role="note"></div>
+  </aside>
+  <div class="cap" id="cap"></div>
+ </div>
+ <div class="bar">
+  <button class="btn" id="prevBtn" aria-label="Previous section">⏮</button>
+  <button class="btn" id="backBtn" aria-label="Back 10 seconds">↺10</button>
+  <button class="btn pri" id="playBtn" aria-label="Play or pause">❚❚</button>
+  <button class="btn" id="nextBtn" aria-label="Next section">⏭</button>
+  <div class="prog" id="prog" title="Overall progress"><i id="progI"></i></div>
+  <span class="time" id="time">0:00 / 0:00</span>
+  <button class="btn" id="spdBtn" aria-label="Playback speed">1×</button>
+  <button class="btn" id="ccBtn" aria-label="Toggle captions">CC</button>
+  <button class="btn" id="notesBtn">Notes</button>
+ </div>
+ <div class="chips" id="chips"></div>
+ <div class="drawer" id="drawer"></div>
+</section>
+
+<footer class="wrap foot">Cold Ischemia Foundation · Ellenton, Florida · No pharmaceutical funding · Not medical advice · Not legal advice. Narrated with a synthetic voice. <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></footer>
+
+<audio id="au" preload="auto"></audio>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const store={get(k,d){try{const v=localStorage.getItem('cifweb_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('cifweb_'+k,JSON.stringify(v))}catch(e){}}};
+let S,M={},flat=[],idx=0,playing=false,raf=0,speed=1,cc=true,fallbackT=null,fallbackStart=0;
+const au=$('au');
+let state=store.get('state',{idx:0,seen:{},answers:{},tips:{}});
+
+function fmt(t){t=Math.max(0,Math.round(t));return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')}
+function dur(sc){return (M[sc.id]&&M[sc.id].d)||Math.max(8,sc.say.split(/\s+/).length/2.6)}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+Promise.all([fetch('webinar/script.json').then(r=>r.json()),fetch('webinar/audio/manifest.json').then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([s,m])=>{
+ S=s;M=m;
+ S.chapters.forEach((c,ci)=>c.scenes.forEach(sc=>{sc.ci=ci;sc.ct=c.title;flat.push(sc)}));
+ const total=flat.reduce((a,sc)=>a+dur(sc),0);
+ buildToc();buildChips();
+ if(state.idx>0&&state.idx<flat.length){$('resumeBtn').hidden=false}
+ window._cifTotal=total;
+});
+
+function chapterStart(ci){return flat.findIndex(sc=>sc.ci===ci)}
+function buildToc(){
+ $('toc').innerHTML=S.chapters.map((c,ci)=>{
+  const sc=c.scenes,mins=Math.max(1,Math.round(sc.reduce((a,x)=>a+dur(x),0)/60));
+  const done=sc.every(x=>state.seen[x.id]);
+  return `<button data-ci="${ci}"><span class="n">${ci}</span><span><b>${esc(c.title)}</b><small>${mins} min${done?' · <span class="done">✓ watched</span>':''}</small></span></button>`}).join('');
+ $('toc').querySelectorAll('button').forEach(b=>b.onclick=()=>begin(chapterStart(+b.dataset.ci)));
+}
+function buildChips(){
+ $('chips').innerHTML=S.chapters.map((c,ci)=>`<button data-ci="${ci}">${ci}. ${esc(c.title)}</button>`).join('');
+ $('chips').querySelectorAll('button').forEach(b=>b.onclick=()=>{go(chapterStart(+b.dataset.ci),true)});
+}
+function markChips(){
+ const ci=flat[idx]?flat[idx].ci:-1;
+ $('chips').querySelectorAll('button').forEach(b=>{const c=+b.dataset.ci;b.classList.toggle('on',c===ci);b.classList.toggle('seen',S.chapters[c].scenes.every(x=>state.seen[x.id]))});
+}
+$('startBtn').onclick=()=>begin(0);
+$('resumeBtn').onclick=()=>begin(state.idx);
+function begin(i){document.body.classList.add('playing');window.scrollTo(0,0);go(i,true)}
+
+function sentences(t){return t.split(/(?<=[.?!])\s+/).filter(Boolean)}
+let capPlan=[];
+function render(){
+ const sc=flat[idx];
+ $('end').classList.remove('in');$('slide').style.display='';$('cap').style.display='';
+ let h=`<div class="ch">Chapter ${sc.ci} · ${esc(sc.ct)}</div><div class="k">${esc(sc.kicker||'')}</div>`;
+ if(sc.q){
+  const prev=state.answers[sc.id];
+  h+=`<div class="quiz"><p class="qp">${esc(sc.q.p)}</p><div class="opts">${sc.q.o.map((o,i)=>`<button data-i="${i}">${esc(o)}</button>`).join('')}</div><div class="why" id="why"></div></div>`;
+  $('slide').innerHTML=h;
+  const btns=[...$('slide').querySelectorAll('.opts button')];
+  const show=(pick)=>{btns.forEach((b,i)=>{b.disabled=true;if(i===sc.q.a)b.classList.add('right');else if(i===pick)b.classList.add('wrong')});
+   const w=$('why');w.innerHTML=`<b>${pick===sc.q.a?'Right.':'Not quite.'}</b> ${esc(sc.q.why)} <div style="margin-top:12px"><button class="btn pri" id="qNext">Continue ▶</button></div>`;w.classList.add('in');
+   $('qNext').onclick=()=>go(idx+1,true)};
+  btns.forEach(b=>b.onclick=()=>{const p=+b.dataset.i;state.answers[sc.id]=p;save();show(p)});
+  if(prev!==undefined)show(prev);
+ }else{
+  h+=`<h2>${esc(sc.title)}</h2><ul>${(sc.points||[]).map(p=>`<li>${esc(p)}</li>`).join('')}</ul>`;
+  if(sc.link)h+=`<div class="go"><a class="btn" href="${esc(sc.link.href)}" target="_blank" rel="noopener">${esc(sc.link.label)} ↗</a></div>`;
+  $('slide').innerHTML=h;
+ }
+ const tip=$('tip');tip.classList.remove('in');
+ tip.innerHTML=sc.tip?`<div class="tk">Navigator Tip</div><b>${esc(sc.tip.h)}</b><p>${esc(sc.tip.t)}</p>`:'';
+ const ss=sentences(sc.say),tot=ss.reduce((a,s)=>a+s.length,0),d=dur(sc);let acc=0.25;
+ capPlan=ss.map(s=>{const st=acc;acc+=(s.length/tot)*(d-0.5);return {t:st,s}});
+ $('cap').textContent='';
+ markChips();
+}
+function save(){state.idx=idx;store.set('state',state)}
+
+function go(i,autoplay){
+ stopFallback();
+ if(i>=flat.length){finish();return}
+ fbElapsed=0;idx=Math.max(0,i);save();render();
+ const sc=flat[idx];
+ if(M[sc.id]){au.src='webinar/audio/'+sc.id+'.mp3';au.playbackRate=speed;au.currentTime=0;if(autoplay)play()}
+ else{playing=autoplay;fallbackStart=performance.now();if(autoplay)startFallback();updBtn()}
+ tick();
+}
+function play(){const sc=flat[idx];if(M[sc.id]){au.play().then(()=>{playing=true;updBtn()}).catch(()=>{playing=false;updBtn()})}else{playing=true;startFallback();updBtn()}}
+function pause(){playing=false;au.pause();stopFallback();updBtn()}
+function updBtn(){$('playBtn').textContent=playing?'❚❚':'▶'}
+function startFallback(){stopFallback();const d=dur(flat[idx])*1000;const el=fbElapsed||0;fallbackStart=performance.now()-el;fallbackT=setTimeout(ended,(d-el)/speed)}
+let fbElapsed=0;
+function stopFallback(){if(fallbackT){clearTimeout(fallbackT);fallbackT=null;fbElapsed=performance.now()-fallbackStart}}
+function cur(){const sc=flat[idx];if(M[sc.id])return au.currentTime;return playing?(performance.now()-fallbackStart)*speed/1000:fbElapsed/1000}
+au.onended=ended;
+function ended(){
+ const sc=flat[idx];state.seen[sc.id]=1;fbElapsed=0;save();
+ if(sc.q&&state.answers[sc.id]===undefined){playing=false;updBtn();return}
+ if(sc.offer){finish();return}
+ setTimeout(()=>{if(flat[idx]===sc)go(idx+1,true)},900);
+}
+function tick(){
+ cancelAnimationFrame(raf);
+ const loop=()=>{
+  if(!flat.length)return;
+  const sc=flat[idx],t=cur(),d=dur(sc);
+  // points reveal
+  const lis=$('slide').querySelectorAll('li');lis.forEach((li,i)=>{if(t>=(i+0.4)*d/(lis.length+1)||state.seen[sc.id])li.classList.add('in')});
+  if(sc.tip&&(t>d*0.42||state.seen[sc.id])){$('tip').classList.add('in');if(!state.tips[sc.id]){state.tips[sc.id]=1;save()}}
+  let c='';for(const p of capPlan)if(t>=p.t)c=p.s;$('cap').textContent=c;
+  // mouth
+  const m=M[sc.id]&&M[sc.id].m;let o=0;
+  if(m&&playing){const f=Math.floor(t*25);o=+(m[f]||0)/9}
+  else if(!m&&playing){o=(Math.sin(t*14)*.5+.5)*.6}
+  $('mOpen').setAttribute('ry',(o*5.5).toFixed(1));$('mClosed').style.opacity=o>.15?0:1;
+  $('avHead').style.transform=playing?`rotate(${Math.sin(t*1.3)*1.6}deg) translateY(${Math.sin(t*.9)*1.2}px)`:'none';
+  // progress
+  let before=0;for(let i=0;i<idx;i++)before+=dur(flat[i]);
+  const tot=window._cifTotal||1;$('progI').style.width=Math.min(100,(before+Math.min(t,d))/tot*100)+'%';
+  $('time').textContent=fmt(before+Math.min(t,d))+' / '+fmt(tot);
+  raf=requestAnimationFrame(loop)};
+ loop();
+}
+$('playBtn').onclick=()=>playing?pause():play();
+$('nextBtn').onclick=()=>go(idx+1,playing||true);
+$('prevBtn').onclick=()=>go(idx-1,true);
+$('backBtn').onclick=()=>{const sc=flat[idx];if(M[sc.id]){if(au.currentTime<3&&idx>0)go(idx-1,true);else au.currentTime=Math.max(0,au.currentTime-10)}else go(idx,true)};
+$('spdBtn').onclick=()=>{speed=speed===1?1.15:speed===1.15?1.3:1;au.playbackRate=speed;$('spdBtn').textContent=speed+'×'};
+$('ccBtn').onclick=()=>{cc=!cc;$('cap').classList.toggle('off',!cc);$('ccBtn').style.opacity=cc?1:.5};
+$('prog').onclick=e=>{const r=$('prog').getBoundingClientRect(),target=(e.clientX-r.left)/r.width*(window._cifTotal||0);let a=0;for(let i=0;i<flat.length;i++){a+=dur(flat[i]);if(a>=target){go(i,true);return}}};
+document.addEventListener('keydown',e=>{if(!document.body.classList.contains('playing')||/INPUT|TEXTAREA/.test(e.target.tagName))return;if(e.code==='Space'){e.preventDefault();playing?pause():play()}if(e.code==='ArrowRight')go(idx+1,true);if(e.code==='ArrowLeft')$('backBtn').click()});
+$('notesBtn').onclick=()=>{const d=$('drawer');if(d.classList.contains('in')){d.classList.remove('in');return}notes();d.classList.add('in');d.scrollIntoView({behavior:'smooth'})};
+function notes(){
+ const tips=flat.filter(sc=>sc.tip&&state.tips[sc.id]);
+ $('drawer').innerHTML=`<h3>Your Navigator notes</h3><p style="color:var(--mut);margin:0 0 8px">Every tip you've reached so far is collected here. Print it or save it as a PDF.</p>`+
+ (tips.length?tips.map(sc=>`<div class="nt"><b>${esc(sc.tip.h)}</b><br>${esc(sc.tip.t)}</div>`).join(''):'<div class="nt">No tips yet. They appear as you watch.</div>')+
+ `<div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn" onclick="window.print()">Print / save PDF</button></div>`;
+}
+function finish(){
+ pause();cancelAnimationFrame(raf);
+ const qs=flat.filter(sc=>sc.q),right=qs.filter(sc=>state.answers[sc.id]===sc.q.a).length;
+ $('slide').style.display='none';$('cap').style.display='none';$('tip').classList.remove('in');$('cap').textContent='';
+ const o=S.offer;
+ $('end').innerHTML=`<div class="k">You finished the webinar</div><h2>Now, stop doing this alone.</h2>
+ <p style="color:var(--mut);font-size:20px;max-width:34em">You answered ${right} of ${qs.length} knowledge checks correctly. Your Navigator notes are saved on this device.</p>
+ <div class="cta" style="margin-top:18px"><a class="btn pri" href="cif-volunteer-page.html">Join the Foundation as a volunteer</a><a class="btn" href="command-center.html">Open the Command Center</a><button class="btn" id="shareBtn">Share this webinar</button><button class="btn" id="notesEnd">My notes</button><button class="btn" id="again">Watch again</button></div>
+ ${o&&o.enabled?`<div class="offer"><div class="k">${esc(o.kicker||'For those ready to go further')}</div><h3>${esc(o.title)}</h3><p style="margin:0 0 14px">${esc(o.text)}</p><a class="btn pri" href="${esc(o.href)}">${esc(o.cta)}</a></div>`:''}`;
+ $('end').classList.add('in');
+ $('shareBtn').onclick=async()=>{const url=location.origin+location.pathname,t='From One Voice to a Movement, a free self-paced webinar from the Cold Ischemia Foundation';
+  try{if(navigator.share){await navigator.share({title:t,url});return}}catch(e){return}
+  try{await navigator.clipboard.writeText(url);$('shareBtn').textContent='Link copied'}catch(e){prompt('Copy this link:',url)}};
+ $('notesEnd').onclick=()=>$('notesBtn').click();
+ $('again').onclick=()=>{state.idx=0;save();go(0,true)};
+ $('progI').style.width='100%';markChips();
+}
+})();
+</script>
+</body>
+</html>
