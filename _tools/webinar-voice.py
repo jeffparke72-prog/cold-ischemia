@@ -17,7 +17,7 @@ from kokoro_onnx import Kokoro
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 W = os.path.join(ROOT, 'webinar')
 OUT = os.path.join(W, 'audio')
-SPEED, FPS, GAP = 0.88, 25, 0.38
+SPEED, FPS, GAP = 0.9, 25, 0.42
 MD = sys.argv[1] if len(sys.argv) > 1 else '/tmp/kk'
 
 SAY = [
@@ -25,7 +25,9 @@ SAY = [
     (r'\bHHS\b', 'H H S'), (r'\bOIG\b', 'O I G'), (r'\bHRSA\b', 'hersa'), (r'\bDOJ\b', 'D O J'),
     (r'\bAARP\b', 'A A R P'), (r'\bFMLA\b', 'F M L A'), (r'\bHIPAA\b', 'hippa'), (r'\bNLDAC\b', 'N L D A C'),
     (r'\bMERIDIAN\b', 'Meridian'), (r'\bForm 990\b', 'Form nine ninety'), (r'regulations\.gov', 'regulations dot gov'),
-    (r'\bCFR\b', 'C F R'),
+    (r'\bCFR\b', 'C F R'), (r'\bDCD\b', 'D C D'), (r'\bNRP\b', 'N R P'), (r'\bKDPI\b', 'K D P I'),
+    (r'\bOPOs\b', 'O P Os'), (r'\bOPO\b', 'O P O'), (r'srtr\.org', 'S R T R dot org'), (r'\bSRTR\b', 'S R T R'),
+    (r'OPTNComplaints@hrsa\.gov', 'O P T N complaints at hersa dot gov'),
 ]
 def spoken(t):
     for a, b in SAY: t = re.sub(a, b, t)

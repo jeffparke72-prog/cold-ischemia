@@ -1,750 +1,1262 @@
 {
- "title": "From One Voice to a Movement",
- "subtitle": "A self-paced webinar from the Cold Ischemia Foundation",
- "voice": "af_heart",
+ "title": "The Cold Window",
+ "subtitle": "What really happens between a donor's last heartbeat and a patient's new beginning",
+ "voice": "am_michael",
  "chapters": [
   {
-   "id": "c0",
-   "title": "Welcome",
+   "id": "k0",
+   "title": "The clock nobody shows you",
    "scenes": [
     {
-     "id": "c0s1",
+     "id": "k0s1",
      "kicker": "Before we begin",
-     "title": "This webinar runs on your schedule",
-     "points": [
-      "About 30 minutes, in seven chapters",
-      "Pause, rewind, or skip ahead any time",
-      "Your place is saved on this device"
-     ],
-     "say": "Welcome. I'm your guide for the next half hour, and this session runs entirely on your schedule. You can pause me, send me back a few seconds, or jump to any chapter from the list. If you leave, your place is saved on this device, so you can pick up right where you stopped. Along the way, you'll see Navigator Tips appear beside me. Those are practical, specific moves for getting through hospitals, insurers, and agencies with less friction. At the end of most chapters, there's a short question. Nobody is grading you. The questions exist so the important parts stick."
+     "title": "Nine thousand kidneys",
+     "v": {
+      "t": "stat",
+      "n": 9266,
+      "suf": "",
+      "cap": "deceased-donor kidneys recovered in 2024 and never transplanted"
+     },
+     "src": "AOPO, 2025, from OPTN data",
+     "say": "In 2024, surgeons across this country recovered more than nine thousand kidneys from deceased donors that were never transplanted into anyone. Each one came from a family that said yes on the worst day of their lives. Each one was flown or driven somewhere, logged, tested, and offered. Then it was set aside. Meanwhile, tens of thousands of people sat on a waiting list for exactly that organ. I'm going to spend the next hour walking you through how that happens. Not the brochure version. The real one: the hospital rooms, the phone calls, the machines, the rules, and the people deciding what counts as a usable organ while you wait for a call."
     },
     {
-     "id": "c0s2",
-     "kicker": "What this is about",
-     "title": "Not another awareness talk",
-     "points": [
-      "The system you're already inside",
-      "The rights you can use this week",
-      "How one person becomes a movement"
-     ],
-     "say": "Here is the promise. This is not a talk about what kidney disease is. You already know that, or you're living it. This is about the machinery around it. Who makes the rules, who profits from the delays, and which rights you can actually put to work this week. Then we'll turn to the part most organizations skip entirely: how one frustrated person becomes ten, how ten become a local force, and how a local force ends up in the federal record where it can't be ignored. By the end, you'll have a plan, not just a feeling.",
-     "tip": {
-      "h": "Keep a pen nearby",
-      "t": "Several tips name exact regulations and deadlines. Write down the two that apply to your situation right now. Those are the ones you'll use first."
-     }
+     "id": "k0s2",
+     "kicker": "The scale of it",
+     "title": "Almost three in ten",
+     "v": {
+      "t": "dots",
+      "total": 100,
+      "hi": 29,
+      "hiLabel": "recovered, never transplanted",
+      "loLabel": "transplanted",
+      "cap": "Of every 100 deceased-donor kidneys recovered in 2024"
+     },
+     "src": "OPTN/SRTR 2024 Annual Data Report",
+     "say": "Here is the same number as a share. According to the national registry's 2024 annual report, twenty-nine point three percent of deceased-donor kidneys recovered for transplant were not transplanted. Look at the grid. Almost three out of every ten. That rate has been climbing for years, even as the number of donors has hit record after record. So this isn't simply a shortage of generous people. It's a problem with what happens after the gift is made. The system calls this nonuse. I'd call it the most expensive silence in American medicine, and by the end of this session, you'll understand where the silence comes from and what you can do to break it."
+    },
+    {
+     "id": "k0s3",
+     "kicker": "How this works",
+     "title": "Watch it your way",
+     "v": {
+      "t": "flow",
+      "steps": [
+       "Donor",
+       "Recovery",
+       "Preservation",
+       "Offer",
+       "Transport",
+       "Surgery"
+      ],
+      "hi": -1
+     },
+     "src": "",
+     "say": "We'll follow a donated organ the way it actually travels: from the moment someone becomes a potential donor, through recovery, preservation, the offer system, transport, and finally surgery. At each stop, I'll show you who's in charge, what can go wrong, and the newest science trying to fix it. You can pause me any time, jump between chapters, or slow me down. Along the way, Navigator Tips will appear beside me with specific questions to ask and rules to cite. Every chapter ends with a short question. These aren't tests. They're checkpoints, because some of what you're about to learn changes how you should talk to your own care team."
     }
    ]
   },
   {
-   "id": "c1",
-   "title": "Why the Foundation exists",
+   "id": "k1",
+   "title": "Two legal ways to die",
    "scenes": [
     {
-     "id": "c1s1",
-     "kicker": "The name",
-     "title": "Living inside the window",
-     "points": [
-      "Cold ischemia: the stretch of time an organ waits without blood flow",
-      "The moment of greatest vulnerability",
-      "Care partners live inside that window every day"
-     ],
-     "say": "Cold ischemia is the medical term for the time an organ spends outside the body, cut off from blood flow, waiting to be restored. It's the stretch where everything can be lost. Jeff and Marie Parke chose that name on purpose. Care partners live inside a window just like it. They do skilled, round-the-clock work for which the system offers no training, no pay, no protection, and no way back to the life they had before. The Foundation was built inside that window, by two people who lived it from both sides of the same kitchen table."
+     "id": "k1s1",
+     "kicker": "The starting line",
+     "title": "Brain death and circulatory death",
+     "v": {
+      "t": "split",
+      "l": {
+       "h": "Donation after brain death",
+       "items": [
+        "Death declared by neurologic criteria",
+        "Heart still beating on a ventilator",
+        "Organs perfused until recovery"
+       ]
+      },
+      "r": {
+       "h": "Donation after circulatory death",
+       "items": [
+        "Family decides to withdraw support",
+        "Death declared after the heart stops",
+        "Organs face a stretch of warm ischemia"
+       ]
+      }
+     },
+     "src": "",
+     "say": "Every deceased donation begins with one of two legal definitions of death. In donation after brain death, a person's brain has permanently stopped functioning, but a ventilator keeps the heart beating, so the organs keep receiving blood right up until recovery. In donation after circulatory death, the person has a devastating injury but doesn't meet brain death criteria. The family decides to withdraw life support, the heart stops, a waiting period passes, death is declared, and only then can the surgical team begin. In those minutes between the last heartbeat and the start of cooling, the organs are warm and starved of oxygen. Surgeons call it warm ischemia, and it's the reason these organs have historically been treated as riskier."
     },
     {
-     "id": "c1s2",
-     "kicker": "The scale",
-     "title": "A structural failure, not bad luck",
-     "points": [
-      "53 million Americans give unpaid care to family",
-      "About $600 billion a year in unpaid labor",
-      "Zero dollars set aside for care partner training or pay"
-     ],
-     "say": "This isn't one family's hard luck. AARP and the National Alliance for Caregiving count about fifty-three million Americans giving unpaid care to a family member. AARP's Public Policy Institute puts the value of that labor at roughly six hundred billion dollars a year. And here's the part that stings. Transplant programs require a designated care partner before a patient can be listed. No care partner, no listing. So the system treats that person as a medical requirement while providing no standard training, no compensation, and no seat at the tables where the rules are written."
+     "id": "k1s1b",
+     "kicker": "Inside the DCD process",
+     "title": "The minutes nobody describes",
+     "v": {
+      "t": "flow",
+      "steps": [
+       "Family decision",
+       "Withdrawal of support",
+       "Heart stops",
+       "Hands-off wait",
+       "Death declared",
+       "Recovery begins"
+      ],
+      "hi": 3
+     },
+     "src": "",
+     "say": "Let me slow that second pathway down, because families are rarely walked through it. After a family decides to withdraw life support, the clock starts. Each hospital and procurement organization works under a protocol with a time limit. If the heart doesn't stop within that window, often an hour or two, donation is called off and the person is cared for until they die naturally. If the heart does stop, there's a hands-off period of a few minutes, when no one touches the patient, to confirm circulation won't return on its own. Only then is death declared. Every one of those minutes is a moment where trust is either earned or lost."
     },
     {
-     "id": "c1s3",
-     "kicker": "The difference",
-     "title": "Independence is the product",
-     "points": [
-      "No pharmaceutical, dialysis, insurer, or hospital money",
-      "No donations accepted",
-      "Fees only for services you request, at posted rates"
-     ],
-     "say": "Most patient advocacy groups in this country take money from the same industries they're supposed to hold accountable. When your sponsor is a dialysis chain or a drug company, there are sentences you simply never say out loud. The Cold Ischemia Foundation took the opposite road. It takes no money from drug, device, or dialysis companies, hospital systems, insurers, or any advocacy group they fund. It doesn't even accept donations. The basics are free, and fees apply only to services you ask for, at posted rates. That independence is what lets the Foundation name institutions, cite the law, and say what others won't.",
+     "id": "k1s2",
+     "kicker": "A quiet revolution",
+     "title": "From 2 percent to half of all donors",
+     "v": {
+      "t": "line",
+      "pts": [
+       [
+        2000,
+        2
+       ],
+       [
+        2010,
+        12
+       ],
+       [
+        2024,
+        43
+       ],
+       [
+        2025,
+        49
+       ]
+      ],
+      "suf": "%",
+      "lab": "Circulatory-death donors as a share of all deceased donors"
+     },
+     "src": "Husain et al., JAMA 2026; HRSA OPTN briefing paper",
+     "say": "Here's a shift almost nobody outside the field has noticed. In 2000, circulatory-death donors made up about two percent of deceased donors in the United States: one hundred eighteen people. By 2025, a study in the Journal of the American Medical Association counted more than eight thousand, roughly half of all deceased donors. Nearly half of recovered kidneys now come through this pathway. That growth is a big part of why transplant numbers keep setting records. It's also why the questions in the next few chapters matter so much. When half the system runs on a pathway built around a stopped heart, how that moment is handled becomes everything."
+    },
+    {
+     "id": "k1s3",
+     "kicker": "Why it matters to you",
+     "title": "Your organ offer may say DCD",
+     "v": {
+      "t": "split",
+      "l": {
+       "h": "What you might hear",
+       "items": [
+        "\"It's a DCD kidney\"",
+        "\"Higher risk of a slow start\"",
+        "\"We passed on it\""
+       ]
+      },
+      "r": {
+       "h": "What you can ask",
+       "items": [
+        "How long was the warm time?",
+        "Was it machine-perfused?",
+        "Would you decline it for every patient, or just me?"
+       ]
+      }
+     },
+     "src": "",
+     "say": "If you're waiting for a kidney, you may one day hear that an offer is a DCD kidney, short for donation after circulatory death. You might also hear that it's more likely to start slowly. That's true on average. Kidneys from these donors have higher rates of delayed function, meaning the new kidney takes days or weeks to fully wake up. But delayed function is not failure. Many of these kidneys go on to work well for years. The real questions are how long the warm period lasted, how the organ was preserved, and whether your team is declining it because of you specifically, or because of a habit.",
      "tip": {
-      "h": "Check who funds the voice",
-      "t": "Before you trust any patient group's advice, look up its annual Form 990 on ProPublica's Nonprofit Explorer and read its corporate sponsor list. Funding shapes what an organization is willing to say."
+      "h": "Ask about your offer filters",
+      "t": "Ask your transplant team in writing which kinds of offers they automatically screen out for you, such as DCD donors, older donors, or long cold times. Then ask whether those limits still fit your situation today."
      }
     },
     {
-     "id": "c1s5",
-     "kicker": "On the record",
-     "title": "What the Foundation has already done",
-     "points": [
-      "Six formal demand letters to Congress, CMS, HHS, NIH, the Florida Legislature, and the OPTN Board",
-      "A documented audit of 40 federal violations",
-      "A Lean Six Sigma reform paper sent to the OPTN Board, HRSA, and CMS"
-     ],
-     "say": "Independence would be an empty word without action behind it, so here's some of the record. The Foundation has sent six formal demand letters, to Congress, CMS, the Department of Health and Human Services, the National Institutes of Health, the Florida Legislature, and the OPTN Board, each one stating exactly what was demanded and of whom. It has published an audit documenting forty federal violations. And it submitted a Lean Six Sigma analysis of the transplant system to the OPTN Board, HRSA, and CMS. That's the same method used to cut defects in manufacturing and hospitals, applied to a system that produces far too many of them.",
-     "link": {
-      "label": "Read the demand letters",
-      "href": "demand-letters.html"
-     }
-    },
-    {
-     "id": "c1s4",
-     "kicker": "Knowledge check",
+     "id": "k1s4",
+     "kicker": "Checkpoint",
      "title": "Quick question",
-     "points": [],
-     "say": "Let's lock that in with a quick question. Take your time. The answer and the reasoning appear as soon as you choose.",
+     "v": {
+      "t": "title",
+      "h": "Checkpoint",
+      "sub": "Chapter 1"
+     },
+     "src": "",
+     "say": "Let's make sure that distinction stuck.",
      "q": {
-      "p": "What makes the Cold Ischemia Foundation different from most patient advocacy groups?",
+      "p": "What's the main reason circulatory-death organs have been treated as riskier?",
       "o": [
-       "It's funded by the largest dialysis providers",
-       "It accepts no industry money and no donations",
-       "It's run by a federal agency",
-       "It only serves patients, never care partners"
+       "The donors are always older",
+       "Warm, oxygen-starved minutes after the heart stops",
+       "They can only travel short distances",
+       "They're never tested for infection"
       ],
       "a": 1,
-      "why": "The Foundation refuses all money from drug, device, and dialysis companies, hospitals, insurers, and the groups they fund, and it doesn't accept donations either. That's what allows it to name names."
+      "why": "After the heart stops and before cooling begins, the organ is warm and without oxygen. That warm ischemia is the core injury preservation science is trying to reduce."
      }
     }
    ]
   },
   {
-   "id": "c2",
-   "title": "A tour of your toolkit",
+   "id": "k2",
+   "title": "Inside the procurement organization",
    "scenes": [
     {
-     "id": "c2s1",
-     "kicker": "The Command Center",
-     "title": "One place for every lever",
-     "points": [
-      "Guided tools, live federal feeds, complaint builders",
-      "No membership, no paywall",
-      "Built because care partners needed them"
-     ],
-     "say": "Everything the Foundation has built lives in one place called the Command Center. Think of it as a workshop instead of a library. These aren't links to other people's brochures. They're working tools that produce letters, records, and plans you can use the same day. Every one exists because a patient or care partner needed it and couldn't find it anywhere else. And all of it is free. No account, no membership, no credit card. Over the next few minutes, I'll walk you through the tools you're most likely to need, and when each one earns its keep.",
-     "link": {
-      "label": "Open the Command Center",
-      "href": "command-center.html"
-     }
-    },
-    {
-     "id": "c2s2",
-     "kicker": "When something goes wrong",
-     "title": "The Situation Room and The Translator",
-     "points": [
-      "Describe a crisis, get the rule broken and the agency to call",
-      "Paste a denial letter, get your rights in plain English",
-      "Both produce paperwork, not pep talks"
-     ],
-     "say": "Two tools are built for the worst days. In the Situation Room, you describe what's happening in your own words. It identifies the federal rule that may have been broken, the agency responsible, and drafts a complaint letter ready for your signature. The Translator handles the paperwork that's designed to confuse. Paste in a denial letter, a discharge notice, or a facility policy, and it explains what the document really says, what your rights are, and what the institution is required to do next. Neither one offers a wellness score. Both hand you something you can file.",
-     "link": {
-      "label": "Enter the Situation Room",
-      "href": "situation-room.html"
+     "id": "k2s1",
+     "kicker": "The gatekeepers",
+     "title": "Fifty-five monopolies",
+     "v": {
+      "t": "grid",
+      "total": 55,
+      "hi": 0,
+      "cap": "55 organ procurement organizations, each with an exclusive territory"
      },
-     "tip": {
-      "h": "Name the rule, get a response",
-      "t": "Vague complaints get filed away. A complaint that cites the exact regulation, the date, and the people involved starts a clock the institution has to answer. Always include all three."
-     }
+     "src": "Federal designation; territories set in the 1980s",
+     "say": "When a hospital patient may become a donor, the hospital must call the local organ procurement organization, usually shortened to OPO. There are fifty-five of them. Each one holds an exclusive territory, a map line drawn decades ago, so nobody competes. The OPO evaluates the patient, approaches the family, manages the donor's body, coordinates the surgeons, and offers the organs through the national match system. These are nonprofits, funded through Medicare cost reimbursement, and for most of their history no one was ever pushed out. Until very recently, none had lost its federal certification in roughly forty years. That changed in 2025, and it's still changing as you watch this."
     },
     {
-     "id": "c2s3",
-     "kicker": "Who to call, and who voted how",
-     "title": "The Accountability Atlas and Congress Scorecard",
-     "points": [
-      "Direct contacts for CMS, HHS, OIG, HRSA, DOJ, and the OPTN",
-      "All 18 ESRD Networks and every state survey agency",
-      "Letter grades for every member of Congress"
-     ],
-     "say": "Knowing your rights means nothing if you can't find the right door. The Accountability Atlas lists direct contacts for the federal agencies that oversee your care, along with all eighteen ESRD Networks and every state survey agency. The Congress Scorecard grades every senator and House member on actual votes affecting chronic illness, care partner pay, and patient rights. Before you call your representative's office, look up their grade. It changes the conversation. You're no longer asking for sympathy. You're asking them to explain a record.",
-     "link": {
-      "label": "See the Congress Scorecard",
-      "href": "congress-scorecard.html"
-     }
-    },
-    {
-     "id": "c2s4",
-     "kicker": "For the long haul",
-     "title": "Tools for planning, documenting, and deciding",
-     "points": [
-      "Insurance Appeal Builder and Records Request Generator",
-      "Treatment Continuity Planner and Incident Workflow",
-      "The Substitute, for backup care"
-     ],
-     "say": "Some tools are built for quieter days, so the loud ones go better. The Insurance Appeal Builder drafts appeal letters organized by the type of denial. The Records Request Generator writes requests that cite your federal right of access. The Treatment Continuity Planner helps you map backup options before a provider relationship falls apart. The Incident Workflow keeps a dated timeline of problems and escalations. And The Substitute is a backup care plan, because every care partner eventually gets sick, gets called away, or simply hits a wall. Planning for that moment is not pessimism. It's protection.",
-     "link": {
-      "label": "Browse the full toolkit",
-      "href": "projects.html"
-     }
-    },
-    {
-     "id": "c2s4b",
-     "kicker": "For the hardest moments at home",
-     "title": "The Survival Guide tools",
-     "points": [
-      "The Field Station: methods for high-tension moments",
-      "Exact phrases, matched to the situation",
-      "No login, works on your phone"
-     ],
-     "say": "Not every crisis happens at a hospital. Some happen at home, when fear, exhaustion, and illness collide and the air in the room changes. The Survival Guide tools were built for those moments. The Field Station lets you pick the situation you're in and surfaces a method drawn from mentalization research, trauma-informed practice, and conflict mediation, along with exact phrases you can use. It works on your phone, without an account. Bookmark it now, while things are calm. Nobody thinks clearly enough to search for help in the middle of a hard moment.",
-     "link": {
-      "label": "Open the Survival Guide hub",
-      "href": "tool-survival-guide-hub.html"
+     "id": "k2s1b",
+     "kicker": "Two teams, two jobs",
+     "title": "Your doctors are not the donation team",
+     "v": {
+      "t": "split",
+      "l": {
+       "h": "The hospital's job",
+       "items": [
+        "Full life-saving care for every patient",
+        "Refer potential donors to the OPO",
+        "Keep medical care separate from donor status"
+       ]
+      },
+      "r": {
+       "h": "The OPO's job",
+       "items": [
+        "Approach the family about donation",
+        "Give families adequate time to decide",
+        "Stop immediately if signs of life appear"
+       ]
+      }
      },
+     "src": "CMS QSO-26-05, March 11, 2026",
+     "say": "In March 2026, Medicare sent new guidance to every state inspection agency spelling out who does what. Hospitals must give every patient the same full, life-saving care regardless of whether they might become a donor, and must keep that care separate from donor status. Procurement organizations and hospitals must give families adequate time to decide, without rushing or pressure. And if signs of life are observed before or during recovery, procurement is expected to stop immediately. Inspectors now review referral records, complaints, and cases where procurement stopped before recovery. None of this was new law. It was a reminder that had to be issued, which tells you how badly it was needed.",
      "tip": {
-      "h": "Check your own state first",
-      "t": "Before responding to a tense exchange, notice your own breathing and pulse. Answering from a calmer state almost always changes what happens next, more than finding the perfect words."
+      "h": "Ask who each person works for",
+      "t": "In an ICU, ask every new person who joins a family conversation: are you part of the medical team, or the donation organization? You have the right to know, and to ask for time before any decision."
      }
     },
     {
-     "id": "c2s5",
-     "kicker": "Learning that goes deeper",
-     "title": "Read, watch, and study",
-     "points": [
-      "The Gatekeeper Files: a new fix every Thursday",
-      "Field Notes on BHOC organ preservation research",
-      "The Advocate's Academy and free guides"
-     ],
-     "say": "The Foundation also publishes work that goes well past the usual talking points. The Gatekeeper Files opens a new card every Thursday, naming a problem people with kidney disease run into, the payment rule or policy line actually causing it, and a fix. The BHOC Field Notes follow research on Biological Hemoglobin Oxygen Carriers and whether controlled oxygen could protect an organ while it waits. The Advocate's Academy offers self-paced courses with quizzes. And free guides like The First 24 Hours give you a crisis plan you can download and keep.",
-     "link": {
-      "label": "Open The Gatekeeper Files",
-      "href": "gatekeeper-files.html"
+     "id": "k2s2",
+     "kicker": "What an investigation found",
+     "title": "351 cases, examined line by line",
+     "v": {
+      "t": "dots",
+      "total": 351,
+      "hi": 103,
+      "hiLabel": "cases with concerning features",
+      "loLabel": "other cases reviewed",
+      "cap": "HRSA review of donations authorized but not completed, 2021 to 2024"
      },
+     "src": "HHS and HRSA findings on Network for Hope",
+     "say": "In Kentucky, a federal agency called HRSA reviewed three hundred fifty-one cases where donation was authorized but never completed at the procurement organization now called Network for Hope. It found one hundred three cases with concerning features, including seventy-three patients showing neurological signs incompatible with organ donation. Federal reviewers concluded that at least twenty-eight patients may not have been dead when the procurement process began. The organization has disputed the findings and says it follows national policy. Investigators also noted that the risks were highest in smaller and rural hospitals, where staff may have less experience and less backup. That's not a footnote. That's where many donors are."
+    },
+    {
+     "id": "k2s3",
+     "kicker": "Consequences, at last",
+     "title": "A decertification, and an appeal",
+     "v": {
+      "t": "timeline",
+      "ev": [
+       [
+        "Jul 2025",
+        "HHS announces reform initiative after the Kentucky findings"
+       ],
+       [
+        "Sep 2025",
+        "First OPO decertification in decades"
+       ],
+       [
+        "Aug 5, 2026",
+        "HHS begins decertifying Network for Hope"
+       ],
+       [
+        "Nov 3, 2026",
+        "CMS termination date in its public notice"
+       ]
+      ]
+     },
+     "src": "CMS public notice; HHS press release, Aug 5, 2026",
+     "say": "In August 2026, the Department of Health and Human Services announced it was decertifying Network for Hope, which serves Kentucky and parts of Indiana, Ohio, and West Virginia. The public notice set November third as the date its Medicare agreement would end. The organization strongly disagrees and has said it will appeal. Whatever the outcome, notice what had to happen first: a whistleblower, a congressional hearing, newspaper investigations, and years of federal review. The system didn't catch this on its own. People outside it forced the issue. Hold onto that, because it's the same lesson you'll see in every chapter of this webinar.",
      "tip": {
-      "h": "Make Thursday a habit",
-      "t": "Set a weekly reminder for Thursday and read the new Gatekeeper card. Each one takes about five minutes and hands you one policy fact most clinicians have never heard."
+      "h": "Know your OPO by name",
+      "t": "Look up which procurement organization covers your county. Families can ask the hospital's ethics committee or patient advocate to be present during donation conversations, and can ask for any step to be explained before agreeing."
+     },
+     "link": {
+      "label": "Find your OPO",
+      "href": "opo-directory.html"
      }
     },
     {
-     "id": "c2s6",
-     "kicker": "Knowledge check",
+     "id": "k2s4",
+     "kicker": "Checkpoint",
      "title": "Quick question",
-     "points": [],
-     "say": "Here's a scenario to test the tour.",
+     "v": {
+      "t": "title",
+      "h": "Checkpoint",
+      "sub": "Chapter 2"
+     },
+     "src": "",
+     "say": "One question on the gatekeepers.",
      "q": {
-      "p": "An insurer sends a denial letter full of jargon. Which tool should you open first?",
+      "p": "How many organ procurement organizations hold exclusive territories in the United States?",
       "o": [
-       "The Congress Scorecard",
-       "The Translator",
-       "The Gatekeeper Files",
-       "The Substitute"
+       "About 12",
+       "55",
+       "250",
+       "Every hospital has its own"
       ],
       "a": 1,
-      "why": "The Translator is built for exactly this. Paste the letter in and it explains what it says, your rights, and what the insurer must do next. From there, the Insurance Appeal Builder can draft your response."
+      "why": "Fifty-five OPOs each hold a federally designated territory. Until recently, almost none faced real consequences for poor performance."
      }
     }
    ]
   },
   {
-   "id": "c3",
-   "title": "Rights you can use this week",
+   "id": "k3",
+   "title": "Restarting the flow",
    "scenes": [
     {
-     "id": "c3s1",
-     "kicker": "The paper trail",
-     "title": "Your records belong to you",
-     "points": [
-      "HIPAA gives you the right to your own records",
-      "Providers generally have 30 days to respond",
-      "Ask in writing, keep a copy, note the date"
-     ],
-     "say": "Let's get practical. Your first right is the right to your own records. Under HIPAA, you can request your medical records, and the provider generally has thirty days to respond, with one thirty-day extension if they explain the delay in writing. That includes lab results, notes, evaluation documents, and treatment records. Always ask in writing, keep a copy, and write down the date you sent it. If they miss the deadline, that becomes its own complaint. Records are leverage. You can't challenge a decision you can't see.",
+     "id": "k3s1",
+     "kicker": "Normothermic regional perfusion",
+     "title": "A pump after the heart stops",
+     "v": {
+      "t": "circuit",
+      "mode": "warm",
+      "label": "NRP: warm blood restored to the abdominal or chest organs inside the donor"
+     },
+     "src": "HRSA OPTN NRP policy page",
+     "say": "Now to one of the most important, least discussed procedures in organ donation. It's called normothermic regional perfusion, or NRP. After a circulatory-death donor's heart stops and death is declared, surgeons connect an external pump that restores warm, oxygen-rich blood to selected organs, while the vessels leading to the brain are blocked. The organs get to recover from those warm, starved minutes before they're removed, and they can be assessed while working. Supporters say it rescues organs that would otherwise be lost and produces better transplants. Some surgeons call it life-saving care that, done properly, is safe. That's one side of a very sharp debate."
+    },
+    {
+     "id": "k3s2",
+     "kicker": "The other side",
+     "title": "The dead donor rule",
+     "v": {
+      "t": "quote",
+      "q": "It's taking organs from people who are no longer dead.",
+      "by": "Dr. Lainie Friedman Ross, bioethicist, University of Rochester, to NPR"
+     },
+     "src": "NPR, November 14, 2026",
+     "say": "Here's the objection. Organ donation in this country rests on something called the dead donor rule: recovery must never cause death. A circulatory-death declaration means no one will try to restart circulation. NRP restarts circulation. Critics, including bioethicists and some transplant surgeons, argue that this contradicts the very declaration it depends on, and that clamping the brain's blood supply is an attempt to make sure a second kind of death has happened. They also worry that families aren't always told, in plain words, what NRP involves before they agree to donate. Both sides are serious people. You deserve to hear both arguments before anyone asks your family to decide."
+    },
+    {
+     "id": "k3s2b",
+     "kicker": "For families",
+     "title": "Will NRP be used? Ask before you sign.",
+     "v": {
+      "t": "checklist",
+      "items": [
+       "Will NRP be used for our loved one?",
+       "Who will be in the room, and who do they work for?",
+       "What happens if there are signs of life?",
+       "Can we stop the process at any point?",
+       "Will we get a written summary afterward?"
+      ]
+     },
+     "src": "OPTN NRP policy: authorization and disclosure safeguards",
+     "say": "If you ever find yourself in that room, as a family member or a health care proxy, here are questions worth asking out loud. Will NRP be used? Who will be present, and who employs them? What happens if anyone sees signs of life? Can we stop at any point? And will we receive a written summary of what was done? The new national policy includes requirements around authorization and disclosure, but a policy only protects people who know to invoke it. Asking these questions isn't hostile. It's what an informed family does. Most donation professionals will respect you more for it, and the ones who don't are telling you something."
+    },
+    {
+     "id": "k3s3",
+     "kicker": "Brand-new rules",
+     "title": "A national policy, approved by emergency",
+     "v": {
+      "t": "checklist",
+      "items": [
+       "Clamp and vent the vessels to the brain",
+       "Avoid paralytic drugs that could mask movement",
+       "Plan to hand care back if concerns arise",
+       "Report unexpected events to the OPTN",
+       "Clearer disclosure and family communication"
+      ]
+     },
+     "src": "OPTN NRP policy, approved Nov 6, 2026",
+     "say": "On November sixth, 2026, the national transplant network's board approved the first uniform national policy for NRP, through an emergency action so safeguards could start right away. Among other things, surgeons must do more than clamp the vessels to the brain; they must also vent them. The policy recommends against paralyzing drugs that could hide movement. Procurement organizations need a documented plan for handing care back to the hospital team if concerns arise. And certain events, like an unplanned pause over concern that blood may be reaching the brain, must be reported. Critics say these steps mostly describe what careful surgeons already do. Supporters call it an important first step.",
+     "tip": {
+      "h": "Your comment counts until December 28",
+      "t": "The NRP policy is open for public comment from November 13 to December 28, 2026, on the OPTN website. Anyone can comment. A specific, personal, well-reasoned comment becomes part of the official record."
+     }
+    },
+    {
+     "id": "k3s4",
+     "kicker": "Checkpoint",
+     "title": "Quick question",
+     "v": {
+      "t": "title",
+      "h": "Checkpoint",
+      "sub": "Chapter 3"
+     },
+     "src": "",
+     "say": "Let's check the core of this debate.",
+     "q": {
+      "p": "Why do critics say NRP conflicts with the dead donor rule?",
+      "o": [
+       "It uses organs from living donors",
+       "It restarts circulation after death was declared based on circulation stopping",
+       "It's only done in other countries",
+       "It skips family consent entirely"
+      ],
+      "a": 1,
+      "why": "A circulatory-death declaration assumes circulation won't be restarted. NRP restarts it to the organs, which is the heart of the ethical objection."
+     }
+    }
+   ]
+  },
+  {
+   "id": "k4",
+   "title": "The cold clock",
+   "scenes": [
+    {
+     "id": "k4s1",
+     "kicker": "The window we're named for",
+     "title": "Cold slows the damage. It doesn't stop it.",
+     "v": {
+      "t": "clock",
+      "hours": 24,
+      "cap": "Cold ischemia: from the cold flush until blood flows again in the recipient"
+     },
+     "src": "",
+     "say": "Once an organ is removed, it's flushed with a cold preservation solution and chilled. This begins cold ischemia, the window this foundation is named after. Cold slows the organ's metabolism to a crawl, the way a refrigerator slows spoiling. But the cells are still using up their energy, and toxic byproducts are still building. When blood finally rushes back in the recipient, there's a second wave of injury, called reperfusion injury. So every hour on ice matters. Not because an organ suddenly expires at a certain hour, but because the damage keeps adding up, quietly, in a cooler, in a cargo hold, on a loading dock, while people make phone calls."
+    },
+    {
+     "id": "k4s1b",
+     "kicker": "The donor's score",
+     "title": "KDPI: the number that decides a kidney's fate",
+     "v": {
+      "t": "bars",
+      "items": [
+       [
+        "All recovered kidneys",
+        29.3
+       ],
+       [
+        "Biopsied kidneys",
+        40.8
+       ],
+       [
+        "Donors 65 or older",
+        68.9
+       ]
+      ],
+      "suf": "%",
+      "cap": "Share of recovered kidneys not transplanted, 2024"
+     },
+     "src": "OPTN/SRTR 2024 Annual Data Report: Kidney",
+     "say": "Every deceased-donor kidney gets a score called the Kidney Donor Profile Index, or KDPI. It runs from zero to one hundred percent and compares that kidney with others recovered the previous year, using the donor's age, size, history, and a few lab values. A higher number means a shorter expected lifespan for the kidney, on average. Here's why it matters. In 2024, about forty-one percent of kidneys that were biopsied went unused, and nearly sixty-nine percent of kidneys from donors sixty-five or older did. For many older patients, a kidney from an older donor today can beat years more of waiting for a perfect one. But only if someone accepts it."
+    },
+    {
+     "id": "k4s2",
+     "kicker": "What the data shows",
+     "title": "Longer cold time, slower starts",
+     "v": {
+      "t": "bars",
+      "items": [
+       [
+        "16 h or less",
+        20.9
+       ],
+       [
+        "16 to 24 h",
+        28.1
+       ],
+       [
+        "24 to 32 h",
+        32.4
+       ],
+       [
+        "32 to 40 h",
+        37.5
+       ],
+       [
+        "Over 40 h",
+        35.8
+       ]
+      ],
+      "suf": "%",
+      "cap": "Delayed graft function by cold ischemia time, U.S. recipients 2000 to 2018"
+     },
+     "src": "Kidney Medicine, 2023 (UCLA cohort study)",
+     "say": "Here's what a large national study of U.S. kidney recipients found. With sixteen hours of cold time or less, about twenty-one percent of kidneys had delayed function. Between thirty-two and forty hours, it was about thirty-seven and a half percent. So longer cold time clearly means more slow starts. But here's what the same researchers concluded, and it surprises people: the effect on long-term kidney survival was modest, and smaller than the effect of the donor's own profile. They warned that long cold time alone should not be the main reason to decline a kidney. That one sentence describes thousands of discarded organs."
+    },
+    {
+     "id": "k4s2b",
+     "kicker": "A different country, a different answer",
+     "title": "Would these kidneys be thrown away elsewhere?",
+     "v": {
+      "t": "stat",
+      "n": 62,
+      "suf": "%",
+      "cap": "of discarded U.S. kidneys estimated usable under French allocation practices"
+     },
+     "src": "Aubert et al., 2019, as summarized in a 2024 review",
+     "say": "Here's a comparison that should bother everyone. A 2019 study applied France's kidney practices to American kidneys that had been discarded, and estimated that sixty-two percent of them could have been successfully transplanted there. France isn't using magic. It's using organs from older donors more readily, relying less on rushed biopsies, and treating long-term outcomes rather than perfect paperwork as the goal. Researchers here have also questioned how well a biopsy read in the middle of the night predicts how a kidney will really do. When a different country looks at the same kidney and sees a life-saving organ, the problem isn't the kidney. It's the decision."
+    },
+    {
+     "id": "k4s3",
+     "kicker": "Where the hours go",
+     "title": "Most of the clock is spent waiting",
+     "v": {
+      "t": "stat",
+      "n": 19.69,
+      "dec": 2,
+      "suf": " hrs",
+      "cap": "average kidney allocation time as of June 2025"
+     },
+     "src": "OPTN Kidney Committee, August 2025",
+     "say": "Where do those hours go? Surgery takes a few. Flying takes a few. But a huge share is spent on allocation: the process of offering the kidney down a ranked list of patients until a transplant team says yes. As of mid-2025, the national transplant network reported the average kidney allocation time at nearly twenty hours. Twenty hours of offers, declines, callbacks, and waiting for test results, often while the organ sits on ice. Each decline pushes the kidney further down the list and further into the clock, which makes the next team more likely to decline too. It's a spiral, and once it starts, it's very hard to stop.",
+     "tip": {
+      "h": "Ask about speed, not just safety",
+      "t": "Ask your transplant program how quickly it responds to offers, and whether it will accept a kidney that has already been declined by others. Slow responses add hours to the clock for everyone behind you."
+     }
+    },
+    {
+     "id": "k4s4",
+     "kicker": "Checkpoint",
+     "title": "Quick question",
+     "v": {
+      "t": "title",
+      "h": "Checkpoint",
+      "sub": "Chapter 4"
+     },
+     "src": "",
+     "say": "Here's a question about that cold-time study.",
+     "q": {
+      "p": "What did the national cold-time study conclude about declining kidneys?",
+      "o": [
+       "Any kidney over 24 hours should be discarded",
+       "Long cold time alone shouldn't be the main reason to decline",
+       "Cold time has no effect at all",
+       "Only living-donor kidneys are worth accepting"
+      ],
+      "a": 1,
+      "why": "Longer cold time raised delayed function, but the effect on long-term survival was modest. The authors cautioned against declining a kidney on cold time alone, especially when the donor profile is good."
+     }
+    }
+   ]
+  },
+  {
+   "id": "k5",
+   "title": "Machines that buy time",
+   "scenes": [
+    {
+     "id": "k5s1",
+     "kicker": "The icebox",
+     "title": "Static cold storage: the 1970s standard",
+     "v": {
+      "t": "circuit",
+      "mode": "ice",
+      "label": "Static cold storage: solution, bags, ice, and a cooler"
+     },
+     "src": "",
+     "say": "For more than fifty years, the standard way to move a kidney has looked a lot like a picnic. The organ is flushed, sealed in sterile bags with preservation fluid, and packed in ice inside a cooler. It's simple, cheap, and it travels anywhere. It also gives the team almost no information. Nobody can see how the organ is doing inside that cooler. They can only count the hours and guess. That is the backdrop for everything you're about to see: a field trying to move from guessing to measuring, and from slowing damage to actually preventing it."
+    },
+    {
+     "id": "k5s2",
+     "kicker": "The cold pump",
+     "title": "Hypothermic machine perfusion",
+     "v": {
+      "t": "circuit",
+      "mode": "cold",
+      "label": "Cold solution pumped through the kidney's own vessels"
+     },
+     "src": "Cochrane systematic review",
+     "say": "The first upgrade is a cold pump, called hypothermic machine perfusion. Instead of sitting still in fluid, the kidney is connected to a machine that pushes cold preservation solution through its own blood vessels. That keeps the tiny vessels open, flushes out waste, and gives the team numbers to watch, like flow and resistance. A Cochrane review, one of the most respected forms of medical evidence, concluded that compared with the icebox, cold pumping reduces delayed function, improves kidney survival, and is cost-saving in U.S. and European settings. That's not a lab curiosity. That's established evidence, and many American kidneys still travel on ice."
+    },
+    {
+     "id": "k5s3",
+     "kicker": "Add oxygen",
+     "title": "The COMPARE trial",
+     "v": {
+      "t": "pair",
+      "a": {
+       "n": 3,
+       "of": 106,
+       "lab": "Cold pump with oxygen"
+      },
+      "b": {
+       "n": 11,
+       "of": 106,
+       "lab": "Cold pump without oxygen"
+      },
+      "cap": "Kidneys that failed within the first year, paired circulatory-death donors aged 50+"
+     },
+     "src": "Jochmans et al., The Lancet, 2020",
+     "say": "Then researchers asked a simple question: what if we add oxygen to the cold pump? In a European trial called COMPARE, published in The Lancet, kidney pairs from older circulatory-death donors were split. One kidney from each donor got a cold pump with oxygen, the other got the same pump without it. Same donor, same day, a near-perfect comparison. In the first year, three of one hundred six oxygenated kidneys failed, compared with eleven of one hundred six without oxygen. The difference in average kidney function wasn't significant, but complications and failures dropped. Oxygen, even at cold temperatures, seems to matter."
+    },
+    {
+     "id": "k5s4",
+     "kicker": "Warm it up",
+     "title": "Normothermic machine perfusion",
+     "v": {
+      "t": "circuit",
+      "mode": "warm",
+      "label": "Body-temperature, oxygenated red-cell perfusate: the kidney works outside the body"
+     },
+     "src": "Nature Medicine 2023; Nature Communications 2025",
+     "say": "The boldest approach skips the cold entirely. In normothermic machine perfusion, the kidney is kept at body temperature and fed a warm, oxygenated fluid made with red blood cells. The organ actually works on the machine, making urine, using energy, showing whether it's viable. A randomized trial in circulatory-death kidneys found that one hour of this warm perfusion was safe and feasible, but it didn't reduce delayed function compared with the icebox. Then, in 2025, an Oxford-led study kept kidneys on warm perfusion for a median of about six hours, and as long as twenty-three, before transplant. The results are early but they hint at a future where organs are tested, treated, and even repaired before surgery."
+    },
+    {
+     "id": "k5s4b",
+     "kicker": "Where warm machines already won",
+     "title": "Livers and hearts went first",
+     "v": {
+      "t": "timeline",
+      "ev": [
+       [
+        "Sep 2021",
+        "FDA approves a warm perfusion system for donor livers"
+       ],
+       [
+        "Dec 2021",
+        "A second warm liver device approved, up to 12 hours"
+       ],
+       [
+        "Apr 2022",
+        "Warm heart system approved for circulatory-death donors"
+       ],
+       [
+        "Today",
+        "Kidneys still travel mostly cold"
+       ]
+      ]
+     },
+     "src": "FDA premarket approvals P200031, P200035; BioWorld",
+     "say": "Warm machines aren't science fiction for every organ. In 2021, the FDA approved two warm perfusion systems for donor livers, one of them for up to twelve hours of preservation. In 2022, a warm system was approved for hearts from circulatory-death donors, which means a heart can be restarted and watched beating in a box before it's ever placed in a recipient. For years, those hearts were considered impossible to use. So the question isn't whether warm, measured preservation works. It's why kidneys, the organ the most people are waiting for, still mostly travel in coolers. Part of the answer is cost. Part of it is habit. Neither is a medical reason."
+    },
+    {
+     "id": "k5s5",
+     "kicker": "What this means for you",
+     "title": "The machine may matter as much as the match",
+     "v": {
+      "t": "split",
+      "l": {
+       "h": "Ask your center",
+       "items": [
+        "Do you use machine perfusion for kidneys?",
+        "Cold, oxygenated, or warm?",
+        "Do you accept pumped kidneys from far away?"
+       ]
+      },
+      "r": {
+       "h": "Why it matters",
+       "items": [
+        "Fewer slow starts",
+        "More organs judged usable",
+        "Longer safe travel windows"
+       ]
+      }
+     },
+     "src": "",
+     "say": "So here's the practical takeaway. When you're choosing a transplant program, or deciding whether to list at more than one, ask how they preserve kidneys and what they're willing to accept. Programs that use machine perfusion, and know how to read its numbers, may say yes to organs that others decline. And if you hear a kidney was declined because of long cold time, it's fair to ask whether it was on a pump, and what the pump showed. You're not second-guessing your surgeon. You're asking the same questions the research is asking.",
+     "tip": {
+      "h": "Check program offer data",
+      "t": "The Scientific Registry of Transplant Recipients publishes program-specific reports at srtr.org, including how often each program accepts the offers it receives. Compare programs before you choose where to list."
+     }
+    },
+    {
+     "id": "k5s6",
+     "kicker": "Checkpoint",
+     "title": "Quick question",
+     "v": {
+      "t": "title",
+      "h": "Checkpoint",
+      "sub": "Chapter 5"
+     },
+     "src": "",
+     "say": "A question about that trial.",
+     "q": {
+      "p": "In the COMPARE trial, what happened when oxygen was added to cold machine perfusion?",
+      "o": [
+       "More kidneys failed",
+       "Fewer kidneys failed in the first year",
+       "Kidneys could only be used locally",
+       "Nothing was measured"
+      ],
+      "a": 1,
+      "why": "Three of 106 oxygenated kidneys failed versus 11 of 106 without oxygen. Even at cold temperatures, supplying oxygen appears to protect the organ."
+     }
+    }
+   ]
+  },
+  {
+   "id": "k6",
+   "title": "Oxygen without the ice: BHOC",
+   "scenes": [
+    {
+     "id": "k6s1",
+     "kicker": "The question underneath it all",
+     "title": "What if the clock met oxygen instead of only cold?",
+     "v": {
+      "t": "molecule",
+      "cap": "Biological Hemoglobin Oxygen Carrier: hemoglobin working outside the red cell"
+     },
+     "src": "bhoctherapeutics.com",
+     "say": "Every technology you've just seen points to the same idea: organs suffer because they're starved of oxygen, and cold only slows that harm. Which leads to a question few patients ever hear asked. What if we could deliver oxygen to an organ precisely, without needing whole blood? That's the work of BHOC Therapeutics. BHOC stands for Biological Hemoglobin Oxygen Carrier. It's hemoglobin, the molecule your red cells use to carry oxygen, working outside the red cell. Because there's no cell membrane, it carries no blood-group markers, so it's designed to be compatible with all blood types. And its oxygen affinity is engineered, so it loads oxygen and releases it where tissue needs it."
+    },
+    {
+     "id": "k6s1b",
+     "kicker": "An honest history",
+     "title": "Why oxygen carriers must earn trust",
+     "v": {
+      "t": "stat",
+      "n": 3711,
+      "suf": "",
+      "cap": "patients in 16 trials of earlier hemoglobin-based blood substitutes reviewed in 2008"
+     },
+     "src": "Natanson et al., JAMA, 2008",
+     "say": "You should also know the history, because it explains why careful evidence matters so much here. In 2008, a review in the Journal of the American Medical Association looked at sixteen trials of earlier hemoglobin-based blood substitutes, five products, three thousand seven hundred eleven patients. Those earlier products, given as blood substitutes, were linked to a higher risk of heart attack and death. That's a sobering record, and it's exactly why BHOC Therapeutics' evidence hub keeps historical oxygen-carrier studies separate from wider transplantation research, so neither borrows credibility from the other. Any new approach has to earn trust from scratch, in the right setting, with the right trials. That's the standard we should hold everyone to."
+    },
+    {
+     "id": "k6s2",
+     "kicker": "Precision Oxygen Therapeutics",
+     "title": "Not a replacement for blood",
+     "v": {
+      "t": "split",
+      "l": {
+       "h": "What BHOC is designed to be",
+       "items": [
+        "Cell-free hemoglobin",
+        "Compatible with all blood types by design",
+        "Engineered oxygen affinity",
+        "A complementary oxygen-delivery bridge"
+       ]
+      },
+      "r": {
+       "h": "What it is not",
+       "items": [
+        "Not \"artificial blood\"",
+        "Not a replacement for blood",
+        "Not an approved therapy claim",
+        "Research and development"
+       ]
+      }
+     },
+     "src": "bhoctherapeutics.com",
+     "say": "BHOC Therapeutics calls its approach Precision Oxygen Therapeutics: oxygen delivery that's controlled and predictable, down to the tissue. And they're unusually careful about what they don't claim. They don't call it artificial blood. It's not designed to replace blood. It's meant to be a complementary bridge for oxygen delivery. Their research areas include organ transplantation, severe anemia, surgery and blood loss, cardiac and ischemic emergencies, sickle cell disease, and emergency and remote care. And they state plainly that these are areas of research and development, not approved therapeutic claims. In a field full of hype, that honesty is worth noticing."
+    },
+    {
+     "id": "k6s3",
+     "kicker": "Four moments of vulnerability",
+     "title": "Mapping oxygen across the graft's journey",
+     "v": {
+      "t": "flow",
+      "steps": [
+       "Preservation",
+       "Machine perfusion",
+       "Viability assessment",
+       "Reperfusion"
+      ],
+      "hi": 0
+     },
+     "src": "BHOC Therapeutics Transplantation Evidence Hub",
+     "say": "For transplantation, BHOC Therapeutics maintains an evidence hub mapping sixty-four publications on oxygen carriers, across liver, kidney, heart, lung, limb, and composite tissue research. It asks one question at four moments. During preservation, while the organ waits. During machine perfusion, when oxygen is delivered outside the body. During viability assessment, when teams judge whether an organ can be used. And at reperfusion, when blood flows again in the recipient. The first of those moments is the cold window itself. Cold storage slows the damage. Controlled oxygen delivery asks whether some of that damage never has to happen at all.",
      "link": {
-      "label": "Generate a records request",
-      "href": "tool-records-request.html"
+      "label": "Explore the BHOC transplant evidence hub",
+      "href": "https://bhoctherapeutics.com/evidence/library/transplant/Transplant-index.html"
+     }
+    },
+    {
+     "id": "k6s4",
+     "kicker": "Why patients never hear about this",
+     "title": "It lives in journals, not in exam rooms",
+     "v": {
+      "t": "split",
+      "l": {
+       "h": "Where it's discussed",
+       "items": [
+        "Surgical journals",
+        "Preservation research meetings",
+        "Industry panels"
+       ]
+      },
+      "r": {
+       "h": "Where it should be discussed",
+       "items": [
+        "With people waiting for organs",
+        "With care partners",
+        "With donor families"
+       ]
+      }
+     },
+     "src": "",
+     "say": "None of this is secret. It's published and presented. But it's discussed almost entirely among surgeons, preservation scientists, and companies. It almost never reaches the person actually waiting for an organ, or the care partner who will manage the first hard weeks after surgery. That gap matters. Better preservation could mean organs travel farther, more of them are judged usable, and fewer people start their new life with a kidney that's slow to wake up. That's directly relevant to whether a specific patient in a specific region gets an offer at all. You deserve to know what's being built to solve the problem that keeps you waiting.",
+     "link": {
+      "label": "Read the Foundation's BHOC page",
+      "href": "bhoc.html"
      },
      "tip": {
-      "h": "Ask for the format you need",
-      "t": "You can request records electronically if the provider keeps them that way. Ask for PDF by email or a patient portal download, and specify whether you want physician notes included."
+      "h": "Separate evidence from hope",
+      "t": "When you read about any new preservation technology, ask three things: was it tested in people, was it randomized, and is it approved for use? Listing a study is not the same as proving a treatment works."
      }
     },
     {
-     "id": "c3s1b",
-     "kicker": "Your most underrated tool",
-     "title": "The contact log",
-     "points": [
-      "Date, time, name, title, what was said",
-      "Send a short follow-up email after every call",
-      "Store it where your care partner can find it"
-     ],
-     "say": "Before any of these rights help you, you need one habit: the contact log. Every time you talk to a coordinator, an insurer, a billing office, or a social worker, write down the date, the time, the person's full name and title, and what they told you. After an important call, send a two-line email summarizing it. Something like, thank you for confirming today that my appeal was received and will be decided by the fifteenth. Now a verbal promise has a paper trail. Keep the log somewhere your care partner can reach it, because they may be the one who needs it.",
+     "id": "k6s5",
+     "kicker": "Checkpoint",
+     "title": "Quick question",
+     "v": {
+      "t": "title",
+      "h": "Checkpoint",
+      "sub": "Chapter 6"
+     },
+     "src": "",
+     "say": "Let's make sure the description of BHOC is clear.",
+     "q": {
+      "p": "Which description of BHOC matches how BHOC Therapeutics describes it?",
+      "o": [
+       "Artificial blood that replaces transfusions",
+       "Cell-free hemoglobin designed to be compatible with all blood types",
+       "An approved treatment for kidney failure",
+       "A new kind of dialysis filter"
+      ],
+      "a": 1,
+      "why": "BHOC Therapeutics describes BHOC as cell-free hemoglobin with engineered oxygen affinity, designed to be compatible with all blood types, as a complementary oxygen bridge. They state their transplant work is research, not an approved claim."
+     }
+    }
+   ]
+  },
+  {
+   "id": "k7",
+   "title": "The offer game",
+   "scenes": [
+    {
+     "id": "k7s1",
+     "kicker": "Offers are made to you",
+     "title": "Declined on your behalf",
+     "v": {
+      "t": "stat",
+      "n": 25,
+      "suf": "",
+      "cap": "median kidney offers received by patients who died waiting"
+     },
+     "src": "Research cited by the National Kidney Foundation",
+     "say": "Here's something most people on the list never realize. Under federal law, organ offers are made to individual patients, not to transplant centers. But it's the center that answers the phone. Your team can decline an offer made in your name, and in most cases you'll never hear about it. Research cited by the National Kidney Foundation found that patients who died waiting had received a median of twenty-five kidney offers before death. Twenty-five. Some of those organs were surely wrong for them. But it's worth asking whether every single one was. And it's worth asking why the person whose life depended on the answer was never told the question existed."
+    },
+    {
+     "id": "k7s1b",
+     "kicker": "Why centers say no",
+     "title": "Caution has incentives",
+     "v": {
+      "t": "split",
+      "l": {
+       "h": "Pressures that push toward no",
+       "items": [
+        "Programs graded on outcomes",
+        "Slow starts mean longer hospital stays",
+        "Night-time offers and short staffing"
+       ]
+      },
+      "r": {
+       "h": "What gets lost",
+       "items": [
+        "Patients who'd accept more risk",
+        "Time on the list",
+        "Kidneys that would have worked"
+       ]
+      }
+     },
+     "src": "",
+     "say": "Why would a team decline an organ that might help you? Usually not out of carelessness. Programs are graded publicly on how their transplants turn out, so a risky kidney that struggles can hurt their numbers. Kidneys that start slowly mean longer hospital stays and more work. Offers often arrive at night, when staffing is thin. Many researchers have argued that these pressures push centers toward saying no, even when a patient would gladly take the risk. Regulators have started measuring offer acceptance alongside outcomes for exactly this reason. Your job isn't to overrule your surgeon. It's to make sure your own tolerance for risk is on the record."
+    },
+    {
+     "id": "k7s2",
+     "kicker": "Skipping the line",
+     "title": "Out-of-sequence allocation",
+     "v": {
+      "t": "line",
+      "pts": [
+       [
+        2019,
+        1
+       ],
+       [
+        2024,
+        18
+       ]
+      ],
+      "suf": "%",
+      "lab": "Kidneys allocated out of the national match sequence"
+     },
+     "src": "OPTN AOOS Workgroup, September 2025; HRSA directive, February 2025",
+     "say": "Now the part that has federal regulators most concerned. When procurement organizations worry a kidney won't be placed in time, some have stopped following the ranked list and offered it directly to a center they know will take it. That's called allocation out of sequence. According to the chair of the national workgroup studying it, it rose from about one percent of kidney allocations in 2019 to roughly eighteen percent in 2024. In February 2025, HRSA told the transplant network that widespread out-of-sequence placement, as practiced, doesn't comply with federal rules, and that offers must go to individual patients, not to programs. When the line gets skipped, someone in that line lost a chance and never knew it."
+    },
+    {
+     "id": "k7s3",
+     "kicker": "Transparency is coming, slowly",
+     "title": "What you can ask for now",
+     "v": {
+      "t": "checklist",
+      "items": [
+       "Your current waitlist status, active or inactive",
+       "Your offer filters and acceptance criteria",
+       "Whether offers were declined for you, and why",
+       "Your accrued waiting time",
+       "The program's written selection criteria"
+      ]
+     },
+     "src": "HHS IOTA proposal, Dec 2025; OPTN patient notification proposal, 2025",
+     "say": "There is movement. In December 2025, federal health officials proposed changes to a Medicare model for kidney transplant hospitals, including notifying patients who've been listed for three years about offers declined on their behalf. The national network has also considered requiring programs to notify patients within ten business days when they're made inactive or reactivated. These are proposals and pilots, not universal rights yet. But nothing stops you from asking today. Ask in writing for your status, your offer filters, your waiting time, and whether offers have been declined for you. A program that respects you will answer. A program that won't is telling you something important.",
      "tip": {
-      "h": "Always get a reference number",
-      "t": "Insurers and agencies assign call reference numbers. Ask for one at the start of every call and write it in your log. It's the fastest way to prove the conversation happened."
+      "h": "Inactive status is silent",
+      "t": "You can sit on the list as inactive, unable to receive offers, without knowing it. Ask your coordinator every three months, in writing: am I active, and has anything changed in my status or offer criteria?"
      }
     },
     {
-     "id": "c3s2",
-     "kicker": "Inside the transplant program",
-     "title": "Ask for the rulebook",
-     "points": [
-      "Programs must use written selection criteria",
-      "They must give you a copy when you ask",
-      "Written notice within 10 business days of key list decisions"
-     ],
-     "say": "Transplant programs often feel like a black box. Here are two ways in. First, federal rules require every transplant program to use written patient selection criteria, and to give a copy to any patient who asks. Ask for it. Read it. If you're turned down, compare the decision against the criteria. Second, under OPTN policy, the program must notify you in writing within ten business days when you're added to the waiting list, when your evaluation finishes but you're not listed, or when you're removed for any reason other than transplant. No letter means a policy was missed.",
-     "tip": {
-      "h": "Use the exact citation",
-      "t": "When asking for selection criteria, cite 42 CFR 482.90. A request that names the regulation tends to get answered faster than a general question to a coordinator."
-     }
-    },
-    {
-     "id": "c3s3",
+     "id": "k7s3b",
      "kicker": "More than one door",
-     "title": "You may list at more than one program",
-     "points": [
-      "Multiple listing is allowed",
-      "Waiting times differ widely between programs",
-      "Check insurance and travel before you commit"
-     ],
-     "say": "Something many patients never hear: you may be evaluated and listed at more than one transplant program. Waiting times and acceptance practices vary a great deal from program to program, even within the same region. Multiple listing isn't the right move for everyone. It depends on your insurance, your ability to travel on short notice, and the extra testing involved. But it's your decision to make, not something that should be quietly left out of the conversation. Ask each program directly what its policy is on patients who are listed elsewhere, and get the answer in writing.",
+     "title": "Listing at a second program",
+     "v": {
+      "t": "flow",
+      "steps": [
+       "Program A",
+       "Your record",
+       "Program B"
+      ],
+      "hi": 1
+     },
+     "src": "",
+     "say": "One of the most effective moves patients rarely hear about is listing at more than one transplant program. It's allowed. Programs differ widely in what they accept, how fast they respond, and how many offers they turn down. A second program, especially one in a different procurement region, can mean a completely different stream of offers. It isn't right for everyone. It takes extra testing, travel planning, and insurance approval. Ask the second program how your waiting time would be counted and what they'd need from you. And ask your first program directly how it feels about patients who list elsewhere. Their answer will tell you a lot.",
      "link": {
       "label": "Compare transplant centers",
       "href": "kidney-transplant-centers.html"
      }
     },
     {
-     "id": "c3s4",
-     "kicker": "When the insurer says no",
-     "title": "Denials are often a first offer",
-     "points": [
-      "Most plans: 180 days to file an internal appeal",
-      "External review by an independent party is available",
-      "Medicare: 120 days to request a redetermination"
-     ],
-     "say": "A denial is often the opening move, not the final word. For most private and marketplace plans, you have one hundred eighty days from the denial notice to file an internal appeal, and if that fails, you can request an external review by an independent reviewer the insurer doesn't control. Medicare gives you one hundred twenty days to ask for a redetermination. A strong appeal includes the exact plan language, a letter of medical necessity from your doctor, and a clear timeline. Deadlines are strict, so put the date on your calendar the day the letter arrives.",
-     "link": {
-      "label": "Build an insurance appeal",
-      "href": "tool-insurance-appeal.html"
-     },
-     "tip": {
-      "h": "Request the claim file",
-      "t": "You're entitled to the documents the insurer used to deny you, free of charge. Request the full claim file before you write your appeal, so you're answering their actual reasoning."
-     }
-    },
-    {
-     "id": "c3s4b",
-     "kicker": "Leaving the hospital too soon",
-     "title": "Medicare discharge appeals",
-     "points": [
-      "Look for 'An Important Message from Medicare'",
-      "Ask the BFCC-QIO for a fast, independent review",
-      "Request it before you leave the hospital"
-     ],
-     "say": "Here's a right that matters in the hospital itself. If you're a Medicare inpatient and you believe you're being discharged before it's safe, you have the right to a fast, independent review. The hospital is required to give you a notice called An Important Message from Medicare About Your Rights. It lists the phone number for your Beneficiary and Family Centered Care Quality Improvement Organization, usually shortened to BFCC-QIO. Call them before you leave the hospital, ideally no later than your planned discharge day. While the review is underway, you generally won't be charged for the extra hospital days.",
-     "tip": {
-      "h": "Ask for the notice by name",
-      "t": "If nobody has handed you An Important Message from Medicare, ask the nurse or case manager for it by name. The phone number you need for the appeal is printed on it."
-     }
-    },
-    {
-     "id": "c3s5",
-     "kicker": "Escalation",
-     "title": "Climb the ladder in order",
-     "points": [
-      "1. Written grievance to the facility",
-      "2. Your ESRD Network or the transplant program's oversight",
-      "3. State survey agency, then CMS"
-     ],
-     "say": "When something goes wrong at a facility, escalate in order, and in writing. Start with a written grievance to the facility itself. Facilities are required to have a grievance process, and a written complaint creates a record. If that stalls, go to your regional ESRD Network, one of eighteen across the country. Next comes your state survey agency, which inspects facilities on behalf of CMS. Federal agencies come after that, and the OPTN for transplant matters. Skipping rungs often gets your complaint sent back to the start. Climbing them in order builds a file nobody can claim they never saw.",
-     "link": {
-      "label": "Find your Network and state agency",
-      "href": "accountability.html"
-     },
-     "tip": {
-      "h": "Protection against retaliation",
-      "t": "Federal rules for dialysis facilities protect patients from retaliation for filing grievances, and an involuntary discharge generally requires thirty days' written notice. If you're threatened with discharge after complaining, document it immediately."
-     }
-    },
-    {
-     "id": "c3s6",
-     "kicker": "Knowledge check",
+     "id": "k7s4",
+     "kicker": "Checkpoint",
      "title": "Quick question",
-     "points": [],
-     "say": "Two questions this time, because these rights matter. Here's the first.",
+     "v": {
+      "t": "title",
+      "h": "Checkpoint",
+      "sub": "Chapter 7"
+     },
+     "src": "",
+     "say": "A question about who actually receives an offer.",
      "q": {
-      "p": "You asked a transplant program for its patient selection criteria. What are they required to do?",
+      "p": "Under federal rules, to whom is an organ offer actually made?",
       "o": [
-       "Nothing; criteria are confidential",
-       "Give you a copy on request",
-       "Only share them with your doctor",
-       "Charge a records fee first"
-      ],
-      "a": 1,
-      "why": "Under 42 CFR 482.90, transplant programs must use written selection criteria and give a copy to a patient who asks."
-     }
-    },
-    {
-     "id": "c3s7",
-     "kicker": "Knowledge check",
-     "title": "One more",
-     "points": [],
-     "say": "And the second.",
-     "q": {
-      "p": "A facility ignores your verbal complaint. What's the strongest next step?",
-      "o": [
-       "Post about it online first",
-       "File a written grievance with the facility",
-       "Go straight to your senator",
-       "Switch facilities without saying anything"
-      ],
-      "a": 1,
-      "why": "A written grievance creates a dated record and starts the formal process. If it stalls, you climb to the ESRD Network, the state survey agency, then CMS, and each rung can see the trail."
-     }
-    }
-   ]
-  },
-  {
-   "id": "c4",
-   "title": "Care partners and living donors",
-   "scenes": [
-    {
-     "id": "c4s1",
-     "kicker": "The unseen half",
-     "title": "Required, but unprotected",
-     "points": [
-      "A listing prerequisite with no training standard",
-      "No federal pay, no job protection built for the role",
-      "Burnout is predictable, so plan for it"
-     ],
-     "say": "Let's talk about the person standing beside the patient. The care partner manages medications, appointments, transportation, insurance calls, and the emotional weight of all of it, often while holding a job. The system depends on that labor and does almost nothing to support it. If you're a care partner, know this: your exhaustion isn't a character flaw. It's what happens when a system builds itself on work it won't name. The Foundation's tools exist to lighten that load, and its advocacy exists to make sure the load is eventually recognized, measured, and paid for."
-    },
-    {
-     "id": "c4s2",
-     "kicker": "Protections that do exist",
-     "title": "Use what's already on the books",
-     "points": [
-      "FMLA: up to 12 weeks of job-protected unpaid leave",
-      "Some states add paid family leave",
-      "Ask your employer's HR for the policy in writing"
-     ],
-     "say": "Some protections already exist, and too few people use them. The Family and Medical Leave Act lets eligible workers take up to twelve weeks of unpaid, job-protected leave a year to care for a spouse, child, or parent with a serious health condition. It can be taken in pieces, a day here or a few hours there, for appointments and recovery. A growing number of states also offer paid family leave on top of that. Ask your employer's human resources office for its policy in writing, and ask which forms your doctor needs to complete.",
-     "tip": {
-      "h": "Intermittent leave",
-      "t": "FMLA leave doesn't have to be taken all at once. Request intermittent leave for appointments and flare-ups, so you protect your job without burning through all twelve weeks in one stretch."
-     }
-    },
-    {
-     "id": "c4s3",
-     "kicker": "Living donors",
-     "title": "The donor deserves an advocate too",
-     "points": [
-      "Programs must provide an independent living donor advocate",
-      "Help with travel costs may be available through NLDAC",
-      "Donors can withdraw at any time"
-     ],
-     "say": "If you're considering becoming a living donor, you deserve someone in your corner whose only job is you. Federal rules require transplant programs to provide an independent living donor advocate, separate from the recipient's team. Use that person. Ask them hard questions. The National Living Donor Assistance Center may help with travel and lodging costs for donors who qualify. And remember, you can decline or withdraw at any point. The Foundation's guide for living donors, Not a Spare, walks through readiness, risk, and the questions programs don't always volunteer answers to.",
-     "link": {
-      "label": "Visit the Living Donor Hub",
-      "href": "living-donor-hub.html"
-     }
-    },
-    {
-     "id": "c4s3b",
-     "kicker": "Plan for the day you can't",
-     "title": "Backup care and your own limits",
-     "points": [
-      "Name a backup person and write down the routine",
-      "Keep a one-page medical summary current",
-      "Your health is part of the care plan"
-     ],
-     "say": "Every care partner eventually faces a day they can't show up. Illness, a family emergency, or plain exhaustion. Plan for it now. Name a backup person, and write down the routine: medications, appointments, phone numbers, insurance details, and the small things only you know. Keep a one-page medical summary current, so anyone stepping in can be useful within minutes. The Foundation's tool called The Substitute walks you through building that backup plan. And one more thing. Your own health appointments belong on the calendar too. A care plan that burns out its care partner isn't a plan.",
-     "link": {
-      "label": "Plan for continuity",
-      "href": "tool-continuity-planner.html"
-     }
-    },
-    {
-     "id": "c4s4",
-     "kicker": "Knowledge check",
-     "title": "Quick question",
-     "points": [],
-     "say": "A quick check on care partner and donor protections.",
-     "q": {
-      "p": "Who is a living donor's independent advocate supposed to represent?",
-      "o": [
-       "The recipient",
-       "The transplant program's finances",
-       "The donor, and only the donor",
-       "The insurance company"
+       "The transplant center",
+       "The procurement organization",
+       "The individual patient",
+       "The patient's insurer"
       ],
       "a": 2,
-      "why": "The independent living donor advocate exists to protect the donor's interests, separately from the recipient's care team."
+      "why": "Offers are made to individual patients. Centers respond on the patient's behalf, which is exactly why patients should ask what's being declined in their name."
      }
     }
    ]
   },
   {
-   "id": "c5",
-   "title": "From one voice to a record",
+   "id": "k8",
+   "title": "Who's accountable now",
    "scenes": [
     {
-     "id": "c5s1",
-     "kicker": "Why paperwork wins",
-     "title": "Institutions answer to records, not feelings",
-     "points": [
-      "Every filed complaint becomes a federal record",
-      "Every record starts a compliance clock",
-      "Ignored clocks become evidence of a pattern"
-     ],
-     "say": "Here's the strategy at the center of everything the Foundation does. Institutions change when there's a documented public record they can't erase. A phone call vanishes. A filed complaint stays. Each filing starts a compliance clock. Each clock the institution ignores adds to a record of non-compliance. One complaint is a problem for a facility. A hundred complaints, filed the same way and citing the same rule, become a pattern that congressional staff, investigators, and journalists can actually use. Your story matters most when it's written down in a form the system is required to answer."
-    },
-    {
-     "id": "c5s2",
-     "kicker": "Your story, structured",
-     "title": "Turn experience into testimony",
-     "points": [
-      "MERIDIAN turns one story into three documents",
-      "Dates, names, rules, outcomes",
-      "Share only with consent, always"
-     ],
-     "say": "Most people tell their story in the order they lived it, and that's natural. But decision-makers read differently. They want dates, names, the rule involved, and the outcome you're asking for. The Foundation's MERIDIAN tool turns your experience into three documents: a private record for yourself, a picture of where your story fits in the national pattern, and a formal statement aimed at a specific decision-maker. It runs in your browser, with no account, and nothing is stored. One rule never bends: no one's story gets shared without that person's clear permission.",
-     "link": {
-      "label": "Open MERIDIAN",
-      "href": "tool-meridian.html"
+     "id": "k8s1",
+     "kicker": "A network rebuilt",
+     "title": "The end of a single-contractor era",
+     "v": {
+      "t": "timeline",
+      "ev": [
+       [
+        "Aug 2024",
+        "OPTN board incorporated separately from its longtime contractor"
+       ],
+       [
+        "2025",
+        "Independent, elected board seated; multi-vendor model begins"
+       ],
+       [
+        "2025",
+        "New out-of-sequence dashboards and compliance tools"
+       ],
+       [
+        "2026",
+        "Contracts and oversight still being restructured"
+       ]
+      ]
      },
+     "src": "HRSA OPTN Modernization updates",
+     "say": "For nearly forty years, the national transplant network was run under one main contract by one organization. That's changing. HRSA separated the network's board from its longtime contractor, seated an independent elected board, and moved to a model with multiple vendors handling different jobs. It added dashboards for out-of-sequence allocation and new compliance tools, and it opened a direct channel for reporting concerns. Change on this scale is messy, and not everything is working smoothly. But for the first time in a generation, the doors are open to people outside the industry. Patients and care partners can comment, report, and sit on committees.",
      "tip": {
-      "h": "The one-page rule",
-      "t": "Keep a one-page version of your story: three dates, two rules broken, one specific request. Staffers often read a single page. Attach the long version behind it."
+      "h": "Report concerns directly",
+      "t": "Concerns about organ donation, procurement, or transplant practices can be sent to HRSA through the OPTN complaint channel at OPTNComplaints@hrsa.gov. Include dates, places, and what you observed."
      }
     },
     {
-     "id": "c5s2b",
-     "kicker": "The Foundation's method",
-     "title": "Lean Six Sigma for advocates",
-     "points": [
-      "Define the problem in one sentence",
-      "Measure it: dates, counts, delays",
-      "Analyze, Improve, Control: fix the cause, then lock it in"
-     ],
-     "say": "The Foundation approaches advocacy the way an engineer approaches a broken process, using a Lean Six Sigma method called DMAIC. Define the problem in one sentence. Measure it, with dates, counts, and delays rather than adjectives. Analyze it, to find the rule or step that's actually causing the failure. Improve it, by proposing a specific fix. Control it, by tracking whether the fix holds. You don't need a certification to use this. Next time something goes wrong, write those five words down the side of a page and fill them in. Your complaint will read like an audit, and audits get answers."
+     "id": "k8s2",
+     "kicker": "Report cards with teeth",
+     "title": "Procurement organizations, graded",
+     "v": {
+      "t": "grid",
+      "total": 55,
+      "hi": 23,
+      "cap": "AOPO warned up to 42% of the 55 OPOs could face decertification"
+     },
+     "src": "CMS final rule CMS-3409-F, Oct 30, 2026; Bloomberg Government",
+     "say": "Meanwhile, Medicare finalized a rule on October thirtieth, 2026, that keeps its three-tier grading system for procurement organizations and moves toward decertifying the lowest tier. Organizations whose service areas fall only in tier three will be decertified, and the best performers can compete to take over. The industry's own association warned that as many as forty-two percent of the fifty-five organizations could face decertification. Current agreements are set to expire in January 2027. Whatever you think of the metrics, this is the first time the gatekeepers have faced real competition. Your region's organ procurement organization may soon be run by someone new."
     },
     {
-     "id": "c5s3",
-     "kicker": "Join the tribe",
-     "title": "Seven ways to put your time to work",
-     "points": [
-      "Patient and care partner support",
-      "Policy outreach, content, data and Lean Six Sigma",
-      "Digital, events, and operations"
-     ],
-     "say": "This is where you come in. The Foundation runs volunteer tracks across seven areas: direct support for patients and care partners, policy and legislative outreach, writing and fact-checking toolkits, data and Lean Six Sigma analysis, digital and social media, community events, and the operations that keep a small, busy organization running. You don't need credentials. You need honest self-awareness, reliability, and a willingness to learn. Before applying, you'll take a self-paced readiness training, because the people being served deserve volunteers who know what they're stepping into.",
-     "link": {
-      "label": "Explore volunteering",
-      "href": "cif-volunteer-page.html"
-     }
+     "id": "k8s2b",
+     "kicker": "Pressure works",
+     "title": "The bottom tier shrank",
+     "v": {
+      "t": "bars",
+      "items": [
+       [
+        "Tier 3 OPOs, earlier count",
+        24
+       ],
+       [
+        "Tier 3 OPOs, recent count",
+        10
+       ]
+      ],
+      "suf": "",
+      "cap": "Lowest-performing OPOs as counted by CMS"
+     },
+     "src": "CMS proposed rule fact sheet, January 2026",
+     "say": "Here's the encouraging part. When Medicare first published its grading system, it estimated that a large share of procurement organizations would fall into the lowest tier. According to Medicare's own 2026 fact sheet, the number of organizations in tier three has since dropped from twenty-four to ten. Some of that is real improvement: better referral systems, more circulatory-death donation, more organs recovered. The lesson is simple and it applies to your own advocacy too. Organizations change when they're measured in public and when consequences are real. Patients and families helped make that pressure possible, by testifying, writing, and refusing to let the subject drop."
     },
     {
-     "id": "c5s3b",
-     "kicker": "What contributing looks like",
-     "title": "An hour can matter",
-     "points": [
-      "Fact-check a guide",
-      "Research one legislator's record",
-      "Help one family find the right tool"
-     ],
-     "say": "People often think volunteering means giving up every weekend. It doesn't have to. An hour can fact-check a section of a guide against its sources. An hour can pull one legislator's voting record together before a district office visit. An hour can walk one overwhelmed family through the Translator so they understand their denial letter for the first time. The Foundation matches new volunteers with ready-made starter tasks, so your first contribution is real and finished in your first week. Consistency matters far more than size. A few dependable hours a month beat a burst of enthusiasm that fades."
-    },
-    {
-     "id": "c5s4",
-     "kicker": "The ground rules",
-     "title": "What every volunteer protects",
-     "points": [
-      "Know where advocacy ends and medical or legal advice begins",
-      "Confidentiality by default",
-      "Represent positions exactly as documented"
-     ],
-     "say": "Every volunteer holds the same standards, whatever track they choose. Know where advocacy ends and medical or legal practice begins, and send those questions to a qualified professional. Treat what people tell you as confidential by default. Represent the Foundation's positions exactly as they're documented, not stronger and not softer. Show up for what you promise, or say early that you can't. And advocate for every person with the same rigor, no matter their diagnosis or how sympathetic their story sounds. The system already sorts people by how much noise they can make. We don't repeat that."
-    },
-    {
-     "id": "c5s5",
-     "kicker": "Knowledge check",
+     "id": "k8s3",
+     "kicker": "Checkpoint",
      "title": "Quick question",
-     "points": [],
-     "say": "Let's check the core idea of this chapter.",
+     "v": {
+      "t": "title",
+      "h": "Checkpoint",
+      "sub": "Chapter 8"
+     },
+     "src": "",
+     "say": "One more on accountability.",
      "q": {
-      "p": "Why does the Foundation push people to file written complaints instead of just calling?",
+      "p": "What happens to a procurement organization whose service areas are all graded tier 3 under the 2026 rule?",
       "o": [
-       "Written complaints are faster to ignore",
-       "Filed complaints create records and start compliance clocks",
-       "Phone calls are against the rules",
-       "It makes the paperwork look longer"
+       "It gets extra funding",
+       "Nothing changes",
+       "It will be decertified",
+       "It merges with a hospital"
+      ],
+      "a": 2,
+      "why": "Under the final rule, OPOs with only tier 3 service areas will be decertified, and higher-performing organizations can compete for those territories."
+     }
+    }
+   ]
+  },
+  {
+   "id": "k9",
+   "title": "The next horizon",
+   "scenes": [
+    {
+     "id": "k9s1",
+     "kicker": "Beyond human donors",
+     "title": "Gene-edited pig kidneys enter trials",
+     "v": {
+      "t": "timeline",
+      "ev": [
+       [
+        "2024",
+        "First pig kidney transplant into a living person"
+       ],
+       [
+        "Jan 2025",
+        "Tim Andrews receives a gene-edited pig kidney"
+       ],
+       [
+        "2025",
+        "FDA clears the first formal clinical trials"
+       ],
+       [
+        "Jan 2026",
+        "Andrews receives a human kidney after nearly nine months off treatment"
+       ]
+      ]
+     },
+     "src": "NKF; News-Medical; IBTimes, 2026",
+     "say": "Let me take you to the edge of what's possible. Gene-edited pig kidneys have moved from experiments into formal clinical trials. One company is testing a kidney with ten gene edits; another is testing one with sixty-nine. In January 2025, a New Hampshire man named Tim Andrews received a pig kidney at Massachusetts General Hospital and lived nearly nine months without needing dialysis. Then, in January 2026, he received a human kidney. The pig kidney served as a bridge. Researchers are careful to say much more testing is needed. But the idea that a person's wait could someday be measured in weeks, not years, is no longer science fiction."
+    },
+    {
+     "id": "k9s1b",
+     "kicker": "Stopping the clock entirely",
+     "title": "Organ banking",
+     "v": {
+      "t": "stat",
+      "n": 100,
+      "suf": " days",
+      "cap": "vitrified rat kidneys stored, rewarmed, and transplanted with full function"
+     },
+     "src": "Han et al., Nature Communications, 2023 (University of Minnesota)",
+     "say": "Now imagine never racing the clock at all. In 2023, researchers at the University of Minnesota cooled rat kidneys so fast, in a protective solution, that they turned glassy instead of forming ice. They stored them for up to one hundred days, then rewarmed them evenly from the inside using tiny iron particles and a magnetic field. The kidneys were transplanted, and all five recipient rats regained full kidney function within a month. These were rats, not people, and human organs are far bigger and harder to rewarm. But if organ banking ever works in humans, transplant could become a planned surgery instead of a midnight emergency."
+    },
+    {
+     "id": "k9s2",
+     "kicker": "Connect the dots",
+     "title": "Every breakthrough runs into the same wall",
+     "v": {
+      "t": "split",
+      "l": {
+       "h": "The science is moving",
+       "items": [
+        "Oxygenated and warm perfusion",
+        "Oxygen-carrier research like BHOC",
+        "Gene-edited organs"
+       ]
+      },
+      "r": {
+       "h": "The system lags",
+       "items": [
+        "Slow, opaque offer decisions",
+        "Uneven procurement performance",
+        "Patients left out of the loop"
+       ]
+      }
+     },
+     "src": "",
+     "say": "Step back and you'll see the pattern. The science is moving fast: warm machines, oxygen carriers, gene-edited organs. But every one of those advances has to pass through the same system. A procurement organization has to refer the donor properly. A center has to answer an offer quickly. A team has to be willing to accept an organ that's been pumped and measured instead of guessed at. A patient has to know they're active and what's being declined. Technology can add hours to the clock. Only people can make sure those hours aren't wasted. That's where you come in, and that's where this foundation lives."
+    },
+    {
+     "id": "k9s3",
+     "kicker": "Checkpoint",
+     "title": "Quick question",
+     "v": {
+      "t": "title",
+      "h": "Checkpoint",
+      "sub": "Chapter 9"
+     },
+     "src": "",
+     "say": "A question about the far horizon.",
+     "q": {
+      "p": "What did the University of Minnesota organ banking study achieve?",
+      "o": [
+       "Human kidneys stored for a year",
+       "Rat kidneys stored up to 100 days, then transplanted with full function",
+       "A kidney grown from stem cells",
+       "A permanent artificial kidney"
       ],
       "a": 1,
-      "why": "A filed complaint becomes part of the record and triggers obligations to respond. Many filed complaints citing the same rule reveal a pattern that investigators, legislators, and reporters can act on."
+      "why": "Vitrified rat kidneys were stored up to 100 days, rewarmed with nanoparticles, and transplanted. All five recipients recovered full function within 30 days. Human use is still far off."
      }
     }
    ]
   },
   {
-   "id": "c6",
-   "title": "Building a movement where you live",
+   "id": "k10",
+   "title": "What you do with this",
    "scenes": [
     {
-     "id": "c6s1",
-     "kicker": "Start small, on purpose",
-     "title": "The kitchen-table briefing",
-     "points": [
-      "Six to ten people, ninety minutes",
-      "One problem, one rule, one ask",
-      "Leave with names, roles, and a date"
-     ],
-     "say": "Movements rarely start with a rally. They start at a table. Invite six to ten people: patients, care partners, a nurse who's frustrated, a neighbor who's simply curious. Keep it to ninety minutes. Pick one problem, the rule behind it, and one specific request you'll make together. Show a Gatekeeper card or a Scorecard grade to anchor the conversation in facts. Before anyone leaves, write down names, who's taking which task, and the date you'll meet again. A group that leaves with assignments comes back. A group that leaves with only good feelings usually doesn't.",
-     "tip": {
-      "h": "Rotate the host",
-      "t": "Ask a different person to host each meeting. Shared hosting spreads ownership, so the group doesn't collapse when one organizer gets sick or busy."
-     }
-    },
-    {
-     "id": "c6s2",
-     "kicker": "Go where people already gather",
-     "title": "Libraries, faith communities, and clubs",
-     "points": [
-      "Free rooms with built-in audiences",
-      "Offer a 30-minute talk using this webinar",
-      "Bring printed First 24 Hours guides"
-     ],
-     "say": "You don't have to build an audience from nothing. Public libraries, faith communities, senior centers, civic clubs, and support groups already gather people and often lend rooms for free. Offer a thirty-minute session. You can even play chapters of this webinar and lead a discussion afterward. Bring printed copies of The First 24 Hours guide so every person leaves holding something useful. The Foundation also offers a free thirty-minute webinar for patient groups, and live workshops for those who want to go further. Ask the host to add your next meeting to their community calendar.",
+     "id": "k10s1",
+     "kicker": "This week",
+     "title": "Five moves for patients and care partners",
+     "v": {
+      "t": "checklist",
+      "items": [
+       "Confirm in writing that you're active",
+       "Ask for your offer filters and acceptance criteria",
+       "Ask how your program preserves kidneys",
+       "Compare programs' offer acceptance at srtr.org",
+       "Consider listing at a second program"
+      ]
+     },
+     "src": "",
+     "say": "Let's turn all of this into action. If you or someone you love is waiting, here are five moves for this week. Confirm in writing that you're active. Ask for your offer filters, meaning the kinds of organs your team automatically turns down for you, and whether they still make sense. Ask how your program preserves kidneys and whether it uses machine perfusion. Look up your program's offer acceptance data on the national registry's website. And ask whether listing at a second program could shorten your wait. None of these requires a medical degree. Each one puts you back in the room where decisions about your life are being made.",
      "link": {
-      "label": "Download The First 24 Hours",
-      "href": "first-24-hours.html"
+      "label": "Compare transplant centers",
+      "href": "kidney-transplant-centers.html"
      }
     },
     {
-     "id": "c6s2b",
-     "kicker": "Care that holds",
-     "title": "Start a support circle",
-     "points": [
-      "A small group that meets on a regular schedule",
-      "Shared tasks: rides, meals, paperwork, phone calls",
-      "Clear agreements on privacy"
-     ],
-     "say": "Not every group needs to be about policy. Some of the strongest local movements begin as support circles, small groups of patients and care partners who meet on a regular schedule and actually carry part of each other's load. One member drives to appointments. Another helps with appeal paperwork. Another simply makes the phone calls that someone is too tired to make. Agree on privacy from the first meeting: what's said in the circle stays there. Over time, a circle that trusts each other becomes the group that shows up at the district office together.",
-     "tip": {
-      "h": "Write the agreements down",
-      "t": "Put the circle's privacy rules, meeting schedule, and how decisions are made on a single page. Hand it to every new member. Clear agreements prevent most of the conflicts that break groups apart."
-     }
+     "id": "k10s1b",
+     "kicker": "For donor families",
+     "title": "Your rights in the hardest room",
+     "v": {
+      "t": "checklist",
+      "items": [
+       "Full medical care comes first, always",
+       "You can ask for time, and you'll get it",
+       "You can ask who each person works for",
+       "You can ask whether NRP will be used",
+       "You can ask for the hospital's patient advocate"
+      ]
+     },
+     "src": "CMS QSO-26-05, March 2026",
+     "say": "If you're ever the family in that hospital room, here's what you can hold onto. Your loved one must receive full medical care, whatever the donation question. You can ask for time, and federal guidance says you should get it, without pressure. You can ask every person who joins the conversation who they work for. You can ask whether normothermic regional perfusion will be used. And you can ask for the hospital's patient advocate or ethics consult to be with you. Saying yes to donation is one of the most generous things a person can do. It should never be a yes given in confusion."
     },
     {
-     "id": "c6s3",
-     "kicker": "Make it official",
-     "title": "Proclamations and the press",
-     "points": [
-      "Ask your city or county for a proclamation",
-      "November: National Family Caregivers Month",
-      "March: National Kidney Month"
-     ],
-     "say": "Local officials hand out proclamations all the time, and they're easier to get than most people expect. Contact your mayor's or county commission's office and ask them to recognize care partners during National Family Caregivers Month in November, or kidney patients during National Kidney Month in March. A proclamation gives you a reason to fill the room, a photo, and a news hook. Pair it with a short letter to the editor of your local paper, under two hundred fifty words, with one fact and one request. Local coverage is how a group of ten starts to look like a hundred.",
-     "tip": {
-      "h": "Write the draft for them",
-      "t": "City staff are busy. Send a ready-to-sign draft proclamation with your request. Offices often adopt the language they're handed, which lets you choose the facts."
-     }
+     "id": "k10s1c",
+     "kicker": "For nurses and clinicians",
+     "title": "If you see something, document it",
+     "v": {
+      "t": "checklist",
+      "items": [
+       "Write down what you saw, with times",
+       "Use your hospital's safety reporting system",
+       "Report to OPTNComplaints@hrsa.gov",
+       "Contact your state survey agency if needed"
+      ]
+     },
+     "src": "HRSA OPTN contact channels",
+     "say": "Some of you watching work inside hospitals. If you ever see something during a donation case that troubles you, write it down right away: what you saw, when, and who was present. Use your hospital's safety reporting system. You can also report directly to HRSA through the transplant network's complaint channel, and to your state's survey agency, which inspects hospitals for Medicare. The Kentucky case came to light because people inside the system refused to stay quiet. Their courage changed national policy. Speaking up isn't disloyalty to your profession. It's the highest form of loyalty to it."
     },
     {
-     "id": "c6s4",
-     "kicker": "Talk to power, prepared",
-     "title": "District offices and public comment",
-     "points": [
-      "Meet staff at the local district office",
-      "Bring the Scorecard grade and a one-page ask",
-      "Comment on federal rules at regulations.gov"
-     ],
-     "say": "Members of Congress keep offices back home, and the staff there meet with constituents regularly, especially during recess. Request a meeting. Bring two or three people, a one-page ask, and the member's Scorecard grade. Be polite, specific, and brief, then follow up in writing within a week. Then there's the door most people don't know exists. When agencies like CMS propose new rules, anyone can submit a public comment at regulations.gov, and the agency must consider it. The OPTN also opens its policy proposals to public comment. A dozen well-sourced comments from one community get noticed.",
+     "id": "k10s2",
+     "kicker": "This month",
+     "title": "Turn knowledge into a public record",
+     "v": {
+      "t": "checklist",
+      "items": [
+       "Comment on the NRP policy before Dec 28, 2026",
+       "Write to your members of Congress about offer transparency",
+       "Ask your county's OPO for its CMS tier and plans",
+       "Share one fact from this webinar with sources"
+      ]
+     },
+     "src": "",
+     "say": "Next, the public record. Institutions respond to written, specific, sourced comments, not to frustration in a waiting room. Before December twenty-eighth, 2026, submit a comment on the national NRP policy, whatever your view. Write to your members of Congress asking them to support offer transparency for every patient, not just a pilot. Ask your region's procurement organization what tier it's in and what it's doing about it. And share one fact you learned today, with the source attached. One sourced fact, posted by a real person, does more than a thousand angry comments without one.",
      "link": {
-      "label": "Read the Foundation's demand letters",
-      "href": "demand-letters.html"
+      "label": "Grade your representatives",
+      "href": "congress-scorecard.html"
      },
      "tip": {
-      "h": "Comment with evidence",
-      "t": "Agencies weigh substance, not volume. A comment that cites data, describes a real impact, and proposes specific wording carries more weight than a hundred identical form letters."
+      "h": "Write like an investigator",
+      "t": "In any comment or letter, include one personal fact, one data point with its source, and one specific request. Keep it under a page. Staff summarize what they can quote."
      }
     },
     {
-     "id": "c6s5",
-     "kicker": "Online, with discipline",
-     "title": "Share facts, not just outrage",
-     "points": [
-      "One fact, one source, one action per post",
-      "Share Foundation pages so people land on tools",
-      "Never post someone's story without consent"
-     ],
-     "say": "Social media can spread a movement or drown it in noise. Keep every post simple: one fact, its source, and one action people can take. Link to the Foundation's pages so readers land on working tools instead of just reading a headline. Tag your local officials when you share a Scorecard grade. Celebrate small wins, like a records request answered or an appeal overturned, because wins recruit people faster than outrage. And protect the people you're fighting for. Never post anyone's health details or story without their clear, informed permission."
-    },
-    {
-     "id": "c6s5b",
-     "kicker": "Choose partners carefully",
-     "title": "Vet every coalition",
-     "points": [
-      "Check who funds a potential partner",
-      "Ask what they've been willing to criticize",
-      "Agree on the ask before you share a stage"
-     ],
-     "say": "As your group grows, other organizations will want to partner with you. Some will make you stronger. Others will quietly soften your message to protect their sponsors. Before you join a coalition, check who funds it, using its Form 990 and its public sponsor list. Ask what it has been willing to criticize in the past. And agree on the specific request before you share a stage, a press release, or a letterhead. A partnership that can't name the problem out loud will eventually ask you not to either. Independence protects your credibility, and credibility is the only currency a grassroots group truly has."
-    },
-    {
-     "id": "c6s6",
-     "kicker": "Your first 90 days",
-     "title": "A simple plan",
-     "points": [
-      "Days 1–30: two people, one briefing, one records request each",
-      "Days 31–60: a library talk and a proclamation request",
-      "Days 61–90: a district office meeting and a public comment"
-     ],
-     "say": "Let's put it together into ninety days. In the first month, recruit two people, hold one kitchen-table briefing, and have each person send one records request or appeal of their own. That builds confidence. In the second month, host a talk at a library or community space and ask your city for a proclamation. In the third month, meet with a district office and submit a group of public comments on an open rule. By day ninety, you'll have a small team, a public record, and relationships with officials who now know your names. That's a movement.",
-     "tip": {
-      "h": "Track it like a project",
-      "t": "Use a simple log: date, action, person, result. After 90 days, that log is your proof of impact and the story you'll tell to recruit the next ten people."
-     }
-    },
-    {
-     "id": "c6s7",
-     "kicker": "Knowledge check",
-     "title": "Quick question",
-     "points": [],
-     "say": "One last check before we wrap up.",
+     "id": "k10s2q",
+     "kicker": "Checkpoint",
+     "title": "Last question",
+     "v": {
+      "t": "title",
+      "h": "Final checkpoint",
+      "sub": "Chapter 10"
+     },
+     "src": "",
+     "say": "Here's the last checkpoint.",
      "q": {
-      "p": "Your group wants local attention in November. Which move fits best?",
+      "p": "Under CMS's 2026 guidance, what should happen if signs of life are seen during procurement?",
       "o": [
-       "Ask the city for a National Family Caregivers Month proclamation",
-       "Wait until a crisis makes the news",
-       "Post anonymous complaints online",
-       "Hold a rally with no specific ask"
+       "Continue if the family agreed",
+       "Pause for an hour, then continue",
+       "Stop the procurement process immediately",
+       "Ask the transplant center to decide"
       ],
-      "a": 0,
-      "why": "November is National Family Caregivers Month. A proclamation gives you an event, a photo, and a news hook, and it puts care partners on the official record."
+      "a": 2,
+      "why": "CMS guidance says OPOs are expected to stop the procurement process immediately if signs of life are observed before or during organ recovery."
      }
-    }
-   ]
-  },
-  {
-   "id": "c7",
-   "title": "Your next step",
-   "scenes": [
-    {
-     "id": "c7s1",
-     "kicker": "What you now have",
-     "title": "A toolkit, a set of rights, and a plan",
-     "points": [
-      "Know the tools and when to use them",
-      "Use your rights in writing, on deadline",
-      "Build a group of ten, then a public record"
-     ],
-     "say": "Let's look at what you're leaving with. You know where the Foundation's tools are and which one to open when trouble starts. You know rights most patients never hear about: your records in thirty days, a transplant program's selection criteria on request, written notice of list decisions, appeal deadlines, and the escalation ladder. And you have a ninety-day plan for turning one voice into a local force that ends up in the federal record. None of this asks you to be fearless. It asks you to be organized, persistent, and connected to people doing the same work."
     },
     {
-     "id": "c7s2",
+     "id": "k10s3",
      "kicker": "Join us",
-     "title": "Stop doing this alone",
-     "points": [
-      "Volunteer with the Foundation",
-      "Share this webinar with one person this week",
-      "Come back any time; your place is saved"
-     ],
-     "say": "So here's the ask. First, join the Cold Ischemia Foundation tribe. Explore the volunteer tracks and start the readiness training. Second, share this webinar with one person this week, someone who's tired of fighting the system alone. Third, open one tool today, even if it's just requesting your own records. Small actions, taken on purpose, are how every lasting change in this system has started. Thank you for spending this time with me. The buttons on the screen will take you wherever you'd like to go next.",
+     "title": "Bring this to your community",
+     "v": {
+      "t": "photo",
+      "src": "united_we_stand.jpg",
+      "cap": "Movements start with a few people who refuse to look away"
+     },
+     "src": "",
+     "say": "Finally, don't carry this alone. The Cold Ischemia Foundation exists to put this knowledge in the hands of the people the system was supposed to serve, with no industry money behind us. Join us as a volunteer. Host a viewing of this webinar at your library, your faith community, or your support group, and lead a conversation afterward. Bring it to your local paper. Invite your representative's staff. Every conversation about the cold window is one more family that will ask better questions on their hardest day. Thank you for spending this hour with me. The buttons on your screen will take you where you'd like to go next.",
      "link": {
-      "label": "Explore volunteering",
+      "label": "Volunteer with the Foundation",
       "href": "cif-volunteer-page.html"
      },
      "offer": true
@@ -756,7 +1268,7 @@
   "enabled": false,
   "kicker": "For those ready to go further",
   "title": "Product name goes here",
-  "text": "One or two sentences on what the product does and why it's worth having.",
+  "text": "One or two sentences on what the tool does.",
   "cta": "Get it",
   "href": "https://payhip.com/coldischemia"
  }
